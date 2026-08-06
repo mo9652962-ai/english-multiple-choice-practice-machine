@@ -271,7 +271,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="ai-assistant-page">
+  <div class="ai-assistant-page page-assistant">
     <header class="ai-page-head">
       <div>
         <span class="eyebrow">AI STUDY COMPANION</span>

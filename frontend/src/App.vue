@@ -60,6 +60,7 @@ onMounted(() => {
   dark.value = localStorage.getItem('linjian-theme') === 'dark'
     || (!localStorage.getItem('linjian-theme') && matchMedia('(prefers-color-scheme: dark)').matches)
   applyTheme()
+  document.body.classList.add('ink-landscape')
   void loadCategories()
 })
 </script>
@@ -71,9 +72,9 @@ onMounted(() => {
   >
     <aside class="sidebar" v-if="!route.path.startsWith('/practice')">
       <RouterLink class="brand" to="/">
-        <span class="brand-mark"><img src="/assets/icons/brand-mark.png" alt="" /></span>
-        <span class="brand-copy"><strong>AI 英语刷题机</strong><small>接大模型 · 本地题库 · 自由刷题</small></span>
-      </RouterLink>
+              <span class="brand-mark">墨</span>
+              <span class="brand-copy"><strong>墨题 · 英语刷题</strong><small>水墨之间 · 学海无涯</small></span>
+            </RouterLink>
       <nav aria-label="主要导航">
         <RouterLink to="/"><Home :size="19" aria-hidden="true" /><span>首页</span></RouterLink>
         <RouterLink to="/library"><Library :size="19" aria-hidden="true" /><span>题库与练习</span></RouterLink>
@@ -106,6 +107,7 @@ onMounted(() => {
         <BookOpenText :size="18" />
         <p>慢一点读，答案常藏在句子之间。</p>
       </div>
+      <span class="vertical-text" aria-hidden="true">温故而知新，可以为师矣</span>
       <button class="theme-button" type="button" @click="toggleTheme" :aria-label="dark ? '切换到浅色模式' : '切换到夜间模式'">
         <Sun v-if="dark" :size="18" /><Moon v-else :size="18" />
         {{ dark ? '浅色模式' : '夜间模式' }}

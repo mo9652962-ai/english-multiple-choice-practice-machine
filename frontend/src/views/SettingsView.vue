@@ -231,7 +231,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="page ai-settings-page">
+  <div class="page page-settings ai-settings-page">
     <div class="page-head">
       <div>
         <span class="eyebrow">MODEL WORKSPACE</span>

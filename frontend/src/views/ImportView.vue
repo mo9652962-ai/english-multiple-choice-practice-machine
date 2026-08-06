@@ -612,7 +612,7 @@ async function exportEsq(includeLabels = false) {
 </script>
 
 <template>
-  <div class="page">
+  <div class="page page-import">
     <div class="page-head"><div><span class="eyebrow">IMPORT & REVIEW</span><h1>导入题库</h1><p class="lead">试卷和答案分别解析。即使答案缺失，也可以先保存题目草稿，再人工补全。</p></div></div>
     <QuestionBankSwitcher @changed="handleProfileChanged" />
     <div v-if="error" class="warning" role="alert">{{ error }}</div><div v-if="notice" class="card" style="margin-bottom:16px;color:var(--success)">{{ notice }}</div>

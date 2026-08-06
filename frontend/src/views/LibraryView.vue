@@ -96,7 +96,7 @@ async function deleteSelected() {
 </script>
 
 <template>
-  <div class="page">
+  <div class="page page-library">
     <div class="page-head"><div><span class="eyebrow">QUESTION LIBRARY</span><h1>按年份练习</h1><p class="lead">完成整年45道客观题后统一判分，中途自动保存。</p></div></div>
     <QuestionBankSwitcher @changed="loadPapers" />
     <div class="batch-toolbar">
