@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import socket
 import sys
 import threading
@@ -9,6 +10,14 @@ import webbrowser
 
 import uvicorn
 
+# v9.20.1: 打包路径自适应——Electron extraResources 把 backend 放在
+# resources/backend，而 run_app.py 在 resources/app/。把 resources 根加入
+# sys.path，否则 `uvicorn.run("backend.app.main:app")` import 失败 → 后端
+# 起不来 → 桌面端白屏（复现于 2026-08-06 v1.0.1）
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_RESOURCES = os.path.dirname(_HERE)
+if os.path.isdir(os.path.join(_RESOURCES, "backend")):
+    sys.path.insert(0, _RESOURCES)
 
 URL = "http://127.0.0.1:8765"
 
@@ -47,4 +56,3 @@ if __name__ == "__main__":
     print(f"[刷题机] {'局域网模式 (手机可访问 http://' + get_lan_ip() + ':8765)' if lan else '本机模式 (http://127.0.0.1:8765)'}")
     threading.Thread(target=open_when_ready, args=(lan,), daemon=True).start()
     uvicorn.run("backend.app.main:app", host=bind_host, port=8765)
-
