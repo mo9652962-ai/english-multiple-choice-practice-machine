@@ -1,6 +1,6 @@
 {
   "name": "ai-english-practice-desktop",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "AI 英语刷题机 - 桌面应用",
   "main": "main.js",
   "scripts": {
@@ -53,6 +53,14 @@
         "filter": [
           "**/*",
           "!**/*.map"
+        ]
+      },
+      {
+        "from": "../backend/dist/backend_app",
+        "to": "backend_app",
+        "filter": [
+          "**/*",
+          "!**/*.pyc"
         ]
       }
     ],
