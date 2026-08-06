@@ -47,10 +47,11 @@ function wait(milliseconds: number) {
   return new Promise(resolve => window.setTimeout(resolve, milliseconds))
 }
 
-async function loadHome() {
+async function loadHome(force = false) {
   error.value = ''
   const embedded = (window as any).__LINJIAN_STARTUP__
-  if (embedded) {
+  // v2.11: 切换题库级别时 force=true → 跳过首屏缓存, 重新请求该级别推荐
+  if (embedded && !force) {
     data.value = embedded
     try {
       const words: any = await get('/vocabulary/home?limit=20')
@@ -111,6 +112,16 @@ async function randomPractice(type: string) {
     router.push(`/practice/${session.id}`)
   } catch (e) { error.value = String(e) }
 }
+
+const UNIT_TYPE_NAMES: Record<string, string> = {
+  cloze: '完形填空', reading: '阅读理解', paragraph_matching: '阅读 Part B', part_b: '阅读 Part B',
+  translation: '翻译', writing: '写作', listening: '听力',
+}
+const UNIT_TYPE_PARAMS: Record<string, string> = {
+  cloze: 'cloze', reading: 'reading', paragraph_matching: 'part_b',
+}
+function typeName(type: string) { return UNIT_TYPE_NAMES[type] || type }
+function typeParam(type: string) { return UNIT_TYPE_PARAMS[type] || type }
 </script>
 
 <template>
@@ -123,7 +134,60 @@ async function randomPractice(type: string) {
         <RouterLink class="button" to="/library"><BookOpen :size="17" />查看全部题库<ArrowRight :size="16" /></RouterLink>
       </div>
     </div>
-    <QuestionBankSwitcher @changed="loadHome" />
+    <QuestionBankSwitcher @changed="() => loadHome(true)" />
+    <!-- v2.9: 按当前级别针对性推荐 -->
+    <section v-if="data?.recommendations" class="recommend-section">
+      <div class="section-title"><h2><span class="hero-seal recommend-seal" aria-hidden="true">荐</span>{{ data.active_profile?.name || '本级别' }} · 为你推荐</h2></div>
+      <!-- 继续练习 -->
+      <RouterLink v-if="data.recommendations.continue_paper" :to="'/library'" class="card recommend-continue">
+        <span class="feature-icon sage" style="width:48px;height:48px;font-size:22px;margin-bottom:0">继</span>
+        <span class="action-copy">
+          <small>上次未完</small>
+          <h3>继续练习 {{ data.recommendations.continue_paper.year }} 年{{ data.recommendations.continue_paper.subject ? ' · ' + data.recommendations.continue_paper.subject : '' }}</h3>
+          <p>{{ data.recommendations.continue_paper.title }}</p>
+        </span>
+        <ArrowRight class="action-arrow" :size="19" />
+      </RouterLink>
+      <!-- 本级别真题卷 -->
+      <div v-if="data.recommendations.papers?.length" class="grid grid-4 recommend-papers">
+        <RouterLink v-for="p in data.recommendations.papers.slice(0, 4)" :key="p.id" :to="'/library'" class="card recommend-paper">
+          <span class="seal-badge" aria-hidden="true">卷</span>
+          <strong>{{ p.year }} 年{{ p.subject ? ' · ' + p.subject : '' }}</strong>
+          <small>{{ p.title }}</small>
+          <span class="stat-link">去练习 <ArrowRight :size="14" /></span>
+        </RouterLink>
+      </div>
+      <!-- 高频错题 + 薄弱单元 -->
+      <div v-if="data.recommendations.top_wrong?.length" class="grid grid-2 recommend-wrong-grid">
+        <div class="card recommend-wrong">
+          <h3>本级别高频错题</h3>
+          <RouterLink v-for="w in data.recommendations.top_wrong" :key="w.id" :to="'/wrong'" class="recommend-wrong-item">
+            <span class="wrong-badge">{{ w.wrong_count }} 次错</span>
+            <span>{{ w.prompt }}</span>
+          </RouterLink>
+        </div>
+        <div v-if="data.recommendations.weak_units?.length" class="card recommend-wrong">
+          <h3>薄弱单元</h3>
+          <RouterLink v-for="u in data.recommendations.weak_units" :key="u.id" :to="'/wrong'" class="recommend-wrong-item">
+            <span class="wrong-badge">{{ u.wrong_n }} 题错</span>
+            <span>{{ u.title }}</span>
+          </RouterLink>
+        </div>
+      </div>
+      <!-- 能力雷达: 各题型正确率 + 薄弱一键专项 -->
+      <div v-if="data.recommendations.ability_radar?.length" class="card recommend-radar">
+        <h3>能力雷达 · 本级别各题型正确率</h3>
+        <div class="radar-bars">
+          <div v-for="a in data.recommendations.ability_radar" :key="a.type" class="radar-item" :class="{ weak: a.rate !== null && a.rate < 60 }">
+            <span class="radar-label">{{ typeName(a.type) }}</span>
+            <span class="radar-bar"><span class="radar-fill" :style="{ width: (a.rate ?? 0) + '%' }"></span></span>
+            <span class="radar-rate">{{ a.rate ?? '—' }}%</span>
+            <span v-if="a.rate !== null && a.rate < 60" class="radar-weak-tag">薄弱</span>
+            <button v-if="a.rate !== null" class="button ghost radar-go" type="button" @click="randomPractice(typeParam(a.type))">练一练</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <div v-if="error" class="warning">{{ error }}</div>
     <section v-if="vocabulary.length" class="vocabulary-ticker card" @mouseenter="tickerPaused=true" @mouseleave="tickerPaused=false">
       <div class="ticker-heading"><div><span class="eyebrow">VOCABULARY REVIEW</span><h3>词汇回顾</h3></div><RouterLink to="/vocabulary">查看单词本 →</RouterLink></div>
