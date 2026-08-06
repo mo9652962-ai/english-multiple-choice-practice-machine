@@ -1,0 +1,22 @@
+{
+  "$schema": "https://zeabur.com/schema.json",
+  "build": {
+    "type": "dockerfile"
+  },
+  "deploy": {
+    "healthcheckPath": "/api/health",
+    "healthcheckTimeout": 30,
+    "maxReplicas": 1,
+    "minReplicas": 1
+  },
+  "services": [
+    {
+      "name": "epm-backend",
+      "port": 8765,
+      "env": {
+        "EPM_API_KEY": "请在 Zeabur 控制台设置强随机密钥",
+        "EPM_RATE_LIMIT": "120"
+      }
+    }
+  ]
+}

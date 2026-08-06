@@ -1,0 +1,27 @@
+# Docker 构建排除（保持镜像小 + 不泄露本地数据）
+.git
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+frontend/node_modules
+frontend/dist
+electron
+mobile-app
+backend/data
+*.db
+*.sqlite
+.env
+.env.*
+!.env.example
+work
+outputs
+design-system
+docs
+examples
+tools
+*.md
+AUTHORS.md
+NOTICE.md
+LICENSE
