@@ -122,6 +122,54 @@ const UNIT_TYPE_PARAMS: Record<string, string> = {
 }
 function typeName(type: string) { return UNIT_TYPE_NAMES[type] || type }
 function typeParam(type: string) { return UNIT_TYPE_PARAMS[type] || type }
+
+// v2.12: 练习卡随级别动态切换 (标题/描述/可用性 按当前题库级别)
+const practiceCards = computed(() => {
+  const profile = data.value?.active_profile?.name || ''
+  const counts = data.value?.recommendations?.unit_type_counts || {}
+  const clozeN = counts.cloze || 0
+  const readN = counts.reading || 0
+  const partBN = counts.paragraph_matching || 0
+  const isGaoKao = profile.includes('高中')
+  const isCet4 = profile.includes('四级')
+  const isCet6 = profile.includes('六级')
+  const isKaoYan = profile.includes('考研')
+  const level = profile || '本级别'
+  return [
+    {
+      key: 'cloze', icon: '/assets/icons/cloze.png', iconClass: 'orange',
+      title: isCet4 || isCet6 ? '选词填空' : '完形填空',
+      subtitle: clozeN
+        ? (isKaoYan ? `${level} · 20 空语篇` : isGaoKao ? `${level} · 15 空语境` : `${level} · 整篇提交`)
+        : `${level} 暂无此题型`,
+      desc: isCet4 || isCet6
+        ? '四六级改革后取消完形，改为选词填空（词汇理解）。'
+        : (isKaoYan ? '考研完形：语篇连贯与词汇辨析并重。' : isGaoKao ? '高考完形：语境语义优先于语法。' : '在完整语境中完成填空练习。'),
+      enabled: clozeN > 0, type: 'cloze',
+    },
+    {
+      key: 'reading', icon: '/assets/icons/reading.png', iconClass: 'sage',
+      title: '阅读理解',
+      subtitle: readN ? `${level} · ${readN} 篇` : `${level} 暂无此题型`,
+      desc: isKaoYan ? '考研阅读 A：主旨/态度/细节/推理四类题。'
+        : isCet6 ? '六级仔细阅读：学术语料，长难句更多。'
+        : isCet4 ? '四级仔细阅读：篇章长度与词汇量适中。'
+        : isGaoKao ? '高考阅读：传统四篇 + 语篇理解。'
+        : '按文章完整练习，专注理解论证与细节。',
+      enabled: readN > 0, type: 'reading',
+    },
+    {
+      key: 'part_b', icon: '/assets/icons/part-b.png', iconClass: 'blue',
+      title: isKaoYan ? '阅读 Part B' : (isCet4 || isCet6 ? '长篇阅读匹配' : '七选五'),
+      subtitle: partBN ? `${level} · ${partBN} 篇` : `${level} 暂无此题型`,
+      desc: isKaoYan ? '考研新题型：七选五/排序/段落匹配。'
+        : (isCet4 || isCet6) ? '四六级长篇阅读：句子与段落信息匹配。'
+        : isGaoKao ? '高考七选五：把握文章结构与句际逻辑。'
+        : '在段落关系中辨认结构、衔接与观点。',
+      enabled: partBN > 0, type: 'part_b',
+    },
+  ]
+})
 </script>
 
 <template>
@@ -206,19 +254,19 @@ function typeParam(type: string) { return UNIT_TYPE_PARAMS[type] || type }
       </div>
     </section>
     <div class="grid grid-3 practice-actions">
-      <button class="card action-card" type="button" @click="randomPractice('cloze')">
-        <span class="feature-icon orange"><img src="/assets/icons/cloze.png" alt="" /></span>
-        <span class="action-copy"><small>20 个空 · 整篇提交</small><h3>完型填空</h3><p>随机抽取一整篇，在完整语境中完成练习。</p></span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </button>
-      <button class="card action-card" type="button" @click="randomPractice('reading')">
-        <span class="feature-icon sage"><img src="/assets/icons/reading.png" alt="" /></span>
-        <span class="action-copy"><small>1 篇文章 · 5 道题</small><h3>阅读理解</h3><p>按文章完整练习，专注理解论证与细节。</p></span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </button>
-      <button class="card action-card" type="button" @click="randomPractice('part_b')">
-        <span class="feature-icon blue"><img src="/assets/icons/part-b.png" alt="" /></span>
-        <span class="action-copy"><small>排序 · 填入 · 匹配</small><h3>阅读 Part B</h3><p>在段落关系中辨认结构、衔接与观点。</p></span>
+      <button
+        v-for="card in practiceCards" :key="card.key"
+        class="card action-card" type="button"
+        :disabled="!card.enabled"
+        :class="{ 'practice-card-disabled': !card.enabled }"
+        @click="card.enabled && randomPractice(card.type)"
+      >
+        <span class="feature-icon" :class="card.iconClass"><img :src="card.icon" alt="" /></span>
+        <span class="action-copy">
+          <small>{{ card.subtitle }}</small>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.desc }}</p>
+        </span>
         <ArrowRight class="action-arrow" :size="19" />
       </button>
     </div>
