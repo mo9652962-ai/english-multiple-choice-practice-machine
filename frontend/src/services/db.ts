@@ -16,7 +16,8 @@ export async function initDatabase(): Promise<Database> {
   if (db) return db
 
   SQL = await initSqlJs({
-    locateFile: (file: string) => `https://sql.js.org/dist/${file}`,
+    // v9.20.1: wasm 本地化（public/sql-wasm.wasm）——5+App 无网环境不能依赖 CDN
+    locateFile: (file: string) => `sql-wasm.wasm`,
   })
 
   // 尝试从 IndexedDB 恢复
