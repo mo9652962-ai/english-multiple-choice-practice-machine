@@ -773,25 +773,61 @@ def translate_vocabulary_entry(entry_id: int) -> None:
 def review_entry(
     connection: sqlite3.Connection, entry_id: int, rating: str
 ) -> dict[str, Any]:
+    """复习单词，使用 FSRS 算法安排下次复习
+    
+    评分映射: again→Again(不认识) hard→Hard(有点印象) mastered→Good(已掌握)
+    """
+    from .fsrs_scheduler import review_card, card_from_db, card_to_dict
+    
     now = datetime.now()
+    
+    # 尝试从数据库读取 FSRS Card 状态
+    row = connection.execute(
+        "SELECT * FROM vocabulary_entries WHERE id = ?", (entry_id,)
+    ).fetchone()
+    if not row:
+        raise LookupError(f"单词 id={entry_id} 不存在")
+    
+    # 恢复 FSRS Card
+    card = card_from_db(dict(row))
+    new_card, retrievability, interval_desc = review_card(card, rating)
+    fsrs_data = card_to_dict(new_card)
+    
+    # 旧字段兼容
     delays = {"again": 1, "hard": 3, "mastered": 7}
-    next_review = now + timedelta(days=delays[rating])
+    next_review = datetime.fromisoformat(fsrs_data["fsrs_due"]) if fsrs_data["fsrs_due"] else (now + timedelta(days=delays[rating]))
     status = "mastered" if rating == "mastered" else "learning"
+    
     connection.execute(
-        """
-        UPDATE vocabulary_entries
-        SET study_status = ?, last_reviewed_at = ?, next_review_at = ?,
-            updated_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-        """,
-        (status, now.isoformat(timespec="seconds"), next_review.isoformat(timespec="seconds"), entry_id),
+        """UPDATE vocabulary_entries
+           SET study_status = ?, last_reviewed_at = ?, next_review_at = ?,
+               fsrs_due = ?, fsrs_stability = ?, fsrs_difficulty = ?,
+               fsrs_state = ?, fsrs_step = ?, fsrs_last_review = ?,
+               updated_at = CURRENT_TIMESTAMP
+           WHERE id = ?""",
+        (
+            status,
+            now.isoformat(timespec="seconds"),
+            next_review.isoformat(timespec="seconds"),
+            fsrs_data["fsrs_due"],
+            fsrs_data["fsrs_stability"],
+            fsrs_data["fsrs_difficulty"],
+            fsrs_data["fsrs_state"],
+            fsrs_data["fsrs_step"],
+            fsrs_data["fsrs_last_review"],
+            entry_id,
+        ),
     )
     connection.execute(
-        """
-        INSERT INTO vocabulary_reviews (entry_id, rating, next_review_at)
-        VALUES (?, ?, ?)
-        """,
+        """INSERT INTO vocabulary_reviews (entry_id, rating, next_review_at)
+           VALUES (?, ?, ?)""",
         (entry_id, rating, next_review.isoformat(timespec="seconds")),
     )
     connection.commit()
+    # v9.19: 记录 streak 学习行为
+    try:
+        from .streak import record_activity
+        record_activity(connection, "vocab_review", f"entry {entry_id}")
+    except Exception:
+        pass
     return _serialize_entry(connection, entry_id)

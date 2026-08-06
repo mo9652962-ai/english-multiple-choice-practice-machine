@@ -82,9 +82,22 @@ def submit(
     session_id: int, connection: sqlite3.Connection = Depends(get_db)
 ) -> dict:
     try:
-        return submit_session(connection, session_id)
+        result = submit_session(connection, session_id)
+        _record_streak_activity(connection, "practice_submit", f"session {session_id}")
+        return result
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error
+
+
+def _record_streak_activity(
+    connection: sqlite3.Connection, activity_type: str, detail: str = ""
+) -> None:
+    """记录 streak 学习行为（失败静默，不影响主流程）"""
+    try:
+        from ..services.streak import record_activity
+        record_activity(connection, activity_type, detail)
+    except Exception:
+        pass
 
 
 @router.post("/sessions/{session_id}/units/{unit_id}/submit")

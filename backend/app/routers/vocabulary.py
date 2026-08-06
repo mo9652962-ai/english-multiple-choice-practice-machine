@@ -4,6 +4,7 @@ import sqlite3
 from datetime import datetime
 
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query
+from fastapi.responses import FileResponse
 
 from ..database import get_db
 from ..schemas import (
@@ -41,10 +42,14 @@ def create_entry(
 def list_entries(
     status: str = "all",
     search: str = "",
+    category: str = "",
     connection: sqlite3.Connection = Depends(get_db),
 ) -> dict:
     conditions = ["1 = 1"]
     params: list[object] = []
+    if category:
+        conditions.append("category = ?")
+        params.append(category)
     if status == "frequent":
         conditions.append("(encounter_count >= 2 OR manually_frequent = 1)")
     elif status == "review":
@@ -79,8 +84,9 @@ def list_entries(
         FROM vocabulary_entries
         WHERE {' AND '.join(conditions)}
         ORDER BY
-                 CASE WHEN datetime(last_seen_at) >= datetime('now', '-7 days') THEN 0 ELSE 1 END,
+                CASE WHEN datetime(last_seen_at) >= datetime('now', '-7 days') THEN 0 ELSE 1 END,
                  is_frequent DESC, encounter_count DESC, last_seen_at DESC
+        LIMIT 800
         """,
         params,
     ).fetchall()
@@ -98,9 +104,6 @@ def list_entries(
         """
     ).fetchone()
     items = [dict(row) for row in rows]
-    local_map = local_similar_matches(connection, [item["id"] for item in items])
-    for item in items:
-        item["local_similar"] = local_map.get(item["id"], [])
     return {"items": items, "counts": dict(counts)}
 
 
@@ -147,6 +150,49 @@ def create_translation_run(
         "trigger": request.trigger,
         "queuedCount": len(queued_ids),
     }
+
+
+@router.get("/due-today")
+def due_today(
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """获取今日待复习单词列表（FSRS 调度）"""
+    from ..services.fsrs_scheduler import get_due_today
+    entries = get_due_today(connection)
+    return {"count": len(entries), "entries": entries}
+
+
+@router.get("/stats/summary")
+def vocab_stats(
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """单词本学习统计"""
+    from ..services.fsrs_scheduler import get_due_count
+    total = connection.execute(
+        "SELECT COUNT(*) FROM vocabulary_entries"
+    ).fetchone()[0]
+    mastered = connection.execute(
+        "SELECT COUNT(*) FROM vocabulary_entries WHERE study_status = 'mastered'"
+    ).fetchone()[0]
+    due = get_due_count(connection)
+    return {
+        "total": total,
+        "mastered": mastered,
+        "learning": total - mastered,
+        "due_today": due,
+        "mastery_rate": round(mastered / total * 100, 1) if total > 0 else 0,
+    }
+
+
+@router.get("/article")
+def generate_vocab_article(
+    topic: str = "随机",
+    word_count: int = 8,
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """从单词本选词，AI 生成包含这些词的语境短文（辅助记忆）"""
+    from ..services.article_generator import generate_article
+    return generate_article(connection, topic, word_count)
 
 
 @router.get("/{entry_id}")
@@ -233,3 +279,31 @@ def submit_review(
         return review_entry(connection, entry_id, request.rating)
     except LookupError as error:
         raise HTTPException(404, str(error)) from error
+
+
+@router.get("/export/anki")
+def export_anki_deck(
+    status: str = "all",
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """导出单词本为 Anki .apkg 牌组（返回 JSON 元信息 + 下载端点）"""
+    from ..services.anki_export import export_anki
+    try:
+        result = export_anki(connection, status_filter=status)
+    except Exception as error:
+        raise HTTPException(500, f"导出失败：{error}") from error
+    if result["count"] == 0:
+        return {"error": "没有可导出的单词", **result}
+    return result
+
+
+@router.get("/export/anki/download")
+def download_anki_deck(
+    filename: str,
+) -> FileResponse:
+    """下载已生成的 Anki 牌组文件"""
+    from pathlib import Path
+    file = Path("exports") / filename
+    if not file.is_file():
+        raise HTTPException(404, "文件不存在，请先导出")
+    return FileResponse(file, media_type="application/octet-stream", filename=filename)

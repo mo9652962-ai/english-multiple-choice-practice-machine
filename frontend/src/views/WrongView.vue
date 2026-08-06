@@ -10,6 +10,7 @@ import {
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
+import { showToast } from '../services/toast'
 
 type WrongRow = {
   question_id: number
@@ -80,6 +81,38 @@ const startingKey = ref('')
 const openYears = ref(new Set<number>())
 const analysisReport = ref<HTMLElement | null>(null)
 const analysisStatuses = ref<Record<number, AnalysisStatus>>({})
+const exporting = ref(false)
+
+async function exportWrong() {
+  if (exporting.value) return
+  exporting.value = true
+  try {
+    const result: any = await get('/wrong/export')
+    const markdown: string = result.markdown || ''
+    if (!markdown) {
+      showToast('没有可导出的错题。', 'info')
+      return
+    }
+    // 复制到剪贴板 + 下载 .md 文件
+    try {
+      await navigator.clipboard.writeText(markdown)
+    } catch {
+      // 剪贴板不可用时忽略，仍提供下载
+    }
+    const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `错题导出-${new Date().toISOString().slice(0, 10)}.md`
+    a.click()
+    URL.revokeObjectURL(url)
+    showToast(`已导出 ${result.count} 道错题（已复制到剪贴板）`, 'success')
+  } catch (e) {
+    showToast(`导出失败：${e}`, 'error')
+  } finally {
+    exporting.value = false
+  }
+}
 
 const visible = computed(() =>
   frequentOnly.value ? rows.value.filter(row => row.is_frequent) : rows.value,
@@ -278,6 +311,9 @@ function analysisLabel(unitIds: number[]): string {
         <h1>错题本</h1>
         <p class="lead">按年份与篇目整理，可直接对指定范围进行分析或重做。</p>
       </div>
+      <button class="button ghost" type="button" :disabled="exporting" @click="exportWrong">
+        {{ exporting ? '导出中…' : '导出错题' }}
+      </button>
     </div>
 
     <div v-if="error" class="warning">{{ error }}</div>

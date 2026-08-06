@@ -14,11 +14,13 @@ from .database import connect, initialize_database
 from .routers import (
     ai,
     dashboard,
+    exam,
     imports,
     papers,
     practice,
     question_bank_profiles,
     question_banks,
+    version,
     vocabulary,
     wrong,
 )
@@ -48,6 +50,10 @@ app = FastAPI(
     contact={"name": "往事随风k"},
     lifespan=lifespan,
 )
+# v9.20: 安全协议——API Key 鉴权 + 限流（云端部署/多人使用时启用 EPM_API_KEY）
+from .security_middleware import SecurityMiddleware
+
+app.add_middleware(SecurityMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
@@ -65,6 +71,8 @@ app.include_router(question_banks.router, prefix="/api")
 app.include_router(question_bank_profiles.router, prefix="/api")
 app.include_router(ai.router, prefix="/api")
 app.include_router(vocabulary.router, prefix="/api")
+app.include_router(exam.router, prefix="/api")
+app.include_router(version.router, prefix="/api")
 
 
 @app.get("/api/health")

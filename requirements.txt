@@ -6,3 +6,5 @@ python-docx==1.2.0
 lxml==6.0.0
 cryptography==45.0.6
 pypdf==5.9.0
+fsrs>=2.0.0
+genanki>=0.13.0

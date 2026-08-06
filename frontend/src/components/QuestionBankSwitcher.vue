@@ -30,6 +30,16 @@ async function activate(event: Event) {
   }
 }
 
+async function activateById(id: number) {
+  if (!id || id === questionBankProfilesState.activeId) return
+  try {
+    await activateQuestionBankProfile(id)
+    emit('changed')
+  } catch (cause) {
+    error.value = String(cause)
+  }
+}
+
 async function createProfile() {
   const name = newName.value.trim()
   if (!name) return
@@ -72,11 +82,23 @@ async function removeProfile(profile: any) {
         :disabled="questionBankProfilesState.loading"
         aria-label="当前题库配置"
         @change="activate"
+        class="category-select"
       >
         <option v-for="profile in questionBankProfilesState.items" :key="profile.id" :value="profile.id">
           {{ profile.name }}
         </option>
       </select>
+      <div class="category-dots">
+        <span
+          v-for="profile in questionBankProfilesState.items"
+          :key="profile.id"
+          class="category-dot"
+          :class="{ active: profile.id === questionBankProfilesState.activeId }"
+          :style="{ background: profile.color || '#486d5c' }"
+          :title="profile.name"
+          @click="activateById(profile.id)"
+        ></span>
+      </div>
       <button class="button ghost compact" type="button" @click="managing = !managing">
         <Settings2 :size="15" />管理
       </button>
@@ -92,9 +114,10 @@ async function removeProfile(profile: any) {
         </button>
       </div>
       <div v-for="profile in questionBankProfilesState.items" :key="profile.id" class="bank-manager-row">
+        <span class="bank-manager-color" :style="{ background: profile.color || '#486d5c' }"></span>
         <span>
           <strong>{{ profile.name }}</strong>
-          <small>{{ profile.paper_count || 0 }} 套试卷 · {{ profile.question_count || 0 }} 题</small>
+          <small>{{ profile.description }}</small>
         </span>
         <span class="bank-manager-actions">
           <button class="button ghost compact" type="button" @click="renameProfile(profile)">重命名</button>

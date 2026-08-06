@@ -829,6 +829,12 @@ def analyze_wrong(
                 (unit_id, report_id, max_session_id),
             )
         connection.commit()
+        # v9.19: 记录 streak 学习行为
+        try:
+            from ..services.streak import record_activity
+            record_activity(connection, "ai_analyze", f"report {report_id}")
+        except Exception:
+            pass
     except (ValueError, LookupError, httpx.HTTPError, json.JSONDecodeError) as error:
         raise HTTPException(400, f"分析失败：{error}") from error
     return {
@@ -1082,3 +1088,30 @@ def suggest_correction(
         "warnings": corrected["warnings"],
         "requires_answer_confirmation": bool(suggestion.get("answer_changes")),
     }
+
+
+@router.post("/similar-questions")
+def generate_similar(
+    request: AiAnalyzeRequest,
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """从错题考点生成同考点变体题（巩固练习）"""
+    from ..services.similar_questions import generate_similar_questions
+    qids = request.question_ids
+    if not qids:
+        qids = [
+            row["question_id"]
+            for row in connection.execute(
+                "SELECT question_id FROM wrong_stats WHERE wrong_count > 0 ORDER BY wrong_count DESC LIMIT 1"
+            ).fetchall()
+        ]
+    if not qids:
+        return {"error": "没有错题数据，先做几道题吧", "questions": []}
+    result = generate_similar_questions(connection, qids[0], count=request.question_ids and 3 or 3)
+    # v9.19: 记录 streak 学习行为
+    try:
+        from ..services.streak import record_activity
+        record_activity(connection, "similar_questions", f"question {qids[0]}")
+    except Exception:
+        pass
+    return result

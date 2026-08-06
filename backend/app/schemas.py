@@ -40,7 +40,7 @@ class AnswerUpdate(BaseModel):
 
 
 class AiSettingsUpdate(BaseModel):
-    name: str = "本地模型"
+    name: str = "DeepSeek V4-Flash"
     base_url: str
     api_key: str | None = None
     model: str
@@ -57,13 +57,13 @@ class AiModelListRequest(BaseModel):
 
 
 class AiProfileWrite(BaseModel):
-    name: str = "本地模型"
-    base_url: str = "http://127.0.0.1:11434/v1"
+    name: str = "DeepSeek V4-Flash"
+    base_url: str = "https://api.deepseek.com/v1"
     api_key: str | None = None
     clear_api_key: bool = False
     enabled: bool = True
     is_default: bool = False
-    default_model: str = ""
+    default_model: str = "deepseek-v4-flash"
     temperature: float = 0.2
     max_tokens: int = Field(default=0, ge=0)
     system_prompt: str = ""

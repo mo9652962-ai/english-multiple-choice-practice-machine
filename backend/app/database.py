@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS question_bank_profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT NOT NULL DEFAULT '',
+    color TEXT NOT NULL DEFAULT '#486d5c',
+    icon TEXT NOT NULL DEFAULT 'book',
     is_default INTEGER NOT NULL DEFAULT 0,
     deleted_at TEXT,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -170,6 +172,13 @@ CREATE TABLE IF NOT EXISTS vocabulary_entries (
     user_edited INTEGER NOT NULL DEFAULT 0,
     next_review_at TEXT,
     last_reviewed_at TEXT,
+    -- FSRS 间隔复习字段 (v9.19: 替代固定间隔算法)
+    fsrs_due TEXT,
+    fsrs_stability REAL,
+    fsrs_difficulty REAL,
+    fsrs_state INTEGER DEFAULT 0,
+    fsrs_step INTEGER DEFAULT 0,
+    fsrs_last_review TEXT,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -251,10 +260,10 @@ CREATE TABLE IF NOT EXISTS revision_log (
 
 CREATE TABLE IF NOT EXISTS ai_settings (
     id INTEGER PRIMARY KEY CHECK (id = 1),
-    name TEXT NOT NULL DEFAULT '本地模型',
-    base_url TEXT NOT NULL DEFAULT 'http://127.0.0.1:11434/v1',
+    name TEXT NOT NULL DEFAULT 'DeepSeek V4-Flash',
+    base_url TEXT NOT NULL DEFAULT 'https://api.deepseek.com/v1',
     api_key_encrypted TEXT,
-    model TEXT NOT NULL DEFAULT '',
+    model TEXT NOT NULL DEFAULT 'deepseek-v4-flash',
     temperature REAL NOT NULL DEFAULT 0.2,
     max_tokens INTEGER NOT NULL DEFAULT 1200,
     system_prompt TEXT NOT NULL DEFAULT '',
@@ -309,6 +318,18 @@ CREATE TABLE IF NOT EXISTS ai_messages (
     FOREIGN KEY (conversation_id) REFERENCES ai_conversations(id) ON DELETE CASCADE,
     FOREIGN KEY (profile_id) REFERENCES ai_profiles(id) ON DELETE SET NULL
 );
+
+CREATE TABLE IF NOT EXISTS learning_days (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    day TEXT NOT NULL,
+    activity_type TEXT NOT NULL,
+    detail TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (day, activity_type)
+);
+
+CREATE INDEX IF NOT EXISTS idx_learning_days_day
+    ON learning_days(day);
 
 CREATE TABLE IF NOT EXISTS question_ai_labels (
     question_id INTEGER PRIMARY KEY,
@@ -394,6 +415,34 @@ CREATE TABLE IF NOT EXISTS question_bank_revisions (
     action TEXT NOT NULL,
     summary TEXT NOT NULL DEFAULT '{}',
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- v9.19: 模拟考试模式
+CREATE TABLE IF NOT EXISTS exam_sessions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    profile_id INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    question_ids TEXT NOT NULL,
+    total_questions INTEGER NOT NULL,
+    duration_minutes INTEGER NOT NULL,
+    status TEXT NOT NULL DEFAULT 'active',
+    started_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    submitted_at TEXT,
+    score REAL,
+    max_score REAL,
+    correct_count INTEGER DEFAULT 0,
+    wrong_count INTEGER DEFAULT 0,
+    unanswered_count INTEGER DEFAULT 0,
+    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)
+);
+CREATE TABLE IF NOT EXISTS exam_answers (
+    exam_id INTEGER NOT NULL,
+    question_id INTEGER NOT NULL,
+    user_answer TEXT NOT NULL DEFAULT '',
+    option_order TEXT NOT NULL DEFAULT '[]',
+    answered_at TEXT,
+    PRIMARY KEY (exam_id, question_id),
+    FOREIGN KEY (exam_id) REFERENCES exam_sessions(id) ON DELETE CASCADE
 );
 
 INSERT INTO ai_profiles
@@ -546,14 +595,28 @@ def _paper_child_create_statements() -> dict[str, str]:
 def _run_migrations(connection: sqlite3.Connection) -> None:
     connection.execute(
         """
-        INSERT INTO question_bank_profiles (name, description, is_default)
-        SELECT '考研英语一', '现有题库自动迁移配置', 1
+        INSERT INTO question_bank_profiles (name, description, color, icon, is_default)
+        SELECT '考研英语一', '完形 · 阅读 · 新题型 · 翻译 · 写作', '#486d5c', 'book', 1
         WHERE NOT EXISTS (
             SELECT 1 FROM question_bank_profiles
             WHERE name = '考研英语一' COLLATE NOCASE
         )
         """
     )
+    # v9.19: 预置其他四个类别
+    for name, desc, color, icon in [
+        ('高中英语', '阅读理解 · 完形 · 七选五 · 语法填空 · 写作', '#e67e22', 'graduation-cap'),
+        ('大学英语四级', '听力 · 阅读 · 翻译 · 写作', '#3498db', 'book-open'),
+        ('大学英语六级', '听力 · 阅读 · 翻译 · 写作', '#8e44ad', 'book-open'),
+        ('考研英语二', '完形 · 阅读 · 新题型 · 翻译 · 写作', '#2ecc71', 'book'),
+    ]:
+        connection.execute(
+            """
+            INSERT OR IGNORE INTO question_bank_profiles (name, description, color, icon)
+            VALUES (?, ?, ?, ?)
+            """,
+            (name, desc, color, icon),
+        )
     default_profile_id = connection.execute(
         "SELECT id FROM question_bank_profiles WHERE name = '考研英语一' COLLATE NOCASE ORDER BY id LIMIT 1"
     ).fetchone()["id"]

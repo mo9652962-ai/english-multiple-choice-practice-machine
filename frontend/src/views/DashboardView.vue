@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ArrowRight, BookOpen, Sparkles, Star } from 'lucide-vue-next'
+import { ArrowRight, BookOpen, Flame, Sparkles, Star } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
 import QuestionBankSwitcher from '../components/QuestionBankSwitcher.vue'
+import StudyHeatmap from '../components/StudyHeatmap.vue'
+import CountUp from '../components/CountUp.vue'
 
 const router = useRouter()
 const data = ref<any>(null)
@@ -13,6 +15,9 @@ const tickerPaused = ref(false)
 const vocabularyPage = ref(0)
 const wordsPerPage = 4
 let vocabularyTimer: number | null = null
+// v9.19: streak 数据
+const streak = ref<any>(null)
+const dueToday = ref<any[]>([])
 const vocabularyPages = computed(() => {
   const pages: any[][] = []
   for (let index = 0; index < vocabulary.value.length; index += wordsPerPage) {
@@ -57,10 +62,15 @@ async function loadHome() {
   }
   let dashboardResult: PromiseSettledResult<any> | null = null
   let wordsResult: PromiseSettledResult<any> | null = null
+  let streakResult: PromiseSettledResult<any> | null = null
+  let dueResult: PromiseSettledResult<any> | null = null
 
   for (let attempt = 0; attempt < 2; attempt++) {
-    [dashboardResult, wordsResult] = await Promise.allSettled([
-      get('/startup'), get('/vocabulary/home?limit=20'),
+    [dashboardResult, wordsResult, streakResult, dueResult] = await Promise.allSettled([
+      get('/startup'),
+      get('/vocabulary/home?limit=20'),
+      get('/dashboard/streak'),
+      get('/vocabulary/due-today'),
     ])
     if (dashboardResult.status === 'fulfilled') break
     if (attempt === 0) await wait(500)
@@ -74,6 +84,14 @@ async function loadHome() {
   if (wordsResult?.status === 'fulfilled') {
     const words: any = wordsResult.value
     vocabulary.value = words.items || []
+  }
+  // v9.19: streak + 待复习
+  if (streakResult?.status === 'fulfilled') {
+    streak.value = streakResult.value
+  }
+  if (dueResult?.status === 'fulfilled') {
+    const due: any = dueResult.value
+    dueToday.value = due.entries || []
   }
 }
 
@@ -142,12 +160,47 @@ async function randomPractice(type: string) {
     </div>
     <div class="section-title"><h2>学习概览</h2></div>
     <div v-if="data" class="grid grid-4">
-      <div class="card"><span class="stat-label">已收录年份</span><div class="stat-value">{{ data.paper_count }}</div></div>
-      <div class="card"><span class="stat-label">练习篇目</span><div class="stat-value">{{ data.unit_count }}</div></div>
-      <div class="card"><span class="stat-label">客观题</span><div class="stat-value">{{ data.question_count }}</div></div>
-      <RouterLink to="/wrong" class="card stat-card linked"><span class="stat-label">高频错题</span><div class="stat-value">{{ data.frequent_count }}</div><span class="stat-link">去复习 <ArrowRight :size="14" /></span></RouterLink>
+      <div class="card stat-card"><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div></div>
+      <div class="card stat-card"><span class="stat-label">练习篇目</span><div class="stat-value"><CountUp :value="data.unit_count" /></div></div>
+      <div class="card stat-card"><span class="stat-label">客观题</span><div class="stat-value"><CountUp :value="data.question_count" /></div></div>
+      <RouterLink to="/wrong" class="card stat-card linked"><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div><span class="stat-link">去复习 <ArrowRight :size="14" /></span></RouterLink>
     </div>
-    <div v-else class="loading">正在整理书桌…</div>
+    <div v-else class="loading-grid">
+      <div class="skeleton skeleton-lg"></div>
+      <div class="skeleton-grid">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+    </div>
+
+    <!-- v9.19: streak 打卡卡片 -->
+    <div v-if="streak" class="streak-card card">
+      <div class="streak-head">
+        <div class="streak-flame" :class="{ lit: streak.streak?.today_active }">
+          <Flame :size="28" fill="currentColor" />
+        </div>
+        <div>
+          <span class="eyebrow">STUDY STREAK</span>
+          <h3>已连续学习 <strong>{{ streak.streak?.current || 0 }}</strong> 天</h3>
+          <p class="lead">历史最佳 {{ streak.streak?.best || 0 }} 天 · 本月 {{ streak.monthly?.active_days || 0 }} 天活跃</p>
+        </div>
+        <RouterLink v-if="dueToday.length" to="/vocabulary" class="due-link">
+          {{ dueToday.length }} 个单词待复习 <ArrowRight :size="14" />
+        </RouterLink>
+      </div>
+      <StudyHeatmap :values="streak.heatmap || []" tooltip-unit="次学习" />
+      <div v-if="streak.weekly" class="weekly-strip">
+        <span v-for="d in streak.weekly.daily" :key="d.date" class="week-dot" :class="{ active: d.active, today: d.date === streak.weekly.daily[6].date }" :title="`${d.date} · ${d.count} 次学习`" />
+        <span class="weekly-text">本周 {{ streak.weekly.active_days }}/7 天活跃 · {{ streak.weekly.total_activities }} 次学习</span>
+      </div>
+      <div v-if="dueToday.length" class="due-words">
+        <span class="due-label">今日待复习：</span>
+        <RouterLink v-for="w in dueToday.slice(0, 6)" :key="w.id" :to="`/vocabulary?word=${w.id}`" class="due-chip">{{ w.term }}</RouterLink>
+        <RouterLink v-if="dueToday.length > 6" to="/vocabulary" class="due-more">+{{ dueToday.length - 6 }}</RouterLink>
+      </div>
+    </div>
     <div class="section-title"><h2>温柔提醒</h2></div>
     <div class="card gentle-reminder">
       <span class="icon blue" style="margin:0"><Sparkles /></span>

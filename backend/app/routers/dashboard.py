@@ -99,3 +99,21 @@ def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         "frequent_count": frequent_count,
         "recent_sessions": [dict(row) for row in recent],
     }
+
+
+@router.get("/streak")
+def streak(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """学习连续打卡 + 热力图数据 + 周报"""
+    from ..services.streak import get_streak, get_heatmap_data, get_monthly_summary, get_weekly_report
+    return {
+        "streak": get_streak(connection),
+        "heatmap": get_heatmap_data(connection, days=180),
+        "monthly": get_monthly_summary(connection),
+        "weekly": get_weekly_report(connection),
+    }
+
+
+@router.get("/dashboard/streak", include_in_schema=False)
+def streak_alias(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """兼容前端 /dashboard/streak 路径"""
+    return streak(connection)

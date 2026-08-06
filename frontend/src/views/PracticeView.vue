@@ -45,6 +45,13 @@ type PracticeTimerState = {
 const timerState = ref<PracticeTimerState | null>(null)
 const timerPromptVisible = ref(false)
 const timerNow = ref(Date.now())
+// v9.19 UI: 阅读字号调节 (18~24px)
+const passageFontSize = ref(Number(localStorage.getItem('passage-font-size')) || 20)
+function adjustFontSize(delta: number) {
+  passageFontSize.value = Math.min(24, Math.max(18, passageFontSize.value + delta))
+  localStorage.setItem('passage-font-size', String(passageFontSize.value))
+}
+const passageStyle = computed(() => ({ fontSize: `${passageFontSize.value}px` }))
 let timerTicker: number | null = null
 const activeUnit = computed(() => session.value?.units?.[activeUnitIndex.value])
 const activeContentBlocks = computed(() => activeUnit.value?.content_blocks || [])
@@ -768,7 +775,14 @@ async function copySelectedTerm() {
     </div>
     <div v-if="session && activeUnit" class="practice-layout">
       <section class="passage-pane">
-        <span class="eyebrow">{{ activeUnit.year }} · {{ activeUnit.title }}</span>
+        <div class="passage-toolbar">
+          <span class="eyebrow">{{ activeUnit.year }} · {{ activeUnit.title }}</span>
+          <div class="font-size-control" title="调整字号">
+            <button type="button" @click="adjustFontSize(-1)" :disabled="passageFontSize <= 18" aria-label="减小字号">A−</button>
+            <span class="font-size-value">{{ passageFontSize }}px</span>
+            <button type="button" @click="adjustFontSize(1)" :disabled="passageFontSize >= 24" aria-label="增大字号">A+</button>
+          </div>
+        </div>
         <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
         <audio
           v-if="isListening && session.audio_url"
@@ -781,7 +795,7 @@ async function copySelectedTerm() {
           @timeupdate="onAudioTimeUpdate"
         />
         <p v-if="activeUnit.shared_data?.directions" class="lead" style="margin-bottom:24px">{{ activeUnit.shared_data.directions }}</p>
-        <div class="passage" data-vocab-text @contextmenu="openVocabularyMenu">
+        <div class="passage" data-vocab-text @contextmenu="openVocabularyMenu" :style="passageStyle">
           <ContentBlocks
             v-if="activeContentBlocks.length"
             :blocks="activeContentBlocks"

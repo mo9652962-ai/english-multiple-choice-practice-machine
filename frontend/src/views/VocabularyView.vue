@@ -1,20 +1,26 @@
 <script setup lang="ts">
-import { BookOpen, Check, RefreshCw, Search, Settings, Star, Trash2 } from 'lucide-vue-next'
+import { BookOpen, Check, RefreshCw, Search, Settings, Star, Trash2, Headphones } from 'lucide-vue-next'
 import { computed, onMounted, reactive, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { del, get, post, put } from '../api'
+import TtsButton from '../components/TtsButton.vue'
+import DictationMode from '../components/DictationMode.vue'
+import { showToast } from '../services/toast'
 
 const route = useRoute()
 const items = ref<any[]>([])
 const counts = ref<any>({ total:0, frequent:0, mastered:0, pending:0, review:0 })
 const selected = ref<any>(null)
 const filter = ref('all')
+const category = ref('')
 const search = ref('')
 const error = ref('')
 const notice = ref('')
 const editing = ref(false)
 const editForm = reactive<any>({})
 const reviewMode = ref(false)
+const dictationMode = ref(false)
+const dictationWords = ref<any[]>([])
 const reveal = ref(false)
 const reviewIndex = ref(0)
 const reviewItems = computed(() => items.value.filter(item => item.translation_status === 'ready' && item.study_status !== 'mastered'))
@@ -60,7 +66,8 @@ function translationStatusText(status: string, detail = false) {
 
 async function load() {
   try {
-    const result: any = await get(`/vocabulary?status=${filter.value}&search=${encodeURIComponent(search.value)}`)
+    const catParam = category.value ? `&category=${encodeURIComponent(category.value)}` : ''
+    const result: any = await get(`/vocabulary?status=${filter.value}&search=${encodeURIComponent(search.value)}${catParam}`)
     error.value = ''
     items.value = result.items || []
     counts.value = result.counts || counts.value
@@ -111,6 +118,32 @@ async function retryTranslation() {
   await load()
 }
 
+async function exportAnki() {
+  try {
+    const result: any = await get('/vocabulary/export/anki')
+    if (result.error) {
+      showToast(result.error, 'error')
+      return
+    }
+    // 下载 .apkg 文件
+    const resp = await fetch(`/api/vocabulary/export/anki/download?filename=${encodeURIComponent(result.filename)}`)
+    if (!resp.ok) {
+      showToast('文件下载失败，请到 exports/ 目录查看', 'error')
+      return
+    }
+    const blob = await resp.blob()
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = result.filename
+    a.click()
+    URL.revokeObjectURL(url)
+    showToast(`已导出 ${result.count} 个单词到 Anki 牌组`, 'success')
+  } catch (e) {
+    showToast(`导出失败：${e}`, 'error')
+  }
+}
+
 async function rate(rating: string) {
   if (!reviewWord.value) return
   await post(`/vocabulary/${reviewWord.value.id}/review`, { rating })
@@ -127,12 +160,22 @@ function startReview() {
   load()
 }
 
+function startDictation() {
+  // 从当前列表随机取 10 个已就绪词
+  const ready = items.value.filter((w: any) => w.translation_status === 'ready')
+  const pool = ready.length ? ready : items.value
+  const shuffled = [...pool].sort(() => Math.random() - 0.5)
+  dictationWords.value = shuffled.slice(0, 10)
+  dictationMode.value = true
+}
+
 let searchTimer = 0
 watch(search, () => {
   window.clearTimeout(searchTimer)
   searchTimer = window.setTimeout(load, 250)
 })
 watch(filter, load)
+watch(category, load)
 onMounted(load)
 </script>
 
@@ -142,11 +185,24 @@ onMounted(load)
       <div><span class="eyebrow">VOCABULARY BOOK</span><h1>我的单词本</h1><p class="lead">从真题语境中收集、理解并复习真正困扰你的词。</p></div>
       <div style="display:flex;gap:8px;align-items:center">
         <button class="button ghost" @click="showDisplayDialog=true"><Settings :size="17" />显示设置</button>
+        <button class="button ghost" @click="startDictation" :disabled="!items.length"><Headphones :size="17" />听写模式</button>
         <button class="button" @click="startReview"><BookOpen :size="17" />开始今日复习</button>
       </div>
     </div>
+    <DictationMode
+      v-if="dictationMode"
+      :words="dictationWords"
+      @close="dictationMode = false"
+    />
     <div v-if="error" class="warning">{{ error }}</div>
     <div v-if="notice" class="card vocab-notice">{{ notice }}</div>
+    <div class="vocab-categories">
+      <button class="vocab-cat-chip" :class="{ active: category === '' }" @click="category=''">全部</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '高中' }" @click="category='高中'">🏫 高中</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">📘 四级</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">📙 六级</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">🎓 考研</button>
+    </div>
     <div class="vocab-stats">
       <button class="card" @click="filter='all'"><span>全部单词</span><strong>{{ counts.total || 0 }}</strong></button>
       <button class="card amber" @click="filter='frequent'"><span>🌟 高频生词</span><strong>{{ counts.frequent || 0 }}</strong></button>
@@ -156,22 +212,31 @@ onMounted(load)
     </div>
 
     <section v-if="reviewMode" class="review-overlay">
-      <div class="review-card" v-if="reviewWord">
-        <button class="button ghost review-close" @click="reviewMode=false">退出复习</button>
-        <span class="eyebrow">今日 {{ reviewIndex + 1 }} / {{ reviewItems.length }}</span>
-        <div class="review-term"><span v-if="reviewWord.is_frequent">🌟</span>{{ reviewWord.lemma || reviewWord.term }}</div>
-        <div class="review-phonetic">{{ reviewWord.phonetic }}</div>
-        <button v-if="!reveal" class="button secondary reveal-button" @click="reveal=true">显示释义和原句</button>
-        <div v-else class="review-answer">
-          <strong>{{ reviewWord.common_meaning || reviewWord.contextual_meaning }}</strong>
-          <p v-if="reviewWord.contextual_meaning && reviewWord.contextual_meaning !== reviewWord.common_meaning">
-            本句语境：{{ reviewWord.contextual_meaning }}
-          </p>
-          <blockquote>{{ reviewWord.latest_sentence }}</blockquote>
-          <div class="review-actions">
-            <button class="button danger" @click="rate('again')">不认识</button>
-            <button class="button secondary" @click="rate('hard')">有点印象</button>
-            <button class="button" @click="rate('mastered')">已掌握</button>
+      <div class="review-card flip-scene" v-if="reviewWord">
+        <div class="flip-inner" :class="{ flipped: reveal }">
+          <!-- 正面: 单词 -->
+          <div class="flip-face flip-front">
+            <button class="button ghost review-close" @click="reviewMode=false">退出复习</button>
+            <span class="eyebrow">今日 {{ reviewIndex + 1 }} / {{ reviewItems.length }}</span>
+            <div class="review-term"><span v-if="reviewWord.is_frequent">🌟</span>{{ reviewWord.lemma || reviewWord.term }}<TtsButton :text="reviewWord.term" :speed="0.85" /></div>
+            <div class="review-phonetic">{{ reviewWord.phonetic }}</div>
+            <button class="button secondary reveal-button" @click="reveal=true"><span class="flip-hint">点击翻开</span><RefreshCw :size="15" /></button>
+          </div>
+          <!-- 背面: 释义 -->
+          <div class="flip-face flip-back">
+            <span class="eyebrow">今日 {{ reviewIndex + 1 }} / {{ reviewItems.length }}</span>
+            <div class="review-answer">
+              <strong>{{ reviewWord.common_meaning || reviewWord.contextual_meaning }}</strong>
+              <p v-if="reviewWord.contextual_meaning && reviewWord.contextual_meaning !== reviewWord.common_meaning">
+                本句语境：{{ reviewWord.contextual_meaning }}
+              </p>
+              <blockquote>{{ reviewWord.latest_sentence }}</blockquote>
+            </div>
+            <div class="review-actions">
+              <button class="button danger" @click="rate('again')">不认识</button>
+              <button class="button secondary" @click="rate('hard')">有点印象</button>
+              <button class="button" @click="rate('mastered')">已掌握</button>
+            </div>
           </div>
         </div>
       </div>
@@ -199,8 +264,8 @@ onMounted(load)
 
       <section class="vocab-detail card" v-if="selected">
         <div class="vocab-detail-head">
-          <div><span class="eyebrow">{{ selected.is_frequent ? '🌟 HIGH FREQUENCY' : 'VOCABULARY' }}</span><h2>{{ selected.lemma || selected.term }}</h2><p>{{ selected.phonetic }} <span v-if="selected.part_of_speech">· {{ selected.part_of_speech }}</span></p></div>
-          <div class="vocab-tools"><button class="button ghost" @click="expandedAll=!expandedAll">{{ expandedAll ? '收起全部' : '展开全部' }}</button><button class="button ghost" @click="editing=!editing">编辑</button><button class="button ghost danger-text" @click="removeEntry"><Trash2 :size="17" /></button></div>
+          <div><span class="eyebrow">{{ selected.is_frequent ? '🌟 HIGH FREQUENCY' : 'VOCABULARY' }}</span><h2>{{ selected.lemma || selected.term }}<TtsButton :text="selected.term" :speed="0.8" /></h2><p>{{ selected.phonetic }} <span v-if="selected.part_of_speech">· {{ selected.part_of_speech }}</span></p></div>
+          <div class="vocab-tools"><button class="button ghost" @click="expandedAll=!expandedAll">{{ expandedAll ? '收起全部' : '展开全部' }}</button><button class="button ghost" @click="exportAnki">导出 Anki</button><button class="button ghost" @click="editing=!editing">编辑</button><button class="button ghost danger-text" @click="removeEntry"><Trash2 :size="17" /></button></div>
         </div>
         <div v-if="selected.translation_status!=='ready'" class="vocab-pending-panel">
           <RefreshCw :size="22" /><strong>{{ translationStatusText(selected.translation_status, true) }}</strong>
