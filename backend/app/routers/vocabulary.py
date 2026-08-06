@@ -48,8 +48,9 @@ def list_entries(
     conditions = ["1 = 1"]
     params: list[object] = []
     if category:
-        conditions.append("category = ?")
-        params.append(category)
+        # v2.15: 前缀匹配, 支持 "高中" → "高中·高频"/"高中·热点"
+        conditions.append("category LIKE ?")
+        params.append(f"{category}%")
     if status == "frequent":
         conditions.append("(encounter_count >= 2 OR manually_frequent = 1)")
     elif status == "review":

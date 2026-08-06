@@ -13,6 +13,7 @@ const counts = ref<any>({ total:0, frequent:0, mastered:0, pending:0, review:0 }
 const selected = ref<any>(null)
 const filter = ref('all')
 const category = ref('')
+const catType = ref('')  // v2.15: 高频/热点 子分类
 const search = ref('')
 const error = ref('')
 const notice = ref('')
@@ -66,7 +67,7 @@ function translationStatusText(status: string, detail = false) {
 
 async function load() {
   try {
-    const catParam = category.value ? `&category=${encodeURIComponent(category.value)}` : ''
+    const catParam = category.value || catType.value ? `&category=${encodeURIComponent(category.value + catType.value)}` : ''
     const result: any = await get(`/vocabulary?status=${filter.value}&search=${encodeURIComponent(search.value)}${catParam}`)
     error.value = ''
     items.value = result.items || []
@@ -176,6 +177,7 @@ watch(search, () => {
 })
 watch(filter, load)
 watch(category, load)
+watch(catType, load)
 onMounted(load)
 </script>
 
@@ -202,6 +204,12 @@ onMounted(load)
       <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">📘 四级</button>
       <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">📙 六级</button>
       <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">🎓 考研</button>
+    </div>
+    <div class="vocab-categories vocab-cat-types">
+      <button class="vocab-cat-chip" :class="{ active: catType === '' }" @click="catType=''">全部类型</button>
+      <button class="vocab-cat-chip" :class="{ active: catType === '·高频' }" @click="catType='·高频'">⭐ 高频词</button>
+      <button class="vocab-cat-chip" :class="{ active: catType === '·热点' }" @click="catType='·热点'">🔥 热点词</button>
+      <button class="vocab-cat-chip" :class="{ active: catType === '·' }" @click="catType='·'">📚 基础词</button>
     </div>
     <div class="vocab-stats">
       <button class="card" @click="filter='all'"><span>全部单词</span><strong>{{ counts.total || 0 }}</strong></button>
