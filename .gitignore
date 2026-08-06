@@ -1,0 +1,46 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend dependencies and generated files
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Electron 构建产物与依赖（桌面版源码在 electron/, 产物不入库）
+electron/node_modules/
+electron/dist/
+
+# Local runtime data and private development artifacts
+backend/data/
+work/
+outputs/
+design-system/
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.backup
+*.log
+.codex-local/batch-import-state.json
+
+# Secrets and local certificates
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
