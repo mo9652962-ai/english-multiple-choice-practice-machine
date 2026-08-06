@@ -113,6 +113,13 @@ async function randomPractice(type: string) {
   } catch (e) { error.value = String(e) }
 }
 
+// v2.18: 今日计划任务跳转
+function runPlanTask(task: any) {
+  if (task.action === 'words') { router.push('/vocabulary') }
+  else if (task.action === 'wrong') { router.push('/wrong') }
+  else { randomPractice(task.action) }
+}
+
 const UNIT_TYPE_NAMES: Record<string, string> = {
   cloze: '完形填空', reading: '阅读理解', paragraph_matching: '阅读 Part B', part_b: '阅读 Part B',
   translation: '翻译', writing: '写作', listening: '听力',
@@ -183,6 +190,30 @@ const practiceCards = computed(() => {
       </div>
     </div>
     <QuestionBankSwitcher @changed="() => loadHome(true)" />
+    <!-- v2.18: 备考倒计时条 (研究: 练题狗/好题库 备考节点) -->
+    <div v-if="data?.exam_countdown?.length" class="exam-countdown-bar">
+      <span class="countdown-label">⏳ 备考倒计时</span>
+      <span v-for="ex in data.exam_countdown.slice(0, 3)" :key="ex.name" class="countdown-item">
+        <strong>{{ ex.name }}</strong>
+        <b>{{ ex.days_left }}</b> 天
+      </span>
+    </div>
+    <!-- v2.18: 今日学习计划 (研究: AI智能推题/自动安排复习) -->
+    <div v-if="data?.today_plan?.plan?.length" class="card today-plan-card">
+      <h3 class="today-plan-title">📌 今日学习计划</h3>
+      <div class="today-plan-list">
+        <button
+          v-for="(task, i) in data.today_plan.plan" :key="i"
+          class="today-plan-item" type="button"
+          :class="{ done: task.done }"
+          @click="!task.done && runPlanTask(task)"
+        >
+          <span class="plan-icon">{{ task.icon }}</span>
+          <span class="plan-label">{{ task.label }}</span>
+          <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
+        </button>
+      </div>
+    </div>
     <!-- v2.9: 按当前级别针对性推荐 -->
     <section v-if="data?.recommendations" class="recommend-section">
       <div class="section-title"><h2><span class="hero-seal recommend-seal" aria-hidden="true">荐</span>{{ data.active_profile?.name || '本级别' }} · 为你推荐</h2></div>

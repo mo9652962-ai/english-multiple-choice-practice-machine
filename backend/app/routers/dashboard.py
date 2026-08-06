@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sqlite3
+from datetime import date, timedelta
 
 from fastapi import APIRouter, Depends
 
@@ -100,6 +101,103 @@ def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         "recent_sessions": [dict(row) for row in recent],
         # v2.9: 按当前级别针对性推荐
         "recommendations": _build_recommendations(connection, profile_id),
+        # v2.18: 今日学习计划 + 考试倒计时
+        "today_plan": _build_today_plan(connection, profile_id, dict(profile).get("name", "") if profile else ""),
+        "exam_countdown": _next_exam_dates(),
+    }
+
+
+def _next_exam_dates(today: date | None = None) -> list[dict]:
+    """v2.18: 目标考试倒计时 (研究: 练题狗/好题库 备考节点功能)
+    高考 6月7日; 四六级 6月/12月第2个周六; 考研 12月第4个周六
+    """
+    today = today or date.today()
+    def nth_saturday(year: int, month: int, n: int) -> date:
+        first = date(year, month, 1)
+        # 第一个周六
+        offset = (5 - first.weekday()) % 7
+        return first + timedelta(days=offset + (n - 1) * 7)
+    candidates = [
+        ("高考", date(today.year, 6, 7)),
+        ("四级", nth_saturday(today.year, 6, 2)),
+        ("六级", nth_saturday(today.year, 6, 2)),
+        ("考研", nth_saturday(today.year, 12, 4)),
+    ]
+    # 若当年 6 月已过, 补明年 6 月
+    for name, d in list(candidates):
+        if d < today:
+            if name == "高考":
+                candidates.append(("高考", date(today.year + 1, 6, 7)))
+            elif name in ("四级", "六级"):
+                candidates.append((name, nth_saturday(today.year + 1, 6, 2)))
+            else:
+                candidates.append((name, nth_saturday(today.year + 1, 12, 4)))
+    out = []
+    for name, d in candidates:
+        if d < today: continue
+        out.append({"name": name, "date": d.isoformat(), "days_left": (d - today).days})
+    out.sort(key=lambda x: x["days_left"])
+    return out[:4]
+
+
+@router.get("/exam-countdown")
+def exam_countdown(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """v2.18: 目标考试倒计时"""
+    return {"exams": _next_exam_dates()}
+
+
+def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_name: str) -> dict:
+    """v2.18: 今日学习计划 (研究: 练题狗 AI智能推题 / 可栗口语 自动安排复习)
+    组合: FSRS待复习词 + 薄弱题型专项 + 错题复习
+    """
+    # ① FSRS 今日待复习单词
+    from ..services.fsrs_scheduler import get_due_today
+    try:
+        due = get_due_today(connection)
+        due_count = len(due)
+    except Exception:
+        due_count = 0
+    # ② 薄弱题型: 能力雷达最低正确率题型
+    weak_type = None
+    ability = connection.execute(
+        """
+        SELECT u.unit_type, SUM(CASE WHEN pa.is_correct THEN 1 ELSE 0 END) correct,
+               COUNT(*) total
+        FROM practice_answers pa JOIN questions q ON q.id = pa.question_id
+        JOIN units u ON u.id = q.unit_id JOIN papers p ON p.id = u.paper_id
+        WHERE p.profile_id = ? AND p.deleted_at IS NULL
+        GROUP BY u.unit_type HAVING COUNT(*) >= 3
+        ORDER BY (correct * 1.0 / COUNT(*)) ASC LIMIT 1
+        """, (profile_id,)).fetchone()
+    if ability:
+        weak_type = ability["unit_type"]
+    # ③ 待复习错题 (错 >= 2 次 或 近期错过且未连续答对)
+    wrong = connection.execute(
+        """SELECT COUNT(*) n FROM wrong_stats WHERE wrong_count >= 2
+           AND question_id IN (SELECT id FROM questions WHERE unit_id IN
+               (SELECT id FROM units WHERE paper_id IN
+                   (SELECT id FROM papers WHERE profile_id = ? AND deleted_at IS NULL)))""",
+        (profile_id,)).fetchone()["n"]
+    # ④ 今日推荐练习题型
+    counts = connection.execute(
+        """SELECT u.unit_type, COUNT(DISTINCT u.id) n FROM units u
+           JOIN papers p ON p.id = u.paper_id
+           WHERE p.profile_id = ? AND p.deleted_at IS NULL GROUP BY u.unit_type
+           ORDER BY n DESC LIMIT 1""", (profile_id,)).fetchone()
+    practice_type = counts["unit_type"] if counts else None
+    practice_label = {"cloze": "完形/选词填空", "reading": "阅读理解",
+                      "paragraph_matching": "长篇匹配/七选五", "part_b": "七选五/匹配"}.get(practice_type or "", "专项练习")
+    return {
+        "words_due": due_count,
+        "weak_type": weak_type,
+        "wrong_review": wrong,
+        "practice_type": practice_type,
+        "practice_label": practice_label,
+        "plan": [
+            {"icon": "📖", "label": f"复习 {due_count} 个到期单词", "done": due_count == 0, "action": "words"},
+            {"icon": "✏️", "label": f"{profile_name} · {practice_label}专项", "done": False, "action": practice_type or "random"},
+            {"icon": "📝", "label": f"重做 {wrong} 道高频错题", "done": wrong == 0, "action": "wrong"},
+        ],
     }
 
 
