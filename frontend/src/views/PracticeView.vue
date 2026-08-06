@@ -735,7 +735,7 @@ async function copySelectedTerm() {
 </script>
 
 <template>
-  <div class="practice-page" @click="vocabMenu.visible=false">
+  <div class="practice-page page-practice" @click="vocabMenu.visible=false">
     <header class="practice-top">
       <div style="display:flex;align-items:center;gap:18px">
         <button class="button ghost" @click="router.push('/library')"><ArrowLeft :size="18" />退出</button>

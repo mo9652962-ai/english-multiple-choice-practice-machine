@@ -304,7 +304,7 @@ function analysisLabel(unitIds: number[]): string {
 </script>
 
 <template>
-  <div class="page wrong-page">
+  <div class="page page-wrong wrong-page">
     <div class="page-head">
       <div>
         <span class="eyebrow">WRONG ANSWERS</span>

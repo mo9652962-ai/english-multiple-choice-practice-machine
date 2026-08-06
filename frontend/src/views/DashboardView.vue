@@ -114,11 +114,11 @@ async function randomPractice(type: string) {
 </script>
 
 <template>
-  <div class="page">
+  <div class="page page-home">
     <div class="page-head study-hero">
       <div class="study-hero-copy">
         <span class="eyebrow">YOUR QUIET STUDY SPACE</span>
-        <h1>今天想练些什么？</h1>
+        <h1><span class="hero-seal" aria-hidden="true">墨</span>今天想练些什么？</h1>
         <p class="lead">选一篇文章，留一点安静的时间给自己。</p>
         <RouterLink class="button" to="/library"><BookOpen :size="17" />查看全部题库<ArrowRight :size="16" /></RouterLink>
       </div>
@@ -160,10 +160,10 @@ async function randomPractice(type: string) {
     </div>
     <div class="section-title"><h2>学习概览</h2></div>
     <div v-if="data" class="grid grid-4">
-      <div class="card stat-card"><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div></div>
-      <div class="card stat-card"><span class="stat-label">练习篇目</span><div class="stat-value"><CountUp :value="data.unit_count" /></div></div>
-      <div class="card stat-card"><span class="stat-label">客观题</span><div class="stat-value"><CountUp :value="data.question_count" /></div></div>
-      <RouterLink to="/wrong" class="card stat-card linked"><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div><span class="stat-link">去复习 <ArrowRight :size="14" /></span></RouterLink>
+      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">卷</span><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div></div>
+      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">篇</span><span class="stat-label">练习篇目</span><div class="stat-value"><CountUp :value="data.unit_count" /></div></div>
+      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">题</span><span class="stat-label">客观题</span><div class="stat-value"><CountUp :value="data.question_count" /></div></div>
+      <RouterLink to="/wrong" class="card stat-card linked ink-dot"><span class="seal-badge" aria-hidden="true">错</span><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div><span class="stat-link">去复习 <ArrowRight :size="14" /></span></RouterLink>
     </div>
     <div v-else class="loading-grid">
       <div class="skeleton skeleton-lg"></div>
