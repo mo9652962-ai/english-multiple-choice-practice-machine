@@ -1207,3 +1207,52 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 :root.dark .page-assistant::before { opacity: .22; }
 :root.dark .page-settings::before { opacity: .20; }
 :root.dark .page-practice::before { opacity: .12; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   按级别推荐板块 v2.9 — 切换年级/题库级别 → 针对性推荐
+   ═══════════════════════════════════════════════════════════════════ */
+.recommend-section { margin-top: 4px; }
+.recommend-seal { width: 30px; height: 30px; font-size: 14px; border-width: 1.5px;
+  margin-right: 8px; vertical-align: middle; }
+.recommend-continue { display: flex; align-items: center; gap: 16px; padding: 18px 22px; }
+.recommend-continue h3 { margin: 2px 0 2px; }
+.recommend-continue p { margin: 0; color: var(--muted); font-size: 13px; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap; max-width: 520px; }
+.recommend-papers { margin-top: 14px; }
+.recommend-paper { position: relative; display: flex; flex-direction: column; gap: 6px;
+  padding: 20px; min-height: 116px; text-decoration: none; }
+.recommend-paper strong { font-family: "STZhongsong","Noto Serif SC","Songti SC",serif;
+  font-size: 17px; }
+.recommend-paper small { color: var(--muted); font-size: 12px; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.recommend-paper .stat-link { margin-top: auto; color: var(--accent); font-size: 12px;
+  display: inline-flex; align-items: center; gap: 4px; }
+.recommend-wrong-grid { margin-top: 14px; }
+.recommend-wrong h3 { font-size: 15px; margin-bottom: 10px; }
+.recommend-wrong-item { display: flex; align-items: center; gap: 10px; padding: 9px 4px;
+  border-radius: 8px; text-decoration: none; color: var(--ink); font-size: 13px;
+  line-height: 1.5; transition: background .18s ease; }
+.recommend-wrong-item:hover { background: var(--primary-faint); }
+.recommend-wrong-item + .recommend-wrong-item { border-top: 1px solid var(--line); }
+.wrong-badge { flex: 0 0 auto; padding: 2px 8px; border-radius: 99px; font-size: 11px;
+  color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.recommend-wrong-item span:last-child { overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; }
+
+/* ── 能力雷达 (v2.10: 各题型正确率 + 薄弱一键专项) ── */
+.recommend-radar { margin-top: 14px; }
+.recommend-radar h3 { font-size: 15px; margin-bottom: 12px; }
+.radar-bars { display: grid; gap: 10px; }
+.radar-item { display: flex; align-items: center; gap: 12px; }
+.radar-label { flex: 0 0 84px; font-size: 13px; color: var(--ink); font-weight: 600; }
+.radar-bar { flex: 1; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.radar-fill { display: block; height: 100%; border-radius: 99px;
+  background: linear-gradient(90deg, var(--bamboo, #5c7a52), color-mix(in srgb, var(--bamboo, #5c7a52) 55%, var(--surface-solid)));
+  transition: width .6s var(--ease, cubic-bezier(.22,1,.36,1)); }
+.radar-item.weak .radar-fill {
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--surface-solid))); }
+.radar-rate { flex: 0 0 44px; font-size: 13px; font-weight: 700; font-family: "STKaiti","KaiTi",serif; }
+.radar-item.weak .radar-rate { color: var(--accent); }
+.radar-weak-tag { flex: 0 0 auto; padding: 1px 8px; border-radius: 99px; font-size: 11px;
+  color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.radar-go { flex: 0 0 auto; min-height: 28px; padding: 4px 12px; font-size: 12px; border-radius: 8px; }
