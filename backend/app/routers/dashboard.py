@@ -181,6 +181,21 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
         (profile_id,),
     ).fetchall()
 
+    # ⑥ 题型可用性: 该级别各 unit_type 单元数 (前端练习卡据此显示/灰化)
+    unit_type_counts = {
+        row["unit_type"]: row["n"]
+        for row in connection.execute(
+            """
+            SELECT u.unit_type, COUNT(DISTINCT u.id) AS n
+            FROM units u
+            JOIN papers p ON p.id = u.paper_id
+            WHERE p.profile_id = ? AND p.deleted_at IS NULL
+            GROUP BY u.unit_type
+            """,
+            (profile_id,),
+        ).fetchall()
+    }
+
     def _trim(text: str, n: int = 60) -> str:
         text = (text or "").replace("\n", " ").strip()
         return text if len(text) <= n else text[:n] + "…"
@@ -211,6 +226,8 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
             }
             for r in ability
         ],
+        # v2.12: 题型可用性 (练习卡动态显示/灰化)
+        "unit_type_counts": unit_type_counts,
     }
 
 
