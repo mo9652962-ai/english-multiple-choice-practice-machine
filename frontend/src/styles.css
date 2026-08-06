@@ -1256,3 +1256,8 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .radar-weak-tag { flex: 0 0 auto; padding: 1px 8px; border-radius: 99px; font-size: 11px;
   color: var(--accent); background: var(--accent-soft); font-weight: 700; }
 .radar-go { flex: 0 0 auto; min-height: 28px; padding: 4px 12px; font-size: 12px; border-radius: 8px; }
+
+/* ── 练习卡随级别灰化 (v2.12: 该级别无此题型) ── */
+.practice-card-disabled { opacity: .55; cursor: not-allowed; filter: grayscale(.35); }
+.practice-card-disabled:hover { transform: none !important; box-shadow: var(--shadow-sm) !important; border-color: var(--line) !important; }
+.practice-card-disabled .action-arrow { opacity: .35; }
