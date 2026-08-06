@@ -180,7 +180,7 @@ onMounted(load)
 </script>
 
 <template>
-  <div class="page vocabulary-page">
+  <div class="page page-vocab vocabulary-page">
     <div class="page-head">
       <div><span class="eyebrow">VOCABULARY BOOK</span><h1>我的单词本</h1><p class="lead">从真题语境中收集、理解并复习真正困扰你的词。</p></div>
       <div style="display:flex;gap:8px;align-items:center">

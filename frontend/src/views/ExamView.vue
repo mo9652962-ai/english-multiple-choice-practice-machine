@@ -107,7 +107,7 @@ onBeforeUnmount(() => { if (ticker.value) clearInterval(ticker.value) })
 </script>
 
 <template>
-  <div class="exam-page">
+  <div class="exam-page page-exam">
     <!-- 开始设置 -->
     <div v-if="showStartDialog && !exam" class="exam-start card">
       <h2>📝 模拟考试</h2>

@@ -1,30 +1,37 @@
 :root {
   font-family: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
-  color: #25342d;
-  background: #f5f2e9;
+  color: #2e2a23;
+  background: #f7f3ee;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --bg: #f5f2e9;
-  --surface: rgba(255, 255, 252, .9);
-  --surface-solid: #fffefa;
-  --ink: #25342d;
-  --muted: #68776f;
-  --line: #dce3dc;
-  --line-strong: #cbd5ce;
-  --primary: #486d5c;
-  --primary-hover: #3c5f4f;
-  --primary-soft: #e1ece5;
-  --primary-faint: #f0f5f1;
-  --lavender: #ece8f2;
-  --apricot: #f3e4d3;
-  --blue: #e0ebef;
-  --danger: #a9534d;
-  --danger-soft: #f8e3df;
-  --success: #3f7059;
-  --focus: rgba(72, 109, 92, .28);
-  --shadow-sm: 0 2px 10px rgba(43, 59, 50, .05);
-  --shadow: 0 16px 44px rgba(43, 59, 50, .08);
-  --shadow-hover: 0 20px 48px rgba(43, 59, 50, .13);
+  /* ── 水墨文人书房配色 v2.6 (墨色为主 + 朱砂强调 + 宣纸为底) ── */
+  --bg: #f7f3ee;                    /* 宣纸暖白 (2026 Warm Paper #F7F3EE) */
+  --surface: rgba(253, 250, 243, .92); /* 暖宣纸半透 */
+  --surface-solid: #fdfaf3;         /* 象牙白 #FFFBF0 调和 */
+  --ink: #2e2a23;                   /* 暖墨色 */
+  --muted: #787369;                 /* 墨灰 */
+  --line: #e4ded1;                  /* 纸边线 */
+  --line-strong: #cfc7b6;           /* 深纸边 */
+  --primary: #403c35;               /* 墨色主按钮 (明显水墨) */
+  --primary-hover: #2f2c26;         /* 深墨 hover */
+  --primary-soft: #eae6dc;          /* 淡墨 */
+  --primary-faint: #f2efe7;         /* 极淡墨 */
+  --accent: #c73e3a;                /* 朱砂红 (印章/强调) */
+  --accent-soft: #f8e6e4;           /* 淡朱砂 */
+  --bamboo: #5c7a52;                /* 竹青 (辅助点缀) */
+  --bamboo-soft: #e7eddf;           /* 淡竹青 */
+  --lavender: #eae4ee;              /* 藕荷 */
+  --apricot: #f5e9d4;               /* 缃色浅 */
+  --blue: #e4eef0;                  /* 月白 #D6ECF0 调和 */
+  --danger: #a9423c;                /* 胭脂 */
+  --danger-soft: #f8e5e1;
+  --success: #3e6b52;               /* 松绿 */
+  --gold: #a8842f;                  /* 秋香色 */
+  --gold-soft: #f7efdc;
+  --focus: rgba(64, 60, 53, .28);   /* 墨色 focus */
+  --shadow-sm: 0 2px 10px rgba(46, 42, 35, .05);
+  --shadow: 0 16px 44px rgba(46, 42, 35, .08);
+  --shadow-hover: 0 20px 48px rgba(46, 42, 35, .13);
   --radius-sm: 10px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -32,37 +39,43 @@
   /* v9.19 UI 美化: 缓动 + 渐变 + 发光 */
   --ease: cubic-bezier(.22, 1, .36, 1);
   --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
-  --hero-glow-1: rgba(222, 235, 228, .65);
-  --hero-glow-2: rgba(236, 232, 242, .5);
-  --card-gradient: linear-gradient(160deg, rgba(255,255,255,.6), rgba(255,255,255,0) 60%);
+  --hero-glow-1: rgba(222, 235, 228, .55);   /* 竹青光晕 */
+  --hero-glow-2: rgba(236, 232, 242, .4);    /* 藕荷光晕 */
+  --card-gradient: linear-gradient(160deg, rgba(255, 253, 246, .9), rgba(255, 253, 246, 0) 60%);
   --glow-primary: 0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent), 0 8px 30px color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
 :root.dark {
   color-scheme: dark;
-  --bg: #17201c;
-  --surface: rgba(34, 46, 40, .9);
-  --surface-solid: #222e28;
-  --ink: #e8eee9;
-  --muted: #a3b1a9;
-  --line: #3a4941;
-  --line-strong: #4c5e54;
-  --primary: #8db5a3;
-  --primary-hover: #a0c5b4;
-  --primary-soft: #30483d;
-  --primary-faint: #283a32;
+  --bg: #1a1813;                    /* 玄色墨底 */
+  --surface: rgba(31, 29, 24, .92);
+  --surface-solid: #211f1a;
+  --ink: #e9e4d9;                   /* 月白字 */
+  --muted: #a39c8e;                 /* 墨灰亮 */
+  --line: #3b382f;
+  --line-strong: #4e4a3e;
+  --primary: #b8b2a4;               /* 月白墨 (深色模式主色) */
+  --primary-hover: #c9c3b4;
+  --primary-soft: #33302a;
+  --primary-faint: #292720;
+  --accent: #d4554a;                /* 朱砂亮 */
+  --accent-soft: #3d2a26;
+  --bamboo: #9ebb86;
+  --bamboo-soft: #2a3626;
   --lavender: #3b3548;
   --apricot: #4a3b31;
   --blue: #30434d;
-  --danger: #e09890;
+  --danger: #e0a095;
   --danger-soft: #503531;
-  --success: #9ac9b3;
-  --focus: rgba(141, 181, 163, .36);
+  --success: #a3cbb2;
+  --gold: #c4a35a;
+  --gold-soft: #363020;
+  --focus: rgba(158, 187, 134, .36);
   --shadow-sm: 0 2px 12px rgba(0,0,0,.13);
   --shadow: 0 14px 42px rgba(0, 0, 0, .2);
   --shadow-hover: 0 22px 52px rgba(0,0,0,.3);
-  --hero-glow-1: rgba(60, 95, 79, .35);
-  --hero-glow-2: rgba(90, 80, 120, .25);
+  --hero-glow-1: rgba(60, 95, 79, .3);
+  --hero-glow-2: rgba(90, 80, 120, .2);
   --card-gradient: linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,0) 60%);
 }
 
@@ -114,8 +127,10 @@ html:not(.dark)::view-transition-new(root) { animation: vt-fade-in .25s ease; }
 .practice-shell>.main-content { grid-column:auto; }
 .sidebar { position: sticky; top: 0; height: 100vh; padding: 28px 18px 20px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--surface-solid) 88%, transparent); backdrop-filter: blur(20px); display: flex; flex-direction: column; z-index: 12; }
 .brand { display: flex; gap: 12px; align-items: center; padding: 0 8px 27px; }
-.brand-mark { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(145deg, #edf4ee, #d7e5dc); box-shadow: 0 9px 22px rgba(72,109,92,.16); overflow: hidden; }
+.brand-mark { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(145deg, #eef3e6, #d8e3cc); box-shadow: 0 9px 22px rgba(92,122,82,.16); overflow: hidden; }
 .brand-mark img { width: 48px; height: 48px; object-fit: contain; }
+/* 差异化: 印章式品牌字 (替代原版图片 logo) */
+.brand-mark span { font-family: "STKaiti","KaiTi",serif; font-size: 24px; font-weight: 700; color: #c73e3a; line-height: 1; }
 .brand strong, .brand small { display: block; }
 .brand strong { font-family: "STZhongsong", "Noto Serif SC", "Songti SC", serif; font-size: 18px; letter-spacing: .03em; }.brand small { color: var(--muted); margin-top: 4px; font-size: 11px; }
 .brand-copy { min-width: 0; }
@@ -241,8 +256,8 @@ h2, h3 { margin: 0; }
 .stat-value { font: 500 30px Georgia, serif; margin-top: 10px; }
 .section-title { margin: 34px 0 16px; display: flex; justify-content: space-between; align-items: center; }
 .button { min-height: 42px; border: 1px solid transparent; border-radius: 12px; padding: 10px 16px; background: var(--primary); color: white; font-weight: 650; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s var(--ease); }
-.button:hover:not(:disabled) { background: var(--primary-hover); box-shadow: 0 8px 20px rgba(60,95,79,.18); transform: translateY(-1px); }
-.button:active:not(:disabled) { transform: translateY(0) scale(.97); box-shadow: 0 3px 10px rgba(60,95,79,.14); }
+.button:hover:not(:disabled) { background: var(--primary-hover); box-shadow: 0 8px 20px rgba(76,102,67,.18); transform: translateY(-1px); }
+.button:active:not(:disabled) { transform: translateY(0) scale(.97); box-shadow: 0 3px 10px rgba(76,102,67,.14); }
 .button.secondary { background: var(--surface-solid); color: var(--ink); border-color: var(--line); }
 .button.ghost { background: transparent; color: var(--muted); }
 .button.danger { background: var(--danger); }
@@ -614,16 +629,16 @@ h2, h3 { margin: 0; }
 .ai-message.assistant>div { max-width:min(760px,94%); border-radius:5px 16px 16px 16px; }
 .ai-message.error>div { color:var(--danger); background:var(--danger-soft); border-color:color-mix(in srgb,var(--danger) 18%,var(--line)); }
 .ai-message-avatar { width:32px; height:32px; display:grid; place-items:center; border-radius:10px; color:var(--primary); background:var(--primary-soft); }
-.ai-message>div { padding:12px 15px; border:1px solid var(--line); background:var(--surface-solid); color:var(--ink); white-space:pre-wrap; overflow-wrap:anywhere; font-size:14px; line-height:1.75; box-shadow:0 5px 18px rgba(43,59,50,.05); }
+.ai-message>div { padding:12px 15px; border:1px solid var(--line); background:var(--surface-solid); color:var(--ink); white-space:pre-wrap; overflow-wrap:anywhere; font-size:14px; line-height:1.75; box-shadow:0 5px 18px rgba(46,42,35,.05); }
 .ai-thinking { display:flex; align-items:center; gap:8px; color:var(--muted) !important; }
 .ai-inline-error { width:min(900px,calc(100% - 48px)); margin:0 auto 10px; padding:9px 12px; border-radius:10px; color:var(--danger); background:var(--danger-soft); font-size:12px; line-height:1.55; }
-.ai-composer { width:min(900px,calc(100% - 48px)); margin:0 auto 22px; padding:10px; border:1px solid var(--line-strong); border-radius:17px; background:var(--surface-solid); box-shadow:0 12px 32px rgba(43,59,50,.1); transition:border-color .18s ease,box-shadow .18s ease; }
-.ai-composer:focus-within { border-color:var(--primary); box-shadow:0 0 0 3px var(--focus),0 12px 32px rgba(43,59,50,.1); }
+.ai-composer { width:min(900px,calc(100% - 48px)); margin:0 auto 22px; padding:10px; border:1px solid var(--line-strong); border-radius:17px; background:var(--surface-solid); box-shadow:0 12px 32px rgba(46,42,35,.1); transition:border-color .18s ease,box-shadow .18s ease; }
+.ai-composer:focus-within { border-color:var(--primary); box-shadow:0 0 0 3px var(--focus),0 12px 32px rgba(46,42,35,.1); }
 .ai-composer textarea { width:100%; min-height:78px; max-height:210px; padding:6px 8px; resize:vertical; border:0; outline:0; color:var(--ink); background:transparent; font-size:14px; line-height:1.65; }
 .ai-composer>div { display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .ai-composer small { min-width:0; padding-left:7px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--muted); font-size:10px; }
 .ai-send-button { width:40px; height:40px; flex:0 0 40px; display:grid; place-items:center; border:0; border-radius:12px; color:white; background:var(--primary); transition:background-color .18s ease,box-shadow .18s ease; }
-.ai-send-button:hover:not(:disabled) { background:var(--primary-hover); box-shadow:0 7px 18px rgba(60,95,79,.2); }
+.ai-send-button:hover:not(:disabled) { background:var(--primary-hover); box-shadow:0 7px 18px rgba(76,102,67,.2); }
 .ai-send-button:disabled { opacity:.38; cursor:not-allowed; }
 .ai-send-button.stop { color:var(--danger); background:var(--danger-soft); }
 
@@ -964,3 +979,231 @@ h2, h3 { margin: 0; }
 
 /* v9.19: 移动端底部导航 */
 .mobile-nav { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   水墨特色组件 v2.6 — 印章角标 · 墨滴进度 · 竖排书法 · 墨点 · Hero印章 · 淡山水
+   布局骨架不变，仅追加特色视觉组件
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 印章角标 (Seal Badge): 卡片右上角朱砂印章字 ── */
+.seal-badge {
+  position: absolute; top: 14px; right: 14px;
+  width: 34px; height: 34px; display: grid; place-items: center;
+  border: 1.5px solid var(--accent); border-radius: 4px;
+  color: var(--accent); font-family: "STKaiti","KaiTi",serif;
+  font-size: 15px; font-weight: 700; transform: rotate(4deg);
+  background: color-mix(in srgb, var(--accent-soft) 40%, transparent);
+  box-shadow: 0 2px 6px rgba(199,62,58,.15);
+  user-select: none; pointer-events: none; z-index: 1;
+}
+
+/* ── 墨滴进度条 (Ink Progress): 墨笔涂划渐隐 ── */
+.ink-progress { position: relative; height: 6px; border-radius: 99px;
+  background: var(--line); overflow: hidden; }
+.ink-progress .ink-progress-fill { height: 100%; border-radius: 99px;
+  background: linear-gradient(90deg, var(--ink) 0%, var(--muted) 60%, var(--line-strong) 100%);
+  transition: width .5s var(--ease-ink, .25s); }
+.ink-progress .ink-progress-fill.accent {
+  background: linear-gradient(90deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 60%, var(--surface-solid)) 100%);
+}
+
+/* ── 竖排书法 (Vertical Calligraphy): 侧边栏/页脚装饰 ── */
+.vertical-text {
+  writing-mode: vertical-rl; letter-spacing: .18em;
+  font-family: "STKaiti","KaiTi",serif; font-size: 12px; color: var(--muted);
+  user-select: none; line-height: 1.9;
+}
+.vertical-text::before { content: '▍'; color: var(--accent); margin-bottom: 6px; opacity: .8; }
+
+/* ── 卡片墨点 (Ink Dot): 卡片四角淡淡墨点 ── */
+.card.ink-dot::after {
+  content: ''; position: absolute; right: 18px; bottom: 16px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle, var(--ink) 0%, transparent 70%);
+  opacity: .12; pointer-events: none;
+}
+.card.ink-dot::before { right: 26px; }
+
+/* ── Hero 印章 (Hero Seal): 页面主标题旁朱砂印章 ── */
+.hero-seal {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border: 2px solid var(--accent); border-radius: 5px;
+  color: var(--accent); font-family: "STKaiti","KaiTi",serif; font-size: 18px;
+  font-weight: 700; transform: rotate(-5deg); margin-right: 12px;
+  background: color-mix(in srgb, var(--accent-soft) 30%, transparent);
+  box-shadow: 0 3px 10px rgba(199,62,58,.18);
+  animation: seal-stamp .5s cubic-bezier(.22,1,.36,1) both;
+  vertical-align: middle; user-select: none;
+}
+@keyframes seal-stamp {
+  from { opacity: 0; transform: rotate(-5deg) scale(.6); }
+  to   { opacity: 1; transform: rotate(-5deg) scale(1); }
+}
+
+/* ── 淡山水背景 (Subtle Landscape): 极淡远山+云雾, 不抢内容 ── */
+body.ink-landscape::after {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  background:
+    radial-gradient(ellipse 60% 42% at 82% 18%, rgba(64,60,53,.05) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 62% 30%, rgba(64,60,53,.04) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 30% at 18% 88%, rgba(64,60,53,.04) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(247,243,238,.0) 55%, rgba(247,243,238,.75) 100%);
+}
+:root.dark body.ink-landscape::after {
+  opacity: .4;
+  background:
+    radial-gradient(ellipse 60% 42% at 82% 18%, rgba(232,228,217,.04) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 62% 30%, rgba(232,228,217,.03) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 30% at 18% 88%, rgba(232,228,217,.03) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(26,24,19,.0) 55%, rgba(26,24,19,.75) 100%);
+}
+
+/* ── 墨滴加载 (Ink Loading): 竖直墨滴上下流动 ── */
+@keyframes ink-drip {
+  0%   { height: 0; opacity: .9; }
+  50%  { height: 100%; opacity: .35; }
+  100% { height: 0; opacity: .9; }
+}
+.ink-loading { position: relative; width: 4px; height: 28px; margin: 0 auto;
+  background: var(--line); border-radius: 2px; overflow: hidden; }
+.ink-loading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%;
+  background: var(--ink); border-radius: 2px; animation: ink-drip 1.4s var(--ease, ease) infinite; }
+
+/* ── 统计数字楷体墨韵 ── */
+.stat-value { font-family: "STKaiti","KaiTi","Georgia",serif; font-weight: 600; }
+
+/* ── 朱砂红导航指示 (Active 换朱砂) ── */
+nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-sm); }
+.sidebar-category.active { box-shadow: inset 3px 0 var(--accent); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   板块特色化 v2.7 — 每个板块独立水墨主题 (局部变量覆盖 + 特色装饰)
+   布局骨架不动, 仅通过板块类切换主题色与装饰
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* 板块通用: 页眉标题下墨线 */
+.page .page-head h1, .exam-page .page-head h1 {
+  position: relative; padding-bottom: 12px;
+}
+.page .page-head h1::after, .exam-page .page-head h1::after {
+  content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 64px;
+  border-radius: 2px; background: linear-gradient(90deg, var(--sec-accent, var(--accent)), transparent);
+}
+.page .page-head .eyebrow { color: var(--sec-accent, var(--accent)); }
+
+/* ── ① 首页: 山水意境 (墨+朱砂) ── */
+.page-home { --sec-accent: #c73e3a; --sec-primary: #403c35; }
+.page-home .study-hero { background:
+  linear-gradient(175deg, var(--surface-solid) 0%, color-mix(in srgb, var(--primary-soft) 96%, var(--surface-solid)) 100%); }
+
+/* ── ② 题库与练习: 书卷竹简 (竹青) ── */
+.page-library { --sec-accent: #5c7a52; --sec-primary: #4c6643; }
+.page-library .page-head h1::after { width: 90px;
+  background: linear-gradient(90deg, #5c7a52, #9eb884, transparent); }
+.page-library .card { border-color: color-mix(in srgb, #5c7a52 22%, var(--line)); }
+.page-library .card:hover { border-color: color-mix(in srgb, #5c7a52 55%, var(--line-strong)); }
+
+/* ── ③ 模拟考试: 科举金榜 (秋香金) ── */
+.page-exam { --sec-accent: #a8842f; --sec-primary: #8a6c24; }
+.page-exam .exam-start h2::before, .page-exam .exam-title strong::before { content: '榜 '; color: #a8842f; }
+.page-exam .exam-timer { color: #a8842f; background: color-mix(in srgb, #a8842f 10%, var(--surface)); }
+.page-exam .exam-dot.answered { background: color-mix(in srgb, #a8842f 14%, var(--surface)); border-color: #a8842f; color: #a8842f; }
+.page-exam .exam-option.selected { border-color: #a8842f; border-left: 3px solid #a8842f; }
+.page-exam .exam-option.selected .opt-key { background: #a8842f; }
+.page-exam .big-score.good { color: #a8842f; }
+
+/* ── ④ 错题本: 朱砂批注 (胭脂红批改感) ── */
+.page-wrong { --sec-accent: #a9423c; --sec-primary: #8e3a34; }
+.page-wrong .page-head h1::after { width: 80px;
+  background: linear-gradient(90deg, #a9423c, #d07a74, transparent); }
+.page-wrong .card { border-color: color-mix(in srgb, #a9423c 18%, var(--line)); }
+.page-wrong .wrong-analysis-total strong { color: #a9423c; }
+.page-wrong .result-cell .bad, .page-wrong .wrong-analysis-category strong { color: #a9423c; }
+
+/* ── ⑤ 单词本: 活字印刷 (黛蓝墨) ── */
+.page-vocab { --sec-accent: #425066; --sec-primary: #363f52; }
+.page-vocab .page-head h1::after { width: 70px;
+  background: linear-gradient(90deg, #425066, #7a8aa6, transparent); }
+.page-vocab .ticker-word, .page-vocab .vocab-list-item.active { border-color: color-mix(in srgb, #425066 35%, var(--line)); }
+.page-vocab .vocab-cat-chip.active { background: #425066; border-color: #425066; }
+.page-vocab .ticker-word strong { color: #425066; }
+.page-vocab .vocab-star { color: #a8842f; }
+
+/* ── ⑥ 导入题库: 文房四宝 (茶褐砚台) ── */
+.page-import { --sec-accent: #8b6d4a; --sec-primary: #71583a; }
+.page-import .page-head h1::after { width: 85px;
+  background: linear-gradient(90deg, #8b6d4a, #c4a47a, transparent); }
+.page-import .card { border-color: color-mix(in srgb, #8b6d4a 20%, var(--line)); }
+.page-import .card:hover { border-color: color-mix(in srgb, #8b6d4a 55%, var(--line-strong)); }
+
+/* ── ⑦ AI 学习助手: 云雾灵思 (黛蓝月白) ── */
+.page-assistant { --sec-accent: #4a6fa5; --sec-primary: #3b5a88; }
+.page-assistant .ai-page-head h1::after,
+.page-assistant .page-head h1::after { width: 72px;
+  background: linear-gradient(90deg, #4a6fa5, #8fb0d8, transparent); }
+.page-assistant .ai-message.user, .page-assistant .ai-conversation-sidebar {
+  border-color: color-mix(in srgb, #4a6fa5 25%, var(--line)); }
+
+/* ── ⑧ 设置: 素净留白 (灰墨) ── */
+.page-settings { --sec-accent: #787369; --sec-primary: #5c5850; }
+.page-settings .page-head h1::after { width: 48px;
+  background: linear-gradient(90deg, #787369, #b5b0a6, transparent); }
+.page-settings .card { border-color: color-mix(in srgb, #787369 16%, var(--line)); }
+
+/* ── 板块按钮: 主按钮跟随板块主题 ── */
+.page-library .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-exam .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-wrong .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-vocab .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-import .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-assistant .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-settings .button:not(.secondary):not(.ghost):not(.danger) { background: var(--sec-primary); }
+.page-library .button:not(.secondary):not(.ghost):not(.danger):hover,
+.page-exam .button:not(.secondary):not(.ghost):not(.danger):hover,
+.page-wrong .button:not(.secondary):not(.ghost):not(.danger):hover,
+.page-vocab .button:not(.secondary):not(.ghost):not(.danger):hover,
+.page-import .button:not(.secondary):not(.ghost):not(.danger):hover,
+.page-assistant .button:not(.secondary):not(.ghost):not(.danger):hover,
+.page-settings .button:not(.secondary):not(.ghost):not(.danger):hover { filter: brightness(1.12); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   板块背景图 v2.8 — 每板块独立水墨画背景
+   来源: Cleveland/Walters 博物馆馆藏 (Public Domain + Unsplash License, 免费商用)
+   本地化存储保证离线/打包可用; 淡处理保证文字可读
+   ═══════════════════════════════════════════════════════════════════ */
+.page-home::before, .page-library::before, .page-exam::before, .page-wrong::before,
+.page-vocab::before, .page-import::before, .page-assistant::before, .page-settings::before,
+.page-practice::before {
+  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background-size: cover; background-position: center 30%;
+  background-repeat: no-repeat;
+}
+/* 首页: 天都晓日图 (明代丁云鹏) — 大气山水 */
+.page-home::before { background-image: url('/assets/backgrounds/home.jpg'); opacity: .30; }
+/* 题库: 雪竹图 — 书卷竹简感 */
+.page-library::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .34; }
+/* 考试: 瀑布亭台图 — 山河气魄 */
+.page-exam::before { background-image: url('/assets/backgrounds/exam.jpg'); opacity: .32; }
+/* 错题: 独行悬崖图 — 沉思反思感 */
+.page-wrong::before { background-image: url('/assets/backgrounds/wrong.jpg'); opacity: .36; }
+/* 单词: 松树书法图 — 文字活字感 */
+.page-vocab::before { background-image: url('/assets/backgrounds/vocab.jpg'); opacity: .30; }
+/* 导入: 孤舟图 — 文房笔墨意境 */
+.page-import::before { background-image: url('/assets/backgrounds/import.jpg'); opacity: .30; }
+/* AI: 楚山秋霁图 (明代蓝瑛) — 云雾灵思 */
+.page-assistant::before { background-image: url('/assets/backgrounds/ai.jpg'); opacity: .30; }
+/* 设置: 行舟水景图 — 素净留白 */
+.page-settings::before { background-image: url('/assets/backgrounds/settings.jpg'); opacity: .28; }
+/* 练习: 复用题库雪竹 (更淡, 专注不扰) */
+.page-practice::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .18; }
+
+/* 深色模式: 图片略亮 + 不透明度略降 */
+:root.dark .page-home::before { opacity: .22; }
+:root.dark .page-library::before { opacity: .24; }
+:root.dark .page-exam::before { opacity: .22; }
+:root.dark .page-wrong::before { opacity: .26; }
+:root.dark .page-vocab::before { opacity: .22; }
+:root.dark .page-import::before { opacity: .22; }
+:root.dark .page-assistant::before { opacity: .22; }
+:root.dark .page-settings::before { opacity: .20; }
+:root.dark .page-practice::before { opacity: .12; }
