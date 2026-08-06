@@ -58,15 +58,32 @@ function findPython() {
 }
 
 function startBackend() {
+  // v9.20.1: 优先独立后端 exe（别人电脑无需 Python）；回退 python run_app.py（开发模式）
+  const resources = process.resourcesPath
+  const backendExe = path.join(resources, 'backend_app', 'backend_app.exe')
+  const hasBackendExe = app.isPackaged && require('fs').existsSync(backendExe)
+  if (hasBackendExe) {
+    backendProc = spawn(backendExe, [], {
+      windowsHide: true,
+      stdio: 'ignore',
+      env: {
+        ...process.env,
+        EPM_DATA_DIR: path.join(resources, 'backend', 'data'),
+        EPM_FRONTEND_DIST: path.join(resources, 'frontend', 'dist'),
+        EPM_HOST: '127.0.0.1',
+        EPM_PORT: String(PORT),
+      },
+    })
+    return true
+  }
   const py = findPython()
   if (!py) {
     dialog.showErrorBox('启动失败', '未找到 Python，请安装 Python 3.10+ 并加入 PATH')
     return false
   }
   const projectDir = app.isPackaged
-    ? path.join(process.resourcesPath, 'app')
+    ? path.join(resources, 'app')
     : __dirname
-  const runScript = path.join(projectDir, 'run_app.py')
   const args = ['run_app.py', '--lan'] // 局域网模式：手机同 WiFi 可访问
   backendProc = spawn(py, args, {
     cwd: projectDir,
