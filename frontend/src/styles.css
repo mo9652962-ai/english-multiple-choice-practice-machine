@@ -326,6 +326,7 @@ h2, h3 { margin: 0; }
 .vocab-stats span { color: var(--muted); font-size: 12px; }.vocab-stats strong { font: 500 25px Georgia,serif; margin-top: 7px; }.vocab-stats .amber { background: color-mix(in srgb, var(--apricot) 60%, var(--surface)); }
 /* v9.19: 单词本阶段筛选 chips */
 .vocab-categories { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.vocab-cat-types { margin-top: -6px; margin-bottom: 18px; }
 .vocab-cat-chip { padding: 7px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer; transition: all .18s var(--ease); }
 .vocab-cat-chip:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); }
 .vocab-cat-chip.active { background: var(--primary); border-color: var(--primary); color: var(--surface-solid); box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent); }
