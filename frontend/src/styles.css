@@ -1692,3 +1692,79 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .modal-fade-enter-active .category-modal-panel, .modal-fade-leave-active .category-modal-panel { transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
 .modal-fade-enter-from .category-modal-panel, .modal-fade-leave-to .category-modal-panel { transform: scale(.92) translateY(12px); }
 :root.dark .category-modal { background: color-mix(in srgb, #14140f 74%, transparent); }
+
+/* ═══ v2.48: 精致高级感打磨 (2026 luxury design: 克制优雅·层次·字距) ═══ */
+
+/* ① 更细腻的多层阴影体系 (ambient + key 分层, 高级感核心) */
+:root {
+  --shadow-sm: 0 1px 2px rgba(46,42,35,.04), 0 4px 14px rgba(46,42,35,.05);
+  --shadow: 0 2px 4px rgba(46,42,35,.04), 0 18px 44px rgba(46,42,35,.08), 0 1px 0 rgba(255,255,255,.5) inset;
+  --shadow-hover: 0 4px 10px rgba(46,42,35,.07), 0 26px 56px rgba(46,42,35,.14);
+  --shadow-lift: 0 1px 2px rgba(46,42,35,.05), 0 10px 26px rgba(46,42,35,.10);
+}
+
+/* ② 排版精致化: 标题字距 + 层级 (bold typography) */
+h1, h2, h3 { letter-spacing: .02em; }
+.page-head h1 { letter-spacing: .05em; font-weight: 900; }
+.eyebrow { letter-spacing: .22em; font-size: 10px; font-weight: 800; opacity: .75; }
+.stat-label { letter-spacing: .06em; }
+.hero-seal { letter-spacing: 0; }
+
+/* ③ 卡片质感: 内高光 + 细边框 (understated elegance) — 注意: 不用全局 overflow:hidden (会裁剪下拉层) */
+.card {
+  border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 34%, transparent), transparent 42%) padding-box,
+    var(--card-gradient) padding-box;
+  box-shadow: var(--shadow);
+}
+.card::before {
+  content: ''; display: block; position: absolute; top: 0; left: 12px; right: 12px; height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, #ffffff 80%, transparent), transparent);
+  pointer-events: none; z-index: 0;
+}
+.card { position: relative; }
+
+/* ④ 按钮精致化: 墨色渐变 + 细腻内阴影 */
+.button { box-shadow: 0 1px 2px rgba(46,42,35,.10), 0 1px 0 rgba(255,255,255,.06) inset; }
+.button:not(.secondary):not(.ghost):not(.danger) {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 94%, #ffffff), var(--primary));
+}
+.button:not(.secondary):not(.ghost):not(.danger):hover {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary-hover) 94%, #ffffff), var(--primary-hover));
+}
+
+/* ⑤ 数字/数据精致化 (Georgia 衬线数字更高级) */
+.stat-value, .big-score, .wr-value, .rank-num, .countdown-item b { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: .01em; }
+
+/* ⑥ 输入框 focus 精致化 */
+input, select, textarea { transition: border-color .2s, box-shadow .2s; }
+input:focus, select:focus, textarea:focus {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* ⑦ 滚动条精致化 (全局) */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--line-strong) 55%, transparent); border-radius: 99px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background-color: color-mix(in srgb, var(--line-strong) 85%, transparent); }
+
+/* ⑧ 侧边栏精致化: 更清晰的分组线 */
+.app-sidebar { box-shadow: 1px 0 0 color-mix(in srgb, var(--line) 60%, transparent), 6px 0 24px rgba(46,42,35,.04); }
+.sidebar-category-label { letter-spacing: .18em; font-size: 10px; }
+.sidebar-category { transition: transform .18s var(--ease), background-color .2s, box-shadow .2s; }
+.sidebar-category:hover { transform: translateX(2px); box-shadow: var(--shadow-lift); }
+
+/* ⑨ 徽章/标签高级质感 */
+.rank-rule, .freq-type-chip, .freq-badge, .ai-pick-chip { backdrop-filter: blur(4px); border: 1px solid color-mix(in srgb, var(--line) 45%, transparent); }
+
+/* ⑩ 桌面端磨砂玻璃感 (progressive blur) */
+@supports (backdrop-filter: blur(12px)) {
+  .app-sidebar, .mobile-nav { backdrop-filter: blur(14px) saturate(1.15); background: color-mix(in srgb, var(--surface-solid) 82%, transparent) !important; }
+  .exam-countdown-bar { backdrop-filter: blur(10px); }
+}
+
+/* ⑪ 高光线不遮挡内容 */
+.card::before { pointer-events: none; }
+.card > * { position: relative; z-index: 1; }
