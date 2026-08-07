@@ -2454,3 +2454,11 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .modal-fade-enter-active .category-modal-panel, .modal-fade-enter-active .quick-panel { transition: transform .3s var(--ease-bounce), opacity .25s; }
 /* toast 精致 */
 .app-toast { box-shadow: 0 10px 30px rgba(46,42,35,.16), 0 0 0 1px color-mix(in srgb, var(--line) 40%, transparent); border-radius: 14px; }
+
+/* ═══ v2.88: 第三轮高级感 9/10 — 深色模式再深化 ═══ */
+:root.dark { --hero-glow-1: rgba(80, 120, 95, .28); --hero-glow-2: rgba(100, 85, 130, .22); }
+:root.dark .quote-author, :root.dark .hero-seal, :root.dark .brand-copy strong { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+:root.dark .card:hover { box-shadow: var(--shadow-hover), 0 0 0 1px color-mix(in srgb, var(--gold) 14%, transparent); }
+:root.dark .study-hero .hero-cta .button { box-shadow: 0 6px 22px rgba(0,0,0,.4), 0 0 0 1px color-mix(in srgb, #ffffff 12%, transparent) inset; }
+:root.dark .app-sidebar { background: linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 94%, #24221c), color-mix(in srgb, var(--surface-solid) 86%, #1b1a15)); }
+:root.dark .sidebar-note { background: color-mix(in srgb, var(--gold) 10%, var(--surface-solid)); }
