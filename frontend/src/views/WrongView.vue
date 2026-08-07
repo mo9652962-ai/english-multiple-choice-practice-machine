@@ -10,7 +10,7 @@ import {
 } from 'lucide-vue-next'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { get, post } from '../api'
+import { get, post, put } from '../api'
 import { showToast } from '../services/toast'
 
 type WrongRow = {
@@ -226,6 +226,22 @@ const wrongStats = ref<any>(null)
 async function loadWrongStats() {
   try { wrongStats.value = await get('/wrong/stats') } catch { /* 非阻塞 */ }
 }
+// v2.46: 我的分析笔记 (粉笔式)
+const noteEditing = ref<number | null>(null)
+const noteDraft = ref('')
+function toggleNote(item: any) {
+  if (noteEditing.value === item.id) { noteEditing.value = null; return }
+  noteEditing.value = item.id
+  noteDraft.value = item.note || ''
+}
+async function saveNote(item: any) {
+  try {
+    const r: any = await put(`/wrong/${item.id}/note`, { note: noteDraft.value })
+    item.note = r.note
+    noteEditing.value = null
+    showToast('分析笔记已保存', 'success')
+  } catch (e) { showToast(`保存失败：${e}`, 'error') }
+}
 async function redoQuestion(questionId: number) {
   try {
     const session: any = await post('/practice/sessions', {
@@ -409,6 +425,18 @@ function analysisLabel(unitIds: number[]): string {
               <i>错 {{ item.wrong_count }} 次</i>
               <i v-if="item.year">{{ item.year }}</i>
             </span>
+            <!-- v2.46: 我的分析笔记 (粉笔式) -->
+            <span class="freq-note" :class="{ has: item.note }" @click.stop="toggleNote(item)">
+              📝 <span>{{ item.note ? '我的分析' : '记笔记' }}</span>
+            </span>
+            <span v-if="noteEditing === item.id" class="freq-note-editor" @click.stop>
+              <textarea v-model="noteDraft" rows="2" maxlength="500" placeholder="写下你的分析：错因、思路、提醒…"></textarea>
+              <span class="freq-note-actions">
+                <button class="button compact" @click="saveNote(item)">保存</button>
+                <button class="button ghost compact" @click="noteEditing = null">取消</button>
+              </span>
+            </span>
+            <span v-else-if="item.note" class="freq-note-view" @click.stop>{{ item.note }}</span>
           </span>
         </button>
       </div>

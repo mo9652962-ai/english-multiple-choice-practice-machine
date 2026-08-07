@@ -1664,3 +1664,11 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 @media (prefers-reduced-motion: reduce) {
   .button, .card, .app-sidebar nav a, .study-hero .hero-cta .button, .page > .card { animation: none !important; transition: none !important; }
 }
+
+/* ── v2.46: 我的分析笔记 (粉笔式) ── */
+.freq-note { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 99px; background: color-mix(in srgb, var(--line) 30%, transparent); font-size: 10.5px; color: var(--muted); cursor: pointer; font-style: normal; }
+.freq-note:hover, .freq-note.has { background: color-mix(in srgb, #4a6fa5 16%, transparent); color: #4a6fa5; }
+.freq-note-editor { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; padding: 8px; border: 1px dashed color-mix(in srgb, #4a6fa5 40%, var(--line)); border-radius: 10px; background: color-mix(in srgb, var(--surface) 60%, transparent); }
+.freq-note-editor textarea { width: 100%; resize: vertical; font: inherit; font-size: 12px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-solid); color: var(--text); }
+.freq-note-actions { display: flex; gap: 6px; justify-content: flex-end; }
+.freq-note-view { display: block; margin-top: 6px; padding: 6px 10px; font-size: 11.5px; line-height: 1.6; color: var(--muted); background: color-mix(in srgb, var(--line) 18%, transparent); border-radius: 8px; border-left: 3px solid #4a6fa5; }
