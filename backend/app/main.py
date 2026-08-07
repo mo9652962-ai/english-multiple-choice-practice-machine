@@ -25,6 +25,8 @@ from .routers import (
     vocab_plans,
     vocab_context,
     report,
+    achievements,
+    ai_recommend,
     wrong,
 )
 from .services.ai_client import ensure_ai_model_catalog
@@ -76,6 +78,8 @@ app.include_router(ai.router, prefix="/api")
 app.include_router(vocab_plans.router, prefix="")
 app.include_router(vocab_context.router, prefix="")
 app.include_router(report.router, prefix="")
+app.include_router(achievements.router, prefix="")
+app.include_router(ai_recommend.router, prefix="")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
