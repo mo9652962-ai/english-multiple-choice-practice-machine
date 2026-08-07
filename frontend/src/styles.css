@@ -1625,3 +1625,10 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .freq-badge.reason-ok { background: color-mix(in srgb, #3d7a54 16%, transparent); color: #3d7a54; }
 .freq-types { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .freq-type-chip { padding: 4px 12px; border-radius: 99px; background: color-mix(in srgb, var(--line) 30%, transparent); font-size: 11px; color: var(--muted); }
+
+/* ── v2.43: 闪卡复习增强 (百词斩式) ── */
+.review-progress { position: fixed; top: 0; left: 0; right: 0; height: 4px; z-index: 60; background: transparent; }
+.review-progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--bamboo, #3d7a54), var(--gold, #a8842f)); transition: width .35s ease; border-radius: 0 4px 4px 0; }
+.flip-inner { cursor: pointer; }
+.review-actions button { cursor: pointer; }
+@media (max-width: 720px) { .review-actions { flex-wrap: wrap; } }
