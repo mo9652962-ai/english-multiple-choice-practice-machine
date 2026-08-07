@@ -108,6 +108,26 @@ onBeforeUnmount(() => {
   if (vocabularyTimer !== null) window.clearInterval(vocabularyTimer)
 })
 
+// v2.40: 打卡里程碑庆祝 (3/7/14/30 天火焰, localStorage 防重复)
+import CelebrateOverlay from '../components/CelebrateOverlay.vue'
+const streakCelebrate = ref<{ show: boolean; kind: 'confetti' | 'flame'; title: string; subtitle: string }>({
+  show: false, kind: 'flame', title: '', subtitle: '',
+})
+const STREAK_MILESTONES = [3, 7, 14, 30, 60, 100]
+function maybeStreakCelebrate(streak: number) {
+  if (streak < 3) return
+  const milestone = STREAK_MILESTONES.filter((m) => streak >= m).pop()
+  if (!milestone) return
+  const key = `epm_streak_celebrated_${milestone}`
+  if (localStorage.getItem(key)) return
+  localStorage.setItem(key, '1')
+  streakCelebrate.value = {
+    show: true, kind: 'flame',
+    title: `🔥 连续打卡 ${streak} 天！`,
+    subtitle: `达成 ${milestone} 天里程碑 · 坚持就是胜利`,
+  }
+}
+
 // v2.39: 今日目标 (localStorage) + 今日答题数 (leaderboard API) + 每日一词
 const dailyGoal = ref(Number(localStorage.getItem('epm_daily_goal') || 50))
 const todayAnswered = ref(0)
@@ -129,6 +149,7 @@ async function loadGoalAndWord() {
     const lb: any = await get('/leaderboard')
     const days = lb.days || []
     todayAnswered.value = days.length ? days[days.length - 1].count : 0
+    maybeStreakCelebrate(lb.streak || 0) // v2.40: 打卡里程碑火焰
   } catch { /* 排行不可用忽略 */ }
   // 每日一词: 按日期从已加载词汇里取 (固定种子, 当天稳定)
   try {
@@ -444,4 +465,13 @@ const practiceCards = computed(() => {
       <div><h3>理解文章，比记住答案更重要。</h3><p class="lead">选项可以每次打乱，但文章中的逻辑不会改变。</p></div>
     </div>
   </div>
+
+  <!-- v2.40: 打卡里程碑火焰庆祝 -->
+  <CelebrateOverlay
+    :show="streakCelebrate.show"
+    :kind="streakCelebrate.kind"
+    :title="streakCelebrate.title"
+    :subtitle="streakCelebrate.subtitle"
+    @close="streakCelebrate.show = false"
+  />
 </template>
