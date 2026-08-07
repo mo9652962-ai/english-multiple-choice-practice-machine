@@ -1906,3 +1906,19 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 .category-modal-panel, .review-overlay .review-card { box-shadow: 0 6px 16px rgba(46,42,35,.10), 0 30px 80px rgba(46,42,35,.22); }
 /* 按钮按压微缩 */
 .button:not(:disabled):active { transform: translateY(0) scale(.97); }
+
+/* ═══ v2.53: 卡片容器质感 (纸感 + 玻璃渐变) ═══ */
+.card {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,0) 46%) padding-box,
+    linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 96%, #ffffff), color-mix(in srgb, var(--surface-solid) 88%, #f3efe6)) padding-box,
+    var(--card-gradient) padding-box;
+}
+/* 分区卡片: 左侧主题色细条 */
+.report-panel, .today-plan-card { border-left: 3px solid color-mix(in srgb, var(--accent) 55%, transparent); }
+/* 统计卡: 上方渐变细条 */
+.stat-card { border-top: 2px solid color-mix(in srgb, var(--accent) 22%, transparent); }
+/* 卡片圆角更精致 */
+.card { border-radius: calc(var(--radius-md) + 2px); }
+/* 玻璃卡 (hero/倒计时) */
+.exam-countdown-bar, .study-hero { background: linear-gradient(150deg, color-mix(in srgb, var(--surface-solid) 88%, transparent), color-mix(in srgb, var(--surface-solid) 72%, transparent)); }
