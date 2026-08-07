@@ -88,6 +88,26 @@ badge("exam_1", "模考初体验", "✍️", "完成第一场模拟考试", lamb
 badge("paper_5", "刷题新秀", "📝", "完成 5 套练习", lambda c, p: (_paper_done(c), 5))
 badge("paper_30", "刷题达人", "🏆", "完成 30 套练习", lambda c, p: (_paper_done(c), 30))
 
+# ── v2.39: 进阶徽章 (游戏化深化, 数据均已存在) ──
+def _correct_count(connection):
+    r = connection.execute(
+        "SELECT COUNT(*) n FROM practice_answers WHERE is_correct = 1").fetchone()
+    return r["n"] or 0
+
+
+def _wrong_redone_50(connection):
+    return _wrong_redone(connection)
+
+
+def _paper_done_100(connection):
+    return _paper_done(connection)
+
+
+badge("correct_500", "答题高手", "💯", "累计答对 500 题", lambda c, p: (_correct_count(c), 500))
+badge("streak_14", "半月坚持", "🌙", "连续打卡 14 天", lambda c, p: (_streak(c, p), 14))
+badge("paper_100", "刷题王者", "👑", "完成 100 套练习", lambda c, p: (_paper_done_100(c), 100))
+badge("wrong_50", "错题克星", "🛡️", "重做 50 道错题", lambda c, p: (_wrong_redone_50(c), 50))
+
 
 @router.get("")
 def get_achievements(connection: sqlite3.Connection = Depends(get_db)):
