@@ -2242,3 +2242,18 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 /* 进度环精致 */
 .vocab-ring { transition: box-shadow .3s; }
 .vocab-ring:hover { box-shadow: 0 8px 24px color-mix(in srgb, var(--bamboo) 32%, transparent); }
+
+/* ═══ v2.71: 导航/弹窗精致化 ═══ */
+/* 类别弹窗卡: 精致 */
+.category-modal-card { border-radius: 16px; }
+.category-modal-icon { border-radius: 16px; }
+/* 弹窗面板统一 */
+.category-modal-panel, .quick-panel, .review-overlay .review-card { border-radius: 22px; }
+/* 侧边栏品牌 */
+.brand-copy strong { letter-spacing: .08em; }
+.brand-copy small { letter-spacing: .06em; }
+/* 导航激活: 更精致 */
+.app-sidebar nav a.router-link-active { font-weight: 700; }
+/* 移动端底部导航 */
+.mobile-nav a { border-radius: 12px; margin: 0 2px; }
+.mobile-nav a.router-link-active { background: color-mix(in srgb, var(--accent) 10%, transparent); }
