@@ -2195,3 +2195,18 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 .recommend-paper { border-radius: 14px; }
 /* 每日一词 */
 .word-of-day { border-radius: 16px; }
+
+/* ═══ v2.68: 词汇页精致化 (快答/自测/闪卡) ═══ */
+/* 入口卡精致 */
+.cloze-entry { border-radius: 16px; transition: transform .2s var(--ease), border-color .2s, box-shadow .2s; }
+.cloze-entry:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+/* 快答弹层精致 */
+.quick-panel { border-radius: 22px; }
+.quick-option { border-radius: 13px; }
+/* 闪卡翻转面精致 */
+.flip-front, .flip-back { border-radius: 20px; }
+/* 词卡 hover */
+.due-chip { transition: transform .15s, border-color .15s; }
+.due-chip:hover { transform: translateY(-2px); border-color: var(--gold); }
+/* 词汇进度环中心文字 */
+.vocab-ring { box-shadow: 0 6px 18px color-mix(in srgb, var(--bamboo) 20%, transparent); border-radius: 50%; }
