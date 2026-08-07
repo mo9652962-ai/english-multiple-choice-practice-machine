@@ -9,6 +9,7 @@ BASE = r"D:\english-multiple-choice-practice-machine"
 CLOZE_TOTAL = 1000
 ok_count = 0
 fail_count = 0
+skip_count = 0
 errors: dict[str, int] = {}
 
 
@@ -58,23 +59,26 @@ for i in range(CLOZE_TOTAL):
                     req("PUT", f"/api/practice/sessions/{sid}/answers/{q['id']}",
                         {"answer": opts[0].get("label") or opts[0].get("key") or opts[0].get("stable_key")})
                     answered = True
-            # 无选项题(如听力音频题)跳过, 提交时若仍缺会 409 → 统计为失败
         req("POST", f"/api/practice/sessions/{sid}/submit", {})
         ok_count += 1
     except urllib.error.HTTPError as e:
-        fail_count += 1
-        errors[f"HTTP{e.code}"] = errors.get(f"HTTP{e.code}", 0) + 1
+        if e.code == 400:
+            # v2.34: 该级别无该题型 (如考研一无听力) → 预期场景, 计为跳过而非失败
+            skip_count += 1
+        else:
+            fail_count += 1
+            errors[f"HTTP{e.code}"] = errors.get(f"HTTP{e.code}", 0) + 1
     except Exception as e:
         fail_count += 1
         key = str(e)[:60]
         errors[key] = errors.get(key, 0) + 1
     if (i + 1) % 50 == 0:
         el = time.time() - t0
-        print(f"  {i+1}/1000 轮 | 成功 {ok_count} 失败 {fail_count} | {el:.0f}s", flush=True)
+        print(f"  {i+1}/1000 轮 | 成功 {ok_count} 失败 {fail_count} 跳过 {skip_count} | {el:.0f}s", flush=True)
     time.sleep(0.2)
 
 elapsed = time.time() - t0
-print(f"\n=== 千轮结果: 成功 {ok_count} / 失败 {fail_count} ({elapsed:.0f}s ===", flush=True)
+print(f"\n=== 千轮结果: 成功 {ok_count} / 失败 {fail_count} / 跳过 {skip_count} ({elapsed:.0f}s ===", flush=True)
 if errors:
     print("错误分布:", errors, flush=True)
 

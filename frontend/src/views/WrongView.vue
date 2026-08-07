@@ -6,6 +6,7 @@ import {
   FileText,
   Play,
   Sparkles,
+  Zap,
 } from 'lucide-vue-next'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
@@ -222,6 +223,33 @@ async function retryScope(
   }
 }
 
+// v2.34: 同类题强化 (粉笔/错题plus式) — 按该范围错题最薄弱题型, 生成同类专项练习
+async function strengthenScope(key: string, questionIds: number[], title: string) {
+  startingKey.value = key
+  error.value = ''
+  try {
+    const scopeRows = rows.value.filter(r => questionIds.includes(r.question_id))
+    const typeCount: Record<string, number> = {}
+    for (const row of scopeRows) {
+      typeCount[row.unit_type] = (typeCount[row.unit_type] || 0) + row.wrong_count
+    }
+    const top = Object.entries(typeCount).sort((a, b) => b[1] - a[1])[0]
+    if (!top) {
+      error.value = '没有可强化的题型'
+      return
+    }
+    const session: any = await post('/practice/sessions', {
+      mode: 'random', unit_type: top[0], count: 1, shuffle_options: true,
+    })
+    showToast(`已生成 ${top[0]} 同类专项（薄弱题型 ${top[1]} 次错）`, 'success')
+    router.push(`/practice/${session.id}`)
+  } catch (e) {
+    error.value = `${title}同类强化启动失败：${String(e)}`
+  } finally {
+    startingKey.value = ''
+  }
+}
+
 async function analyzeScope(
   key: string,
   questionIds: number[],
@@ -422,6 +450,15 @@ function analysisLabel(unitIds: number[]): string {
               <Play :size="15" />
               {{ startingKey === `year-${yearGroup.year}` ? '正在启动…' : '开始重做' }}
             </button>
+            <button
+              class="button compact"
+              type="button"
+              :disabled="Boolean(startingKey)"
+              @click="strengthenScope(`year-${yearGroup.year}`, yearGroup.questionIds, `${yearGroup.year} 年`)"
+            >
+              <Zap :size="15" />
+              {{ startingKey === `year-${yearGroup.year}` ? '正在启动…' : '同类强化' }}
+            </button>
           </div>
         </div>
 
@@ -462,6 +499,15 @@ function analysisLabel(unitIds: number[]): string {
               >
                 <Play :size="15" />
                 {{ startingKey === `unit-${unit.unitId}` ? '正在启动…' : '开始重做' }}
+              </button>
+              <button
+                class="button compact"
+                type="button"
+                :disabled="Boolean(startingKey)"
+                @click="strengthenScope(`unit-${unit.unitId}`, unit.questionIds, `${yearGroup.year} 年${unit.title}`)"
+              >
+                <Zap :size="15" />
+                {{ startingKey === `unit-${unit.unitId}` ? '正在启动…' : '同类强化' }}
               </button>
             </div>
           </article>
