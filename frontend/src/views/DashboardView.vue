@@ -122,10 +122,10 @@ function runPlanTask(task: any) {
 
 const UNIT_TYPE_NAMES: Record<string, string> = {
   cloze: '完形填空', reading: '阅读理解', paragraph_matching: '阅读 Part B', part_b: '阅读 Part B',
-  translation: '翻译', writing: '写作', listening: '听力',
+  translation: '翻译', writing: '写作', listening: '听力理解',
 }
 const UNIT_TYPE_PARAMS: Record<string, string> = {
-  cloze: 'cloze', reading: 'reading', paragraph_matching: 'part_b',
+  cloze: 'cloze', reading: 'reading', paragraph_matching: 'part_b', listening: 'listening',
 }
 function typeName(type: string) { return UNIT_TYPE_NAMES[type] || type }
 function typeParam(type: string) { return UNIT_TYPE_PARAMS[type] || type }
