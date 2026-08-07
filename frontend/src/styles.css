@@ -2442,3 +2442,15 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 /* 类别按钮 hover 微动 */
 .sidebar-category { border-radius: 10px; }
 .sidebar-category:hover { padding-left: 16px; }
+
+/* ═══ v2.87: 第三轮高级感 8/10 — 弹窗/浮层精修 ═══ */
+.category-modal-panel, .quick-panel, .review-overlay .review-card, .result-dialog {
+  background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 97%, #ffffff), color-mix(in srgb, var(--surface-solid) 90%, #f3efe6));
+  border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+/* 弹窗头部细线 */
+.category-modal-head, .quick-head { border-bottom: 1px solid color-mix(in srgb, var(--line) 45%, transparent); padding-bottom: 12px; }
+/* 浮层入场: 更优雅 */
+.modal-fade-enter-active .category-modal-panel, .modal-fade-enter-active .quick-panel { transition: transform .3s var(--ease-bounce), opacity .25s; }
+/* toast 精致 */
+.app-toast { box-shadow: 0 10px 30px rgba(46,42,35,.16), 0 0 0 1px color-mix(in srgb, var(--line) 40%, transparent); border-radius: 14px; }
