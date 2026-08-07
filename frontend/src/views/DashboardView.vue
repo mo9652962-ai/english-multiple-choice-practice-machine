@@ -108,6 +108,33 @@ onBeforeUnmount(() => {
   if (vocabularyTimer !== null) window.clearInterval(vocabularyTimer)
 })
 
+// v2.79: 今日金句 (名言库 + 日期种子轮换 + 点击换一句)
+const QUOTES = [
+  { en: "The only way to do great work is to love what you do.", cn: "成就伟业的唯一途径，是热爱你所做的事。", author: "乔布斯" },
+  { en: "Success is not final, failure is not fatal: it is the courage to continue that counts.", cn: "成功并非终点，失败也非末日，重要的是继续前行的勇气。", author: "丘吉尔" },
+  { en: "Believe you can and you're halfway there.", cn: "相信自己能做到，你就已经成功了一半。", author: "罗斯福" },
+  { en: "Knowledge is a treasure, but practice is the key to it.", cn: "知识是宝库，实践是开启宝库的钥匙。", author: "富勒" },
+  { en: "The best way to predict the future is to create it.", cn: "预测未来最好的方式，就是亲手创造未来。", author: "德鲁克" },
+  { en: "Don't watch the clock; do what it does. Keep going.", cn: "不要盯着时钟看，学学它——永不停歇。", author: "列文森" },
+  { en: "Learning never exhausts the mind.", cn: "学习永远不会让心灵疲惫。", author: "达·芬奇" },
+  { en: "The beautiful thing about learning is that no one can take it away from you.", cn: "学习最美妙之处在于，谁也夺不走它。", author: "B.B. King" },
+  { en: "A journey of a thousand miles begins with a single step.", cn: "千里之行，始于足下。", author: "老子" },
+  { en: "It does not matter how slowly you go as long as you do not stop.", cn: "走得慢没关系，只要不停下来。", author: "孔子" },
+  { en: "The more that you read, the more things you will know.", cn: "读得越多，知道的越多。", author: "苏斯博士" },
+  { en: "The secret of getting ahead is getting started.", cn: "领先的秘诀，就是开始行动。", author: "马克·吐温" },
+]
+const todayQuote = ref(QUOTES[0])
+function pickQuote(seedOffset = 0) {
+  const day = new Date().toISOString().slice(0, 10)
+  let h = seedOffset
+  for (const ch of day) h = (h * 31 + ch.charCodeAt(0)) % 997
+  todayQuote.value = QUOTES[h % QUOTES.length]
+}
+function nextQuote() {
+  pickQuote(Math.floor(Math.random() * 997))
+}
+pickQuote()
+
 // v2.40: 打卡里程碑庆祝 (3/7/14/30 天火焰, localStorage 防重复)
 import CelebrateOverlay from '../components/CelebrateOverlay.vue'
 const streakCelebrate = ref<{ show: boolean; kind: 'confetti' | 'flame'; title: string; subtitle: string }>({
@@ -257,6 +284,16 @@ const practiceCards = computed(() => {
         <b>{{ ex.days_left }}</b> 天
       </span>
     </div>
+    <!-- v2.79: 今日金句 (每日名言轮换, 点击换一句) -->
+    <div class="card quote-card" @click="nextQuote" title="点击换一句">
+      <div class="quote-mark" aria-hidden="true">❝</div>
+      <div class="quote-body">
+        <p class="quote-en">{{ todayQuote.en }}</p>
+        <p class="quote-cn">{{ todayQuote.cn }} <span class="quote-author">—— {{ todayQuote.author }}</span></p>
+      </div>
+      <span class="quote-hint">每日一句 · 点击换一句</span>
+    </div>
+
     <!-- v2.18/19: 今日学习计划 (研究: AI智能推题/艾宾浩斯新学+复习) -->
     <div v-if="data?.today_plan?.plan?.length" class="card today-plan-card">
       <div class="today-plan-head">
