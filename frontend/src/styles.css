@@ -2210,3 +2210,19 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 .due-chip:hover { transform: translateY(-2px); border-color: var(--gold); }
 /* 词汇进度环中心文字 */
 .vocab-ring { box-shadow: 0 6px 18px color-mix(in srgb, var(--bamboo) 20%, transparent); border-radius: 50%; }
+
+/* ═══ v2.69: 错题本精致化 ═══ */
+/* 高频错题卡: 排名徽章 */
+.freq-rank { width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.freq-item { border-radius: 14px; }
+/* 错题年份行: 精致展开 */
+.wrong-year { border-radius: 16px; }
+.wrong-year-row { border-radius: 12px; }
+.wrong-unit-row { border-radius: 10px; }
+/* 分析面板 */
+.wrong-analysis-category .wrong-analysis-bar { border-radius: 99px; height: 7px; }
+.wrong-analysis-category .wrong-analysis-bar span { border-radius: 99px; }
+/* 笔记编辑器 */
+.freq-note-editor { border-radius: 12px; }
+/* 导出按钮区 */
+.wrong-scope-actions .button { border-radius: 10px; }
