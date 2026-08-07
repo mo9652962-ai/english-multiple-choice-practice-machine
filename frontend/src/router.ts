@@ -20,6 +20,10 @@ import ListeningView from './views/ListeningView.vue'
 
 export default createRouter({
   history: createWebHistory(),
+  // v2.76: 路由切换回到顶部 (修复点动切换后停留在旧滚动位置)
+  scrollBehavior() {
+    return { top: 0 }
+  },
   routes: [
     { path: '/', component: DashboardView },
     { path: '/library', component: LibraryView },

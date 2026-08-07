@@ -2306,3 +2306,12 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 .page { padding-bottom: 40px; }
 /* 最后的品牌细节: 印章 */
 .hero-seal { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent), 0 2px 8px color-mix(in srgb, var(--accent) 22%, transparent); }
+
+/* ═══ v2.76: 滚动/切换修复 ═══ */
+/* 弹窗打开时锁定背景滚动 (防止滑动穿透) */
+body:has(.category-modal), body:has(.quick-overlay), body:has(.review-overlay),
+body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
+/* 练习页内部滚动容器: 独立滚动条 (PracticeView passage/question 双栏) */
+.passage-pane::-webkit-scrollbar, .question-pane::-webkit-scrollbar { width: 6px; }
+/* 快速切换时防跳动: 页面过渡克制 */
+.main-content > * { animation-duration: .25s; }
