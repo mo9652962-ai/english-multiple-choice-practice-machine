@@ -11,6 +11,7 @@ import ReportView from './views/ReportView.vue'
 import AchievementsView from './views/AchievementsView.vue'
 import VocabularyView from './views/VocabularyView.vue'
 import TrashView from './views/TrashView.vue'
+import LeaderboardView from './views/LeaderboardView.vue'
 
 export default createRouter({
   history: createWebHistory(),
@@ -22,6 +23,7 @@ export default createRouter({
     { path: '/wrong', component: WrongView },
     { path: '/report', component: ReportView },
     { path: '/achievements', component: AchievementsView },
+    { path: '/leaderboard', component: LeaderboardView },
     { path: '/vocabulary', component: VocabularyView },
     { path: '/imports', component: ImportView },
     { path: '/assistant', component: AiAssistant },

@@ -29,6 +29,7 @@ from .routers import (
     ai_recommend,
     vocab_cloze,
     vocab_quiz,
+    leaderboard,
     wrong,
 )
 from .services.ai_client import ensure_ai_model_catalog
@@ -84,6 +85,7 @@ app.include_router(achievements.router, prefix="")
 app.include_router(ai_recommend.router, prefix="")
 app.include_router(vocab_cloze.router, prefix="")
 app.include_router(vocab_quiz.router, prefix="")
+app.include_router(leaderboard.router, prefix="")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
