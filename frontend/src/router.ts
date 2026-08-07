@@ -12,6 +12,11 @@ import AchievementsView from './views/AchievementsView.vue'
 import VocabularyView from './views/VocabularyView.vue'
 import TrashView from './views/TrashView.vue'
 import LeaderboardView from './views/LeaderboardView.vue'
+import FocusView from './views/FocusView.vue'
+import CalendarView from './views/CalendarView.vue'
+import GoalView from './views/GoalView.vue'
+import ReadingView from './views/ReadingView.vue'
+import ListeningView from './views/ListeningView.vue'
 
 export default createRouter({
   history: createWebHistory(),
@@ -24,6 +29,11 @@ export default createRouter({
     { path: '/report', component: ReportView },
     { path: '/achievements', component: AchievementsView },
     { path: '/leaderboard', component: LeaderboardView },
+    { path: '/focus', component: FocusView },
+    { path: '/calendar', component: CalendarView },
+    { path: '/goal', component: GoalView },
+    { path: '/reading', component: ReadingView },
+    { path: '/listening', component: ListeningView },
     { path: '/vocabulary', component: VocabularyView },
     { path: '/imports', component: ImportView },
     { path: '/assistant', component: AiAssistant },
