@@ -1892,3 +1892,17 @@ p { line-height: 1.7; }
 .card p, .report-panel p { line-height: 1.75; }
 /* 引文/例句更精致 */
 blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb, var(--muted) 88%, var(--ink)); }
+
+/* ═══ v2.52: 阴影层次深化 (更细腻的三层阴影 + 有色阴影) ═══ */
+:root {
+  --shadow-sm: 0 1px 2px rgba(46,42,35,.03), 0 3px 10px rgba(46,42,35,.045);
+  --shadow: 0 2px 3px rgba(46,42,35,.03), 0 8px 20px rgba(46,42,35,.06), 0 22px 48px rgba(46,42,35,.07);
+  --shadow-hover: 0 3px 6px rgba(46,42,35,.05), 0 14px 32px rgba(46,42,35,.10), 0 32px 64px rgba(46,42,35,.10);
+  --shadow-lift: 0 1px 2px rgba(46,42,35,.04), 0 8px 22px rgba(46,42,35,.08);
+}
+/* 有色阴影: 卡片悬停带主题色微光 */
+.card:hover { box-shadow: var(--shadow-hover), 0 0 0 1px color-mix(in srgb, var(--accent) 6%, transparent); }
+/* 弹窗/浮层深阴影 */
+.category-modal-panel, .review-overlay .review-card { box-shadow: 0 6px 16px rgba(46,42,35,.10), 0 30px 80px rgba(46,42,35,.22); }
+/* 按钮按压微缩 */
+.button:not(:disabled):active { transform: translateY(0) scale(.97); }
