@@ -1502,3 +1502,60 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .answered-bar-wrap { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; height: 100%; }
 .answered-bar { width: 70%; max-width: 22px; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 60%, var(--bamboo))); transition: height .5s cubic-bezier(.22,1,.36,1); }
 .answered-bar-wrap:hover .answered-bar { background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 60%, var(--primary))); }
+
+/* ── v2.39: 学习排行页 ── */
+.page-leaderboard { --sec-accent: #4a6fa5; --sec-primary: #3d5f8f; }
+.rank-level { display: flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 99px; background: color-mix(in srgb, var(--sec-accent) 12%, var(--surface-solid)); border: 1px solid color-mix(in srgb, var(--sec-accent) 30%, transparent); font-size: 14px; }
+.rank-icon { font-size: 22px; }
+.rank-num { font: 800 30px Georgia, serif; }
+.rank-rules { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.rank-rule { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 99px; background: color-mix(in srgb, var(--line) 25%, transparent); font-size: 12px; color: var(--text); }
+.rank-rule i { font-style: normal; }
+
+/* ── v2.39: 窄屏尺寸适配增强 (适应性修改) ── */
+@media (max-width: 720px) {
+  .card { padding: 12px 14px; }
+  .stat-value { font-size: 24px; }
+  .bento-wide .stat-value { font-size: 28px; }
+  .page-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .page-head h1 { font-size: 22px; }
+  .rank-stats .stat-value b.rank-num { font-size: 24px; }
+  .heatmap-week { gap: 2px; }
+  .heat-cell { width: 11px; height: 11px; }
+  .cloze-options { grid-template-columns: 1fr; }
+  .exam-countdown-bar { flex-wrap: wrap; }
+  .profile-stats { grid-template-columns: repeat(2, 1fr); }
+  .today-plan-item { flex-wrap: wrap; gap: 6px; }
+  .vocab-ring { width: 52px; height: 52px; }
+  .vocab-ring-svg { width: 52px; height: 52px; }
+}
+@media (max-width: 480px) {
+  .grid-2, .grid-3, .grid-4, .rank-stats { grid-template-columns: 1fr; }
+  .bento-wide { grid-column: auto; }
+  .answered-trend { height: 90px; }
+  .trend-day { font-size: 9px; }
+  .wrong-scope-actions { flex-wrap: wrap; }
+}
+
+/* ── v2.39: 新板块水墨背景 (博物馆 PD 图) ── */
+.page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .28; }
+.page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .26; }
+.page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .26; }
+.page-leaderboard::before, .page-report::before, .page-achievements::before {
+  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background-size: cover; background-position: center 30%; background-repeat: no-repeat;
+}
+:root.dark .page-leaderboard::before { opacity: .16; }
+:root.dark .page-report::before { opacity: .15; }
+:root.dark .page-achievements::before { opacity: .15; }
+
+/* ── v2.39: 今日目标 + 每日一词 ── */
+.home-goal-row { margin-top: 4px; }
+.goal-bar { height: 8px; border-radius: 99px; background: color-mix(in srgb, var(--line) 40%, transparent); overflow: hidden; margin: 10px 0 12px; }
+.goal-bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--bamboo), var(--gold)); transition: width .6s cubic-bezier(.22,1,.36,1); }
+.goal-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.word-of-day { cursor: pointer; transition: transform .25s; }
+.word-of-day:hover { transform: translateY(-2px); }
+.wod-word { font: 700 24px Georgia, serif; color: var(--text); margin: 6px 0 2px; }
+.wod-mean { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+.wod-hint { display: inline-block; margin-top: 8px; font-size: 11px; color: var(--accent); }

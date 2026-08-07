@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Flame, Sparkles, Star } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
+import { showToast } from '../services/toast'
 import QuestionBankSwitcher from '../components/QuestionBankSwitcher.vue'
 import StudyHeatmap from '../components/StudyHeatmap.vue'
 import CountUp from '../components/CountUp.vue'
@@ -101,10 +102,45 @@ onMounted(async () => {
   await loadHome()
   startVocabularyRotation()
   try { aiPicks.value = await get('/recommendations/ai') } catch { /* 推题失败不阻塞 */ }
+  loadGoalAndWord()
 })
 onBeforeUnmount(() => {
   if (vocabularyTimer !== null) window.clearInterval(vocabularyTimer)
 })
+
+// v2.39: 今日目标 (localStorage) + 今日答题数 (leaderboard API) + 每日一词
+const dailyGoal = ref(Number(localStorage.getItem('epm_daily_goal') || 50))
+const todayAnswered = ref(0)
+const wordOfDay = ref<any>(null)
+const goalPct = computed(() => {
+  if (!dailyGoal.value) return 0
+  return Math.min(100, Math.round((todayAnswered.value / dailyGoal.value) * 100))
+})
+function saveGoal() {
+  localStorage.setItem('epm_daily_goal', String(dailyGoal.value))
+  showToast(`今日目标设为 ${dailyGoal.value || '未设定'} 题`, 'success')
+}
+function quickGoal(n: number) {
+  dailyGoal.value = n
+  saveGoal()
+}
+async function loadGoalAndWord() {
+  try {
+    const lb: any = await get('/leaderboard')
+    const days = lb.days || []
+    todayAnswered.value = days.length ? days[days.length - 1].count : 0
+  } catch { /* 排行不可用忽略 */ }
+  // 每日一词: 按日期从已加载词汇里取 (固定种子, 当天稳定)
+  try {
+    const pool = vocabulary.value?.length ? vocabulary.value : []
+    if (pool.length) {
+      const daySeed = new Date().toISOString().slice(0, 10)
+      let h = 0
+      for (const ch of daySeed) h = (h * 31 + ch.charCodeAt(0)) % 997
+      wordOfDay.value = pool[h % pool.length]
+    }
+  } catch { /* 忽略 */ }
+}
 
 async function randomPractice(type: string) {
   try {
@@ -218,6 +254,31 @@ const practiceCards = computed(() => {
           <span class="plan-min">{{ task.minutes }}分</span>
           <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
         </button>
+      </div>
+    </div>
+    <!-- v2.39: 今日目标 + 每日一词 -->
+    <div class="grid grid-2 home-goal-row">
+      <div class="card today-plan-card">
+        <div class="today-plan-head">
+          <h3 class="today-plan-title">🎯 今日目标</h3>
+          <span class="today-plan-total">{{ todayAnswered }} / {{ dailyGoal }} 题</span>
+        </div>
+        <div class="goal-bar"><i :style="{ width: goalPct + '%' }"></i></div>
+        <div class="goal-actions">
+          <button class="button ghost compact" @click="quickGoal(20)">20题</button>
+          <button class="button ghost compact" @click="quickGoal(50)">50题</button>
+          <button class="button ghost compact" @click="quickGoal(100)">100题</button>
+          <button class="button compact" @click="dailyGoal = 0; saveGoal()">重置</button>
+        </div>
+      </div>
+      <div class="card today-plan-card word-of-day" @click="router.push('/vocabulary')">
+        <div class="today-plan-head"><h3 class="today-plan-title">📖 每日一词</h3></div>
+        <template v-if="wordOfDay">
+          <p class="wod-word">{{ wordOfDay.term }}</p>
+          <p class="wod-mean">{{ wordOfDay.common_meaning || wordOfDay.contextual_meaning || '' }}</p>
+          <span class="wod-hint">去单词本复习 →</span>
+        </template>
+        <p v-else class="muted">暂无词汇数据</p>
       </div>
     </div>
     <!-- v2.9: 按当前级别针对性推荐 -->
