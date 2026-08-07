@@ -2257,3 +2257,19 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 /* 移动端底部导航 */
 .mobile-nav a { border-radius: 12px; margin: 0 2px; }
 .mobile-nav a.router-link-active { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+
+/* ═══ v2.72: 练习页精致化 (答题区) ═══ */
+/* 选项按钮: 精致 */
+.option-button, .cloze-option { border-radius: 13px; transition: all .18s var(--ease); }
+.option-button:hover, .cloze-option:hover { border-color: color-mix(in srgb, var(--accent) 45%, transparent); transform: translateX(3px); }
+/* 选中/正确/错误态统一 */
+.option-button.selected { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent); }
+/* 文章区: 书卷排版 */
+.passage-pane { line-height: 1.9; }
+.passage-pane p { margin: 0 0 14px; }
+/* 题目卡 */
+.question-pane .card { border-radius: 16px; }
+/* 单元页签 */
+.unit-tabs button { border-radius: 99px; padding: 7px 16px; }
+/* 结果面板 */
+.result-dialog { border-radius: 26px; }
