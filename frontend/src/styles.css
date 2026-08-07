@@ -2109,3 +2109,18 @@ html, body { overflow-x: hidden; overflow-y: auto; }
 @media (max-width: 720px) {
   .study-hero h1 { font-size: 17px; }
 }
+
+/* ═══ v2.63: 左侧导航精致小滚动条 (始终可见细条 + 悬停加深) ═══ */
+.sidebar {
+  scrollbar-width: thin;               /* Firefox 细条 */
+  scrollbar-color: color-mix(in srgb, var(--line-strong) 70%, transparent) transparent;
+}
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-track { background: color-mix(in srgb, var(--line) 22%, transparent); border-radius: 99px; margin: 6px 0; }
+.sidebar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--line-strong) 72%, transparent);
+  border-radius: 99px;
+  border: 1.5px solid transparent;
+  background-clip: content-box;
+}
+.sidebar::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--accent) 65%, transparent); background-clip: content-box; }
