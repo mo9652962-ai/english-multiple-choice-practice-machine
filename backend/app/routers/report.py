@@ -1,9 +1,8 @@
-"""学习报告 (v2.25) — 竞品好题库/练题狗核心: 数据可视化叙事
-正确率趋势 + 题型统计 + 词汇进度 + 学习时长 + 智能建议
+"""学习报告 (v2.30) — 支持全部级别 + 单级别维度
+正确率趋势 + 题型统计 + 词汇进度 + 学习时长 + 智能建议 + 级别汇总
 """
 from __future__ import annotations
 
-import json
 import sqlite3
 from datetime import date, timedelta
 from fastapi import APIRouter, Depends
@@ -12,113 +11,157 @@ from ..database import get_active_profile_id, get_db
 
 router = APIRouter(prefix="/api/report", tags=["report"])
 
+_LABEL = {"cloze": "完形", "reading": "阅读", "paragraph_matching": "PartB",
+          "part_b": "PartB", "listening": "听力", "word_bank": "选词"}
 
-def _json(data) -> str:
-    return json.dumps(data, ensure_ascii=False)
+
+def _profile_list(connection):
+    return connection.execute(
+        "SELECT id, name FROM question_bank_profiles ORDER BY id").fetchall()
 
 
-@router.get("")
-def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
-    """综合学习报告"""
-    profile_id = get_active_profile_id(connection)
-    profile = connection.execute(
-        "SELECT id, name FROM question_bank_profiles WHERE id = ?", (profile_id,)
-    ).fetchone()
-    profile_name = profile["name"] if profile else "当前级别"
-
-    today = date.today()
-    days7 = (today - timedelta(days=6)).isoformat()
-    days30 = (today - timedelta(days=29)).isoformat()
-
-    # ① 正确率趋势 (近30天, 按天)
-    trend = connection.execute(
-        """SELECT date(pa.answered_at) day,
-                  SUM(CASE WHEN pa.is_correct THEN 1 ELSE 0 END) correct,
-                  COUNT(*) total
-           FROM practice_answers pa
-           WHERE date(pa.answered_at) >= ?
-           GROUP BY date(pa.answered_at)
-           ORDER BY day""",
-        (days30,),
-    ).fetchall()
-    trend_data = []
-    for row in trend:
-        rate = round(row["correct"] / row["total"] * 100) if row["total"] else 0
-        trend_data.append({"day": row["day"][5:], "rate": rate, "total": row["total"]})
-
-    # ② 题型统计 (当前级别)
-    by_type = connection.execute(
-        """SELECT u.unit_type,
+def _type_stats(connection, profile_id=None):
+    q = """SELECT u.unit_type,
                   SUM(CASE WHEN pa.is_correct THEN 1 ELSE 0 END) correct,
                   COUNT(*) total
            FROM practice_answers pa
            JOIN questions q ON q.id = pa.question_id
            JOIN units u ON u.id = q.unit_id
            JOIN papers p ON p.id = u.paper_id
-           WHERE p.profile_id = ? AND p.deleted_at IS NULL
-           GROUP BY u.unit_type""",
-        (profile_id,),
-    ).fetchall()
-    type_stats = []
-    for row in by_type:
+           WHERE p.deleted_at IS NULL"""
+    args = []
+    if profile_id:
+        q += " AND p.profile_id = ?"
+        args.append(profile_id)
+    q += " GROUP BY u.unit_type"
+    rows = connection.execute(q, args).fetchall()
+    out = []
+    for row in rows:
         rate = round(row["correct"] / row["total"] * 100) if row["total"] else 0
-        label = {"cloze": "完形", "reading": "阅读", "paragraph_matching": "PartB",
-                 "part_b": "PartB", "listening": "听力"}.get(row["unit_type"], row["unit_type"])
-        type_stats.append({"type": row["unit_type"], "label": label,
-                           "correct": row["correct"], "total": row["total"], "rate": rate})
+        out.append({"type": row["unit_type"], "label": _LABEL.get(row["unit_type"], row["unit_type"]),
+                    "correct": row["correct"], "total": row["total"], "rate": rate})
+    return out
 
-    # ③ 词汇进度
+
+def _trend(connection, profile_id=None):
+    days30 = (date.today() - timedelta(days=29)).isoformat()
+    q = """SELECT date(pa.answered_at) day,
+                  SUM(CASE WHEN pa.is_correct THEN 1 ELSE 0 END) correct,
+                  COUNT(*) total
+           FROM practice_answers pa
+           JOIN questions q ON q.id = pa.question_id
+           JOIN units u ON u.id = q.unit_id
+           JOIN papers p ON p.id = u.paper_id
+           WHERE date(pa.answered_at) >= ? AND p.deleted_at IS NULL"""
+    args = [days30]
+    if profile_id:
+        q += " AND p.profile_id = ?"
+        args.append(profile_id)
+    q += " GROUP BY date(pa.answered_at) ORDER BY day"
+    rows = connection.execute(q, args).fetchall()
+    return [{"day": r["day"][5:], "rate": round(r["correct"] / r["total"] * 100) if r["total"] else 0,
+             "total": r["total"]} for r in rows]
+
+
+def _profile_summary(connection):
+    """每级别汇总: 练习场次 + 正确率 + 错题数"""
+    profiles = _profile_list(connection)
+    out = []
+    for p in profiles:
+        sess = connection.execute(
+            "SELECT COUNT(*) n FROM practice_sessions ps "
+            "JOIN papers p2 ON p2.id = ps.paper_id WHERE p2.profile_id = ?", (p["id"],)).fetchone()
+        ans = connection.execute(
+            """SELECT SUM(CASE WHEN pa.is_correct THEN 1 ELSE 0 END) correct, COUNT(*) total
+               FROM practice_answers pa
+               JOIN questions q ON q.id = pa.question_id
+               JOIN units u ON u.id = q.unit_id
+               JOIN papers p2 ON p2.id = u.paper_id
+               WHERE p2.profile_id = ? AND p2.deleted_at IS NULL""", (p["id"],)).fetchone()
+        wrong = connection.execute(
+            """SELECT COUNT(*) n FROM wrong_stats ws
+               JOIN questions q ON q.id = ws.question_id
+               JOIN units u ON u.id = q.unit_id
+               JOIN papers p2 ON p2.id = u.paper_id
+               WHERE p2.profile_id = ? AND p2.deleted_at IS NULL""", (p["id"],)).fetchone()
+        rate = round(ans["correct"] / ans["total"] * 100) if ans["total"] else 0
+        out.append({"profile_id": p["id"], "name": p["name"],
+                    "sessions": sess["n"] if sess else 0,
+                    "answered": ans["total"] if ans else 0,
+                    "rate": rate, "wrong": wrong["n"] if wrong else 0})
+    return out
+
+
+@router.get("")
+def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """综合学习报告: ?scope=all(默认,全级别) | current(当前级别)"""
+    scope = "all"
+    active_pid = get_active_profile_id(connection)
+    profile = connection.execute(
+        "SELECT id, name FROM question_bank_profiles WHERE id = ?", (active_pid,)
+    ).fetchone()
+    active_name = profile["name"] if profile else "当前级别"
+
+    today = date.today()
+    days7 = (today - timedelta(days=6)).isoformat()
+
+    # ① 全部级别趋势 (scope=all) 或当前级别
+    trend = _trend(connection, None if scope == "all" else active_pid)
+
+    # ② 题型统计 (全级别汇总 + 当前级别)
+    by_type_all = _type_stats(connection, None)
+    by_type_current = _type_stats(connection, active_pid)
+
+    # ③ 每级别汇总
+    by_profile = _profile_summary(connection)
+
+    # ④ 词汇进度 (全局)
     vocab = connection.execute(
         """SELECT COUNT(*) total,
                   SUM(CASE WHEN study_status != 'new' THEN 1 ELSE 0 END) learned,
                   SUM(CASE WHEN study_status = 'mastered' THEN 1 ELSE 0 END) mastered
-           FROM vocabulary_entries""",
-    ).fetchone()
+           FROM vocabulary_entries""").fetchone()
 
-    # ④ 学习时长/活跃 (近7天)
+    # ⑤ 活跃 (近7天, 全局)
     active7 = connection.execute(
-        """SELECT COUNT(DISTINCT day) days, COUNT(*) activities
-           FROM learning_days WHERE day >= ?""",
-        (days7,),
-    ).fetchone()
+        "SELECT COUNT(DISTINCT day) days, COUNT(*) activities FROM learning_days WHERE day >= ?",
+        (days7,)).fetchone()
 
-    # ⑤ 错题概况
+    # ⑥ 错题概况
     wrong_stats = connection.execute(
-        """SELECT COUNT(*) n,
-                  SUM(CASE WHEN wrong_count >= 2 THEN 1 ELSE 0 END) repeat_wrong
-           FROM wrong_stats""",
-    ).fetchone()
+        """SELECT COUNT(*) n, SUM(CASE WHEN wrong_count >= 2 THEN 1 ELSE 0 END) repeat_wrong
+           FROM wrong_stats""").fetchone()
 
-    # ⑥ 练习总量
+    # ⑦ 练习总量
     practice = connection.execute(
-        """SELECT COUNT(*) sessions,
-                  SUM(CASE WHEN status = 'submitted' THEN 1 ELSE 0 END) submitted
-           FROM practice_sessions""",
-    ).fetchone()
+        "SELECT COUNT(*) sessions, SUM(CASE WHEN status = 'submitted' THEN 1 ELSE 0 END) submitted "
+        "FROM practice_sessions").fetchone()
 
-    # ⑦ 建议 (规则: 薄弱题型 + 词汇缺口 + 连续性)
+    # ⑧ 建议 (基于全级别薄弱 + 词汇 + 活跃)
     suggestions = []
-    if type_stats:
-        weakest = min(type_stats, key=lambda x: x["rate"])
+    if by_type_all:
+        weakest = min(by_type_all, key=lambda x: x["rate"])
         if weakest["total"] >= 3 and weakest["rate"] < 60:
-            suggestions.append(f"🔍 {weakest['label']}正确率仅 {weakest['rate']}%（{weakest['correct']}/{weakest['total']}），建议专项强化")
+            suggestions.append(f"🔍 全级别 {weakest['label']} 正确率仅 {weakest['rate']}%（{weakest['correct']}/{weakest['total']}），建议专项强化")
+    if by_profile:
+        weakest_p = min(by_profile, key=lambda x: x["rate"])
+        if weakest_p["answered"] >= 5 and weakest_p["rate"] < 70:
+            suggestions.append(f"🎯 {weakest_p['name']} 正确率 {weakest_p['rate']}%（{weakest_p['answered']} 题），重点突破")
     if vocab and vocab["learned"] < 100:
         suggestions.append("📖 词汇量积累中，建议每天完成词书任务（新词 20 + 复习）")
-    streak = connection.execute(
-        "SELECT 1 FROM learning_days WHERE day = ? LIMIT 1",
-        (today.isoformat(),),
-    ).fetchone()
     if active7 and active7["days"] >= 5:
         suggestions.append(f"🔥 连续活跃 {active7['days']} 天，保持节奏！")
-    elif streak:
-        suggestions.append(f"⚡ 今天已开始学习，坚持打卡！")
     if wrong_stats and wrong_stats["repeat_wrong"]:
         suggestions.append(f"📝 {wrong_stats['repeat_wrong']} 道高频错题待重做，建议优先清理")
 
     return {
-        "profile": profile_name,
-        "trend": trend_data,
-        "by_type": type_stats,
+        "scope": scope,
+        "active_profile": {"id": active_pid, "name": active_name},
+        "profiles": [{"id": p["id"], "name": p["name"]} for p in _profile_list(connection)],
+        "trend": trend,
+        "by_type": by_type_all,
+        "by_type_current": by_type_current,
+        "by_profile": by_profile,
         "vocab": {"total": vocab["total"] if vocab else 0,
                   "learned": vocab["learned"] if vocab else 0,
                   "mastered": vocab["mastered"] if vocab else 0},

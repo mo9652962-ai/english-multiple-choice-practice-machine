@@ -1379,3 +1379,14 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .ai-picks-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .ai-pick-chip { padding: 8px 14px; border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--surface) 55%, transparent); font-size: 13px; font-weight: 700; color: var(--text); cursor: pointer; transition: all .18s var(--ease); }
 .ai-pick-chip:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+/* ── v2.30: 学习报告 全级别汇总 ── */
+.profile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.profile-card { padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--surface) 55%, transparent); transition: all .18s var(--ease); }
+.profile-card.profile-active { border-color: var(--primary); box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 15%, transparent); }
+.profile-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.profile-head strong { font-size: 13px; color: var(--text); }
+.profile-tag { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 99px; background: var(--primary); color: var(--surface-solid); }
+.profile-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; }
+.profile-stats b { display: block; font: 800 15px Georgia, serif; color: var(--text); }
+.profile-stats small { font-size: 10px; color: var(--muted); }
