@@ -18,7 +18,7 @@ from __future__ import annotations
 import sqlite3
 from datetime import datetime, timezone
 
-from fsrs import Card, Rating, Scheduler
+from fsrs import Card, Rating, Scheduler, State
 
 # 评分映射
 RATING_MAP = {
@@ -52,6 +52,12 @@ def review_card(card: Card, rating_key: str) -> tuple[Card, float, str]:
         (updated_card, retrievability, interval_desc)
     """
     rating = RATING_MAP.get(rating_key, Rating.Hard)
+    # v2.75 防御: 旧数据 fsrs_state=0 非法, 重置为新卡 (fsrs State 枚举从 1 开始)
+    try:
+        if card.state is None or int(card.state) not in (1, 2, 3, 4):
+            card.state = State.New
+    except Exception:
+        card.state = State.New
     new_card, review_log = _scheduler.review_card(card, rating)
     
     # 计算记忆可提取概率
