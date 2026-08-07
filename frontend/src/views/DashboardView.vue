@@ -334,11 +334,12 @@ const practiceCards = computed(() => {
       </button>
     </div>
     <div class="section-title"><h2>学习概览</h2></div>
-    <div v-if="data" class="grid grid-4">
-      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">卷</span><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div></div>
+    <div v-if="data" class="grid grid-4 bento-stats">
+      <div class="card stat-card bento-wide ink-dot"><span class="seal-badge" aria-hidden="true">卷</span><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div><span class="stat-note">覆盖 {{ data.active_profile?.name || '本级别' }} 真题与模拟</span></div>
       <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">篇</span><span class="stat-label">练习篇目</span><div class="stat-value"><CountUp :value="data.unit_count" /></div></div>
       <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">题</span><span class="stat-label">客观题</span><div class="stat-value"><CountUp :value="data.question_count" /></div></div>
-      <RouterLink to="/wrong" class="card stat-card linked ink-dot"><span class="seal-badge" aria-hidden="true">错</span><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div><span class="stat-link">去复习 <ArrowRight :size="14" /></span></RouterLink>
+      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">错</span><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div></div>
+      <RouterLink to="/report" class="card stat-card linked ink-dot bento-wide"><span class="seal-badge" aria-hidden="true">报</span><span class="stat-label">学习报告</span><div class="stat-value"><CountUp :value="data.answered_count || 0" /></div><span class="stat-link">查看趋势与建议 <ArrowRight :size="14" /></span></RouterLink>
     </div>
     <div v-else class="loading-grid">
       <div class="skeleton skeleton-lg"></div>
