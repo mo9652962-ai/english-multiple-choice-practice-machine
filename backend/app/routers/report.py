@@ -137,6 +137,16 @@ def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         "SELECT COUNT(*) sessions, SUM(CASE WHEN status = 'submitted' THEN 1 ELSE 0 END) submitted "
         "FROM practice_sessions").fetchone()
 
+    # ⑦b v2.38: 近14天每日答题量趋势 (数据可视化: 练习量趋势线)
+    answered_trend = []
+    for i in range(13, -1, -1):
+        day = (today - timedelta(days=i)).isoformat()
+        n = connection.execute(
+            "SELECT COUNT(*) FROM practice_answers WHERE substr(answered_at, 1, 10) = ?",
+            (day,),
+        ).fetchone()[0]
+        answered_trend.append({"day": day, "count": n})
+
     # ⑧ 建议 (基于全级别薄弱 + 词汇 + 活跃)
     suggestions = []
     if by_type_all:
@@ -171,6 +181,7 @@ def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
                   "repeat": wrong_stats["repeat_wrong"] if wrong_stats else 0},
         "practice": {"sessions": practice["sessions"] if practice else 0,
                      "submitted": practice["submitted"] if practice else 0},
+        "answered_trend": answered_trend,
         "suggestions": suggestions,
     }
 

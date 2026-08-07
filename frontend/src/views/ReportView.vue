@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { get } from '../api'
 import CountUp from '../components/CountUp.vue'
 
@@ -38,6 +38,19 @@ const heatmapWeeks = (): any[][] => {
 function heatClass(level: number) {
   return `heat-l${Math.min(4, level)}`
 }
+
+// v2.38: 词汇掌握进度 (环)
+const vocabPct = computed(() => {
+  const total = report.value?.vocab?.total || 0
+  const learned = report.value?.vocab?.learned || 0
+  return total ? Math.round((learned / total) * 100) : 0
+})
+
+// v2.38: 练习量趋势最大值 (归一化柱高)
+const answeredTrendMax = computed(() => {
+  const arr = report.value?.answered_trend || []
+  return Math.max(...arr.map((t: any) => t.count || 0), 1)
+})
 
 function rateClass(rate: number) {
   if (rate >= 80) return 'rate-good'
@@ -79,10 +92,17 @@ function radarPoints(): string {
           <div class="stat-value"><CountUp :value="report.wrong.total" /></div>
           <small class="stat-sub">{{ report.wrong.repeat }} 道高频重复错</small>
         </div>
-        <div class="card stat-card">
+        <div class="card stat-card vocab-ring-card">
           <span class="stat-label">词汇掌握</span>
-          <div class="stat-value"><CountUp :value="report.vocab.learned" /></div>
-          <small class="stat-sub">已掌握 {{ report.vocab.mastered }} / 共 {{ report.vocab.total }}</small>
+          <!-- v2.38: 进度环 (数据可视化 UI 趋势) -->
+          <div class="vocab-ring" :style="{ '--pct': vocabPct + '%' }">
+            <svg viewBox="0 0 44 44" class="vocab-ring-svg">
+              <circle class="vocab-ring-track" cx="22" cy="22" r="18" />
+              <circle class="vocab-ring-bar" cx="22" cy="22" r="18" />
+            </svg>
+            <div class="vocab-ring-text"><b>{{ vocabPct }}</b><span>%</span></div>
+          </div>
+          <small class="stat-sub">已学 {{ report.vocab.learned }} / 掌握 {{ report.vocab.mastered }}</small>
         </div>
         <div class="card stat-card">
           <span class="stat-label">近7天活跃</span>
@@ -142,6 +162,18 @@ function radarPoints(): string {
             </div>
           </div>
           <div v-else class="muted">暂无练习数据，去刷一题吧</div>
+        </div>
+
+        <!-- v2.38: 练习量趋势 (近14天) -->
+        <div class="card report-panel">
+          <h3>📊 练习量趋势（近14天）</h3>
+          <div v-if="answeredTrendMax" class="answered-trend">
+            <div v-for="(t, i) in report.answered_trend" :key="i" class="answered-bar-wrap" :title="`${t.day} 答题 ${t.count} 题`">
+              <div class="answered-bar" :style="{ height: Math.max(4, (t.count / answeredTrendMax) * 100) + '%' }"></div>
+              <span class="trend-day">{{ t.day.slice(3) }}</span>
+            </div>
+          </div>
+          <div v-else class="muted">近14天暂无答题记录</div>
         </div>
 
         <!-- 题型能力雷达 -->
