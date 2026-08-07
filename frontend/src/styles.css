@@ -1939,3 +1939,19 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 .button.danger { background: linear-gradient(180deg, color-mix(in srgb, var(--danger) 92%, #ffffff), var(--danger)); }
 /* 图标按钮 hover 微旋转 */
 .wrong-expand-button:hover svg, .cal-head button:hover svg { transform: rotate(-6deg); transition: transform .25s var(--ease); }
+
+/* ═══ v2.55: 数据可视化精致化 (图表/环形/热力) ═══ */
+/* 环形进度: 更细更精致 */
+.ring-fg, .vocab-ring svg circle.ring-fg, .focus-ring-svg .ring-fg { stroke-width: 6; }
+/* 柱状图: 渐变 + 圆角 */
+.answered-bar, .goal-day-bar, .heat-cell { border-radius: 99px; }
+.answered-bar { background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 78%, #ffffff), var(--accent)); }
+/* 热力图: 更柔和的色阶 */
+.heat-l1 { background: color-mix(in srgb, #bf6a5c 10%, transparent) !important; }
+.heat-l2 { background: color-mix(in srgb, #bf6a5c 26%, transparent) !important; }
+.heat-l3 { background: color-mix(in srgb, #bf6a5c 48%, transparent) !important; color: #fff !important; }
+.heat-l4 { background: #a05243 !important; color: #fff !important; }
+/* 统计数字: 细长感 */
+.stat-value, .rank-num, .wr-value { font-weight: 650; }
+/* 进度条: 光泽 */
+.goal-bar i, .review-progress i { box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 0 8px color-mix(in srgb, var(--gold) 40%, transparent); }
