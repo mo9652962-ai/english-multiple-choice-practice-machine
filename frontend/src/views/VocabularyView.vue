@@ -288,6 +288,11 @@ async function finishQuiz() {
   }
 }
 
+// v2.43: 闪卡翻面 (点击卡片/空格键)
+function toggleReveal() {
+  if (reviewMode.value) reveal.value = !reveal.value
+}
+
 function closeQuiz() {
   quizMode.value = false
 }
@@ -438,15 +443,16 @@ onMounted(() => { load(); loadPlans() })
     </div>
 
     <section v-if="reviewMode" class="review-overlay">
+      <div class="review-progress"><i :style="{ width: ((reviewIndex) / Math.max(reviewItems.length, 1)) * 100 + '%' }"></i></div>
       <div class="review-card flip-scene" v-if="reviewWord">
-        <div class="flip-inner" :class="{ flipped: reveal }">
+        <div class="flip-inner" :class="{ flipped: reveal }" @click="toggleReveal">
           <!-- 正面: 单词 -->
           <div class="flip-face flip-front">
-            <button class="button ghost review-close" @click="reviewMode=false">退出复习</button>
+            <button class="button ghost review-close" @click.stop="reviewMode=false">退出复习</button>
             <span class="eyebrow">今日 {{ reviewIndex + 1 }} / {{ reviewItems.length }}</span>
             <div class="review-term"><span v-if="reviewWord.is_frequent">🌟</span>{{ reviewWord.lemma || reviewWord.term }}<TtsButton :text="reviewWord.term" :speed="0.85" /></div>
             <div class="review-phonetic">{{ reviewWord.phonetic }}</div>
-            <button class="button secondary reveal-button" @click="reveal=true"><span class="flip-hint">点击翻开</span><RefreshCw :size="15" /></button>
+            <button class="button secondary reveal-button" @click.stop="reveal=true"><span class="flip-hint">点击翻开</span><RefreshCw :size="15" /></button>
           </div>
           <!-- 背面: 释义 -->
           <div class="flip-face flip-back">
@@ -459,9 +465,9 @@ onMounted(() => { load(); loadPlans() })
               <blockquote>{{ reviewWord.latest_sentence }}</blockquote>
             </div>
             <div class="review-actions">
-              <button class="button danger" @click="rate('again')">不认识</button>
-              <button class="button secondary" @click="rate('hard')">有点印象</button>
-              <button class="button" @click="rate('mastered')">已掌握</button>
+              <button class="button danger" @click.stop="rate('again')">不认识</button>
+              <button class="button secondary" @click.stop="rate('hard')">有点印象</button>
+              <button class="button" @click.stop="rate('mastered')">已掌握</button>
             </div>
           </div>
         </div>
