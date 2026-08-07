@@ -1842,3 +1842,34 @@ input:focus, select:focus, textarea:focus {
 .listening-title { font: 800 14px Georgia, serif; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .listening-meta { font-size: 11px; color: var(--muted); }
 .listening-go { font-size: 11px; font-weight: 700; color: var(--sec-accent); flex-shrink: 0; }
+
+/* ═══ v2.50: 莫兰迪色系调和 (低饱和灰调 → 高级内敛) ═══ */
+:root {
+  /* 辅助色降饱和 (莫兰迪灰调: 朱砂→灰红 / 竹青→灰绿 / 秋香→奶油黄) */
+  --accent: #bf6a5c;
+  --bamboo: #7d9273;
+  --bamboo-soft: #e8eee2;
+  --gold: #ab945f;
+  --gold-soft: #f5f0e2;
+  --lavender: #e7e1eb;
+  --blue: #e2eaee;
+  --danger: #a4574f;
+  --danger-soft: #f6e4e0;
+  --success: #587a60;
+  /* 背景柔化: 更暖更淡的宣纸 */
+  --bg: #f8f5ef;
+  --surface: rgba(254, 251, 244, .92);
+  --surface-solid: #fefbf4;
+  /* 线条更淡 */
+  --line: #e8e2d5;
+  --line-strong: #d5cdbb;
+  /* 光晕降饱和 */
+  --hero-glow-1: rgba(214, 228, 216, .45);
+  --hero-glow-2: rgba(232, 227, 238, .35);
+  /* 莫兰迪色变量 */
+  --morandi-blue: #a2b4c0;
+  --morandi-green: #a3b5a6;
+  --morandi-pink: #d4b5b0;
+  --morandi-cream: #c8b8a0;
+  --morandi-gray: #b8b8b0;
+}
