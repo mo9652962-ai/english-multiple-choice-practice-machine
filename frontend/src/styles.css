@@ -2068,3 +2068,30 @@ svg { transition: transform .2s var(--ease); }
   .main-content { padding: clamp(20px, 2vw + 10px, 34px); }
   .card { padding: clamp(16px, 1vw + 10px, 24px); }
 }
+
+/* ═══ v2.61: 滚动修复 — 左侧可滑动 + 主内容完整滚动 ═══ */
+/* ① 侧边栏: 内容超高时可滚动 (17 导航 + 类别) */
+.sidebar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--line-strong) 55%, transparent) transparent;
+}
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--line-strong) 55%, transparent); border-radius: 99px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+/* ② 侧边栏子块防压缩 */
+.sidebar nav, .sidebar .brand, .sidebar .sidebar-categories, .sidebar .sidebar-note, .sidebar .theme-button, .sidebar .vertical-text {
+  flex-shrink: 0;
+}
+/* ③ 主内容: 确保完整撑开滚动 + 底部留白 */
+.app-shell > .main-content {
+  min-height: 100vh;
+  min-width: 0;
+  overflow: visible;
+  padding-bottom: 56px;
+}
+/* ④ 页面容器兜底: 允许纵向滚动 */
+html, body { overflow-x: hidden; overflow-y: auto; }
+/* ⑤ 卡片动画不阻塞滚动 (fill 保守处理) */
+.main-content > * { animation: page-fade .35s ease backwards; }
