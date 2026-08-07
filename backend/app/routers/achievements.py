@@ -1,0 +1,136 @@
+"""成就徽章系统 (v2.29) — 游戏化激励 (多邻国/百词斩式)
+规则引擎: 检查用户数据 → 授予徽章 → 前端展示
+"""
+from __future__ import annotations
+
+import sqlite3
+from datetime import date
+from fastapi import APIRouter, Depends
+
+from ..database import get_active_profile_id, get_db
+
+router = APIRouter(prefix="/api/achievements", tags=["achievements"])
+
+# 徽章定义: key, name, icon, desc, 检查函数
+BADGES = []
+
+
+def badge(key, name, icon, desc, check):
+    BADGES.append({"key": key, "name": name, "icon": icon, "desc": desc, "check": check})
+
+
+def _init_table(connection):
+    connection.execute("""CREATE TABLE IF NOT EXISTS user_achievements (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        badge_key TEXT NOT NULL UNIQUE,
+        earned_at TEXT NOT NULL,
+        progress INTEGER DEFAULT 0,
+        target INTEGER DEFAULT 0
+    )""")
+
+
+# ── 徽章规则 ──
+def _practice_count(connection):
+    r = connection.execute("SELECT COUNT(*) n FROM practice_sessions").fetchone()
+    return r["n"]
+
+
+def _streak(connection, profile_id):
+    today = date.today().isoformat()
+    days = {r["day"] for r in connection.execute("SELECT DISTINCT day FROM learning_days").fetchall()}
+    # 从今天或昨天往前数
+    from datetime import timedelta
+    d = date.today()
+    if d.isoformat() not in days:
+        d -= timedelta(days=1)
+    n = 0
+    while d.isoformat() in days:
+        n += 1
+        d -= timedelta(days=1)
+    return n
+
+
+def _vocab_learned(connection):
+    r = connection.execute("SELECT COUNT(*) n FROM vocabulary_entries WHERE study_status != 'new'").fetchone()
+    return r["n"]
+
+
+def _vocab_mastered(connection):
+    r = connection.execute("SELECT COUNT(*) n FROM vocabulary_entries WHERE study_status = 'mastered'").fetchone()
+    return r["n"]
+
+
+def _wrong_redone(connection):
+    r = connection.execute(
+        "SELECT SUM(attempt_count) n FROM wrong_stats WHERE attempt_count > 1").fetchone()
+    return r["n"] or 0
+
+
+def _exam_done(connection):
+    r = connection.execute("SELECT COUNT(*) n FROM exam_sessions WHERE status = 'submitted'").fetchone()
+    return r["n"]
+
+
+def _paper_done(connection):
+    r = connection.execute(
+        "SELECT COUNT(DISTINCT session_id) n FROM practice_unit_submissions").fetchone()
+    return r["n"]
+
+
+badge("first_practice", "初次练习", "🎯", "完成你的第一场练习", lambda c, p: (_practice_count(c), 1))
+badge("streak_7", "七日坚持", "🔥", "连续打卡 7 天", lambda c, p: (_streak(c, p), 7))
+badge("streak_30", "月度之星", "🔥", "连续打卡 30 天", lambda c, p: (_streak(c, p), 30))
+badge("vocab_100", "词汇入门", "📚", "掌握 100 个单词", lambda c, p: (_vocab_learned(c), 100))
+badge("vocab_1000", "词汇大师", "🏛️", "掌握 1000 个单词", lambda c, p: (_vocab_learned(c), 1000))
+badge("vocab_master_500", "词汇精研", "🎖️", "精研 500 个单词", lambda c, p: (_vocab_mastered(c), 500))
+badge("wrong_10", "错题清道夫", "🧹", "重做 10 道错题", lambda c, p: (_wrong_redone(c), 10))
+badge("exam_1", "模考初体验", "✍️", "完成第一场模拟考试", lambda c, p: (_exam_done(c), 1))
+badge("paper_5", "刷题新秀", "📝", "完成 5 套练习", lambda c, p: (_paper_done(c), 5))
+badge("paper_30", "刷题达人", "🏆", "完成 30 套练习", lambda c, p: (_paper_done(c), 30))
+
+
+@router.get("")
+def get_achievements(connection: sqlite3.Connection = Depends(get_db)):
+    """徽章列表 + 进度 + 是否已获得"""
+    _init_table(connection)
+    profile_id = get_active_profile_id(connection)
+    earned = {r["badge_key"]: r for r in connection.execute(
+        "SELECT * FROM user_achievements").fetchall()}
+    items = []
+    for b in BADGES:
+        try:
+            current, target = b["check"](connection, profile_id)
+        except Exception:
+            current, target = 0, b.get("target", 1)
+        items.append({
+            "key": b["key"], "name": b["name"], "icon": b["icon"], "desc": b["desc"],
+            "earned": b["key"] in earned,
+            "earned_at": earned[b["key"]]["earned_at"] if b["key"] in earned else None,
+            "progress": min(current, target), "target": target,
+            "percent": round(min(current, target) / target * 100) if target else 0,
+        })
+    earned_count = len(earned)
+    return {"badges": items, "earned_count": earned_count, "total": len(BADGES)}
+
+
+@router.post("/check")
+def check_achievements(connection: sqlite3.Connection = Depends(get_db)):
+    """检查并授予新徽章 (提交练习/学习行为后调用)"""
+    _init_table(connection)
+    profile_id = get_active_profile_id(connection)
+    now = date.today().isoformat()
+    new_earned = []
+    for b in BADGES:
+        try:
+            current, target = b["check"](connection, profile_id)
+        except Exception:
+            continue
+        exists = connection.execute(
+            "SELECT 1 FROM user_achievements WHERE badge_key = ?", (b["key"],)).fetchone()
+        if current >= target and not exists:
+            connection.execute(
+                "INSERT INTO user_achievements (badge_key, earned_at, progress, target) VALUES (?,?,?,?)",
+                (b["key"], now, min(current, target), target))
+            new_earned.append(b)
+    connection.commit()
+    return {"new_badges": new_earned, "count": len(new_earned)}
