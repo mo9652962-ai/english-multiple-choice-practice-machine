@@ -2424,3 +2424,11 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .goal-day.done .goal-day-bar { box-shadow: 0 0 10px color-mix(in srgb, var(--success) 45%, transparent); }
 /* 排行数字: 段位色 */
 .rank-level { background: color-mix(in srgb, var(--surface-solid) 78%, transparent); backdrop-filter: blur(6px); }
+
+/* ═══ v2.85: 第三轮高级感 6/10 — Hero 再精致 (品牌感) ═══ */
+.study-hero { border: 1px solid color-mix(in srgb, var(--gold) 22%, var(--line)); }
+.study-hero h1 { font-weight: 800; text-shadow: 0 1px 2px rgba(46,42,35,.08), 0 0 24px color-mix(in srgb, #ffffff 30%, transparent); }
+.study-hero .eyebrow { color: color-mix(in srgb, var(--gold) 85%, var(--muted)); }
+/* Hero CTA 渐变按钮 */
+.study-hero .hero-cta .button { background: var(--gold-grad); color: #fff; font-weight: 700; box-shadow: 0 6px 20px color-mix(in srgb, var(--gold) 35%, transparent); }
+.study-hero .hero-cta .button:hover { filter: brightness(1.06); }
