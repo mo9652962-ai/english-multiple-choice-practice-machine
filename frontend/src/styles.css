@@ -1632,3 +1632,10 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .flip-inner { cursor: pointer; }
 .review-actions button { cursor: pointer; }
 @media (max-width: 720px) { .review-actions { flex-wrap: wrap; } }
+
+/* ── v2.44: 考试等级 + 用时 (粉笔式) ── */
+.exam-level { padding: 3px 12px; border-radius: 99px; font-weight: 800; font-size: 12px; }
+.exam-level.level-ex { background: color-mix(in srgb, #c97b4a 18%, transparent); color: #c97b4a; }
+.exam-level.level-good { background: color-mix(in srgb, #3d7a54 18%, transparent); color: #3d7a54; }
+.exam-level.level-ok { background: color-mix(in srgb, #a8842f 18%, transparent); color: #a8842f; }
+.exam-level.level-warn { background: color-mix(in srgb, #c0392b 18%, transparent); color: #c0392b; }
