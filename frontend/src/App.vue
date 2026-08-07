@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, FileUp, GraduationCap, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, Sun, Timer, Trophy } from 'lucide-vue-next'
+import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, Sun, Target, Timer, Trophy } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
@@ -118,6 +118,11 @@ onMounted(() => {
         <RouterLink to="/report"><BarChart3 :size="19" aria-hidden="true" /><span>学习报告</span></RouterLink>
         <RouterLink to="/achievements"><Trophy :size="19" aria-hidden="true" /><span>成就徽章</span></RouterLink>
         <RouterLink to="/leaderboard"><BarChart2 :size="19" aria-hidden="true" /><span>学习排行</span></RouterLink>
+        <RouterLink to="/focus"><Timer :size="19" aria-hidden="true" /><span>专注计时</span></RouterLink>
+        <RouterLink to="/calendar"><CalendarDays :size="19" aria-hidden="true" /><span>学习日历</span></RouterLink>
+        <RouterLink to="/goal"><Target :size="19" aria-hidden="true" /><span>目标中心</span></RouterLink>
+        <RouterLink to="/reading"><BookOpenText :size="19" aria-hidden="true" /><span>阅读训练</span></RouterLink>
+        <RouterLink to="/listening"><Headphones :size="19" aria-hidden="true" /><span>听力精听</span></RouterLink>
         <RouterLink to="/vocabulary"><BookMarked :size="19" aria-hidden="true" /><span>单词本</span></RouterLink>
         <RouterLink to="/imports"><FileUp :size="19" aria-hidden="true" /><span>导入题库</span></RouterLink>
         <RouterLink to="/assistant">
