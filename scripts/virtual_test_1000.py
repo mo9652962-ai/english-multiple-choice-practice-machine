@@ -38,7 +38,7 @@ def set_profile(pid):
 PROFILES = [1, 2, 3, 4, 5]
 TYPES = ["cloze", "reading", "part_b", "listening"]
 
-print(f"🚀 千轮虚拟压力测试开始 — {CLOZE_TOTAL} 轮 × 五级别×四题型 (限流合规 2.5s/轮)", flush=True)
+print(f"🚀 千轮虚拟压力测试开始 — {CLOZE_TOTAL} 轮 × 五级别×四题型 (高限流模式 0.2s/轮)", flush=True)
 t0 = time.time()
 for i in range(CLOZE_TOTAL):
     pid = PROFILES[i % len(PROFILES)]
@@ -51,12 +51,14 @@ for i in range(CLOZE_TOTAL):
         detail = req("GET", f"/api/practice/sessions/{sid}")
         answered = False
         for unit in detail.get("units", []):
-            for q in unit.get("questions", [])[:1]:
+            # v2.32b: 必须答全部题 (submit_session 有防漏答完整性检查, 部分作答→409)
+            for q in unit.get("questions", []):
                 opts = q.get("options", [])
                 if opts:
                     req("PUT", f"/api/practice/sessions/{sid}/answers/{q['id']}",
                         {"answer": opts[0].get("label") or opts[0].get("key") or opts[0].get("stable_key")})
                     answered = True
+            # 无选项题(如听力音频题)跳过, 提交时若仍缺会 409 → 统计为失败
         req("POST", f"/api/practice/sessions/{sid}/submit", {})
         ok_count += 1
     except urllib.error.HTTPError as e:
@@ -69,7 +71,7 @@ for i in range(CLOZE_TOTAL):
     if (i + 1) % 50 == 0:
         el = time.time() - t0
         print(f"  {i+1}/1000 轮 | 成功 {ok_count} 失败 {fail_count} | {el:.0f}s", flush=True)
-    time.sleep(2.5)
+    time.sleep(0.2)
 
 elapsed = time.time() - t0
 print(f"\n=== 千轮结果: 成功 {ok_count} / 失败 {fail_count} ({elapsed:.0f}s ===", flush=True)
