@@ -296,6 +296,14 @@ function toggleQuizReveal() {
   quizRevealed.value = !quizRevealed.value
 }
 
+// v2.36: 词文串学风格标签 (薄荷阅读式)
+const STYLE_LABELS: Record<string, string> = {
+  interview: '🗣 访谈', argument: '📊 论述', news: '📰 新闻', story: '📖 故事', article: '📄 文章',
+}
+function styleLabel(style: string) {
+  return STYLE_LABELS[style] || style
+}
+
 let searchTimer = 0
 watch(search, () => {
   window.clearTimeout(searchTimer)
@@ -533,7 +541,7 @@ onMounted(() => { load(); loadPlans() })
             <div v-else-if="wordContexts.length">
               <article v-for="(c, i) in wordContexts" :key="i" class="occurrence">
                 <p v-html="highlightContext(c)"></p>
-                <small>{{ c.source }}</small>
+                <small>{{ c.source }} <span v-if="c.style" class="style-badge" :class="`style-${c.style}`">{{ styleLabel(c.style) }}</span></small>
               </article>
             </div>
             <div v-else class="muted">题库中暂无该词的真题例句。</div>
