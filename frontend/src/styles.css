@@ -1985,3 +1985,18 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 }
 /* 主题按钮 */
 .theme-button { border-radius: 10px; }
+
+/* ═══ v2.58: 克制动效与过渡 (优雅而非炫技) ═══ */
+/* 路由切换: 页面柔和淡入 */
+.main-content > * { animation: page-fade .35s ease both; }
+@keyframes page-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* 数字跳动过渡 (CountUp 已用, 补充平滑) */
+.stat-value b { font-variant-numeric: tabular-nums; }
+/* 悬停: 克制位移 */
+.recommend-paper:hover, .practice-card:hover, .reading-card:hover, .listening-card:hover { transition: transform .22s var(--ease), box-shadow .22s, border-color .22s; }
+/* 列表项 hover 背景过渡 */
+.wrong-year-row, .wrong-unit-row { transition: background-color .2s; }
+.wrong-year-row:hover, .wrong-unit-row:hover { background: color-mix(in srgb, var(--line) 14%, transparent); }
+/* 模态: 克制缩放 */
+.category-modal-panel, .review-overlay .review-card { animation: modal-in .28s var(--ease-bounce); }
+@keyframes modal-in { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: none; } }
