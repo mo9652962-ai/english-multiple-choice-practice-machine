@@ -1639,3 +1639,28 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .exam-level.level-good { background: color-mix(in srgb, #3d7a54 18%, transparent); color: #3d7a54; }
 .exam-level.level-ok { background: color-mix(in srgb, #a8842f 18%, transparent); color: #a8842f; }
 .exam-level.level-warn { background: color-mix(in srgb, #c0392b 18%, transparent); color: #c0392b; }
+
+/* ── v2.45: 全局微交互收尾 (2026 六类微动画: hover/确认/滚动/加载/导航/脉冲) ── */
+/* ① 按钮 hover lift (hover feedback) */
+.button { transition: transform .18s ease-out, box-shadow .18s ease-out, background-color .2s, border-color .2s; }
+.button:not(:disabled):hover { transform: translateY(-1.5px); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 22%, transparent); }
+.button:not(:disabled):active { transform: translateY(0) scale(.98); }
+/* ② 卡片 hover 提升 (hover feedback) */
+.card { transition: border-color .25s, box-shadow .25s, transform .25s; }
+.card:hover { box-shadow: 0 10px 30px color-mix(in srgb, var(--line-strong) 26%, transparent); }
+/* ③ 导航激活态动画 (navigation transitions) */
+.app-sidebar nav a { transition: background-color .2s, transform .2s, color .2s; }
+.app-sidebar nav a:hover { transform: translateX(2px); }
+.app-sidebar nav a.router-link-active { transform: translateX(0); }
+/* ④ 首页 CTA 微光脉冲 (attention pulse) */
+.study-hero .hero-cta .button { animation: cta-pulse 2.8s ease-in-out infinite; }
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 32%, transparent); }
+  50% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+/* ⑤ 滚动显现 (scroll reveal) — 卡片轻入 */
+.page > .card, .page > section, .page > div { animation: card-enter .4s ease-out both; }
+@keyframes card-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .button, .card, .app-sidebar nav a, .study-hero .hero-cta .button, .page > .card { animation: none !important; transition: none !important; }
+}
