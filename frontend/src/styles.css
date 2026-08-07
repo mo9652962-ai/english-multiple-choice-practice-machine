@@ -125,7 +125,7 @@ html:not(.dark)::view-transition-new(root) { animation: vt-fade-in .25s ease; }
 .app-shell>.sidebar { grid-column:1; }
 .app-shell>.main-content { grid-column:2; }
 .practice-shell>.main-content { grid-column:auto; }
-.sidebar { position: sticky; top: 0; height: 100vh; padding: 28px 18px 20px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--surface-solid) 88%, transparent); backdrop-filter: blur(20px); display: flex; flex-direction: column; z-index: 12; }
+.sidebar { position: fixed; top: 0; left: 0; width: 248px; height: 100vh; padding: 28px 18px 20px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--surface-solid) 88%, transparent); backdrop-filter: blur(20px); display: flex; flex-direction: column; z-index: 12; overflow-y: auto; overflow-x: hidden; }
 .brand { display: flex; gap: 12px; align-items: center; padding: 0 8px 27px; }
 .brand-mark { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(145deg, #eef3e6, #d8e3cc); box-shadow: 0 9px 22px rgba(92,122,82,.16); overflow: hidden; }
 .brand-mark img { width: 48px; height: 48px; object-fit: contain; }
@@ -819,7 +819,7 @@ h2, h3 { margin: 0; }
 @media (max-width: 1200px) {
   .app-shell { grid-template-columns:218px minmax(0,1fr); }
   .practice-shell { display:block; }
-  .sidebar { padding-left: 14px; padding-right: 14px; }
+  .sidebar { width: 218px; padding-left: 14px; padding-right: 14px; }
   .page { padding-left: 28px; padding-right: 28px; }
   .vocabulary-layout { grid-template-columns: 170px minmax(270px,.85fr) minmax(340px,1.2fr); }
 }
