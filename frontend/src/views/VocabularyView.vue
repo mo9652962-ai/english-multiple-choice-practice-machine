@@ -10,6 +10,10 @@ import { showToast } from '../services/toast'
 const route = useRoute()
 const items = ref<any[]>([])
 const counts = ref<any>({ total:0, frequent:0, mastered:0, pending:0, review:0 })
+const plans = ref<any[]>([])
+const activePlan = ref<any>(null)
+const planWords = ref<any[]>([])
+const planLoading = ref(false)
 const selected = ref<any>(null)
 const filter = ref('all')
 const category = ref('')
@@ -178,7 +182,26 @@ watch(search, () => {
 watch(filter, load)
 watch(category, load)
 watch(catType, load)
-onMounted(load)
+async function loadPlans() {
+  try {
+    const r: any = await get('/vocabulary/plans')
+    plans.value = r.plans || []
+  } catch { /* 计划加载失败不阻塞 */ }
+}
+
+async function openPlan(plan: any) {
+  activePlan.value = plan
+  planLoading.value = true
+  try {
+    const r: any = await get(`/vocabulary/plans/${plan.key}/daily`)
+    planWords.value = r.words || []
+  } catch { planWords.value = [] }
+  planLoading.value = false
+}
+
+function closePlan() { activePlan.value = null; planWords.value = [] }
+
+onMounted(() => { load(); loadPlans() })
 </script>
 
 <template>
@@ -194,8 +217,47 @@ onMounted(load)
     <DictationMode
       v-if="dictationMode"
       :words="dictationWords"
-      @close="dictationMode = false"
+      @close="dictationMode=false"
     />
+    <!-- v2.22: 分级背诵计划 (墨墨/扇贝式词书) -->
+    <div v-if="plans.length" class="card vocab-plans-card">
+      <div class="vocab-plans-head">
+        <h3>📚 分级背诵计划</h3>
+        <span class="vocab-plans-sub">选一本词书，按每日任务背新词 + 复习到期词</span>
+      </div>
+      <div class="vocab-plans-grid">
+        <button v-for="p in plans" :key="p.key" class="vocab-plan-item" type="button" @click="openPlan(p)">
+          <span class="plan-book-icon">{{ p.icon }}</span>
+          <span class="plan-book-info">
+            <strong>{{ p.name }}</strong>
+            <small>{{ p.desc }}</small>
+            <span class="plan-progress"><i :style="{ width: p.progress + '%' }"></i></span>
+          </span>
+          <span class="plan-book-stat">{{ p.learned }}/{{ p.target }}</span>
+        </button>
+      </div>
+    </div>
+    <!-- 今日任务弹层 -->
+    <div v-if="activePlan" class="plan-drawer" @click.self="closePlan">
+      <div class="plan-drawer-panel">
+        <div class="plan-drawer-head">
+          <h3>{{ activePlan.icon }} {{ activePlan.name }} · 今日任务</h3>
+          <button class="button ghost" @click="closePlan">关闭</button>
+        </div>
+        <p class="lead" style="margin-bottom:12px">新词 {{ planWords.filter((w:any) => w.study_status === 'new').length }} 个 + 到期复习 {{ planWords.length - planWords.filter((w:any) => w.study_status === 'new').length }} 个</p>
+        <div v-if="planLoading" class="muted">加载中…</div>
+        <div v-else class="plan-word-list">
+          <div v-for="(w, i) in planWords" :key="w.id" class="plan-word-item" @click="select(w.id)">
+            <span class="plan-word-num">{{ i + 1 }}</span>
+            <div class="plan-word-main">
+              <strong>{{ w.term }}</strong>
+              <small>{{ w.phonetic }} {{ w.part_of_speech }} {{ w.common_meaning || w.contextual_meaning }}</small>
+            </div>
+            <TtsButton :text="w.term" />
+          </div>
+        </div>
+      </div>
+    </div>
     <div v-if="error" class="warning">{{ error }}</div>
     <div v-if="notice" class="card vocab-notice">{{ notice }}</div>
     <div class="vocab-categories">
