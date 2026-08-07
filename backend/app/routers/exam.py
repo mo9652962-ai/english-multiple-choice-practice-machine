@@ -14,6 +14,13 @@ from pydantic import BaseModel, Field
 
 from ..database import get_db
 
+
+def _parse_dt(s: str) -> datetime:
+    """v2.44: 解析时间字符串 (支持空格/T 分隔)"""
+    if not s:
+        return datetime.now()
+    return datetime.fromisoformat(s.replace("Z", "+00:00").replace(" ", "T"))
+
 router = APIRouter(prefix="/exam", tags=["exam"])
 
 
@@ -218,6 +225,15 @@ def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> di
 def _result(connection: sqlite3.Connection, exam_id: int) -> dict:
     row = connection.execute("SELECT * FROM exam_sessions WHERE id = ?", (exam_id,)).fetchone()
     accuracy = (row["correct_count"] / row["total_questions"] * 100) if row["total_questions"] else 0
+    # v2.44: 答题用时 + 等级评价 (粉笔式考试报告)
+    used_min = 0
+    if row["started_at"] and row["submitted_at"]:
+        try:
+            used_min = round((_parse_dt(row["submitted_at"]) - _parse_dt(row["started_at"])).total_seconds() / 60, 1)
+        except Exception:
+            used_min = 0
+    level = ("优秀" if accuracy >= 85 else "良好" if accuracy >= 70 else
+             "合格" if accuracy >= 55 else "待加强")
     return {
         "id": exam_id,
         "title": row["title"],
@@ -230,6 +246,10 @@ def _result(connection: sqlite3.Connection, exam_id: int) -> dict:
         "unanswered_count": row["unanswered_count"],
         "total_questions": row["total_questions"],
         "submitted_at": row["submitted_at"],
+        "duration_minutes": row["duration_minutes"] or 0,
+        "used_minutes": used_min,
+        "time_ratio": round(used_min / (row["duration_minutes"] or 1) * 100) if row["duration_minutes"] else 0,
+        "level": level,
     }
 
 
