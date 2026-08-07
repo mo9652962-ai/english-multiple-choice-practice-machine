@@ -2386,3 +2386,14 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .stat-label, .eyebrow { text-transform: none; letter-spacing: .18em; }
 /* 数字 tabular 统一 */
 .stat-value, .rank-num, .wr-value, .big-score, .focus-time, .quick-word { font-variant-numeric: tabular-nums lining-nums; }
+
+/* ═══ v2.82: 第三轮高级感 3/10 — 卡片细节 (内影/角标/悬停光) ═══ */
+.card { border: 1px solid color-mix(in srgb, var(--line) 82%, transparent); }
+/* 悬停: 主题色内描边 + 上浮 */
+.card:hover { transform: translateY(-1px); }
+/* 统计卡微内影 */
+.stat-card { box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 55%, transparent), var(--shadow-sm); }
+/* 卡片 hover 高光线增强 */
+.card:hover::before { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 22%, transparent), transparent); }
+/* 角标圆角统一 */
+.badge, .ai-picks-badge, .reading-badge { border-radius: 99px; }
