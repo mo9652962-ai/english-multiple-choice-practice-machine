@@ -193,7 +193,7 @@ def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
     """v2.42: 错题统计 — 高频错题 TOP10 + 类型分布 + 错因标签 (猿题库考点归因)"""
     top = connection.execute(
         """SELECT q.id, q.stem, q.question_type, q.metadata,
-                  ws.wrong_count, ws.attempt_count, ws.recent_results, ws.last_wrong_at,
+                  ws.wrong_count, ws.attempt_count, ws.recent_results, ws.last_wrong_at, ws.note,
                   units.title AS unit_title, units.unit_type, papers.year, papers.title AS paper_title
            FROM wrong_stats ws
            JOIN questions q ON q.id = ws.question_id
@@ -237,6 +237,7 @@ def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
             "year": r["year"],
             "paper_title": r["paper_title"],
             "last_wrong_at": r["last_wrong_at"],
+            "note": r["note"] or "",
             "has_explanation": bool(meta.get("explanation")),
         })
     # 类型分布
@@ -247,3 +248,17 @@ def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
            WHERE ws.wrong_count > 0
            GROUP BY units.unit_type ORDER BY n DESC""").fetchall()
     return {"top": items, "by_type": [{"type": r[0], "count": r[1]} for r in by_type]}
+
+
+@router.put("/{question_id}/note")
+def save_wrong_note(question_id: int, body: dict, connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """v2.46: 我的分析 — 错题个人笔记 (粉笔式)"""
+    note = (body.get("note") or "").strip()[:500]
+    connection.execute(
+        """INSERT INTO wrong_stats (question_id, wrong_count, recent_results, note, last_wrong_at, last_attempt_at)
+           VALUES (?, 1, '[]', ?, datetime('now'), datetime('now'))
+           ON CONFLICT(question_id) DO UPDATE SET note = excluded.note, last_attempt_at = datetime('now')""",
+        (question_id, note),
+    )
+    connection.commit()
+    return {"question_id": question_id, "note": note}
