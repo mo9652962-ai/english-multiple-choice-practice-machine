@@ -2397,3 +2397,17 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .card:hover::before { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 22%, transparent), transparent); }
 /* 角标圆角统一 */
 .badge, .ai-picks-badge, .reading-badge { border-radius: 99px; }
+
+/* ═══ v2.83: 第三轮高级感 4/10 — 按钮动效精修 (光扫/微弹) ═══ */
+.button { position: relative; overflow: hidden; }
+/* 光扫效果 (hover) */
+.button:not(:disabled)::after {
+  content: ''; position: absolute; top: 0; left: -80%; width: 50%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: skewX(-20deg); transition: left .5s var(--ease);
+}
+.button:not(:disabled):hover::after { left: 130%; }
+/* 按下微弹 */
+.button:not(:disabled):active { transform: scale(.965); }
+/* 次级按钮描边细腻 */
+.button.secondary { box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 40%, transparent); }
