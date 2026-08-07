@@ -2226,3 +2226,19 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 .freq-note-editor { border-radius: 12px; }
 /* 导出按钮区 */
 .wrong-scope-actions .button { border-radius: 10px; }
+
+/* ═══ v2.70: 报告页精致化 ═══ */
+/* 报告面板: 细腻 */
+.report-panel { border-radius: 16px; }
+/* 本周战报: 卡片精致 */
+.week-report-item { border-radius: 13px; }
+.wr-value { letter-spacing: .01em; }
+/* 正确率趋势: 柱状圆角 */
+.trend-bar { border-radius: 99px; }
+/* 能力雷达/热力图 */
+.heat-cell { border-radius: 3px; }
+/* 报告统计卡 */
+.rank-stats .stat-card { border-radius: 15px; }
+/* 进度环精致 */
+.vocab-ring { transition: box-shadow .3s; }
+.vocab-ring:hover { box-shadow: 0 8px 24px color-mix(in srgb, var(--bamboo) 32%, transparent); }
