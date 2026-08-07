@@ -1922,3 +1922,20 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 .card { border-radius: calc(var(--radius-md) + 2px); }
 /* 玻璃卡 (hero/倒计时) */
 .exam-countdown-bar, .study-hero { background: linear-gradient(150deg, color-mix(in srgb, var(--surface-solid) 88%, transparent), color-mix(in srgb, var(--surface-solid) 72%, transparent)); }
+
+/* ═══ v2.54: 按钮控件精致化 (细腻交互态) ═══ */
+/* 主按钮: 微渐变 + 高光 */
+.button:not(.secondary):not(.ghost):not(.danger) {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 88%, #ffffff 8%), color-mix(in srgb, var(--primary) 100%, #000 2%));
+  box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 1px 0 rgba(255,255,255,.08) inset, 0 -1px 0 rgba(0,0,0,.06) inset;
+}
+/* 次要按钮: 细腻描边 */
+.button.secondary { border: 1px solid color-mix(in srgb, var(--line-strong) 70%, transparent); background: color-mix(in srgb, var(--surface-solid) 80%, transparent); }
+/* ghost 按钮 hover 微底 */
+.button.ghost:hover { background: color-mix(in srgb, var(--line) 26%, transparent); }
+/* 紧凑按钮统一 */
+.button.compact { padding: 5px 12px; font-size: 12px; border-radius: 9px; }
+/* 危险按钮柔和 */
+.button.danger { background: linear-gradient(180deg, color-mix(in srgb, var(--danger) 92%, #ffffff), var(--danger)); }
+/* 图标按钮 hover 微旋转 */
+.wrong-expand-button:hover svg, .cal-head button:hover svg { transform: rotate(-6deg); transition: transform .25s var(--ease); }
