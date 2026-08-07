@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 模拟考试模式 — 全屏限时作答 + 即时评分
-import { AlarmClock, CheckCircle2, ChevronLeft, ChevronRight, Flag, XCircle } from 'lucide-vue-next'
+import { AlarmClock, CheckCircle2, ChevronLeft, ChevronRight, Clock, Flag, XCircle } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { get, post, put } from '../api'
@@ -214,6 +214,9 @@ onBeforeUnmount(() => { if (ticker.value) clearInterval(ticker.value) })
           <div class="result-cell"><XCircle :size="20" class="bad" /><span>{{ exam.wrong_count }} 答错</span></div>
           <div class="result-cell"><span class="muted">{{ exam.unanswered_count }} 未答</span></div>
           <div class="result-cell"><span class="muted">{{ exam.score }} / {{ exam.max_score }} 分</span></div>
+          <!-- v2.44: 等级评价 + 答题用时 (粉笔式考试报告) -->
+          <div class="result-cell"><span class="exam-level" :class="'level-' + (exam.level === '优秀' ? 'ex' : exam.level === '良好' ? 'good' : exam.level === '合格' ? 'ok' : 'warn')">{{ exam.level }}</span></div>
+          <div class="result-cell"><Clock :size="20" class="ok" /><span>用时 {{ exam.used_minutes || 0 }} 分<small v-if="exam.duration_minutes">/ {{ exam.duration_minutes }} 分</small></span></div>
         </div>
         <div class="result-actions">
           <button class="button" @click="showStartDialog = true">再来一场</button>
