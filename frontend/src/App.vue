@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, FileUp, GraduationCap, Home, Library, MessageCircle, Moon, Settings, Sun, Timer, Trophy } from 'lucide-vue-next'
-import { onMounted, ref } from 'vue'
+import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, FileUp, GraduationCap, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, Sun, Timer, Trophy } from 'lucide-vue-next'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
 import { get } from './api'
@@ -26,10 +26,45 @@ async function switchCategory(id: number) {
   try {
     await activateQuestionBankProfile(id)
     activeCategoryId.value = id
+    recordCategoryUsage(id)
     window.location.reload()
   } catch {
     // ignore
   }
+}
+
+// v2.47: 常用类别 (localStorage 使用计数 top2) + 类别选择弹窗
+const categoryModal = ref(false)
+function recordCategoryUsage(id: number) {
+  try {
+    const raw = localStorage.getItem('epm_category_usage') || '{}'
+    const usage: Record<string, number> = JSON.parse(raw)
+    usage[String(id)] = (usage[String(id)] || 0) + 1
+    localStorage.setItem('epm_category_usage', JSON.stringify(usage))
+  } catch { /* ignore */ }
+}
+const frequentCategories = computed(() => {
+  try {
+    const raw = localStorage.getItem('epm_category_usage') || '{}'
+    const usage: Record<string, number> = JSON.parse(raw)
+    const sorted = [...categories.value]
+      .filter((c) => c.id !== activeCategoryId.value && !c.deleted_at)
+      .sort((a, b) => (usage[String(b.id)] || 0) - (usage[String(a.id)] || 0))
+    return [...sorted.slice(0, 2)]
+  } catch {
+    return categories.value.filter((c) => c.id !== activeCategoryId.value).slice(0, 2)
+  }
+})
+const activeCategory = computed(() =>
+  categories.value.find((c) => c.id === activeCategoryId.value) || null
+)
+function openCategoryModal() {
+  categoryModal.value = true
+}
+function pickCategory(cat: any) {
+  categoryModal.value = false
+  if (cat.id === activeCategoryId.value) return
+  switchCategory(cat.id)
 }
 
 const categoryIcons: Record<string, any> = {
@@ -90,20 +125,37 @@ onMounted(() => {
         </RouterLink>
         <RouterLink to="/settings"><Settings :size="19" aria-hidden="true" /><span>模型与设置</span></RouterLink>
       </nav>
-      <!-- v9.19: 侧边栏类别切换 -->
+      <!-- v9.19: 侧边栏类别切换 · v2.47: 常用类别 + 弹窗选择 -->
       <div v-if="categories.length" class="sidebar-categories">
         <span class="sidebar-category-label">考试类别</span>
+        <!-- 当前类别 -->
         <button
-          v-for="cat in categories"
-          :key="cat.id"
+          v-if="activeCategory"
+          class="sidebar-category active"
+          type="button"
+          @click="openCategoryModal"
+        >
+          <span class="sidebar-category-dot" :style="{ background: activeCategory.color || '#486d5c' }"></span>
+          <component :is="categoryIcons[activeCategory.icon] || BookMarked" :size="16" aria-hidden="true" />
+          <span>{{ activeCategory.name }}</span>
+        </button>
+        <!-- 常用类别 (最近使用) -->
+        <button
+          v-for="cat in frequentCategories"
+          :key="'freq-' + cat.id"
           class="sidebar-category"
-          :class="{ active: cat.id === activeCategoryId }"
           type="button"
           @click="switchCategory(cat.id)"
         >
           <span class="sidebar-category-dot" :style="{ background: cat.color || '#486d5c' }"></span>
           <component :is="categoryIcons[cat.icon] || BookMarked" :size="16" aria-hidden="true" />
           <span>{{ cat.name }}</span>
+        </button>
+        <!-- 全部类别 -->
+        <button class="sidebar-category all-categories" type="button" @click="openCategoryModal">
+          <span class="sidebar-category-dot" style="background: linear-gradient(135deg,#c97b4a,#4a6fa5)"></span>
+          <LayoutGrid :size="16" aria-hidden="true" />
+          <span>全部类别</span>
         </button>
       </div>
       <div class="sidebar-note">
@@ -130,4 +182,39 @@ onMounted(() => {
         </nav>
       </div>
       <AppToast />
+
+      <!-- v2.47: 考试类别选择弹窗 (点击"全部类别"或当前类别打开) -->
+      <Teleport to="body">
+        <Transition name="modal-fade">
+          <div v-if="categoryModal" class="category-modal" @click.self="categoryModal = false">
+            <div class="category-modal-panel">
+              <div class="category-modal-head">
+                <div>
+                  <span class="eyebrow">CATEGORY</span>
+                  <h3>选择考试类别</h3>
+                </div>
+                <button class="button ghost compact" type="button" @click="categoryModal = false">✕ 关闭</button>
+              </div>
+              <div class="category-modal-grid">
+                <button
+                  v-for="cat in categories"
+                  :key="cat.id"
+                  class="category-modal-card"
+                  :class="{ active: cat.id === activeCategoryId }"
+                  type="button"
+                  @click="pickCategory(cat)"
+                >
+                  <span class="category-modal-icon" :style="{ background: (cat.color || '#486d5c') + '22', color: cat.color || '#486d5c' }">
+                    <component :is="categoryIcons[cat.icon] || BookMarked" :size="26" aria-hidden="true" />
+                  </span>
+                  <span class="category-modal-name">{{ cat.name }}</span>
+                  <span class="category-modal-desc">{{ cat.description || '英语刷题练习' }}</span>
+                  <span v-if="cat.id === activeCategoryId" class="category-modal-active">当前使用 ✓</span>
+                  <span class="category-modal-dot" :style="{ background: cat.color || '#486d5c' }"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </Transition>
+      </Teleport>
     </template>
