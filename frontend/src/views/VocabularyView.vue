@@ -297,6 +297,84 @@ function closeQuiz() {
   quizMode.value = false
 }
 
+// v2.64: 快答挑战 (百词斩 PK 式 — 限时 4 选 1)
+const quickMode = ref(false)
+const quickItems = ref<any[]>([])
+const quickIndex = ref(0)
+const quickScore = ref(0)
+const quickRemain = ref(10)
+const quickOptions = ref<string[]>([])
+const quickPicked = ref<string | null>(null)
+const quickDone = ref(false)
+const quickBest = ref(Number(localStorage.getItem('epm_quick_best') || 0))
+let quickTimer: number | null = null
+
+async function startQuick() {
+  try {
+    const r: any = await get('/vocab/quiz?count=10')
+    quickItems.value = (r.items || []).filter((w: any) => w.meaning)
+    if (quickItems.value.length < 4) { showToast('可用词汇不足，先学几个词吧', 'info'); return }
+    quickIndex.value = 0
+    quickScore.value = 0
+    quickDone.value = false
+    quickPicked.value = null
+    quickMode.value = true
+    buildQuickOptions()
+    startQuickTimer()
+  } catch (e) { showToast('快答挑战加载失败', 'error') }
+}
+function buildQuickOptions() {
+  const cur = quickItems.value[quickIndex.value]
+  if (!cur) return
+  const others = quickItems.value
+    .filter((w: any) => w.id !== cur.id && w.meaning !== cur.meaning)
+    .map((w: any) => w.meaning)
+  const pool = [...new Set([cur.meaning, ...others])].slice(0, 4)
+  while (pool.length < 4) pool.push('以上都不是')
+  quickOptions.value = pool.sort(() => Math.random() - 0.5)
+  quickRemain.value = 10
+}
+function startQuickTimer() {
+  if (quickTimer !== null) window.clearInterval(quickTimer)
+  quickTimer = window.setInterval(() => {
+    quickRemain.value -= 1
+    if (quickRemain.value <= 0) quickAnswer('')
+  }, 1000)
+}
+function quickAnswer(option: string) {
+  if (quickPicked.value !== null || quickDone.value) return
+  const cur = quickItems.value[quickIndex.value]
+  const correct = option === cur.meaning
+  quickPicked.value = option
+  if (correct) quickScore.value += 1
+  window.setTimeout(() => {
+    if (quickIndex.value < quickItems.value.length - 1) {
+      quickIndex.value++
+      quickPicked.value = null
+      buildQuickOptions()
+    } else {
+      quickDone.value = true
+      if (quickTimer !== null) window.clearInterval(quickTimer)
+      const best = Math.max(quickBest.value, quickScore.value)
+      quickBest.value = best
+      localStorage.setItem('epm_quick_best', String(best))
+    }
+  }, 650)
+}
+function closeQuick() {
+  quickMode.value = false
+  if (quickTimer !== null) window.clearInterval(quickTimer)
+}
+const quickLevel = computed(() => {
+  const total = quickItems.value.length || 10
+  const rate = quickScore.value / total
+  if (rate >= 0.9) return { label: '词汇大师', icon: '🏆' }
+  if (rate >= 0.7) return { label: '掌握扎实', icon: '🥇' }
+  if (rate >= 0.5) return { label: '继续加油', icon: '🥈' }
+  return { label: '需要复习', icon: '📚' }
+})
+const quickCurrent = computed(() => quickItems.value[quickIndex.value])
+
 function toggleQuizReveal() {
   quizRevealed.value = !quizRevealed.value
 }
@@ -418,6 +496,15 @@ onMounted(() => { load(); loadPlans() })
         <small>10 个词快速定位词汇量等级（百词斩式初测）</small>
       </div>
       <button class="button" :disabled="quizLoading">{{ quizLoading ? '加载中…' : '开始' }}</button>
+    </div>
+    <!-- v2.64: 快答挑战入口 (百词斩 PK 式) -->
+    <div class="cloze-entry card quick-entry" @click="startQuick">
+      <div class="cloze-entry-icon">⚡</div>
+      <div class="cloze-entry-main">
+        <strong>快答挑战</strong>
+        <small>10 题限时 4 选 1 · 每题 10 秒 · 最佳 {{ quickBest }}/10</small>
+      </div>
+      <button class="button secondary">开始</button>
     </div>
     <div v-if="error" class="warning">{{ error }}</div>
     <div v-if="notice" class="card vocab-notice">{{ notice }}</div>
@@ -649,4 +736,53 @@ onMounted(() => { load(); loadPlans() })
       </div>
     </div>
   </div>
+
+  <!-- v2.64: 快答挑战弹层 (百词斩 PK 式) -->
+  <Teleport to="body">
+    <Transition name="modal-fade">
+      <div v-if="quickMode" class="quick-overlay" @click.self="closeQuick">
+        <div class="quick-panel">
+          <div class="quick-head">
+            <span class="eyebrow">QUICK CHALLENGE</span>
+            <button class="button ghost compact" @click="closeQuick">✕ 退出</button>
+          </div>
+          <!-- 结果 -->
+          <div v-if="quickDone" class="quick-result">
+            <span class="quick-result-icon">{{ quickLevel.icon }}</span>
+            <h3 class="quick-result-title">{{ quickLevel.label }}</h3>
+            <p class="quick-result-score"><b class="rank-num">{{ quickScore }}</b> / {{ quickItems.length }}</p>
+            <p class="quick-result-best">最佳成绩 {{ quickBest }}/{{ quickItems.length }}</p>
+            <div class="quick-actions">
+              <button class="button" @click="startQuick">再来一局</button>
+              <button class="button ghost" @click="closeQuick">关闭</button>
+            </div>
+          </div>
+          <!-- 答题 -->
+          <template v-else-if="quickCurrent">
+            <div class="quick-progress">
+              <i :style="{ width: ((quickIndex + 1) / quickItems.length) * 100 + '%' }"></i>
+            </div>
+            <div class="quick-meta">
+              <span>{{ quickIndex + 1 }} / {{ quickItems.length }}</span>
+              <span class="quick-timer" :class="{ low: quickRemain <= 3 }">⏱ {{ quickRemain }}s</span>
+              <span>得分 {{ quickScore }}</span>
+            </div>
+            <h3 class="quick-word">{{ quickCurrent.word }}</h3>
+            <div class="quick-options">
+              <button
+                v-for="opt in quickOptions" :key="opt"
+                class="quick-option" type="button"
+                :class="{
+                  picked: quickPicked === opt,
+                  correct: quickPicked !== null && opt === quickCurrent.meaning,
+                  wrong: quickPicked === opt && opt !== quickCurrent.meaning,
+                }"
+                @click="quickAnswer(opt)"
+              >{{ opt }}</button>
+            </div>
+          </template>
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
