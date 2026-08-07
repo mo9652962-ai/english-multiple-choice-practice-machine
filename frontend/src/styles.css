@@ -1390,3 +1390,39 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .profile-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; }
 .profile-stats b { display: block; font: 800 15px Georgia, serif; color: var(--text); }
 .profile-stats small { font-size: 10px; color: var(--muted); }
+
+/* ── v2.32: 短文填词 (扇贝式) ── */
+.cloze-entry { display: flex; align-items: center; gap: 12px; padding: 14px 16px; cursor: pointer; transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s; }
+.cloze-entry:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.cloze-entry-icon { font-size: 26px; line-height: 1; }
+.cloze-entry-main { flex: 1; min-width: 0; }
+.cloze-entry-main strong { display: block; font-size: 14px; color: var(--text); }
+.cloze-entry-main small { font-size: 11px; color: var(--muted); }
+.cloze-card { width: min(560px, 92vw); max-height: 82vh; overflow: auto; }
+.cloze-progress { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.cloze-sentence { font-size: 15px; line-height: 1.8; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+.cloze-meaning { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.cloze-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.cloze-option { position: relative; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-solid); color: var(--text); font-size: 13px; text-align: left; cursor: pointer; transition: all .2s; }
+.cloze-option:hover:not(:disabled) { border-color: var(--primary); transform: translateY(-1px); }
+.cloze-option.picked { border-color: var(--success); background: color-mix(in srgb, var(--success) 12%, var(--surface-solid)); }
+.cloze-option.wrong { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 12%, var(--surface-solid)); }
+.cloze-option:disabled { cursor: default; }
+.cloze-mark { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--success); font-weight: 800; }
+.cloze-result { text-align: center; padding: 12px 0; }
+.cloze-score { font: 800 42px Georgia, serif; color: var(--text); margin-bottom: 6px; }
+.cloze-wrong { margin-top: 10px; font-size: 12px; color: var(--danger); }
+
+/* ── v2.32: 2026 Bento Box + Liquid Glass (借鉴 2026 UI 趋势) ── */
+.bento-stats { grid-template-columns: repeat(4, 1fr); align-items: stretch; }
+.bento-wide { grid-column: span 2; }
+.stat-card { position: relative; overflow: hidden; backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 88%, transparent), color-mix(in srgb, var(--surface-2) 72%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 65%, transparent); box-shadow: 0 8px 32px -12px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.4); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+.stat-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 85% -10%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%); pointer-events: none; }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -14px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.5); }
+.bento-wide .stat-value { font-size: 34px; }
+.stat-note { display: block; font-size: 10.5px; color: var(--muted); margin-top: 4px; }
+.streak-card { backdrop-filter: blur(14px); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 90%, transparent), color-mix(in srgb, var(--surface-2) 70%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 60%, transparent); }
+.study-hero { position: relative; overflow: hidden; }
+.study-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 120% at 12% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), radial-gradient(70% 100% at 95% 100%, color-mix(in srgb, var(--bamboo) 12%, transparent), transparent 55%); pointer-events: none; }
+.today-plan-card, .recommend-section .card { backdrop-filter: blur(10px); background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 78%, transparent)); }
+@media (max-width: 900px) { .bento-stats { grid-template-columns: repeat(2, 1fr); } .bento-wide { grid-column: span 2; } }

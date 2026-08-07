@@ -184,6 +184,59 @@ function startDictation() {
   dictationMode.value = true
 }
 
+// v2.32: 短文填词 (扇贝式) — 真题句挖空选词
+const clozeItems = ref<any[]>([])
+const clozeMode = ref(false)
+const clozeIndex = ref(0)
+const clozePicked = ref('')
+const clozeScore = ref(0)
+const clozeDone = ref(false)
+const clozeLoading = ref(false)
+const clozeWrong = ref<string[]>([])
+
+async function loadCloze() {
+  clozeLoading.value = true
+  try {
+    const r: any = await get('/vocab/cloze?count=5')
+    clozeItems.value = r.items || []
+    clozeIndex.value = 0
+    clozePicked.value = ''
+    clozeScore.value = 0
+    clozeDone.value = false
+    clozeWrong.value = []
+    clozeMode.value = true
+  } catch (e) {
+    showToast('生成填词失败，请稍后再试', 'error')
+  } finally {
+    clozeLoading.value = false
+  }
+}
+
+const clozeCurrent = computed(() => clozeItems.value[clozeIndex.value])
+
+function pickCloze(opt: string) {
+  if (clozePicked.value) return
+  clozePicked.value = opt
+  if (opt === clozeCurrent.value?.answer) {
+    clozeScore.value++
+  } else {
+    clozeWrong.value.push(clozeCurrent.value?.word || opt)
+  }
+}
+
+function nextCloze() {
+  if (clozeIndex.value < clozeItems.value.length - 1) {
+    clozeIndex.value++
+    clozePicked.value = ''
+  } else {
+    clozeDone.value = true
+  }
+}
+
+function closeCloze() {
+  clozeMode.value = false
+}
+
 let searchTimer = 0
 watch(search, () => {
   window.clearTimeout(searchTimer)
@@ -275,6 +328,15 @@ onMounted(() => { load(); loadPlans() })
           </div>
         </div>
       </div>
+    </div>
+    <!-- v2.32: 短文填词入口 -->
+    <div class="cloze-entry card" @click="loadCloze">
+      <div class="cloze-entry-icon">✏️</div>
+      <div class="cloze-entry-main">
+        <strong>短文填词</strong>
+        <small>真题句子挖空 · 在语境里检验单词（扇贝同款）</small>
+      </div>
+      <button class="button" :disabled="clozeLoading">{{ clozeLoading ? '生成中…' : '开始' }}</button>
     </div>
     <div v-if="error" class="warning">{{ error }}</div>
     <div v-if="notice" class="card vocab-notice">{{ notice }}</div>
@@ -423,6 +485,40 @@ onMounted(() => { load(); loadPlans() })
         </div>
       </section>
       <section v-else class="vocab-detail card empty">选择一个单词查看详细释义与真题语境。</section>
+    </div>
+    <!-- v2.32: 短文填词弹层 -->
+    <div v-if="clozeMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="短文填词">
+      <div class="review-card cloze-card">
+        <h3 style="margin-bottom:8px">✏️ 短文填词</h3>
+        <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:14px">真题句子挖空 · 选择最合适的单词（扇贝同款练习）</p>
+        <template v-if="!clozeDone && clozeCurrent">
+          <div class="cloze-progress">{{ clozeIndex + 1 }} / {{ clozeItems.length }} · 答对 {{ clozeScore }}</div>
+          <p class="cloze-sentence">{{ clozeCurrent.blank_sentence }}</p>
+          <p class="cloze-meaning">{{ clozeCurrent.phonetic }} {{ clozeCurrent.part_of_speech }} · {{ clozeCurrent.meaning }}</p>
+          <div class="cloze-options">
+            <button v-for="opt in clozeCurrent.options" :key="opt" class="cloze-option"
+              :class="{ picked: clozePicked && opt === clozeCurrent.answer, wrong: clozePicked && opt === clozePicked && opt !== clozeCurrent.answer }"
+              :disabled="!!clozePicked" @click="pickCloze(opt)">
+              {{ opt }}
+              <span v-if="clozePicked && opt === clozeCurrent.answer" class="cloze-mark">✓</span>
+            </button>
+          </div>
+          <div style="display:flex;justify-content:flex-end;margin-top:16px">
+            <button class="button" :disabled="!clozePicked" @click="nextCloze">{{ clozeIndex < clozeItems.length - 1 ? '下一题' : '查看结果' }}</button>
+          </div>
+        </template>
+        <template v-else-if="clozeDone">
+          <div class="cloze-result">
+            <div class="cloze-score">{{ clozeScore }} / {{ clozeItems.length }}</div>
+            <p>{{ clozeScore === clozeItems.length ? '🎉 全对！语感很棒' : clozeScore >= 3 ? '👍 不错，继续巩固' : '📖 多看看单词本，再试一次' }}</p>
+            <p v-if="clozeWrong.length" class="cloze-wrong">需要巩固：{{ clozeWrong.join('、') }}</p>
+          </div>
+          <div style="display:flex;justify-content:center;gap:10px;margin-top:18px">
+            <button class="button" @click="loadCloze">再练一组</button>
+            <button class="button ghost" @click="closeCloze">关闭</button>
+          </div>
+        </template>
+      </div>
     </div>
     <div v-if="showDisplayDialog" class="review-overlay" role="dialog" aria-modal="true" aria-label="单词本显示设置">
       <div class="review-card vocab-display-dialog">
