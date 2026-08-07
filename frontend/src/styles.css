@@ -1438,3 +1438,20 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .report-main .report-panel { backdrop-filter: blur(14px); background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 90%, transparent), color-mix(in srgb, var(--surface-2) 74%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 60%, transparent); box-shadow: 0 8px 28px -12px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.35); transition: transform .3s cubic-bezier(.22,1,.36,1); }
 .report-main .report-panel:hover { transform: translateY(-2px); }
 .profile-grid > div { backdrop-filter: blur(10px); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 76%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+
+/* ── v2.34: 深色模式 Glass 适配 (2026 趋势: dark-mode gradients) ── */
+:root.dark .stat-card,
+:root.dark .report-main .report-panel,
+:root.dark .streak-card,
+:root.dark .today-plan-card,
+:root.dark .recommend-section .card {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 80%, transparent), color-mix(in srgb, var(--surface-2) 66%, transparent));
+  border-color: color-mix(in srgb, var(--line) 48%, transparent);
+  box-shadow: 0 10px 34px -14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+}
+:root.dark .stat-card::after { opacity: .5; }
+:root.dark .cloze-option { background: color-mix(in srgb, var(--surface-2) 70%, transparent); }
+:root.dark .cloze-sentence { background: color-mix(in srgb, var(--surface-2) 60%, transparent); }
+
+/* v2.34: 深色渐变装饰 (数据叙事化) */
+:root.dark .study-hero::before { opacity: .55; }
