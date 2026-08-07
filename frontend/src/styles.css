@@ -1488,3 +1488,17 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .style-news { background: color-mix(in srgb, var(--blue) 40%, var(--surface-solid)); color: #3a6a8a; border: 1px solid color-mix(in srgb, #4a7fa5 35%, transparent); }
 .style-story { background: color-mix(in srgb, var(--gold) 16%, var(--surface-solid)); color: var(--gold); border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent); }
 .style-article { background: color-mix(in srgb, var(--muted) 12%, var(--surface-solid)); color: var(--muted); border: 1px solid color-mix(in srgb, var(--muted) 25%, transparent); }
+
+/* ── v2.38: 词汇进度环 + 练习量趋势 (数据可视化) ── */
+.vocab-ring-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 18px 12px; }
+.vocab-ring { position: relative; width: 64px; height: 64px; }
+.vocab-ring-svg { width: 64px; height: 64px; transform: rotate(-90deg); }
+.vocab-ring-track { fill: none; stroke: color-mix(in srgb, var(--line) 55%, transparent); stroke-width: 5; }
+.vocab-ring-bar { fill: none; stroke: var(--bamboo); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 113; stroke-dashoffset: calc(113 - (var(--pct, 0) / 100) * 113); transition: stroke-dashoffset .8s cubic-bezier(.22,1,.36,1); }
+.vocab-ring-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 1px; }
+.vocab-ring-text b { font: 800 17px Georgia, serif; color: var(--text); }
+.vocab-ring-text span { font-size: 10px; color: var(--muted); }
+.answered-trend { display: flex; align-items: flex-end; gap: 4px; height: 120px; }
+.answered-bar-wrap { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; height: 100%; }
+.answered-bar { width: 70%; max-width: 22px; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 60%, var(--bamboo))); transition: height .5s cubic-bezier(.22,1,.36,1); }
+.answered-bar-wrap:hover .answered-bar { background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 60%, var(--primary))); }
