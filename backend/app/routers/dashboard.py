@@ -205,7 +205,7 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
     # 时间预估 (研究: 刷题计划 任务量可调)
     words_min = max(5, due_count * 0.4)
     new_min = new_target * 0.5
-    practice_min = {"cloze": 12, "reading": 15, "paragraph_matching": 15, "part_b": 12}.get(practice_type or "", 12)
+    practice_min = {"cloze": 12, "reading": 15, "paragraph_matching": 15, "part_b": 12, "listening": 25}.get(practice_type or "", 12)
     wrong_min = min(20, max(5, wrong * 1.2))
     total_min = round(words_min + new_min + practice_min + wrong_min)
     return {
