@@ -2153,3 +2153,16 @@ html, body { overflow-x: hidden; overflow-y: auto; }
 .quick-result-best { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
 .quick-actions { display: flex; gap: 10px; justify-content: center; }
 :root.dark .quick-overlay { background: color-mix(in srgb, #14140f 76%, transparent); }
+
+/* ═══ v2.65: 字体系统升级 (书卷气: 中文宋体 + 英文衬线) ═══ */
+body {
+  font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", "STSong", "Times New Roman", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 标题强化书卷气 */
+h1, h2, h3 { font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", "STSong", Georgia, serif; }
+/* 数据/数字保持衬线 */
+.stat-value, .rank-num, .wr-value, .big-score, .focus-time, .quick-word { font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; }
+/* 小标签/按钮保持无衬线 (可读性) */
+.eyebrow, .button, .stat-label, .sidebar-category-label, .countdown-label { font-family: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI", sans-serif; }
