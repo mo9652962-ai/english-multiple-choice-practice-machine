@@ -1608,3 +1608,20 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .wr-delta.down { color: var(--accent, #c73e3a); }
 .week-report-item small { font-size: 10px; color: var(--muted); }
 @media (max-width: 720px) { .week-report-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── v2.42: 高频错题 TOP (猿题库考点归因) ── */
+.freq-card { margin-bottom: 14px; }
+.freq-sub { font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 6px; }
+.freq-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-top: 12px; }
+.freq-item { display: flex; gap: 10px; align-items: flex-start; text-align: left; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); cursor: pointer; transition: border-color .2s, transform .2s; }
+.freq-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+.freq-rank { font: 800 18px Georgia, serif; color: var(--accent); min-width: 20px; text-align: center; padding-top: 2px; }
+.freq-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.freq-stem { font-size: 12.5px; color: var(--text); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.freq-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 10.5px; color: var(--muted); font-style: normal; }
+.freq-badge { padding: 2px 8px; border-radius: 99px; font-style: normal; font-weight: 700; }
+.freq-badge.reason-repeat { background: color-mix(in srgb, #c0392b 16%, transparent); color: #c0392b; }
+.freq-badge.reason-weak { background: color-mix(in srgb, #a8842f 16%, transparent); color: #a8842f; }
+.freq-badge.reason-ok { background: color-mix(in srgb, #3d7a54 16%, transparent); color: #3d7a54; }
+.freq-types { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.freq-type-chip { padding: 4px 12px; border-radius: 99px; background: color-mix(in srgb, var(--line) 30%, transparent); font-size: 11px; color: var(--muted); }

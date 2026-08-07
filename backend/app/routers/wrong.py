@@ -186,3 +186,64 @@ def export_wrong_html(connection: sqlite3.Connection = Depends(get_db)):
 </body></html>"""
     from fastapi.responses import HTMLResponse
     return HTMLResponse(content=html, headers={"Content-Disposition": "inline; filename=wrong-paper.html"})
+
+
+@router.get("/stats")
+def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """v2.42: 错题统计 — 高频错题 TOP10 + 类型分布 + 错因标签 (猿题库考点归因)"""
+    top = connection.execute(
+        """SELECT q.id, q.stem, q.question_type, q.metadata,
+                  ws.wrong_count, ws.attempt_count, ws.recent_results, ws.last_wrong_at,
+                  units.title AS unit_title, units.unit_type, papers.year, papers.title AS paper_title
+           FROM wrong_stats ws
+           JOIN questions q ON q.id = ws.question_id
+           LEFT JOIN units ON units.id = q.unit_id
+           LEFT JOIN papers ON papers.id = units.paper_id
+           WHERE ws.wrong_count > 0
+           ORDER BY ws.wrong_count DESC, ws.last_wrong_at DESC
+           LIMIT 10""").fetchall()
+    items = []
+    for r in top:
+        meta = {}
+        try:
+            import json as _json
+            meta = _json.loads(r["metadata"] or "{}")
+        except Exception:
+            pass
+        # 错因标签: 基于 recent_results (T/F 序列)
+        recent = (r["recent_results"] or "").upper()
+        if recent.endswith("T") and r["wrong_count"] <= 1:
+            reason = "已掌握"
+            reason_icon = "✅"
+        elif r["wrong_count"] >= 3:
+            reason = "反复出错"
+            reason_icon = "🔁"
+        elif r["attempt_count"] >= 3:
+            reason = "易错点"
+            reason_icon = "⚠️"
+        else:
+            reason = "偶尔失误"
+            reason_icon = "🌱"
+        items.append({
+            "id": r["id"],
+            "stem": r["stem"][:60],
+            "question_type": r["question_type"],
+            "wrong_count": r["wrong_count"],
+            "attempt_count": r["attempt_count"],
+            "reason": reason,
+            "reason_icon": reason_icon,
+            "unit_type": r["unit_type"],
+            "unit_title": r["unit_title"],
+            "year": r["year"],
+            "paper_title": r["paper_title"],
+            "last_wrong_at": r["last_wrong_at"],
+            "has_explanation": bool(meta.get("explanation")),
+        })
+    # 类型分布
+    by_type = connection.execute(
+        """SELECT units.unit_type, COUNT(*) n
+           FROM wrong_stats ws JOIN questions q ON q.id = ws.question_id
+           LEFT JOIN units ON units.id = q.unit_id
+           WHERE ws.wrong_count > 0
+           GROUP BY units.unit_type ORDER BY n DESC""").fetchall()
+    return {"top": items, "by_type": [{"type": r[0], "count": r[1]} for r in by_type]}

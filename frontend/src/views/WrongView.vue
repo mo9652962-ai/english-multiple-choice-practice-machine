@@ -221,6 +221,21 @@ async function load() {
 
 onMounted(load)
 
+// v2.42: 高频错题 TOP + 错因分布
+const wrongStats = ref<any>(null)
+async function loadWrongStats() {
+  try { wrongStats.value = await get('/wrong/stats') } catch { /* 非阻塞 */ }
+}
+async function redoQuestion(questionId: number) {
+  try {
+    const session: any = await post('/practice/sessions', {
+      mode: 'random', question_ids: [questionId], count: 1, shuffle_options: true,
+    })
+    router.push(`/practice/${session.id}`)
+  } catch (e) { showToast(`重做失败：${e}`, 'error') }
+}
+onMounted(loadWrongStats)
+
 function toggleYear(year: number) {
   const next = new Set(openYears.value)
   next.has(year) ? next.delete(year) : next.add(year)
@@ -375,6 +390,32 @@ function analysisLabel(unitIds: number[]): string {
         <button class="button" type="button" :disabled="paperExporting" @click="exportWrongPaper">
           {{ paperExporting ? '生成中…' : '📄 错题卷' }}
         </button>
+      </div>
+    </div>
+
+    <!-- v2.42: 高频错题 TOP + 错因分布 (猿题库考点归因) -->
+    <div v-if="wrongStats?.top?.length" class="card report-panel freq-card">
+      <h3>🔁 高频错题 TOP{{ wrongStats.top.length }} <small class="freq-sub">按重复出错次数排序 · 考前优先攻克</small></h3>
+      <div class="freq-grid">
+        <button
+          v-for="(item, i) in wrongStats.top.slice(0, 5)" :key="item.id"
+          class="freq-item" type="button" @click="redoQuestion(item.id)"
+        >
+          <span class="freq-rank">{{ i + 1 }}</span>
+          <span class="freq-body">
+            <span class="freq-stem">{{ item.stem }}</span>
+            <span class="freq-meta">
+              <i class="freq-badge" :class="'reason-' + (item.reason === '反复出错' ? 'repeat' : item.reason === '易错点' ? 'weak' : 'ok')">{{ item.reason_icon }} {{ item.reason }}</i>
+              <i>错 {{ item.wrong_count }} 次</i>
+              <i v-if="item.year">{{ item.year }}</i>
+            </span>
+          </span>
+        </button>
+      </div>
+      <div v-if="wrongStats.by_type?.length" class="freq-types">
+        <span v-for="t in wrongStats.by_type" :key="t.type" class="freq-type-chip">
+          {{ t.type || '未分类' }} × {{ t.count }}
+        </span>
       </div>
     </div>
 
