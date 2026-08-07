@@ -243,8 +243,8 @@ const practiceCards = computed(() => {
     <div class="page-head study-hero">
       <div class="study-hero-copy">
         <span class="eyebrow">YOUR QUIET STUDY SPACE</span>
-        <h1><span class="hero-seal" aria-hidden="true">墨</span>今天想练些什么？</h1>
-        <p class="lead">选一篇文章，留一点安静的时间给自己。</p>
+        <h1><span class="hero-seal" aria-hidden="true">墨</span>"Tell me and I forget. Teach me and I remember. Involve me and I learn."</h1>
+        <p class="lead">告诉我，我会忘记；教给我，我会记得；让我参与其中，我才真正学会。 —— 本杰明·富兰克林</p>
         <RouterLink class="button" to="/library"><BookOpen :size="17" />查看全部题库<ArrowRight :size="16" /></RouterLink>
       </div>
     </div>
