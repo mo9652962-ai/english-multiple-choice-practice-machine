@@ -466,7 +466,14 @@ const practiceCards = computed(() => {
     </div>
   </div>
 
-  <!-- v2.40: 打卡里程碑火焰庆祝 -->
+  <!-- v2.78: 水墨飘叶装饰 -->
+  <span class="ink-falling-leaf" style="left:6%;animation-duration:14s;animation-delay:0s">🍃</span>
+  <span class="ink-falling-leaf" style="left:22%;animation-duration:19s;animation-delay:3s">🍂</span>
+  <span class="ink-falling-leaf" style="left:48%;animation-duration:16s;animation-delay:7s">🍃</span>
+  <span class="ink-falling-leaf" style="left:78%;animation-duration:21s;animation-delay:2s">🍂</span>
+  <span class="ink-falling-leaf" style="left:92%;animation-duration:17s;animation-delay:5s">🍃</span>
+
+  <!-- v2.47: 打卡里程碑火焰庆祝 -->
   <CelebrateOverlay
     :show="streakCelebrate.show"
     :kind="streakCelebrate.kind"

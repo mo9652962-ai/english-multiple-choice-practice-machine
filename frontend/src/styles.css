@@ -1077,11 +1077,16 @@ h2, h3 { margin: 0; }
 /* ── 淡山水背景 (Subtle Landscape): 极淡远山+云雾, 不抢内容 ── */
 body.ink-landscape::after {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
-  background:
+  /* v2.78: 全局水墨底图 (江南春霭图 石涛) + 光影叠加 */
+  background-image:
     radial-gradient(ellipse 60% 42% at 82% 18%, rgba(64,60,53,.05) 0%, transparent 70%),
     radial-gradient(ellipse 45% 35% at 62% 30%, rgba(64,60,53,.04) 0%, transparent 70%),
     radial-gradient(ellipse 70% 30% at 18% 88%, rgba(64,60,53,.04) 0%, transparent 70%),
-    linear-gradient(180deg, rgba(247,243,238,.0) 55%, rgba(247,243,238,.75) 100%);
+    linear-gradient(180deg, rgba(247,243,238,.0) 55%, rgba(247,243,238,.75) 100%),
+    url('/assets/backgrounds/ink-2-jiangnan.jpg');
+  background-size: auto, auto, auto, auto, cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 :root.dark body.ink-landscape::after {
   opacity: .4;
@@ -1208,7 +1213,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .page-home::before, .page-library::before, .page-exam::before, .page-wrong::before,
 .page-vocab::before, .page-import::before, .page-assistant::before, .page-settings::before,
 .page-practice::before {
-  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background-size: cover; background-position: center 30%;
   background-repeat: no-repeat;
 }
@@ -1548,7 +1553,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .26; }
 .page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .26; }
 .page-leaderboard::before, .page-report::before, .page-achievements::before {
-  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
 }
 :root.dark .page-leaderboard::before { opacity: .16; }
@@ -2315,3 +2320,31 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .passage-pane::-webkit-scrollbar, .question-pane::-webkit-scrollbar { width: 6px; }
 /* 快速切换时防跳动: 页面过渡克制 */
 .main-content > * { animation-duration: .25s; }
+
+/* ═══ v2.78: 水墨装饰元素 (纯CSS, 增强氛围) ═══ */
+/* ① 飘叶动画 (首页右下) */
+.ink-falling-leaf { position: fixed; z-index: 0; pointer-events: none; color: color-mix(in srgb, var(--bamboo) 55%, transparent); font-size: 16px; animation: leaf-fall linear infinite; }
+@keyframes leaf-fall {
+  0% { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
+  12% { opacity: .7; }
+  88% { opacity: .5; }
+  100% { transform: translateY(105vh) rotate(300deg); opacity: 0; }
+}
+/* ② 印章式分区标题 (朱砂小方章) */
+.section-title h2::before { content: '◈'; color: color-mix(in srgb, var(--accent) 65%, transparent); margin-right: 8px; font-size: .8em; }
+/* ③ 水墨分隔线 (卡片之间) */
+.page > .section-title { position: relative; }
+/* ④ 卡片顶部水墨墨迹 (极淡) */
+.card::after {
+  content: ''; position: absolute; top: 0; right: 0; width: 42px; height: 42px; pointer-events: none; opacity: .14;
+  background: radial-gradient(circle at 70% 30%, var(--ink) 0 12%, transparent 14%),
+              radial-gradient(circle at 55% 55%, var(--ink) 0 8%, transparent 10%),
+              radial-gradient(circle at 80% 65%, var(--ink) 0 6%, transparent 8%);
+  border-radius: 0 0 0 60% 40% 50%;
+  filter: blur(.4px);
+}
+:root.dark .card::after { opacity: .2; }
+
+/* ═══ v2.78b: 飘叶 z-index 修正 (在背景之上内容之下) ═══ */
+.ink-falling-leaf { z-index: 0; }
+.main-content { position: relative; z-index: 1; }
