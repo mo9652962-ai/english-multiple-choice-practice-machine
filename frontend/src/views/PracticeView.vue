@@ -615,10 +615,29 @@ async function submitSession() {
     session.value = await post(`/practice/sessions/${session.value.id}/submit`)
     finishTimer()
     showSessionResult()
+    maybeCelebrate() // v2.40: 高正确率撒花
   }
   catch (e) {
     if (await handleIncompleteSubmission(e)) return
     error.value = String(e)
+  }
+}
+
+// v2.40: 庆祝动效 (多邻国式) — 正确率≥80% 撒花
+import CelebrateOverlay from '../components/CelebrateOverlay.vue'
+const celebrate = ref<{ show: boolean; kind: 'confetti' | 'flame'; title: string; subtitle: string }>({
+  show: false, kind: 'confetti', title: '', subtitle: '',
+})
+function maybeCelebrate() {
+  const s = session.value
+  if (!s) return
+  const rate = s.max_score ? Math.round((s.score / s.max_score) * 100) : 0
+  if (rate >= 80) {
+    celebrate.value = {
+      show: true, kind: 'confetti',
+      title: rate >= 95 ? '🎉 近乎满分！' : '🎉 做得漂亮！',
+      subtitle: `正确率 ${rate}% · 本次共 ${s.units?.length || 0} 个板块`,
+    }
   }
 }
 
@@ -1099,5 +1118,14 @@ async function copySelectedTerm() {
         </div>
       </div>
     </section>
+
+    <!-- v2.40: 庆祝动效 -->
+    <CelebrateOverlay
+      :show="celebrate.show"
+      :kind="celebrate.kind"
+      :title="celebrate.title"
+      :subtitle="celebrate.subtitle"
+      @close="celebrate.show = false"
+    />
   </div>
 </template>
