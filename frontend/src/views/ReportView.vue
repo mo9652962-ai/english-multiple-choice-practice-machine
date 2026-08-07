@@ -6,13 +6,38 @@ import CountUp from '../components/CountUp.vue'
 const report = ref<any>(null)
 const loading = ref(true)
 const error = ref('')
+const heatmap = ref<any>(null)
 
 onMounted(async () => {
   try {
     report.value = await get('/report')
   } catch (e) { error.value = String(e) }
   loading.value = false
+  // v2.35: 学习热力图 (GitHub 风格)
+  try {
+    heatmap.value = await get('/report/heatmap')
+  } catch { heatmap.value = null }
 })
+
+// v2.35: 热力图按周分组 (7 行 × 16 列, GitHub 风格)
+const heatmapWeeks = (): any[][] => {
+  if (!heatmap.value?.cells) return []
+  const cells = heatmap.value.cells
+  const weeks: any[][] = []
+  for (let w = 0; w < cells.length / 7; w++) {
+    const col: any[] = []
+    for (let d = 0; d < 7; d++) {
+      const c = cells[w * 7 + d]
+      if (c) col.push(c)
+    }
+    weeks.push(col)
+  }
+  return weeks
+}
+
+function heatClass(level: number) {
+  return `heat-l${Math.min(4, level)}`
+}
 
 function rateClass(rate: number) {
   if (rate >= 80) return 'rate-good'
@@ -82,6 +107,27 @@ function radarPoints(): string {
               <div><b>{{ p.wrong }}</b><small>错题</small></div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- v2.35: 学习热力图 (GitHub 风格打卡) -->
+      <div v-if="heatmap?.cells?.length" class="card report-panel heatmap-panel">
+        <h3>🔥 学习热力图（近 16 周）</h3>
+        <p class="lead" style="font-size:12px;color:var(--muted);margin-bottom:12px">颜色越深，当天学习越投入 · 共 {{ heatmap.total }} 次活动</p>
+        <div class="heatmap-grid">
+          <div v-for="(week, wi) in heatmapWeeks()" :key="wi" class="heatmap-week">
+            <div v-for="cell in week" :key="cell.date" class="heat-cell" :class="heatClass(cell.level)"
+              :title="`${cell.date} · ${cell.count} 次活动`"></div>
+          </div>
+        </div>
+        <div class="heatmap-legend">
+          <span>少</span>
+          <i class="heat-cell heat-l0"></i>
+          <i class="heat-cell heat-l1"></i>
+          <i class="heat-cell heat-l2"></i>
+          <i class="heat-cell heat-l3"></i>
+          <i class="heat-cell heat-l4"></i>
+          <span>多</span>
         </div>
       </div>
 

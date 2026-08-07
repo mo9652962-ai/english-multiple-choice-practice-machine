@@ -1455,3 +1455,28 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 
 /* v2.34: 深色渐变装饰 (数据叙事化) */
 :root.dark .study-hero::before { opacity: .55; }
+
+/* ── v2.35: 学习热力图 (GitHub 风格打卡) ── */
+.heatmap-panel { overflow: hidden; }
+.heatmap-grid { display: flex; gap: 3px; overflow-x: auto; padding-bottom: 4px; }
+.heatmap-week { display: flex; flex-direction: column; gap: 3px; }
+.heat-cell { width: 13px; height: 13px; border-radius: 3px; background: color-mix(in srgb, var(--line) 55%, transparent); transition: transform .15s; }
+.heat-cell:hover { transform: scale(1.35); }
+.heat-l1 { background: color-mix(in srgb, var(--bamboo) 30%, var(--surface-2)); }
+.heat-l2 { background: color-mix(in srgb, var(--bamboo) 55%, var(--surface-2)); }
+.heat-l3 { background: color-mix(in srgb, var(--bamboo) 75%, var(--surface-2)); }
+.heat-l4 { background: var(--bamboo); }
+.heatmap-legend { display: flex; align-items: center; gap: 4px; margin-top: 10px; font-size: 10px; color: var(--muted); justify-content: flex-end; }
+.heatmap-legend i { display: inline-block; }
+
+/* ── v2.35: 3D/Spatial 微交互 (2026 spatial UI) ── */
+.stat-card, .report-main .report-panel, .practice-card {
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s;
+}
+.stat-card:hover, .report-main .report-panel:hover, .practice-card:hover {
+  transform: translateY(-4px) rotateX(2deg) rotateY(-1deg);
+  box-shadow: 0 20px 48px -16px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.5);
+}
+.study-hero h1 { animation: hero-in .7s cubic-bezier(.22,1,.36,1) both; }
+@keyframes hero-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
