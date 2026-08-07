@@ -15,6 +15,8 @@ const activePlan = ref<any>(null)
 const planWords = ref<any[]>([])
 const planLoading = ref(false)
 const selected = ref<any>(null)
+const wordContexts = ref<any[]>([])
+const wordContextsLoading = ref(false)
 const filter = ref('all')
 const category = ref('')
 const catType = ref('')  // v2.15: 高频/热点 子分类
@@ -90,6 +92,14 @@ async function select(id: number) {
     Object.assign(editForm, selected.value)
     editing.value = false
     expandedAll.value = false
+    // v2.23: 词文串学 — 加载真题语境
+    wordContexts.value = []
+    wordContextsLoading.value = true
+    try {
+      const ctx: any = await get(`/vocabulary/${id}/context`)
+      wordContexts.value = ctx.contexts || []
+    } catch { wordContexts.value = [] }
+    wordContextsLoading.value = false
   } catch (e) {
     error.value = String(e)
   }
@@ -200,6 +210,14 @@ async function openPlan(plan: any) {
 }
 
 function closePlan() { activePlan.value = null; planWords.value = [] }
+
+// v2.23: 词文串学 — 高亮词形
+function highlightContext(c: any): string {
+  const word = c.highlight || ''
+  if (!word) return c.sentence
+  const re = new RegExp('(' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig')
+  return c.sentence.replace(re, '<mark class="vocab-context-mark">$1</mark>')
+}
 
 onMounted(() => { load(); loadPlans() })
 </script>
@@ -376,6 +394,19 @@ onMounted(() => { load(); loadPlans() })
                 <small>{{ occurrence.year || '未知年份' }} · {{ occurrence.unit_title || occurrence.unit_type }}</small>
               </article>
             </template>
+          </div>
+          <!-- v2.23: 词文串学 — 全局真题语境扩展 -->
+          <div class="detail-section vocab-context-section">
+            <label>词文串学 · 真题语境</label>
+            <p class="vocab-context-hint">在真题文章中巩固记忆，背一个词，见真语境</p>
+            <div v-if="wordContextsLoading" class="muted">检索真题语境…</div>
+            <div v-else-if="wordContexts.length">
+              <article v-for="(c, i) in wordContexts" :key="i" class="occurrence">
+                <p v-html="highlightContext(c)"></p>
+                <small>{{ c.source }}</small>
+              </article>
+            </div>
+            <div v-else class="muted">题库中暂无该词的真题例句。</div>
           </div>
           <div class="detail-actions">
             <button class="button secondary" @click="put(`/vocabulary/${selected.id}`,{manually_frequent:!selected.manually_frequent}).then(()=>load())"><Star :size="16" />{{ selected.manually_frequent ? '取消重点' : '标记重点' }}</button>
