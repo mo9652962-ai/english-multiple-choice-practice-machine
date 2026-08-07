@@ -2273,3 +2273,21 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 .unit-tabs button { border-radius: 99px; padding: 7px 16px; }
 /* 结果面板 */
 .result-dialog { border-radius: 26px; }
+
+/* ═══ v2.73: 深色模式精致化 (玄色墨底 + 月白字 + 柔光) ═══ */
+:root.dark {
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+  --shadow: 0 2px 4px rgba(0,0,0,.3), 0 16px 40px rgba(0,0,0,.28);
+  --shadow-hover: 0 4px 10px rgba(0,0,0,.35), 0 26px 56px rgba(0,0,0,.32);
+}
+:root.dark .card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 5%, transparent), transparent 42%) padding-box,
+    linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 96%, #2a2a24), color-mix(in srgb, var(--surface-solid) 88%, #1d1c17)) padding-box;
+}
+:root.dark .card::before { background: linear-gradient(90deg, transparent, color-mix(in srgb, #ffffff 9%, transparent), transparent); }
+:root.dark .card:hover { box-shadow: var(--shadow-hover), 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent); }
+:root.dark .button:not(.secondary):not(.ghost):not(.danger) {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 82%, #ffffff 6%), color-mix(in srgb, var(--primary) 100%, #000 4%));
+}
+:root.dark .freq-note-view, :root.dark .freq-note-editor { background: color-mix(in srgb, var(--line) 14%, transparent); }
