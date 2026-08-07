@@ -1235,6 +1235,16 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .page-settings::before { background-image: url('/assets/backgrounds/settings.jpg'); opacity: .28; }
 /* 练习: 复用题库雪竹 (更淡, 专注不扰) */
 .page-practice::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .18; }
+/* v2.92: 5 个新模块水墨背景 (楚山秋霁·专注 / 秋水潺湲·时光 / 天都晓日·登峰 / 江南春霭·书卷 / 桃花源·听音) */
+.page-focus::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .26; }
+.page-calendar::before { background-image: url('/assets/backgrounds/ink-5-shu.jpg'); opacity: .26; }
+.page-goal::before { background-image: url('/assets/backgrounds/ink-1-tiandu.jpg'); opacity: .24; }
+.page-reading::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .26; }
+.page-listening::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .26; }
+.page-focus::before, .page-calendar::before, .page-goal::before, .page-reading::before, .page-listening::before {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-size: cover; background-position: center 30%; background-repeat: no-repeat;
+}
 
 /* 深色模式: 图片略亮 + 不透明度略降 */
 :root.dark .page-home::before { opacity: .22; }
@@ -1243,6 +1253,8 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 :root.dark .page-wrong::before { opacity: .26; }
 :root.dark .page-vocab::before { opacity: .22; }
 :root.dark .page-import::before { opacity: .22; }
+:root.dark .page-focus::before, :root.dark .page-calendar::before, :root.dark .page-goal::before,
+:root.dark .page-reading::before, :root.dark .page-listening::before { opacity: .16; }
 :root.dark .page-assistant::before { opacity: .22; }
 :root.dark .page-settings::before { opacity: .20; }
 :root.dark .page-practice::before { opacity: .12; }
