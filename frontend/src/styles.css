@@ -2362,3 +2362,16 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
   .quote-mark { font-size: 32px; }
   .quote-en { font-size: 13px; }
 }
+
+/* ═══ v2.80: 第三轮高级感 1/10 — 配色再深化 (暖调微光 + 主题渐变) ═══ */
+:root {
+  --hero-glow-1: rgba(208, 225, 210, .5);
+  --hero-glow-2: rgba(230, 224, 236, .42);
+  --gold-grad: linear-gradient(135deg, #b89a55, #a8842f 60%, #c9a24a);
+  --accent-grad: linear-gradient(135deg, #c97a68, #bf6a5c 55%, #d58a76);
+  --ink-grad: linear-gradient(135deg, #4a463d, #2e2a23);
+}
+/* 金句/印章用渐变文字 */
+.quote-author, .hero-seal, .brand-copy strong { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* 主按钮墨色渐变再精 */
+.button:not(.secondary):not(.ghost):not(.danger) { background: var(--ink-grad); }
