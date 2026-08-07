@@ -1955,3 +1955,15 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 .stat-value, .rank-num, .wr-value { font-weight: 650; }
 /* 进度条: 光泽 */
 .goal-bar i, .review-progress i { box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 0 8px color-mix(in srgb, var(--gold) 40%, transparent); }
+
+/* ═══ v2.56: 首页 Hero 品牌感 (精致首屏) ═══ */
+.study-hero {
+  background-image: linear-gradient(120deg, color-mix(in srgb, var(--surface-solid) 78%, transparent) 35%, transparent 75%), url("/assets/forest-study-hero.webp");
+  box-shadow: var(--shadow-hover), 0 0 0 1px color-mix(in srgb, #ffffff 30%, transparent) inset;
+  backdrop-filter: blur(2px);
+}
+.study-hero h1 { letter-spacing: .08em; font-weight: 950; }
+.study-hero .hero-seal { box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 30%, transparent); }
+.study-hero .hero-cta .button { min-width: 130px; }
+/* 品牌 mark 精致化 */
+.brand-mark { box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 35%, transparent), 0 0 0 1px color-mix(in srgb, #ffffff 25%, transparent) inset; }
