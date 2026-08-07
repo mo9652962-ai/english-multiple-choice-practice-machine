@@ -1351,3 +1351,31 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 /* 智能建议 */
 .suggest-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .suggest-list li { padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--surface) 60%, transparent); font-size: 13px; color: var(--text); }
+
+/* ── v2.29: 成就徽章页 ── */
+.page-achievements .achieve-summary { display: flex; align-items: baseline; gap: 6px; padding: 12px 18px; border-radius: 16px; }
+.page-achievements .achieve-summary strong { font: 800 26px Georgia, serif; color: var(--accent); }
+.page-achievements .achieve-summary span { font-size: 13px; color: var(--muted); }
+.achieve-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.achieve-card { display: flex; gap: 14px; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); transition: all .2s var(--ease); }
+.achieve-card.earned { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 12%, transparent); }
+.achieve-card.locked { opacity: .72; }
+.achieve-icon { font-size: 32px; line-height: 1; filter: drop-shadow(0 3px 6px rgba(0,0,0,.15)); }
+.achieve-icon-dim { filter: grayscale(1) opacity(.45); }
+.achieve-body { flex: 1; min-width: 0; }
+.achieve-body h3 { font-size: 14px; font-weight: 800; margin: 0 0 4px; }
+.achieve-body p { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+.achieve-progress { height: 6px; border-radius: 99px; background: color-mix(in srgb, var(--line) 55%, transparent); overflow: hidden; }
+.achieve-progress i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width .5s var(--ease); }
+.achieve-meta { display: block; font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+/* ── v2.29: AI 推题卡 ── */
+.ai-picks-card { padding: 18px; margin-bottom: 14px; border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }
+.ai-picks-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.ai-picks-badge { font: 800 12px 'Noto Serif SC', serif; letter-spacing: .04em; padding: 4px 12px; border-radius: 99px; background: linear-gradient(90deg, var(--primary), var(--accent)); color: var(--surface-solid); }
+.ai-picks-sub { font-size: 12px; color: var(--muted); }
+.ai-strategy { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.ai-strategy p { margin: 0; font-size: 13px; color: var(--text); }
+.ai-picks-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.ai-pick-chip { padding: 8px 14px; border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--surface) 55%, transparent); font-size: 13px; font-weight: 700; color: var(--text); cursor: pointer; transition: all .18s var(--ease); }
+.ai-pick-chip:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-sm); }

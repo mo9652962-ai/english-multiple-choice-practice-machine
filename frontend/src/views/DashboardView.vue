@@ -9,6 +9,7 @@ import CountUp from '../components/CountUp.vue'
 
 const router = useRouter()
 const data = ref<any>(null)
+const aiPicks = ref<any>(null)
 const error = ref('')
 const vocabulary = ref<any[]>([])
 const tickerPaused = ref(false)
@@ -99,6 +100,7 @@ async function loadHome(force = false) {
 onMounted(async () => {
   await loadHome()
   startVocabularyRotation()
+  try { aiPicks.value = await get('/recommendations/ai') } catch { /* 推题失败不阻塞 */ }
 })
 onBeforeUnmount(() => {
   if (vocabularyTimer !== null) window.clearInterval(vocabularyTimer)
@@ -221,6 +223,32 @@ const practiceCards = computed(() => {
     <!-- v2.9: 按当前级别针对性推荐 -->
     <section v-if="data?.recommendations" class="recommend-section">
       <div class="section-title"><h2><span class="hero-seal recommend-seal" aria-hidden="true">荐</span>{{ data.active_profile?.name || '本级别' }} · 为你推荐</h2></div>
+      <!-- v2.29: AI 智能推题 -->
+      <div v-if="aiPicks" class="card ai-picks-card">
+        <div class="ai-picks-head">
+          <span class="ai-picks-badge">AI 推题</span>
+          <span class="ai-picks-sub">基于薄弱分析 · 规则引擎</span>
+        </div>
+        <div class="ai-picks-body">
+          <div v-if="aiPicks.strategy?.length" class="ai-strategy">
+            <p v-for="(s, i) in aiPicks.strategy" :key="i">{{ s }}</p>
+          </div>
+          <div class="ai-picks-row">
+            <button v-if="aiPicks.weak_type" class="ai-pick-chip" type="button" @click="randomPractice(aiPicks.weak_type)">
+              🎯 强化{{ aiPicks.weak_label }}（薄弱）
+            </button>
+            <button v-if="aiPicks.redo?.length" class="ai-pick-chip" type="button" @click="router.push('/wrong')">
+              🔁 重做 {{ aiPicks.redo.length }} 道高频错题
+            </button>
+            <button v-if="aiPicks.vocab?.length" class="ai-pick-chip" type="button" @click="router.push('/vocabulary')">
+              📖 背 {{ aiPicks.vocab.length }} 个生词
+            </button>
+            <button class="ai-pick-chip" type="button" @click="router.push('/exam')">
+              ✍️ 模拟考试
+            </button>
+          </div>
+        </div>
+      </div>
       <!-- 继续练习 -->
       <RouterLink v-if="data.recommendations.continue_paper" :to="'/library'" class="card recommend-continue">
         <span class="feature-icon sage" style="width:48px;height:48px;font-size:22px;margin-bottom:0">继</span>
