@@ -147,6 +147,30 @@ def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         ).fetchone()[0]
         answered_trend.append({"day": day, "count": n})
 
+    # ⑦c v2.41: 本周 vs 上周对比 (墨墨式数据亮点)
+    def _week_stats(ws: str, we: str) -> dict:
+        n = connection.execute(
+            "SELECT COUNT(*) FROM practice_answers WHERE substr(answered_at,1,10) >= ? AND substr(answered_at,1,10) <= ?",
+            (ws, we)).fetchone()[0]
+        c = connection.execute(
+            "SELECT COUNT(*) FROM practice_answers WHERE substr(answered_at,1,10) >= ? AND substr(answered_at,1,10) <= ? AND is_correct = 1",
+            (ws, we)).fetchone()[0]
+        v = connection.execute(
+            "SELECT COUNT(*) FROM vocabulary_entries WHERE substr(COALESCE(last_seen_at, updated_at),1,10) >= ? AND substr(COALESCE(last_seen_at, updated_at),1,10) <= ? AND study_status != 'new'",
+            (ws, we)).fetchone()[0]
+        return {"answered": n, "correct": c, "rate": round(c / n * 100) if n else 0, "vocab": v}
+
+    monday = today - timedelta(days=today.weekday())
+    this_week = _week_stats(monday.isoformat(), today.isoformat())
+    last_week = _week_stats((monday - timedelta(days=7)).isoformat(), (monday - timedelta(days=1)).isoformat())
+    week_compare = {
+        "this": this_week,
+        "last": last_week,
+        "answered_delta": this_week["answered"] - last_week["answered"],
+        "rate_delta": this_week["rate"] - last_week["rate"],
+        "vocab_delta": this_week["vocab"] - last_week["vocab"],
+    }
+
     # ⑧ 建议 (基于全级别薄弱 + 词汇 + 活跃)
     suggestions = []
     if by_type_all:
@@ -182,6 +206,11 @@ def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         "practice": {"sessions": practice["sessions"] if practice else 0,
                      "submitted": practice["submitted"] if practice else 0},
         "answered_trend": answered_trend,
+        "week_compare": week_compare,
+        "total_answered": connection.execute("SELECT COUNT(*) FROM practice_answers").fetchone()[0],
+        "total_rate": round((lambda c, n: c / n * 100 if n else 0)(
+            connection.execute("SELECT COUNT(*) FROM practice_answers WHERE is_correct = 1").fetchone()[0],
+            connection.execute("SELECT COUNT(*) FROM practice_answers").fetchone()[0])),
         "suggestions": suggestions,
     }
 
