@@ -326,8 +326,35 @@ def get_session(connection: sqlite3.Connection, session_id: int) -> dict[str, An
         "result_summary": result_summary,
         "units": units,
         "progress": {"answered": answered, "total": len(answers)},
+        # v2.22: 听力音频外链 (B站真题音频)
+        "audio_url": _session_audio_url(connection, unit_ids),
     }
     return payload
+
+
+# B站 2026 四六级听力音频 (公开真题音频)
+_BILI_AUDIO = {
+    "cet4": "https://player.bilibili.com/player.html?bvid=BV126MyzGEXZ&page=1&high_quality=1",
+    "cet6": "https://player.bilibili.com/player.html?bvid=BV1E4P171zEW&page=1&high_quality=1",
+}
+
+
+def _session_audio_url(connection: sqlite3.Connection, unit_ids: list[int]) -> str | None:
+    """v2.22: 听力单元挂 B站真题音频 (根据级别匹配)"""
+    if not unit_ids:
+        return None
+    row = connection.execute(
+        """
+        SELECT u.unit_type, p.profile_id FROM units u
+        JOIN papers p ON p.id = u.paper_id
+        WHERE u.id = ? AND u.unit_type = 'listening'
+        """,
+        (unit_ids[0],),
+    ).fetchone()
+    if not row:
+        return None
+    key = "cet6" if row["profile_id"] == 4 else "cet4"
+    return _BILI_AUDIO.get(key)
 
 
 def save_answer(

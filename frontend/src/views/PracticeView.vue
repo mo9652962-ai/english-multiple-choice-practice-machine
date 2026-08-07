@@ -785,7 +785,7 @@ async function copySelectedTerm() {
         </div>
         <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
         <audio
-          v-if="isListening && session.audio_url"
+          v-if="isListening && session.audio_url && !session.audio_url.includes('bilibili')"
           ref="audioPlayer"
           class="listening-player"
           :src="session.audio_url"
@@ -794,6 +794,18 @@ async function copySelectedTerm() {
           @seeking="audioSeekable ? undefined : $event.preventDefault()"
           @timeupdate="onAudioTimeUpdate"
         />
+        <div v-else-if="isListening && session.audio_url" class="listening-bili-wrap">
+          <p class="listening-hint">▶ 真题听力音频（B站公开资源，点击播放）</p>
+          <iframe
+            class="listening-bili-player"
+            :src="session.audio_url"
+            scrolling="no"
+            border="0"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
         <p v-if="activeUnit.shared_data?.directions" class="lead" style="margin-bottom:24px">{{ activeUnit.shared_data.directions }}</p>
         <div class="passage" data-vocab-text @contextmenu="openVocabularyMenu" :style="passageStyle">
           <ContentBlocks
