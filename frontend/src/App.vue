@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BookMarked, BookOpenText, Brain, FileUp, GraduationCap, Home, Library, MessageCircle, Moon, Settings, Sun, Timer } from 'lucide-vue-next'
+import { BarChart3, BookMarked, BookOpenText, Brain, FileUp, GraduationCap, Home, Library, MessageCircle, Moon, Settings, Sun, Timer } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
@@ -80,6 +80,7 @@ onMounted(() => {
         <RouterLink to="/library"><Library :size="19" aria-hidden="true" /><span>题库与练习</span></RouterLink>
         <RouterLink to="/exam"><Timer :size="19" aria-hidden="true" /><span>模拟考试</span></RouterLink>
         <RouterLink to="/wrong"><Brain :size="19" aria-hidden="true" /><span>错题本</span></RouterLink>
+        <RouterLink to="/report"><BarChart3 :size="19" aria-hidden="true" /><span>学习报告</span></RouterLink>
         <RouterLink to="/vocabulary"><BookMarked :size="19" aria-hidden="true" /><span>单词本</span></RouterLink>
         <RouterLink to="/imports"><FileUp :size="19" aria-hidden="true" /><span>导入题库</span></RouterLink>
         <RouterLink to="/assistant">
@@ -121,6 +122,7 @@ onMounted(() => {
           <RouterLink to="/"><Home :size="20" /><span>首页</span></RouterLink>
           <RouterLink to="/library"><Library :size="20" /><span>题库</span></RouterLink>
           <RouterLink to="/wrong"><Brain :size="20" /><span>错题</span></RouterLink>
+          <RouterLink to="/report"><BarChart3 :size="20" /><span>报告</span></RouterLink>
           <RouterLink to="/vocabulary"><BookMarked :size="20" /><span>单词</span></RouterLink>
           <RouterLink to="/settings"><Settings :size="20" /><span>设置</span></RouterLink>
         </nav>
