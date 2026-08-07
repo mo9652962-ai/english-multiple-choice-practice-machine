@@ -1,12 +1,14 @@
 {
-  "name": "AI 英语刷题机",
-  "short_name": "刷题机",
-  "description": "接大模型 · 本地题库 · 自由刷题",
+  "name": "墨题 · 英语刷题",
+  "short_name": "墨题",
+  "description": "水墨风英语刷题机 · 真题练习 · 单词记忆 · 错题本",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f5f2e9",
   "theme_color": "#486d5c",
   "orientation": "any",
+  "lang": "zh-CN",
+  "categories": ["education", "productivity"],
   "icons": [
     {
       "src": "/assets/icons/brand-mark.png",
