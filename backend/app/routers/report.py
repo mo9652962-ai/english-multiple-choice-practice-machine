@@ -173,3 +173,28 @@ def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
                      "submitted": practice["submitted"] if practice else 0},
         "suggestions": suggestions,
     }
+
+@router.get("/heatmap")
+def get_heatmap(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+    """v2.35: 学习热力图 (GitHub 风格) — 近 16 周每日活动次数"""
+    today = date.today()
+    start = today - timedelta(days=16 * 7 - 1)
+    rows = connection.execute(
+        """SELECT day, COUNT(*) AS n FROM learning_days
+           WHERE day >= ? GROUP BY day""",
+        (start.isoformat(),),
+    ).fetchall()
+    counts = {r["day"]: r["n"] for r in rows}
+    cells = []
+    for i in range(16 * 7):
+        d = start + timedelta(days=i)
+        iso = d.isoformat()
+        cells.append({
+            "date": iso,
+            "count": counts.get(iso, 0),
+            "level": min(4, int(counts.get(iso, 0) / 2)) if counts.get(iso) else 0,
+        })
+    # 对齐到周日开始 (GitHub 风格列=周)
+    max_level = max((c["level"] for c in cells), default=0)
+    return {"weeks": 16, "cells": cells, "max_level": max_level,
+            "total": sum(counts.values())}
