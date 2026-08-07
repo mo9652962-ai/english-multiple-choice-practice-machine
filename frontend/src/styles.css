@@ -1967,3 +1967,21 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 .study-hero .hero-cta .button { min-width: 130px; }
 /* 品牌 mark 精致化 */
 .brand-mark { box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 35%, transparent), 0 0 0 1px color-mix(in srgb, #ffffff 25%, transparent) inset; }
+
+/* ═══ v2.57: 侧边栏导航精致化 (层次与质感) ═══ */
+.app-sidebar nav a { border-radius: 10px; margin: 2px 0; }
+.app-sidebar nav a.router-link-active {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 14%, transparent), color-mix(in srgb, var(--primary) 5%, transparent));
+  box-shadow: inset 3px 0 0 var(--accent), 0 1px 3px rgba(46,42,35,.05);
+}
+.app-sidebar nav a:hover { background: color-mix(in srgb, var(--line) 22%, transparent); }
+/* 分组标签: 更清晰 */
+.sidebar-category-label, .sidebar-note p { letter-spacing: .2em; }
+/* 类别按钮: 细腻 */
+.sidebar-category { border-radius: 10px; }
+.sidebar-category.active {
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+/* 主题按钮 */
+.theme-button { border-radius: 10px; }
