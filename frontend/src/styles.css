@@ -2348,3 +2348,17 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 /* ═══ v2.78b: 飘叶 z-index 修正 (在背景之上内容之下) ═══ */
 .ink-falling-leaf { z-index: 0; }
 .main-content { position: relative; z-index: 1; }
+
+/* ═══ v2.79: 今日金句卡 ═══ */
+.quote-card { position: relative; display: flex; gap: 16px; align-items: flex-start; padding: 18px 22px; margin-bottom: 14px; cursor: pointer; overflow: hidden; }
+.quote-card:hover { border-color: color-mix(in srgb, var(--gold) 45%, var(--line)); }
+.quote-mark { font: 800 44px Georgia, serif; color: color-mix(in srgb, var(--accent) 40%, transparent); line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.quote-body { min-width: 0; flex: 1; }
+.quote-en { font: italic 600 15px Georgia, serif; color: var(--text); margin: 0 0 8px; line-height: 1.55; letter-spacing: .01em; }
+.quote-cn { font-size: 12.5px; color: var(--muted); margin: 0; line-height: 1.7; }
+.quote-author { font-size: 11px; color: color-mix(in srgb, var(--gold) 80%, var(--muted)); }
+.quote-hint { position: absolute; bottom: 8px; right: 14px; font-size: 10px; color: color-mix(in srgb, var(--muted) 65%, transparent); letter-spacing: .08em; }
+@media (max-width: 720px) {
+  .quote-mark { font-size: 32px; }
+  .quote-en { font-size: 13px; }
+}
