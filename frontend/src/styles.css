@@ -2000,3 +2000,20 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 /* 模态: 克制缩放 */
 .category-modal-panel, .review-overlay .review-card { animation: modal-in .28s var(--ease-bounce); }
 @keyframes modal-in { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ═══ v2.59: 细节打磨 (徽章/空态/图标/焦点) ═══ */
+/* 徽章统一圆角 */
+.rank-rule, .freq-type-chip, .freq-badge, .ai-pick-chip, .reading-badge, .focus-today-item, .cal-total { border-radius: 99px; }
+/* 空状态: 更优雅 */
+.empty { text-align: center; padding: 44px 20px !important; color: var(--muted); }
+.illustrated-empty img { filter: sepia(.18) saturate(.8) opacity(.85); }
+/* 焦点环: 品牌化 */
+:focus-visible { outline: 2px solid color-mix(in srgb, var(--accent) 65%, transparent); outline-offset: 2px; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent); }
+/* 选中文本: 品牌色 */
+::selection { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+/* 图标统一过渡 */
+svg { transition: transform .2s var(--ease); }
+/* 分隔线: 更淡 */
+.section-title { border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+/* 提示/警示: 柔和 */
+.warning, .muted { letter-spacing: .01em; }
