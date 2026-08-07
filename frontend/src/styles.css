@@ -1873,3 +1873,22 @@ input:focus, select:focus, textarea:focus {
   --morandi-cream: #c8b8a0;
   --morandi-gray: #b8b8b0;
 }
+
+/* ═══ v2.51: 排版系统精致化 (字距/行高/标题层级) ═══ */
+body { line-height: 1.65; }
+h1, h2, h3, h4 { line-height: 1.3; }
+p { line-height: 1.7; }
+/* 中文正文更舒展 */
+.lead { line-height: 1.8; letter-spacing: .01em; }
+/* 大标题精致层级 */
+.page-head h1 { text-shadow: 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent); }
+/* 数字与单位区分 */
+.stat-value small, .stat-value .stat-unit { font-size: .5em; font-weight: 600; color: var(--muted); margin-left: 2px; letter-spacing: .04em; }
+/* 标签统一小字号 + 字距 */
+.section-title h2 { letter-spacing: .04em; }
+/* 卡片标题精致 */
+.card h3 { letter-spacing: .03em; }
+/* 正文行高统一 + 优化中文阅读 */
+.card p, .report-panel p { line-height: 1.75; }
+/* 引文/例句更精致 */
+blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb, var(--muted) 88%, var(--ink)); }
