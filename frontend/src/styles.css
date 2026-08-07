@@ -2095,3 +2095,17 @@ svg { transition: transform .2s var(--ease); }
 html, body { overflow-x: hidden; overflow-y: auto; }
 /* ⑤ 卡片动画不阻塞滚动 (fill 保守处理) */
 .main-content > * { animation: page-fade .35s ease backwards; }
+
+/* ═══ v2.62: Hero 名言适配 (富兰克林) ═══ */
+.study-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px, 1.5vw + 12px, 27px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .02em;
+  max-width: 620px;
+}
+.study-hero .lead { margin-top: 10px; font-size: 13.5px; color: var(--muted); }
+@media (max-width: 720px) {
+  .study-hero h1 { font-size: 17px; }
+}
