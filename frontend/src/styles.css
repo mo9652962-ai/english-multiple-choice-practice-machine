@@ -1768,3 +1768,77 @@ input:focus, select:focus, textarea:focus {
 /* ⑪ 高光线不遮挡内容 */
 .card::before { pointer-events: none; }
 .card > * { position: relative; z-index: 1; }
+
+/* ═══ v2.49: 5 个新模块 (专注/日历/目标/阅读/听力) ═══ */
+/* 专注计时 */
+.page-focus { --sec-accent: #c97b4a; --sec-primary: #a85f33; }
+.focus-today { display: flex; gap: 10px; flex-wrap: wrap; }
+.focus-today-item { padding: 6px 14px; border-radius: 99px; background: color-mix(in srgb, var(--sec-accent) 12%, var(--surface-solid)); border: 1px solid color-mix(in srgb, var(--sec-accent) 28%, transparent); font-size: 12px; font-weight: 700; }
+.focus-card { display: flex; flex-direction: column; align-items: center; padding: 30px 24px; gap: 22px; }
+.focus-modes { display: flex; gap: 10px; }
+.focus-mode { padding: 7px 18px; border-radius: 99px; border: 1px solid var(--line); background: transparent; font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer; transition: all .2s; }
+.focus-mode.active { background: color-mix(in srgb, currentColor 8%, transparent); }
+.focus-ring { position: relative; width: 220px; height: 220px; }
+.focus-ring-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.focus-ring-svg circle { fill: none; stroke-width: 7; }
+.ring-bg { stroke: color-mix(in srgb, var(--line) 60%, transparent); }
+.ring-fg { stroke: var(--color); stroke-linecap: round; stroke-dasharray: 326.7; stroke-dashoffset: calc(326.7 * (1 - var(--pct) / 100)); transition: stroke-dashoffset .5s ease, stroke .3s; }
+.focus-time { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 800 52px Georgia, serif; letter-spacing: .03em; color: var(--text); }
+.focus-mode-label { position: absolute; bottom: 62px; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--muted); letter-spacing: .2em; }
+.focus-controls { display: flex; gap: 12px; }
+.focus-tip { font-size: 11px; color: var(--muted); }
+
+/* 学习日历 */
+.page-calendar { --sec-accent: #5c7a52; --sec-primary: #4c6643; }
+.cal-total { padding: 6px 14px; border-radius: 99px; background: color-mix(in srgb, var(--sec-accent) 12%, var(--surface-solid)); font-size: 12px; font-weight: 700; }
+.cal-head { display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 14px; }
+.cal-title { margin: 0; font: 800 18px Georgia, serif; min-width: 130px; text-align: center; }
+.cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 6px; }
+.cal-weekdays span { text-align: center; font-size: 11px; color: var(--muted); font-weight: 700; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-cell { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 12px; border-radius: 8px; color: var(--text); border: 1px solid transparent; transition: transform .15s; }
+.cal-cell:not(.blank):hover { transform: scale(1.1); }
+.cal-cell.blank { visibility: hidden; }
+.cal-cell.heat-l1 { background: color-mix(in srgb, #c97b4a 14%, transparent); }
+.cal-cell.heat-l2 { background: color-mix(in srgb, #c97b4a 30%, transparent); }
+.cal-cell.heat-l3 { background: color-mix(in srgb, #c97b4a 48%, transparent); color: #fff; }
+.cal-cell.heat-l4 { background: #b05c2e; color: #fff; font-weight: 800; }
+.cal-cell.today { border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent); }
+.cal-legend { display: flex; align-items: center; gap: 6px; justify-content: flex-end; margin-top: 10px; font-size: 10px; color: var(--muted); }
+.cal-types { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+/* 目标中心 */
+.page-goal { --sec-accent: #a8842f; --sec-primary: #8a6d24; }
+.goal-hero { display: flex; align-items: center; gap: 30px; padding: 26px; }
+.goal-ring { position: relative; width: 150px; height: 150px; flex-shrink: 0; }
+.goal-ring-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.goal-ring-text b { font-size: 28px; }
+.goal-ring-text span { font-size: 10px; color: var(--muted); }
+.goal-info h3 { margin: 0 0 6px; font-size: 16px; }
+.goal-rate { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+.goal-set { display: flex; gap: 8px; margin-top: 10px; }
+.goal-set input { width: 110px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-solid); color: var(--text); }
+.goal-history { display: flex; align-items: flex-end; gap: 8px; height: 120px; padding-top: 10px; }
+.goal-day { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%; }
+.goal-day-bar { width: 70%; max-width: 22px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #c9a24a, #a8842f); transition: height .4s ease; }
+.goal-day.done .goal-day-bar { background: linear-gradient(180deg, #6d9a6b, #3e6b52); }
+.goal-day-label { font-size: 9px; color: var(--muted); }
+
+/* 阅读训练 */
+.page-reading { --sec-accent: #5c7a52; --sec-primary: #4c6643; }
+.reading-grid, .listening-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.reading-card, .listening-card { cursor: pointer; transition: transform .2s, border-color .2s; padding: 18px; }
+.reading-card:hover, .listening-card:hover { transform: translateY(-3px); border-color: var(--sec-accent); }
+.reading-badge { display: inline-block; padding: 2px 10px; border-radius: 99px; background: color-mix(in srgb, var(--sec-accent) 14%, transparent); color: var(--sec-accent); font-size: 10px; font-weight: 800; letter-spacing: .12em; margin-bottom: 10px; }
+.reading-title { font: 800 15px Georgia, serif; margin: 0 0 8px; }
+.reading-excerpt { font-size: 12px; color: var(--muted); line-height: 1.7; margin: 0 0 12px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.reading-go { font-size: 11px; font-weight: 700; color: var(--sec-accent); }
+
+/* 听力精听 */
+.page-listening { --sec-accent: #4a6fa5; --sec-primary: #3d5f8f; }
+.listening-card { display: flex; align-items: center; gap: 12px; }
+.listening-icon { font-size: 26px; }
+.listening-body { flex: 1; min-width: 0; }
+.listening-title { font: 800 14px Georgia, serif; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.listening-meta { font-size: 11px; color: var(--muted); }
+.listening-go { font-size: 11px; font-weight: 700; color: var(--sec-accent); flex-shrink: 0; }
