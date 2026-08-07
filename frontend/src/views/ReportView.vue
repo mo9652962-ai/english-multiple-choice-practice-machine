@@ -66,10 +66,29 @@ function radarPoints(): string {
         </div>
       </div>
 
+      <!-- 级别汇总 (全部类别) -->
+      <div v-if="report.by_profile?.length" class="report-panel card">
+        <h3>🗂️ 全部级别汇总</h3>
+        <div class="profile-grid">
+          <div v-for="p in report.by_profile" :key="p.profile_id" class="profile-card" :class="{ 'profile-active': p.profile_id === report.active_profile?.id }">
+            <div class="profile-head">
+              <strong>{{ p.name }}</strong>
+              <span v-if="p.profile_id === report.active_profile?.id" class="profile-tag">当前</span>
+            </div>
+            <div class="profile-stats">
+              <div><b>{{ p.sessions }}</b><small>场次</small></div>
+              <div><b>{{ p.answered }}</b><small>答题</small></div>
+              <div><b :class="rateClass(p.rate)">{{ p.rate }}%</b><small>正确率</small></div>
+              <div><b>{{ p.wrong }}</b><small>错题</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="grid grid-2 report-main">
         <!-- 正确率趋势 -->
         <div class="card report-panel">
-          <h3>📈 正确率趋势（近30天）</h3>
+          <h3>📈 正确率趋势（近30天 · 全级别）</h3>
           <div v-if="report.trend.length" class="trend-chart">
             <div v-for="(t, i) in report.trend" :key="i" class="trend-bar-wrap">
               <div class="trend-bar" :class="rateClass(t.rate)" :style="{ height: Math.max(6, t.rate) + '%' }" :title="`${t.day} 正确率 ${t.rate}% (${t.total}题)`"></div>
@@ -81,7 +100,7 @@ function radarPoints(): string {
 
         <!-- 题型能力雷达 -->
         <div class="card report-panel">
-          <h3>🎯 题型能力（{{ report.profile }}）</h3>
+          <h3>🎯 题型能力（全级别汇总）</h3>
           <div v-if="report.by_type.length" class="radar-wrap">
             <svg viewBox="0 0 120 120" class="radar">
               <polygon points="60,12 108,60 60,108 12,60" fill="none" stroke="var(--line)" stroke-width="0.5" />
