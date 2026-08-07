@@ -1297,11 +1297,17 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .practice-card-disabled .action-arrow { opacity: .35; }
 
 /* ── v2.18: 备考倒计时条 + 今日学习计划 (研究优化) ── */
-.exam-countdown-bar { display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+/* v2.40: 倒计时条改横向滚动 (适配尺寸: 考试多时可滑动查看全部) */
+.exam-countdown-bar { display: flex; align-items: center; gap: 18px; flex-wrap: nowrap;
   padding: 10px 16px; margin-bottom: 14px; border: 1px dashed var(--sec-accent, var(--line));
-  border-radius: 14px; background: color-mix(in srgb, var(--surface) 82%, transparent); }
-.countdown-label { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .05em; }
-.countdown-item { display: inline-flex; align-items: baseline; gap: 5px; font-size: 13px; color: var(--muted); }
+  border-radius: 14px; background: color-mix(in srgb, var(--surface) 82%, transparent);
+  overflow-x: auto; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent) 40%, transparent) transparent;
+  -webkit-overflow-scrolling: touch; }
+.exam-countdown-bar::-webkit-scrollbar { height: 4px; }
+.exam-countdown-bar::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 99px; }
+.exam-countdown-bar::-webkit-scrollbar-track { background: transparent; }
+.countdown-label { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .05em; flex-shrink: 0; }
+.countdown-item { display: inline-flex; align-items: baseline; gap: 5px; font-size: 13px; color: var(--muted); flex-shrink: 0; }
 .countdown-item strong { color: var(--sec-accent, var(--primary)); font-weight: 800; }
 .countdown-item b { font: 700 17px Georgia, serif; color: var(--accent, #c73e3a); }
 
@@ -1581,3 +1587,13 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .celebrate-fade-enter-active, .celebrate-fade-leave-active { transition: opacity .3s; }
 .celebrate-fade-enter-from, .celebrate-fade-leave-to { opacity: 0; }
 :root.dark .celebrate-overlay { background: color-mix(in srgb, #14140f 74%, transparent); }
+
+/* ── v2.40: 流式排版 (2026 响应式最佳实践: clamp 平滑缩放) ── */
+body { font-size: clamp(14px, 0.8rem + 0.25vw, 16px); }
+h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
+.page-head h1 { font-size: clamp(22px, 1.35rem + 1.1vw, 32px); }
+.stat-value { font-size: clamp(24px, 1.45rem + 1vw, 34px); }
+.study-hero { padding: clamp(26px, 3vw + 10px, 46px); }
+.grid { gap: clamp(12px, 1vw + 6px, 18px); }
+.card { padding: clamp(12px, 0.8vw + 8px, 18px); }
+.main-content { padding: clamp(14px, 1.5vw + 8px, 26px); }
