@@ -164,6 +164,42 @@ function radarPoints(): string {
           <div v-else class="muted">暂无练习数据，去刷一题吧</div>
         </div>
 
+        <!-- v2.41: 本周战报 (墨墨式数据亮点: 本周 vs 上周) -->
+        <div class="card report-panel week-report-card">
+          <h3>📈 本周战报</h3>
+          <div v-if="report?.week_compare" class="week-report-grid">
+            <div class="week-report-item">
+              <span class="wr-label">本周答题</span>
+              <b class="wr-value">{{ report.week_compare.this.answered }}</b>
+              <span class="wr-delta" :class="report.week_compare.answered_delta >= 0 ? 'up' : 'down'">
+                {{ report.week_compare.answered_delta >= 0 ? '↑' : '↓' }} {{ Math.abs(report.week_compare.answered_delta) }}
+              </span>
+              <small>上周 {{ report.week_compare.last.answered }}</small>
+            </div>
+            <div class="week-report-item">
+              <span class="wr-label">正确率</span>
+              <b class="wr-value">{{ report.week_compare.this.rate }}%</b>
+              <span class="wr-delta" :class="report.week_compare.rate_delta >= 0 ? 'up' : 'down'">
+                {{ report.week_compare.rate_delta >= 0 ? '↑' : '↓' }} {{ Math.abs(report.week_compare.rate_delta) }}%
+              </span>
+              <small>上周 {{ report.week_compare.last.rate }}%</small>
+            </div>
+            <div class="week-report-item">
+              <span class="wr-label">本周新词</span>
+              <b class="wr-value">{{ report.week_compare.this.vocab }}</b>
+              <span class="wr-delta" :class="report.week_compare.vocab_delta >= 0 ? 'up' : 'down'">
+                {{ report.week_compare.vocab_delta >= 0 ? '↑' : '↓' }} {{ Math.abs(report.week_compare.vocab_delta) }}
+              </span>
+              <small>上周 {{ report.week_compare.last.vocab }}</small>
+            </div>
+            <div class="week-report-item">
+              <span class="wr-label">累计正确率</span>
+              <b class="wr-value">{{ report.total_rate }}%</b>
+              <small>全周期 {{ report.total_answered }} 题</small>
+            </div>
+          </div>
+        </div>
+
         <!-- v2.38: 练习量趋势 (近14天) -->
         <div class="card report-panel">
           <h3>📊 练习量趋势（近14天）</h3>
