@@ -115,6 +115,34 @@ async function exportWrong() {
   }
 }
 
+// v2.37: 导出可打印错题卷 (粉笔式出卷, HTML 打印版)
+const paperExporting = ref(false)
+async function exportWrongPaper() {
+  if (paperExporting.value) return
+  paperExporting.value = true
+  try {
+    const res = await fetch('/api/wrong/export/html')
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const html = await res.text()
+    if (!html.includes('paper-item')) {
+      showToast('没有可导出的错题。', 'info')
+      return
+    }
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `错题卷-${new Date().toISOString().slice(0, 10)}.html`
+    a.click()
+    URL.revokeObjectURL(url)
+    showToast('错题卷已导出，可用浏览器打开后打印', 'success')
+  } catch (e) {
+    showToast(`导出失败：${e}`, 'error')
+  } finally {
+    paperExporting.value = false
+  }
+}
+
 const visible = computed(() =>
   frequentOnly.value ? rows.value.filter(row => row.is_frequent) : rows.value,
 )
@@ -339,9 +367,15 @@ function analysisLabel(unitIds: number[]): string {
         <h1>错题本</h1>
         <p class="lead">按年份与篇目整理，可直接对指定范围进行分析或重做。</p>
       </div>
-      <button class="button ghost" type="button" :disabled="exporting" @click="exportWrong">
-        {{ exporting ? '导出中…' : '导出错题' }}
-      </button>
+      <div style="display:flex;gap:8px">
+        <button class="button ghost" type="button" :disabled="exporting" @click="exportWrong">
+          {{ exporting ? '导出中…' : '导出错题' }}
+        </button>
+        <!-- v2.37: 打印错题卷 (粉笔式出卷) -->
+        <button class="button" type="button" :disabled="paperExporting" @click="exportWrongPaper">
+          {{ paperExporting ? '生成中…' : '📄 错题卷' }}
+        </button>
+      </div>
     </div>
 
     <div v-if="error" class="warning">{{ error }}</div>
