@@ -148,8 +148,9 @@ def exam_countdown(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 
 def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_name: str) -> dict:
     """v2.18: 今日学习计划 (研究: 练题狗 AI智能推题 / 可栗口语 自动安排复习)
-    组合: FSRS待复习词 + 薄弱题型专项 + 错题复习
+    v2.19: 研究强化 - 艾宾浩斯"每日=新学+复习" + 任务量/时间预估 + 完成度追踪
     """
+    today = date.today().isoformat()
     # ① FSRS 今日待复习单词
     from ..services.fsrs_scheduler import get_due_today
     try:
@@ -157,7 +158,17 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
         due_count = len(due)
     except Exception:
         due_count = 0
-    # ② 薄弱题型: 能力雷达最低正确率题型
+    # ② 今日新词目标 (艾宾浩斯: 每日新学 + 复习; 默认 20/天)
+    new_words = connection.execute(
+        """SELECT COUNT(*) n FROM vocabulary_entries
+           WHERE study_status = 'new' AND (fsrs_due IS NULL OR fsrs_due <= ?)""",
+        (today + "T23:59:59",)).fetchone()["n"]
+    new_target = min(20, max(0, new_words))
+    # 今日已学新词 (learning_days 记录)
+    learned_today = connection.execute(
+        """SELECT COUNT(*) n FROM learning_days WHERE day = ? AND activity_type IN ('vocabulary','word')""",
+        (today,)).fetchone()["n"]
+    # ③ 薄弱题型: 能力雷达最低正确率题型
     weak_type = None
     ability = connection.execute(
         """
@@ -171,14 +182,18 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
         """, (profile_id,)).fetchone()
     if ability:
         weak_type = ability["unit_type"]
-    # ③ 待复习错题 (错 >= 2 次 或 近期错过且未连续答对)
+    # ④ 待复习错题 (错 >= 2 次)
     wrong = connection.execute(
         """SELECT COUNT(*) n FROM wrong_stats WHERE wrong_count >= 2
            AND question_id IN (SELECT id FROM questions WHERE unit_id IN
                (SELECT id FROM units WHERE paper_id IN
                    (SELECT id FROM papers WHERE profile_id = ? AND deleted_at IS NULL)))""",
         (profile_id,)).fetchone()["n"]
-    # ④ 今日推荐练习题型
+    # 今日已做练习
+    practiced_today = connection.execute(
+        """SELECT COUNT(*) n FROM learning_days WHERE day = ? AND activity_type IN ('practice','exam')""",
+        (today,)).fetchone()["n"]
+    # ⑤ 今日推荐练习题型
     counts = connection.execute(
         """SELECT u.unit_type, COUNT(DISTINCT u.id) n FROM units u
            JOIN papers p ON p.id = u.paper_id
@@ -187,16 +202,29 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
     practice_type = counts["unit_type"] if counts else None
     practice_label = {"cloze": "完形/选词填空", "reading": "阅读理解",
                       "paragraph_matching": "长篇匹配/七选五", "part_b": "七选五/匹配"}.get(practice_type or "", "专项练习")
+    # 时间预估 (研究: 刷题计划 任务量可调)
+    words_min = max(5, due_count * 0.4)
+    new_min = new_target * 0.5
+    practice_min = {"cloze": 12, "reading": 15, "paragraph_matching": 15, "part_b": 12}.get(practice_type or "", 12)
+    wrong_min = min(20, max(5, wrong * 1.2))
+    total_min = round(words_min + new_min + practice_min + wrong_min)
     return {
         "words_due": due_count,
+        "new_words_target": new_target,
+        "new_words_learned": learned_today,
         "weak_type": weak_type,
         "wrong_review": wrong,
         "practice_type": practice_type,
         "practice_label": practice_label,
+        "total_minutes": total_min,
         "plan": [
-            {"icon": "📖", "label": f"复习 {due_count} 个到期单词", "done": due_count == 0, "action": "words"},
-            {"icon": "✏️", "label": f"{profile_name} · {practice_label}专项", "done": False, "action": practice_type or "random"},
-            {"icon": "📝", "label": f"重做 {wrong} 道高频错题", "done": wrong == 0, "action": "wrong"},
+            {"icon": "📖", "label": f"背 {new_target} 个新词 + 复习 {due_count} 个",
+             "minutes": round(words_min + new_min), "done": due_count == 0 and learned_today >= new_target,
+             "action": "words"},
+            {"icon": "✏️", "label": f"{profile_name} · {practice_label}专项",
+             "minutes": practice_min, "done": practiced_today > 0, "action": practice_type or "random"},
+            {"icon": "📝", "label": f"重做 {wrong} 道高频错题",
+             "minutes": wrong_min, "done": wrong == 0, "action": "wrong"},
         ],
     }
 

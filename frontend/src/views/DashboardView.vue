@@ -198,9 +198,12 @@ const practiceCards = computed(() => {
         <b>{{ ex.days_left }}</b> 天
       </span>
     </div>
-    <!-- v2.18: 今日学习计划 (研究: AI智能推题/自动安排复习) -->
+    <!-- v2.18/19: 今日学习计划 (研究: AI智能推题/艾宾浩斯新学+复习) -->
     <div v-if="data?.today_plan?.plan?.length" class="card today-plan-card">
-      <h3 class="today-plan-title">📌 今日学习计划</h3>
+      <div class="today-plan-head">
+        <h3 class="today-plan-title">📌 今日学习计划</h3>
+        <span class="today-plan-total">预计 {{ data.today_plan.total_minutes || 0 }} 分钟</span>
+      </div>
       <div class="today-plan-list">
         <button
           v-for="(task, i) in data.today_plan.plan" :key="i"
@@ -210,6 +213,7 @@ const practiceCards = computed(() => {
         >
           <span class="plan-icon">{{ task.icon }}</span>
           <span class="plan-label">{{ task.label }}</span>
+          <span class="plan-min">{{ task.minutes }}分</span>
           <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
         </button>
       </div>
