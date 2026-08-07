@@ -11,8 +11,8 @@ const error = ref('')
 
 onMounted(async () => {
   try {
-    // 复用词文串学接口: 按题型取短文 (reading/cloze)
-    const r: any = await get('/vocab/context?limit=6')
+    // v2.77: 直接使用 /library/units (原 /vocab/context 不存在, 会返回 HTML 导致 JSON 解析失败)
+    const r: any = await get('/library/units?unit_type=reading&limit=6')
     const list = Array.isArray(r) ? r : r?.items || r?.passages || []
     passages.value = list
   } catch (e) {
