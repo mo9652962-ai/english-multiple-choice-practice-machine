@@ -1672,3 +1672,23 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .freq-note-editor textarea { width: 100%; resize: vertical; font: inherit; font-size: 12px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-solid); color: var(--text); }
 .freq-note-actions { display: flex; gap: 6px; justify-content: flex-end; }
 .freq-note-view { display: block; margin-top: 6px; padding: 6px 10px; font-size: 11.5px; line-height: 1.6; color: var(--muted); background: color-mix(in srgb, var(--line) 18%, transparent); border-radius: 8px; border-left: 3px solid #4a6fa5; }
+
+/* ── v2.47: 类别选择弹窗 ── */
+.category-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; background: color-mix(in srgb, var(--bg-solid, #f7f4ec) 72%, transparent); backdrop-filter: blur(6px); }
+.category-modal-panel { width: min(720px, 94vw); max-height: 86vh; overflow-y: auto; background: var(--surface-solid); border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); border-radius: 20px; padding: 22px 24px; box-shadow: 0 24px 70px rgba(0,0,0,.18); }
+.category-modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.category-modal-head h3 { margin: 0; font: 800 20px Georgia, serif; }
+.category-modal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.category-modal-card { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; text-align: left; padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); cursor: pointer; transition: transform .2s, border-color .2s, box-shadow .2s; overflow: hidden; }
+.category-modal-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 10px 26px rgba(0,0,0,.1); }
+.category-modal-card.active { border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent); }
+.category-modal-icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; }
+.category-modal-name { font: 800 15px Georgia, serif; color: var(--text); }
+.category-modal-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+.category-modal-active { position: absolute; top: 10px; right: 10px; padding: 2px 8px; border-radius: 99px; background: var(--accent); color: #fff; font-size: 10px; font-weight: 700; }
+.category-modal-dot { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; }
+.modal-fade-enter-active, .modal-fade-leave-active { transition: opacity .25s; }
+.modal-fade-enter-from, .modal-fade-leave-to { opacity: 0; }
+.modal-fade-enter-active .category-modal-panel, .modal-fade-leave-active .category-modal-panel { transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
+.modal-fade-enter-from .category-modal-panel, .modal-fade-leave-to .category-modal-panel { transform: scale(.92) translateY(12px); }
+:root.dark .category-modal { background: color-mix(in srgb, #14140f 74%, transparent); }
