@@ -6,7 +6,7 @@
   text-rendering: optimizeLegibility;
   /* ── 水墨文人书房配色 v2.6 (墨色为主 + 朱砂强调 + 宣纸为底) ── */
   --bg: #f7f3ee;                    /* 宣纸暖白 (2026 Warm Paper #F7F3EE) */
-  --surface: rgba(253, 250, 243, .92); /* 暖宣纸半透 */
+  --surface: rgba(253, 250, 243, .97); /* 暖宣纸近实 (v2.93: 提实保清晰) */
   --surface-solid: #fdfaf3;         /* 象牙白 #FFFBF0 调和 */
   --ink: #2e2a23;                   /* 暖墨色 */
   --muted: #787369;                 /* 墨灰 */
@@ -48,7 +48,7 @@
 :root.dark {
   color-scheme: dark;
   --bg: #1a1813;                    /* 玄色墨底 */
-  --surface: rgba(31, 29, 24, .92);
+  --surface: rgba(31, 29, 24, .97);
   --surface-solid: #211f1a;
   --ink: #e9e4d9;                   /* 月白字 */
   --muted: #a39c8e;                 /* 墨灰亮 */
@@ -1054,7 +1054,7 @@ h2, h3 { margin: 0; }
   content: ''; position: absolute; right: 18px; bottom: 16px;
   width: 10px; height: 10px; border-radius: 50%;
   background: radial-gradient(circle, var(--ink) 0%, transparent 70%);
-  opacity: .12; pointer-events: none;
+  opacity: .09; pointer-events: none;
 }
 .card.ink-dot::before { right: 26px; }
 
@@ -1076,7 +1076,7 @@ h2, h3 { margin: 0; }
 
 /* ── 淡山水背景 (Subtle Landscape): 极淡远山+云雾, 不抢内容 ── */
 body.ink-landscape::after {
-  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .11;
   /* v2.78: 全局水墨底图 (江南春霭图 石涛) + 光影叠加 */
   background-image:
     radial-gradient(ellipse 60% 42% at 82% 18%, rgba(64,60,53,.05) 0%, transparent 70%),
@@ -1218,46 +1218,46 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
   background-repeat: no-repeat;
 }
 /* 首页: 天都晓日图 (明代丁云鹏) — 大气山水 */
-.page-home::before { background-image: url('/assets/backgrounds/home.jpg'); opacity: .30; }
+.page-home::before { background-image: url('/assets/backgrounds/home.jpg'); opacity: .20; }
 /* 题库: 雪竹图 — 书卷竹简感 */
-.page-library::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .34; }
+.page-library::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .20; }
 /* 考试: 瀑布亭台图 — 山河气魄 */
-.page-exam::before { background-image: url('/assets/backgrounds/exam.jpg'); opacity: .32; }
+.page-exam::before { background-image: url('/assets/backgrounds/exam.jpg'); opacity: .21; }
 /* 错题: 独行悬崖图 — 沉思反思感 */
-.page-wrong::before { background-image: url('/assets/backgrounds/wrong.jpg'); opacity: .36; }
+.page-wrong::before { background-image: url('/assets/backgrounds/wrong.jpg'); opacity: .20; }
 /* 单词: 松树书法图 — 文字活字感 */
-.page-vocab::before { background-image: url('/assets/backgrounds/vocab.jpg'); opacity: .30; }
+.page-vocab::before { background-image: url('/assets/backgrounds/vocab.jpg'); opacity: .20; }
 /* 导入: 孤舟图 — 文房笔墨意境 */
-.page-import::before { background-image: url('/assets/backgrounds/import.jpg'); opacity: .30; }
+.page-import::before { background-image: url('/assets/backgrounds/import.jpg'); opacity: .20; }
 /* AI: 楚山秋霁图 (明代蓝瑛) — 云雾灵思 */
-.page-assistant::before { background-image: url('/assets/backgrounds/ai.jpg'); opacity: .30; }
+.page-assistant::before { background-image: url('/assets/backgrounds/ai.jpg'); opacity: .20; }
 /* 设置: 行舟水景图 — 素净留白 */
-.page-settings::before { background-image: url('/assets/backgrounds/settings.jpg'); opacity: .28; }
+.page-settings::before { background-image: url('/assets/backgrounds/settings.jpg'); opacity: .18; }
 /* 练习: 复用题库雪竹 (更淡, 专注不扰) */
-.page-practice::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .18; }
+.page-practice::before { background-image: url('/assets/backgrounds/library.jpg'); opacity: .12; }
 /* v2.92: 5 个新模块水墨背景 (楚山秋霁·专注 / 秋水潺湲·时光 / 天都晓日·登峰 / 江南春霭·书卷 / 桃花源·听音) */
-.page-focus::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .26; }
-.page-calendar::before { background-image: url('/assets/backgrounds/ink-5-shu.jpg'); opacity: .26; }
-.page-goal::before { background-image: url('/assets/backgrounds/ink-1-tiandu.jpg'); opacity: .24; }
-.page-reading::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .26; }
-.page-listening::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .26; }
+.page-focus::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .16; }
+.page-calendar::before { background-image: url('/assets/backgrounds/ink-5-shu.jpg'); opacity: .16; }
+.page-goal::before { background-image: url('/assets/backgrounds/ink-1-tiandu.jpg'); opacity: .16; }
+.page-reading::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .16; }
+.page-listening::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .16; }
 .page-focus::before, .page-calendar::before, .page-goal::before, .page-reading::before, .page-listening::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
 }
 
 /* 深色模式: 图片略亮 + 不透明度略降 */
-:root.dark .page-home::before { opacity: .22; }
-:root.dark .page-library::before { opacity: .24; }
-:root.dark .page-exam::before { opacity: .22; }
-:root.dark .page-wrong::before { opacity: .26; }
-:root.dark .page-vocab::before { opacity: .22; }
-:root.dark .page-import::before { opacity: .22; }
+:root.dark .page-home::before { opacity: .14; }
+:root.dark .page-library::before { opacity: .15; }
+:root.dark .page-exam::before { opacity: .14; }
+:root.dark .page-wrong::before { opacity: .11; }
+:root.dark .page-vocab::before { opacity: .14; }
+:root.dark .page-import::before { opacity: .14; }
 :root.dark .page-focus::before, :root.dark .page-calendar::before, :root.dark .page-goal::before,
-:root.dark .page-reading::before, :root.dark .page-listening::before { opacity: .16; }
-:root.dark .page-assistant::before { opacity: .22; }
+:root.dark .page-reading::before, :root.dark .page-listening::before { opacity: .11; }
+:root.dark .page-assistant::before { opacity: .14; }
 :root.dark .page-settings::before { opacity: .20; }
-:root.dark .page-practice::before { opacity: .12; }
+:root.dark .page-practice::before { opacity: .09; }
 
 /* ═══════════════════════════════════════════════════════════════════
    按级别推荐板块 v2.9 — 切换年级/题库级别 → 针对性推荐
@@ -1561,14 +1561,14 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 }
 
 /* ── v2.39: 新板块水墨背景 (博物馆 PD 图) ── */
-.page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .28; }
-.page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .26; }
-.page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .26; }
+.page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .09; }
+.page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .11; }
+.page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .11; }
 .page-leaderboard::before, .page-report::before, .page-achievements::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
 }
-:root.dark .page-leaderboard::before { opacity: .16; }
+:root.dark .page-leaderboard::before { opacity: .11; }
 :root.dark .page-report::before { opacity: .15; }
 :root.dark .page-achievements::before { opacity: .15; }
 
