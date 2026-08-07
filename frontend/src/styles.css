@@ -1426,3 +1426,15 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .study-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 120% at 12% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), radial-gradient(70% 100% at 95% 100%, color-mix(in srgb, var(--bamboo) 12%, transparent), transparent 55%); pointer-events: none; }
 .today-plan-card, .recommend-section .card { backdrop-filter: blur(10px); background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 78%, transparent)); }
 @media (max-width: 900px) { .bento-stats { grid-template-columns: repeat(2, 1fr); } .bento-wide { grid-column: span 2; } }
+
+/* ── v2.33: 词汇量自测 (百词斩式) ── */
+.quiz-word { font: 700 34px Georgia, serif; color: var(--text); text-align: center; margin: 8px 0 2px; }
+.quiz-phonetic { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+.quiz-meaning { text-align: center; color: var(--text); font-size: 13px; padding: 8px 12px; background: var(--surface-2); border-radius: 8px; }
+.quiz-level { display: inline-block; margin-top: 8px; padding: 5px 16px; border-radius: 99px; background: color-mix(in srgb, var(--primary) 14%, var(--surface-solid)); border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent); color: var(--text); font-size: 13px; font-weight: 700; }
+
+/* ── v2.33: 报告页 Bento 化 ── */
+.report-main { align-items: stretch; }
+.report-main .report-panel { backdrop-filter: blur(14px); background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 90%, transparent), color-mix(in srgb, var(--surface-2) 74%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 60%, transparent); box-shadow: 0 8px 28px -12px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.35); transition: transform .3s cubic-bezier(.22,1,.36,1); }
+.report-main .report-panel:hover { transform: translateY(-2px); }
+.profile-grid > div { backdrop-filter: blur(10px); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 76%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
