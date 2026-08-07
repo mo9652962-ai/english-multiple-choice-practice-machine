@@ -2432,3 +2432,13 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 /* Hero CTA 渐变按钮 */
 .study-hero .hero-cta .button { background: var(--gold-grad); color: #fff; font-weight: 700; box-shadow: 0 6px 20px color-mix(in srgb, var(--gold) 35%, transparent); }
 .study-hero .hero-cta .button:hover { filter: brightness(1.06); }
+
+/* ═══ v2.86: 第三轮高级感 7/10 — 侧边栏/导航精修 ═══ */
+.app-sidebar { background: linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-solid) 84%, transparent)); }
+.brand { padding-bottom: 22px; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); margin-bottom: 12px; }
+.app-sidebar nav a { letter-spacing: .02em; }
+.app-sidebar nav a.router-link-active { font-weight: 750; }
+.sidebar-note { border: 1px solid color-mix(in srgb, var(--gold) 20%, transparent); }
+/* 类别按钮 hover 微动 */
+.sidebar-category { border-radius: 10px; }
+.sidebar-category:hover { padding-left: 16px; }
