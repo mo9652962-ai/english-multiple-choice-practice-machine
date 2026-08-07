@@ -2462,3 +2462,21 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 :root.dark .study-hero .hero-cta .button { box-shadow: 0 6px 22px rgba(0,0,0,.4), 0 0 0 1px color-mix(in srgb, #ffffff 12%, transparent) inset; }
 :root.dark .app-sidebar { background: linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 94%, #24221c), color-mix(in srgb, var(--surface-solid) 86%, #1b1a15)); }
 :root.dark .sidebar-note { background: color-mix(in srgb, var(--gold) 10%, var(--surface-solid)); }
+
+/* ═══ v2.89: 第三轮高级感 10/10 — 收尾整合 (一致性/细节) ═══ */
+/* 全局过渡统一 */
+a, button, input, select, textarea, .card, .stat-card { transition-duration: .22s; transition-timing-function: var(--ease); }
+/* 图标 hover 统一 */
+.sidebar-category:hover svg, .freq-item:hover svg { transform: scale(1.08); }
+/* 焦点环统一 */
+:focus-visible { outline: 2px solid color-mix(in srgb, var(--gold) 55%, transparent); }
+/* 空状态图标动效 */
+.illustrated-empty img { transition: transform .3s var(--ease); }
+.illustrated-empty:hover img { transform: scale(1.04) rotate(-1deg); }
+/* 页面底部留白统一 */
+.page { padding-bottom: 48px; }
+/* prefers-reduced-motion 完整 */
+@media (prefers-reduced-motion: reduce) {
+  .button::after, .ink-falling-leaf, .card, .page > .card { animation: none !important; transition: none !important; }
+  .button::after { display: none; }
+}
