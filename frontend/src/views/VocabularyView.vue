@@ -237,6 +237,65 @@ function closeCloze() {
   clozeMode.value = false
 }
 
+// v2.33: 词汇量自测 (百词斩式)
+const quizMode = ref(false)
+const quizItems = ref<any[]>([])
+const quizIndex = ref(0)
+const quizResults = ref<Record<string, number>>({})
+const quizResult = ref<any>(null)
+const quizLoading = ref(false)
+
+async function loadQuiz() {
+  quizLoading.value = true
+  try {
+    const r: any = await get('/vocab/quiz?count=10')
+    quizItems.value = r.items || []
+    quizIndex.value = 0
+    quizResults.value = {}
+    quizResult.value = null
+    quizMode.value = true
+  } catch (e) {
+    showToast('词汇量自测加载失败', 'error')
+  } finally {
+    quizLoading.value = false
+  }
+}
+
+const quizCurrent = computed(() => quizItems.value[quizIndex.value])
+const quizRevealed = ref(false)
+
+function rateQuiz(known: number) {
+  if (!quizCurrent.value) return
+  quizResults.value[quizCurrent.value.id] = known
+  quizRevealed.value = false
+  if (quizIndex.value < quizItems.value.length - 1) {
+    quizIndex.value++
+  } else {
+    finishQuiz()
+  }
+}
+
+async function finishQuiz() {
+  const results = quizItems.value.map((w: any) => ({
+    word: w.word,
+    known: quizResults.value[w.id] ?? 0,
+  }))
+  try {
+    const r: any = await post('/vocab/quiz/estimate', { results })
+    quizResult.value = r
+  } catch (e) {
+    showToast('估算失败', 'error')
+  }
+}
+
+function closeQuiz() {
+  quizMode.value = false
+}
+
+function toggleQuizReveal() {
+  quizRevealed.value = !quizRevealed.value
+}
+
 let searchTimer = 0
 watch(search, () => {
   window.clearTimeout(searchTimer)
@@ -337,6 +396,15 @@ onMounted(() => { load(); loadPlans() })
         <small>真题句子挖空 · 在语境里检验单词（扇贝同款）</small>
       </div>
       <button class="button" :disabled="clozeLoading">{{ clozeLoading ? '生成中…' : '开始' }}</button>
+    </div>
+    <!-- v2.33: 词汇量自测入口 -->
+    <div class="cloze-entry card" @click="loadQuiz">
+      <div class="cloze-entry-icon">📊</div>
+      <div class="cloze-entry-main">
+        <strong>词汇量自测</strong>
+        <small>10 个词快速定位词汇量等级（百词斩式初测）</small>
+      </div>
+      <button class="button" :disabled="quizLoading">{{ quizLoading ? '加载中…' : '开始' }}</button>
     </div>
     <div v-if="error" class="warning">{{ error }}</div>
     <div v-if="notice" class="card vocab-notice">{{ notice }}</div>
@@ -516,6 +584,37 @@ onMounted(() => { load(); loadPlans() })
           <div style="display:flex;justify-content:center;gap:10px;margin-top:18px">
             <button class="button" @click="loadCloze">再练一组</button>
             <button class="button ghost" @click="closeCloze">关闭</button>
+          </div>
+        </template>
+      </div>
+    </div>
+    <!-- v2.33: 词汇量自测弹层 -->
+    <div v-if="quizMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="词汇量自测">
+      <div class="review-card cloze-card">
+        <h3 style="margin-bottom:8px">📊 词汇量自测</h3>
+        <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:14px">10 个词 · 认识 / 模糊 / 不认识，快速定位词汇等级</p>
+        <template v-if="!quizResult && quizCurrent">
+          <div class="cloze-progress">{{ quizIndex + 1 }} / {{ quizItems.length }}</div>
+          <p class="quiz-word">{{ quizCurrent.word }}</p>
+          <p class="quiz-phonetic">{{ quizCurrent.phonetic }}</p>
+          <button v-if="!quizRevealed" class="button ghost" style="margin-bottom:16px" @click="toggleQuizReveal">显示释义</button>
+          <p v-else class="quiz-meaning" style="margin-bottom:16px">{{ quizCurrent.meaning }}</p>
+          <div class="cloze-options" style="grid-template-columns:repeat(3,1fr)">
+            <button class="cloze-option" @click="rateQuiz(0)">😵 不认识</button>
+            <button class="cloze-option" @click="rateQuiz(1)">🤔 模糊</button>
+            <button class="cloze-option" @click="rateQuiz(2)">😎 认识</button>
+          </div>
+        </template>
+        <template v-else-if="quizResult">
+          <div class="cloze-result">
+            <div class="cloze-score">{{ quizResult.estimated }}</div>
+            <p>估算词汇量</p>
+            <div class="quiz-level">{{ quizResult.level }}</div>
+            <p style="margin-top:8px">答题 {{ quizResult.answered }} 词 · 正确率 {{ Math.round((quizResult.ratio || 0) * 100) }}%</p>
+          </div>
+          <div style="display:flex;justify-content:center;gap:10px;margin-top:18px">
+            <button class="button" @click="loadQuiz">再测一次</button>
+            <button class="button ghost" @click="closeQuiz">关闭</button>
           </div>
         </template>
       </div>
