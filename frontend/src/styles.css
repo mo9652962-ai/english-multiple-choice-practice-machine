@@ -1076,7 +1076,7 @@ h2, h3 { margin: 0; }
 
 /* ── 淡山水背景 (Subtle Landscape): 极淡远山+云雾, 不抢内容 ── */
 body.ink-landscape::after {
-  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .11;
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .26;
   /* v2.78: 全局水墨底图 (江南春霭图 石涛) + 光影叠加 */
   background-image:
     radial-gradient(ellipse 60% 42% at 82% 18%, rgba(64,60,53,.05) 0%, transparent 70%),
@@ -1561,9 +1561,9 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 }
 
 /* ── v2.39: 新板块水墨背景 (博物馆 PD 图) ── */
-.page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .09; }
-.page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .11; }
-.page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .11; }
+.page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .16; }
+.page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .16; }
+.page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .16; }
 .page-leaderboard::before, .page-report::before, .page-achievements::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
