@@ -2411,3 +2411,16 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .button:not(:disabled):active { transform: scale(.965); }
 /* 次级按钮描边细腻 */
 .button.secondary { box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 40%, transparent); }
+
+/* ═══ v2.84: 第三轮高级感 5/10 — 数据可视化精修 (渐变/光泽/动效) ═══ */
+/* 环形进度: 渐变描边 + 尾端圆点 */
+.ring-fg { stroke: url(#ringGrad) !important; }
+/* 柱状: 金→朱渐变 */
+.answered-bar, .trend-bar { background: linear-gradient(180deg, #c9a24a, #a8842f 55%, #bf6a5c) !important; }
+/* 热力图: 过渡色阶 */
+.heat-cell { transition: transform .15s, filter .2s; }
+.heat-cell:hover { transform: scale(1.25); filter: brightness(1.08); }
+/* 目标柱: 达成发光 */
+.goal-day.done .goal-day-bar { box-shadow: 0 0 10px color-mix(in srgb, var(--success) 45%, transparent); }
+/* 排行数字: 段位色 */
+.rank-level { background: color-mix(in srgb, var(--surface-solid) 78%, transparent); backdrop-filter: blur(6px); }
