@@ -2166,3 +2166,15 @@ h1, h2, h3 { font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "
 .stat-value, .rank-num, .wr-value, .big-score, .focus-time, .quick-word { font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; }
 /* 小标签/按钮保持无衬线 (可读性) */
 .eyebrow, .button, .stat-label, .sidebar-category-label, .countdown-label { font-family: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI", sans-serif; }
+
+/* ═══ v2.66: 色彩细节深化 (主题色分层 + 柔和底色) ═══ */
+/* 强调色柔和底 (统一: 10-14% 透明度圆角底) */
+.ai-picks-badge, .reading-badge, .listening-icon, .countdown-label { background: color-mix(in srgb, currentColor 11%, transparent); border-radius: 8px; padding: 3px 9px; }
+/* 分区背景微差 (卡片内区块) */
+.recommend-paper, .practice-card, .today-plan-item { background: color-mix(in srgb, var(--surface) 62%, transparent); }
+/* 输入/按钮底色统一 */
+input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82%, var(--bg)); }
+/* 分隔线更淡雅 */
+.section-title, .today-plan-head { border-bottom-color: color-mix(in srgb, var(--line) 45%, transparent); }
+/* 页码/标签 hover 色彩 */
+.freq-type-chip:hover, .cal-type-chip:hover { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--accent); }
