@@ -1559,3 +1559,25 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .wod-word { font: 700 24px Georgia, serif; color: var(--text); margin: 6px 0 2px; }
 .wod-mean { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
 .wod-hint { display: inline-block; margin-top: 8px; font-size: 11px; color: var(--accent); }
+
+/* ── v2.40: 庆祝动效 (多邻国式 micro-interaction) ── */
+.celebrate-overlay { position: fixed; inset: 0; z-index: 999; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--bg-solid, #f7f4ec) 72%, transparent); backdrop-filter: blur(4px); cursor: pointer; overflow: hidden; }
+.celebrate-particle { position: absolute; top: -12px; border-radius: 2px; animation-name: celebrate-fall; animation-timing-function: cubic-bezier(.25,.6,.35,1); animation-iteration-count: 1; opacity: 0; }
+@keyframes celebrate-fall {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(105vh) rotate(540deg); opacity: 0; }
+}
+.celebrate-flame-wrap { font-size: 72px; animation: flame-bounce .8s cubic-bezier(.34,1.56,.64,1) 3; filter: drop-shadow(0 0 18px rgba(255,140,60,.6)); }
+@keyframes flame-bounce { 0%,100% { transform: scale(1); } 40% { transform: scale(1.35) rotate(-6deg); } 70% { transform: scale(.92) rotate(4deg); } }
+.celebrate-ink { position: absolute; width: 240px; height: 240px; border-radius: 50%; border: 3px solid rgba(201,123,74,.5); animation: ink-ring 1.6s ease-out 1; }
+.celebrate-ink::after { content: ''; position: absolute; inset: 18px; border-radius: 50%; border: 2px solid rgba(74,111,165,.35); animation: ink-ring 1.6s ease-out .2s 1; }
+@keyframes ink-ring { 0% { transform: scale(.3); opacity: 0; } 30% { opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
+.celebrate-card { position: relative; z-index: 1; text-align: center; background: var(--surface-solid); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); border-radius: 18px; padding: 26px 40px; box-shadow: 0 18px 50px rgba(0,0,0,.14); animation: card-pop .5s cubic-bezier(.34,1.56,.64,1); }
+.celebrate-title { display: block; font: 800 26px Georgia, serif; color: var(--text); }
+.celebrate-sub { margin: 10px 0 4px; color: var(--muted); font-size: 13px; }
+.celebrate-tip { display: block; margin-top: 8px; font-size: 10px; color: color-mix(in srgb, var(--muted) 70%, transparent); }
+@keyframes card-pop { 0% { transform: scale(.6) translateY(24px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+.celebrate-fade-enter-active, .celebrate-fade-leave-active { transition: opacity .3s; }
+.celebrate-fade-enter-from, .celebrate-fade-leave-to { opacity: 0; }
+:root.dark .celebrate-overlay { background: color-mix(in srgb, #14140f 74%, transparent); }
