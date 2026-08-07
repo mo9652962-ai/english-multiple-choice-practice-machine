@@ -2178,3 +2178,20 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 .section-title, .today-plan-head { border-bottom-color: color-mix(in srgb, var(--line) 45%, transparent); }
 /* 页码/标签 hover 色彩 */
 .freq-type-chip:hover, .cal-type-chip:hover { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--accent); }
+
+/* ═══ v2.67: 首页数据区块精致化 ═══ */
+/* 今日计划项: 精致行 */
+.today-plan-item { border-radius: 12px; border: 1px solid transparent; transition: border-color .2s, background .2s; }
+.today-plan-item:hover { border-color: color-mix(in srgb, var(--accent) 30%, transparent); background: color-mix(in srgb, var(--accent) 5%, transparent); }
+/* 计划完成态: 柔和绿 */
+.today-plan-item.done { background: color-mix(in srgb, var(--success) 8%, transparent); border-color: color-mix(in srgb, var(--success) 22%, transparent); }
+/* 倒计时项 hover */
+.countdown-item { padding: 4px 10px; border-radius: 8px; transition: background .2s; }
+.countdown-item:hover { background: color-mix(in srgb, var(--line) 24%, transparent); }
+/* AI推题 chips 精致 */
+.ai-pick-chip { border-radius: 99px; transition: transform .18s var(--ease), box-shadow .18s; }
+.ai-pick-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+/* 推荐卡 hover 精细 */
+.recommend-paper { border-radius: 14px; }
+/* 每日一词 */
+.word-of-day { border-radius: 16px; }
