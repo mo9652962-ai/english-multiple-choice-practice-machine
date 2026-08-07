@@ -2291,3 +2291,18 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
   background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 82%, #ffffff 6%), color-mix(in srgb, var(--primary) 100%, #000 4%));
 }
 :root.dark .freq-note-view, :root.dark .freq-note-editor { background: color-mix(in srgb, var(--line) 14%, transparent); }
+
+/* ═══ v2.74: 收尾整合 (视觉一致性 + 细节) ═══ */
+/* 全局圆角体系统一 */
+:root { --radius-sm: 11px; --radius-md: 15px; --radius-lg: 21px; --radius-xl: 29px; }
+/* 焦点/选中一致 */
+::selection, .option-button.selected, .quick-option.correct { transition: all .2s; }
+/* 滚动条全局精致 (补充) */
+*::-webkit-scrollbar { width: 7px; height: 7px; }
+*::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--line-strong) 58%, transparent); border-radius: 99px; border: 2px solid transparent; background-clip: content-box; }
+/* 空状态统一留白 */
+.card.empty { padding: 48px 20px !important; }
+/* 页脚间距统一 */
+.page { padding-bottom: 40px; }
+/* 最后的品牌细节: 印章 */
+.hero-seal { box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent), 0 2px 8px color-mix(in srgb, var(--accent) 22%, transparent); }
