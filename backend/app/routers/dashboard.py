@@ -137,7 +137,7 @@ def _next_exam_dates(today: date | None = None) -> list[dict]:
         if d < today: continue
         out.append({"name": name, "date": d.isoformat(), "days_left": (d - today).days})
     out.sort(key=lambda x: x["days_left"])
-    return out[:4]
+    return out
 
 
 @router.get("/exam-countdown")

@@ -252,7 +252,7 @@ const practiceCards = computed(() => {
     <!-- v2.18: 备考倒计时条 (研究: 练题狗/好题库 备考节点) -->
     <div v-if="data?.exam_countdown?.length" class="exam-countdown-bar">
       <span class="countdown-label">⏳ 备考倒计时</span>
-      <span v-for="ex in data.exam_countdown.slice(0, 3)" :key="ex.name" class="countdown-item">
+      <span v-for="ex in data.exam_countdown" :key="ex.name" class="countdown-item">
         <strong>{{ ex.name }}</strong>
         <b>{{ ex.days_left }}</b> 天
       </span>
