@@ -7,6 +7,7 @@ import LibraryView from './views/LibraryView.vue'
 import PracticeView from './views/PracticeView.vue'
 import SettingsView from './views/SettingsView.vue'
 import WrongView from './views/WrongView.vue'
+import ReportView from './views/ReportView.vue'
 import VocabularyView from './views/VocabularyView.vue'
 import TrashView from './views/TrashView.vue'
 
@@ -18,6 +19,7 @@ export default createRouter({
     { path: '/practice/:id', component: PracticeView },
     { path: '/exam', component: ExamView },
     { path: '/wrong', component: WrongView },
+    { path: '/report', component: ReportView },
     { path: '/vocabulary', component: VocabularyView },
     { path: '/imports', component: ImportView },
     { path: '/assistant', component: AiAssistant },

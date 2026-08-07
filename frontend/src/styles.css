@@ -1320,3 +1320,34 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .plan-min { font-size: 11px; color: var(--muted); font-weight: 700; background: color-mix(in srgb, var(--line) 40%, transparent); padding: 2px 8px; border-radius: 99px; }
 .plan-status { font-size: 12px; color: var(--muted); font-weight: 700; }
 .today-plan-item:not(.done) .plan-status { color: var(--primary); }
+
+/* ── v2.25: 学习报告页 (数据叙事化, 2026 液态玻璃风格) ── */
+.page-report .report-hero { margin-bottom: 16px; }
+.report-panel { padding: 18px; margin-bottom: 16px; }
+.report-panel h3 { font-size: 14px; font-weight: 800; margin: 0 0 14px; color: var(--sec-primary, var(--text)); }
+.stat-sub { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.report-main { align-items: start; }
+
+/* 正确率趋势 */
+.trend-chart { display: flex; align-items: flex-end; gap: 6px; height: 180px; padding-top: 10px; }
+.trend-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.trend-bar { width: 100%; max-width: 26px; border-radius: 6px 6px 3px 3px; background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 55%, transparent)); transition: height .6s var(--ease); }
+.trend-bar.rate-good { background: linear-gradient(180deg, #2e8b57, #6bbf8a); }
+.trend-bar.rate-mid { background: linear-gradient(180deg, #d4a017, #e8c766); }
+.trend-bar.rate-bad { background: linear-gradient(180deg, #c73e3a, #e07b78); }
+.trend-day { font-size: 10px; color: var(--muted); }
+
+/* 雷达 */
+.radar-wrap { display: flex; gap: 16px; align-items: center; }
+.radar { width: 200px; height: 200px; flex-shrink: 0; }
+.radar-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.radar-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); }
+.radar-item b { margin-left: auto; font: 700 13px Georgia, serif; }
+.radar-dot { width: 9px; height: 9px; border-radius: 99px; background: var(--line-strong); flex-shrink: 0; }
+.radar-dot.rate-good { background: #2e8b57; }
+.radar-dot.rate-mid { background: #d4a017; }
+.radar-dot.rate-bad { background: #c73e3a; }
+
+/* 智能建议 */
+.suggest-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.suggest-list li { padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--surface) 60%, transparent); font-size: 13px; color: var(--text); }
