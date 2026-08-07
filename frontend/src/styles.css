@@ -1480,3 +1480,11 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 }
 .study-hero h1 { animation: hero-in .7s cubic-bezier(.22,1,.36,1) both; }
 @keyframes hero-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── v2.36: 词文串学风格徽章 (薄荷阅读式) ── */
+.style-badge { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 99px; font-size: 10px; font-weight: 700; vertical-align: 1px; }
+.style-interview { background: color-mix(in srgb, var(--bamboo) 18%, var(--surface-solid)); color: var(--bamboo); border: 1px solid color-mix(in srgb, var(--bamboo) 35%, transparent); }
+.style-argument { background: color-mix(in srgb, var(--accent) 14%, var(--surface-solid)); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+.style-news { background: color-mix(in srgb, var(--blue) 40%, var(--surface-solid)); color: #3a6a8a; border: 1px solid color-mix(in srgb, #4a7fa5 35%, transparent); }
+.style-story { background: color-mix(in srgb, var(--gold) 16%, var(--surface-solid)); color: var(--gold); border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent); }
+.style-article { background: color-mix(in srgb, var(--muted) 12%, var(--surface-solid)); color: var(--muted); border: 1px solid color-mix(in srgb, var(--muted) 25%, transparent); }

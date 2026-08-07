@@ -51,6 +51,8 @@ def get_word_context(
                 continue
         except Exception:
             continue
+        # v2.36: 文章风格分类 (薄荷阅读/可栗式: 按内容特征打风格标签)
+        style = _detect_style(text)
         # 按句子切分 (简单: 句号/问号/叹号 + 空格)
         sentences = re.split(r"(?<=[.!?])\s+", text)
         for s in sentences:
@@ -63,6 +65,7 @@ def get_word_context(
                     "highlight": m.group(0),
                     "source": f"{row['profile_name']} {row['year']}年 {row['title']}",
                     "unit_id": row["unit_id"],
+                    "style": style,
                 })
                 if len(contexts) >= 6:
                     break
@@ -70,3 +73,21 @@ def get_word_context(
             break
 
     return {"term": term, "contexts": contexts}
+
+
+def _detect_style(text: str) -> str:
+    """v2.36: 规则式文章风格分类 (真题阅读)
+    访谈(引号对话)/论述(研究证据)/新闻(数据事实)/故事(叙事)
+    """
+    t = (text or "")[:600].lower()
+    quote_count = t.count('"') + t.count("'")
+    if quote_count >= 4 and any(w in t for w in ["said", "says", "asked", "told", "interview"]):
+        return "interview"
+    if any(w in t for w in ["according to", "research", "study", "found that", "researchers", "survey"]):
+        return "argument"
+    if any(w in t for w in ["percent", "million", "billion", "data", "report", "statistics"]):
+        return "news"
+    # v2.36: 词边界匹配 (子串会误判, 如 "concept" 含 "once")
+    if any(re.search(r"\b" + re.escape(w) + r"\b", t) for w in ["once", "story", "remember", "childhood", "years ago", "when i was"]):
+        return "story"
+    return "article"
