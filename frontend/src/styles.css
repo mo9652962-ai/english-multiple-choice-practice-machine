@@ -2017,3 +2017,54 @@ svg { transition: transform .2s var(--ease); }
 .section-title { border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
 /* 提示/警示: 柔和 */
 .warning, .muted { letter-spacing: .01em; }
+
+/* ═══ v2.60: 格式修正 + 适应性/尺寸修改 (新组件窄屏适配 + 统一) ═══ */
+@media (max-width: 720px) {
+  /* 专注计时: 环形缩小 + 模式换行 */
+  .focus-ring { width: 170px; height: 170px; }
+  .focus-time { font-size: 40px; }
+  .focus-modes { flex-wrap: wrap; justify-content: center; }
+  .focus-card { padding: 20px 14px; }
+  /* 日历: 格子紧凑 */
+  .cal-cell { font-size: 10px; border-radius: 6px; }
+  .cal-weekdays span { font-size: 10px; }
+  .cal-grid, .cal-weekdays { gap: 3px; }
+  /* 目标中心: 堆叠 */
+  .goal-hero { flex-direction: column; align-items: center; text-align: center; gap: 18px; padding: 20px 14px; }
+  .goal-info { display: flex; flex-direction: column; align-items: center; }
+  .goal-set { justify-content: center; }
+  .goal-history { gap: 4px; height: 100px; }
+  .goal-day-label { font-size: 8px; }
+  /* 类别弹窗: 单列卡片 */
+  .category-modal-panel { padding: 16px; }
+  .category-modal-grid { grid-template-columns: 1fr; }
+  /* 高频错题: 单列 */
+  .freq-grid { grid-template-columns: 1fr; }
+  /* 阅读/听力: 单列 */
+  .reading-grid, .listening-grid { grid-template-columns: 1fr; }
+  /* 战报: 2列已适配, 内边距收紧 */
+  .week-report-item { padding: 9px; }
+  /* 首页今日目标/每日一词: 单列 */
+  .home-goal-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  /* 超窄屏: 日历 7 列压缩 */
+  .cal-cell { aspect-ratio: auto; height: 30px; }
+  /* 专注控制按钮铺满 */
+  .focus-controls { width: 100%; }
+  .focus-controls .button { flex: 1; }
+  /* 目标历史: 更矮 */
+  .goal-history { height: 80px; }
+  /* 弹窗头部紧凑 */
+  .category-modal-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* 格式统一: 长文本溢出处理 */
+.freq-stem, .reading-excerpt, .card p, .lead { overflow-wrap: break-word; word-break: break-word; }
+/* 表格/长数字不溢出 */
+.stat-value, .rank-num, .wr-value { white-space: nowrap; }
+/* 大屏间距放宽 (1200px+) */
+@media (min-width: 1400px) {
+  .main-content { padding: clamp(20px, 2vw + 10px, 34px); }
+  .card { padding: clamp(16px, 1vw + 10px, 24px); }
+}
