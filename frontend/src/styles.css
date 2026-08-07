@@ -2375,3 +2375,14 @@ body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
 .quote-author, .hero-seal, .brand-copy strong { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 /* 主按钮墨色渐变再精 */
 .button:not(.secondary):not(.ghost):not(.danger) { background: var(--ink-grad); }
+
+/* ═══ v2.81: 第三轮高级感 2/10 — 排版精修 (对比度/层次) ═══ */
+.page-head h1 { letter-spacing: .06em; }
+.section-title h2 { font-size: clamp(16px, 1.1vw + 10px, 19px); letter-spacing: .05em; }
+.card h3 { letter-spacing: .04em; }
+/* 正文与标题对比更清晰 */
+.lead { color: color-mix(in srgb, var(--muted) 92%, var(--ink)); }
+/* 列表/标签统一 */
+.stat-label, .eyebrow { text-transform: none; letter-spacing: .18em; }
+/* 数字 tabular 统一 */
+.stat-value, .rank-num, .wr-value, .big-score, .focus-time, .quick-word { font-variant-numeric: tabular-nums lining-nums; }
