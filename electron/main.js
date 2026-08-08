@@ -1,10 +1,35 @@
 // AI 英语刷题机 - Electron 桌面应用主进程
 // 职责: 启动 Python 后端 → 等待健康检查 → 创建窗口加载前端
-// v9.20: 自动更新（electron-updater, 启动+每10分钟检查）
+// v9.21 (beta.2): 单实例锁 + crashReporter + 更新错误日志 + 数据备份提示
 const { app, BrowserWindow, dialog } = require('electron')
 const { spawn, spawnSync } = require('child_process')
 const path = require('path')
 const http = require('http')
+const fs = require('fs')
+
+// ---------- 单实例锁（防多开导致后端端口冲突） ----------
+const gotLock = app.requestSingleInstanceLock()
+if (!gotLock) {
+  app.quit()
+} else {
+  app.on('second-instance', () => {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
+}
+
+// ---------- 崩溃日志（内测反馈用，本地文件） ----------
+try {
+  const { crashReporter } = require('electron')
+  crashReporter.start({
+    productName: 'AI英语刷题机',
+    companyName: 'MoSoftware',
+    submitURL: '', // 不上报服务器，仅本地记录
+    uploadToServer: false,
+  })
+} catch (e) { /* crashReporter 可选 */ }
 
 const PORT = 8765
 const URL = `http://127.0.0.1:${PORT}`
@@ -33,6 +58,13 @@ function setupAutoUpdater() {
     })
     autoUpdater.on('error', (err) => {
       console.error('[updater]', err && err.message)
+      // 写入本地日志（内测反馈用）
+      try {
+        const logDir = path.join(app.getPath('userData'), 'logs')
+        fs.mkdirSync(logDir, { recursive: true })
+        fs.appendFileSync(path.join(logDir, 'updater.log'),
+          `${new Date().toISOString()} ERROR ${err && err.message}\n`)
+      } catch (e) { /* 日志失败忽略 */ }
     })
     // 启动时检查 + 每 10 分钟轮询
     autoUpdater.checkForUpdatesAndNotify()
@@ -58,6 +90,19 @@ function findPython() {
 }
 
 function startBackend() {
+  // v9.21 (beta.2): 首次启动复制种子题库到用户数据目录（内置正式真题）
+  try {
+    const userDataDir = path.join(app.getPath('userData'), 'data')
+    const userDb = path.join(userDataDir, 'question_bank.db')
+    if (!fs.existsSync(userDb)) {
+      const seedDb = path.join(process.resourcesPath, 'seed', 'question_bank.db')
+      if (fs.existsSync(seedDb)) {
+        fs.mkdirSync(userDataDir, { recursive: true })
+        fs.copyFileSync(seedDb, userDb)
+        console.log('[seed] 首次启动：内置真题库已就位')
+      }
+    }
+  } catch (e) { console.error('[seed]', e.message) }
   // v9.20.1: 优先独立后端 exe（别人电脑无需 Python）；回退 python run_app.py（开发模式）
   const resources = process.resourcesPath
   const backendExe = path.join(resources, 'backend_app', 'backend_app.exe')
