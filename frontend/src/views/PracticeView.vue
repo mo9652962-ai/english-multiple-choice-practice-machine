@@ -817,6 +817,54 @@ function sentenceAround(text: string, term: string) {
   return compact.slice(left + 1, right).trim().slice(0, 1500)
 }
 
+// ── v3.0: 移动端长按查词/标注 ──
+let touchTimer: number | null = null
+const touchStartPos = { x: 0, y: 0 }
+
+function onPassageTouchStart(event: TouchEvent) {
+  const t = event.touches[0]
+  touchStartPos.x = t.clientX
+  touchStartPos.y = t.clientY
+  if (touchTimer) window.clearTimeout(touchTimer)
+  touchTimer = window.setTimeout(() => {
+    openVocabularyFromTouch(t.clientX, t.clientY)
+  }, 420)
+}
+
+function onPassageTouchMove() {
+  if (touchTimer) { window.clearTimeout(touchTimer); touchTimer = null }
+}
+
+function onPassageTouchEnd() {
+  if (touchTimer) { window.clearTimeout(touchTimer); touchTimer = null }
+}
+
+function openVocabularyFromTouch(x: number, y: number) {
+  const el = document.elementFromPoint(x, y)
+  if (!el) return
+  const range = document.caretRangeFromPoint?.(x, y)
+  if (!range) return
+  // 手动扩展为单词（Range.expand 类型缺失且兼容性差）
+  const node = range.startContainer
+  if (!node || node.nodeType !== Node.TEXT_NODE) return
+  const text = node.textContent || ''
+  let pos = range.startOffset
+  let start = pos
+  while (start > 0 && /[A-Za-z'’\-]/.test(text[start - 1])) start--
+  let end = pos
+  while (end < text.length && /[A-Za-z'’\-]/.test(text[end])) end++
+  if (start === end) return
+  const wordRange = document.createRange()
+  wordRange.setStart(node, start)
+  wordRange.setEnd(node, end)
+  const sel = window.getSelection()
+  sel?.removeAllRanges()
+  sel?.addRange(wordRange)
+  // 复用右键查词逻辑
+  const fakeEvent = { target: el } as unknown as MouseEvent
+  openVocabularyMenu(fakeEvent)
+}
+
 function openVocabularyMenu(event: MouseEvent) {
   const selection = window.getSelection()
   const term = selection?.toString().trim().replace(/\s+/g, ' ') || ''
@@ -944,7 +992,8 @@ async function copySelectedTerm() {
           ></iframe>
         </div>
         <p v-if="activeUnit.shared_data?.directions" class="lead" style="margin-bottom:24px">{{ activeUnit.shared_data.directions }}</p>
-        <div class="passage" data-vocab-text @contextmenu="openVocabularyMenu" :style="passageStyle">
+        <div class="passage" data-vocab-text @contextmenu="openVocabularyMenu" :style="passageStyle"
+          @touchstart="onPassageTouchStart" @touchmove="onPassageTouchMove" @touchend="onPassageTouchEnd">
           <ContentBlocks
             v-if="activeContentBlocks.length"
             :blocks="activeContentBlocks"
