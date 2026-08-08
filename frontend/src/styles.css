@@ -1025,7 +1025,7 @@ h2, h3 { margin: 0; }
   width: 34px; height: 34px; display: grid; place-items: center;
   border: 1.5px solid var(--accent); border-radius: 4px;
   color: var(--accent); font-family: "STKaiti","KaiTi",serif;
-  font-size: 15px; font-weight: 700; transform: rotate(4deg);
+  font-size: 15px; font-weight: 700; transform: rotate(2deg);
   background: color-mix(in srgb, var(--accent-soft) 40%, transparent);
   box-shadow: 0 2px 6px rgba(199,62,58,.15);
   user-select: none; pointer-events: none; z-index: 1;
@@ -1063,15 +1063,15 @@ h2, h3 { margin: 0; }
   display: inline-flex; align-items: center; justify-content: center;
   width: 40px; height: 40px; border: 2px solid var(--accent); border-radius: 5px;
   color: var(--accent); font-family: "STKaiti","KaiTi",serif; font-size: 18px;
-  font-weight: 700; transform: rotate(-5deg); margin-right: 12px;
+  font-weight: 700; transform: rotate(-2deg); margin-right: 12px;
   background: color-mix(in srgb, var(--accent-soft) 30%, transparent);
   box-shadow: 0 3px 10px rgba(199,62,58,.18);
   animation: seal-stamp .5s cubic-bezier(.22,1,.36,1) both;
   vertical-align: middle; user-select: none;
 }
 @keyframes seal-stamp {
-  from { opacity: 0; transform: rotate(-5deg) scale(.6); }
-  to   { opacity: 1; transform: rotate(-5deg) scale(1); }
+  from { opacity: 0; transform: rotate(-2deg) scale(.6); }
+  to   { opacity: 1; transform: rotate(-2deg) scale(1); }
 }
 
 /* ── 淡山水背景 (Subtle Landscape): 极淡远山+云雾, 不抢内容 ── */
@@ -1269,7 +1269,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .recommend-continue h3 { margin: 2px 0 2px; }
 .recommend-continue p { margin: 0; color: var(--muted); font-size: 13px; overflow: hidden;
   text-overflow: ellipsis; white-space: nowrap; max-width: 520px; }
-.recommend-papers { margin-top: 14px; }
+.recommend-papers { margin-top: 14px; grid-auto-rows: 1fr; }
 .recommend-paper { position: relative; display: flex; flex-direction: column; gap: 6px;
   padding: 20px; min-height: 116px; text-decoration: none; }
 .recommend-paper strong { font-family: "STZhongsong","Noto Serif SC","Songti SC",serif;
