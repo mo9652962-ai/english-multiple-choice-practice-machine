@@ -11,6 +11,7 @@ import ReportView from './views/ReportView.vue'
 import AchievementsView from './views/AchievementsView.vue'
 import VocabularyView from './views/VocabularyView.vue'
 import TrashView from './views/TrashView.vue'
+import NotesView from './views/NotesView.vue'
 import LeaderboardView from './views/LeaderboardView.vue'
 import FocusView from './views/FocusView.vue'
 import CalendarView from './views/CalendarView.vue'
@@ -43,5 +44,6 @@ export default createRouter({
     { path: '/assistant', component: AiAssistant },
     { path: '/settings', component: SettingsView },
     { path: '/trash', component: TrashView },
+    { path: '/notes', component: NotesView },
   ],
 })

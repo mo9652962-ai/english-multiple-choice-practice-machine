@@ -55,6 +55,35 @@ def list_annotations(unit_id: int, connection: sqlite3.Connection = Depends(get_
     return [_row(r) for r in rows]
 
 
+@router.get("/annotations")
+def list_all_annotations(
+    connection: sqlite3.Connection = Depends(get_db),
+    keyword: str | None = None,
+) -> list[dict]:
+    """v3.0: 全量标注（笔记管理页用）——JOIN units 带单元标题"""
+    sql = """SELECT a.id, a.unit_id, a.start_offset, a.end_offset, a.text, a.note,
+                    a.color, a.created_at, a.updated_at,
+                    u.title AS unit_title,
+                    p.year AS paper_year
+             FROM annotations a
+             LEFT JOIN units u ON u.id = a.unit_id
+             LEFT JOIN papers p ON p.id = u.paper_id
+             WHERE 1=1"""
+    params: list[Any] = []
+    if keyword:
+        sql += " AND (a.text LIKE ? OR a.note LIKE ?)"
+        params.extend([f"%{keyword}%", f"%{keyword}%"])
+    sql += " ORDER BY a.created_at DESC, a.id DESC"
+    rows = connection.execute(sql, params).fetchall()
+    result = []
+    for r in rows:
+        item = _row(r)
+        item["unit_title"] = r["unit_title"] or f"单元 {r['unit_id']}"
+        item["paper_year"] = r["paper_year"]
+        result.append(item)
+    return result
+
+
 @router.post("/units/{unit_id}/annotations")
 def create_annotation(
     unit_id: int,
