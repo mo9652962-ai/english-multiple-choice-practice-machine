@@ -6,8 +6,8 @@
   text-rendering: optimizeLegibility;
   /* ── 水墨文人书房配色 v2.6 (墨色为主 + 朱砂强调 + 宣纸为底) ── */
   --bg: #f7f3ee;                    /* 宣纸暖白 (2026 Warm Paper #F7F3EE) */
-  --surface: rgba(253, 250, 243, .97); /* 暖宣纸近实 (v2.93: 提实保清晰) */
-  --surface-solid: #fdfaf3;         /* 象牙白 #FFFBF0 调和 */
+  --surface: #fdfaf3;         /* 实色象牙白 (v3.0-fix: 取消透明防花纹透出) */
+  --surface-solid: #fdfaf3;   /* 与 --surface 一致 */
   --ink: #2e2a23;                   /* 暖墨色 */
   --muted: #787369;                 /* 墨灰 */
   --line: #e4ded1;                  /* 纸边线 */
@@ -48,7 +48,7 @@
 :root.dark {
   color-scheme: dark;
   --bg: #1a1813;                    /* 玄色墨底 */
-  --surface: rgba(31, 29, 24, .97);
+  --surface: #211f1a;  /* 实色墨黑 (v3.0-fix: 取消透明) */
   --surface-solid: #211f1a;
   --ink: #e9e4d9;                   /* 月白字 */
   --muted: #a39c8e;                 /* 墨灰亮 */
@@ -125,7 +125,7 @@ html:not(.dark)::view-transition-new(root) { animation: vt-fade-in .25s ease; }
 .app-shell>.sidebar { grid-column:1; }
 .app-shell>.main-content { grid-column:2; }
 .practice-shell>.main-content { grid-column:auto; }
-.sidebar { position: fixed; top: 0; left: 0; width: 248px; height: 100vh; padding: 28px 18px 20px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--surface-solid) 88%, transparent); backdrop-filter: blur(20px); display: flex; flex-direction: column; z-index: 12; overflow-y: auto; overflow-x: hidden; }
+.sidebar { position: fixed; top: 0; left: 0; width: 248px; height: 100vh; padding: 28px 18px 20px; border-right: 1px solid var(--line); background: var(--surface-solid); display: flex; flex-direction: column; z-index: 12; overflow-y: auto; overflow-x: hidden; }
 .brand { display: flex; gap: 12px; align-items: center; padding: 0 8px 27px; }
 .brand-mark { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(145deg, #eef3e6, #d8e3cc); box-shadow: 0 9px 22px rgba(92,122,82,.16); overflow: hidden; }
 .brand-mark img { width: 48px; height: 48px; object-fit: contain; }
@@ -1439,15 +1439,15 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 /* ── v2.32: 2026 Bento Box + Liquid Glass (借鉴 2026 UI 趋势) ── */
 .bento-stats { grid-template-columns: repeat(4, 1fr); align-items: stretch; }
 .bento-wide { grid-column: span 2; }
-.stat-card { position: relative; overflow: hidden; backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 88%, transparent), color-mix(in srgb, var(--surface-2) 72%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 65%, transparent); box-shadow: 0 8px 32px -12px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.4); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+.stat-card { position: relative; overflow: hidden; background: var(--surface-solid); border: 1px solid var(--line); box-shadow: 0 8px 32px -12px rgba(0,0,0,.18); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
 .stat-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 85% -10%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%); pointer-events: none; }
 .stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -14px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.5); }
 .bento-wide .stat-value { font-size: 34px; }
 .stat-note { display: block; font-size: 10.5px; color: var(--muted); margin-top: 4px; }
-.streak-card { backdrop-filter: blur(14px); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 90%, transparent), color-mix(in srgb, var(--surface-2) 70%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 60%, transparent); }
+.streak-card { background: var(--surface-solid); border: 1px solid var(--line); }
 .study-hero { position: relative; overflow: hidden; }
 .study-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 120% at 12% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), radial-gradient(70% 100% at 95% 100%, color-mix(in srgb, var(--bamboo) 12%, transparent), transparent 55%); pointer-events: none; }
-.today-plan-card, .recommend-section .card { backdrop-filter: blur(10px); background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 78%, transparent)); }
+.today-plan-card, .recommend-section .card { background: var(--surface-solid); }
 @media (max-width: 900px) { .bento-stats { grid-template-columns: repeat(2, 1fr); } .bento-wide { grid-column: span 2; } }
 
 /* ── v2.33: 词汇量自测 (百词斩式) ── */
@@ -1458,9 +1458,9 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 
 /* ── v2.33: 报告页 Bento 化 ── */
 .report-main { align-items: stretch; }
-.report-main .report-panel { backdrop-filter: blur(14px); background: linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 90%, transparent), color-mix(in srgb, var(--surface-2) 74%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 60%, transparent); box-shadow: 0 8px 28px -12px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.35); transition: transform .3s cubic-bezier(.22,1,.36,1); }
+.report-main .report-panel { background: var(--surface-solid); border: 1px solid var(--line); box-shadow: 0 8px 28px -12px rgba(0,0,0,.15); transition: transform .3s cubic-bezier(.22,1,.36,1); }
 .report-main .report-panel:hover { transform: translateY(-2px); }
-.profile-grid > div { backdrop-filter: blur(10px); background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 76%, transparent)); border: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.profile-grid > div { background: var(--surface-solid); border: 1px solid var(--line); }
 
 /* ── v2.34: 深色模式 Glass 适配 (2026 趋势: dark-mode gradients) ── */
 :root.dark .stat-card,
@@ -1468,9 +1468,9 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 :root.dark .streak-card,
 :root.dark .today-plan-card,
 :root.dark .recommend-section .card {
-  background: linear-gradient(160deg, color-mix(in srgb, var(--surface-solid) 80%, transparent), color-mix(in srgb, var(--surface-2) 66%, transparent));
-  border-color: color-mix(in srgb, var(--line) 48%, transparent);
-  box-shadow: 0 10px 34px -14px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+  background: var(--surface-solid);
+  border-color: var(--line);
+  box-shadow: 0 10px 34px -14px rgba(0,0,0,.5);
 }
 :root.dark .stat-card::after { opacity: .5; }
 :root.dark .cloze-option { background: color-mix(in srgb, var(--surface-2) 70%, transparent); }
@@ -1875,7 +1875,7 @@ input:focus, select:focus, textarea:focus {
   --success: #587a60;
   /* 背景柔化: 更暖更淡的宣纸 */
   --bg: #f8f5ef;
-  --surface: rgba(254, 251, 244, .92);
+  --surface: #fefbf4;   /* 实色 (v3.0-fix: 取消透明) */
   --surface-solid: #fefbf4;
   /* 线条更淡 */
   --line: #e8e2d5;
@@ -1937,8 +1937,8 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
 .stat-card { border-top: 2px solid color-mix(in srgb, var(--accent) 22%, transparent); }
 /* 卡片圆角更精致 */
 .card { border-radius: calc(var(--radius-md) + 2px); }
-/* 玻璃卡 (hero/倒计时) */
-.exam-countdown-bar, .study-hero { background: linear-gradient(150deg, color-mix(in srgb, var(--surface-solid) 88%, transparent), color-mix(in srgb, var(--surface-solid) 72%, transparent)); }
+/* 玻璃卡 (hero/倒计时) — v3.0-fix: 实色 */
+.exam-countdown-bar, .study-hero { background: var(--surface-solid); }
 
 /* ═══ v2.54: 按钮控件精致化 (细腻交互态) ═══ */
 /* 主按钮: 微渐变 + 高光 */
@@ -1947,7 +1947,7 @@ blockquote { font-style: italic; letter-spacing: .01em; color: color-mix(in srgb
   box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 1px 0 rgba(255,255,255,.08) inset, 0 -1px 0 rgba(0,0,0,.06) inset;
 }
 /* 次要按钮: 细腻描边 */
-.button.secondary { border: 1px solid color-mix(in srgb, var(--line-strong) 70%, transparent); background: color-mix(in srgb, var(--surface-solid) 80%, transparent); }
+.button.secondary { border: 1px solid var(--line-strong); background: var(--surface-solid); }
 /* ghost 按钮 hover 微底 */
 .button.ghost:hover { background: color-mix(in srgb, var(--line) 26%, transparent); }
 /* 紧凑按钮统一 */
