@@ -2721,3 +2721,42 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
 /* ═══ v2.109: 品牌竖线微调 3px→2px + 清除渐变残留 ═══ */
 .border-left\:3px, [style*="border-left:3px"], .side-tab-like { border-left-width: 2px; }
 .wrong-level-icon, .opt-key, .category-item.active, .stat-card { border-left-width: 2px !important; }
+
+/* ═══ v3.0-mobile: 移动端增强（安全区 + 动态视口 + 触控优化）═══ */
+/* 刘海屏/全面屏安全区 */
+@media (max-width: 980px) {
+  .sidebar { padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+  .app-shell, .practice-shell { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  body { padding-bottom: env(safe-area-inset-bottom); }
+}
+/* 动态视口（移动浏览器地址栏收起/展开不跳动） */
+.app-shell, .practice-shell, .sidebar, .practice-page { min-height: 100dvh; }
+body { min-height: 100dvh; }
+/* 触控目标强化（移动端按钮最小 44px） */
+@media (max-width: 980px) {
+  .button, .option-btn, .action-card, .sidebar nav a { min-height: 44px; }
+  .option-btn { padding: 14px 12px; }
+  input[type="checkbox"], .opt-key { min-width: 20px; min-height: 20px; }
+}
+/* 防 iOS 长按弹菜单 / 双击缩放 */
+@media (max-width: 980px) {
+  * { -webkit-touch-callout: none; }
+  button, a { touch-action: manipulation; }
+}
+/* 移动端表格横向滚动（宽内容不破版） */
+@media (max-width: 720px) {
+  .table-wrap, table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* ═══ v3.0-mobile: 底部导航核心 7 项（其余功能由首页功能卡覆盖）═══ */
+@media (max-width: 980px) {
+  .sidebar nav a:nth-child(6),
+  .sidebar nav a:nth-child(7),
+  .sidebar nav a:nth-child(8),
+  .sidebar nav a:nth-child(9),
+  .sidebar nav a:nth-child(10),
+  .sidebar nav a:nth-child(11),
+  .sidebar nav a:nth-child(12),
+  .sidebar nav a:nth-child(14),
+  .sidebar nav a:nth-child(16) { display: none; }
+}

@@ -13,6 +13,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
     "@formkit/auto-animate": "^0.9.0",
     "lucide-vue-next": "^0.468.0",
     "sql.js": "^1.14.1",
