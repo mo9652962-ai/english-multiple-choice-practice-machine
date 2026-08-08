@@ -445,7 +445,21 @@ CREATE TABLE IF NOT EXISTS exam_answers (
     FOREIGN KEY (exam_id) REFERENCES exam_sessions(id) ON DELETE CASCADE
 );
 
-INSERT INTO ai_profiles
+-- v3.0: 做题标注（关键词高亮 + 笔记持久化）
+CREATE TABLE IF NOT EXISTS annotations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    unit_id INTEGER NOT NULL,
+    start_offset INTEGER NOT NULL,
+    end_offset INTEGER NOT NULL,
+    text TEXT NOT NULL,
+    note TEXT NOT NULL DEFAULT '',
+    color TEXT NOT NULL DEFAULT 'amber',
+    created_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+    updated_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_annotations_unit ON annotations(unit_id);
+
+ INSERT INTO ai_profiles
     (name, base_url, api_key_encrypted, enabled, is_default, default_model,
      temperature, max_tokens, system_prompt)
 SELECT

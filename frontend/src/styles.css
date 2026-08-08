@@ -2760,3 +2760,32 @@ body { min-height: 100dvh; }
   .sidebar nav a:nth-child(14),
   .sidebar nav a:nth-child(16) { display: none; }
 }
+
+/* ═══ v3.0: 做题标注（关键词高亮 + 笔记持久化）═══ */
+.ann { border-radius: 3px; padding: 0 1px; cursor: pointer; transition: filter .15s; }
+.ann:hover { filter: brightness(1.08); }
+.ann-amber { background: color-mix(in srgb, #f5c518 38%, transparent); color: inherit; }
+.ann-green { background: color-mix(in srgb, #2e7d32 32%, transparent); color: inherit; }
+.ann-blue { background: color-mix(in srgb, #1976d2 32%, transparent); color: inherit; }
+.ann-red { background: color-mix(in srgb, #c62828 32%, transparent); color: inherit; }
+.ann-purple { background: color-mix(in srgb, #7b1fa2 32%, transparent); color: inherit; }
+:root.dark .ann-amber { background: color-mix(in srgb, #f5c518 46%, transparent); }
+:root.dark .ann-green { background: color-mix(in srgb, #66bb6a 40%, transparent); }
+:root.dark .ann-blue { background: color-mix(in srgb, #42a5f5 40%, transparent); }
+:root.dark .ann-red { background: color-mix(in srgb, #ef5350 40%, transparent); }
+:root.dark .ann-purple { background: color-mix(in srgb, #ab47bc 40%, transparent); }
+
+.ann-bubble { position: fixed; z-index: 50; transform: translate(-50%, -100%); display: flex; gap: 6px; background: var(--surface-solid); border: 1px solid var(--line); border-radius: 10px; padding: 6px 8px; box-shadow: var(--shadow-hover); }
+.ann-bubble-btn { border: 0; background: transparent; color: var(--ink); font-size: 13px; padding: 6px 10px; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.ann-bubble-btn:hover { background: var(--primary-soft); }
+
+.ann-note-overlay { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,.32); display: grid; place-items: center; padding: 20px; }
+.ann-note-card { width: min(420px, 92vw); background: var(--surface-solid); border: 1px solid var(--line); border-radius: 16px; padding: 20px; box-shadow: var(--shadow-hover); }
+.ann-note-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.ann-note-title { font: 800 15px 'Noto Serif SC', serif; color: var(--ink); }
+.ann-note-close { border: 0; background: transparent; color: var(--muted); font-size: 16px; cursor: pointer; padding: 4px 8px; border-radius: 8px; }
+.ann-note-close:hover { background: var(--primary-soft); }
+.ann-note-quote { margin: 0 0 12px; padding: 10px 14px; border-left: 3px solid var(--primary); background: var(--primary-faint); border-radius: 0 10px 10px 0; color: var(--muted); font: 14px/1.6 Georgia, serif; }
+.ann-note-input { width: 100%; box-sizing: border-box; resize: vertical; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font-size: 14px; line-height: 1.6; }
+.ann-note-input:focus { outline: 2px solid color-mix(in srgb, var(--primary) 35%, transparent); border-color: var(--primary); }
+.ann-note-actions { display: flex; justify-content: space-between; gap: 10px; margin-top: 14px; }
