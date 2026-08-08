@@ -1,6 +1,6 @@
 {
   "name": "ai-english-practice-desktop",
-  "version": "2.0.0-beta.5",
+  "version": "2.0.0-beta.6",
   "description": "AI 英语刷题机 - 桌面应用",
   "main": "main.js",
   "scripts": {
@@ -76,13 +76,16 @@
         "nsis",
         "portable"
       ],
-      "icon": "../frontend/public/brand-mark.png"
+      "icon": "installer-assets/installer.ico"
     },
     "nsis": {
       "artifactName": "epm-setup-${version}.${ext}",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true
+      "createDesktopShortcut": true,
+      "installerIcon": "installer-assets/installer.ico",
+      "installerHeaderIcon": "installer-assets/installer-header.bmp",
+      "installerSidebar": "installer-assets/installer-sidebar.bmp"
     },
     "portable": {
       "artifactName": "epm-portable-${version}.${ext}"
