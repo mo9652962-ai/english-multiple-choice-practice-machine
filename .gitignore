@@ -48,3 +48,4 @@ Thumbs.db
 # PyInstaller 后端独立包（155MB 产物不入库）
 backend/dist/
 backend/build/
+electron/*.zip
