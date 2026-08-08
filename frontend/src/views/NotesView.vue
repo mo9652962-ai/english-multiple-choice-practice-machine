@@ -1,29 +1,42 @@
 <script setup lang="ts">
-// v3.0: 笔记管理 — 集中查看做题时的标注记录（关键词高亮 + 笔记）
+// v3.0-enhance: 笔记管理增强 — 标签分类 + Markdown 导出 + 复习模式 + 统计
 import { onMounted, ref, computed } from 'vue'
 import { get, put, del } from '../api'
-import { BookMarked, Search } from 'lucide-vue-next'
+import { BookMarked, Search, Download, RefreshCw, Tag } from 'lucide-vue-next'
+
+const TAGS = ['生词', '短语', '语法', '长难句', '易错', '其他'] as const
 
 const notes = ref<any[]>([])
 const loading = ref(true)
 const keyword = ref('')
+const activeTag = ref('')
 const error = ref('')
-const editing = ref<{ id: number; note: string } | null>(null)
+const editing = ref<{ id: number; note: string; tag: string } | null>(null)
+const stats = ref<{ total: number; week: number; today: number; tags: { tag: string; count: number }[] } | null>(null)
+
+// 复习模式
+const reviewMode = ref(false)
+const reviewItems = ref<any[]>([])
+const reviewIndex = ref(0)
+const reviewRevealed = ref(false)
 
 const filtered = computed(() => {
   const k = keyword.value.trim().toLowerCase()
-  if (!k) return notes.value
-  return notes.value.filter(n =>
-    (n.text || '').toLowerCase().includes(k) ||
-    (n.note || '').toLowerCase().includes(k) ||
-    (n.unit_title || '').toLowerCase().includes(k)
-  )
+  return notes.value.filter(n => {
+    const tagOk = !activeTag.value || (n.tag || '') === activeTag.value
+    if (!tagOk) return false
+    if (!k) return true
+    return (n.text || '').toLowerCase().includes(k) ||
+      (n.note || '').toLowerCase().includes(k) ||
+      (n.unit_title || '').toLowerCase().includes(k)
+  })
 })
 
 onMounted(async () => {
   try {
-    const r: any = await get('/annotations')
+    const [r, s]: any = await Promise.all([get('/annotations'), get('/annotations/stats')])
     notes.value = Array.isArray(r) ? r : []
+    stats.value = s || null
   } catch (e) {
     error.value = String(e)
   }
@@ -33,10 +46,13 @@ onMounted(async () => {
 async function saveEdit() {
   if (!editing.value) return
   try {
-    const r: any = await put(`/annotations/${editing.value.id}`, { note: editing.value.note })
+    const r: any = await put(`/annotations/${editing.value.id}`, {
+      note: editing.value.note, tag: editing.value.tag,
+    })
     const found = notes.value.find(n => n.id === r.id)
-    if (found) found.note = r.note
+    if (found) { found.note = r.note; found.tag = r.tag }
     editing.value = null
+    await refreshStats()
   } catch (e) {
     error.value = String(e)
   }
@@ -47,6 +63,7 @@ async function removeNote(id: number) {
   try {
     await del(`/annotations/${id}`)
     notes.value = notes.value.filter(n => n.id !== id)
+    await refreshStats()
   } catch (e) {
     error.value = String(e)
   }
@@ -54,6 +71,60 @@ async function removeNote(id: number) {
 
 function colorClass(color: string) {
   return `ann ann-${color || 'amber'}`
+}
+
+// ── 导出 Markdown ──
+function exportMarkdown() {
+  const items = filtered.value
+  if (!items.length) return
+  const lines: string[] = ['# 墨题 · 我的笔记', '', `> 共 ${items.length} 条 · 导出时间 ${new Date().toLocaleString('zh-CN')}`, '']
+  for (const n of items) {
+    lines.push(`## ${n.text}`)
+    if (n.tag) lines.push(`> 标签：${n.tag}`)
+    if (n.paper_year || n.unit_title) lines.push(`> 来源：${n.paper_year ? n.paper_year + '年 · ' : ''}${n.unit_title}`)
+    lines.push(`> 时间：${n.created_at}`)
+    lines.push('')
+    lines.push(n.note || '_（无笔记内容）_')
+    lines.push('')
+    lines.push('---', '')
+  }
+  const blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `墨题笔记-${new Date().toISOString().slice(0, 10)}.md`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+// ── 复习模式 ──
+async function startReview() {
+  try {
+    const r: any = await get('/annotations/review?limit=20')
+    reviewItems.value = r?.items || []
+    reviewIndex.value = 0
+    reviewRevealed.value = false
+    reviewMode.value = reviewItems.value.length > 0
+  } catch (e) {
+    error.value = String(e)
+  }
+}
+
+function nextReview() {
+  if (reviewIndex.value < reviewItems.value.length - 1) {
+    reviewIndex.value += 1
+    reviewRevealed.value = false
+  } else {
+    reviewMode.value = false
+  }
+}
+
+// ── 统计 ──
+async function refreshStats() {
+  try {
+    const s: any = await get('/annotations/stats')
+    stats.value = s || null
+  } catch { /* 忽略 */ }
 }
 </script>
 
@@ -65,27 +136,51 @@ function colorClass(color: string) {
         <h1>我的笔记</h1>
         <p class="lead">做题时标记的记录都在这里，随时回顾你的重点和思考。</p>
       </div>
-      <div class="notes-search">
-        <Search :size="15" class="notes-search-icon" aria-hidden="true" />
-        <input v-model="keyword" type="search" placeholder="搜索关键词 / 笔记内容 / 单元…" />
+      <div class="notes-actions">
+        <div class="notes-search">
+          <Search :size="15" class="notes-search-icon" aria-hidden="true" />
+          <input v-model="keyword" type="search" placeholder="搜索关键词 / 笔记内容 / 单元…" />
+        </div>
+        <button type="button" class="button ghost" title="导出 Markdown" @click="exportMarkdown">
+          <Download :size="15" /> 导出
+        </button>
+        <button type="button" class="button" title="复习模式" @click="startReview">
+          <RefreshCw :size="15" /> 复习
+        </button>
       </div>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div v-if="stats" class="notes-stats">
+      <div class="notes-stat"><span class="notes-stat-num">{{ stats.total }}</span><span class="notes-stat-label">全部笔记</span></div>
+      <div class="notes-stat"><span class="notes-stat-num">{{ stats.week }}</span><span class="notes-stat-label">近 7 天</span></div>
+      <div class="notes-stat"><span class="notes-stat-num">{{ stats.today }}</span><span class="notes-stat-label">今天</span></div>
+    </div>
+
+    <!-- 标签筛选 -->
+    <div class="notes-tags">
+      <button type="button" class="notes-tag" :class="{ active: !activeTag }" @click="activeTag = ''">全部</button>
+      <button v-for="t in TAGS" :key="t" type="button" class="notes-tag" :class="{ active: activeTag === t }" @click="activeTag = activeTag === t ? '' : t">
+        <Tag :size="12" /> {{ t }}
+      </button>
     </div>
 
     <div v-if="loading" class="card empty">加载中…</div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="!filtered.length" class="card empty illustrated-empty">
-      <div><BookMarked :size="25" /><strong>{{ keyword ? '没有匹配的笔记' : '还没有笔记' }}</strong></div>
-      <p>{{ keyword ? '换个关键词试试' : '做题时选中文章中的词句，点「高亮」或「高亮+笔记」即可记录。' }}</p>
+      <div><BookMarked :size="25" /><strong>{{ keyword || activeTag ? '没有匹配的笔记' : '还没有笔记' }}</strong></div>
+      <p>{{ keyword || activeTag ? '换个条件试试' : '做题时选中文章中的词句，点「高亮」或「高亮+笔记」即可记录。' }}</p>
     </div>
     <div v-else class="notes-list">
       <article v-for="n in filtered" :key="n.id" class="card note-item">
         <div class="note-item-head">
           <span class="note-item-meta">
             <span class="note-item-unit">{{ n.paper_year ? n.paper_year + '年 · ' : '' }}{{ n.unit_title }}</span>
+            <span v-if="n.tag" class="note-item-tag">{{ n.tag }}</span>
             <time class="note-item-time">{{ n.created_at }}</time>
           </span>
           <div class="note-item-actions">
-            <button type="button" class="note-action-btn" title="编辑笔记" @click="editing = { id: n.id, note: n.note || '' }">✏️</button>
+            <button type="button" class="note-action-btn" title="编辑笔记" @click="editing = { id: n.id, note: n.note || '', tag: n.tag || '' }">✏️</button>
             <button type="button" class="note-action-btn danger" title="删除" @click="removeNote(n.id)">🗑</button>
           </div>
         </div>
@@ -95,12 +190,41 @@ function colorClass(color: string) {
       </article>
     </div>
 
+    <!-- 复习模式 -->
+    <div v-if="reviewMode" class="ann-note-overlay" @click.self="reviewMode = false">
+      <div class="ann-note-card review-card-note">
+        <div class="ann-note-head">
+          <span class="ann-note-title">🔄 复习笔记 · {{ reviewIndex + 1 }}/{{ reviewItems.length }}</span>
+          <button type="button" class="ann-note-close" @click="reviewMode = false">✕</button>
+        </div>
+        <template v-if="reviewItems[reviewIndex]">
+          <div class="review-prompt" @click="reviewRevealed = !reviewRevealed">
+            <mark :class="colorClass(reviewItems[reviewIndex].color)">{{ reviewItems[reviewIndex].text }}</mark>
+            <p class="review-hint">{{ reviewRevealed ? '点击隐藏答案' : '点击显示你的笔记' }}</p>
+          </div>
+          <div v-if="reviewRevealed" class="review-answer-box">
+            <p v-if="reviewItems[reviewIndex].note" class="review-answer-text">{{ reviewItems[reviewIndex].note }}</p>
+            <p v-else class="review-answer-text empty">（这条没有笔记内容）</p>
+            <p class="review-source">{{ reviewItems[reviewIndex].paper_year ? reviewItems[reviewIndex].paper_year + '年 · ' : '' }}{{ reviewItems[reviewIndex].unit_title }} · {{ reviewItems[reviewIndex].created_at }}</p>
+          </div>
+          <div class="ann-note-actions">
+            <button type="button" class="button ghost" @click="reviewMode = false">退出复习</button>
+            <button type="button" class="button" @click="nextReview">{{ reviewIndex < reviewItems.length - 1 ? '下一条 →' : '完成复习 ✓' }}</button>
+          </div>
+        </template>
+      </div>
+    </div>
+
     <!-- 编辑弹窗 -->
     <div v-if="editing" class="ann-note-overlay" @click.self="editing = null">
       <div class="ann-note-card">
         <div class="ann-note-head">
           <span class="ann-note-title">✏️ 编辑笔记</span>
           <button type="button" class="ann-note-close" @click="editing = null">✕</button>
+        </div>
+        <div class="edit-tag-row">
+          <span class="edit-tag-label">标签：</span>
+          <button v-for="t in TAGS" :key="t" type="button" class="notes-tag small" :class="{ active: editing.tag === t }" @click="editing.tag = editing.tag === t ? '' : t">{{ t }}</button>
         </div>
         <textarea
           v-model="editing.note"

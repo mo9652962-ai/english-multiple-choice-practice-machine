@@ -655,6 +655,7 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
     _ensure_column(connection, "vocabulary_entries", "synonyms", "TEXT NOT NULL DEFAULT '[]'")
     _ensure_column(connection, "vocabulary_entries", "antonyms", "TEXT NOT NULL DEFAULT '[]'")
     _ensure_column(connection, "vocabulary_entries", "similar_forms", "TEXT NOT NULL DEFAULT '[]'")
+    _ensure_column(connection, "annotations", "tag", "TEXT NOT NULL DEFAULT ''")
     _ensure_column(connection, "papers", "exam_type", "TEXT NOT NULL DEFAULT ''")
     _ensure_column(connection, "papers", "exam_month", "INTEGER NOT NULL DEFAULT 0")
     _ensure_column(connection, "papers", "set_number", "INTEGER NOT NULL DEFAULT 1")
