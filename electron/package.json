@@ -1,6 +1,6 @@
 {
   "name": "ai-english-practice-desktop",
-  "version": "1.0.3",
+  "version": "2.0.0-beta.1",
   "description": "AI 英语刷题机 - 桌面应用",
   "main": "main.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "electron-builder": "^25.0.0"
   },
   "dependencies": {
-    "electron-updater": "^6.3.0"
+    "electron-updater": "^6.8.9"
   },
   "build": {
     "appId": "com.sora.englishpractice",
@@ -80,8 +80,5 @@
     "portable": {
       "artifactName": "epm-portable-${version}.${ext}"
     }
-  },
-  "dependencies": {
-    "electron-updater": "^6.8.9"
   }
 }
