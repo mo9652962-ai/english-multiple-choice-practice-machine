@@ -38,7 +38,46 @@ let backendProc = null
 let mainWindow = null
 
 // ---------- 自动更新（仅打包版启用） ----------
+// v9.22 (beta.4): 双网络适配——GitHub 主源失败（中国无代理）→ 自动切 ghproxy 国内镜像
 let autoUpdater = null
+const GH_MIRROR = 'https://ghproxy.net/https://github.com/mo9652962-ai/epm-releases/releases/latest/download'
+let mirrorMode = false
+
+async function checkForUpdatesSmart() {
+  if (!autoUpdater) return
+  try {
+    if (mirrorMode) {
+      // 已切镜像：直接走镜像检查
+      await autoUpdater.checkForUpdates()
+      return
+    }
+    // 先试 GitHub 主源（短超时）
+    await Promise.race([
+      autoUpdater.checkForUpdates(),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('主源超时')), 20000)),
+    ])
+  } catch (err) {
+    // 主源失败（超时/网络错误）→ 切国内镜像重试一次
+    if (!mirrorMode) {
+      mirrorMode = true
+      console.error('[updater] 主源不可达，切换 ghproxy 国内镜像:', err.message)
+      try {
+        const logDir = path.join(app.getPath('userData'), 'logs')
+        fs.mkdirSync(logDir, { recursive: true })
+        fs.appendFileSync(path.join(logDir, 'updater.log'),
+          `${new Date().toISOString()} SWITCH mirror (${err.message})\n`)
+      } catch (e) { /* 日志失败忽略 */ }
+      try {
+        autoUpdater.setFeedURL({ provider: 'generic', url: GH_MIRROR })
+        await autoUpdater.checkForUpdates()
+      } catch (e2) {
+        console.error('[updater] 镜像源也失败:', e2.message)
+        mirrorMode = false // 下轮恢复主源
+      }
+    }
+  }
+}
+
 function setupAutoUpdater() {
   if (!app.isPackaged) return
   try {
@@ -66,11 +105,9 @@ function setupAutoUpdater() {
           `${new Date().toISOString()} ERROR ${err && err.message}\n`)
       } catch (e) { /* 日志失败忽略 */ }
     })
-    // 启动时检查 + 每 10 分钟轮询
-    autoUpdater.checkForUpdatesAndNotify()
-    setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify()
-    }, 10 * 60 * 1000)
+    // 启动时检查 + 每 10 分钟轮询（双网络适配）
+    checkForUpdatesSmart()
+    setInterval(checkForUpdatesSmart, 10 * 60 * 1000)
   } catch (e) {
     console.error('[updater] init failed:', e.message)
   }
