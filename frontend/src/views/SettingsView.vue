@@ -228,6 +228,42 @@ async function removeProfile(profile: AiProfile) {
 onMounted(() => {
   load()
 })
+
+// ── v2.95: 内置反馈入口 ──
+const fbOpen = ref(false)
+const fbCat = ref('other')
+const fbContent = ref('')
+const fbContact = ref('')
+const fbSending = ref(false)
+const fbMsg = ref('')
+const fbCats = [
+  { value: 'bug', label: '🐞 报错' },
+  { value: 'bad', label: '😕 不好用' },
+  { value: 'idea', label: '💡 想要新功能' },
+  { value: 'other', label: '📝 其他' },
+]
+
+async function submitFeedback() {
+  if (fbContent.value.trim().length < 2 || fbSending.value) return
+  fbSending.value = true
+  fbMsg.value = ''
+  try {
+    await post('/feedback', {
+      category: fbCat.value,
+      content: fbContent.value.trim(),
+      contact: fbContact.value.trim(),
+      page: window.location.pathname,
+    })
+    fbMsg.value = '✅ 反馈已收到，谢谢！'
+    fbContent.value = ''
+    fbContact.value = ''
+    setTimeout(() => { fbOpen.value = false; fbMsg.value = '' }, 1200)
+  } catch (cause) {
+    fbMsg.value = '❌ 提交失败：' + String(cause)
+  } finally {
+    fbSending.value = false
+  }
+}
 </script>
 
 <template>
@@ -373,6 +409,31 @@ onMounted(() => {
           </section>
         </div>
       </article>
+
+      <!-- v2.95: 内置反馈入口 (内测方案 P0) -->
+      <article class="card feedback-card">
+        <div class="card-header"><h2>反馈建议</h2><p>遇到问题？有想法？3 秒告诉我们——帮助我们把刷题机做得更好。</p></div>
+        <button class="button" type="button" @click="fbOpen = true">📮 提交反馈</button>
+      </article>
+    </div>
+  </div>
+
+  <!-- 反馈弹窗 -->
+  <div v-if="fbOpen" class="modal-backdrop" @click.self="fbOpen = false">
+    <div class="modal-card feedback-modal">
+      <div class="modal-header"><h3>反馈建议</h3><button class="modal-close" type="button" @click="fbOpen = false">×</button></div>
+      <div class="feedback-form">
+        <div class="feedback-cats">
+          <button v-for="c in fbCats" :key="c.value" type="button" :class="{ active: fbCat === c.value }" @click="fbCat = c.value">{{ c.label }}</button>
+        </div>
+        <textarea v-model="fbContent" rows="4" maxlength="2000" placeholder="请描述你的问题或建议（必填）"></textarea>
+        <input v-model="fbContact" maxlength="200" placeholder="联系方式（选填，方便我们回复你）" />
+        <div class="feedback-actions">
+          <button class="button secondary" type="button" @click="fbOpen = false">取消</button>
+          <button class="button" type="button" :disabled="fbSending || fbContent.trim().length < 2" @click="submitFeedback">{{ fbSending ? '提交中…' : '提交反馈' }}</button>
+        </div>
+        <p v-if="fbMsg" class="feedback-msg">{{ fbMsg }}</p>
+      </div>
     </div>
   </div>
 </template>

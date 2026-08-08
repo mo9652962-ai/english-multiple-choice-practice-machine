@@ -2531,3 +2531,21 @@ a, button, input, select, textarea, .card, .stat-card { transition-duration: .22
   .cal-cell { width: 34px; height: 34px; font-size: 10px; border-radius: 8px; }
   .cal-title { font-size: 16px; }
 }
+
+/* ═══ v2.95: 内置反馈入口 ═══ */
+.feedback-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.feedback-card .card-header { margin: 0; flex: 1; }
+.feedback-card .card-header p { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(20,18,14,.45); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.feedback-modal { width: min(440px, 92vw); padding: 0; overflow: hidden; }
+.feedback-modal .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.feedback-modal .modal-header h3 { margin: 0; font-family: var(--font-serif); }
+.modal-close { background: none; border: none; font-size: 22px; line-height: 1; color: var(--muted); cursor: pointer; }
+.feedback-form { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; }
+.feedback-cats { display: flex; flex-wrap: wrap; gap: 8px; }
+.feedback-cats button { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: 12px; cursor: pointer; transition: all .2s; }
+.feedback-cats button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.feedback-form textarea, .feedback-form input { width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font: inherit; font-size: 13px; background: var(--surface-solid); color: var(--text); resize: vertical; }
+.feedback-form textarea:focus, .feedback-form input:focus { outline: none; border-color: var(--accent); }
+.feedback-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.feedback-msg { margin: 0; font-size: 13px; text-align: center; }

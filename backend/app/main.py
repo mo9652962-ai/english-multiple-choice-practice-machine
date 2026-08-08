@@ -15,6 +15,7 @@ from .routers import (
     ai,
     dashboard,
     exam,
+    feedback,
     imports,
     papers,
     practice,
@@ -93,6 +94,7 @@ app.include_router(library.router, prefix="")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
+app.include_router(feedback.router, prefix="")
 
 
 @app.get("/api/health")
