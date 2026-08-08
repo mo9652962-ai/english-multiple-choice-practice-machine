@@ -68,7 +68,8 @@ function startBackend() {
       stdio: 'ignore',
       env: {
         ...process.env,
-        EPM_DATA_DIR: path.join(resources, 'backend', 'data'),
+        // v2.0-beta: 数据放用户目录（%APPDATA%），避免 Program Files 写入权限 + 杀软关注
+        EPM_DATA_DIR: path.join(app.getPath('userData'), 'data'),
         EPM_FRONTEND_DIST: path.join(resources, 'frontend', 'dist'),
         EPM_HOST: '127.0.0.1',
         EPM_PORT: String(PORT),
