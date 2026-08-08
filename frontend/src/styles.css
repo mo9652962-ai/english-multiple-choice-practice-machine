@@ -1083,7 +1083,7 @@ body.ink-landscape::after {
     radial-gradient(ellipse 45% 35% at 62% 30%, rgba(64,60,53,.04) 0%, transparent 70%),
     radial-gradient(ellipse 70% 30% at 18% 88%, rgba(64,60,53,.04) 0%, transparent 70%),
     linear-gradient(180deg, rgba(247,243,238,.0) 55%, rgba(247,243,238,.75) 100%),
-    url('/assets/backgrounds/ink-2-jiangnan.jpg');
+    url('/assets/backgrounds/login-ink.png');
   background-size: auto, auto, auto, auto, cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1239,7 +1239,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .page-focus::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .16; }
 .page-calendar::before { background-image: url('/assets/backgrounds/ink-5-shu.jpg'); opacity: .16; }
 .page-goal::before { background-image: url('/assets/backgrounds/ink-1-tiandu.jpg'); opacity: .16; }
-.page-reading::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .16; }
+.page-reading::before { background-image: url('/assets/backgrounds/login-ink.png'); opacity: .16; }
 .page-listening::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .16; }
 .page-focus::before, .page-calendar::before, .page-goal::before, .page-reading::before, .page-listening::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
@@ -1562,7 +1562,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 
 /* ── v2.39: 新板块水墨背景 (博物馆 PD 图) ── */
 .page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .16; }
-.page-report::before { background-image: url('/assets/backgrounds/ink-2-jiangnan.jpg'); opacity: .16; }
+.page-report::before { background-image: url('/assets/backgrounds/login-ink.png'); opacity: .16; }
 .page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .16; }
 .page-leaderboard::before, .page-report::before, .page-achievements::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
