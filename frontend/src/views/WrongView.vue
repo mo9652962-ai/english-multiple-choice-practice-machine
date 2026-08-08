@@ -309,6 +309,32 @@ async function strengthenScope(key: string, questionIds: number[], title: string
   }
 }
 
+// v2.96: AI 变体题 (竞品借鉴: 粉笔举一反三/类似题推荐)
+const aiVariantKey = ref('')
+const aiVariantOpen = ref(false)
+const aiVariantLoading = ref(false)
+const aiVariantError = ref('')
+const aiVariantsList = ref<any[]>([])
+
+async function aiVariants(key: string, questionIds: number[]) {
+  aiVariantKey.value = key
+  aiVariantError.value = ''
+  aiVariantLoading.value = true
+  aiVariantOpen.value = true
+  try {
+    const result: any = await post('/ai/similar-questions', { question_ids: questionIds.slice(0, 5) })
+    aiVariantsList.value = result.questions || []
+    if (!aiVariantsList.value.length) {
+      aiVariantError.value = result.error || 'AI 未生成变体题，请稍后再试'
+    }
+  } catch (e) {
+    aiVariantError.value = `生成失败：${String(e)}`
+  } finally {
+    aiVariantLoading.value = false
+    aiVariantKey.value = ''
+  }
+}
+
 async function analyzeScope(
   key: string,
   questionIds: number[],
@@ -612,6 +638,15 @@ function analysisLabel(unitIds: number[]): string {
                 <Zap :size="15" />
                 {{ startingKey === `unit-${unit.unitId}` ? '正在启动…' : '同类强化' }}
               </button>
+              <button
+                class="button compact"
+                type="button"
+                :disabled="Boolean(aiVariantKey)"
+                @click="aiVariants(`unit-${unit.unitId}`, unit.questionIds)"
+              >
+                <Brain :size="15" />
+                {{ aiVariantKey === `unit-${unit.unitId}` ? '生成中…' : 'AI 变体' }}
+              </button>
             </div>
           </article>
         </div>
@@ -622,6 +657,31 @@ function analysisLabel(unitIds: number[]): string {
       <img src="/assets/quiet-study-empty.webp" alt="">
       <div><Brain :size="25" /><strong>这里还没有错题</strong></div>
       <p>{{ frequentOnly ? '当前没有高频错题，可以切换为查看全部错题。' : '保持这个状态很不错，继续按自己的节奏练习。' }}</p>
+    </div>
+  </div>
+
+  <!-- v2.96: AI 变体题弹窗 (竞品借鉴: 粉笔举一反三/类似题推荐) -->
+  <div v-if="aiVariantOpen" class="modal-backdrop" @click.self="aiVariantOpen = false">
+    <div class="modal-card ai-variant-modal">
+      <div class="modal-header">
+        <h3>🧠 AI 变体题</h3>
+        <button class="modal-close" type="button" @click="aiVariantOpen = false">×</button>
+      </div>
+      <p class="ai-variant-note">基于你的错题考点，AI 生成的相似题（举一反三）</p>
+      <div v-if="aiVariantLoading" class="ai-variant-loading">AI 生成中，请稍候…</div>
+      <div v-else-if="aiVariantError" class="ai-variant-error">{{ aiVariantError }}</div>
+      <div v-else class="ai-variant-list">
+        <div v-for="(q, qi) in aiVariantsList" :key="qi" class="ai-variant-item">
+          <div class="ai-variant-stem">{{ qi + 1 }}. {{ q.stem }}</div>
+          <div v-if="q.options?.length" class="ai-variant-options">
+            <div v-for="(o, oi) in q.options" :key="oi" class="ai-variant-option">
+              <span class="ai-variant-key">{{ ['A','B','C','D'][oi] }}.</span> {{ o }}
+            </div>
+          </div>
+          <div class="ai-variant-answer">✅ 答案：{{ q.answer || '见解析' }}</div>
+          <div v-if="q.explain" class="ai-variant-explain">💡 {{ q.explain }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
