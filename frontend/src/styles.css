@@ -2700,3 +2700,24 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
 .empty-state, .illustrated-empty { padding: 48px 24px; }
 .badge, .tag, .chip { border-radius: 999px; }
 .separator, .divider { border: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); margin: 18px 0; }
+
+/* ═══ v2.107: 去AI味修复 (impeccable 59规则检测: 渐变文字/发光是AI模板特征) ═══ */
+.stat-value, .big-number, .hero-stat { background: none; -webkit-text-fill-color: initial; color: var(--accent-600); font-weight: 700; }
+:root.dark .stat-value, :root.dark .big-number { background: none; -webkit-text-fill-color: initial; color: #d9865f; }
+:root.dark .progress-ring .ring-used { filter: none; }
+:root.dark .card:hover { box-shadow: 0 12px 32px -12px rgba(0,0,0,.5); }
+.progress-ring .ring-used, .ring-progress, .circle-progress { background: var(--accent-500); }
+.chart-bar, .bar-fill { background: var(--accent-500); }
+
+/* ═══ v2.108: 去AI味修复2 (side-tab竖线/弹跳缓动/渐变残留 — impeccable检测) ═══ */
+.card-header h2 { padding-left: 0; }
+.card-header h2::before { display: none; }
+.modal-card { animation: none; }
+.page > * { animation: none; }
+.toast, .notification, .snackbar { animation: none; }
+.stat-value, .big-number, .hero-stat { background: none; -webkit-text-fill-color: initial; color: var(--accent-600); }
+.vocab-progress-fill, .word-progress { background: var(--moss-600); }
+
+/* ═══ v2.109: 品牌竖线微调 3px→2px + 清除渐变残留 ═══ */
+.border-left\:3px, [style*="border-left:3px"], .side-tab-like { border-left-width: 2px; }
+.wrong-level-icon, .opt-key, .category-item.active, .stat-card { border-left-width: 2px !important; }
