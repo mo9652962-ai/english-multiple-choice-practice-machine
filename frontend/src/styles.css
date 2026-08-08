@@ -236,9 +236,9 @@ h2, h3 { margin: 0; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow-sm); backdrop-filter: blur(12px); position: relative; }
+.card { background: var(--surface-solid); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow-sm); backdrop-filter: blur(12px); position: relative; }
 /* v9.19 UI: 卡片顶部柔和高光渐变 (::before absolute 脱离流, 内容自然在上层) */
-.card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 90px; border-radius: var(--radius-lg) var(--radius-lg) 50% 50%; background: var(--card-gradient); pointer-events: none; opacity: .7; }
+.card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 90px; border-radius: var(--radius-lg) var(--radius-lg) 50% 50%; background: var(--card-gradient); pointer-events: none; opacity: .45; }
 .action-card { position: relative; min-height: 224px; text-align: left; color: var(--ink); overflow: hidden; transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease); }
 .action-card:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: var(--shadow-hover); }
 .action-card:active { transform: translateY(-1px) scale(.99); }
@@ -2300,7 +2300,7 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 :root.dark .card {
   background:
     linear-gradient(180deg, color-mix(in srgb, #ffffff 5%, transparent), transparent 42%) padding-box,
-    linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 96%, #2a2a24), color-mix(in srgb, var(--surface-solid) 88%, #1d1c17)) padding-box;
+    linear-gradient(165deg, color-mix(in srgb, var(--surface-solid) 99%, #2a2a24), color-mix(in srgb, var(--surface-solid) 98%, #1d1c17)) padding-box;
 }
 :root.dark .card::before { background: linear-gradient(90deg, transparent, color-mix(in srgb, #ffffff 9%, transparent), transparent); }
 :root.dark .card:hover { box-shadow: var(--shadow-hover), 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent); }
