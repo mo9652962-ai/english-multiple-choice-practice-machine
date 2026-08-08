@@ -2549,3 +2549,19 @@ a, button, input, select, textarea, .card, .stat-card { transition-duration: .22
 .feedback-form textarea:focus, .feedback-form input:focus { outline: none; border-color: var(--accent); }
 .feedback-actions { display: flex; justify-content: flex-end; gap: 10px; }
 .feedback-msg { margin: 0; font-size: 13px; text-align: center; }
+
+/* ═══ v2.96: AI 变体题弹窗 (竞品借鉴: 举一反三) ═══ */
+.ai-variant-modal { width: min(520px, 92vw); max-height: 80vh; display: flex; flex-direction: column; overflow: hidden; }
+.ai-variant-modal .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); flex-shrink: 0; }
+.ai-variant-modal .modal-header h3 { margin: 0; font-family: var(--font-serif); }
+.ai-variant-note { margin: 12px 20px 0; font-size: 12px; color: var(--muted); }
+.ai-variant-list { padding: 12px 20px 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+.ai-variant-item { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: color-mix(in srgb, var(--surface-solid) 60%, transparent); }
+.ai-variant-stem { font-size: 14px; line-height: 1.6; }
+.ai-variant-options { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.ai-variant-option { font-size: 13px; color: var(--text); opacity: .9; }
+.ai-variant-key { font-weight: 700; color: var(--accent); margin-right: 2px; }
+.ai-variant-answer { margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--accent); }
+.ai-variant-explain { margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.ai-variant-loading, .ai-variant-error { padding: 24px; text-align: center; font-size: 13px; }
+.ai-variant-error { color: var(--danger, #d94848); }
