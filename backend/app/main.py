@@ -19,6 +19,7 @@ from .routers import (
     imports,
     papers,
     practice,
+    annotations,
     question_bank_profiles,
     question_banks,
     version,
@@ -102,6 +103,7 @@ app.add_middleware(
 app.include_router(dashboard.router, prefix="/api")
 app.include_router(papers.router, prefix="/api")
 app.include_router(practice.router, prefix="/api")
+app.include_router(annotations.router, prefix="/api")
 app.include_router(wrong.router, prefix="/api")
 app.include_router(imports.router, prefix="/api")
 app.include_router(question_banks.router, prefix="/api")

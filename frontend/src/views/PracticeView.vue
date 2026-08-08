@@ -16,7 +16,7 @@ import {
 import { VueDraggableNext } from 'vue-draggable-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
-import { get, post, put } from '../api'
+import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
 
 const route = useRoute()
@@ -153,9 +153,13 @@ const orderingAnswers = computed(() => {
   return result
 })
 type PassageSegment = {
-  type: 'text' | 'blank'
+  type: 'text' | 'blank' | 'mark'
   text: string
   number?: number
+  start?: number
+  annotationId?: number
+  color?: string
+  note?: string
 }
 const passageSegments = computed<PassageSegment[]>(() => {
   const unit = activeUnit.value
@@ -195,19 +199,130 @@ const passageSegments = computed<PassageSegment[]>(() => {
     after = candidate.index
   }
 
-  if (!selected.length) return [{ type: 'text', text: passage }]
+  if (!selected.length) return [{ type: 'text', text: passage, start: 0 }]
   const result: PassageSegment[] = []
   let cursor = 0
   for (const blank of selected) {
     if (blank.start > cursor) {
-      result.push({ type: 'text', text: passage.slice(cursor, blank.start) })
+      result.push({ type: 'text', text: passage.slice(cursor, blank.start), start: cursor })
     }
-    result.push({ type: 'blank', text: String(blank.number), number: blank.number })
+    result.push({ type: 'blank', text: String(blank.number), number: blank.number, start: blank.start })
     cursor = blank.end
   }
-  if (cursor < passage.length) result.push({ type: 'text', text: passage.slice(cursor) })
+  if (cursor < passage.length) result.push({ type: 'text', text: passage.slice(cursor), start: cursor })
   return result
 })
+
+// ── v3.0: 做题标注（关键词高亮 + 笔记持久化）──
+const annotations = ref<any[]>([])
+const annotationBubble = ref({ visible: false, x: 0, y: 0, selText: '', selStart: 0, selEnd: 0 })
+const annotationNote = ref({ visible: false, ann: null as any | null, noteText: '' })
+
+function passageText(): string {
+  const unit = activeUnit.value
+  return unit?.passage || ''
+}
+
+async function loadAnnotations() {
+  const unit = activeUnit.value
+  if (!unit?.id) { annotations.value = []; return }
+  try {
+    const r: any = await get(`/units/${unit.id}/annotations`)
+    annotations.value = Array.isArray(r) ? r : []
+  } catch { annotations.value = [] }
+}
+
+function annotatedSegments(): PassageSegment[] {
+  const base = passageSegments.value
+  const anns = [...annotations.value].sort((a, b) => a.start_offset - b.start_offset)
+  if (!anns.length) return base
+  const result: PassageSegment[] = []
+  for (const seg of base) {
+    if (seg.type !== 'text' || seg.start === undefined) { result.push(seg); continue }
+    let cursor = seg.start
+    for (const ann of anns) {
+      if (ann.end_offset <= seg.start || ann.start_offset >= seg.start + seg.text.length) continue
+      if (ann.start_offset > cursor) {
+        result.push({ type: 'text', text: passageText().slice(cursor, ann.start_offset), start: cursor })
+      }
+      result.push({
+        type: 'mark', text: passageText().slice(ann.start_offset, ann.end_offset),
+        start: ann.start_offset, annotationId: ann.id, color: ann.color, note: ann.note,
+      })
+      cursor = Math.max(cursor, ann.end_offset)
+    }
+    if (cursor < seg.start + seg.text.length) {
+      result.push({ type: 'text', text: passageText().slice(cursor, seg.start + seg.text.length), start: cursor })
+    }
+  }
+  return result
+}
+
+function onPassageSelection() {
+  const sel = window.getSelection()
+  if (!sel || sel.isCollapsed || !sel.rangeCount) { annotationBubble.value.visible = false; return }
+  const passageEl = document.querySelector('.passage')
+  if (!passageEl || !passageEl.contains(sel.anchorNode)) { annotationBubble.value.visible = false; return }
+  const text = sel.toString().trim()
+  if (!text || text.length > 200) { annotationBubble.value.visible = false; return }
+  // 计算 passage 内偏移
+  const unit = activeUnit.value
+  const passage = unit?.passage || ''
+  const range = sel.getRangeAt(0)
+  const pre = range.cloneRange()
+  pre.selectNodeContents(passageEl)
+  pre.setEnd(range.startContainer, range.startOffset)
+  const startOffset = pre.toString().length
+  const endOffset = startOffset + text.length
+  // 校正：selection 可能与 passage 原文（含 blank 占位差异）不完全对齐——用文本搜索兜底
+  const idx = passage.indexOf(text)
+  const s = idx >= 0 ? idx : startOffset
+  const e = s + text.length
+  const rect = range.getBoundingClientRect()
+  annotationBubble.value = { visible: true, x: rect.left + rect.width / 2, y: rect.top, selText: text, selStart: s, selEnd: e }
+}
+
+async function addAnnotation(withNote: boolean) {
+  const b = annotationBubble.value
+  const unit = activeUnit.value
+  if (!unit?.id || !b.selText) return
+  try {
+    const r: any = await post(`/units/${unit.id}/annotations`, {
+      start_offset: b.selStart, end_offset: b.selEnd, text: b.selText,
+      note: withNote ? annotationNote.value.noteText : '',
+      color: 'amber',
+    })
+    annotations.value.push(r)
+    annotationBubble.value.visible = false
+    annotationNote.value = { visible: false, ann: null, noteText: '' }
+    window.getSelection()?.removeAllRanges()
+  } catch (e) { console.error('标注失败', e) }
+}
+
+function openAnnotationNote(seg: any) {
+  annotationNote.value = { visible: true, ann: seg, noteText: seg.note || '' }
+}
+
+async function saveAnnotationNote() {
+  const n = annotationNote.value
+  if (!n.ann?.annotationId) return
+  try {
+    const r: any = await put(`/annotations/${n.ann.annotationId}`, { note: n.noteText })
+    const found = annotations.value.find(a => a.id === r.id)
+    if (found) { found.note = r.note; found.color = r.color }
+    annotationNote.value.visible = false
+  } catch (e) { console.error('笔记保存失败', e) }
+}
+
+async function deleteAnnotation() {
+  const n = annotationNote.value
+  if (!n.ann?.annotationId) return
+  try {
+    await del(`/annotations/${n.ann.annotationId}`)
+    annotations.value = annotations.value.filter(a => a.id !== n.ann.annotationId)
+    annotationNote.value.visible = false
+  } catch (e) { console.error('删除标注失败', e) }
+}
 
 function timerStorageKey(sessionId: number) {
   return `linjian-practice-timer-${sessionId}`
@@ -434,6 +549,7 @@ async function load() {
     loadPendingVocabulary(session.value.id)
     syncOrdering()
     initializeTimer()
+    await loadAnnotations()
   }
   catch (e) { error.value = String(e) }
 }
@@ -443,6 +559,7 @@ onMounted(() => {
   }, 500)
   window.addEventListener('keydown', handleWindowKeydown)
   window.addEventListener('pagehide', flushVocabularyOnPageHide)
+  window.addEventListener('selectionchange', onPassageSelection)
   load()
 })
 onBeforeUnmount(() => {
@@ -646,6 +763,7 @@ function switchUnit(index: number) {
   unansweredNotice.value = ''
   highlightedQuestionId.value = null
   syncOrdering()
+  void loadAnnotations()
 }
 
 function showUnitResult(unitId = activeUnit.value?.id) {
@@ -833,12 +951,49 @@ async function copySelectedTerm() {
             :package-id="activeContentPackage.packageId"
             :content-version="activeContentPackage.contentVersion"
           />
-          <template v-else v-for="(segment, index) in passageSegments" :key="`${segment.type}-${index}`">
+          <template v-else v-for="(segment, index) in annotatedSegments()" :key="`${segment.type}-${segment.start ?? index}`">
             <span v-if="segment.type === 'blank'" class="passage-blank" :aria-label="`第 ${segment.number} 空`">
               <span class="blank-number">{{ segment.number }}</span>
             </span>
+            <mark
+              v-else-if="segment.type === 'mark'"
+              class="ann"
+              :class="`ann-${segment.color || 'amber'}`"
+              :data-ann-id="segment.annotationId"
+              @click="openAnnotationNote(segment)"
+            >{{ segment.text }}</mark>
             <template v-else>{{ segment.text }}</template>
           </template>
+        </div>
+        <!-- v3.0: 标注气泡（选中文字后） -->
+        <div
+          v-if="annotationBubble.visible"
+          class="ann-bubble"
+          :style="{ left: annotationBubble.x + 'px', top: (annotationBubble.y - 12) + 'px' }"
+          @mousedown.prevent
+        >
+          <button type="button" class="ann-bubble-btn" @click="addAnnotation(false)">🖍 高亮</button>
+          <button type="button" class="ann-bubble-btn" @click="annotationNote.noteText=''; addAnnotation(true)">📝 高亮+笔记</button>
+        </div>
+        <!-- v3.0: 标注笔记弹窗 -->
+        <div v-if="annotationNote.visible" class="ann-note-overlay" @click.self="annotationNote.visible = false">
+          <div class="ann-note-card">
+            <div class="ann-note-head">
+              <span class="ann-note-title">📌 标注笔记</span>
+              <button type="button" class="ann-note-close" @click="annotationNote.visible = false">✕</button>
+            </div>
+            <blockquote class="ann-note-quote">“{{ annotationNote.ann?.text }}”</blockquote>
+            <textarea
+              v-model="annotationNote.noteText"
+              class="ann-note-input"
+              rows="4"
+              placeholder="写下你的理解、翻译或记忆技巧…"
+            ></textarea>
+            <div class="ann-note-actions">
+              <button type="button" class="button ghost danger" @click="deleteAnnotation">删除标注</button>
+              <button type="button" class="button" @click="saveAnnotationNote">保存笔记</button>
+            </div>
+          </div>
         </div>
       </section>
       <section class="question-pane">
