@@ -17,6 +17,9 @@ frontend/vite.config.d.ts
 electron/node_modules/
 electron/dist/
 
+# Android 构建产物（Capacitor 生成，重建可再生成；种子库由 public/ 同步）
+frontend/android/
+
 # Local runtime data and private development artifacts
 backend/data/
 work/
