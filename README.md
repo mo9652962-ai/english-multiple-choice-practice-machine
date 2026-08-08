@@ -19,7 +19,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows-2563EB?style=flat-square" alt="Windows">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v0.1.0--alpha-F59E0B?style=flat-square" alt="v0.1.0-alpha">
+    <img src="https://img.shields.io/badge/status-v2.0.0--beta.10-2563EB?style=flat-square" alt="v2.0.0-beta.10">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
