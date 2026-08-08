@@ -92,10 +92,9 @@ def generate_similar_questions(
         response = chat_completion(
             connection,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.9,
             max_tokens=1200,
         )
-        text = response.get("content", "")
+        text = response if isinstance(response, str) else response.get("content", "")
         questions = parse_json_response(text)
         if not isinstance(questions, list):
             questions = [questions] if questions else []
