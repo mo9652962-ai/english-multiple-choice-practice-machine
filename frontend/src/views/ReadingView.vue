@@ -2,7 +2,7 @@
 // v2.49: 阅读训练 (词文串学短文阅读 — 借签薄荷阅读语境学习)
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { get } from '../api'
+import { get, post } from '../api'
 
 const router = useRouter()
 const passages = ref<any[]>([])
@@ -25,11 +25,17 @@ onMounted(async () => {
   loading.value = false
 })
 
-function startPractice(p: any) {
-  if (p.unit_id || p.id) {
-    router.push(`/practice?unit=${p.unit_id || p.id}`)
-  } else {
-    router.push('/library')
+async function startPractice(p: any) {
+  // v3.0-fix: 创建会话再跳转（原直跳 /practice?unit= 导致 params.id 为 undefined → 空白）
+  const unitId = p.unit_id || p.id
+  if (!unitId) { router.push('/library'); return }
+  try {
+    const session: any = await post('/practice/sessions', {
+      mode: 'unit', unit_ids: [unitId], shuffle_options: true,
+    })
+    router.push(`/practice/${session.id}`)
+  } catch (e) {
+    error.value = String(e)
   }
 }
 </script>
