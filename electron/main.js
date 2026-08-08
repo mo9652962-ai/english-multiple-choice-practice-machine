@@ -31,6 +31,18 @@ try {
   })
 } catch (e) { /* crashReporter 可选 */ }
 
+// ---------- 未捕获异常处理（不弹窗，写日志） ----------
+// v9.23 (beta.5): 修复 EPIPE 弹窗——console 写入失败等异常不再打断用户
+process.on('uncaughtException', (err) => {
+  try {
+    const logDir = path.join(app.getPath('userData'), 'logs')
+    fs.mkdirSync(logDir, { recursive: true })
+    fs.appendFileSync(path.join(logDir, 'crash.log'),
+      `${new Date().toISOString()} UNCAUGHT ${err && err.stack || err}\n`)
+  } catch (e) { /* 日志失败忽略 */ }
+  // 不弹窗、不退出——更新等后台任务失败可静默重试
+})
+
 const PORT = 8765
 const URL = `http://127.0.0.1:${PORT}`
 
@@ -82,6 +94,8 @@ function setupAutoUpdater() {
   if (!app.isPackaged) return
   try {
     autoUpdater = require('electron-updater').autoUpdater
+    // v9.23 (beta.5): 禁用差分下载——150MB 安装包差分易出错，全量下载更稳
+    autoUpdater.disableDifferentialDownload = true
     // 下载完提示重启（静默下载，不打扰使用）
     autoUpdater.on('update-downloaded', () => {
       if (mainWindow) {
