@@ -43,6 +43,7 @@ from .services.trash import purge_expired
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     initialize_database()
+    _backup_database_on_startup()
     with connect() as connection:
         ensure_ai_model_catalog(connection)
         clean_machine_meanings(connection)
@@ -53,6 +54,31 @@ async def lifespan(_: FastAPI):
         daemon=True,
     ).start()
     yield
+
+
+def _backup_database_on_startup() -> None:
+    """启动时自动备份数据库（Anki 式数据安全：保留最近 5 份）"""
+    import shutil
+    try:
+        from .config import DATA_DIR, DATABASE_PATH
+        if not DATABASE_PATH.exists():
+            return
+        backup_dir = DATA_DIR / "backups"
+        backup_dir.mkdir(parents=True, exist_ok=True)
+        import time as _t
+        stamp = _t.strftime("%Y%m%d_%H%M%S")
+        dest = backup_dir / f"question_bank_{stamp}.db"
+        shutil.copy2(DATABASE_PATH, dest)
+        # 保留最近 5 份
+        backups = sorted(backup_dir.glob("question_bank_*.db"))
+        for old in backups[:-5]:
+            try:
+                old.unlink()
+            except OSError:
+                pass
+    except Exception:
+        # 备份失败不应阻塞启动
+        pass
 
 
 app = FastAPI(

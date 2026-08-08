@@ -1,6 +1,6 @@
 {
   "name": "ai-english-practice-desktop",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "AI 英语刷题机 - 桌面应用",
   "main": "main.js",
   "scripts": {
@@ -36,7 +36,10 @@
         "filter": [
           "**/*",
           "!**/__pycache__/**",
-          "!**/*.pyc"
+          "!**/*.pyc",
+          "!data/**",
+          "!dist/**",
+          "!build/**"
         ]
       },
       {
@@ -62,6 +65,10 @@
           "**/*",
           "!**/*.pyc"
         ]
+      },
+      {
+        "from": "../backend/data/question_bank.db",
+        "to": "seed/question_bank.db"
       }
     ],
     "win": {
