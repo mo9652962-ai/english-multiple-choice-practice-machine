@@ -427,12 +427,17 @@ def save_answer(
 
 
 def _update_wrong_stat(
-    connection: sqlite3.Connection, question_id: int, is_correct: bool
+    connection: sqlite3.Connection, question_id: int, is_correct: bool,
+    reduce_on_correct: bool = False,
 ) -> None:
     row = connection.execute(
         "SELECT * FROM wrong_stats WHERE question_id = ?", (question_id,)
     ).fetchone()
     now = datetime.now().isoformat(timespec="seconds")
+    # 错题迭代：wrong 模式重做作对 → wrong_count 减 1（越做越少）
+    delta = 0 if is_correct else 1
+    if reduce_on_correct and is_correct:
+        delta = -1
     if row is None:
         recent = [is_correct]
         connection.execute(
@@ -444,7 +449,7 @@ def _update_wrong_stat(
             """,
             (
                 question_id,
-                0 if is_correct else 1,
+                max(0, delta),
                 json.dumps(recent),
                 1 if is_correct else 0,
                 None if is_correct else now,
@@ -455,11 +460,12 @@ def _update_wrong_stat(
 
     recent = parse_json(row["recent_results"], [])
     recent = (recent + [is_correct])[-10:]
+    new_wrong_count = max(0, row["wrong_count"] + delta)
     connection.execute(
         """
         UPDATE wrong_stats
         SET attempt_count = attempt_count + 1,
-            wrong_count = wrong_count + ?,
+            wrong_count = ?,
             recent_results = ?,
             consecutive_correct = ?,
             last_wrong_at = ?,
@@ -467,7 +473,7 @@ def _update_wrong_stat(
         WHERE question_id = ?
         """,
         (
-            0 if is_correct else 1,
+            new_wrong_count,
             json.dumps(recent),
             row["consecutive_correct"] + 1 if is_correct else 0,
             row["last_wrong_at"] if is_correct else now,
@@ -480,6 +486,7 @@ def _update_wrong_stat(
 def _grade_answer_rows(
     connection: sqlite3.Connection,
     rows: list[sqlite3.Row],
+    reduce_on_correct: bool = False,
 ) -> tuple[float, float]:
     score = 0.0
     max_score = 0.0
@@ -496,7 +503,7 @@ def _grade_answer_rows(
             (int(is_correct), row["id"]),
         )
         if not already_graded:
-            _update_wrong_stat(connection, row["question_id"], is_correct)
+            _update_wrong_stat(connection, row["question_id"], is_correct, reduce_on_correct)
     return score, max_score
 
 
@@ -548,7 +555,14 @@ def submit_unit(
             question_id=missing["question_id"],
             question_number=missing["number"],
         )
-    score, max_score = _grade_answer_rows(connection, rows)
+    score, max_score = _grade_answer_rows(
+        connection, rows,
+        reduce_on_correct=bool(
+            connection.execute(
+                "SELECT mode FROM practice_sessions WHERE id = ?", (session_id,)
+            ).fetchone()["mode"] == "wrong"
+        ),
+    )
     connection.execute(
         """
         INSERT INTO practice_unit_submissions
@@ -602,7 +616,9 @@ def submit_session(
     score = 0.0
     max_score = 0.0
     for unit_id, unit_rows in rows_by_unit.items():
-        unit_score, unit_max_score = _grade_answer_rows(connection, unit_rows)
+        unit_score, unit_max_score = _grade_answer_rows(
+            connection, unit_rows, reduce_on_correct=session["mode"] == "wrong"
+        )
         score += unit_score
         max_score += unit_max_score
         connection.execute(

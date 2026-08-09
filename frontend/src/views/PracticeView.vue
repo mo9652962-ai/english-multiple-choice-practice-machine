@@ -543,9 +543,28 @@ function finishTimer() {
   persistTimer()
 }
 
+function shuffleOptions(questions: any[]) {
+  // 选项打乱（防记答案）：仅打乱显示顺序，判分用 stable_key 不受影响
+  // 排序题（ordering）不打乱（语义是用户自己排序）
+  if (localStorage.getItem('epm_shuffle_options') === 'false') return
+  for (const question of questions) {
+    const opts = question.options
+    if (!opts || opts.length < 2) continue
+    if (question.question_type === 'ordering') continue
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[opts[i], opts[j]] = [opts[j], opts[i]]
+    }
+  }
+}
+
 async function load() {
   try {
     session.value = await get(`/practice/sessions/${route.params.id}`)
+    // 选项打乱：每次进入练习随机排序（v3.0-feat: 防记答案）
+    for (const unit of session.value.units || []) {
+      shuffleOptions(unit.questions || [])
+    }
     loadPendingVocabulary(session.value.id)
     syncOrdering()
     initializeTimer()
@@ -970,16 +989,16 @@ async function copySelectedTerm() {
         </div>
         <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
         <audio
-          v-if="isListening && session.audio_url && !session.audio_url.includes('bilibili')"
+          v-if="isListening && activeUnit.audio_url && !activeUnit.audio_url.includes('bilibili')"
           ref="audioPlayer"
           class="listening-player"
-          :src="session.audio_url"
+          :src="activeUnit.audio_url"
           controls
           :disableRemotePlayback="!audioSeekable"
           @seeking="audioSeekable ? undefined : $event.preventDefault()"
           @timeupdate="onAudioTimeUpdate"
         />
-        <div v-else-if="isListening && session.audio_url" class="listening-bili-wrap">
+        <div v-else-if="isListening && activeUnit.audio_url" class="listening-bili-wrap">
           <p class="listening-hint">▶ 真题听力音频（B站公开资源，点击播放）</p>
           <iframe
             class="listening-bili-player"

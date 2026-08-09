@@ -17,12 +17,12 @@ def list_units(unit_type: str = Query("", description="题型: reading/listening
                connection: sqlite3.Connection = Depends(get_db)) -> dict:
     """按题型返回已发布单元的短文列表 (阅读/听力入口数据源)"""
     sql = """SELECT units.id, units.paper_id, units.unit_type, units.title,
-                    units.passage, units.subtype,
+                    units.passage, units.subtype, units.audio_path,
                     papers.year, papers.title AS paper_title, papers.profile_id
              FROM units
              JOIN papers ON papers.id = units.paper_id
              WHERE papers.status = 'published' AND papers.deleted_at IS NULL
-               AND (units.passage IS NOT NULL AND units.passage != '')"""
+               AND ((units.passage IS NOT NULL AND units.passage != '') OR units.audio_path IS NOT NULL)"""
     params: list = []
     if unit_type:
         sql += " AND units.unit_type = ?"
@@ -44,5 +44,6 @@ def list_units(unit_type: str = Query("", description="题型: reading/listening
             "year": r["year"],
             "paper_title": r["paper_title"],
             "profile_id": r["profile_id"],
+            "audio_url": f"/audio/{r['audio_path'].split('/')[-1]}" if r["audio_path"] else None,
         })
     return {"items": items, "count": len(items)}
