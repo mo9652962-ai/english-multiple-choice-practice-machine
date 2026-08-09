@@ -17,9 +17,9 @@
   </p>
 
   <p>
-    <img src="https://img.shields.io/badge/platform-Windows-2563EB?style=flat-square" alt="Windows">
+    <img src="https://img.shields.io/badge/platform-Windows--web--Android-2563EB?style=flat-square" alt="Windows/Web/Android">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.0.0--beta.10-2563EB?style=flat-square" alt="v2.0.0-beta.10">
+    <img src="https://img.shields.io/badge/status-v2.0.0--beta.12-2563EB?style=flat-square" alt="v2.0.0-beta.12">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -60,20 +60,21 @@
 
 > 我们希望即使题目数量有限，每一次重新练习仍然需要理解文章、判断逻辑和重新作答，而不是把反复刷题变成机械地背答案。
 
-项目当前处于 `v0.1.0-alpha / 持续开发阶段`。核心刷题、错题本、单词本、AI 助手、模型辅助导入和 ESQ 题库分享链路已经可以使用；便携发布包、公开 CI 和更多考试模板仍在完善中。
+项目当前处于 `v2.0.0-beta.12 / 持续开发阶段`。核心刷题、错题本、单词本、AI 助手、模型辅助导入和 ESQ 题库分享链路已经可以使用；便携发布包、公开 CI 和更多考试模板仍在完善中。
 
 ## 功能概览
 
 | 模块 | 当前能力 |
 | --- | --- |
 | 主页 | 学习概览、暗色模式、每 5 秒翻页的词汇回顾、高频词优先、快速开始随机练习 |
-| 练习 | 按年份整卷、随机抽整篇、考研英语一/二、四六级听力/选词填空/段落匹配/阅读 |
+| 练习 | 按年份整卷、随机抽整篇、**选项打乱（防记答案）**、考研英语一/二、四六级听力/选词填空/段落匹配/阅读 |
 | 提交 | 整篇提交、整卷提交、未答题定位、得分/正确数/错题数反馈 |
-| 错题本 | 按年份 → 篇目组织、重做/分析、高频错题统计、分析缓存与重做门控 |
-| 单词本 | 文章/题干/选项右键收藏、退出练习后批量翻译、同义/反义/形近词辨析 |
+| 错题本 | 按年份 → 篇目组织、重做/分析、**迭代递减（重做只显示本次错的，越做越少）**、高频错题统计 |
+| 单词本 | 文章/题干/选项右键收藏、退出练习后批量翻译、同义/反义/形近词辨析、高频 🌟 |
 | AI 助手 | 多 API 配置、多会话、模型同步、聊天、错题分析、题库标注和导入草稿校正 |
-| 题库 | 多题库配置、回收站、Word/PDF 草稿、答案/音频附件、ESQ 1.1、批量导入 |
-| 数据 | 本地存储、可复制备份、API Key 使用 Windows DPAPI 加密 |
+| 听力 | **MP3/M4A/WAV/OGG 音频导入、内置播放器、计时时禁拖进度条** |
+| 题库 | 多题库配置、回收站、Word/PDF 草稿、答案/音频附件、ESQ 1.1、批量导入、**2025-2026 最新真题** |
+| 数据 | 本地存储、可复制备份、API Key 使用 Windows DPAPI / Android Keystore AES-GCM 加密 |
 
 ## 详细功能
 
@@ -203,7 +204,7 @@ AI 可用于：
 安全边界：
 
 - 模型不能直接修改正式题库；导入校正和标签建议必须由用户确认后才写入。
-- API Key 使用 Windows DPAPI 加密后存入本地数据库。
+- API Key 使用 Windows DPAPI（Windows）/ Android Keystore AES-GCM（Android）加密后存入本地数据库。
 - 只有在用户主动调用相应功能时，聊天内容、词汇语境、错题材料或题库草稿才会发送到所选远程模型；请根据服务商政策选择模型。
 
 ### 6. 题库配置、回收站与批量管理
@@ -360,7 +361,7 @@ backend/data/
 - 前端：Vue 3、TypeScript、Vite、Vue Router、Lucide Vue、Auto Animate。
 - 后端：Python、FastAPI、Uvicorn、SQLite。
 - 文档解析：`python-docx`、`lxml`、`pypdf`。
-- 安全存储：`cryptography` 提供 Windows DPAPI 加密。
+- 安全存储：`cryptography` 提供 Windows DPAPI / Android Keystore AES-GCM 加密。
 
 ```mermaid
 flowchart LR
@@ -421,7 +422,7 @@ corepack pnpm run build
 
 - 加入 GitHub Actions CI，并持续执行密钥和隐私文件扫描。
 - 增加 `CONTRIBUTING.md`、`SECURITY.md`、Issue/PR 模板。
-- 制作 Windows `v0.1.0-alpha` 便携版。
+- 制作 Windows `v2.0.0-beta.12` 便携版。
 
 ## 贡献题库与代码
 
