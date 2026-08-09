@@ -56,17 +56,20 @@ export const del = <T>(path: string) => api<T>(path, { method: 'DELETE' })
 let _offlineReady = false
 let _offlinePromise: Promise<boolean> | null = null
 
-export async function initOfflineMode(): Promise<boolean> {
+export async function initOfflineMode(skipHealthCheck = false): Promise<boolean> {
   if (_offlinePromise) return _offlinePromise
   _offlinePromise = (async () => {
-    try {
-      const resp = await fetch('/api/health', { signal: AbortSignal.timeout(2000) })
-      if (resp.ok) {
-        _offlineReady = false
-        return false
+    // Capacitor 原生平台（手机）没有本地后端——跳过 health 检查直接切 sql.js
+    if (!skipHealthCheck) {
+      try {
+        const resp = await fetch('/api/health', { signal: AbortSignal.timeout(2000) })
+        if (resp.ok) {
+          _offlineReady = false
+          return false
+        }
+      } catch {
+        // 后端不可用 → 初始化 sql.js
       }
-    } catch {
-      // 后端不可用 → 初始化 sql.js
     }
     try {
       const { initDatabase } = await import('./services/db')
