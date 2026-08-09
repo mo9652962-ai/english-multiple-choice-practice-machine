@@ -55,6 +55,16 @@ let autoUpdater = null
 const GH_MIRROR = 'https://ghproxy.net/https://github.com/mo9652962-ai/epm-releases/releases/latest/download'
 let mirrorMode = false
 
+// EPIPE 防护：Windows 无控制台场景下 console 写入管道断裂会抛 EPIPE 崩溃
+// （electron-updater 库内部 console.log 曾触发——见 crash.log NsisUpdater.doCheckForUpdates）
+const _safeConsole = (fn) => (...args) => {
+  try { fn(...args) } catch (_e) { /* 忽略 EPIPE 等写入错误 */ }
+}
+console.log = _safeConsole(console.log)
+console.warn = _safeConsole(console.warn)
+console.error = _safeConsole(console.error)
+console.info = _safeConsole(console.info)
+
 async function checkForUpdatesSmart() {
   if (!autoUpdater) return
   try {
