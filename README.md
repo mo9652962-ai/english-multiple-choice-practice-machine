@@ -81,6 +81,19 @@
 | 激励 | **14 枚成就徽章**（连续打卡/词汇量里程碑/刷题成就）、连续学习天数统计 |
 | 更新 | **前端自动更新检测（60s 轮询）**、GitHub Release + HTTPS 镜像双源、SHA-256 校验 |
 
+## 界面展示
+
+| | |
+|:---|:---|
+| ![主页](docs/screenshots/home.png) | ![推荐页](docs/screenshots/home-recommend.png) |
+| 学习主页 · 词汇回顾 · 备考倒计时 | 推荐卷 · 按年去重 · 卷别标签 |
+| ![练习](docs/screenshots/exam.png) | ![题库](docs/screenshots/library.png) |
+| 真题练习 · 选项打乱 · 计时 | 多题库 · 年份/卷别筛选 |
+| ![四级词汇卡](docs/screenshots/cards-cet4.png) | ![高考词汇卡](docs/screenshots/cards-gaokao.png) |
+| 四级词库 · 音标 · 双语例句 | 高考词库 · 真题例句 |
+| ![考研词汇卡](docs/screenshots/cards-kaoyan.png) | ![设置](docs/screenshots/settings.png) |
+| 考研词库 · 分级背诵计划 | 模型配置 · 数据备份 · 安全存储 |
+
 ## 详细功能
 
 ### 1. 主页与学习概览
