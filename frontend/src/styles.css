@@ -827,6 +827,10 @@ h2, h3 { margin: 0; }
 @media (max-width: 980px) {
   .app-shell,.practice-shell { display:block; padding-bottom:74px; }
   .sidebar { display: none; } /* v3.3: 移动端隐藏侧边栏——mobile-nav 底部导航接管 */
+  /* v3.3: 移动端题库管理展开区改流内（absolute 会盖住下方名言/内容） */
+  .bank-manager { position: static; width: 100%; margin-top: 10px; max-height: 55vh; overflow-y: auto; }
+  .bank-manager-row { flex-wrap: wrap; }
+  .bank-manager-actions { margin-left: auto; }
   .grid-4 { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .vocab-stats { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .vocabulary-layout { grid-template-columns: 160px minmax(260px,1fr); }
