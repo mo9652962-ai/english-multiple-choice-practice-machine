@@ -6,7 +6,7 @@
 
   **题库自由 · 模型自由 · 数据本地 · 自由刷题**
 
-  面向英语客观题学习者的 Windows 本地刷题与复习工具
+  **英语刷题机（English Practice Machine）是开源的英语客观题刷题与复习工具，为考研/四六级/高考考生提供本地优先的真题练习、错题迭代、单词记忆与 AI 学习辅助——不依赖网络、不绑定服务商、数据完全自持。**
 
   <p>
     <a href="README.en.md">English</a>
@@ -447,3 +447,35 @@ corepack pnpm run build
 程序代码以 [GNU General Public License v3.0 only](LICENSE) 发布。版权与第三方依赖说明见 [AUTHORS.md](AUTHORS.md) 和 [NOTICE.md](NOTICE.md)。
 
 题库、题目文本、答案、AI 标签以及 ESQ 包可以有独立的来源和授权条件。使用或分享题库前，请确认自己拥有相应权利。
+
+## 常见问题（FAQ）
+
+**Q: 必须配置 AI 模型才能用吗？**
+不用。基础刷题、判分、错题本、单词本完全离线可用；AI 助手、单词翻译、错题分析、题库导入校正是可选增强功能。
+
+**Q: 和百词斩/墨墨/不背单词有什么不同？**
+本工具聚焦"真题刷题 + 错题迭代 + 语境记忆"闭环：内置真题库可刷可练，错题重做只显示本次错题（迭代递减），词汇带真题/双语例句。不追求游戏化堆功能，专注应试提分。数据 100% 本地，不收集隐私。
+
+**Q: 题库可以自己导入吗？**
+可以。支持 Word/PDF 草稿导入、ESQ 1.0/1.1 格式导入导出分享、模型辅助定位题目与答案（需用户确认后入库）。
+
+**Q: 支持哪些考试？**
+内置考研英语一/二、大学英语四六级、高考英语真题题库，支持通过 ESQ 扩展到其他考试。
+
+**Q: 数据存在哪？会不会丢？**
+全部存在本机 SQLite（Windows: %APPDATA%\ai-english-practice-desktop）。有自动备份机制（data/backups/）。API Key 使用 Windows DPAPI / Android Keystore AES-GCM 加密。
+
+## 路线图
+
+- [x] v2.0.0-beta.12：竞品功能回收（听力/选项打乱/错题迭代/安全存储）
+- [x] v2.0.0-beta.13：安全存储加密接线 + 2026 高考 I 卷
+- [x] v2.0.0-beta.14：移动端 P0+P1（竖屏分区/动态首页/笔记合并/答题卡）+ 词汇库 7,751 词
+- [ ] v2.0.0-beta.15：词汇音标 + 双语例句全量 + 四六级真题补充
+- [ ] 正式版 v2.0.0：公开 CI、便携版安装包、更多考试模板
+
+## 相关链接
+
+- [更新发布](https://github.com/mo9652962-ai/epm-releases/releases)
+- [题库格式规范](docs/question-bank-format.md)
+- [功能一图看懂](docs/images/feature-overview-public.webp)
+- 反馈问题 / 建议 → [Issues](https://github.com/mo9652962-ai/epm-releases/issues)
