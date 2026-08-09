@@ -47,9 +47,20 @@ export const put = async <T>(path: string, body?: unknown) => {
   }
   return api<T>(path, { method: 'PUT', body: body === undefined ? undefined : JSON.stringify(body) })
 }
-export const patch = <T>(path: string, body?: unknown) =>
-  api<T>(path, { method: 'PATCH', body: body === undefined ? undefined : JSON.stringify(body) })
-export const del = <T>(path: string) => api<T>(path, { method: 'DELETE' })
+export const patch = async <T>(path: string, body?: unknown) => {
+  if (isOffline()) {
+    const { apiPatch } = await import('./services/api-adapter')
+    return apiPatch(path, body as any) as T
+  }
+  return api<T>(path, { method: 'PATCH', body: body === undefined ? undefined : JSON.stringify(body) })
+}
+export const del = async <T>(path: string) => {
+  if (isOffline()) {
+    const { apiDelete } = await import('./services/api-adapter')
+    return apiDelete(path) as T
+  }
+  return api<T>(path, { method: 'DELETE' })
+}
 
 // ── PWA 离线模式 (v9.19) ──
 // 检测后端是否可用，不可用则自动切换到 sql.js 本地数据库
