@@ -17,7 +17,8 @@ export async function initDatabase(): Promise<Database> {
 
   SQL = await initSqlJs({
     // v9.20.1: wasm 本地化（public/sql-wasm.wasm）——5+App 无网环境不能依赖 CDN
-    locateFile: (file: string) => `sql-wasm.wasm`,
+    // v3.3: 绝对路径——相对路径在路由页（/dashboard 等）会解析错误（404）
+    locateFile: (file: string) => `/sql-wasm.wasm`,
   })
 
   // 尝试从 IndexedDB 恢复
@@ -43,7 +44,8 @@ export async function initDatabase(): Promise<Database> {
 // v9.20: 加载预置题库（public/question_bank.db，sql.js 可直接读取 SQLite 格式）
 async function fetchSeedDatabase(): Promise<Uint8Array | null> {
   try {
-    const resp = await fetch('question_bank.db', { signal: AbortSignal.timeout(8000) })
+    // v3.3: 绝对路径——相对路径在路由页会 404
+    const resp = await fetch('/question_bank.db', { signal: AbortSignal.timeout(8000) })
     if (!resp.ok) return null
     const buf = await resp.arrayBuffer()
     return new Uint8Array(buf)
