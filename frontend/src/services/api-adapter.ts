@@ -15,6 +15,15 @@ export function onModeChange(fn: () => void) { listeners.push(fn) }
 
 export async function checkBackend(): Promise<boolean> {
   if (backendAvailable !== null) return backendAvailable
+  // Capacitor 原生平台（手机）：无本地后端——直接切 sql.js（不走 health——Capacitor 会返回 index.html 200 误判）
+  const isNative = !!(window as any)?.Capacitor?.isNativePlatform?.()
+  if (isNative) {
+    backendAvailable = false
+    offlineMode = true
+    await initDatabase()
+    listeners.forEach(fn => fn())
+    return backendAvailable
+  }
   try {
     const resp = await fetch('/api/health', { signal: AbortSignal.timeout(2000) })
     backendAvailable = resp.ok
@@ -68,6 +77,32 @@ export async function apiPut(path: string, body?: any): Promise<any> {
     return resp.json()
   }
   return offlinePut(path, body)
+}
+
+export async function apiPatch(path: string, body?: any): Promise<any> {
+  await checkBackend()
+  if (backendAvailable) {
+    const resp = await fetch(`/api${path}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: body ? JSON.stringify(body) : undefined,
+    })
+    if (!resp.ok) throw new Error(`${resp.status}`)
+    return resp.json()
+  }
+  // v3.3: 离线 PATCH 兜底（本地更新或空响应——防 HTML JSON 报错）
+  return offlinePut(path, body) || {}
+}
+
+export async function apiDelete(path: string): Promise<any> {
+  await checkBackend()
+  if (backendAvailable) {
+    const resp = await fetch(`/api${path}`, { method: 'DELETE' })
+    if (!resp.ok) throw new Error(`${resp.status}`)
+    return resp.json().catch(() => ({}))
+  }
+  // v3.3: 离线 DELETE 兜底（空响应）
+  return {}
 }
 
 // ── 离线路由（sql.js） ──
