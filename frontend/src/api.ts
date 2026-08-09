@@ -26,11 +26,27 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
   return response.json()
 }
 
-export const get = <T>(path: string) => api<T>(path)
-export const post = <T>(path: string, body?: unknown) =>
-  api<T>(path, { method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) })
-export const put = <T>(path: string, body?: unknown) =>
-  api<T>(path, { method: 'PUT', body: body === undefined ? undefined : JSON.stringify(body) })
+export const get = async <T>(path: string) => {
+  if (isOffline()) {
+    const { apiGet } = await import('./services/api-adapter')
+    return apiGet(path) as T
+  }
+  return api<T>(path)
+}
+export const post = async <T>(path: string, body?: unknown) => {
+  if (isOffline()) {
+    const { apiPost } = await import('./services/api-adapter')
+    return apiPost(path, body as any) as T
+  }
+  return api<T>(path, { method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) })
+}
+export const put = async <T>(path: string, body?: unknown) => {
+  if (isOffline()) {
+    const { apiPut } = await import('./services/api-adapter')
+    return apiPut(path, body as any) as T
+  }
+  return api<T>(path, { method: 'PUT', body: body === undefined ? undefined : JSON.stringify(body) })
+}
 export const patch = <T>(path: string, body?: unknown) =>
   api<T>(path, { method: 'PATCH', body: body === undefined ? undefined : JSON.stringify(body) })
 export const del = <T>(path: string) => api<T>(path, { method: 'DELETE' })

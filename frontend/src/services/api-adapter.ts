@@ -56,6 +56,20 @@ export async function apiPost(path: string, body?: any): Promise<any> {
   return offlinePost(path, body)
 }
 
+export async function apiPut(path: string, body?: any): Promise<any> {
+  await checkBackend()
+  if (backendAvailable) {
+    const resp = await fetch(`/api${path}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: body ? JSON.stringify(body) : undefined,
+    })
+    if (!resp.ok) throw new Error(`${resp.status}`)
+    return resp.json()
+  }
+  return offlinePut(path, body)
+}
+
 // ── 离线路由（sql.js） ──
 
 function offlineGet(path: string): any {
@@ -79,6 +93,17 @@ function offlineGet(path: string): any {
   // AI settings
   if (path === '/ai/settings') {
     return queryOne("SELECT * FROM ai_profiles WHERE is_default = 1") || {}
+  }
+  // AI profiles list（离线 APK：key 密文不回显，仅返回 has_api_key）
+  if (path === '/ai/profiles' || path.startsWith('/ai/profiles?')) {
+    const rows = queryAll("SELECT id, name, base_url, default_model, temperature, max_tokens, system_prompt, enabled, is_default, api_key_encrypted FROM ai_profiles ORDER BY id")
+    return rows.map((r: any) => ({
+      id: r.id, name: r.name, base_url: r.base_url, default_model: r.default_model,
+      temperature: r.temperature, max_tokens: r.max_tokens, system_prompt: r.system_prompt,
+      enabled: !!r.enabled, is_default: !!r.is_default,
+      has_api_key: !!(r.api_key_encrypted && r.api_key_encrypted.length > 8),
+      models: [],
+    }))
   }
   // Streak
   if (path === '/dashboard/streak') {
@@ -121,6 +146,10 @@ function offlinePost(path: string, body?: any): any {
     execute("INSERT INTO practice_sessions (id, mode, paper_id, status) VALUES (?, ?, ?, 'in_progress')", [id, body?.mode || 'random', body?.paper_id || null])
     return { id, mode: body?.mode || 'random' }
   }
+  // AI profile create（离线 APK：api_key 用 SecureStorage AES-GCM 加密存储）
+  if (path === '/ai/profiles') {
+    return saveAiProfileOffline(body)
+  }
   // Vocabulary review
   if (path.match(/\/vocabulary\/\d+\/review/)) {
     const id = parseInt(path.match(/\/vocabulary\/(\d+)\/review/)![1])
@@ -128,4 +157,55 @@ function offlinePost(path: string, body?: any): any {
     return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [id])
   }
   return {}
+}
+
+function offlinePut(path: string, body?: any): any {
+  // AI profile update（离线 APK：key 变化时重新加密）
+  const m = path.match(/^\/ai\/profiles\/(\d+)$/)
+  if (m) {
+    return updateAiProfileOffline(parseInt(m[1]), body)
+  }
+  return {}
+}
+
+// ── 离线 AI 配置保存（SecureStorage 加密）──
+
+async function encryptKey(value: string | null | undefined): Promise<string | null> {
+  if (!value) return null
+  try {
+    const cap = (window as any)?.Capacitor
+    if (cap?.isNativePlatform?.()) {
+      const { SecureStorage } = await import('./secure-storage')
+      return await SecureStorage.encrypt(value)
+    }
+  } catch {
+    // 加密失败回退（仍可用，仅提示风险）
+  }
+  return value
+}
+
+async function saveAiProfileOffline(body: any): Promise<any> {
+  const encrypted = await encryptKey(body?.api_key)
+  const existing = queryOne("SELECT id FROM ai_profiles WHERE name = ?", [body?.name])
+  if (existing) {
+    updateAiProfileOffline(existing.id, body)
+    return queryOne("SELECT * FROM ai_profiles WHERE id = ?", [existing.id])
+  }
+  execute(
+    `INSERT INTO ai_profiles (name, base_url, api_key_encrypted, default_model, temperature, max_tokens, system_prompt, enabled, is_default, created_at, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, 1, 0, datetime('now','localtime'), datetime('now','localtime'))`,
+    [body?.name || '未命名', body?.base_url || '', encrypted || '', body?.default_model || '', body?.temperature ?? 0.2, body?.max_tokens ?? 1200, body?.system_prompt || '']
+  )
+  const id = lastInsertRowId()
+  return queryOne("SELECT * FROM ai_profiles WHERE id = ?", [id])
+}
+
+async function updateAiProfileOffline(id: number, body: any): Promise<any> {
+  const current = queryOne("SELECT api_key_encrypted FROM ai_profiles WHERE id = ?", [id])
+  const encrypted = body?.api_key ? await encryptKey(body.api_key) : current?.api_key_encrypted
+  execute(
+    `UPDATE ai_profiles SET name = ?, base_url = ?, api_key_encrypted = ?, default_model = ?, temperature = ?, max_tokens = ?, system_prompt = ?, updated_at = datetime('now','localtime') WHERE id = ?`,
+    [body?.name ?? current?.name ?? '', body?.base_url ?? current?.base_url ?? '', encrypted ?? '', body?.default_model ?? current?.default_model ?? '', body?.temperature ?? current?.temperature ?? 0.2, body?.max_tokens ?? current?.max_tokens ?? 1200, body?.system_prompt ?? current?.system_prompt ?? '', id]
+  )
+  return queryOne("SELECT * FROM ai_profiles WHERE id = ?", [id])
 }
