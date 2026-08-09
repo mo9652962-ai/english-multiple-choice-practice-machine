@@ -1456,11 +1456,12 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 /* ── v2.32: 2026 Bento Box + Liquid Glass (借鉴 2026 UI 趋势) ── */
 .bento-stats { grid-template-columns: repeat(4, 1fr); align-items: stretch; }
 .bento-wide { grid-column: span 2; }
-.stat-card { position: relative; overflow: hidden; background: var(--surface-solid); border: 1px solid var(--line); box-shadow: 0 8px 32px -12px rgba(0,0,0,.18); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+.stat-card { position: relative; overflow: hidden; background: var(--surface-solid); border: 1px solid var(--line); box-shadow: 0 8px 32px -12px rgba(0,0,0,.18); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; padding: 18px 20px; }
 .stat-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 85% -10%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%); pointer-events: none; }
 .stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -14px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.5); }
 .bento-wide .stat-value { font-size: 34px; }
-.stat-note { display: block; font-size: 10.5px; color: var(--muted); margin-top: 4px; }
+.stat-note { display: block; font-size: 10.5px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+.stat-value { line-height: 1.25; margin-top: 12px; }
 .streak-card { background: var(--surface-solid); border: 1px solid var(--line); }
 .study-hero { position: relative; overflow: hidden; }
 .study-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 120% at 12% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), radial-gradient(70% 100% at 95% 100%, color-mix(in srgb, var(--bamboo) 12%, transparent), transparent 55%); pointer-events: none; }
@@ -1623,7 +1624,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 :root.dark .celebrate-overlay { background: color-mix(in srgb, #14140f 74%, transparent); }
 
 /* ── v2.40: 流式排版 (2026 响应式最佳实践: clamp 平滑缩放) ── */
-body { font-size: clamp(14px, 0.8rem + 0.25vw, 16px); }
+body { font-size: clamp(14px, 0.8rem + 0.25vw, 16px); line-height: 1.6; }
 h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
 .page-head h1 { font-size: clamp(22px, 1.35rem + 1.1vw, 32px); }
 .stat-value { font-size: clamp(24px, 1.45rem + 1vw, 34px); }
