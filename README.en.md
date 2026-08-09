@@ -19,7 +19,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows-2563EB?style=flat-square" alt="Windows">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v0.1.0--alpha-F59E0B?style=flat-square" alt="v0.1.0-alpha">
+    <img src="https://img.shields.io/badge/status-v2.0.0--beta.12-2563EB?style=flat-square" alt="v2.0.0-beta.12">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -56,7 +56,7 @@ Random practice selects complete units, options can be shuffled before each atte
 
 > Even with a limited set of questions, every new attempt should require reading, reasoning, and answering again—not simply recalling the correct option.
 
-The project is currently `v0.1.0-alpha / active development`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, and ESQ sharing workflows are available. Portable releases, public CI, and additional exam templates are still being developed.
+The project is currently `v2.0.0-beta.12 / active development`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, and ESQ sharing workflows are available. Portable releases, public CI, and additional exam templates are still being developed.
 
 ## Feature overview
 
@@ -69,7 +69,7 @@ The project is currently `v0.1.0-alpha / active development`. The main practice,
 | Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison |
 | AI assistant | Multiple API profiles, multi-session chat, model sync, wrong-answer analysis, labels, and draft correction |
 | Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import |
-| Data | Local storage, folder backup, Windows DPAPI encryption for API keys |
+| Data | Local storage, folder backup, Windows DPAPI / Android Keystore AES-GCM encryption for API keys |
 
 ## Features in detail
 
@@ -199,7 +199,7 @@ AI-assisted workflows include:
 Safety boundaries:
 
 - The model cannot directly edit the published question bank. Import corrections and label suggestions require user confirmation.
-- API keys are encrypted with Windows DPAPI before being stored in the local database.
+- API keys are encrypted with Windows DPAPI (Windows) / Android Keystore AES-GCM (Android) before being stored in the local database.
 - Only content explicitly submitted by the user is sent to the selected remote model: chat messages, vocabulary context, wrong-answer material, or draft-question text. Choose a provider according to its retention and privacy policy.
 
 ### 6. Question-bank profiles, recycle bin, and batch management
@@ -355,7 +355,7 @@ backend/data/
 - Frontend: Vue 3, TypeScript, Vite, Vue Router, Lucide Vue, Auto Animate.
 - Backend: Python, FastAPI, Uvicorn, SQLite.
 - Document parsing: `python-docx`, `lxml`, `pypdf`.
-- Secure storage: `cryptography` for Windows DPAPI encryption.
+- Secure storage: `cryptography` for Windows DPAPI / Android Keystore AES-GCM encryption.
 
 ```mermaid
 flowchart LR
@@ -416,7 +416,7 @@ Before the first public release, the maintainer should:
 
 - Add GitHub Actions CI with recurring secret and privacy-file scans.
 - Add `CONTRIBUTING.md`, `SECURITY.md`, and issue/PR templates.
-- Publish a Windows `v0.1.0-alpha` portable build.
+- Publish a Windows `v2.0.0-beta.12` portable build.
 
 ## Contributing question banks and code
 
