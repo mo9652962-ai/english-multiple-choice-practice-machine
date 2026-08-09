@@ -15,14 +15,27 @@ let db: Database | null = null
 export async function initDatabase(): Promise<Database> {
   if (db) return db
 
-  SQL = await initSqlJs({
-    // v9.20.1: wasm 本地化（public/sql-wasm.wasm）——5+App 无网环境不能依赖 CDN
-    // v3.3: 绝对路径——相对路径在路由页（/dashboard 等）会解析错误（404）
-    locateFile: (file: string) => `/sql-wasm.wasm`,
-  })
+  // v3.3: 用 wasmBinary（fetch buffer）而非 instantiateStreaming——
+  // Capacitor WebView 对 https://localhost 的 streaming 支持不稳定（曾返回 HTML 导致加载失败）
+  let SQL: SqlJsStatic
+  try {
+    const wasmResp = await fetch('/sql-wasm.wasm', { signal: AbortSignal.timeout(15000) })
+    if (!wasmResp.ok) throw new Error(`wasm 加载失败: ${wasmResp.status}`)
+    const wasmBinary = new Uint8Array(await wasmResp.arrayBuffer())
+    SQL = await initSqlJs({ wasmBinary: wasmBinary.buffer as ArrayBuffer })
+  } catch (e) {
+    console.error('[offline] sql.js wasm 加载失败:', e)
+    throw e
+  }
 
-  // 尝试从 IndexedDB 恢复
-  const saved = await loadFromIndexedDB()
+  // 尝试从 IndexedDB 恢复（异常不阻塞——走 seed）
+  let saved: Uint8Array | null = null
+  try {
+    saved = await loadFromIndexedDB()
+  } catch (e) {
+    console.error('[offline] IndexedDB 恢复失败，走 seed:', e)
+    saved = null
+  }
   if (saved) {
     db = new SQL.Database(saved)
   } else {
@@ -35,7 +48,11 @@ export async function initDatabase(): Promise<Database> {
       db = new SQL.Database()
       createSchema()
     }
-    await saveToIndexedDB()
+    try {
+      await saveToIndexedDB()
+    } catch (e) {
+      console.error('[offline] IndexedDB 保存失败（忽略）:', e)
+    }
   }
 
   return db
