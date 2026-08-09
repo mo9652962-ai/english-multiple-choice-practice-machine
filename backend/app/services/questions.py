@@ -141,6 +141,7 @@ def serialize_unit(
         "passage": repair_inline_blank_paragraph_breaks(unit["passage"]),
         "shared_data": parse_json(unit["shared_data"], {}),
         "content_blocks": parse_json(unit["shared_data"], {}).get("content_blocks", []),
+        "audio_url": f"/audio/{unit['audio_path'].split('/')[-1]}" if unit["audio_path"] else None,
         "questions": questions,
         "max_score": sum(question["score"] for question in questions),
     }
