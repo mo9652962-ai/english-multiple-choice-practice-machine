@@ -103,7 +103,7 @@ def detail(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> di
     for qid in qids:
         q = connection.execute(
             """SELECT q.id, q.external_key AS question_key, q.number, q.stem, q.score,
-                      pa.year, pa.title AS paper_title
+                      pa.year, pa.title AS paper_title, u.passage, u.unit_type
                FROM questions q
                JOIN units u ON q.unit_id = u.id
                JOIN papers pa ON u.paper_id = pa.id
@@ -115,6 +115,9 @@ def detail(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> di
         questions.append({
             "id": q["id"], "number": q["number"], "stem": q["stem"],
             "score": q["score"], "year": q["year"], "paper_title": q["paper_title"],
+            # v3.3: 返回文章上下文（选词填空/阅读需要——否则只有指令无法作答）
+            "passage": (q["passage"] or "").replace("\r\n", "\n").strip(),
+            "unit_type": q["unit_type"],
             "options": _load_options(connection, q["id"]),
             "answered": None,
         })

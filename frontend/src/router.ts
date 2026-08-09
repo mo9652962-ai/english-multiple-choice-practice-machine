@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import AiAssistant from './components/AiAssistant.vue'
 import DashboardView from './views/DashboardView.vue'
 import ExamView from './views/ExamView.vue'
@@ -20,7 +20,8 @@ import ReadingView from './views/ReadingView.vue'
 import ListeningView from './views/ListeningView.vue'
 
 export default createRouter({
-  history: createWebHistory(),
+  // v3.3: hash 模式——assets 相对路径在深层路由/多端(file:// Capacitor)下不白屏
+  history: createWebHashHistory(),
   // v2.76: 路由切换回到顶部 (修复点动切换后停留在旧滚动位置)
   scrollBehavior() {
     return { top: 0 }
