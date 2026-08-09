@@ -438,9 +438,23 @@ async function submitFeedback() {
       <article class="card feedback-card">
         <div class="card-header"><h2>反馈建议</h2><p>遇到问题？有想法？3 秒告诉我们——帮助我们把刷题机做得更好。</p></div>
         <button class="button" type="button" @click="fbOpen = true">📮 提交反馈</button>
-      </article>
-    </div>
-  </div>
+              </article>
+
+              <!-- v3.3: 我的墨题——版本信息 + 检查更新入口 -->
+              <article class="card">
+                <div class="card-header">
+                  <div>
+                    <span class="eyebrow">ABOUT</span>
+                    <h2>我的墨题</h2>
+                    <p>查看版本号、开发时间与检查更新</p>
+                  </div>
+                  <a class="button ghost" href="#/about">
+                    v2.0.0-beta.15 →
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
 
   <!-- 反馈弹窗 -->
   <div v-if="fbOpen" class="modal-backdrop" @click.self="fbOpen = false">
