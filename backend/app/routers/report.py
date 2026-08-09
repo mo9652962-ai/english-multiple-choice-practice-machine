@@ -181,7 +181,7 @@ def get_report(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         weakest_p = min(by_profile, key=lambda x: x["rate"])
         if weakest_p["answered"] >= 5 and weakest_p["rate"] < 70:
             suggestions.append(f"🎯 {weakest_p['name']} 正确率 {weakest_p['rate']}%（{weakest_p['answered']} 题），重点突破")
-    if vocab and vocab["learned"] < 100:
+    if vocab and (vocab["learned"] or 0) < 100:
         suggestions.append("📖 词汇量积累中，建议每天完成词书任务（新词 20 + 复习）")
     if active7 and active7["days"] >= 5:
         suggestions.append(f"🔥 连续活跃 {active7['days']} 天，保持节奏！")

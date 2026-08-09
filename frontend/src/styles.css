@@ -170,6 +170,10 @@ nav a.router-link-active { color: var(--primary); background: linear-gradient(90
 .exam-q-meta { display: flex; gap: 8px; margin-bottom: 12px; }
 .chip { padding: 4px 10px; border-radius: 999px; background: var(--primary-faint); color: var(--muted); font-size: 11px; font-weight: 600; }
 .exam-stem { font-size: 16px; line-height: 1.7; margin: 0 0 20px; font-weight: 600; }
+/* v3.3: 考试文章上下文（选词填空/阅读——带边框与换行保留） */
+.exam-passage { white-space: pre-wrap; font-size: 14.5px; line-height: 1.9; color: var(--text, #2d3a33);
+  background: color-mix(in srgb, var(--surface-solid) 55%, transparent); border: 1px solid var(--line);
+  border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; max-height: 34vh; overflow-y: auto; }
 .exam-options { display: grid; gap: 10px; }
 .exam-option { display: flex; gap: 12px; align-items: flex-start; text-align: left; padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); cursor: pointer; transition: all .16s var(--ease); font-size: 14px; line-height: 1.6; }
 .exam-option:hover { border-color: var(--primary); transform: translateX(3px); }
