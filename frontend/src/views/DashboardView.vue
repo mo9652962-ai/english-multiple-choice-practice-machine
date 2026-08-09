@@ -20,6 +20,38 @@ let vocabularyTimer: number | null = null
 // v9.19: streak 数据
 const streak = ref<any>(null)
 const dueToday = ref<any[]>([])
+
+// v3.1: 卷别识别与区分（解决同一年多张卷标题相似"看着重复"）
+function paperSet(title: string): string {
+  if (!title) return ''
+  const m = title.match(/(新高考[ⅠI一二]?卷|全国[甲乙]卷|全国I?I?卷|新课标[ⅠI一二]?卷|[甲乙]卷)/)
+  return m ? m[1] : ''
+}
+function paperKind(title: string): string {
+  if (!title) return ''
+  return title
+    .replace(/^\d{4}年/, '')
+    .replace(/(新高考[ⅠI一二]?卷|全国[甲乙]卷|全国I?I?卷|新课标[ⅠI一二]?卷|[甲乙]卷)/, '')
+    .replace(/^高考英语/, '')
+    .trim()
+}
+function setClass(title: string): string {
+  const s = paperSet(title)
+  if (s.includes('甲')) return 'set-jia'
+  if (s.includes('乙')) return 'set-yi'
+  if (s.includes('新')) return 'set-new'
+  return 'set-default'
+}
+// v3.1: 推荐卷按年份去重（同一年多张只显示最新一张——避免"看着重复"）
+const recommendPapers = computed(() => {
+  const papers = data.value?.recommendations?.papers || []
+  const seen = new Set<number>()
+  return papers.filter((p: any) => {
+    if (seen.has(p.year)) return false
+    seen.add(p.year)
+    return true
+  }).slice(0, 4)
+})
 const vocabularyPages = computed(() => {
   const pages: any[][] = []
   for (let index = 0; index < vocabulary.value.length; index += wordsPerPage) {
@@ -379,11 +411,11 @@ const practiceCards = computed(() => {
         <ArrowRight class="action-arrow" :size="19" />
       </RouterLink>
       <!-- 本级别真题卷 -->
-      <div v-if="data.recommendations.papers?.length" class="grid grid-4 recommend-papers">
-        <RouterLink v-for="p in data.recommendations.papers.slice(0, 4)" :key="p.id" :to="'/library'" class="card recommend-paper">
+      <div v-if="recommendPapers.length" class="grid grid-4 recommend-papers">
+        <RouterLink v-for="p in recommendPapers" :key="p.id" :to="'/library'" class="card recommend-paper">
           <span class="seal-badge" aria-hidden="true">卷</span>
           <strong>{{ p.year }} 年{{ p.subject ? ' · ' + p.subject : '' }}</strong>
-          <small>{{ p.title }}</small>
+          <small><span class="paper-set-tag" :class="setClass(p.title)">{{ paperSet(p.title) }}</span>{{ paperKind(p.title) }}</small>
           <span class="stat-link">去练习 <ArrowRight :size="14" /></span>
         </RouterLink>
       </div>
