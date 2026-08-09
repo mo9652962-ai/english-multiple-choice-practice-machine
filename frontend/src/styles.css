@@ -2844,3 +2844,10 @@ body { min-height: 100dvh; }
   .notes-search { flex: 1; min-width: 100%; }
   .notes-stat { min-width: 80px; }
 }
+
+/* v3.0: 练习偏好开关 */
+.practice-pref-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 6px 0; }
+.practice-pref-row p { color: var(--muted, #777); font-size: 12.5px; margin: 4px 0 0; max-width: 480px; line-height: 1.5; }
+.pref-switch { position: relative; width: 44px; height: 24px; border-radius: 999px; background: #d8d3c9; border: 1px solid #c9c2b4; cursor: pointer; transition: background .2s; flex-shrink: 0; }
+.pref-switch span { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: left .2s; }
+.pref-switch span.on { left: 22px; background: #e5444c; }

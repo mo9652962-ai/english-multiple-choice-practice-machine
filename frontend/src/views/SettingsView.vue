@@ -43,6 +43,7 @@ type AiProfile = {
 
 const profiles = ref<AiProfile[]>([])
 const expanded = ref<number[]>([])
+const shuffleEnabled = ref(localStorage.getItem('epm_shuffle_options') !== 'false')
 const busy = reactive<Record<string, boolean>>({})
 const notices = reactive<Record<number, string>>({})
 const message = ref('')
@@ -94,6 +95,11 @@ function toggleExpanded(id: number) {
   expanded.value = expanded.value.includes(id)
     ? expanded.value.filter(item => item !== id)
     : [...expanded.value, id]
+}
+
+function toggleShuffle() {
+  shuffleEnabled.value = !shuffleEnabled.value
+  localStorage.setItem('epm_shuffle_options', shuffleEnabled.value ? 'true' : 'false')
 }
 
 async function load() {
@@ -281,6 +287,24 @@ async function submitFeedback() {
 
     <div v-if="error" class="warning" role="alert">{{ error }}</div>
     <div v-if="message" class="settings-success"><Check :size="17" />{{ message }}</div>
+
+    <section class="api-profile-card new-profile">
+      <div class="api-profile-heading">
+        <span class="api-profile-icon"><PlugZap :size="20" /></span>
+        <div><span class="eyebrow">PRACTICE PREFERENCES</span><h2>练习偏好</h2></div>
+      </div>
+      <div class="api-profile-body">
+        <div class="practice-pref-row">
+          <div>
+            <strong>选项打乱</strong>
+            <p>每次打开练习时随机排序选择题选项（防记答案）。判分使用稳定键，不影响正确性。排序题不受影响。</p>
+          </div>
+          <button class="pref-switch" type="button" role="switch" :aria-checked="shuffleEnabled" @click="toggleShuffle">
+            <span :class="{ on: shuffleEnabled }"></span>
+          </button>
+        </div>
+      </div>
+    </section>
 
     <section v-if="creating" class="api-profile-card new-profile">
       <div class="api-profile-heading">

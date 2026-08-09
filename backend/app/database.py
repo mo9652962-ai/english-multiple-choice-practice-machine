@@ -641,6 +641,7 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
     _ensure_column(connection, "papers", "profile_id", f"INTEGER NOT NULL DEFAULT {int(default_profile_id)}")
     _ensure_column(connection, "papers", "deleted_at", "TEXT")
     _ensure_column(connection, "units", "external_key", "TEXT")
+    _ensure_column(connection, "units", "audio_path", "TEXT")
     _ensure_column(connection, "questions", "external_key", "TEXT")
     _ensure_column(connection, "questions", "content_hash", "TEXT")
     _ensure_column(connection, "options", "metadata", "TEXT NOT NULL DEFAULT '{}'")

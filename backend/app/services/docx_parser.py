@@ -1581,12 +1581,18 @@ def publish_draft(
         )
         paper_id = int(cursor.lastrowid)
     connection.execute("DELETE FROM units WHERE paper_id = ?", (paper_id,))
-    for unit in draft["units"]:
+    # 听力音频：draft.audio_paths[0] 关联到首个听力单元（若无听力单元则关联首个单元）
+    audio_path = None
+    if draft.get("audio_paths"):
+        audio_path = str(draft["audio_paths"][0])
+    elif draft.get("audio_file_count"):
+        audio_path = str(draft.get("audio_paths")[0]) if draft.get("audio_paths") else None
+    for index, unit in enumerate(draft["units"]):
         unit_cursor = connection.execute(
             """
             INSERT INTO units
-                (paper_id, unit_type, subtype, title, sequence, passage, shared_data)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+                (paper_id, unit_type, subtype, title, sequence, passage, shared_data, audio_path)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 paper_id,
@@ -1596,6 +1602,7 @@ def publish_draft(
                 unit["sequence"],
                 unit.get("passage", ""),
                 json.dumps(unit.get("shared_data", {}), ensure_ascii=False),
+                (audio_path if unit.get("unit_type") == "listening" else None) or (audio_path if index == 0 else None),
             ),
         )
         unit_id = unit_cursor.lastrowid

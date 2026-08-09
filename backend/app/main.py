@@ -8,6 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from app.config import DATA_DIR, UPLOAD_DIR
 
 from .config import FRONTEND_DIST
 from .database import connect, initialize_database
@@ -134,6 +135,10 @@ if FRONTEND_DIST.exists():
     assets = FRONTEND_DIST / "assets"
     if assets.exists():
         app.mount("/assets", StaticFiles(directory=assets), name="assets")
+
+    # 听力音频静态服务（导入的 MP3/M4A/WAV/OGG → /audio/<filename>）
+    if UPLOAD_DIR.exists():
+        app.mount("/audio", StaticFiles(directory=UPLOAD_DIR), name="audio")
 
     @app.get("/{full_path:path}", include_in_schema=False)
     def frontend(full_path: str):
