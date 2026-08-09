@@ -177,13 +177,12 @@ onMounted(() => {
         <main class="main-content">
           <RouterView />
         </main>
-        <!-- v9.19: 移动端底部导航 -->
+        <!-- v9.19: 移动端底部导航 (v3.2: 错题+单词合并为笔记) -->
         <nav class="mobile-nav" aria-label="移动端导航">
           <RouterLink to="/"><Home :size="20" /><span>首页</span></RouterLink>
           <RouterLink to="/library"><Library :size="20" /><span>题库</span></RouterLink>
-          <RouterLink to="/wrong"><Brain :size="20" /><span>错题</span></RouterLink>
+          <RouterLink to="/notes"><BookMarked :size="20" /><span>笔记</span></RouterLink>
           <RouterLink to="/report"><BarChart3 :size="20" /><span>报告</span></RouterLink>
-          <RouterLink to="/vocabulary"><BookMarked :size="20" /><span>单词</span></RouterLink>
           <RouterLink to="/settings"><Settings :size="20" /><span>设置</span></RouterLink>
         </nav>
       </div>
