@@ -116,7 +116,7 @@ def home_words(
     rows = connection.execute(
         """
         SELECT id, term, lemma, contextual_meaning, common_meaning,
-               encounter_count, study_status,
+               encounter_count, study_status, category,
                CASE WHEN encounter_count >= 2 OR manually_frequent = 1 THEN 1 ELSE 0 END AS is_frequent
         FROM vocabulary_entries
         WHERE translation_status = 'ready'
