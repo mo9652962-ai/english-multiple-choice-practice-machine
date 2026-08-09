@@ -2851,3 +2851,11 @@ body { min-height: 100dvh; }
 .pref-switch { position: relative; width: 44px; height: 24px; border-radius: 999px; background: #d8d3c9; border: 1px solid #c9c2b4; cursor: pointer; transition: background .2s; flex-shrink: 0; }
 .pref-switch span { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: left .2s; }
 .pref-switch span.on { left: 22px; background: #e5444c; }
+
+/* v3.1: 试卷卷别标签（区分同一年多张卷） */
+.paper-set-tag { display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; color: #fff; vertical-align: 1px; }
+.paper-set-tag.set-jia { background: #d64545; }
+.paper-set-tag.set-yi { background: #3b6fd6; }
+.paper-set-tag.set-new { background: #2e9e6b; }
+.paper-set-tag.set-default { background: #8a8578; }
+.recommend-paper small { color: var(--muted, #777); font-size: 12.5px; line-height: 1.5; }
