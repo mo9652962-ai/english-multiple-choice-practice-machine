@@ -1293,7 +1293,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
   font-size: 17px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .recommend-paper small { color: var(--muted); font-size: 12px; line-height: 1.5;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.recommend-paper .stat-link { margin-top: auto; color: var(--accent); font-size: 12px;
+.recommend-paper .stat-link { color: var(--accent); font-size: 12px;
   display: inline-flex; align-items: center; gap: 4px; }
 .recommend-wrong-grid { margin-top: 14px; }
 .recommend-wrong h3 { font-size: 15px; margin-bottom: 10px; }
