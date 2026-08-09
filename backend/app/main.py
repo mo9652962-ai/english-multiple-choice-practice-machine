@@ -131,6 +131,36 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+# v3.3: 我的墨题——版本号 + 开发时间 + 检查更新（GitHub releases 代理）
+APP_VERSION = "2.0.0-beta.15"
+APP_RELEASE_DATE = "2026-08-10"
+_UPDATE_REPO = "mo9652962-ai/epm-releases"
+
+
+@app.get("/api/version")
+def get_version() -> dict:
+    latest = None
+    try:
+        import json as _json
+        import urllib.request as _urllib
+
+        req = _urllib.Request(
+            f"https://api.github.com/repos/{_UPDATE_REPO}/releases/latest",
+            headers={"User-Agent": "epm-update-check", "Accept": "application/vnd.github+json"},
+        )
+        with _urllib.request.urlopen(req, timeout=8) as resp:
+            data = _json.loads(resp.read().decode("utf-8"))
+            latest = data.get("tag_name")
+    except Exception:
+        latest = None
+    return {
+        "version": APP_VERSION,
+        "release_date": APP_RELEASE_DATE,
+        "latest_version": latest,
+        "update_url": f"https://github.com/{_UPDATE_REPO}/releases/latest",
+    }
+
+
 if FRONTEND_DIST.exists():
     assets = FRONTEND_DIST / "assets"
     if assets.exists():

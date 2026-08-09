@@ -18,6 +18,7 @@ import CalendarView from './views/CalendarView.vue'
 import GoalView from './views/GoalView.vue'
 import ReadingView from './views/ReadingView.vue'
 import ListeningView from './views/ListeningView.vue'
+import AboutView from './views/AboutView.vue'
 
 export default createRouter({
   // v3.3: hash 模式——assets 相对路径在深层路由/多端(file:// Capacitor)下不白屏
@@ -44,6 +45,7 @@ export default createRouter({
     { path: '/imports', component: ImportView },
     { path: '/assistant', component: AiAssistant },
     { path: '/settings', component: SettingsView },
+    { path: '/about', component: AboutView },
     { path: '/trash', component: TrashView },
     { path: '/notes', component: NotesView },
   ],
