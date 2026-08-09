@@ -7,7 +7,9 @@ import {
   ChevronRight,
   Clock3,
   Coffee,
+  GripHorizontal,
   GripVertical,
+  Grid3x3,
   Play,
   Save,
   Send,
@@ -75,6 +77,61 @@ const isPartB = computed(() => activeUnit.value?.unit_type === 'part_b')
 const isMatchingPartB = computed(() => isPartB.value && activeUnit.value?.subtype !== 'true_false')
 const isOrdering = computed(() => activeUnit.value?.subtype === 'paragraph_reordering')
 const isListening = computed(() => activeUnit.value?.unit_type === 'listening')
+
+// v3.2: 移动端竖屏上下分区（文章区/题目区独立滚动 + 可拖分隔条）
+const isMobileSplit = ref(false)
+let dividerCleanup: (() => void) | null = null
+
+function onSplitResize() {
+  isMobileSplit.value = window.innerWidth < 768 && !isListening.value
+}
+function startDragDivider(e: PointerEvent) {
+  e.preventDefault()
+  const container = (e.currentTarget as HTMLElement).parentElement!
+  const startY = e.clientY
+  const startRatio = parseFloat(container.style.getPropertyValue('--passage-ratio')) || 45
+  const rect = container.getBoundingClientRect()
+  const move = (ev: PointerEvent) => {
+    const ratio = Math.min(72, Math.max(25, ((ev.clientY - rect.top) / rect.height) * 100))
+    container.style.setProperty('--passage-ratio', ratio.toFixed(1) + '%')
+  }
+  const up = () => {
+    window.removeEventListener('pointermove', move)
+    window.removeEventListener('pointerup', up)
+    dividerCleanup = null
+  }
+  window.addEventListener('pointermove', move)
+  window.addEventListener('pointerup', up)
+  dividerCleanup = up
+}
+onMounted(() => {
+  onSplitResize()
+  window.addEventListener('resize', onSplitResize)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', onSplitResize)
+  if (dividerCleanup) dividerCleanup()
+})
+
+// v3.2: 答题卡抽屉（移动端题目导航）
+const answerSheetOpen = ref(false)
+function isAnswered(qid: number): boolean {
+  const q = activeUnit.value?.questions.find((x: any) => x.id === qid)
+  return !!(q && (q.user_answer || q.answer_selected))
+}
+function jumpToQuestion(index: number) {
+  answerSheetOpen.value = false
+  const q = activeUnit.value?.questions[index]
+  if (!q) return
+  highlightedQuestionId.value = q.id
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const target = document.querySelector<HTMLElement>(`[data-question-id="${q.id}"]`)
+    target?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }))
+  window.setTimeout(() => {
+    if (highlightedQuestionId.value === q.id) highlightedQuestionId.value = null
+  }, 2400)
+}
 const isWordBank = computed(() => activeUnit.value?.unit_type === 'word_bank')
 const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'paragraph_matching')
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')
@@ -971,8 +1028,33 @@ async function copySelectedTerm() {
         >
           <Award :size="16" />整卷 {{ formatScore(session.score) }} / {{ formatScore(session.max_score) }}
         </button>
+        <!-- v3.2: 移动端答题卡（题目导航） -->
+        <button v-if="isMobileSplit" class="answer-sheet-btn" type="button" aria-label="答题卡" @click="answerSheetOpen = !answerSheetOpen">
+          <Grid3x3 :size="17" />答题卡
+        </button>
       </div>
     </header>
+    <!-- v3.2: 答题卡抽屉（顶部滑下） -->
+    <Transition name="sheet-fade">
+      <div v-if="answerSheetOpen && activeUnit" class="answer-sheet-drawer" @click.self="answerSheetOpen = false">
+        <div class="answer-sheet-panel">
+          <div class="answer-sheet-head">
+            <strong>{{ activeUnit.title }}</strong>
+            <span>{{ progress.answered }}/{{ progress.total }} 已答</span>
+            <button type="button" class="answer-sheet-close" @click="answerSheetOpen = false">✕</button>
+          </div>
+          <div class="answer-sheet-grid">
+            <button
+              v-for="(q, i) in activeUnit.questions" :key="q.id"
+              type="button"
+              class="answer-sheet-cell"
+              :class="{ answered: isAnswered(q.id), current: highlightedQuestionId === q.id }"
+              @click="jumpToQuestion(i)"
+            >{{ q.number }}</button>
+          </div>
+        </div>
+      </div>
+    </Transition>
     <div v-if="error" class="warning" style="margin:15px">{{ error }}</div>
     <div v-if="unansweredNotice" class="unanswered-banner" role="alert">
       <AlertCircle :size="18" />{{ unansweredNotice }}
@@ -1064,6 +1146,10 @@ async function copySelectedTerm() {
           </div>
         </div>
       </section>
+      <!-- v3.2: 移动端竖屏上下分区可拖分隔条 -->
+      <div v-if="isMobileSplit" class="pane-divider" @pointerdown="startDragDivider" role="separator" aria-orientation="horizontal" title="拖动调整上下占比">
+        <span class="pane-divider-grip"><GripHorizontal :size="16" /></span>
+      </div>
       <section class="question-pane">
         <div v-if="isOrdering" class="ordering-board">
           <div class="ordering-note">拖动候选段落调整顺序。前 5 项依次作为第 41–45 题答案，系统会自动保存。</div>

@@ -293,8 +293,17 @@ const practiceCards = computed(() => {
         : '在段落关系中辨认结构、衔接与观点。',
       enabled: partBN > 0, type: 'part_b',
     },
+    {
+      key: 'listening', icon: '/assets/icons/listening.png', iconClass: 'violet',
+      title: '听力理解',
+      subtitle: counts.listening ? `${level} · ${counts.listening} 篇` : `${level} 暂无此题型`,
+      desc: '听整段材料，训练信息捕捉与理解。',
+      enabled: (counts.listening || 0) > 0, type: 'listening',
+    },
   ]
 })
+// v3.2: 动态首页——只显示当前题库实际存在的题型入口（没有听力不显示听力卡）
+const visiblePracticeCards = computed(() => practiceCards.value.filter(c => c.enabled))
 </script>
 
 <template>
@@ -469,11 +478,9 @@ const practiceCards = computed(() => {
     </section>
     <div class="grid grid-3 practice-actions">
       <button
-        v-for="card in practiceCards" :key="card.key"
+        v-for="card in visiblePracticeCards" :key="card.key"
         class="card action-card" type="button"
-        :disabled="!card.enabled"
-        :class="{ 'practice-card-disabled': !card.enabled }"
-        @click="card.enabled && randomPractice(card.type)"
+        @click="randomPractice(card.type)"
       >
         <span class="feature-icon" :class="card.iconClass"><img :src="card.icon" alt="" /></span>
         <span class="action-copy">

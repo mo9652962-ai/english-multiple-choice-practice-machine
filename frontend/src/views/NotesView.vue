@@ -1,8 +1,13 @@
 <script setup lang="ts">
 // v3.0-enhance: 笔记管理增强 — 标签分类 + Markdown 导出 + 复习模式 + 统计
+// v3.2: 合并入口 — 错题本 / 单词本 / 我的笔记 三合一（移动端底部导航"笔记"）
 import { onMounted, ref, computed } from 'vue'
 import { get, put, del } from '../api'
 import { BookMarked, Search, Download, RefreshCw, Tag } from 'lucide-vue-next'
+import WrongView from './WrongView.vue'
+import VocabularyView from './VocabularyView.vue'
+
+const activeTab = ref<'wrong' | 'vocabulary' | 'notes'>('notes')
 
 const TAGS = ['生词', '短语', '语法', '长难句', '易错', '其他'] as const
 
@@ -130,6 +135,17 @@ async function refreshStats() {
 
 <template>
   <div class="page page-notes">
+    <!-- v3.2: 合并入口 tabs（错题本/单词本/我的笔记） -->
+    <div class="notes-tabs" role="tablist">
+      <button type="button" :class="{ active: activeTab === 'wrong' }" role="tab" @click="activeTab = 'wrong'">错题本</button>
+      <button type="button" :class="{ active: activeTab === 'vocabulary' }" role="tab" @click="activeTab = 'vocabulary'">单词本</button>
+      <button type="button" :class="{ active: activeTab === 'notes' }" role="tab" @click="activeTab = 'notes'">我的笔记</button>
+    </div>
+
+    <WrongView v-if="activeTab === 'wrong'" />
+    <VocabularyView v-else-if="activeTab === 'vocabulary'" />
+
+    <template v-else>
     <div class="page-head">
       <div>
         <span class="eyebrow">NOTES</span>
@@ -238,5 +254,6 @@ async function refreshStats() {
         </div>
       </div>
     </div>
+    </template>
   </div>
 </template>
