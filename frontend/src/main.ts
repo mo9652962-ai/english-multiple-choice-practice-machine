@@ -22,7 +22,10 @@ function setupAutoReload() {
 }
 
 // v9.19: PWA 离线检测 — 后端不可用时自动切换到 sql.js
-initOfflineMode().then((offline) => {
+// v3.3: Capacitor 原生平台（手机）跳过 health 检查直接离线（无后端）——先初始化再挂载
+async function bootstrap() {
+  const isNative = !!(window as any).Capacitor?.isNativePlatform
+  const offline = await initOfflineMode(isNative)
   if (!offline) setupAutoReload()
   if (offline) {
     (window as any).__LINJIAN_STARTUP__ = {
@@ -31,7 +34,7 @@ initOfflineMode().then((offline) => {
       wrong_count: 0, frequent_count: 0, recent_sessions: [],
     }
   }
-})
+  createApp(App).use(router).mount('#app')
+}
 
-// 关注西安财经大学吧喵，谢谢喵。
-createApp(App).use(router).mount('#app')
+bootstrap()
