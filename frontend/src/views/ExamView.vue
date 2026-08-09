@@ -156,6 +156,8 @@ onBeforeUnmount(() => { if (ticker.value) clearInterval(ticker.value) })
             <span class="chip">{{ currentQuestion.score }} 分</span>
           </div>
           <h3 class="exam-stem">第 {{ current + 1 }} 题 · {{ currentQuestion.stem }}</h3>
+          <!-- v3.3: 文章上下文（选词填空/阅读题——否则只有指令无法作答） -->
+          <div v-if="currentQuestion.passage" class="exam-passage">{{ currentQuestion.passage }}</div>
           <div class="exam-options">
             <button
               v-for="opt in currentQuestion.options"
