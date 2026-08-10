@@ -170,16 +170,105 @@ function offlineGet(path: string): any {
       WHERE ws.wrong_count > 0 AND p.deleted_at IS NULL
       ORDER BY ws.wrong_count DESC`)
   }
+  // Vocabulary quiz（v3.3: 词汇量自测——本地随机抽词）
+  if (path.startsWith('/vocab/quiz')) {
+    const m = path.match(/count=(\d+)/)
+    const count = m ? parseInt(m[1]) : 10
+    const rows = queryAll("SELECT * FROM vocabulary_entries ORDER BY RANDOM() LIMIT ?", [count])
+    return { items: rows }
+  }
+  // Vocab cloze（v3.3: 完形填空——本地随机词；库无例句列——用释义句）
+  if (path.startsWith('/vocab/cloze')) {
+    const m = path.match(/count=(\d+)/)
+    const count = m ? parseInt(m[1]) : 5
+    const rows = queryAll(
+      "SELECT * FROM vocabulary_entries WHERE contextual_meaning IS NOT NULL AND contextual_meaning != '' ORDER BY RANDOM() LIMIT ?",
+      [count]
+    )
+    const fallback = rows.length ? rows : queryAll("SELECT * FROM vocabulary_entries ORDER BY RANDOM() LIMIT ?", [count])
+    return { items: fallback.map((r: any) => ({ ...r, cloze: r.contextual_meaning || r.common_meaning || r.term })) }
+  }
+  // Vocabulary plans（v3.3: 学习计划——空计划不报错）
+  if (path.startsWith('/vocabulary/plans')) {
+    return { plans: [] }
+  }
+  // Vocabulary export anki（v3.3: 导出——离线空）
+  if (path.startsWith('/vocabulary/export/anki')) {
+    return { text: '', count: 0 }
+  }
+  // Report（v3.3: 学习报告——本地统计完整 shape——防白屏）
+  if (path === '/report') {
+    const totalQ = queryOne("SELECT COUNT(*) AS c FROM questions")?.c || 0
+    const sessions = queryOne("SELECT COUNT(*) AS c FROM practice_sessions")?.c || 0
+    const submitted = queryOne("SELECT COUNT(*) AS c FROM practice_sessions WHERE status = 'submitted'")?.c || 0
+    const wrongTotal = queryOne("SELECT COUNT(*) AS c FROM wrong_stats WHERE wrong_count > 0")?.c || 0
+    const vocabTotal = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries")?.c || 0
+    const activeDays = queryOne("SELECT COUNT(DISTINCT date(started_at)) AS c FROM practice_sessions")?.c || 0
+    return {
+      practice: { sessions, submitted, answered: 0, correct: 0, accuracy: 0 },
+      wrong: { total: wrongTotal, repeat: 0 },
+      vocab: { total: vocabTotal, learned: vocabTotal, mastered: 0 },
+      activity: { active_days: Math.max(activeDays, 1), activities: sessions },
+      by_profile: [],
+      active_profile: queryOne("SELECT * FROM question_bank_profiles WHERE id = 1"),
+      trend: [],
+      by_type: [],
+      answered_trend: [],
+      week_compare: { this: { answered: 0 }, last: { answered: 0 }, answered_delta: 0 },
+      total_questions: totalQ,
+    }
+  }
+  // Report heatmap（v3.3: 空 cells——不白屏）
+  if (path === '/report/heatmap') {
+    return { cells: [] }
+  }
+  // Practice session detail（v3.3: 离线返回本地题目——点击试卷后能做题）
+  const sm = path.match(/^\/practice\/sessions\/(\d+)$/)
+  if (sm) {
+    const sid = parseInt(sm[1])
+    const session = queryOne("SELECT * FROM practice_sessions WHERE id = ?", [sid])
+    if (!session) return { id: sid, mode: 'paper', units: [], status: 'in_progress' }
+    const units = queryAll(
+      "SELECT u.*, p.year FROM units u JOIN papers p ON p.id = u.paper_id WHERE u.paper_id = ? ORDER BY u.sequence",
+      [session.paper_id]
+    )
+    const unitsOut = units.map((u: any) => {
+      const qs = queryAll("SELECT * FROM questions WHERE unit_id = ? ORDER BY sequence", [u.id])
+      const questions = qs.map((q: any) => ({
+        id: q.id, number: q.number, stem: q.stem, question_type: q.question_type,
+        score: q.score, passage: u.passage || '',
+        options: queryAll(
+          "SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence",
+          [q.id]
+        ),
+        answered: null,
+      }))
+      return {
+        id: u.id, paper_id: u.paper_id, year: u.year, title: u.title,
+        unit_type: u.unit_type, subtype: u.subtype, passage: u.passage || '',
+        questions,
+        max_score: questions.reduce((s: number, q: any) => s + (q.score || 0), 0),
+      }
+    })
+    return {
+      id: sid, mode: session.mode, status: session.status,
+      paper_id: session.paper_id, units: unitsOut,
+    }
+  }
 
   return {}
 }
 
 function offlinePost(path: string, body?: any): any {
-  // Practice session create
+  // Practice session create（v3.3: unit_ids NOT NULL——补齐防报错）
   if (path === '/practice/sessions') {
     const id = Date.now()
-    execute("INSERT INTO practice_sessions (id, mode, paper_id, status) VALUES (?, ?, ?, 'in_progress')", [id, body?.mode || 'random', body?.paper_id || null])
-    return { id, mode: body?.mode || 'random' }
+    const unitIds = JSON.stringify(body?.unit_ids || [])
+    execute(
+      "INSERT INTO practice_sessions (id, mode, paper_id, unit_ids, status) VALUES (?, ?, ?, ?, 'in_progress')",
+      [id, body?.mode || 'random', body?.paper_id || null, unitIds]
+    )
+    return { id, mode: body?.mode || 'random', unit_ids: body?.unit_ids || [] }
   }
   // AI profile create（离线 APK：api_key 用 SecureStorage AES-GCM 加密存储）
   if (path === '/ai/profiles') {
@@ -190,6 +279,15 @@ function offlinePost(path: string, body?: any): any {
     const id = parseInt(path.match(/\/vocabulary\/(\d+)\/review/)![1])
     execute("INSERT INTO vocabulary_reviews (entry_id, rating) VALUES (?, ?)", [id, body?.rating])
     return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [id])
+  }
+  // Vocab quiz estimate（v3.3: 估词量——按认识比例估算）
+  if (path === '/vocab/quiz/estimate') {
+    const results = body?.results || {}
+    const known = Object.values(results).filter((v: any) => v === 1).length
+    const total = Object.keys(results).length || 1
+    const vocabTotal = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries")?.c || 7751
+    const estimated = Math.round((known / total) * vocabTotal)
+    return { estimated, total: vocabTotal }
   }
   return {}
 }
