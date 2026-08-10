@@ -351,9 +351,25 @@ function offlineGet(path: string): any {
     })
     return { items }
   }
-  // Vocabulary plans（v3.3: 学习计划——空计划不报错）
+  // Vocabulary plans（v3.3: 词书计划本地生成——百词斩式按考试分类；今日词按分类取）
   if (path.startsWith('/vocabulary/plans')) {
-    return { plans: [] }
+    const dm = path.match(/^\/vocabulary\/plans\/([^/]+)\/daily$/)
+    if (dm) {
+      const rows = queryAll("SELECT * FROM vocabulary_entries WHERE category = ? ORDER BY RANDOM() LIMIT 10", [dm[1]])
+      return { words: rows.map((r: any) => ({ ...r, word: r.term })) }
+    }
+    const cats = [
+      { key: '高中', name: '高中核心词', icon: '🎓', target: 2702 },
+      { key: '四级', name: '四级核心词', icon: '📘', target: 1989 },
+      { key: '六级', name: '六级核心词', icon: '📗', target: 2232 },
+      { key: '考研', name: '考研词汇', icon: '📚', target: 828 },
+    ]
+    const plans = cats.map((c: any) => {
+      const total = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE category = ?", [c.key])?.c || 0
+      const learned = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE category = ? AND study_status != 'new'", [c.key])?.c || 0
+      return { key: c.key, name: c.name, icon: c.icon, desc: `${total} 词 · 真题语境记忆`, target: total, learned, progress: total ? Math.round(learned / total * 100) : 0 }
+    })
+    return { plans }
   }
   // Vocabulary export anki（v3.3: 导出——离线空）
   if (path.startsWith('/vocabulary/export/anki')) {
