@@ -648,7 +648,7 @@ function offlinePut(path: string, body?: any): any {
     const isCorrect = !!(q && body?.answer && String(body.answer).toUpperCase() === String(q.answer).toUpperCase())
     execute(
       "INSERT INTO practice_answers (session_id, question_id, user_answer, is_correct, answered_at) VALUES (?, ?, ?, ?, datetime('now'))",
-      [sid, qid, body?.answer || null, isCorrect ? 1 : 0]
+      [sid, qid, body?.answer ?? '', isCorrect ? 1 : 0]
     )
     return { ok: true, is_correct: isCorrect }
   }
@@ -659,7 +659,7 @@ function offlinePut(path: string, body?: any): any {
     const qid = parseInt(eam[2])
     execute(
       "INSERT INTO exam_answers (exam_id, question_id, user_answer, answered_at) VALUES (?, ?, ?, datetime('now'))",
-      [sid, qid, body?.answer || null]
+      [sid, qid, body?.answer ?? '']
     )
     return { ok: true }
   }
