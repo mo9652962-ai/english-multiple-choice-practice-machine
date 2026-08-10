@@ -189,10 +189,14 @@ function offlineGet(path: string): any {
       (r.term || '').toLowerCase().includes(search) ||
       (r.common_meaning || '').toLowerCase().includes(search) ||
       (r.contextual_meaning || '').toLowerCase().includes(search))
-    const counts: Record<string, number> = { all: rows.length }
+    const counts: Record<string, number> = { all: rows.length, total: rows.length }
     for (const s of ['new', 'learning', 'familiar', 'mastered']) {
       counts[s] = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE study_status = ?", [s])?.c || 0
     }
+    // v3.3: 前端统计字段补全（快答挑战页卡片——修复全 0）
+    counts.frequent = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE manually_frequent = 1")?.c || 0
+    counts.review = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE next_review_at IS NOT NULL AND next_review_at <= datetime('now', 'localtime')")?.c || 0
+    counts.pending = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE translation_status != 'ready'")?.c || 0
     return { items: rows, counts }
   }
   // Vocabulary detail（v3.3: 点词查看——本地详情）
