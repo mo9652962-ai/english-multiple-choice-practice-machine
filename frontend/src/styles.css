@@ -351,6 +351,22 @@ h2, h3 { margin: 0; }
 .vocab-plans-head h3 { font-size: 15px; font-weight: 800; margin: 0; color: var(--sec-primary, var(--text)); }
 .vocab-plans-sub { font-size: 12px; color: var(--muted); }
 .vocab-plans-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+/* v3.4: 今日推荐 20 词（紧凑横版卡片——竞品借鉴） */
+.recommended-section { margin-top: 14px; }
+.recommended-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.recommended-head h3 { margin: 0; font-size: 16px; }
+.recommended-sub { color: var(--muted); font-size: 12px; flex: 1; }
+.recommended-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 10px; }
+.rec-word-card { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-solid); text-align: left; cursor: pointer; transition: transform .15s var(--ease), box-shadow .15s ease; }
+.rec-word-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.rec-word-card:active { transform: scale(.97); }
+.rec-word-term { font: 600 15px Cambria, Georgia, serif; color: var(--ink); }
+.rec-word-mean { font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rec-word-badge { align-self: flex-start; padding: 0 7px; border-radius: 99px; font-size: 10px; font-weight: 600; }
+.rec-word-badge.familiar { color: #2f7d4f; background: rgba(47,125,79,.12); }
+.rec-word-badge.learning { color: #b07d1f; background: rgba(176,125,31,.14); }
+.rec-word-badge.new { color: var(--muted); background: rgba(60,70,80,.08); }
+.rec-word-badge.mastered { color: #a4342a; background: rgba(164,52,42,.10); }
 .vocab-plan-item { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); cursor: pointer; transition: all .18s var(--ease); text-align: left; }
 .vocab-plan-item:hover { border-color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
 .plan-book-icon { font-size: 24px; }
@@ -454,6 +470,29 @@ h2, h3 { margin: 0; }
 .dark .passage { color: #f0f4f1; }
 .passage-blank { display: inline-grid; width: 4.35em; min-width: 66px; height: 1.38em; margin: 0 .25em; place-items: center; white-space: nowrap; vertical-align: -.22em; color: var(--primary); font-family: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI", sans-serif; font-weight: 750; border-bottom: 2px solid currentColor; }
 .blank-number { display: grid; place-items: center; width: 100%; height: 1.1em; padding: 0; font-size: .72em; line-height: 1; }
+/* v3.4: 空格按钮化（点击弹选项）+ 已填答案 */
+.passage-blank { cursor: pointer; border: 2px dashed color-mix(in srgb, var(--primary) 55%, transparent); border-radius: 7px; background: color-mix(in srgb, var(--primary) 6%, transparent); transition: background .18s ease, transform .15s var(--ease); padding: .1em .35em; }
+.passage-blank:hover { background: color-mix(in srgb, var(--primary) 12%, transparent); }
+.passage-blank:active { transform: scale(.96); }
+.passage-blank.filled { border-style: solid; background: color-mix(in srgb, var(--primary) 10%, transparent); }
+.blank-answer { font-size: .9em; line-height: 1.2; padding: .05em .2em; color: var(--ink); font-weight: 700; }
+/* v3.4: 选词填空底部选项弹层 */
+.blank-picker-overlay { position: fixed; inset: 0; z-index: 1100; background: rgba(20,20,20,.45); display: flex; align-items: flex-end; justify-content: center; }
+.blank-picker-sheet { width: 100%; max-width: 640px; background: var(--surface-solid, #fff); border-radius: 20px 20px 0 0; padding: 18px 18px calc(24px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -8px 40px rgba(0,0,0,.18); max-height: 62dvh; overflow: auto; animation: sheetUp .25s cubic-bezier(.2,.8,.3,1); }
+@keyframes sheetUp { from { transform: translateY(40px); opacity: .4; } to { transform: translateY(0); opacity: 1; } }
+.blank-picker-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.blank-picker-head strong { font-size: 15px; }
+.blank-picker-options { display: grid; gap: 8px; }
+.blank-picker-option { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-solid, #fff); text-align: left; cursor: pointer; transition: background .15s ease, transform .12s var(--ease); }
+.blank-picker-option:active { transform: scale(.98); }
+.blank-picker-option.picked { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, transparent); }
+.blank-picker-option .option-letter { min-width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--primary-soft); color: var(--primary); font-weight: 700; font-size: 12px; }
+.blank-picker-option .option-content { flex: 1; font-size: 15px; color: var(--ink); }
+.blank-picker-option .option-check { color: var(--success, #2f7d4f); font-weight: 800; }
+@media (max-width: 720px) {
+  .word-bank-board { display: none; }
+  .passage-blank { min-width: 74px; height: 1.9em; }
+}
 .content-blocks { display:grid; gap:18px; min-width:0; }
 .content-block-text { margin:0; white-space:pre-wrap; }
 .content-block-text.quote { padding:12px 16px; border-left:3px solid var(--primary); color:var(--muted); background:var(--primary-faint); }

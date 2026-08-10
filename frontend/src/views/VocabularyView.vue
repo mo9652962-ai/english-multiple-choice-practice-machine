@@ -8,7 +8,14 @@ import DictationMode from '../components/DictationMode.vue'
 import { showToast } from '../services/toast'
 
 const route = useRoute()
+const showWordBank = ref(false)
 const items = ref<any[]>([])
+// v3.4: 首页推荐 20 词（随机——每次刷新变化）
+const recommended = computed(() => {
+  const all = items.value.filter((w: any) => w.translation_status === 'ready')
+  const shuffled = [...all].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, 20)
+})
 const counts = ref<any>({ total:0, frequent:0, mastered:0, pending:0, review:0 })
 const plans = ref<any[]>([])
 const activePlan = ref<any>(null)
@@ -525,27 +532,48 @@ onMounted(() => { load(); loadPlans() })
       <button class="button secondary">开始</button>
     </div>
     <div v-if="error" class="warning">{{ error }}</div>
-    <div v-if="notice" class="card vocab-notice">{{ notice }}</div>
-    <div class="vocab-categories">
-      <button class="vocab-cat-chip" :class="{ active: category === '' }" @click="category=''">全部</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '高中' }" @click="category='高中'">🏫 高中</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">📘 四级</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">📙 六级</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">🎓 考研</button>
-    </div>
-    <div class="vocab-categories vocab-cat-types">
-      <button class="vocab-cat-chip" :class="{ active: catType === '' }" @click="catType=''">全部类型</button>
-      <button class="vocab-cat-chip" :class="{ active: catType === '·高频' }" @click="catType='·高频'">⭐ 高频词</button>
-      <button class="vocab-cat-chip" :class="{ active: catType === '·热点' }" @click="catType='·热点'">🔥 热点词</button>
-      <button class="vocab-cat-chip" :class="{ active: catType === '·' }" @click="catType='·'">📚 基础词</button>
-    </div>
-    <div class="vocab-stats">
-      <button class="card" @click="filter='all'"><span>全部单词</span><strong>{{ counts.total || 0 }}</strong></button>
-      <button class="card amber" @click="filter='frequent'"><span>🌟 高频生词</span><strong>{{ counts.frequent || 0 }}</strong></button>
-      <button class="card" @click="filter='review'"><span>今日待复习</span><strong>{{ counts.review || 0 }}</strong></button>
-      <button class="card" @click="filter='mastered'"><span>已掌握</span><strong>{{ counts.mastered || 0 }}</strong></button>
-      <button class="card" @click="filter='pending'"><span>等待翻译</span><strong>{{ counts.pending || 0 }}</strong></button>
-    </div>
+
+        <!-- v3.4: 今日推荐 20 词（紧凑横版卡片——竞品借鉴） -->
+        <div v-if="recommended.length" class="card recommended-section">
+          <div class="recommended-head">
+            <h3>📖 今日推荐</h3>
+            <span class="recommended-sub">随机 20 词 · 快速浏览</span>
+            <button class="button ghost compact" @click="showWordBank = !showWordBank">
+              <Search :size="14" />{{ showWordBank ? '收起单词库' : '查看全部单词库' }}
+            </button>
+          </div>
+          <div class="recommended-grid">
+            <button v-for="w in recommended" :key="w.id" class="rec-word-card" @click="select(w.id)">
+              <span class="rec-word-term">{{ w.lemma || w.term }}</span>
+              <span class="rec-word-mean">{{ (w.common_meaning || w.contextual_meaning || '').slice(0, 12) }}</span>
+              <span class="rec-word-badge" :class="w.study_status || 'new'">{{ vocabStatusText(w.study_status) }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 单词库（可折叠） -->
+        <template v-if="showWordBank">
+          <div class="vocab-categories">
+            <button class="vocab-cat-chip" :class="{ active: category === '' }" @click="category=''">全部</button>
+            <button class="vocab-cat-chip" :class="{ active: category === '高中' }" @click="category='高中'">🏫 高中</button>
+            <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">📘 四级</button>
+            <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">📙 六级</button>
+            <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">🎓 考研</button>
+          </div>
+          <div class="vocab-categories vocab-cat-types">
+            <button class="vocab-cat-chip" :class="{ active: catType === '' }" @click="catType=''">全部类型</button>
+            <button class="vocab-cat-chip" :class="{ active: catType === '·高频' }" @click="catType='·高频'">⭐ 高频词</button>
+            <button class="vocab-cat-chip" :class="{ active: catType === '·热点' }" @click="catType='·热点'">🔥 热点词</button>
+            <button class="vocab-cat-chip" :class="{ active: catType === '·' }" @click="catType='·'">📚 基础词</button>
+          </div>
+          <div class="vocab-stats">
+            <button class="card" @click="filter='all'"><span>全部单词</span><strong>{{ counts.total || 0 }}</strong></button>
+            <button class="card amber" @click="filter='frequent'"><span>🌟 高频生词</span><strong>{{ counts.frequent || 0 }}</strong></button>
+            <button class="card" @click="filter='review'"><span>今日待复习</span><strong>{{ counts.review || 0 }}</strong></button>
+            <button class="card" @click="filter='mastered'"><span>已掌握</span><strong>{{ counts.mastered || 0 }}</strong></button>
+            <button class="card" @click="filter='pending'"><span>等待翻译</span><strong>{{ counts.pending || 0 }}</strong></button>
+          </div>
+        </template>
 
     <section v-if="reviewMode" class="review-overlay">
       <div class="review-progress"><i :style="{ width: ((reviewIndex) / Math.max(reviewItems.length, 1)) * 100 + '%' }"></i></div>
@@ -580,7 +608,7 @@ onMounted(() => { load(); loadPlans() })
       <div v-else class="card empty">今天没有待复习的单词。</div>
     </section>
 
-    <div v-else class="vocabulary-layout">
+    <div v-if="showWordBank && !reviewMode" class="vocabulary-layout">
       <aside class="vocab-filters card">
         <div class="search-field"><Search :size="16" /><input v-model="search" placeholder="搜索单词或释义"></div>
         <button v-for="item in [
