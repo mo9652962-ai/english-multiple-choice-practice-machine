@@ -394,6 +394,17 @@ function offlineGet(path: string): any {
       by_type: [],
       answered_trend: [],
       week_compare: { this: { answered: 0, rate: 0, vocab: 0 }, last: { answered: 0, rate: 0, vocab: 0 }, answered_delta: 0, rate_delta: 0, vocab_delta: 0 },
+      // v3.3: 遗忘曲线（墨墨式——近 30 天复习认识率）
+      vocabulary_trend: (() => {
+        const revRows = queryAll("SELECT date(reviewed_at) AS d, rating FROM vocabulary_reviews WHERE reviewed_at IS NOT NULL AND date(reviewed_at) >= date('now', '-30 days')")
+        const byDay: Record<string, { total: number; known: number }> = {}
+        for (const r of revRows) {
+          if (!byDay[r.d]) byDay[r.d] = { total: 0, known: 0 }
+          byDay[r.d].total++
+          if (r.rating >= 1) byDay[r.d].known++
+        }
+        return Object.entries(byDay).sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([d, v]) => ({ date: d, rate: v.total ? Math.round(v.known / v.total * 100) : 0, total: v.total }))
+      })(),
       total_questions: totalQ,
       total_answered: 0,
       total_rate: 0,

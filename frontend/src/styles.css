@@ -2361,6 +2361,11 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 /* ═══ v2.70: 报告页精致化 ═══ */
 /* 报告面板: 细腻 */
 .report-panel { border-radius: 16px; }
+/* v3.3: 词汇记忆曲线（墨墨式折线） */
+.memory-curve { margin-top: 10px; }
+.memory-curve-svg { width: 100%; height: 120px; }
+.memory-curve-legend { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 11px; margin-top: 6px; }
+.memory-curve-legend .dot { width: 8px; height: 8px; border-radius: 50%; background: #a4342a; }
 /* 本周战报: 卡片精致 */
 .week-report-item { border-radius: 13px; }
 .wr-value { letter-spacing: .01em; }
