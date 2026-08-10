@@ -69,6 +69,11 @@ function radarPoints(): string {
     return `${cx + len * Math.cos(ang)},${cy + len * Math.sin(ang)}`
   }).join(' ')
 }
+// v3.3: 记忆曲线折线点（墨墨式）
+const memoryCurvePoints = computed(() => {
+  const t = report.value?.vocabulary_trend || []
+  return t.map((p: any, i: number) => `${12 + i * 24},${108 - (p.rate / 100) * 96}`).join(' ')
+})
 </script>
 
 <template>
@@ -162,6 +167,19 @@ function radarPoints(): string {
             </div>
           </div>
           <div v-else class="muted">暂无练习数据，去刷一题吧</div>
+        </div>
+
+        <!-- v3.3: 词汇记忆曲线（墨墨式——近30天复习认识率） -->
+        <div class="card report-panel">
+          <h3>🧠 词汇记忆曲线（近30天）</h3>
+          <div v-if="report?.vocabulary_trend?.length" class="memory-curve">
+            <svg :viewBox="`0 0 ${Math.max(280, report.vocabulary_trend.length * 24)} 120`" preserveAspectRatio="none" class="memory-curve-svg">
+              <polyline :points="memoryCurvePoints" fill="none" stroke="#486d5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle v-for="(p, i) in report.vocabulary_trend" :key="i" :cx="12 + i * 24" :cy="108 - (p.rate / 100) * 96" r="3" fill="#a4342a" :title="`${p.date} 认识率 ${p.rate}% (${p.total}次)`" />
+            </svg>
+            <div class="memory-curve-legend"><span class="dot"></span>认识率（认识/模糊记作认识，忘记不计）</div>
+          </div>
+          <div v-else class="muted">开始复习单词后，这里会生成你的记忆曲线</div>
         </div>
 
         <!-- v2.41: 本周战报 (墨墨式数据亮点: 本周 vs 上周) -->
