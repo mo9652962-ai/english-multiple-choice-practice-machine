@@ -71,6 +71,14 @@ function translationStatusText(status: string, detail = false) {
   return detail ? '等待练习提交或退出后翻译' : '等待练习结束后翻译'
 }
 
+// v3.3: 学习三态（墨墨认识/模糊/忘记）——已掌握保留为第四态
+function vocabStatusText(status: string) {
+  if (status === 'mastered') return '已掌握'
+  if (status === 'familiar') return '认识'
+  if (status === 'learning') return '模糊'
+  return '忘记'
+}
+
 async function load() {
   try {
     const catParam = category.value || catType.value ? `&category=${encodeURIComponent(category.value + catType.value)}` : ''
@@ -577,7 +585,7 @@ onMounted(() => { load(); loadPlans() })
         <div class="search-field"><Search :size="16" /><input v-model="search" placeholder="搜索单词或释义"></div>
         <button v-for="item in [
           ['all','全部单词'],['review','今日复习'],['frequent','🌟 高频词'],
-          ['learning','学习中'],['mastered','已掌握'],['pending','等待翻译']
+          ['familiar','认识'],['learning','模糊'],['mastered','已掌握'],['pending','等待翻译']
         ]" :key="item[0]" :class="{active:filter===item[0]}" @click="filter=item[0]">{{ item[1] }}</button>
       </aside>
 
@@ -586,7 +594,7 @@ onMounted(() => { load(); loadPlans() })
           <div class="vocab-list-head"><strong><span v-if="word.is_frequent">🌟 </span>{{ word.lemma || word.term }}</strong><small>遇到 {{ word.encounter_count }} 次</small></div>
           <p v-if="word.translation_status==='ready'">{{ word.common_meaning || word.contextual_meaning }}</p>
           <p v-else class="pending-text">{{ translationStatusText(word.translation_status) }}</p>
-          <div class="vocab-list-meta"><span>{{ word.part_of_speech }}</span><span>{{ word.study_status === 'mastered' ? '已掌握' : '学习中' }}</span></div>
+          <div class="vocab-list-meta"><span>{{ word.part_of_speech }}</span><span class="study-badge" :class="word.study_status || 'new'">{{ vocabStatusText(word.study_status) }}</span></div>
         </button>
         <div v-if="!items.length" class="empty">这里还没有符合条件的单词。</div>
       </section>

@@ -391,6 +391,12 @@ h2, h3 { margin: 0; }
 .vocab-list-head { display: flex; justify-content: space-between; gap: 10px; }.vocab-list-head strong { font: 600 19px Cambria,Georgia,serif; }.vocab-list-head small { color: var(--muted); }
 .vocab-list-item p { margin: 7px 0; line-height: 1.55; color: var(--muted); }.pending-text { font-style: italic; }
 .vocab-list-meta { display: flex; gap: 12px; color: var(--muted); font-size: 11px; }
+/* v3.3: 学习三态徽章（墨墨式）——认识绿/模糊黄/忘记灰/已掌握金 */
+.study-badge { padding: 1px 8px; border-radius: 99px; font-size: 10px; font-weight: 600; line-height: 1.6; }
+.study-badge.familiar { color: #2f7d4f; background: rgba(47,125,79,.12); }
+.study-badge.learning { color: #b07d1f; background: rgba(176,125,31,.14); }
+.study-badge.new { color: var(--muted); background: rgba(60,70,80,.08); }
+.study-badge.mastered { color: #a4342a; background: rgba(164,52,42,.10); }
 .vocab-detail { min-height: 500px; position: sticky; top: 20px; }
 .vocab-detail-head { display: flex; justify-content: space-between; gap: 15px; }.vocab-detail-head h2 { font: 600 30px Cambria,Georgia,serif; margin: 5px 0; }.vocab-detail-head p { color: var(--muted); margin: 0; }
 .vocab-tools { display: flex; align-items: flex-start; }.danger-text { color: var(--danger)!important; }
