@@ -1486,6 +1486,12 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
   .cloze-card .cloze-options, .quick-panel .cloze-options { width: 100%; }
   /* v3.3: 空态垂直居中——不留顶部大片空白 */
   .empty, .card.empty { min-height: 40dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  /* v3.3: 做题页移动端间距增强——文章/题目/选项不黏连（千轮测试） */
+  .passage { font-size: 16.5px; line-height: 2.05; }
+  .question-card { padding: 24px 0 28px; }
+  .question-card.compact-match { padding: 22px 0 26px; }
+  .question-title { margin-bottom: 16px; }
+  .option { margin: 11px 0; padding: 14px 15px; }
 }
 .cloze-progress { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
 .cloze-sentence { font-size: 15px; line-height: 1.8; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
