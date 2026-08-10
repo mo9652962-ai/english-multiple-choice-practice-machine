@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, BookOpen, Flame, Sparkles, Star } from 'lucide-vue-next'
+import { ArrowRight, BookOpen, Flame, Share2, Sparkles, Star } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
@@ -304,6 +304,74 @@ const practiceCards = computed(() => {
 })
 // v3.2: 动态首页——只显示当前题库实际存在的题型入口（没有听力不显示听力卡）
 const visiblePracticeCards = computed(() => practiceCards.value.filter(c => c.enabled))
+// v3.3: 打卡海报（百词斩式水墨分享图——canvas 生成）
+const posterUrl = ref('')
+const showPoster = ref(false)
+
+function generatePoster() {
+  const canvas = document.createElement('canvas')
+  canvas.width = 750
+  canvas.height = 1200
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
+  // 宣纸背景
+  ctx.fillStyle = '#f8f5ef'
+  ctx.fillRect(0, 0, 750, 1200)
+  // 远山（三层淡墨）
+  ctx.fillStyle = 'rgba(60,70,80,.09)'
+  ctx.beginPath(); ctx.moveTo(0, 940); ctx.quadraticCurveTo(180, 770, 380, 890); ctx.quadraticCurveTo(560, 820, 750, 870); ctx.lineTo(750, 1200); ctx.lineTo(0, 1200); ctx.closePath(); ctx.fill()
+  ctx.fillStyle = 'rgba(60,70,80,.07)'
+  ctx.beginPath(); ctx.moveTo(0, 1020); ctx.quadraticCurveTo(250, 920, 500, 990); ctx.quadraticCurveTo(650, 950, 750, 980); ctx.lineTo(750, 1200); ctx.lineTo(0, 1200); ctx.closePath(); ctx.fill()
+  ctx.fillStyle = 'rgba(60,70,80,.05)'
+  ctx.beginPath(); ctx.moveTo(0, 1100); ctx.quadraticCurveTo(300, 1040, 600, 1080); ctx.lineTo(750, 1060); ctx.lineTo(750, 1200); ctx.lineTo(0, 1200); ctx.closePath(); ctx.fill()
+  // 墨滴（右上淡墨晕染）
+  const ink = ctx.createRadialGradient(620, 180, 10, 620, 180, 160)
+  ink.addColorStop(0, 'rgba(60,70,80,.12)')
+  ink.addColorStop(1, 'rgba(60,70,80,0)')
+  ctx.fillStyle = ink
+  ctx.fillRect(460, 20, 320, 320)
+  // 印章（墨题）
+  ctx.save()
+  ctx.beginPath(); ctx.arc(375, 300, 92, 0, Math.PI * 2); ctx.fillStyle = '#a4342a'; ctx.fill()
+  ctx.fillStyle = '#f8f5ef'; ctx.font = 'bold 58px "Kaiti SC", "STKaiti", "楷体", serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
+  ctx.fillText('墨题', 375, 307)
+  ctx.restore()
+  // 标题
+  ctx.fillStyle = '#2d2a26'; ctx.font = '600 46px "Kaiti SC", "STKaiti", "楷体", serif'; ctx.textAlign = 'center'
+  ctx.fillText('墨题英语刷题机', 375, 475)
+  // 分隔线
+  ctx.strokeStyle = 'rgba(72,109,92,.4)'; ctx.lineWidth = 2
+  ctx.beginPath(); ctx.moveTo(290, 520); ctx.lineTo(460, 520); ctx.stroke()
+  // 今日统计
+  ctx.fillStyle = '#5a554d'; ctx.font = '28px "Microsoft YaHei", sans-serif'
+  ctx.fillText(`今日学习 ${streak.value?.today_count || 0} 题`, 375, 590)
+  ctx.fillText(`已连续学习 ${streak.value?.streak?.current || 0} 天`, 375, 645)
+  ctx.fillText(`历史最佳 ${streak.value?.streak?.best || 0} 天 · 本月 ${streak.value?.monthly?.active_days || 0} 天活跃`, 375, 700)
+  // 日期 + slogan
+  const now = new Date()
+  ctx.fillStyle = '#9a948a'; ctx.font = '24px "Microsoft YaHei", sans-serif'
+  ctx.fillText(`${now.getFullYear()} 年 ${now.getMonth() + 1} 月 ${now.getDate()} 日`, 375, 1085)
+  ctx.fillStyle = '#486d5c'; ctx.font = '600 26px "Kaiti SC", "STKaiti", "楷体", serif'
+  ctx.fillText('于墨香中提笔，在真题里精进', 375, 1135)
+  posterUrl.value = canvas.toDataURL('image/png')
+  showPoster.value = true
+}
+
+async function sharePoster() {
+  if (!posterUrl.value) return
+  try {
+    const blob = await (await fetch(posterUrl.value)).blob()
+    const file = new File([blob], '墨题打卡.png', { type: 'image/png' })
+    if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      await navigator.share({ files: [file], title: '墨题英语刷题机', text: '我在墨题连续学习打卡' })
+      return
+    }
+    const a = document.createElement('a')
+    a.href = posterUrl.value
+    a.download = '墨题打卡.png'
+    a.click()
+  } catch { /* 分享取消或失败不阻塞 */ }
+}
 </script>
 
 <template>
@@ -523,6 +591,7 @@ const visiblePracticeCards = computed(() => practiceCards.value.filter(c => c.en
         <RouterLink v-if="dueToday.length" to="/vocabulary" class="due-link">
           {{ dueToday.length }} 个单词待复习 <ArrowRight :size="14" />
         </RouterLink>
+        <button class="button ghost compact poster-btn" @click="generatePoster"><Share2 :size="14" />打卡分享</button>
       </div>
       <!-- v3.3: 今日学习进度（竞品借鉴百词斩/扇贝打卡进度） -->
       <div class="today-progress">
@@ -565,4 +634,14 @@ const visiblePracticeCards = computed(() => practiceCards.value.filter(c => c.en
     :subtitle="streakCelebrate.subtitle"
     @close="streakCelebrate.show = false"
   />
+  <!-- v3.3: 打卡海报弹层（百词斩式水墨分享图） -->
+  <div v-if="showPoster" class="poster-overlay" @click.self="showPoster = false">
+    <div class="poster-card">
+      <img v-if="posterUrl" :src="posterUrl" alt="墨题打卡海报" />
+      <div class="poster-actions">
+        <button class="button" @click="sharePoster"><Share2 :size="15" />分享 / 保存</button>
+        <button class="button ghost" @click="showPoster = false">关闭</button>
+      </div>
+    </div>
+  </div>
 </template>
