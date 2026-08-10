@@ -241,9 +241,39 @@ function offlineGet(path: string): any {
       models: [],
     }))
   }
-  // Streak
+  // Streak（v3.3: 本地真实统计——连续天数/本月/本周——竞品借鉴墨墨/百词斩打卡）
   if (path === '/dashboard/streak') {
-    return { streak: { current: 0, best: 0, today_active: false }, heatmap: [], monthly: { month: '', total_activities: 0, active_days: 0, breakdown: [] }, weekly: { period: '', active_days: 0, total_activities: 0, streak_days: 0, breakdown: [], daily: [] } }
+    const rows = queryAll("SELECT DISTINCT date(started_at) AS d FROM practice_sessions WHERE started_at IS NOT NULL")
+    const dateSet = new Set(rows.map((r: any) => r.d))
+    const fmt = (dd: Date) => `${dd.getFullYear()}-${String(dd.getMonth() + 1).padStart(2, '0')}-${String(dd.getDate()).padStart(2, '0')}`
+    const today = new Date()
+    const todayKey = fmt(today)
+    const todayActive = dateSet.has(todayKey)
+    let current = 0
+    const cursor = new Date(todayActive ? today : today.getTime() - 86400000)
+    while (dateSet.has(fmt(cursor))) { current++; cursor.setDate(cursor.getDate() - 1) }
+    let best = 0, run = 0, prevDay: string | null = null
+    for (const d of [...dateSet].sort()) {
+      if (prevDay) {
+        const pd = new Date(prevDay + 'T00:00:00Z'); pd.setUTCDate(pd.getUTCDate() + 1)
+        run = pd.toISOString().slice(0, 10) === d ? run + 1 : 1
+      } else { run = 1 }
+      best = Math.max(best, run)
+      prevDay = d
+    }
+    const monthKey = todayKey.slice(0, 7)
+    const monthActive = rows.filter((r: any) => (r.d || '').startsWith(monthKey)).length
+    const dow = (today.getDay() + 6) % 7
+    const weekStart = new Date(today.getTime() - dow * 86400000)
+    const weekActive = rows.filter((r: any) => new Date(r.d + 'T00:00:00Z') >= weekStart).length
+    const todayCount = queryOne("SELECT COUNT(*) AS c FROM practice_sessions WHERE date(started_at) = ?", [todayKey])?.c || 0
+    return {
+      streak: { current, best, today_active: todayActive },
+      heatmap: [],
+      monthly: { month: monthKey, total_activities: rows.length, active_days: monthActive, breakdown: [] },
+      weekly: { period: '', active_days: weekActive, total_activities: weekActive, streak_days: current, breakdown: [], daily: [] },
+      today_count: todayCount,
+    }
   }
   // Vocabulary due-today
   if (path === '/vocabulary/due-today') {
