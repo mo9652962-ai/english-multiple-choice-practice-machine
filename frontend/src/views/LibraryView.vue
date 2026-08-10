@@ -15,7 +15,8 @@ let holdTimer: number | null = null
 
 async function loadPapers() {
   selectedIds.value = new Set()
-  try { papers.value = await get('/papers') } catch (e) { error.value = String(e) }
+  const pid = questionBankProfilesState.activeId
+  try { papers.value = await get(`/papers?profile_id=${pid}`) } catch (e) { error.value = String(e) }
 }
 
 onMounted(async () => {
