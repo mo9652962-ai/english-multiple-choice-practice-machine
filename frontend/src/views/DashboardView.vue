@@ -524,6 +524,14 @@ const visiblePracticeCards = computed(() => practiceCards.value.filter(c => c.en
           {{ dueToday.length }} 个单词待复习 <ArrowRight :size="14" />
         </RouterLink>
       </div>
+      <!-- v3.3: 今日学习进度（竞品借鉴百词斩/扇贝打卡进度） -->
+      <div class="today-progress">
+        <div class="today-progress-head">
+          <span>今日学习</span>
+          <strong>{{ streak.today_count || 0 }} / 20 题</strong>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" :style="{ width: Math.min(100, ((streak.today_count || 0) / 20 * 100)) + '%' }"></div></div>
+      </div>
       <StudyHeatmap :values="streak.heatmap || []" tooltip-unit="次学习" />
       <div v-if="streak.weekly" class="weekly-strip">
         <span v-for="d in streak.weekly.daily" :key="d.date" class="week-dot" :class="{ active: d.active, today: d.date === streak.weekly.daily[6].date }" :title="`${d.date} · ${d.count} 次学习`" />
