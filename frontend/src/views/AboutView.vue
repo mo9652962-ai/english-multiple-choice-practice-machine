@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { get } from '../api'
 import { CheckCircle2, ExternalLink, LoaderCircle, RotateCw, Sparkles } from 'lucide-vue-next'
 
 // v3.3: 我的墨题——版本号 + 开发时间 + 检查更新
@@ -12,6 +13,8 @@ const checking = ref(false)
 const result = ref('')
 const latest = ref('')
 const hasNew = ref(false)
+const downloadUrlRef = ref(UPDATE_URL)
+const mirrors = ref<string[]>([])
 
 // beta 版本比较：2.0.0-beta.16 > 2.0.0-beta.15；正式版 > beta
 function isNewer(latestTag: string, current: string): boolean {
@@ -35,14 +38,34 @@ async function checkUpdate() {
   latest.value = ''
   hasNew.value = false
   try {
-    // 统一直接查 GitHub releases（桌面/移动端——GitHub API 允许 CORS；不走后端代理避免环境差异）
-    const resp = await fetch(`https://api.github.com/repos/${UPDATE_REPO}/releases/latest`, {
-      headers: { Accept: 'application/vnd.github+json' },
-      signal: AbortSignal.timeout(10000),
-    })
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-    const tag = (await resp.json()).tag_name || ''
+    let tag = ''
+    let downloadUrl = UPDATE_URL
+    let mirrorUrls: string[] = []
+    const isNative = !!(window as any)?.Capacitor?.isNativePlatform?.()
+    if (isNative) {
+      // 移动端：直接查 GitHub releases
+      const resp = await fetch(`https://api.github.com/repos/${UPDATE_REPO}/releases/latest`, {
+        headers: { Accept: 'application/vnd.github+json' },
+        signal: AbortSignal.timeout(10000),
+      })
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+      const data = await resp.json()
+      tag = data.tag_name || ''
+      const apk = (data.assets || []).find((a: any) => a.name?.endsWith('.apk'))
+      if (apk?.browser_download_url) downloadUrl = apk.browser_download_url
+    } else {
+      // 桌面：后端代理（含镜像回退 + 资产列表）
+      const r: any = await get('/version')
+      tag = r?.latest_version || ''
+      mirrorUrls = r?.mirrors || []
+      if (r?.assets?.length) {
+        const exe = r.assets.find((a: any) => a.name?.endsWith('.exe'))
+        if (exe?.url) downloadUrl = exe.url
+      }
+    }
     latest.value = tag
+    downloadUrlRef.value = downloadUrl
+    mirrors.value = mirrorUrls
     if (isNewer(tag, APP_VERSION)) {
       hasNew.value = true
       result.value = `发现新版本 ${tag}`
@@ -96,9 +119,14 @@ async function checkUpdate() {
         </template>
         <template v-else>
           <Sparkles :size="16" />{{ result }}
-          <a class="about-download" :href="UPDATE_URL" target="_blank" rel="noopener">
+          <a class="about-download" :href="downloadUrlRef" target="_blank" rel="noopener">
             获取最新版 <ExternalLink :size="13" />
           </a>
+          <!-- v3.3: 镜像回退（国内可访问） -->
+          <div v-if="mirrors.length" class="about-mirrors">
+            <span>镜像下载：</span>
+            <a v-for="(m, i) in mirrors" :key="i" :href="m" target="_blank" rel="noopener">镜像{{ i + 1 }}</a>
+          </div>
         </template>
       </div>
     </div>
@@ -132,6 +160,8 @@ async function checkUpdate() {
 .about-result.ok { background: color-mix(in srgb, #486d5c 10%, transparent); color: #3c5c4d; }
 .about-result.new { background: color-mix(in srgb, #c97b4a 12%, transparent); color: #a85f33; }
 .about-download { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; font-weight: 700; color: #a85f33; text-decoration: underline; }
+.about-mirrors { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 12px; color: var(--muted); flex-wrap: wrap; justify-content: center; }
+.about-mirrors a { color: var(--primary); text-decoration: underline; }
 .spin { animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 </style>

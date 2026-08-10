@@ -140,6 +140,7 @@ _UPDATE_REPO = "mo9652962-ai/epm-releases"
 @app.get("/api/version")
 def get_version() -> dict:
     latest = None
+    assets: list = []
     try:
         import json as _json
         import urllib.request as _urllib
@@ -151,6 +152,15 @@ def get_version() -> dict:
         with _urllib.request.urlopen(req, timeout=8) as resp:
             data = _json.loads(resp.read().decode("utf-8"))
             latest = data.get("tag_name")
+            assets = [
+                {
+                    "name": a.get("name"),
+                    "url": a.get("browser_download_url"),
+                    "size": a.get("size"),
+                }
+                for a in data.get("assets", [])
+                if a.get("name") and a.get("name").endswith((".exe", ".apk", ".zip"))
+            ]
     except Exception:
         latest = None
     return {
@@ -158,6 +168,12 @@ def get_version() -> dict:
         "release_date": APP_RELEASE_DATE,
         "latest_version": latest,
         "update_url": f"https://github.com/{_UPDATE_REPO}/releases/latest",
+        # v3.3: 镜像回退（ghproxy——国内可访问）
+        "mirrors": [
+            f"https://ghproxy.net/https://github.com/{_UPDATE_REPO}/releases/latest",
+            f"https://gh-proxy.com/https://github.com/{_UPDATE_REPO}/releases/latest",
+        ],
+        "assets": assets,
     }
 
 
