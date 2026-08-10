@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, StickyNote, Sun, Target, Timer, Trophy } from 'lucide-vue-next'
+import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, Sparkles, StickyNote, Sun, Target, Timer, Trophy } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
@@ -182,6 +182,7 @@ onMounted(() => {
           <RouterLink to="/"><Home :size="20" /><span>首页</span></RouterLink>
           <RouterLink to="/library"><Library :size="20" /><span>题库</span></RouterLink>
           <RouterLink to="/notes"><BookMarked :size="20" /><span>笔记</span></RouterLink>
+          <RouterLink to="/assistant"><Sparkles :size="20" /><span>AI</span></RouterLink>
           <RouterLink to="/report"><BarChart3 :size="20" /><span>报告</span></RouterLink>
           <RouterLink to="/settings"><Settings :size="20" /><span>设置</span></RouterLink>
         </nav>
