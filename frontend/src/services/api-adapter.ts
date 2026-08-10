@@ -267,11 +267,21 @@ function offlineGet(path: string): any {
     const weekStart = new Date(today.getTime() - dow * 86400000)
     const weekActive = rows.filter((r: any) => new Date(r.d + 'T00:00:00Z') >= weekStart).length
     const todayCount = queryOne("SELECT COUNT(*) AS c FROM practice_sessions WHERE date(started_at) = ?", [todayKey])?.c || 0
+    // v3.3: 热力图真实数据（墨墨式统计图表——近 90 天）
+    const heatRows = queryAll("SELECT date(started_at) AS d, COUNT(*) AS c FROM practice_sessions WHERE started_at IS NOT NULL AND date(started_at) >= date('now', '-90 days') GROUP BY date(started_at)")
+    const heatmap = heatRows.map((r: any) => ({ date: r.d, count: r.c }))
+    // v3.3: 本周 7 天（前端周条）
+    const daily: any[] = []
+    for (let i = 6; i >= 0; i--) {
+      const dd = new Date(today.getTime() - i * 86400000)
+      const key = fmt(dd)
+      daily.push({ date: key, count: dateSet.has(key) ? 1 : 0, active: dateSet.has(key) })
+    }
     return {
       streak: { current, best, today_active: todayActive },
-      heatmap: [],
+      heatmap,
       monthly: { month: monthKey, total_activities: rows.length, active_days: monthActive, breakdown: [] },
-      weekly: { period: '', active_days: weekActive, total_activities: weekActive, streak_days: current, breakdown: [], daily: [] },
+      weekly: { period: '', active_days: weekActive, total_activities: weekActive, streak_days: current, breakdown: [], daily },
       today_count: todayCount,
     }
   }
