@@ -107,6 +107,43 @@ export async function apiDelete(path: string): Promise<any> {
 
 // ── 离线路由（sql.js） ──
 
+// v3.3: 构建离线会话详情（判分提交后前端刷新用——含 submissions）
+function buildOfflineSession(sid: number): any {
+  const session = queryOne("SELECT * FROM practice_sessions WHERE id = ?", [sid])
+  if (!session) return { id: sid, mode: 'paper', units: [], status: 'in_progress' }
+  const units = queryAll(
+    "SELECT u.*, p.year FROM units u JOIN papers p ON p.id = u.paper_id WHERE u.paper_id = ? ORDER BY u.sequence",
+    [session.paper_id]
+  )
+  const subs = queryAll("SELECT * FROM practice_unit_submissions WHERE session_id = ?", [sid])
+  const subByUnit: Record<number, any> = {}
+  for (const s of subs) subByUnit[s.unit_id] = s
+  const unitsOut = units.map((u: any) => {
+    const qs = queryAll("SELECT * FROM questions WHERE unit_id = ? ORDER BY sequence", [u.id])
+    const questions = qs.map((q: any) => ({
+      id: q.id, number: q.number, stem: q.stem, question_type: q.question_type,
+      score: q.score, passage: u.passage || '',
+      options: queryAll(
+        "SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence",
+        [q.id]
+      ),
+      answered: null,
+    }))
+    const sub = subByUnit[u.id]
+    return {
+      id: u.id, paper_id: u.paper_id, year: u.year, title: u.title,
+      unit_type: u.unit_type, subtype: u.subtype, passage: u.passage || '',
+      questions,
+      max_score: questions.reduce((s: number, q: any) => s + (q.score || 0), 0),
+      submission: sub ? { submitted: true, score: sub.score, max_score: sub.max_score } : undefined,
+    }
+  })
+  return {
+    id: sid, mode: session.mode, status: session.status,
+    paper_id: session.paper_id, units: unitsOut,
+  }
+}
+
 function offlineGet(path: string): any {
   // Dashboard
   if (path === '/startup' || path === '/overview' || path === '/dashboard') {
@@ -225,36 +262,53 @@ function offlineGet(path: string): any {
   // Practice session detail（v3.3: 离线返回本地题目——点击试卷后能做题）
   const sm = path.match(/^\/practice\/sessions\/(\d+)$/)
   if (sm) {
-    const sid = parseInt(sm[1])
-    const session = queryOne("SELECT * FROM practice_sessions WHERE id = ?", [sid])
-    if (!session) return { id: sid, mode: 'paper', units: [], status: 'in_progress' }
-    const units = queryAll(
-      "SELECT u.*, p.year FROM units u JOIN papers p ON p.id = u.paper_id WHERE u.paper_id = ? ORDER BY u.sequence",
-      [session.paper_id]
-    )
-    const unitsOut = units.map((u: any) => {
-      const qs = queryAll("SELECT * FROM questions WHERE unit_id = ? ORDER BY sequence", [u.id])
-      const questions = qs.map((q: any) => ({
-        id: q.id, number: q.number, stem: q.stem, question_type: q.question_type,
-        score: q.score, passage: u.passage || '',
-        options: queryAll(
-          "SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence",
-          [q.id]
-        ),
-        answered: null,
-      }))
-      return {
-        id: u.id, paper_id: u.paper_id, year: u.year, title: u.title,
-        unit_type: u.unit_type, subtype: u.subtype, passage: u.passage || '',
-        questions,
-        max_score: questions.reduce((s: number, q: any) => s + (q.score || 0), 0),
-      }
-    })
-    return {
-      id: sid, mode: session.mode, status: session.status,
-      paper_id: session.paper_id, units: unitsOut,
-    }
+    return buildOfflineSession(parseInt(sm[1]))
   }
+  // Exam session detail（考试——本地会话+题目）
+  const exm = path.match(/^\/exam\/sessions\/(\d+)$/)
+  if (exm) {
+    return buildOfflineSession(parseInt(exm[1]))
+  }
+  // Library units（听力/阅读入口——本地按题型查）
+  if (path.startsWith('/library/units')) {
+    const qs = new URLSearchParams(path.split('?')[1] || '')
+    const unitType = qs.get('unit_type') || ''
+    const limit = parseInt(qs.get('limit') || '20')
+    const sql = unitType
+      ? "SELECT u.*, p.year, p.title AS paper_title FROM units u JOIN papers p ON p.id = u.paper_id WHERE u.unit_type = ? AND p.deleted_at IS NULL ORDER BY p.year DESC, u.sequence LIMIT ?"
+      : "SELECT u.*, p.year, p.title AS paper_title FROM units u JOIN papers p ON p.id = u.paper_id WHERE p.deleted_at IS NULL ORDER BY p.year DESC, u.sequence LIMIT ?"
+    const params = unitType ? [unitType, limit] : [limit]
+    return queryAll(sql, params)
+  }
+  // Achievements
+  if (path === '/achievements') {
+    return { achievements: [], total: 0, unlocked_count: 0, progress: [] }
+  }
+  // Leaderboard
+  if (path === '/leaderboard') {
+    return { rankings: [], user: null, period: 'weekly' }
+  }
+  // AI recommendations
+  if (path === '/recommendations/ai') {
+    return { items: [] }
+  }
+  // Annotations（笔记页）
+  if (path === '/annotations') return { items: [] }
+  if (path.startsWith('/annotations/review')) return { items: [] }
+  if (path.startsWith('/annotations/stats')) return { total: 0, by_tag: {}, recent: [] }
+  // Imports（导入页）
+  if (path === '/imports' || path.startsWith('/imports?')) return { imports: [], total: 0 }
+  if (path.startsWith('/question-banks/imports')) return { imports: [] }
+  if (path === '/ai/selector-models') return { models: [], ai_configured: false }
+  // Trash
+  if (path === '/trash' || path.startsWith('/trash?')) return { papers: [], units: [], total: 0 }
+  // Wrong export/stats
+  if (path.startsWith('/wrong/export')) return { text: '', count: 0 }
+  if (path === '/wrong/stats') return { total: 0, by_type: [], frequent: [], recent: [] }
+  // Wrong AI status
+  if (path.startsWith('/ai/wrong-analysis-status')) return { status: 'none', pending: 0 }
+  // Version（桌面 About 用后端；移动端直连 GitHub——兜底）
+  if (path === '/version') return { version: '2.0.0-beta.15', release_date: '2026-08-10', latest_version: null }
 
   return {}
 }
@@ -289,6 +343,99 @@ function offlinePost(path: string, body?: any): any {
     const estimated = Math.round((known / total) * vocabTotal)
     return { estimated, total: vocabTotal }
   }
+  // Exam start（v3.3: 离线创建考试会话——详情走 /practice/sessions/{id}）
+  if (path === '/exam/start') {
+    const id = Date.now()
+    const unitIds = JSON.stringify(body?.unit_ids || [])
+    execute(
+      "INSERT INTO practice_sessions (id, mode, paper_id, unit_ids, status) VALUES (?, 'exam', ?, ?, 'in_progress')",
+      [id, body?.paper_id || null, unitIds]
+    )
+    return { session_id: id, id, status: 'in_progress' }
+  }
+  // Vocabulary add（长按选词加入单词本——本地插入）
+  if (path === '/vocabulary') {
+    const term = (body?.term || body?.word || '').trim().toLowerCase()
+    if (term) {
+      const exists = queryOne("SELECT id FROM vocabulary_entries WHERE term = ?", [term])
+      if (!exists) {
+        execute(
+          "INSERT INTO vocabulary_entries (term, normalized_term, encounter_count, study_status, created_at, updated_at) VALUES (?, ?, 1, 'new', datetime('now'), datetime('now'))",
+          [term, term]
+        )
+      } else {
+        execute("UPDATE vocabulary_entries SET encounter_count = encounter_count + 1 WHERE id = ?", [exists.id])
+      }
+    }
+    return { ok: true }
+  }
+  // Vocabulary translation runs（离线：记录 pending——不报错）
+  if (path === '/vocabulary/translation-runs') {
+    return { id: Date.now(), status: 'pending', items: [] }
+  }
+  // Feedback（离线：本地记录——不报错）
+  if (path === '/feedback') {
+    return { ok: true }
+  }
+  // Papers batch move（离线：空操作——不报错）
+  if (path === '/papers/batch-move') {
+    return { moved: 0 }
+  }
+  // AI wrong analysis（离线：无模型——不报错）
+  if (path === '/ai/analyze-wrong') {
+    return { ok: true, message: '离线模式无法调用 AI', analysis: null }
+  }
+  if (path === '/ai/similar-questions') {
+    return { questions: [] }
+  }
+  // Practice unit submit（v3.3: 本地判分——单篇提交即时得分）
+  const sum = path.match(/^\/practice\/sessions\/(\d+)\/units\/(\d+)\/submit$/)
+  if (sum) {
+    const sid = parseInt(sum[1])
+    const uid = parseInt(sum[2])
+    const questions = queryAll("SELECT id, answer, score FROM questions WHERE unit_id = ?", [uid])
+    const ansRows = queryAll("SELECT question_id, user_answer FROM practice_answers WHERE session_id = ?", [sid])
+    const answers: Record<number, string> = {}
+    for (const a of ansRows) answers[a.question_id] = a.user_answer
+    let correct = 0
+    let score = 0
+    let maxScore = 0
+    for (const q of questions) {
+      maxScore += q.score || 0
+      const ans = answers[q.id]
+      if (ans && String(ans).toUpperCase() === String(q.answer).toUpperCase()) {
+        correct++
+        score += q.score || 0
+      } else {
+        // 错题入库
+        const existing = queryOne("SELECT question_id FROM wrong_stats WHERE question_id = ?", [q.id])
+        if (existing) {
+          execute("UPDATE wrong_stats SET wrong_count = wrong_count + 1, attempt_count = attempt_count + 1, last_wrong_at = datetime('now') WHERE question_id = ?", [q.id])
+        } else {
+          execute("INSERT INTO wrong_stats (question_id, attempt_count, wrong_count, recent_results, last_wrong_at) VALUES (?, 1, 1, ?, datetime('now'))", [q.id, JSON.stringify([ans || null])])
+        }
+      }
+    }
+    execute(
+      "INSERT INTO practice_unit_submissions (session_id, unit_id, score, max_score, submitted_at) VALUES (?, ?, ?, ?, datetime('now'))",
+      [sid, uid, score, maxScore]
+    )
+    return buildOfflineSession(sid)
+  }
+  // Practice session submit（整卷提交）
+  const ssm = path.match(/^\/practice\/sessions\/(\d+)\/submit$/)
+  if (ssm) {
+    const sid = parseInt(ssm[1])
+    execute("UPDATE practice_sessions SET status = 'submitted', submitted_at = datetime('now') WHERE id = ?", [sid])
+    return buildOfflineSession(sid)
+  }
+  // Exam session submit（考试提交）
+  const esm = path.match(/^\/exam\/sessions\/(\d+)\/submit$/)
+  if (esm) {
+    const sid = parseInt(esm[1])
+    execute("UPDATE practice_sessions SET status = 'submitted', submitted_at = datetime('now') WHERE id = ?", [sid])
+    return buildOfflineSession(sid)
+  }
   return {}
 }
 
@@ -298,6 +445,32 @@ function offlinePut(path: string, body?: any): any {
   if (m) {
     return updateAiProfileOffline(parseInt(m[1]), body)
   }
+  // Practice answer save（v3.3: 本地记录答案——判分依据）
+  const am = path.match(/^\/practice\/sessions\/(\d+)\/answers\/(\d+)$/)
+  if (am) {
+    const sid = parseInt(am[1])
+    const qid = parseInt(am[2])
+    const q = queryOne("SELECT answer FROM questions WHERE id = ?", [qid])
+    const isCorrect = !!(q && body?.answer && String(body.answer).toUpperCase() === String(q.answer).toUpperCase())
+    execute(
+      "INSERT INTO practice_answers (session_id, question_id, user_answer, is_correct, answered_at) VALUES (?, ?, ?, ?, datetime('now'))",
+      [sid, qid, body?.answer || null, isCorrect ? 1 : 0]
+    )
+    return { ok: true, is_correct: isCorrect }
+  }
+  // Exam answer save（考试答题——本地记录）
+  const eam = path.match(/^\/exam\/sessions\/(\d+)\/answers\/(\d+)$/)
+  if (eam) {
+    const sid = parseInt(eam[1])
+    const qid = parseInt(eam[2])
+    execute(
+      "INSERT INTO exam_answers (exam_id, question_id, user_answer, answered_at) VALUES (?, ?, ?, datetime('now'))",
+      [sid, qid, body?.answer || null]
+    )
+    return { ok: true }
+  }
+  // Annotations（标注——本地记录）
+  if (path === '/units/') return {}
   return {}
 }
 
