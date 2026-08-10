@@ -162,6 +162,36 @@ function offlineGet(path: string): any {
     const rows = queryAll("SELECT * FROM vocabulary_entries ORDER BY encounter_count DESC LIMIT 20")
     return { items: rows }
   }
+  // Vocabulary main list（v3.3: 我的单词本主列表——本地查询含全部状态——修复真机空单词本）
+  if (path.startsWith('/vocabulary?') || path === '/vocabulary') {
+    const u = new URL(path, 'http://local')
+    const status = u.searchParams.get('status') || ''
+    const search = (u.searchParams.get('search') || '').toLowerCase()
+    const category = u.searchParams.get('category') || ''
+    let rows = queryAll("SELECT * FROM vocabulary_entries ORDER BY encounter_count DESC, id ASC")
+    if (status && status !== 'all') rows = rows.filter((r: any) => (r.study_status || 'new') === status)
+    if (category) rows = rows.filter((r: any) => (r.category || '') === category)
+    if (search) rows = rows.filter((r: any) =>
+      (r.term || '').toLowerCase().includes(search) ||
+      (r.common_meaning || '').toLowerCase().includes(search) ||
+      (r.contextual_meaning || '').toLowerCase().includes(search))
+    const counts: Record<string, number> = { all: rows.length }
+    for (const s of ['new', 'learning', 'familiar', 'mastered']) {
+      counts[s] = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE study_status = ?", [s])?.c || 0
+    }
+    return { items: rows, counts }
+  }
+  // Vocabulary detail（v3.3: 点词查看——本地详情）
+  const vd = path.match(/^\/vocabulary\/(\d+)$/)
+  if (vd) {
+    return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [parseInt(vd[1])]) || { ok: false }
+  }
+  // Vocabulary context（v3.3: 真题语境——本地简版）
+  const vc = path.match(/^\/vocabulary\/(\d+)\/context$/)
+  if (vc) {
+    const row = queryOne("SELECT contextual_meaning, lemma FROM vocabulary_entries WHERE id = ?", [parseInt(vc[1])])
+    return { items: row?.contextual_meaning ? [{ sentence: row.contextual_meaning }] : [] }
+  }
   // AI settings
   if (path === '/ai/settings') {
     return queryOne("SELECT * FROM ai_profiles WHERE is_default = 1") || {}
@@ -388,6 +418,20 @@ function offlinePost(path: string, body?: any): any {
   if (path === '/ai/similar-questions') {
     return { questions: [] }
   }
+  // Vocabulary review（v3.3: 复习评级——本地更新状态）
+  const vr = path.match(/^\/vocabulary\/(\d+)\/review$/)
+  if (vr) {
+    const vid = parseInt(vr[1])
+    const rating = body?.rating ?? 0
+    const status = rating >= 2 ? 'familiar' : (rating >= 1 ? 'learning' : 'new')
+    execute("UPDATE vocabulary_entries SET study_status = ?, last_reviewed_at = datetime('now'), next_review_at = datetime('now', '+1 day') WHERE id = ?", [status, vid])
+    return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [vid]) || { ok: true }
+  }
+  // Vocabulary retry（v3.3: 重新翻译——本地空返回）
+  const vrt = path.match(/^\/vocabulary\/(\d+)\/retry$/)
+  if (vrt) {
+    return { ok: true, queued: false }
+  }
   // Practice unit submit（v3.3: 本地判分——单篇提交即时得分）
   const sum = path.match(/^\/practice\/sessions\/(\d+)\/units\/(\d+)\/submit$/)
   if (sum) {
@@ -444,6 +488,21 @@ function offlinePut(path: string, body?: any): any {
   const m = path.match(/^\/ai\/profiles\/(\d+)$/)
   if (m) {
     return updateAiProfileOffline(parseInt(m[1]), body)
+  }
+  // Vocabulary update（v3.3: 标记重点/已掌握——本地保存）
+  const vu = path.match(/^\/vocabulary\/(\d+)$/)
+  if (vu) {
+    const vid = parseInt(vu[1])
+    const fields: string[] = []
+    const vals: any[] = []
+    for (const k of ['study_status', 'manually_frequent', 'notes', 'is_favorite', 'user_edited']) {
+      if (body && body[k] !== undefined) { fields.push(`${k} = ?`); vals.push(body[k]) }
+    }
+    if (fields.length) {
+      vals.push(vid)
+      execute(`UPDATE vocabulary_entries SET ${fields.join(', ')}, updated_at = datetime('now') WHERE id = ?`, vals)
+    }
+    return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [vid]) || { ok: true }
   }
   // Practice answer save（v3.3: 本地记录答案——判分依据）
   const am = path.match(/^\/practice\/sessions\/(\d+)\/answers\/(\d+)$/)
