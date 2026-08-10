@@ -12,8 +12,8 @@ export async function loadQuestionBankProfiles() {
   try {
     questionBankProfilesState.items = await get<any[]>('/question-bank-profiles')
     questionBankProfilesState.activeId = Number(
-      questionBankProfilesState.items.find(item => item.is_active)?.id || 0,
-    )
+        questionBankProfilesState.items.find((item: any) => item.is_default)?.id || 0,
+      )
     return questionBankProfilesState.items
   } finally {
     questionBankProfilesState.loading = false
@@ -21,8 +21,8 @@ export async function loadQuestionBankProfiles() {
 }
 
 export async function activateQuestionBankProfile(profileId: number) {
-  await post(`/question-bank-profiles/${profileId}/activate`)
   questionBankProfilesState.activeId = profileId
+  try { await post(`/question-bank-profiles/${profileId}/activate`) } catch { /* 离线忽略 */ }
   await loadQuestionBankProfiles()
 }
 
