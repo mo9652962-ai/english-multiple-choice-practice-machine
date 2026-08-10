@@ -189,7 +189,7 @@ function offlineGet(path: string): any {
       (r.term || '').toLowerCase().includes(search) ||
       (r.common_meaning || '').toLowerCase().includes(search) ||
       (r.contextual_meaning || '').toLowerCase().includes(search))
-    const counts: Record<string, number> = { all: rows.length, total: rows.length }
+    const counts: Record<string, number> = { all: rows.length, total: queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries")?.c || rows.length }
     for (const s of ['new', 'learning', 'familiar', 'mastered']) {
       counts[s] = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE study_status = ?", [s])?.c || 0
     }
