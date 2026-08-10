@@ -1473,6 +1473,20 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .cloze-entry-main strong { display: block; font-size: 14px; color: var(--text); }
 .cloze-entry-main small { font-size: 11px; color: var(--muted); }
 .cloze-card { width: min(560px, 92vw); max-height: 82vh; overflow: auto; }
+/* v3.3: 单词本功能弹层（短文填词/词汇量自测/快答挑战）——内容垂直居中铺满，无多余滚动条（千轮测试修正） */
+@media (max-width: 980px) {
+  .review-overlay { overflow: hidden; }
+  .cloze-card, .quick-panel {
+    min-height: min(480px, 66dvh);
+    max-height: calc(100dvh - 88px);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    overflow-y: auto;
+  }
+  .cloze-card > *, .quick-panel > * { max-width: 100%; }
+  .cloze-card .cloze-options, .quick-panel .cloze-options { width: 100%; }
+  /* v3.3: 空态垂直居中——不留顶部大片空白 */
+  .empty, .card.empty { min-height: 40dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+}
 .cloze-progress { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
 .cloze-sentence { font-size: 15px; line-height: 1.8; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
 .cloze-meaning { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
