@@ -1058,6 +1058,12 @@ h2, h3 { margin: 0; }
   .mobile-nav a svg { width: 22px; height: 22px; }
   .mobile-nav a.router-link-active { color: var(--primary); font-weight: 650; }
 }
+/* v3.3: 最小屏（320-360px）底部导航紧凑——6 项防挤压重叠（千轮测试发现） */
+@media (max-width: 360px) {
+  .mobile-nav { height: 56px; padding: 4px 2px calc(4px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))); }
+  .mobile-nav a { gap: 2px; font-size: 10px; padding: 3px 0; }
+  .mobile-nav a svg { width: 17px; height: 17px; }
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    水墨特色组件 v2.6 — 印章角标 · 墨滴进度 · 竖排书法 · 墨点 · Hero印章 · 淡山水
