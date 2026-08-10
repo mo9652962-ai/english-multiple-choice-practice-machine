@@ -9,6 +9,7 @@ const emit = defineEmits<{ close: [] }>()
 
 const idx = ref(0)
 const input = ref('')
+const mode = ref<'choice' | 'spell'>('choice') // v3.3: 默认选择题（听音选词）——可切拼写
 const result = ref<'correct' | 'wrong' | null>(null)
 const correctCount = ref(0)
 const wrongCount = ref(0)
@@ -23,14 +24,26 @@ const supported = typeof window !== 'undefined' && 'speechSynthesis' in window
 
 function speak(text: string) {
   if (!supported) return
-  window.speechSynthesis.cancel()
+  const synth = window.speechSynthesis
+  synth.cancel()
+  if (synth.paused) synth.resume() // v3.3: 部分 WebView 暂停状态——恢复
   const u = new SpeechSynthesisUtterance(text)
   u.lang = 'en-US'
   u.rate = 0.85
-  const voices = window.speechSynthesis.getVoices()
-  const en = voices.find(v => /en[-_]US/i.test(v.lang))
-  if (en) u.voice = en
-  window.speechSynthesis.speak(u)
+  // v3.3: 不强制指定 voice——部分 WebView 指定失败无声（默认引擎更稳）
+  synth.speak(u)
+  // voices 异步加载兜底
+  if (!synth.getVoices().length) {
+    const onVoices = () => {
+      synth.onvoiceschanged = null
+      synth.cancel()
+      const u2 = new SpeechSynthesisUtterance(text)
+      u2.lang = 'en-US'; u2.rate = 0.85
+      synth.speak(u2)
+    }
+    synth.onvoiceschanged = onVoices
+    setTimeout(() => { synth.onvoiceschanged = null }, 3000)
+  }
 }
 
 function playWord() {
@@ -53,6 +66,26 @@ function check() {
     result.value = 'wrong'
     wrongCount.value++
   }
+}
+
+// v3.3: 选择题模式——听音选词
+function choose(opt: string) {
+  if (result.value || !current.value) return
+  if (opt === current.value.term) {
+    result.value = 'correct'
+    correctCount.value++
+  } else {
+    result.value = 'wrong'
+    wrongCount.value++
+  }
+}
+
+function switchMode(m: 'choice' | 'spell') {
+  if (mode.value === m) return
+  mode.value = m
+  result.value = null
+  input.value = ''
+  nextTick(() => { if (m === 'spell') inputRef.value?.focus() })
 }
 
 function next() {
@@ -119,7 +152,11 @@ const accuracy = computed(() => {
           <h3>🎧 听写模式</h3>
           <span class="muted">{{ idx + 1 }} / {{ words.length }}</span>
         </div>
-        <button class="button ghost compact" @click="emit('close')"><X :size="16" />退出</button>
+        <div class="dictation-mode-switch">
+          <button class="button ghost compact" :class="{ active: mode === 'choice' }" @click="switchMode('choice')">选择题</button>
+          <button class="button ghost compact" :class="{ active: mode === 'spell' }" @click="switchMode('spell')">拼写</button>
+          <button class="button ghost compact" @click="emit('close')"><X :size="16" />退出</button>
+        </div>
       </header>
 
       <div class="dictation-body">
@@ -134,6 +171,7 @@ const accuracy = computed(() => {
           </div>
 
           <input
+            v-if="mode === 'spell'"
             ref="inputRef"
             v-model="input"
             class="dictation-input"
@@ -142,6 +180,19 @@ const accuracy = computed(() => {
             placeholder="输入你听到的单词…"
             @keyup="onKey"
           />
+
+          <!-- v3.3: 选择题模式——听音选词 -->
+          <div v-if="mode === 'choice'" class="dictation-options">
+            <button
+              v-for="opt in current.options || []"
+              :key="opt"
+              class="dictation-option"
+              :class="{ picked: result && opt === current.term, wrong: result && opt !== current.term && result === 'wrong' }"
+              :disabled="!!result"
+              @click="choose(opt)"
+            >{{ opt }}</button>
+            <p v-if="!current.options?.length" class="muted">选项生成中…</p>
+          </div>
 
           <div v-if="result" class="dictation-result" :class="result">
             <template v-if="result === 'correct'">

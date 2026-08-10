@@ -180,7 +180,17 @@ function startDictation() {
   const ready = items.value.filter((w: any) => w.translation_status === 'ready')
   const pool = ready.length ? ready : items.value
   const shuffled = [...pool].sort(() => Math.random() - 0.5)
-  dictationWords.value = shuffled.slice(0, 10)
+  // v3.3: 生成 4 选项（听音选词）——正确词 + 3 干扰词
+  const picked = shuffled.slice(0, 10)
+  dictationWords.value = picked.map((w: any, i: number) => {
+    const distractors = shuffled.filter((x: any) => x.id !== w.id).slice(i, i + 3).map((x: any) => x.term)
+    while (distractors.length < 3) {
+      const extra = items.value.find((x: any) => !distractors.includes(x.term) && x.term !== w.term)
+      if (!extra) break
+      distractors.push(extra.term)
+    }
+    return { ...w, options: [w.term, ...distractors].sort(() => Math.random() - 0.5) }
+  })
   dictationMode.value = true
 }
 

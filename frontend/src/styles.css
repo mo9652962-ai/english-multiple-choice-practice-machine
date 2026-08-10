@@ -205,6 +205,19 @@ nav a.router-link-active { color: var(--primary); background: linear-gradient(90
 .dictation-overlay { position: fixed; inset: 0; background: rgba(20, 28, 24, .5); backdrop-filter: blur(6px); display: grid; place-items: center; z-index: 60; padding: 20px; }
 .dictation-card { width: min(480px, 100%); background: var(--surface-solid); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.25); overflow: hidden; }
 .dictation-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+/* v3.3: 听写模式选择题——选项 + 模式切换 */
+.dictation-mode-switch { display: flex; gap: 6px; align-items: center; }
+.dictation-mode-switch .button.active { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
+.dictation-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 14px 0; }
+.dictation-option { padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-solid); color: var(--text); font-size: 15px; text-align: center; cursor: pointer; transition: all .2s; }
+.dictation-option:active { transform: scale(.97); }
+.dictation-option.picked { border-color: var(--success); background: color-mix(in srgb, var(--success) 12%, var(--surface-solid)); color: var(--success); font-weight: 600; }
+.dictation-option.wrong { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 12%, var(--surface-solid)); }
+@media (max-width: 980px) {
+  .dictation-header { flex-wrap: wrap; gap: 8px; }
+  .dictation-mode-switch { flex-wrap: wrap; }
+  .dictation-options { grid-template-columns: repeat(2, 1fr); }
+}
 .dictation-header h3 { margin: 0; font-size: 18px; }
 .dictation-body { padding: 30px 26px; text-align: center; }
 .dictation-progress { margin-bottom: 24px; }

@@ -37,35 +37,33 @@ function toggle() {
     .trim()
   if (!clean) return
 
-  window.speechSynthesis.cancel()   // 清除排队
+  const synth = window.speechSynthesis
+  synth.cancel()   // 清除排队
+  if (synth.paused) synth.resume()  // v3.3: 部分 WebView 暂停状态——恢复
   utterance = new SpeechSynthesisUtterance(clean)
   utterance.lang = 'en-US'
   utterance.rate = props.speed
-
-  // 优先选美音
-  const voices = window.speechSynthesis.getVoices()
-  const en = voices.find(v => /en[-_]US/i.test(v.lang) && /female|samantha|zira|google us/i.test(v.name))
-    || voices.find(v => /en[-_]US/i.test(v.lang))
-  if (en) utterance.voice = en
-
+  // v3.3: 不强制指定 voice——部分 Android WebView 指定失败导致无声（默认引擎更稳）
+  synth.speak(utterance)
+  speaking.value = true
   utterance.onend = () => { speaking.value = false }
   utterance.onerror = () => { speaking.value = false }
-
-  window.speechSynthesis.speak(utterance)
-  speaking.value = true
-}
-
-// 某些浏览器 voices 异步加载
-if (supported) {
-  window.speechSynthesis.onvoiceschanged = () => {
-    if (utterance) {
-      const voices = window.speechSynthesis.getVoices()
-      const en = voices.find(v => /en[-_]US/i.test(v.lang))
-      if (en) utterance.voice = en
+  // v3.3: voices 异步加载兜底——首次 getVoices 空时加载后再播
+  if (!window.speechSynthesis.getVoices().length) {
+    const onVoices = () => {
+      window.speechSynthesis.onvoiceschanged = null
+      synth.cancel()
+      const u2 = new SpeechSynthesisUtterance(clean)
+      u2.lang = 'en-US'
+      u2.rate = props.speed
+      synth.speak(u2)
     }
+    window.speechSynthesis.onvoiceschanged = onVoices
+    setTimeout(() => { window.speechSynthesis.onvoiceschanged = null }, 3000)
   }
 }
 
+// v3.3: voices 处理已内联到 toggle（不强制指定 voice——默认引擎更稳）
 onBeforeUnmount(stop)
 </script>
 
