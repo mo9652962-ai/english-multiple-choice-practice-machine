@@ -242,9 +242,10 @@ function offlineGet(path: string): any {
     const m = path.match(/count=(\d+)/)
     const count = m ? parseInt(m[1]) : 10
     const rows = queryAll("SELECT * FROM vocabulary_entries ORDER BY RANDOM() LIMIT ?", [count])
-    return { items: rows }
+    // v3.3: word 字段映射（前端显示单词——修复只显示音标）
+    return { items: rows.map((r: any) => ({ ...r, word: r.term })) }
   }
-  // Vocab cloze（v3.3: 完形填空——本地随机词；库无例句列——用释义句）
+  // Vocab cloze（v3.3: 完形填空——本地生成句子挖空+选项+答案——修复无短文/无选项/卡死）
   if (path.startsWith('/vocab/cloze')) {
     const m = path.match(/count=(\d+)/)
     const count = m ? parseInt(m[1]) : 5
@@ -253,7 +254,21 @@ function offlineGet(path: string): any {
       [count]
     )
     const fallback = rows.length ? rows : queryAll("SELECT * FROM vocabulary_entries ORDER BY RANDOM() LIMIT ?", [count])
-    return { items: fallback.map((r: any) => ({ ...r, cloze: r.contextual_meaning || r.common_meaning || r.term })) }
+    const items = fallback.map((r: any) => {
+      const term = r.term || ''
+      const sentence = r.contextual_meaning || r.common_meaning || term
+      let blank = sentence
+      if (term && sentence.includes(term)) {
+        blank = sentence.replace(term, '____')
+      } else if (term) {
+        blank = `${sentence} ____`
+      }
+      // 干扰词：同库随机 3 个（排除自身）
+      const distractors = queryAll("SELECT term FROM vocabulary_entries WHERE id != ? ORDER BY RANDOM() LIMIT 3", [r.id]).map((d: any) => d.term)
+      const options = [term, ...distractors].sort(() => Math.random() - 0.5)
+      return { ...r, blank_sentence: blank, options, answer: term, cloze: sentence }
+    })
+    return { items }
   }
   // Vocabulary plans（v3.3: 学习计划——空计划不报错）
   if (path.startsWith('/vocabulary/plans')) {
@@ -367,14 +382,16 @@ function offlinePost(path: string, body?: any): any {
     execute("INSERT INTO vocabulary_reviews (entry_id, rating) VALUES (?, ?)", [id, body?.rating])
     return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [id])
   }
-  // Vocab quiz estimate（v3.3: 估词量——按认识比例估算）
+  // Vocab quiz estimate（v3.3: 估词量——按认识比例估算；v3.3 修复：results 是数组）
   if (path === '/vocab/quiz/estimate') {
-    const results = body?.results || {}
-    const known = Object.values(results).filter((v: any) => v === 1).length
-    const total = Object.keys(results).length || 1
+    const results = Array.isArray(body?.results) ? body.results : []
+    const known = results.filter((r: any) => (r?.known ?? 0) >= 2).length
+    const total = results.length || 1
+    const ratio = known / total
     const vocabTotal = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries")?.c || 7751
-    const estimated = Math.round((known / total) * vocabTotal)
-    return { estimated, total: vocabTotal }
+    const estimated = Math.round(ratio * vocabTotal)
+    const level = estimated >= 12000 ? 'CET-6 / 考研' : estimated >= 6000 ? 'CET-4 优秀' : estimated >= 4000 ? 'CET-4' : estimated >= 2500 ? '高中' : '初中'
+    return { estimated, total: vocabTotal, answered: total, ratio, level }
   }
   // Exam start（v3.3: 离线创建考试会话——详情走 /practice/sessions/{id}）
   if (path === '/exam/start') {

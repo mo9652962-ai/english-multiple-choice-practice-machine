@@ -1477,7 +1477,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 @media (max-width: 980px) {
   .review-overlay { overflow: hidden; }
   .cloze-card, .quick-panel {
-    min-height: min(480px, 66dvh);
+    min-height: min(480px, 78dvh);
     max-height: calc(100dvh - 88px);
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     overflow-y: auto;
