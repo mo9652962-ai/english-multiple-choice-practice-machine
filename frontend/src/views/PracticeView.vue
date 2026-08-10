@@ -673,6 +673,28 @@ async function select(question: any, key: string) {
   finally { saving.value = null }
 }
 
+// v3.4: 选词填空——点文章空格弹出选项（避免文章/选项重叠）
+const blankPicker = ref<any>(null)
+
+function blankQuestion(number: number | undefined) {
+  return (activeUnit.value?.questions || []).find((q: any) => Number(q.number) === Number(number))
+}
+function blankAnswerText(number: number | undefined) {
+  const q = blankQuestion(number)
+  if (!q?.user_answer) return ''
+  const opt = (q.options || []).find((o: any) => o.stable_key === q.user_answer || o.key === q.user_answer)
+  return opt?.content || opt?.label || q.user_answer
+}
+function openBlankPicker(question: any) {
+  if (!question || activeUnitSubmitted.value) return
+  blankPicker.value = question
+}
+function pickBlank(option: any) {
+  if (!blankPicker.value) return
+  select(blankPicker.value, option.stable_key || option.key)
+  blankPicker.value = null
+}
+
 function syncOrdering() {
   if (!isOrdering.value || !activeUnit.value?.questions?.length) {
     orderingItems.value = []
@@ -1102,9 +1124,16 @@ async function copySelectedTerm() {
             :content-version="activeContentPackage.contentVersion"
           />
           <template v-else v-for="(segment, index) in annotatedSegments()" :key="`${segment.type}-${segment.start ?? index}`">
-            <span v-if="segment.type === 'blank'" class="passage-blank" :aria-label="`第 ${segment.number} 空`">
-              <span class="blank-number">{{ segment.number }}</span>
-            </span>
+            <button
+              v-if="segment.type === 'blank'"
+              class="passage-blank"
+              :class="{ filled: !!blankAnswerText(segment.number) }"
+              :aria-label="`第 ${segment.number} 空`"
+              @click="openBlankPicker(blankQuestion(segment.number ?? 0))"
+            >
+              <span v-if="blankAnswerText(segment.number)" class="blank-answer">{{ blankAnswerText(segment.number) }}</span>
+              <span v-else class="blank-number">{{ segment.number }}</span>
+            </button>
             <mark
               v-else-if="segment.type === 'mark'"
               class="ann"
@@ -1436,5 +1465,31 @@ async function copySelectedTerm() {
       :subtitle="celebrate.subtitle"
       @close="celebrate.show = false"
     />
+
+    <!-- v3.4: 选词填空——点击文章空格弹出选项（避免重叠） -->
+    <Teleport to="body">
+      <div v-if="blankPicker" class="blank-picker-overlay" @click.self="blankPicker = null">
+        <div class="blank-picker-sheet">
+          <div class="blank-picker-head">
+            <strong>第 {{ blankPicker.number }} 空 · 选择最佳选项</strong>
+            <button class="button ghost compact" type="button" @click="blankPicker = null">关闭</button>
+          </div>
+          <div class="blank-picker-options">
+            <button
+              v-for="option in blankPicker.options"
+              :key="option.stable_key || option.key"
+              class="blank-picker-option"
+              :class="{ picked: blankPicker.user_answer === (option.stable_key || option.key) }"
+              type="button"
+              @click="pickBlank(option)"
+            >
+              <span class="option-letter">{{ option.label }}</span>
+              <span class="option-content">{{ option.content }}</span>
+              <span v-if="blankPicker.user_answer === (option.stable_key || option.key)" class="option-check">✓</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
