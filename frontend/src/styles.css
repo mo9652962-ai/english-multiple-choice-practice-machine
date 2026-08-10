@@ -889,6 +889,12 @@ h2, h3 { margin: 0; }
   .vocabulary-layout { display: block; }
   .vocab-filters, .vocab-detail { position: static; margin-bottom: 14px; }
   .vocab-list { max-height: 470px; margin-bottom: 14px; }
+  /* v3.3: 单词本移动端填满+防遮挡+按钮紧凑（千轮测试发现） */
+  .page-vocab { padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px)); }
+  .vocab-list { max-height: calc(100dvh - 340px); min-height: 40dvh; margin-bottom: 6px; }
+  .page-vocab .page-head > :last-child { flex-wrap: wrap; gap: 8px; }
+  .page-vocab .page-head .button { font-size: 12px; padding: 8px 10px; white-space: nowrap; }
+  .page-vocab .vocab-plans-card { margin-bottom: 12px; }
   .review-card { width: calc(100vw - 28px); min-height: 440px; padding: 32px 20px; }
   .review-term { font-size: 38px; }
   .review-actions { flex-wrap: wrap; }
