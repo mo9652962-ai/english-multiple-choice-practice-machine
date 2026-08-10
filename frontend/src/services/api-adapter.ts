@@ -147,14 +147,28 @@ function buildOfflineSession(sid: number): any {
 function offlineGet(path: string): any {
   // Dashboard
   if (path === '/startup' || path === '/overview' || path === '/dashboard') {
+    const profile = queryOne("SELECT * FROM question_bank_profiles WHERE is_default = 1") || queryOne("SELECT * FROM question_bank_profiles WHERE id = 1")
+    const allPapers = queryAll("SELECT * FROM papers WHERE status = 'published' AND deleted_at IS NULL ORDER BY year DESC, id DESC")
+    // v3.3: 推荐随年级——按当前配置 profile_id 筛选（修复推荐固定预设）
+    const recPapers = profile ? allPapers.filter((p: any) => p.profile_id === profile.id) : allPapers
+    const counts: Record<string, number> = {}
+    for (const p of recPapers) {
+      const uts = queryAll("SELECT unit_type FROM units WHERE paper_id = ?", [p.id])
+      for (const u of uts) { const t = u.unit_type || 'other'; counts[t] = (counts[t] || 0) + 1 }
+    }
     return {
-      active_profile: queryOne("SELECT * FROM question_bank_profiles WHERE id = 1"),
-      paper_count: queryOne("SELECT COUNT(*) AS count FROM papers WHERE status = 'published' AND deleted_at IS NULL")?.count || 0,
+      active_profile: profile,
+      paper_count: allPapers.length,
       unit_count: 0,
       question_count: 0,
       wrong_count: queryOne("SELECT COUNT(*) AS count FROM wrong_stats WHERE wrong_count > 0")?.count || 0,
       frequent_count: 0,
       recent_sessions: [],
+      recommendations: {
+        papers: recPapers.slice(0, 8),
+        unit_type_counts: counts,
+        continue_paper: null,
+      },
     }
   }
   // Vocabulary home
@@ -220,9 +234,16 @@ function offlineGet(path: string): any {
     const total = queryOne("SELECT COUNT(*) AS count FROM vocabulary_entries")?.count || 0
     return { total, mastered: 0, learning: total, due_today: 0, mastery_rate: 0 }
   }
-  // Papers list
+  // Papers list（v3.3: 按年级 profile_id 过滤——修复切换年级题库不变）
   if (path === '/papers' || path.startsWith('/papers?')) {
-    return queryAll("SELECT * FROM papers WHERE status = 'published' AND deleted_at IS NULL ORDER BY year DESC")
+    const u = new URL(path, 'http://local')
+    const pid = u.searchParams.get('profile_id')
+    const rows = queryAll("SELECT * FROM papers WHERE status = 'published' AND deleted_at IS NULL ORDER BY year DESC")
+    return pid ? rows.filter((p: any) => String(p.profile_id) === pid) : rows
+  }
+  // Question bank profiles（v3.3: 年级/题库配置列表——切换器选项——修复无法切换）
+  if (path === '/question-bank-profiles' || path.startsWith('/question-bank-profiles?')) {
+    return queryAll("SELECT * FROM question_bank_profiles WHERE deleted_at IS NULL ORDER BY id")
   }
   // Wrong list
   if (path === '/wrong') {
@@ -437,6 +458,13 @@ function offlinePost(path: string, body?: any): any {
   }
   if (path === '/ai/similar-questions') {
     return { questions: [] }
+  }
+  // Activate question bank profile（v3.3: 切换年级/题库——本地更新默认）
+  const qa = path.match(/^\/question-bank-profiles\/(\d+)\/activate$/)
+  if (qa) {
+    execute("UPDATE question_bank_profiles SET is_default = 0")
+    execute("UPDATE question_bank_profiles SET is_default = 1 WHERE id = ?", [parseInt(qa[1])])
+    return { ok: true, id: parseInt(qa[1]) }
   }
   // Vocabulary review（v3.3: 复习评级——本地更新状态）
   const vr = path.match(/^\/vocabulary\/(\d+)\/review$/)
