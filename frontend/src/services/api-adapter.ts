@@ -206,6 +206,22 @@ function offlineGet(path: string): any {
     const row = queryOne("SELECT contextual_meaning, lemma FROM vocabulary_entries WHERE id = ?", [parseInt(vc[1])])
     return { items: row?.contextual_meaning ? [{ sentence: row.contextual_meaning }] : [] }
   }
+  // AI conversation detail（v3.3: 离线空会话——不崩）
+  if (path.startsWith('/ai/conversations/') && !path.endsWith('/messages')) {
+    return { id: 0, title: '', messages: [] }
+  }
+  // AI import detail（v3.3: 空）
+  if (path.startsWith('/ai/imports/')) {
+    return { id: 0, items: [] }
+  }
+  // AI question labels（v3.3: 空列表）
+  if (path.startsWith('/ai/question-labels')) {
+    return []
+  }
+  // Calendar（v3.3: 空 cells）
+  if (path.startsWith('/calendar')) {
+    return { cells: [], year: '', months: [] }
+  }
   // AI settings
   if (path === '/ai/settings') {
     return queryOne("SELECT * FROM ai_profiles WHERE is_default = 1") || {}

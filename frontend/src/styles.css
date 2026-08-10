@@ -895,6 +895,12 @@ h2, h3 { margin: 0; }
   .page-vocab .page-head > :last-child { flex-wrap: wrap; gap: 8px; }
   .page-vocab .page-head .button { font-size: 12px; padding: 8px 10px; white-space: nowrap; }
   .page-vocab .vocab-plans-card { margin-bottom: 12px; }
+  /* v3.3: 竞品级移动端美化——触控反馈/卡片统一（千轮研究：百词斩/扇贝按压反馈） */
+  .card, .cloze-entry { border-radius: 18px; }
+  .button:active, .cloze-option:active, .quick-panel button:active { transform: scale(.97); }
+  .vocab-list-item:active, .plan-word-item:active, .question-card:active, .ticker-item:active { transform: scale(.985); }
+  .mobile-nav a:active { transform: scale(.9); }
+  .card { box-shadow: 0 2px 10px rgba(46,42,35,.06); }
   .review-card { width: calc(100vw - 28px); min-height: 440px; padding: 32px 20px; }
   .review-term { font-size: 38px; }
   .review-actions { flex-wrap: wrap; }
