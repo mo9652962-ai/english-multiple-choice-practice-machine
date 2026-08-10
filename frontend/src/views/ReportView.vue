@@ -234,7 +234,7 @@ function radarPoints(): string {
       </div>
 
       <!-- 智能建议 -->
-      <div v-if="report.suggestions.length" class="card report-panel">
+      <div v-if="report.suggestions?.length" class="card report-panel">
         <h3>💡 智能建议</h3>
         <ul class="suggest-list">
           <li v-for="(s, i) in report.suggestions" :key="i">{{ s }}</li>

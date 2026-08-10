@@ -281,8 +281,11 @@ function offlineGet(path: string): any {
       trend: [],
       by_type: [],
       answered_trend: [],
-      week_compare: { this: { answered: 0 }, last: { answered: 0 }, answered_delta: 0 },
+      week_compare: { this: { answered: 0, rate: 0, vocab: 0 }, last: { answered: 0, rate: 0, vocab: 0 }, answered_delta: 0, rate_delta: 0, vocab_delta: 0 },
       total_questions: totalQ,
+      total_answered: 0,
+      total_rate: 0,
+      suggestions: [],
     }
   }
   // Report heatmap（v3.3: 空 cells——不白屏）
