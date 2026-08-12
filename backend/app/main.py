@@ -86,7 +86,7 @@ def _backup_database_on_startup() -> None:
 app = FastAPI(
     title="英语刷题机",
     version="0.1.0",
-    contact={"name": "往事随风k"},
+    contact={"name": "sora（mo9652962-ai）"},
     lifespan=lifespan,
 )
 # v9.20: 安全协议——API Key 鉴权 + 限流（云端部署/多人使用时启用 EPM_API_KEY）
