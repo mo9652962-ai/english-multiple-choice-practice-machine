@@ -455,7 +455,7 @@ corepack pnpm run build
 
 ## 作者与许可证
 
-作者与维护者：**往事随风k**
+作者与维护者：**sora（mo9652962-ai）**
 
 程序代码以 [GNU General Public License v3.0 only](LICENSE) 发布。版权与第三方依赖说明见 [AUTHORS.md](AUTHORS.md) 和 [NOTICE.md](NOTICE.md)。
 

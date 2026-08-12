@@ -1,6 +1,6 @@
 # 英语刷题机版权与许可说明
 
-Copyright (C) 2026 往事随风k
+Copyright (C) 2026 sora（mo9652962-ai）
 
 英语刷题机程序代码以 GNU General Public License v3.0 only
 （SPDX 标识：`GPL-3.0-only`）发布，完整条款见根目录 `LICENSE`。
