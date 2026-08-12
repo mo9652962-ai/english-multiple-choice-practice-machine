@@ -8,6 +8,8 @@ import PracticeView from './views/PracticeView.vue'
 import SettingsView from './views/SettingsView.vue'
 import WrongView from './views/WrongView.vue'
 import ReportView from './views/ReportView.vue'
+import VocabularyBankView from './views/VocabularyBankView.vue'
+import VocabularyWordView from './views/VocabularyWordView.vue'
 import AchievementsView from './views/AchievementsView.vue'
 import VocabularyView from './views/VocabularyView.vue'
 import TrashView from './views/TrashView.vue'
@@ -42,6 +44,8 @@ export default createRouter({
     { path: '/reading', component: ReadingView },
     { path: '/listening', component: ListeningView },
     { path: '/vocabulary', component: VocabularyView },
+    { path: '/vocab-bank', component: VocabularyBankView },
+    { path: '/vocab-word/:id', component: VocabularyWordView },
     { path: '/imports', component: ImportView },
     { path: '/assistant', component: AiAssistant },
     { path: '/settings', component: SettingsView },
