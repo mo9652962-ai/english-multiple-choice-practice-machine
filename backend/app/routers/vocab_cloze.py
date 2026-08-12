@@ -89,7 +89,17 @@ def _pick_distractors(conn: sqlite3.Connection, word: str, n: int = 3) -> list[s
         if len(distractors) >= n:
             break
     while len(distractors) < n:
-        distractors.append("_____")
+        # 兜底：再随机取任意词（避免 "_____" 废选项）
+        extra = conn.execute(
+            "SELECT term FROM vocabulary_entries WHERE term != ? AND term != '' ORDER BY RANDOM() LIMIT 20",
+            (word,),
+        ).fetchall()
+        for r in extra:
+            d = r[0]
+            if d.lower() != word.lower() and d not in distractors:
+                distractors.append(d)
+            if len(distractors) >= n:
+                break
     return distractors[:n]
 
 

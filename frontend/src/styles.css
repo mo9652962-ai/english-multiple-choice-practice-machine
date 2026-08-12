@@ -116,7 +116,7 @@ html:not(.dark)::view-transition-new(root) { animation: vt-fade-in .25s ease; }
 
 /* v9.19 UI: 页面入场动画 */
 @keyframes page-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-.page { animation: page-fade-up .42s var(--ease) both; }
+.page { animation: page-fade-up .42s var(--ease) backwards; }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes pop-in { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: scale(1); } }
 
@@ -476,13 +476,32 @@ h2, h3 { margin: 0; }
 .passage-blank:active { transform: scale(.96); }
 .passage-blank.filled { border-style: solid; background: color-mix(in srgb, var(--primary) 10%, transparent); }
 .blank-answer { font-size: .9em; line-height: 1.2; padding: .05em .2em; color: var(--ink); font-weight: 700; }
-/* v3.4: 选词填空底部选项弹层 */
-.blank-picker-overlay { position: fixed; inset: 0; z-index: 1100; background: rgba(20,20,20,.45); display: flex; align-items: flex-end; justify-content: center; }
-.blank-picker-sheet { width: 100%; max-width: 640px; background: var(--surface-solid, #fff); border-radius: 20px 20px 0 0; padding: 18px 18px calc(24px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -8px 40px rgba(0,0,0,.18); max-height: 62dvh; overflow: auto; animation: sheetUp .25s cubic-bezier(.2,.8,.3,1); }
+/* v3.4: 选词填空——内联答题区（sticky 底部固定，不遮挡文章；移动端在底部导航上方） */
+.blank-picker-dock {
+  position: sticky;
+  bottom: 14px;
+  z-index: 30;
+  margin: 18px 0 10px;
+  background: var(--surface-solid, #fff);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px 14px 14px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06);
+  max-height: 46dvh;
+  overflow: auto;
+  animation: sheetUp .22s cubic-bezier(.2,.8,.3,1);
+}
+.blank-picker-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; }
+.blank-picker-head strong { font-size: 14px; }
 @keyframes sheetUp { from { transform: translateY(40px); opacity: .4; } to { transform: translateY(0); opacity: 1; } }
-.blank-picker-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-.blank-picker-head strong { font-size: 15px; }
-.blank-picker-options { display: grid; gap: 8px; }
+.blank-picker-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+@media (max-width: 980px) {
+  .blank-picker-dock { bottom: calc(60px + env(safe-area-inset-bottom, 0px)); margin: 12px 0 6px; }
+  .blank-picker-options { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .blank-picker-options { grid-template-columns: 1fr; }
+}
 .blank-picker-option { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-solid, #fff); text-align: left; cursor: pointer; transition: background .15s ease, transform .12s var(--ease); }
 .blank-picker-option:active { transform: scale(.98); }
 .blank-picker-option.picked { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, transparent); }
@@ -907,13 +926,14 @@ h2, h3 { margin: 0; }
   .passage-pane, .question-pane { overflow: visible; }
   .passage-pane { border-right: 0; border-bottom: 1px solid var(--line); padding: 32px clamp(22px,5vw,48px); }
   .question-pane { padding: 28px clamp(22px,5vw,48px) 100px; }
-  /* v3.2: 移动端窄屏(<768px)上下分区——文章区/题目区独立滚动 + 可拖分隔条 */
+  /* v3.2: 移动端窄屏(<768px)上下分区——文章区/题目区独立滚动 + 可拖分隔条
+     v3.4: 默认文章区 58%（完形长文章完整可读，不被选项挤压）；拖拽范围 30-78% */
   @media (max-width: 767px) and (min-width: 400px) {
     .practice-layout {
       grid-template-columns: 1fr;
-      grid-template-rows: minmax(180px, var(--passage-ratio, 45%)) 10px minmax(0, 1fr);
+      grid-template-rows: minmax(240px, var(--passage-ratio, 58%)) 10px minmax(0, 1fr);
       height: calc(100vh - 68px - 56px);
-      --passage-ratio: 45%;
+      --passage-ratio: 58%;
     }
     .passage-pane { overflow: auto; border-right: 0; border-bottom: 0; padding: 20px clamp(18px,4vw,30px) 28px; min-height: 0; }
     .question-pane { overflow: auto; padding: 20px clamp(18px,4vw,30px) 90px; min-height: 0; background: color-mix(in srgb, var(--surface-solid) 46%, transparent); }
@@ -922,7 +942,7 @@ h2, h3 { margin: 0; }
   }
   @media (max-width: 399px) {
     .pane-divider { display: none; }
-    .practice-layout { grid-template-rows: minmax(180px, var(--passage-ratio, 45%)) 0 minmax(0, 1fr); height: calc(100vh - 68px - 56px); }
+    .practice-layout { grid-template-rows: minmax(220px, var(--passage-ratio, 58%)) 0 minmax(0, 1fr); height: calc(100vh - 68px - 56px); }
   }
   .practice-footer { width: 100%; }
   .result-overlay,.timer-overlay { left:0; right:auto; width:100vw; }
@@ -1564,13 +1584,14 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .cloze-entry-main strong { display: block; font-size: 14px; color: var(--text); }
 .cloze-entry-main small { font-size: 11px; color: var(--muted); }
 .cloze-card { width: min(560px, 92vw); max-height: 82vh; overflow: auto; }
-/* v3.3: 单词本功能弹层（短文填词/词汇量自测/快答挑战）——内容垂直居中铺满，无多余滚动条（千轮测试修正） */
+.cloze-card-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+/* v3.3: 单词本功能弹层（短文填词/词汇量自测/快答挑战）——高度贴合内容，不留上下大空白（用户反馈：弹层空间太大只有中心有内容） */
 @media (max-width: 980px) {
   .review-overlay { overflow: hidden; }
   .cloze-card, .quick-panel {
-    min-height: min(480px, 78dvh);
     max-height: calc(100dvh - 88px);
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    display: flex; flex-direction: column;
+    justify-content: center;
     overflow-y: auto;
   }
   .cloze-card > *, .quick-panel > * { max-width: 100%; }
@@ -1839,7 +1860,7 @@ h1 { font-size: clamp(24px, 1.4rem + 1.4vw, 36px); }
   50% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 0%, transparent); }
 }
 /* ⑤ 滚动显现 (scroll reveal) — 卡片轻入 */
-.page > .card, .page > section, .page > div { animation: card-enter .4s ease-out both; }
+.page > .card, .page > section, .page > div { animation: card-enter .4s ease-out backwards; }
 @keyframes card-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
   .button, .card, .app-sidebar nav a, .study-hero .hero-cta .button, .page > .card { animation: none !important; transition: none !important; }
@@ -3049,3 +3070,91 @@ body { min-height: 100dvh; }
 .sheet-fade-enter-active, .sheet-fade-leave-active { transition: opacity .16s ease; }
 .sheet-fade-enter-from, .sheet-fade-leave-to { opacity: 0; }
 @media (min-width: 768px) { .answer-sheet-btn { display: none; } }
+
+/* v3.3: 横屏横版设计——功能弹层左右分栏（题目左/选项右，试卷式排版）
+   放在文件末尾确保覆盖 quick-panel 等基础样式 */
+@media (orientation: landscape) and (max-width: 980px) {
+  .review-overlay, .quick-overlay { padding: 10px; }
+  .cloze-card, .quick-panel {
+    width: min(94vw, 880px);
+    min-height: 0;  /* grid min-height:auto 会压过 max-height（内容 480 > 336） */
+    max-height: calc(100vh - 76px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 8px 24px;
+    align-content: center;
+    overflow-y: auto;
+  }
+  .cloze-card-head, .cloze-card > .lead, .quick-head { grid-column: 1 / -1; }
+  /* 左列：题目/进度/单词 */
+  .cloze-card .cloze-progress, .cloze-card .cloze-sentence, .cloze-card .cloze-meaning,
+  .cloze-card .quiz-word, .cloze-card .quiz-phonetic, .cloze-card .quiz-meaning,
+  .quick-panel .quick-progress, .quick-panel .quick-meta, .quick-panel .quick-word { grid-column: 1; }
+  /* 右列：选项区垂直居中 */
+  .cloze-card .cloze-options, .quick-panel .quick-options {
+    grid-column: 2;
+    grid-row: 3 / span 5;
+    align-content: center;
+    display: grid;
+  }
+  .cloze-card .cloze-options { grid-template-columns: 1fr; }
+  .quick-panel .quick-options { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .quick-panel .quick-option { padding: 13px 16px; }
+  /* 底部操作按钮放右列（选项下方） */
+  .cloze-card > div:last-child, .quick-panel .quick-actions { grid-column: 2; }
+  /* 自测的「显示释义」按钮随左列 */
+  .cloze-card > button.ghost { grid-column: 1; justify-self: start; }
+  /* 结果态跨两列居中 */
+  .cloze-card .cloze-result, .quick-panel .quick-result { grid-column: 1 / -1; text-align: center; }
+  .cloze-card .cloze-result + div, .quick-panel .quick-result + .quick-actions { grid-column: 1 / -1; justify-content: center; }
+  .quiz-word { font-size: 40px; }
+  .quick-word { font-size: 34px; }
+}
+
+/* ═══════════════ v3.4: 手机横屏横版设计（横竖屏自动切换）═══════════════
+   参考：Desisle 考试平板 landscape-first（左导航/右内容）、扇贝「试卷字体+同屏」、
+   MDN orientation + Google 横屏强制双列。
+   练习页横屏 = 左文章/右题目（试卷式），竖屏保留原上下分区（58% 文章）。
+   放文件末尾确保覆盖移动端竖屏样式。 */
+@media (orientation: landscape) and (max-width: 1100px) {
+  /* ── 练习页：左文右题 ── */
+  .practice-layout {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    height: calc(100vh - 56px - 48px);
+    --passage-ratio: 58%;
+  }
+  .pane-divider { display: none; }
+  .passage-pane {
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    overflow: auto;
+    padding: 16px clamp(14px, 3vw, 26px) 28px;
+  }
+  .question-pane {
+    overflow: auto;
+    padding: 16px clamp(14px, 3vw, 26px) 76px;
+  }
+  /* 文章试卷感：字号略大、行距舒适 */
+  .passage { font-size: 16.5px; line-height: 2.0; }
+  .passage p { margin: 0 0 12px; }
+  .question-card { padding: 14px 0 18px; }
+  .question-title { margin-bottom: 12px; }
+  .option { margin: 7px 0; padding: 10px 12px; }
+
+  /* ── 顶栏紧凑 ── */
+  .practice-top { min-height: 56px; height: 56px; padding: 4px 14px; flex-wrap: nowrap; }
+  .practice-top .practice-title, .practice-top h2 { font-size: 15px; }
+
+  /* ── 底部提交栏：移到导航上方 ── */
+  .practice-footer { bottom: 48px; width: 50%; padding: 8px 16px; }
+
+  /* ── 底部导航紧凑（全局）── */
+  .mobile-nav { height: 48px; padding: 4px 6px calc(4px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))); }
+  .mobile-nav a { padding: 2px 0; }
+  .mobile-nav a span { font-size: 10px; }
+  .mobile-nav a svg { width: 19px; height: 19px; }
+
+  /* ── 答题卡按钮/顶栏右侧控件紧凑 ── */
+  .practice-top .button, .practice-top .answer-sheet-btn { padding: 5px 10px; font-size: 12px; }
+}
