@@ -1,11 +1,11 @@
 {
-  "_comment": "AI 中转站注水测试配置。从 GitHub 评测项目 zzsting88/relayAPI (2026-06) 挑选的 3 个口碑站。填入 base_url/api_key 后运行 check_watermark.py",
+  "_comment": "AI 中转站注水测试配置。从 GitHub 评测项目 zzsting88/relayAPI (2026-06) 挑选的 3 个口碑站 + 自测站。填入 base_url/api_key 后运行 check_watermark.py",
   "stations": [
     {
       "name": "PackyCode",
       "desc": "Claude Code 优化, 速度最快, 很多站的上游, 客服响应快 (评测推荐)",
       "base_url": "https://api.packyapi.com/v1",
-      "api_key": "sk-REPLACE_ME",
+      "api_key": "***",
       "target_model": "anthropic/claude-sonnet-4.5",
       "claimed_price": "Claude ~10元/M"
     },
@@ -13,7 +13,7 @@
       "name": "9527code",
       "desc": "稳定性口碑好, 假一赔十承诺, 客服响应快 (评测推荐)",
       "base_url": "https://api.9527code.com/v1",
-      "api_key": "sk-REPLACE_ME",
+      "api_key": "***",
       "target_model": "claude-sonnet-4.5",
       "claimed_price": "月套餐低倍率"
     },
@@ -21,7 +21,7 @@
       "name": "灵算",
       "desc": "GPT 系列便宜稳定, 响应稳 (评测推荐)",
       "base_url": "https://api.lingsuanai.com/v1",
-      "api_key": "sk-REPLACE_ME",
+      "api_key": "***",
       "target_model": "gpt-5.4",
       "claimed_price": "GPT-5.6 Sol ¥0.79/M"
     },
@@ -29,9 +29,17 @@
       "name": "基元律动",
       "desc": "国产模型聚合平台(北京基元律动科技), 实测deepseek-v4-flash真实, deepseek-v4-pro疑似底层claude-3.5-sonnet降级",
       "base_url": "https://tokenrhythm.studio/v1",
-      "api_key": "sk_tr_u8AdaHjalW6gcwNRPtnxUTd_xaSVurLJtNWpSVVXYm0",
+      "api_key": "sk_tr_...XYm0",
       "target_model": "deepseek-v4-pro",
       "claimed_price": "deepseek-v4-pro ¥12/24 per M"
+    },
+    {
+      "name": "keylinkclub",
+      "desc": "低价中转站(API聚合超市), 分组 tj_openai 0.06x/GPT Plus账号池, tj_claude 0.2x可能降智。跑 keylinkclub_check.py 做多分组增强测试",
+      "base_url": "https://keylinkclub.com/v1",
+      "api_key": "PASTE_YOUR_KEYLINKCLUB_KEY_HERE",
+      "target_model": "gpt-4o",
+      "claimed_price": "tj_openai 0.06x / tj_claude 0.2x"
     }
   ]
 }

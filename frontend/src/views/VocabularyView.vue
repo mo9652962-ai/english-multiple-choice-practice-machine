@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { BookOpen, Check, RefreshCw, Search, Settings, Star, Trash2, Headphones } from 'lucide-vue-next'
+import { BookOpen, Check, FileText, RefreshCw, Search, Settings, Star, Trash2, Headphones } from 'lucide-vue-next'
 import { computed, onMounted, reactive, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { del, get, post, put } from '../api'
 import TtsButton from '../components/TtsButton.vue'
 import DictationMode from '../components/DictationMode.vue'
 import { showToast } from '../services/toast'
 
 const route = useRoute()
+const router = useRouter()
 const showWordBank = ref(false)
 const items = ref<any[]>([])
 // v3.4: 首页推荐 20 词（随机——每次刷新变化）
@@ -322,6 +323,38 @@ function closeQuiz() {
   quizMode.value = false
 }
 
+// v3.4: AI 文章练词（借锐满分 6.0「AI 文章练词」——按弱词生成专属短文）
+const articleMode = ref(false)
+const articleData = ref<any>(null)
+const articleLoading = ref(false)
+const articleTopic = ref('随机')
+
+async function loadArticle() {
+  articleLoading.value = true
+  articleMode.value = true
+  articleData.value = null
+  try {
+    const r: any = await get(`/vocabulary/article?topic=${encodeURIComponent(articleTopic.value)}&word_count=8`)
+    articleData.value = r
+  } catch (e) {
+    articleData.value = { error: String(e) }
+  }
+  articleLoading.value = false
+}
+function closeArticle() { articleMode.value = false; articleData.value = null }
+
+// v3.4: 划词→生词本（借真题全刷「点击查词」+ 冲刺营「划词加生词本」）
+async function quickAddVocab(term: string) {
+  if (!term) return
+  const found = items.value.find((w: any) => w.term === term || w.lemma === term)
+  if (found) {
+    await put(`/vocabulary/${found.id}`, { study_status: found.study_status === 'mastered' ? 'mastered' : 'learning' })
+    showToast(`已加入生词复习：${term}`, 'success')
+  } else {
+    showToast('该词暂不在单词本，做题后自动收录', 'info')
+  }
+}
+
 // v2.64: 快答挑战 (百词斩 PK 式 — 限时 4 选 1)
 const quickMode = ref(false)
 const quickItems = ref<any[]>([])
@@ -457,6 +490,7 @@ onMounted(() => { load(); loadPlans() })
       <div style="display:flex;gap:8px;align-items:center">
         <button class="button ghost" @click="showDisplayDialog=true"><Settings :size="17" />显示设置</button>
         <button class="button ghost" @click="startDictation" :disabled="!items.length"><Headphones :size="17" />听写模式</button>
+        <button class="button ghost" @click="loadArticle"><FileText :size="17" />AI 文章练词</button>
         <button class="button" @click="startReview"><BookOpen :size="17" />开始今日复习</button>
       </div>
     </div>
@@ -538,42 +572,18 @@ onMounted(() => { load(); loadPlans() })
           <div class="recommended-head">
             <h3>📖 今日推荐</h3>
             <span class="recommended-sub">随机 20 词 · 快速浏览</span>
-            <button class="button ghost compact" @click="showWordBank = !showWordBank">
-              <Search :size="14" />{{ showWordBank ? '收起单词库' : '查看全部单词库' }}
+            <button class="button ghost compact" @click="router.push('/vocab-bank')">
+              <Search :size="14" />查看全部单词库
             </button>
           </div>
           <div class="recommended-grid">
-            <button v-for="w in recommended" :key="w.id" class="rec-word-card" @click="select(w.id)">
+            <button v-for="w in recommended" :key="w.id" class="rec-word-card" @click="router.push({ path: '/vocab-bank', query: { word: w.id } })">
               <span class="rec-word-term">{{ w.lemma || w.term }}</span>
               <span class="rec-word-mean">{{ (w.common_meaning || w.contextual_meaning || '').slice(0, 12) }}</span>
               <span class="rec-word-badge" :class="w.study_status || 'new'">{{ vocabStatusText(w.study_status) }}</span>
             </button>
           </div>
         </div>
-
-        <!-- 单词库（可折叠） -->
-        <template v-if="showWordBank">
-          <div class="vocab-categories">
-            <button class="vocab-cat-chip" :class="{ active: category === '' }" @click="category=''">全部</button>
-            <button class="vocab-cat-chip" :class="{ active: category === '高中' }" @click="category='高中'">🏫 高中</button>
-            <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">📘 四级</button>
-            <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">📙 六级</button>
-            <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">🎓 考研</button>
-          </div>
-          <div class="vocab-categories vocab-cat-types">
-            <button class="vocab-cat-chip" :class="{ active: catType === '' }" @click="catType=''">全部类型</button>
-            <button class="vocab-cat-chip" :class="{ active: catType === '·高频' }" @click="catType='·高频'">⭐ 高频词</button>
-            <button class="vocab-cat-chip" :class="{ active: catType === '·热点' }" @click="catType='·热点'">🔥 热点词</button>
-            <button class="vocab-cat-chip" :class="{ active: catType === '·' }" @click="catType='·'">📚 基础词</button>
-          </div>
-          <div class="vocab-stats">
-            <button class="card" @click="filter='all'"><span>全部单词</span><strong>{{ counts.total || 0 }}</strong></button>
-            <button class="card amber" @click="filter='frequent'"><span>🌟 高频生词</span><strong>{{ counts.frequent || 0 }}</strong></button>
-            <button class="card" @click="filter='review'"><span>今日待复习</span><strong>{{ counts.review || 0 }}</strong></button>
-            <button class="card" @click="filter='mastered'"><span>已掌握</span><strong>{{ counts.mastered || 0 }}</strong></button>
-            <button class="card" @click="filter='pending'"><span>等待翻译</span><strong>{{ counts.pending || 0 }}</strong></button>
-          </div>
-        </template>
 
     <section v-if="reviewMode" class="review-overlay">
       <div class="review-progress"><i :style="{ width: ((reviewIndex) / Math.max(reviewItems.length, 1)) * 100 + '%' }"></i></div>
@@ -608,103 +618,44 @@ onMounted(() => { load(); loadPlans() })
       <div v-else class="card empty">今天没有待复习的单词。</div>
     </section>
 
-    <div v-if="showWordBank && !reviewMode" class="vocabulary-layout">
-      <aside class="vocab-filters card">
-        <div class="search-field"><Search :size="16" /><input v-model="search" placeholder="搜索单词或释义"></div>
-        <button v-for="item in [
-          ['all','全部单词'],['review','今日复习'],['frequent','🌟 高频词'],
-          ['familiar','认识'],['learning','模糊'],['mastered','已掌握'],['pending','等待翻译']
-        ]" :key="item[0]" :class="{active:filter===item[0]}" @click="filter=item[0]">{{ item[1] }}</button>
-      </aside>
-
-      <section class="vocab-list card">
-        <button v-for="word in items" :key="word.id" class="vocab-list-item" :class="{active:selected?.id===word.id}" @click="select(word.id)">
-          <div class="vocab-list-head"><strong><span v-if="word.is_frequent">🌟 </span>{{ word.lemma || word.term }}</strong><small>遇到 {{ word.encounter_count }} 次</small></div>
-          <p v-if="word.translation_status==='ready'">{{ word.common_meaning || word.contextual_meaning }}</p>
-          <p v-else class="pending-text">{{ translationStatusText(word.translation_status) }}</p>
-          <div class="vocab-list-meta"><span>{{ word.part_of_speech }}</span><span class="study-badge" :class="word.study_status || 'new'">{{ vocabStatusText(word.study_status) }}</span></div>
-        </button>
-        <div v-if="!items.length" class="empty">这里还没有符合条件的单词。</div>
-      </section>
-
-      <section class="vocab-detail card" v-if="selected">
-        <div class="vocab-detail-head">
-          <div><span class="eyebrow">{{ selected.is_frequent ? '🌟 HIGH FREQUENCY' : 'VOCABULARY' }}</span><h2>{{ selected.lemma || selected.term }}<TtsButton :text="selected.term" :speed="0.8" /></h2><p>{{ selected.phonetic }} <span v-if="selected.part_of_speech">· {{ selected.part_of_speech }}</span></p></div>
-          <div class="vocab-tools"><button class="button ghost" @click="expandedAll=!expandedAll">{{ expandedAll ? '收起全部' : '展开全部' }}</button><button class="button ghost" @click="exportAnki">导出 Anki</button><button class="button ghost" @click="editing=!editing">编辑</button><button class="button ghost danger-text" @click="removeEntry"><Trash2 :size="17" /></button></div>
+    <!-- v3.4: AI 文章练词弹层（按弱词生成专属短文——锐满分 6.0 借鉴） -->
+    <div v-if="articleMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="AI 文章练词">
+      <div class="review-card cloze-card" style="max-height:86vh;overflow:auto">
+        <div class="cloze-card-head">
+          <h3 style="margin-bottom:8px">📄 AI 文章练词</h3>
+          <button class="button ghost compact" @click="closeArticle">✕ 关闭</button>
         </div>
-        <div v-if="selected.translation_status!=='ready'" class="vocab-pending-panel">
-          <RefreshCw :size="22" /><strong>{{ translationStatusText(selected.translation_status, true) }}</strong>
-          <p>单词和真题原句已经安全保存。</p>
-          <button v-if="selected.translation_status==='failed'" class="button secondary" @click="retryTranslation">重新翻译</button>
+        <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:12px">按你的弱词生成专属短文 · 在语境里巩固（扇贝词文串学 + 锐满分 AI 文章练词）</p>
+        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center">
+          <span style="font-size:12px;color:var(--muted)">主题：</span>
+          <button v-for="t in ['随机','科技','日常','考研']" :key="t" class="notes-tag small" :class="{active:articleTopic===t}" @click="articleTopic=t">{{ t }}</button>
+          <button class="button" :disabled="articleLoading" @click="loadArticle">{{ articleLoading ? '生成中…' : '重新生成' }}</button>
         </div>
-        <template v-else-if="!editing">
-          <div v-if="displayConfig.common_meaning || expandedAll" class="detail-section"><label>常用释义</label><strong>{{ selected.common_meaning || selected.contextual_meaning }}</strong></div>
-          <div v-if="selected.synonyms?.length && (displayConfig.synonyms || expandedAll)" class="detail-section discrimination-section">
-            <label>同义词辨析</label>
-            <ul class="discrimination-list">
-              <li v-for="item in selected.synonyms" :key="`s-${item.word}`"><strong>{{ item.word }}</strong><span>{{ item.note }}</span></li>
-            </ul>
+        <div v-if="articleLoading" class="muted" style="padding:20px;text-align:center">AI 正在写短文…</div>
+        <div v-else-if="articleData?.error" class="warning">{{ articleData.error }}</div>
+        <template v-else-if="articleData">
+          <div class="vocab-article-words" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+            <span v-for="w in articleData.words" :key="w.term" class="vocab-article-word"
+              style="background:var(--primary-soft);color:var(--primary);padding:3px 10px;border-radius:99px;font-size:12px;cursor:pointer"
+              @click="quickAddVocab(w.term)">
+              {{ w.term }}
+              <span v-if="w.meaning" style="color:var(--muted)">· {{ w.meaning }}</span>
+            </span>
           </div>
-          <div v-if="selected.antonyms?.length && (displayConfig.antonyms || expandedAll)" class="detail-section discrimination-section">
-            <label>反义词辨析</label>
-            <ul class="discrimination-list">
-              <li v-for="item in selected.antonyms" :key="`a-${item.word}`"><strong>{{ item.word }}</strong><span>{{ item.note }}</span></li>
-            </ul>
-          </div>
-          <div v-if="(selected.local_similar?.length || selected.similar_forms?.length) && (displayConfig.similar_forms || expandedAll)" class="detail-section discrimination-section">
-            <label>形近词辨析</label>
-            <ul class="discrimination-list">
-              <li v-for="item in selected.local_similar" :key="`l-${item.word}`"><strong>{{ item.word }}</strong><span>{{ item.note }}<em class="source-tag">本地</em></span></li>
-              <li v-for="item in selected.similar_forms" :key="`m-${item.word}`"><strong>{{ item.word }}</strong><span>{{ item.note }}</span></li>
-            </ul>
-          </div>
-          <div v-if="selected.memory_hint && (displayConfig.memory_hint || expandedAll)" class="detail-section memory-hint"><label>记忆提示</label><p>{{ selected.memory_hint }}</p></div>
-          <div v-if="selected.note" class="detail-section"><label>我的笔记</label><p>{{ selected.note }}</p></div>
-          <div v-if="(displayConfig.contextual || expandedAll) || (displayConfig.sentence || expandedAll)" class="detail-section"><label>真题中的遇见</label>
-            <div v-if="selected.contextual_meaning && (displayConfig.contextual || expandedAll)" class="occurrence-context-meaning">
-              <small>语境释义</small>
-              <strong>{{ selected.contextual_meaning }}</strong>
-            </div>
-            <template v-if="displayConfig.sentence || expandedAll">
-              <article v-for="occurrence in selected.occurrences" :key="occurrence.id" class="occurrence">
-                <p>{{ occurrence.context_sentence }}</p>
-                <small>{{ occurrence.year || '未知年份' }} · {{ occurrence.unit_title || occurrence.unit_type }}</small>
-              </article>
-            </template>
-          </div>
-          <!-- v2.23: 词文串学 — 全局真题语境扩展 -->
-          <div class="detail-section vocab-context-section">
-            <label>词文串学 · 真题语境</label>
-            <p class="vocab-context-hint">在真题文章中巩固记忆，背一个词，见真语境</p>
-            <div v-if="wordContextsLoading" class="muted">检索真题语境…</div>
-            <div v-else-if="wordContexts.length">
-              <article v-for="(c, i) in wordContexts" :key="i" class="occurrence">
-                <p v-html="highlightContext(c)"></p>
-                <small>{{ c.source }} <span v-if="c.style" class="style-badge" :class="`style-${c.style}`">{{ styleLabel(c.style) }}</span></small>
-              </article>
-            </div>
-            <div v-else class="muted">题库中暂无该词的真题例句。</div>
-          </div>
-          <div class="detail-actions">
-            <button class="button secondary" @click="put(`/vocabulary/${selected.id}`,{manually_frequent:!selected.manually_frequent}).then(()=>load())"><Star :size="16" />{{ selected.manually_frequent ? '取消重点' : '标记重点' }}</button>
-            <button class="button" @click="put(`/vocabulary/${selected.id}`,{study_status:selected.study_status==='mastered'?'learning':'mastered'}).then(()=>load())"><Check :size="16" />{{ selected.study_status === 'mastered' ? '恢复学习' : '标记已掌握' }}</button>
-          </div>
+          <div class="vocab-article-body" style="line-height:2;font-size:15px;background:var(--surface-2);border-radius:12px;padding:16px"
+               v-html="articleData.article_html || articleData.article || ''"></div>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px">点击上方单词可加入生词复习</p>
         </template>
-        <div v-else class="vocab-edit">
-          <label>音标<input v-model="editForm.phonetic"></label>
-          <label>词性<input v-model="editForm.part_of_speech"></label>
-          <label>当前语境释义<textarea rows="3" v-model="editForm.contextual_meaning"></textarea></label>
-          <label>常用释义<textarea rows="3" v-model="editForm.common_meaning"></textarea></label>
-          <label>我的笔记<textarea rows="4" v-model="editForm.note"></textarea></label>
-          <div><button class="button" @click="saveEdit">保存修改</button><button class="button ghost" @click="editing=false">取消</button></div>
-        </div>
-      </section>
-      <section v-else class="vocab-detail card empty">选择一个单词查看详细释义与真题语境。</section>
+      </div>
     </div>
+
     <!-- v2.32: 短文填词弹层 -->
     <div v-if="clozeMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="短文填词">
       <div class="review-card cloze-card">
-        <h3 style="margin-bottom:8px">✏️ 短文填词</h3>
+        <div class="cloze-card-head">
+          <h3 style="margin-bottom:8px">✏️ 短文填词</h3>
+          <button class="button ghost compact" @click="closeCloze">✕ 退出</button>
+        </div>
         <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:14px">真题句子挖空 · 选择最合适的单词（扇贝同款练习）</p>
         <template v-if="!clozeDone && clozeCurrent">
           <div class="cloze-progress">{{ clozeIndex + 1 }} / {{ clozeItems.length }} · 答对 {{ clozeScore }}</div>
@@ -738,14 +689,17 @@ onMounted(() => { load(); loadPlans() })
     <!-- v2.33: 词汇量自测弹层 -->
     <div v-if="quizMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="词汇量自测">
       <div class="review-card cloze-card">
-        <h3 style="margin-bottom:8px">📊 词汇量自测</h3>
+        <div class="cloze-card-head">
+          <h3 style="margin-bottom:8px">📊 词汇量自测</h3>
+          <button class="button ghost compact" @click="closeQuiz">✕ 退出</button>
+        </div>
         <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:14px">10 个词 · 认识 / 模糊 / 不认识，快速定位词汇等级</p>
         <template v-if="!quizResult && quizCurrent">
           <div class="cloze-progress">{{ quizIndex + 1 }} / {{ quizItems.length }}</div>
           <p class="quiz-word">{{ quizCurrent.word }}</p>
           <p class="quiz-phonetic">{{ quizCurrent.phonetic }}</p>
           <button v-if="!quizRevealed" class="button ghost" style="margin-bottom:16px" @click="toggleQuizReveal">显示释义</button>
-          <p v-else class="quiz-meaning" style="margin-bottom:16px">{{ quizCurrent.meaning }}</p>
+          <p v-else class="quiz-meaning" style="margin-bottom:16px" @click="toggleQuizReveal">{{ quizCurrent.meaning || '（暂无释义）' }}</p>
           <div class="cloze-options" style="grid-template-columns:repeat(3,1fr)">
             <button class="cloze-option" @click="rateQuiz(0)">😵 不认识</button>
             <button class="cloze-option" @click="rateQuiz(1)">🤔 模糊</button>

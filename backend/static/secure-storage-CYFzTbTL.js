@@ -1,0 +1,1 @@
+async function r(){var e;const t=window==null?void 0:window.Capacitor;if(!((e=t==null?void 0:t.Plugins)!=null&&e.SecureStorage))throw new Error("SecureStorage 插件不可用（非原生环境）");return t.Plugins.SecureStorage}const u={async encrypt(t){return(await(await r()).encrypt({value:t})).value},async decrypt(t){return(await(await r()).decrypt({value:t})).value}};export{u as SecureStorage};

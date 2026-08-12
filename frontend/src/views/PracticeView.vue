@@ -20,6 +20,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
 import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
+import { showToast } from '../services/toast'
 
 const route = useRoute()
 const router = useRouter()
@@ -92,7 +93,7 @@ function startDragDivider(e: PointerEvent) {
   const startRatio = parseFloat(container.style.getPropertyValue('--passage-ratio')) || 45
   const rect = container.getBoundingClientRect()
   const move = (ev: PointerEvent) => {
-    const ratio = Math.min(72, Math.max(25, ((ev.clientY - rect.top) / rect.height) * 100))
+    const ratio = Math.min(78, Math.max(30, ((ev.clientY - rect.top) / rect.height) * 100))
     container.style.setProperty('--passage-ratio', ratio.toFixed(1) + '%')
   }
   const up = () => {
@@ -354,6 +355,29 @@ async function addAnnotation(withNote: boolean) {
     annotationNote.value = { visible: false, ann: null, noteText: '' }
     window.getSelection()?.removeAllRanges()
   } catch (e) { console.error('标注失败', e) }
+}
+
+// v3.4: 划词→加生词本（借真题全刷「点击查词」+ 冲刺营「划词加生词本」）
+async function addSelectedToVocab() {
+  const b = annotationBubble.value
+  const term = (b.selText || '').trim()
+  if (!term) return
+  // 找词汇表中已收录的同形词（词形还原尝试：去 s/es/ed/ing 等）
+  let found: any = null
+  try {
+    const resp: any = await get(`/vocabulary?search=${encodeURIComponent(term)}&limit=5`)
+    const items = resp.items || []
+    found = items.find((w: any) => w.term === term || w.lemma === term) || items[0]
+  } catch { found = null }
+  if (found) {
+    await put(`/vocabulary/${found.id}`, { study_status: found.study_status === 'mastered' ? 'mastered' : 'learning' })
+    showToast(`已加入生词复习：${term}`, 'success')
+  } else {
+    // 未收录：提示做题后自动收集，或用 AI 标注管道补充
+    showToast(`「${term}」将随做题自动收录，可稍后在单词本查看`, 'info')
+  }
+  annotationBubble.value.visible = false
+  window.getSelection()?.removeAllRanges()
 }
 
 function openAnnotationNote(seg: any) {
@@ -655,6 +679,50 @@ function handleWindowKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape' && resultPanelVisible.value) {
     resultPanelVisible.value = false
   }
+  // v3.4: 桌面快捷键（Anki 习惯——双端受益）
+  const target = event.target as HTMLElement
+  if (target && /INPUT|TEXTAREA|SELECT/.test(target.tagName)) return
+  const unit = activeUnit.value
+  if (!unit || activeUnitSubmitted.value || session.value?.status === 'submitted') return
+  // 1-4 / A-D：选择当前题选项
+  const cur = unit.questions?.find((q: any) => q.id === highlightedQuestionId.value)
+  if (cur && !cur.user_answer) {
+    const keyMap: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, '1': 0, '2': 1, '3': 2, '4': 3 }
+    const idx = keyMap[event.key.toLowerCase()]
+    if (idx !== undefined && cur.options?.[idx]) {
+      select(cur, cur.options[idx].stable_key || cur.options[idx].key)
+      event.preventDefault()
+      return
+    }
+  }
+  // ←/→：上一题/下一题
+  if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+    nextHighlighted()
+    event.preventDefault()
+  } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+    prevHighlighted()
+    event.preventDefault()
+  } else if (event.key.toLowerCase() === 's') {
+    answerSheetOpen.value = !answerSheetOpen.value
+  }
+}
+
+// v3.4: 快捷键辅助——高亮题切换
+function nextHighlighted() {
+  const unit = activeUnit.value
+  if (!unit?.questions?.length) return
+  const ids = unit.questions.map((q: any) => q.id)
+  const cur = highlightedQuestionId.value
+  const idx = ids.indexOf(cur)
+  highlightedQuestionId.value = ids[Math.min(idx + 1, ids.length - 1)]
+}
+function prevHighlighted() {
+  const unit = activeUnit.value
+  if (!unit?.questions?.length) return
+  const ids = unit.questions.map((q: any) => q.id)
+  const cur = highlightedQuestionId.value
+  const idx = ids.indexOf(cur)
+  highlightedQuestionId.value = ids[Math.max(idx - 1, 0)]
 }
 
 async function select(question: any, key: string) {
@@ -692,7 +760,7 @@ function openBlankPicker(question: any) {
 function pickBlank(option: any) {
   if (!blankPicker.value) return
   select(blankPicker.value, option.stable_key || option.key)
-  blankPicker.value = null
+  // 选完保留答题区（显示 ✓），点文章其他空格自动切换当前空；点「收起」隐藏
 }
 
 function syncOrdering() {
@@ -1153,6 +1221,7 @@ async function copySelectedTerm() {
         >
           <button type="button" class="ann-bubble-btn" @click="addAnnotation(false)">🖍 高亮</button>
           <button type="button" class="ann-bubble-btn" @click="annotationNote.noteText=''; addAnnotation(true)">📝 高亮+笔记</button>
+          <button type="button" class="ann-bubble-btn" @click="addSelectedToVocab">📌 加生词本</button>
         </div>
         <!-- v3.0: 标注笔记弹窗 -->
         <div v-if="annotationNote.visible" class="ann-note-overlay" @click.self="annotationNote.visible = false">
@@ -1466,30 +1535,26 @@ async function copySelectedTerm() {
       @close="celebrate.show = false"
     />
 
-    <!-- v3.4: 选词填空——点击文章空格弹出选项（避免重叠） -->
-    <Teleport to="body">
-      <div v-if="blankPicker" class="blank-picker-overlay" @click.self="blankPicker = null">
-        <div class="blank-picker-sheet">
-          <div class="blank-picker-head">
-            <strong>第 {{ blankPicker.number }} 空 · 选择最佳选项</strong>
-            <button class="button ghost compact" type="button" @click="blankPicker = null">关闭</button>
-          </div>
-          <div class="blank-picker-options">
-            <button
-              v-for="option in blankPicker.options"
-              :key="option.stable_key || option.key"
-              class="blank-picker-option"
-              :class="{ picked: blankPicker.user_answer === (option.stable_key || option.key) }"
-              type="button"
-              @click="pickBlank(option)"
-            >
-              <span class="option-letter">{{ option.label }}</span>
-              <span class="option-content">{{ option.content }}</span>
-              <span v-if="blankPicker.user_answer === (option.stable_key || option.key)" class="option-check">✓</span>
-            </button>
-          </div>
-        </div>
+    <!-- v3.4: 选词填空——内联答题区（sticky 底部，不遮挡文章；点空格切换当前空） -->
+    <div v-if="blankPicker" class="blank-picker-dock" role="dialog" aria-label="选词填空答题区">
+      <div class="blank-picker-head">
+        <strong>第 {{ blankPicker.number }} 空 · 选择最佳选项</strong>
+        <button class="button ghost compact" type="button" @click="blankPicker = null">收起 ✕</button>
       </div>
-    </Teleport>
+      <div class="blank-picker-options">
+        <button
+          v-for="option in blankPicker.options"
+          :key="option.stable_key || option.key"
+          class="blank-picker-option"
+          :class="{ picked: blankPicker.user_answer === (option.stable_key || option.key) }"
+          type="button"
+          @click="pickBlank(option)"
+        >
+          <span class="option-letter">{{ option.label }}</span>
+          <span class="option-content">{{ option.content }}</span>
+          <span v-if="blankPicker.user_answer === (option.stable_key || option.key)" class="option-check">✓</span>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
