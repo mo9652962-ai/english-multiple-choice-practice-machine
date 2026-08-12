@@ -431,7 +431,7 @@ Code contributions follow GPL-3.0-only. Question-bank content does not automatic
 
 ## Author and license
 
-Author and maintainer: **往事随风k**
+Author and maintainer: **sora（mo9652962-ai）**
 
 The program code is released under the [GNU General Public License v3.0 only](LICENSE). See [AUTHORS.md](AUTHORS.md) and [NOTICE.md](NOTICE.md) for authorship and third-party notices.
 
