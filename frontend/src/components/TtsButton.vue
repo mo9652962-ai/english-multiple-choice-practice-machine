@@ -1,9 +1,10 @@
 <script setup lang="ts">
-// TTS 朗读按钮 — 浏览器原生 Web Speech API（零依赖）
-// 参考: Edge 沉浸式阅读器"朗读"、TTSReader
+// TTS 朗读按钮 — Capacitor 原生 TTS 优先（Android 稳定）/ Web Speech API 回退
+// 修复: Android WebView speechSynthesis 无声（2026-08-13）
 // 用法: <TtsButton :text="'Hello world'" :speed="0.9" />
 
 import { onBeforeUnmount, ref } from 'vue'
+import { speak, stop as stopTts } from '../services/tts'
 
 const props = withDefaults(defineProps<{
   text: string
@@ -15,55 +16,32 @@ const props = withDefaults(defineProps<{
 })
 
 const speaking = ref(false)
-const supported = typeof window !== 'undefined' && 'speechSynthesis' in window
-
-let utterance: SpeechSynthesisUtterance | null = null
+const supported = typeof window !== 'undefined' && ('speechSynthesis' in window || !!navigator)
 
 function stop() {
-  if (!supported) return
-  window.speechSynthesis.cancel()
+  stopTts()
   speaking.value = false
 }
 
-function toggle() {
-  if (!supported) return
+async function toggle() {
   if (speaking.value) {
     stop()
     return
   }
   const clean = props.text
-    .replace(/<[^>]+>/g, ' ')       // 去 HTML 标签
+    .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
   if (!clean) return
-
-  const synth = window.speechSynthesis
-  synth.cancel()   // 清除排队
-  if (synth.paused) synth.resume()  // v3.3: 部分 WebView 暂停状态——恢复
-  utterance = new SpeechSynthesisUtterance(clean)
-  utterance.lang = 'en-US'
-  utterance.rate = props.speed
-  // v3.3: 不强制指定 voice——部分 Android WebView 指定失败导致无声（默认引擎更稳）
-  synth.speak(utterance)
   speaking.value = true
-  utterance.onend = () => { speaking.value = false }
-  utterance.onerror = () => { speaking.value = false }
-  // v3.3: voices 异步加载兜底——首次 getVoices 空时加载后再播
-  if (!window.speechSynthesis.getVoices().length) {
-    const onVoices = () => {
-      window.speechSynthesis.onvoiceschanged = null
-      synth.cancel()
-      const u2 = new SpeechSynthesisUtterance(clean)
-      u2.lang = 'en-US'
-      u2.rate = props.speed
-      synth.speak(u2)
-    }
-    window.speechSynthesis.onvoiceschanged = onVoices
-    setTimeout(() => { window.speechSynthesis.onvoiceschanged = null }, 3000)
+  try {
+    await speak(clean, props.speed)
+  } finally {
+    // 原生 TTS 播放完成/失败都复位（Web 由 utterance.onend 处理，这里兜底）
+    setTimeout(() => { speaking.value = false }, 4000)
   }
 }
 
-// v3.3: voices 处理已内联到 toggle（不强制指定 voice——默认引擎更稳）
 onBeforeUnmount(stop)
 </script>
 
