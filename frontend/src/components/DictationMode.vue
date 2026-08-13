@@ -3,6 +3,7 @@
 // 参考: 不背单词"随身听" + 墨墨听写 (研究 2026-08)
 import { Check, RefreshCw, Volume2, X } from 'lucide-vue-next'
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { speak, stop as stopTts } from '../services/tts'
 
 const props = defineProps<{ words: any[] }>()
 const emit = defineEmits<{ close: [] }>()
@@ -20,38 +21,19 @@ const inputRef = ref<HTMLInputElement | null>(null)
 const words = computed(() => props.words || [])
 const current = computed(() => words.value[idx.value] || null)
 
-const supported = typeof window !== 'undefined' && 'speechSynthesis' in window
-
-function speak(text: string) {
-  if (!supported) return
-  const synth = window.speechSynthesis
-  synth.cancel()
-  if (synth.paused) synth.resume() // v3.3: 部分 WebView 暂停状态——恢复
-  const u = new SpeechSynthesisUtterance(text)
-  u.lang = 'en-US'
-  u.rate = 0.85
-  // v3.3: 不强制指定 voice——部分 WebView 指定失败无声（默认引擎更稳）
-  synth.speak(u)
-  // voices 异步加载兜底
-  if (!synth.getVoices().length) {
-    const onVoices = () => {
-      synth.onvoiceschanged = null
-      synth.cancel()
-      const u2 = new SpeechSynthesisUtterance(text)
-      u2.lang = 'en-US'; u2.rate = 0.85
-      synth.speak(u2)
-    }
-    synth.onvoiceschanged = onVoices
-    setTimeout(() => { synth.onvoiceschanged = null }, 3000)
-  }
+// v3.4: 统一 TTS 服务（原生 Capacitor 优先，修复 Android WebView 无声）
+async function playWordSound(text: string) {
+  try {
+    await speak(text, 0.85)
+  } catch { /* ignore */ }
 }
 
 function playWord() {
-  if (current.value) speak(current.value.term)
+  if (current.value) playWordSound(current.value.term)
 }
 
 function playSentence() {
-  if (current.value?.latest_sentence) speak(current.value.latest_sentence)
+  if (current.value?.latest_sentence) playWordSound(current.value.latest_sentence)
 }
 
 function check() {
@@ -136,7 +118,7 @@ onMounted(() => {
   })
 })
 
-onUnmounted(() => { window.speechSynthesis?.cancel() })
+onUnmounted(() => { stopTts() })
 
 const accuracy = computed(() => {
   const done = correctCount.value + wrongCount.value

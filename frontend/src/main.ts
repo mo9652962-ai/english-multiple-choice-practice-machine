@@ -35,6 +35,19 @@ async function bootstrap() {
     }
   }
   createApp(App).use(router).mount('#app')
+  // v3.4: 启动动画与 app 挂载联动——加载完才淡出（模仿移动端 splash 过渡）
+  // 修复: 本地加载极快时动画一闪而过——最小展示时长 1.8s（快加载也至少看动画）
+  // 双保险：index.html 内 2.9s 兜底 setTimeout 仍保留（挂载异常也能消失）
+  const splashStart = (window as any).__SPLASH_START__ || performance.now()
+  const elapsed = performance.now() - splashStart
+  const minShow = Math.max(0, 1800 - elapsed)
+  setTimeout(() => {
+    const s = document.getElementById('splash')
+    if (s && !s.classList.contains('hide')) {
+      s.classList.add('hide')
+      setTimeout(() => s.remove(), 550)
+    }
+  }, minShow)
 }
 
 bootstrap()
