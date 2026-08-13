@@ -231,15 +231,26 @@ function offlineGet(path: string): any {
     return queryOne("SELECT * FROM ai_profiles WHERE is_default = 1") || {}
   }
   // AI profiles list（离线 APK：key 密文不回显，仅返回 has_api_key）
+  // v3.4: models 从 ai_profile_models 表读（修复模型选择器空）
   if (path === '/ai/profiles' || path.startsWith('/ai/profiles?')) {
     const rows = queryAll("SELECT id, name, base_url, default_model, temperature, max_tokens, system_prompt, enabled, is_default, api_key_encrypted FROM ai_profiles ORDER BY id")
-    return rows.map((r: any) => ({
-      id: r.id, name: r.name, base_url: r.base_url, default_model: r.default_model,
-      temperature: r.temperature, max_tokens: r.max_tokens, system_prompt: r.system_prompt,
-      enabled: !!r.enabled, is_default: !!r.is_default,
-      has_api_key: !!(r.api_key_encrypted && r.api_key_encrypted.length > 8),
-      models: [],
-    }))
+    return rows.map((r: any) => {
+      const models = queryAll(
+        "SELECT model_id, display_name, owned_by, provider, is_visible, is_available FROM ai_profile_models WHERE profile_id = ? ORDER BY is_visible DESC, model_id",
+        [r.id]
+      )
+      return {
+        id: r.id, name: r.name, base_url: r.base_url, default_model: r.default_model,
+        temperature: r.temperature, max_tokens: r.max_tokens, system_prompt: r.system_prompt,
+        enabled: !!r.enabled, is_default: !!r.is_default,
+        has_api_key: !!(r.api_key_encrypted && r.api_key_encrypted.length > 8),
+        models: models.map((m: any) => ({
+          id: m.model_id, model: m.model_id, display_name: m.display_name || m.model_id,
+          owned_by: m.owned_by || '', provider: m.provider || '',
+          is_visible: !!m.is_visible, is_available: !!m.is_available,
+        })),
+      }
+    })
   }
   // Streak（v3.3: 本地真实统计——连续天数/本月/本周——竞品借鉴墨墨/百词斩打卡）
   if (path === '/dashboard/streak') {
@@ -484,6 +495,47 @@ function offlinePost(path: string, body?: any): any {
   if (path === '/ai/profiles') {
     return saveAiProfileOffline(body)
   }
+  // AI profile models sync（v3.4: 离线从本地 ai_profile_models 表读模型——修复 TypeError undefined.length）
+  const sm = path.match(/^\/ai\/profiles\/(\d+)\/models\/sync$/)
+  if (sm) {
+    const pid = parseInt(sm[1])
+    const rows = queryAll(
+      "SELECT model_id, display_name, owned_by, provider, is_visible, is_available FROM ai_profile_models WHERE profile_id = ? ORDER BY is_visible DESC, model_id",
+      [pid]
+    )
+    return {
+      models: rows.map((r: any) => ({
+        id: r.model_id,
+        model: r.model_id,
+        display_name: r.display_name || r.model_id,
+        owned_by: r.owned_by || '',
+        provider: r.provider || '',
+        is_visible: !!r.is_visible,
+        is_available: !!r.is_available,
+      })),
+    }
+  }
+  // AI profile test（离线：本地已有配置即视为可达提示）
+  const atm = path.match(/^\/ai\/profiles\/(\d+)\/test$/)
+  if (atm) {
+    return { message: '离线模式：模型同步来自本地配置，测试连接请在桌面端进行' }
+  }
+  // AI profile models visibility（v3.4: 离线模型显示开关）
+  const mvm = path.match(/^\/ai\/profiles\/(\d+)\/models\/visibility$/)
+  if (mvm) {
+    const pid = parseInt(mvm[1])
+    execute("UPDATE ai_profile_models SET is_visible = ? WHERE profile_id = ?", [body?.is_visible ? 1 : 0, pid])
+    return { ok: true }
+  }
+  const mvm2 = path.match(/^\/ai\/profiles\/(\d+)\/models$/)
+  if (mvm2) {
+    const pid = parseInt(mvm2[1])
+    execute(
+      "UPDATE ai_profile_models SET is_visible = ? WHERE profile_id = ? AND model_id = ?",
+      [body?.is_visible ? 1 : 0, pid, body?.model_id || '']
+    )
+    return { ok: true }
+  }
   // Vocabulary review
   if (path.match(/\/vocabulary\/\d+\/review/)) {
     const id = parseInt(path.match(/\/vocabulary\/(\d+)\/review/)![1])
@@ -510,6 +562,65 @@ function offlinePost(path: string, body?: any): any {
       [id, body?.paper_id || null, unitIds]
     )
     return { session_id: id, id, status: 'in_progress' }
+  }
+  // AI 文章练词（v3.4: 离线模板生成——从本地弱词拼语境短文，不依赖 AI API）
+  if (path.startsWith('/vocabulary/article')) {
+    const topic = new URL(path, 'http://localhost').searchParams.get('topic') || '随机'
+    const words = queryAll(
+      "SELECT id, term, common_meaning, part_of_speech FROM vocabulary_entries WHERE study_status = 'learning' AND common_meaning IS NOT NULL AND common_meaning != '' ORDER BY RANDOM() LIMIT 8"
+    )
+    if (!words.length) {
+      words.push(...queryAll("SELECT id, term, common_meaning, part_of_speech FROM vocabulary_entries ORDER BY RANDOM() LIMIT 8"))
+    }
+    const TEMPLATES: Record<string, string[]> = {
+      '科技': [
+        'In modern {w}, engineers often face the challenge of balancing cost and performance.',
+        'The team decided to {w} the new approach after careful analysis.',
+        'A good system should {w} unexpected changes without breaking.',
+        'Researchers continue to {w} the gap between theory and practice.',
+        'Every project needs a clear strategy to {w} its goals.',
+        'The update aims to {w} the user experience significantly.',
+        'We must {w} the risks before making a final decision.',
+        'The platform will {w} a wider audience next year.',
+      ],
+      '日常': [
+        'Every morning, I try to {w} my daily tasks in order.',
+        'My mother always tells me to {w} a healthy lifestyle.',
+        'It is important to {w} time for rest and relaxation.',
+        'We should {w} our neighbors with kindness and respect.',
+        'She decided to {w} the habit of reading before bed.',
+        'The kids love to {w} new games on the weekend.',
+        'A warm smile can {w} a difficult day.',
+        'He learned to {w} small joys in everyday life.',
+      ],
+      '考研': [
+        'In academic writing, one must {w} evidence to support each claim.',
+        'The study aims to {w} the relationship between variables.',
+        'Scholars often {w} multiple perspectives before drawing conclusions.',
+        'A rigorous experiment should {w} all potential biases.',
+        'The theory helps us {w} complex phenomena in detail.',
+        'Researchers must {w} their findings against existing literature.',
+        'Statistical methods allow us to {w} significant patterns.',
+        'The paper will {w} the implications of these results.',
+      ],
+    }
+    const tpls = TEMPLATES[topic] || TEMPLATES['日常']
+    const articleParts: string[] = []
+    const htmlParts: string[] = []
+    const outWords = words.map((w: any, i: number) => {
+      const tpl = tpls[i % tpls.length]
+      const pos = w.part_of_speech || 'word'
+      articleParts.push(tpl.replace('{w}', w.term))
+      htmlParts.push(`<p>${tpl.replace('{w}', `<strong style="color:#2d8a3a">${w.term}</strong>`)} <span style="color:#888;font-size:12px">(${w.common_meaning})</span></p>`)
+      return { id: w.id, term: w.term, meaning: w.common_meaning, part_of_speech: pos }
+    })
+    return {
+      words: outWords,
+      article: articleParts.join(' '),
+      article_html: htmlParts.join(''),
+      topic,
+      offline: true,
+    }
   }
   // Vocabulary add（长按选词加入单词本——本地插入）
   if (path === '/vocabulary') {
@@ -640,6 +751,7 @@ function offlinePut(path: string, body?: any): any {
     return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [vid]) || { ok: true }
   }
   // Practice answer save（v3.3: 本地记录答案——判分依据）
+  // v3.4: INSERT → UPSERT——修复重复提交 UNIQUE 冲突（2026-08-13）
   const am = path.match(/^\/practice\/sessions\/(\d+)\/answers\/(\d+)$/)
   if (am) {
     const sid = parseInt(am[1])
@@ -647,18 +759,25 @@ function offlinePut(path: string, body?: any): any {
     const q = queryOne("SELECT answer FROM questions WHERE id = ?", [qid])
     const isCorrect = !!(q && body?.answer && String(body.answer).toUpperCase() === String(q.answer).toUpperCase())
     execute(
-      "INSERT INTO practice_answers (session_id, question_id, user_answer, is_correct, answered_at) VALUES (?, ?, ?, ?, datetime('now'))",
+      `INSERT INTO practice_answers (session_id, question_id, user_answer, is_correct, answered_at)
+       VALUES (?, ?, ?, ?, datetime('now'))
+       ON CONFLICT(session_id, question_id)
+       DO UPDATE SET user_answer = excluded.user_answer, is_correct = excluded.is_correct, answered_at = excluded.answered_at`,
       [sid, qid, body?.answer ?? '', isCorrect ? 1 : 0]
     )
     return { ok: true, is_correct: isCorrect }
   }
   // Exam answer save（考试答题——本地记录）
+  // v3.4: INSERT → UPSERT——修复重复提交 UNIQUE 冲突
   const eam = path.match(/^\/exam\/sessions\/(\d+)\/answers\/(\d+)$/)
   if (eam) {
     const sid = parseInt(eam[1])
     const qid = parseInt(eam[2])
     execute(
-      "INSERT INTO exam_answers (exam_id, question_id, user_answer, answered_at) VALUES (?, ?, ?, datetime('now'))",
+      `INSERT INTO exam_answers (exam_id, question_id, user_answer, answered_at)
+       VALUES (?, ?, ?, datetime('now'))
+       ON CONFLICT(exam_id, question_id)
+       DO UPDATE SET user_answer = excluded.user_answer, answered_at = excluded.answered_at`,
       [sid, qid, body?.answer ?? '']
     )
     return { ok: true }

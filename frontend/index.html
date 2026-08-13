@@ -40,7 +40,12 @@
         font-family: "Kaiti SC", "STKaiti", "楷体", serif;
         font-size: 30px; font-weight: 700; letter-spacing: 3px; text-indent: 3px;
         box-shadow: 0 10px 28px rgba(164,52,42,.35), inset 0 0 0 2px rgba(248,245,239,.25);
-        animation: sealIn .6s cubic-bezier(.2,.8,.3,1.2) .15s both;
+        animation: sealIn .6s cubic-bezier(.2,.8,.3,1.2) .15s both, sealPulse 2.2s ease-in-out .8s infinite;
+      }
+      /* v3.4: 印章呼吸（模仿移动端 App logo 脉冲） */
+      @keyframes sealPulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 10px 28px rgba(164,52,42,.35), inset 0 0 0 2px rgba(248,245,239,.25); }
+        50% { transform: scale(1.05); box-shadow: 0 14px 34px rgba(164,52,42,.42), inset 0 0 0 2px rgba(248,245,239,.3); }
       }
       /* 品牌字——上浮淡入 */
       .splash-title {
@@ -87,8 +92,9 @@
       <div class="splash-ink ink-3"></div>
       <div class="splash-content">
         <div class="splash-seal">墨题</div>
-        <h1 class="splash-title">墨题英语刷题机</h1>
-        <div class="splash-subtitle">真题 · 单词 · 刷题</div>
+        <!-- v3.4: 启动动画只展示品牌"墨题" -->
+        <h1 class="splash-title">墨 题</h1>
+        <div class="splash-subtitle">真题 · 单词 · 精进</div>
         <p class="splash-caption">于墨香中提笔，在真题里精进</p>
         <div class="splash-progress"><i></i></div>
       </div>
@@ -96,6 +102,8 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
     <script>
+      // v3.4: 记录页面加载时间（供 main.ts 计算最小动画展示时长）
+      window.__SPLASH_START__ = performance.now()
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {})
       }
