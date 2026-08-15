@@ -661,6 +661,44 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
     _ensure_column(connection, "papers", "exam_month", "INTEGER NOT NULL DEFAULT 0")
     _ensure_column(connection, "papers", "set_number", "INTEGER NOT NULL DEFAULT 1")
     _ensure_column(connection, "papers", "session_group_key", "TEXT NOT NULL DEFAULT ''")
+    _ensure_column(connection, "ai_profiles", "task_tags", "TEXT NOT NULL DEFAULT '[]'")
+    _ensure_column(connection, "ai_profiles", "priority", "INTEGER NOT NULL DEFAULT 100")
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS ai_usage (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            task TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            model TEXT NOT NULL,
+            prompt_tokens INTEGER NOT NULL DEFAULT 0,
+            completion_tokens INTEGER NOT NULL DEFAULT 0,
+            latency_ms INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL DEFAULT 'ok',
+            error TEXT NOT NULL DEFAULT '',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+    connection.execute(
+        "CREATE INDEX IF NOT EXISTS idx_ai_usage_task_time ON ai_usage(task, created_at)"
+    )
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS diagnostic_reports (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            scope_key TEXT NOT NULL DEFAULT '',
+            question_ids TEXT NOT NULL DEFAULT '[]',
+            input_snapshot TEXT NOT NULL DEFAULT '{}',
+            question_count INTEGER NOT NULL DEFAULT 0,
+            aggregate_data TEXT NOT NULL DEFAULT '{}',
+            level_data TEXT NOT NULL DEFAULT '{}',
+            recommendations TEXT NOT NULL DEFAULT '[]',
+            trend_data TEXT NOT NULL DEFAULT '{}',
+            report TEXT NOT NULL DEFAULT '',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
     connection.execute(
         """
         UPDATE vocabulary_entries

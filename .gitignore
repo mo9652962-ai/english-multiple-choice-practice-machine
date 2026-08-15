@@ -52,3 +52,6 @@ Thumbs.db
 backend/dist/
 backend/build/
 electron/*.zip
+
+# HBuilderX 旧路径（已弃用 2026-08-15，移动端走 Capacitor）
+mobile-app/

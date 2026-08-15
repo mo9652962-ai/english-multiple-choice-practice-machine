@@ -425,6 +425,9 @@ function analysisLabel(unitIds: number[]): string {
         <p class="lead">按年份与篇目整理，可直接对指定范围进行分析或重做。</p>
       </div>
       <div style="display:flex;gap:8px">
+        <button class="button primary" type="button" @click="router.push('/diagnostic')">
+          🧠 学习诊断
+        </button>
         <button class="button ghost" type="button" :disabled="exporting" @click="exportWrong">
           {{ exporting ? '导出中…' : '导出错题' }}
         </button>

@@ -5,7 +5,8 @@ import sqlite3
 from collections import Counter, defaultdict
 from typing import Any
 
-from .ai_client import chat_completion, parse_json_response
+from .ai_client import parse_json_response
+from .ai_router import chat_with_routing
 
 
 CAUSE_LABELS = {
@@ -216,8 +217,9 @@ def diagnose_wrong_answers(
     last_error: Exception | None = None
     for limit in (6000, 7800):
         try:
-            raw = chat_completion(
+            raw = chat_with_routing(
                 connection,
+                "wrong_diagnosis",
                 messages,
                 response_format={"type": "json_object"},
                 max_tokens=limit,
@@ -333,8 +335,9 @@ def write_anonymous_report(
     last_error: Exception | None = None
     for limit in attempts:
         try:
-            return chat_completion(
+            return chat_with_routing(
                 connection,
+                "wrong_diagnosis",
                 [
                     {"role": "system", "content": prompt},
                     {
