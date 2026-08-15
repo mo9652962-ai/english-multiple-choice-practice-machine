@@ -34,6 +34,7 @@ from .routers import (
     vocab_quiz,
     leaderboard,
     calendar,
+    diagnostic,
     library,
     wrong,
 )
@@ -119,6 +120,7 @@ app.include_router(vocab_cloze.router, prefix="")
 app.include_router(vocab_quiz.router, prefix="")
 app.include_router(leaderboard.router, prefix="")
 app.include_router(calendar.router, prefix="")
+app.include_router(diagnostic.router, prefix="/api")
 app.include_router(library.router, prefix="")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
