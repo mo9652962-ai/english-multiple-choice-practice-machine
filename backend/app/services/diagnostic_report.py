@@ -229,6 +229,61 @@ def compare_snapshots(
     }
 
 
+def build_report_text(
+    aggregate: dict[str, Any],
+    level: dict[str, Any],
+    trend: dict[str, Any],
+    recommendations: list[dict[str, Any]],
+) -> str:
+    """本地模板组装文字报告（不调 AI，省一次调用 ~20s）。"""
+    total = aggregate.get("question_count", 0)
+    categories = aggregate.get("categories", [])
+    top = categories[0] if categories else {"code": "uncertain", "label": "证据不足", "percentage": 0}
+    lines: list[str] = []
+
+    lines.append("### 1. 当前主要短板")
+    if categories:
+        parts = "、".join(f"{c.get('label', c.get('code'))}（{c.get('percentage', 0):.0f}%）" for c in categories[:3])
+        lines.append(f"本次共诊断 **{total} 题**，归因分布：{parts}。")
+    top_guidance = CAUSE_GUIDANCE.get(top.get("code", ""), "")
+    if top_guidance:
+        lines.append(f"最突出的问题是 **{top.get('label', top.get('code'))}**：{top_guidance}")
+
+    level_num = level.get("overall") if isinstance(level, dict) else None
+    lines.append("")
+    lines.append("### 2. 当前水平")
+    if level_num:
+        label = _LEVEL_LABELS.get(level_num, "")
+        lines.append(f"评估为 **{level_num}/5**：{label}")
+
+    lines.append("")
+    lines.append("### 3. 复习建议")
+    if recommendations:
+        for rec in recommendations[:3]:
+            lines.append(f"- **{rec.get('label')}**：{rec.get('suggestion', '')}（已为你挑选 {len(rec.get('question_ids', []))} 道同类型练习）")
+    else:
+        lines.append("本次未识别出明确的薄弱环节，建议保持当前节奏，继续积累作答记录后再诊断。")
+
+    if trend.get("has_previous"):
+        lines.append("")
+        lines.append("### 4. 对比上次")
+        if trend.get("improved"):
+            lines.append(f"- 改善：{'、'.join(trend['improved'])}")
+        if trend.get("worsened"):
+            lines.append(f"- 恶化：{'、'.join(trend['worsened'])}")
+        if trend.get("new"):
+            lines.append(f"- 新增：{'、'.join(trend['new'])}")
+        if not trend.get("improved") and not trend.get("worsened") and not trend.get("new"):
+            lines.append("- 与上次基本持平")
+
+    if aggregate.get("uncertain_count", 0):
+        lines.append("")
+        lines.append("### 5. 说明")
+        lines.append("有部分题目证据不足未能确定归因——继续作答后可提升诊断准确度。")
+
+    return "\n".join(lines)
+
+
 def generate_diagnostic_report(
     connection: sqlite3.Connection,
     question_ids: list[int],
@@ -253,12 +308,8 @@ def generate_diagnostic_report(
             except json.JSONDecodeError:
                 previous = None
     trend = compare_snapshots(previous, aggregate)
-    # 文字报告：复用匿名报告生成
-    from .wrong_analysis import write_anonymous_report
-    try:
-        report = write_anonymous_report(connection, aggregate)
-    except ValueError:
-        report = ""
+    # 文字报告：本地模板组装（不调 AI，生成速度从 ~80s 降到 ~60s）
+    report = build_report_text(aggregate, level, trend, recommendations)
     report_id = _save_report(
         connection,
         question_ids=question_ids,
