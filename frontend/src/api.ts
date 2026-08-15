@@ -84,7 +84,11 @@ export async function initOfflineMode(skipHealthCheck = false): Promise<boolean>
     }
     try {
       const { initDatabase } = await import('./services/db')
-      await initDatabase()
+      // v3.5: sql.js 初始化加超时保护——wasm 加载挂起时不让 bootstrap 卡死（曾导致整页白屏）
+      await Promise.race([
+        initDatabase(),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('sql.js init timeout')), 10000)),
+      ])
       _offlineReady = true
       return true
     } catch {
