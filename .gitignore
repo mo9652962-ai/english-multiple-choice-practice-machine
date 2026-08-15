@@ -29,6 +29,7 @@ design-system/
 *.sqlite
 *.sqlite3
 *.bak
+*.bak-*
 *.backup
 *.log
 .codex-local/batch-import-state.json
