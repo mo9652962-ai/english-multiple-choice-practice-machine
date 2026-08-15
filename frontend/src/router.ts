@@ -8,6 +8,7 @@ import PracticeView from './views/PracticeView.vue'
 import SettingsView from './views/SettingsView.vue'
 import WrongView from './views/WrongView.vue'
 import ReportView from './views/ReportView.vue'
+import DiagnosticView from './views/DiagnosticView.vue'
 import VocabularyBankView from './views/VocabularyBankView.vue'
 import VocabularyWordView from './views/VocabularyWordView.vue'
 import AchievementsView from './views/AchievementsView.vue'
@@ -36,6 +37,7 @@ export default createRouter({
     { path: '/exam', component: ExamView },
     { path: '/wrong', component: WrongView },
     { path: '/report', component: ReportView },
+    { path: '/diagnostic', component: DiagnosticView },
     { path: '/achievements', component: AchievementsView },
     { path: '/leaderboard', component: LeaderboardView },
     { path: '/focus', component: FocusView },

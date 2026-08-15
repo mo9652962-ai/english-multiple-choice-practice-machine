@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, Sparkles, StickyNote, Sun, Target, Timer, Trophy } from 'lucide-vue-next'
+import { Activity, BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Moon, Settings, Sparkles, StickyNote, Sun, Target, Timer, Trophy } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
@@ -115,6 +115,7 @@ onMounted(() => {
         <RouterLink to="/library"><Library :size="19" aria-hidden="true" /><span>题库与练习</span></RouterLink>
         <RouterLink to="/exam"><Timer :size="19" aria-hidden="true" /><span>模拟考试</span></RouterLink>
         <RouterLink to="/wrong"><Brain :size="19" aria-hidden="true" /><span>错题本</span></RouterLink>
+        <RouterLink to="/diagnostic"><Activity :size="19" aria-hidden="true" /><span>学习诊断</span></RouterLink>
         <RouterLink to="/report"><BarChart3 :size="19" aria-hidden="true" /><span>学习报告</span></RouterLink>
         <RouterLink to="/achievements"><Trophy :size="19" aria-hidden="true" /><span>成就徽章</span></RouterLink>
         <RouterLink to="/leaderboard"><BarChart2 :size="19" aria-hidden="true" /><span>学习排行</span></RouterLink>
