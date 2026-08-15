@@ -38,7 +38,8 @@ onMounted(async () => {
   // 历史报告列表
   try { history.value = await get('/diagnostic/reports?limit=8') } catch { /* ignore */ }
   const id = route.query.report
-  if (id) loadReport(Number(id))
+  if (id) { loadReport(Number(id)) }
+  else if (history.value.length) { loadReport(history.value[0].id) }  // 刷新后自动展示最新报告
 })
 
 async function loadReport(id: number) {
@@ -56,10 +57,17 @@ async function loadWrongForSelect() {
   } catch (e) { error.value = String(e) }
 }
 
+const loadingStep = ref('正在诊断…')
+let stepTimers: number[] = []
+
 async function generate() {
   if (!questionIds.value.length) { error.value = '请先勾选要诊断的错题'; return }
   loading.value = true
   error.value = ''
+  stepTimers = []
+  loadingStep.value = '正在逐题归因…（约 40 秒）'
+  stepTimers.push(window.setTimeout(() => { loadingStep.value = '正在评估水平…' }, 40000))
+  stepTimers.push(window.setTimeout(() => { loadingStep.value = '正在生成报告…' }, 55000))
   try {
     const prev = history.value[0]?.id
     report.value = await post('/diagnostic/report', {
@@ -70,6 +78,7 @@ async function generate() {
     questionIds.value = []
     selecting.value = false
   } catch (e) { error.value = String(e) }
+  finally { stepTimers.forEach((t) => clearTimeout(t)); stepTimers = [] }
   loading.value = false
 }
 
@@ -114,8 +123,7 @@ function useHistory(id: number) { loadReport(id) }
       <p v-if="error" class="error">{{ error }}</p>
     </div>
 
-    <div v-if="loading && !report" class="card"><p class="muted">正在诊断…可能需要 1-2 分钟</p></div>
-
+    <div v-if="loading && !report" class="card"><p class="muted">{{ loadingStep }}</p></div>
     <template v-if="report">
       <button class="btn" @click="report = null; selecting = false" style="margin-bottom: 12px">← 返回</button>
       <div v-if="error" class="error" style="margin-bottom: 12px">{{ error }}</div>

@@ -92,13 +92,11 @@ def generate_article(
     prompt = ARTICLE_PROMPTS[topic].format(words=word_list)
     
     try:
-        response = chat_completion(
+        article = chat_completion(
             connection,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.8,
             max_tokens=800,
         )
-        article = response.get("content", "")
     except Exception as e:
         return {"error": f"AI 生成失败: {e}", "words": words}
     
