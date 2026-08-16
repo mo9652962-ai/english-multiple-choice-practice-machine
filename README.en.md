@@ -19,7 +19,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows-2563EB?style=flat-square" alt="Windows">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.0.0--beta.12-2563EB?style=flat-square" alt="v2.0.0-beta.12">
+    <img src="https://img.shields.io/badge/status-v2.0.0--beta.15-2563EB?style=flat-square" alt="v2.0.0-beta.15">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -56,20 +56,24 @@ Random practice selects complete units, options can be shuffled before each atte
 
 > Even with a limited set of questions, every new attempt should require reading, reasoning, and answering again—not simply recalling the correct option.
 
-The project is currently `v2.0.0-beta.12 / active development`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, and ESQ sharing workflows are available. Portable releases, public CI, and additional exam templates are still being developed.
+The project is currently `v2.0.0-beta.15 / active development`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, and FSRS-based vocabulary review are available. Portable releases, public CI, and additional exam templates are still being developed.
 
 ## Feature overview
 
 | Area | Available now |
 | --- | --- |
-| Home | Learning overview, dark mode, vocabulary review every five seconds, frequent-word priority, quick random practice |
-| Practice | Full-year papers, random complete units, postgraduate English I/II, CET listening/word bank/paragraph matching/reading |
+| Home | Learning overview, dark mode, vocabulary review flipping every 5s, frequent-word priority, quick random practice, **recommended papers deduplicated by year + exam label**, **dynamic question-type entry (no listening card when no audio)** |
+| Practice | Full-year papers, random complete units, **shuffled options (anti-answer-memorization)**, **desktop shortcuts (Anki-style 1/2/3/4)**, postgraduate English I/II, CET listening/word bank/paragraph matching/reading |
 | Submission | Unit submission, paper submission, unanswered-question navigation, score/correct/wrong feedback |
-| Wrong answers | Year → unit navigation, redo/analysis, frequent mistakes, cached reports, and retry-gated re-analysis |
-| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison |
+| Wrong answers | Year → unit navigation, redo/analysis, **iterative reduction (redo shows only this round's mistakes)**, frequent-mistake stats |
+| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **7,751-word built-in bank (phonetics + exam/bilingual examples)**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **sentence fill-in (real-exam cloze)**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
 | AI assistant | Multiple API profiles, multi-session chat, model sync, wrong-answer analysis, labels, and draft correction |
-| Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import |
+| Listening | **MP3/M4A/WAV/OGG import, built-in player, progress-bar lock while timing** |
+| Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import, **2025-2026 latest real exams** |
 | Data | Local storage, folder backup, Windows DPAPI / Android Keystore AES-GCM encryption for API keys |
+| Mobile | **Portrait split layout (independent article/question scrolling + draggable divider)**, **merged bottom nav (Notes = Wrong answers + Vocabulary)**, **answer-sheet drawer**, **dynamic home** |
+| Motivation | **14 achievement badges** (streaks/vocabulary milestones/practice achievements), consecutive-day stats, **learning heatmap (GitHub-contribution style, 90 days)**, **check-in poster (Baicizhan-style ink share image via WebShare)**, **report-page vocabulary memory curve (SVG)** |
+| Updates | **Front-end auto-update check (60s polling)**, GitHub Release + HTTPS mirror dual source, SHA-256 verification |
 
 ## Features in detail
 
@@ -416,7 +420,7 @@ Before the first public release, the maintainer should:
 
 - Add GitHub Actions CI with recurring secret and privacy-file scans.
 - Add `CONTRIBUTING.md`, `SECURITY.md`, and issue/PR templates.
-- Publish a Windows `v2.0.0-beta.12` portable build.
+- Publish a Windows `v2.0.0-beta.15` portable build.
 
 ## Contributing question banks and code
 
