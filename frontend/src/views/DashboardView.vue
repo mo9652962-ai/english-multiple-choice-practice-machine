@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, BookOpen, Flame, Share2, Sparkles, Star } from 'lucide-vue-next'
+import { ArrowRight, BookOpen, Flame, Headphones, Share2, Sparkles, Star } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
@@ -62,6 +62,22 @@ const vocabularyPages = computed(() => {
 const visibleWords = computed(() =>
   vocabularyPages.value[vocabularyPage.value] || vocabularyPages.value[0] || [],
 )
+const hasListening = computed(() =>
+  Number(data.value?.paper_type_counts?.listening || 0) > 0,
+)
+const hasPracticeType = (type: string) =>
+  Number(data.value?.unit_type_counts?.[type] || 0) > 0
+const hasAnyPractice = computed(() =>
+  ['cloze', 'reading', 'part_b', 'listening'].some(hasPracticeType),
+)
+const practiceGridClass = computed(() => {
+  const count = ['cloze', 'reading', 'part_b', 'listening']
+    .filter(hasPracticeType).length
+  if (count >= 4) return 'grid-4'
+  if (count === 3) return 'grid-3'
+  if (count === 2) return 'grid-2'
+  return ''
+})
 
 function wordMeaning(word: any) {
   return word.common_meaning || word.contextual_meaning || '释义整理中'
@@ -86,6 +102,9 @@ async function loadHome(force = false) {
   const embedded = (window as any).__LINJIAN_STARTUP__
   // v2.11: 切换题库级别时 force=true → 跳过首屏缓存, 重新请求该级别推荐
   if (embedded && !force) {
+    // The injected payload only accelerates the first paint. Profile changes
+    // must fetch fresh counts for the newly active question bank.
+    delete (window as any).__LINJIAN_STARTUP__
     data.value = embedded
     try {
       const words: any = await get('/vocabulary/home?limit=20')
@@ -223,9 +242,17 @@ async function loadGoalAndWord() {
 }
 
 async function randomPractice(type: string) {
+  if (!hasPracticeType(type)) {
+    error.value = '当前题库配置中没有可练习的该题型，请先切换题库配置或导入题目。'
+    return
+  }
   try {
     const session: any = await post('/practice/sessions', {
-      mode: 'random', unit_type: type, count: 1, shuffle_options: true,
+      mode: 'random',
+      unit_type: type,
+      selection_scope: type === 'listening' ? 'paper_unit_type' : 'unit',
+      count: 1,
+      shuffle_options: true,
     })
     router.push(`/practice/${session.id}`)
   } catch (e) { error.value = String(e) }
@@ -544,20 +571,31 @@ async function sharePoster() {
         </Transition>
       </div>
     </section>
-    <div class="grid grid-3 practice-actions">
-      <button
-        v-for="card in visiblePracticeCards" :key="card.key"
-        class="card action-card" type="button"
-        @click="randomPractice(card.type)"
-      >
-        <span class="feature-icon" :class="card.iconClass"><img :src="card.icon" alt="" /></span>
-        <span class="action-copy">
-          <small>{{ card.subtitle }}</small>
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.desc }}</p>
-        </span>
+    <div v-if="hasAnyPractice" class="grid practice-actions" :class="practiceGridClass">
+      <button v-if="hasPracticeType('cloze')" class="card action-card" type="button" @click="randomPractice('cloze')">
+        <span class="feature-icon orange"><img src="/assets/icons/cloze.png" alt="" /></span>
+        <span class="action-copy"><small>20 个空 · 整篇提交</small><h3>完型填空</h3><p>随机抽取一整篇，在完整语境中完成练习。</p></span>
         <ArrowRight class="action-arrow" :size="19" />
       </button>
+      <button v-if="hasPracticeType('reading')" class="card action-card" type="button" @click="randomPractice('reading')">
+        <span class="feature-icon sage"><img src="/assets/icons/reading.png" alt="" /></span>
+        <span class="action-copy"><small>1 篇文章 · 5 道题</small><h3>阅读理解</h3><p>按文章完整练习，专注理解论证与细节。</p></span>
+        <ArrowRight class="action-arrow" :size="19" />
+      </button>
+      <button v-if="hasPracticeType('part_b')" class="card action-card" type="button" @click="randomPractice('part_b')">
+        <span class="feature-icon blue"><img src="/assets/icons/part-b.png" alt="" /></span>
+        <span class="action-copy"><small>排序 · 填入 · 匹配</small><h3>阅读 Part B</h3><p>在段落关系中辨认结构、衔接与观点。</p></span>
+        <ArrowRight class="action-arrow" :size="19" />
+      </button>
+      <button v-if="hasListening" class="card action-card" type="button" @click="randomPractice('listening')">
+        <span class="feature-icon purple"><Headphones :size="42" aria-hidden="true" /></span>
+        <span class="action-copy"><small>随机一套 · 完整听力</small><h3>听力单刷</h3><p>抽取一套试卷的完整听力部分，音频跨 Section 自动续播。</p></span>
+        <ArrowRight class="action-arrow" :size="19" />
+      </button>
+    </div>
+    <div v-else-if="data" class="card empty">
+      当前题库配置中还没有可练习的已发布题目，请先切换题库配置或导入题库。
+      <RouterLink class="button ghost compact" to="/library">前往题库</RouterLink>
     </div>
     <div class="section-title"><h2>学习概览</h2></div>
     <div v-if="data" class="grid grid-4 bento-stats">

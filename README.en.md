@@ -276,6 +276,19 @@ Validate a custom package:
 
 ## Quick start
 
+The repository now includes two ready-to-practice starter banks:
+**Postgraduate English I (2010-2026)** and **Postgraduate English II
+(2010-2025)**. On first launch, the app validates and installs both ESQ
+packages automatically. Later launches use the package ID and content version
+as an idempotency key, so papers are not duplicated and personal practice data
+is not overwritten. Switch banks from the home or question-bank page, and keep
+adding other ESQ, Word, or PDF banks as needed.
+
+The bundled banks are independent content packages and are not covered by the
+repository's GPL-3.0-only code license. Their source, usage notice, and content
+licensing boundaries are defined by each ESQ package's `manifest.json` and
+included notices.
+
 ### Verified environment
 
 - Windows 10/11

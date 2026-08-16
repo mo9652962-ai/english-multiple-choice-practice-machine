@@ -1146,9 +1146,22 @@ def validate_draft(draft: dict[str, Any]) -> list[str]:
         for u in units:
             actual_by_type.setdefault(u["unit_type"], []).append(u)
         for template in expected_template:
-            matches = [u for u in units if u["unit_type"] == template["type"]]
+            matches = [
+                u
+                for u in units
+                if u["unit_type"] == template["type"]
+                and (
+                    not template.get("subtype")
+                    or u.get("subtype") == template["subtype"]
+                )
+            ]
             if not matches:
                 if template["type"] == "part_b":
+                    continue
+                if (
+                    template["type"] == "listening"
+                    and int(draft.get("set_number") or 1) == 3
+                ):
                     continue
                 warnings.append(f"缺少{template['title']}")
                 continue
@@ -1533,6 +1546,8 @@ def publish_draft(
     source_file: str,
     *,
     profile_id: int = 1,
+    audio_paths: list[Path] | None = None,
+    audio_names: list[str] | None = None,
 ) -> int:
     year = draft.get("year")
     if not year:
@@ -1640,5 +1655,14 @@ def publish_draft(
                         option_sequence,
                     ),
                 )
+    if audio_paths:
+        from .listening import attach_listening_assets
+
+        attach_listening_assets(
+            connection,
+            paper_id,
+            audio_paths,
+            audio_names,
+        )
     connection.commit()
     return paper_id

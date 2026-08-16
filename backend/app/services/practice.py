@@ -9,6 +9,7 @@ from typing import Any
 from ..database import get_active_profile_id
 from ..schemas import PracticeCreate
 from .questions import parse_json, serialize_unit
+from .listening import listening_unit_has_audio_sql
 
 
 class IncompleteSubmissionError(ValueError):
@@ -73,10 +74,45 @@ def _select_unit_ids(
         return request.unit_ids, request.paper_id
 
     if request.mode == "random":
+        if request.selection_scope == "paper_unit_type":
+            if not request.unit_type:
+                raise ValueError("整套题型练习需要指定题型")
+            paper_query = """
+                SELECT DISTINCT papers.id
+                FROM papers
+                JOIN units ON units.paper_id = papers.id
+                JOIN questions ON questions.unit_id = units.id
+                WHERE papers.status = 'published'
+                  AND papers.deleted_at IS NULL
+                  AND papers.profile_id = ?
+                  AND units.unit_type = ?
+            """
+            paper_params: list[Any] = [active_profile_id, request.unit_type]
+            if request.unit_type == "listening":
+                paper_query += f" AND ({listening_unit_has_audio_sql('units')})"
+            if request.paper_id:
+                paper_query += " AND papers.id = ?"
+                paper_params.append(request.paper_id)
+            paper_rows = connection.execute(paper_query, paper_params).fetchall()
+            paper_ids = [int(row["id"]) for row in paper_rows]
+            if not paper_ids:
+                raise LookupError("当前题库配置中没有符合条件的完整题型")
+            selected_paper_id = random.choice(paper_ids)
+            unit_rows = connection.execute(
+                """
+                SELECT id FROM units
+                WHERE paper_id = ? AND unit_type = ?
+                ORDER BY sequence, id
+                """,
+                (selected_paper_id, request.unit_type),
+            ).fetchall()
+            return [int(row["id"]) for row in unit_rows], selected_paper_id
+
         query = """
-            SELECT units.id
+            SELECT DISTINCT units.id
             FROM units
             JOIN papers ON papers.id = units.paper_id
+            JOIN questions ON questions.unit_id = units.id
             WHERE papers.status = 'published'
               AND papers.deleted_at IS NULL
               AND papers.profile_id = ?
@@ -85,6 +121,8 @@ def _select_unit_ids(
         if request.unit_type:
             query += " AND units.unit_type = ?"
             params.append(request.unit_type)
+            if request.unit_type == "listening":
+                query += f" AND ({listening_unit_has_audio_sql('units')})"
         if request.paper_id:
             query += " AND units.paper_id = ?"
             params.append(request.paper_id)
@@ -124,12 +162,29 @@ def _select_unit_ids(
     raise ValueError("不支持的练习模式")
 
 
+def _normalize_listening_audio(units: list[dict[str, Any]]) -> None:
+    listening_units = [unit for unit in units if unit.get("unit_type") == "listening"]
+    if len(listening_units) < 2:
+        return
+    shared_payloads = [unit.get("shared_data") or {} for unit in listening_units]
+    if any(payload.get("audio_mode") for payload in shared_payloads):
+        return
+    track_lists = [payload.get("audio_tracks") or [] for payload in shared_payloads]
+    if not track_lists[0] or any(tracks != track_lists[0] for tracks in track_lists[1:]):
+        return
+    if len(track_lists[0]) != len(listening_units):
+        return
+    for index, payload in enumerate(shared_payloads):
+        payload["audio_tracks"] = [track_lists[0][index]]
+        payload["audio_mode"] = "per_unit"
+
+
 def create_session(
     connection: sqlite3.Connection, request: PracticeCreate
 ) -> dict[str, Any]:
     unit_ids, paper_id = _select_unit_ids(connection, request)
     if not unit_ids:
-        raise ValueError("没有符合条件的练习篇目")
+        raise LookupError("当前题库配置中没有已发布且包含题目的练习篇目")
 
     cursor = connection.execute(
         """
@@ -188,6 +243,7 @@ def create_session(
                     json.dumps(question["option_order"], ensure_ascii=False),
                 ),
             )
+    _normalize_listening_audio(units)
     connection.commit()
     return {
         "id": session_id,
@@ -301,6 +357,7 @@ def get_session(connection: sqlite3.Connection, session_id: int) -> dict[str, An
             unit["submission"] = {"submitted": False}
         units.append(unit)
 
+    _normalize_listening_audio(units)
     answered = sum(bool(row["user_answer"]) for row in answers)
     result_summary = None
     if session["status"] == "submitted":
