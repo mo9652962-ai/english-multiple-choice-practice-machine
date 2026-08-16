@@ -58,10 +58,21 @@ const passageStyle = computed(() => ({ fontSize: `${passageFontSize.value}px` })
 let timerTicker: number | null = null
 const activeUnit = computed(() => session.value?.units?.[activeUnitIndex.value])
 const activeContentBlocks = computed(() => activeUnit.value?.content_blocks || [])
+// v3.6: 选词填空——右侧选项面板改为点文章空格弹出（用户反馈右侧点击无反应）
+const isCloze = computed(() => activeUnit.value?.unit_type === 'cloze')
 const activeContentPackage = computed(() => ({
   packageId: activeUnit.value?.shared_data?.content_package_id || '',
   contentVersion: activeUnit.value?.shared_data?.content_version || '',
 }))
+// v3.6: 文章内空白回填已选答案（ContentBlocks 分支用）
+const blankAnswersMap = computed<Record<number, string>>(() => {
+  const map: Record<number, string> = {}
+  for (const q of activeUnit.value?.questions || []) {
+    const text = blankAnswerText(Number(q.number))
+    if (text) map[Number(q.number)] = text
+  }
+  return map
+})
 const progress = computed(() => {
   if (!session.value) return { answered: 0, total: 0 }
   let answered = 0
@@ -1190,6 +1201,8 @@ async function copySelectedTerm() {
             :blocks="activeContentBlocks"
             :package-id="activeContentPackage.packageId"
             :content-version="activeContentPackage.contentVersion"
+            :blank-answers="blankAnswersMap"
+            @blank-click="(n: number) => openBlankPicker(blankQuestion(n))"
           />
           <template v-else v-for="(segment, index) in annotatedSegments()" :key="`${segment.type}-${segment.start ?? index}`">
             <button
@@ -1245,10 +1258,11 @@ async function copySelectedTerm() {
         </div>
       </section>
       <!-- v3.2: 移动端竖屏上下分区可拖分隔条 -->
-      <div v-if="isMobileSplit" class="pane-divider" @pointerdown="startDragDivider" role="separator" aria-orientation="horizontal" title="拖动调整上下占比">
+      <div v-if="isMobileSplit && !isCloze" class="pane-divider" @pointerdown="startDragDivider" role="separator" aria-orientation="horizontal" title="拖动调整上下占比">
         <span class="pane-divider-grip"><GripHorizontal :size="16" /></span>
       </div>
-      <section class="question-pane">
+      <!-- v3.6: 选词填空隐藏右侧面板——点文章空格弹选项（用户反馈右侧点击无反应） -->
+      <section v-if="!isCloze" class="question-pane">
         <div v-if="isOrdering" class="ordering-board">
           <div class="ordering-note">拖动候选段落调整顺序。前 5 项依次作为第 41–45 题答案，系统会自动保存。</div>
           <VueDraggableNext
