@@ -666,6 +666,7 @@ def _label_rows(
         return False, "本地标签已锁定或人工编辑"
     if not label.get("questionContentHash"):
         return False, "标签缺少题目内容哈希"
+    locked = int(label.get("reviewStatus") == "locked")
     connection.execute(
         """
         INSERT INTO question_ai_labels
@@ -673,7 +674,7 @@ def _label_rows(
              attention_points, vocabulary_demand, context_dependency,
              grammar_dependency, confidence, locked, user_edited,
              model_name, label_version, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?, 1, CURRENT_TIMESTAMP)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, 1, CURRENT_TIMESTAMP)
         ON CONFLICT(question_id) DO UPDATE SET
             primary_skill = excluded.primary_skill,
             secondary_skills = excluded.secondary_skills,
@@ -683,6 +684,7 @@ def _label_rows(
             context_dependency = excluded.context_dependency,
             grammar_dependency = excluded.grammar_dependency,
             confidence = excluded.confidence,
+            locked = excluded.locked,
             model_name = excluded.model_name,
             label_version = question_ai_labels.label_version + 1,
             updated_at = CURRENT_TIMESTAMP
@@ -697,6 +699,7 @@ def _label_rows(
             label.get("contextDependency", "medium"),
             label.get("grammarDependency", "medium"),
             float(label.get("confidence", 0) or 0),
+            locked,
             str(label.get("source", "esq")),
         ),
     )

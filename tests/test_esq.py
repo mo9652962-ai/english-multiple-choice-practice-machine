@@ -152,6 +152,10 @@ class EsqRoundTripTests(unittest.TestCase):
                 "backend.app.routers.question_banks.QUESTION_BANK_DIR",
                 cls.question_bank_dir,
             ),
+            patch(
+                "backend.app.main.install_bundled_question_banks",
+                return_value=[],
+            ),
         ]
         for active_patch in cls.patches:
             active_patch.start()
