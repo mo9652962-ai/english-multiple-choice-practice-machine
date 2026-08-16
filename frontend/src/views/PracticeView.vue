@@ -21,6 +21,7 @@ import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
 import { showToast } from '../services/toast'
 import ListeningPlayer from '../components/ListeningPlayer.vue'
+import QuestionExplain from '../components/QuestionExplain.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -1194,7 +1195,6 @@ async function copySelectedTerm() {
             <template v-else>{{ segment.text }}</template>
           </template>
         </div>
-<<<<<<< HEAD
         <!-- v3.0: 标注气泡（选中文字后） -->
         <div
           v-if="annotationBubble.visible"
@@ -1268,6 +1268,7 @@ async function copySelectedTerm() {
             <div v-if="activeUnitSubmitted" class="match-result" :style="{color:question.is_correct?'var(--success)':'var(--danger)'}">
               {{ question.is_correct ? '回答正确' : `正确答案：${displayedAnswer(question)}` }}
             </div>
+            <QuestionExplain v-if="activeUnitSubmitted" :question-id="question.id" :question="question" />
           </div>
         </div>
         <div v-else-if="isWordBank" class="word-bank-board">
