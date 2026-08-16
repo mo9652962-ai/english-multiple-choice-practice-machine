@@ -148,6 +148,7 @@ function jumpToQuestion(index: number) {
 const isWordBank = computed(() => activeUnit.value?.unit_type === 'word_bank')
 const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'paragraph_matching')
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')
+const orderingItems = ref<any[]>([])
 const audioTracks = computed(() => activeUnit.value?.shared_data?.audio_tracks || [])
 const candidateOptions = computed(() => activeUnit.value?.questions?.[0]?.options || [])
 const selectedWordBank = ref<Record<string, string>>({})
