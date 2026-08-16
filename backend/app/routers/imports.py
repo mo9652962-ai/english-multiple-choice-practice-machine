@@ -432,6 +432,10 @@ async def upload_import(
             )
             parse_context["import_group_id"] = import_group_id
             parse_context["source_container_path"] = str(stored_path)
+            parse_context["audio_names"] = [
+                str(item.filename or "")
+                for item in selected_audio_files[: len(variant_audio_paths)]
+            ]
             cursor = connection.execute(
                 """
                 INSERT INTO import_jobs
@@ -804,16 +808,26 @@ def publish(
     warnings = validate_draft(draft)
     if warnings and not force:
         raise HTTPException(409, {"message": "仍有校验问题", "warnings": warnings})
+    try:
+        parse_context = json.loads(row["parse_context"] or "{}")
+    except json.JSONDecodeError:
+        parse_context = {}
     paper_id = publish_draft(
         connection,
         draft,
         row["filename"],
         profile_id=int(row["profile_id"]),
+        audio_paths=[
+            Path(value)
+            for value in parse_context.get("audio_paths", [])
+            if value
+        ],
+        audio_names=[
+            str(value)
+            for value in parse_context.get("audio_names", [])
+            if value
+        ],
     )
-    try:
-        parse_context = json.loads(row["parse_context"] or "{}")
-    except json.JSONDecodeError:
-        parse_context = {}
     parse_context["published_paper_ids"] = [paper_id]
     parse_context["published_scope_title"] = str(draft.get("title") or f"{draft.get('year', '')} 年题库")
     connection.execute(

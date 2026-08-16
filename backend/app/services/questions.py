@@ -4,6 +4,7 @@ import json
 import random
 import sqlite3
 from typing import Any
+from urllib.parse import quote
 
 from .passage_cleanup import repair_inline_blank_paragraph_breaks
 
@@ -15,6 +16,39 @@ def parse_json(value: str | None, default: Any) -> Any:
         return json.loads(value)
     except json.JSONDecodeError:
         return default
+
+
+def _audio_tracks(shared_data: dict[str, Any]) -> list[dict[str, Any]]:
+    if not isinstance(shared_data, dict):
+        shared_data = {}
+    package_id = str(shared_data.get("content_package_id", "")).strip()
+    content_version = str(shared_data.get("content_version", "")).strip()
+    tracks = [
+        dict(track)
+        for track in shared_data.get("audio_tracks", [])
+        if isinstance(track, dict)
+    ]
+    if not tracks and package_id and content_version:
+        tracks = [
+            {
+                "asset_id": block.get("assetId"),
+                "label": block.get("label") or block.get("caption") or "听力音频",
+            }
+            for block in shared_data.get("content_blocks", [])
+            if isinstance(block, dict)
+            and block.get("type") == "audio"
+            and block.get("assetId")
+        ]
+    for track in tracks:
+        asset_id = str(track.get("asset_id") or track.get("assetId") or "").strip()
+        if asset_id and package_id and content_version and not track.get("url"):
+            track["asset_id"] = asset_id
+            track["url"] = (
+                "/api/question-banks/assets/"
+                f"{quote(package_id, safe='')}/{quote(content_version, safe='')}/"
+                f"{quote(asset_id, safe='')}"
+            )
+    return [track for track in tracks if track.get("url")]
 
 
 def serialize_question(
@@ -129,6 +163,9 @@ def serialize_unit(
         )
         for row in question_rows
     ]
+    shared_data = parse_json(unit["shared_data"], {}) or {}
+    if unit["unit_type"] == "listening":
+        shared_data["audio_tracks"] = _audio_tracks(shared_data)
     return {
         "id": unit["id"],
         "paper_id": unit["paper_id"],
@@ -139,8 +176,8 @@ def serialize_unit(
         "title": unit["title"],
         "sequence": unit["sequence"],
         "passage": repair_inline_blank_paragraph_breaks(unit["passage"]),
-        "shared_data": parse_json(unit["shared_data"], {}),
-        "content_blocks": parse_json(unit["shared_data"], {}).get("content_blocks", []),
+        "shared_data": shared_data,
+        "content_blocks": shared_data.get("content_blocks", []),
         "audio_url": f"/audio/{unit['audio_path'].split('/')[-1]}" if unit["audio_path"] else None,
         "questions": questions,
         "max_score": sum(question["score"] for question in questions),

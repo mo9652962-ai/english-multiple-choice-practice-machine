@@ -15,12 +15,12 @@ import {
   Send,
   X,
 } from 'lucide-vue-next'
-import { VueDraggableNext } from 'vue-draggable-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
 import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
 import { showToast } from '../services/toast'
+import ListeningPlayer from '../components/ListeningPlayer.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -35,7 +35,7 @@ const resultPanelVisible = ref(false)
 const resultPanelMode = ref<'unit' | 'session'>('unit')
 const resultPanelUnitId = ref<number | null>(null)
 const vocabMenu = ref({ visible: false, x: 0, y: 0, term: '', sentence: '', questionId: null as number | null })
-const audioPlayer = ref<HTMLAudioElement | null>(null)
+const listeningPlayer = ref<InstanceType<typeof ListeningPlayer> | null>(null)
 type VocabularyTranslationTrigger = 'unit_submit' | 'session_submit' | 'practice_exit'
 type PendingVocabularyRecord = { entryId: number, unitId: number | null }
 const pendingVocabulary = ref<PendingVocabularyRecord[]>([])
@@ -147,15 +147,9 @@ function jumpToQuestion(index: number) {
 const isWordBank = computed(() => activeUnit.value?.unit_type === 'word_bank')
 const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'paragraph_matching')
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')
-const orderingItems = ref<any[]>([])
+const audioTracks = computed(() => activeUnit.value?.shared_data?.audio_tracks || [])
 const candidateOptions = computed(() => activeUnit.value?.questions?.[0]?.options || [])
 const selectedWordBank = ref<Record<string, string>>({})
-
-function onAudioTimeUpdate() {
-  if (!audioSeekable.value && audioPlayer.value) {
-    audioPlayer.value.currentTime = 0
-  }
-}
 
 const usedWordBankLetters = computed(() => new Set(Object.values(selectedWordBank.value).filter(Boolean)))
 const wordBankWords = computed(() => {
@@ -213,14 +207,6 @@ const overallResult = computed(() => {
 const hasPendingUnits = computed(() =>
   Boolean(session.value?.units?.some((unit: any) => !unit.submission?.submitted)),
 )
-const orderingAnswers = computed(() => {
-  const result: Record<number, string> = {}
-  for (let index = 0; index < orderingItems.value.length; index++) {
-    const question = activeUnit.value?.questions?.[index]
-    if (question) result[question.id] = orderingItems.value[index].stable_key
-  }
-  return result
-})
 type PassageSegment = {
   type: 'text' | 'blank' | 'mark'
   text: string
@@ -609,6 +595,7 @@ function pauseTimer() {
   state.startedAt = null
   state.mode = 'paused'
   timerNow.value = now
+  listeningPlayer.value?.pause()
   persistTimer()
 }
 
@@ -658,7 +645,6 @@ async function load() {
       shuffleOptions(unit.questions || [])
     }
     loadPendingVocabulary(session.value.id)
-    syncOrdering()
     initializeTimer()
     await loadAnnotations()
   }
@@ -788,25 +774,15 @@ function syncOrdering() {
   ]
 }
 
-async function saveOrdering() {
-  if (!isOrdering.value || session.value.status === 'submitted' || activeUnitSubmitted.value) return
-  const questions = activeUnit.value.questions
-  const activeItems = orderingItems.value.slice(0, questions.length)
-  try {
-    for (let index = 0; index < questions.length; index++) {
-      const item = activeItems[index]
-      if (!item) continue
-      questions[index].user_answer = item.stable_key
-      await put(`/practice/sessions/${session.value.id}/answers/${questions[index].id}`, {
-        answer: item.stable_key,
-        option_order: questions[index].option_order,
-      })
-    }
-  } catch (e) {
-    error.value = String(e)
-    session.value = await get(`/practice/sessions/${session.value.id}`)
-    syncOrdering()
-  }
+function isOrderingOptionUsedByAnother(question: any, stableKey: string) {
+  return (activeUnit.value?.questions || []).some((other: any) =>
+    other.id !== question.id && other.user_answer === stableKey,
+  )
+}
+
+function selectOrdering(question: any, stableKey: string) {
+  if (!stableKey || isOrderingOptionUsedByAnother(question, stableKey)) return
+  void select(question, stableKey)
 }
 
 function selectWordBank(question: any, letter: string) {
@@ -851,7 +827,6 @@ function firstUnanswered(unitIndexes: number[]) {
 
 async function focusUnanswered(unitIndex: number, question: any) {
   activeUnitIndex.value = unitIndex
-  syncOrdering()
   highlightedQuestionId.value = question.id
   unansweredNotice.value = `${session.value.units[unitIndex].title}的第 ${question.number} 题还未作答，已为你定位。`
   await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
@@ -888,7 +863,6 @@ async function submitCurrentUnit() {
     session.value = await post(
       `/practice/sessions/${session.value.id}/units/${submittedUnitId}/submit`,
     )
-    syncOrdering()
     unansweredNotice.value = ''
     showUnitResult(submittedUnitId)
   } catch (e) {
@@ -1160,9 +1134,9 @@ async function copySelectedTerm() {
     <div v-if="unansweredNotice" class="unanswered-banner" role="alert">
       <AlertCircle :size="18" />{{ unansweredNotice }}
     </div>
-    <div v-if="session && activeUnit" class="practice-layout">
-      <section class="passage-pane">
-        <div class="passage-toolbar">
+    <div v-if="session && activeUnit" class="practice-layout" :class="{'listening-layout':isListening}">
+      <section class="passage-pane" :class="{'listening-console-pane':isListening}">
+        <div v-if="!isListening" class="passage-toolbar">
           <span class="eyebrow">{{ activeUnit.year }} · {{ activeUnit.title }}</span>
           <div class="font-size-control" title="调整字号">
             <button type="button" @click="adjustFontSize(-1)" :disabled="passageFontSize <= 18" aria-label="减小字号">A−</button>
@@ -1170,31 +1144,26 @@ async function copySelectedTerm() {
             <button type="button" @click="adjustFontSize(1)" :disabled="passageFontSize >= 24" aria-label="增大字号">A+</button>
           </div>
         </div>
-        <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
-        <audio
-          v-if="isListening && activeUnit.audio_url && !activeUnit.audio_url.includes('bilibili')"
-          ref="audioPlayer"
-          class="listening-player"
-          :src="activeUnit.audio_url"
-          controls
-          :disableRemotePlayback="!audioSeekable"
-          @seeking="audioSeekable ? undefined : $event.preventDefault()"
-          @timeupdate="onAudioTimeUpdate"
+        <ListeningPlayer
+          v-if="isListening"
+          ref="listeningPlayer"
+          :tracks="audioTracks"
+          :seekable="audioSeekable"
+          :timer-paused="timerState?.mode === 'paused'"
         />
-        <div v-else-if="isListening && activeUnit.audio_url" class="listening-bili-wrap">
-          <p class="listening-hint">▶ 真题听力音频（B站公开资源，点击播放）</p>
-          <iframe
-            class="listening-bili-player"
-            :src="session.audio_url"
-            scrolling="no"
-            border="0"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-          ></iframe>
-        </div>
+        <template v-else>
+        <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
         <p v-if="activeUnit.shared_data?.directions" class="lead" style="margin-bottom:24px">{{ activeUnit.shared_data.directions }}</p>
-        <div class="passage" data-vocab-text @contextmenu="openVocabularyMenu" :style="passageStyle"
+        <div v-if="isOrdering" class="ordering-reference-sheet" aria-label="候选段落 A 到 G">
+          <article v-for="option in candidateOptions" :key="option.stable_key" class="ordering-paragraph" data-vocab-text @contextmenu="openVocabularyMenu">
+            <strong class="ordering-paragraph-label">{{ option.label }}.</strong>
+            <div class="ordering-paragraph-content">
+              <ContentBlocks v-if="option.content_blocks?.length" :blocks="option.content_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" />
+              <p v-else>{{ option.content }}</p>
+            </div>
+          </article>
+        </div>
+        <div v-else class="passage" data-vocab-text @contextmenu="openVocabularyMenu" :style="passageStyle"
           @touchstart="onPassageTouchStart" @touchmove="onPassageTouchMove" @touchend="onPassageTouchEnd">
           <ContentBlocks
             v-if="activeContentBlocks.length"
@@ -1225,6 +1194,7 @@ async function copySelectedTerm() {
             <template v-else>{{ segment.text }}</template>
           </template>
         </div>
+<<<<<<< HEAD
         <!-- v3.0: 标注气泡（选中文字后） -->
         <div
           v-if="annotationBubble.visible"
@@ -1256,6 +1226,7 @@ async function copySelectedTerm() {
             </div>
           </div>
         </div>
+        </template>
       </section>
       <!-- v3.2: 移动端竖屏上下分区可拖分隔条 -->
       <div v-if="isMobileSplit && !isCloze" class="pane-divider" @pointerdown="startDragDivider" role="separator" aria-orientation="horizontal" title="拖动调整上下占比">
@@ -1264,26 +1235,24 @@ async function copySelectedTerm() {
       <!-- v3.6: 选词填空隐藏右侧面板——点文章空格弹选项（用户反馈右侧点击无反应） -->
       <section v-if="!isCloze" class="question-pane">
         <div v-if="isOrdering" class="ordering-board">
-          <div class="ordering-note">拖动候选段落调整顺序。前 5 项依次作为第 41–45 题答案，系统会自动保存。</div>
-          <VueDraggableNext
-            v-model="orderingItems"
-            item-key="stable_key"
-            handle=".drag-handle"
-            ghost-class="drag-ghost"
-            :disabled="activeUnitSubmitted"
-            @change="saveOrdering"
-          >
-            <article v-for="(item, index) in orderingItems" :key="item.stable_key" class="candidate-card" data-vocab-text :data-question-id="activeUnit.questions[index]?.id" :class="{ extra: index >= activeUnit.questions.length, 'unanswered-focus': highlightedQuestionId === activeUnit.questions[index]?.id }" @contextmenu="openVocabularyMenu">
-              <span class="drag-handle"><GripVertical :size="19" /></span>
-              <span class="candidate-position">{{ index < activeUnit.questions.length ? 41 + index : '备选' }}</span>
-              <span class="option-letter">{{ item.label }}</span>
-              <ContentBlocks v-if="item.content_blocks?.length" :blocks="item.content_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" />
-              <p v-else>{{ item.content }}</p>
-              <span v-if="activeUnitSubmitted && index < activeUnit.questions.length" class="order-result" :class="{correct: orderingAnswers[activeUnit.questions[index].id] === activeUnit.questions[index].answer}">
-                {{ orderingAnswers[activeUnit.questions[index].id] === activeUnit.questions[index].answer ? '正确' : `答案 ${displayedAnswer(activeUnit.questions[index])}` }}
-              </span>
-            </article>
-          </VueDraggableNext>
+          <div class="ordering-section-heading"><span>选择答案</span><small>{{ activeUnit.questions.filter((question: any) => question.user_answer).length }} / {{ activeUnit.questions.length }} 已完成</small></div>
+          <div class="ordering-answer-list">
+            <div v-for="question in activeUnit.questions" :key="question.id" class="ordering-answer-row" :class="{'unanswered-focus': highlightedQuestionId === question.id}" :data-question-id="question.id">
+              <strong>{{ question.number }}.</strong>
+              <div class="ordering-choice-row" role="group" :aria-label="`${question.number}题段落选择`">
+                <button
+                  v-for="option in candidateOptions"
+                  :key="option.stable_key"
+                  type="button"
+                  class="ordering-choice"
+                  :class="resultClass(question, option)"
+                  :disabled="activeUnitSubmitted || isOrderingOptionUsedByAnother(question, option.stable_key)"
+                  @click="selectOrdering(question, option.stable_key)"
+                >{{ option.label }}</button>
+              </div>
+              <span v-if="activeUnitSubmitted" class="order-result" :class="{correct: question.is_correct}">{{ question.is_correct ? '正确' : `正确答案：${displayedAnswer(question)}` }}</span>
+            </div>
+          </div>
         </div>
         <div v-else-if="isMatchingPartB" class="matching-board">
           <div class="candidate-bank">
@@ -1365,7 +1334,7 @@ async function copySelectedTerm() {
           </div>
         </div>
       </section>
-      <footer class="practice-footer">
+      <footer class="practice-footer" :class="{'listening-footer':isListening}">
         <div class="practice-footer-summary">
           <span>{{ activeUnitIndex + 1 }} / {{ session.units.length }} 篇</span>
           <button

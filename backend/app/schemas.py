@@ -11,6 +11,7 @@ class PracticeCreate(BaseModel):
     unit_ids: list[int] = Field(default_factory=list)
     question_ids: list[int] = Field(default_factory=list)
     unit_type: str | None = None
+    selection_scope: Literal["unit", "paper_unit_type"] = "unit"
     count: int = 1
     shuffle_options: bool = True
 

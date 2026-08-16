@@ -9,7 +9,7 @@ question-bank profile and model-assist behavior as the desktop UI.
 Typical usage (PowerShell):
 
     ./.venv/Scripts/python.exe tools/batch_import.py `
-      --source "C:/Users/MEC/Desktop/考研英语一真题word版" `
+      --source "path/to/exam-papers" `
       --profile-id 1 `
       --ai-profile-id 2 `
       --model deepseek-v4-flash `
