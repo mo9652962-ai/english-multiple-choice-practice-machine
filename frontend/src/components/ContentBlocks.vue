@@ -5,11 +5,16 @@ const props = withDefaults(defineProps<{
   blocks?: any[]
   packageId?: string
   contentVersion?: string
+  blankAnswers?: Record<number, string>
 }>(), {
   blocks: () => [],
   packageId: '',
   contentVersion: '',
+  blankAnswers: () => ({}),
 })
+
+// v3.6: 文章内空白可点击——派发 blank-click 事件，由父组件打开选项（选词填空交互）
+const emit = defineEmits<{ (e: 'blank-click', number: number): void }>()
 
 const hasBlocks = computed(() => props.blocks.length > 0)
 
@@ -38,7 +43,14 @@ function textParts(text: string) {
     <template v-for="block in blocks" :key="block.blockKey">
       <p v-if="block.type === 'paragraph' || block.type === 'quote'" class="content-block-text" :class="{quote:block.type === 'quote'}">
         <template v-for="(part, index) in textParts(block.text || '')" :key="`${block.blockKey}-${index}`">
-          <span v-if="part.type === 'blank'" class="passage-blank" :aria-label="`第 ${part.number} 空`"><span class="blank-number">{{ part.number }}</span></span>
+          <button
+            v-if="part.type === 'blank'"
+            class="passage-blank"
+            :class="{ filled: !!blankAnswers[part.number ?? 0] }"
+            type="button"
+            :aria-label="`第 ${part.number} 空`"
+            @click="emit('blank-click', part.number ?? 0)"
+          ><span v-if="blankAnswers[part.number ?? 0]" class="blank-answer">{{ blankAnswers[part.number ?? 0] }}</span><span v-else class="blank-number">{{ part.number }}</span></button>
           <template v-else>{{ part.text }}</template>
         </template>
       </p>

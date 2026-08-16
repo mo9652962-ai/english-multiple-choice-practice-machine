@@ -121,7 +121,7 @@ Cloze and Part B blanks use structured markers. The renderer aligns the number a
 #### Postgraduate English II and CET formats
 
 - Postgraduate English II supports T/F-style Part B questions while retaining complete-unit practice and stable-key grading.
-- CET-4/CET-6 support listening, word-bank cloze, paragraph matching, and detailed reading. Word-bank tasks use a passage plus a draggable A–O bank; paragraph matching uses a letter selector beside each statement.
+- CET-4/CET-6 support listening, word-bank cloze, paragraph matching, and detailed reading. Word-bank tasks use clickable blanks inside the passage — **since v3.6, clicking a blank opens the choices directly (replacing the draggable A–O bank and fixing the unresponsive right-side panel)**; selected answers are filled back into the passage blanks. Paragraph matching uses a letter selector beside each statement.
 - Listening transcripts are never shown and listening questions are excluded from wrong-answer analysis. Audio plays as one continuous track and is submitted as one section.
 - With the timer enabled, seeking is locked; without the timer, the learner may seek freely. Exiting an unfinished listening section warns that the attempt will not be retained.
 
