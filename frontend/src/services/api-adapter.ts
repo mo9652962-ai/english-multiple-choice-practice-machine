@@ -474,6 +474,34 @@ function offlineGet(path: string): any {
   if (path === '/wrong/stats') return { total: 0, by_type: [], frequent: [], recent: [] }
   // Wrong AI status
   if (path.startsWith('/ai/wrong-analysis-status')) return { status: 'none', pending: 0 }
+  // Explanations（题目解析：离线从 question_explanations 表读，缺表返回 unavailable）
+  const em = path.match(/^\/questions\/(\d+)\/explain$/)
+  if (em) {
+    try {
+      const row = queryOne(
+        'SELECT content, source_model, updated_at FROM question_explanations WHERE question_id = ?',
+        [parseInt(em[1])],
+      )
+      if (row?.content) {
+        let parsed: any = row.content
+        try { parsed = JSON.parse(row.content) } catch { /* raw text fallback */ }
+        return { question_id: parseInt(em[1]), available: true, content: parsed, source_model: row.source_model || '', updated_at: row.updated_at || '' }
+      }
+      return { question_id: parseInt(em[1]), available: false }
+    } catch {
+      return { question_id: parseInt(em[1]), available: false }
+    }
+  }
+  if (path === '/explanations/coverage') {
+    try {
+      const r = queryOne(
+        'SELECT COUNT(q.id) AS total, SUM(CASE WHEN e.question_id IS NOT NULL THEN 1 ELSE 0 END) AS explained FROM questions q LEFT JOIN question_explanations e ON e.question_id = q.id',
+      )
+      const total = (r?.total || 0) as number
+      const explained = (r?.explained || 0) as number
+      return { total, explained, remaining: Math.max(0, total - explained), percentage: total ? Math.round(explained * 100 / total) : 0 }
+    } catch { return { total: 0, explained: 0, remaining: 0, percentage: 0 } }
+  }
   // Version（桌面 About 用后端；移动端直连 GitHub——兜底）
   if (path === '/version') return { version: '2.0.0-beta.15', release_date: '2026-08-10', latest_version: null }
 
