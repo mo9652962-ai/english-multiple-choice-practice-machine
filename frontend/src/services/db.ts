@@ -3,6 +3,7 @@
 // 替代后端 Python SQLite，浏览器端直接运行
 
 import initSqlJs, { type Database, type SqlJsStatic } from 'sql.js'
+import { applyOfflineMigrations } from './offline-migrations'
 
 const DB_NAME = 'english-machine'
 const DB_KEY = 'sqlite-db'
@@ -53,6 +54,16 @@ export async function initDatabase(): Promise<Database> {
     } catch (e) {
       console.error('[offline] IndexedDB 保存失败（忽略）:', e)
     }
+  }
+
+  // v9.21: 离线库自动迁移——按随包清单补建缺失表/索引（存量 IndexedDB 副本自动升级）
+  try {
+    const migrated = await applyOfflineMigrations(db)
+    if (migrated) {
+      await saveToIndexedDB()
+    }
+  } catch (e) {
+    console.error('[offline] schema 迁移失败（忽略，不阻塞启动）:', e)
   }
 
   return db

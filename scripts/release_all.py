@@ -53,6 +53,7 @@ def main():
         input("回车继续...")
 
     # 1. 前端
+    run("python scripts/migrate_frontend_db.py")  # 前端离线库同步迁移 + 生成清单
     run("npm run build", cwd=frontend)
 
     # 2. 后端 PyInstaller (每次发布必须重建!)
