@@ -1,0 +1,382 @@
+{
+ "version": "2026-08-17 13:03:09",
+ "fingerprint": "bd085476f5e9",
+ "object_count": 75,
+ "objects": [
+  {
+   "type": "index",
+   "name": "idx_ai_conversations_updated",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_ai_conversations_updated\n    ON ai_conversations(updated_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_ai_messages_conversation",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_ai_messages_conversation\n    ON ai_messages(conversation_id, id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_ai_profile_models_selector",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_ai_profile_models_selector\n    ON ai_profile_models(profile_id, is_visible, is_available)"
+  },
+  {
+   "type": "index",
+   "name": "idx_ai_profiles_single_default",
+   "sql": "CREATE UNIQUE INDEX idx_ai_profiles_single_default\n    ON ai_profiles(is_default) WHERE is_default = 1"
+  },
+  {
+   "type": "index",
+   "name": "idx_ai_usage_task_time",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_ai_usage_task_time ON ai_usage(task, created_at)"
+  },
+  {
+   "type": "index",
+   "name": "idx_annotations_unit",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_annotations_unit ON annotations(unit_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_answer_events_question",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_answer_events_question\n    ON practice_answer_events(question_id, changed_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_answers_session",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_answers_session ON practice_answers(session_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_import_jobs_profile",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_import_jobs_profile\n            ON import_jobs(profile_id, deleted_at, updated_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_learning_days_day",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_learning_days_day\n    ON learning_days(day)"
+  },
+  {
+   "type": "index",
+   "name": "idx_papers_external_key",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_papers_external_key\n            ON papers(external_key)"
+  },
+  {
+   "type": "index",
+   "name": "idx_papers_profile",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_papers_profile\n            ON papers(profile_id, deleted_at, year DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_ai_labels_locked",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_question_ai_labels_locked\n    ON question_ai_labels(locked, updated_at)"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_bank_assets_lookup",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_question_bank_assets_lookup\n    ON question_bank_assets(package_id, content_version, asset_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_bank_profiles_name",
+   "sql": "CREATE UNIQUE INDEX idx_question_bank_profiles_name\n    ON question_bank_profiles(name COLLATE NOCASE)\n    WHERE deleted_at IS NULL"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_bank_revisions_paper",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_question_bank_revisions_paper\n    ON question_bank_revisions(paper_external_key, created_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_label_run_items_question",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_question_label_run_items_question\n    ON question_label_run_items(question_id, run_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_questions_external_key",
+   "sql": "CREATE UNIQUE INDEX idx_questions_external_key\n            ON questions(unit_id, external_key)\n            WHERE external_key IS NOT NULL AND external_key <> ''"
+  },
+  {
+   "type": "index",
+   "name": "idx_questions_unit",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_questions_unit ON questions(unit_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_trash_purge",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_trash_purge\n            ON trash_entries(purge_after, restored_at)"
+  },
+  {
+   "type": "index",
+   "name": "idx_unit_submissions_session",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_unit_submissions_session\n    ON practice_unit_submissions(session_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_units_external_key",
+   "sql": "CREATE UNIQUE INDEX idx_units_external_key\n            ON units(paper_id, external_key)\n            WHERE external_key IS NOT NULL AND external_key <> ''"
+  },
+  {
+   "type": "index",
+   "name": "idx_units_paper",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_units_paper ON units(paper_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_vocab_occurrences_entry",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_vocab_occurrences_entry\n    ON vocabulary_occurrences(entry_id, created_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_vocab_priority",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_vocab_priority\n    ON vocabulary_entries(encounter_count DESC, next_review_at, last_seen_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_vocab_translation_queue",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_vocab_translation_queue\n    ON vocabulary_entries(translation_status, user_edited, updated_at)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_analysis_created",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_analysis_created\n    ON wrong_analysis_reports(created_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_cause_diagnoses_cause",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_cause_diagnoses_cause\n    ON wrong_cause_diagnoses(primary_cause)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_cause_diagnoses_question",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_cause_diagnoses_question\n    ON wrong_cause_diagnoses(question_id, diagnosed_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_cause_snapshots_series",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_cause_snapshots_series\n    ON wrong_cause_snapshots(cause_code, report_id DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_count",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_count ON wrong_stats(wrong_count DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_kp_cause",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_kp_cause\n    ON wrong_knowledge_points(cause_code)"
+  },
+  {
+   "type": "index",
+   "name": "idx_wrong_kp_snapshots_code",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_wrong_kp_snapshots_code\n    ON wrong_kp_snapshots(kp_code, report_id DESC)"
+  },
+  {
+   "type": "table",
+   "name": "ai_conversations",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_conversations (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    title TEXT NOT NULL DEFAULT '新对话',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "ai_messages",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_messages (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    conversation_id INTEGER NOT NULL,\n    role TEXT NOT NULL CHECK (role IN ('user', 'assistant')),\n    content TEXT NOT NULL,\n    profile_id INTEGER,\n    model_id TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (conversation_id) REFERENCES ai_conversations(id) ON DELETE CASCADE,\n    FOREIGN KEY (profile_id) REFERENCES ai_profiles(id) ON DELETE SET NULL\n)"
+  },
+  {
+   "type": "table",
+   "name": "ai_profile_models",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_profile_models (\n    profile_id INTEGER NOT NULL,\n    model_id TEXT NOT NULL,\n    display_name TEXT NOT NULL DEFAULT '',\n    owned_by TEXT NOT NULL DEFAULT '',\n    provider TEXT NOT NULL DEFAULT '',\n    is_visible INTEGER NOT NULL DEFAULT 1,\n    is_available INTEGER NOT NULL DEFAULT 1,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    PRIMARY KEY (profile_id, model_id),\n    FOREIGN KEY (profile_id) REFERENCES ai_profiles(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "ai_profiles",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_profiles (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    name TEXT NOT NULL,\n    base_url TEXT NOT NULL,\n    api_key_encrypted TEXT,\n    enabled INTEGER NOT NULL DEFAULT 1,\n    is_default INTEGER NOT NULL DEFAULT 0,\n    default_model TEXT NOT NULL DEFAULT '',\n    temperature REAL NOT NULL DEFAULT 0.2,\n    max_tokens INTEGER NOT NULL DEFAULT 1200,\n    system_prompt TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n, task_tags TEXT NOT NULL DEFAULT '[]', priority INTEGER NOT NULL DEFAULT 100)"
+  },
+  {
+   "type": "table",
+   "name": "ai_settings",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_settings (\n    id INTEGER PRIMARY KEY CHECK (id = 1),\n    name TEXT NOT NULL DEFAULT 'DeepSeek V4-Flash',\n    base_url TEXT NOT NULL DEFAULT 'https://api.deepseek.com/v1',\n    api_key_encrypted TEXT,\n    model TEXT NOT NULL DEFAULT 'deepseek-v4-flash',\n    temperature REAL NOT NULL DEFAULT 0.2,\n    max_tokens INTEGER NOT NULL DEFAULT 1200,\n    system_prompt TEXT NOT NULL DEFAULT '',\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "ai_usage",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_usage (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            task TEXT NOT NULL,\n            provider TEXT NOT NULL,\n            model TEXT NOT NULL,\n            prompt_tokens INTEGER NOT NULL DEFAULT 0,\n            completion_tokens INTEGER NOT NULL DEFAULT 0,\n            latency_ms INTEGER NOT NULL DEFAULT 0,\n            status TEXT NOT NULL DEFAULT 'ok',\n            error TEXT NOT NULL DEFAULT '',\n            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n        )"
+  },
+  {
+   "type": "table",
+   "name": "annotations",
+   "sql": "CREATE TABLE IF NOT EXISTS annotations (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    unit_id INTEGER NOT NULL,\n    start_offset INTEGER NOT NULL,\n    end_offset INTEGER NOT NULL,\n    text TEXT NOT NULL,\n    note TEXT NOT NULL DEFAULT '',\n    color TEXT NOT NULL DEFAULT 'amber',\n    created_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),\n    updated_at TEXT\n, tag TEXT NOT NULL DEFAULT '')"
+  },
+  {
+   "type": "table",
+   "name": "app_settings",
+   "sql": "CREATE TABLE IF NOT EXISTS app_settings (\n    key TEXT PRIMARY KEY,\n    value TEXT NOT NULL DEFAULT ''\n)"
+  },
+  {
+   "type": "table",
+   "name": "diagnostic_reports",
+   "sql": "CREATE TABLE IF NOT EXISTS diagnostic_reports (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            scope_key TEXT NOT NULL DEFAULT '',\n            question_ids TEXT NOT NULL DEFAULT '[]',\n            input_snapshot TEXT NOT NULL DEFAULT '{}',\n            question_count INTEGER NOT NULL DEFAULT 0,\n            aggregate_data TEXT NOT NULL DEFAULT '{}',\n            level_data TEXT NOT NULL DEFAULT '{}',\n            recommendations TEXT NOT NULL DEFAULT '[]',\n            trend_data TEXT NOT NULL DEFAULT '{}',\n            report TEXT NOT NULL DEFAULT '',\n            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n        )"
+  },
+  {
+   "type": "table",
+   "name": "exam_answers",
+   "sql": "CREATE TABLE IF NOT EXISTS exam_answers (\n    exam_id INTEGER NOT NULL,\n    question_id INTEGER NOT NULL,\n    user_answer TEXT NOT NULL DEFAULT '',\n    option_order TEXT NOT NULL DEFAULT '[]',\n    answered_at TEXT,\n    PRIMARY KEY (exam_id, question_id),\n    FOREIGN KEY (exam_id) REFERENCES exam_sessions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "exam_sessions",
+   "sql": "CREATE TABLE IF NOT EXISTS exam_sessions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    profile_id INTEGER NOT NULL,\n    title TEXT NOT NULL,\n    question_ids TEXT NOT NULL,\n    total_questions INTEGER NOT NULL,\n    duration_minutes INTEGER NOT NULL,\n    status TEXT NOT NULL DEFAULT 'active',\n    started_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    submitted_at TEXT,\n    score REAL,\n    max_score REAL,\n    correct_count INTEGER DEFAULT 0,\n    wrong_count INTEGER DEFAULT 0,\n    unanswered_count INTEGER DEFAULT 0,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "feedback",
+   "sql": "CREATE TABLE IF NOT EXISTS feedback (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        category TEXT NOT NULL DEFAULT 'other',\n        content TEXT NOT NULL,\n        contact TEXT DEFAULT '',\n        page TEXT DEFAULT '',\n        status TEXT NOT NULL DEFAULT 'new',\n        created_at TEXT NOT NULL\n    )"
+  },
+  {
+   "type": "table",
+   "name": "import_jobs",
+   "sql": "CREATE TABLE IF NOT EXISTS import_jobs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    profile_id INTEGER NOT NULL DEFAULT 1,\n    filename TEXT NOT NULL,\n    stored_path TEXT NOT NULL,\n    answer_stored_path TEXT NOT NULL DEFAULT '',\n    detected_year INTEGER,\n    detected_format TEXT,\n    status TEXT NOT NULL DEFAULT 'analyzing',\n    draft_data TEXT NOT NULL DEFAULT '{}',\n    warnings TEXT NOT NULL DEFAULT '[]',\n    parse_context TEXT NOT NULL DEFAULT '{}',\n    deleted_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "learning_days",
+   "sql": "CREATE TABLE IF NOT EXISTS learning_days (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    day TEXT NOT NULL,\n    activity_type TEXT NOT NULL,\n    detail TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    UNIQUE (day, activity_type)\n)"
+  },
+  {
+   "type": "table",
+   "name": "options",
+   "sql": "CREATE TABLE IF NOT EXISTS options (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    question_id INTEGER NOT NULL,\n    stable_key TEXT NOT NULL,\n    original_label TEXT NOT NULL,\n    content TEXT NOT NULL,\n    sequence INTEGER NOT NULL, metadata TEXT NOT NULL DEFAULT '{}',\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE,\n    UNIQUE (question_id, stable_key)\n)"
+  },
+  {
+   "type": "table",
+   "name": "papers",
+   "sql": "CREATE TABLE IF NOT EXISTS papers (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    profile_id INTEGER NOT NULL DEFAULT 1,\n    year INTEGER NOT NULL,\n    subject TEXT NOT NULL DEFAULT '英语一',\n    title TEXT NOT NULL,\n    source_file TEXT,\n    status TEXT NOT NULL DEFAULT 'draft',\n    deleted_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, external_key TEXT, package_id TEXT, content_version TEXT, source_metadata TEXT NOT NULL DEFAULT '{}', exam_type TEXT NOT NULL DEFAULT '', exam_month INTEGER NOT NULL DEFAULT 0, set_number INTEGER NOT NULL DEFAULT 1, session_group_key TEXT NOT NULL DEFAULT '',\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "practice_answer_events",
+   "sql": "CREATE TABLE IF NOT EXISTS practice_answer_events (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    session_id INTEGER NOT NULL,\n    question_id INTEGER NOT NULL,\n    user_answer TEXT NOT NULL,\n    option_order TEXT NOT NULL DEFAULT '[]',\n    changed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (session_id) REFERENCES practice_sessions(id) ON DELETE CASCADE,\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "practice_answers",
+   "sql": "CREATE TABLE IF NOT EXISTS practice_answers (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    session_id INTEGER NOT NULL,\n    question_id INTEGER NOT NULL,\n    user_answer TEXT NOT NULL,\n    option_order TEXT NOT NULL DEFAULT '[]',\n    is_correct INTEGER,\n    answered_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (session_id) REFERENCES practice_sessions(id) ON DELETE CASCADE,\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE,\n    UNIQUE (session_id, question_id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "practice_sessions",
+   "sql": "CREATE TABLE IF NOT EXISTS practice_sessions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    mode TEXT NOT NULL,\n    paper_id INTEGER,\n    unit_ids TEXT NOT NULL,\n    shuffle_options INTEGER NOT NULL DEFAULT 1,\n    status TEXT NOT NULL DEFAULT 'active',\n    started_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    submitted_at TEXT,\n    score REAL,\n    max_score REAL,\n    FOREIGN KEY (paper_id) REFERENCES papers(id) ON DELETE SET NULL\n)"
+  },
+  {
+   "type": "table",
+   "name": "practice_unit_submissions",
+   "sql": "CREATE TABLE IF NOT EXISTS practice_unit_submissions (\n    session_id INTEGER NOT NULL,\n    unit_id INTEGER NOT NULL,\n    submitted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    score REAL NOT NULL DEFAULT 0,\n    max_score REAL NOT NULL DEFAULT 0,\n    PRIMARY KEY (session_id, unit_id),\n    FOREIGN KEY (session_id) REFERENCES practice_sessions(id) ON DELETE CASCADE,\n    FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_ai_labels",
+   "sql": "CREATE TABLE IF NOT EXISTS question_ai_labels (\n    question_id INTEGER PRIMARY KEY,\n    primary_skill TEXT NOT NULL DEFAULT '',\n    secondary_skills TEXT NOT NULL DEFAULT '[]',\n    trap_types TEXT NOT NULL DEFAULT '[]',\n    attention_points TEXT NOT NULL DEFAULT '[]',\n    vocabulary_demand TEXT NOT NULL DEFAULT 'medium',\n    context_dependency TEXT NOT NULL DEFAULT 'medium',\n    grammar_dependency TEXT NOT NULL DEFAULT 'medium',\n    confidence REAL NOT NULL DEFAULT 0,\n    locked INTEGER NOT NULL DEFAULT 0,\n    user_edited INTEGER NOT NULL DEFAULT 0,\n    model_name TEXT NOT NULL DEFAULT '',\n    label_version INTEGER NOT NULL DEFAULT 1,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_bank_assets",
+   "sql": "CREATE TABLE IF NOT EXISTS question_bank_assets (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    package_id TEXT NOT NULL,\n    content_version TEXT NOT NULL,\n    asset_id TEXT NOT NULL,\n    stored_path TEXT NOT NULL,\n    media_type TEXT NOT NULL,\n    sha256 TEXT NOT NULL,\n    metadata TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    UNIQUE (package_id, content_version, asset_id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_bank_packages",
+   "sql": "CREATE TABLE IF NOT EXISTS question_bank_packages (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    package_id TEXT NOT NULL,\n    content_version TEXT NOT NULL,\n    title TEXT NOT NULL DEFAULT '',\n    publisher TEXT NOT NULL DEFAULT '',\n    manifest_data TEXT NOT NULL DEFAULT '{}',\n    source_file TEXT NOT NULL DEFAULT '',\n    status TEXT NOT NULL DEFAULT 'published',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    UNIQUE (package_id, content_version)\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_bank_profiles",
+   "sql": "CREATE TABLE IF NOT EXISTS question_bank_profiles (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    name TEXT NOT NULL,\n    description TEXT NOT NULL DEFAULT '',\n    color TEXT NOT NULL DEFAULT '#486d5c',\n    icon TEXT NOT NULL DEFAULT 'book',\n    is_default INTEGER NOT NULL DEFAULT 0,\n    deleted_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_bank_revisions",
+   "sql": "CREATE TABLE IF NOT EXISTS question_bank_revisions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    package_id TEXT NOT NULL,\n    content_version TEXT NOT NULL,\n    paper_external_key TEXT NOT NULL,\n    action TEXT NOT NULL,\n    summary TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_label_run_items",
+   "sql": "CREATE TABLE IF NOT EXISTS question_label_run_items (\n    run_id TEXT NOT NULL,\n    question_id INTEGER NOT NULL,\n    processed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    PRIMARY KEY (run_id, question_id),\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "questions",
+   "sql": "CREATE TABLE IF NOT EXISTS questions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    unit_id INTEGER NOT NULL,\n    number INTEGER NOT NULL,\n    stem TEXT NOT NULL DEFAULT '',\n    question_type TEXT NOT NULL DEFAULT 'single_choice',\n    answer TEXT NOT NULL,\n    score REAL NOT NULL,\n    sequence INTEGER NOT NULL,\n    metadata TEXT NOT NULL DEFAULT '{}',\n    external_key TEXT,\n    content_hash TEXT,\n    FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE CASCADE,\n    UNIQUE (unit_id, number)\n)"
+  },
+  {
+   "type": "table",
+   "name": "revision_log",
+   "sql": "CREATE TABLE IF NOT EXISTS revision_log (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    import_job_id INTEGER,\n    entity_type TEXT NOT NULL,\n    entity_ref TEXT NOT NULL,\n    field_name TEXT NOT NULL,\n    old_value TEXT,\n    new_value TEXT,\n    source TEXT NOT NULL,\n    model_name TEXT,\n    approved INTEGER NOT NULL DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (import_job_id) REFERENCES import_jobs(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "trash_entries",
+   "sql": "CREATE TABLE IF NOT EXISTS trash_entries (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    deletion_batch_id TEXT NOT NULL,\n    resource_type TEXT NOT NULL,\n    resource_id INTEGER NOT NULL,\n    resource_name TEXT NOT NULL DEFAULT '',\n    profile_id INTEGER,\n    metadata TEXT NOT NULL DEFAULT '{}',\n    deleted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    purge_after TEXT NOT NULL,\n    restored_at TEXT,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id) ON DELETE SET NULL\n)"
+  },
+  {
+   "type": "table",
+   "name": "units",
+   "sql": "CREATE TABLE IF NOT EXISTS units (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    paper_id INTEGER NOT NULL,\n    unit_type TEXT NOT NULL,\n    subtype TEXT,\n    title TEXT NOT NULL,\n    external_key TEXT,\n    sequence INTEGER NOT NULL,\n    passage TEXT NOT NULL DEFAULT '',\n    shared_data TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, audio_path TEXT,\n    FOREIGN KEY (paper_id) REFERENCES papers(id) ON DELETE CASCADE,\n    UNIQUE (paper_id, sequence)\n)"
+  },
+  {
+   "type": "table",
+   "name": "user_achievements",
+   "sql": "CREATE TABLE IF NOT EXISTS user_achievements (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        badge_key TEXT NOT NULL UNIQUE,\n        earned_at TEXT NOT NULL,\n        progress INTEGER DEFAULT 0,\n        target INTEGER DEFAULT 0\n    )"
+  },
+  {
+   "type": "table",
+   "name": "vocabulary_entries",
+   "sql": "CREATE TABLE IF NOT EXISTS vocabulary_entries (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    term TEXT NOT NULL,\n    normalized_term TEXT NOT NULL UNIQUE,\n    lemma TEXT NOT NULL DEFAULT '',\n    phonetic TEXT NOT NULL DEFAULT '',\n    part_of_speech TEXT NOT NULL DEFAULT '',\n    contextual_meaning TEXT NOT NULL DEFAULT '',\n    common_meaning TEXT NOT NULL DEFAULT '',\n    synonyms TEXT NOT NULL DEFAULT '[]',\n    antonyms TEXT NOT NULL DEFAULT '[]',\n    similar_forms TEXT NOT NULL DEFAULT '[]',\n    memory_hint TEXT NOT NULL DEFAULT '',\n    note TEXT NOT NULL DEFAULT '',\n    translation_status TEXT NOT NULL DEFAULT 'pending',\n    translation_error TEXT NOT NULL DEFAULT '',\n    encounter_count INTEGER NOT NULL DEFAULT 1,\n    study_status TEXT NOT NULL DEFAULT 'learning',\n    manually_frequent INTEGER NOT NULL DEFAULT 0,\n    user_edited INTEGER NOT NULL DEFAULT 0,\n    next_review_at TEXT,\n    last_reviewed_at TEXT,\n    -- FSRS 间隔复习字段 (v9.19: 替代固定间隔算法)\n    fsrs_due TEXT,\n    fsrs_stability REAL,\n    fsrs_difficulty REAL,\n    fsrs_state INTEGER DEFAULT 0,\n    fsrs_step INTEGER DEFAULT 0,\n    fsrs_last_review TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    last_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n, category TEXT NOT NULL DEFAULT '')"
+  },
+  {
+   "type": "table",
+   "name": "vocabulary_occurrences",
+   "sql": "CREATE TABLE IF NOT EXISTS vocabulary_occurrences (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    entry_id INTEGER NOT NULL,\n    surface_form TEXT NOT NULL,\n    context_sentence TEXT NOT NULL DEFAULT '',\n    context_before TEXT NOT NULL DEFAULT '',\n    context_after TEXT NOT NULL DEFAULT '',\n    unit_id INTEGER,\n    question_id INTEGER,\n    year INTEGER,\n    unit_title TEXT NOT NULL DEFAULT '',\n    unit_type TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (entry_id) REFERENCES vocabulary_entries(id) ON DELETE CASCADE,\n    FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE SET NULL,\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE SET NULL\n)"
+  },
+  {
+   "type": "table",
+   "name": "vocabulary_reviews",
+   "sql": "CREATE TABLE IF NOT EXISTS vocabulary_reviews (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    entry_id INTEGER NOT NULL,\n    rating TEXT NOT NULL,\n    reviewed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    next_review_at TEXT,\n    FOREIGN KEY (entry_id) REFERENCES vocabulary_entries(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_analysis_reports",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_analysis_reports (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    scope_key TEXT NOT NULL DEFAULT '',\n    unit_ids TEXT NOT NULL DEFAULT '[]',\n    input_snapshot TEXT NOT NULL DEFAULT '{}',\n    scope_title TEXT NOT NULL DEFAULT '',\n    question_count INTEGER NOT NULL DEFAULT 0,\n    aggregate_data TEXT NOT NULL DEFAULT '{}',\n    report TEXT NOT NULL,\n    model_name TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_analysis_states",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_analysis_states (\n    unit_id INTEGER PRIMARY KEY,\n    report_id INTEGER NOT NULL,\n    analyzed_session_id INTEGER NOT NULL DEFAULT 0,\n    analyzed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE CASCADE,\n    FOREIGN KEY (report_id) REFERENCES wrong_analysis_reports(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_cause_diagnoses",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_cause_diagnoses (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    report_id INTEGER NOT NULL,\n    question_id INTEGER NOT NULL,\n    primary_cause TEXT NOT NULL DEFAULT 'uncertain',\n    secondary_causes TEXT NOT NULL DEFAULT '[]',\n    knowledge_points TEXT NOT NULL DEFAULT '[]',\n    confidence REAL NOT NULL DEFAULT 0,\n    reason_codes TEXT NOT NULL DEFAULT '[]',\n    recommended_actions TEXT NOT NULL DEFAULT '[]',\n    diagnosed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (report_id) REFERENCES wrong_analysis_reports(id) ON DELETE CASCADE,\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE,\n    UNIQUE (report_id, question_id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_cause_mastery",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_cause_mastery (\n    cause_code TEXT PRIMARY KEY,\n    first_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    last_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    total_occurrences INTEGER NOT NULL DEFAULT 0,\n    report_count INTEGER NOT NULL DEFAULT 0,\n    recent_percentage REAL NOT NULL DEFAULT 0,\n    previous_percentage REAL NOT NULL DEFAULT 0,\n    trend_direction TEXT NOT NULL DEFAULT 'stable',\n    mastery_score INTEGER NOT NULL DEFAULT 50,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_cause_snapshots",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_cause_snapshots (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    report_id INTEGER NOT NULL,\n    cause_code TEXT NOT NULL,\n    question_count INTEGER NOT NULL DEFAULT 0,\n    wrong_count INTEGER NOT NULL DEFAULT 0,\n    percentage REAL NOT NULL DEFAULT 0,\n    average_confidence REAL NOT NULL DEFAULT 0,\n    captured_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (report_id) REFERENCES wrong_analysis_reports(id) ON DELETE CASCADE,\n    UNIQUE (report_id, cause_code)\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_knowledge_points",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_knowledge_points (\n    code TEXT PRIMARY KEY,\n    cause_code TEXT NOT NULL,\n    label TEXT NOT NULL,\n    description TEXT NOT NULL DEFAULT '',\n    guidance TEXT NOT NULL DEFAULT '',\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_kp_snapshots",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_kp_snapshots (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    report_id INTEGER NOT NULL,\n    kp_code TEXT NOT NULL,\n    hit_count INTEGER NOT NULL DEFAULT 0,\n    percentage REAL NOT NULL DEFAULT 0,\n    captured_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (report_id) REFERENCES wrong_analysis_reports(id) ON DELETE CASCADE,\n    UNIQUE (report_id, kp_code)\n)"
+  },
+  {
+   "type": "table",
+   "name": "wrong_stats",
+   "sql": "CREATE TABLE IF NOT EXISTS wrong_stats (\n    question_id INTEGER PRIMARY KEY,\n    attempt_count INTEGER NOT NULL DEFAULT 0,\n    wrong_count INTEGER NOT NULL DEFAULT 0,\n    recent_results TEXT NOT NULL DEFAULT '[]',\n    consecutive_correct INTEGER NOT NULL DEFAULT 0,\n    manually_frequent INTEGER NOT NULL DEFAULT 0,\n    last_wrong_at TEXT,\n    last_attempt_at TEXT, note TEXT DEFAULT '',\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  }
+ ]
+}
