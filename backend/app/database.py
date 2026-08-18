@@ -459,6 +459,20 @@ CREATE TABLE IF NOT EXISTS annotations (
 );
 CREATE INDEX IF NOT EXISTS idx_annotations_unit ON annotations(unit_id);
 
+-- 任务E: 题目解析（AI 批量生成，content 为结构化 JSON，见 backend/prompts/explain_prompt.py）
+CREATE TABLE IF NOT EXISTS question_explanations (
+    question_id INTEGER PRIMARY KEY,
+    content TEXT NOT NULL,
+    source_model TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+    updated_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
+);
+CREATE INDEX IF NOT EXISTS idx_question_explanations_updated
+    ON question_explanations(updated_at DESC);
+CREATE INDEX IF NOT EXISTS idx_question_explanations_model
+    ON question_explanations(source_model);
+
  INSERT INTO ai_profiles
     (name, base_url, api_key_encrypted, enabled, is_default, default_model,
      temperature, max_tokens, system_prompt)
