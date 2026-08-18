@@ -1,7 +1,7 @@
 {
- "version": "2026-08-17 13:03:09",
- "fingerprint": "bd085476f5e9",
- "object_count": 75,
+ "version": "2026-08-18 13:01:19",
+ "fingerprint": "132f94a5203f",
+ "object_count": 78,
  "objects": [
   {
    "type": "index",
@@ -82,6 +82,16 @@
    "type": "index",
    "name": "idx_question_bank_revisions_paper",
    "sql": "CREATE INDEX IF NOT EXISTS idx_question_bank_revisions_paper\n    ON question_bank_revisions(paper_external_key, created_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_explanations_model",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_question_explanations_model\n    ON question_explanations(source_model)"
+  },
+  {
+   "type": "index",
+   "name": "idx_question_explanations_updated",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_question_explanations_updated\n    ON question_explanations(updated_at DESC)"
   },
   {
    "type": "index",
@@ -292,6 +302,11 @@
    "type": "table",
    "name": "question_bank_revisions",
    "sql": "CREATE TABLE IF NOT EXISTS question_bank_revisions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    package_id TEXT NOT NULL,\n    content_version TEXT NOT NULL,\n    paper_external_key TEXT NOT NULL,\n    action TEXT NOT NULL,\n    summary TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "question_explanations",
+   "sql": "CREATE TABLE IF NOT EXISTS question_explanations (\n    question_id INTEGER PRIMARY KEY,\n    content TEXT NOT NULL,\n    source_model TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),\n    updated_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
   },
   {
    "type": "table",
