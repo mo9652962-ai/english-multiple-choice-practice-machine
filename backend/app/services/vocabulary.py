@@ -615,7 +615,9 @@ def _translate_vocabulary_batch(
 
 
 def translate_queued_vocabulary() -> dict[str, int]:
-    _TRANSLATION_LOCK.acquire()
+    # v9.23: 非阻塞互斥——已有翻译任务在跑时跳过本次触发（防后台任务堆积/重复翻译）
+    if not _TRANSLATION_LOCK.acquire(blocking=False):
+        return {"translated": 0, "remaining": 0, "skipped": True}
     translated = 0
     try:
         with connect() as connection:

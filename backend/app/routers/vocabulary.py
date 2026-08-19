@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import sqlite3
+import threading
+import time
 from datetime import datetime
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request
 from fastapi.responses import FileResponse
 
 from ..database import get_db
@@ -47,10 +49,16 @@ def list_entries(
 ) -> dict:
     conditions = ["1 = 1"]
     params: list[object] = []
+
+    def _escape_like(s: str) -> str:
+        """v9.23: LIKE 通配符转义（% _ / 作为字面值）"""
+        return s.replace("/", "//").replace("%", "/%").replace("_", "/_")
+
     if category:
         # v2.15: 前缀匹配, 支持 "高中" → "高中·高频"/"高中·热点"
-        conditions.append("category LIKE ?")
-        params.append(f"{category}%")
+        # v9.23: 通配符转义
+        conditions.append("category LIKE ? ESCAPE '/'")
+        params.append(f"{_escape_like(category)}%")
     if status == "frequent":
         conditions.append("(encounter_count >= 2 OR manually_frequent = 1)")
     elif status == "review":
@@ -68,9 +76,10 @@ def list_entries(
         conditions.append("translation_status != 'ready'")
     if search.strip():
         conditions.append(
-            "(term LIKE ? OR lemma LIKE ? OR contextual_meaning LIKE ? OR common_meaning LIKE ?)"
+            "(term LIKE ? ESCAPE '/' OR lemma LIKE ? ESCAPE '/' "
+            "OR contextual_meaning LIKE ? ESCAPE '/' OR common_meaning LIKE ? ESCAPE '/')"
         )
-        needle = f"%{search.strip()}%"
+        needle = f"%{_escape_like(search.strip())}%"
         params.extend([needle] * 4)
     rows = connection.execute(
         f"""
@@ -185,13 +194,31 @@ def vocab_stats(
     }
 
 
+# v9.23: /article 高消耗接口限流（每 IP 每分钟 3 次——防额度盗刷）
+_article_requests: dict[str, list[float]] = {}
+_article_requests_lock = threading.Lock()
+_ARTICLE_RATE_LIMIT = 3  # 次/分钟
+_ARTICLE_RATE_WINDOW = 60
+
+
 @router.get("/article")
 def generate_vocab_article(
     topic: str = "随机",
     word_count: int = 8,
     connection: sqlite3.Connection = Depends(get_db),
+    request: Request = None,
 ) -> dict:
-    """从单词本选词，AI 生成包含这些词的语境短文（辅助记忆）"""
+    """从单词本选词，AI 生成包含这些词的语境短文（辅助记忆）
+    v9.23: 加限流——高消耗接口，防止公网部署时被刷爆额度"""
+    # 限流（复用 request.client.host，不信任 XFF）
+    ip = request.client.host if request and request.client else "unknown"
+    now = time.time()
+    with _article_requests_lock:
+        window = [t for t in _article_requests.get(ip, []) if now - t < _ARTICLE_RATE_WINDOW]
+        if len(window) >= _ARTICLE_RATE_LIMIT:
+            raise HTTPException(429, f"生成短文太频繁（限 {_ARTICLE_RATE_LIMIT} 次/分钟）")
+        window.append(now)
+        _article_requests[ip] = window
     from ..services.article_generator import generate_article
     return generate_article(connection, topic, word_count)
 
@@ -302,9 +329,11 @@ def export_anki_deck(
 def download_anki_deck(
     filename: str,
 ) -> FileResponse:
-    """下载已生成的 Anki 牌组文件"""
+    """下载已生成的 Anki 牌组文件（v9.23: 路径沙箱——防 ../ 任意文件下载）"""
     from pathlib import Path
-    file = Path("exports") / filename
-    if not file.is_file():
+    exports_dir = Path("exports").resolve()
+    safe_name = Path(filename).name  # 仅保留文件名（剥离路径字符）
+    file = (exports_dir / safe_name).resolve()
+    if not file.is_file() or not file.is_relative_to(exports_dir):
         raise HTTPException(404, "文件不存在，请先导出")
-    return FileResponse(file, media_type="application/octet-stream", filename=filename)
+    return FileResponse(file, media_type="application/octet-stream", filename=safe_name)
