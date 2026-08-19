@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sqlite3
 import threading
 from contextlib import asynccontextmanager
 
@@ -65,8 +66,7 @@ async def lifespan(_: FastAPI):
 
 
 def _backup_database_on_startup() -> None:
-    """启动时自动备份数据库（Anki 式数据安全：保留最近 5 份）"""
-    import shutil
+    """启动时自动备份数据库（v9.21: 用 SQLite 在线备份 API 替代 copy2——防 WAL 损坏）"""
     try:
         from .config import DATA_DIR, DATABASE_PATH
         if not DATABASE_PATH.exists():
@@ -76,7 +76,8 @@ def _backup_database_on_startup() -> None:
         import time as _t
         stamp = _t.strftime("%Y%m%d_%H%M%S")
         dest = backup_dir / f"question_bank_{stamp}.db"
-        shutil.copy2(DATABASE_PATH, dest)
+        with connect() as src, sqlite3.connect(dest) as dst:
+            src.backup(dst)
         # 保留最近 5 份
         backups = sorted(backup_dir.glob("question_bank_*.db"))
         for old in backups[:-5]:
@@ -116,22 +117,22 @@ app.include_router(imports.router, prefix="/api")
 app.include_router(question_banks.router, prefix="/api")
 app.include_router(question_bank_profiles.router, prefix="/api")
 app.include_router(ai.router, prefix="/api")
-app.include_router(vocab_plans.router, prefix="")
-app.include_router(vocab_context.router, prefix="")
-app.include_router(report.router, prefix="")
-app.include_router(achievements.router, prefix="")
-app.include_router(ai_recommend.router, prefix="")
-app.include_router(vocab_cloze.router, prefix="")
-app.include_router(vocab_quiz.router, prefix="")
-app.include_router(leaderboard.router, prefix="")
-app.include_router(calendar.router, prefix="")
-app.include_router(diagnostic.router, prefix="/api")
+app.include_router(vocab_plans.router, prefix="/api")
+app.include_router(vocab_context.router, prefix="/api")
+app.include_router(report.router, prefix="/api")
+app.include_router(achievements.router, prefix="/api")
+app.include_router(ai_recommend.router, prefix="/api")
+app.include_router(vocab_cloze.router, prefix="/api")
+app.include_router(vocab_quiz.router, prefix="/api")
+app.include_router(leaderboard.router, prefix="/api")
+app.include_router(calendar.router, prefix="/api")
 app.include_router(explanations.router, prefix="/api")
-app.include_router(library.router, prefix="")
+app.include_router(library.router, prefix="/api")
+app.include_router(feedback.router, prefix="/api")
+app.include_router(diagnostic.router, prefix="/api")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
-app.include_router(feedback.router, prefix="")
 
 
 @app.get("/api/health")
@@ -196,9 +197,12 @@ if FRONTEND_DIST.exists():
 
     @app.get("/{full_path:path}", include_in_schema=False)
     def frontend(full_path: str):
-        candidate = FRONTEND_DIST / full_path
-        if full_path and candidate.is_file():
-            return FileResponse(candidate)
+        # v9.21: 路径沙箱——防止 ../ 逃逸读取后端源码/数据库
+        if full_path:
+            resolved = (FRONTEND_DIST / full_path).resolve()
+            dist_root = FRONTEND_DIST.resolve()
+            if resolved.is_file() and resolved.is_relative_to(dist_root):
+                return FileResponse(resolved)
         html = (FRONTEND_DIST / "index.html").read_text(encoding="utf-8")
         with connect() as connection:
             startup_data = dashboard.dashboard(connection)
