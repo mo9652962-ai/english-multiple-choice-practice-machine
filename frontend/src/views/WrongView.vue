@@ -282,6 +282,17 @@ async function retryScope(
   }
 }
 
+// v9.24: 题型枚举转人类可读（脏枚举 → 中文标签）
+const TYPE_LABELS: Record<string, string> = {
+  cloze: '完型填空', paragraph_matching: '段落匹配', part_b: '新题型',
+  reading: '阅读理解', listening: '听力', translation: '翻译', writing: '写作',
+  vocabulary: '词汇', grammar: '语法', fill_blank: '填空', multiple_choice: '选择',
+}
+function typeLabel(t: string | null | undefined): string {
+  if (!t) return '未分类'
+  return TYPE_LABELS[t] || t.replace(/_/g, ' ')
+}
+
 // v2.34: 同类题强化 (粉笔/错题plus式) — 按该范围错题最薄弱题型, 生成同类专项练习
 async function strengthenScope(key: string, questionIds: number[], title: string) {
   startingKey.value = key
@@ -471,7 +482,7 @@ function analysisLabel(unitIds: number[]): string {
       </div>
       <div v-if="wrongStats.by_type?.length" class="freq-types">
         <span v-for="t in wrongStats.by_type" :key="t.type" class="freq-type-chip">
-          {{ t.type || '未分类' }} × {{ t.count }}
+          {{ typeLabel(t.type) }} × {{ t.count }}
         </span>
       </div>
     </div>

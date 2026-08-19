@@ -29,6 +29,15 @@ const causeColor: Record<string, string> = {
 
 const causeLabel = (code: string) => report.value?.aggregate?.categories?.find((c: any) => c.code === code)?.label || code
 
+// v9.24: 能力维度转译（脏 key → 人类可读）
+const DIM_LABELS: Record<string, string> = {
+  detail: '细节定位题', uncertain: '主旨/推断题', vocabulary: '词汇理解',
+  grammar: '语法结构', context: '语境推断', discourse: '篇章逻辑',
+  inference: '推理判断', main_idea: '主旨大意', attitude: '态度观点',
+  trap: '干扰项识别', carelessness: '粗心失误', collocation: '搭配运用',
+}
+const dimLabel = (key: string) => DIM_LABELS[key] || key.replace(/_/g, ' ')
+
 const levelBars = computed(() => {
   const dims = report.value?.level?.by_dimension || {}
   return Object.entries(dims).map(([key, value]) => ({ key, value: value as number }))
@@ -135,16 +144,16 @@ function useHistory(id: number) { loadReport(id) }
           <span class="muted">{{ report.created_at }}</span>
         </div>
         <div class="level-row">
-          <div class="level-score">
-            <span class="level-num">{{ report.level?.overall || '-' }}</span>
-            <span class="level-max">/ 5</span>
+          <div class="level-score grade-seal-badge">
+            <span class="level-num score-huge">{{ report.level?.overall || '-' }}</span>
+            <span class="level-max score-total">/ 5</span>
           </div>
           <div class="level-label">{{ report.level?.label || '' }}</div>
         </div>
         <div v-if="levelBars.length" class="level-dims">
           <div v-for="d in levelBars" :key="d.key" class="dim-row">
-            <span class="dim-name">{{ d.key }}</span>
-            <div class="dim-track"><div class="dim-fill" :style="{ width: (d.value / 5 * 100) + '%' }"></div></div>
+            <span class="dim-name">{{ dimLabel(d.key) }}</span>
+            <div class="dim-track ink-progress-track"><div class="dim-fill ink-progress-bar" :style="{ width: (d.value / 5 * 100) + '%' }"></div></div>
             <span class="dim-value">{{ d.value }}</span>
           </div>
         </div>
@@ -220,8 +229,8 @@ function useHistory(id: number) { loadReport(id) }
 .level-label { color: var(--ink-2); }
 .level-dims .dim-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
 .dim-name { width: 90px; font-size: 13px; color: var(--ink-3); }
-.dim-track { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
-.dim-fill { height: 100%; background: var(--primary); border-radius: 4px; transition: width .5s; }
+.dim-track { flex: 1; height: 8px; background: var(--primary-faint); border-radius: 999px; overflow: hidden; }
+.dim-fill { height: 100%; background: linear-gradient(90deg, #544E46 0%, #4A5F4E 100%); border-radius: 999px; transition: width .5s; }
 .dim-value { width: 24px; text-align: right; font-size: 13px; color: var(--ink-3); }
 .cause-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px dashed var(--line); }
 .cause-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
