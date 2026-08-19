@@ -110,7 +110,7 @@ onBeforeUnmount(() => { if (ticker.value) clearInterval(ticker.value) })
   <div class="exam-page page-exam">
     <!-- 开始设置 -->
     <div v-if="showStartDialog && !exam" class="exam-start card">
-      <h2>📝 模拟考试</h2>
+      <h2><span class="hero-seal exam-seal" aria-hidden="true">榜</span>模拟考试</h2>
       <p class="muted">从当前题库随机抽题，全真限时作答，交卷即时评分</p>
       <label>
         <span>考试类别</span>
