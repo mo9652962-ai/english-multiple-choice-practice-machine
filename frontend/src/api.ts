@@ -1,10 +1,23 @@
 const API_ROOT = '/api'
 
+// v9.24: 多用户认证——token 存储
+const TOKEN_KEY = 'epm_auth_token'
+export function getToken(): string | null {
+  return localStorage.getItem(TOKEN_KEY)
+}
+export function setToken(token: string | null): void {
+  if (token) localStorage.setItem(TOKEN_KEY, token)
+  else localStorage.removeItem(TOKEN_KEY)
+}
+
 export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
   const headers = new Headers(options.headers)
   if (!(options.body instanceof FormData)) {
     headers.set('Content-Type', 'application/json')
   }
+  // v9.24: 自动携带 token
+  const token = getToken()
+  if (token) headers.set('Authorization', `Bearer ${token}`)
   const response = await fetch(`${API_ROOT}${path}`, { ...options, headers })
   if (!response.ok) {
     let message = `${response.status} ${response.statusText}`
@@ -17,6 +30,13 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
         : (detail as any)?.message || JSON.stringify(detail)
     } catch {
       // Keep status text.
+    }
+    // v9.24: 401 未登录 → 跳登录页
+    if (response.status === 401 && !path.startsWith('/auth/')) {
+      setToken(null)
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login'
+      }
     }
     const error = new Error(message) as Error & { status?: number, detail?: unknown }
     error.status = response.status
@@ -60,6 +80,18 @@ export const del = async <T>(path: string) => {
     return apiDelete(path) as T
   }
   return api<T>(path, { method: 'DELETE' })
+}
+
+// ── v9.24: 多用户认证 API ──
+export interface AuthUser { id: number; username: string; is_admin: boolean }
+export interface AuthResponse { token: string; user: AuthUser }
+
+export const authApi = {
+  register: (username: string, password: string) =>
+    api<AuthResponse>('/auth/register', { method: 'POST', body: JSON.stringify({ username, password }) }),
+  login: (username: string, password: string) =>
+    api<AuthResponse>('/auth/login', { method: 'POST', body: JSON.stringify({ username, password }) }),
+  me: () => api<AuthUser>('/auth/me'),
 }
 
 // ── PWA 离线模式 (v9.19) ──

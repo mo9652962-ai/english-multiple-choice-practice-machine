@@ -9,6 +9,7 @@ from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, R
 from fastapi.responses import FileResponse
 
 from ..database import get_db
+from .auth import maybe_require_user
 from ..schemas import (
     VocabularyCreate,
     VocabularyReview,
@@ -32,9 +33,10 @@ router = APIRouter(prefix="/vocabulary", tags=["vocabulary"])
 def create_entry(
     request: VocabularyCreate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
-        result = add_vocabulary(connection, request.model_dump())
+        result = add_vocabulary(connection, request.model_dump(), user["id"] if user else None)
     except ValueError as error:
         raise HTTPException(400, str(error)) from error
     return result
@@ -46,9 +48,18 @@ def list_entries(
     search: str = "",
     category: str = "",
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     conditions = ["1 = 1"]
     params: list[object] = []
+    # v9.24: 多用户——按 user_id 过滤（EPM_AUTH 开启时）
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED:
+        if user:
+            conditions.append("user_id = ?")
+            params.append(user["id"])
+        else:
+            conditions.append("user_id IS NULL")
 
     def _escape_like(s: str) -> str:
         """v9.23: LIKE 通配符转义（% _ / 作为字面值）"""
@@ -225,8 +236,18 @@ def generate_vocab_article(
 
 @router.get("/{entry_id}")
 def read_entry(
-    entry_id: int, connection: sqlite3.Connection = Depends(get_db)
+    entry_id: int, connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    # v9.24: 多用户——校验归属
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED:
+        row = connection.execute(
+            "SELECT id FROM vocabulary_entries WHERE id = ? AND user_id = ?",
+            (entry_id, user["id"] if user else None),
+        ).fetchone()
+        if row is None:
+            raise HTTPException(404, "单词不存在或无权访问")
     try:
         return _serialize_entry(connection, entry_id)
     except LookupError as error:
@@ -238,7 +259,17 @@ def update_entry(
     entry_id: int,
     request: VocabularyUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    # v9.24: 多用户——校验归属
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED:
+        row = connection.execute(
+            "SELECT id FROM vocabulary_entries WHERE id = ? AND user_id = ?",
+            (entry_id, user["id"] if user else None),
+        ).fetchone()
+        if row is None:
+            raise HTTPException(404, "单词不存在或无权访问")
     fields = request.model_dump(exclude_none=True)
     if not fields:
         return _serialize_entry(connection, entry_id)
@@ -270,8 +301,18 @@ def update_entry(
 
 @router.delete("/{entry_id}")
 def delete_entry(
-    entry_id: int, connection: sqlite3.Connection = Depends(get_db)
+    entry_id: int, connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    # v9.24: 多用户——校验归属
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED:
+        row = connection.execute(
+            "SELECT id FROM vocabulary_entries WHERE id = ? AND user_id = ?",
+            (entry_id, user["id"] if user else None),
+        ).fetchone()
+        if row is None:
+            raise HTTPException(404, "单词不存在或无权访问")
     connection.execute("DELETE FROM vocabulary_entries WHERE id = ?", (entry_id,))
     connection.commit()
     return {"ok": True}

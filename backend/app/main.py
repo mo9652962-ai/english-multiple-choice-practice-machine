@@ -15,6 +15,7 @@ from .config import FRONTEND_DIST
 from .database import connect, initialize_database
 from .routers import (
     ai,
+    auth,  # v9.24: 多用户认证
     dashboard,
     exam,
     feedback,
@@ -121,6 +122,7 @@ app.add_middleware(
 )
 
 app.include_router(dashboard.router, prefix="/api")
+app.include_router(auth.router, prefix="/api")  # v9.24: 多用户认证（register/login/me）
 app.include_router(papers.router, prefix="/api")
 app.include_router(practice.router, prefix="/api")
 app.include_router(annotations.router, prefix="/api")

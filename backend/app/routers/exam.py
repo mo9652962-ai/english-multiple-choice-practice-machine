@@ -13,6 +13,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
+from .auth import maybe_require_user
 
 
 def _parse_dt(s: str) -> datetime:
@@ -20,6 +21,15 @@ def _parse_dt(s: str) -> datetime:
     if not s:
         return datetime.now()
     return datetime.fromisoformat(s.replace("Z", "+00:00").replace(" ", "T"))
+
+
+def _user_scope(user: dict | None, alias: str = "") -> tuple[str, list]:
+    """v9.24: EPM_AUTH 开启时返回 user_id 过滤条件；关闭时返回空（兼容单用户）"""
+    from .auth import AUTH_ENABLED
+    if not AUTH_ENABLED or user is None:
+        return "", []
+    prefix = f"{alias}." if alias else ""
+    return f" AND {prefix}user_id = ?", [user["id"]]
 
 router = APIRouter(prefix="/exam", tags=["exam"])
 
@@ -69,7 +79,8 @@ def _load_options(connection: sqlite3.Connection, question_id: int) -> list[dict
 
 
 @router.post("/start")
-def start(request: ExamStart, connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def start(request: ExamStart, connection: sqlite3.Connection = Depends(get_db),
+          user: dict | None = Depends(maybe_require_user)) -> dict:
     profile = connection.execute(
         "SELECT id, name FROM question_bank_profiles WHERE id = ? AND deleted_at IS NULL",
         (request.profile_id,),
@@ -79,11 +90,14 @@ def start(request: ExamStart, connection: sqlite3.Connection = Depends(get_db)) 
     questions = _pick_questions(connection, request.profile_id, request.count)
     minutes = request.minutes or max(5, round(len(questions) * 1.0))
     qids = [q["id"] for q in questions]
+    # v9.24: 创建时记录 user_id（EPM_AUTH=1 时）
+    scope, scope_params = _user_scope(user)
     cursor = connection.execute(
         """INSERT INTO exam_sessions
-        (profile_id, title, question_ids, total_questions, duration_minutes, status)
-        VALUES (?, ?, ?, ?, ?, 'active')""",
-        (request.profile_id, f"{profile['name']} 模拟考试", json.dumps(qids), len(qids), minutes),
+        (profile_id, title, question_ids, total_questions, duration_minutes, status, user_id)
+        VALUES (?, ?, ?, ?, ?, 'active', ?)""",
+        (request.profile_id, f"{profile['name']} 模拟考试", json.dumps(qids), len(qids), minutes,
+         user["id"] if user else None),
     )
     connection.commit()
     return {"id": cursor.lastrowid, "title": f"{profile['name']} 模拟考试",
@@ -92,9 +106,11 @@ def start(request: ExamStart, connection: sqlite3.Connection = Depends(get_db)) 
 
 
 @router.get("/sessions/{exam_id}")
-def detail(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def detail(exam_id: int, connection: sqlite3.Connection = Depends(get_db),
+           user: dict | None = Depends(maybe_require_user)) -> dict:
+    scope, scope_params = _user_scope(user)
     row = connection.execute(
-        "SELECT * FROM exam_sessions WHERE id = ?", (exam_id,)
+        f"SELECT * FROM exam_sessions WHERE id = ?{scope}", (exam_id, *scope_params)
     ).fetchone()
     if row is None:
         raise _error("NOT_FOUND", "考试不存在")
@@ -155,8 +171,12 @@ def detail(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> di
 def update_answer(
     exam_id: int, question_id: int, request: AnswerUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    row = connection.execute("SELECT * FROM exam_sessions WHERE id = ?", (exam_id,)).fetchone()
+    scope, scope_params = _user_scope(user)
+    row = connection.execute(
+        f"SELECT * FROM exam_sessions WHERE id = ?{scope}", (exam_id, *scope_params)
+    ).fetchone()
     if row is None:
         raise _error("NOT_FOUND", "考试不存在")
     if row["status"] != "active":
@@ -187,8 +207,12 @@ def update_answer(
 
 
 @router.post("/sessions/{exam_id}/submit")
-def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> dict:
-    row = connection.execute("SELECT * FROM exam_sessions WHERE id = ?", (exam_id,)).fetchone()
+def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db),
+           user: dict | None = Depends(maybe_require_user)) -> dict:
+    scope, scope_params = _user_scope(user)
+    row = connection.execute(
+        f"SELECT * FROM exam_sessions WHERE id = ?{scope}", (exam_id, *scope_params)
+    ).fetchone()
     if row is None:
         raise _error("NOT_FOUND", "考试不存在")
     if row["status"] != "active":
@@ -275,12 +299,15 @@ def _result(connection: sqlite3.Connection, exam_id: int) -> dict:
 
 
 @router.get("/history")
-def history(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def history(connection: sqlite3.Connection = Depends(get_db),
+            user: dict | None = Depends(maybe_require_user)) -> dict:
+    scope, scope_params = _user_scope(user)
     rows = connection.execute(
-        """SELECT id, title, total_questions, duration_minutes, score, max_score,
+        f"""SELECT id, title, total_questions, duration_minutes, score, max_score,
                   correct_count, wrong_count, unanswered_count, submitted_at
-           FROM exam_sessions WHERE status = 'submitted'
-           ORDER BY id DESC LIMIT 30"""
+           FROM exam_sessions WHERE status = 'submitted'{scope}
+           ORDER BY id DESC LIMIT 30""",
+        (*scope_params,),
     ).fetchall()
     items = []
     for r in rows:

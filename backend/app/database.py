@@ -11,6 +11,18 @@ from .config import DATABASE_PATH, ensure_directories
 SCHEMA = """
 PRAGMA foreign_keys = ON;
 
+-- v9.24: 多用户支持（多人部署时启用）
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE COLLATE NOCASE,
+    password_hash TEXT NOT NULL,
+    token TEXT,
+    is_admin INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_login_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_users_token ON users(token);
+
 CREATE TABLE IF NOT EXISTS question_bank_profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -848,6 +860,31 @@ def initialize_database() -> None:
     with connect() as connection:
         connection.executescript(SCHEMA)
         _run_migrations(connection)
+        _migrate_add_user_id(connection)
+
+
+# v9.24: 多用户迁移——核心个人数据表加 user_id（幂等：已存在则跳过）
+_USER_ID_TABLES = {
+    "exam_sessions": "ALTER TABLE exam_sessions ADD COLUMN user_id INTEGER",
+    "practice_sessions": "ALTER TABLE practice_sessions ADD COLUMN user_id INTEGER",
+    "ai_conversations": "ALTER TABLE ai_conversations ADD COLUMN user_id INTEGER",
+    "vocabulary_entries": "ALTER TABLE vocabulary_entries ADD COLUMN user_id INTEGER",
+}
+
+
+def _migrate_add_user_id(connection: sqlite3.Connection) -> None:
+    for table, ddl in _USER_ID_TABLES.items():
+        try:
+            cols = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+            if "user_id" not in cols:
+                connection.execute(ddl)
+                connection.execute(
+                    f"CREATE INDEX IF NOT EXISTS idx_{table}_user_id ON {table}(user_id)"
+                )
+                print(f"[migrate] {table}.user_id added")
+        except Exception:
+            pass
+    connection.commit()
 
 
 def get_default_profile_id(connection: sqlite3.Connection) -> int:
