@@ -34,7 +34,15 @@ RATE_LIMIT = int(os.environ.get("EPM_RATE_LIMIT", "120"))
 RATE_WINDOW = 60  # 秒
 
 # 放行路径（无需鉴权/不限流——健康检查、静态资源）
-PUBLIC_PATHS = ("/api/health", "/assets/", "/manifest.json", "/sw.js", "/icons/")
+PUBLIC_PATHS = (
+    "/api/health",
+    "/api/auth/login",     # v9.24: 多用户登录/注册必须在 API Key 白名单外
+    "/api/auth/register",
+    "/assets/",
+    "/manifest.json",
+    "/sw.js",
+    "/icons/",
+)
 
 _requests: dict[str, list[float]] = {}  # ip → 时间戳列表
 
