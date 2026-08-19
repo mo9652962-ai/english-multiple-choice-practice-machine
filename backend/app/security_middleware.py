@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import os
 import time
+import hmac
 
 from fastapi import Request
 from fastapi.responses import JSONResponse
@@ -39,10 +40,12 @@ _requests: dict[str, list[float]] = {}  # ip → 时间戳列表
 
 
 def _client_ip(request: Request) -> str:
-    """取客户端 IP（优先 X-Forwarded-For——反向代理场景）"""
-    fwd = request.headers.get("x-forwarded-for", "")
-    if fwd:
-        return fwd.split(",")[0].strip()
+    """取客户端 IP（v9.21: 仅当配置了可信代理时信任 X-Forwarded-For，否则回退直连 IP）
+    防伪造 XFF 绕过限流：未显式配置 EPM_TRUST_PROXY 时不读 XFF"""
+    if os.environ.get("EPM_TRUST_PROXY", "").strip():
+        fwd = request.headers.get("x-forwarded-for", "")
+        if fwd:
+            return fwd.split(",")[0].strip()
     return request.client.host if request.client else "unknown"
 
 
@@ -60,10 +63,10 @@ class SecurityMiddleware(BaseHTTPMiddleware):
 
         ip = _client_ip(request)
 
-        # 1. 鉴权：EPM_API_KEY 启用时必须带 X-API-Key
+        # 1. 鉴权：EPM_API_KEY 启用时必须带 X-API-Key（v9.21: 常量时间比对）
         if API_KEY:
             key = request.headers.get("x-api-key", "")
-            if key != API_KEY:
+            if not hmac.compare_digest(key, API_KEY):
                 return JSONResponse(
                     {"detail": "未授权访问（无效 API Key）"},
                     status_code=401,

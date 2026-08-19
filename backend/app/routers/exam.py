@@ -156,11 +156,22 @@ def update_answer(
     exam_id: int, question_id: int, request: AnswerUpdate,
     connection: sqlite3.Connection = Depends(get_db),
 ) -> dict:
-    row = connection.execute("SELECT status FROM exam_sessions WHERE id = ?", (exam_id,)).fetchone()
+    row = connection.execute("SELECT * FROM exam_sessions WHERE id = ?", (exam_id,)).fetchone()
     if row is None:
         raise _error("NOT_FOUND", "考试不存在")
     if row["status"] != "active":
         raise _error("EXAM_FINISHED", "考试已结束")
+    # v9.21: 服务端超时强制检查（防超时后继续作答刷分）
+    started = _parse_dt(row["started_at"])
+    deadline = started + timedelta(minutes=(row["duration_minutes"] or 0), seconds=60)
+    if datetime.utcnow() > deadline:
+        connection.execute("UPDATE exam_sessions SET status='expired' WHERE id=?", (exam_id,))
+        connection.commit()
+        raise _error("EXAM_EXPIRED", "考试时间已截止，无法继续作答")
+    # v9.21: 题目归属校验（防写入不属于本考试的题目答案）
+    qids = json.loads(row["question_ids"])
+    if question_id not in qids:
+        raise _error("QUESTION_NOT_IN_EXAM", "题目不属于本考试")
     connection.execute(
         """INSERT INTO exam_answers (exam_id, question_id, user_answer, option_order, answered_at)
         VALUES (?, ?, ?, ?, ?)
@@ -169,7 +180,7 @@ def update_answer(
             option_order = excluded.option_order,
             answered_at = excluded.answered_at""",
         (exam_id, question_id, request.answer,
-         json.dumps(request.option_order), datetime.now().isoformat(timespec="seconds")),
+         json.dumps(request.option_order), datetime.utcnow().isoformat(timespec="seconds")),
     )
     connection.commit()
     return {"saved": True}
@@ -181,6 +192,13 @@ def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> di
     if row is None:
         raise _error("NOT_FOUND", "考试不存在")
     if row["status"] != "active":
+        return _result(connection, exam_id)
+    # v9.21: 服务端超时强制检查（超时自动判 expired）
+    started = _parse_dt(row["started_at"])
+    deadline = started + timedelta(minutes=(row["duration_minutes"] or 0), seconds=60)
+    if datetime.utcnow() > deadline:
+        connection.execute("UPDATE exam_sessions SET status='expired' WHERE id=?", (exam_id,))
+        connection.commit()
         return _result(connection, exam_id)
     qids = json.loads(row["question_ids"])
     answered_map = {
@@ -212,7 +230,7 @@ def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db)) -> di
         """UPDATE exam_sessions SET status='submitted', submitted_at=?, score=?, max_score=?,
            correct_count=?, wrong_count=?, unanswered_count=?
         WHERE id = ?""",
-        (datetime.now().isoformat(timespec="seconds"), round(score, 1), round(max_score, 1),
+        (datetime.utcnow().isoformat(timespec="seconds"), round(score, 1), round(max_score, 1),
          correct, wrong, unanswered, exam_id),
     )
     connection.commit()
