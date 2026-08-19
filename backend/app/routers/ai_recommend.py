@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_active_profile_id, get_db
 
-router = APIRouter(prefix="/api/recommendations", tags=["recommendations"])
+router = APIRouter(prefix="/recommendations", tags=["recommendations"])
 
 
 def _trim(text: str, n: int = 80) -> str:

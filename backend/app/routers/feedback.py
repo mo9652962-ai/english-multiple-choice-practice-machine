@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 from ..database import get_active_profile_id, get_db
 
-router = APIRouter(prefix="/api/feedback", tags=["feedback"])
+router = APIRouter(prefix="/feedback", tags=["feedback"])
 
 
 def _init_table(connection):
