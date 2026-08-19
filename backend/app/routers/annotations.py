@@ -194,3 +194,24 @@ def annotation_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         "tags": [{"tag": r["tag"], "count": r["c"]} for r in tags],
         "colors": [{"color": r["color"], "count": r["c"]} for r in colors],
     }
+
+
+@router.get("/annotations/stats")
+def annotation_stats(
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """v9.24: 标注统计（前端 NotesView 调用——此前缺失导致在线模式 404）"""
+    total = connection.execute("SELECT COUNT(*) FROM annotations").fetchone()[0]
+    by_tag = dict(
+        connection.execute(
+            "SELECT tag, COUNT(*) FROM annotations WHERE tag != '' GROUP BY tag"
+        ).fetchall()
+    )
+    recent = [
+        dict(r)
+        for r in connection.execute(
+            """SELECT id, unit_id, text, tag, created_at
+               FROM annotations ORDER BY id DESC LIMIT 5"""
+        ).fetchall()
+    ]
+    return {"total": total, "by_tag": by_tag, "recent": recent}
