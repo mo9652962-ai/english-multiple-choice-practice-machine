@@ -1,17 +1,40 @@
 from __future__ import annotations
 
+import ipaddress
 import json
+import logging
+import socket
 import sqlite3
 import time
 from typing import Any
+from urllib.parse import urlparse
 
 import httpx
 
 from ..security import unprotect_text
 
+logger = logging.getLogger(__name__)
 
 _TRANSIENT_STATUS_CODES = {429, 500, 502, 503, 504}
 _CHAT_RETRY_ATTEMPTS = 3
+
+
+def validate_public_url(url: str) -> None:
+    """SSRF 防护（v9.22）: 禁止向私有/内网/保留地址发起请求。
+    覆盖 127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 等"""
+    parsed = urlparse(url)
+    if parsed.scheme not in ("http", "https"):
+        raise ValueError("仅支持 HTTP/HTTPS 协议")
+    hostname = (parsed.hostname or "").strip()
+    if not hostname:
+        raise ValueError("URL 缺少主机名")
+    try:
+        ip_str = socket.gethostbyname(hostname)
+        ip = ipaddress.ip_address(ip_str)
+    except socket.gaierror as exc:
+        raise ValueError(f"无法解析主机名: {hostname}") from exc
+    if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved:
+        raise ValueError(f"禁止访问内网/保留地址: {hostname} ({ip_str})")
 
 
 def _public_profile(row: sqlite3.Row | dict[str, Any]) -> dict[str, Any]:
@@ -190,6 +213,8 @@ def list_available_models(
     profile_id: int | None = None,
 ) -> dict[str, Any]:
     normalized = _normalize_base_url(base_url)
+    # v9.22: SSRF 防护——禁止请求私有/内网地址
+    validate_public_url(normalized)
     key = (api_key or "").strip()
     if use_saved_api_key:
         saved = (
