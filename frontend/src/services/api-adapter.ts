@@ -101,8 +101,35 @@ export async function apiDelete(path: string): Promise<any> {
     if (!resp.ok) throw new Error(`${resp.status}`)
     return resp.json().catch(() => ({}))
   }
-  // v3.3: 离线 DELETE 兜底（空响应）
-  return {}
+  // v9.24: 离线 DELETE 真删除（修复假删除——本地库执行对应 SQL）
+  return offlineDelete(path)
+}
+
+// v9.24: 离线删除路由（生词/试卷/错题/笔记/标注）
+function offlineDelete(path: string): any {
+  const vm = path.match(/^\/vocabulary\/(\d+)$/)
+  if (vm) {
+    execute('DELETE FROM vocabulary_entries WHERE id = ?', [parseInt(vm[1])])
+    return { ok: true, deleted: true }
+  }
+  const pm = path.match(/^\/papers\/(\d+)$/)
+  if (pm) {
+    execute("UPDATE papers SET deleted_at = datetime('now', 'localtime') WHERE id = ?", [parseInt(pm[1])])
+    return { ok: true, deleted: true }
+  }
+  const wm = path.match(/^\/wrong\/(\d+)$/)
+  if (wm) {
+    execute('DELETE FROM wrong_stats WHERE id = ?', [parseInt(wm[1])])
+    return { ok: true, deleted: true }
+  }
+  const am = path.match(/^\/annotations\/(\d+)$/)
+  if (am) {
+    execute('DELETE FROM annotations WHERE id = ?', [parseInt(am[1])])
+    return { ok: true, deleted: true }
+  }
+  // 未匹配路径：返回 ok 但记录（避免 UI 误以为成功）
+  console.warn('[offlineDelete] 未实现路径:', path)
+  return { ok: true, deleted: false, unsupported: true }
 }
 
 // ── 离线路由（sql.js） ──
@@ -118,6 +145,13 @@ function buildOfflineSession(sid: number): any {
   const subs = queryAll("SELECT * FROM practice_unit_submissions WHERE session_id = ?", [sid])
   const subByUnit: Record<number, any> = {}
   for (const s of subs) subByUnit[s.unit_id] = s
+  // v9.24: 预取用户答案回填（修复离线刷新丢进度——answered 永远 null）
+  const ansRows = queryAll(
+    "SELECT question_id, user_answer FROM practice_answers WHERE session_id = ?",
+    [sid]
+  )
+  const ansMap: Record<number, string> = {}
+  for (const a of ansRows) ansMap[a.question_id] = a.user_answer
   const unitsOut = units.map((u: any) => {
     const qs = queryAll("SELECT * FROM questions WHERE unit_id = ? ORDER BY sequence", [u.id])
     const questions = qs.map((q: any) => ({
@@ -127,7 +161,7 @@ function buildOfflineSession(sid: number): any {
         "SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence",
         [q.id]
       ),
-      answered: null,
+      answered: ansMap[q.id] ?? null,
     }))
     const sub = subByUnit[u.id]
     return {
@@ -177,18 +211,26 @@ function offlineGet(path: string): any {
     return { items: rows }
   }
   // Vocabulary main list（v3.3: 我的单词本主列表——本地查询含全部状态——修复真机空单词本）
+  // v9.24: 过滤下推 SQL（修复全表拉内存 filter——低端机卡顿/OOM）
   if (path.startsWith('/vocabulary?') || path === '/vocabulary') {
     const u = new URL(path, 'http://local')
     const status = u.searchParams.get('status') || ''
     const search = (u.searchParams.get('search') || '').toLowerCase()
     const category = u.searchParams.get('category') || ''
-    let rows = queryAll("SELECT * FROM vocabulary_entries ORDER BY encounter_count DESC, id ASC")
-    if (status && status !== 'all') rows = rows.filter((r: any) => (r.study_status || 'new') === status)
-    if (category) rows = rows.filter((r: any) => (r.category || '') === category)
-    if (search) rows = rows.filter((r: any) =>
-      (r.term || '').toLowerCase().includes(search) ||
-      (r.common_meaning || '').toLowerCase().includes(search) ||
-      (r.contextual_meaning || '').toLowerCase().includes(search))
+    const conditions: string[] = ['1 = 1']
+    const params: any[] = []
+    if (status && status !== 'all') { conditions.push('study_status = ?'); params.push(status) }
+    if (category) { conditions.push('category LIKE ?'); params.push(`${category}%`) }
+    if (search) {
+      conditions.push("(term LIKE ? OR common_meaning LIKE ? OR contextual_meaning LIKE ?)")
+      const needle = `%${search}%`
+      params.push(needle, needle, needle)
+    }
+    params.push(500)  // v9.24: 上限 500 条（分页场景由前端控制）
+    const rows = queryAll(
+      `SELECT * FROM vocabulary_entries WHERE ${conditions.join(' AND ')} ORDER BY encounter_count DESC, id ASC LIMIT ?`,
+      params
+    )
     const counts: Record<string, number> = { all: rows.length, total: queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries")?.c || rows.length }
     for (const s of ['new', 'learning', 'familiar', 'mastered']) {
       counts[s] = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE study_status = ?", [s])?.c || 0
@@ -504,6 +546,10 @@ function offlineGet(path: string): any {
   }
   // Version（桌面 About 用后端；移动端直连 GitHub——兜底）
   if (path === '/version') return { version: '2.0.0-beta.15', release_date: '2026-08-10', latest_version: null }
+  // v9.24: 高频聚合页空安全结构（修复返回 {} 导致前端 .map 白屏）
+  if (path === '/exam/history') return { items: [], count: 0, average_accuracy: 0 }
+  if (path.startsWith('/diagnostic/reports')) return { reports: [], total: 0 }
+  if (path === '/auth/me') return { id: 0, username: 'local', is_admin: true }
 
   return {}
 }
@@ -711,6 +757,9 @@ function offlinePost(path: string, body?: any): any {
   if (sum) {
     const sid = parseInt(sum[1])
     const uid = parseInt(sum[2])
+    // v9.24: 事务包裹（批量判分+错题+提交记录——防部分写入）
+    execute('BEGIN TRANSACTION')
+    try {
     const questions = queryAll("SELECT id, answer, score FROM questions WHERE unit_id = ?", [uid])
     const ansRows = queryAll("SELECT question_id, user_answer FROM practice_answers WHERE session_id = ?", [sid])
     const answers: Record<number, string> = {}
@@ -738,6 +787,11 @@ function offlinePost(path: string, body?: any): any {
       "INSERT INTO practice_unit_submissions (session_id, unit_id, score, max_score, submitted_at) VALUES (?, ?, ?, ?, datetime('now'))",
       [sid, uid, score, maxScore]
     )
+    execute('COMMIT')
+    } catch (err) {
+      execute('ROLLBACK')
+      throw err
+    }
     return buildOfflineSession(sid)
   }
   // Practice session submit（整卷提交）
@@ -769,7 +823,13 @@ function offlinePut(path: string, body?: any): any {
     const vid = parseInt(vu[1])
     const fields: string[] = []
     const vals: any[] = []
-    for (const k of ['study_status', 'manually_frequent', 'notes', 'is_favorite', 'user_edited']) {
+    // v9.24: notes → note 映射（后端 schema 是单数 note——修复 no such column）
+    const noteValue = body?.note ?? body?.notes
+    if (noteValue !== undefined) {
+      fields.push('note = ?')
+      vals.push(noteValue)
+    }
+    for (const k of ['study_status', 'manually_frequent', 'is_favorite', 'user_edited']) {
       if (body && body[k] !== undefined) { fields.push(`${k} = ?`); vals.push(body[k]) }
     }
     if (fields.length) {
@@ -835,7 +895,7 @@ async function saveAiProfileOffline(body: any): Promise<any> {
   const encrypted = await encryptKey(body?.api_key)
   const existing = queryOne("SELECT id FROM ai_profiles WHERE name = ?", [body?.name])
   if (existing) {
-    updateAiProfileOffline(existing.id, body)
+    await updateAiProfileOffline(existing.id, body)  // v9.24: 补 await——修复加密写入竞态
     return queryOne("SELECT * FROM ai_profiles WHERE id = ?", [existing.id])
   }
   execute(

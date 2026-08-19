@@ -2,6 +2,21 @@
 
 本项目遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范。
 
+## [Unreleased] - 2026-08-19
+
+### 🔧 离线链路修复（任务 E 收尾）
+- 离线库自动迁移三层机制：构建期迁移（scripts/migrate_frontend_db.py）+ 运行期自迁移（offline_migrations.json + offline-migrations.ts）+ 清单自动生成，存量设备 IndexedDB 旧副本自动升级
+- 离线 DELETE 真删除：生词/试卷/错题/笔记/标注本地 SQL 执行，修复假删除
+- 离线刷新丢进度修复：buildOfflineSession 预取 practice_answers 回填 answered
+- 离线词汇 note 字段映射：notes → note（后端 schema 单数），修复 no such column
+- 离线补 /questions/{id}/explain 与 /explanations/coverage 路由
+
+### 🐛 其他修复（2026-08-19）
+- API Key 白名单加登录/注册路径（云端 EPM_API_KEY 死锁修复）
+- 补齐 /annotations/stats 端点（NotesView 在线模式 404）
+- 修复 11 个 router 双重 /api 前缀（学习报告/排行/成就/听力/阅读报错根因）
+- 前端 XSS 修复：DOMPurify 消毒全部 v-html
+
 ## [2.0.0-beta.15] - 2026-08-09
 
 ### ✨ 词汇数据大增强
