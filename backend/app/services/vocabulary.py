@@ -269,27 +269,30 @@ def _serialize_entry(connection: sqlite3.Connection, entry_id: int) -> dict[str,
 
 
 def add_vocabulary(
-    connection: sqlite3.Connection, data: dict[str, Any]
+    connection: sqlite3.Connection, data: dict[str, Any], user_id: int | None = None
 ) -> dict[str, Any]:
     term = validate_term(data["term"])
     normalized = vocabulary_key(term)
-    row = connection.execute(
-        """
-        SELECT id, encounter_count, study_status, translation_status, user_edited
-        FROM vocabulary_entries
-        WHERE normalized_term = ?
-        """,
-        (normalized,),
-    ).fetchone()
+    # v9.24: 多用户——按 user_id 查重（user_id None = 匿名/本地单用户）
+    if user_id is not None:
+        row = connection.execute(
+            """SELECT id, encounter_count, study_status, translation_status, user_edited
+            FROM vocabulary_entries WHERE normalized_term = ? AND user_id = ?""",
+            (normalized, user_id),
+        ).fetchone()
+    else:
+        row = connection.execute(
+            """SELECT id, encounter_count, study_status, translation_status, user_edited
+            FROM vocabulary_entries WHERE normalized_term = ? AND user_id IS NULL""",
+            (normalized,),
+        ).fetchone()
     is_new = row is None
     if is_new:
         cursor = connection.execute(
-            """
-            INSERT INTO vocabulary_entries
-                (term, normalized_term, translation_status)
-            VALUES (?, ?, 'pending')
-            """,
-            (term, normalized),
+            """INSERT INTO vocabulary_entries
+                (term, normalized_term, translation_status, user_id)
+            VALUES (?, ?, 'pending', ?)""",
+            (term, normalized, user_id),
         )
         entry_id = cursor.lastrowid
     else:
