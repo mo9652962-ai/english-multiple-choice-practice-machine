@@ -4,6 +4,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { get, put } from '../api'
+import { sanitizeHtml } from '../services/sanitize'  // v9.24: XSS 防护
 import { ArrowLeft, BookOpen, Check, Headphones, RefreshCw, Star, Volume2 } from 'lucide-vue-next'
 import TtsButton from '../components/TtsButton.vue'
 
@@ -168,7 +169,7 @@ onMounted(load)
         <div v-if="contextsLoading" class="muted">检索真题语境…</div>
         <div v-else-if="contexts.length">
           <article v-for="(c, i) in contexts" :key="i" class="word-sentence">
-            <p v-html="highlightContext(c)"></p>
+            <p v-html="sanitizeHtml(highlightContext(c))"></p>
             <small><TtsButton :text="c.sentence" :speed="0.9" :size="13" /> {{ c.source }} <span v-if="c.style" class="style-badge" :class="`style-${c.style}`">{{ styleLabel(c.style) }}</span></small>
           </article>
         </div>
