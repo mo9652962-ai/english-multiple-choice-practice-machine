@@ -22,6 +22,7 @@ import GoalView from './views/GoalView.vue'
 import ReadingView from './views/ReadingView.vue'
 import ListeningView from './views/ListeningView.vue'
 import AboutView from './views/AboutView.vue'
+import LoginView from './views/LoginView.vue'  // v9.24: 多用户登录
 
 export default createRouter({
   // v3.3: hash 模式——assets 相对路径在深层路由/多端(file:// Capacitor)下不白屏
@@ -54,5 +55,6 @@ export default createRouter({
     { path: '/about', component: AboutView },
     { path: '/trash', component: TrashView },
     { path: '/notes', component: NotesView },
+    { path: '/login', component: LoginView },  // v9.24: 多用户登录页
   ],
 })

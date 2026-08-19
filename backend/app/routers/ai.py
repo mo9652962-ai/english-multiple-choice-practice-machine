@@ -10,6 +10,18 @@ from fastapi import APIRouter, Depends, HTTPException
 logger = logging.getLogger(__name__)
 
 from ..database import get_db
+from .auth import get_current_user
+
+
+def _require_admin_when_enabled(user: dict | None) -> None:
+    """v9.24: EPM_AUTH 开启时要求管理员；关闭时放行（兼容单用户）"""
+    from .auth import AUTH_ENABLED
+    if not AUTH_ENABLED:
+        return
+    if user is None:
+        raise HTTPException(401, "未登录")
+    if not user["is_admin"]:
+        raise HTTPException(403, "需要管理员权限")
 from ..schemas import (
     AiAnalyzeRequest,
     AiChatRequest,
@@ -106,7 +118,9 @@ def _conversation_payload(
 
 
 @router.get("/settings")
-def read_settings(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def read_settings(connection: sqlite3.Connection = Depends(get_db),
+                  user: dict | None = Depends(get_current_user)) -> dict:
+    _require_admin_when_enabled(user)  # v9.24: 多用户时管理接口仅管理员
     return get_ai_settings(connection)
 
 
@@ -114,7 +128,9 @@ def read_settings(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 def update_settings(
     request: AiSettingsUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)  # v9.24: 多用户时管理接口仅管理员
     profile = get_ai_profile(connection)
     current = connection.execute(
         "SELECT api_key_encrypted FROM ai_profiles WHERE id = ?",
@@ -233,7 +249,9 @@ def list_profiles(connection: sqlite3.Connection = Depends(get_db)) -> list[dict
 def create_profile(
     request: AiProfileWrite,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)  # v9.24: 多用户时管理接口仅管理员
     if not request.name.strip():
         raise HTTPException(400, "请填写配置名称")
     if not request.base_url.strip():
@@ -283,7 +301,9 @@ def update_profile(
     profile_id: int,
     request: AiProfileWrite,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)  # v9.24: 多用户时管理接口仅管理员
     current = _profile_or_404(connection, profile_id)
     if not request.name.strip() or not request.base_url.strip():
         raise HTTPException(400, "配置名称和 API Base URL 不能为空")
@@ -339,7 +359,9 @@ def update_profile(
 def delete_profile(
     profile_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)  # v9.24: 多用户时管理接口仅管理员
     _profile_or_404(connection, profile_id)
     count = connection.execute("SELECT COUNT(*) AS total FROM ai_profiles").fetchone()
     if count["total"] <= 1:
