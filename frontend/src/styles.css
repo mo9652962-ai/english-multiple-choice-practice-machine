@@ -42,6 +42,16 @@
   --hero-glow-1: rgba(222, 235, 228, .55);   /* 竹青光晕 */
   --hero-glow-2: rgba(236, 232, 242, .4);    /* 藕荷光晕 */
   --card-gradient: linear-gradient(160deg, rgba(255, 253, 246, .9), rgba(255, 253, 246, 0) 60%);
+  /* v9.24 UI 精修（Gemini 方案）: 内敛朱砂 + 竹青 + 衬线字体 + 统一过渡 */
+  --accent-vermilion: #B84A39;          /* 内敛朱砂（替代 #c73e3a 更温润）*/
+  --accent-vermilion-hover: #A33E2E;
+  --accent-bamboo: #4A5F4E;             /* 深竹青（替代 #5c7a52 更沉稳）*/
+  --accent-bamboo-hover: #3D4F41;
+  --accent-ochre: #A67A38;              /* 沉香藤黄（待复习/中性提示）*/
+  --border-light: rgba(160, 145, 125, 0.20);
+  --radius-pill: 9999px;
+  --font-serif: "Cinzel", "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif;
+  --transition-smooth: all 0.22s cubic-bezier(0.25, 0.8, 0.25, 1);
   --glow-primary: 0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent), 0 8px 30px color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
@@ -310,7 +320,78 @@ h2, h3 { margin: 0; }
 }
 .study-hero-copy { position: relative; z-index: 1; max-width: 540px; }
 .study-hero-copy .button { margin-top: 24px; }
+/* v9.24 UI 精修（Gemini 方案）: Hero 主按钮朱砂印章质感 */
+.study-hero-copy .button {
+  background: var(--accent-vermilion);
+  color: #FAF8F5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 10px 24px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px -2px rgba(184, 74, 57, 0.28);
+  transition: var(--transition-smooth);
+}
+.study-hero-copy .button:hover {
+  background: var(--accent-vermilion-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(184, 74, 57, 0.35);
+}
+/* v9.24 UI 精修: 目标控制器——题量选中竹青 + 重置降权幽灵 */
+.goal-actions .button.ghost { border-radius: var(--radius-pill); }
+.goal-actions .button.ghost:not(.compact-active) { color: var(--accent-bamboo); }
+.goal-actions .button.compact {
+  background: transparent;
+  color: var(--muted);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  transition: var(--transition-smooth);
+}
+.goal-actions .button.compact:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--ink);
+}
 .loading { color: var(--muted); padding: 30px; text-align: center; }
+/* v9.24 UI 精修（Gemini 方案）: 考试页——定制下拉框 + 松烟墨 CTA */
+.exam-start select {
+  appearance: none;
+  width: 100%;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 0 36px 0 14px;
+  color: var(--ink);
+  font-size: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238C8479' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: var(--transition-smooth);
+}
+.exam-start select:focus {
+  border-color: var(--accent-vermilion);
+  box-shadow: 0 0 0 3px rgba(184, 74, 57, 0.12);
+  outline: none;
+}
+.exam-start .button {
+  width: 100%;
+  height: 44px;
+  background: #2C2A29;
+  color: #F7F5F0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 14px rgba(44, 42, 41, 0.2);
+  transition: var(--transition-smooth);
+}
+.exam-start .button:hover:not(:disabled) {
+  background: #1A1918;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(44, 42, 41, 0.3);
+}
+.exam-seal { font-size: 0.9em; margin-right: 6px; }
 
 /* v9.19 UI: 骨架屏加载 */
 .skeleton { border-radius: var(--radius-md); background: linear-gradient(100deg, var(--line) 40%, color-mix(in srgb, var(--line) 55%, var(--surface-solid)) 50%, var(--line) 60%); background-size: 200% 100%; animation: skeleton-shimmer 1.4s ease-in-out infinite; }
@@ -718,7 +799,43 @@ h2, h3 { margin: 0; }
 .stat-card.linked:hover { border-color: var(--line-strong); transform: translateY(-2px); box-shadow: var(--shadow); }
 .stat-link { position: absolute; right: 18px; bottom: 16px; display: inline-flex; align-items: center; gap: 4px; color: var(--primary); font-size: 12px; font-weight: 700; }
 .paper-card { transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+/* v9.24 UI 精修（Gemini 方案）: 线装书脊 + 书卷质感 */
+.paper-card {
+  position: relative;
+  overflow: hidden;
+}
+.paper-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-bamboo);
+  opacity: 0.55;
+  border-radius: 2px 0 0 2px;
+}
 .paper-card:hover { transform: translateY(-2px); border-color: var(--line-strong); box-shadow: var(--shadow); }
+/* v9.24 UI 精修: 开始整卷松针墨绿 + 已发布竹青徽标 */
+.paper-card .button {
+  background: var(--accent-bamboo);
+  color: #FAF8F5;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+.paper-card .button:hover:not(:disabled) {
+  background: var(--accent-bamboo-hover);
+  box-shadow: 0 4px 12px rgba(52, 67, 53, 0.25);
+}
+.paper-card .pill {
+  background: rgba(74, 95, 78, 0.08);
+  color: var(--accent-bamboo);
+  border: 1px solid rgba(74, 95, 78, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  padding: 2px 8px;
+}
 .paper-year { font-family: "STZhongsong", "Noto Serif SC", Georgia, serif; font-size: 30px; font-weight: 600; margin: 20px 0 6px; }
 
 .ai-assistant-page { width:100%; height:100dvh; min-height:650px; padding:34px clamp(24px,3.5vw,54px) 38px; display:flex; flex-direction:column; overflow:hidden; }
@@ -2916,6 +3033,29 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
 .page { padding: 22px clamp(14px, 3vw, 28px) 40px; max-width: 1200px; margin: 0 auto; }
 .empty-state, .illustrated-empty { padding: 48px 24px; }
 .badge, .tag, .chip { border-radius: 999px; }
+/* v9.24 UI 精修（Gemini 方案）: 记忆状态三色印泥系统 */
+.rec-word-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.rec-word-badge.mastered {
+  background: rgba(74, 95, 78, 0.08);
+  color: var(--accent-bamboo);
+  border-color: rgba(74, 95, 78, 0.2);
+}
+.rec-word-badge.learning {
+  background: rgba(166, 122, 56, 0.08);
+  color: var(--accent-ochre);
+  border-color: rgba(166, 122, 56, 0.2);
+}
+.rec-word-badge.forgot, .rec-word-badge.new {
+  background: rgba(184, 74, 57, 0.08);
+  color: var(--accent-vermilion);
+  border-color: rgba(184, 74, 57, 0.2);
+}
 .separator, .divider { border: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); margin: 18px 0; }
 
 /* ═══ v2.107: 去AI味修复 (impeccable 59规则检测: 渐变文字/发光是AI模板特征) ═══ */
