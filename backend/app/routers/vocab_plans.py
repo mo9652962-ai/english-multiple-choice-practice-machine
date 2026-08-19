@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_db
 
-router = APIRouter(prefix="/api/vocabulary", tags=["vocabulary"])
+router = APIRouter(prefix="/vocabulary", tags=["vocabulary"])
 
 # 词书定义: name, category_pattern, target_count, desc
 WORD_BOOKS = [

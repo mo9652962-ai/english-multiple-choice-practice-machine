@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_active_profile_id, get_db
 
-router = APIRouter(prefix="/api/achievements", tags=["achievements"])
+router = APIRouter(prefix="/achievements", tags=["achievements"])
 
 # 徽章定义: key, name, icon, desc, 检查函数
 BADGES = []

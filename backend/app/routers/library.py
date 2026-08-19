@@ -8,7 +8,7 @@ from fastapi import APIRouter, Depends, Query
 
 from ..database import get_db
 
-router = APIRouter(prefix="/api/library", tags=["library"])
+router = APIRouter(prefix="/library", tags=["library"])
 
 
 @router.get("/units")
