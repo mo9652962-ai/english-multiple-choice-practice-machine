@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_db
 
-router = APIRouter(prefix="/api/leaderboard", tags=["leaderboard"])
+router = APIRouter(prefix="/leaderboard", tags=["leaderboard"])
 
 
 @router.get("")

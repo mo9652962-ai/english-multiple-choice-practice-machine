@@ -10,7 +10,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_db
 
-router = APIRouter(prefix="/api/vocab/cloze", tags=["vocab-cloze"])
+router = APIRouter(prefix="/vocab/cloze", tags=["vocab-cloze"])
 
 
 def _pick_target_words(conn: sqlite3.Connection, limit: int = 8) -> list[dict]:

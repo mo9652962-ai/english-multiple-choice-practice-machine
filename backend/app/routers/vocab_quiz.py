@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_db
 
-router = APIRouter(prefix="/api/vocab/quiz", tags=["vocab-quiz"])
+router = APIRouter(prefix="/vocab/quiz", tags=["vocab-quiz"])
 
 # 估算基数 (按题库词库规模)
 BASE_VOCAB = 8000

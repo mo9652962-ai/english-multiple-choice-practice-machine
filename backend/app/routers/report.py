@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_active_profile_id, get_db
 
-router = APIRouter(prefix="/api/report", tags=["report"])
+router = APIRouter(prefix="/report", tags=["report"])
 
 _LABEL = {"cloze": "完形", "reading": "阅读", "paragraph_matching": "PartB",
           "part_b": "PartB", "listening": "听力", "word_bank": "选词"}
