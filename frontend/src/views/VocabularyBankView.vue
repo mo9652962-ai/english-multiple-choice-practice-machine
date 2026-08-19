@@ -4,6 +4,7 @@
 import { computed, onMounted, onBeforeUnmount, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { del, get, post, put } from '../api'
+import { sanitizeHtml } from '../services/sanitize'  // v9.24: XSS 防护
 import { ArrowUp, Check, RefreshCw, Search, Star, Trash2 } from 'lucide-vue-next'
 import TtsButton from '../components/TtsButton.vue'
 
@@ -243,7 +244,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
             <div v-if="wordContextsLoading" class="muted">检索真题语境…</div>
             <div v-else-if="wordContexts.length">
               <article v-for="(c, i) in wordContexts" :key="i" class="occurrence">
-                <p v-html="highlightContext(c)"></p>
+                <p v-html="sanitizeHtml(highlightContext(c))"></p>
                 <small>{{ c.source }} <span v-if="c.style" class="style-badge" :class="`style-${c.style}`">{{ styleLabel(c.style) }}</span></small>
               </article>
             </div>

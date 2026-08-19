@@ -3,6 +3,7 @@ import { BookOpen, Check, FileText, RefreshCw, Search, Settings, Star, Trash2, H
 import { computed, onMounted, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { del, get, post, put } from '../api'
+import { sanitizeHtml } from '../services/sanitize'  // v9.24: XSS 防护
 import TtsButton from '../components/TtsButton.vue'
 import DictationMode from '../components/DictationMode.vue'
 import { showToast } from '../services/toast'
@@ -643,7 +644,7 @@ onMounted(() => { load(); loadPlans() })
             </span>
           </div>
           <div class="vocab-article-body" style="line-height:2;font-size:15px;background:var(--surface-2);border-radius:12px;padding:16px"
-               v-html="articleData.article_html || articleData.article || ''"></div>
+               v-html="sanitizeHtml(articleData.article_html || articleData.article || '')"></div>
           <p style="font-size:11px;color:var(--muted);margin-top:8px">点击上方单词可加入生词复习</p>
         </template>
       </div>
