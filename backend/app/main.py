@@ -57,6 +57,18 @@ async def lifespan(_: FastAPI):
         clean_machine_meanings(connection)
         purge_expired(connection)
         repair_published_listening_assets(connection)
+    # v9.23: 清理 24h 前的临时导出文件（exports/ 目录）
+    try:
+        from .config import DATA_DIR
+        import time as _t
+        for old in (DATA_DIR / "exports").glob("*"):
+            try:
+                if _t.time() - old.stat().st_mtime > 24 * 3600:
+                    old.unlink()
+            except OSError:
+                pass
+    except Exception:
+        pass
     threading.Thread(
         target=translate_queued_vocabulary,
         name="vocabulary-translation-recovery",
