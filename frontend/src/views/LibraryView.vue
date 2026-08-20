@@ -11,6 +11,7 @@ const papers = ref<any[]>([])
 const error = ref('')
 const batchMode = ref(false)
 const selectedIds = ref<Set<number>>(new Set())
+const showDeleteConfirm = ref(false)  // v9.27: 宣纸确认弹层
 let holdTimer: number | null = null
 
 async function loadPapers() {
@@ -85,7 +86,12 @@ async function moveSelected() {
 
 async function deleteSelected() {
   if (!selectedIds.value.size) return
-  if (!window.confirm(`将选中的 ${selectedIds.value.size} 套试卷移入回收站？`)) return
+  // v9.27: 宣纸确认弹层替换原生 confirm（Gemini UI4）
+  showDeleteConfirm.value = true
+}
+async function confirmDelete() {
+  showDeleteConfirm.value = false
+  if (!selectedIds.value.size) return
   try {
     for (const id of selectedIds.value) await del(`/papers/${id}`)
     leaveBatch()
@@ -136,4 +142,18 @@ async function deleteSelected() {
       <p>请先到“导入题库”上传 Word 真题。</p>
     </div>
   </div>
+
+  <!-- v9.27: 宣纸确认弹层（替换原生 confirm） -->
+  <Teleport to="body">
+    <div v-if="showDeleteConfirm" class="modal-overlay" @click.self="showDeleteConfirm = false">
+      <div class="modal-xuanzhi-confirm">
+        <h3>🗑 移入回收站</h3>
+        <p>销毁卷宗将无法复原练习记录。<b>确认将选中的 {{ selectedIds.size }} 套试卷移入回收站？</b></p>
+        <div class="modal-actions">
+          <button class="button ghost" @click="showDeleteConfirm = false">再想想</button>
+          <button class="button danger" @click="confirmDelete">确认移入</button>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>

@@ -3367,7 +3367,7 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
   border-radius: 9999px;
   background: linear-gradient(90deg, var(--accent-ochre) 0%, #C4974D 100%);
 }
-/* ── v9.26: AI 助教精讲入口按钮 ── */
+/* ═══ v9.26: AI 助教精讲入口按钮 ═══ */
 .ai-tutor-btn {
   float: right;
   font-size: 11px;
@@ -3387,6 +3387,134 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
   color: #FFFDF9;
   transform: translateY(-1px);
 }
+/* ═══ v9.27 UI 四轮（Gemini 方案）: 首页/单词本/登录/导入/题库库 ═══ */
+/* ── 1. 首页仪表盘 ── */
+.dashboard-stat-card {
+  background: rgba(255, 252, 247, 0.88);
+  border: 1px solid var(--border-paper);
+  box-shadow: var(--shadow-paper);
+  border-radius: 14px;
+  padding: 16px 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.dashboard-stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.stat-number-serif {
+  font-family: var(--font-en-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-pine);
+  line-height: 1.1;
+  font-feature-settings: "tnum";
+}
+.stat-number-serif.neutral { color: var(--text-pine); }
+.stat-number-serif.warn { color: var(--accent-vermilion); }
+.stat-number-serif.success { color: var(--accent-bamboo); }
+.btn-zhusha-primary {
+  background-color: var(--accent-vermilion);
+  color: #FAF7F2;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(184, 74, 57, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-zhusha-primary:hover { background-color: #9E3B2D; transform: translateY(-1px); }
+.btn-zhusha-primary:active { transform: scale(0.98); }
+.btn-xuanzhi-secondary {
+  background: rgba(250, 247, 242, 0.75);
+  color: var(--text-pine);
+  border: 1px solid var(--border-paper);
+  border-radius: 9999px;
+  transition: all 0.2s;
+}
+.btn-xuanzhi-secondary:hover { border-color: var(--accent-bamboo); color: var(--accent-bamboo); }
+.ai-trinity-card {
+  background: rgba(255, 252, 247, 0.92);
+  border-left: 3px solid var(--accent-ochre);
+  border-top: 1px solid var(--border-paper);
+  border-right: 1px solid var(--border-paper);
+  border-bottom: 1px solid var(--border-paper);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ai-trinity-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.ai-trinity-card .trinity-title { font-family: var(--font-serif); font-size: 14px; color: var(--text-pine); font-weight: 600; }
+.ai-trinity-card .trinity-desc { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
+.ai-trinity-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.ai-trinity-badge {
+  display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px;
+  font-family: var(--font-serif); margin-right: 8px;
+}
+.ai-trinity-badge.badge-review { background: rgba(166, 122, 56, 0.1); color: var(--accent-ochre); border: 1px solid rgba(166, 122, 56, 0.25); }
+.ai-trinity-badge.badge-explain { background: rgba(184, 74, 57, 0.08); color: var(--accent-vermilion); border: 1px solid rgba(184, 74, 57, 0.2); }
+.ai-trinity-badge.badge-speaking { background: rgba(74, 95, 78, 0.1); color: var(--accent-bamboo); border: 1px solid rgba(74, 95, 78, 0.25); }
+/* ── 2. 单词本三页 ── */
+.vocab-status-tag { font-family: var(--font-serif); font-size: 11px; padding: 2px 10px; border-radius: 9999px; display: inline-block; }
+.vocab-status-tag--mastered { background: rgba(74, 95, 78, 0.12); color: var(--accent-bamboo); border: 1px solid rgba(74, 95, 78, 0.3); }
+.vocab-status-tag--learning { background: rgba(166, 122, 56, 0.12); color: var(--accent-ochre); border: 1px solid rgba(166, 122, 56, 0.3); }
+.vocab-status-tag--raw { background: rgba(184, 74, 57, 0.12); color: var(--accent-vermilion); border: 1px solid rgba(184, 74, 57, 0.3); }
+.vocab-word-serif {
+  font-family: var(--font-en-serif);
+  font-size: 2.2rem; font-weight: 700; color: var(--text-pine); line-height: 1.15;
+}
+.vocab-phonetic-serif { font-family: var(--font-en-serif); color: var(--text-faint); font-style: italic; }
+.vocab-recite-action-bar {
+  position: sticky; bottom: 0; margin-top: 16px;
+  padding: 12px 16px env(safe-area-inset-bottom);
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border-paper);
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+}
+.vocab-btn-action { height: 52px; border-radius: 12px; font-family: var(--font-serif); font-size: 15px; font-weight: 600; border: 1px solid var(--border-paper); cursor: pointer; transition: all 0.2s; }
+.vocab-btn-action.btn-known { background: rgba(74, 95, 78, 0.12); color: var(--accent-bamboo); border-color: rgba(74, 95, 78, 0.3); }
+.vocab-btn-action.btn-fuzzy { background: rgba(166, 122, 56, 0.12); color: var(--accent-ochre); border-color: rgba(166, 122, 56, 0.3); }
+.vocab-btn-action.btn-forgot { background: rgba(184, 74, 57, 0.12); color: var(--accent-vermilion); border-color: rgba(184, 74, 57, 0.3); }
+.vocab-btn-action:hover { transform: translateY(-2px); }
+/* ── 3. 登录页 ── */
+.login-paper-card { background: rgba(255, 252, 247, 0.92); border: 1px solid var(--border-paper); border-radius: 14px; box-shadow: 0 8px 32px rgba(44, 38, 34, 0.08); padding: 32px 24px; }
+.ink-form-input {
+  background: rgba(250, 247, 242, 0.65);
+  border: 1px solid var(--border-paper);
+  color: var(--text-pine);
+  font-family: var(--font-serif);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.ink-form-input:focus { outline: none; border-color: var(--accent-bamboo); background: rgba(255, 255, 255, 0.9); box-shadow: 0 0 0 3px rgba(74, 95, 78, 0.12); }
+.ink-alert-danger { background: rgba(184, 74, 57, 0.08); border-left: 3px solid var(--accent-vermilion); color: #8C2E20; font-family: var(--font-serif); padding: 10px 14px; font-size: 13px; border-radius: 0 8px 8px 0; }
+/* ── 4. 导入题库 ── */
+.import-step-bar { display: flex; align-items: center; justify-content: space-between; position: relative; margin-bottom: 24px; }
+.import-step-node { font-family: var(--font-serif); color: var(--text-faint); display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; }
+.import-step-node .step-dot { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--border-paper); display: flex; align-items: center; justify-content: center; background: rgba(255, 252, 247, 0.9); font-size: 12px; color: var(--text-faint); }
+.import-step-node.is-active { color: var(--accent-vermilion); font-weight: 600; }
+.import-step-node.is-active .step-dot { border-color: var(--accent-vermilion); color: var(--accent-vermilion); background: rgba(184, 74, 57, 0.06); }
+.import-step-node.is-done { color: var(--accent-bamboo); }
+.import-step-node.is-done .step-dot { border-color: var(--accent-bamboo); color: var(--accent-bamboo); background: rgba(74, 95, 78, 0.06); }
+.import-step-line { flex: 1; height: 1px; background: var(--border-paper); margin: 0 12px; max-width: 60px; }
+.import-upload-dropzone {
+  background: rgba(250, 247, 242, 0.5);
+  border: 1.5px dashed #C4B9A3;
+  border-radius: 12px;
+  padding: 36px 20px;
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.import-upload-dropzone:hover { border-color: var(--accent-vermilion); background: rgba(255, 252, 247, 0.85); }
+.import-progress-track { background: #E8E0D2; height: 6px; border-radius: 9999px; overflow: hidden; }
+.import-progress-bar-ink { background: linear-gradient(90deg, var(--accent-bamboo) 0%, #6E8973 100%); height: 100%; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+/* ── 5. 题库库 ── */
+.library-scroll-card { background: rgba(255, 252, 247, 0.9); border: 1px solid var(--border-paper); border-radius: 12px; padding: 16px; position: relative; box-shadow: var(--shadow-paper); transition: all 0.2s; }
+.library-scroll-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.library-badge-tag { position: absolute; top: 10px; right: 12px; font-family: var(--font-serif); font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(166, 122, 56, 0.15); color: var(--accent-ochre); border: 1px solid rgba(166, 122, 56, 0.3); }
+.library-year-title { font-family: var(--font-en-serif); font-size: 1.35rem; font-weight: 700; color: var(--text-pine); }
+.modal-xuanzhi-confirm { background: #FAF7F2; border: 1px solid var(--border-paper); box-shadow: 0 16px 40px rgba(44, 38, 34, 0.16); border-radius: 14px; padding: 24px; }
+.modal-xuanzhi-confirm h3 { font-family: var(--font-serif); font-size: 16px; color: var(--text-pine); margin-bottom: 10px; }
+.modal-xuanzhi-confirm p { font-size: 13px; color: var(--text-faint); line-height: 1.7; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
 /* ═══ v9.24 UI 精修二轮（Gemini 方案）: 练习/错题/诊断 ═══ */
 /* ── 练习页: 选项四态水墨 ── */
 .option {
