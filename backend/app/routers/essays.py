@@ -14,7 +14,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
-from ..services.ai_client import chat_completion
+from ..services.ai_client import chat_completion, parse_json_response
 from prompts.essay_prompt import ESSAY_SYSTEM_PROMPT, build_essay_user_prompt
 
 router = APIRouter(prefix="/essays", tags=["essays"])
@@ -47,8 +47,8 @@ def evaluate_essay(
         max_tokens=2500,
     )
     try:
-        parsed = json.loads(raw)
-    except (TypeError, json.JSONDecodeError):
+        parsed = parse_json_response(raw)
+    except ValueError:
         raise HTTPException(status_code=502, detail="AI 返回解析失败，请重试")
 
     # 规范化

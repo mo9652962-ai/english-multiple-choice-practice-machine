@@ -129,7 +129,7 @@ def deep_explain_question(
         (question_id,),
     ).fetchall()
     from prompts.explain_prompt import DEEP_EXPLAIN_SYSTEM_PROMPT
-    from ..services.ai_client import chat_completion
+    from ..services.ai_client import chat_completion, parse_json_response
 
     user_prompt = (
         "题目：{}\n\n"
@@ -155,8 +155,8 @@ def deep_explain_question(
         response_format={"type": "json_object"},
     )
     try:
-        parsed = json.loads(raw)
-    except (TypeError, json.JSONDecodeError):
+        parsed = parse_json_response(raw)
+    except ValueError:
         raise HTTPException(status_code=502, detail="AI 返回解析失败，请重试")
     # 规范化必填字段
     parsed.setdefault("question_type_label", "")

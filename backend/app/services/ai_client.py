@@ -267,6 +267,8 @@ def chat_completion(
         raise ValueError("请先填写 API 地址和模型名称")
     if not settings.get("enabled", True):
         raise ValueError("所选 API 配置当前未启用")
+    # v9.29-Gemini 审查: chat_completion 补 SSRF 校验（此前只在 list_available_models 调用）
+    validate_public_url(settings["base_url"])
     url = settings["base_url"].rstrip("/") + "/chat/completions"
     headers = {"Content-Type": "application/json"}
     if settings["api_key"]:
