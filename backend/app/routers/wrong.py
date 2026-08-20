@@ -255,9 +255,9 @@ def save_wrong_note(question_id: int, body: dict, connection: sqlite3.Connection
     """v2.46: 我的分析 — 错题个人笔记 (粉笔式)"""
     note = (body.get("note") or "").strip()[:500]
     connection.execute(
-        """INSERT INTO wrong_stats (question_id, wrong_count, recent_results, note, last_wrong_at, last_attempt_at)
-           VALUES (?, 1, '[]', ?, datetime('now'), datetime('now'))
-           ON CONFLICT(question_id) DO UPDATE SET note = excluded.note, last_attempt_at = datetime('now')""",
+        """INSERT INTO wrong_stats (user_id, question_id, wrong_count, attempt_count, recent_results, note, last_wrong_at, last_attempt_at)
+           VALUES (NULL, ?, 0, 0, '[]', ?, NULL, datetime('now'))
+           ON CONFLICT DO UPDATE SET note = excluded.note, last_attempt_at = excluded.last_attempt_at""",
         (question_id, note),
     )
     connection.commit()
