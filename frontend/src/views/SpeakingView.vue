@@ -74,6 +74,11 @@
         </div>
       </div>
       <p class="report-summary">{{ report.summary }}</p>
+      <!-- v9.28: Gemini batch5 任务4——本场亮点表达 -->
+      <div v-if="nativeHighlights.length" class="native-highlights">
+        <h4>✨ 本场 Native 亮点表达</h4>
+        <div v-for="(h, i) in nativeHighlights" :key="i" class="native-highlight-item">{{ h }}</div>
+      </div>
       <button class="button ghost" @click="resetAll">再来一场</button>
     </div>
   </div>
@@ -95,6 +100,7 @@ const textInput = ref('')
 const listening = ref(false)
 const speaking = ref(false)
 const report = ref<any>(null)
+const nativeHighlights = ref<string[]>([])
 
 const dimLabel = (k: string) => ({ fluency: '流畅度', grammar: '语法', vocabulary: '词汇', coherence: '连贯' }[k] || k)
 
@@ -166,6 +172,11 @@ async function sendTurn(text?: string) {
 async function finish() {
   if (!session.value) return
   report.value = await post(`/speaking/sessions/${session.value.session_id}/finish`)
+  // v9.28: Gemini batch5 任务4——口语局后报告：汇总本场 Native 亮点表达
+  nativeHighlights.value = turns.value
+    .filter((t: any) => t.feedback?.native_upgrade)
+    .map((t: any) => t.feedback.native_upgrade)
+    .slice(-3)
 }
 
 function resetAll() {
@@ -236,5 +247,9 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 .dim-track { flex: 1; }
 .dim-score { font-family: var(--font-en-serif); color: var(--accent-bamboo); font-weight: 600; }
 .report-summary { margin-top: 14px; font-size: 14px; color: var(--text-pine); line-height: 1.7; }
+.native-highlights { margin-top: 16px; padding: 12px 16px; background: rgba(166, 122, 56, 0.06); border: 1px solid rgba(166, 122, 56, 0.2); border-radius: 10px; }
+.native-highlights h4 { font-family: var(--font-serif); font-size: 14px; color: var(--accent-ochre); margin-bottom: 8px; }
+.native-highlight-item { font-size: 13px; color: var(--text-pine); padding: 5px 0; border-bottom: 1px dashed rgba(166, 122, 56, 0.15); }
+.native-highlight-item:last-child { border-bottom: none; }
 kbd { background: rgba(60, 50, 40, 0.06); border-radius: 4px; padding: 1px 6px; font-size: 11px; }
 </style>
