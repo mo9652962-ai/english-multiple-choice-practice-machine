@@ -85,7 +85,14 @@ function vocabStatusText(status: string) {
   if (status === 'mastered') return '已掌握'
   if (status === 'familiar') return '认识'
   if (status === 'learning') return '模糊'
-  return '忘记'
+  return '生疏'
+}
+
+// v9.27: Gemini UI4——状态标签三色映射（竹青已掌握/藤黄学习中/朱砂生疏）
+function getStatusClass(status: string) {
+  if (status === 'mastered') return 'vocab-status-tag--mastered'
+  if (status === 'familiar' || status === 'learning') return 'vocab-status-tag--learning'
+  return 'vocab-status-tag--raw'
 }
 
 async function load() {
@@ -581,7 +588,7 @@ onMounted(() => { load(); loadPlans() })
             <button v-for="w in recommended" :key="w.id" class="rec-word-card" @click="router.push({ path: '/vocab-bank', query: { word: w.id } })">
               <span class="rec-word-term">{{ w.lemma || w.term }}</span>
               <span class="rec-word-mean">{{ (w.common_meaning || w.contextual_meaning || '').slice(0, 12) }}</span>
-              <span class="rec-word-badge" :class="w.study_status || 'new'">{{ vocabStatusText(w.study_status) }}</span>
+              <span class="vocab-status-tag" :class="getStatusClass(w.study_status)">{{ vocabStatusText(w.study_status) }}</span>
             </button>
           </div>
         </div>

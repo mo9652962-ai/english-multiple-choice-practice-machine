@@ -12,6 +12,7 @@ import {
   RefreshCw,
   Save,
   Server,
+  Sparkles,
   Trash2,
 } from 'lucide-vue-next'
 import { onMounted, reactive, ref } from 'vue'
@@ -233,7 +234,37 @@ async function removeProfile(profile: AiProfile) {
 
 onMounted(() => {
   load()
+  loadUsage()
 })
+
+// ── v9.27: Gemini UI4——文枢阁用量（AI Usage） ──
+const usageLoading = ref(false)
+const usageError = ref('')
+const usage = ref<any>(null)
+const usageBarWidth = 300
+const usageColors = ['#B84A39', '#4A5F4E', '#A67A38', '#6B7B8C', '#8A7D6D']
+const USAGE_TASK_LABELS: Record<string, string> = {
+  'deep-explain': '精讲', 'deep_explain': '精讲',
+  'essay': '批改', 'essay_evaluate': '批改',
+  'speaking': '陪练', 'speaking_session': '陪练',
+  'translate': '翻译', 'vocabulary': '翻译',
+  'similar_questions': '变式', 'generate_similar': '变式',
+}
+function usageTaskLabel(task: string) { return USAGE_TASK_LABELS[task] || task }
+function usageBarOffset(i: number) {
+  return usage.value ? usage.value.distribution.slice(0, i).reduce((a: number, d: any) => a + usageBarWidth * d.percent / 100, 0) : 0
+}
+async function loadUsage() {
+  usageLoading.value = true
+  usageError.value = ''
+  try {
+    usage.value = await get('/ai/usage')
+  } catch (e) {
+    usageError.value = String(e)
+  } finally {
+    usageLoading.value = false
+  }
+}
 
 // ── v2.95: 内置反馈入口 ──
 const fbOpen = ref(false)
@@ -303,6 +334,48 @@ async function submitFeedback() {
             <span :class="{ on: shuffleEnabled }"></span>
           </button>
         </div>
+      </div>
+    </section>
+
+    <!-- v9.27: Gemini UI4——文枢阁用量（AI Usage） -->
+    <section class="api-profile-card new-profile">
+      <div class="api-profile-heading">
+        <span class="api-profile-icon"><Sparkles :size="20" /></span>
+        <div><span class="eyebrow">文枢阁用量</span><h2>AI 笔墨消耗</h2></div>
+      </div>
+      <div class="api-profile-body">
+        <div v-if="usageLoading" class="lead" style="font-size:12px">正在研墨…</div>
+        <div v-else-if="usageError" class="lead" style="font-size:12px;color:var(--zhusha,#B84A39)">{{ usageError }}</div>
+        <template v-else-if="usage">
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+            <div>
+              <div style="font-size:12px;color:var(--muted)">本月调用</div>
+              <div class="font-serif" style="font-size:22px;font-weight:700;color:#B84A39">{{ usage.total_calls }} 次</div>
+            </div>
+            <div>
+              <div style="font-size:12px;color:var(--muted)">消耗 Tokens</div>
+              <div class="font-serif" style="font-size:22px;font-weight:700">{{ (usage.total_tokens / 1000).toFixed(1) }}k</div>
+            </div>
+            <div>
+              <div style="font-size:12px;color:var(--muted)" title="status 非 ok 的调用占比">失败率</div>
+              <div class="font-serif" style="font-size:22px;font-weight:700">{{ usage.fail_rate }}%</div>
+            </div>
+          </div>
+          <!-- 任务类型分布（水墨 SVG 横向条） -->
+          <div style="font-size:12px;color:var(--muted);margin-bottom:4px">任务类型分布</div>
+          <svg :viewBox="'0 0 ' + usageBarWidth + ' 24'" width="100%" height="24" style="border-radius:6px;overflow:hidden;border:1px solid #E8E0D2">
+            <rect v-for="(d, i) in usage.distribution" :key="i"
+                  :x="usageBarOffset(i)" y="0" :width="usageBarWidth * d.percent / 100" height="24"
+                  :fill="usageColors[i % usageColors.length]" />
+          </svg>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:11px;color:var(--muted)">
+            <span v-for="(d, i) in usage.distribution" :key="i">
+              <span :style="{ display:'inline-block', width:8, height:8, borderRadius:2, background: usageColors[i % usageColors.length], marginRight: 3 }"></span>
+              {{ usageTaskLabel(d.task) }} {{ d.percent }}%
+            </span>
+            <span v-if="!usage.distribution.length">本月暂无 AI 调用记录</span>
+          </div>
+        </template>
       </div>
     </section>
 
