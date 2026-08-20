@@ -1,30 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import AiAssistant from './components/AiAssistant.vue'
-import DashboardView from './views/DashboardView.vue'
-import ExamView from './views/ExamView.vue'
-import ImportView from './views/ImportView.vue'
-import LibraryView from './views/LibraryView.vue'
-import PracticeView from './views/PracticeView.vue'
-import SettingsView from './views/SettingsView.vue'
-import WrongView from './views/WrongView.vue'
-import ReportView from './views/ReportView.vue'
-import DiagnosticView from './views/DiagnosticView.vue'
-import VocabularyBankView from './views/VocabularyBankView.vue'
-import VocabularyWordView from './views/VocabularyWordView.vue'
-import AchievementsView from './views/AchievementsView.vue'
-import VocabularyView from './views/VocabularyView.vue'
-import TrashView from './views/TrashView.vue'
-import NotesView from './views/NotesView.vue'
-import EssayView from './views/EssayView.vue'  // v9.26: P1 作文批改
-import SpeakingView from './views/SpeakingView.vue'  // v9.26: P2 口语陪练
-import LeaderboardView from './views/LeaderboardView.vue'
-import FocusView from './views/FocusView.vue'
-import CalendarView from './views/CalendarView.vue'
-import GoalView from './views/GoalView.vue'
-import ReadingView from './views/ReadingView.vue'
-import ListeningView from './views/ListeningView.vue'
-import AboutView from './views/AboutView.vue'
-import LoginView from './views/LoginView.vue'  // v9.24: 多用户登录
+// v9.26: 全部页面改动态 import（懒加载）——主 bundle 509KB → 按页分包
+// AiAssistant 是全局组件不在此路由?——保留静态（首屏小）
 
 export default createRouter({
   // v3.3: hash 模式——assets 相对路径在深层路由/多端(file:// Capacitor)下不白屏
@@ -34,31 +10,31 @@ export default createRouter({
     return { top: 0 }
   },
   routes: [
-    { path: '/', component: DashboardView },
-    { path: '/library', component: LibraryView },
-    { path: '/practice/:id', component: PracticeView },
-    { path: '/exam', component: ExamView },
-    { path: '/wrong', component: WrongView },
-    { path: '/report', component: ReportView },
-    { path: '/diagnostic', component: DiagnosticView },
-    { path: '/achievements', component: AchievementsView },
-    { path: '/leaderboard', component: LeaderboardView },
-    { path: '/focus', component: FocusView },
-    { path: '/calendar', component: CalendarView },
-    { path: '/goal', component: GoalView },
-    { path: '/reading', component: ReadingView },
-    { path: '/listening', component: ListeningView },
-    { path: '/vocabulary', component: VocabularyView },
-    { path: '/vocab-bank', component: VocabularyBankView },
-    { path: '/vocab-word/:id', component: VocabularyWordView },
-    { path: '/imports', component: ImportView },
-    { path: '/assistant', component: AiAssistant },
-    { path: '/settings', component: SettingsView },
-    { path: '/about', component: AboutView },
-    { path: '/trash', component: TrashView },
-    { path: '/notes', component: NotesView },
-    { path: '/essay', component: EssayView },  // v9.26: P1 作文批改
-    { path: '/speaking', component: SpeakingView },  // v9.26: P2 口语陪练
-    { path: '/login', component: LoginView },  // v9.24: 多用户登录页
+    { path: '/', component: () => import('./views/DashboardView.vue') },
+    { path: '/library', component: () => import('./views/LibraryView.vue') },
+    { path: '/practice/:id', component: () => import('./views/PracticeView.vue') },
+    { path: '/exam', component: () => import('./views/ExamView.vue') },
+    { path: '/wrong', component: () => import('./views/WrongView.vue') },
+    { path: '/report', component: () => import('./views/ReportView.vue') },
+    { path: '/diagnostic', component: () => import('./views/DiagnosticView.vue') },
+    { path: '/achievements', component: () => import('./views/AchievementsView.vue') },
+    { path: '/leaderboard', component: () => import('./views/LeaderboardView.vue') },
+    { path: '/focus', component: () => import('./views/FocusView.vue') },
+    { path: '/calendar', component: () => import('./views/CalendarView.vue') },
+    { path: '/goal', component: () => import('./views/GoalView.vue') },
+    { path: '/reading', component: () => import('./views/ReadingView.vue') },
+    { path: '/listening', component: () => import('./views/ListeningView.vue') },
+    { path: '/vocabulary', component: () => import('./views/VocabularyView.vue') },
+    { path: '/vocab-bank', component: () => import('./views/VocabularyBankView.vue') },
+    { path: '/vocab-word/:id', component: () => import('./views/VocabularyWordView.vue') },
+    { path: '/imports', component: () => import('./views/ImportView.vue') },
+    { path: '/assistant', component: () => import('./components/AiAssistant.vue') },
+    { path: '/settings', component: () => import('./views/SettingsView.vue') },
+    { path: '/about', component: () => import('./views/AboutView.vue') },
+    { path: '/trash', component: () => import('./views/TrashView.vue') },
+    { path: '/notes', component: () => import('./views/NotesView.vue') },
+    { path: '/essay', component: () => import('./views/EssayView.vue') },  // v9.26: P1 作文批改
+    { path: '/speaking', component: () => import('./views/SpeakingView.vue') },  // v9.26: P2 口语陪练
+    { path: '/login', component: () => import('./views/LoginView.vue') },  // v9.24: 多用户登录页
   ],
 })
