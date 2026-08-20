@@ -16,7 +16,7 @@
           <input v-model="subject" class="essay-select" placeholder="科目（英语一/二）" style="width:120px" />
           <input v-model="promptTitle" class="essay-select" placeholder="题目要求（可选）" style="flex:1" />
         </div>
-        <textarea v-model="content" class="essay-textarea" placeholder="在此输入你的英语作文…"
+        <textarea v-model="content" class="essay-textarea" placeholder="在此输入你的英语作文…" maxlength="1500"
                   :class="{ 'word-warn': wordCount < 80 }"></textarea>
         <div class="essay-footer">
           <span class="word-count" :class="{ ok: wordCount >= 80 && wordCount <= 220, warn: wordCount > 0 && wordCount < 80 }">

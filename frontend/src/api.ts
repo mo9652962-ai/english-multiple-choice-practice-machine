@@ -1,4 +1,6 @@
-const API_ROOT = '/api'
+// v9.28: Gemini 方案——API 根地址支持构建时注入（打包手机 APK 时必须指向 PC 局域网 IP）
+// 用法: VITE_API_ROOT=http://192.168.x.x:8765/api npm run build
+const API_ROOT = (import.meta.env.VITE_API_ROOT as string | undefined) || '/api'
 
 // v9.24: 多用户认证——token 存储
 const TOKEN_KEY = 'epm_auth_token'
