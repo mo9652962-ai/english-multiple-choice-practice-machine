@@ -151,7 +151,8 @@ CREATE TABLE IF NOT EXISTS practice_unit_submissions (
 );
 
 CREATE TABLE IF NOT EXISTS wrong_stats (
-    question_id INTEGER PRIMARY KEY,
+    user_id INTEGER DEFAULT NULL,
+    question_id INTEGER NOT NULL,
     attempt_count INTEGER NOT NULL DEFAULT 0,
     wrong_count INTEGER NOT NULL DEFAULT 0,
     recent_results TEXT NOT NULL DEFAULT '[]',
@@ -159,13 +160,15 @@ CREATE TABLE IF NOT EXISTS wrong_stats (
     manually_frequent INTEGER NOT NULL DEFAULT 0,
     last_wrong_at TEXT,
     last_attempt_at TEXT,
+    PRIMARY KEY (user_id, question_id),
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS vocabulary_entries (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
     term TEXT NOT NULL,
-    normalized_term TEXT NOT NULL UNIQUE,
+    normalized_term TEXT NOT NULL,
     lemma TEXT NOT NULL DEFAULT '',
     phonetic TEXT NOT NULL DEFAULT '',
     part_of_speech TEXT NOT NULL DEFAULT '',
@@ -333,11 +336,12 @@ CREATE TABLE IF NOT EXISTS ai_messages (
 
 CREATE TABLE IF NOT EXISTS learning_days (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
     day TEXT NOT NULL,
     activity_type TEXT NOT NULL,
     detail TEXT NOT NULL DEFAULT '',
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE (day, activity_type)
+    UNIQUE (user_id, day, activity_type)
 );
 
 CREATE INDEX IF NOT EXISTS idx_learning_days_day
@@ -460,6 +464,7 @@ CREATE TABLE IF NOT EXISTS exam_answers (
 -- v3.0: 做题标注（关键词高亮 + 笔记持久化）
 CREATE TABLE IF NOT EXISTS annotations (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
     unit_id INTEGER NOT NULL,
     start_offset INTEGER NOT NULL,
     end_offset INTEGER NOT NULL,
@@ -543,6 +548,13 @@ def connect() -> sqlite3.Connection:
     connection = sqlite3.connect(DATABASE_PATH, check_same_thread=False)
     connection.row_factory = sqlite3.Row
     connection.execute("PRAGMA foreign_keys = ON")
+    # v9.24: 生产级并发配置（WAL + 忙等待——防多线程/后台任务 database is locked）
+    try:
+        connection.execute("PRAGMA journal_mode = WAL")
+        connection.execute("PRAGMA busy_timeout = 5000")
+        connection.execute("PRAGMA synchronous = NORMAL")
+    except sqlite3.Error:
+        pass  # 只读/旧环境不强制
     return connection
 
 
@@ -861,6 +873,7 @@ def initialize_database() -> None:
         connection.executescript(SCHEMA)
         _run_migrations(connection)
         _migrate_add_user_id(connection)
+        _migrate_multi_user_schema(connection)  # v9.24: 多用户约束重建
 
 
 # v9.24: 多用户迁移——核心个人数据表加 user_id（幂等：已存在则跳过）
@@ -882,9 +895,200 @@ def _migrate_add_user_id(connection: sqlite3.Connection) -> None:
                     f"CREATE INDEX IF NOT EXISTS idx_{table}_user_id ON {table}(user_id)"
                 )
                 print(f"[migrate] {table}.user_id added")
-        except Exception:
-            pass
+        except Exception as exc:
+            # v9.24: 不吞异常——迁移失败要暴露（防不一致状态继续服务）
+            print(f"[migrate][ERROR] {table}.user_id 迁移失败: {exc}")
     connection.commit()
+
+
+# v9.24: 多用户 schema 升级——重建唯一约束/主键（SQLite 不支持 ALTER 约束）
+def _table_sql(connection: sqlite3.Connection, table: str) -> str:
+    row = connection.execute(
+        "SELECT sql FROM sqlite_master WHERE type='table' AND name=?", (table,)
+    ).fetchone()
+    return row[0] if row else ""
+
+
+def _migrate_multi_user_schema(connection: sqlite3.Connection) -> None:
+    try:
+        # 1. annotations / learning_days 加 user_id 列（ALTER 可处理）
+        for table, ddl in [
+            ("annotations", "ALTER TABLE annotations ADD COLUMN user_id INTEGER DEFAULT NULL"),
+            ("learning_days", "ALTER TABLE learning_days ADD COLUMN user_id INTEGER DEFAULT NULL"),
+        ]:
+            cols = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+            if "user_id" not in cols:
+                connection.execute(ddl)
+                print(f"[migrate] {table}.user_id added")
+        # 2. vocabulary_entries: 全局 UNIQUE → 联合 UNIQUE（重建表）
+        v_sql = _table_sql(connection, "vocabulary_entries")
+        if v_sql and "normalized_term TEXT NOT NULL UNIQUE" in v_sql:
+            _rebuild_vocabulary_entries(connection)
+            print("[migrate] vocabulary_entries 联合唯一约束重建")
+        # 联合唯一索引（新库/重建后都执行；旧库需 user_id 列存在——重建已保证）
+        connection.execute(
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_vocab_user_term "
+            "ON vocabulary_entries(user_id, normalized_term)"
+        )
+        # 3. wrong_stats: 主键 question_id → (user_id, question_id)（重建表）
+        w_sql = _table_sql(connection, "wrong_stats")
+        if w_sql and "question_id INTEGER PRIMARY KEY" in w_sql:
+            _rebuild_wrong_stats(connection)
+            print("[migrate] wrong_stats 复合主键重建")
+        # 4. learning_days: 唯一 (day, activity_type) → (user_id, day, activity_type)（重建表）
+        l_sql = _table_sql(connection, "learning_days")
+        if l_sql and "UNIQUE (day, activity_type)" in l_sql and "UNIQUE (user_id, day" not in l_sql:
+            _rebuild_learning_days(connection)
+            print("[migrate] learning_days 联合唯一重建")
+        # 5. 关键外键索引（级联删除性能）
+        for idx, tbl, col in [
+            ("idx_practice_answers_question", "practice_answers", "question_id"),
+            ("idx_practice_answer_events_session", "practice_answer_events", "session_id"),
+            ("idx_vocabulary_reviews_entry", "vocabulary_reviews", "entry_id"),
+            ("idx_vocabulary_occurrences_unit", "vocabulary_occurrences", "unit_id"),
+        ]:
+            connection.execute(f"CREATE INDEX IF NOT EXISTS {idx} ON {tbl}({col})")
+        connection.commit()
+    except Exception as exc:
+        print(f"[migrate][ERROR] 多用户 schema 升级失败: {exc}")
+        raise
+
+
+def _rebuild_vocabulary_entries(connection: sqlite3.Connection) -> None:
+    connection.execute("PRAGMA foreign_keys = OFF")
+    try:
+        connection.execute("BEGIN")
+        connection.execute("ALTER TABLE vocabulary_entries RENAME TO vocabulary_entries_old")
+        connection.execute(
+            """CREATE TABLE vocabulary_entries (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER DEFAULT NULL,
+                term TEXT NOT NULL,
+                normalized_term TEXT NOT NULL,
+                lemma TEXT NOT NULL DEFAULT '',
+                phonetic TEXT NOT NULL DEFAULT '',
+                part_of_speech TEXT NOT NULL DEFAULT '',
+                contextual_meaning TEXT NOT NULL DEFAULT '',
+                common_meaning TEXT NOT NULL DEFAULT '',
+                synonyms TEXT NOT NULL DEFAULT '[]',
+                antonyms TEXT NOT NULL DEFAULT '[]',
+                similar_forms TEXT NOT NULL DEFAULT '[]',
+                memory_hint TEXT NOT NULL DEFAULT '',
+                note TEXT NOT NULL DEFAULT '',
+                translation_status TEXT NOT NULL DEFAULT 'pending',
+                translation_error TEXT NOT NULL DEFAULT '',
+                encounter_count INTEGER NOT NULL DEFAULT 1,
+                study_status TEXT NOT NULL DEFAULT 'learning',
+                manually_frequent INTEGER NOT NULL DEFAULT 0,
+                user_edited INTEGER NOT NULL DEFAULT 0,
+                next_review_at TEXT,
+                last_reviewed_at TEXT,
+                fsrs_due TEXT,
+                fsrs_stability REAL,
+                fsrs_difficulty REAL,
+                fsrs_state INTEGER DEFAULT 0,
+                fsrs_step INTEGER DEFAULT 0,
+                fsrs_last_review TEXT,
+                created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                last_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+            )"""
+        )
+        connection.execute(
+            """INSERT INTO vocabulary_entries (
+                id, user_id, term, normalized_term, lemma, phonetic, part_of_speech,
+                contextual_meaning, common_meaning, synonyms, antonyms, similar_forms,
+                memory_hint, note, translation_status, translation_error, encounter_count,
+                study_status, manually_frequent, user_edited, next_review_at, last_reviewed_at,
+                fsrs_due, fsrs_stability, fsrs_difficulty, fsrs_state, fsrs_step, fsrs_last_review,
+                created_at, updated_at, last_seen_at
+            ) SELECT id, user_id, term, normalized_term, lemma, phonetic, part_of_speech,
+                contextual_meaning, common_meaning, synonyms, antonyms, similar_forms,
+                memory_hint, note, translation_status, translation_error, encounter_count,
+                study_status, manually_frequent, user_edited, next_review_at, last_reviewed_at,
+                fsrs_due, fsrs_stability, fsrs_difficulty, fsrs_state, fsrs_step, fsrs_last_review,
+                created_at, updated_at, last_seen_at
+            FROM vocabulary_entries_old"""
+        )
+        connection.execute("DROP TABLE vocabulary_entries_old")
+        connection.execute(
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_vocab_user_term ON vocabulary_entries(user_id, normalized_term)"
+        )
+        connection.execute("COMMIT")
+    except Exception:
+        connection.execute("ROLLBACK")
+        raise
+    finally:
+        connection.execute("PRAGMA foreign_keys = ON")
+
+
+def _rebuild_wrong_stats(connection: sqlite3.Connection) -> None:
+    connection.execute("PRAGMA foreign_keys = OFF")
+    try:
+        connection.execute("BEGIN")
+        connection.execute("ALTER TABLE wrong_stats RENAME TO wrong_stats_old")
+        connection.execute(
+            """CREATE TABLE wrong_stats (
+                user_id INTEGER DEFAULT NULL,
+                question_id INTEGER NOT NULL,
+                attempt_count INTEGER NOT NULL DEFAULT 0,
+                wrong_count INTEGER NOT NULL DEFAULT 0,
+                recent_results TEXT NOT NULL DEFAULT '[]',
+                consecutive_correct INTEGER NOT NULL DEFAULT 0,
+                manually_frequent INTEGER NOT NULL DEFAULT 0,
+                last_wrong_at TEXT,
+                last_attempt_at TEXT,
+                PRIMARY KEY (user_id, question_id),
+                FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
+            )"""
+        )
+        connection.execute(
+            """INSERT INTO wrong_stats (
+                user_id, question_id, attempt_count, wrong_count, recent_results,
+                consecutive_correct, manually_frequent, last_wrong_at, last_attempt_at
+            ) SELECT NULL, question_id, attempt_count, wrong_count, recent_results,
+                consecutive_correct, manually_frequent, last_wrong_at, last_attempt_at
+            FROM wrong_stats_old"""
+        )
+        connection.execute("DROP TABLE wrong_stats_old")
+        connection.execute("COMMIT")
+    except Exception:
+        connection.execute("ROLLBACK")
+        raise
+    finally:
+        connection.execute("PRAGMA foreign_keys = ON")
+
+
+def _rebuild_learning_days(connection: sqlite3.Connection) -> None:
+    connection.execute("PRAGMA foreign_keys = OFF")
+    try:
+        connection.execute("BEGIN")
+        connection.execute("ALTER TABLE learning_days RENAME TO learning_days_old")
+        connection.execute(
+            """CREATE TABLE learning_days (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER DEFAULT NULL,
+                day TEXT NOT NULL,
+                activity_type TEXT NOT NULL,
+                detail TEXT NOT NULL DEFAULT '',
+                created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                UNIQUE (user_id, day, activity_type)
+            )"""
+        )
+        connection.execute(
+            """INSERT INTO learning_days (id, user_id, day, activity_type, detail, created_at)
+               SELECT id, NULL, day, activity_type, detail, created_at FROM learning_days_old"""
+        )
+        connection.execute("DROP TABLE learning_days_old")
+        connection.execute(
+            "CREATE INDEX IF NOT EXISTS idx_learning_days_day ON learning_days(day)"
+        )
+        connection.execute("COMMIT")
+    except Exception:
+        connection.execute("ROLLBACK")
+        raise
+    finally:
+        connection.execute("PRAGMA foreign_keys = ON")
 
 
 def get_default_profile_id(connection: sqlite3.Connection) -> int:
