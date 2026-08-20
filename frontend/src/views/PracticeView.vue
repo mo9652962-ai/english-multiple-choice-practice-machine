@@ -15,7 +15,7 @@ import {
   Send,
   X,
 } from 'lucide-vue-next'
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
 import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
@@ -59,6 +59,23 @@ function adjustFontSize(delta: number) {
 const passageStyle = computed(() => ({ fontSize: `${passageFontSize.value}px` }))
 let timerTicker: number | null = null
 const activeUnit = computed(() => session.value?.units?.[activeUnitIndex.value])
+
+// v9.28: Gemini batch5 任务2——本篇词汇掌握度
+const coveragePct = ref<number | null>(null)
+const coverageTotal = ref(0)
+const coverageKnown = ref(0)
+watch(activeUnit, async (unit) => {
+  coveragePct.value = null
+  if (!unit?.id || unit.unit_type === 'cloze') return
+  try {
+    const res: any = await get(`/review/coverage/${unit.id}`)
+    if (res.coverage !== null) {
+      coveragePct.value = res.coverage
+      coverageTotal.value = res.total_words
+      coverageKnown.value = res.known_words
+    }
+  } catch { /* 覆盖率不可用不阻断练习 */ }
+})
 const activeContentBlocks = computed(() => activeUnit.value?.content_blocks || [])
 // v3.6: 选词填空——右侧选项面板改为点文章空格弹出（用户反馈右侧点击无反应）
 const isCloze = computed(() => activeUnit.value?.unit_type === 'cloze')
@@ -1165,6 +1182,11 @@ function openDeepExplain(questionId: number) {
         />
         <template v-else>
         <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
+        <!-- v9.28: Gemini batch5 任务2——本篇词汇掌握度 -->
+        <div v-if="coveragePct !== null" class="coverage-pill" :class="{ high: coveragePct >= 80, low: coveragePct < 60 }">
+          📖 本篇词汇掌握度 <strong>{{ coveragePct }}%</strong>
+          <small>（共 {{ coverageTotal }} 词 · 已识 {{ coverageKnown }}）</small>
+        </div>
         <p v-if="activeUnit.shared_data?.directions" class="lead" style="margin-bottom:24px">{{ activeUnit.shared_data.directions }}</p>
         <div v-if="isOrdering" class="ordering-reference-sheet" aria-label="候选段落 A 到 G">
           <article v-for="option in candidateOptions" :key="option.stable_key" class="ordering-paragraph" data-vocab-text @contextmenu="openVocabularyMenu">

@@ -7,9 +7,19 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
+from ..services import coverage as coverage_service
 from ..services import review as review_service
 
 router = APIRouter(prefix="/review", tags=["review"])
+
+
+@router.get("/coverage/{unit_id}")
+def unit_coverage(
+    unit_id: int,
+    connection: sqlite3.Connection = Depends(get_db),
+) -> dict:
+    """v9.28: Gemini batch5 任务2——单篇文章生词覆盖率"""
+    return coverage_service.get_passage_coverage(connection, unit_id)
 
 
 class RateRequest(BaseModel):
