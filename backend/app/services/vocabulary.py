@@ -119,17 +119,35 @@ def local_similar_matches(
     """Find words already in the wordbook whose spelling is close to each entry."""
     if not entry_ids:
         return {}
-    pool = connection.execute("SELECT id, term FROM vocabulary_entries").fetchall()
-    pool_by_id = {row["id"]: row for row in pool}
+    # v9.25: 性能修复——不再全表拉取 + 全量 Levenshtein（数万词 OOM/CPU 100%）
+    # 改为 SQL 前缀匹配候选池（按 term 首字符粗筛 + LIMIT 200）
+    pool_by_id: dict[int, dict] = {}
     buckets: dict[int, list[tuple[int, str, str]]] = {}
-    for row in pool:
-        key = _match_key(row["term"])
-        buckets.setdefault(len(key), []).append((row["id"], key, row["term"]))
-    result: dict[int, list[dict[str, str]]] = {}
     for entry_id in {int(value) for value in entry_ids}:
-        term_row = pool_by_id.get(entry_id)
-        if term_row is None:
+        row = connection.execute(
+            "SELECT id, term FROM vocabulary_entries WHERE id = ?", (entry_id,)
+        ).fetchone()
+        if row is None:
             continue
+        pool_by_id[row["id"]] = row
+        own_key = _match_key(row["term"])
+        prefix = own_key[:2] if len(own_key) >= 2 else (own_key[:1] or "")
+        if prefix:
+            cands = connection.execute(
+                "SELECT id, term FROM vocabulary_entries WHERE term LIKE ? LIMIT 200",
+                (prefix + "%",),
+            ).fetchall()
+        else:
+            cands = connection.execute(
+                "SELECT id, term FROM vocabulary_entries LIMIT 200"
+            ).fetchall()
+        for crow in cands:
+            if crow["id"] in buckets:
+                continue
+            key = _match_key(crow["term"])
+            buckets.setdefault(len(key), []).append((crow["id"], key, crow["term"]))
+    result: dict[int, list[dict[str, str]]] = {}
+    for entry_id, term_row in pool_by_id.items():
         own_key = _match_key(term_row["term"])
         candidates: list[tuple[int, str]] = []
         for length in range(max(1, len(own_key) - 2), len(own_key) + 3):
@@ -291,10 +309,26 @@ def add_vocabulary(
         cursor = connection.execute(
             """INSERT INTO vocabulary_entries
                 (term, normalized_term, translation_status, user_id)
-            VALUES (?, ?, 'pending', ?)""",
+            VALUES (?, ?, 'pending', ?)
+            ON CONFLICT(user_id, normalized_term) DO NOTHING""",
             (term, normalized, user_id),
         )
-        entry_id = cursor.lastrowid
+        # v9.25: 并发双击竞态——ON CONFLICT DO NOTHING 后 lastrowid 为 None → 走已存在路径
+        if cursor.lastrowid is None:
+            is_new = False
+            if user_id is not None:
+                row = connection.execute(
+                    """SELECT id, encounter_count, study_status, translation_status, user_edited
+                    FROM vocabulary_entries WHERE normalized_term = ? AND user_id = ?""",
+                    (normalized, user_id),
+                ).fetchone()
+            else:
+                row = connection.execute(
+                    """SELECT id, encounter_count, study_status, translation_status, user_edited
+                    FROM vocabulary_entries WHERE normalized_term = ? AND user_id IS NULL""",
+                    (normalized,),
+                ).fetchone()
+        entry_id = cursor.lastrowid if cursor.lastrowid is not None else (row["id"] if row is not None else None)
     else:
         entry_id = row["id"]
         next_status = (
@@ -626,36 +660,45 @@ def translate_queued_vocabulary() -> dict[str, int]:
         with connect() as connection:
             if not _has_translation_model(connection):
                 return {"translated": 0, "remaining": 0}
-            connection.execute("BEGIN IMMEDIATE")
-            rows = connection.execute(
+            # v9.25: 原子认领（去掉 BEGIN IMMEDIATE——避免与 sqlite3 隐式事务冲突）
+            # 认领条件含僵尸自愈: 超时 10 分钟的 translating 任务重新入队
+            cursor = connection.execute(
                 """
-                SELECT id
-                FROM vocabulary_entries
-                WHERE user_edited = 0
-                  AND translation_status = 'queued'
-                ORDER BY updated_at, id
-                LIMIT ?
-                """,
-                (MAX_TRANSLATIONS_PER_RUN,),
-            ).fetchall()
-            entry_ids = [row["id"] for row in rows]
-            if not entry_ids:
-                connection.commit()
-                return {"translated": 0, "remaining": 0}
-            placeholders = ",".join("?" for _ in entry_ids)
-            connection.execute(
-                f"""
                 UPDATE vocabulary_entries
                 SET translation_status = 'translating',
                     translation_error = '',
                     updated_at = CURRENT_TIMESTAMP
-                WHERE id IN ({placeholders})
-                  AND user_edited = 0
-                  AND translation_status = 'queued'
+                WHERE id IN (
+                    SELECT id FROM vocabulary_entries
+                    WHERE user_edited = 0
+                      AND (
+                        translation_status = 'queued'
+                        OR (translation_status = 'translating'
+                            AND updated_at < datetime('now', '-10 minutes'))
+                      )
+                    ORDER BY updated_at, id
+                    LIMIT ?
+                )
                 """,
-                entry_ids,
+                (MAX_TRANSLATIONS_PER_RUN,),
             )
             connection.commit()
+            claimed = cursor.rowcount
+            if claimed == 0:
+                return {"translated": 0, "remaining": 0}
+            entry_ids = [
+                r["id"]
+                for r in connection.execute(
+                    f"""
+                    SELECT id FROM vocabulary_entries
+                    WHERE translation_status = 'translating'
+                    ORDER BY updated_at, id
+                    LIMIT {claimed}
+                    """
+                ).fetchall()
+            ]
+            if not entry_ids:
+                return {"translated": 0, "remaining": 0}
             claimed_rows = _translation_rows(connection, entry_ids)
             for index in range(0, len(claimed_rows), TRANSLATION_BATCH_SIZE):
                 batch = claimed_rows[index:index + TRANSLATION_BATCH_SIZE]
