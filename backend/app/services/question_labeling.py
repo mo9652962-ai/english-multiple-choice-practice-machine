@@ -432,22 +432,34 @@ def label_next_unit(
     processed = 0
     # Each call keeps the complete passage but emits at most five labels.
     # Successful sub-batches are committed immediately.
-    for start in range(0, len(questions), 5):
-        batch = questions[start : start + 5]
-        labels = _request_batch_with_fallback(
-            connection,
-            unit=unit,
-            questions=batch,
-            profile_id=profile_id,
-            model=model,
-            max_tokens=max_tokens,
-        )
-        processed += _save_labels(
-            connection,
-            labels,
-            model_name=profile["default_model"],
-            run_id=effective_run_id,
-        )
+    try:
+        for start in range(0, len(questions), 5):
+            batch = questions[start : start + 5]
+            labels = _request_batch_with_fallback(
+                connection,
+                unit=unit,
+                questions=batch,
+                profile_id=profile_id,
+                model=model,
+                max_tokens=max_tokens,
+            )
+            processed += _save_labels(
+                connection,
+                labels,
+                model_name=profile["default_model"],
+                run_id=effective_run_id,
+            )
+    except Exception as exc:
+        # v9.25: 毒丸熔断——AI 持续报错时标记本单元已处理（跳过），防死循环
+        # 单元题目写入 run_items 视为「已尝试」，避免每次重复选同一失败单元
+        network_log = "label unit {} failed: {}".format(unit["id"], exc)
+        for q in questions:
+            connection.execute(
+                "INSERT OR REPLACE INTO question_label_run_items (run_id, question_id) VALUES (?, ?)",
+                (effective_run_id, q["id"]),
+            )
+        connection.commit()
+        raise RuntimeError(network_log) from exc
     return {
         "done": False,
         "processed": processed,
