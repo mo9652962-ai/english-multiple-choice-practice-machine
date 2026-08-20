@@ -476,6 +476,29 @@ CREATE TABLE IF NOT EXISTS annotations (
 );
 CREATE INDEX IF NOT EXISTS idx_annotations_unit ON annotations(unit_id);
 
+-- v9.26: P1 作文批改（考研大小作文多维精批）
+CREATE TABLE IF NOT EXISTS essay_submissions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
+    essay_type TEXT NOT NULL,
+    subject TEXT NOT NULL DEFAULT '英语一',
+    prompt_title TEXT NOT NULL DEFAULT '',
+    user_content TEXT NOT NULL,
+    word_count INTEGER NOT NULL DEFAULT 0,
+    score REAL NOT NULL DEFAULT 0,
+    max_score REAL NOT NULL DEFAULT 20,
+    band_name TEXT NOT NULL DEFAULT '',
+    dimensions TEXT NOT NULL DEFAULT '{}',
+    overall_comment TEXT NOT NULL DEFAULT '',
+    markups TEXT NOT NULL DEFAULT '[]',
+    lexical_upgrades TEXT NOT NULL DEFAULT '[]',
+    model_essay TEXT NOT NULL DEFAULT '',
+    essay_highlights TEXT NOT NULL DEFAULT '[]',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_essay_user ON essay_submissions(user_id, created_at DESC);
+
 -- 任务E: 题目解析（AI 批量生成，content 为结构化 JSON，见 backend/prompts/explain_prompt.py）
 CREATE TABLE IF NOT EXISTS question_explanations (
     question_id INTEGER PRIMARY KEY,
