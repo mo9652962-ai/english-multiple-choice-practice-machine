@@ -15,6 +15,7 @@ import AchievementsView from './views/AchievementsView.vue'
 import VocabularyView from './views/VocabularyView.vue'
 import TrashView from './views/TrashView.vue'
 import NotesView from './views/NotesView.vue'
+import EssayView from './views/EssayView.vue'  // v9.26: P1 作文批改
 import LeaderboardView from './views/LeaderboardView.vue'
 import FocusView from './views/FocusView.vue'
 import CalendarView from './views/CalendarView.vue'
@@ -55,6 +56,7 @@ export default createRouter({
     { path: '/about', component: AboutView },
     { path: '/trash', component: TrashView },
     { path: '/notes', component: NotesView },
+    { path: '/essay', component: EssayView },  // v9.26: P1 作文批改
     { path: '/login', component: LoginView },  // v9.24: 多用户登录页
   ],
 })
