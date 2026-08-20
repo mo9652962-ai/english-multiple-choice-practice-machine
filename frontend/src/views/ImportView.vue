@@ -69,6 +69,19 @@ const bulkAnswers = ref<Record<string, string>>({})
 const busy = ref(false)
 const uploadStage = ref('')
 const uploadElapsedSeconds = ref(0)
+
+// v9.27: Gemini UI4——导入流程三阶段（1 纳卷→2 校勘→3 归藏）
+const importStep = computed(() => {
+  if (current.value && current.value.status === 'done') return 3
+  if (busy.value || uploadStage.value) return 2
+  return 1
+})
+// 校勘进度：无真实进度源——按时长递进，92% 封顶（完成后跳 100）
+const importProgressWidth = computed(() => {
+  if (importStep.value === 3) return 100
+  if (!uploadStage.value) return 0
+  return Math.min(92, Math.round(uploadElapsedSeconds.value * 3))
+})
 const error = ref('')
 const notice = ref('')
 const aiInstructions = ref('')
@@ -684,6 +697,14 @@ async function exportEsq(includeLabels = false) {
 
     <div class="grid" style="grid-template-columns:320px 1fr">
       <aside>
+        <!-- v9.27: Gemini UI4——墨滴步骤条（纳卷→校勘→归藏） -->
+        <div class="import-step-bar">
+          <div class="import-step-node" :class="{ active: importStep >= 1, done: importStep > 1 }">1. 纳卷</div>
+          <div class="import-step-line" :class="{ active: importStep >= 2 }"></div>
+          <div class="import-step-node" :class="{ active: importStep >= 2, done: importStep > 2 }">2. 校勘</div>
+          <div class="import-step-line" :class="{ active: importStep >= 3 }"></div>
+          <div class="import-step-node" :class="{ active: importStep >= 3 }">3. 归藏</div>
+        </div>
         <div class="card">
           <label class="field">
             <span>导入到题库配置</span>
@@ -706,6 +727,13 @@ async function exportEsq(includeLabels = false) {
           <p v-if="useModelAssist" class="lead import-file-hint">本地解析完成后会自动调用默认模型核对答案，可能需要 30 秒以上。</p>
           <button class="button" style="width:100%" :disabled="!selectedFile || busy" @click="upload"><FileUp :size="16" />{{ busy ? '正在分析…' : '上传并解析' }}</button>
           <p v-if="busy && uploadStage" class="lead import-file-hint import-progress">{{ uploadStage }} · {{ uploadElapsedSeconds }} 秒</p>
+          <!-- v9.27: Gemini UI4——竹青校勘进度条 -->
+          <div v-if="busy && uploadStage" class="import-progress-container">
+            <div class="import-progress-track">
+              <div class="import-progress-bar-ink" :style="{ width: importProgressWidth + '%' }"></div>
+            </div>
+            <div class="import-progress-meta"><span class="font-serif">{{ importProgressWidth }}%</span></div>
+          </div>
         </div>
         <div class="card">
           <label class="field"><span>导入 ESQ 共享题库</span><input type="file" accept=".esq,.zip" @change="selectedEsqFile=($event.target as HTMLInputElement).files?.[0] || null"></label>

@@ -255,6 +255,7 @@ def chat_completion(
     profile_id: int | None = None,
     model: str | None = None,
     max_tokens: int | None = None,
+    usage_out: dict[str, int] | None = None,  # v9.27: usage 回传（可选）
 ) -> str:
     settings = (
         _profile_with_key(connection, profile_id)
@@ -318,20 +319,25 @@ def chat_completion(
             response = post_with_retry(client, payload)
         response.raise_for_status()
         data = response.json()
-    try:
-        message = data["choices"][0]["message"]
-    except (KeyError, IndexError, TypeError) as error:
-        raise ValueError("模型接口返回格式不兼容") from error
-    content = _extract_message_content(message.get("content"))
-    if not content:
-        finish_reason = data["choices"][0].get("finish_reason")
-        detail = (
-            "，供应商可能提前终止了回复；请重试或切换模型/API 配置"
-            if finish_reason in {"length", "stop"}
-            else ""
-        )
-        raise ValueError(f"模型没有返回可显示的正文{detail}")
-    return content
+        # v9.27: usage 统计回传（可选——ai_router 用它记录真实 tokens）
+        if usage_out is not None:
+            u = data.get("usage") or {}
+            usage_out["prompt_tokens"] = int(u.get("prompt_tokens") or 0)
+            usage_out["completion_tokens"] = int(u.get("completion_tokens") or 0)
+        try:
+            message = data["choices"][0]["message"]
+        except (KeyError, IndexError, TypeError) as error:
+            raise ValueError("模型接口返回格式不兼容") from error
+        content = _extract_message_content(message.get("content"))
+        if not content:
+            finish_reason = data["choices"][0].get("finish_reason")
+            detail = (
+                "，供应商可能提前终止了回复；请重试或切换模型/API 配置"
+                if finish_reason in {"length", "stop"}
+                else ""
+            )
+            raise ValueError(f"模型没有返回可显示的正文{detail}")
+        return content
 
 
 def _extract_message_content(value: Any) -> str:

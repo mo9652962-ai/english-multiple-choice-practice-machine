@@ -1153,3 +1153,70 @@ def generate_similar(
     except Exception:
         pass
     return result
+
+
+@router.get("/usage")
+def get_ai_usage(
+    month: str = "",  # YYYY-MM；空 = 本月
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
+) -> dict:
+    """v9.27: Gemini UI4——AI 用量月度聚合（文枢阁用量）"""
+    from datetime import datetime
+
+    if not month:
+        month = datetime.now().strftime("%Y-%m")
+    # 校验格式
+    try:
+        datetime.strptime(month, "%Y-%m")
+    except ValueError:
+        raise HTTPException(400, "month 需为 YYYY-MM 格式") from None
+
+    row = connection.execute(
+        """
+        SELECT
+            COUNT(*) AS total_calls,
+            COALESCE(SUM(prompt_tokens), 0) AS prompt_tokens,
+            COALESCE(SUM(completion_tokens), 0) AS completion_tokens,
+            COALESCE(SUM(CASE WHEN status != 'ok' THEN 1 ELSE 0 END), 0) AS failed_calls
+        FROM ai_usage
+        WHERE strftime('%Y-%m', created_at) = ?
+        """,
+        (month,),
+    ).fetchone()
+
+    dist_rows = connection.execute(
+        """
+        SELECT task,
+               COUNT(*) AS calls,
+               COALESCE(SUM(prompt_tokens), 0) AS prompt_tokens,
+               COALESCE(SUM(completion_tokens), 0) AS completion_tokens
+        FROM ai_usage
+        WHERE strftime('%Y-%m', created_at) = ?
+        GROUP BY task
+        ORDER BY calls DESC
+        """,
+        (month,),
+    ).fetchall()
+
+    total_tokens = (row["prompt_tokens"] or 0) + (row["completion_tokens"] or 0)
+    total_calls = row["total_calls"] or 0
+    distribution = []
+    for r in dist_rows:
+        type_tokens = (r["prompt_tokens"] or 0) + (r["completion_tokens"] or 0)
+        distribution.append({
+            "task": r["task"] or "other",
+            "calls": r["calls"],
+            "tokens": type_tokens,
+            "percent": round(type_tokens * 100.0 / total_tokens, 1) if total_tokens else 0.0,
+        })
+    return {
+        "month": month,
+        "total_calls": total_calls,
+        "total_tokens": total_tokens,
+        "prompt_tokens": row["prompt_tokens"] or 0,
+        "completion_tokens": row["completion_tokens"] or 0,
+        "failed_calls": row["failed_calls"] or 0,
+        "fail_rate": round((row["failed_calls"] or 0) * 100.0 / total_calls, 1) if total_calls else 0.0,
+        "distribution": distribution,
+    }

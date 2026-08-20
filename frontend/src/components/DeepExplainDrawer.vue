@@ -2,7 +2,7 @@
   <Teleport to="body">
     <Transition name="drawer-fade">
       <div v-if="visible" class="deep-explain-overlay" @click.self="close">
-        <aside class="deep-explain-drawer" :class="{ loading }">
+        <aside class="deep-explain-drawer" :class="{ loading }" @click="handleWordClick">
           <header class="drawer-head">
             <h3><span class="hero-seal" aria-hidden="true">讲</span>AI 助教精讲</h3>
             <button class="drawer-close" @click="close">✕</button>
@@ -25,10 +25,10 @@
               <span v-if="data.core_skill" class="explain-tag skill">{{ data.core_skill }}</span>
             </div>
 
-            <!-- 定位句 -->
+            <!-- 定位句（v9.27 划词可点） -->
             <div v-if="data.locator_sentence" class="explain-section">
               <h4>📌 原文定位</h4>
-              <blockquote class="locator-quote">{{ data.locator_sentence }}</blockquote>
+              <blockquote class="locator-quote" v-html="tokenizeText(data.locator_sentence)"></blockquote>
             </div>
 
             <!-- 解题步骤 -->
@@ -51,14 +51,14 @@
                       :class="opt.status === 'correct' ? 'trap-badge-correct' : 'trap-badge-wrong'">
                   {{ opt.trap_type }}
                 </span>
-                <p>{{ opt.analysis }}</p>
+                <p v-html="tokenizeText(opt.analysis)"></p>
               </div>
             </div>
 
-            <!-- 长难句语法 -->
+            <!-- 长难句语法（v9.27 划词可点） -->
             <div v-if="data.sentence_grammar?.core_skeleton" class="explain-section">
               <h4>📐 长难句骨架</h4>
-              <p class="skeleton-text">{{ data.sentence_grammar.core_skeleton }}</p>
+              <p class="skeleton-text" v-html="tokenizeText(data.sentence_grammar.core_skeleton)"></p>
               <p v-if="data.sentence_grammar.grammar_note" class="grammar-note">{{ data.sentence_grammar.grammar_note }}</p>
             </div>
 
@@ -87,6 +87,21 @@
               <button class="button ghost compact" @click="load(true)">重新生成</button>
             </footer>
           </div>
+
+          <!-- v9.27: Gemini UI4——划词悬浮卡片（点击解析中的英文单词查词） -->
+          <div v-if="popover.visible" class="word-popover"
+               :style="{ top: popover.y + 'px', left: popover.x + 'px' }">
+            <div v-if="popover.loading" class="word-popover-loading">查词中…</div>
+            <template v-else-if="popover.data">
+              <div class="word-popover-term font-serif">{{ popover.data.term || popover.data.lemma }}</div>
+              <div v-if="popover.data.phonetic" class="word-popover-phonetic">{{ popover.data.phonetic }}</div>
+              <div class="word-popover-mean">{{ popover.data.common_meaning || popover.data.contextual_meaning || '词库暂无释义' }}</div>
+              <button class="word-popover-add" @click.stop="addToVocab(popover.data)">
+                <Star :size="12" />{{ popover.data.id ? '已在词库' : '加入生词本' }}
+              </button>
+            </template>
+            <div v-else class="word-popover-loading">词库未收录</div>
+          </div>
         </aside>
       </div>
     </Transition>
@@ -95,7 +110,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { post } from '../api'
+import { Star } from 'lucide-vue-next'
+import { get, post } from '../api'
 
 const props = defineProps<{ questionId: number | null }>()
 const emit = defineEmits<{ (e: 'jump', questionId: number): void }>()
@@ -104,6 +120,58 @@ const visible = ref(false)
 const loading = ref(false)
 const error = ref('')
 const data = ref<any>(null)
+
+// v9.27: Gemini UI4——划词联动（点击英文单词查词）
+const popover = ref<{ visible: boolean; x: number; y: number; loading: boolean; data: any }>({
+  visible: false, x: 0, y: 0, loading: false, data: null,
+})
+const wordCache = new Map<string, any>()
+
+// 转义 HTML + 包裹英文单词为可点击 span（仅限解析文本）
+function tokenizeText(text: string): string {
+  const escaped = text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  return escaped.replace(/([A-Za-z][A-Za-z'-]{1,})/g,
+    '<span class="clickable-word" data-word="$1">$1</span>')
+}
+
+async function handleWordClick(event: MouseEvent) {
+  const target = event.target as HTMLElement
+  if (!target.classList.contains('clickable-word')) {
+    if (!target.closest('.word-popover')) popover.value.visible = false
+    return
+  }
+  const word = (target.dataset.word || '').toLowerCase()
+  if (!word) return
+  const rect = target.getBoundingClientRect()
+  popover.value = { visible: true, x: rect.left, y: rect.bottom + 8, loading: true, data: null }
+
+  if (wordCache.has(word)) {
+    popover.value.data = wordCache.get(word)
+    popover.value.loading = false
+    return
+  }
+  try {
+    const res: any = await get(`/vocabulary?search=${encodeURIComponent(word)}&exact=true`)
+    const item = (res.items || [])[0] || null
+    wordCache.set(word, item)
+    popover.value.data = item
+  } catch {
+    wordCache.set(word, null)
+    popover.value.data = null
+  } finally {
+    popover.value.loading = false
+  }
+}
+
+async function addToVocab(entry: any) {
+  if (!entry || entry.id) return
+  try {
+    const created: any = await post('/vocabulary', { term: entry.term || entry.lemma })
+    wordCache.set((entry.term || entry.lemma || '').toLowerCase(), created)
+    popover.value.data = created
+  } catch { /* 词库已有或失败——忽略 */ }
+}
 
 async function load(forceRefresh = false) {
   if (!props.questionId) return
@@ -200,4 +268,14 @@ defineExpose({ open, close })
 .drawer-fade-enter-active .deep-explain-drawer, .drawer-fade-leave-active .deep-explain-drawer { transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .drawer-fade-enter-from, .drawer-fade-leave-to { opacity: 0; }
 .drawer-fade-enter-from .deep-explain-drawer, .drawer-fade-leave-to .deep-explain-drawer { transform: translateX(100%); }
+
+/* v9.27: Gemini UI4——划词悬浮卡片 */
+.clickable-word { color: var(--zhusha, #B84A39); text-decoration: underline dashed; text-underline-offset: 3px; cursor: pointer; }
+.word-popover { position: fixed; z-index: 9999; min-width: 200px; max-width: 260px; background: #FAF7F2; border: 1px solid #E8E0D2; border-radius: 10px; box-shadow: 0 10px 30px rgba(44, 38, 34, 0.16); padding: 12px 14px; }
+.word-popover-loading { font-size: 12px; color: var(--muted, #8a7d6d); }
+.word-popover-term { font-size: 18px; font-weight: 700; color: #3a322b; }
+.word-popover-phonetic { font-size: 12px; color: var(--muted, #8a7d6d); margin: 2px 0 6px; }
+.word-popover-mean { font-size: 13px; line-height: 1.5; color: #4a4138; }
+.word-popover-add { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; padding: 3px 8px; font-size: 12px; color: #B84A39; background: transparent; border: 1px solid #D8C9B8; border-radius: 6px; cursor: pointer; }
+.word-popover-add:hover { background: rgba(184, 74, 57, 0.08); }
 </style>

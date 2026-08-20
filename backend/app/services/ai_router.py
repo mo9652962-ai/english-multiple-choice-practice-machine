@@ -152,6 +152,7 @@ def chat_with_routing(
         if not _health(connection, candidate["id"]):
             continue
         started = time.monotonic()
+        usage_out: dict[str, int] = {}
         try:
             result = chat_completion(
                 connection,
@@ -160,12 +161,15 @@ def chat_with_routing(
                 profile_id=candidate["id"],
                 model=model or candidate["default_model"] or None,
                 max_tokens=max_tokens or candidate["max_tokens"] or None,
+                usage_out=usage_out,  # v9.27: 记录真实 tokens
             )
             _record_usage(
                 connection,
                 task=task,
                 provider=candidate["name"],
                 model=model or candidate["default_model"] or "",
+                prompt_tokens=usage_out.get("prompt_tokens", 0),
+                completion_tokens=usage_out.get("completion_tokens", 0),
                 latency_ms=int((time.monotonic() - started) * 1000),
             )
             return result

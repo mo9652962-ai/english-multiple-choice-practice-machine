@@ -47,6 +47,7 @@ def list_entries(
     status: str = "all",
     search: str = "",
     category: str = "",
+    exact: bool = False,  # v9.27: Gemini UI4——划词查词精确匹配（deep-explain 联动）
     connection: sqlite3.Connection = Depends(get_db),
     user: dict | None = Depends(maybe_require_user),
 ) -> dict:
@@ -86,12 +87,20 @@ def list_entries(
     elif status == "pending":
         conditions.append("translation_status != 'ready'")
     if search.strip():
-        conditions.append(
-            "(term LIKE ? ESCAPE '/' OR lemma LIKE ? ESCAPE '/' "
-            "OR contextual_meaning LIKE ? ESCAPE '/' OR common_meaning LIKE ? ESCAPE '/')"
-        )
-        needle = f"%{_escape_like(search.strip())}%"
-        params.extend([needle] * 4)
+        if exact:
+            # v9.27: 划词精确匹配——只返回命中词条本身（大小写不敏感，优先 lemma=term）
+            conditions.append(
+                "(term = ? COLLATE NOCASE OR lemma = ? COLLATE NOCASE)"
+            )
+            needle = search.strip()
+            params.extend([needle, needle])
+        else:
+            conditions.append(
+                "(term LIKE ? ESCAPE '/' OR lemma LIKE ? ESCAPE '/' "
+                "OR contextual_meaning LIKE ? ESCAPE '/' OR common_meaning LIKE ? ESCAPE '/')"
+            )
+            needle = f"%{_escape_like(search.strip())}%"
+            params.extend([needle] * 4)
     rows = connection.execute(
         f"""
         SELECT *,
