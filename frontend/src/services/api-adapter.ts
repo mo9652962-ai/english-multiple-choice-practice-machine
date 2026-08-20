@@ -575,12 +575,18 @@ function offlineGet(path: string): any {
   // GET /essays/{id}
   const essayM = path.match(/^\/essays\/(\d+)$/)
   if (essayM) {
-    return idbGet(`essay:${essayM[1]}`).then((essay: any) => essay || { submission_id: Number(essayM[1]), error: 'not_found' })
+    return idbGet(`essay:${essayM[1]}`).then((essay: any) => {
+      if (essay) return essay
+      return Promise.reject({ response: { status: 404, data: { detail: '批改记录不存在' } } })
+    })
   }
   // GET /speaking/sessions/{id}
   const speakM = path.match(/^\/speaking\/sessions\/(\d+)$/)
   if (speakM) {
-    return getSpeakingSession(Number(speakM[1])).then((s: any) => s || { id: Number(speakM[1]), status: 'missing' })
+    return getSpeakingSession(Number(speakM[1])).then((s: any) => {
+      if (s) return s
+      return Promise.reject({ response: { status: 404, data: { detail: '会话不存在' } } })
+    })
   }
 
   return {}
@@ -843,12 +849,12 @@ function offlinePost(path: string, body?: any): any {
 
   // ── v9.29: 离线 AI 直连（llm-direct）──
 
-  // POST /explanations/questions/{qid}/deep-explain（真题精讲）
-  const dxm = path.match(/^\/explanations\/questions\/(\d+)\/deep-explain$/)
+  // POST /questions/{qid}/deep-explain（真题精讲——后端路由无前缀，前端 DeepExplainDrawer 调 /questions/...）
+  const dxm = path.match(/^\/questions\/(\d+)\/deep-explain$/)
   if (dxm) {
     const qid = parseInt(dxm[1])
     const q = queryOne('SELECT id, stem, answer, question_type, unit_id FROM questions WHERE id = ?', [qid])
-    if (!q) return { error: '题目不存在' }
+    if (!q) return Promise.reject({ response: { status: 404, data: { detail: '题目不存在' } } })
     const unit = q.unit_id ? queryOne('SELECT passage, title FROM units WHERE id = ?', [q.unit_id]) : null
     const options = queryAll('SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence', [qid]) as { key: string; content: string }[]
     const forceRefresh = !!(body && (body as any).force_refresh)
@@ -857,14 +863,15 @@ function offlinePost(path: string, body?: any): any {
       qid,
       { stem: q.stem, answer: q.answer, options: options || [], passage: unit?.passage || '' },
       forceRefresh,
-    ).catch((err: Error) => ({ error: err.message }))
+    ).catch((err: Error) => Promise.reject({ response: { status: 502, data: { detail: err.message } } }))
   }
 
   // POST /essays/evaluate（作文批改）
   if (path === '/essays/evaluate') {
     const req = (body || {}) as any
-    if (!req.user_content) return { error: '作文内容为空' }
-    return offlineEssayEvaluate(req).catch((err: Error) => ({ error: err.message }))
+    if (!req.user_content) return Promise.reject({ response: { status: 400, data: { detail: '作文内容为空' } } })
+    return offlineEssayEvaluate(req).catch((err: Error) =>
+      Promise.reject({ response: { status: 502, data: { detail: err.message } } }))
   }
 
   // POST /speaking/sessions（建口语会话——本地模板开场白）
@@ -885,17 +892,16 @@ function offlinePost(path: string, body?: any): any {
     const sid = parseInt(stm[1])
     const req = (body || {}) as any
     return getSpeakingSession(sid).then(async (session: any) => {
-      if (!session) return { error: '会话不存在' }
-      if (session.status !== 'active') return { error: '会话已结束' }
+      if (!session) return Promise.reject({ response: { status: 404, data: { detail: '会话不存在' } } })
+      if (session.status !== 'active') return Promise.reject({ response: { status: 400, data: { detail: '会话已结束' } } })
       const history: { role: string; content: string }[] = []
       for (const t of (session.turns || []).slice(-6)) {
         if (t.user_text) history.push({ role: 'user', content: t.user_text })
         if (t.ai_reply) history.push({ role: 'assistant', content: t.ai_reply })
       }
       const result = await offlineSpeakingTurn(session.scenario, session.topic, history, req.user_text || '')
-        .catch((err: Error) => ({ error: err.message }))
-      if ((result as any).error) return result
-      await appendSpeakingTurn(session, req.user_text || '', result as any)
+        .catch((err: Error) => Promise.reject({ response: { status: 502, data: { detail: err.message } } }))
+      await appendSpeakingTurn(session, req.user_text || '', result)
       return { ...result, turn_index: session.turns.length + 1 }
     })
   }

@@ -9,17 +9,38 @@ import { SecureStorage } from './secure-storage'
 const IDB_NAME = 'epm_ai_cache'
 const IDB_STORE = 'kv'
 
+// 单例连接（避免每次 open 新连接——Gemini 审查 2026-08-20）
+let _idbPromise: Promise<IDBDatabase> | null = null
+
 function idbOpen(): Promise<IDBDatabase> {
-  return new Promise((resolve, reject) => {
-    const req = indexedDB.open(IDB_NAME, 1)
-    req.onupgradeneeded = () => {
-      if (!req.result.objectStoreNames.contains(IDB_STORE)) {
-        req.result.createObjectStore(IDB_STORE)
+  if (!_idbPromise) {
+    _idbPromise = new Promise((resolve, reject) => {
+      const req = indexedDB.open(IDB_NAME, 1)
+      req.onupgradeneeded = () => {
+        if (!req.result.objectStoreNames.contains(IDB_STORE)) {
+          req.result.createObjectStore(IDB_STORE)
+        }
       }
-    }
-    req.onsuccess = () => resolve(req.result)
-    req.onerror = () => reject(req.error)
-  })
+      req.onsuccess = () => resolve(req.result)
+      req.onerror = () => {
+        _idbPromise = null // 失败重置，下次重试
+        reject(req.error)
+      }
+    })
+  }
+  return _idbPromise
+}
+
+// 本地时间戳（对齐后端 SQLite CURRENT_TIMESTAMP 的 "YYYY-MM-DD HH:MM:SS" 格式）
+export function localTimestamp(): string {
+  const d = new Date()
+  const p = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`
+}
+
+// 唯一主键（Date.now() + 随机后缀，避免快速并发碰撞——Gemini 审查 2026-08-20）
+export function uniqueId(): number {
+  return Date.now() * 1000 + Math.floor(Math.random() * 1000)
 }
 
 export async function idbGet(key: string): Promise<any> {
@@ -235,7 +256,7 @@ ${(question.passage || '').slice(0, 4000)}
     knowledge_points: parsed.knowledge_points ?? [],
     study_advice: parsed.study_advice ?? '',
     source_model: '',
-    updated_at: new Date().toISOString(),
+    updated_at: localTimestamp(),
   }
   await idbSet(cacheKey, result)
   return result
@@ -294,7 +315,7 @@ ${req.user_content}
   const parsed = tryParseJson(raw)
   const maxScore = req.essay_type !== 'essay_small' ? 20 : 10
   const result: EssayEvaluateResult = {
-    submission_id: Date.now(),
+    submission_id: uniqueId(),
     word_count: wordCount,
     score: parsed.score ?? 0,
     max_score: parsed.max_score ?? maxScore,
@@ -376,7 +397,7 @@ export interface SpeakingSession {
 
 export async function createSpeakingSession(scenario: string, topic: string): Promise<SpeakingSession> {
   const session: SpeakingSession = {
-    id: Date.now(),
+    id: uniqueId(),
     scenario,
     topic,
     status: 'active',
@@ -399,7 +420,7 @@ export async function appendSpeakingTurn(
     turn_index: session.turns.length + 1,
     user_text: userText,
     ai_reply: aiResult.reply,
-    created_at: new Date().toISOString(),
+    created_at: localTimestamp(),
   })
   await idbSet(`speaking:${session.id}`, session)
 }
