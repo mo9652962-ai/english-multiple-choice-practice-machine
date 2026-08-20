@@ -55,9 +55,13 @@
               </div>
             </div>
 
-            <!-- 长难句语法（v9.27 划词可点） -->
+            <!-- 长难句语法（v9.27 划词可点 / v9.28 可收藏） -->
             <div v-if="data.sentence_grammar?.core_skeleton" class="explain-section">
-              <h4>📐 长难句骨架</h4>
+              <h4>📐 长难句骨架
+                <button class="collect-btn" type="button" @click.stop="collectFragment('long_sentence', data.sentence_grammar.core_skeleton)" title="收藏到典藏本">
+                  <Bookmark :size="13" /> 典藏
+                </button>
+              </h4>
               <p class="skeleton-text" v-html="tokenizeText(data.sentence_grammar.core_skeleton)"></p>
               <p v-if="data.sentence_grammar.grammar_note" class="grammar-note">{{ data.sentence_grammar.grammar_note }}</p>
             </div>
@@ -110,7 +114,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Star } from 'lucide-vue-next'
+import { Bookmark, Star } from 'lucide-vue-next'
 import { get, post } from '../api'
 
 const props = defineProps<{ questionId: number | null }>()
@@ -125,6 +129,7 @@ const data = ref<any>(null)
 const popover = ref<{ visible: boolean; x: number; y: number; loading: boolean; data: any }>({
   visible: false, x: 0, y: 0, loading: false, data: null,
 })
+const collectedFlash = ref(false)
 const wordCache = new Map<string, any>()
 
 // 转义 HTML + 包裹英文单词为可点击 span（仅限解析文本）
@@ -133,6 +138,22 @@ function tokenizeText(text: string): string {
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   return escaped.replace(/([A-Za-z][A-Za-z'-]{1,})/g,
     '<span class="clickable-word" data-word="$1">$1</span>')
+}
+
+// v9.28: Gemini batch5 任务4——精讲典藏收藏
+async function collectFragment(type: string, content: string) {
+  if (!props.questionId || !content.trim()) return
+  try {
+    await post('/collections', {
+      question_id: props.questionId,
+      fragment_type: type,
+      content: content.trim(),
+      source: 'deep-explain',
+    })
+    // 轻提示：抽屉内无 toast，用按钮短暂反馈
+    collectedFlash.value = true
+    setTimeout(() => (collectedFlash.value = false), 1200)
+  } catch { /* 收藏失败静默（不阻断浏览） */ }
 }
 
 async function handleWordClick(event: MouseEvent) {
@@ -270,6 +291,14 @@ defineExpose({ open, close })
 .drawer-fade-enter-from .deep-explain-drawer, .drawer-fade-leave-to .deep-explain-drawer { transform: translateX(100%); }
 
 /* v9.27: Gemini UI4——划词悬浮卡片 */
+.collect-btn {
+  display: inline-flex; align-items: center; gap: 3px;
+  margin-left: 8px; padding: 2px 8px; border: 1px solid #E8E0D2; border-radius: 999px;
+  background: transparent; color: #8A7D6D; font-size: 11px; cursor: pointer; vertical-align: middle;
+  transition: all .15s;
+}
+.collect-btn:hover, .collect-btn.flash { background: #B84A39; border-color: #B84A39; color: #fff; }
+.explain-section h4 { display: flex; align-items: center; }
 .clickable-word { color: var(--zhusha, #B84A39); text-decoration: underline dashed; text-underline-offset: 3px; cursor: pointer; }
 .word-popover { position: fixed; z-index: 9999; min-width: 200px; max-width: 260px; background: #FAF7F2; border: 1px solid #E8E0D2; border-radius: 10px; box-shadow: 0 10px 30px rgba(44, 38, 34, 0.16); padding: 12px 14px; }
 .word-popover-loading { font-size: 12px; color: var(--muted, #8a7d6d); }

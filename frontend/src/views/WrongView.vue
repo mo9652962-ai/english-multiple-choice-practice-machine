@@ -457,6 +457,10 @@ function analysisLabel(unitIds: number[]): string {
         <button class="button" type="button" :disabled="paperExporting" @click="exportWrongPaper">
           {{ paperExporting ? '生成中…' : '📄 错题卷' }}
         </button>
+        <!-- v9.28: Gemini batch5 任务4——精讲典藏入口 -->
+        <button class="button ghost" type="button" @click="router.push('/collections')">
+          📌 典藏
+        </button>
       </div>
     </div>
 
