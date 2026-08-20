@@ -117,3 +117,40 @@ cd backend && python -c "from app.main import app; print([r.path for r in app.ro
 cd frontend && npx vue-tsc --noEmit   # TS 类型
 cd frontend && npx vite build          # 构建（用 background 跑）
 ```
+
+---
+
+## v9.26 更新（2026-08-20）——AI 三件套 + 性能 + 安全
+
+### AI 三件套（Gemini 方案落地，全部走现有 AI 配置零新增依赖）
+
+| 功能 | 后端 | 前端 | 成本 |
+|:---|:---|:---|:---|
+| **P0 真题精讲** | `POST /api/questions/{id}/deep-explain`（`backend/app/routers/explanations.py`）| `DeepExplainDrawer.vue`（练习页 ✨AI 精讲按钮）| 单题 ¥0.0034，缓存后 95% 零成本 |
+| **P1 作文批改** | `POST /api/essays/evaluate` + `GET /api/essays[/{id}]`（`routers/essays.py`）| `EssayView.vue`（导航「作文精批」）| 单篇 ¥0.004 |
+| **P2 口语陪练** | `POST /api/speaking/sessions[/{id}/turns|/finish]`（`routers/speaking.py`）| `SpeakingView.vue`（导航「口语陪练」，Web Speech API 浏览器原生语音）| 单轮 ¥0.001 |
+
+**提示词位置**：`backend/prompts/explain_prompt.py`（DEEP_EXPLAIN_SYSTEM_PROMPT）/ `essay_prompt.py` / `speaking_prompt.py`——均为严格 JSON 输出 + response_format=json_object。
+
+**关键坑**：
+- 新表 `essay_submissions` / `speaking_sessions` / `speaking_turns` 在 `database.py` SCHEMA——**旧后端进程不会自动建表，重启（墨题启动.bat）后自动执行**；若手工测试先 `initialize_database()`
+- `explanations.py` 的 `from prompts.explain_prompt import` 是**顶层导入**（prompts 是 backend 根的包，不是 app 子包）——`..prompts` 会 ModuleNotFoundError
+- deep-explain 缓存命中条件：`content` 是 dict 且含 `options_analysis`（深度结构）；旧简单版解析不会命中深度缓存（会重新生成）
+
+### 性能优化（2026-08-20）
+
+- **路由全量懒加载**：`frontend/src/router.ts` 全部 `() => import(...)`——主 bundle 509KB→140KB（-72%，gzip 164→52KB）
+- services 层：`local_similar_matches` 全表+Levenshtein → SQL 前缀候选池（LIMIT 200）；`translate_queued_vocabulary` 去掉 BEGIN IMMEDIATE 改原子 UPDATE 认领 + translating 10 分钟超时自愈；`label_next_unit` 失败熔断防毒丸死循环
+
+### Gemini 审查已修（2026-08-20，安全）
+
+- **P0 严重**：`question_labeling.py` 毒丸死循环（AI 失败 unit 永远重复选）→ 异常标记跳过
+- **services 严重**：translating 僵尸状态（异常崩溃永久锁定）→ 超时自愈认领
+- **Sims4 联机**（不同仓库）：lobby.py 路径穿越 RCE（filename 网络可控 → `_safe_save_filename` 白名单）、travel_ack 路由缺失（每次旅行 10s 超时）已修
+
+### 后续路线补充
+
+- [ ] UI 第四轮审查：Dashboard/单词本三页/登录/导入/题库库（问题包在桌面 gemini-moti-ui4.md，等 Gemini 方案）
+- [ ] Sims4 架构级 4 项（主机迁移/存档竞态/多线程锁/离线级联——问题包在桌面 gemini-sims4-architecture.md）
+- [ ] deep-explain 前端划词联动（点击解析中的单词弹词库释义）
+- [ ] 作文批改多用户隔离（user_id 目前 NULL）
