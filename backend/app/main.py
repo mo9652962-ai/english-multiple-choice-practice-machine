@@ -25,6 +25,7 @@ from .routers import (
     annotations,
     question_bank_profiles,
     question_banks,
+    review,  # v9.28: 错题 SRS 复习
     version,
     vocabulary,
     vocab_plans,
@@ -142,6 +143,7 @@ app.include_router(achievements.router, prefix="/api")
 app.include_router(ai_recommend.router, prefix="/api")
 app.include_router(vocab_cloze.router, prefix="/api")
 app.include_router(vocab_quiz.router, prefix="/api")
+app.include_router(review.router, prefix="/api")  # v9.28: 错题 SRS
 app.include_router(leaderboard.router, prefix="/api")
 app.include_router(calendar.router, prefix="/api")
 app.include_router(explanations.router, prefix="/api")
