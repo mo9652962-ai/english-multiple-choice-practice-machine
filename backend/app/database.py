@@ -160,9 +160,11 @@ CREATE TABLE IF NOT EXISTS wrong_stats (
     manually_frequent INTEGER NOT NULL DEFAULT 0,
     last_wrong_at TEXT,
     last_attempt_at TEXT,
+    note TEXT DEFAULT '',
     PRIMARY KEY (user_id, question_id),
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
+CREATE UNIQUE INDEX IF NOT EXISTS idx_ws_user_qid ON wrong_stats(COALESCE(user_id, -1), question_id);
 
 -- v9.28: Gemini batch5 任务4——AI 三件套体验：精讲典藏（长难句/解析收藏）
 CREATE TABLE IF NOT EXISTS explain_collections (
