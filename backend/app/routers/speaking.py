@@ -15,7 +15,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
-from ..services.ai_client import chat_completion
+from ..services.ai_client import chat_completion, parse_json_response
 from prompts.speaking_prompt import (
     SCENARIOS,
     SPEAKING_SYSTEM_PROMPT,
@@ -108,8 +108,8 @@ def submit_turn(
         max_tokens=800,
     )
     try:
-        parsed = json.loads(raw)
-    except (TypeError, json.JSONDecodeError):
+        parsed = parse_json_response(raw)
+    except ValueError:
         raise HTTPException(status_code=502, detail="AI 返回解析失败，请重试")
 
     ai_reply = str(parsed.get("reply") or "").strip()
