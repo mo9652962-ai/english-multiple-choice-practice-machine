@@ -3,6 +3,11 @@
 // 桌面端：后端可用 → 用 HTTP API
 
 import { queryAll, queryOne, execute, lastInsertRowId, initDatabase, getDb } from './db'
+import {
+  offlineDeepExplain, offlineEssayEvaluate, offlineSpeakingTurn,
+  createSpeakingSession, getSpeakingSession, appendSpeakingTurn,
+  idbGet, idbAll,
+} from './llm-direct'
 
 let backendAvailable: boolean | null = null
 let offlineMode = false
@@ -181,7 +186,11 @@ function buildOfflineSession(sid: number): any {
 function offlineGet(path: string): any {
   // Dashboard
   if (path === '/startup' || path === '/overview' || path === '/dashboard') {
-    const profile = queryOne("SELECT * FROM question_bank_profiles WHERE is_default = 1") || queryOne("SELECT * FROM question_bank_profiles WHERE id = 1")
+    // v9.28: 与后端 get_active_profile_id 一致——优先读 app_settings，不再用 is_default
+    const activeRow = queryOne("SELECT value FROM app_settings WHERE key = 'active_question_bank_profile_id'")
+    const profile = (activeRow?.value && queryOne("SELECT * FROM question_bank_profiles WHERE id = ? AND deleted_at IS NULL", [parseInt(activeRow.value)]))
+      || queryOne("SELECT * FROM question_bank_profiles WHERE is_default = 1")
+      || queryOne("SELECT * FROM question_bank_profiles WHERE id = 1")
     const allPapers = queryAll("SELECT * FROM papers WHERE status = 'published' AND deleted_at IS NULL ORDER BY year DESC, id DESC")
     // v3.3: 推荐随年级——按当前配置 profile_id 筛选（修复推荐固定预设）
     const recPapers = profile ? allPapers.filter((p: any) => p.profile_id === profile.id) : allPapers
@@ -483,10 +492,17 @@ function offlineGet(path: string): any {
     const qs = new URLSearchParams(path.split('?')[1] || '')
     const unitType = qs.get('unit_type') || ''
     const limit = parseInt(qs.get('limit') || '20')
+    // v9.28: 修复「部分篇目不存在或不属于当前题库配置」——只列当前激活题库的篇目
+    // 与后端 get_active_profile_id 一致：优先读 app_settings 的 active_question_bank_profile_id
+    const activeRow = queryOne("SELECT value FROM app_settings WHERE key = 'active_question_bank_profile_id'")
+    const activeProfile = (activeRow?.value && queryOne("SELECT * FROM question_bank_profiles WHERE id = ? AND deleted_at IS NULL", [parseInt(activeRow.value)]))
+      || queryOne("SELECT * FROM question_bank_profiles WHERE is_default = 1")
+      || queryOne("SELECT * FROM question_bank_profiles WHERE id = 1")
+    const profileId = activeProfile?.id ?? 1
     const sql = unitType
-      ? "SELECT u.*, p.year, p.title AS paper_title FROM units u JOIN papers p ON p.id = u.paper_id WHERE u.unit_type = ? AND p.deleted_at IS NULL ORDER BY p.year DESC, u.sequence LIMIT ?"
-      : "SELECT u.*, p.year, p.title AS paper_title FROM units u JOIN papers p ON p.id = u.paper_id WHERE p.deleted_at IS NULL ORDER BY p.year DESC, u.sequence LIMIT ?"
-    const params = unitType ? [unitType, limit] : [limit]
+      ? "SELECT u.*, p.year, p.title AS paper_title FROM units u JOIN papers p ON p.id = u.paper_id WHERE u.unit_type = ? AND p.deleted_at IS NULL AND p.profile_id = ? ORDER BY p.year DESC, u.sequence LIMIT ?"
+      : "SELECT u.*, p.year, p.title AS paper_title FROM units u JOIN papers p ON p.id = u.paper_id WHERE p.deleted_at IS NULL AND p.profile_id = ? ORDER BY p.year DESC, u.sequence LIMIT ?"
+    const params = unitType ? [unitType, profileId, limit] : [profileId, limit]
     return queryAll(sql, params)
   }
   // Achievements
@@ -550,6 +566,22 @@ function offlineGet(path: string): any {
   if (path === '/exam/history') return { items: [], count: 0, average_accuracy: 0 }
   if (path.startsWith('/diagnostic/reports')) return { reports: [], total: 0 }
   if (path === '/auth/me') return { id: 0, username: 'local', is_admin: true }
+
+  // v9.29: 离线 AI 历史（llm-direct 直连的产物，从 IndexedDB 读）
+  // GET /essays（历史批改列表）
+  if (path === '/essays' || path.startsWith('/essays?')) {
+    return idbGet('essays:list').then((list: any) => ({ items: list || [], count: (list || []).length }))
+  }
+  // GET /essays/{id}
+  const essayM = path.match(/^\/essays\/(\d+)$/)
+  if (essayM) {
+    return idbGet(`essay:${essayM[1]}`).then((essay: any) => essay || { submission_id: Number(essayM[1]), error: 'not_found' })
+  }
+  // GET /speaking/sessions/{id}
+  const speakM = path.match(/^\/speaking\/sessions\/(\d+)$/)
+  if (speakM) {
+    return getSpeakingSession(Number(speakM[1])).then((s: any) => s || { id: Number(speakM[1]), status: 'missing' })
+  }
 
   return {}
 }
@@ -805,9 +837,69 @@ function offlinePost(path: string, body?: any): any {
   const esm = path.match(/^\/exam\/sessions\/(\d+)\/submit$/)
   if (esm) {
     const sid = parseInt(esm[1])
-    execute("UPDATE practice_sessions SET status = 'submitted', submitted_at = datetime('now') WHERE id = ?", [sid])
+    execute("UPDATE exam_sessions SET status = 'submitted', submitted_at = datetime('now') WHERE id = ?", [sid])
     return buildOfflineSession(sid)
   }
+
+  // ── v9.29: 离线 AI 直连（llm-direct）──
+
+  // POST /explanations/questions/{qid}/deep-explain（真题精讲）
+  const dxm = path.match(/^\/explanations\/questions\/(\d+)\/deep-explain$/)
+  if (dxm) {
+    const qid = parseInt(dxm[1])
+    const q = queryOne('SELECT id, stem, answer, question_type, unit_id FROM questions WHERE id = ?', [qid])
+    if (!q) return { error: '题目不存在' }
+    const unit = q.unit_id ? queryOne('SELECT passage, title FROM units WHERE id = ?', [q.unit_id]) : null
+    const options = queryAll('SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence', [qid]) as { key: string; content: string }[]
+    const forceRefresh = !!(body && (body as any).force_refresh)
+    // 异步直连——外层 api.ts post() 是 async，会自动 await Promise
+    return offlineDeepExplain(
+      qid,
+      { stem: q.stem, answer: q.answer, options: options || [], passage: unit?.passage || '' },
+      forceRefresh,
+    ).catch((err: Error) => ({ error: err.message }))
+  }
+
+  // POST /essays/evaluate（作文批改）
+  if (path === '/essays/evaluate') {
+    const req = (body || {}) as any
+    if (!req.user_content) return { error: '作文内容为空' }
+    return offlineEssayEvaluate(req).catch((err: Error) => ({ error: err.message }))
+  }
+
+  // POST /speaking/sessions（建口语会话——本地模板开场白）
+  if (path === '/speaking/sessions') {
+    const req = (body || {}) as any
+    const scenario = req.scenario || 'graduate_interview'
+    const opening = '你好，我是你的口语考官。请根据话题开始你的回答。'
+    return createSpeakingSession(scenario, req.topic || '').then((session: any) => ({
+      session_id: session.id,
+      scenario,
+      opening_message: { role: 'assistant', content: opening, audio_text: opening, created_at: '' },
+    }))
+  }
+
+  // POST /speaking/sessions/{id}/turns（口语反馈——直连 AI）
+  const stm = path.match(/^\/speaking\/sessions\/(\d+)\/turns$/)
+  if (stm) {
+    const sid = parseInt(stm[1])
+    const req = (body || {}) as any
+    return getSpeakingSession(sid).then(async (session: any) => {
+      if (!session) return { error: '会话不存在' }
+      if (session.status !== 'active') return { error: '会话已结束' }
+      const history: { role: string; content: string }[] = []
+      for (const t of (session.turns || []).slice(-6)) {
+        if (t.user_text) history.push({ role: 'user', content: t.user_text })
+        if (t.ai_reply) history.push({ role: 'assistant', content: t.ai_reply })
+      }
+      const result = await offlineSpeakingTurn(session.scenario, session.topic, history, req.user_text || '')
+        .catch((err: Error) => ({ error: err.message }))
+      if ((result as any).error) return result
+      await appendSpeakingTurn(session, req.user_text || '', result as any)
+      return { ...result, turn_index: session.turns.length + 1 }
+    })
+  }
+
   return {}
 }
 
