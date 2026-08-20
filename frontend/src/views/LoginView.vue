@@ -2,7 +2,7 @@
   <div class="login-page">
     <div class="login-card">
       <h1 class="login-title">墨题</h1>
-      <p class="login-subtitle">{{ mode === 'login' ? '登录账号' : '注册账号' }}</p>
+      <p class="login-subtitle">{{ mode === 'login' ? '初登墨题 · 开卷立案' : '立卷注册' }}</p>
 
       <form @submit.prevent="submit">
         <div class="field">
@@ -28,7 +28,7 @@
         <p v-if="error" class="error">{{ error }}</p>
         <p v-if="notice" class="notice">{{ notice }}</p>
         <button type="submit" class="submit-btn" :disabled="loading">
-          {{ loading ? '请稍候…' : (mode === 'login' ? '登录' : '注册') }}
+          {{ loading ? '请稍候…' : (mode === 'login' ? '启卷研习' : '立卷') }}
         </button>
       </form>
 
