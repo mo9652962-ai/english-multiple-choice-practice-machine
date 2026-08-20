@@ -499,6 +499,35 @@ CREATE TABLE IF NOT EXISTS essay_submissions (
 );
 CREATE INDEX IF NOT EXISTS idx_essay_user ON essay_submissions(user_id, created_at DESC);
 
+-- v9.26: P2 口语陪练（考研复试仿真/日常流利度/发音纠偏）
+CREATE TABLE IF NOT EXISTS speaking_sessions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
+    scenario TEXT NOT NULL DEFAULT 'graduate_interview',
+    topic TEXT NOT NULL DEFAULT '',
+    ai_role TEXT NOT NULL DEFAULT 'Examiner',
+    score_fluency REAL DEFAULT 0,
+    score_grammar REAL DEFAULT 0,
+    score_vocabulary REAL DEFAULT 0,
+    score_coherence REAL DEFAULT 0,
+    summary_report TEXT DEFAULT '{}',
+    status TEXT NOT NULL DEFAULT 'active',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS speaking_turns (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id INTEGER NOT NULL,
+    turn_index INTEGER NOT NULL DEFAULT 0,
+    user_text TEXT NOT NULL DEFAULT '',
+    ai_reply TEXT NOT NULL DEFAULT '',
+    grammar_corrections TEXT NOT NULL DEFAULT '[]',
+    native_upgrade TEXT NOT NULL DEFAULT '',
+    audio_duration_ms INTEGER DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_speaking_turns_session ON speaking_turns(session_id, turn_index);
+
 -- 任务E: 题目解析（AI 批量生成，content 为结构化 JSON，见 backend/prompts/explain_prompt.py）
 CREATE TABLE IF NOT EXISTS question_explanations (
     question_id INTEGER PRIMARY KEY,
