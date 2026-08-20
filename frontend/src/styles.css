@@ -52,6 +52,18 @@
   --radius-pill: 9999px;
   --font-serif: "Cinzel", "Source Han Serif SC", "Noto Serif SC", "Songti SC", SimSun, Georgia, serif;
   --transition-smooth: all 0.22s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* v9.25 UI 三轮（Gemini 方案）: 宣纸纸感 + 金石印章体系 */
+  --bg-paper: #FAF7F2;
+  --bg-card: rgba(255, 252, 247, 0.88);
+  --bg-card-hover: rgba(255, 255, 255, 0.96);
+  --text-pine: #2B2825;
+  --text-faint: #7D766D;
+  --text-muted-2: #A8A095;
+  --border-paper: rgba(60, 50, 40, 0.08);
+  --border-paper-focus: rgba(184, 74, 57, 0.35);
+  --shadow-paper: 0 4px 20px -2px rgba(60, 50, 40, 0.04), 0 2px 6px -1px rgba(60, 50, 40, 0.02);
+  --shadow-hover-2: 0 10px 28px -4px rgba(60, 50, 40, 0.08);
+  --font-en-serif: "Baskerville", "Georgia", "Times New Roman", serif;
   --glow-primary: 0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent), 0 8px 30px color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
@@ -3057,6 +3069,304 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
   border-color: rgba(184, 74, 57, 0.2);
 }
 .separator, .divider { border: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); margin: 18px 0; }
+/* ═══ v9.25 UI 三轮（Gemini 方案）: 设置/报告/日历/目标/专注/阅读/听力/成就 ═══ */
+/* ── 设置页: 朱砂主按钮 + 内陷宣纸输入 + 朱砂开关 ── */
+.settings-primary-btn, .settings-page .btn.primary, .settings-view .btn.primary {
+  background: var(--accent-vermilion);
+  color: #FFFDF9;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(184, 74, 57, 0.2);
+  transition: all 0.2s ease;
+}
+.settings-primary-btn:hover, .settings-page .btn.primary:hover {
+  background: #A33F30;
+  transform: translateY(-1px);
+}
+.settings-input, .settings-select, .settings-page input[type="text"], .settings-page select, .settings-page input[type="password"] {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border-paper);
+  border-radius: 10px;
+  color: var(--text-pine);
+  font-family: var(--font-sans);
+  padding: 10px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.settings-input:focus, .settings-select:focus, .settings-page input:focus, .settings-page select:focus {
+  outline: none;
+  border-color: var(--accent-vermilion);
+  box-shadow: 0 0 0 3px rgba(184, 74, 57, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+}
+/* ── 学习报告: 衬线大数字 + 色彩语义化 + 竹青当前标签 ── */
+.report-stat-num, .stat-num, .stat-card .big-number {
+  font-family: var(--font-en-serif);
+  font-feature-settings: "tnum";
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+.report-stat-num.neutral, .stat-card .big-number.neutral { color: var(--text-pine); }
+.report-stat-num.warn, .stat-card .big-number.warn { color: var(--accent-vermilion); }
+.report-stat-num.success, .stat-card .big-number.success { color: var(--accent-bamboo); }
+/* 当前标签竹青印泥 */
+.tag-current, .profile-current-tag, .current-profile-tag {
+  background: rgba(74, 95, 78, 0.12);
+  color: var(--accent-bamboo);
+  border: 1px solid rgba(74, 95, 78, 0.25);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-family: var(--font-serif);
+}
+/* 青墨五色热力图 */
+.heatmap-cell, .heat-cell {
+  border-radius: 4px;
+}
+.heatmap-cell[data-level="0"], .heat-cell[data-level="0"] { background: rgba(60, 50, 40, 0.04); }
+.heatmap-cell[data-level="1"], .heat-cell[data-level="1"] { background: rgba(74, 95, 78, 0.20); }
+.heatmap-cell[data-level="2"], .heat-cell[data-level="2"] { background: rgba(74, 95, 78, 0.45); }
+.heatmap-cell[data-level="3"], .heat-cell[data-level="3"] { background: rgba(74, 95, 78, 0.70); }
+.heatmap-cell[data-level="4"], .heat-cell[data-level="4"] { background: var(--accent-bamboo); }
+/* ── 学习日历: 朱砂墨点 + 印章打卡 ── */
+.calendar-cell, .cal-cell {
+  position: relative;
+  font-family: var(--font-en-serif);
+  font-size: 15px;
+  color: var(--text-pine);
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+.calendar-cell.today, .cal-cell.today {
+  border: 1px solid var(--accent-vermilion);
+  color: var(--accent-vermilion);
+  font-weight: 600;
+}
+.calendar-cell.has-activity::after, .cal-cell.has-activity::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-vermilion);
+}
+.calendar-cell.completed, .cal-cell.completed {
+  background: rgba(74, 95, 78, 0.12);
+  color: var(--accent-bamboo);
+}
+/* ── 目标中心: 手卷卡片 + 渐变进度 ── */
+.goal-card, .goal-progress-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-paper);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-paper);
+}
+.goal-progress-track, .goal-track {
+  height: 8px;
+  background: rgba(60, 50, 40, 0.06);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.goal-progress-fill, .goal-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent-bamboo) 0%, #6E8B73 100%);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.goal-progress-fill.warn, .goal-fill.warn {
+  background: linear-gradient(90deg, var(--accent-ochre) 0%, #C4974D 100%);
+}
+/* ── 专注计时: 衬线大字 + 双圈圆环 ── */
+.timer-display, .focus-timer-num {
+  font-family: var(--font-en-serif);
+  font-size: 58px;
+  font-weight: 500;
+  color: var(--text-pine);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(60, 50, 40, 0.05);
+}
+.timer-status-text, .focus-status {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--text-faint);
+  letter-spacing: 4px;
+}
+.timer-svg-ring { stroke: rgba(60, 50, 40, 0.08); stroke-width: 4; }
+.timer-svg-progress { stroke: var(--accent-bamboo); stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset 0.5s ease; }
+/* ── 阅读训练: 文献卡片 + hover 揭页 ── */
+.reading-card, .reading-unit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-paper);
+  border-radius: 14px;
+  padding: 22px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, box-shadow 0.2s;
+}
+.reading-card:hover, .reading-unit-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(74, 95, 78, 0.3);
+  box-shadow: var(--shadow-hover-2);
+}
+.reading-snippet, .reading-preview {
+  font-family: var(--font-en-serif);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(43, 40, 37, 0.82);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.reading-action-link, .reading-card .btn, .reading-unit-card .btn {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--accent-bamboo);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s;
+}
+.reading-card:hover .reading-action-link, .reading-unit-card:hover .reading-action-link { gap: 8px; color: #384A3B; }
+/* ── 听力: 居中空状态 + 精听高亮句 ── */
+.listening-empty-box {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px dashed rgba(60, 50, 40, 0.15);
+  border-radius: 16px;
+}
+.listening-sentence-active {
+  background: rgba(184, 74, 57, 0.05);
+  border-left: 3px solid var(--accent-vermilion);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-pine);
+  font-family: var(--font-en-serif);
+}
+/* ── 成就徽章: 金石印章体系 ── */
+.badge-card, .achievement-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-paper);
+  border-radius: 14px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, box-shadow 0.2s;
+}
+.badge-card:hover, .achievement-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover-2); }
+.badge-card.unlocked, .achievement-card.unlocked {
+  border-color: rgba(166, 122, 56, 0.3);
+  background: linear-gradient(145deg, rgba(255, 252, 247, 0.95), rgba(250, 243, 230, 0.6));
+}
+.badge-seal-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1.5px solid var(--accent-ochre);
+  background: rgba(166, 122, 56, 0.08);
+  color: var(--accent-ochre);
+}
+.badge-card.locked .badge-seal-icon, .achievement-card.locked .badge-seal-icon {
+  border: 1.5px dashed var(--text-muted-2);
+  background: rgba(60, 50, 40, 0.03);
+  color: var(--text-muted-2);
+}
+.badge-stamp-tag, .achievement-date {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  color: var(--accent-vermilion);
+  background: rgba(184, 74, 57, 0.08);
+  border: 1px solid rgba(184, 74, 57, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+/* ── 实际类名适配（对齐现有组件结构）── */
+.page-settings .button, .page-settings .btn {
+  border-radius: 9999px;
+}
+.page-settings input[type="text"], .page-settings input[type="password"], .page-settings select {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border-paper);
+  border-radius: 10px;
+  color: var(--text-pine);
+  padding: 10px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.page-settings input:focus, .page-settings select:focus {
+  outline: none;
+  border-color: var(--accent-vermilion);
+  box-shadow: 0 0 0 3px rgba(184, 74, 57, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+}
+/* 目标中心: 圆环 + 进度日条 */
+.goal-ring { border-color: var(--accent-bamboo); }
+.goal-day-bar .goal-day-progress, .goal-day-bar > div > div {
+  background: linear-gradient(90deg, var(--accent-bamboo) 0%, #6E8B73 100%);
+  border-radius: 9999px;
+}
+/* 专注: 衬线大字 + 圆环 */
+.focus-time {
+  font-family: var(--font-en-serif);
+  font-size: 58px;
+  font-weight: 500;
+  color: var(--text-pine);
+  letter-spacing: 2px;
+}
+.focus-mode-label {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--text-faint);
+  letter-spacing: 4px;
+}
+.focus-ring { stroke: var(--accent-bamboo); stroke-width: 5; stroke-linecap: round; }
+/* 成就: 印章图标 + 解锁渐变 */
+.achieve-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-paper);
+  border-radius: 14px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, box-shadow 0.2s;
+}
+.achieve-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover-2); }
+.achieve-card.unlocked, .achieve-card:has(.achieve-icon.unlocked) {
+  border-color: rgba(166, 122, 56, 0.3);
+  background: linear-gradient(145deg, rgba(255, 252, 247, 0.95), rgba(250, 243, 230, 0.6));
+}
+.achieve-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1.5px solid var(--accent-ochre);
+  background: rgba(166, 122, 56, 0.08);
+  color: var(--accent-ochre);
+}
+.achieve-progress {
+  height: 4px;
+  background: rgba(60, 50, 40, 0.06);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.achieve-progress > div {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent-ochre) 0%, #C4974D 100%);
+}
 /* ═══ v9.24 UI 精修二轮（Gemini 方案）: 练习/错题/诊断 ═══ */
 /* ── 练习页: 选项四态水墨 ── */
 .option {
