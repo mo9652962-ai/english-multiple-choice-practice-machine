@@ -504,6 +504,24 @@ async function sharePoster() {
           </div>
         </div>
       </div>
+      <!-- v9.27: AI 研习阁三件套（Gemini UI4——新功能透出） -->
+      <div class="ai-trinity-row">
+        <div class="ai-trinity-card" @click="router.push('/essay')">
+          <span class="ai-trinity-badge badge-review">精批</span>
+          <span class="trinity-title">✍️ 作文精批</span>
+          <p class="trinity-desc">考研阅卷组标准 · 逐句批注 + 满分范文</p>
+        </div>
+        <div class="ai-trinity-card" @click="router.push('/speaking')">
+          <span class="ai-trinity-badge badge-speaking">陪练</span>
+          <span class="trinity-title">🎧 口语陪练</span>
+          <p class="trinity-desc">复试仿真 · 考官问答 · 语音识别</p>
+        </div>
+        <div class="ai-trinity-card" @click="router.push('/library')">
+          <span class="ai-trinity-badge badge-explain">精讲</span>
+          <span class="trinity-title">📖 真题精讲</span>
+          <p class="trinity-desc">刷题时点 ✨AI 精讲 · 选项陷阱拆解</p>
+        </div>
+      </div>
       <!-- 继续练习 -->
       <RouterLink v-if="data.recommendations.continue_paper" :to="'/library'" class="card recommend-continue">
         <span class="feature-icon sage" style="width:48px;height:48px;font-size:22px;margin-bottom:0">继</span>
