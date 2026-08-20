@@ -40,6 +40,7 @@ from .routers import (
     explanations,
     library,
     wrong,
+    essays,  # v9.26: P1 作文批改
 )
 from .services.ai_client import ensure_ai_model_catalog
 from .services.bundled_banks import install_bundled_question_banks
@@ -127,6 +128,7 @@ app.include_router(papers.router, prefix="/api")
 app.include_router(practice.router, prefix="/api")
 app.include_router(annotations.router, prefix="/api")
 app.include_router(wrong.router, prefix="/api")
+app.include_router(essays.router, prefix="/api")  # v9.26: P1 作文批改
 app.include_router(imports.router, prefix="/api")
 app.include_router(question_banks.router, prefix="/api")
 app.include_router(question_bank_profiles.router, prefix="/api")
