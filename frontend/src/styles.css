@@ -3954,3 +3954,16 @@ body { min-height: 100dvh; }
   .deep-explain-drawer { width: 100% !important; max-width: 100% !important; height: 85vh; border-radius: 16px 16px 0 0; }
   .drawer-fade-enter-from .deep-explain-drawer, .drawer-fade-leave-to .deep-explain-drawer { transform: translateY(100%); }
 }
+
+/* v9.28: Gemini batch5 任务2——词汇掌握度徽章 */
+.coverage-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin: 0 0 16px; padding: 4px 12px;
+  border: 1px solid #E8E0D2; border-radius: 999px;
+  background: rgba(255, 252, 247, 0.85);
+  font-size: 13px; color: #5A5144;
+}
+.coverage-pill strong { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: #A67A38; }
+.coverage-pill.high strong { color: #4A5F4E; }
+.coverage-pill.low strong { color: #B84A39; }
+.coverage-pill small { font-size: 11px; color: #8A7D6D; }
