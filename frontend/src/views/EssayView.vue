@@ -61,12 +61,16 @@
 
         <!-- 词汇升格 -->
         <div v-if="result.lexical_upgrades?.length" class="card essay-section-card">
-          <h3>✨ 词汇升格</h3>
+          <h3>✨ 词汇升格 <small class="section-hint">点击「收录」加入词库，进入复习流</small></h3>
           <div v-for="(u, i) in result.lexical_upgrades" :key="i" class="upgrade-item">
             <span class="upgrade-orig">{{ u.original_word }}</span>
             <span class="upgrade-arrow">→</span>
             <span class="upgrade-new">{{ u.advanced_alternative }}</span>
             <span v-if="u.position" class="upgrade-pos">{{ u.position }}</span>
+            <!-- v9.28: Gemini batch5 任务4——作文语料收录 -->
+            <button class="upgrade-collect" type="button" @click="collectUpgrade(u)" :disabled="collectedUpgrades.has(u.advanced_alternative)">
+              {{ collectedUpgrades.has(u.advanced_alternative) ? '✓ 已收录' : '+ 收录' }}
+            </button>
           </div>
         </div>
 
@@ -98,6 +102,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { get, post } from '../api'
+import { showToast } from '../services/toast'
 
 const essayType = ref('essay_large')
 const subject = ref('英语一')
@@ -133,6 +138,23 @@ async function evaluate() {
     alert(String(e))
   } finally {
     loading.value = false
+  }
+}
+
+// v9.28: Gemini batch5 任务4——作文语料收录（升格词 → 词库复习流）
+const collectedUpgrades = ref<Set<string>>(new Set())
+async function collectUpgrade(u: any) {
+  const word = (u.advanced_alternative || '').trim()
+  if (!word || collectedUpgrades.value.has(word)) return
+  try {
+    await post('/vocabulary', {
+      term: word,
+      context_sentence: `作文升格：${u.original_word || ''} → ${word}`,
+    })
+    collectedUpgrades.value.add(word)
+    showToast(`已收录「${word}」到词库`, 'success')
+  } catch (e) {
+    showToast(`收录失败：${e}`, 'error')
   }
 }
 
@@ -186,7 +208,15 @@ onMounted(loadHistoryList)
 .upgrade-orig { color: var(--text-faint); text-decoration: line-through; }
 .upgrade-arrow { color: var(--accent-ochre); }
 .upgrade-new { color: var(--accent-bamboo); font-weight: 600; }
-.upgrade-pos { margin-left: auto; font-size: 11px; color: var(--text-muted-2); }
+.upgrade-collect {
+  margin-left: auto; padding: 2px 10px; border: 1px solid rgba(74, 95, 78, 0.3);
+  border-radius: 999px; background: transparent; color: #4A5F4E;
+  font-size: 11px; cursor: pointer; transition: all .15s; flex-shrink: 0;
+}
+.upgrade-collect:hover { background: #4A5F4E; color: #fff; border-color: #4A5F4E; }
+.upgrade-collect:disabled { opacity: 0.55; cursor: default; }
+.section-hint { font-size: 11px; color: var(--text-faint); font-weight: 400; }
+.upgrade-pos { margin-left: 6px; font-size: 11px; color: var(--text-muted-2); }
 .model-essay-text { font-family: var(--font-en-serif), serif; font-size: 14px; line-height: 1.8; color: var(--text-pine); }
 .highlight-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .highlight-item { font-family: var(--font-serif); font-size: 11px; color: var(--accent-ochre); background: rgba(166, 122, 56, 0.06); border: 1px solid rgba(166, 122, 56, 0.2); border-radius: 4px; padding: 2px 8px; }
