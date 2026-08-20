@@ -3937,3 +3937,20 @@ body { min-height: 100dvh; }
   /* ── 答题卡按钮/顶栏右侧控件紧凑 ── */
   .practice-top .button, .practice-top .answer-sheet-btn { padding: 5px 10px; font-size: 12px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   v9.27: Gemini UI4——移动端审查适配（Capacitor 竖屏）
+   1. 全局防误选/防系统字体缩放（划词段落在练习页单独放开）
+   2. 精讲抽屉移动端改底部滑出（Bottom Sheet）
+   3. 移动端列表点击热区 ≥ 44px
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  body { user-select: none; -webkit-user-select: none; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  /* 练习页文章区/解析区允许划词翻译 */
+  .passage-body, .article-body, .reading-body, .word-context, [class*="passage"], [class*="article"], [class*="reading"] { user-select: text; -webkit-user-select: text; }
+  /* 列表点击热区 */
+  .rec-word-card, .vocab-list-item, .wrong-item, .paper-row { min-height: 44px; }
+  /* 精讲抽屉：底部滑出 Bottom Sheet（高度 85%，替代右侧抽屉） */
+  .deep-explain-drawer { width: 100% !important; max-width: 100% !important; height: 85vh; border-radius: 16px 16px 0 0; }
+  .drawer-fade-enter-from .deep-explain-drawer, .drawer-fade-leave-to .deep-explain-drawer { transform: translateY(100%); }
+}
