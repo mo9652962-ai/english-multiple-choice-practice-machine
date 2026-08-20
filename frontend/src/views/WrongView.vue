@@ -250,7 +250,18 @@ async function redoQuestion(questionId: number) {
     router.push(`/practice/${session.id}`)
   } catch (e) { showToast(`重做失败：${e}`, 'error') }
 }
-onMounted(loadWrongStats)
+
+// v9.28: Gemini batch5 任务3——错题 SRS「今日复习」
+const reviewDue = ref(0)
+const reviewItems = ref<any[]>([])
+async function loadReview() {
+  try {
+    const res: any = await get('/review/queue')
+    reviewDue.value = res.due_count || 0
+    reviewItems.value = res.items || []
+  } catch { /* 复习队列不可用不阻断错题本 */ }
+}
+onMounted(() => { loadWrongStats(); loadReview() })
 
 function toggleYear(year: number) {
   const next = new Set(openYears.value)
@@ -445,6 +456,27 @@ function analysisLabel(unitIds: number[]): string {
         <!-- v2.37: 打印错题卷 (粉笔式出卷) -->
         <button class="button" type="button" :disabled="paperExporting" @click="exportWrongPaper">
           {{ paperExporting ? '生成中…' : '📄 错题卷' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- v9.28: Gemini batch5 任务3——错题 SRS 今日复习 -->
+    <div v-if="reviewDue > 0" class="card report-panel freq-card">
+      <h3>🗓️ 今日复习 <small class="freq-sub">{{ reviewDue }} 题到期 · 按遗忘曲线排序 · 考前每天巩固</small></h3>
+      <div class="freq-grid">
+        <button
+          v-for="(item, i) in reviewItems.slice(0, 10)" :key="item.question_id"
+          class="freq-item" type="button" @click="redoQuestion(item.question_id)"
+        >
+          <span class="freq-rank">{{ i + 1 }}</span>
+          <span class="freq-body">
+            <span class="freq-stem">{{ item.stem }}</span>
+            <span class="freq-meta">
+              <i class="freq-badge" style="background:var(--zhuqing-light,rgba(74,95,78,.12));color:var(--zhuqing,#4A5F4E)">🔄 {{ item.interval }} 天间隔</i>
+              <i>ease {{ item.ease }}</i>
+              <i v-if="item.wrong_count">错 {{ item.wrong_count }} 次</i>
+            </span>
+          </span>
         </button>
       </div>
     </div>

@@ -487,6 +487,19 @@ def _update_wrong_stat(
     connection: sqlite3.Connection, question_id: int, is_correct: bool,
     reduce_on_correct: bool = False,
 ) -> None:
+    # v9.28: Gemini batch5 任务3——SRS 间隔重复挂钩
+    # 仅「答错」或「已有 SRS 记录」进入复习曲线（答对的新题不进队列）
+    if not is_correct or connection.execute(
+        "SELECT 1 FROM spaced_repetition_records WHERE user_id IS NULL AND question_id = ?",
+        (question_id,),
+    ).fetchone() is not None:
+        try:
+            from .review import update_srs_record
+            update_srs_record(
+                connection, question_id, quality_score=4 if is_correct else 1
+            )
+        except Exception:
+            pass  # SRS 失败不影响主判分流程
     row = connection.execute(
         "SELECT * FROM wrong_stats WHERE question_id = ?", (question_id,)
     ).fetchone()

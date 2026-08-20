@@ -164,6 +164,19 @@ CREATE TABLE IF NOT EXISTS wrong_stats (
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
 
+-- v9.28: Gemini batch5 任务3——错题间隔重复（SM-2 简化版）
+CREATE TABLE IF NOT EXISTS spaced_repetition_records (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
+    question_id INTEGER NOT NULL,
+    interval_days INTEGER NOT NULL DEFAULT 1,
+    ease_factor REAL NOT NULL DEFAULT 2.5,
+    review_date TEXT,
+    due_date TEXT NOT NULL,
+    UNIQUE (user_id, question_id),
+    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS vocabulary_entries (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER DEFAULT NULL,
