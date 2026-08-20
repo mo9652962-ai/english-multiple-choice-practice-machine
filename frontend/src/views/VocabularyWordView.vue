@@ -62,6 +62,13 @@ async function load() {
   loading.value = false
 }
 
+// v9.27: Gemini UI4——三态背诵（认识 familiar / 模糊 learning / 忘记 ''）
+async function setStudyStatus(status: string) {
+  if (!word.value) return
+  await put(`/vocabulary/${word.value.id}`, { study_status: status })
+  await load()
+}
+
 onMounted(load)
 </script>
 
@@ -82,11 +89,11 @@ onMounted(load)
     <div v-else-if="!word" class="card empty">未找到该单词</div>
 
     <template v-else>
-      <!-- 词头区：视觉锚定（有道9.0：单词+简明释义重点突出） -->
+      <!-- 词头区：视觉锚定（v9.27 衬线词头） -->
       <section class="word-hero card">
         <div class="word-hero-term">
-          <h1>{{ displayTerm }}</h1>
-          <span class="word-hero-phonetic">{{ word.phonetic }}</span>
+          <h1 class="vocab-word-serif">{{ displayTerm }}</h1>
+          <span class="word-hero-phonetic vocab-phonetic-serif">{{ word.phonetic }}</span>
           <!-- 发音：美音/英音切换 + 朗读（不背单词风格） -->
           <div class="word-voice">
             <div class="voice-toggle">
@@ -176,13 +183,16 @@ onMounted(load)
         <div v-else class="muted">题库中暂无该词的真题语境。</div>
       </section>
 
-      <!-- 操作 -->
-      <div class="word-actions">
-        <button class="button secondary" @click="put(`/vocabulary/${word.id}`, { manually_frequent: !word.manually_frequent }).then(load)">
-          <Star :size="16" />{{ word.manually_frequent ? '取消重点' : '标记重点' }}
-        </button>
-        <button class="button" @click="put(`/vocabulary/${word.id}`, { study_status: word.study_status === 'mastered' ? 'learning' : 'mastered' }).then(load)">
-          <Check :size="16" />{{ word.study_status === 'mastered' ? '恢复学习' : '标记已掌握' }}
+      <!-- v9.27: Gemini UI4——三态背诵底栏（认识/模糊/忘记，墨墨模式） -->
+      <div class="word-actions vocab-recite-action-bar">
+        <button class="vocab-btn-action btn-forgot" @click="setStudyStatus('')">忘记</button>
+        <button class="vocab-btn-action btn-fuzzy" @click="setStudyStatus('learning')">模糊</button>
+        <button class="vocab-btn-action btn-known" @click="setStudyStatus('familiar')">认识</button>
+      </div>
+      <!-- v9.27: 标记重点保留（独立小按钮，不占主操作位） -->
+      <div class="word-actions-secondary">
+        <button class="button ghost compact" @click="put(`/vocabulary/${word.id}`, { manually_frequent: !word.manually_frequent }).then(load)">
+          <Star :size="14" />{{ word.manually_frequent ? '取消重点' : '标记重点' }}
         </button>
       </div>
     </template>

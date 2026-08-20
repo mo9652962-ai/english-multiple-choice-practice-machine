@@ -32,7 +32,14 @@ function vocabStatusText(status: string) {
   if (status === 'mastered') return '已掌握'
   if (status === 'familiar') return '认识'
   if (status === 'learning') return '模糊'
-  return '忘记'
+  return '生疏'
+}
+
+// v9.27: Gemini UI4——状态标签三色映射
+function getStatusClass(status: string) {
+  if (status === 'mastered') return 'vocab-status-tag--mastered'
+  if (status === 'familiar' || status === 'learning') return 'vocab-status-tag--learning'
+  return 'vocab-status-tag--raw'
 }
 
 function translationStatusText(status: string, detail = false) {
@@ -202,7 +209,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
           <div class="vocab-list-head"><strong><span v-if="word.is_frequent">🌟 </span>{{ word.lemma || word.term }}</strong><small>遇到 {{ word.encounter_count }} 次</small></div>
           <p v-if="word.translation_status==='ready'">{{ word.common_meaning || word.contextual_meaning }}</p>
           <p v-else class="pending-text">{{ translationStatusText(word.translation_status) }}</p>
-          <div class="vocab-list-meta"><span>{{ word.part_of_speech }}</span><span class="study-badge" :class="word.study_status || 'new'">{{ vocabStatusText(word.study_status) }}</span></div>
+          <div class="vocab-list-meta"><span>{{ word.part_of_speech }}</span><span class="vocab-status-tag" :class="getStatusClass(word.study_status)">{{ vocabStatusText(word.study_status) }}</span></div>
         </button>
         <div v-if="!items.length" class="empty">这里还没有符合条件的单词。</div>
       </section>
