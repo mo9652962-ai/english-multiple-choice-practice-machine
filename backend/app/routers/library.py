@@ -7,6 +7,7 @@ import sqlite3
 from fastapi import APIRouter, Depends, Query
 
 from ..database import get_db
+from ..services.practice import get_active_profile_id
 
 router = APIRouter(prefix="/library", tags=["library"])
 
@@ -16,14 +17,17 @@ def list_units(unit_type: str = Query("", description="题型: reading/listening
                limit: int = Query(10, ge=1, le=100),
                connection: sqlite3.Connection = Depends(get_db)) -> dict:
     """按题型返回已发布单元的短文列表 (阅读/听力入口数据源)"""
+    # v9.28: 修复「部分篇目不存在或不属于当前题库配置」——只列当前激活题库篇目
+    active_profile_id = get_active_profile_id(connection)
     sql = """SELECT units.id, units.paper_id, units.unit_type, units.title,
                     units.passage, units.subtype, units.audio_path,
                     papers.year, papers.title AS paper_title, papers.profile_id
              FROM units
              JOIN papers ON papers.id = units.paper_id
              WHERE papers.status = 'published' AND papers.deleted_at IS NULL
+               AND papers.profile_id = ?
                AND ((units.passage IS NOT NULL AND units.passage != '') OR units.audio_path IS NOT NULL)"""
-    params: list = []
+    params: list = [active_profile_id]
     if unit_type:
         sql += " AND units.unit_type = ?"
         params.append(unit_type)
