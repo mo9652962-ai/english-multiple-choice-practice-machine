@@ -15,6 +15,7 @@ export default createRouter({
     { path: '/practice/:id', component: () => import('./views/PracticeView.vue') },
     { path: '/exam', component: () => import('./views/ExamView.vue') },
     { path: '/wrong', component: () => import('./views/WrongView.vue') },
+    { path: '/collections', component: () => import('./views/CollectionsView.vue') },
     { path: '/report', component: () => import('./views/ReportView.vue') },
     { path: '/diagnostic', component: () => import('./views/DiagnosticView.vue') },
     { path: '/achievements', component: () => import('./views/AchievementsView.vue') },

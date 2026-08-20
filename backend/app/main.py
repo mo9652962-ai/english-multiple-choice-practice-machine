@@ -23,6 +23,7 @@ from .routers import (
     papers,
     practice,
     annotations,
+    collections,  # v9.28: 精讲典藏
     question_bank_profiles,
     question_banks,
     review,  # v9.28: 错题 SRS 复习
@@ -129,6 +130,7 @@ app.include_router(auth.router, prefix="/api")  # v9.24: 多用户认证（regis
 app.include_router(papers.router, prefix="/api")
 app.include_router(practice.router, prefix="/api")
 app.include_router(annotations.router, prefix="/api")
+app.include_router(collections.router, prefix="/api")  # v9.28: 精讲典藏
 app.include_router(wrong.router, prefix="/api")
 app.include_router(essays.router, prefix="/api")  # v9.26: P1 作文批改
 app.include_router(speaking.router, prefix="/api")  # v9.26: P2 口语陪练
