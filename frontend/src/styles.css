@@ -3367,6 +3367,26 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
   border-radius: 9999px;
   background: linear-gradient(90deg, var(--accent-ochre) 0%, #C4974D 100%);
 }
+/* ── v9.26: AI 助教精讲入口按钮 ── */
+.ai-tutor-btn {
+  float: right;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: rgba(166, 122, 56, 0.08);
+  color: var(--accent-ochre);
+  border: 1px solid rgba(166, 122, 56, 0.25);
+  cursor: pointer;
+  font-family: var(--font-serif);
+  transition: all 0.2s;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.ai-tutor-btn:hover {
+  background: var(--accent-ochre);
+  color: #FFFDF9;
+  transform: translateY(-1px);
+}
 /* ═══ v9.24 UI 精修二轮（Gemini 方案）: 练习/错题/诊断 ═══ */
 /* ── 练习页: 选项四态水墨 ── */
 .option {

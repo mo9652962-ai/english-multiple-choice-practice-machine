@@ -22,6 +22,7 @@ import ContentBlocks from '../components/ContentBlocks.vue'
 import { showToast } from '../services/toast'
 import ListeningPlayer from '../components/ListeningPlayer.vue'
 import QuestionExplain from '../components/QuestionExplain.vue'
+import DeepExplainDrawer from '../components/DeepExplainDrawer.vue'  // v9.26: AI 助教精讲
 
 const route = useRoute()
 const router = useRouter()
@@ -1070,6 +1071,15 @@ async function copySelectedTerm() {
   await window.navigator.clipboard.writeText(vocabMenu.value.term)
   vocabMenu.value.visible = false
 }
+
+// v9.26: AI 助教精讲（P0 真题精讲——水墨手卷抽屉）
+const deepExplainRef = ref<InstanceType<typeof DeepExplainDrawer> | null>(null)
+const deepExplainQuestionId = ref<number | null>(null)
+function openDeepExplain(questionId: number) {
+  deepExplainQuestionId.value = questionId
+  // 下一帧等 ref 挂载后 open
+  window.setTimeout(() => { deepExplainRef.value?.open() }, 0)
+}
 </script>
 
 <template>
@@ -1318,7 +1328,9 @@ async function copySelectedTerm() {
           </div>
         </div>
         <div v-else v-for="question in activeUnit.questions" :key="question.id" class="question-card" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
-          <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
+          <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template>
+            <button class="ai-tutor-btn" title="AI 助教精讲" @click.stop="openDeepExplain(question.id)">✨ AI 精讲</button>
+          </div>
           <button
             v-for="option in question.options"
             :key="option.stable_key"
@@ -1542,4 +1554,7 @@ async function copySelectedTerm() {
       </div>
     </div>
   </div>
+
+  <!-- v9.26: AI 助教精讲抽屉 -->
+  <DeepExplainDrawer v-if="deepExplainQuestionId !== null" ref="deepExplainRef" :question-id="deepExplainQuestionId" @jump="openDeepExplain" />
 </template>
