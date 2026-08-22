@@ -16,8 +16,13 @@ from pydantic import BaseModel, Field
 from ..database import get_db
 from ..services.ai_client import chat_completion, parse_json_response
 from prompts.essay_prompt import ESSAY_SYSTEM_PROMPT, build_essay_user_prompt
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/essays", tags=["essays"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 class EssayEvaluateRequest(BaseModel):
@@ -31,6 +36,7 @@ class EssayEvaluateRequest(BaseModel):
 def evaluate_essay(
     request: EssayEvaluateRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     """AI 批改作文（考研阅卷组标准——评分/维度/行内批注/词汇升格/范文）。"""
     content = request.user_content.strip()
@@ -62,14 +68,15 @@ def evaluate_essay(
     parsed.setdefault("model_essay", "")
     parsed.setdefault("essay_highlights", [])
 
-    # 持久化（多用户: user_id 由 get_current_user 提供——简化版先 NULL）
+    # 持久化（v9.30 安全修复: 写入当前用户 user_id；EPM_AUTH=0 时 NULL 兼容单用户）
     cursor = connection.execute(
         """INSERT INTO essay_submissions
-            (essay_type, subject, prompt_title, user_content, word_count,
+            (user_id, essay_type, subject, prompt_title, user_content, word_count,
              score, max_score, band_name, dimensions, overall_comment,
              markups, lexical_upgrades, model_essay, essay_highlights)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         (
+            _current_user_id(user),
             request.essay_type, request.subject, request.prompt_title, content, word_count,
             float(parsed["score"]), float(parsed["max_score"]), parsed["band"],
             json.dumps(parsed["dimensions"], ensure_ascii=False),
@@ -92,14 +99,16 @@ def evaluate_essay(
 @router.get("")
 def list_essays(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
     limit: int = 20,
 ) -> dict[str, Any]:
     """历史批改列表（不含全文——轻量）。"""
+    user_id = _current_user_id(user)
     rows = connection.execute(
         """SELECT id, essay_type, subject, prompt_title, word_count, score, max_score,
                   band_name, overall_comment, created_at
-           FROM essay_submissions ORDER BY id DESC LIMIT ?""",
-        (limit,),
+           FROM essay_submissions WHERE user_id IS ? ORDER BY id DESC LIMIT ?""",
+        (user_id, limit),
     ).fetchall()
     return {
         "items": [dict(r) for r in rows],
@@ -111,9 +120,11 @@ def list_essays(
 def get_essay(
     submission_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     row = connection.execute(
-        "SELECT * FROM essay_submissions WHERE id = ?", (submission_id,)
+        "SELECT * FROM essay_submissions WHERE id = ? AND user_id IS ?",
+        (submission_id, _current_user_id(user)),
     ).fetchone()
     if row is None:
         raise HTTPException(status_code=404, detail="批改记录不存在")

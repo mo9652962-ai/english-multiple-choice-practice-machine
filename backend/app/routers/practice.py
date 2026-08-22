@@ -14,9 +14,14 @@ from ..services.practice import (
     submit_session,
     submit_unit,
 )
+from .auth import maybe_require_user
 
 
 router = APIRouter(prefix="/practice", tags=["practice"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 def translate_error(error: Exception) -> HTTPException:
@@ -39,20 +44,24 @@ def translate_error(error: Exception) -> HTTPException:
 
 @router.post("/sessions")
 def create(
-    request: PracticeCreate, connection: sqlite3.Connection = Depends(get_db)
+    request: PracticeCreate,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
-        return create_session(connection, request)
+        return create_session(connection, request, user_id=_current_user_id(user))
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error
 
 
 @router.get("/sessions/{session_id}")
 def detail(
-    session_id: int, connection: sqlite3.Connection = Depends(get_db)
+    session_id: int,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
-        return get_session(connection, session_id)
+        return get_session(connection, session_id, user_id=_current_user_id(user))
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error
 
@@ -63,6 +72,7 @@ def update_answer(
     question_id: int,
     request: AnswerUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, bool]:
     try:
         save_answer(
@@ -71,6 +81,7 @@ def update_answer(
             question_id,
             request.answer,
             request.option_order,
+            user_id=_current_user_id(user),
         )
         return {"saved": True}
     except (ValueError, LookupError) as error:
@@ -79,10 +90,12 @@ def update_answer(
 
 @router.post("/sessions/{session_id}/submit")
 def submit(
-    session_id: int, connection: sqlite3.Connection = Depends(get_db)
+    session_id: int,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
-        result = submit_session(connection, session_id)
+        result = submit_session(connection, session_id, user_id=_current_user_id(user))
         _record_streak_activity(connection, "practice_submit", f"session {session_id}")
         return result
     except (ValueError, LookupError) as error:
@@ -105,8 +118,9 @@ def submit_current_unit(
     session_id: int,
     unit_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
-        return submit_unit(connection, session_id, unit_id)
+        return submit_unit(connection, session_id, unit_id, user_id=_current_user_id(user))
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error

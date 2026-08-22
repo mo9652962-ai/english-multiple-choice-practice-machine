@@ -26,7 +26,54 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 # 启用开关（1=多人模式，0=本地单用户兼容）
 AUTH_ENABLED = os.environ.get("EPM_AUTH", "").strip() in ("1", "true", "on")
 
+# v9.30 安全修复: 部署者可指定管理员用户名（EPM_ADMIN_USERNAME）
+# 指定后：该用户名注册即为管理员；未指定时保持「首个注册=管理员」兼容逻辑
+ADMIN_USERNAME = os.environ.get("EPM_ADMIN_USERNAME", "").strip()
+
 _PBKDF2_ITERATIONS = 100_000
+
+# v9.30 安全修复: 登录失败计数限流（防暴力破解）
+# 同一 IP+用户名 15 分钟内失败 >= 5 次 → 锁定 15 分钟
+_LOGIN_MAX_FAILURES = 5
+_LOGIN_WINDOW_SECONDS = 15 * 60
+_login_failures: dict[str, list[float]] = {}
+import threading
+_login_failures_lock = threading.Lock()
+
+
+def _login_lock_key(ip: str, username: str) -> str:
+    return f"{ip}:{username.lower()}"
+
+
+def _login_is_locked(ip: str, username: str) -> bool:
+    import time
+    key = _login_lock_key(ip, username)
+    with _login_failures_lock:
+        now = time.time()
+        window = [t for t in _login_failures.get(key, []) if now - t < _LOGIN_WINDOW_SECONDS]
+        if window:
+            _login_failures[key] = window
+        return len(window) >= _LOGIN_MAX_FAILURES
+
+
+def _login_record_failure(ip: str, username: str) -> None:
+    import time
+    key = _login_lock_key(ip, username)
+    with _login_failures_lock:
+        now = time.time()
+        _login_failures.setdefault(key, []).append(now)
+        # 清理过期 key（防止内存无限增长）
+        _login_failures[key] = [
+            t for t in _login_failures[key] if now - t < _LOGIN_WINDOW_SECONDS
+        ]
+        if len(_login_failures) > 10_000:
+            _login_failures.clear()
+
+
+def _login_clear_failures(ip: str, username: str) -> None:
+    key = _login_lock_key(ip, username)
+    with _login_failures_lock:
+        _login_failures.pop(key, None)
 
 
 # ---------------- 密码 / token 工具 ----------------
@@ -122,12 +169,27 @@ def register(
     if existing:
         raise HTTPException(409, "用户名已存在")
     token = generate_token()
-    # 首个注册用户自动成为管理员
-    is_first = connection.execute("SELECT COUNT(*) AS n FROM users").fetchone()["n"] == 0
+    # v9.30 安全修复: 管理员初始化策略
+    # ① EPM_ADMIN_USERNAME 指定 → 该用户名注册即为管理员（推荐，防抢注）
+    # ② 未指定 → 兼容旧逻辑：首个注册用户自动成为管理员
+    user_count = connection.execute("SELECT COUNT(*) AS n FROM users").fetchone()["n"]
+    is_first = user_count == 0
+    if ADMIN_USERNAME:
+        is_admin = username.lower() == ADMIN_USERNAME.lower()
+        if is_admin and user_count > 0:
+            # 已有其他用户时指定管理员注册——需确保该用户名尚未被占用（上面已查重）
+            pass
+    else:
+        is_admin = is_first
+        if is_first:
+            print(
+                "[auth][WARN] 首个注册用户自动成为管理员。"
+                "建议设置 EPM_ADMIN_USERNAME 环境变量指定管理员，防止抢注。"
+            )
     cursor = connection.execute(
         """INSERT INTO users (username, password_hash, token, is_admin, last_login_at)
         VALUES (?, ?, ?, ?, datetime('now'))""",
-        (username, hash_password(request.password), token, 1 if is_first else 0),
+        (username, hash_password(request.password), token, 1 if is_admin else 0),
     )
     new_user_id = cursor.lastrowid
     # v9.24: 首个用户注册时——把本地单用户遗留数据（user_id IS NULL）迁移给他
@@ -144,7 +206,7 @@ def register(
         "token": token,
         "user": {"id": new_user_id,
                  "username": username,
-                 "is_admin": is_first,
+                 "is_admin": bool(is_admin),
                  "migrated_legacy": is_first},
     }
 
@@ -152,13 +214,21 @@ def register(
 @router.post("/login")
 def login(
     request: LoginRequest,
+    request_obj: Request,
     connection=Depends(get_db),
 ) -> dict:
+    # v9.30 安全修复: 登录失败计数限流（防暴力破解）
+    ip = request_obj.client.host if request_obj.client else "unknown"
+    username = request.username.strip()
+    if _login_is_locked(ip, username):
+        raise HTTPException(429, "失败次数过多，请 15 分钟后再试")
     row = connection.execute(
-        "SELECT * FROM users WHERE username = ? COLLATE NOCASE", (request.username.strip(),)
+        "SELECT * FROM users WHERE username = ? COLLATE NOCASE", (username,)
     ).fetchone()
     if row is None or not verify_password(request.password, row["password_hash"]):
+        _login_record_failure(ip, username)
         raise HTTPException(401, "用户名或密码错误")
+    _login_clear_failures(ip, username)
     token = generate_token()
     connection.execute(
         "UPDATE users SET token = ?, last_login_at = datetime('now') WHERE id = ?",
