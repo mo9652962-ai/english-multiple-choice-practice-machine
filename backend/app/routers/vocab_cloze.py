@@ -9,32 +9,37 @@ import sqlite3
 from fastapi import APIRouter, Depends
 
 from ..database import get_db
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/vocab/cloze", tags=["vocab-cloze"])
 
 
-def _pick_target_words(conn: sqlite3.Connection, limit: int = 8) -> list[dict]:
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
+
+
+def _pick_target_words(conn: sqlite3.Connection, limit: int = 8, user_id: int | None = None) -> list[dict]:
     """挑选学习中的单词作为挖空目标 (优先生词/学习中, 避免已掌握)"""
     rows = conn.execute("""
         SELECT id, term AS word, phonetic, part_of_speech,
                COALESCE(common_meaning, contextual_meaning, '') AS meaning,
                study_status
         FROM vocabulary_entries
-        WHERE term IS NOT NULL AND term != ''
+        WHERE user_id IS ? AND term IS NOT NULL AND term != ''
           AND COALESCE(study_status, '') != 'mastered'
         ORDER BY CASE WHEN COALESCE(study_status,'')='new' THEN 0
                       WHEN COALESCE(study_status,'')='learning' THEN 1 ELSE 2 END,
                  RANDOM()
         LIMIT ?
-    """, (limit,)).fetchall()
+    """, (user_id, limit)).fetchall()
     if not rows:
         rows = conn.execute("""
             SELECT id, term AS word, phonetic, part_of_speech,
                    COALESCE(common_meaning, contextual_meaning, '') AS meaning,
                    study_status
-            FROM vocabulary_entries WHERE term IS NOT NULL AND term != ''
+            FROM vocabulary_entries WHERE user_id IS ? AND term IS NOT NULL AND term != ''
             ORDER BY RANDOM() LIMIT ?
-        """, (limit,)).fetchall()
+        """, (user_id, limit)).fetchall()
     return [dict(r) for r in rows]
 
 
@@ -107,10 +112,12 @@ def _pick_distractors(conn: sqlite3.Connection, word: str, n: int = 3) -> list[s
 def get_cloze(
     count: int = 5,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """生成短文填词 (count 道选词填空)"""
+    user_id = _current_user_id(user)
     count = max(1, min(count, 10))
-    words = _pick_target_words(connection, limit=count * 3)
+    words = _pick_target_words(connection, limit=count * 3, user_id=user_id)
     items: list[dict] = []
     for w in words:
         if len(items) >= count:

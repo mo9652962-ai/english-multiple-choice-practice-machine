@@ -17,6 +17,11 @@ router = APIRouter(tags=["annotations"])
 
 
 from ..database import get_db
+from .auth import maybe_require_user
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 class AnnotationCreate(BaseModel):
@@ -50,10 +55,14 @@ def _row(r: sqlite3.Row) -> dict[str, Any]:
 
 
 @router.get("/units/{unit_id}/annotations")
-def list_annotations(unit_id: int, connection: sqlite3.Connection = Depends(get_db)) -> list[dict]:
+def list_annotations(
+    unit_id: int,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> list[dict]:
     rows = connection.execute(
-        "SELECT * FROM annotations WHERE unit_id = ? ORDER BY start_offset",
-        (unit_id,),
+        "SELECT * FROM annotations WHERE unit_id = ? AND user_id IS ? ORDER BY start_offset",
+        (unit_id, _current_user_id(user)),
     ).fetchall()
     return [_row(r) for r in rows]
 
@@ -61,9 +70,11 @@ def list_annotations(unit_id: int, connection: sqlite3.Connection = Depends(get_
 @router.get("/annotations")
 def list_all_annotations(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
     keyword: str | None = None,
 ) -> list[dict]:
     """v3.0: 全量标注（笔记管理页用）——JOIN units 带单元标题"""
+    user_id = _current_user_id(user)
     sql = """SELECT a.id, a.unit_id, a.start_offset, a.end_offset, a.text, a.note,
                     a.color, a.created_at, a.updated_at,
                     u.title AS unit_title,
@@ -71,8 +82,8 @@ def list_all_annotations(
              FROM annotations a
              LEFT JOIN units u ON u.id = a.unit_id
              LEFT JOIN papers p ON p.id = u.paper_id
-             WHERE 1=1"""
-    params: list[Any] = []
+             WHERE a.user_id IS ?"""
+    params: list[Any] = [user_id]
     if keyword:
         sql += " AND (a.text LIKE ? OR a.note LIKE ?)"
         params.extend([f"%{keyword}%", f"%{keyword}%"])
@@ -92,18 +103,21 @@ def create_annotation(
     unit_id: int,
     payload: AnnotationCreate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     if payload.end_offset <= payload.start_offset:
         raise HTTPException(status_code=400, detail="end_offset 必须大于 start_offset")
     cursor = connection.execute(
-        """INSERT INTO annotations (unit_id, start_offset, end_offset, text, note, color, tag, created_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+        """INSERT INTO annotations (unit_id, start_offset, end_offset, text, note, color, tag, user_id, created_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         (unit_id, payload.start_offset, payload.end_offset, payload.text, payload.note,
-         payload.color, payload.tag, datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
+         payload.color, payload.tag, _current_user_id(user),
+         datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
     )
     connection.commit()
     row = connection.execute(
-        "SELECT * FROM annotations WHERE id = ?", (cursor.lastrowid,)
+        "SELECT * FROM annotations WHERE id = ? AND user_id IS ?",
+        (cursor.lastrowid, _current_user_id(user)),
     ).fetchone()
     return _row(row)
 
@@ -113,9 +127,11 @@ def update_annotation(
     annotation_id: int,
     payload: AnnotationUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    user_id = _current_user_id(user)
     current = connection.execute(
-        "SELECT * FROM annotations WHERE id = ?", (annotation_id,)
+        "SELECT * FROM annotations WHERE id = ? AND user_id IS ?", (annotation_id, user_id)
     ).fetchone()
     if not current:
         raise HTTPException(status_code=404, detail="标注不存在")
@@ -123,21 +139,26 @@ def update_annotation(
     new_color = payload.color if payload.color is not None else current["color"]
     new_tag = payload.tag if payload.tag is not None else current["tag"]
     connection.execute(
-        """UPDATE annotations SET note = ?, color = ?, tag = ?, updated_at = ? WHERE id = ?""",
-        (new_note, new_color, new_tag, datetime.now().strftime("%Y-%m-%d %H:%M:%S"), annotation_id),
+        """UPDATE annotations SET note = ?, color = ?, tag = ?, updated_at = ? WHERE id = ? AND user_id IS ?""",
+        (new_note, new_color, new_tag, datetime.now().strftime("%Y-%m-%d %H:%M:%S"), annotation_id, user_id),
     )
     connection.commit()
     row = connection.execute(
-        "SELECT * FROM annotations WHERE id = ?", (annotation_id,)
+        "SELECT * FROM annotations WHERE id = ? AND user_id IS ?", (annotation_id, user_id)
     ).fetchone()
     return _row(row)
 
 
 @router.delete("/annotations/{annotation_id}")
 def delete_annotation(
-    annotation_id: int, connection: sqlite3.Connection = Depends(get_db)
+    annotation_id: int,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    cursor = connection.execute("DELETE FROM annotations WHERE id = ?", (annotation_id,))
+    cursor = connection.execute(
+        "DELETE FROM annotations WHERE id = ? AND user_id IS ?",
+        (annotation_id, _current_user_id(user)),
+    )
     connection.commit()
     if cursor.rowcount == 0:
         raise HTTPException(status_code=404, detail="标注不存在")
@@ -147,45 +168,64 @@ def delete_annotation(
 @router.get("/annotations/review")
 def review_annotations(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
     limit: int = 20,
 ) -> dict:
     """v3.0-enhance: 复习模式——随机取笔记（优先无笔记内容/旧的）"""
+    user_id = _current_user_id(user)
     rows = connection.execute(
         """SELECT a.id, a.unit_id, a.start_offset, a.end_offset, a.text, a.note, a.color, a.tag,
                   a.created_at, a.updated_at,
                   u.title AS unit_title
            FROM annotations a
            LEFT JOIN units u ON u.id = a.unit_id
+           WHERE a.user_id IS ?
            ORDER BY CASE WHEN a.note = '' THEN 0 ELSE 1 END, RANDOM()
            LIMIT ?""",
-        (limit,),
+        (user_id, limit),
     ).fetchall()
     items = []
     for r in rows:
         item = _row(r)
         item["unit_title"] = r["unit_title"] or f"单元 {r['unit_id']}"
         items.append(item)
-    return {"items": items, "total": connection.execute("SELECT COUNT(*) c FROM annotations").fetchone()["c"]}
+    return {
+        "items": items,
+        "total": connection.execute(
+            "SELECT COUNT(*) c FROM annotations WHERE user_id IS ?", (user_id,)
+        ).fetchone()["c"],
+    }
 
 
 @router.get("/annotations/stats")
-def annotation_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def annotation_stats(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     """v3.0-enhance: 笔记统计——总数/本周新增/标签分布/颜色分布"""
-    total = connection.execute("SELECT COUNT(*) c FROM annotations").fetchone()["c"]
+    user_id = _current_user_id(user)
+    total = connection.execute(
+        "SELECT COUNT(*) c FROM annotations WHERE user_id IS ?", (user_id,)
+    ).fetchone()["c"]
     week = connection.execute(
         """SELECT COUNT(*) c FROM annotations
-           WHERE created_at >= datetime('now', 'localtime', '-7 days')"""
+           WHERE user_id IS ? AND created_at >= datetime('now', 'localtime', '-7 days')""",
+        (user_id,),
     ).fetchone()["c"]
     today = connection.execute(
         """SELECT COUNT(*) c FROM annotations
-           WHERE date(created_at) = date('now', 'localtime')"""
+           WHERE user_id IS ? AND date(created_at) = date('now', 'localtime')""",
+        (user_id,),
     ).fetchone()["c"]
     tags = connection.execute(
         """SELECT tag, COUNT(*) c FROM annotations
-           WHERE tag != '' GROUP BY tag ORDER BY c DESC"""
+           WHERE user_id IS ? AND tag != '' GROUP BY tag ORDER BY c DESC""",
+        (user_id,),
     ).fetchall()
     colors = connection.execute(
-        """SELECT color, COUNT(*) c FROM annotations GROUP BY color ORDER BY c DESC"""
+        """SELECT color, COUNT(*) c FROM annotations
+           WHERE user_id IS ? GROUP BY color ORDER BY c DESC""",
+        (user_id,),
     ).fetchall()
     return {
         "total": total,
@@ -197,21 +237,27 @@ def annotation_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 
 
 @router.get("/annotations/stats")
-def annotation_stats(
+def annotation_stats_v2(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """v9.24: 标注统计（前端 NotesView 调用——此前缺失导致在线模式 404）"""
-    total = connection.execute("SELECT COUNT(*) FROM annotations").fetchone()[0]
+    user_id = _current_user_id(user)
+    total = connection.execute(
+        "SELECT COUNT(*) FROM annotations WHERE user_id IS ?", (user_id,)
+    ).fetchone()[0]
     by_tag = dict(
         connection.execute(
-            "SELECT tag, COUNT(*) FROM annotations WHERE tag != '' GROUP BY tag"
+            "SELECT tag, COUNT(*) FROM annotations WHERE user_id IS ? AND tag != '' GROUP BY tag",
+            (user_id,),
         ).fetchall()
     )
     recent = [
         dict(r)
         for r in connection.execute(
             """SELECT id, unit_id, text, tag, created_at
-               FROM annotations ORDER BY id DESC LIMIT 5"""
+               FROM annotations WHERE user_id IS ? ORDER BY id DESC LIMIT 5""",
+            (user_id,),
         ).fetchall()
     ]
     return {"total": total, "by_tag": by_tag, "recent": recent}

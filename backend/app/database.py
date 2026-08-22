@@ -959,6 +959,8 @@ _USER_ID_TABLES = {
     "practice_sessions": "ALTER TABLE practice_sessions ADD COLUMN user_id INTEGER",
     "ai_conversations": "ALTER TABLE ai_conversations ADD COLUMN user_id INTEGER",
     "vocabulary_entries": "ALTER TABLE vocabulary_entries ADD COLUMN user_id INTEGER",
+    "diagnostic_reports": "ALTER TABLE diagnostic_reports ADD COLUMN user_id INTEGER",  # v9.30 安全修复
+    "wrong_analysis_reports": "ALTER TABLE wrong_analysis_reports ADD COLUMN user_id INTEGER",  # v9.30 预留
 }
 
 

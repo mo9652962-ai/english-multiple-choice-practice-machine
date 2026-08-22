@@ -227,7 +227,7 @@ if FRONTEND_DIST.exists():
                 return FileResponse(resolved)
         html = (FRONTEND_DIST / "index.html").read_text(encoding="utf-8")
         with connect() as connection:
-            startup_data = dashboard.dashboard(connection)
+            startup_data = dashboard.dashboard(connection, None)  # v9.30: 首页壳层匿名（数据按需从 /api 拉取）
         serialized = json.dumps(startup_data, ensure_ascii=False).replace("<", "\\u003c")
         html = html.replace(
             "</head>",

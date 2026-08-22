@@ -8,17 +8,25 @@ import sqlite3
 from fastapi import APIRouter, Depends
 
 from ..database import get_db
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/vocabulary", tags=["vocabulary"])
 
 
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
+
+
 @router.get("/{entry_id}/context")
 def get_word_context(
-    entry_id: int, connection: sqlite3.Connection = Depends(get_db)
+    entry_id: int,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """返回该词在真题文章中出现的句子(最多 6 条)"""
     entry = connection.execute(
-        "SELECT id, term, lemma FROM vocabulary_entries WHERE id = ?", (entry_id,)
+        "SELECT id, term, lemma FROM vocabulary_entries WHERE id = ? AND user_id IS ?",
+        (entry_id, _current_user_id(user)),
     ).fetchone()
     if entry is None:
         return {"contexts": [], "term": ""}
