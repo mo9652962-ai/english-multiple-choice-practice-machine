@@ -9,8 +9,13 @@ from pydantic import BaseModel, Field
 from ..database import get_db
 from ..services import coverage as coverage_service
 from ..services import review as review_service
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/review", tags=["review"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 @router.get("/coverage/{unit_id}")
@@ -27,11 +32,15 @@ class RateRequest(BaseModel):
 
 
 @router.get("/queue")
-def due_queue(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def due_queue(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     """今日到期复习队列（按 due 早 + ease 低优先）"""
-    queue = review_service.get_due_queue(connection)
+    user_id = _current_user_id(user)
+    queue = review_service.get_due_queue(connection, user_id=user_id)
     return {
-        "due_count": review_service.count_due(connection),
+        "due_count": review_service.count_due(connection, user_id=user_id),
         "items": queue,
     }
 
@@ -41,6 +50,7 @@ def rate_question(
     question_id: int,
     request: RateRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """提交作答质量分 → 更新 SRS 间隔"""
     # 校验题目存在
@@ -49,7 +59,7 @@ def rate_question(
     ).fetchone() is None:
         raise HTTPException(404, "题目不存在")
     result = review_service.update_srs_record(
-        connection, question_id, request.quality
+        connection, question_id, request.quality, user_id=_current_user_id(user)
     )
     connection.commit()
     return {"ok": True, **result}

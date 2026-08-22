@@ -10,7 +10,7 @@ from fastapi import APIRouter, Depends, HTTPException
 logger = logging.getLogger(__name__)
 
 from ..database import get_db
-from .auth import get_current_user
+from .auth import get_current_user, maybe_require_user
 
 
 def _require_admin_when_enabled(user: dict | None) -> None:
@@ -22,6 +22,12 @@ def _require_admin_when_enabled(user: dict | None) -> None:
         raise HTTPException(401, "未登录")
     if not user["is_admin"]:
         raise HTTPException(403, "需要管理员权限")
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    """取当前用户 id；EPM_AUTH 未启用（单用户）时返回 None（旧数据 user_id IS NULL）"""
+    return user["id"] if user else None
+
 from ..schemas import (
     AiAnalyzeRequest,
     AiChatRequest,
@@ -96,10 +102,12 @@ def _ensure_default_profile(connection: sqlite3.Connection) -> None:
 def _conversation_payload(
     connection: sqlite3.Connection,
     conversation_id: int,
+    user_id: int | None = None,
 ) -> dict:
+    # v9.30 安全修复: 按当前用户过滤（EPM_AUTH=0 时 user_id=None 兼容旧数据 user_id IS NULL）
     row = connection.execute(
-        "SELECT * FROM ai_conversations WHERE id = ?",
-        (conversation_id,),
+        "SELECT * FROM ai_conversations WHERE id = ? AND user_id IS ?",
+        (conversation_id, user_id),
     ).fetchone()
     if row is None:
         raise HTTPException(404, "对话不存在")
@@ -516,16 +524,20 @@ def selector_models(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 @router.get("/conversations")
 def list_conversations(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> list[dict]:
+    user_id = _current_user_id(user)
     rows = connection.execute(
         """
         SELECT c.*,
                (SELECT COUNT(*) FROM ai_messages m WHERE m.conversation_id = c.id)
                    AS message_count
         FROM ai_conversations c
+        WHERE c.user_id IS ?
         ORDER BY c.updated_at DESC, c.id DESC
         LIMIT 50
-        """
+        """,
+        (user_id,),
     ).fetchall()
     return [dict(row) for row in rows]
 
@@ -533,28 +545,34 @@ def list_conversations(
 @router.post("/conversations")
 def create_conversation(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    cursor = connection.execute("INSERT INTO ai_conversations DEFAULT VALUES")
+    cursor = connection.execute(
+        "INSERT INTO ai_conversations (user_id) VALUES (?)",
+        (_current_user_id(user),),
+    )
     connection.commit()
-    return _conversation_payload(connection, int(cursor.lastrowid))
+    return _conversation_payload(connection, int(cursor.lastrowid), _current_user_id(user))
 
 
 @router.get("/conversations/{conversation_id}")
 def read_conversation(
     conversation_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    return _conversation_payload(connection, conversation_id)
+    return _conversation_payload(connection, conversation_id, _current_user_id(user))
 
 
 @router.delete("/conversations/{conversation_id}")
 def delete_conversation(
     conversation_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     cursor = connection.execute(
-        "DELETE FROM ai_conversations WHERE id = ?",
-        (conversation_id,),
+        "DELETE FROM ai_conversations WHERE id = ? AND user_id IS ?",
+        (conversation_id, _current_user_id(user)),
     )
     if cursor.rowcount == 0:
         raise HTTPException(404, "对话不存在")
@@ -566,7 +584,9 @@ def delete_conversation(
 def chat(
     request: AiChatRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    user_id = _current_user_id(user)
     profile = _profile_or_404(connection, request.profile_id)
     ensure_ai_model_catalog(connection)
     selected = connection.execute(
@@ -582,10 +602,13 @@ def chat(
 
     conversation_id = request.conversation_id
     if conversation_id is None:
-        cursor = connection.execute("INSERT INTO ai_conversations DEFAULT VALUES")
+        cursor = connection.execute(
+            "INSERT INTO ai_conversations (user_id) VALUES (?)",
+            (user_id,),
+        )
         conversation_id = int(cursor.lastrowid)
     else:
-        _conversation_payload(connection, conversation_id)
+        _conversation_payload(connection, conversation_id, user_id)
 
     history = connection.execute(
         """
@@ -631,8 +654,8 @@ def chat(
         (conversation_id, content, request.profile_id, request.model),
     )
     existing = connection.execute(
-        "SELECT title FROM ai_conversations WHERE id = ?",
-        (conversation_id,),
+        "SELECT title FROM ai_conversations WHERE id = ? AND user_id IS ?",
+        (conversation_id, user_id),
     ).fetchone()
     title = existing["title"]
     if title == "新对话":
@@ -641,9 +664,9 @@ def chat(
         """
         UPDATE ai_conversations
         SET title = ?, updated_at = CURRENT_TIMESTAMP
-        WHERE id = ?
+        WHERE id = ? AND user_id IS ?
         """,
-        (title, conversation_id),
+        (title, conversation_id, user_id),
     )
     connection.commit()
     return {

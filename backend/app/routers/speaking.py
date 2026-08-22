@@ -21,8 +21,13 @@ from prompts.speaking_prompt import (
     SPEAKING_SYSTEM_PROMPT,
     build_speaking_user_prompt,
 )
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/speaking", tags=["speaking"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 class SessionCreateRequest(BaseModel):
@@ -39,14 +44,15 @@ class TurnSubmitRequest(BaseModel):
 def create_session(
     request: SessionCreateRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     """创建口语会话，返回考官开场白（本地模板——0 成本）。"""
     scenario = request.scenario if request.scenario in SCENARIOS else "graduate_interview"
     meta = SCENARIOS[scenario]
     cursor = connection.execute(
-        """INSERT INTO speaking_sessions (scenario, topic, ai_role, status)
-           VALUES (?, ?, ?, 'active')""",
-        (scenario, request.topic, meta["role"]),
+        """INSERT INTO speaking_sessions (user_id, scenario, topic, ai_role, status)
+           VALUES (?, ?, ?, ?, 'active')""",
+        (_current_user_id(user), scenario, request.topic, meta["role"]),
     )
     connection.commit()
     session_id = int(cursor.lastrowid)
@@ -74,10 +80,12 @@ def submit_turn(
     session_id: int,
     request: TurnSubmitRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     """提交考生回答 → AI 考官回应（回应 + 语法纠错 + 地道升级 + 追问 + 流畅分）。"""
     session = connection.execute(
-        "SELECT * FROM speaking_sessions WHERE id = ?", (session_id,)
+        "SELECT * FROM speaking_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, _current_user_id(user)),
     ).fetchone()
     if session is None:
         raise HTTPException(status_code=404, detail="会话不存在")
@@ -162,10 +170,12 @@ def submit_turn(
 def finish_session(
     session_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     """结束会话 → 本地汇总四维评分（流畅/语法/词汇/连贯——无额外 AI 调用）。"""
     session = connection.execute(
-        "SELECT * FROM speaking_sessions WHERE id = ?", (session_id,)
+        "SELECT * FROM speaking_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, _current_user_id(user)),
     ).fetchone()
     if session is None:
         raise HTTPException(status_code=404, detail="会话不存在")
@@ -230,9 +240,11 @@ def finish_session(
 def get_session(
     session_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     session = connection.execute(
-        "SELECT * FROM speaking_sessions WHERE id = ?", (session_id,)
+        "SELECT * FROM speaking_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, _current_user_id(user)),
     ).fetchone()
     if session is None:
         raise HTTPException(status_code=404, detail="会话不存在")

@@ -180,7 +180,7 @@ def _normalize_listening_audio(units: list[dict[str, Any]]) -> None:
 
 
 def create_session(
-    connection: sqlite3.Connection, request: PracticeCreate
+    connection: sqlite3.Connection, request: PracticeCreate, user_id: int | None = None
 ) -> dict[str, Any]:
     unit_ids, paper_id = _select_unit_ids(connection, request)
     if not unit_ids:
@@ -188,10 +188,11 @@ def create_session(
 
     cursor = connection.execute(
         """
-        INSERT INTO practice_sessions (mode, paper_id, unit_ids, shuffle_options)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO practice_sessions (user_id, mode, paper_id, unit_ids, shuffle_options)
+        VALUES (?, ?, ?, ?, ?)
         """,
         (
+            user_id,
             request.mode,
             paper_id,
             json.dumps(unit_ids),
@@ -256,9 +257,12 @@ def create_session(
     }
 
 
-def get_session(connection: sqlite3.Connection, session_id: int) -> dict[str, Any]:
+def get_session(
+    connection: sqlite3.Connection, session_id: int, user_id: int | None = None
+) -> dict[str, Any]:
     session = connection.execute(
-        "SELECT * FROM practice_sessions WHERE id = ?", (session_id,)
+        "SELECT * FROM practice_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, user_id),
     ).fetchone()
     if session is None:
         raise LookupError("练习记录不存在")
@@ -420,9 +424,11 @@ def save_answer(
     question_id: int,
     user_answer: str,
     option_order: list[str],
+    user_id: int | None = None,
 ) -> None:
     session = connection.execute(
-        "SELECT status FROM practice_sessions WHERE id = ?", (session_id,)
+        "SELECT status FROM practice_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, user_id),
     ).fetchone()
     if session is None:
         raise LookupError("练习记录不存在")
@@ -581,9 +587,11 @@ def submit_unit(
     connection: sqlite3.Connection,
     session_id: int,
     unit_id: int,
+    user_id: int | None = None,
 ) -> dict[str, Any]:
     session = connection.execute(
-        "SELECT * FROM practice_sessions WHERE id = ?", (session_id,)
+        "SELECT * FROM practice_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, user_id),
     ).fetchone()
     if session is None:
         raise LookupError("练习记录不存在")
@@ -602,7 +610,7 @@ def submit_unit(
         (session_id, unit_id),
     ).fetchone()
     if existing:
-        return get_session(connection, session_id)
+        return get_session(connection, session_id, user_id=user_id)
     rows = connection.execute(
         """
         SELECT practice_answers.*, questions.answer, questions.score,
@@ -646,15 +654,16 @@ def submit_unit(
 
 
 def submit_session(
-    connection: sqlite3.Connection, session_id: int
+    connection: sqlite3.Connection, session_id: int, user_id: int | None = None
 ) -> dict[str, Any]:
     session = connection.execute(
-        "SELECT * FROM practice_sessions WHERE id = ?", (session_id,)
+        "SELECT * FROM practice_sessions WHERE id = ? AND user_id IS ?",
+        (session_id, user_id),
     ).fetchone()
     if session is None:
         raise LookupError("练习记录不存在")
     if session["status"] == "submitted":
-        return get_session(connection, session_id)
+        return get_session(connection, session_id, user_id=user_id)
 
     rows = connection.execute(
         """
