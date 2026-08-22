@@ -18,8 +18,13 @@ from ..services.diagnostic_report import (
     list_diagnostic_reports,
     load_diagnostic_report,
 )
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/diagnostic", tags=["diagnostic"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 class DiagnosticRequest(BaseModel):
@@ -31,6 +36,7 @@ class DiagnosticRequest(BaseModel):
 def create_report(
     request: DiagnosticRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     profile_id = get_active_profile_id(connection)
     try:
@@ -39,6 +45,7 @@ def create_report(
             request.question_ids,
             previous_report_id=request.previous_report_id,
             profile_id=profile_id,
+            user_id=_current_user_id(user),
         )
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
@@ -49,8 +56,9 @@ def create_report(
 def get_report(
     report_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
-    report = load_diagnostic_report(connection, report_id)
+    report = load_diagnostic_report(connection, report_id, user_id=_current_user_id(user))
     if report is None:
         raise HTTPException(status_code=404, detail="诊断报告不存在")
     return report
@@ -60,5 +68,6 @@ def get_report(
 def get_reports(
     limit: int = 10,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> list[dict[str, Any]]:
-    return list_diagnostic_reports(connection, limit=min(limit, 50))
+    return list_diagnostic_reports(connection, limit=min(limit, 50), user_id=_current_user_id(user))

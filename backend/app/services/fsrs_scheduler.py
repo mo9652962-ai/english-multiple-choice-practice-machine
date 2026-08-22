@@ -125,7 +125,7 @@ def get_due_count(connection: sqlite3.Connection) -> int:
     return row[0] if row else 0
 
 
-def get_due_today(connection: sqlite3.Connection, limit: int = 20) -> list[dict]:
+def get_due_today(connection: sqlite3.Connection, limit: int = 20, user_id: int | None = None) -> list[dict]:
     """获取今日待复习单词列表（按 retrievability 最低优先）"""
     now = datetime.now(timezone.utc).isoformat()
     rows = connection.execute(
@@ -133,11 +133,12 @@ def get_due_today(connection: sqlite3.Connection, limit: int = 20) -> list[dict]
                   fsrs_due, fsrs_stability, fsrs_difficulty,
                   common_meaning, contextual_meaning
            FROM vocabulary_entries
-           WHERE fsrs_due IS NOT NULL
+           WHERE user_id IS ?
+             AND fsrs_due IS NOT NULL
              AND fsrs_due <= ?
            ORDER BY fsrs_due ASC
            LIMIT ?""",
-        (now, limit),
+        (user_id, now, limit),
     ).fetchall()
     result = []
     for row in rows:

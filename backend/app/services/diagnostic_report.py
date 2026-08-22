@@ -290,6 +290,7 @@ def generate_diagnostic_report(
     *,
     previous_report_id: int | None = None,
     profile_id: int | None = None,
+    user_id: int | None = None,  # v9.30 安全修复
 ) -> dict[str, Any]:
     """完整诊断报告流程：归因 → 聚合 → level → recommendations → trend → 持久化。"""
     diagnoses, _ = diagnose_wrong_answers(connection, question_ids)
@@ -299,8 +300,8 @@ def generate_diagnostic_report(
     previous = None
     if previous_report_id:
         row = connection.execute(
-            "SELECT aggregate_data FROM diagnostic_reports WHERE id = ?",
-            (previous_report_id,),
+            "SELECT aggregate_data FROM diagnostic_reports WHERE id = ? AND user_id IS ?",
+            (previous_report_id, user_id),
         ).fetchone()
         if row:
             try:
@@ -319,6 +320,7 @@ def generate_diagnostic_report(
         trend=trend,
         report=report,
         profile_id=profile_id,
+        user_id=user_id,
     )
     return {
         "id": report_id,
@@ -342,16 +344,18 @@ def _save_report(
     trend: dict[str, Any],
     report: str,
     profile_id: int | None = None,
+    user_id: int | None = None,
 ) -> int:
     scope_key = f"diag-{profile_id or 0}-{date.today().isoformat()}"
     cursor = connection.execute(
         """
         INSERT INTO diagnostic_reports
-            (scope_key, question_ids, input_snapshot, question_count,
+            (user_id, scope_key, question_ids, input_snapshot, question_count,
              aggregate_data, level_data, recommendations, trend_data, report)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
+            user_id,
             scope_key,
             json.dumps(question_ids, ensure_ascii=False),
             json.dumps({"profile_id": profile_id}, ensure_ascii=False),
@@ -370,9 +374,11 @@ def _save_report(
 def load_diagnostic_report(
     connection: sqlite3.Connection,
     report_id: int,
+    user_id: int | None = None,  # v9.30 安全修复
 ) -> dict[str, Any] | None:
     row = connection.execute(
-        "SELECT * FROM diagnostic_reports WHERE id = ?", (report_id,)
+        "SELECT * FROM diagnostic_reports WHERE id = ? AND user_id IS ?",
+        (report_id, user_id),
     ).fetchone()
     if not row:
         return None
@@ -392,14 +398,16 @@ def list_diagnostic_reports(
     connection: sqlite3.Connection,
     *,
     limit: int = 10,
+    user_id: int | None = None,  # v9.30 安全修复
 ) -> list[dict[str, Any]]:
     rows = connection.execute(
         """
         SELECT id, scope_key, question_count, created_at
         FROM diagnostic_reports
+        WHERE user_id IS ?
         ORDER BY id DESC
         LIMIT ?
         """,
-        (limit,),
+        (user_id, limit),
     ).fetchall()
     return [dict(row) for row in rows]

@@ -8,8 +8,13 @@ import sqlite3
 from fastapi import APIRouter, Depends
 
 from ..database import get_db
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/vocab/quiz", tags=["vocab-quiz"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 # 估算基数 (按题库词库规模)
 BASE_VOCAB = 8000
@@ -19,12 +24,17 @@ BASE_VOCAB = 8000
 def get_quiz(
     count: int = 10,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """取 count 个词做词汇量抽样 (已学/生词按库内比例)"""
+    user_id = _current_user_id(user)
     count = max(5, min(count, 20))
-    total = connection.execute("SELECT COUNT(*) FROM vocabulary_entries").fetchone()[0]
+    total = connection.execute(
+        "SELECT COUNT(*) FROM vocabulary_entries WHERE user_id IS ?", (user_id,)
+    ).fetchone()[0]
     learned = connection.execute(
-        "SELECT COUNT(*) FROM vocabulary_entries WHERE COALESCE(study_status,'') IN ('mastered','learning')"
+        "SELECT COUNT(*) FROM vocabulary_entries WHERE user_id IS ? AND COALESCE(study_status,'') IN ('mastered','learning')",
+        (user_id,),
     ).fetchone()[0]
     # 按比例抽样: 已学词为主 + 少量生词
     n_learned = max(2, int(count * 0.6))
@@ -32,11 +42,11 @@ def get_quiz(
     items: list[dict] = []
     for sql, n in [
         ("SELECT id, term AS word, phonetic, COALESCE(common_meaning, contextual_meaning,'') AS meaning "
-         "FROM vocabulary_entries WHERE COALESCE(study_status,'') IN ('mastered','learning') ORDER BY RANDOM() LIMIT ?", n_learned),
+         "FROM vocabulary_entries WHERE user_id IS ? AND COALESCE(study_status,'') IN ('mastered','learning') ORDER BY RANDOM() LIMIT ?", n_learned),
         ("SELECT id, term AS word, phonetic, COALESCE(common_meaning, contextual_meaning,'') AS meaning "
-         "FROM vocabulary_entries WHERE COALESCE(study_status,'') NOT IN ('mastered','learning') ORDER BY RANDOM() LIMIT ?", n_new),
+         "FROM vocabulary_entries WHERE user_id IS ? AND COALESCE(study_status,'') NOT IN ('mastered','learning') ORDER BY RANDOM() LIMIT ?", n_new),
     ]:
-        for r in connection.execute(sql, (n,)).fetchall():
+        for r in connection.execute(sql, (user_id, n)).fetchall():
             items.append(dict(r))
     random.shuffle(items)
     return {
