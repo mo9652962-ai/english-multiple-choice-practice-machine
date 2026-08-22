@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import json
+import os  # v9.32: EPM_AI_DAILY_QUOTA 配额配置
 import sqlite3
 import time
 from dataclasses import dataclass
@@ -89,6 +90,7 @@ def _record_usage(
     task: str,
     provider: str,
     model: str,
+    user_id: int | None = None,  # v9.32: 配额——按用户记录
     prompt_tokens: int = 0,
     completion_tokens: int = 0,
     latency_ms: int = 0,
@@ -99,14 +101,15 @@ def _record_usage(
         connection.execute(
             """
             INSERT INTO ai_usage
-                (task, provider, model, prompt_tokens, completion_tokens,
+                (task, provider, model, user_id, prompt_tokens, completion_tokens,
                  latency_ms, status, error)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 task,
                 provider[:80],
                 model[:120],
+                user_id,
                 prompt_tokens,
                 completion_tokens,
                 latency_ms,
@@ -128,6 +131,7 @@ def chat_with_routing(
     response_format: dict[str, Any] | None = None,
     model: str | None = None,
     max_tokens: int | None = None,
+    user_id: int | None = None,  # v9.32: 配额——透传记录
 ) -> str:
     """按任务路由调用 AI：候选 profile 按 priority 顺序 → 降级链 → 明确报错。
 
@@ -168,6 +172,7 @@ def chat_with_routing(
                 task=task,
                 provider=candidate["name"],
                 model=model or candidate["default_model"] or "",
+                user_id=user_id,  # v9.32
                 prompt_tokens=usage_out.get("prompt_tokens", 0),
                 completion_tokens=usage_out.get("completion_tokens", 0),
                 latency_ms=int((time.monotonic() - started) * 1000),
@@ -180,6 +185,7 @@ def chat_with_routing(
                 task=task,
                 provider=candidate["name"],
                 model=model or candidate["default_model"] or "",
+                user_id=user_id,  # v9.32
                 latency_ms=int((time.monotonic() - started) * 1000),
                 status="fallback",
                 error=str(error),
@@ -208,3 +214,62 @@ def usage_stats(connection: sqlite3.Connection, days: int = 30) -> dict[str, Any
         (f"-{days} days",),
     ).fetchall()
     return {"days": days, "rows": [dict(row) for row in rows]}
+
+
+# ── v9.32: 每日 AI 配额（防多人模式登录用户无限调用烧 key）──
+
+# 环境变量配置：EPM_AI_DAILY_QUOTA=0（默认）不限制；部署者设置如 100 = 每人每天 100 次（chat+speaking 合并）
+DAILY_QUOTA = int((os.environ.get("EPM_AI_DAILY_QUOTA") or "0").strip() or 0)
+
+
+class QuotaExceeded(Exception):
+    """当日 AI 调用配额已用完。"""
+
+
+def check_daily_quota(
+    connection: sqlite3.Connection,
+    user_id: int | None,
+    task: str,
+    quota: int = DAILY_QUOTA,
+) -> None:
+    """多人模式按用户+任务检查当日调用次数；超限抛 QuotaExceeded。
+
+    单用户（user_id=None）或 quota<=0（未配置）→ 不限制。
+    """
+    if user_id is None or quota <= 0:
+        return
+    row = connection.execute(
+        """
+        SELECT COUNT(*) AS n FROM ai_usage
+        WHERE user_id = ? AND task = ?
+          AND created_at >= date('now', 'localtime')
+          AND created_at < date('now', 'localtime', '+1 day')
+        """,
+        (user_id, task),
+    ).fetchone()
+    if row and row["n"] >= quota:
+        raise QuotaExceeded(
+            f"今日 AI 调用次数已达上限（{quota} 次/日），请明天再试"
+        )
+
+
+def record_user_usage(
+    connection: sqlite3.Connection,
+    user_id: int | None,
+    task: str,
+    provider: str,
+    model: str,
+    **kwargs,
+) -> None:
+    """路由层手动记录用户 AI 调用（chat/speaking 不经过 ai_router 时用）。"""
+    try:
+        _record_usage(
+            connection,
+            task=task,
+            provider=provider or "unknown",
+            model=model or "",
+            user_id=user_id,
+            **kwargs,
+        )
+    except Exception:
+        pass

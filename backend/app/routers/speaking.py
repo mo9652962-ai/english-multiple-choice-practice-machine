@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import json
 import sqlite3
+
+import httpx  # v9.32: AI 异常捕获
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -16,6 +18,7 @@ from pydantic import BaseModel, Field
 
 from ..database import get_db
 from ..services.ai_client import chat_completion, parse_json_response
+from ..services.ai_router import QuotaExceeded, check_daily_quota, record_user_usage
 from prompts.speaking_prompt import (
     SCENARIOS,
     SPEAKING_SYSTEM_PROMPT,
@@ -104,17 +107,29 @@ def submit_turn(
             history.append({"role": "user", "content": r["user_text"]})
         history.append({"role": "assistant", "content": r["ai_reply"]})
 
-    raw = chat_completion(
-        connection,
-        [
-            {"role": "system", "content": SPEAKING_SYSTEM_PROMPT},
-            {"role": "user", "content": build_speaking_user_prompt(
-                session["scenario"], session["topic"], history, request.user_text
-            )},
-        ],
-        response_format={"type": "json_object"},
-        max_tokens=800,
-    )
+    # v9.32: 每日配额检查（多人模式 EPM_AUTH=1 + EPM_AI_DAILY_QUOTA>0 时生效）
+    # 通过即记录（调用前计数——失败也计，防无限重试绕过）
+    try:
+        check_daily_quota(connection, _current_user_id(user), "speaking")
+        record_user_usage(connection, _current_user_id(user), "speaking", provider="speaking", model="")
+    except QuotaExceeded as exc:
+        raise HTTPException(status_code=429, detail=str(exc)) from exc
+
+    try:
+        raw = chat_completion(
+            connection,
+            [
+                {"role": "system", "content": SPEAKING_SYSTEM_PROMPT},
+                {"role": "user", "content": build_speaking_user_prompt(
+                    session["scenario"], session["topic"], history, request.user_text
+                )},
+            ],
+            response_format={"type": "json_object"},
+            max_tokens=800,
+        )
+    except (ValueError, LookupError, httpx.HTTPError) as error:
+        # v9.32: 补 AI 异常捕获（原来直接 500）
+        raise HTTPException(status_code=502, detail=f"AI 服务调用失败：{error}") from error
     try:
         parsed = parse_json_response(raw)
     except ValueError:
