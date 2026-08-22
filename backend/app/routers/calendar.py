@@ -8,13 +8,15 @@ from datetime import date
 from fastapi import APIRouter, Depends
 
 from ..database import get_db
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/calendar", tags=["calendar"])
 
 
 @router.get("")
 def calendar_month(year: int | None = None, month: int | None = None,
-                   connection: sqlite3.Connection = Depends(get_db)) -> dict:
+                   connection: sqlite3.Connection = Depends(get_db),
+                   user: dict | None = Depends(maybe_require_user)) -> dict:
     """指定月份学习记录 (默认当月). 返回每天活动数 + 活动类型分布"""
     today = date.today()
     y = year or today.year

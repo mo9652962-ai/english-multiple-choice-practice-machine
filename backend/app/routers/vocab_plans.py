@@ -8,8 +8,13 @@ from datetime import date, timedelta
 from fastapi import APIRouter, Depends
 
 from ..database import get_db
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/vocabulary", tags=["vocabulary"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 # 词书定义: name, category_pattern, target_count, desc
 WORD_BOOKS = [
@@ -27,22 +32,26 @@ WORD_BOOKS = [
 
 
 @router.get("/plans")
-def get_plans(connection: sqlite3.Connection = Depends(get_db)):
+def get_plans(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+):
     """词书列表 + 每本进度"""
+    user_id = _current_user_id(user)
     today = date.today().isoformat()
     plans = []
     for book in WORD_BOOKS:
         total = connection.execute(
-            "SELECT COUNT(*) FROM vocabulary_entries WHERE category LIKE ?",
-            (book["pattern"],)).fetchone()[0]
+            "SELECT COUNT(*) FROM vocabulary_entries WHERE user_id IS ? AND category LIKE ?",
+            (user_id, book["pattern"])).fetchone()[0]
         learned = connection.execute(
-            "SELECT COUNT(*) FROM vocabulary_entries WHERE category LIKE ? AND study_status != 'new'",
-            (book["pattern"],)).fetchone()[0]
+            "SELECT COUNT(*) FROM vocabulary_entries WHERE user_id IS ? AND category LIKE ? AND study_status != 'new'",
+            (user_id, book["pattern"])).fetchone()[0]
         # 今日学这本词书的词数 (learning_days 按 category 统计不可行, 用 fsrs_last_review 估算)
         today_learned = connection.execute(
             """SELECT COUNT(*) FROM vocabulary_entries
-               WHERE category LIKE ? AND date(fsrs_last_review) = ?""",
-            (book["pattern"], today)).fetchone()[0]
+               WHERE user_id IS ? AND category LIKE ? AND date(fsrs_last_review) = ?""",
+            (user_id, book["pattern"], today)).fetchone()[0]
         plans.append({
             "key": book["key"], "name": book["name"], "desc": book["desc"], "icon": book["icon"],
             "target": min(book["target"], total), "total": total,
@@ -53,8 +62,13 @@ def get_plans(connection: sqlite3.Connection = Depends(get_db)):
 
 
 @router.get("/plans/{plan_key}/daily")
-def get_daily_task(plan_key: str, connection: sqlite3.Connection = Depends(get_db)):
+def get_daily_task(
+    plan_key: str,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+):
     """某词书今日任务: 新词 N 个 + FSRS 到期复习"""
+    user_id = _current_user_id(user)
     book = next((b for b in WORD_BOOKS if b["key"] == plan_key), None)
     if not book:
         return {"error": "unknown plan"}
@@ -63,16 +77,16 @@ def get_daily_task(plan_key: str, connection: sqlite3.Connection = Depends(get_d
     new_words = connection.execute(
         """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech
            FROM vocabulary_entries
-           WHERE category LIKE ? AND study_status = 'new'
+           WHERE user_id IS ? AND category LIKE ? AND study_status = 'new'
            ORDER BY id LIMIT 20""",
-        (book["pattern"],)).fetchall()
+        (user_id, book["pattern"])).fetchall()
     # 到期复习: fsrs_due <= today
     due_words = connection.execute(
         """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech
            FROM vocabulary_entries
-           WHERE category LIKE ? AND fsrs_due IS NOT NULL AND fsrs_due <= ? AND fsrs_due != ''
+           WHERE user_id IS ? AND category LIKE ? AND fsrs_due IS NOT NULL AND fsrs_due <= ? AND fsrs_due != ''
            ORDER BY fsrs_due LIMIT 50""",
-        (book["pattern"], today + "T23:59:59")).fetchall()
+        (user_id, book["pattern"], today + "T23:59:59")).fetchall()
     # 组合: 新词优先, 不足补复习
     all_words = [dict(w) for w in new_words] + [dict(w) for w in due_words]
     # v2.22 修复: 若整本词书都无进度, 回退推荐未学词 (防止空任务)
@@ -80,16 +94,16 @@ def get_daily_task(plan_key: str, connection: sqlite3.Connection = Depends(get_d
         all_words = [dict(w) for w in connection.execute(
             """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech, study_status
                FROM vocabulary_entries
-               WHERE category LIKE ? AND study_status = 'new'
+               WHERE user_id IS ? AND category LIKE ? AND study_status = 'new'
                ORDER BY id LIMIT 20""",
-            (book["pattern"],)).fetchall()]
+            (user_id, book["pattern"])).fetchall()]
         if not all_words:
             all_words = [dict(w) for w in connection.execute(
                 """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech, study_status
                    FROM vocabulary_entries
-                   WHERE category LIKE ?
+                   WHERE user_id IS ? AND category LIKE ?
                    ORDER BY id LIMIT 20""",
-                (book["pattern"],)).fetchall()]
+                (user_id, book["pattern"])).fetchall()]
     return {
         "plan": book["name"],
         "new_count": len([w for w in all_words if w["study_status"] == "new"]),

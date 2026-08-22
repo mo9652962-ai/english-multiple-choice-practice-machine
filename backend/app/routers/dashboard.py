@@ -7,16 +7,24 @@ from fastapi import APIRouter, Depends
 
 from ..database import get_active_profile_id, get_db
 from ..services.listening import listening_unit_has_audio_sql
-
+from .auth import maybe_require_user
 
 router = APIRouter(tags=["dashboard"])
+
+
+def _current_user_id(user: dict | None) -> int | None:
+    return user["id"] if user else None
 
 
 @router.get("/startup")
 @router.get("/overview", include_in_schema=False)
 @router.get("/dashboard", include_in_schema=False)
-def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def dashboard(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     profile_id = get_active_profile_id(connection)
+    user_id = _current_user_id(user)
     profile = connection.execute(
         "SELECT id, name FROM question_bank_profiles WHERE id = ?",
         (profile_id,),
@@ -52,9 +60,10 @@ def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         JOIN units ON units.id = questions.unit_id
         JOIN papers ON papers.id = units.paper_id
         WHERE wrong_stats.wrong_count > 0
+          AND wrong_stats.user_id IS ?
           AND papers.profile_id = ? AND papers.deleted_at IS NULL
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchone()["count"]
     frequent_count = connection.execute(
         """
@@ -74,9 +83,10 @@ def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
                     WHERE value = 0
                 ) >= 3
            ))
+          AND wrong_stats.user_id IS ?
           AND papers.profile_id = ? AND papers.deleted_at IS NULL
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchone()["count"]
     recent = connection.execute(
         """
@@ -86,11 +96,12 @@ def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
                practice_sessions.max_score, papers.year
         FROM practice_sessions
         LEFT JOIN papers ON papers.id = practice_sessions.paper_id
-        WHERE papers.profile_id = ? OR practice_sessions.paper_id IS NULL
+        WHERE practice_sessions.user_id IS ?
+          AND (papers.profile_id = ? OR practice_sessions.paper_id IS NULL)
         ORDER BY practice_sessions.id DESC
         LIMIT 5
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
     listening_audio_condition = listening_unit_has_audio_sql("units")
     unit_type_counts = {
@@ -138,9 +149,9 @@ def dashboard(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         "paper_type_counts": paper_type_counts,
         "recent_sessions": [dict(row) for row in recent],
         # v2.9: 按当前级别针对性推荐
-        "recommendations": _build_recommendations(connection, profile_id),
+        "recommendations": _build_recommendations(connection, profile_id, user_id),
         # v2.18: 今日学习计划 + 考试倒计时
-        "today_plan": _build_today_plan(connection, profile_id, dict(profile).get("name", "") if profile else ""),
+        "today_plan": _build_today_plan(connection, profile_id, dict(profile).get("name", "") if profile else "", user_id),
         "exam_countdown": _next_exam_dates(),
     }
 
@@ -184,7 +195,9 @@ def exam_countdown(connection: sqlite3.Connection = Depends(get_db)) -> dict:
     return {"exams": _next_exam_dates()}
 
 
-def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_name: str) -> dict:
+def _build_today_plan(
+    connection: sqlite3.Connection, profile_id: int, profile_name: str, user_id: int | None = None
+) -> dict:
     """v2.18: 今日学习计划 (研究: 练题狗 AI智能推题 / 可栗口语 自动安排复习)
     v2.19: 研究强化 - 艾宾浩斯"每日=新学+复习" + 任务量/时间预估 + 完成度追踪
     """
@@ -192,15 +205,15 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
     # ① FSRS 今日待复习单词
     from ..services.fsrs_scheduler import get_due_today
     try:
-        due = get_due_today(connection)
+        due = get_due_today(connection, user_id=user_id)
         due_count = len(due)
     except Exception:
         due_count = 0
     # ② 今日新词目标 (艾宾浩斯: 每日新学 + 复习; 默认 20/天)
     new_words = connection.execute(
         """SELECT COUNT(*) n FROM vocabulary_entries
-           WHERE study_status = 'new' AND (fsrs_due IS NULL OR fsrs_due <= ?)""",
-        (today + "T23:59:59",)).fetchone()["n"]
+           WHERE user_id IS ? AND study_status = 'new' AND (fsrs_due IS NULL OR fsrs_due <= ?)""",
+        (user_id, today + "T23:59:59")).fetchone()["n"]
     new_target = min(20, max(0, new_words))
     # 今日已学新词 (learning_days 记录)
     learned_today = connection.execute(
@@ -214,19 +227,20 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
                COUNT(*) total
         FROM practice_answers pa JOIN questions q ON q.id = pa.question_id
         JOIN units u ON u.id = q.unit_id JOIN papers p ON p.id = u.paper_id
-        WHERE p.profile_id = ? AND p.deleted_at IS NULL
+        JOIN practice_sessions ps ON ps.id = pa.session_id
+        WHERE ps.user_id IS ? AND p.profile_id = ? AND p.deleted_at IS NULL
         GROUP BY u.unit_type HAVING COUNT(*) >= 3
         ORDER BY (correct * 1.0 / COUNT(*)) ASC LIMIT 1
-        """, (profile_id,)).fetchone()
+        """, (user_id, profile_id)).fetchone()
     if ability:
         weak_type = ability["unit_type"]
     # ④ 待复习错题 (错 >= 2 次)
     wrong = connection.execute(
-        """SELECT COUNT(*) n FROM wrong_stats WHERE wrong_count >= 2
+        """SELECT COUNT(*) n FROM wrong_stats WHERE wrong_count >= 2 AND user_id IS ?
            AND question_id IN (SELECT id FROM questions WHERE unit_id IN
                (SELECT id FROM units WHERE paper_id IN
                    (SELECT id FROM papers WHERE profile_id = ? AND deleted_at IS NULL)))""",
-        (profile_id,)).fetchone()["n"]
+        (user_id, profile_id)).fetchone()["n"]
     # 今日已做练习
     practiced_today = connection.execute(
         """SELECT COUNT(*) n FROM learning_days WHERE day = ? AND activity_type IN ('practice','exam')""",
@@ -267,7 +281,7 @@ def _build_today_plan(connection: sqlite3.Connection, profile_id: int, profile_n
     }
 
 
-def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> dict:
+def _build_recommendations(connection: sqlite3.Connection, profile_id: int, user_id: int | None = None) -> dict:
     """v2.9: 按当前级别(题库)生成针对性推荐。
     规则推荐(无外部ML): 继续练习 / 本级别真题卷 / 本级别高频错题 / 薄弱单元
     """
@@ -277,11 +291,12 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
         SELECT papers.id, papers.year, papers.subject, papers.title
         FROM practice_sessions
         JOIN papers ON papers.id = practice_sessions.paper_id
-        WHERE papers.profile_id = ? AND papers.deleted_at IS NULL
+        WHERE practice_sessions.user_id IS ?
+          AND papers.profile_id = ? AND papers.deleted_at IS NULL
           AND practice_sessions.status = 'in_progress'
         ORDER BY practice_sessions.id DESC LIMIT 1
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchone()
 
     # ② 本级别真题卷: 已发布, 最近年份优先, 取 6 份
@@ -304,12 +319,13 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
         JOIN questions ON questions.id = wrong_stats.question_id
         JOIN units ON units.id = questions.unit_id
         JOIN papers ON papers.id = units.paper_id
-        WHERE papers.profile_id = ? AND papers.deleted_at IS NULL
+        WHERE wrong_stats.user_id IS ?
+          AND papers.profile_id = ? AND papers.deleted_at IS NULL
           AND wrong_stats.wrong_count > 0
         ORDER BY wrong_stats.wrong_count DESC, wrong_stats.last_wrong_at DESC
         LIMIT 3
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
 
     # ④ 薄弱单元: 该级别错误率最高的单元(按错题数)
@@ -320,12 +336,13 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
         JOIN questions ON questions.id = wrong_stats.question_id
         JOIN units ON units.id = questions.unit_id
         JOIN papers ON papers.id = units.paper_id
-        WHERE papers.profile_id = ? AND papers.deleted_at IS NULL
+        WHERE wrong_stats.user_id IS ?
+          AND papers.profile_id = ? AND papers.deleted_at IS NULL
           AND wrong_stats.wrong_count > 0
         GROUP BY units.id, units.title
         ORDER BY wrong_n DESC LIMIT 3
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
 
     # ⑤ 能力雷达: 按 unit_type 统计该级别正确率 (阅读/完形/匹配)
@@ -338,11 +355,12 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
         JOIN questions q ON q.id = pa.question_id
         JOIN units u ON u.id = q.unit_id
         JOIN papers p ON p.id = u.paper_id
-        WHERE p.profile_id = ? AND p.deleted_at IS NULL
+        JOIN practice_sessions ps ON ps.id = pa.session_id
+        WHERE ps.user_id IS ? AND p.profile_id = ? AND p.deleted_at IS NULL
         GROUP BY u.unit_type
         ORDER BY (COUNT(*) * 1.0) DESC
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
 
     # ⑥ 题型可用性: 该级别各 unit_type 单元数 (前端练习卡据此显示/灰化)
@@ -396,7 +414,10 @@ def _build_recommendations(connection: sqlite3.Connection, profile_id: int) -> d
 
 
 @router.get("/streak")
-def streak(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def streak(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     from ..services.streak import get_streak, get_heatmap_data, get_monthly_summary, get_weekly_report
     return {
         "streak": get_streak(connection),
@@ -407,6 +428,9 @@ def streak(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 
 
 @router.get("/dashboard/streak", include_in_schema=False)
-def streak_alias(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def streak_alias(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     """兼容前端 /dashboard/streak 路径"""
-    return streak(connection)
+    return streak(connection, user)
