@@ -17,6 +17,7 @@ from typing import Any
 from fastapi import APIRouter, Depends, HTTPException
 
 from ..database import get_db
+from .auth import AUTH_ENABLED, maybe_require_user
 
 router = APIRouter(tags=["explanations"])
 
@@ -85,12 +86,19 @@ def deep_explain_question(
     question_id: int,
     request: dict[str, Any] | None = None,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
     """生成/获取深度精讲（AI 生成一次，缓存永久复用——95% 请求 0 成本）。
 
     body: {"force_refresh": bool} 可选；默认读缓存。
+    v9.31 安全加固: 挂 maybe_require_user（EPM_AUTH=1 时强制登录）；
+    force_refresh 要求登录（匿名只能读缓存，防局域网匿名刷 AI 烧 key）。
     """
     force_refresh = bool((request or {}).get("force_refresh"))
+    # v9.31: 仅多人模式（EPM_AUTH=1）下未登录 force_refresh 拒绝；
+    # 单用户模式（EPM_AUTH=0）user 恒为 None，放行保持原有体验
+    if force_refresh and AUTH_ENABLED and user is None:
+        raise HTTPException(status_code=401, detail="强制刷新需要登录")
     question = connection.execute(
         """SELECT q.id, q.number, q.stem, q.answer, q.question_type, q.unit_id,
                   u.title AS unit_title, u.passage, p.year, p.title AS paper_title
