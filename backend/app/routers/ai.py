@@ -202,7 +202,11 @@ def read_available_models(
 
 
 @router.post("/test")
-def test_connection(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def test_connection(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
+    # v9.31: 挂 maybe_require_user（EPM_AUTH=1 时防匿名触发真实 AI 调用烧 key）
     try:
         content = chat_completion(
             connection,
@@ -221,7 +225,11 @@ def test_connection(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 
 
 @router.get("/profiles")
-def list_profiles(connection: sqlite3.Connection = Depends(get_db)) -> list[dict]:
+def list_profiles(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> list[dict]:
+    # v9.31: 挂 maybe_require_user（EPM_AUTH=1 时防未登录读取 AI 配置面）
     rows = connection.execute(
         """
         SELECT * FROM ai_profiles
