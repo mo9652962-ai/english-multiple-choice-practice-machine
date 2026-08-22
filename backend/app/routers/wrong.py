@@ -7,14 +7,23 @@ from fastapi import APIRouter, Depends, HTTPException
 from html import escape as html_escape
 
 from ..database import get_active_profile_id, get_db
-
+from .auth import maybe_require_user
 
 router = APIRouter(prefix="/wrong", tags=["wrong"])
 
 
+def _current_user_id(user: dict | None) -> int | None:
+    """EPM_AUTH 未启用时返回 None（兼容旧数据 user_id IS NULL）"""
+    return user["id"] if user else None
+
+
 @router.get("")
-def list_wrong(connection: sqlite3.Connection = Depends(get_db)) -> list[dict]:
+def list_wrong(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> list[dict]:
     profile_id = get_active_profile_id(connection)
+    user_id = _current_user_id(user)
     rows = connection.execute(
         """
         SELECT questions.id AS question_id, questions.number, questions.stem,
@@ -25,13 +34,14 @@ def list_wrong(connection: sqlite3.Connection = Depends(get_db)) -> list[dict]:
         JOIN units ON units.id = questions.unit_id
         JOIN papers ON papers.id = units.paper_id
         WHERE wrong_stats.wrong_count > 0
+          AND wrong_stats.user_id IS ?
           AND papers.profile_id = ?
           AND papers.deleted_at IS NULL
         ORDER BY wrong_stats.manually_frequent DESC,
                  wrong_stats.wrong_count DESC,
                  wrong_stats.last_wrong_at DESC
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
     result = []
     for row in rows:
@@ -53,14 +63,16 @@ def mark_frequent(
     question_id: int,
     enabled: bool = True,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, bool]:
+    user_id = _current_user_id(user)
     cursor = connection.execute(
         """
         UPDATE wrong_stats
         SET manually_frequent = ?
-        WHERE question_id = ?
+        WHERE question_id = ? AND user_id IS ?
         """,
-        (int(enabled), question_id),
+        (int(enabled), question_id, user_id),
     )
     if cursor.rowcount == 0:
         raise HTTPException(404, "错题不存在")
@@ -69,9 +81,13 @@ def mark_frequent(
 
 
 @router.get("/export")
-def export_wrong(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def export_wrong(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     """导出错题为 Markdown（可复制到任何 AI 分析/打印）"""
     profile_id = get_active_profile_id(connection)
+    user_id = _current_user_id(user)
     rows = connection.execute(
         """
         SELECT questions.id AS question_id, questions.number, questions.stem,
@@ -83,12 +99,13 @@ def export_wrong(connection: sqlite3.Connection = Depends(get_db)) -> dict:
         JOIN units ON units.id = questions.unit_id
         JOIN papers ON papers.id = units.paper_id
         WHERE wrong_stats.wrong_count > 0
+          AND wrong_stats.user_id IS ?
           AND papers.profile_id = ?
           AND papers.deleted_at IS NULL
         ORDER BY wrong_stats.wrong_count DESC,
                  wrong_stats.last_wrong_at DESC
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
 
     lines = [
@@ -124,9 +141,13 @@ def export_wrong(connection: sqlite3.Connection = Depends(get_db)) -> dict:
 
 
 @router.get("/export/html")
-def export_wrong_html(connection: sqlite3.Connection = Depends(get_db)):
+def export_wrong_html(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+):
     """v2.37: 可打印错题卷 (粉笔式出卷) — A4 打印友好 HTML + 答案附后"""
     profile_id = get_active_profile_id(connection)
+    user_id = _current_user_id(user)
     rows = connection.execute(
         """
         SELECT questions.id AS question_id, questions.number, questions.stem,
@@ -138,11 +159,12 @@ def export_wrong_html(connection: sqlite3.Connection = Depends(get_db)):
         JOIN units ON units.id = questions.unit_id
         JOIN papers ON papers.id = units.paper_id
         WHERE wrong_stats.wrong_count > 0
+          AND wrong_stats.user_id IS ?
           AND papers.profile_id = ?
           AND papers.deleted_at IS NULL
         ORDER BY wrong_stats.wrong_count DESC, wrong_stats.last_wrong_at DESC
         """,
-        (profile_id,),
+        (user_id, profile_id),
     ).fetchall()
 
     cards = []
@@ -189,8 +211,12 @@ def export_wrong_html(connection: sqlite3.Connection = Depends(get_db)):
 
 
 @router.get("/stats")
-def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def wrong_stats(
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     """v2.42: 错题统计 — 高频错题 TOP10 + 类型分布 + 错因标签 (猿题库考点归因)"""
+    user_id = _current_user_id(user)
     top = connection.execute(
         """SELECT q.id, q.stem, q.question_type, q.metadata,
                   ws.wrong_count, ws.attempt_count, ws.recent_results, ws.last_wrong_at, ws.note,
@@ -200,8 +226,11 @@ def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
            LEFT JOIN units ON units.id = q.unit_id
            LEFT JOIN papers ON papers.id = units.paper_id
            WHERE ws.wrong_count > 0
+             AND ws.user_id IS ?
            ORDER BY ws.wrong_count DESC, ws.last_wrong_at DESC
-           LIMIT 10""").fetchall()
+           LIMIT 10""",
+        (user_id,),
+    ).fetchall()
     items = []
     for r in top:
         meta = {}
@@ -246,19 +275,28 @@ def wrong_stats(connection: sqlite3.Connection = Depends(get_db)) -> dict:
            FROM wrong_stats ws JOIN questions q ON q.id = ws.question_id
            LEFT JOIN units ON units.id = q.unit_id
            WHERE ws.wrong_count > 0
-           GROUP BY units.unit_type ORDER BY n DESC""").fetchall()
+             AND ws.user_id IS ?
+           GROUP BY units.unit_type ORDER BY n DESC""",
+        (user_id,),
+    ).fetchall()
     return {"top": items, "by_type": [{"type": r[0], "count": r[1]} for r in by_type]}
 
 
 @router.put("/{question_id}/note")
-def save_wrong_note(question_id: int, body: dict, connection: sqlite3.Connection = Depends(get_db)) -> dict:
+def save_wrong_note(
+    question_id: int,
+    body: dict,
+    connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
+) -> dict:
     """v2.46: 我的分析 — 错题个人笔记 (粉笔式)"""
     note = (body.get("note") or "").strip()[:500]
+    user_id = _current_user_id(user)
     connection.execute(
         """INSERT INTO wrong_stats (user_id, question_id, wrong_count, attempt_count, recent_results, note, last_wrong_at, last_attempt_at)
-           VALUES (NULL, ?, 0, 0, '[]', ?, NULL, datetime('now'))
+           VALUES (?, ?, 0, 0, '[]', ?, NULL, datetime('now'))
            ON CONFLICT DO UPDATE SET note = excluded.note, last_attempt_at = excluded.last_attempt_at""",
-        (question_id, note),
+        (user_id, question_id, note),
     )
     connection.commit()
     return {"question_id": question_id, "note": note}
