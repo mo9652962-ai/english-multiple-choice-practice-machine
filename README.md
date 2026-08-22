@@ -482,7 +482,7 @@ corepack pnpm run build
 
 - 加入 GitHub Actions CI，并持续执行密钥和隐私文件扫描。
 - 增加 `CONTRIBUTING.md`、`SECURITY.md`、Issue/PR 模板。
-- 制作 Windows `v2.0.0-beta.12` 便携版。
+- 制作 Windows `v2.0.0` 便携版（对齐路线图：正式版含便携包）。
 
 ## 贡献题库与代码
 
