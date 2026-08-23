@@ -7,6 +7,9 @@ import { showToast } from '../services/toast'
 import QuestionBankSwitcher from '../components/QuestionBankSwitcher.vue'
 import StudyHeatmap from '../components/StudyHeatmap.vue'
 import CountUp from '../components/CountUp.vue'
+// v9.33: 新手引导（首次访问显示，4 步激活）
+import OnboardingGuide from '../components/OnboardingGuide.vue'
+const showOnboarding = ref(!localStorage.getItem('epm_onboarded'))
 
 const router = useRouter()
 const data = ref<any>(null)
@@ -700,4 +703,6 @@ async function sharePoster() {
       </div>
     </div>
   </div>
+  <!-- v9.33: 新手引导 -->
+  <OnboardingGuide :open="showOnboarding" @close="showOnboarding = false" />
 </template>
