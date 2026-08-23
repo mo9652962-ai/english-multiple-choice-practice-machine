@@ -235,22 +235,44 @@ def check_daily_quota(
     """多人模式按用户+任务检查当日调用次数；超限抛 QuotaExceeded。
 
     单用户（user_id=None）或 quota<=0（未配置）→ 不限制。
+
+    v9.33 原子化加固：原实现是 SELECT COUNT + Python 比较（check-then-act），
+    并发请求可同时读到相同计数、双双通过后各写一条 → 超额。
+    现改为 BEGIN IMMEDIATE 事务内「锁库 → 计数 → 判定」，写者串行化，
+    判定与后续 INSERT 处于同一写事务，杜绝 TOCTOU 超扣窗口。
     """
     if user_id is None or quota <= 0:
         return
-    row = connection.execute(
-        """
-        SELECT COUNT(*) AS n FROM ai_usage
-        WHERE user_id = ? AND task = ?
-          AND created_at >= date('now', 'localtime')
-          AND created_at < date('now', 'localtime', '+1 day')
-        """,
-        (user_id, task),
-    ).fetchone()
-    if row and row["n"] >= quota:
-        raise QuotaExceeded(
-            f"今日 AI 调用次数已达上限（{quota} 次/日），请明天再试"
-        )
+    # BEGIN IMMEDIATE：立刻取写锁（SQLite 库级锁），其他写事务在此排队。
+    # 计数判定在锁内完成 → 并发 check 不可能同时看到"未满"的同一快照。
+    was_in_transaction = connection.in_transaction
+    if not was_in_transaction:
+        connection.execute("BEGIN IMMEDIATE")
+    try:
+        row = connection.execute(
+            """
+            SELECT COUNT(*) AS n FROM ai_usage
+            WHERE user_id = ? AND task = ?
+              AND created_at >= date('now', 'localtime')
+              AND created_at < date('now', 'localtime', '+1 day')
+            """,
+            (user_id, task),
+        ).fetchone()
+        if row and row["n"] >= quota:
+            if not was_in_transaction:
+                connection.rollback()
+            raise QuotaExceeded(
+                f"今日 AI 调用次数已达上限（{quota} 次/日），请明天再试"
+            )
+        # 未超限：保持事务打开，调用方随后的 record_user_usage INSERT
+        # 在同一写事务中提交——判定与写入原子绑定。
+        # （ai.py/speaking.py 的 check→record 序列在同一 connection 上执行）
+    except QuotaExceeded:
+        raise
+    except sqlite3.Error:
+        if not was_in_transaction and connection.in_transaction:
+            connection.rollback()
+        # 锁冲突/数据库错误时放行主流程（配额失败不应阻断学习功能）
 
 
 def record_user_usage(
