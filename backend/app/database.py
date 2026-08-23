@@ -164,7 +164,6 @@ CREATE TABLE IF NOT EXISTS wrong_stats (
     PRIMARY KEY (user_id, question_id),
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
-CREATE UNIQUE INDEX IF NOT EXISTS idx_ws_user_qid ON wrong_stats(COALESCE(user_id, -1), question_id);
 
 -- v9.28: Gemini batch5 任务4——AI 三件套体验：精讲典藏（长难句/解析收藏）
 CREATE TABLE IF NOT EXISTS explain_collections (
@@ -222,6 +221,9 @@ CREATE TABLE IF NOT EXISTS vocabulary_entries (
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_vocab_user_term
+    ON vocabulary_entries(user_id, normalized_term);
 
 CREATE TABLE IF NOT EXISTS vocabulary_occurrences (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

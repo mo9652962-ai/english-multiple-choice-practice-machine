@@ -21,7 +21,9 @@ _CHAT_RETRY_ATTEMPTS = 3
 
 def validate_public_url(url: str) -> None:
     """SSRF 防护（v9.22）: 禁止向私有/内网/保留地址发起请求。
-    覆盖 127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 等"""
+    覆盖 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16, 0.0.0.0/8 等。
+    注：放行 loopback（127.0.0.0/8, ::1）——本机 Ollama/本地模型是产品功能，
+    用户显式配置的本机服务不算 SSRF 攻击面；私有网段与云 metadata 仍严格拦截。"""
     parsed = urlparse(url)
     if parsed.scheme not in ("http", "https"):
         raise ValueError("仅支持 HTTP/HTTPS 协议")
@@ -33,9 +35,11 @@ def validate_public_url(url: str) -> None:
         ip = ipaddress.ip_address(ip_str)
     except socket.gaierror as exc:
         raise ValueError(f"无法解析主机名: {hostname}") from exc
-    if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved:
+    # 放行本机回环（127.0.0.0/8, ::1）：本机 Ollama/本地模型是产品功能，非 SSRF 攻击面
+    if ip.is_loopback:
+        return
+    if ip.is_private or ip.is_link_local or ip.is_reserved or ip.is_multicast or ip.is_unspecified:
         raise ValueError(f"禁止访问内网/保留地址: {hostname} ({ip_str})")
-
 
 def _public_profile(row: sqlite3.Row | dict[str, Any]) -> dict[str, Any]:
     payload = dict(row)

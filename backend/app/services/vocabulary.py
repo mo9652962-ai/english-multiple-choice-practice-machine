@@ -703,6 +703,7 @@ def translate_queued_vocabulary() -> dict[str, int]:
             for index in range(0, len(claimed_rows), TRANSLATION_BATCH_SIZE):
                 batch = claimed_rows[index:index + TRANSLATION_BATCH_SIZE]
                 _translate_vocabulary_batch(connection, batch)
+            placeholders = ",".join("?" for _ in entry_ids)
             translated = connection.execute(
                 f"""
                 SELECT COUNT(*)
