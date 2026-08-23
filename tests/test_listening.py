@@ -224,7 +224,7 @@ class ListeningAssetTests(unittest.TestCase):
                     shuffle_options=True,
                 ),
             )
-            overview = dashboard(connection)
+            overview = dashboard(connection, None)
 
         self.assertEqual(session["paper_id"], paper_id)
         self.assertEqual(len(session["units"]), 3)
@@ -266,7 +266,7 @@ class ListeningAssetTests(unittest.TestCase):
                     """,
                     (unit_id,),
                 )
-                overview = dashboard(connection)
+                overview = dashboard(connection, None)
                 with self.assertRaises(LookupError):
                     create_session(
                         connection,
@@ -374,9 +374,9 @@ class ListeningAssetTests(unittest.TestCase):
                 )
 
                 set_active_profile_id(connection, text_profile_id)
-                text_overview = dashboard(connection)
+                text_overview = dashboard(connection, None)
                 set_active_profile_id(connection, audio_profile_id)
-                audio_overview = dashboard(connection)
+                audio_overview = dashboard(connection, None)
             finally:
                 set_active_profile_id(connection, original_profile_id)
 
