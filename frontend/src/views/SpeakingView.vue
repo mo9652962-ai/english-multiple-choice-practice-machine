@@ -50,7 +50,13 @@
 
         <!-- 输入区 -->
         <div class="speaking-input">
-          <button class="mic-btn" :class="{ active: listening }" @click="toggleListen" :disabled="speaking">
+          <button class="button auto-btn" :class="{ active: autoMode }" @click="autoMode ? stopAutoMode() : startAutoMode()" :disabled="speaking">
+            {{ autoMode ? '⏹ 关闭自动切句' : '✨ 自动切句' }}
+          </button>
+          <button class="button offline-btn" :class="{ active: offlineMode }" @click="offlineMode = !offlineMode" :disabled="autoMode || speaking">
+            {{ offlineMode ? '📶 离线识别已开' : '📴 离线识别' }}
+          </button>
+          <button class="mic-btn" :class="{ active: listening }" @click="toggleListen" :disabled="speaking || autoMode">
             {{ listening ? '⏹ 完成' : '🎙 按住说话' }}
           </button>
           <input v-model="textInput" class="text-input" placeholder="或直接输入英文回答…" @keyup.enter="sendTurn()" :disabled="listening || speaking" />
@@ -87,6 +93,13 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref } from 'vue'
 import { get, post } from '../api'
+import { VADAudioManager } from '../libs/vad/manager'
+import { createVAD } from '../libs/vad/vad'
+import { toWav } from '../libs/vad/wav'
+import workletUrl from '../libs/vad/process.worklet?worker&url'
+import { createTranscriptionProvider } from 'xsai-transformers'
+import transcriptionWorkerURL from 'xsai-transformers/transcription/worker?worker&url'
+import { generateTranscription } from '@xsai/generate-transcription'
 
 const scenarios = [
   { id: 'graduate_interview', label: '考研复试仿真', desc: '个人陈述 / 专业问答 / 时事抽题', stamp: '复试' },
@@ -129,6 +142,95 @@ function toggleListen() {
   if (listening.value) { recognition.stop(); listening.value = false; return }
   recognition.start()
   listening.value = true
+}
+
+// ── VAD 自动模式（Silero 语音活动检测——自动切句，不用按按钮）──
+// 依赖 @huggingface/transformers（已装）；不支持时自动降级为手动模式
+// offlineMode = 浏览器 Whisper 本地转写（全离线，音频不出设备）
+const autoMode = ref(false)
+const offlineMode = ref(false)
+const offlineBusy = ref(false)
+let vadManager: VADAudioManager | null = null
+let vadStarted = false
+
+// 离线 Whisper provider（懒初始化——首次使用时加载模型）
+let offlineTranscriber: ReturnType<typeof createTranscriptionProvider> | null = null
+
+async function transcribeOffline(buffer: Float32Array): Promise<string> {
+  if (!offlineTranscriber) {
+    offlineTranscriber = createTranscriptionProvider({
+      baseURL: `xsai-transformers:///?worker-url=${transcriptionWorkerURL}`,
+    })
+  }
+  // Float32Array → WAV Blob（16kHz 单声道）
+  const wav = toWav(buffer, 16000)
+  const file = new File([wav], 'speech.wav', { type: 'audio/wav' })
+  const { text } = await generateTranscription({
+    ...offlineTranscriber.transcription('onnx-community/whisper-tiny'),
+    file,
+  })
+  return (text || '').trim()
+}
+
+async function startAutoMode() {
+  if (!recognition && !offlineMode.value) { alert('当前环境不支持语音识别，请使用手动模式'); return }
+  autoMode.value = true
+  try {
+    const vad = await createVAD({
+      sampleRate: 16000,
+      speechThreshold: 0.3,
+      exitThreshold: 0.1,
+      minSilenceDurationMs: 400,
+      speechPadMs: 80,
+      minSpeechDurationMs: 250,
+    })
+    if (offlineMode.value) {
+      // 离线模式：VAD 切句 → 浏览器 Whisper 转写
+      vad.on('speech-ready', async ({ buffer }) => {
+        if (offlineBusy.value) return
+        offlineBusy.value = true
+        listening.value = true
+        try {
+          const text = await transcribeOffline(buffer)
+          listening.value = false
+          if (text) sendTurn(text)
+        } catch (e) {
+          console.warn('[Whisper] 转写失败:', e)
+          listening.value = false
+          alert('离线识别失败，请重试或切换到在线模式')
+        } finally {
+          offlineBusy.value = false
+        }
+      })
+    } else {
+      // 在线模式：VAD 切句 + Web Speech API 识别
+      vad.on('speech-start', () => {
+        if (!vadStarted && recognition) {
+          try { recognition.start(); vadStarted = true; listening.value = true } catch { /* 已在识别中 */ }
+        }
+      })
+      vad.on('speech-end', () => {
+        if (vadStarted && recognition) {
+          try { recognition.stop(); vadStarted = false } catch { /* 已停止 */ }
+        }
+      })
+    }
+    vadManager = new VADAudioManager(vad)
+    await vadManager.initialize(workletUrl)
+    await vadManager.startMicrophone()
+  } catch (e) {
+    console.warn('[VAD] 初始化失败，降级为手动模式:', e)
+    autoMode.value = false
+    alert('自动切句不可用（设备不支持），请用手动按住说话')
+  }
+}
+
+function stopAutoMode() {
+  autoMode.value = false
+  offlineBusy.value = false
+  vadStarted = false
+  vadManager?.stop()
+  vadManager = null
 }
 
 function speakText(text: string) {
@@ -194,7 +296,10 @@ function onKeydown(e: KeyboardEvent) {
   }
 }
 window.addEventListener('keydown', onKeydown)
-onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onKeydown)
+  stopAutoMode()
+})
 </script>
 
 <style scoped>
