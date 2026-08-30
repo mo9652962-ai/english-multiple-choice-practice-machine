@@ -148,7 +148,7 @@ async function refreshStats() {
     <template v-else>
     <div class="page-head">
       <div>
-        <span class="eyebrow">NOTES</span>
+        <span class="eyebrow">研习笔记</span>
         <h1>我的笔记</h1>
         <p class="lead">做题时标记的记录都在这里，随时回顾你的重点和思考。</p>
       </div>

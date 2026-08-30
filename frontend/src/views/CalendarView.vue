@@ -58,7 +58,7 @@ function isToday(day: string): boolean {
   <div class="page page-calendar">
     <div class="page-head">
       <div>
-        <span class="eyebrow">CALENDAR</span>
+        <span class="eyebrow">研习日历</span>
         <h1>学习日历</h1>
         <p class="lead">每一天的学习足迹，都在这里留下印记。</p>
       </div>

@@ -274,7 +274,7 @@ onBeforeUnmount(() => {
   <div class="ai-assistant-page page-assistant">
     <header class="ai-page-head">
       <div>
-        <span class="eyebrow">AI STUDY COMPANION</span>
+        <span class="eyebrow">AI 助学伴读</span>
         <h1>AI 学习助手</h1>
         <p class="lead">长难句、选项辨析、词义和学习方法，都可以在这里随时提问。</p>
       </div>

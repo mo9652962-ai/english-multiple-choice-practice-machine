@@ -626,7 +626,7 @@ async function exportEsq(includeLabels = false) {
 
 <template>
   <div class="page page-import">
-    <div class="page-head"><div><span class="eyebrow">IMPORT & REVIEW</span><h1>导入题库</h1><p class="lead">试卷和答案分别解析。即使答案缺失，也可以先保存题目草稿，再人工补全。</p></div></div>
+    <div class="page-head"><div><span class="eyebrow">试卷导入与审查</span><h1>导入题库</h1><p class="lead">试卷和答案分别解析。即使答案缺失，也可以先保存题目草稿，再人工补全。</p></div></div>
     <QuestionBankSwitcher @changed="handleProfileChanged" />
     <div v-if="error" class="warning" role="alert">{{ error }}</div><div v-if="notice" class="card" style="margin-bottom:16px;color:var(--success)">{{ notice }}</div>
 
@@ -634,7 +634,7 @@ async function exportEsq(includeLabels = false) {
       <div class="question-label-heading">
         <span class="api-profile-icon"><LibraryBig :size="21" /></span>
         <div>
-          <span class="eyebrow">QUESTION INTELLIGENCE</span>
+          <span class="eyebrow">试题智能解析</span>
           <h2 id="question-label-title">题库智能标注</h2>
           <p>题库批准入库后再启动模型标注，避免草稿被提前消费 Token。默认只处理刚刚入库的试卷，已锁定的人工标签不会被覆盖。</p>
         </div>
@@ -853,7 +853,7 @@ async function exportEsq(includeLabels = false) {
         <div class="card visual-draft-editor">
           <div class="visual-editor-head">
             <div>
-              <span class="eyebrow">FIELD-BY-FIELD REVIEW</span>
+              <span class="eyebrow">逐项核验</span>
               <h3>结构化草稿校对器</h3>
               <p class="lead">按试卷、篇目、题目和选项逐项检查。修改会直接写入当前草稿，最后点击“保存人工校正”。</p>
             </div>
@@ -905,7 +905,7 @@ async function exportEsq(includeLabels = false) {
     <div v-if="labelPromptOpen" class="label-editor-overlay" role="dialog" aria-modal="true" aria-labelledby="label-prompt-title">
       <section class="label-editor label-prompt card">
         <header>
-          <div><span class="eyebrow">POST-PUBLISH OPTION</span><h2 id="label-prompt-title">是否立即进行智能标注？</h2></div>
+          <div><span class="eyebrow">发布后选项</span><h2 id="label-prompt-title">是否立即进行智能标注？</h2></div>
           <button class="button ghost compact" type="button" aria-label="稍后处理" @click="closeLabelPrompt">稍后</button>
         </header>
         <div class="label-prompt-summary">
@@ -930,7 +930,7 @@ async function exportEsq(includeLabels = false) {
     <div v-if="editingLabel" class="label-editor-overlay" role="presentation" @click.self="editingLabel=null">
       <section class="label-editor card" role="dialog" aria-modal="true" aria-labelledby="label-editor-title">
         <header>
-          <div><span class="eyebrow">MANUAL REVIEW</span><h2 id="label-editor-title">{{ editingLabel.year }} 年第 {{ editingLabel.number }} 题</h2></div>
+          <div><span class="eyebrow">人工核验</span><h2 id="label-editor-title">{{ editingLabel.year }} 年第 {{ editingLabel.number }} 题</h2></div>
           <button class="button ghost compact" type="button" @click="editingLabel=null">取消</button>
         </header>
         <div class="field"><label>主要考点</label><input v-model.trim="editingLabel.primary_skill"></div>

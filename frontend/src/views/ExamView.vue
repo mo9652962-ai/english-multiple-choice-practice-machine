@@ -63,6 +63,13 @@ async function answer(key: string) {
   try {
     await put(`/exam/sessions/${examId.value}/answers/${q.id}`, { answer: key })
   } catch { /* 忽略网络抖动 */ }
+
+  // v9.32: 移动端答题流畅体验——选完自动平滑切换至下一题
+  if (current.value < (exam.value.questions?.length || 0) - 1) {
+    window.setTimeout(() => {
+      current.value++
+    }, 240)
+  }
 }
 
 function go(idx: number) {

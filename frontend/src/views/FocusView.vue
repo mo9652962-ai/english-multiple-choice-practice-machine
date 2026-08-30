@@ -82,7 +82,7 @@ onBeforeUnmount(() => { if (timer !== null) window.clearInterval(timer) })
   <div class="page page-focus">
     <div class="page-head">
       <div>
-        <span class="eyebrow">FOCUS</span>
+        <span class="eyebrow">专注静思</span>
         <h1>专注计时</h1>
         <p class="lead">番茄工作法 · 25 分钟专注，5 分钟休息，让学习进入心流。</p>
       </div>
