@@ -1,4 +1,10 @@
 <script setup lang="ts">
+/**
+ * 题库切换器（侧边栏词书/题库管理）。
+ * 无 props；管理操作完成后 emit `changed` 通知父组件刷新。
+ * 内部使用 `services/questionBankProfiles.ts`（增删改查题库配置）。
+ * @emits changed - 题库列表变更后触发（父组件据此刷新数据）
+ */
 import { LibraryBig, Plus, Settings2, Trash2 } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
 import {
