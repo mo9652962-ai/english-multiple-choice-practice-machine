@@ -107,75 +107,81 @@ onMounted(() => {
   >
     <aside class="sidebar" v-if="!route.path.startsWith('/practice')">
       <RouterLink class="brand" to="/">
-              <span class="brand-mark">墨</span>
-              <span class="brand-copy"><strong>墨题 · 英语刷题</strong><small>水墨之间 · 学海无涯</small></span>
-            </RouterLink>
+        <span class="brand-mark">墨</span>
+        <span class="brand-copy"><strong>墨题</strong><small>水墨之间 · 学海无涯</small></span>
+      </RouterLink>
       <nav aria-label="主要导航">
-        <RouterLink to="/"><Home :size="19" aria-hidden="true" /><span>首页</span></RouterLink>
-        <RouterLink to="/library"><Library :size="19" aria-hidden="true" /><span>题库与练习</span></RouterLink>
-        <RouterLink to="/exam"><Timer :size="19" aria-hidden="true" /><span>模拟考试</span></RouterLink>
-        <RouterLink to="/wrong"><Brain :size="19" aria-hidden="true" /><span>错题本</span></RouterLink>
-        <RouterLink to="/diagnostic"><Activity :size="19" aria-hidden="true" /><span>学习诊断</span></RouterLink>
-        <RouterLink to="/report"><BarChart3 :size="19" aria-hidden="true" /><span>学习报告</span></RouterLink>
-        <RouterLink to="/achievements"><Trophy :size="19" aria-hidden="true" /><span>成就徽章</span></RouterLink>
-        <RouterLink to="/leaderboard"><BarChart2 :size="19" aria-hidden="true" /><span>学习排行</span></RouterLink>
-        <RouterLink to="/focus"><Timer :size="19" aria-hidden="true" /><span>专注计时</span></RouterLink>
-        <RouterLink to="/calendar"><CalendarDays :size="19" aria-hidden="true" /><span>学习日历</span></RouterLink>
-        <RouterLink to="/goal"><Target :size="19" aria-hidden="true" /><span>目标中心</span></RouterLink>
-        <RouterLink to="/reading"><BookOpenText :size="19" aria-hidden="true" /><span>阅读训练</span></RouterLink>
-        <RouterLink to="/listening"><Headphones :size="19" aria-hidden="true" /><span>听力精听</span></RouterLink>
-        <RouterLink to="/vocabulary"><BookMarked :size="19" aria-hidden="true" /><span>单词本</span></RouterLink>
-        <RouterLink to="/imports"><FileUp :size="19" aria-hidden="true" /><span>导入题库</span></RouterLink>
-        <RouterLink to="/notes"><StickyNote :size="19" aria-hidden="true" /><span>我的笔记</span></RouterLink>
-        <RouterLink to="/essay"><PenLine :size="19" aria-hidden="true" /><span>作文精批</span></RouterLink>
-        <RouterLink to="/speaking"><Mic2 :size="19" aria-hidden="true" /><span>口语陪练</span></RouterLink>
-        <RouterLink to="/assistant">
-          <MessageCircle :size="19" aria-hidden="true" /><span>AI 学习助手</span>
-        </RouterLink>
-        <RouterLink to="/settings"><Settings :size="19" aria-hidden="true" /><span>模型与设置</span></RouterLink>
+        <div class="nav-section-label">研习核心</div>
+        <RouterLink to="/"><Home :size="18" aria-hidden="true" /><span>首页</span></RouterLink>
+        <RouterLink to="/library"><Library :size="18" aria-hidden="true" /><span>题库与练习</span></RouterLink>
+        <RouterLink to="/exam"><Timer :size="18" aria-hidden="true" /><span>模拟考试</span></RouterLink>
+        <RouterLink to="/reading"><BookOpenText :size="18" aria-hidden="true" /><span>阅读训练</span></RouterLink>
+        <RouterLink to="/listening"><Headphones :size="18" aria-hidden="true" /><span>听力精听</span></RouterLink>
+        <RouterLink to="/vocabulary"><BookMarked :size="18" aria-hidden="true" /><span>单词本</span></RouterLink>
+
+        <div class="nav-section-label">分析与诊断</div>
+        <RouterLink to="/wrong"><Brain :size="18" aria-hidden="true" /><span>错题本</span></RouterLink>
+        <RouterLink to="/diagnostic"><Activity :size="18" aria-hidden="true" /><span>学习诊断</span></RouterLink>
+        <RouterLink to="/report"><BarChart3 :size="18" aria-hidden="true" /><span>学习报告</span></RouterLink>
+        <RouterLink to="/notes"><StickyNote :size="18" aria-hidden="true" /><span>我的笔记</span></RouterLink>
+        <RouterLink to="/achievements"><Trophy :size="18" aria-hidden="true" /><span>成就徽章</span></RouterLink>
+        <RouterLink to="/leaderboard"><BarChart2 :size="18" aria-hidden="true" /><span>学习排行</span></RouterLink>
+
+        <div class="nav-section-label">AI 助手与精批</div>
+        <RouterLink to="/essay"><PenLine :size="18" aria-hidden="true" /><span>作文精批</span></RouterLink>
+        <RouterLink to="/speaking"><Mic2 :size="18" aria-hidden="true" /><span>口语陪练</span></RouterLink>
+        <RouterLink to="/assistant"><Sparkles :size="18" aria-hidden="true" /><span>AI 学习助手</span></RouterLink>
+
+        <div class="nav-section-label">规划与配置</div>
+        <RouterLink to="/focus"><Timer :size="18" aria-hidden="true" /><span>专注计时</span></RouterLink>
+        <RouterLink to="/calendar"><CalendarDays :size="18" aria-hidden="true" /><span>学习日历</span></RouterLink>
+        <RouterLink to="/goal"><Target :size="18" aria-hidden="true" /><span>目标中心</span></RouterLink>
+        <RouterLink to="/imports"><FileUp :size="18" aria-hidden="true" /><span>导入题库</span></RouterLink>
+        <RouterLink to="/settings"><Settings :size="18" aria-hidden="true" /><span>模型与设置</span></RouterLink>
       </nav>
-      <!-- v9.19: 侧边栏类别切换 · v2.47: 常用类别 + 弹窗选择 -->
-      <div v-if="categories.length" class="sidebar-categories">
-        <span class="sidebar-category-label">考试类别</span>
-        <!-- 当前类别 -->
-        <button
-          v-if="activeCategory"
-          class="sidebar-category active"
-          type="button"
-          @click="openCategoryModal"
-        >
-          <span class="sidebar-category-dot" :style="{ background: activeCategory.color || '#486d5c' }"></span>
-          <component :is="categoryIcons[activeCategory.icon] || BookMarked" :size="16" aria-hidden="true" />
-          <span>{{ activeCategory.name }}</span>
-        </button>
-        <!-- 常用类别 (最近使用) -->
-        <button
-          v-for="cat in frequentCategories"
-          :key="'freq-' + cat.id"
-          class="sidebar-category"
-          type="button"
-          @click="switchCategory(cat.id)"
-        >
-          <span class="sidebar-category-dot" :style="{ background: cat.color || '#486d5c' }"></span>
-          <component :is="categoryIcons[cat.icon] || BookMarked" :size="16" aria-hidden="true" />
-          <span>{{ cat.name }}</span>
-        </button>
-        <!-- 全部类别 -->
-        <button class="sidebar-category all-categories" type="button" @click="openCategoryModal">
-          <span class="sidebar-category-dot" style="background: linear-gradient(135deg,#c97b4a,#4a6fa5)"></span>
-          <LayoutGrid :size="16" aria-hidden="true" />
-          <span>全部类别</span>
+      <!-- 侧边栏底部停靠区 (考试类别 + 提示卡 + 主题切换) -->
+      <div class="sidebar-footer">
+        <div v-if="categories.length" class="sidebar-categories">
+          <span class="sidebar-category-label">考试类别</span>
+          <!-- 当前类别 -->
+          <button
+            v-if="activeCategory"
+            class="sidebar-category active"
+            type="button"
+            @click="openCategoryModal"
+          >
+            <span class="sidebar-category-dot" :style="{ background: activeCategory.color || '#486d5c' }"></span>
+            <component :is="categoryIcons[activeCategory.icon] || BookMarked" :size="16" aria-hidden="true" />
+            <span>{{ activeCategory.name }}</span>
+          </button>
+          <!-- 常用类别 (最近使用) -->
+          <button
+            v-for="cat in frequentCategories"
+            :key="'freq-' + cat.id"
+            class="sidebar-category"
+            type="button"
+            @click="switchCategory(cat.id)"
+          >
+            <span class="sidebar-category-dot" :style="{ background: cat.color || '#486d5c' }"></span>
+            <component :is="categoryIcons[cat.icon] || BookMarked" :size="16" aria-hidden="true" />
+            <span>{{ cat.name }}</span>
+          </button>
+          <!-- 全部类别 -->
+          <button class="sidebar-category all-categories" type="button" @click="openCategoryModal">
+            <span class="sidebar-category-dot" style="background: linear-gradient(135deg,#c97b4a,#4a6fa5)"></span>
+            <LayoutGrid :size="16" aria-hidden="true" />
+            <span>全部类别</span>
+          </button>
+        </div>
+        <div class="sidebar-note">
+          <BookOpenText :size="18" />
+          <p>慢一点读，答案常藏在句子之间。</p>
+        </div>
+        <button class="theme-button" type="button" @click="toggleTheme" :aria-label="dark ? '切换到浅色模式' : '切换到夜间模式'">
+          <Sun v-if="dark" :size="18" /><Moon v-else :size="18" />
+          {{ dark ? '浅色模式' : '夜间模式' }}
         </button>
       </div>
-      <div class="sidebar-note">
-        <BookOpenText :size="18" />
-        <p>慢一点读，答案常藏在句子之间。</p>
-      </div>
-      <span class="vertical-text" aria-hidden="true">温故而知新，可以为师矣</span>
-      <button class="theme-button" type="button" @click="toggleTheme" :aria-label="dark ? '切换到浅色模式' : '切换到夜间模式'">
-        <Sun v-if="dark" :size="18" /><Moon v-else :size="18" />
-        {{ dark ? '浅色模式' : '夜间模式' }}
-      </button>
     </aside>
         <main class="main-content">
           <RouterView />
@@ -199,7 +205,7 @@ onMounted(() => {
             <div class="category-modal-panel">
               <div class="category-modal-head">
                 <div>
-                  <span class="eyebrow">CATEGORY</span>
+                  <span class="eyebrow">考试类别</span>
                   <h3>选择考试类别</h3>
                 </div>
                 <button class="button ghost compact" type="button" @click="categoryModal = false">✕ 关闭</button>
@@ -217,7 +223,7 @@ onMounted(() => {
                     <component :is="categoryIcons[cat.icon] || BookMarked" :size="26" aria-hidden="true" />
                   </span>
                   <span class="category-modal-name">{{ cat.name }}</span>
-                  <span class="category-modal-desc">{{ cat.description || '英语刷题练习' }}</span>
+                  <span class="category-modal-desc">{{ cat.description || '英语真题练习' }}</span>
                   <span v-if="cat.id === activeCategoryId" class="category-modal-active">当前使用 ✓</span>
                   <span class="category-modal-dot" :style="{ background: cat.color || '#486d5c' }"></span>
                 </button>
