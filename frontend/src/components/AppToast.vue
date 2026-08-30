@@ -1,6 +1,12 @@
 <script setup lang="ts">
-// 全局 Toast 渲染组件 — 右下角堆叠 + 进度条 + 类型图标
-// 挂载到 App.vue 一次即可
+/**
+ * 全局 Toast 提示组件（右下角堆叠 + 进度条 + 类型图标）。
+ * ⚠️ 不要直接 import 本组件使用——统一通过 `services/toast.ts` 的
+ * `showToast({ message, type, duration })` 调用，本组件挂载在 App.vue 一次即可。
+ * @example
+ * import { showToast } from '../services/toast'
+ * showToast({ message: '已保存', type: 'success' })
+ */
 
 import { CheckCircle2, Info, XCircle } from 'lucide-vue-next'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
