@@ -17,16 +17,17 @@ def _current_user_id(user: dict | None) -> int | None:
     return user["id"] if user else None
 
 # 词书定义: name, category_pattern, target_count, desc
+# target 为上限；实际以词库匹配数为准（get_plans 里 min(target, total)）
 WORD_BOOKS = [
-    {"key": "cet4_core", "name": "四级核心词", "pattern": "四级·高频%", "target": 700,
+    {"key": "cet4_core", "name": "四级核心词", "pattern": "四级·高频%", "target": 9999,
      "desc": "四级真题高频核心词（考频排序）", "icon": "📘"},
-    {"key": "cet6_core", "name": "六级核心词", "pattern": "六级·高频%", "target": 600,
+    {"key": "cet6_core", "name": "六级核心词", "pattern": "六级·高频%", "target": 9999,
      "desc": "六级真题高频核心词", "icon": "📙"},
-    {"key": "kaoyan_freq", "name": "考研高频词", "pattern": "考研%高频%", "target": 1580,
+    {"key": "kaoyan_freq", "name": "考研高频词", "pattern": "考研%高频%", "target": 9999,
      "desc": "考研真题高频词（kajweb 考频排序）", "icon": "🎓"},
-    {"key": "gaokao_core", "name": "高中核心词", "pattern": "高中%", "target": 800,
-     "desc": "高考核心词汇", "icon": "🏫"},
-    {"key": "hot_words", "name": "真题热点词", "pattern": "%热点%", "target": 300,
+    {"key": "gaokao_core", "name": "高中核心词", "pattern": "高中·高频%", "target": 9999,
+     "desc": "高考核心词汇（高频）", "icon": "🏫"},
+    {"key": "hot_words", "name": "真题热点词", "pattern": "%热点%", "target": 9999,
      "desc": "近两年真题高频出现词（AI 释义）", "icon": "🔥"},
 ]
 
@@ -52,11 +53,12 @@ def get_plans(
             """SELECT COUNT(*) FROM vocabulary_entries
                WHERE user_id IS ? AND category LIKE ? AND date(fsrs_last_review) = ?""",
             (user_id, book["pattern"], today)).fetchone()[0]
+        target = min(book["target"], total)
         plans.append({
             "key": book["key"], "name": book["name"], "desc": book["desc"], "icon": book["icon"],
-            "target": min(book["target"], total), "total": total,
+            "target": target, "total": total,
             "learned": learned, "today_learned": today_learned,
-            "progress": min(100, round(learned / book["target"] * 100)) if book["target"] else 0,
+            "progress": min(100, round(learned / target * 100)) if target else 0,
         })
     return {"plans": plans}
 
@@ -75,14 +77,14 @@ def get_daily_task(
     today = date.today().isoformat()
     # 新词: 优先 study_status='new' 且无 fsrs 记录
     new_words = connection.execute(
-        """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech
+        """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech, study_status
            FROM vocabulary_entries
            WHERE user_id IS ? AND category LIKE ? AND study_status = 'new'
            ORDER BY id LIMIT 20""",
         (user_id, book["pattern"])).fetchall()
     # 到期复习: fsrs_due <= today
     due_words = connection.execute(
-        """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech
+        """SELECT id, term, phonetic, common_meaning, contextual_meaning, part_of_speech, study_status
            FROM vocabulary_entries
            WHERE user_id IS ? AND category LIKE ? AND fsrs_due IS NOT NULL AND fsrs_due <= ? AND fsrs_due != ''
            ORDER BY fsrs_due LIMIT 50""",
