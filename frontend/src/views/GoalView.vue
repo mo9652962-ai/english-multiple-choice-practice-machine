@@ -57,7 +57,7 @@ onMounted(async () => {
   <div class="page page-goal">
     <div class="page-head">
       <div>
-        <span class="eyebrow">GOAL</span>
+        <span class="eyebrow">学业目标</span>
         <h1>目标中心</h1>
         <p class="lead">设定每日目标，让进步看得见。</p>
       </div>

@@ -368,7 +368,7 @@ function generatePoster() {
   ctx.restore()
   // 标题
   ctx.fillStyle = '#2d2a26'; ctx.font = '600 46px "Kaiti SC", "STKaiti", "楷体", serif'; ctx.textAlign = 'center'
-  ctx.fillText('墨题英语刷题机', 375, 475)
+  ctx.fillText('墨题', 375, 475)
   // 分隔线
   ctx.strokeStyle = 'rgba(72,109,92,.4)'; ctx.lineWidth = 2
   ctx.beginPath(); ctx.moveTo(290, 520); ctx.lineTo(460, 520); ctx.stroke()
@@ -393,7 +393,7 @@ async function sharePoster() {
     const blob = await (await fetch(posterUrl.value)).blob()
     const file = new File([blob], '墨题打卡.png', { type: 'image/png' })
     if (navigator.share && navigator.canShare?.({ files: [file] })) {
-      await navigator.share({ files: [file], title: '墨题英语刷题机', text: '我在墨题连续学习打卡' })
+      await navigator.share({ files: [file], title: '墨题', text: '我在墨题连续学习打卡' })
       return
     }
     const a = document.createElement('a')
@@ -408,7 +408,7 @@ async function sharePoster() {
   <div class="page page-home">
     <div class="page-head study-hero">
       <div class="study-hero-copy">
-        <span class="eyebrow">YOUR QUIET STUDY SPACE</span>
+        <span class="eyebrow">墨题研习空间</span>
         <h1><span class="hero-seal" aria-hidden="true">墨</span>"Tell me and I forget. Teach me and I remember. Involve me and I learn."</h1>
         <p class="lead">告诉我，我会忘记；教给我，我会记得；让我参与其中，我才真正学会。 —— 本杰明·富兰克林</p>
         <RouterLink class="button" to="/library"><BookOpen :size="17" />查看全部题库<ArrowRight :size="16" /></RouterLink>
@@ -577,7 +577,7 @@ async function sharePoster() {
     </section>
     <div v-if="error" class="warning">{{ error }}</div>
     <section v-if="vocabulary.length" class="vocabulary-ticker card" @mouseenter="tickerPaused=true" @mouseleave="tickerPaused=false">
-      <div class="ticker-heading"><div><span class="eyebrow">VOCABULARY REVIEW</span><h3>词汇回顾</h3></div><RouterLink to="/vocabulary">查看单词本 →</RouterLink></div>
+      <div class="ticker-heading"><div><span class="eyebrow">词汇温故</span><h3>词汇回顾</h3></div><RouterLink to="/vocabulary">查看单词本 →</RouterLink></div>
       <div class="ticker-window">
         <Transition name="vocabulary-flip" mode="out-in">
           <div :key="vocabularyPage" class="ticker-group">
@@ -643,7 +643,7 @@ async function sharePoster() {
           <Flame :size="28" fill="currentColor" />
         </div>
         <div>
-          <span class="eyebrow">STUDY STREAK</span>
+          <span class="eyebrow">连续研习</span>
           <h3>已连续学习 <strong>{{ streak.streak?.current || 0 }}</strong> 天</h3>
           <p class="lead">历史最佳 {{ streak.streak?.best || 0 }} 天 · 本月 {{ streak.monthly?.active_days || 0 }} 天活跃</p>
         </div>

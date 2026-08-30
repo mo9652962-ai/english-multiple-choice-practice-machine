@@ -307,7 +307,7 @@ async function submitFeedback() {
   <div class="page page-settings ai-settings-page">
     <div class="page-head">
       <div>
-        <span class="eyebrow">MODEL WORKSPACE</span>
+        <span class="eyebrow">文枢阁 · 模型配置</span>
         <h1>模型与 API</h1>
         <p class="lead">像工作区一样管理多个接口；只有启用的 API 和可见模型会出现在左侧助手中。</p>
       </div>
@@ -322,7 +322,7 @@ async function submitFeedback() {
     <section class="api-profile-card new-profile">
       <div class="api-profile-heading">
         <span class="api-profile-icon"><PlugZap :size="20" /></span>
-        <div><span class="eyebrow">PRACTICE PREFERENCES</span><h2>练习偏好</h2></div>
+        <div><span class="eyebrow">练习偏好</span><h2>练习偏好</h2></div>
       </div>
       <div class="api-profile-body">
         <div class="practice-pref-row">
@@ -382,15 +382,15 @@ async function submitFeedback() {
     <section v-if="creating" class="api-profile-card new-profile">
       <div class="api-profile-heading">
         <span class="api-profile-icon"><CirclePlus :size="20" /></span>
-        <div><span class="eyebrow">NEW CONNECTION</span><h2>添加新的 API</h2></div>
+        <div><span class="eyebrow">新增 API 连接</span><h2>添加新的 API</h2></div>
       </div>
       <div class="api-profile-body">
         <div class="grid grid-2">
           <div class="field"><label>配置名称</label><input v-model.trim="newProfile.name" placeholder="例如：本地 Ollama"></div>
           <div class="field"><label>默认模型（可稍后同步选择）</label><input v-model.trim="newProfile.default_model" placeholder="例如：qwen3:8b"></div>
         </div>
-        <div class="field"><label>API Base URL</label><input v-model.trim="newProfile.base_url" placeholder="http://127.0.0.1:11434/v1"></div>
-        <div class="field"><label>API Key</label><input v-model="newProfile.api_key" type="password" placeholder="本地接口通常可留空"></div>
+        <div class="field"><label>API 基础地址 (Base URL)</label><input v-model.trim="newProfile.base_url" placeholder="http://127.0.0.1:11434/v1"></div>
+        <div class="field"><label>API 密钥 (Key)</label><input v-model="newProfile.api_key" type="password" placeholder="本地接口通常可留空"></div>
         <div class="api-create-actions">
           <button class="button secondary" type="button" @click="creating=false">取消</button>
           <button class="button" type="button" :disabled="busy[busyKey('create',0)]" @click="createProfile">
@@ -441,7 +441,7 @@ async function submitFeedback() {
               </select>
             </div>
           </div>
-          <div class="field"><label>API Base URL</label><input v-model.trim="profile.base_url"></div>
+          <div class="field"><label>API 基础地址 (Base URL)</label><input v-model.trim="profile.base_url"></div>
           <div class="field">
             <label>API Key（留空不会清除）</label>
             <div class="api-key-input">
@@ -450,7 +450,7 @@ async function submitFeedback() {
             </div>
           </div>
           <div class="grid grid-2">
-            <div class="field"><label>Temperature</label><input v-model.number="profile.temperature" type="number" min="0" max="2" step=".1"></div>
+            <div class="field"><label>生成随机性 (Temperature)</label><input v-model.number="profile.temperature" type="number" min="0" max="2" step=".1"></div>
             <div class="field"><label>输出 Token 上限（已停用）</label><input v-model.number="profile.max_tokens" type="number" disabled><small>保留旧配置兼容；当前不会向模型发送输出 Token 上限。</small></div>
           </div>
           <p class="field-hint">Temperature 控制回答的随机性与创造性：值越低越稳定、越适合判分和事实类任务（错题分析、题库导入、单词翻译建议 0.2–0.5）；越高越发散，适合头脑风暴。</p>
@@ -509,7 +509,7 @@ async function submitFeedback() {
 
       <!-- v2.95: 内置反馈入口 (内测方案 P0) -->
       <article class="card feedback-card">
-        <div class="card-header"><h2>反馈建议</h2><p>遇到问题？有想法？3 秒告诉我们——帮助我们把刷题机做得更好。</p></div>
+        <div class="card-header"><h2>反馈建议</h2><p>遇到问题？有想法？3 秒告诉我们——帮助我们把墨题做得更好。</p></div>
         <button class="button" type="button" @click="fbOpen = true">📮 提交反馈</button>
               </article>
 
@@ -517,7 +517,7 @@ async function submitFeedback() {
               <article class="card">
                 <div class="card-header">
                   <div>
-                    <span class="eyebrow">ABOUT</span>
+                    <span class="eyebrow">关于墨题</span>
                     <h2>我的墨题</h2>
                     <p>查看版本号、开发时间与检查更新</p>
                   </div>

@@ -148,7 +148,7 @@ async function checkUpdate() {
 
     <div class="about-card card">
       <div class="about-logo">墨</div>
-      <h3>墨题 · 英语刷题机</h3>
+      <h3>墨题</h3>
       <p class="muted about-slogan">水墨之间 · 学海无涯</p>
 
       <div class="about-info">

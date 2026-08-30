@@ -27,7 +27,7 @@ function maxCount(): number {
   <div class="page page-leaderboard">
     <div class="page-head">
       <div>
-        <span class="eyebrow">LEADERBOARD</span>
+        <span class="eyebrow">研习榜单</span>
         <h1>学习排行</h1>
         <p class="lead">本周学习战报 · 与自己赛跑，每天进步一点点（多邻国式激励）</p>
       </div>

@@ -442,7 +442,7 @@ function analysisLabel(unitIds: number[]): string {
   <div class="page page-wrong wrong-page">
     <div class="page-head">
       <div>
-        <span class="eyebrow">WRONG ANSWERS</span>
+        <span class="eyebrow">错题集</span>
         <h1>错题本</h1>
         <p class="lead">按年份与篇目整理，可直接对指定范围进行分析或重做。</p>
       </div>
@@ -535,7 +535,7 @@ function analysisLabel(unitIds: number[]): string {
     >
       <div class="section-title wrong-report-title">
         <div>
-          <span class="eyebrow">AI REVIEW</span>
+          <span class="eyebrow">AI 智能诊断</span>
           <h3>{{ analysisTitle }}分析</h3>
         </div>
         <button class="button ghost" @click="analysis='';analysisAggregate=null;analysisNote=''">收起</button>
@@ -570,7 +570,7 @@ function analysisLabel(unitIds: number[]): string {
 
     <section v-if="visible.length" class="wrong-overview" aria-label="错题概览">
       <div class="wrong-overview-copy">
-        <span class="eyebrow">REVIEW MAP</span>
+        <span class="eyebrow">复习导图</span>
         <strong>{{ visible.length }} 道错题，分布在 {{ grouped.length }} 个年份</strong>
         <span>累计答错 {{ totalWrongAttempts }} 次，其中 {{ totalFrequent }} 道为高频错题。</span>
       </div>

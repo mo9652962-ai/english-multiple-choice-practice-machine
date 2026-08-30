@@ -163,6 +163,32 @@ function jumpToQuestion(index: number) {
     if (highlightedQuestionId.value === q.id) highlightedQuestionId.value = null
   }, 2400)
 }
+
+// v9.32: 移动端当前题索引与快速前后翻题
+const currentQuestionIndex = computed(() => {
+  const qs = activeUnit.value?.questions || []
+  if (!qs.length) return 0
+  if (highlightedQuestionId.value) {
+    const idx = qs.findIndex((q: any) => q.id === highlightedQuestionId.value)
+    if (idx >= 0) return idx
+  }
+  const firstUnanswered = qs.findIndex((q: any) => !q.user_answer)
+  return firstUnanswered >= 0 ? firstUnanswered : 0
+})
+
+function prevQuestion() {
+  const qs = activeUnit.value?.questions || []
+  if (!qs.length) return
+  const targetIdx = Math.max(0, currentQuestionIndex.value - 1)
+  jumpToQuestion(targetIdx)
+}
+
+function nextQuestion() {
+  const qs = activeUnit.value?.questions || []
+  if (!qs.length) return
+  const targetIdx = Math.min(qs.length - 1, currentQuestionIndex.value + 1)
+  jumpToQuestion(targetIdx)
+}
 const isWordBank = computed(() => activeUnit.value?.unit_type === 'word_bank')
 const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'paragraph_matching')
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')
@@ -776,8 +802,27 @@ function openBlankPicker(question: any) {
 }
 function pickBlank(option: any) {
   if (!blankPicker.value) return
+  const currentNum = Number(blankPicker.value.number)
   select(blankPicker.value, option.stable_key || option.key)
-  // 选完保留答题区（显示 ✓），点文章其他空格自动切换当前空；点「收起」隐藏
+  // v9.32: 选完自动平滑推进到下一个空，移动端做题连贯不打断
+  const qs = activeUnit.value?.questions || []
+  const idx = qs.findIndex((q: any) => Number(q.number) === currentNum)
+  if (idx >= 0 && idx < qs.length - 1) {
+    window.setTimeout(() => {
+      blankPicker.value = qs[idx + 1]
+    }, 200)
+  }
+}
+function stepBlank(delta: number) {
+  if (!blankPicker.value) return
+  const currentNum = Number(blankPicker.value.number)
+  const qs = activeUnit.value?.questions || []
+  const idx = qs.findIndex((q: any) => Number(q.number) === currentNum)
+  if (idx < 0) return
+  const targetIdx = idx + delta
+  if (targetIdx >= 0 && targetIdx < qs.length) {
+    blankPicker.value = qs[targetIdx]
+  }
 }
 
 function syncOrdering() {
@@ -1267,6 +1312,19 @@ function openDeepExplain(questionId: number) {
       </div>
       <!-- v3.6: 选词填空隐藏右侧面板——点文章空格弹选项（用户反馈右侧点击无反应） -->
       <section v-if="!isCloze" class="question-pane">
+        <!-- v9.32: 移动端快捷题目导航栏 (第 X/Y 题 + 上下题快速翻页 + 答题卡抽屉入口) -->
+        <div v-if="isMobileSplit" class="mobile-question-toolbar">
+          <button class="mob-q-btn" type="button" :disabled="currentQuestionIndex <= 0" @click="prevQuestion">
+            ‹ 上一题
+          </button>
+          <button class="mob-q-indicator" type="button" @click="answerSheetOpen = true" title="点击打开答题卡">
+            <Grid3x3 :size="14" />
+            <span>第 {{ currentQuestionIndex + 1 }} / {{ activeUnit.questions?.length || 0 }} 题</span>
+          </button>
+          <button class="mob-q-btn" type="button" :disabled="currentQuestionIndex >= (activeUnit.questions?.length || 0) - 1" @click="nextQuestion">
+            下一题 ›
+          </button>
+        </div>
         <div v-if="isOrdering" class="ordering-board">
           <div class="ordering-section-heading"><span>选择答案</span><small>{{ activeUnit.questions.filter((question: any) => question.user_answer).length }} / {{ activeUnit.questions.length }} 已完成</small></div>
           <div class="ordering-answer-list">
@@ -1421,7 +1479,7 @@ function openDeepExplain(questionId: number) {
           <div class="result-dialog-heading">
             <span class="result-icon"><CheckCircle2 :size="27" /></span>
             <div>
-              <span class="eyebrow">UNIT COMPLETE</span>
+              <span class="eyebrow">板块完成</span>
               <h2 id="practice-result-title">{{ resultUnit.title }}已提交</h2>
               <p>本篇成绩已保存，其他篇目仍可继续作答。</p>
             </div>
@@ -1467,7 +1525,7 @@ function openDeepExplain(questionId: number) {
           <div class="result-dialog-heading">
             <span class="result-icon paper"><Award :size="29" /></span>
             <div>
-              <span class="eyebrow">PAPER COMPLETE</span>
+              <span class="eyebrow">整卷交卷</span>
               <h2 id="practice-result-title">{{ session.units[0]?.year || '' }} 年整卷成绩</h2>
               <p>所有客观题已判分，各篇成绩如下。</p>
             </div>
@@ -1519,7 +1577,7 @@ function openDeepExplain(questionId: number) {
     <section v-if="timerPromptVisible" class="timer-overlay" role="dialog" aria-modal="true" aria-labelledby="timer-choice-title">
       <div class="timer-dialog card">
         <span class="timer-dialog-icon"><Clock3 :size="30" /></span>
-        <span class="eyebrow">FOCUS TIMER</span>
+        <span class="eyebrow">专注计时</span>
         <h2 id="timer-choice-title">这次练习要计时吗？</h2>
         <p class="lead">计时能帮助你了解自己的答题节奏。中途可以点击“休息一下”，暂停期间不会计入用时。</p>
         <div class="timer-dialog-actions">
@@ -1534,7 +1592,7 @@ function openDeepExplain(questionId: number) {
     <section v-if="timerState?.mode === 'paused' && session?.status === 'active'" class="timer-overlay timer-pause-overlay" role="dialog" aria-modal="true" aria-labelledby="timer-pause-title">
       <div class="timer-dialog pause-dialog card">
         <span class="timer-dialog-icon rest"><Coffee :size="30" /></span>
-        <span class="eyebrow">TAKE A BREATH</span>
+        <span class="eyebrow">小憩片刻</span>
         <h2 id="timer-pause-title">计时已暂停</h2>
         <div class="paused-time">{{ timerText }}</div>
         <p class="lead">活动一下肩颈、喝口水。准备好后再继续，休息时间不会计入练习用时。</p>
@@ -1557,7 +1615,11 @@ function openDeepExplain(questionId: number) {
     <!-- v3.4: 选词填空——内联答题区（sticky 底部，不遮挡文章；点空格切换当前空） -->
     <div v-if="blankPicker" class="blank-picker-dock" role="dialog" aria-label="选词填空答题区">
       <div class="blank-picker-head">
-        <strong>第 {{ blankPicker.number }} 空 · 选择最佳选项</strong>
+        <div class="blank-nav-controls">
+          <button class="blank-step-btn" type="button" :disabled="Number(blankPicker.number) <= 1" @click="stepBlank(-1)" title="上一空">‹</button>
+          <strong>第 {{ blankPicker.number }} 空 · 选词</strong>
+          <button class="blank-step-btn" type="button" :disabled="Number(blankPicker.number) >= (activeUnit.questions?.length || 20)" @click="stepBlank(1)" title="下一空">›</button>
+        </div>
         <button class="button ghost compact" type="button" @click="blankPicker = null">收起 ✕</button>
       </div>
       <div class="blank-picker-options">

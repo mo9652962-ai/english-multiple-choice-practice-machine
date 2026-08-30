@@ -79,7 +79,7 @@ const memoryCurvePoints = computed(() => {
 <template>
   <div class="page page-report">
     <div class="page-head">
-      <div><span class="eyebrow">LEARNING REPORT</span><h1>学习报告</h1><p class="lead">数据可视化复盘：正确率趋势、薄弱题型、词汇进度与智能建议。</p></div>
+      <div><span class="eyebrow">研习学情报告</span><h1>学习报告</h1><p class="lead">数据可视化复盘：正确率趋势、薄弱题型、词汇进度与智能建议。</p></div>
     </div>
 
     <div v-if="loading" class="card empty">报告生成中…</div>
