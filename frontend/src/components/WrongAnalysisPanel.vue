@@ -106,9 +106,13 @@ type HistoryItem = {
 
 const props = withDefaults(
   defineProps<{
+    /** 要分析的错题 ID 列表；空数组时自动从当前错题本拉取 */
     questionIds?: number[]
+    /** 面板标题（如「本周错题分析」）*/
     scopeTitle?: string
+    /** 限定单元 ID（按单元范围分析时传入）*/
     unitIds?: number[]
+    /** 挂载后是否自动发起分析（默认 true）*/
     autoLoad?: boolean
   }>(),
   { questionIds: () => [], scopeTitle: '', unitIds: () => [], autoLoad: true },
@@ -162,6 +166,9 @@ const sheetDragY = ref(0)
 const collapsedCards = ref<Set<string>>(new Set())
 const rootEl = ref<HTMLElement | null>(null)
 let grabStartY = 0
+let grabLastY = 0
+let grabLastT = 0
+let grabReleaseV = 0 // px/s 释放速度（apple-design 规范：速度交接）
 let swipeStartX = 0
 let swipeStartY = 0
 let mediaQuery: MediaQueryList | null = null
@@ -201,19 +208,30 @@ function onBackdropClick(event: MouseEvent) {
 function onGrabStart(event: TouchEvent) {
   if (event.touches.length !== 1) return
   grabStartY = event.touches[0].clientY
+  grabLastY = event.touches[0].clientY
+  grabLastT = performance.now()
+  grabReleaseV = 0
   sheetDragY.value = 0
 }
 
 function onGrabMove(event: TouchEvent) {
-  const dy = event.touches[0].clientY - grabStartY
+  const y = event.touches[0].clientY
+  const now = performance.now()
+  const dt = now - grabLastT
+  if (dt > 0) grabReleaseV = ((y - grabLastY) / dt) * 1000 // px/s
+  grabLastY = y
+  grabLastT = now
+  const dy = y - grabStartY
   sheetDragY.value = Math.max(0, dy)
 }
 
 function onGrabEnd() {
-  if (sheetDragY.value > 90) {
+  // apple-design 规范：用速度符号/大小决策，非仅位置；快甩即关（速度交接）
+  if (sheetDragY.value > 90 || grabReleaseV > 700) {
     closeSheet()
   } else {
-    sheetDragY.value = 0 // 回弹
+    // 平滑回弹：加过渡让 CSS 处理（模板端仅在有位移时用 transform）
+    sheetDragY.value = 0
   }
 }
 
@@ -553,11 +571,11 @@ onBeforeUnmount(() => {
 
         <div
           class="wa-panel-scroll"
-          :style="sheetActive && sheetDragY ? { transform: `translateY(${sheetDragY}px)` } : undefined"
+          :style="sheetActive && sheetDragY ? { transform: `translateY(${sheetDragY}px)`, transition: 'none' } : { transition: 'transform .3s cubic-bezier(.22, 1, .36, 1)' }"
         >
           <div class="wa-panel-head">
             <div>
-              <span class="eyebrow">ATTRIBUTION</span>
+              <span class="eyebrow">错因归因</span>
               <h3>🧩 知识点归因分析</h3>
               <p class="wa-panel-sub">
                 12 分类错误原因 → 细粒度知识点 → 分层学习建议 → 跨报告趋势追踪
@@ -678,7 +696,7 @@ onBeforeUnmount(() => {
                   <span v-else class="wa-trend-chip is-stable">与上次分析相比无明显变化</span>
                 </div>
                 <div v-if="result.report" class="wa-ai-report">
-                  <span class="eyebrow">AI SUMMARY</span>
+                  <span class="eyebrow">AI 智能总结</span>
                   <div class="wa-ai-report-text">{{ result.report }}</div>
                 </div>
               </template>

@@ -19,8 +19,11 @@ type AudioTrack = {
 }
 
 const props = withDefaults(defineProps<{
+  /** 音频轨列表；空数组时组件显示空态 */
   tracks?: AudioTrack[]
+  /** 是否允许拖动进度条（默认 true）*/
   seekable?: boolean
+  /** 外部暂停计时（如听写模式倒计时暂停时同步）*/
   timerPaused?: boolean
 }>(), {
   tracks: () => [],
@@ -209,7 +212,7 @@ defineExpose({ pause })
     <div class="listening-heading">
       <span class="listening-icon" aria-hidden="true"><Headphones :size="28" /></span>
       <div>
-        <span class="eyebrow">Listening practice</span>
+        <span class="eyebrow">听力特训</span>
         <h1>听力练习</h1>
         <p>不显示听力原文，请按照完整音频完成本段题目。</p>
       </div>

@@ -5,7 +5,7 @@ import { Check, RefreshCw, Volume2, X } from 'lucide-vue-next'
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { speak, stop as stopTts } from '../services/tts'
 
-const props = defineProps<{ words: any[] }>()
+const props = defineProps<{ /** 要听写的单词列表（每项含 word/en/phonetic 等字段）*/ words: any[] }>()
 const emit = defineEmits<{ close: [] }>()
 
 const idx = ref(0)
