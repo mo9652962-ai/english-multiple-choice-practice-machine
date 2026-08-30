@@ -159,7 +159,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   <div class="page page-vocab vocabulary-page vocab-bank-page" ref="scrollEl">
     <div class="page-head">
       <div>
-        <span class="eyebrow">VOCABULARY BANK</span>
+        <span class="eyebrow">词库宝典</span>
         <h1>全部单词库</h1>
         <p class="lead">从真题语境中收集的全部词汇，可按分类/状态筛选浏览。</p>
       </div>

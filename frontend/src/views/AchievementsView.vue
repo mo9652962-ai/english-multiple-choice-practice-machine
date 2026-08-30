@@ -17,7 +17,7 @@ onMounted(async () => {
 <template>
   <div class="page page-achievements">
     <div class="page-head">
-      <div><span class="eyebrow">ACHIEVEMENTS</span><h1>成就徽章</h1><p class="lead">坚持学习，解锁属于你的里程碑。游戏化激励，让每天进步看得见。</p></div>
+      <div><span class="eyebrow">成就里程碑</span><h1>成就徽章</h1><p class="lead">坚持学习，解锁属于你的里程碑。游戏化激励，让每天进步看得见。</p></div>
       <div v-if="data" class="achieve-summary card">
         <strong>{{ data.earned_count }}</strong><span>/ {{ data.total }} 已解锁</span>
       </div>

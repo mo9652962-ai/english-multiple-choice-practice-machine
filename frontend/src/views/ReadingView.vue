@@ -44,7 +44,7 @@ async function startPractice(p: any) {
   <div class="page page-reading">
     <div class="page-head">
       <div>
-        <span class="eyebrow">READING</span>
+        <span class="eyebrow">深度精读</span>
         <h1>阅读训练</h1>
         <p class="lead">在真实语境中读短文、学单词，理解比背诵更重要。</p>
       </div>
@@ -58,7 +58,7 @@ async function startPractice(p: any) {
     </div>
     <div v-else class="reading-grid">
       <article v-for="(p, i) in passages" :key="i" class="card reading-card" @click="startPractice(p)">
-        <span class="reading-badge">READING</span>
+        <span class="reading-badge">精读</span>
         <h3 class="reading-title">{{ p.title || p.unit_title || `阅读短文 ${i + 1}` }}</h3>
         <p class="reading-excerpt">{{ (p.passage || p.excerpt || '').slice(0, 120) }}…</p>
         <span class="reading-go">开始阅读 →</span>

@@ -44,7 +44,7 @@ onMounted(load)
   <div class="page page-vocab">
     <div class="page-head">
       <div>
-        <span class="eyebrow">COLLECTIONS</span>
+        <span class="eyebrow">藏经阁 · 收藏夹</span>
         <h1>精讲典藏</h1>
         <p class="lead">AI 精讲中收藏的长难句与解析片段——复习时随时回看。</p>
       </div>

@@ -494,7 +494,7 @@ onMounted(() => { load(); loadPlans() })
 <template>
   <div class="page page-vocab vocabulary-page">
     <div class="page-head">
-      <div><span class="eyebrow">VOCABULARY BOOK</span><h1>我的单词本</h1><p class="lead">从真题语境中收集、理解并复习真正困扰你的词。</p></div>
+      <div><span class="eyebrow">生词本</span><h1>我的单词本</h1><p class="lead">从真题语境中收集、理解并复习真正困扰你的词。</p></div>
       <div style="display:flex;gap:8px;align-items:center">
         <button class="button ghost" @click="showDisplayDialog=true"><Settings :size="17" />显示设置</button>
         <button class="button ghost" @click="startDictation" :disabled="!items.length"><Headphones :size="17" />听写模式</button>
@@ -751,7 +751,7 @@ onMounted(() => { load(); loadPlans() })
       <div v-if="quickMode" class="quick-overlay" @click.self="closeQuick">
         <div class="quick-panel">
           <div class="quick-head">
-            <span class="eyebrow">QUICK CHALLENGE</span>
+            <span class="eyebrow">快速自测</span>
             <button class="button ghost compact" @click="closeQuick">✕ 退出</button>
           </div>
           <!-- 结果 -->

@@ -104,7 +104,7 @@ async function confirmDelete() {
 
 <template>
   <div class="page page-library">
-    <div class="page-head"><div><span class="eyebrow">QUESTION LIBRARY</span><h1>按年份练习</h1><p class="lead">完成整年45道客观题后统一判分，中途自动保存。</p></div></div>
+    <div class="page-head"><div><span class="eyebrow">真题题库</span><h1>按年份练习</h1><p class="lead">完成整年45道客观题后统一判分，中途自动保存。</p></div></div>
     <QuestionBankSwitcher @changed="loadPapers" />
     <div class="batch-toolbar">
       <span class="lead">{{ batchMode ? `已选择 ${selectedIds.size} 套试卷` : '长按试卷或点击“批量管理”可移动、删除多套试卷。' }}</span>

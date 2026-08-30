@@ -286,7 +286,7 @@ defineExpose({ open, close })
 .cached-mark { font-family: var(--font-serif); font-size: 11px; color: var(--accent-ochre); }
 .drawer-loading, .drawer-error { padding: 40px 20px; text-align: center; color: var(--text-faint); }
 .drawer-fade-enter-active, .drawer-fade-leave-active { transition: opacity 0.2s; }
-.drawer-fade-enter-active .deep-explain-drawer, .drawer-fade-leave-active .deep-explain-drawer { transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.drawer-fade-enter-active .deep-explain-drawer, .drawer-fade-leave-active .deep-explain-drawer { transition: transform 0.3s cubic-bezier(.22, 1, .36, 1); }
 .drawer-fade-enter-from, .drawer-fade-leave-to { opacity: 0; }
 .drawer-fade-enter-from .deep-explain-drawer, .drawer-fade-leave-to .deep-explain-drawer { transform: translateX(100%); }
 

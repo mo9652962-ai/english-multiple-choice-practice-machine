@@ -86,7 +86,7 @@ function seek(e: Event) {
   <div class="page page-listening">
     <div class="page-head">
       <div>
-        <span class="eyebrow">LISTENING</span>
+        <span class="eyebrow">听力研习</span>
         <h1>听力精听</h1>
         <p class="lead">集中练习听力篇章，磨耳朵从每一句开始。支持变速、单句循环、复读。</p>
       </div>
