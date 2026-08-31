@@ -14,6 +14,8 @@
     <a href="docs/question-bank-format.md">题库格式</a>
     ·
     <a href="LICENSE">GPL-3.0-only</a>
+    ·
+    <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/actions/workflows/ci.yml">GitHub Actions CI</a>
   </p>
 
   <p>
@@ -60,7 +62,7 @@
 
 > 我们希望即使题目数量有限，每一次重新练习仍然需要理解文章、判断逻辑和重新作答，而不是把反复刷题变成机械地背答案。
 
-项目当前处于 `v2.0.0-beta.15 / 持续开发阶段`。核心刷题、错题本、单词本、AI 助手、模型辅助导入、ESQ 题库分享链路、移动端竖屏适配、安全存储加密、学习热力图与打卡海报已经可以使用；便携发布包、公开 CI 和更多考试模板仍在完善中。
+项目当前处于 `v2.0.0-beta.15 / 持续开发阶段`。核心刷题、错题本、单词本、AI 助手、模型辅助导入、ESQ 题库分享链路、移动端竖屏适配、安全存储加密、学习热力图与打卡海报已经可以使用；便携发布包和更多考试模板仍在完善中。公开 GitHub Actions CI 已覆盖前端类型检查/构建、后端单元测试和后端导入检查。
 
 **当前内置数据**：692 道客观真题（含 2026 高考英语全国 I 卷 45 题）+ **7,751 个全类别核心词汇**（高考 2,702 / 四级 1,989 / 六级 2,232 / 考研 828——含音标与真题/双语例句）。
 
@@ -461,7 +463,7 @@ cd frontend
 corepack pnpm run build
 ```
 
-当前最近一次完整后端测试为 76 项通过、1 项私人全题库测试按环境跳过，前端生产构建通过。完整真题库集成测试通过 `ENGLISH_PRACTICE_CORPUS` 环境变量显式启用，在没有私人题库的公开环境中会自动跳过。GitHub CI 仍在准备中。
+当前最近一次完整后端测试为 76 项通过、1 项私人全题库测试按环境跳过，前端生产构建通过。公开 GitHub Actions CI 会安装 `requirements-dev.txt`，执行 `python -m pytest -q tests`、前端类型检查/构建和后端导入检查。完整真题库集成测试通过 `ENGLISH_PRACTICE_CORPUS` 显式启用，在没有私人题库的公开环境中会自动跳过。
 
 ## 当前状态与路线图
 

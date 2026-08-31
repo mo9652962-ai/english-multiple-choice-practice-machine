@@ -24,7 +24,7 @@ jobs:
         run: cd frontend && npm run build
 
   backend-health:
-    name: Backend import check
+    name: Backend tests and import check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,10 +33,10 @@ jobs:
           python-version: "3.11"
       - name: Install
         run: |
-          cd backend
           python -m pip install --upgrade pip
-          pip install -r requirements.txt || pip install fastapi uvicorn
+          pip install -r requirements-dev.txt
+      - name: Tests
+        run: python -m pytest -q tests
       - name: Import check
         run: |
-          cd backend
-          python -c "import app.main"
+          PYTHONPATH=backend python -c "import app.main; print('backend import ok')"
