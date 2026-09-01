@@ -380,44 +380,72 @@ h2, h3 { margin: 0; }
   color: var(--ink);
 }
 .loading { color: var(--muted); padding: 30px; text-align: center; }
-/* v9.24 UI 精修（Gemini 方案）: 考试页——定制下拉框 + 松烟墨 CTA */
+/* v10.1 UI 修复: 考试页——定制下拉框与暗色模式高对比度适配 */
 .exam-start select {
   appearance: none;
+  -webkit-appearance: none;
   width: 100%;
-  height: 42px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--line-strong);
+  height: 44px;
+  background-color: var(--surface-solid);
+  border: 1.5px solid var(--line-strong);
   border-radius: var(--radius-sm);
   padding: 0 36px 0 14px;
   color: var(--ink);
-  font-size: 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238C8479' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  font-size: 15px;
+  font-weight: 500;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23787369' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   transition: var(--transition-smooth);
 }
 .exam-start select:focus {
   border-color: var(--accent-vermilion);
-  box-shadow: 0 0 0 3px rgba(184, 74, 57, 0.12);
+  box-shadow: 0 0 0 3px rgba(184, 74, 57, 0.2);
   outline: none;
+}
+.exam-start select option {
+  background-color: var(--surface-solid);
+  color: var(--ink);
+  padding: 10px;
 }
 .exam-start .button {
   width: 100%;
-  height: 44px;
-  background: #2C2A29;
-  color: #F7F5F0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  height: 46px;
+  background: var(--primary);
+  color: var(--bg);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 700;
   letter-spacing: 1px;
-  box-shadow: 0 4px 14px rgba(44, 42, 41, 0.2);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
 }
 .exam-start .button:hover:not(:disabled) {
-  background: #1A1918;
+  background: var(--primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(44, 42, 41, 0.3);
+  box-shadow: var(--shadow);
+}
+:root.dark .exam-start select {
+  background-color: #26241e;
+  border-color: #4e4a3e;
+  color: #e9e4d9;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23a39c8e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+:root.dark .exam-start select option {
+  background-color: #211f1a;
+  color: #e9e4d9;
+}
+:root.dark .exam-start .button {
+  background: #d4554a;
+  color: #ffffff;
+  border-color: #e0a095;
+  box-shadow: 0 4px 18px rgba(212, 85, 74, 0.35);
+}
+:root.dark .exam-start .button:hover:not(:disabled) {
+  background: #e26156;
+  box-shadow: 0 6px 24px rgba(212, 85, 74, 0.45);
 }
 .exam-seal { font-size: 0.9em; margin-right: 6px; }
 
@@ -3711,7 +3739,7 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
   opacity: 0.7;
 }
 .recommend-practice-chip {
-  background: rgba(255, 255, 255, 0.85);
+  background-color: var(--surface-solid);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-pill);
   padding: 6px 14px;
@@ -4200,4 +4228,573 @@ button:active:not(:disabled),
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ✦ 墨题 v10.0 终极 UI 强化与流体美化系统 (Apple Design + 东方水墨神韵 2.0) ✦
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. 核心流体变量与物理弹簧预设 ── */
+:root {
+  --ease-spring-snappy: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  --ease-spring-gentle: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --glass-surface-light: rgba(253, 250, 243, 0.82);
+  --glass-border-light: rgba(184, 165, 140, 0.25);
+  --ink-gradient-hover: linear-gradient(135deg, rgba(64, 60, 53, 0.06), rgba(64, 60, 53, 0.02));
+  --seal-vermilion-glow: 0 4px 18px rgba(184, 74, 57, 0.22);
+  --seal-bamboo-glow: 0 4px 18px rgba(74, 95, 78, 0.22);
+  --card-highlight-top: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+:root.dark {
+  --glass-surface-light: rgba(33, 31, 26, 0.85);
+  --glass-border-light: rgba(184, 178, 164, 0.16);
+  --ink-gradient-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  --seal-vermilion-glow: 0 4px 20px rgba(212, 85, 74, 0.3);
+  --seal-bamboo-glow: 0 4px 20px rgba(158, 187, 134, 0.25);
+  --card-highlight-top: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* ── 2. 交互触感微反馈 (Apple Response 11 条) ── */
+button:not(:disabled):active,
+.button:not(:disabled):active,
+.choice-button:not(:disabled):active,
+.sidebar-category:active,
+.action-card:active,
+.card-clickable:active {
+  transform: scale(0.978) translateY(1px) !important;
+  transition: transform 0.1s var(--ease-spring-snappy) !important;
+}
+
+/* ── 3. 侧边栏品牌徽标与导航流体升级 ── */
+.sidebar .brand {
+  position: relative;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.sidebar .brand:hover {
+  background: var(--primary-faint);
+  transform: translateY(-1px);
+}
+
+.brand-mark {
+  position: relative;
+  box-shadow: 0 4px 14px rgba(46, 42, 35, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: transform 0.4s var(--ease-spring-snappy), box-shadow 0.4s var(--ease);
+}
+
+.sidebar .brand:hover .brand-mark {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 6px 20px rgba(184, 74, 57, 0.35);
+}
+
+/* 侧边栏导航链接质感 */
+.sidebar nav a {
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 3px;
+  transition: all 0.25s var(--ease);
+  font-weight: 500;
+}
+
+.sidebar nav a:hover {
+  background: var(--primary-faint);
+  padding-left: 14px;
+  color: var(--ink);
+}
+
+.sidebar nav a.router-link-active {
+  background: var(--primary-soft);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(46, 42, 35, 0.06);
+}
+
+.sidebar nav a.router-link-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3.5px;
+  background: var(--accent-vermilion);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 8px rgba(184, 74, 57, 0.4);
+}
+
+/* ── 4. 卡片与 Bento Grid 液态玻璃质感 (Liquid Glass 2.0) ── */
+.card, .dashboard-card, .stat-card, .practice-card {
+  position: relative;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--surface-solid);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.32s var(--ease-spring-smooth), 
+              box-shadow 0.32s var(--ease-spring-smooth), 
+              border-color 0.32s var(--ease);
+}
+
+.card:hover, .dashboard-card:hover, .stat-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* 顶部极细高光线 */
+.card::after, .dashboard-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: var(--card-highlight-top);
+  pointer-events: none;
+  border-radius: var(--radius-pill);
+}
+
+/* ── 5. 做题核心选项按钮微交互 (Choice Buttons Spring) ── */
+.choice-button {
+  position: relative;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--line);
+  background: var(--surface-solid);
+  padding: 16px 20px;
+  transition: all 0.24s var(--ease-spring-smooth);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.choice-button:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--primary-faint);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(46, 42, 35, 0.08);
+}
+
+.choice-button.selected {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--primary), 0 4px 16px rgba(46, 42, 35, 0.12);
+}
+
+.choice-button.correct {
+  border-color: var(--success) !important;
+  background: color-mix(in srgb, var(--success) 12%, var(--surface-solid)) !important;
+  color: var(--success) !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 1.5px var(--success), 0 6px 20px color-mix(in srgb, var(--success) 25%, transparent) !important;
+}
+
+.choice-button.incorrect, .choice-button.wrong {
+  border-color: var(--accent-vermilion) !important;
+  background: color-mix(in srgb, var(--accent-vermilion) 10%, var(--surface-solid)) !important;
+  color: var(--accent-vermilion) !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 1.5px var(--accent-vermilion), 0 6px 20px var(--seal-vermilion-glow) !important;
+}
+
+/* ── 6. 底部悬浮答题卡栏毛玻璃增强 ── */
+.practice-floating-bar, .answer-sheet-dock, .mobile-nav {
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: var(--glass-surface-light) !important;
+  border-top: 1px solid var(--glass-border-light);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ── 7. 艾宾浩斯与数据胶囊灵动强化 ── */
+.badge-pill, .tag-chip, .seal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.25s var(--ease);
+}
+
+.badge-pill:hover {
+  transform: translateY(-1px);
+}
+
+/* ── 8. 无障碍动作兼容 (Prefers Reduced Motion) ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover, .choice-button:hover {
+    transform: none !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ✦ 墨题移动端千轮强化与流体自适应系统 (Mobile Responsive & Fluid UI v10.0) ✦
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. 全局移动端触控优化与安全区适配 (Safe Area & Touch) ── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mobile-nav {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .practice-floating-bar,
+  .answer-sheet-dock,
+  .mobile-bottom-dock {
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* ── 2. 平板与手机端全局流式布局 (Responsive Shell ≤ 980px) ── */
+@media (max-width: 980px) {
+  .app-shell {
+    display: block !important;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .main-content {
+    padding: clamp(14px, 3.5vw, 24px) !important;
+    max-width: 100% !important;
+  }
+
+  /* 移动端底部导航栏深度美化 (iOS Frosted Glass Style) */
+  .mobile-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    min-height: 60px;
+    background: var(--glass-surface-light) !important;
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border-top: 1px solid var(--glass-border-light);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 12px;
+  }
+
+  .mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 48px; /* 满足 44px+ 最小触控热区 */
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 500;
+    gap: 3px;
+    border-radius: 12px;
+    transition: all 0.22s var(--ease-spring-snappy);
+    position: relative;
+  }
+
+  .mobile-nav a:active {
+    transform: scale(0.92) !important;
+  }
+
+  .mobile-nav a.router-link-active {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .mobile-nav a.router-link-active::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    width: 18px;
+    height: 3px;
+    background: var(--accent-vermilion);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 0 8px rgba(184, 74, 57, 0.5);
+  }
+
+  .mobile-nav a svg {
+    transition: transform 0.25s var(--ease-spring-snappy);
+  }
+
+  .mobile-nav a.router-link-active svg {
+    transform: scale(1.12) translateY(-1px);
+    color: var(--accent-vermilion);
+  }
+}
+
+/* ── 3. 手机端 (≤ 768px) 做题与排版沉浸强化 (Thumb-Friendly Practice) ── */
+@media (max-width: 768px) {
+  /* 页面通用卡片与间距微调 */
+  .page {
+    padding: 0 !important;
+  }
+
+  .card, .dashboard-card, .stat-card {
+    padding: 16px 18px !important;
+    border-radius: var(--radius-md) !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* 首页 Bento Grid 手机端 2 列流体自适应 */
+  .dashboard-grid, .bento-grid, .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .bento-full-width, .dashboard-hero-card {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* 练习模块快捷入口网格 (2x2 手机大触控卡片) */
+  .practice-quick-grid, .practice-type-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .practice-quick-card {
+    padding: 16px 14px !important;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 刷题做题核心选项大拇指优化 (Choice Button 56px+) */
+  .choice-button {
+    min-height: 54px !important;
+    padding: 14px 16px !important;
+    font-size: 1.02rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+
+  .choice-badge {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.95rem !important;
+    flex-shrink: 0;
+    margin-right: 10px !important;
+    margin-top: 2px !important;
+  }
+
+  /* 题目文章阅读区排版 */
+  .passage-content, .reading-passage, .question-text {
+    font-size: 1.06rem !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0.2px;
+    word-break: break-word;
+  }
+
+  /* 弹窗手机端底部抽屉化 (Bottom Sheet) */
+  .category-modal-panel,
+  .modal-panel,
+  .dialog-panel,
+  .ai-assistant-drawer {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    max-height: 82vh !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 24px 24px 0 0 !important;
+    padding: 20px 18px calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+    box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.25) !important;
+    overflow-y: auto !important;
+    animation: bottom-sheet-up 0.35s var(--ease-spring-gentle) !important;
+  }
+
+  /* 抽屉顶部阻尼拉手指示器 */
+  .category-modal-panel::before,
+  .modal-panel::before {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 4px;
+    background: var(--line-strong);
+    border-radius: var(--radius-pill);
+    margin: 0 auto 14px auto;
+    opacity: 0.7;
+  }
+
+  @keyframes bottom-sheet-up {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* 单词本 3D 闪卡小屏自适应 */
+  .flashcard-container, .word-flip-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 240px !important;
+  }
+
+  .flashcard-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .flashcard-actions button {
+    padding: 12px 8px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ── 4. 超小屏手机 (≤ 480px) 紧凑极限适配 (iPhone SE / 小屏设备) ── */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px 12px !important;
+  }
+
+  .dashboard-grid, .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-title, h1 {
+    font-size: 1.45rem !important;
+  }
+
+  .card-header h3, h2 {
+    font-size: 1.2rem !important;
+  }
+
+  .btn-group, .action-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .btn-group button, .action-buttons button {
+    width: 100% !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ✦ 深色模式全站表单控件高对比度保障 (Dark Mode Form Controls & Select Clarity) ✦
+   ══════════════════════════════════════════════════════════════════════════════ */
+:root.dark select,
+:root.dark input[type="text"],
+:root.dark input[type="password"],
+:root.dark input[type="number"],
+:root.dark input[type="search"],
+:root.dark textarea,
+:root.dark .field select,
+:root.dark .field input,
+:root.dark .settings-select,
+:root.dark .bank-switcher select {
+  background-color: #26241e !important;
+  color: #e9e4d9 !important;
+  border-color: #4e4a3e !important;
+}
+
+:root.dark select option {
+  background-color: #211f1a !important;
+  color: #e9e4d9 !important;
+}
+
+:root.dark select:focus,
+:root.dark input:focus,
+:root.dark textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(212, 85, 74, 0.25) !important;
+}
+
+/* 选项文字清晰可读保障 */
+:root.dark .exam-start label span,
+:root.dark .field label,
+:root.dark .form-group label {
+  color: #a39c8e !important;
+  font-weight: 600;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ✦ 极速响应与零延迟动画提速 (Instant Response & Hardware Acceleration v10.2) ✦
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* 1. 全局动画提速 (压减等待感，提升至 0.16s ~ 0.22s 极速丝滑) */
+.page {
+  animation: page-fade-up 0.22s cubic-bezier(0.16, 1, 0.3, 1) backwards !important;
+  will-change: transform, opacity;
+}
+
+@keyframes page-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. 弹窗与抽屉瞬间呼出 (消灭长延迟) */
+.modal-fade-enter-active,
+.modal-fade-leave-active,
+.drawer-fade-enter-active,
+.drawer-fade-leave-active {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.category-modal-panel,
+.modal-panel,
+.dialog-panel,
+.ai-assistant-drawer {
+  animation: modal-pop-quick 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: translateZ(0);
+}
+
+@keyframes modal-pop-quick {
+  from { transform: scale(0.96) translateY(10px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .category-modal-panel,
+  .modal-panel,
+  .dialog-panel,
+  .ai-assistant-drawer {
+    animation: bottom-sheet-quick 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  @keyframes bottom-sheet-quick {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+/* 3. 卡片与按钮即时点击反馈 (零延迟下压) */
+.card, .action-card, .practice-card, .paper-card, .choice-button, .sidebar-category {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.15s ease !important;
+  transform: translateZ(0);
+}
+
+.card:active, .action-card:active, .paper-card:active, .choice-button:active {
+  transform: scale(0.975) translateY(1px) !important;
+  transition: transform 0.08s ease-out !important;
+}
+
+/* 4. 加载态即刻高光指示 */
+.action-card.loading, .button.loading {
+  pointer-events: none;
+  opacity: 0.82;
+  box-shadow: 0 0 0 2px var(--accent-vermilion) !important;
 }
