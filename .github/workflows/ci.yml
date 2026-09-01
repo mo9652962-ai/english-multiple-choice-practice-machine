@@ -10,8 +10,8 @@ jobs:
     name: Frontend build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -27,8 +27,8 @@ jobs:
     name: Backend tests and import check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - name: Install
@@ -36,7 +36,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
       - name: Tests
-        run: python -m pytest -q tests
+        run: PYTHONPATH=backend python -m pytest -q tests
       - name: Import check
         run: |
           PYTHONPATH=backend python -c "import app.main; print('backend import ok')"
