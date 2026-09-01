@@ -3,6 +3,7 @@ from __future__ import annotations
 import ipaddress
 import json
 import logging
+import os
 import socket
 import sqlite3
 import time
@@ -17,6 +18,8 @@ logger = logging.getLogger(__name__)
 
 _TRANSIENT_STATUS_CODES = {429, 500, 502, 503, 504}
 _CHAT_RETRY_ATTEMPTS = 3
+_EMBEDDING_BATCH_SIZE = 10
+_EMBEDDING_DEFAULT_MODELS = ("text-embedding-v4", "text-embedding-v2", "bge-m3")
 
 
 def validate_public_url(url: str) -> None:
@@ -344,6 +347,182 @@ def chat_completion(
             )
             raise ValueError(f"模型没有返回可显示的正文{detail}")
         return content
+
+
+def embed_texts(
+    connection: sqlite3.Connection,
+    texts: list[str],
+    profile_id: int | None = None,
+) -> list[list[float]]:
+    """Call an OpenAI-compatible embeddings endpoint in batches of at most 10.
+
+    Embeddings use a provider separate from the normal chat profile because the
+    configured chat provider may not expose an embeddings endpoint. Environment
+    variables take precedence; otherwise a DashScope/Aliyun profile is selected
+    before falling back to the requested/default AI profile.
+    """
+    if not texts:
+        return []
+    if any(not isinstance(text, str) for text in texts):
+        raise ValueError("Embedding 输入必须是文本列表")
+
+    env_base_url = os.environ.get("EPM_EMBEDDING_BASE_URL", "").strip()
+    env_api_key = os.environ.get("EPM_EMBEDDING_API_KEY", "").strip()
+    env_model = os.environ.get("EPM_EMBEDDING_MODEL", "").strip()
+
+    settings: dict[str, Any]
+    if env_base_url and env_api_key:
+        settings = {
+            "base_url": env_base_url,
+            "api_key": env_api_key,
+            "default_model": env_model or _EMBEDDING_DEFAULT_MODELS[0],
+        }
+    else:
+        if profile_id is not None:
+            selected_profile_id = profile_id
+        else:
+            try:
+                row = connection.execute(
+                    """
+                    SELECT id
+                    FROM ai_profiles
+                    WHERE enabled = 1
+                      AND (
+                          LOWER(base_url) LIKE '%dashscope%'
+                          OR LOWER(base_url) LIKE '%aliyun%'
+                      )
+                    ORDER BY is_default DESC, id
+                    LIMIT 1
+                    """
+                ).fetchone()
+            except sqlite3.Error as error:
+                raise ValueError(
+                    "未配置可用的 Embedding 服务（EPM_EMBEDDING_* 环境变量或 DashScope 兼容 profile）"
+                ) from error
+            if row is not None:
+                selected_profile_id = int(row["id"] if isinstance(row, sqlite3.Row) else row[0])
+            else:
+                try:
+                    selected_profile_id = int(get_ai_profile(connection)["id"])
+                except (LookupError, KeyError, TypeError, ValueError, sqlite3.Error) as error:
+                    raise ValueError(
+                        "未配置可用的 Embedding 服务（EPM_EMBEDDING_* 环境变量或 DashScope 兼容 profile）"
+                    ) from error
+        try:
+            settings = _profile_with_key(connection, selected_profile_id)
+        except (LookupError, KeyError, TypeError, ValueError, sqlite3.Error) as error:
+            raise ValueError(
+                "未配置可用的 Embedding 服务（EPM_EMBEDDING_* 环境变量或 DashScope 兼容 profile）"
+            ) from error
+        settings["default_model"] = _EMBEDDING_DEFAULT_MODELS[0]
+
+    base_url = str(settings.get("base_url") or "").strip()
+    if not base_url:
+        raise ValueError(
+            "未配置可用的 Embedding 服务（EPM_EMBEDDING_* 环境变量或 DashScope 兼容 profile）"
+        )
+    validate_public_url(base_url)
+    api_key = str(settings.get("api_key") or "").strip()
+    configured_model = str(settings.get("default_model") or "").strip()
+    models = [configured_model, *_EMBEDDING_DEFAULT_MODELS]
+    ordered_models: list[str] = []
+    for model_name in models:
+        if model_name and model_name not in ordered_models:
+            ordered_models.append(model_name)
+    if not ordered_models:
+        raise ValueError(
+            "未配置可用的 Embedding 服务（EPM_EMBEDDING_* 环境变量或 DashScope 兼容 profile）"
+        )
+
+    url = base_url.rstrip("/") + "/embeddings"
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+
+    def post_with_retry(client: httpx.Client, payload: dict[str, Any]) -> httpx.Response:
+        last_response: httpx.Response | None = None
+        last_error: httpx.HTTPError | None = None
+        for attempt in range(_CHAT_RETRY_ATTEMPTS):
+            try:
+                response = client.post(url, headers=headers, json=payload)
+            except (httpx.ConnectError, httpx.ReadTimeout, httpx.RemoteProtocolError) as error:
+                last_error = error
+                if attempt == _CHAT_RETRY_ATTEMPTS - 1:
+                    raise ValueError("Embedding 服务暂时不可用，请稍后重试或检查配置") from error
+                time.sleep(2**attempt)
+                continue
+            last_response = response
+            if response.status_code not in _TRANSIENT_STATUS_CODES:
+                return response
+            if attempt < _CHAT_RETRY_ATTEMPTS - 1:
+                retry_after = response.headers.get("Retry-After", "").strip()
+                try:
+                    delay = max(1.0, min(8.0, float(retry_after)))
+                except ValueError:
+                    delay = float(2**attempt)
+                time.sleep(delay)
+                continue
+        if last_response is not None:
+            return last_response
+        raise ValueError("Embedding 服务暂时不可用，请稍后重试或检查配置") from last_error
+
+    def decode_embeddings(payload: Any, expected_count: int) -> list[list[float]]:
+        rows = payload.get("data") if isinstance(payload, dict) else None
+        if not isinstance(rows, list) or len(rows) != expected_count:
+            raise ValueError("Embedding 接口返回格式不兼容")
+        indexed: list[tuple[int, list[float]]] = []
+        for fallback_index, row in enumerate(rows):
+            if not isinstance(row, dict) or not isinstance(row.get("embedding"), list):
+                raise ValueError("Embedding 接口返回格式不兼容")
+            try:
+                vector = [float(value) for value in row["embedding"]]
+            except (TypeError, ValueError) as error:
+                raise ValueError("Embedding 接口返回了无效向量") from error
+            if not vector:
+                raise ValueError("Embedding 接口返回了空向量")
+            try:
+                index = int(row.get("index", fallback_index))
+            except (TypeError, ValueError):
+                index = fallback_index
+            indexed.append((index, vector))
+        indexed.sort(key=lambda item: item[0])
+        if [index for index, _ in indexed] != list(range(expected_count)):
+            # Some compatible providers omit or repeat indices. Their response
+            # order is still well-defined, so retain it rather than reordering
+            # vectors incorrectly.
+            return [vector for _, vector in indexed]
+        return [vector for _, vector in indexed]
+
+    failures: list[str] = []
+    with httpx.Client(timeout=120) as client:
+        for model_name in ordered_models:
+            all_vectors: list[list[float]] = []
+            model_failed = False
+            for start in range(0, len(texts), _EMBEDDING_BATCH_SIZE):
+                batch = texts[start : start + _EMBEDDING_BATCH_SIZE]
+                try:
+                    response = post_with_retry(
+                        client,
+                        {"model": model_name, "input": batch},
+                    )
+                except ValueError as error:
+                    failures.append(f"{model_name}: {error}")
+                    model_failed = True
+                    break
+                if response.status_code in {400, 404}:
+                    failures.append(f"{model_name}: HTTP {response.status_code}")
+                    model_failed = True
+                    break
+                try:
+                    response.raise_for_status()
+                    all_vectors.extend(decode_embeddings(response.json(), len(batch)))
+                except (httpx.HTTPError, json.JSONDecodeError, ValueError) as error:
+                    raise ValueError("Embedding 服务返回错误，请检查模型名称和 API 配置") from error
+            if not model_failed:
+                return all_vectors
+
+    detail = failures[-1] if failures else "没有可用模型"
+    raise ValueError(f"Embedding 服务不可用，请检查模型名称和 API 配置（{detail}）")
 
 
 def _extract_message_content(value: Any) -> str:

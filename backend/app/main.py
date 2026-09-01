@@ -41,6 +41,7 @@ from .routers import (
     diagnostic,
     explanations,
     library,
+    rag,  # Phase 2: RAG 知识库
     wrong,
     essays,  # v9.26: P1 作文批改
     speaking,  # v9.26: P2 口语陪练
@@ -151,6 +152,7 @@ app.include_router(leaderboard.router, prefix="/api")
 app.include_router(calendar.router, prefix="/api")
 app.include_router(explanations.router, prefix="/api")
 app.include_router(library.router, prefix="/api")
+app.include_router(rag.router, prefix="/api")
 app.include_router(feedback.router, prefix="/api")
 app.include_router(diagnostic.router, prefix="/api")
 app.include_router(vocabulary.router, prefix="/api")
