@@ -420,6 +420,14 @@ async function sharePoster() {
       </div>
     </div>
     <QuestionBankSwitcher @changed="() => loadHome(true)" />
+    <!-- v10.1: 学习陪伴聊天室入口（独立于推荐数据加载，始终可见） -->
+    <div class="ai-trinity-row">
+      <div class="ai-trinity-card" @click="router.push('/chat')">
+        <span class="ai-trinity-badge badge-speaking">陪伴</span>
+        <span class="trinity-title">💬 学习聊天室</span>
+        <p class="trinity-desc">研友同在 · @阿墨 随问随答</p>
+      </div>
+    </div>
     <!-- v2.18: 备考倒计时条 (研究: 练题狗/好题库 备考节点) -->
     <div v-if="data?.exam_countdown?.length" class="exam-countdown-bar">
       <span class="countdown-label">⏳ 备考倒计时</span>
