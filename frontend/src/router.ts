@@ -36,6 +36,7 @@ export default createRouter({
     { path: '/notes', component: () => import('./views/NotesView.vue') },
     { path: '/essay', component: () => import('./views/EssayView.vue') },  // v9.26: P1 作文批改
     { path: '/speaking', component: () => import('./views/SpeakingView.vue') },  // v9.26: P2 口语陪练
+    { path: '/chat', component: () => import('./views/ChatView.vue') },  // v10.1: 学习陪伴聊天室
     { path: '/login', component: () => import('./views/LoginView.vue') },  // v9.24: 多用户登录页
   ],
 })
