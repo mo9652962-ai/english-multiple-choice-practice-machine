@@ -677,6 +677,29 @@ CREATE TABLE IF NOT EXISTS user_memories (
     last_used TEXT,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Phase 2: RAG 知识库
+CREATE TABLE IF NOT EXISTS knowledge_docs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    source_name TEXT,
+    source_type TEXT DEFAULT 'text',
+    size INTEGER DEFAULT 0,
+    chunk_count INTEGER DEFAULT 0,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS knowledge_chunks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    doc_id INTEGER,
+    user_id INTEGER,
+    source_name TEXT,
+    chunk_index INTEGER,
+    content TEXT,
+    embedding TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (doc_id) REFERENCES knowledge_docs(id) ON DELETE CASCADE
+);
 """
 
 
