@@ -44,6 +44,7 @@ from .routers import (
     wrong,
     essays,  # v9.26: P1 作文批改
     speaking,  # v9.26: P2 口语陪练
+    agent,  # Phase 1: AI 学习智能体
 )
 from .services.ai_client import ensure_ai_model_catalog
 from .services.bundled_banks import install_bundled_question_banks
@@ -155,6 +156,7 @@ app.include_router(diagnostic.router, prefix="/api")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
+app.include_router(agent.router, prefix="/api")
 
 
 @app.get("/api/health")
