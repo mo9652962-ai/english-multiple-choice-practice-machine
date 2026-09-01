@@ -615,6 +615,68 @@ CREATE INDEX IF NOT EXISTS idx_question_bank_assets_lookup
     ON question_bank_assets(package_id, content_version, asset_id);
 CREATE INDEX IF NOT EXISTS idx_question_bank_revisions_paper
     ON question_bank_revisions(paper_external_key, created_at DESC);
+
+-- Phase 1: AI 学习智能体运行时
+CREATE TABLE IF NOT EXISTS agent_runs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    mode TEXT NOT NULL DEFAULT 'learning',
+    status TEXT NOT NULL DEFAULT 'queued',
+    goal TEXT NOT NULL DEFAULT '',
+    current_step INTEGER NOT NULL DEFAULT 0,
+    max_steps INTEGER NOT NULL DEFAULT 12,
+    summary TEXT NOT NULL DEFAULT '',
+    error TEXT NOT NULL DEFAULT '',
+    started_at TEXT,
+    completed_at TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS agent_steps (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id INTEGER NOT NULL,
+    step_type TEXT NOT NULL,
+    status TEXT NOT NULL,
+    input TEXT NOT NULL DEFAULT '{}',
+    output TEXT NOT NULL DEFAULT '{}',
+    error TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (run_id) REFERENCES agent_runs(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS agent_decisions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id INTEGER NOT NULL,
+    action_type TEXT NOT NULL,
+    priority TEXT NOT NULL DEFAULT 'normal',
+    reason TEXT NOT NULL DEFAULT '',
+    detail TEXT NOT NULL DEFAULT '',
+    status TEXT NOT NULL DEFAULT 'pending',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (run_id) REFERENCES agent_runs(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS agent_tool_calls (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id INTEGER NOT NULL,
+    tool_name TEXT NOT NULL,
+    args TEXT NOT NULL DEFAULT '{}',
+    result TEXT NOT NULL DEFAULT '{}',
+    success INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (run_id) REFERENCES agent_runs(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS user_memories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    type TEXT NOT NULL DEFAULT 'fact',
+    content TEXT NOT NULL,
+    importance REAL NOT NULL DEFAULT 0.5,
+    confidence REAL NOT NULL DEFAULT 0.5,
+    last_used TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 """
 
 
