@@ -15,6 +15,7 @@ const router = useRouter()
 const data = ref<any>(null)
 const aiPicks = ref<any>(null)
 const error = ref('')
+const activePracticeLoading = ref<string | null>(null)
 const vocabulary = ref<any[]>([])
 const tickerPaused = ref(false)
 const vocabularyPage = ref(0)
@@ -249,6 +250,7 @@ async function randomPractice(type: string) {
     error.value = '当前题库配置中没有可练习的该题型，请先切换题库配置或导入题目。'
     return
   }
+  activePracticeLoading.value = type
   try {
     const session: any = await post('/practice/sessions', {
       mode: 'random',
@@ -258,7 +260,10 @@ async function randomPractice(type: string) {
       shuffle_options: true,
     })
     router.push(`/practice/${session.id}`)
-  } catch (e) { error.value = String(e) }
+  } catch (e) { 
+    error.value = String(e)
+    activePracticeLoading.value = null
+  }
 }
 
 // v2.18: 今日计划任务跳转
