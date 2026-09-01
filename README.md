@@ -26,7 +26,7 @@
   </p>
 </div>
 
-![英语刷题机主界面](docs/images/homepage-public.png)
+![英语刷题机主界面](docs/images/homepage-public.png?v=20260901)
 
 *README 截图使用项目自建演示题库，不包含个人 API、做题记录或单词本数据库。*
 
@@ -40,7 +40,7 @@
 
 项目采用 local-first 设计：题库、做题记录、错题本、单词本和模型配置默认保存在本机 SQLite 数据库中；基础刷题和判分不依赖大模型。
 
-![英语刷题机功能一图看懂](docs/images/feature-overview-public.webp)
+![英语刷题机功能一图看懂](docs/images/feature-overview-public.webp?v=20260901)
 
 *信息图中的词汇卡片为展示用画面，不是随仓库分发的单词本数据。*
 
