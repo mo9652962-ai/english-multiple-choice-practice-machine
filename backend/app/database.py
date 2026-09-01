@@ -360,6 +360,16 @@ CREATE TABLE IF NOT EXISTS ai_messages (
     FOREIGN KEY (profile_id) REFERENCES ai_profiles(id) ON DELETE SET NULL
 );
 
+CREATE TABLE IF NOT EXISTS chat_messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    sender_type TEXT NOT NULL DEFAULT 'user',
+    sender_name TEXT,
+    content TEXT NOT NULL,
+    request_id TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE IF NOT EXISTS learning_days (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER DEFAULT NULL,
