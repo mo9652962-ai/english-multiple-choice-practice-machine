@@ -611,8 +611,11 @@ function initializeTimer() {
     timerPromptVisible.value = false
     persistTimer()
   } else {
-    timerState.value = null
-    timerPromptVisible.value = true
+    // 进入新练习时默认不计时，避免全屏弹层挡住文章和选项。
+    // 需要计时时由答题页顶部的“开启计时”入口主动打开选择框。
+    timerState.value = { mode: 'off', elapsedMs: 0, startedAt: null }
+    timerPromptVisible.value = false
+    persistTimer()
   }
 }
 
@@ -1157,6 +1160,14 @@ function openDeepExplain(questionId: number) {
       </div>
       <div v-if="session" class="practice-status">
         <span v-if="saving"><Save :size="15" />正在保存</span><span v-else>已完成 {{ progress.answered }}/{{ progress.total }}</span>
+        <button
+          v-if="session.status === 'active' && !timerEnabled"
+          class="button ghost compact"
+          type="button"
+          @click="timerPromptVisible = true"
+        >
+          <Clock3 :size="15" />开启计时
+        </button>
         <div v-if="timerEnabled" class="practice-timer" :class="{ paused: timerState?.mode === 'paused', finished: timerState?.mode === 'finished' }" aria-live="polite">
           <Clock3 :size="16" />
           <span v-if="timerState?.mode === 'finished'" class="timer-label">本次用时</span>
