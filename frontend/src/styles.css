@@ -526,6 +526,21 @@ h2, h3 { margin: 0; }
 .plan-word-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .plan-word-main strong { font-size: 14px; color: var(--text); }
 .plan-word-main small { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* v3.5: 推荐单词速览弹层（底部抽屉——移动端优先，桌面端同样贴底居中） */
+.word-sheet { position: fixed; inset: 0; z-index: 90; background: rgba(20,15,10,.45); display: flex; align-items: flex-end; justify-content: center; backdrop-filter: blur(3px); }
+.word-sheet-panel { width: min(560px, 100%); max-height: 82vh; overflow-y: auto; background: var(--surface); border-radius: 20px 20px 0 0; padding: 12px 18px calc(16px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -12px 30px rgba(0,0,0,.18); animation: sheet-up .3s cubic-bezier(.22,1,.36,1); display: flex; flex-direction: column; }
+.word-sheet-panel::before { content: ""; display: block; width: 38px; height: 4px; border-radius: 99px; background: var(--line-strong, rgba(60,50,40,.22)); margin: 0 auto 12px; flex: none; }
+.word-sheet-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.word-sheet-title h3 { font: 800 22px Cambria, Georgia, serif; color: var(--ink); margin: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.word-sheet-sub { font-size: 12px; color: var(--muted); margin: 4px 0 0; }
+.word-sheet-body { display: flex; flex-direction: column; }
+.word-sheet-body .detail-section { padding: 12px 0; }
+.word-sheet-body .detail-section:last-child { border-bottom: 0; }
+.word-sheet-actions { display: flex; gap: 10px; justify-content: flex-end; padding-top: 12px; border-top: 1px solid var(--line); position: sticky; bottom: 0; background: var(--surface); }
+/* 移动端：弹层抬到底部导航之上，避免操作按钮被 mobile-nav 遮挡 */
+@media (max-width: 980px) {
+  .word-sheet-panel { margin-bottom: calc(60px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px))); max-height: calc(82vh - 60px); border-radius: 20px; width: calc(100% - 16px); }
+}
 .vocab-context-section { margin-top: 4px; }
 .vocab-context-hint { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
 .vocab-context-mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color: var(--ink); padding: 0 3px; border-radius: 4px; font-weight: 700; }
@@ -2773,7 +2788,7 @@ input, select, textarea { background: color-mix(in srgb, var(--surface-solid) 82
 /* ═══ v2.76: 滚动/切换修复 ═══ */
 /* 弹窗打开时锁定背景滚动 (防止滑动穿透) */
 body:has(.category-modal), body:has(.quick-overlay), body:has(.review-overlay),
-body:has(.plan-drawer-panel), body:has(.result-dialog) { overflow: hidden; }
+body:has(.plan-drawer-panel), body:has(.word-sheet-panel), body:has(.result-dialog) { overflow: hidden; }
 /* 练习页内部滚动容器: 独立滚动条 (PracticeView passage/question 双栏) */
 .passage-pane::-webkit-scrollbar, .question-pane::-webkit-scrollbar { width: 6px; }
 /* 快速切换时防跳动: 页面过渡克制 */
@@ -4737,7 +4752,7 @@ button:not(:disabled):active,
 /* 1. 全局动画提速 (压减等待感，提升至 0.16s ~ 0.22s 极速丝滑) */
 .page {
   animation: page-fade-up 0.22s cubic-bezier(0.16, 1, 0.3, 1) backwards !important;
-  will-change: transform, opacity;
+  /* v10.3: 移除常驻 will-change——它会让 fixed 弹层相对整页而非视口定位（0.22s 短动画无需常驻合成提示） */
 }
 
 @keyframes page-fade-up {
