@@ -160,11 +160,16 @@ onMounted(load)
       <!-- 真题组句：如何组成句子（扇贝真题例句 + 欧路按来源分组） -->
       <section class="word-section card">
         <div class="word-section-head"><Headphones :size="16" /><strong>真题组句 · 如何用</strong></div>
-        <div v-if="!word.occurrences?.length && !contexts.length" class="muted">暂无真题例句。</div>
+        <div v-if="!word.occurrences?.length && !word.examples?.length && !contexts.length" class="muted">暂无真题例句。</div>
         <template v-else>
           <article v-for="occ in (word.occurrences || []).slice(0, expandedAll ? 99 : 3)" :key="occ.id" class="word-sentence">
             <p>{{ occ.context_sentence }}</p>
             <small><TtsButton :text="occ.context_sentence" :speed="0.9" :size="13" /> {{ occ.year || '未知年份' }} · {{ occ.unit_title || occ.unit_type }}</small>
+          </article>
+          <article v-for="example in (word.examples || []).slice(0, expandedAll ? 99 : 3)" :key="`example-${example.id}`" class="word-sentence bilingual-example">
+            <p>{{ example.english_sentence }}</p>
+            <p class="example-translation">{{ example.chinese_translation }}</p>
+            <small><TtsButton :text="example.english_sentence" :speed="0.9" :size="13" /> {{ example.source || '双语例句' }}</small>
           </article>
           <button v-if="word.occurrences?.length > 3" class="button ghost compact" @click="expandedAll = !expandedAll">{{ expandedAll ? '收起' : `展开全部 ${word.occurrences.length} 条` }}</button>
         </template>
@@ -236,6 +241,7 @@ onMounted(load)
 
 .word-sentence { border-left: 3px solid var(--primary); padding-left: 12px; margin-bottom: 12px; }
 .word-sentence p { font-size: 15px; line-height: 1.8; margin: 0 0 6px; }
+.bilingual-example .example-translation { color: var(--muted); font-size: 13px; }
 .word-sentence small { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 
 .word-actions { display: flex; gap: 10px; justify-content: center; margin-top: 8px; padding-bottom: 24px; }

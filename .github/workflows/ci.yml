@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   frontend-build:
@@ -40,3 +45,23 @@ jobs:
       - name: Import check
         run: |
           PYTHONPATH=backend python -c "import app.main; print('backend import ok')"
+
+  repository-hygiene:
+    name: Secret and privacy-file scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Reject private files and high-confidence secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files -z | tr '\0' '\n' | grep -E '(^|/)(\.env|.*\.(db|sqlite|sqlite3|bak|backup|pfx|pem|key))$'; then
+            echo 'A private database, secret, or backup file is tracked.' >&2
+            exit 1
+          fi
+          if git grep -n -I -E '(BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{20,})' -- . ':!docs' ':!README*'; then
+            echo 'A high-confidence secret pattern was found in tracked source.' >&2
+            exit 1
+          fi

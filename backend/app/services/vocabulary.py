@@ -282,6 +282,20 @@ def _serialize_entry(connection: sqlite3.Connection, entry_id: int) -> dict[str,
             (entry_id,),
         ).fetchall()
     ]
+    payload["examples"] = [
+        dict(item)
+        for item in connection.execute(
+            """
+            SELECT id, english_sentence, chinese_translation, source,
+                   source_url, is_verified, created_at, updated_at
+            FROM vocabulary_examples
+            WHERE entry_id = ?
+            ORDER BY is_verified DESC, id DESC
+            LIMIT 5
+            """,
+            (entry_id,),
+        ).fetchall()
+    ]
     _enrich_discrimination(connection, payload)
     return payload
 

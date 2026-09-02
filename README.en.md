@@ -19,7 +19,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows-2563EB?style=flat-square" alt="Windows">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.0.0--beta.15-2563EB?style=flat-square" alt="v2.0.0-beta.15">
+    <img src="https://img.shields.io/badge/status-v2.0.0-2563EB?style=flat-square" alt="v2.0.0">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -56,7 +56,7 @@ Random practice selects complete units, options can be shuffled before each atte
 
 > Even with a limited set of questions, every new attempt should require reading, reasoning, and answering again—not simply recalling the correct option.
 
-The project is currently `v2.0.0-beta.15 / active development`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, and FSRS-based vocabulary review are available. Portable releases, public CI, and additional exam templates are still being developed.
+The project is now `v2.0.0`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, and FSRS-based vocabulary review are available. Public GitHub Actions CI, NSIS/portable Windows artifacts, and discoverable Gaokao/TEM-4/TEM-8 import templates are part of the release workflow. Question-bank text remains separately licensed and personal databases are never tracked.
 
 ## Feature overview
 
@@ -66,10 +66,10 @@ The project is currently `v2.0.0-beta.15 / active development`. The main practic
 | Practice | Full-year papers, random complete units, **shuffled options (anti-answer-memorization)**, **desktop shortcuts (Anki-style 1/2/3/4)**, postgraduate English I/II, CET listening/word bank/paragraph matching/reading |
 | Submission | Unit submission, paper submission, unanswered-question navigation, score/correct/wrong feedback |
 | Wrong answers | Year → unit navigation, redo/analysis, **iterative reduction (redo shows only this round's mistakes)**, frequent-mistake stats |
-| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **7,751-word built-in bank (phonetics + exam/bilingual examples)**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **sentence fill-in (real-exam cloze)**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
+| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **phonetics + source-aware bilingual examples**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **sentence fill-in (real-exam cloze)**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
 | AI assistant | Multiple API profiles, multi-session chat, model sync, wrong-answer analysis, labels, and draft correction |
 | Listening | **MP3/M4A/WAV/OGG import, built-in player, progress-bar lock while timing** |
-| Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import, **2025-2026 latest real exams** |
+| Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import, **CET-4/CET-6, Gaokao, TEM-4/TEM-8 import templates** |
 | Data | Local storage, folder backup, Windows DPAPI / Android Keystore AES-GCM encryption for API keys |
 | Mobile | **Portrait split layout (independent article/question scrolling + draggable divider)**, **merged bottom nav (Notes = Wrong answers + Vocabulary)**, **answer-sheet drawer**, **dynamic home** |
 | Motivation | **14 achievement badges** (streaks/vocabulary milestones/practice achievements), consecutive-day stats, **learning heatmap (GitHub-contribution style, 90 days)**, **check-in poster (Baicizhan-style ink share image via WebShare)**, **report-page vocabulary memory curve (SVG)** |
@@ -264,6 +264,7 @@ Share packages do not contain:
 Read the format documentation, schema, example package, and validator:
 
 - [Question-bank format](docs/question-bank-format.md)
+- [Bilingual vocabulary example data](docs/vocabulary-examples.md)
 - [ESQ 1.0 JSON Schema](docs/schemas/esq-1.0.schema.json)
 - [Demo package](examples/demo-bank.esq)
 - [CLI validator](tools/validate_question_bank.py)
@@ -413,7 +414,7 @@ cd frontend
 corepack pnpm run build
 ```
 
-The latest local check recorded 76 backend tests passing, one private full-corpus test skipped by environment, and a successful production frontend build. Full-corpus integration tests are explicitly enabled through the `ENGLISH_PRACTICE_CORPUS` environment variable and skip automatically when a private corpus is unavailable. GitHub Actions CI is still being prepared.
+The public CI runs backend tests and import checks, frontend typechecking/builds, and tracked-file secret/privacy scans. Full-corpus integration tests are explicitly enabled through the `ENGLISH_PRACTICE_CORPUS` environment variable and skip automatically when a private corpus is unavailable. Windows tags additionally build and verify NSIS and portable artifacts before publishing a GitHub Release.
 
 ## Status and roadmap
 
@@ -426,14 +427,15 @@ Core workflows already available:
 - Multiple API profiles and model-catalog synchronization
 - Multiple bank profiles, one recycle bin, and batch paper management
 - Visual Word/PDF draft review, model-assisted import, and resumable batch import
-- Postgraduate English II, CET objective formats, and ESQ 1.1 sharing
+- Postgraduate English II, CET objective formats, Gaokao/TEM-4/TEM-8 import templates, and ESQ 1.1 sharing
 - GPL-3.0-only code license and author metadata
 
-Before the first public release, the maintainer should:
+Release checklist completed for v2.0.0:
 
-- Add GitHub Actions CI with recurring secret and privacy-file scans.
-- Add `CONTRIBUTING.md`, `SECURITY.md`, and issue/PR templates.
-- Publish a Windows `v2.0.0-beta.15` portable build.
+- Public GitHub Actions CI with backend/frontend and repository-hygiene gates.
+- `CONTRIBUTING.md`, `SECURITY.md`, and issue/PR templates.
+- Windows NSIS installer and portable build generated by `.github/workflows/release.yml`.
+- Structured bilingual-example import/verification and discoverable exam-template catalog.
 
 ## Contributing question banks and code
 

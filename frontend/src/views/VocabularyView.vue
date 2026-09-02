@@ -656,6 +656,14 @@ onMounted(() => { load(); loadPlans() })
                   <small>{{ occ.year || '未知年份' }} · {{ occ.unit_title || occ.unit_type }}</small>
                 </article>
               </div>
+              <div v-if="recDetail.examples?.length" class="detail-section">
+                <label>双语例句</label>
+                <article v-for="example in recDetail.examples" :key="`example-${example.id}`" class="occurrence bilingual-example">
+                  <p>{{ example.english_sentence }}</p>
+                  <p class="example-translation">{{ example.chinese_translation }}</p>
+                  <small v-if="example.source">{{ example.source }}</small>
+                </article>
+              </div>
               <div v-if="recDetail.note" class="detail-section">
                 <label>我的笔记</label>
                 <p>{{ recDetail.note }}</p>

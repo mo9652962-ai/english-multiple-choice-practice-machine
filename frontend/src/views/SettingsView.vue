@@ -522,7 +522,7 @@ async function submitFeedback() {
                     <p>查看版本号、开发时间与检查更新</p>
                   </div>
                   <a class="button ghost" href="#/about">
-                    v2.0.0-beta.15 →
+                    v2.0.0 →
                   </a>
                 </div>
               </article>

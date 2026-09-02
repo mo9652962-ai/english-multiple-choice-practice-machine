@@ -253,7 +253,15 @@ function offlineGet(path: string): any {
   // Vocabulary detail（v3.3: 点词查看——本地详情）
   const vd = path.match(/^\/vocabulary\/(\d+)$/)
   if (vd) {
-    return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [parseInt(vd[1])]) || { ok: false }
+    const entry = queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [parseInt(vd[1])])
+    if (!entry) return { ok: false }
+    return {
+      ...entry,
+      examples: queryAll(
+        "SELECT id, english_sentence, chinese_translation, source, source_url, is_verified FROM vocabulary_examples WHERE entry_id = ? ORDER BY is_verified DESC, id DESC LIMIT 5",
+        [parseInt(vd[1])],
+      ),
+    }
   }
   // Vocabulary context（v3.3: 真题语境——本地简版）
   const vc = path.match(/^\/vocabulary\/(\d+)\/context$/)
@@ -565,7 +573,7 @@ function offlineGet(path: string): any {
     } catch { return { total: 0, explained: 0, remaining: 0, percentage: 0 } }
   }
   // Version（桌面 About 用后端；移动端直连 GitHub——兜底）
-  if (path === '/version') return { version: '2.0.0-beta.15', release_date: '2026-08-10', latest_version: null }
+  if (path === '/version') return { version: '2.0.0', release_date: '2026-09-02', latest_version: null }
   // v9.24: 高频聚合页空安全结构（修复返回 {} 导致前端 .map 白屏）
   if (path === '/exam/history') return { items: [], count: 0, average_accuracy: 0 }
   if (path.startsWith('/diagnostic/reports')) return { reports: [], total: 0 }

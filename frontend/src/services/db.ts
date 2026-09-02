@@ -167,6 +167,20 @@ function createSchema() {
       FOREIGN KEY (entry_id) REFERENCES vocabulary_entries(id)
     );
 
+    CREATE TABLE IF NOT EXISTS vocabulary_examples (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      entry_id INTEGER NOT NULL,
+      english_sentence TEXT NOT NULL,
+      chinese_translation TEXT NOT NULL,
+      source TEXT NOT NULL DEFAULT '',
+      source_url TEXT NOT NULL DEFAULT '',
+      is_verified INTEGER NOT NULL DEFAULT 0,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (entry_id) REFERENCES vocabulary_entries(id) ON DELETE CASCADE,
+      UNIQUE (entry_id, english_sentence)
+    );
+
     CREATE TABLE IF NOT EXISTS vocabulary_reviews (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       entry_id INTEGER NOT NULL,
