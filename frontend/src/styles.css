@@ -4760,7 +4760,9 @@ button:not(:disabled):active,
 /* 1. 全局动画提速 (压减等待感，提升至 0.16s ~ 0.22s 极速丝滑) */
 .page {
   animation: page-fade-up 0.22s cubic-bezier(0.16, 1, 0.3, 1) backwards !important;
-  /* v10.3: 移除常驻 will-change——它会让 fixed 弹层相对整页而非视口定位（0.22s 短动画无需常驻合成提示） */
+  will-change: transform, opacity;
+  /* v10.6: will-change 必须保留——旧版 Android WebView 嵌套 overflow 滚动区缺少合成提示
+     会出现图层绘制错位（练习页正文/选项重叠）；fixed 弹层的定位问题改由 Teleport 解决 */
 }
 
 @keyframes page-fade-up {

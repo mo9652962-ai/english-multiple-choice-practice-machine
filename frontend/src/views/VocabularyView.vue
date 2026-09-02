@@ -520,11 +520,13 @@ onMounted(() => { load(); loadPlans() })
         <button class="button" @click="startReview"><BookOpen :size="17" />开始今日复习</button>
       </div>
     </div>
+    <Teleport to="body">
     <DictationMode
       v-if="dictationMode"
       :words="dictationWords"
       @close="dictationMode=false"
     />
+    </Teleport>
     <!-- v2.22: 分级背诵计划 (墨墨/扇贝式词书) -->
     <div v-if="plans.length" class="card vocab-plans-card">
       <div class="vocab-plans-head">
@@ -543,7 +545,8 @@ onMounted(() => { load(); loadPlans() })
         </button>
       </div>
     </div>
-    <!-- 今日任务弹层 -->
+    <!-- 今日任务弹层（v10.6: Teleport——.page 的 will-change 会让 fixed 相对整页定位） -->
+    <Teleport to="body">
     <div v-if="activePlan" class="plan-drawer" @click.self="closePlan">
       <div class="plan-drawer-panel">
         <div class="plan-drawer-head">
@@ -564,6 +567,7 @@ onMounted(() => { load(); loadPlans() })
         </div>
       </div>
     </div>
+    </Teleport>
     <!-- v2.32: 短文填词入口 -->
     <div class="cloze-entry card" @click="loadCloze">
       <div class="cloze-entry-icon">✏️</div>
@@ -665,6 +669,8 @@ onMounted(() => { load(); loadPlans() })
         </div>
         </Teleport>
 
+    <!-- v10.6: 复习/文章/填词/自测/显示设置弹层统一 Teleport 到 body（避免 .page will-change 影响 fixed 定位） -->
+    <Teleport to="body">
     <section v-if="reviewMode" class="review-overlay">
       <div class="review-progress"><i :style="{ width: ((reviewIndex) / Math.max(reviewItems.length, 1)) * 100 + '%' }"></i></div>
       <div class="review-card flip-scene" v-if="reviewWord">
@@ -815,6 +821,7 @@ onMounted(() => { load(); loadPlans() })
         </div>
       </div>
     </div>
+    </Teleport>
   </div>
 
   <!-- v2.64: 快答挑战弹层 (百词斩 PK 式) -->
