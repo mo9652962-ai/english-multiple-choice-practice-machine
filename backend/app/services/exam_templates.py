@@ -33,6 +33,39 @@ EXAM_TEMPLATES: dict[str, dict[str, Any]] = {
             {"type": "reading", "subtype": "reading_a", "title": "阅读 Section C — Passage Two", "seq": 7, "numbers": range(51, 56)},
         ],
     },
+    # 高考客观题分值和题号会随省份/年份变化；这里定义稳定的题型骨架，
+    # 具体题号仍以导入文档和人工校对结果为准。
+    "gaokao": {
+        "label": "高考英语",
+        "subject_default": "高考英语",
+        "answer_number_range": range(1, 51),
+        "units": [
+            {"type": "cloze", "subtype": "cloze", "title": "完形填空", "seq": 1, "numbers": range(1, 16)},
+            {"type": "reading", "subtype": "reading_a", "title": "阅读理解", "seq": 2, "numbers": range(16, 36)},
+            {"type": "part_b", "subtype": "seven_choice", "title": "七选五", "seq": 3, "numbers": range(36, 41)},
+            {"type": "cloze", "subtype": "grammar_cloze", "title": "语法填空", "seq": 4, "numbers": range(41, 51)},
+        ],
+    },
+    "tem4": {
+        "label": "英语专业四级 (TEM-4)",
+        "subject_default": "英语专业四级",
+        "answer_number_range": range(1, 71),
+        "units": [
+            {"type": "listening", "subtype": "conversation", "title": "听力理解", "seq": 1, "numbers": range(1, 31)},
+            {"type": "cloze", "subtype": "cloze", "title": "完形填空", "seq": 2, "numbers": range(31, 51)},
+            {"type": "reading", "subtype": "reading_a", "title": "阅读理解", "seq": 3, "numbers": range(51, 71)},
+        ],
+    },
+    "tem8": {
+        "label": "英语专业八级 (TEM-8)",
+        "subject_default": "英语专业八级",
+        "answer_number_range": range(1, 61),
+        "units": [
+            {"type": "listening", "subtype": "lecture", "title": "听力理解", "seq": 1, "numbers": range(1, 21)},
+            {"type": "reading", "subtype": "reading_a", "title": "阅读理解", "seq": 2, "numbers": range(21, 41)},
+            {"type": "cloze", "subtype": "cloze", "title": "完形填空", "seq": 3, "numbers": range(41, 61)},
+        ],
+    },
     "postgraduate_english1": {
         "label": "考研英语（一）",
         "subject_default": "英语一",
@@ -70,6 +103,12 @@ ALLOWED_UNIT_TYPES = {
     "paragraph_matching",
 }
 
+
+def supported_exam_types() -> tuple[str, ...]:
+    """Return the stable registry keys exposed to importers and the UI."""
+    return tuple(EXAM_TEMPLATES)
+
+
 def detect_exam_type(blocks_text: str, file_name: str = "") -> str | None:
     """Best-effort detection of exam type from document text and filename."""
     lower = blocks_text.lower()
@@ -78,6 +117,12 @@ def detect_exam_type(blocks_text: str, file_name: str = "") -> str | None:
         return "cet6"
     if "cet-4" in name_lower or "cet4" in name_lower or "四级" in name_lower or "四级" in lower[:3000]:
         return "cet4"
+    if "tem-8" in name_lower or "tem8" in name_lower or "专业八级" in lower[:3000]:
+        return "tem8"
+    if "tem-4" in name_lower or "tem4" in name_lower or "专业四级" in lower[:3000]:
+        return "tem4"
+    if "gaokao" in name_lower or "高考" in name_lower or "高考" in lower[:3000]:
+        return "gaokao"
     if "英语（二）" in lower[:3000] or "英语二" in lower[:3000] or "英语二" in name_lower or "英语2" in name_lower:
         return "postgraduate_english2"
     return "postgraduate_english1"

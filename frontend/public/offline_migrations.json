@@ -1,7 +1,7 @@
 {
- "version": "2026-08-18 13:01:19",
- "fingerprint": "132f94a5203f",
- "object_count": 78,
+ "version": "2026-09-02 19:35:47",
+ "fingerprint": "3a5ab1358854",
+ "object_count": 97,
  "objects": [
   {
    "type": "index",
@@ -42,6 +42,11 @@
    "type": "index",
    "name": "idx_answers_session",
    "sql": "CREATE INDEX IF NOT EXISTS idx_answers_session ON practice_answers(session_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_essay_user",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_essay_user ON essay_submissions(user_id, created_at DESC)"
   },
   {
    "type": "index",
@@ -110,6 +115,11 @@
   },
   {
    "type": "index",
+   "name": "idx_speaking_turns_session",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_speaking_turns_session ON speaking_turns(session_id, turn_index)"
+  },
+  {
+   "type": "index",
    "name": "idx_trash_purge",
    "sql": "CREATE INDEX IF NOT EXISTS idx_trash_purge\n            ON trash_entries(purge_after, restored_at)"
   },
@@ -127,6 +137,16 @@
    "type": "index",
    "name": "idx_units_paper",
    "sql": "CREATE INDEX IF NOT EXISTS idx_units_paper ON units(paper_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_users_token",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_users_token ON users(token)"
+  },
+  {
+   "type": "index",
+   "name": "idx_vocab_examples_entry",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_vocab_examples_entry\n    ON vocabulary_examples(entry_id, created_at DESC)"
   },
   {
    "type": "index",
@@ -180,6 +200,26 @@
   },
   {
    "type": "table",
+   "name": "agent_decisions",
+   "sql": "CREATE TABLE IF NOT EXISTS agent_decisions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    run_id INTEGER NOT NULL,\n    action_type TEXT NOT NULL,\n    priority TEXT NOT NULL DEFAULT 'normal',\n    reason TEXT NOT NULL DEFAULT '',\n    detail TEXT NOT NULL DEFAULT '',\n    status TEXT NOT NULL DEFAULT 'pending',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (run_id) REFERENCES agent_runs(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "agent_runs",
+   "sql": "CREATE TABLE IF NOT EXISTS agent_runs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER,\n    mode TEXT NOT NULL DEFAULT 'learning',\n    status TEXT NOT NULL DEFAULT 'queued',\n    goal TEXT NOT NULL DEFAULT '',\n    current_step INTEGER NOT NULL DEFAULT 0,\n    max_steps INTEGER NOT NULL DEFAULT 12,\n    summary TEXT NOT NULL DEFAULT '',\n    error TEXT NOT NULL DEFAULT '',\n    started_at TEXT,\n    completed_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "agent_steps",
+   "sql": "CREATE TABLE IF NOT EXISTS agent_steps (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    run_id INTEGER NOT NULL,\n    step_type TEXT NOT NULL,\n    status TEXT NOT NULL,\n    input TEXT NOT NULL DEFAULT '{}',\n    output TEXT NOT NULL DEFAULT '{}',\n    error TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (run_id) REFERENCES agent_runs(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "agent_tool_calls",
+   "sql": "CREATE TABLE IF NOT EXISTS agent_tool_calls (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    run_id INTEGER NOT NULL,\n    tool_name TEXT NOT NULL,\n    args TEXT NOT NULL DEFAULT '{}',\n    result TEXT NOT NULL DEFAULT '{}',\n    success INTEGER NOT NULL DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (run_id) REFERENCES agent_runs(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
    "name": "ai_conversations",
    "sql": "CREATE TABLE IF NOT EXISTS ai_conversations (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    title TEXT NOT NULL DEFAULT '新对话',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
   },
@@ -220,8 +260,18 @@
   },
   {
    "type": "table",
+   "name": "chat_messages",
+   "sql": "CREATE TABLE IF NOT EXISTS chat_messages (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER,\n    sender_type TEXT NOT NULL DEFAULT 'user',\n    sender_name TEXT,\n    content TEXT NOT NULL,\n    request_id TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
    "name": "diagnostic_reports",
    "sql": "CREATE TABLE IF NOT EXISTS diagnostic_reports (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            scope_key TEXT NOT NULL DEFAULT '',\n            question_ids TEXT NOT NULL DEFAULT '[]',\n            input_snapshot TEXT NOT NULL DEFAULT '{}',\n            question_count INTEGER NOT NULL DEFAULT 0,\n            aggregate_data TEXT NOT NULL DEFAULT '{}',\n            level_data TEXT NOT NULL DEFAULT '{}',\n            recommendations TEXT NOT NULL DEFAULT '[]',\n            trend_data TEXT NOT NULL DEFAULT '{}',\n            report TEXT NOT NULL DEFAULT '',\n            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n        )"
+  },
+  {
+   "type": "table",
+   "name": "essay_submissions",
+   "sql": "CREATE TABLE IF NOT EXISTS essay_submissions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER DEFAULT NULL,\n    essay_type TEXT NOT NULL,\n    subject TEXT NOT NULL DEFAULT '英语一',\n    prompt_title TEXT NOT NULL DEFAULT '',\n    user_content TEXT NOT NULL,\n    word_count INTEGER NOT NULL DEFAULT 0,\n    score REAL NOT NULL DEFAULT 0,\n    max_score REAL NOT NULL DEFAULT 20,\n    band_name TEXT NOT NULL DEFAULT '',\n    dimensions TEXT NOT NULL DEFAULT '{}',\n    overall_comment TEXT NOT NULL DEFAULT '',\n    markups TEXT NOT NULL DEFAULT '[]',\n    lexical_upgrades TEXT NOT NULL DEFAULT '[]',\n    model_essay TEXT NOT NULL DEFAULT '',\n    essay_highlights TEXT NOT NULL DEFAULT '[]',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
   },
   {
    "type": "table",
@@ -235,6 +285,11 @@
   },
   {
    "type": "table",
+   "name": "explain_collections",
+   "sql": "CREATE TABLE IF NOT EXISTS explain_collections (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    question_id INTEGER NOT NULL,\n    fragment_type TEXT NOT NULL DEFAULT 'note',\n    content TEXT NOT NULL,\n    source TEXT DEFAULT 'deep-explain',\n    created_at TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
    "name": "feedback",
    "sql": "CREATE TABLE IF NOT EXISTS feedback (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        category TEXT NOT NULL DEFAULT 'other',\n        content TEXT NOT NULL,\n        contact TEXT DEFAULT '',\n        page TEXT DEFAULT '',\n        status TEXT NOT NULL DEFAULT 'new',\n        created_at TEXT NOT NULL\n    )"
   },
@@ -242,6 +297,16 @@
    "type": "table",
    "name": "import_jobs",
    "sql": "CREATE TABLE IF NOT EXISTS import_jobs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    profile_id INTEGER NOT NULL DEFAULT 1,\n    filename TEXT NOT NULL,\n    stored_path TEXT NOT NULL,\n    answer_stored_path TEXT NOT NULL DEFAULT '',\n    detected_year INTEGER,\n    detected_format TEXT,\n    status TEXT NOT NULL DEFAULT 'analyzing',\n    draft_data TEXT NOT NULL DEFAULT '{}',\n    warnings TEXT NOT NULL DEFAULT '[]',\n    parse_context TEXT NOT NULL DEFAULT '{}',\n    deleted_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "knowledge_chunks",
+   "sql": "CREATE TABLE IF NOT EXISTS knowledge_chunks (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    doc_id INTEGER,\n    user_id INTEGER,\n    source_name TEXT,\n    chunk_index INTEGER,\n    content TEXT,\n    embedding TEXT,\n    created_at TEXT DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (doc_id) REFERENCES knowledge_docs(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "knowledge_docs",
+   "sql": "CREATE TABLE IF NOT EXISTS knowledge_docs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER,\n    source_name TEXT,\n    source_type TEXT DEFAULT 'text',\n    size INTEGER DEFAULT 0,\n    chunk_count INTEGER DEFAULT 0,\n    created_at TEXT DEFAULT CURRENT_TIMESTAMP\n)"
   },
   {
    "type": "table",
@@ -325,6 +390,21 @@
   },
   {
    "type": "table",
+   "name": "spaced_repetition_records",
+   "sql": "CREATE TABLE IF NOT EXISTS spaced_repetition_records (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER DEFAULT NULL,\n    question_id INTEGER NOT NULL,\n    interval_days INTEGER NOT NULL DEFAULT 1,\n    ease_factor REAL NOT NULL DEFAULT 2.5,\n    review_date TEXT,\n    due_date TEXT NOT NULL,\n    UNIQUE (user_id, question_id),\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "speaking_sessions",
+   "sql": "CREATE TABLE IF NOT EXISTS speaking_sessions (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER DEFAULT NULL,\n    scenario TEXT NOT NULL DEFAULT 'graduate_interview',\n    topic TEXT NOT NULL DEFAULT '',\n    ai_role TEXT NOT NULL DEFAULT 'Examiner',\n    score_fluency REAL DEFAULT 0,\n    score_grammar REAL DEFAULT 0,\n    score_vocabulary REAL DEFAULT 0,\n    score_coherence REAL DEFAULT 0,\n    summary_report TEXT DEFAULT '{}',\n    status TEXT NOT NULL DEFAULT 'active',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "speaking_turns",
+   "sql": "CREATE TABLE IF NOT EXISTS speaking_turns (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    session_id INTEGER NOT NULL,\n    turn_index INTEGER NOT NULL DEFAULT 0,\n    user_text TEXT NOT NULL DEFAULT '',\n    ai_reply TEXT NOT NULL DEFAULT '',\n    grammar_corrections TEXT NOT NULL DEFAULT '[]',\n    native_upgrade TEXT NOT NULL DEFAULT '',\n    audio_duration_ms INTEGER DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
    "name": "trash_entries",
    "sql": "CREATE TABLE IF NOT EXISTS trash_entries (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    deletion_batch_id TEXT NOT NULL,\n    resource_type TEXT NOT NULL,\n    resource_id INTEGER NOT NULL,\n    resource_name TEXT NOT NULL DEFAULT '',\n    profile_id INTEGER,\n    metadata TEXT NOT NULL DEFAULT '{}',\n    deleted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    purge_after TEXT NOT NULL,\n    restored_at TEXT,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id) ON DELETE SET NULL\n)"
   },
@@ -340,8 +420,23 @@
   },
   {
    "type": "table",
+   "name": "user_memories",
+   "sql": "CREATE TABLE IF NOT EXISTS user_memories (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER,\n    type TEXT NOT NULL DEFAULT 'fact',\n    content TEXT NOT NULL,\n    importance REAL NOT NULL DEFAULT 0.5,\n    confidence REAL NOT NULL DEFAULT 0.5,\n    last_used TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
+   "name": "users",
+   "sql": "CREATE TABLE IF NOT EXISTS users (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    username TEXT NOT NULL UNIQUE COLLATE NOCASE,\n    password_hash TEXT NOT NULL,\n    token TEXT,\n    is_admin INTEGER NOT NULL DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    last_login_at TEXT\n)"
+  },
+  {
+   "type": "table",
    "name": "vocabulary_entries",
    "sql": "CREATE TABLE IF NOT EXISTS vocabulary_entries (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    term TEXT NOT NULL,\n    normalized_term TEXT NOT NULL UNIQUE,\n    lemma TEXT NOT NULL DEFAULT '',\n    phonetic TEXT NOT NULL DEFAULT '',\n    part_of_speech TEXT NOT NULL DEFAULT '',\n    contextual_meaning TEXT NOT NULL DEFAULT '',\n    common_meaning TEXT NOT NULL DEFAULT '',\n    synonyms TEXT NOT NULL DEFAULT '[]',\n    antonyms TEXT NOT NULL DEFAULT '[]',\n    similar_forms TEXT NOT NULL DEFAULT '[]',\n    memory_hint TEXT NOT NULL DEFAULT '',\n    note TEXT NOT NULL DEFAULT '',\n    translation_status TEXT NOT NULL DEFAULT 'pending',\n    translation_error TEXT NOT NULL DEFAULT '',\n    encounter_count INTEGER NOT NULL DEFAULT 1,\n    study_status TEXT NOT NULL DEFAULT 'learning',\n    manually_frequent INTEGER NOT NULL DEFAULT 0,\n    user_edited INTEGER NOT NULL DEFAULT 0,\n    next_review_at TEXT,\n    last_reviewed_at TEXT,\n    -- FSRS 间隔复习字段 (v9.19: 替代固定间隔算法)\n    fsrs_due TEXT,\n    fsrs_stability REAL,\n    fsrs_difficulty REAL,\n    fsrs_state INTEGER DEFAULT 0,\n    fsrs_step INTEGER DEFAULT 0,\n    fsrs_last_review TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    last_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n, category TEXT NOT NULL DEFAULT '')"
+  },
+  {
+   "type": "table",
+   "name": "vocabulary_examples",
+   "sql": "CREATE TABLE IF NOT EXISTS vocabulary_examples (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    entry_id INTEGER NOT NULL,\n    english_sentence TEXT NOT NULL,\n    chinese_translation TEXT NOT NULL,\n    source TEXT NOT NULL DEFAULT '',\n    source_url TEXT NOT NULL DEFAULT '',\n    is_verified INTEGER NOT NULL DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (entry_id) REFERENCES vocabulary_entries(id) ON DELETE CASCADE,\n    UNIQUE (entry_id, english_sentence)\n)"
   },
   {
    "type": "table",

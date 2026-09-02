@@ -243,6 +243,23 @@ CREATE TABLE IF NOT EXISTS vocabulary_occurrences (
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE SET NULL
 );
 
+-- v2.0.0-beta.16: keep bilingual examples separate from user occurrences.
+-- This allows a word to have several reviewed examples without mixing them
+-- with the user's capture history or requiring a destructive column rewrite.
+CREATE TABLE IF NOT EXISTS vocabulary_examples (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entry_id INTEGER NOT NULL,
+    english_sentence TEXT NOT NULL,
+    chinese_translation TEXT NOT NULL,
+    source TEXT NOT NULL DEFAULT '',
+    source_url TEXT NOT NULL DEFAULT '',
+    is_verified INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (entry_id) REFERENCES vocabulary_entries(id) ON DELETE CASCADE,
+    UNIQUE (entry_id, english_sentence)
+);
+
 CREATE TABLE IF NOT EXISTS vocabulary_reviews (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     entry_id INTEGER NOT NULL,
@@ -605,6 +622,8 @@ CREATE INDEX IF NOT EXISTS idx_vocab_priority
     ON vocabulary_entries(encounter_count DESC, next_review_at, last_seen_at DESC);
 CREATE INDEX IF NOT EXISTS idx_vocab_occurrences_entry
     ON vocabulary_occurrences(entry_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_vocab_examples_entry
+    ON vocabulary_examples(entry_id, created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_vocab_translation_queue
     ON vocabulary_entries(translation_status, user_edited, updated_at);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_profiles_single_default

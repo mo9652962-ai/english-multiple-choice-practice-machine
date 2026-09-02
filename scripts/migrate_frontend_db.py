@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sqlite3
 import sys
 from datetime import datetime
@@ -68,7 +69,44 @@ def _schema_objects(connection: sqlite3.Connection) -> set[tuple[str, str]]:
     return {(row["type"], row["name"]) for row in rows}
 
 
-def migrate_database(path: Path, *, check_only: bool = False) -> list[str]:
+def _apply_frontend_schema(connection: sqlite3.Connection) -> None:
+    """Apply only missing CREATE statements to the reduced offline seed.
+
+    Older seed databases predate the multi-user columns in the backend schema.
+    Executing the complete schema against one of those files would fail while
+    creating an index on a column that is intentionally absent offline.
+    """
+    existing = _schema_objects(connection)
+    table_statements = re.findall(
+        r"(CREATE TABLE IF NOT EXISTS (\w+)\s*\(.*?\);)",
+        SCHEMA,
+        flags=re.DOTALL,
+    )
+    for statement, name in table_statements:
+        if ("table", name) not in existing:
+            connection.execute(statement)
+    # Index statements are applied after tables. Legacy reduced seeds may not
+    # have every backend-only column, so those individual indexes can be
+    # skipped without blocking the new table/index migration.
+    for statement in re.findall(
+        r"CREATE (?:UNIQUE )?INDEX IF NOT EXISTS \w+\s+ON\s+.*?;",
+        SCHEMA,
+        flags=re.DOTALL,
+    ):
+        name = re.search(r"INDEX IF NOT EXISTS (\w+)", statement)
+        if not name or ("index", name.group(1)) in existing:
+            continue
+        try:
+            connection.execute(statement)
+        except sqlite3.OperationalError:
+            # Legacy reduced seeds may lack a backend-only column. The
+            # runtime migration will still create any table/index it can use.
+            continue
+
+
+def migrate_database(
+    path: Path, *, check_only: bool = False, run_content_migrations: bool = False
+) -> list[str]:
     """对单个库执行与 initialize_database() 等价的幂等迁移，返回补建对象描述。"""
     if not path.exists():
         raise FileNotFoundError(f"数据库不存在: {path}")
@@ -90,8 +128,11 @@ def migrate_database(path: Path, *, check_only: bool = False) -> list[str]:
         missing = sorted(f"{t} {n}" for t, n in declared - before if t in ("table", "index"))
         return missing
 
-    connection.executescript(SCHEMA)
-    _run_migrations(connection)
+    if run_content_migrations:
+        connection.executescript(SCHEMA)
+        _run_migrations(connection)
+    else:
+        _apply_frontend_schema(connection)
     connection.commit()
     after = _schema_objects(connection)
     connection.close()
@@ -166,7 +207,10 @@ def main() -> int:
                 status = "缺少: " + ", ".join(missing) if missing else "已最新"
                 print(f"[check] {target}: {status}")
                 continue
-            created = migrate_database(target)
+            created = migrate_database(
+                target,
+                run_content_migrations=target.resolve() == BACKEND_DB.resolve(),
+            )
             note = f"补建 {len(created)} 个对象: {', '.join(created)}" if created else "已是最新（无变更）"
             print(f"[migrate] {target}: {note}")
         except (FileNotFoundError, sqlite3.Error, RuntimeError) as error:

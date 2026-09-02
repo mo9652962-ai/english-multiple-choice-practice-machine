@@ -4,8 +4,8 @@ import { get } from '../api'
 import { CheckCircle2, ExternalLink, LoaderCircle, RotateCw, Sparkles } from 'lucide-vue-next'
 
 // v3.3: 我的墨题——版本号 + 开发时间 + 检查更新
-const APP_VERSION = '2.0.0-beta.15'
-const RELEASE_DATE = '2026-08-10'
+const APP_VERSION = '2.0.0'
+const RELEASE_DATE = '2026-09-02'
 const UPDATE_REPO = 'mo9652962-ai/epm-releases'
 const UPDATE_URL = `https://github.com/${UPDATE_REPO}/releases/latest`
 
@@ -71,7 +71,7 @@ async function downloadAndInstall() {
   }
 }
 
-// beta 版本比较：2.0.0-beta.16 > 2.0.0-beta.15；正式版 > beta
+// 版本比较：正式版优先于同版本 beta，较新的 beta 优先于旧 beta。
 function isNewer(latestTag: string, current: string): boolean {
   if (!latestTag) return false
   const norm = (v: string) => {

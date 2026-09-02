@@ -11,6 +11,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from ..config import QUESTION_BANK_DIR
+from .exam_templates import supported_exam_types
 
 
 MAX_PACKAGE_BYTES = 100 * 1024 * 1024
@@ -551,7 +552,7 @@ def _validate_manifest(manifest: dict[str, Any], details: list[dict[str, str]]) 
             if not isinstance(paper_entry, dict):
                 continue
             exam_type = paper_entry.get("examType")
-            if isinstance(exam_type, str) and exam_type not in {"", "cet4", "cet6", "postgraduate_english1", "postgraduate_english2"}:
+            if isinstance(exam_type, str) and exam_type not in {"", *supported_exam_types()}:
                 _error(details, f"{path}.examType", "不支持的考试类型")
             exam_month = paper_entry.get("examMonth")
             if exam_month is not None and not isinstance(exam_month, int):

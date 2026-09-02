@@ -47,6 +47,7 @@ from .routers import (
     speaking,  # v9.26: P2 口语陪练
     agent,  # Phase 1: AI 学习智能体
     chat,  # Phase 3: 学习陪伴聊天室
+    exam_templates,
 )
 from .services.ai_client import ensure_ai_model_catalog
 from .services.bundled_banks import install_bundled_question_banks
@@ -112,7 +113,7 @@ def _backup_database_on_startup() -> None:
 
 app = FastAPI(
     title="英语刷题机",
-    version="0.1.0",
+    version="2.0.0",
     contact={"name": "sora（mo9652962-ai）"},
     lifespan=lifespan,
 )
@@ -158,6 +159,7 @@ app.include_router(feedback.router, prefix="/api")
 app.include_router(diagnostic.router, prefix="/api")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
+app.include_router(exam_templates.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
 app.include_router(agent.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
@@ -169,8 +171,8 @@ def health() -> dict[str, str]:
 
 
 # v3.3: 我的墨题——版本号 + 开发时间 + 检查更新（GitHub releases 代理）
-APP_VERSION = "2.0.0-beta.15"
-APP_RELEASE_DATE = "2026-08-10"
+APP_VERSION = "2.0.0"
+APP_RELEASE_DATE = "2026-09-02"
 _UPDATE_REPO = "mo9652962-ai/epm-releases"
 
 
