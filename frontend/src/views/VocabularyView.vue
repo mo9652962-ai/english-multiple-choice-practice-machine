@@ -18,6 +18,24 @@ const recommended = computed(() => {
   const shuffled = [...all].sort(() => Math.random() - 0.5)
   return shuffled.slice(0, 20)
 })
+// v3.5: 今日推荐单词卡 → 弹出释义速览弹层（不再跳转单词库）
+const recDetail = ref<any>(null)
+const recDetailLoading = ref(false)
+async function openRecWord(w: any) {
+  recDetail.value = w          // 先展示列表已有字段，接口返回后补全
+  recDetailLoading.value = true
+  try {
+    recDetail.value = await get(`/vocabulary/${w.id}`)
+  } catch (e) {
+    showToast(`加载单词详情失败：${e}`, 'error')
+  } finally {
+    recDetailLoading.value = false
+  }
+}
+function closeRecWord() {
+  recDetail.value = null
+  recDetailLoading.value = false
+}
 const counts = ref<any>({ total:0, frequent:0, mastered:0, pending:0, review:0 })
 const plans = ref<any[]>([])
 const activePlan = ref<any>(null)
@@ -585,13 +603,67 @@ onMounted(() => { load(); loadPlans() })
             </button>
           </div>
           <div class="recommended-grid">
-            <button v-for="w in recommended" :key="w.id" class="rec-word-card" @click="router.push({ path: '/vocab-bank', query: { word: w.id } })">
+            <button v-for="w in recommended" :key="w.id" class="rec-word-card" @click="openRecWord(w)">
               <span class="rec-word-term">{{ w.lemma || w.term }}</span>
               <span class="rec-word-mean">{{ (w.common_meaning || w.contextual_meaning || '').slice(0, 12) }}</span>
               <span class="vocab-status-tag" :class="getStatusClass(w.study_status)">{{ vocabStatusText(w.study_status) }}</span>
             </button>
           </div>
         </div>
+
+        <!-- v3.5: 推荐单词速览弹层（底部抽屉——点击卡片看释义，不跳转页面） -->
+        <!-- Teleport 到 body：.page 祖先带 will-change:transform，会让 fixed 定位相对页面而非视口 -->
+        <Teleport to="body">
+        <div v-if="recDetail" class="word-sheet" @click.self="closeRecWord">
+          <div class="word-sheet-panel">
+            <div class="word-sheet-head">
+              <div class="word-sheet-title">
+                <h3><span v-if="recDetail.is_frequent">🌟 </span>{{ recDetail.lemma || recDetail.term }}<TtsButton :text="recDetail.term" :speed="0.85" /></h3>
+                <p class="word-sheet-sub">{{ recDetail.phonetic }}<span v-if="recDetail.part_of_speech"> · {{ recDetail.part_of_speech }}</span></p>
+              </div>
+              <span class="vocab-status-tag" :class="getStatusClass(recDetail.study_status)">{{ vocabStatusText(recDetail.study_status) }}</span>
+            </div>
+            <div v-if="recDetailLoading" class="muted" style="padding:6px 0">正在加载完整释义…</div>
+            <div class="word-sheet-body">
+              <div class="detail-section">
+                <label>常用释义</label>
+                <strong>{{ recDetail.common_meaning || recDetail.contextual_meaning || '（暂无释义）' }}</strong>
+              </div>
+              <div v-if="recDetail.contextual_meaning && recDetail.contextual_meaning !== recDetail.common_meaning" class="detail-section">
+                <label>语境释义</label>
+                <strong>{{ recDetail.contextual_meaning }}</strong>
+              </div>
+              <div v-if="recDetail.memory_hint" class="detail-section memory-hint">
+                <label>记忆提示</label>
+                <p>{{ recDetail.memory_hint }}</p>
+              </div>
+              <div v-if="recDetail.synonyms?.length" class="detail-section discrimination-section">
+                <label>同义词辨析</label>
+                <ul class="discrimination-list"><li v-for="item in recDetail.synonyms" :key="`s-${item.word}`"><strong>{{ item.word }}</strong><span>{{ item.note }}</span></li></ul>
+              </div>
+              <div v-if="recDetail.antonyms?.length" class="detail-section discrimination-section">
+                <label>反义词辨析</label>
+                <ul class="discrimination-list"><li v-for="item in recDetail.antonyms" :key="`a-${item.word}`"><strong>{{ item.word }}</strong><span>{{ item.note }}</span></li></ul>
+              </div>
+              <div v-if="recDetail.occurrences?.length" class="detail-section">
+                <label>真题例句</label>
+                <article v-for="occ in recDetail.occurrences.slice(0, 3)" :key="occ.id" class="occurrence">
+                  <p>{{ occ.context_sentence }}</p>
+                  <small>{{ occ.year || '未知年份' }} · {{ occ.unit_title || occ.unit_type }}</small>
+                </article>
+              </div>
+              <div v-if="recDetail.note" class="detail-section">
+                <label>我的笔记</label>
+                <p>{{ recDetail.note }}</p>
+              </div>
+            </div>
+            <div class="word-sheet-actions">
+              <button class="button ghost" @click="closeRecWord">关闭</button>
+              <button class="button secondary" @click="router.push(`/vocab-word/${recDetail.id}`)">查看完整详情</button>
+            </div>
+          </div>
+        </div>
+        </Teleport>
 
     <section v-if="reviewMode" class="review-overlay">
       <div class="review-progress"><i :style="{ width: ((reviewIndex) / Math.max(reviewItems.length, 1)) * 100 + '%' }"></i></div>
