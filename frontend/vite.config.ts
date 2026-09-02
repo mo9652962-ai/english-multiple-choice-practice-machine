@@ -15,7 +15,8 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': 'http://127.0.0.1:8765',
+      // v10.5: ws:true——聊天室 WebSocket(/api/chat/ws) 经 dev 代理转发后端，此前 dev 下永远"连接中"
+      '/api': { target: 'http://127.0.0.1:8765', changeOrigin: true, ws: true },
     },
   },
 })

@@ -104,6 +104,23 @@ let _offlinePromise: Promise<boolean> | null = null
 export async function initOfflineMode(skipHealthCheck = false): Promise<boolean> {
   if (_offlinePromise) return _offlinePromise
   _offlinePromise = (async () => {
+    // v10.4: 手机 APK 构建时注入了 VITE_API_ROOT（指向 PC 局域网后端）→ 先探测后端是否可达
+    // 可达则走在线模式（聊天室/设置/AI 精讲可用）；不可达再降级 sql.js 内置离线库
+    // 注意必须校验响应是 JSON 的 {status:"ok"}——Capacitor 本地服务器对任意路径都回 200 index.html，会被误判
+    if (skipHealthCheck && API_ROOT.startsWith('http')) {
+      try {
+        const resp = await fetch(`${API_ROOT}/health`, { signal: AbortSignal.timeout(2500) })
+        if (resp.ok) {
+          const data = await resp.json().catch(() => null)
+          if (data && data.status === 'ok') {
+            _offlineReady = false
+            return false
+          }
+        }
+      } catch {
+        // PC 后端不可达 → 走离线
+      }
+    }
     // Capacitor 原生平台（手机）没有本地后端——跳过 health 检查直接切 sql.js
     if (!skipHealthCheck) {
       try {

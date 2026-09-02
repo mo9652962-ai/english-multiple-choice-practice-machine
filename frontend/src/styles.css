@@ -1191,24 +1191,6 @@ h2, h3 { margin: 0; }
   .passage-pane, .question-pane { overflow: visible; }
   .passage-pane { border-right: 0; border-bottom: 1px solid var(--line); padding: 32px clamp(22px,5vw,48px); }
   .question-pane { padding: 28px clamp(22px,5vw,48px) 100px; }
-  /* v3.2: 移动端窄屏(<768px)上下分区——文章区/题目区独立滚动 + 可拖分隔条
-     v3.4: 默认文章区 58%（完形长文章完整可读，不被选项挤压）；拖拽范围 30-78% */
-  @media (max-width: 767px) and (min-width: 400px) {
-    .practice-layout {
-      grid-template-columns: 1fr;
-      grid-template-rows: minmax(240px, var(--passage-ratio, 58%)) 10px minmax(0, 1fr);
-      height: calc(100vh - 68px - 56px);
-      --passage-ratio: 58%;
-    }
-    .passage-pane { overflow: auto; border-right: 0; border-bottom: 0; padding: 20px clamp(18px,4vw,30px) 28px; min-height: 0; }
-    .question-pane { overflow: auto; padding: 20px clamp(18px,4vw,30px) 90px; min-height: 0; background: color-mix(in srgb, var(--surface-solid) 46%, transparent); }
-    .pane-divider { display: flex; align-items: center; justify-content: center; cursor: row-resize; touch-action: none; background: color-mix(in srgb, var(--primary) 10%, var(--line)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); user-select: none; }
-    .pane-divider-grip { color: var(--primary); opacity: .75; display: flex; align-items: center; }
-  }
-  @media (max-width: 399px) {
-    .pane-divider { display: none; }
-    .practice-layout { grid-template-rows: minmax(220px, var(--passage-ratio, 58%)) 0 minmax(0, 1fr); height: calc(100vh - 68px - 56px); }
-  }
   .practice-footer { width: 100%; }
   .practice-footer.listening-footer { width:100%; }
   .result-overlay,.timer-overlay { left:0; right:auto; width:100vw; }
@@ -1222,6 +1204,32 @@ h2, h3 { margin: 0; }
   .ai-model-control { min-width:min(280px,38vw); }
   .question-label-controls,.import-label-controls { grid-template-columns:minmax(180px,1fr) auto; }
   .question-label-actions { grid-column:1/-1; }
+}
+
+/* v3.2: 移动端窄屏(<768px)上下分区——文章区/题目区独立滚动 + 可拖分隔条
+   v3.4: 默认文章区 58%（完形长文章完整可读，不被选项挤压）；拖拽范围 30-78%
+   v10.4: 放宽 min-width 到全部窄屏（含 <400px 手机——此前分隔条被隐藏但网格仍是
+   3 行，题目区掉进 0 高行且 overflow 可见，正文与选项重叠）；限定 portrait 避免与横屏双栏冲突
+   v10.5: 移出 980px 块改为顶层媒体查询——原生 CSS 嵌套 @media 在旧版 Android WebView 不生效 */
+@media (max-width: 767px) and (orientation: portrait) {
+  .practice-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(240px, var(--passage-ratio, 58%)) 10px minmax(0, 1fr);
+    height: calc(100vh - 68px - 56px);
+    --passage-ratio: 58%;
+  }
+  /* 显式行分配——分隔条因 cloze/听力被 v-if 移除时，题目区也不掉进分隔行 */
+  .passage-pane { grid-row: 1; }
+  .pane-divider { grid-row: 2; }
+  .question-pane { grid-row: 3; }
+  .passage-pane { overflow: auto; border-right: 0; border-bottom: 0; padding: 20px clamp(18px,4vw,30px) 28px; min-height: 0; }
+  .question-pane { overflow: auto; padding: 20px clamp(18px,4vw,30px) 90px; min-height: 0; background: color-mix(in srgb, var(--surface-solid) 46%, transparent); }
+  .pane-divider { display: flex; align-items: center; justify-content: center; cursor: row-resize; touch-action: none; background: color-mix(in srgb, var(--primary) 10%, var(--line)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); user-select: none; }
+  .pane-divider-grip { color: var(--primary); opacity: .75; display: flex; align-items: center; }
+}
+@media (max-width: 399px) and (orientation: portrait) {
+  .practice-layout { grid-template-rows: minmax(200px, var(--passage-ratio, 58%)) 10px minmax(0, 1fr); }
+  .passage-pane, .question-pane { padding-left: 16px; padding-right: 16px; }
 }
 
 @media (max-width: 720px) {

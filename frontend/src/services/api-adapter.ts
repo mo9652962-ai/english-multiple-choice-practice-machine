@@ -281,6 +281,10 @@ function offlineGet(path: string): any {
   if (path === '/ai/settings') {
     return queryOne("SELECT * FROM ai_profiles WHERE is_default = 1") || {}
   }
+  // v10.4: AI 用量（离线无统计——返回空结构避免设置页报"内容不加载"）
+  if (path === '/ai/usage') {
+    return { month: '', limit_tokens: 0, used_tokens: 0, cost_yuan: 0, distribution: [], recent: [] }
+  }
   // AI profiles list（离线 APK：key 密文不回显，仅返回 has_api_key）
   // v3.4: models 从 ai_profile_models 表读（修复模型选择器空）
   if (path === '/ai/profiles' || path.startsWith('/ai/profiles?')) {
