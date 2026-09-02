@@ -2,7 +2,7 @@
 // v10.1: 学习陪伴聊天室（Phase 3 前端）——REST 拉历史 + WebSocket 实时收发 + @阿墨 流式回复
 import { Bot, LoaderCircle, Send, UserRound } from 'lucide-vue-next'
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-import { get, getToken } from '../api'
+import { get, getToken, isOffline } from '../api'
 
 // ── 消息类型（REST 历史是 snake_case，WS 广播是 camelCase，统一成内部结构）──
 type ChatMessage = {
@@ -38,6 +38,8 @@ const messages = ref<ChatMessage[]>([])
 const input = ref('')
 const online = ref(0)
 const connected = ref(false)
+// v10.4: 离线模式（手机未连上 PC 后端）——聊天室依赖后端 WS，给出明确提示而非永远"连接中"
+const offlineMode = isOffline()
 const loadingHistory = ref(true)
 const loadError = ref('')
 const messageList = ref<HTMLElement | null>(null)
@@ -245,7 +247,9 @@ function send() {
   const content = input.value.trim()
   if (!content) return
   if (!ws || ws.readyState !== WebSocket.OPEN) {
-    loadError.value = '聊天室连接中，请稍候再发送。'
+    loadError.value = offlineMode
+      ? '当前为离线模式——聊天室需要连接电脑后端：手机与电脑连同一 WiFi，并在电脑上启动墨题后端（局域网模式）后重进本页。'
+      : '聊天室连接中，请稍候再发送。'
     return
   }
   loadError.value = ''
@@ -298,6 +302,7 @@ onBeforeUnmount(() => {
           <h1>学习聊天室</h1>
           <p class="chat-sub">
             <template v-if="connected">🟢 {{ online }} 人在线</template>
+            <template v-else-if="offlineMode">📵 离线模式 · 连接电脑后端后可用</template>
             <template v-else>⚪ 连接中…</template>
           </p>
         </div>
