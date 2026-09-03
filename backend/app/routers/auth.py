@@ -19,7 +19,7 @@ import secrets
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
 
-from ..database import get_db
+from ..database import ensure_user_organization, get_db
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -124,11 +124,20 @@ def get_current_user(request: Request, connection=Depends(get_db)) -> dict | Non
     if not token:
         return None
     row = connection.execute(
-        "SELECT id, username, is_admin FROM users WHERE token = ?", (token,)
+        """
+        SELECT id, username, is_admin, active_organization_id
+        FROM users WHERE token = ?
+        """,
+        (token,),
     ).fetchone()
     if row is None:
         return None
-    return {"id": row["id"], "username": row["username"], "is_admin": bool(row["is_admin"])}
+    return {
+        "id": row["id"],
+        "username": row["username"],
+        "is_admin": bool(row["is_admin"]),
+        "active_organization_id": row["active_organization_id"],
+    }
 
 
 def require_user(user=Depends(get_current_user)) -> dict:
@@ -187,6 +196,9 @@ def register(
         (username, hash_password(request.password), token, 1 if is_admin else 0),
     )
     new_user_id = cursor.lastrowid
+    active_organization_id = ensure_user_organization(
+        connection, int(new_user_id), username
+    )
     # v9.24: 首个用户注册时——把本地单用户遗留数据（user_id IS NULL）迁移给他
     if is_first:
         legacy_tables = (
@@ -258,6 +270,7 @@ def register(
         "user": {"id": new_user_id,
                  "username": username,
                  "is_admin": bool(is_admin),
+                 "active_organization_id": active_organization_id,
                  "migrated_legacy": is_first},
     }
 
@@ -288,7 +301,12 @@ def login(
     connection.commit()
     return {
         "token": token,
-        "user": {"id": row["id"], "username": row["username"], "is_admin": bool(row["is_admin"])},
+        "user": {
+            "id": row["id"],
+            "username": row["username"],
+            "is_admin": bool(row["is_admin"]),
+            "active_organization_id": row["active_organization_id"],
+        },
     }
 
 
@@ -296,4 +314,9 @@ def login(
 def me(user=Depends(get_current_user)) -> dict:
     if user is None:
         raise HTTPException(401, "未登录")
-    return {"id": user["id"], "username": user["username"], "is_admin": bool(user["is_admin"])}
+    return {
+        "id": user["id"],
+        "username": user["username"],
+        "is_admin": bool(user["is_admin"]),
+        "active_organization_id": user.get("active_organization_id"),
+    }

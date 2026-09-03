@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sqlite3
+from contextlib import closing
 from collections.abc import Generator
 from datetime import datetime, timedelta, timezone
 from uuid import uuid4
@@ -18,13 +19,58 @@ CREATE TABLE IF NOT EXISTS users (
     password_hash TEXT NOT NULL,
     token TEXT,
     is_admin INTEGER NOT NULL DEFAULT 0,
+    active_organization_id INTEGER,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_login_at TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_users_token ON users(token);
 
+CREATE TABLE IF NOT EXISTS organizations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    slug TEXT NOT NULL UNIQUE COLLATE NOCASE,
+    status TEXT NOT NULL DEFAULT 'active',
+    owner_user_id INTEGER,
+    settings TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS organization_members (
+    organization_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    role TEXT NOT NULL DEFAULT 'student',
+    status TEXT NOT NULL DEFAULT 'active',
+    joined_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (organization_id, user_id),
+    FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+CREATE INDEX IF NOT EXISTS idx_org_members_user
+    ON organization_members(user_id, status, organization_id);
+
+CREATE TABLE IF NOT EXISTS audit_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    organization_id INTEGER,
+    actor_user_id INTEGER,
+    action TEXT NOT NULL,
+    resource_type TEXT NOT NULL,
+    resource_id TEXT,
+    metadata TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE SET NULL,
+    FOREIGN KEY (actor_user_id) REFERENCES users(id) ON DELETE SET NULL
+);
+CREATE INDEX IF NOT EXISTS idx_audit_logs_org_time
+    ON audit_logs(organization_id, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS schema_migrations (
+    version INTEGER PRIMARY KEY,
+    applied_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE IF NOT EXISTS question_bank_profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    organization_id INTEGER,
     name TEXT NOT NULL,
     description TEXT NOT NULL DEFAULT '',
     color TEXT NOT NULL DEFAULT '#486d5c',
@@ -1107,7 +1153,7 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
 
 
 def initialize_database() -> None:
-    with connect() as connection:
+    with closing(connect()) as connection:
         connection.executescript(SCHEMA)
         _run_migrations(connection)
         _migrate_add_user_id(connection)
@@ -1190,9 +1236,211 @@ def _migrate_multi_user_schema(connection: sqlite3.Connection) -> None:
         ]:
             connection.execute(f"CREATE INDEX IF NOT EXISTS {idx} ON {tbl}({col})")
         connection.commit()
+        _run_versioned_migrations(connection)
     except Exception as exc:
         print(f"[migrate][ERROR] 多用户 schema 升级失败: {exc}")
         raise
+
+
+def _organization_slug(connection: sqlite3.Connection, preferred: str) -> str:
+    """Return a deterministic, unused slug for a new organization."""
+    import re
+
+    base = re.sub(r"[^a-z0-9-]+", "-", preferred.lower()).strip("-") or "organization"
+    slug = base[:80]
+    suffix = 2
+    while connection.execute(
+        "SELECT 1 FROM organizations WHERE slug = ? COLLATE NOCASE", (slug,)
+    ).fetchone():
+        suffix_text = f"-{suffix}"
+        slug = f"{base[:80 - len(suffix_text)]}{suffix_text}"
+        suffix += 1
+    return slug
+
+
+def record_audit_log(
+    connection: sqlite3.Connection,
+    *,
+    organization_id: int | None,
+    actor_user_id: int | None,
+    action: str,
+    resource_type: str,
+    resource_id: str | int | None = None,
+    metadata: str = "{}",
+) -> None:
+    connection.execute(
+        """
+        INSERT INTO audit_logs
+            (organization_id, actor_user_id, action, resource_type, resource_id, metadata)
+        VALUES (?, ?, ?, ?, ?, ?)
+        """,
+        (organization_id, actor_user_id, action, resource_type,
+         None if resource_id is None else str(resource_id), metadata),
+    )
+
+
+def ensure_local_organization(connection: sqlite3.Connection) -> int:
+    """Return the compatibility organization used by EPM_AUTH=0."""
+    row = connection.execute(
+        "SELECT id FROM organizations WHERE slug = 'local' COLLATE NOCASE LIMIT 1"
+    ).fetchone()
+    if row:
+        return int(row["id"])
+    cursor = connection.execute(
+        """
+        INSERT INTO organizations (name, slug, status, settings)
+        VALUES ('本地学习空间', 'local', 'active', '{}')
+        """
+    )
+    return int(cursor.lastrowid)
+
+
+def ensure_user_organization(
+    connection: sqlite3.Connection,
+    user_id: int,
+    username: str,
+) -> int:
+    """Create the user's default organization exactly once and select it."""
+    existing = connection.execute(
+        """
+        SELECT organization_id FROM organization_members
+        WHERE user_id = ? AND status = 'active'
+        ORDER BY joined_at, organization_id LIMIT 1
+        """,
+        (user_id,),
+    ).fetchone()
+    if existing:
+        organization_id = int(existing["organization_id"])
+    else:
+        slug = _organization_slug(connection, username)
+        cursor = connection.execute(
+            """
+            INSERT INTO organizations (name, slug, owner_user_id, settings)
+            VALUES (?, ?, ?, '{}')
+            """,
+            (f"{username}的学习空间", slug, user_id),
+        )
+        organization_id = int(cursor.lastrowid)
+        connection.execute(
+            """
+            INSERT INTO organization_members (organization_id, user_id, role, status)
+            VALUES (?, ?, 'owner', 'active')
+            """,
+            (organization_id, user_id),
+        )
+        record_audit_log(
+            connection,
+            organization_id=organization_id,
+            actor_user_id=user_id,
+            action="organization.created",
+            resource_type="organization",
+            resource_id=organization_id,
+        )
+    connection.execute(
+        "UPDATE users SET active_organization_id = ? WHERE id = ?",
+        (organization_id, user_id),
+    )
+    return organization_id
+
+
+def _migrate_enterprise_organizations(connection: sqlite3.Connection) -> None:
+    """Add the P0 organization layer without touching existing learning data."""
+    _ensure_column(connection, "users", "active_organization_id", "INTEGER")
+    _ensure_column(connection, "question_bank_profiles", "organization_id", "INTEGER")
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS organizations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            slug TEXT NOT NULL UNIQUE COLLATE NOCASE,
+            status TEXT NOT NULL DEFAULT 'active',
+            owner_user_id INTEGER,
+            settings TEXT NOT NULL DEFAULT '{}',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS organization_members (
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            role TEXT NOT NULL DEFAULT 'student',
+            status TEXT NOT NULL DEFAULT 'active',
+            joined_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (organization_id, user_id),
+            FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+        )
+        """
+    )
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS audit_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            organization_id INTEGER,
+            actor_user_id INTEGER,
+            action TEXT NOT NULL,
+            resource_type TEXT NOT NULL,
+            resource_id TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE SET NULL,
+            FOREIGN KEY (actor_user_id) REFERENCES users(id) ON DELETE SET NULL
+        )
+        """
+    )
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS schema_migrations (
+            version INTEGER PRIMARY KEY,
+            applied_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+    connection.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_org_members_user
+            ON organization_members(user_id, status, organization_id)
+        """
+    )
+    connection.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_audit_logs_org_time
+            ON audit_logs(organization_id, created_at DESC)
+        """
+    )
+    ensure_local_organization(connection)
+    users = connection.execute(
+        "SELECT id, username FROM users ORDER BY id"
+    ).fetchall()
+    for user in users:
+        ensure_user_organization(connection, int(user["id"]), str(user["username"]))
+
+
+def _run_versioned_migrations(connection: sqlite3.Connection) -> None:
+    """Apply enterprise migrations in ordered, idempotent savepoints."""
+    migrations = {
+        1: lambda conn: None,
+        2: _migrate_enterprise_organizations,
+    }
+    for version, migration in migrations.items():
+        if connection.execute(
+            "SELECT 1 FROM schema_migrations WHERE version = ?", (version,)
+        ).fetchone():
+            continue
+        savepoint = f"schema_migration_{version}"
+        connection.execute(f"SAVEPOINT {savepoint}")
+        try:
+            migration(connection)
+            connection.execute(
+                "INSERT INTO schema_migrations(version) VALUES (?)", (version,)
+            )
+            connection.execute(f"RELEASE SAVEPOINT {savepoint}")
+        except Exception:
+            connection.execute(f"ROLLBACK TO SAVEPOINT {savepoint}")
+            connection.execute(f"RELEASE SAVEPOINT {savepoint}")
+            raise
 
 
 def _rebuild_vocabulary_entries(connection: sqlite3.Connection) -> None:
