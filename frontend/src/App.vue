@@ -3,8 +3,11 @@ import { Activity, BarChart2, BarChart3, BookMarked, BookOpenText, Brain, Calend
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
+import { Building2 } from 'lucide-vue-next'
+import OrganizationSwitcher from './components/OrganizationSwitcher.vue'
 import { get } from './api'
 import { activateQuestionBankProfile, loadQuestionBankProfiles, questionBankProfilesState } from './services/questionBankProfiles'
+import { loadOrganizations } from './services/organizations'
 
 const route = useRoute()
 const dark = ref(false)
@@ -97,6 +100,7 @@ onMounted(() => {
   applyTheme()
   document.body.classList.add('ink-landscape')
   void loadCategories()
+  void loadOrganizations().catch(() => undefined)
 })
 </script>
 
@@ -138,9 +142,11 @@ onMounted(() => {
         <RouterLink to="/goal"><Target :size="18" aria-hidden="true" /><span>目标中心</span></RouterLink>
         <RouterLink to="/imports"><FileUp :size="18" aria-hidden="true" /><span>导入题库</span></RouterLink>
         <RouterLink to="/settings"><Settings :size="18" aria-hidden="true" /><span>模型与设置</span></RouterLink>
+        <RouterLink to="/organizations"><Building2 :size="18" aria-hidden="true" /><span>组织管理</span></RouterLink>
       </nav>
       <!-- 侧边栏底部停靠区 (考试类别 + 提示卡 + 主题切换) -->
       <div class="sidebar-footer">
+        <OrganizationSwitcher />
         <div v-if="categories.length" class="sidebar-categories">
           <span class="sidebar-category-label">考试类别</span>
           <!-- 当前类别 -->

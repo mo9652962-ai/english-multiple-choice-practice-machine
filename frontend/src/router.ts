@@ -30,6 +30,7 @@ export default createRouter({
     { path: '/vocab-word/:id', component: () => import('./views/VocabularyWordView.vue') },
     { path: '/imports', component: () => import('./views/ImportView.vue') },
     { path: '/assistant', component: () => import('./components/AiAssistant.vue') },
+    { path: '/organizations', component: () => import('./views/OrganizationsView.vue') },
     { path: '/settings', component: () => import('./views/SettingsView.vue') },
     { path: '/about', component: () => import('./views/AboutView.vue') },
     { path: '/trash', component: () => import('./views/TrashView.vue') },
