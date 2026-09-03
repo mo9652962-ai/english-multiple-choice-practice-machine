@@ -14,6 +14,7 @@ from lxml import etree
 from pypdf import PdfReader
 
 from .passage_cleanup import repair_inline_blank_paragraph_breaks
+from .option_cleanup import normalize_option_rows
 
 
 NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
@@ -1112,6 +1113,7 @@ def apply_answers_to_draft(draft: dict[str, Any]) -> None:
     answers = draft.setdefault("answers", {})
     for unit in draft.get("units", []):
         for question in unit.get("questions", []):
+            question["options"] = normalize_option_rows(question.get("options", []))
             number = str(question.get("number", ""))
             answer = str(answers.get(number, "") or "").strip().upper()
             answers[number] = answer

@@ -12,6 +12,7 @@ from typing import Any
 
 from ..config import QUESTION_BANK_DIR
 from .exam_templates import supported_exam_types
+from .option_cleanup import normalize_option_rows
 
 
 MAX_PACKAGE_BYTES = 100 * 1024 * 1024
@@ -387,6 +388,9 @@ def _validate_paper(
             if not isinstance(options, list) or not options:
                 _error(details, f"{question_path}.options", "必须包含选项或使用单元候选项")
                 options = []
+            # Accept legacy ESQ/OCR cells that contain e.g. ``foo\tB. bar``
+            # by expanding them before validating keys and importing rows.
+            options = normalize_option_rows(options)
             option_keys: set[str] = set()
             normalized_options: list[dict[str, Any]] = []
             for option_index, raw_option in enumerate(options):

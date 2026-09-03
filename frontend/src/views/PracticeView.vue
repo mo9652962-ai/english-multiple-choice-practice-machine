@@ -109,6 +109,59 @@ const isMatchingPartB = computed(() => isPartB.value && activeUnit.value?.subtyp
 const isOrdering = computed(() => activeUnit.value?.subtype === 'paragraph_reordering')
 const isListening = computed(() => activeUnit.value?.unit_type === 'listening')
 
+// Legacy Word/OCR data can put the next option in the same content cell.
+// Keep this last-resort guard close to rendering so old offline databases are
+// still usable while the database/import repairs roll out.
+const embeddedOptionMark = /(?:^|[\t\r\n])\s*([A-Da-d])\s*[.．、)]\s*/g
+const warnedDirtyOptionQuestions = new Set<string>()
+
+function displayOptions(question: any): any[] {
+  const source = Array.isArray(question?.options) ? question.options : []
+  const result: any[] = []
+  let hasEmbeddedData = false
+  for (const option of source) {
+    const content = String(option?.content ?? '').trim()
+    embeddedOptionMark.lastIndex = 0
+    const matches = [...content.matchAll(embeddedOptionMark)]
+    const firstIndex = matches[0]?.index ?? -1
+    if (!matches.length || (matches.length === 1 && firstIndex === 0)) {
+      result.push(option)
+      continue
+    }
+    hasEmbeddedData = true
+    if (firstIndex > 0 && content.slice(0, firstIndex).trim()) {
+      result.push({ ...option, content: content.slice(0, firstIndex).trim() })
+    }
+    for (let index = 0; index < matches.length; index += 1) {
+      const match = matches[index]
+      const start = (match.index ?? 0) + match[0].length
+      const end = matches[index + 1]?.index ?? content.length
+      const piece = content.slice(start, end).trim()
+      if (piece) {
+        const key = match[1].toUpperCase()
+        result.push({ ...option, key, stable_key: key, label: key, content: piece })
+      }
+    }
+  }
+  const questionKey = String(question?.id ?? question?.number ?? '')
+  if (hasEmbeddedData && !warnedDirtyOptionQuestions.has(questionKey)) {
+    warnedDirtyOptionQuestions.add(questionKey)
+    console.warn(`[墨题] 题目 ${questionKey} 的选项含合并数据，已在前端拆分显示`)
+  }
+  return result
+}
+
+function hasDirtyOptionData(question: any): boolean {
+  const source = Array.isArray(question?.options) ? question.options : []
+  return source.some((option: any) => {
+    const content = String(option?.content ?? '').trim()
+    embeddedOptionMark.lastIndex = 0
+    const matches = [...content.matchAll(embeddedOptionMark)]
+    const firstIndex = matches[0]?.index ?? -1
+    return matches.length > 1 || (firstIndex > 0 && Boolean(content.slice(0, firstIndex).trim()))
+  })
+}
+
 // v3.2: 移动端竖屏上下分区（文章区/题目区独立滚动 + 可拖分隔条）
 const isMobileSplit = ref(false)
 let dividerCleanup: (() => void) | null = null
@@ -194,13 +247,13 @@ const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'para
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')
 const orderingItems = ref<any[]>([])
 const audioTracks = computed(() => activeUnit.value?.shared_data?.audio_tracks || [])
-const candidateOptions = computed(() => activeUnit.value?.questions?.[0]?.options || [])
+const candidateOptions = computed(() => displayOptions(activeUnit.value?.questions?.[0]))
 const selectedWordBank = ref<Record<string, string>>({})
 
 const usedWordBankLetters = computed(() => new Set(Object.values(selectedWordBank.value).filter(Boolean)))
 const wordBankWords = computed(() => {
   if (!isWordBank.value) return []
-  const opts = activeUnit.value?.questions?.[0]?.options || []
+  const opts = displayOptions(activeUnit.value?.questions?.[0])
   return opts.map((option: any, index: number) => ({
     key: option.key,
     label: option.label,
@@ -878,7 +931,7 @@ function resultClass(question: any, option: any) {
 }
 
 function displayedAnswer(question: any) {
-  return question.options.find((option: any) => option.stable_key === question.answer)?.label || question.answer
+  return displayOptions(question).find((option: any) => option.stable_key === question.answer)?.label || question.answer
 }
 
 function firstUnanswered(unitIndexes: number[]) {
@@ -1365,7 +1418,7 @@ function openDeepExplain(questionId: number) {
           <div v-for="question in activeUnit.questions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
             <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
             <div class="match-buttons">
-              <button v-for="option in question.options" :key="option.stable_key" class="match-chip" :class="resultClass(question, option)" :disabled="activeUnitSubmitted" @click="select(question, option.stable_key)">{{ option.label }}</button>
+              <button v-for="option in displayOptions(question)" :key="option.stable_key" class="match-chip" :class="resultClass(question, option)" :disabled="activeUnitSubmitted" @click="select(question, option.stable_key)">{{ option.label }}</button>
             </div>
             <div v-if="activeUnitSubmitted" class="match-result" :style="{color:question.is_correct?'var(--success)':'var(--danger)'}">
               {{ question.is_correct ? '回答正确' : `正确答案：${displayedAnswer(question)}` }}
@@ -1387,7 +1440,7 @@ function openDeepExplain(questionId: number) {
             <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
             <div class="match-buttons">
               <button
-                v-for="option in question.options"
+                v-for="option in displayOptions(question)"
                 :key="option.stable_key"
                 class="match-chip"
                 :class="{ ...resultClass(question, option), used: usedWordBankLetters.has(option.key) && question.user_answer !== option.stable_key }"
@@ -1405,7 +1458,7 @@ function openDeepExplain(questionId: number) {
             <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
             <div class="match-buttons">
               <button
-                v-for="option in question.options"
+                v-for="option in displayOptions(question)"
                 :key="option.stable_key"
                 class="match-chip"
                 :class="resultClass(question, option)"
@@ -1423,7 +1476,7 @@ function openDeepExplain(questionId: number) {
             <button class="ai-tutor-btn" title="AI 助教精讲" @click.stop="openDeepExplain(question.id)">✨ AI 精讲</button>
           </div>
           <button
-            v-for="option in question.options"
+            v-for="option in displayOptions(question)"
             :key="option.stable_key"
             class="option"
             :class="resultClass(question, option)"
@@ -1434,6 +1487,9 @@ function openDeepExplain(questionId: number) {
             <span class="option-letter">{{ option.label }}</span>
             <span class="option-content" data-vocab-text><ContentBlocks v-if="option.content_blocks?.length" :blocks="option.content_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ option.content }}</template></span>
           </button>
+          <div v-if="hasDirtyOptionData(question)" class="option-data-warning" role="status">
+            <AlertCircle :size="14" /> 历史选项数据已自动拆分显示
+          </div>
           <div v-if="activeUnitSubmitted" style="margin-top:10px;font-size:13px" :style="{color:question.is_correct?'var(--success)':'var(--danger)'}">
             <CheckCircle2 :size="15" style="vertical-align:-2px" /> {{ question.is_correct ? '回答正确' : `正确答案：${displayedAnswer(question)}` }}
           </div>
