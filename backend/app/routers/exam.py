@@ -267,7 +267,27 @@ def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db),
         )
     except Exception:
         pass
-    return _result(connection, exam_id)
+    # v9.40: 达标自动发证书（企业版）
+    cert = None
+    try:
+        from ..services.certificates import issue_certificate_if_passed
+        cert = issue_certificate_if_passed(
+            connection,
+            exam_id=exam_id,
+            user_id=user["id"] if user else None,
+            profile_id=row["profile_id"],
+            title=row["title"],
+            score=score,
+            max_score=max_score,
+            pass_score=60.0,
+        )
+        connection.commit()
+    except Exception:
+        cert = None
+    result = _result(connection, exam_id)
+    if cert:
+        result["certificate"] = cert
+    return result
 
 
 def _result(connection: sqlite3.Connection, exam_id: int) -> dict:

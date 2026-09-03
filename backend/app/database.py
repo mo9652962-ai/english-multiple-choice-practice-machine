@@ -514,6 +514,51 @@ CREATE TABLE IF NOT EXISTS exam_answers (
     FOREIGN KEY (exam_id) REFERENCES exam_sessions(id) ON DELETE CASCADE
 );
 
+-- v9.40: 企业版三大功能（动态组卷 / 防作弊 / 证书）
+-- 组卷活动（生成的试卷配置）——不动 papers 真题表，动态卷独立存储
+CREATE TABLE IF NOT EXISTS generated_papers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL DEFAULT '',
+    profile_id INTEGER NOT NULL,
+    configuration TEXT NOT NULL DEFAULT '{}',   -- { types: {single_choice:5,...}, randomize:true, pass_score:60 }
+    question_ids TEXT NOT NULL DEFAULT '[]',
+    total_questions INTEGER NOT NULL DEFAULT 0,
+    max_score REAL NOT NULL DEFAULT 0,
+    pass_score REAL NOT NULL DEFAULT 60,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_by INTEGER DEFAULT NULL,
+    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)
+);
+-- 防作弊事件日志
+CREATE TABLE IF NOT EXISTS anti_cheat_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    exam_id INTEGER NOT NULL,
+    event_type TEXT NOT NULL,  -- screen_switch / suspend / copy / paste / window_blur
+    detail TEXT NOT NULL DEFAULT '',
+    occurred_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    user_id INTEGER DEFAULT NULL,
+    FOREIGN KEY (exam_id) REFERENCES exam_sessions(id) ON DELETE CASCADE
+);
+-- 考试证书（通过考试自动生成）
+CREATE TABLE IF NOT EXISTS certificates (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cert_no TEXT NOT NULL UNIQUE,
+    user_id INTEGER NOT NULL,
+    profile_id INTEGER NOT NULL,
+    exam_id INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    accuracy REAL NOT NULL,
+    score REAL NOT NULL,
+    pass_score REAL NOT NULL DEFAULT 60,
+    level TEXT NOT NULL DEFAULT '合格',
+    issued_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (exam_id) REFERENCES exam_sessions(id)
+);
+CREATE INDEX IF NOT EXISTS idx_certificates_user ON certificates(user_id);
+CREATE INDEX IF NOT EXISTS idx_anti_cheat_exam ON anti_cheat_logs(exam_id);
+CREATE INDEX IF NOT EXISTS idx_gen_papers_profile ON generated_papers(profile_id);
+
 -- v3.0: 做题标注（关键词高亮 + 笔记持久化）
 CREATE TABLE IF NOT EXISTS annotations (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
