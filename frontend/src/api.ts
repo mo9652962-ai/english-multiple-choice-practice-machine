@@ -4,12 +4,24 @@ const API_ROOT = (import.meta.env.VITE_API_ROOT as string | undefined) || '/api'
 
 // v9.24: 多用户认证——token 存储
 const TOKEN_KEY = 'epm_auth_token'
+const ORGANIZATION_KEY = 'epm_active_organization_id'
 export function getToken(): string | null {
   return localStorage.getItem(TOKEN_KEY)
 }
 export function setToken(token: string | null): void {
   if (token) localStorage.setItem(TOKEN_KEY, token)
   else localStorage.removeItem(TOKEN_KEY)
+}
+export function getOrganizationId(): number | null {
+  const value = Number(localStorage.getItem(ORGANIZATION_KEY))
+  return Number.isInteger(value) && value > 0 ? value : null
+}
+export function setOrganizationId(organizationId: number | null): void {
+  if (organizationId && organizationId > 0) {
+    localStorage.setItem(ORGANIZATION_KEY, String(organizationId))
+  } else {
+    localStorage.removeItem(ORGANIZATION_KEY)
+  }
 }
 
 export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
@@ -20,6 +32,8 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
   // v9.24: 自动携带 token
   const token = getToken()
   if (token) headers.set('Authorization', `Bearer ${token}`)
+  const organizationId = getOrganizationId()
+  if (organizationId) headers.set('X-Organization-Id', String(organizationId))
   const response = await fetch(`${API_ROOT}${path}`, { ...options, headers })
   if (!response.ok) {
     let message = `${response.status} ${response.statusText}`
@@ -85,7 +99,12 @@ export const del = async <T>(path: string) => {
 }
 
 // ── v9.24: 多用户认证 API ──
-export interface AuthUser { id: number; username: string; is_admin: boolean }
+export interface AuthUser {
+  id: number
+  username: string
+  is_admin: boolean
+  active_organization_id?: number | null
+}
 export interface AuthResponse { token: string; user: AuthUser }
 
 export const authApi = {

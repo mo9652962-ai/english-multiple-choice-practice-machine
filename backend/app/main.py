@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import sqlite3
 import threading
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, closing
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,6 +18,7 @@ from .routers import (
     auth,  # v9.24: 多用户认证
     certificates,  # v9.40: 证书 & 防作弊
     dashboard,
+    organizations,
     exam,
     feedback,
     imports,
@@ -60,10 +61,10 @@ from .services.wrong_analysis import migrate_wrong_analysis_states
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
+    _backup_database_on_startup()
     initialize_database()
     with connect() as connection:
         migrate_wrong_analysis_states(connection)
-    _backup_database_on_startup()
     install_bundled_question_banks()
     with connect() as connection:
         ensure_ai_model_catalog(connection)
@@ -101,7 +102,7 @@ def _backup_database_on_startup() -> None:
         import time as _t
         stamp = _t.strftime("%Y%m%d_%H%M%S")
         dest = backup_dir / f"question_bank_{stamp}.db"
-        with connect() as src, sqlite3.connect(dest) as dst:
+        with closing(connect()) as src, closing(sqlite3.connect(dest)) as dst:
             src.backup(dst)
         # 保留最近 5 份
         backups = sorted(backup_dir.glob("question_bank_*.db"))
@@ -134,6 +135,7 @@ app.add_middleware(
 )
 
 app.include_router(dashboard.router, prefix="/api")
+app.include_router(organizations.router, prefix="/api")
 app.include_router(auth.router, prefix="/api")  # v9.24: 多用户认证（register/login/me）
 app.include_router(papers.router, prefix="/api")
 app.include_router(practice.router, prefix="/api")
@@ -170,13 +172,33 @@ app.include_router(agent.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
 
 
+APP_VERSION = "2.0.0"
+
+
 @app.get("/api/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, str | int]:
+    connection = connect()
+    try:
+        connection.execute("SELECT 1").fetchone()
+        migration = connection.execute(
+            "SELECT MAX(version) AS version FROM schema_migrations"
+        ).fetchone()
+        schema_version = int(migration["version"] or 0)
+    except sqlite3.Error as error:
+        from fastapi import HTTPException
+
+        raise HTTPException(status_code=503, detail=f"database unavailable: {error}") from error
+    finally:
+        connection.close()
+    return {
+        "status": "ok",
+        "database": "ok",
+        "version": APP_VERSION,
+        "schema_version": schema_version,
+    }
 
 
 # v3.3: 我的墨题——版本号 + 开发时间 + 检查更新（GitHub releases 代理）
-APP_VERSION = "2.0.0"
 APP_RELEASE_DATE = "2026-09-02"
 _UPDATE_REPO = "mo9652962-ai/epm-releases"
 
