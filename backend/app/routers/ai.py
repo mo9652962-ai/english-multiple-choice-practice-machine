@@ -60,6 +60,7 @@ from ..services.question_labeling import (
 from ..services.wrong_analysis import (
     aggregate_diagnoses,
     diagnose_wrong_answers,
+    migrate_wrong_analysis_states,
     write_anonymous_report,
 )
 
@@ -752,6 +753,7 @@ def analyze_wrong(
     connection: sqlite3.Connection = Depends(get_db),
     user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    migrate_wrong_analysis_states(connection)
     user_id = user["id"] if user else None
     question_ids = request.question_ids
     if not question_ids:
@@ -804,9 +806,10 @@ def analyze_wrong(
         SELECT s.unit_id, s.report_id, s.analyzed_session_id
         FROM wrong_analysis_states s
         JOIN wrong_analysis_reports r ON r.id = s.report_id AND r.user_id IS ?
-        WHERE s.unit_id IN ({",".join("?" for _ in unit_ids)})
+        WHERE s.user_id IS ?
+          AND s.unit_id IN ({",".join("?" for _ in unit_ids)})
         """,
-        (user_id, *unit_ids),
+        (user_id, user_id, *unit_ids),
     ).fetchall()
     states_by_unit = {int(row["unit_id"]): row for row in states}
 
@@ -916,12 +919,16 @@ def analyze_wrong(
         ).fetchone()["max_id"]
         for unit_id in unit_ids:
             connection.execute(
+                "DELETE FROM wrong_analysis_states WHERE user_id IS ? AND unit_id = ?",
+                (user_id, unit_id),
+            )
+            connection.execute(
                 """
-                INSERT OR REPLACE INTO wrong_analysis_states
-                    (unit_id, report_id, analyzed_session_id, analyzed_at)
-                VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+                INSERT INTO wrong_analysis_states
+                    (user_id, unit_id, report_id, analyzed_session_id, analyzed_at)
+                VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
                 """,
-                (unit_id, report_id, max_session_id),
+                (user_id, unit_id, report_id, max_session_id),
             )
         connection.commit()
         # v9.19: 记录 streak 学习行为
@@ -951,6 +958,7 @@ def wrong_analysis_status(
     connection: sqlite3.Connection = Depends(get_db),
     user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    migrate_wrong_analysis_states(connection)
     user_id = user["id"] if user else None
     rows = connection.execute(
         """
@@ -958,9 +966,10 @@ def wrong_analysis_status(
                r.scope_key, r.scope_title, r.report, r.aggregate_data
         FROM wrong_analysis_states s
         JOIN wrong_analysis_reports r ON r.id = s.report_id AND r.user_id IS ?
+        WHERE s.user_id IS ?
         ORDER BY s.unit_id
         """,
-        (user_id,),
+        (user_id, user_id),
     ).fetchall()
     units = []
     for row in rows:

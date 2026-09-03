@@ -35,6 +35,7 @@ from ..services.import_assist import (
 )
 from ..services.ai_client import get_ai_profile
 from ..services.trash import trash_import_job
+from .auth import require_admin
 
 
 router = APIRouter(prefix="/imports", tags=["imports"])
@@ -287,6 +288,7 @@ async def upload_import(
     defer_model_assist: bool = Form(False),
     profile_id: int | None = Form(default=None),
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     import_started = time.perf_counter()
     if not file.filename or not file.filename.lower().endswith((".docx", ".doc", ".pdf")):
@@ -498,6 +500,7 @@ def model_assist_retry(
     job_id: int,
     request: ModelAssistRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT * FROM import_jobs WHERE id = ?", (job_id,)
@@ -648,6 +651,7 @@ def update_draft(
     job_id: int,
     request: DraftUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT draft_data FROM import_jobs WHERE id = ?", (job_id,)
@@ -710,6 +714,7 @@ def update_answers(
     job_id: int,
     request: ImportAnswersUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT draft_data FROM import_jobs WHERE id = ?", (job_id,)
@@ -796,6 +801,7 @@ def publish(
     job_id: int,
     force: bool = False,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT * FROM import_jobs WHERE id = ?", (job_id,)
@@ -867,6 +873,7 @@ def publish(
 def delete_import(
     job_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         result = trash_import_job(connection, job_id)

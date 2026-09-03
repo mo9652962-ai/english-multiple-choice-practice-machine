@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from ..database import get_active_profile_id, get_db
 from ..services.trash import trash_paper
+from .auth import require_admin
 
 
 router = APIRouter(prefix="/papers", tags=["papers"])
@@ -65,6 +66,7 @@ def get_paper(
 def delete_paper(
     paper_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         result = trash_paper(connection, paper_id)

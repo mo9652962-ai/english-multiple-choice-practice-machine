@@ -40,6 +40,79 @@ CAUSE_GUIDANCE = {
 }
 
 
+def migrate_wrong_analysis_states(connection: sqlite3.Connection) -> None:
+    """Upgrade the per-unit analysis lock to a per-user lock.
+
+    ``database.py`` owns the historical schema bootstrap and is intentionally
+    left unchanged.  This migration runs after that bootstrap during app
+    startup.  SQLite cannot alter a primary key in place, so legacy tables
+    are rebuilt while retaining their rows; their missing ``user_id`` values
+    remain NULL and therefore continue to represent the anonymous legacy
+    account.
+    """
+    table = connection.execute(
+        "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?",
+        ("wrong_analysis_states",),
+    ).fetchone()
+    if table is None:
+        return
+
+    columns = {
+        row["name"] if isinstance(row, sqlite3.Row) else row[1]
+        for row in connection.execute("PRAGMA table_info(wrong_analysis_states)")
+    }
+    primary_key = {
+        int(row["pk"] if isinstance(row, sqlite3.Row) else row[5]):
+            (row["name"] if isinstance(row, sqlite3.Row) else row[1])
+        for row in connection.execute("PRAGMA table_info(wrong_analysis_states)")
+        if int(row["pk"] if isinstance(row, sqlite3.Row) else row[5])
+    }
+    if "user_id" in columns and primary_key == {1: "user_id", 2: "unit_id"}:
+        return
+
+    connection.commit()
+    connection.execute("PRAGMA foreign_keys = OFF")
+    try:
+        connection.execute("BEGIN")
+        connection.execute(
+            "ALTER TABLE wrong_analysis_states RENAME TO wrong_analysis_states_old"
+        )
+        connection.execute(
+            """
+            CREATE TABLE wrong_analysis_states (
+                user_id INTEGER DEFAULT NULL,
+                unit_id INTEGER NOT NULL,
+                report_id INTEGER NOT NULL,
+                analyzed_session_id INTEGER NOT NULL DEFAULT 0,
+                analyzed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY (user_id, unit_id),
+                FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE CASCADE,
+                FOREIGN KEY (report_id) REFERENCES wrong_analysis_reports(id) ON DELETE CASCADE
+            )
+            """
+        )
+        user_column = "user_id" if "user_id" in columns else "NULL"
+        connection.execute(
+            f"""
+            INSERT INTO wrong_analysis_states
+                (user_id, unit_id, report_id, analyzed_session_id, analyzed_at)
+            SELECT {user_column}, unit_id, report_id, analyzed_session_id, analyzed_at
+            FROM wrong_analysis_states_old
+            """
+        )
+        connection.execute("DROP TABLE wrong_analysis_states_old")
+        connection.execute(
+            "CREATE INDEX IF NOT EXISTS idx_wrong_analysis_states_unit "
+            "ON wrong_analysis_states(unit_id)"
+        )
+        connection.execute("COMMIT")
+    except Exception:
+        connection.execute("ROLLBACK")
+        raise
+    finally:
+        connection.execute("PRAGMA foreign_keys = ON")
+
+
 def _json_list(value: str | None) -> list[Any]:
     try:
         parsed = json.loads(value or "[]")

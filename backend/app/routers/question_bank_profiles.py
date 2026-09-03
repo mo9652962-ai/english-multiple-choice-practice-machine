@@ -17,6 +17,7 @@ from ..services.trash import (
     restore_trash,
     trash_profile,
 )
+from .auth import require_admin
 
 
 router = APIRouter(tags=["question-bank-profiles"])
@@ -54,6 +55,7 @@ def list_profiles(connection: sqlite3.Connection = Depends(get_db)) -> list[dict
 def create_profile(
     request: QuestionBankProfileCreate,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     name = request.name.strip()
     if not name:
@@ -81,6 +83,7 @@ def update_profile(
     profile_id: int,
     request: QuestionBankProfileUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT * FROM question_bank_profiles WHERE id = ? AND deleted_at IS NULL",
@@ -117,6 +120,7 @@ def update_profile(
 def activate_profile(
     profile_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         set_active_profile_id(connection, profile_id)
@@ -134,6 +138,7 @@ def activate_profile(
 def delete_profile(
     profile_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         result = trash_profile(connection, profile_id)
@@ -148,6 +153,7 @@ def delete_profile(
 def batch_move_papers(
     request: BatchPaperMoveRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     paper_ids = sorted(set(request.paper_ids))
     target = connection.execute(
@@ -234,6 +240,7 @@ def restore_item(
     trash_id: int,
     request: TrashRestoreRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         result = restore_trash(connection, trash_id, request.target_profile_id)
@@ -248,6 +255,7 @@ def restore_item(
 def purge_item(
     trash_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         result = purge_trash(connection, trash_id)

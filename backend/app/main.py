@@ -54,11 +54,14 @@ from .services.bundled_banks import install_bundled_question_banks
 from .services.listening import repair_published_listening_assets
 from .services.vocabulary import clean_machine_meanings, translate_queued_vocabulary
 from .services.trash import purge_expired
+from .services.wrong_analysis import migrate_wrong_analysis_states
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     initialize_database()
+    with connect() as connection:
+        migrate_wrong_analysis_states(connection)
     _backup_database_on_startup()
     install_bundled_question_banks()
     with connect() as connection:
