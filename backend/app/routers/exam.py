@@ -261,7 +261,10 @@ def submit(exam_id: int, connection: sqlite3.Connection = Depends(get_db),
     # 记录学习行为
     try:
         from ..services.streak import record_activity
-        record_activity(connection, "exam_submit", f"exam {exam_id}")
+        record_activity(
+            connection, "exam_submit", f"exam {exam_id}",
+            user_id=user["id"] if user else None,
+        )
     except Exception:
         pass
     return _result(connection, exam_id)

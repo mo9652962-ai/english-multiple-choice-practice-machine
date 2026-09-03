@@ -141,8 +141,9 @@ def get_report(
 
     # ⑤ 活跃 (近7天, 全局表低危 — 挂认证已覆盖)
     active7 = connection.execute(
-        "SELECT COUNT(DISTINCT day) days, COUNT(*) activities FROM learning_days WHERE day >= ?",
-        (days7,)).fetchone()
+        """SELECT COUNT(DISTINCT day) days, COUNT(*) activities
+           FROM learning_days WHERE user_id IS ? AND day >= ?""",
+        (user_id, days7)).fetchone()
 
     # ⑥ 错题概况 (当前用户)
     wrong_stats = connection.execute(
@@ -258,8 +259,8 @@ def get_heatmap(
     start = today - timedelta(days=16 * 7 - 1)
     rows = connection.execute(
         """SELECT day, COUNT(*) AS n FROM learning_days
-           WHERE day >= ? GROUP BY day""",
-        (start.isoformat(),),
+           WHERE user_id IS ? AND day >= ? GROUP BY day""",
+        (user["id"] if user else None, start.isoformat()),
     ).fetchall()
     counts = {r["day"]: r["n"] for r in rows}
     cells = []

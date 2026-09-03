@@ -217,8 +217,9 @@ def _build_today_plan(
     new_target = min(20, max(0, new_words))
     # 今日已学新词 (learning_days 记录)
     learned_today = connection.execute(
-        """SELECT COUNT(*) n FROM learning_days WHERE day = ? AND activity_type IN ('vocabulary','word')""",
-        (today,)).fetchone()["n"]
+        """SELECT COUNT(*) n FROM learning_days
+           WHERE user_id IS ? AND day = ? AND activity_type IN ('vocabulary','word')""",
+        (user_id, today)).fetchone()["n"]
     # ③ 薄弱题型: 能力雷达最低正确率题型
     weak_type = None
     ability = connection.execute(
@@ -243,8 +244,9 @@ def _build_today_plan(
         (user_id, profile_id)).fetchone()["n"]
     # 今日已做练习
     practiced_today = connection.execute(
-        """SELECT COUNT(*) n FROM learning_days WHERE day = ? AND activity_type IN ('practice','exam')""",
-        (today,)).fetchone()["n"]
+        """SELECT COUNT(*) n FROM learning_days
+           WHERE user_id IS ? AND day = ? AND activity_type IN ('practice','exam')""",
+        (user_id, today)).fetchone()["n"]
     # ⑤ 今日推荐练习题型
     counts = connection.execute(
         """SELECT u.unit_type, COUNT(DISTINCT u.id) n FROM units u

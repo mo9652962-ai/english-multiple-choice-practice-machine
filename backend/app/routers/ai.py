@@ -708,6 +708,7 @@ def _latest_wrong_snapshot(
     connection: sqlite3.Connection,
     unit_ids: list[int],
     question_ids: list[int],
+    user_id: int | None = None,
 ) -> dict[str, object]:
     """Capture each unit's most recent submitted wrong answers for comparison."""
     placeholders = ",".join("?" for _ in question_ids)
@@ -720,6 +721,7 @@ def _latest_wrong_snapshot(
                     FROM practice_answers AS pa
                     JOIN practice_sessions AS ps ON ps.id = pa.session_id
                     WHERE pa.question_id = q.id
+                      AND ps.user_id IS ?
                       AND pa.is_correct IS NOT NULL
                       AND TRIM(pa.user_answer) <> ''
                     ORDER BY COALESCE(ps.submitted_at, pa.answered_at) DESC,
@@ -729,7 +731,7 @@ def _latest_wrong_snapshot(
             WHERE q.unit_id = ? AND q.id IN ({placeholders})
             ORDER BY q.sequence
             """,
-            (unit_id, *question_ids),
+            (user_id, unit_id, *question_ids),
         ).fetchall()
         errors = [
             {
@@ -748,7 +750,9 @@ def _latest_wrong_snapshot(
 def analyze_wrong(
     request: AiAnalyzeRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    user_id = user["id"] if user else None
     question_ids = request.question_ids
     if not question_ids:
         question_ids = [
@@ -756,15 +760,27 @@ def analyze_wrong(
             for row in connection.execute(
                 """
                 SELECT question_id FROM wrong_stats
-                WHERE wrong_count >= 3 OR manually_frequent = 1
+                WHERE user_id IS ? AND (wrong_count >= 3 OR manually_frequent = 1)
                 ORDER BY wrong_count DESC, last_wrong_at DESC
                 LIMIT 20
-                """
+                """,
+                (user_id,),
             ).fetchall()
         ]
     if not question_ids:
         raise HTTPException(400, "没有可分析的错题")
     question_ids = list(dict.fromkeys(int(value) for value in question_ids))
+    placeholders = ",".join("?" for _ in question_ids)
+    owned_question_ids = {
+        int(row["question_id"])
+        for row in connection.execute(
+            f"SELECT question_id FROM wrong_stats WHERE user_id IS ? AND question_id IN ({placeholders})",
+            (user_id, *question_ids),
+        ).fetchall()
+    }
+    if not owned_question_ids:
+        raise HTTPException(404, "no owned wrong questions")
+    question_ids = [question_id for question_id in question_ids if question_id in owned_question_ids]
     placeholders = ",".join("?" for _ in question_ids)
     unit_rows = connection.execute(
         f"SELECT DISTINCT unit_id FROM questions WHERE id IN ({placeholders})",
@@ -778,18 +794,19 @@ def analyze_wrong(
     report = connection.execute(
         """
         SELECT * FROM wrong_analysis_reports
-        WHERE scope_key = ?
+        WHERE scope_key = ? AND user_id IS ?
         ORDER BY id DESC LIMIT 1
         """,
-        (scope_key,),
+        (scope_key, user_id),
     ).fetchone()
     states = connection.execute(
         f"""
-        SELECT unit_id, report_id, analyzed_session_id
-        FROM wrong_analysis_states
-        WHERE unit_id IN ({",".join("?" for _ in unit_ids)})
+        SELECT s.unit_id, s.report_id, s.analyzed_session_id
+        FROM wrong_analysis_states s
+        JOIN wrong_analysis_reports r ON r.id = s.report_id AND r.user_id IS ?
+        WHERE s.unit_id IN ({",".join("?" for _ in unit_ids)})
         """,
-        unit_ids,
+        (user_id, *unit_ids),
     ).fetchall()
     states_by_unit = {int(row["unit_id"]): row for row in states}
 
@@ -801,11 +818,12 @@ def analyze_wrong(
             continue
         completed = connection.execute(
             """
-            SELECT 1 FROM practice_unit_submissions
-            WHERE unit_id = ? AND session_id > ?
+            SELECT 1 FROM practice_unit_submissions pus
+            JOIN practice_sessions ps ON ps.id = pus.session_id
+            WHERE pus.unit_id = ? AND ps.user_id IS ? AND pus.session_id > ?
             LIMIT 1
             """,
-            (unit_id, state["analyzed_session_id"]),
+            (unit_id, user_id, state["analyzed_session_id"]),
         ).fetchone()
         if not completed:
             all_retried = False
@@ -816,10 +834,10 @@ def analyze_wrong(
         cached_report = connection.execute(
             """
             SELECT * FROM wrong_analysis_reports
-            WHERE id = ?
+            WHERE id = ? AND user_id IS ?
             ORDER BY id DESC LIMIT 1
             """,
-            (locked_report_ids[0],),
+            (locked_report_ids[0], user_id),
         ).fetchone()
     if cached_report is not None:
         try:
@@ -848,8 +866,8 @@ def analyze_wrong(
             if state is None:
                 continue
             previous = connection.execute(
-                "SELECT input_snapshot FROM wrong_analysis_reports WHERE id = ?",
-                (state["report_id"],),
+                "SELECT input_snapshot FROM wrong_analysis_reports WHERE id = ? AND user_id IS ?",
+                (state["report_id"], user_id),
             ).fetchone()
             if previous is None:
                 continue
@@ -870,14 +888,14 @@ def analyze_wrong(
         content = write_anonymous_report(connection, aggregate)
         profile = get_ai_profile(connection)
         input_snapshot = _latest_wrong_snapshot(
-            connection, unit_ids, question_ids
+            connection, unit_ids, question_ids, user_id=user_id
         )
         cursor = connection.execute(
             """
             INSERT INTO wrong_analysis_reports
                 (scope_key, unit_ids, input_snapshot, scope_title,
-                 question_count, aggregate_data, report, model_name)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                 question_count, aggregate_data, report, model_name, user_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 scope_key,
@@ -888,11 +906,13 @@ def analyze_wrong(
                 json.dumps(aggregate, ensure_ascii=False),
                 content,
                 profile["default_model"],
+                user_id,
             ),
         )
         report_id = int(cursor.lastrowid)
         max_session_id = connection.execute(
-            "SELECT COALESCE(MAX(id), 0) AS max_id FROM practice_sessions"
+            "SELECT COALESCE(MAX(id), 0) AS max_id FROM practice_sessions WHERE user_id IS ?",
+            (user_id,),
         ).fetchone()["max_id"]
         for unit_id in unit_ids:
             connection.execute(
@@ -907,7 +927,10 @@ def analyze_wrong(
         # v9.19: 记录 streak 学习行为
         try:
             from ..services.streak import record_activity
-            record_activity(connection, "ai_analyze", f"report {report_id}")
+            record_activity(
+                connection, "ai_analyze", f"report {report_id}",
+                user_id=user_id,
+            )
         except Exception:
             pass
     except (ValueError, LookupError, httpx.HTTPError, json.JSONDecodeError) as error:
@@ -926,25 +949,29 @@ def analyze_wrong(
 @router.get("/wrong-analysis-status")
 def wrong_analysis_status(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    user_id = user["id"] if user else None
     rows = connection.execute(
         """
         SELECT s.unit_id, s.report_id, s.analyzed_session_id,
                r.scope_key, r.scope_title, r.report, r.aggregate_data
         FROM wrong_analysis_states s
-        JOIN wrong_analysis_reports r ON r.id = s.report_id
+        JOIN wrong_analysis_reports r ON r.id = s.report_id AND r.user_id IS ?
         ORDER BY s.unit_id
-        """
+        """,
+        (user_id,),
     ).fetchall()
     units = []
     for row in rows:
         completed = connection.execute(
             """
-            SELECT 1 FROM practice_unit_submissions
-            WHERE unit_id = ? AND session_id > ?
+            SELECT 1 FROM practice_unit_submissions pus
+            JOIN practice_sessions ps ON ps.id = pus.session_id
+            WHERE pus.unit_id = ? AND ps.user_id IS ? AND pus.session_id > ?
             LIMIT 1
             """,
-            (row["unit_id"], row["analyzed_session_id"]),
+            (row["unit_id"], user_id, row["analyzed_session_id"]),
         ).fetchone()
         try:
             aggregate = json.loads(row["aggregate_data"] or "{}")
@@ -1174,6 +1201,7 @@ def suggest_correction(
 def generate_similar(
     request: AiAnalyzeRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """从错题考点生成同考点变体题（巩固练习）"""
     from ..services.similar_questions import generate_similar_questions
@@ -1182,16 +1210,30 @@ def generate_similar(
         qids = [
             row["question_id"]
             for row in connection.execute(
-                "SELECT question_id FROM wrong_stats WHERE wrong_count > 0 ORDER BY wrong_count DESC LIMIT 1"
+                "SELECT question_id FROM wrong_stats WHERE user_id IS ? AND wrong_count > 0 "
+                "ORDER BY wrong_count DESC LIMIT 1",
+                (user["id"] if user else None,),
             ).fetchall()
         ]
     if not qids:
         return {"error": "没有错题数据，先做几道题吧", "questions": []}
+    qids = list(dict.fromkeys(int(value) for value in qids))
+    placeholders = ",".join("?" for _ in qids)
+    owned = connection.execute(
+        f"SELECT question_id FROM wrong_stats WHERE user_id IS ? AND question_id IN ({placeholders})",
+        (user["id"] if user else None, *qids),
+    ).fetchall()
+    if not owned:
+        return {"error": "没有可用的错题数据", "questions": []}
+    qids = [int(row["question_id"]) for row in owned]
     result = generate_similar_questions(connection, qids[0], count=request.question_ids and 3 or 3)
     # v9.19: 记录 streak 学习行为
     try:
         from ..services.streak import record_activity
-        record_activity(connection, "similar_questions", f"question {qids[0]}")
+        record_activity(
+            connection, "similar_questions", f"question {qids[0]}",
+            user_id=user["id"] if user else None,
+        )
     except Exception:
         pass
     return result
@@ -1204,6 +1246,9 @@ def get_ai_usage(
     user: dict | None = Depends(get_current_user),
 ) -> dict:
     """v9.27: Gemini UI4——AI 用量月度聚合（文枢阁用量）"""
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED and user is None:
+        raise HTTPException(401, "login required")
     from datetime import datetime
 
     if not month:
@@ -1222,9 +1267,9 @@ def get_ai_usage(
             COALESCE(SUM(completion_tokens), 0) AS completion_tokens,
             COALESCE(SUM(CASE WHEN status != 'ok' THEN 1 ELSE 0 END), 0) AS failed_calls
         FROM ai_usage
-        WHERE strftime('%Y-%m', created_at) = ?
+        WHERE user_id IS ? AND strftime('%Y-%m', created_at) = ?
         """,
-        (month,),
+        (user["id"] if user else None, month),
     ).fetchone()
 
     dist_rows = connection.execute(
@@ -1234,11 +1279,11 @@ def get_ai_usage(
                COALESCE(SUM(prompt_tokens), 0) AS prompt_tokens,
                COALESCE(SUM(completion_tokens), 0) AS completion_tokens
         FROM ai_usage
-        WHERE strftime('%Y-%m', created_at) = ?
+        WHERE user_id IS ? AND strftime('%Y-%m', created_at) = ?
         GROUP BY task
         ORDER BY calls DESC
         """,
-        (month,),
+        (user["id"] if user else None, month),
     ).fetchall()
 
     total_tokens = (row["prompt_tokens"] or 0) + (row["completion_tokens"] or 0)

@@ -22,9 +22,12 @@ def _current_user_id(user: dict | None) -> int | None:
 def unit_coverage(
     unit_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    """v9.28: Gemini batch5 任务2——单篇文章生词覆盖率"""
-    return coverage_service.get_passage_coverage(connection, unit_id)
+    """v9.28: Gemini batch5 任务2——单篇文章生词覆盖率（按当前用户词库计算）"""
+    return coverage_service.get_passage_coverage(
+        connection, unit_id, user_id=user["id"] if user else None
+    )
 
 
 class RateRequest(BaseModel):

@@ -194,11 +194,67 @@ def register(
     new_user_id = cursor.lastrowid
     # v9.24: 首个用户注册时——把本地单用户遗留数据（user_id IS NULL）迁移给他
     if is_first:
-        for table in ("vocabulary_entries", "exam_sessions", "practice_sessions", "ai_conversations"):
+        legacy_tables = (
+            "vocabulary_entries",
+            "exam_sessions",
+            "practice_sessions",
+            "ai_conversations",
+            "wrong_stats",
+            "spaced_repetition_records",
+            "learning_days",
+            "annotations",
+            "essay_submissions",
+            "speaking_sessions",
+            "agent_runs",
+            "user_memories",
+            "knowledge_docs",
+            "knowledge_chunks",
+            "chat_messages",
+            "diagnostic_reports",
+            "wrong_analysis_reports",
+            "ai_usage",
+            "explain_collections",
+            "user_achievements",
+        )
+        for table in legacy_tables:
             try:
-                connection.execute(
-                    f"UPDATE {table} SET user_id = ? WHERE user_id IS NULL", (new_user_id,)
-                )
+                columns = {
+                    row["name"]
+                    for row in connection.execute(f"PRAGMA table_info({table})")
+                }
+                if table == "explain_collections" and columns and "user_id" not in columns:
+                    connection.execute(
+                        "ALTER TABLE explain_collections ADD COLUMN user_id INTEGER DEFAULT NULL"
+                    )
+                    columns.add("user_id")
+                if table == "user_achievements" and columns and "user_id" not in columns:
+                    connection.execute(
+                        "ALTER TABLE user_achievements RENAME TO user_achievements_old"
+                    )
+                    connection.execute(
+                        """CREATE TABLE user_achievements (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            user_id INTEGER DEFAULT NULL,
+                            badge_key TEXT NOT NULL,
+                            earned_at TEXT NOT NULL,
+                            progress INTEGER DEFAULT 0,
+                            target INTEGER DEFAULT 0,
+                            UNIQUE (user_id, badge_key)
+                        )"""
+                    )
+                    connection.execute(
+                        """INSERT INTO user_achievements
+                           (id, user_id, badge_key, earned_at, progress, target)
+                           SELECT id, NULL, badge_key, earned_at, progress, target
+                           FROM user_achievements_old"""
+                    )
+                    connection.execute("DROP TABLE user_achievements_old")
+                    columns.add("user_id")
+                if "user_id" in columns:
+                    connection.execute(
+                        f"UPDATE {table} SET user_id = ? WHERE user_id IS NULL",
+                        (new_user_id,),
+                    )
             except Exception:
                 pass
     connection.commit()

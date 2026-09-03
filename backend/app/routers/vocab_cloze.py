@@ -73,20 +73,27 @@ def _build_sentence_with_blank(context: str, word: str) -> str:
     return pat.sub("____", context)
 
 
-def _pick_distractors(conn: sqlite3.Connection, word: str, n: int = 3) -> list[str]:
+def _pick_distractors(
+    conn: sqlite3.Connection,
+    word: str,
+    n: int = 3,
+    user_id: int | None = None,
+) -> list[str]:
     """挑干扰词: 同词性优先, 长度相近兜底"""
     distractors: list[str] = []
     pos_row = conn.execute(
-        "SELECT part_of_speech FROM vocabulary_entries WHERE term = ? LIMIT 1",
-        (word,),
+        """SELECT part_of_speech FROM vocabulary_entries
+           WHERE user_id IS ? AND term = ? LIMIT 1""",
+        (user_id, word),
     ).fetchone()
     pos = pos_row[0] if pos_row else ""
     rows = conn.execute("""
         SELECT term FROM vocabulary_entries
-        WHERE term != ? AND length(term) BETWEEN length(?) - 5 AND length(?) + 5
+        WHERE user_id IS ? AND term != ?
+          AND length(term) BETWEEN length(?) - 5 AND length(?) + 5
           AND (? = '' OR part_of_speech = ?)
         ORDER BY RANDOM() LIMIT ?
-    """, (word, word, word, pos, pos, n * 4)).fetchall()
+    """, (user_id, word, word, word, pos, pos, n * 4)).fetchall()
     for r in rows:
         d = r[0]
         if d and d.lower() != word.lower() and d not in distractors:
@@ -96,8 +103,10 @@ def _pick_distractors(conn: sqlite3.Connection, word: str, n: int = 3) -> list[s
     while len(distractors) < n:
         # 兜底：再随机取任意词（避免 "_____" 废选项）
         extra = conn.execute(
-            "SELECT term FROM vocabulary_entries WHERE term != ? AND term != '' ORDER BY RANDOM() LIMIT 20",
-            (word,),
+            """SELECT term FROM vocabulary_entries
+               WHERE user_id IS ? AND term != ? AND term != ''
+               ORDER BY RANDOM() LIMIT 20""",
+            (user_id, word),
         ).fetchall()
         for r in extra:
             d = r[0]
@@ -128,7 +137,7 @@ def get_cloze(
         blank_sentence = _build_sentence_with_blank(context, w["word"])
         if "____" not in blank_sentence:
             continue
-        distractors = _pick_distractors(connection, w["word"])
+        distractors = _pick_distractors(connection, w["word"], user_id=user_id)
         options = [w["word"]] + distractors
         random.shuffle(options)
         items.append({

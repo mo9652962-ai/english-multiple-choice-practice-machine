@@ -27,11 +27,12 @@ def calendar_month(year: int | None = None, month: int | None = None,
     else:
         end = f"{y:04d}-{m + 1:02d}-01"
 
+    user_id = user["id"] if user else None
     rows = connection.execute(
         """SELECT day, activity_type, COUNT(*) n FROM learning_days
-           WHERE day >= ? AND day < ?
+           WHERE user_id IS ? AND day >= ? AND day < ?
            GROUP BY day, activity_type ORDER BY day""",
-        (start, end)).fetchall()
+        (user_id, start, end)).fetchall()
 
     # 每天聚合
     daily: dict[str, dict] = {}
