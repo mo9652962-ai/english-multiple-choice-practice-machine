@@ -16,6 +16,7 @@ from .database import connect, initialize_database
 from .routers import (
     ai,
     auth,  # v9.24: 多用户认证
+    certificates,  # v9.40: 证书 & 防作弊
     dashboard,
     exam,
     feedback,
@@ -162,6 +163,7 @@ app.include_router(feedback.router, prefix="/api")
 app.include_router(diagnostic.router, prefix="/api")
 app.include_router(vocabulary.router, prefix="/api")
 app.include_router(exam.router, prefix="/api")
+app.include_router(certificates.router)  # v9.40: 证书 & 防作弊（自带 /api 前缀）
 app.include_router(exam_templates.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
 app.include_router(agent.router, prefix="/api")
