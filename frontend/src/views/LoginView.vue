@@ -45,6 +45,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { authApi, setToken } from '../api'
+import { showToast } from '../services/toast'
 
 const router = useRouter()
 const mode = ref<'login' | 'register'>('login')
@@ -73,6 +74,7 @@ async function submit() {
     setToken(resp.token)
     if (mode.value === 'register' && (resp.user as any)?.migrated_legacy) {
       notice.value = '首个账号已创建，原有数据已迁移'
+      showToast('首个账号已创建，原有匿名数据已迁移到该账号', 'success', 5000)
     }
     router.push('/')
   } catch (e: any) {

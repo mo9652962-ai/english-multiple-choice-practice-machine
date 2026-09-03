@@ -54,6 +54,7 @@ def export_anki(
     connection: sqlite3.Connection,
     status_filter: str = "all",
     output_dir: str | None = None,
+    user_id: int | None = None,
 ) -> dict:
     """导出单词本为 Anki .apkg 文件
     
@@ -66,10 +67,10 @@ def export_anki(
         {"file": path, "count": N, "notes": [...]}
     """
     # 查询单词
-    where = ""
-    params: list = []
+    where = "WHERE user_id IS ?"
+    params: list = [user_id]
     if status_filter in ("mastered", "learning"):
-        where = "WHERE study_status = ?"
+        where += " AND study_status = ?"
         params.append(status_filter)
 
     rows = connection.execute(

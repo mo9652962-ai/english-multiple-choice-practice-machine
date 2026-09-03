@@ -131,7 +131,9 @@ def list_entries(
                               AND (next_review_at IS NULL OR next_review_at <= CURRENT_TIMESTAMP)
                         THEN 1 ELSE 0 END), 0) AS review
         FROM vocabulary_entries
-        """
+        WHERE {' AND '.join(conditions)}
+        """,
+        params,
     ).fetchone()
     items = [dict(row) for row in rows]
     return {"items": items, "counts": dict(counts)}
@@ -141,14 +143,17 @@ def list_entries(
 def home_words(
     limit: int = Query(20, ge=1, le=50),
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    user_id = user["id"] if user else None
     rows = connection.execute(
         """
         SELECT id, term, lemma, contextual_meaning, common_meaning,
                encounter_count, study_status, category,
                CASE WHEN encounter_count >= 2 OR manually_frequent = 1 THEN 1 ELSE 0 END AS is_frequent
         FROM vocabulary_entries
-        WHERE translation_status = 'ready'
+        WHERE user_id IS ?
+          AND translation_status = 'ready'
         ORDER BY
                  CASE WHEN datetime(created_at) >= datetime('now', '-7 days') THEN 0 ELSE 1 END,
                  is_frequent DESC,
@@ -157,7 +162,7 @@ def home_words(
                  RANDOM()
         LIMIT ?
         """,
-        (limit,),
+        (user_id, limit),
     ).fetchall()
     return {"items": [dict(row) for row in rows]}
 
@@ -167,11 +172,13 @@ def create_translation_run(
     request: VocabularyTranslationRunRequest,
     background_tasks: BackgroundTasks,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     queued_ids = queue_vocabulary_translations(
         connection,
         request.entry_ids,
         include_all_pending=request.trigger == "practice_exit",
+        user_id=user["id"] if user else None,
     )
     if queued_ids:
         background_tasks.add_task(translate_queued_vocabulary)
@@ -185,26 +192,31 @@ def create_translation_run(
 @router.get("/due-today")
 def due_today(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    """获取今日待复习单词列表（FSRS 调度）"""
+    """获取今日待复习单词列表（FSRS 调度，按用户隔离）"""
     from ..services.fsrs_scheduler import get_due_today
-    entries = get_due_today(connection)
+    entries = get_due_today(connection, user_id=user["id"] if user else None)
     return {"count": len(entries), "entries": entries}
 
 
 @router.get("/stats/summary")
 def vocab_stats(
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    """单词本学习统计"""
+    """单词本学习统计（按用户隔离）"""
     from ..services.fsrs_scheduler import get_due_count
+    user_id = user["id"] if user else None
     total = connection.execute(
-        "SELECT COUNT(*) FROM vocabulary_entries"
+        "SELECT COUNT(*) FROM vocabulary_entries WHERE user_id IS ?",
+        (user_id,),
     ).fetchone()[0]
     mastered = connection.execute(
-        "SELECT COUNT(*) FROM vocabulary_entries WHERE study_status = 'mastered'"
+        "SELECT COUNT(*) FROM vocabulary_entries WHERE user_id IS ? AND study_status = 'mastered'",
+        (user_id,),
     ).fetchone()[0]
-    due = get_due_count(connection)
+    due = get_due_count(connection, user_id=user_id)
     return {
         "total": total,
         "mastered": mastered,
@@ -227,6 +239,7 @@ def generate_vocab_article(
     word_count: int = 8,
     connection: sqlite3.Connection = Depends(get_db),
     request: Request = None,
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     """从单词本选词，AI 生成包含这些词的语境短文（辅助记忆）
     v9.23: 加限流——高消耗接口，防止公网部署时被刷爆额度"""
@@ -240,7 +253,7 @@ def generate_vocab_article(
         window.append(now)
         _article_requests[ip] = window
     from ..services.article_generator import generate_article
-    return generate_article(connection, topic, word_count)
+    return generate_article(connection, topic, word_count, user_id=user["id"] if user else None)
 
 
 @router.get("/{entry_id}")
@@ -332,7 +345,16 @@ def retry_translation(
     entry_id: int,
     background_tasks: BackgroundTasks,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED:
+        row = connection.execute(
+            "SELECT id FROM vocabulary_entries WHERE id = ? AND user_id = ?",
+            (entry_id, user["id"] if user else None),
+        ).fetchone()
+        if row is None:
+            raise HTTPException(404, "单词不存在或无权访问")
     connection.execute(
         """
         UPDATE vocabulary_entries
@@ -352,9 +374,21 @@ def submit_review(
     entry_id: int,
     request: VocabularyReview,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
+    from .auth import AUTH_ENABLED
+    if AUTH_ENABLED:
+        row = connection.execute(
+            "SELECT id FROM vocabulary_entries WHERE id = ? AND user_id = ?",
+            (entry_id, user["id"] if user else None),
+        ).fetchone()
+        if row is None:
+            raise HTTPException(404, "单词不存在或无权访问")
     try:
-        return review_entry(connection, entry_id, request.rating)
+        return review_entry(
+            connection, entry_id, request.rating,
+            user_id=user["id"] if user else None,
+        )
     except LookupError as error:
         raise HTTPException(404, str(error)) from error
 
@@ -363,11 +397,12 @@ def submit_review(
 def export_anki_deck(
     status: str = "all",
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(maybe_require_user),
 ) -> dict:
-    """导出单词本为 Anki .apkg 牌组（返回 JSON 元信息 + 下载端点）"""
+    """导出单词本为 Anki .apkg 牌组（返回 JSON 元信息 + 下载端点，按用户隔离）"""
     from ..services.anki_export import export_anki
     try:
-        result = export_anki(connection, status_filter=status)
+        result = export_anki(connection, status_filter=status, user_id=user["id"] if user else None)
     except Exception as error:
         raise HTTPException(500, f"导出失败：{error}") from error
     if result["count"] == 0:

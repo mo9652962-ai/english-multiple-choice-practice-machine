@@ -4,7 +4,7 @@ import sqlite3
 
 from fastapi import APIRouter, Depends, HTTPException
 
-from ..database import get_db
+from ..database import get_active_profile_id, get_db
 from ..schemas import AnswerUpdate, PracticeCreate
 from ..services.practice import (
     IncompleteSubmissionError,
@@ -42,6 +42,47 @@ def translate_error(error: Exception) -> HTTPException:
     return HTTPException(400, str(error))
 
 
+def _scope_wrong_practice(
+    connection: sqlite3.Connection,
+    request: PracticeCreate,
+    user_id: int | None,
+) -> PracticeCreate:
+    """把 wrong 模式的题目集合先限制到当前用户，再交给历史 service。"""
+    if request.mode != "wrong":
+        return request
+    conditions = [
+        "ws.user_id IS ?",
+        "ws.wrong_count > 0",
+        "p.profile_id = ?",
+        "p.deleted_at IS NULL",
+    ]
+    params: list[object] = [user_id, get_active_profile_id(connection)]
+    if request.unit_ids:
+        placeholders = ",".join("?" for _ in request.unit_ids)
+        conditions.append(f"q.unit_id IN ({placeholders})")
+        params.extend(request.unit_ids)
+    if request.question_ids:
+        placeholders = ",".join("?" for _ in request.question_ids)
+        conditions.append(f"q.id IN ({placeholders})")
+        params.extend(request.question_ids)
+    if request.unit_type:
+        conditions.append("u.unit_type = ?")
+        params.append(request.unit_type)
+    rows = connection.execute(
+        f"""SELECT DISTINCT ws.question_id
+            FROM wrong_stats ws
+            JOIN questions q ON q.id = ws.question_id
+            JOIN units u ON u.id = q.unit_id
+            JOIN papers p ON p.id = u.paper_id
+            WHERE {' AND '.join(conditions)}""",
+        params,
+    ).fetchall()
+    question_ids = [int(row["question_id"]) for row in rows]
+    if not question_ids:
+        raise LookupError("当前用户没有符合条件的错题")
+    return request.model_copy(update={"question_ids": question_ids})
+
+
 @router.post("/sessions")
 def create(
     request: PracticeCreate,
@@ -49,7 +90,9 @@ def create(
     user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
-        return create_session(connection, request, user_id=_current_user_id(user))
+        user_id = _current_user_id(user)
+        scoped_request = _scope_wrong_practice(connection, request, user_id)
+        return create_session(connection, scoped_request, user_id=user_id)
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error
 
@@ -96,19 +139,23 @@ def submit(
 ) -> dict:
     try:
         result = submit_session(connection, session_id, user_id=_current_user_id(user))
-        _record_streak_activity(connection, "practice_submit", f"session {session_id}")
+        _record_streak_activity(
+            connection, "practice_submit", f"session {session_id}",
+            user_id=_current_user_id(user),
+        )
         return result
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error
 
 
 def _record_streak_activity(
-    connection: sqlite3.Connection, activity_type: str, detail: str = ""
+    connection: sqlite3.Connection, activity_type: str, detail: str = "",
+    user_id: int | None = None,
 ) -> None:
-    """记录 streak 学习行为（失败静默，不影响主流程）"""
+    """记录 streak 学习行为（失败静默，不影响主流程；按用户隔离）"""
     try:
         from ..services.streak import record_activity
-        record_activity(connection, activity_type, detail)
+        record_activity(connection, activity_type, detail, user_id=user_id)
     except Exception:
         pass
 

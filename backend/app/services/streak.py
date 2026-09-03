@@ -34,23 +34,24 @@ def record_activity(
     connection: sqlite3.Connection,
     activity_type: str,
     detail: str = "",
+    user_id: int | None = None,
 ) -> None:
-    """记录一次学习行为（每天每类型只记一次，防刷）"""
+    """记录一次学习行为（每天每类型只记一次，防刷；按用户隔离）"""
     if activity_type not in LEARNING_ACTIVITY_TYPES:
         activity_type = "practice_submit"
     today = date.today().isoformat()
     # 当天该类型已记录则跳过
     exists = connection.execute(
         """SELECT 1 FROM learning_days
-           WHERE day = ? AND activity_type = ?""",
-        (today, activity_type),
+           WHERE user_id IS ? AND day = ? AND activity_type = ?""",
+        (user_id, today, activity_type),
     ).fetchone()
     if exists:
         return
     connection.execute(
-        """INSERT INTO learning_days (day, activity_type, detail)
-           VALUES (?, ?, ?)""",
-        (today, activity_type, detail[:200]),
+        """INSERT INTO learning_days (user_id, day, activity_type, detail)
+           VALUES (?, ?, ?, ?)""",
+        (user_id, today, activity_type, detail[:200]),
     )
     connection.commit()
 

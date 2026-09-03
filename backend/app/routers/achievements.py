@@ -28,11 +28,36 @@ def badge(key, name, icon, desc, check):
 def _init_table(connection):
     connection.execute("""CREATE TABLE IF NOT EXISTS user_achievements (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        badge_key TEXT NOT NULL UNIQUE,
+        user_id INTEGER DEFAULT NULL,
+        badge_key TEXT NOT NULL,
         earned_at TEXT NOT NULL,
         progress INTEGER DEFAULT 0,
-        target INTEGER DEFAULT 0
+        target INTEGER DEFAULT 0,
+        UNIQUE (user_id, badge_key)
     )""")
+    # v9.30+: 多用户隔离——旧库补 user_id 列，并重建全局 UNIQUE(badge_key) 约束
+    cols = {row[1] for row in connection.execute("PRAGMA table_info(user_achievements)")}
+    if "user_id" not in cols:
+        connection.execute("ALTER TABLE user_achievements RENAME TO user_achievements_old")
+        connection.execute("""CREATE TABLE user_achievements (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER DEFAULT NULL,
+            badge_key TEXT NOT NULL,
+            earned_at TEXT NOT NULL,
+            progress INTEGER DEFAULT 0,
+            target INTEGER DEFAULT 0,
+            UNIQUE (user_id, badge_key)
+        )""")
+        connection.execute(
+            """INSERT INTO user_achievements (id, user_id, badge_key, earned_at, progress, target)
+               SELECT id, NULL, badge_key, earned_at, progress, target FROM user_achievements_old"""
+        )
+        connection.execute("DROP TABLE user_achievements_old")
+        print("[migrate] user_achievements 增加 user_id + 联合唯一重建")
+    connection.execute(
+        "CREATE INDEX IF NOT EXISTS idx_user_achievements_user_id ON user_achievements(user_id)"
+    )
+    connection.commit()
 
 
 # ── 徽章规则（v9.30: 全部按 user_id 过滤）──
@@ -46,7 +71,9 @@ def _practice_count(connection, user_id=None):
 def _streak(connection, profile_id, user_id=None):
     today = date.today().isoformat()
     days = {r["day"] for r in connection.execute(
-        "SELECT DISTINCT day FROM learning_days WHERE day >= date('now', '-60 days')"
+        "SELECT DISTINCT day FROM learning_days "
+        "WHERE user_id IS ? AND day >= date('now', '-60 days')",
+        (user_id,),
     ).fetchall()}
     # 从今天或昨天往前数
     from datetime import timedelta
@@ -146,7 +173,8 @@ def get_achievements(
     profile_id = get_active_profile_id(connection)
     user_id = _current_user_id(user)
     earned = {r["badge_key"]: r for r in connection.execute(
-        "SELECT * FROM user_achievements").fetchall()}
+        "SELECT * FROM user_achievements WHERE user_id IS ?", (user_id,)
+    ).fetchall()}
     items = []
     for b in BADGES:
         try:
@@ -181,11 +209,12 @@ def check_achievements(
         except Exception:
             continue
         exists = connection.execute(
-            "SELECT 1 FROM user_achievements WHERE badge_key = ?", (b["key"],)).fetchone()
+            "SELECT 1 FROM user_achievements WHERE badge_key = ? AND user_id IS ?",
+            (b["key"], user_id)).fetchone()
         if current >= target and not exists:
             connection.execute(
-                "INSERT INTO user_achievements (badge_key, earned_at, progress, target) VALUES (?,?,?,?)",
-                (b["key"], now, min(current, target), target))
+                "INSERT INTO user_achievements (user_id, badge_key, earned_at, progress, target) VALUES (?,?,?,?,?)",
+                (user_id, b["key"], now, min(current, target), target))
             new_earned.append(b)
     connection.commit()
     return {"new_badges": new_earned, "count": len(new_earned)}

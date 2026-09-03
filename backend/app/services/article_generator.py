@@ -34,17 +34,18 @@ ARTICLE_PROMPTS = {
 }
 
 
-def _pick_words(connection: sqlite3.Connection, count: int = 8) -> list[dict]:
-    """从单词本选词：优先待复习 > 高频词 > 随机"""
+def _pick_words(connection: sqlite3.Connection, count: int = 8, user_id: int | None = None) -> list[dict]:
+    """从单词本选词：优先待复习 > 高频词 > 随机（按用户隔离）"""
     # 先查待复习
     rows = connection.execute(
         """SELECT term, common_meaning, encounter_count
            FROM vocabulary_entries
-           WHERE translation_status = 'ready'
+           WHERE user_id IS ?
+             AND translation_status = 'ready'
              AND study_status = 'learning'
            ORDER BY encounter_count DESC
            LIMIT ?""",
-        (count * 2,),
+        (user_id, count * 2,),
     ).fetchall()
     
     words = [dict(r) for r in rows]
@@ -55,11 +56,12 @@ def _pick_words(connection: sqlite3.Connection, count: int = 8) -> list[dict]:
         more = connection.execute(
             """SELECT term, common_meaning, encounter_count
                FROM vocabulary_entries
-               WHERE translation_status = 'ready'
+               WHERE user_id IS ?
+                 AND translation_status = 'ready'
                  AND term NOT IN ({})
                ORDER BY encounter_count DESC
                LIMIT ?""".format(",".join("?" * len(existing_terms)) if existing_terms else "''"),
-            (*existing_terms, count - len(words)),
+            (user_id, *existing_terms, count - len(words)),
         ).fetchall()
         words.extend(dict(r) for r in more)
     
@@ -70,6 +72,7 @@ def generate_article(
     connection: sqlite3.Connection,
     topic: str = "随机",
     word_count: int = 8,
+    user_id: int | None = None,
 ) -> dict[str, Any]:
     """从单词本选词 + 生成语境短文
     
@@ -84,7 +87,7 @@ def generate_article(
     word_count = max(5, min(15, word_count))
     topic = topic if topic in ARTICLE_PROMPTS else "随机"
     
-    words = _pick_words(connection, word_count)
+    words = _pick_words(connection, word_count, user_id=user_id)
     if len(words) < 3:
         return {"error": "单词本词汇不足，请先添加至少 3 个已完成翻译的单词", "words": words}
     

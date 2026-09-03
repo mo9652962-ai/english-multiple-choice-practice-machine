@@ -14,7 +14,6 @@ from fastapi import APIRouter, Depends, WebSocket, WebSocketDisconnect
 from ..database import connect, get_db
 from ..routers.auth import AUTH_ENABLED, maybe_require_user
 from ..services.chat_service import (
-    get_recent_messages,
     save_message,
     stream_ai_reply,
 )
@@ -22,7 +21,8 @@ from ..services.chat_service import (
 router = APIRouter(prefix="/chat", tags=["chat"])
 logger = logging.getLogger(__name__)
 
-_connections: set[WebSocket] = set()
+_connections: dict[WebSocket, int | None] = {}
+_ai_request_users: dict[str, int | None] = {}
 _connections_lock = asyncio.Lock()
 _AI_MENTION_RE = re.compile(r"@(?:ai|墨|阿墨)", re.IGNORECASE)
 
@@ -66,17 +66,21 @@ def _wire_message(message: dict[str, Any], client_id: str | None = None) -> dict
     }
 
 
-async def _broadcast(event: dict[str, Any]) -> None:
+async def _broadcast(event: dict[str, Any], user_id: int | None = None) -> None:
     """串行广播，避免多个并发 AI 任务同时写同一个 WebSocket。"""
+    if user_id is None and event.get("type") in {"ai_start", "ai_delta", "ai_done", "ai_error"}:
+        user_id = _ai_request_users.get(str(event.get("requestId")))
     async with _connections_lock:
         stale: list[WebSocket] = []
-        for websocket in list(_connections):
+        for websocket, connection_user_id in list(_connections.items()):
+            if user_id is not None and connection_user_id != user_id:
+                continue
             try:
                 await websocket.send_json(event)
             except (WebSocketDisconnect, RuntimeError, OSError):
                 stale.append(websocket)
         for websocket in stale:
-            _connections.discard(websocket)
+            _connections.pop(websocket, None)
 
 
 async def _broadcast_presence() -> None:
@@ -89,7 +93,28 @@ async def _broadcast_presence() -> None:
             except (WebSocketDisconnect, RuntimeError, OSError):
                 stale.append(websocket)
         for websocket in stale:
-            _connections.discard(websocket)
+            _connections.pop(websocket, None)
+
+
+def _get_recent_messages(
+    connection, user_id: int | None, limit: int = 100
+) -> list[dict[str, Any]]:
+    """读取当前用户的聊天上下文；chat_messages 没有独立会话外键。"""
+    try:
+        safe_limit = max(1, min(int(limit), 500))
+    except (TypeError, ValueError):
+        safe_limit = 100
+    rows = connection.execute(
+        """
+        SELECT id, user_id, sender_type, sender_name, content, request_id, created_at
+        FROM chat_messages
+        WHERE user_id IS ?
+        ORDER BY created_at DESC, id DESC
+        LIMIT ?
+        """,
+        (user_id, safe_limit),
+    ).fetchall()
+    return [dict(row) for row in reversed(rows)]
 
 
 def _websocket_user_id(websocket: WebSocket, connection) -> int | None:
@@ -115,12 +140,14 @@ async def _run_ai_reply(
     user_message: str,
 ) -> None:
     request_id = _new_request_id()
+    _ai_request_users[request_id] = user_id
     await _broadcast(
         {
             "type": "ai_start",
             "requestId": request_id,
             "senderName": "阿墨",
-        }
+        },
+        user_id=user_id,
     )
     connection = connect()
     chunks: list[str] = []
@@ -132,7 +159,8 @@ async def _run_ai_reply(
                     "type": "ai_delta",
                     "requestId": request_id,
                     "content": chunk,
-                }
+                },
+                user_id=user_id,
             )
         full_content = "".join(chunks).strip()
         saved = save_message(
@@ -151,7 +179,8 @@ async def _run_ai_reply(
                 "fullContent": full_content,
                 "messageId": saved["id"],
                 "createdAt": saved["created_at"],
-            }
+            },
+            user_id=user_id,
         )
     except asyncio.CancelledError:
         raise
@@ -165,6 +194,7 @@ async def _run_ai_reply(
             }
         )
     finally:
+        _ai_request_users.pop(request_id, None)
         connection.close()
 
 
@@ -173,7 +203,7 @@ def list_messages(
     connection=Depends(get_db),
     _user: dict[str, Any] | None = Depends(maybe_require_user),
 ) -> list[dict[str, Any]]:
-    return get_recent_messages(connection, limit=100)
+    return _get_recent_messages(connection, _user_id(_user), limit=100)
 
 
 @router.websocket("/ws")
@@ -188,7 +218,7 @@ async def chat_websocket(websocket: WebSocket) -> None:
             return
 
         async with _connections_lock:
-            _connections.add(websocket)
+            _connections[websocket] = user_id
         await _broadcast_presence()
 
         while True:
@@ -228,10 +258,10 @@ async def chat_websocket(websocket: WebSocket) -> None:
 
             client_id = payload.get("clientId")
             client_id = str(client_id) if client_id is not None else None
-            await _broadcast(_wire_message(saved, client_id))
+            await _broadcast(_wire_message(saved, client_id), user_id=user_id)
 
             if _AI_MENTION_RE.search(content):
-                recent_messages = get_recent_messages(connection, limit=10)
+                recent_messages = _get_recent_messages(connection, user_id, limit=10)
                 task = asyncio.create_task(
                     _run_ai_reply(user_id, recent_messages, content)
                 )
@@ -243,7 +273,6 @@ async def chat_websocket(websocket: WebSocket) -> None:
         pass
     finally:
         async with _connections_lock:
-            _connections.discard(websocket)
+            _connections.pop(websocket, None)
         connection.close()
         await _broadcast_presence()
-

@@ -112,15 +112,16 @@ def card_to_dict(card: Card) -> dict:
     }
 
 
-def get_due_count(connection: sqlite3.Connection) -> int:
-    """获取今日待复习单词数"""
+def get_due_count(connection: sqlite3.Connection, user_id: int | None = None) -> int:
+    """获取今日待复习单词数（按用户隔离；user_id=None 兼容单用户）"""
     now = datetime.now(timezone.utc).isoformat()
     row = connection.execute(
         """SELECT COUNT(*) FROM vocabulary_entries
-           WHERE fsrs_due IS NOT NULL
+           WHERE user_id IS ?
+             AND fsrs_due IS NOT NULL
              AND fsrs_due <= ?
              AND study_status != 'mastered'""",
-        (now,),
+        (user_id, now),
     ).fetchone()
     return row[0] if row else 0
 

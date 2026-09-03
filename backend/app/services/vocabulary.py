@@ -421,17 +421,26 @@ def queue_vocabulary_translations(
     entry_ids: list[int],
     *,
     include_all_pending: bool = False,
+    user_id: int | None = None,
 ) -> list[int]:
     unique_ids = list(dict.fromkeys(int(entry_id) for entry_id in entry_ids if int(entry_id) > 0))[:100]
+    # v9.30+: 多用户——只允许操作属于当前用户的词条（user_id=None 兼容单用户）
+    owned_rows = connection.execute(
+        f"""SELECT id FROM vocabulary_entries
+            WHERE user_id IS ? AND id IN ({",".join("?" * len(unique_ids)) or "NULL"})""",
+        (user_id, *unique_ids),
+    ).fetchall() if unique_ids else []
+    unique_ids = [int(row["id"]) for row in owned_rows][:100]
     if include_all_pending:
         pending_rows = connection.execute(
             """
             SELECT id FROM vocabulary_entries
-            WHERE user_edited = 0 AND translation_status IN ('pending', 'queued')
+            WHERE user_id IS ? AND user_edited = 0
+              AND translation_status IN ('pending', 'queued')
             ORDER BY updated_at, id
             LIMIT ?
             """,
-            (MAX_TRANSLATIONS_PER_RUN,),
+            (user_id, MAX_TRANSLATIONS_PER_RUN,),
         ).fetchall()
         unique_ids = list(
             dict.fromkeys(
@@ -834,7 +843,8 @@ def translate_vocabulary_entry(entry_id: int) -> None:
 
 
 def review_entry(
-    connection: sqlite3.Connection, entry_id: int, rating: str
+    connection: sqlite3.Connection, entry_id: int, rating: str,
+    user_id: int | None = None,
 ) -> dict[str, Any]:
     """复习单词，使用 FSRS 算法安排下次复习
     
@@ -890,7 +900,7 @@ def review_entry(
     # v9.19: 记录 streak 学习行为
     try:
         from .streak import record_activity
-        record_activity(connection, "vocab_review", f"entry {entry_id}")
+        record_activity(connection, "vocab_review", f"entry {entry_id}", user_id=user_id)
     except Exception:
         pass
     return _serialize_entry(connection, entry_id)
