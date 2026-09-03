@@ -330,6 +330,7 @@ h2, h3 { margin: 0; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .pill { display: inline-flex; padding: 5px 9px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: 12px; }
 .warning { padding: 12px 14px; border-radius: 12px; background: var(--danger-soft); color: var(--danger); font-size: 13px; margin: 8px 0; }
+.option-data-warning { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; color: var(--warning, var(--danger)); font-size: 12px; }
 .empty { text-align: center; color: var(--muted); padding: 45px 20px; }
 .illustrated-empty { display: grid; place-items: center; gap: 9px; overflow: hidden; }
 .illustrated-empty img { width: min(210px, 72%); aspect-ratio: 1; object-fit: cover; border-radius: 26px; opacity: .92; }
