@@ -27,7 +27,7 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 AUTH_ENABLED = os.environ.get("EPM_AUTH", "").strip() in ("1", "true", "on")
 
 # v9.30 安全修复: 部署者可指定管理员用户名（EPM_ADMIN_USERNAME）
-# 指定后：该用户名注册即为管理员；未指定时保持「首个注册=管理员」兼容逻辑
+# 指定后：该用户名注册即为管理员；未指定时所有新用户默认为普通用户
 ADMIN_USERNAME = os.environ.get("EPM_ADMIN_USERNAME", "").strip()
 
 _PBKDF2_ITERATIONS = 100_000
@@ -146,7 +146,14 @@ def maybe_require_user(user=Depends(get_current_user)) -> dict | None:
 
 
 def require_admin(user=Depends(get_current_user)) -> dict:
-    """强制要求管理员（EPM_AUTH=1 时使用）"""
+    """Require an administrator in multi-user mode.
+
+    The local single-user mode deliberately remains compatible with the
+    existing desktop workflow; once ``EPM_AUTH`` is enabled, every caller
+    must be authenticated and have the admin flag.
+    """
+    if not AUTH_ENABLED:
+        return user or {"id": None, "username": "local", "is_admin": True}
     if user is None:
         raise HTTPException(401, "未登录")
     if not user["is_admin"]:
@@ -169,23 +176,11 @@ def register(
     if existing:
         raise HTTPException(409, "用户名已存在")
     token = generate_token()
-    # v9.30 安全修复: 管理员初始化策略
-    # ① EPM_ADMIN_USERNAME 指定 → 该用户名注册即为管理员（推荐，防抢注）
-    # ② 未指定 → 兼容旧逻辑：首个注册用户自动成为管理员
+    # v9.30 安全修复: 仅显式配置的用户名可以成为管理员。
+    # 未设置 EPM_ADMIN_USERNAME 时，所有新用户默认都是普通用户。
     user_count = connection.execute("SELECT COUNT(*) AS n FROM users").fetchone()["n"]
     is_first = user_count == 0
-    if ADMIN_USERNAME:
-        is_admin = username.lower() == ADMIN_USERNAME.lower()
-        if is_admin and user_count > 0:
-            # 已有其他用户时指定管理员注册——需确保该用户名尚未被占用（上面已查重）
-            pass
-    else:
-        is_admin = is_first
-        if is_first:
-            print(
-                "[auth][WARN] 首个注册用户自动成为管理员。"
-                "建议设置 EPM_ADMIN_USERNAME 环境变量指定管理员，防止抢注。"
-            )
+    is_admin = bool(ADMIN_USERNAME and username.lower() == ADMIN_USERNAME.lower())
     cursor = connection.execute(
         """INSERT INTO users (username, password_hash, token, is_admin, last_login_at)
         VALUES (?, ?, ?, ?, datetime('now'))""",

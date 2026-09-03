@@ -20,6 +20,7 @@ from ..services.esq import (
     publish_package,
 )
 from ..services.trash import trash_import_job
+from .auth import require_admin
 
 
 router = APIRouter(prefix="/question-banks", tags=["question-banks"])
@@ -76,6 +77,7 @@ async def upload_question_bank(
     file: UploadFile = File(...),
     profile_id: int | None = Form(default=None),
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     selected_profile_id = profile_id or get_active_profile_id(connection)
     if not connection.execute(
@@ -160,6 +162,7 @@ def question_bank_import_detail(
 def delete_question_bank_import(
     job_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     try:
         result = trash_import_job(connection, job_id)
@@ -175,6 +178,7 @@ def publish_question_bank(
     job_id: int,
     request: QuestionBankPublishRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT * FROM import_jobs WHERE id = ? AND detected_format = 'esq-1.0'",
