@@ -7,9 +7,7 @@ import {
   ChevronRight,
   Clock3,
   Coffee,
-  GripHorizontal,
   GripVertical,
-  Grid3x3,
   Play,
   Save,
   Send,
@@ -23,6 +21,8 @@ import { showToast } from '../services/toast'
 import ListeningPlayer from '../components/ListeningPlayer.vue'
 import QuestionExplain from '../components/QuestionExplain.vue'
 import DeepExplainDrawer from '../components/DeepExplainDrawer.vue'  // v9.26: AI 助教精讲
+import MobileSplitPracticeLayout from '../components/practice/MobileSplitPracticeLayout.vue'
+import { sanitizeQuestionOptions } from '../utils/optionSanitizer'
 
 const route = useRoute()
 const router = useRouter()
@@ -109,102 +109,8 @@ const isMatchingPartB = computed(() => isPartB.value && activeUnit.value?.subtyp
 const isOrdering = computed(() => activeUnit.value?.subtype === 'paragraph_reordering')
 const isListening = computed(() => activeUnit.value?.unit_type === 'listening')
 
-// Legacy Word/OCR data can put the next option in the same content cell.
-// Keep this last-resort guard close to rendering so old offline databases are
-// still usable while the database/import repairs roll out.
-const embeddedOptionMark = /(?:^|[\t\r\n])\s*([A-Da-d])\s*[.．、)]\s*/g
-const warnedDirtyOptionQuestions = new Set<string>()
-
-function displayOptions(question: any): any[] {
-  const source = Array.isArray(question?.options) ? question.options : []
-  const result: any[] = []
-  let hasEmbeddedData = false
-  for (const option of source) {
-    const content = String(option?.content ?? '').trim()
-    embeddedOptionMark.lastIndex = 0
-    const matches = [...content.matchAll(embeddedOptionMark)]
-    const firstIndex = matches[0]?.index ?? -1
-    if (!matches.length || (matches.length === 1 && firstIndex === 0)) {
-      result.push(option)
-      continue
-    }
-    hasEmbeddedData = true
-    if (firstIndex > 0 && content.slice(0, firstIndex).trim()) {
-      result.push({ ...option, content: content.slice(0, firstIndex).trim() })
-    }
-    for (let index = 0; index < matches.length; index += 1) {
-      const match = matches[index]
-      const start = (match.index ?? 0) + match[0].length
-      const end = matches[index + 1]?.index ?? content.length
-      const piece = content.slice(start, end).trim()
-      if (piece) {
-        const key = match[1].toUpperCase()
-        result.push({ ...option, key, stable_key: key, label: key, content: piece })
-      }
-    }
-  }
-  const questionKey = String(question?.id ?? question?.number ?? '')
-  if (hasEmbeddedData && !warnedDirtyOptionQuestions.has(questionKey)) {
-    warnedDirtyOptionQuestions.add(questionKey)
-    console.warn(`[墨题] 题目 ${questionKey} 的选项含合并数据，已在前端拆分显示`)
-  }
-  return result
-}
-
-function hasDirtyOptionData(question: any): boolean {
-  const source = Array.isArray(question?.options) ? question.options : []
-  return source.some((option: any) => {
-    const content = String(option?.content ?? '').trim()
-    embeddedOptionMark.lastIndex = 0
-    const matches = [...content.matchAll(embeddedOptionMark)]
-    const firstIndex = matches[0]?.index ?? -1
-    return matches.length > 1 || (firstIndex > 0 && Boolean(content.slice(0, firstIndex).trim()))
-  })
-}
-
-// v3.2: 移动端竖屏上下分区（文章区/题目区独立滚动 + 可拖分隔条）
-const isMobileSplit = ref(false)
-let dividerCleanup: (() => void) | null = null
-
-function onSplitResize() {
-  isMobileSplit.value = window.innerWidth < 768 && !isListening.value
-}
-function startDragDivider(e: PointerEvent) {
-  e.preventDefault()
-  const container = (e.currentTarget as HTMLElement).parentElement!
-  const startY = e.clientY
-  const startRatio = parseFloat(container.style.getPropertyValue('--passage-ratio')) || 45
-  const rect = container.getBoundingClientRect()
-  const move = (ev: PointerEvent) => {
-    const ratio = Math.min(78, Math.max(30, ((ev.clientY - rect.top) / rect.height) * 100))
-    container.style.setProperty('--passage-ratio', ratio.toFixed(1) + '%')
-  }
-  const up = () => {
-    window.removeEventListener('pointermove', move)
-    window.removeEventListener('pointerup', up)
-    dividerCleanup = null
-  }
-  window.addEventListener('pointermove', move)
-  window.addEventListener('pointerup', up)
-  dividerCleanup = up
-}
-onMounted(() => {
-  onSplitResize()
-  window.addEventListener('resize', onSplitResize)
-})
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', onSplitResize)
-  if (dividerCleanup) dividerCleanup()
-})
-
 // v3.2: 答题卡抽屉（移动端题目导航）
-const answerSheetOpen = ref(false)
-function isAnswered(qid: number): boolean {
-  const q = activeUnit.value?.questions.find((x: any) => x.id === qid)
-  return !!(q && (q.user_answer || q.answer_selected))
-}
 function jumpToQuestion(index: number) {
-  answerSheetOpen.value = false
   const q = activeUnit.value?.questions[index]
   if (!q) return
   highlightedQuestionId.value = q.id
@@ -247,13 +153,14 @@ const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'para
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')
 const orderingItems = ref<any[]>([])
 const audioTracks = computed(() => activeUnit.value?.shared_data?.audio_tracks || [])
-const candidateOptions = computed(() => displayOptions(activeUnit.value?.questions?.[0]))
+const safeDisplayOptions = (question: any): any[] => sanitizeQuestionOptions(question?.options).options as any[]
+const candidateOptions = computed(() => safeDisplayOptions(activeUnit.value?.questions?.[0]))
 const selectedWordBank = ref<Record<string, string>>({})
 
 const usedWordBankLetters = computed(() => new Set(Object.values(selectedWordBank.value).filter(Boolean)))
 const wordBankWords = computed(() => {
   if (!isWordBank.value) return []
-  const opts = displayOptions(activeUnit.value?.questions?.[0])
+  const opts = safeDisplayOptions(activeUnit.value?.questions?.[0])
   return opts.map((option: any, index: number) => ({
     key: option.key,
     label: option.label,
@@ -788,8 +695,9 @@ function handleWindowKeydown(event: KeyboardEvent) {
   if (cur && !cur.user_answer) {
     const keyMap: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, '1': 0, '2': 1, '3': 2, '4': 3 }
     const idx = keyMap[event.key.toLowerCase()]
-    if (idx !== undefined && cur.options?.[idx]) {
-      select(cur, cur.options[idx].stable_key || cur.options[idx].key)
+    const safeOptions = safeDisplayOptions(cur)
+    if (idx !== undefined && safeOptions[idx]) {
+      select(cur, safeOptions[idx].stable_key || safeOptions[idx].key)
       event.preventDefault()
       return
     }
@@ -802,7 +710,7 @@ function handleWindowKeydown(event: KeyboardEvent) {
     prevHighlighted()
     event.preventDefault()
   } else if (event.key.toLowerCase() === 's') {
-    answerSheetOpen.value = !answerSheetOpen.value
+    splitLayoutRef.value?.toggleAnswerSheet()
   }
 }
 
@@ -826,15 +734,17 @@ function prevHighlighted() {
 
 async function select(question: any, key: string) {
   if (session.value.status === 'submitted' || activeUnitSubmitted.value) return
-  const previous = question.user_answer
-  question.user_answer = key
-  saving.value = question.id
+  // Layout slot may provide a safe question view; persist into the original session object.
+  const targetQuestion = activeUnit.value?.questions.find((item: any) => item.id === question.id) || question
+  const previous = targetQuestion.user_answer
+  targetQuestion.user_answer = key
+  saving.value = targetQuestion.id
   try {
-    await put(`/practice/sessions/${session.value.id}/answers/${question.id}`, {
-      answer: key, option_order: question.option_order,
+    await put(`/practice/sessions/${session.value.id}/answers/${targetQuestion.id}`, {
+      answer: key, option_order: targetQuestion.option_order,
     })
   } catch (e) {
-    question.user_answer = previous
+    targetQuestion.user_answer = previous
     error.value = String(e)
   }
   finally { saving.value = null }
@@ -849,12 +759,19 @@ function blankQuestion(number: number | undefined) {
 function blankAnswerText(number: number | undefined) {
   const q = blankQuestion(number)
   if (!q?.user_answer) return ''
-  const opt = (q.options || []).find((o: any) => o.stable_key === q.user_answer || o.key === q.user_answer)
+  const opt = safeDisplayOptions(q).find((o: any) => o.stable_key === q.user_answer || o.key === q.user_answer)
   return opt?.content || opt?.label || q.user_answer
 }
 function openBlankPicker(question: any) {
   if (!question || activeUnitSubmitted.value) return
-  blankPicker.value = question
+  const picker = { ...question, options: safeDisplayOptions(question) }
+  Object.defineProperty(picker, 'user_answer', {
+    configurable: true,
+    enumerable: true,
+    get: () => question.user_answer,
+    set: value => { question.user_answer = value },
+  })
+  blankPicker.value = picker
 }
 function pickBlank(option: any) {
   if (!blankPicker.value) return
@@ -865,7 +782,7 @@ function pickBlank(option: any) {
   const idx = qs.findIndex((q: any) => Number(q.number) === currentNum)
   if (idx >= 0 && idx < qs.length - 1) {
     window.setTimeout(() => {
-      blankPicker.value = qs[idx + 1]
+      openBlankPicker(qs[idx + 1])
     }, 200)
   }
 }
@@ -877,7 +794,7 @@ function stepBlank(delta: number) {
   if (idx < 0) return
   const targetIdx = idx + delta
   if (targetIdx >= 0 && targetIdx < qs.length) {
-    blankPicker.value = qs[targetIdx]
+    openBlankPicker(qs[targetIdx])
   }
 }
 
@@ -931,7 +848,8 @@ function resultClass(question: any, option: any) {
 }
 
 function displayedAnswer(question: any) {
-  return displayOptions(question).find((option: any) => option.stable_key === question.answer)?.label || question.answer
+  const options = Array.isArray(question?.options) ? question.options : []
+  return options.find((option: any) => option.stable_key === question.answer)?.label || question.answer
 }
 
 function firstUnanswered(unitIndexes: number[]) {
@@ -1193,6 +1111,7 @@ async function copySelectedTerm() {
 // v9.26: AI 助教精讲（P0 真题精讲——水墨手卷抽屉）
 const deepExplainRef = ref<InstanceType<typeof DeepExplainDrawer> | null>(null)
 const deepExplainQuestionId = ref<number | null>(null)
+const splitLayoutRef = ref<InstanceType<typeof MobileSplitPracticeLayout> | null>(null)
 function openDeepExplain(questionId: number) {
   deepExplainQuestionId.value = questionId
   // 下一帧等 ref 挂载后 open
@@ -1241,39 +1160,29 @@ function openDeepExplain(questionId: number) {
         >
           <Award :size="16" />整卷 {{ formatScore(session.score) }} / {{ formatScore(session.max_score) }}
         </button>
-        <!-- v3.2: 移动端答题卡（题目导航） -->
-        <button v-if="isMobileSplit" class="answer-sheet-btn" type="button" aria-label="答题卡" @click="answerSheetOpen = !answerSheetOpen">
-          <Grid3x3 :size="17" />答题卡
-        </button>
       </div>
     </header>
-    <!-- v3.2: 答题卡抽屉（顶部滑下） -->
-    <Transition name="sheet-fade">
-      <div v-if="answerSheetOpen && activeUnit" class="answer-sheet-drawer" @click.self="answerSheetOpen = false">
-        <div class="answer-sheet-panel">
-          <div class="answer-sheet-head">
-            <strong>{{ activeUnit.title }}</strong>
-            <span>{{ progress.answered }}/{{ progress.total }} 已答</span>
-            <button type="button" class="answer-sheet-close" @click="answerSheetOpen = false">✕</button>
-          </div>
-          <div class="answer-sheet-grid">
-            <button
-              v-for="(q, i) in activeUnit.questions" :key="q.id"
-              type="button"
-              class="answer-sheet-cell"
-              :class="{ answered: isAnswered(q.id), current: highlightedQuestionId === q.id }"
-              @click="jumpToQuestion(i)"
-            >{{ q.number }}</button>
-          </div>
-        </div>
-      </div>
-    </Transition>
     <div v-if="error" class="warning" style="margin:15px">{{ error }}</div>
     <div v-if="unansweredNotice" class="unanswered-banner" role="alert">
       <AlertCircle :size="18" />{{ unansweredNotice }}
     </div>
-    <div v-if="session && activeUnit" class="practice-layout" :class="{'listening-layout':isListening}">
-      <section class="passage-pane" :class="{'listening-console-pane':isListening}">
+    <MobileSplitPracticeLayout
+      v-if="session && activeUnit"
+      ref="splitLayoutRef"
+      :enabled="!isListening"
+      :questions="activeUnit.questions"
+      :current-question-index="currentQuestionIndex"
+      :show-question-pane="!isCloze"
+      :answer-sheet-title="activeUnit.title"
+      :answered-count="progress.answered"
+      :total-count="progress.total"
+      :passage-class="{ 'listening-console-pane': isListening }"
+      :class="{ 'listening-layout': isListening }"
+      @prev="prevQuestion"
+      @next="nextQuestion"
+      @jump-question="jumpToQuestion"
+    >
+      <template #passage>
         <div v-if="!isListening" class="passage-toolbar">
           <span class="eyebrow">{{ activeUnit.year }} · {{ activeUnit.title }}</span>
           <div class="font-size-control" title="调整字号">
@@ -1369,30 +1278,13 @@ function openDeepExplain(questionId: number) {
           </div>
         </div>
         </template>
-      </section>
-      <!-- v3.2: 移动端竖屏上下分区可拖分隔条 -->
-      <div v-if="isMobileSplit && !isCloze" class="pane-divider" @pointerdown="startDragDivider" role="separator" aria-orientation="horizontal" title="拖动调整上下占比">
-        <span class="pane-divider-grip"><GripHorizontal :size="16" /></span>
-      </div>
+      </template>
       <!-- v3.6: 选词填空隐藏右侧面板——点文章空格弹选项（用户反馈右侧点击无反应） -->
-      <section v-if="!isCloze" class="question-pane">
-        <!-- v9.32: 移动端快捷题目导航栏 (第 X/Y 题 + 上下题快速翻页 + 答题卡抽屉入口) -->
-        <div v-if="isMobileSplit" class="mobile-question-toolbar">
-          <button class="mob-q-btn" type="button" :disabled="currentQuestionIndex <= 0" @click="prevQuestion">
-            ‹ 上一题
-          </button>
-          <button class="mob-q-indicator" type="button" @click="answerSheetOpen = true" title="点击打开答题卡">
-            <Grid3x3 :size="14" />
-            <span>第 {{ currentQuestionIndex + 1 }} / {{ activeUnit.questions?.length || 0 }} 题</span>
-          </button>
-          <button class="mob-q-btn" type="button" :disabled="currentQuestionIndex >= (activeUnit.questions?.length || 0) - 1" @click="nextQuestion">
-            下一题 ›
-          </button>
-        </div>
+      <template #questions="{ questions: splitQuestions }">
         <div v-if="isOrdering" class="ordering-board">
-          <div class="ordering-section-heading"><span>选择答案</span><small>{{ activeUnit.questions.filter((question: any) => question.user_answer).length }} / {{ activeUnit.questions.length }} 已完成</small></div>
+          <div class="ordering-section-heading"><span>选择答案</span><small>{{ splitQuestions.filter((question: any) => question.user_answer).length }} / {{ splitQuestions.length }} 已完成</small></div>
           <div class="ordering-answer-list">
-            <div v-for="question in activeUnit.questions" :key="question.id" class="ordering-answer-row" :class="{'unanswered-focus': highlightedQuestionId === question.id}" :data-question-id="question.id">
+            <div v-for="question in splitQuestions" :key="question.id" class="ordering-answer-row" :class="{'unanswered-focus': highlightedQuestionId === question.id}" :data-question-id="question.id">
               <strong>{{ question.number }}.</strong>
               <div class="ordering-choice-row" role="group" :aria-label="`${question.number}题段落选择`">
                 <button
@@ -1415,15 +1307,15 @@ function openDeepExplain(questionId: number) {
               <span class="option-letter">{{ option.label }}</span><ContentBlocks v-if="option.content_blocks?.length" :blocks="option.content_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><p v-else>{{ option.content }}</p>
             </article>
           </div>
-          <div v-for="question in activeUnit.questions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
+          <div v-for="question in splitQuestions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
             <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
             <div class="match-buttons">
-              <button v-for="option in displayOptions(question)" :key="option.stable_key" class="match-chip" :class="resultClass(question, option)" :disabled="activeUnitSubmitted" @click="select(question, option.stable_key)">{{ option.label }}</button>
+              <button v-for="option in question.options" :key="option.stable_key" class="match-chip" :class="resultClass(question, option)" :disabled="activeUnitSubmitted" @click="select(question, option.stable_key)">{{ option.label }}</button>
             </div>
             <div v-if="activeUnitSubmitted" class="match-result" :style="{color:question.is_correct?'var(--success)':'var(--danger)'}">
               {{ question.is_correct ? '回答正确' : `正确答案：${displayedAnswer(question)}` }}
             </div>
-            <QuestionExplain v-if="activeUnitSubmitted" :question-id="question.id" :question="question" />
+            <QuestionExplain v-if="activeUnitSubmitted" :question-id="Number(question.id)" :question="question" />
           </div>
         </div>
         <div v-else-if="isWordBank" class="word-bank-board">
@@ -1436,11 +1328,11 @@ function openDeepExplain(questionId: number) {
               :disabled="activeUnitSubmitted || word.used"
             >{{ word.label }}. {{ word.content }}</button>
           </div>
-          <div v-for="question in activeUnit.questions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
+          <div v-for="question in splitQuestions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
             <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
             <div class="match-buttons">
               <button
-                v-for="option in displayOptions(question)"
+                v-for="option in question.options"
                 :key="option.stable_key"
                 class="match-chip"
                 :class="{ ...resultClass(question, option), used: usedWordBankLetters.has(option.key) && question.user_answer !== option.stable_key }"
@@ -1454,11 +1346,11 @@ function openDeepExplain(questionId: number) {
           </div>
         </div>
         <div v-else-if="isParagraphMatching" class="matching-board">
-          <div v-for="question in activeUnit.questions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
+          <div v-for="question in splitQuestions" :key="question.id" class="question-card compact-match" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
             <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template></div>
             <div class="match-buttons">
               <button
-                v-for="option in displayOptions(question)"
+                v-for="option in question.options"
                 :key="option.stable_key"
                 class="match-chip"
                 :class="resultClass(question, option)"
@@ -1471,12 +1363,12 @@ function openDeepExplain(questionId: number) {
             </div>
           </div>
         </div>
-        <div v-else v-for="question in activeUnit.questions" :key="question.id" class="question-card" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
+        <div v-else v-for="question in splitQuestions" :key="question.id" class="question-card" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
           <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template>
-            <button class="ai-tutor-btn" title="AI 助教精讲" @click.stop="openDeepExplain(question.id)">✨ AI 精讲</button>
+             <button class="ai-tutor-btn" title="AI 助教精讲" @click.stop="openDeepExplain(Number(question.id))">✨ AI 精讲</button>
           </div>
           <button
-            v-for="option in displayOptions(question)"
+            v-for="option in question.options"
             :key="option.stable_key"
             class="option"
             :class="resultClass(question, option)"
@@ -1487,14 +1379,15 @@ function openDeepExplain(questionId: number) {
             <span class="option-letter">{{ option.label }}</span>
             <span class="option-content" data-vocab-text><ContentBlocks v-if="option.content_blocks?.length" :blocks="option.content_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ option.content }}</template></span>
           </button>
-          <div v-if="hasDirtyOptionData(question)" class="option-data-warning" role="status">
+          <div v-if="question.option_data_dirty" class="option-data-warning" role="status">
             <AlertCircle :size="14" /> 历史选项数据已自动拆分显示
           </div>
           <div v-if="activeUnitSubmitted" style="margin-top:10px;font-size:13px" :style="{color:question.is_correct?'var(--success)':'var(--danger)'}">
             <CheckCircle2 :size="15" style="vertical-align:-2px" /> {{ question.is_correct ? '回答正确' : `正确答案：${displayedAnswer(question)}` }}
           </div>
         </div>
-      </section>
+      </template>
+      <template #bottom>
       <footer class="practice-footer" :class="{'listening-footer':isListening}">
         <div class="practice-footer-summary">
           <span>{{ activeUnitIndex + 1 }} / {{ session.units.length }} 篇</span>
@@ -1517,7 +1410,8 @@ function openDeepExplain(questionId: number) {
         </div>
         <button v-else class="button secondary" @click="router.push('/wrong')">查看错题</button>
       </footer>
-    </div>
+      </template>
+    </MobileSplitPracticeLayout>
     <div v-else class="loading">正在展开试卷…</div>
     <div v-if="vocabMenu.visible" class="vocab-context-menu" :style="{left:`${vocabMenu.x}px`,top:`${vocabMenu.y}px`}" @click.stop>
       <button @click="addSelectedVocabulary">加入单词本</button>
