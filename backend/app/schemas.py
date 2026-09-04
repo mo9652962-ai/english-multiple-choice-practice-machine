@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StrictInt
 
 
 class PracticeCreate(BaseModel):
@@ -14,6 +14,12 @@ class PracticeCreate(BaseModel):
     selection_scope: Literal["unit", "paper_unit_type"] = "unit"
     count: int = 1
     shuffle_options: bool = True
+
+
+class OrderCreate(BaseModel):
+    plan_id: int = Field(gt=0)
+    amount_cents: StrictInt = Field(ge=0)
+    organization_id: int | None = Field(default=None, gt=0)
 
 
 class QuestionBankProfileCreate(BaseModel):

@@ -820,6 +820,53 @@ CREATE TABLE IF NOT EXISTS knowledge_chunks (
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (doc_id) REFERENCES knowledge_docs(id) ON DELETE CASCADE
 );
+
+-- P1: 商业订单与人工收款基础表
+CREATE TABLE IF NOT EXISTS plans (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    price_cents INTEGER NOT NULL CHECK (typeof(price_cents) = 'integer' AND price_cents >= 0),
+    duration_days INTEGER NOT NULL CHECK (typeof(duration_days) = 'integer' AND duration_days > 0),
+    features_json TEXT NOT NULL DEFAULT '[]',
+    active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0, 1))
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_no TEXT NOT NULL UNIQUE,
+    organization_id INTEGER NOT NULL,
+    buyer_user_id INTEGER,
+    plan_id INTEGER NOT NULL,
+    amount_cents INTEGER NOT NULL CHECK (typeof(amount_cents) = 'integer' AND amount_cents >= 0),
+    status TEXT NOT NULL DEFAULT 'pending'
+        CHECK (status IN ('pending', 'paid', 'cancelled', 'refunding', 'refunded', 'failed')),
+    expires_at TEXT,
+    paid_at TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE RESTRICT,
+    FOREIGN KEY (buyer_user_id) REFERENCES users(id) ON DELETE SET NULL,
+    FOREIGN KEY (plan_id) REFERENCES plans(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS payment_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_id INTEGER NOT NULL,
+    event_type TEXT NOT NULL,
+    amount_cents INTEGER NOT NULL CHECK (typeof(amount_cents) = 'integer' AND amount_cents >= 0),
+    meta_json TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS idx_orders_org_created
+    ON orders(organization_id, created_at DESC, id DESC);
+CREATE INDEX IF NOT EXISTS idx_orders_buyer_created
+    ON orders(buyer_user_id, created_at DESC, id DESC);
+CREATE INDEX IF NOT EXISTS idx_orders_status_updated
+    ON orders(status, updated_at DESC);
+CREATE INDEX IF NOT EXISTS idx_payment_events_order_created
+    ON payment_events(order_id, created_at DESC, id DESC);
 """
 
 
@@ -1242,6 +1289,76 @@ def _migrate_multi_user_schema(connection: sqlite3.Connection) -> None:
         raise
 
 
+def _migrate_order_schema(connection: sqlite3.Connection) -> None:
+    """Create the P1 commercial order tables and their query indexes.
+
+    The statements intentionally use ``IF NOT EXISTS`` so this migration is
+    safe both for a fresh database (where SCHEMA already created the tables)
+    and for an older database upgraded in place.  It is called inside the
+    versioned migration savepoint, so a failure rolls back the whole change.
+    """
+    statements = (
+        """
+        CREATE TABLE IF NOT EXISTS plans (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            price_cents INTEGER NOT NULL CHECK (typeof(price_cents) = 'integer' AND price_cents >= 0),
+            duration_days INTEGER NOT NULL CHECK (typeof(duration_days) = 'integer' AND duration_days > 0),
+            features_json TEXT NOT NULL DEFAULT '[]',
+            active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0, 1))
+        )
+        """,
+        """
+        CREATE TABLE IF NOT EXISTS orders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            order_no TEXT NOT NULL UNIQUE,
+            organization_id INTEGER NOT NULL,
+            buyer_user_id INTEGER,
+            plan_id INTEGER NOT NULL,
+            amount_cents INTEGER NOT NULL CHECK (typeof(amount_cents) = 'integer' AND amount_cents >= 0),
+            status TEXT NOT NULL DEFAULT 'pending'
+                CHECK (status IN ('pending', 'paid', 'cancelled', 'refunding', 'refunded', 'failed')),
+            expires_at TEXT,
+            paid_at TEXT,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE RESTRICT,
+            FOREIGN KEY (buyer_user_id) REFERENCES users(id) ON DELETE SET NULL,
+            FOREIGN KEY (plan_id) REFERENCES plans(id) ON DELETE RESTRICT
+        )
+        """,
+        """
+        CREATE TABLE IF NOT EXISTS payment_events (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            order_id INTEGER NOT NULL,
+            event_type TEXT NOT NULL,
+            amount_cents INTEGER NOT NULL CHECK (typeof(amount_cents) = 'integer' AND amount_cents >= 0),
+            meta_json TEXT NOT NULL DEFAULT '{}',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+        )
+        """,
+        """
+        CREATE INDEX IF NOT EXISTS idx_orders_org_created
+            ON orders(organization_id, created_at DESC, id DESC);
+        """,
+        """
+        CREATE INDEX IF NOT EXISTS idx_orders_buyer_created
+            ON orders(buyer_user_id, created_at DESC, id DESC);
+        """,
+        """
+        CREATE INDEX IF NOT EXISTS idx_orders_status_updated
+            ON orders(status, updated_at DESC);
+        """,
+        """
+        CREATE INDEX IF NOT EXISTS idx_payment_events_order_created
+            ON payment_events(order_id, created_at DESC, id DESC);
+        """
+    )
+    for statement in statements:
+        connection.execute(statement)
+
+
 def _organization_slug(connection: sqlite3.Connection, preferred: str) -> str:
     """Return a deterministic, unused slug for a new organization."""
     import re
@@ -1410,6 +1527,7 @@ def _migrate_enterprise_organizations(connection: sqlite3.Connection) -> None:
             ON audit_logs(organization_id, created_at DESC)
         """
     )
+    _migrate_order_schema(connection)
     ensure_local_organization(connection)
     users = connection.execute(
         "SELECT id, username FROM users ORDER BY id"

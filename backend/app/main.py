@@ -50,6 +50,7 @@ from .routers import (
     agent,  # Phase 1: AI 学习智能体
     chat,  # Phase 3: 学习陪伴聊天室
     exam_templates,
+    orders,
 )
 from .services.ai_client import ensure_ai_model_catalog
 from .services.bundled_banks import install_bundled_question_banks
@@ -170,6 +171,7 @@ app.include_router(exam_templates.router, prefix="/api")
 app.include_router(version.router, prefix="/api")
 app.include_router(agent.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
+app.include_router(orders.router, prefix="/api")  # P1: 商业订单与人工收款
 
 
 APP_VERSION = "2.0.0"
