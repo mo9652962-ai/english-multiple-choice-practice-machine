@@ -5,7 +5,7 @@
         <aside class="deep-explain-drawer" :class="{ loading }" @click="handleWordClick">
           <header class="drawer-head">
             <h3><span class="hero-seal" aria-hidden="true">讲</span>AI 助教精讲</h3>
-            <button class="drawer-close" @click="close">✕</button>
+            <button class="drawer-close" aria-label="关闭精讲" @click="close">✕</button>
           </header>
 
           <div v-if="loading" class="drawer-loading">

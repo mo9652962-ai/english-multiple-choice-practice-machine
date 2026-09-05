@@ -202,17 +202,17 @@ def get_report(
     if by_type_all:
         weakest = min(by_type_all, key=lambda x: x["rate"])
         if weakest["total"] >= 3 and weakest["rate"] < 60:
-            suggestions.append(f"🔍 全级别 {weakest['label']} 正确率仅 {weakest['rate']}%（{weakest['correct']}/{weakest['total']}），建议专项强化")
+            suggestions.append(f"全级别 {weakest['label']} 正确率仅 {weakest['rate']}%（{weakest['correct']}/{weakest['total']}），建议专项强化")
     if by_profile:
         weakest_p = min(by_profile, key=lambda x: x["rate"])
         if weakest_p["answered"] >= 5 and weakest_p["rate"] < 70:
-            suggestions.append(f"🎯 {weakest_p['name']} 正确率 {weakest_p['rate']}%（{weakest_p['answered']} 题），重点突破")
+            suggestions.append(f"{weakest_p['name']} 正确率 {weakest_p['rate']}%（{weakest_p['answered']} 题），重点突破")
     if vocab and (vocab["learned"] or 0) < 100:
-        suggestions.append("📖 词汇量积累中，建议每天完成词书任务（新词 20 + 复习）")
+        suggestions.append("词汇量积累中，建议每天完成词书任务（新词 20 + 复习）")
     if active7 and active7["days"] >= 5:
-        suggestions.append(f"🔥 连续活跃 {active7['days']} 天，保持节奏！")
+        suggestions.append(f"连续活跃 {active7['days']} 天，保持节奏！")
     if wrong_stats and wrong_stats["repeat_wrong"]:
-        suggestions.append(f"📝 {wrong_stats['repeat_wrong']} 道高频错题待重做，建议优先清理")
+        suggestions.append(f"{wrong_stats['repeat_wrong']} 道高频错题待重做，建议优先清理")
 
     total_row = connection.execute(
         """SELECT COUNT(*) FROM practice_answers pa

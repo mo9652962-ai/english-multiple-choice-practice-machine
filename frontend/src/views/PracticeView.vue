@@ -1267,7 +1267,7 @@ function openDeepExplain(questionId: number) {
           <div class="ann-note-card">
             <div class="ann-note-head">
               <span class="ann-note-title"><StickyNote :size="13" aria-hidden="true" />标注笔记</span>
-              <button type="button" class="ann-note-close" @click="annotationNote.visible = false">✕</button>
+              <button type="button" class="ann-note-close" aria-label="关闭标注笔记" @click="annotationNote.visible = false">✕</button>
             </div>
             <blockquote class="ann-note-quote">“{{ annotationNote.ann?.text }}”</blockquote>
             <textarea

@@ -196,8 +196,8 @@ async function refreshStats() {
             <time class="note-item-time">{{ n.created_at }}</time>
           </span>
           <div class="note-item-actions">
-            <button type="button" class="note-action-btn" title="编辑笔记" @click="editing = { id: n.id, note: n.note || '', tag: n.tag || '' }"><PenLine :size="14" aria-hidden="true" /></button>
-            <button type="button" class="note-action-btn danger" title="删除" @click="removeNote(n.id)"><Trash2 :size="14" aria-hidden="true" /></button>
+            <button type="button" class="note-action-btn" title="编辑笔记" aria-label="编辑笔记" @click="editing = { id: n.id, note: n.note || '', tag: n.tag || '' }"><PenLine :size="14" aria-hidden="true" /></button>
+            <button type="button" class="note-action-btn danger" title="删除" aria-label="删除笔记" @click="removeNote(n.id)"><Trash2 :size="14" aria-hidden="true" /></button>
           </div>
         </div>
         <blockquote class="note-item-quote"><mark :class="colorClass(n.color)">{{ n.text }}</mark></blockquote>
@@ -211,7 +211,7 @@ async function refreshStats() {
       <div class="ann-note-card review-card-note">
         <div class="ann-note-head">
           <span class="ann-note-title"><RefreshCw :size="13" aria-hidden="true" />复习笔记 · {{ reviewIndex + 1 }}/{{ reviewItems.length }}</span>
-          <button type="button" class="ann-note-close" @click="reviewMode = false">✕</button>
+          <button type="button" class="ann-note-close" aria-label="关闭复习" @click="reviewMode = false">✕</button>
         </div>
         <template v-if="reviewItems[reviewIndex]">
           <div class="review-prompt" @click="reviewRevealed = !reviewRevealed">
@@ -236,7 +236,7 @@ async function refreshStats() {
       <div class="ann-note-card">
         <div class="ann-note-head">
           <span class="ann-note-title"><PenLine :size="13" aria-hidden="true" />编辑笔记</span>
-          <button type="button" class="ann-note-close" @click="editing = null">✕</button>
+          <button type="button" class="ann-note-close" aria-label="关闭编辑" @click="editing = null">✕</button>
         </div>
         <div class="edit-tag-row">
           <span class="edit-tag-label">标签：</span>
