@@ -1,0 +1,180 @@
+{
+ "chunk": 21,
+ "items": [
+  {
+   "question_id": 501,
+   "long_sentence": "定位句 There is also research showing that pot plants can clean the air around them by removing harmful gases, such as carbon dioxide：主干 research showing that...，showing 现在分词短语作后置定语；that 从句中 by removing harmful gases 为方式状语，such as carbon dioxide 举例。译：还有研究表明，盆栽植物能通过去除二氧化碳等有害气体来净化周围的空气。",
+   "option": "答案 E「Plants like peace lilies and devil's ivy are among the best」：空前两句讲盆栽能去除有害气体与有害化学物质，E 补充「和平百合、绿萝等植物是其中最好的」，among the best 承接净化空气话题；干扰 C「室内种植物益处多」是总起句，应位于段首而非证据之后，答非所问；F「偶尔换盆也有帮助」无中生有，全文未提换盆。",
+   "keyword": "peace lily 白鹤芋（和平百合）；devil's ivy 绿萝；among the best 最好的…之一；remove harmful gases 去除有害气体＝clean the air。",
+   "note": "段尾空需承上收束：空前连续两个 remove 句是「净化空气」的证据链，答案必须延续该话题；E 的 peace lilies 与下段首句 Aloe vera, peace lilies and spider plants 词汇复现，承上启下双重信号。"
+  },
+  {
+   "question_id": 502,
+   "long_sentence": "定位句为空后引语 It can bring a new interest and focus into people's lives and help to make the link between home and nature：主干 It can bring...and help to make...，两个谓语并列；it 指代空格句中的一件事。译：它能给人们的生活带来新的兴趣与关注点，并帮助建立家与自然之间的联系。",
+   "option": "答案 G「Learning about the requirements of each plant can be very rewarding」：空后 It 只能指代 G 的动名词主语 Learning about...，rewarding 与 bring a new interest 语义呼应；空前 care for them as they mature 与「了解每种植物的需求」同属养植之乐；干扰 A「所有植物都不同」孤立无指代衔接；F「偶尔换盆也有帮助」中的换盆动作无法与 make the link between home and nature 搭配，无中生有。",
+   "keyword": "rewarding 值得的、有益的＝giving satisfaction；requirement 需求＝what a plant needs；care for 照料；mature 成熟。",
+   "note": "引语内填空先看引号后的解释句：It 的指代对象必须是有实义的动作，动名词主语优先；G 的 rewarding 与空前 joy of owning plants 复现「乐趣」语义场，这是第二重验证。"
+  },
+  {
+   "question_id": 503,
+   "long_sentence": "答案句 It's just as important to show yourself some forgiveness：it 作形式主语，真正主语是不定式 to show yourself some forgiveness；just as important 为同级比较，比较对象是上句 Taking responsibility for mistakes is a positive step。译：对自己展现出一些宽容同样重要。",
+   "option": "答案 D：空前 Taking responsibility...is a positive step, but don't beat yourself up（别过度自责）加 To err is human（犯错人之常情），D 的 just as important 与 positive step 构成「A 是积极的一步，B 同样重要」的衔接；空后 help you do this 中 do this 指代 show yourself some forgiveness；干扰 A「一点自我原谅也大有帮助」与 D 近义，但缺少 just as important 的比较锚点，也无法被 do this 精准回指，是本篇最强干扰。",
+   "keyword": "forgiveness 原谅、宽恕；beat yourself up 过度自责；To err is human 人皆犯错；show sb some forgiveness 对某人（自己）宽容。",
+   "note": "首空紧跟主题句，先找并列结构：just as important 必须与上文某个「重要、积极」的评价配对；空后 this 的指代验证不可省——A 与 D 都含原谅义，但只有 D 能同时满足两处衔接。"
+  },
+  {
+   "question_id": 504,
+   "long_sentence": "答案句 Now list all the characteristics you like about yourself：祈使句主干 list all the characteristics；you like about yourself 为省略关系词的定语从句修饰 characteristics；now 承接上句 put the heading 的步骤指令。译：现在列出你喜欢自己的全部特质。",
+   "option": "答案 B：空后 Are you caring? Creative? Generous? 一连串形容词正是 characteristics 的实例列举，They don't have to be world-changing, just aspects of your personality 中 personality 与 B 的 about yourself 复现；干扰 E「这不意味着你必须无视或忘记已发生的事」谈面对错误的态度，与列优势无关，答非所问；D「对自己宽容同样重要」是第 1 空答案，放此处属位置错配的张冠李戴。",
+   "keyword": "characteristic 特质＝aspect of one's personality；list 列出＝write down；caring 有爱心的；generous 慷慨的。",
+   "note": "小标题 Personal strengths（个人优势）决定本空只能选「列优势」的祈使句；写作指导类七选五按 put the heading→list 的动作链展开，空格句与前文祈使句语气一致即可快速锁定。"
+  },
+  {
+   "question_id": 505,
+   "long_sentence": "答案句 Whatever it is, no matter how small it might seem, write it down：whatever it is 与 no matter how small it might seem 均为让步状语从句；write it down 为祈使主干；两个 it 都回指空前列举的善举。译：无论它是什么、看起来多么微不足道，都把它写下来。",
+   "option": "答案 F：空前 It might be the time when you helped a friend with their homework... 连举三个善行例子（帮忙做作业、主动熨衣、家人疲惫时烤饼干），F 的 Whatever it is 收束列举、small it might seem 呼应烤饼干这类小事、write it down 回扣段首 list all the positive things；干扰 G「无论什么错误，记住它不是你性格中固定的部分」偷换概念——本段主题是 Acts of kindness 善举而非 mistakes 错误。",
+   "keyword": "write down 写下＝list、put down；no matter how small 无论多小；act of kindness 善举；without being asked 不劳吩咐、主动地。",
+   "note": "举例之后出空，答案多为总结句：Whatever、no matter 引导的让步句是「列举收束」标志；判定 it 指代要看空前的例子是善举还是错误，本段全是善举，含 mistake 的 G 当即排除。"
+  },
+  {
+   "question_id": 506,
+   "long_sentence": "答案句 They might even like to have a go at doing the exercise：主语 they 指代空前的 a friend or family member；have a go at doing sth 意为「尝试做某事」；even 表递进语气。译：他们甚至可能乐意尝试做一做这个练习。",
+   "option": "答案 C：空前 You could ask a friend or family member to help add to your list，C 的 they 承接「朋友或家人」、the exercise 回指全文的 writing exercise；空后 That way, you could exchange thoughts... 中 that way 指两人各自完成练习后交流心得，衔接顺畅；干扰 E「不必无视或忘记已发生的事」谈错误态度，与邀请亲友参与练习无关，无中生有。",
+   "keyword": "have a go at (doing) sth 尝试做某事＝give it a try；add to 补充、增加；exchange thoughts 交流想法；even 甚至（递进信号）。",
+   "note": "代词链是本题命脉：they 对应 friend or family member、the exercise 对应 writing exercise、that way 对应一起做练习，三个指代必须落在同一对象上，同时满足者唯 C。"
+  },
+  {
+   "question_id": 507,
+   "long_sentence": "答案句 Whatever the mistake, remember it isn't a fixed aspect of your personality：whatever the mistake 为让步状语（省略了系动词 is）；remember 后接省略 that 的宾语从句；fixed 意为「固定不变的」。译：无论犯了什么错，记住它并不是你性格中固定不变的一部分。",
+   "option": "答案 G：空前 most people learn not from their successes but their mistakes 点明「从错误中学习」，空后 mistakes are a positive way to develop and grow 说明错误能促成长——G 的「错误不是性格的固定部分」正是「能成长」的逻辑前提；干扰 A「一点自我原谅也大有帮助」复现首段概念，但本段已不谈 self-forgiveness，答非所问。",
+   "keyword": "fixed 固定的＝unchangeable；aspect 方面＝part；develop and grow 发展成长；cliche 陈词滥调。",
+   "note": "尾空承上启下：前有 learn from mistakes、后有 mistakes are a positive way to develop，答案须同时含「错误」与「可变」两个语义点；A 与 D 都带 forgiveness 色彩，主题错位可一并排除。"
+  },
+  {
+   "question_id": 508,
+   "long_sentence": "定位句（空后）You'll want to look back on your journey to see how far you've come：主干 you'll want to look back on your journey；to see how far you've come 为目的状语，内含 how far 引导的宾语从句。译：你会想回望自己的艺术旅程，看看已经走了多远。",
+   "option": "答案 C「Don't throw away your beginner art」：只有保留初学期的画作，才有 look back on your journey 可言，beginner art 与空前 small studies、a springboard for more complex works 构成「从小习作到复杂作品」的链条；干扰 B「制定职业规划并设定目标」无中生有，全文谈绘画起步不谈职业；F「评估表现、必要时重新定义角色」偷换概念，本段主题是保存习作而非自我评估。",
+   "keyword": "look back on 回顾；beginner art 初学作品；springboard 跳板、起点；sketchbook 素描本。",
+   "note": "空后句 You'll want to look back 是结果前置线索：能被回看的只能是留下的作品，C 的否定祈使与段首 Start small 的建议语气一致；throw away 一类「丢弃」动词的反向提醒是设题眼。"
+  },
+  {
+   "question_id": 509,
+   "long_sentence": "答案句 You'll develop that painting muscle memory that only comes with repetition：主干 you'll develop painting muscle memory；that only comes with repetition 为定语从句，only 强调「只有靠重复才能获得」；muscle memory 指反复练习形成的肌肉记忆。译：你会练出那种唯有重复才能铸就的绘画肌肉记忆。",
+   "option": "答案 G：小标题 Paint often and paint from life 与空前 There's no better way to improve than to put in those brush miles（投入笔耕）都强调多画，G 的 repetition（重复）正是 often、as much as possible 的名词化表达；干扰 D「自在的话就分享作品」是第 4 空答案（对应 post my work on social media），放此处与「多画」话题无关，张冠李戴。",
+   "keyword": "repetition 重复＝painting often；muscle memory 肌肉记忆；brush miles 笔耕（练习量的比喻）；put in 投入（时间精力）。",
+   "note": "词汇复现定位：often、as much as possible 都指向「重复」，G 是七个选项中唯一含 repetition 的句子；only comes with repetition 的强调口吻也注定它必须紧跟「多画」的段落。"
+  },
+  {
+   "question_id": 510,
+   "long_sentence": "定位句（空前）Continually challenge yourself to try something new：祈使句，主干 challenge yourself to do sth；continually 修饰挑战的持续性；不定式 to try something new 表目的。译：不断挑战自己去尝试新事物。",
+   "option": "答案 A「Get out of your comfort zone」：走出舒适区＝challenge yourself to try something new 的同义改写，空后 Artistic growth can be a bit painful（艺术成长会有些痛苦）正是突破舒适区的不适感，Welcome to the club; we've all been there 用共鸣语气坐实；干扰 E「你会遇到瓶颈，时常灰心」是第 5 空答案，对应 won't follow a straight path，与本段「主动挑战」的方向不同，属最强干扰。",
+   "keyword": "comfort zone 舒适区；challenge oneself 挑战自我；painful 痛苦的；take on challenges 接受挑战。",
+   "note": "小标题与选项句同构是七选五高频设计：Continually challenge yourself 与 Get out of your comfort zone 互为改写；painful 加后文每天作画连发一个月的例子，进一步锁定「突破自我」主题。"
+  },
+  {
+   "question_id": 511,
+   "long_sentence": "答案句 Share your work if you feel comfortable doing so：祈使句主干 share your work；if you feel comfortable doing so 为条件状语，doing so 回指分享作品这一行为。译：如果分享作品让你感到自在，那就分享出来。",
+   "option": "答案 D：空后 Seeking and accepting constructive feedback (反馈) is crucial to growth——只有先分享作品才能获得 feedback，I post my work on social media 中 post 与 share 同义复现，in turn have met some of the kindest people 展示分享的正反馈；干扰 A「走出舒适区」是第 3 空答案，与反馈话题无关；B「制定职业计划并设定目标」全文未提，无中生有。",
+   "keyword": "share one's work 分享作品＝post...on social media；constructive feedback 建设性反馈；in turn 作为回报；crucial 至关重要的。",
+   "note": "段首空即小标题空：先读空后首句确定段旨（寻求反馈），再找含「展示、分享」义的祈使句；D 的 if you feel comfortable 语气委婉，与后文 make me feel valued 的正面基调一致。"
+  },
+  {
+   "question_id": 512,
+   "long_sentence": "答案句 You'll hit roadblocks, and you'll feel discouraged at times：and 连接两个并列分句；hit roadblocks 意为「遭遇障碍」，roadblock 本义路障；at times＝sometimes 时不时。译：你会遭遇瓶颈，有时也会感到气馁。",
+   "option": "答案 E：空前 The journey you're on won't follow a straight path（旅程不会一帆风顺）与 hit roadblocks 构成比喻式同义，空后 Push through, give it time and put in the effort 是针对 discouraged 的对策——先陈述困难再鼓励坚持，逻辑完整；干扰 F「评估你的表现，必要时重新定义你的角色」偷换概念，「路不平」推不出「换角色」，role 全文未提。",
+   "keyword": "hit roadblocks 遇到障碍＝meet setbacks；discouraged 灰心的＝lose heart；push through 冲破难关；straight path 直路、坦途。",
+   "note": "空后祈使句 Push through（坚持闯过去）提示空前必先出现「困难」——消极陈述 E 与积极祈使构成「先抑后扬」链；won't follow a straight path 与 roadblocks 的比喻对应是同义替换核心。"
+  },
+  {
+   "question_id": 513,
+   "long_sentence": "答案句 For many of us, moderation means eating less than we do now：for many of us 为范围状语；主干 moderation means eating...，mean 后接动名词作宾语；than we do now 为比较状语从句，do 替代 eat。译：对我们许多人而言，适度意味着比现在吃得少。",
+   "option": "答案 F：空前 it means eating only as much food as your body needs（只吃身体所需的量）——对多数人即「比现在吃得少」，空后 But it doesn't mean saying goodbye to the foods you love 以 But 转折，F 的 less 与「不必告别爱吃的食物」构成「少吃但不戒断」的闭环；干扰 D「我们大多数人需要把食量翻倍」正反混淆，与适度主题完全相反。",
+   "keyword": "moderation 适度；mean doing sth 意味着；satisfied 感到满足的；say goodbye to 告别、戒除。",
+   "note": "下定义后出空，答案须延续 means 的解释链：F 顺承「只吃所需」给出可操作表述；空前 not too full 与空后 But 的转折都是校验点，double 一类反向词应秒排。"
+  },
+  {
+   "question_id": 514,
+   "long_sentence": "定位句（空后）It actually takes a few minutes for your brain to tell your body that it has had enough food：it 作形式主语，真正主语是不定式 for your brain to tell...；that 从句作 tell 的宾语；It takes 时间 for sb to do 表「某人做某事需要多少时间」。译：大脑实际上要过几分钟才会告诉身体：已经吃饱了。",
+   "option": "答案 C「Don't swallow a meal on the way to work」：空前 slow down、rather than just something to eat in between meetings（不只是会议间隙随便吃的）与「上班路上狼吞虎咽」同属快食场景，空后 so eat slowly and stop eating before you feel full 以 so 承接 C 的劝阻；干扰 A「全天好好吃饭」是第 5 空答案，张冠李戴；G「那不会导致破戒或放弃新饮食计划」中 that 指代悬空，话题也不合。",
+   "keyword": "swallow 吞下、狼吞虎咽；slow down 放慢速度；in between meetings 会议间隙；stop eating before you feel full 饱前停筷。",
+   "note": "空后 so eat slowly 的 so 表结果，说明空格句是劝阻快食的祈使或原因句；场景词 on the way to work 与 in between meetings 前后夹击，C 是唯一同场景选项。"
+  },
+  {
+   "question_id": 515,
+   "long_sentence": "答案句 Instead, surround yourself with healthy choices：instead 表「取而代之」，提示空前是不被推荐的做法；surround yourself with sth 为祈使句，意为「让身边充满…」。译：相反，让健康的选择围绕在你身边。",
+   "option": "答案 E：空前 It's more challenging to eat in moderation if you have unhealthy snacks at the ready, like cookies（随手放着饼干等不健康零食，适度进食就更难）——E 用 Instead 反转：别存不健康零食，改放健康选择，at the ready（随手可取）与 surround yourself with 语义对应；干扰 G「那不会导致破戒或放弃新饮食计划」中 that 找不到唯一指代对象，且 cheating 话题偏离「零食存放」。",
+   "keyword": "surround yourself with 让身边围绕著＝keep...at hand；at the ready 随时可用的；unhealthy snacks 不健康零食；instead 相反、取而代之。",
+   "note": "逻辑词 Instead 是最强线索：必与空前的负面做法构成替换关系，锁定「健康替代不健康」；G 的代词 That 悬空是干扰项常见破绽——七选五中代词必须能落到实处。"
+  },
+  {
+   "question_id": 516,
+   "long_sentence": "答案句 We don't always eat just to satisfy hunger：not always 为部分否定，意为「并不总是」；不定式 to satisfy hunger 作目的状语；just 表「仅仅」，与 not always 呼应。译：我们进食并不总是只为填饱肚子。",
+   "option": "答案 B：段首小标题 Control emotional (情绪的) eating 加空后 Many of us also turn to food to deal with unpleasant emotions such as sadness, loneliness, or boredom——B 的「不只是为饥饿而吃」正是情绪化进食的定义式铺垫，空后 also 表递进说明空格句已先提出「非饥饿进食」；干扰 D「我们大多数人需要把食量翻倍」与 control（控制）方向相反，正反混淆。",
+   "keyword": "satisfy hunger 充饥；emotional eating 情绪化进食；turn to 求助于；deal with 应对、排解。",
+   "note": "小标题后首空常为「概念引出句」：B 把 emotional eating 解释成「非饥饿进食」，空后的 also turn to food 才能顺理成章递进；not always 的部分否定与 also 的递进语气完全咬合。"
+  },
+  {
+   "question_id": 517,
+   "long_sentence": "定位句（空后）A healthy breakfast can start your metabolism, while eating small, healthy meals keeps your energy up all day：while 表对比，连接「早餐启动代谢」与「全天少食多餐维持精力」两个分句；动名词短语 eating small, healthy meals 作从句主语。译：健康早餐能启动新陈代谢，而全天少量健康进餐可让精力保持充沛。",
+   "option": "答案 A「Eat properly throughout the day」：breakfast（清晨）加 all day（全天）正是 throughout the day 的拆解复现，段内 Try to eat dinner earlier and fast for 14-16 hours until breakfast 也围绕全天进食节奏展开；干扰 B「我们并非只为充饥而吃」是第 4 空答案，属情绪进食话题，张冠李戴；C「别在上班路上吞饭」是第 2 空答案，与全天安排无关。",
+   "keyword": "throughout the day 贯穿全天；metabolism 新陈代谢；keep energy up 保持精力；fast 禁食（动词，熟词僻义）。",
+   "note": "段首总起空：把空后两句的关键词 breakfast 与 all day 合并即 A 的 throughout the day；fast 在此是动词「禁食」而非「快」，熟词僻义是本段附带考点。"
+  },
+  {
+   "question_id": 518,
+   "long_sentence": "定位句 Several recent studies have found that even low-intensity exercise, done for a short amount of time, can have a meaningful __ on health：主干 studies have found that...；that 从句内主语为 even low-intensity exercise，done for a short amount of time 为过去分词插入语；can have a meaningful __ on 为固定框架。译：哪怕短时间的低强度运动也能显著增进健康。",
+   "option": "正确 F impact（影响）：have an impact on 为固定搭配，meaningful impact（显著影响）契合「低强度也有效」的研究结论；最接近干扰 G limitations（局限）语义相反——本句强调运动的益处而非局限；E coordinates（坐标）虽是名词但与 on health 不成搭配，词义更不相关。",
+   "keyword": "have an impact on 对…有影响＝have an effect on；low-intensity 低强度的；meaningful 显著的、有意义的；impact 名词「影响」、动词「冲击」双词性。",
+   "note": "选词填空先定词性：不定冠词 a 加形容词 meaningful 之后的空格，锁定单数可数名词；have...on 的介词框架直指 impact；impact 与 effect 同义，词库只收其一即靠唯一性作答。"
+  },
+  {
+   "question_id": 519,
+   "long_sentence": "定位句 It's also somewhat __, since the federal physical activity guidelines recommend getting at least 75 minutes of vigorous exercise or 150 minutes of __ exercise each week：主干 It's somewhat ___；somewhat 为程度副词修饰形容词；since 引导原因状语从句。译：每周只运动 10 分钟或许就足以延寿——这一观点也颇具争议，因为联邦身体活动指南建议每周至少进行 75 分钟剧烈运动或 150 分钟中等强度运动。",
+   "option": "正确 D controversial（有争议的）：空前 is novel（新颖）与 since 从句「官方指南要求 75、150 分钟」相冲突——新说法挑战官方标准，故「有争议」；最接近干扰 H moderate 虽是形容词但义为「适度的」，somewhat moderate（有点适度）逻辑不通；N type 是名词，词性不符 somewhat 后接形容词的要求。",
+   "keyword": "controversial 有争议的＝debatable；novel 新颖的；vigorous exercise 剧烈运动；guideline 指南。",
+   "note": "since 因果是解题钥匙：观点说 10 分钟就够，指南要求 75-150 分钟，两者矛盾才有「争议」可言；somewhat 后必接形容词，先按词性过滤掉名词、动词选项再辨词义。"
+  },
+  {
+   "question_id": 520,
+   "long_sentence": "定位句 the federal physical activity guidelines recommend getting at least 75 minutes of vigorous exercise or 150 minutes of __ exercise each week：主干 guidelines recommend getting...；or 连接两种达标方案；150 minutes of __ exercise 中空格作 exercise 的前置定语。译：联邦身体活动指南建议每周至少进行 75 分钟剧烈运动或 150 分钟中等强度运动。",
+   "option": "正确 H moderate（中等强度的）：官方指南的标准表述即 75 分钟 vigorous 或 150 分钟 moderate exercise，moderate 与 vigorous 构成强度高低对照；最接近干扰 D controversial 词性可通但词义不合——「有争议的运动」与指南推荐语境矛盾，且该词已用于第 2 空不可复用；M seemingly 是副词，无法修饰名词 exercise。",
+   "keyword": "moderate exercise 中等强度运动；vigorous 剧烈的；or 表二选一替代；at least 至少。",
+   "note": "考点为 moderate 的「中等强度」义：与 vigorous 同现于运动指南是经典搭配；or 的对比结构提示空格词与 vigorous 同类但程度更轻，认得 75 与 150 这组数字搭配可直接命中。"
+  },
+  {
+   "question_id": 521,
+   "long_sentence": "定位句 The study was based on data from more than 88,000 U.S. adults who __ in the National Health Interview Survey between 1997 and 2008：主干 The study was based on data from...adults；who 引导定语从句修饰 adults，从句缺谓语动词；between 1997 and 2008 为过去时间状语。译：该研究基于 1997 至 2008 年间参加「全国健康访问调查」的 8.8 万余名美国成年人的数据。",
+   "option": "正确 I participated（参加）：participate in 为固定搭配，who ___ in the survey 缺谓语，主语 adults 为复数，过去时间状语决定用过去式 participated；最接近干扰 K populated（居住于）与 participate 形近易混，但 populate 不与 in the survey 搭配，语义也无关；A adjust 义为「调整」，需接 to，答非所问。",
+   "keyword": "participate in 参加＝take part in；be based on 基于；survey 调查；interview survey 访问调查。",
+   "note": "定语从句缺谓语先锁定动词，再由 between 1997 and 2008 定过去式；participated in the survey 是调查类文章的标配表达；K populated 是词库故意设置的形近陷阱，形似 participate 但义为「有人居住」。"
+  },
+  {
+   "question_id": 522,
+   "long_sentence": "定位句 Contrary to some research that has found an __ limit to the amount of exercise that is healthy：Contrary to... 为形容词短语作状语；that has found an ___ limit 为定语从句修饰 research；an 提示空格词以元音音素开头；limit to 表「……的上限」。译：与一些发现「健康运动量存在上限」的研究相反，……",
+   "option": "正确 O upper（上限的）：an upper limit（上限）为固定搭配，并与空后 there was __ no limit to the longevity benefits 形成「有上限 vs 无上限」的对比论证；最接近干扰 N type 冠词搭配错误（an type 不成立）且语义不通；M seemingly 为副词，不能修饰名词 limit。",
+   "keyword": "upper limit 上限；contrary to 与…相反；there is no limit to ……无上限；the amount of ……的量。",
+   "note": "双线索定位：冠词 an 锁定元音开头的单词，Contrary to 与后文 no limit 的对立结构锁定「上限」义；upper 与 limit 拆开各是基础词、合起来是统计与医学语篇的高频固定搭配。"
+  },
+  {
+   "question_id": 523,
+   "long_sentence": "定位句 the researchers found that there was __ no limit to the longevity benefits of exercise：found 后接 that 宾语从句，从句为 there be 存在句；was 与表语 no limit 之间的空格只能是状语；longevity benefits 意为「延寿益处」。译：研究者发现，运动带来的长寿益处似乎没有上限。",
+   "option": "正确 M seemingly（表面上、似乎）：seemingly no limit 表「看似没有上限」，语气留有余地，呼应后文 observational studies cannot prove cause and effect 的谨慎结论；最接近干扰 C approximately（大约）只能修饰数词，不能修饰 no limit；O upper 已用于第 5 空，且形容词无法插在 was 与 no 之间。",
+   "keyword": "seemingly 表面上＝apparently；there is no limit to ……无上限；longevity 长寿；observational study 观察性研究。",
+   "note": "空格位置定词性：be 动词与 no limit 之间只能填副词，词库中副词仅 C、M 两项，直接二选一；学术文章用 seemingly 而非绝对化说法，正是科学写作「留余地」的惯例，也是正确项信号。"
+  },
+  {
+   "question_id": 524,
+   "long_sentence": "定位句 Even the small group of people who got 10 times the amount of exercise recommended by the federal government had a 46% lower __ of death than the least active group：主干 the small group...had a 46% lower ___；who got... 为定语从句；recommended by the federal government 修饰 exercise；than 引出比较。译：运动量达建议值 10 倍者，死亡风险比最不活跃组低 46%。",
+   "option": "正确 L risk（风险）：a lower risk of death（更低的死亡风险）为固定搭配，与 lower、of death 双向咬合；最接近干扰 F impact 词性可通但「死亡的影响降低 46%」不合流行病学表述，且 impact 已用于第 1 空不可复用；G limitations 为复数名词，与前面单数冠词 a 冲突。",
+   "keyword": "risk of death 死亡风险；46% lower 低 46%；a risk of ……的风险；least active 最不活跃的。",
+   "note": "数字语境强提示：46% lower 后接「风险」类名词最自然，risk 与 benefit 是健康语篇的高频反义对；a 加单数可数名词直接排除复数 limitations，词性与词义双重校验。"
+  },
+  {
+   "question_id": 525,
+   "long_sentence": "定位句 Still, observational studies like this one cannot prove cause and effect; they can only find __：Still 表转折让步；分号连接两个并列分句；主干 they can only find ___，情态动词 can 后接动词原形 find，空格为其宾语。译：不过，像这样的观察性研究无法证明因果关系，它们只能发现（数据间的）模式。",
+   "option": "正确 J patterns（模式）：cannot prove cause and effect 与 can only find patterns 构成「不能证因果、只能找关联」的科学表述，patterns 即数据规律；最接近干扰 G limitations 名词复数、语法可通，但「只能发现局限」与 cannot prove 的对照远不如 patterns 贴切；E coordinates（坐标）与研究语境脱节。",
+   "keyword": "pattern 模式、规律；cause and effect 因果关系；prove 证明；correlation 相关性（与 pattern 同属「只关联不因果」语境）。",
+   "note": "cannot...can only 的对比结构提示空格填「次一级证据」：因果之上是规律模式；同时警惕 limitations——它在语法上完全可行，须靠语义对照（prove cause and effect 与 find patterns）排除。"
+  }
+ ]
+}

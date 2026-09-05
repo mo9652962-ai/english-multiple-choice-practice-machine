@@ -1,0 +1,180 @@
+{
+ "chunk": 25,
+ "items": [
+  {
+   "question_id": 601,
+   "long_sentence": "定位句 Policymakers are also urged to __ investments in digital infrastructure to ensure __ access for all students：Policymakers are urged to do 为被动建议句型；to 后接动词原形；in digital infrastructure 修饰 investments；to ensure... 为目的状语。译：政策制定者还被敦促增加对数字基础设施的投资，以确保所有学生都能公平地获取（技术）。",
+   "option": "正确 I increase（增加）：increase investments in...「增加对……的投资」为固定搭配，urged to（被敦促做）的方向必然是「加码」而非削减；最接近干扰 L restrict（限制）restrict investments 方向相反——呼吁投资不可能限制投资；K ignore（忽视）与「敦促行动」矛盾；C mitigate 已用于第 3 空不可复用。",
+   "keyword": "urge sb to do 敦促某人做某事；investment in 对……的投资；digital infrastructure 数字基础设施；policymaker 政策制定者。",
+   "note": "are urged to 的被动建议句型提示「尚未做、应去做」的动作，方向为正面加码；increase 与 restrict 的正反对照是本题辨析核心；in digital infrastructure 的介词短语确认 investments 为宾语。"
+  },
+  {
+   "question_id": 602,
+   "long_sentence": "定位句 to ensure __ access for all students：ensure 后接名词宾语；空格为修饰 access 的形容词；for all students 为受益对象。译：以确保所有学生公平地获取（技术与资源）。",
+   "option": "正确 J equitable（公平的）：equitable access「公平获取」为教育政策语篇的标准搭配，与首段 equity and ethics、widening the digital divide 首尾呼应；最接近干扰 O excessive（过度的）贬义不合——目标不可能是「过度获取」；H balanced 已用于第 8 空不可复用；M alternative（替代的）alternative access 语义偏「另辟途径」，与 for all students 的普惠目的不合。",
+   "keyword": "equitable access 公平获取＝equal access；equity 公平（与 equality 辨析：前者公平、后者均等）；ensure 确保；for all students 面向所有学生。",
+   "note": "空格修饰 access 且受 for all students 限定——「人人可得」直指「公平」义；equitable 与全文 equity 一词是同根复现，抓主题词即可锁定；excessive 的贬义色彩是词义色彩辨析考点。"
+  },
+  {
+   "question_id": 603,
+   "long_sentence": "定位句（首段主旨句）The rapid advancement of artificial intelligence (AI) has sparked a contentious debate about its impact on the labor market, particularly for white-collar professionals：主干 The advancement has sparked a debate；about its impact on... 限定辩论内容；particularly 举例强调对象。译：人工智能的快速发展引发了一场激烈争论——它对劳动力市场、尤其是白领职业群体有何影响。",
+   "option": "正确 B「AI 对白领工作的影响及其引发的社会挑战」：全文按「AI 冲击白领（法律、会计、医疗诊断）→ 30% 岗位或被自动化 → 劳动力市场极化与收入不平等 → 教育改革呼吁 → 社会如何管理转型」展开，B 完整覆盖「影响＋社会挑战」；A「制造业自动化的历史演变」以偏概全，制造业只是对比背景；C「AI 与人类智能解题能力的比较」无中生有；D「机器学习的技术局限」无中生有。",
+   "keyword": "contentious debate 争论激烈的辩论；labor market 劳动力市场；white-collar 白领；blue-collar 蓝领。",
+   "note": "主旨题抓首段主旨句的 debate about its impact on the labor market 与末段 manage the transition 的呼应；「 particularly for white-collar professionals」是范围限定词，排除以偏概全与无中生有选项即可锁定 B。"
+  },
+  {
+   "question_id": 604,
+   "long_sentence": "定位句 However, the displacement is not uniform; those with advanced skills in data science, AI ethics, and human-machine collaboration are likely to see heightened demand：分号连接两个分句；not uniform 表「并非整齐划一」；those with advanced skills in... 为受益群体；heightened demand 意为「需求上升」。译：然而，岗位被取代的情况并不均匀——拥有数据科学、AI 伦理与人机协作等高级技能的人，需求反而会上升。",
+   "option": "正确 C「具备数据科学与 AI 伦理专长的人」＝those with advanced skills in data science, AI ethics, and human-machine collaboration 的同义改写（expertise＝advanced skills、benefit＝heightened demand）；A「中层的会计与律师」正反混淆——原文说 accounting, law 领域风险最高；B「低薪服务业者」是被挤压的底层而非受益者；D「做常规工作的制造业员工」是被此前自动化浪潮威胁的群体，张冠李戴。",
+   "keyword": "displacement 岗位取代；heightened demand 需求上升＝benefit；expertise 专长＝advanced skills；human-machine collaboration 人机协作。",
+   "note": "However 表转折——前文说白领风险高，转折后才是「受益者」；benefit 在原文落成 heightened demand（需求上升），这种「结果换说法」的改写要熟悉；A 项用原文 accounting、law 设「最高风险」陷阱，方向必须核对。"
+  },
+  {
+   "question_id": 605,
+   "long_sentence": "定位句 This polarization of the labor market exacerbates income inequality, as mid-level professionals may find themselves squeezed between high-skill elites and low-wage service workers：主干 This polarization exacerbates income inequality；as 引导原因从句；squeezed between A and B 意为「被夹在两者之间」。译：两极分化加剧收入不平等——中层被夹在精英与低薪服务业者之间。",
+   "option": "正确 A「分裂成两个对立群体的过程」：as 从句给出语境证据——高技能精英与低薪服务者构成两端、中层被挤压，polarization（极化）的词根 polar（两极）也印证「两端对立」；B「变得更均衡」与加剧不平等的事实相反，正反混淆；C「收入差距逐渐缩小」与 exacerbates income inequality 方向相反；D「技术向不同行业扩散」无中生有。",
+   "keyword": "polarization 两极分化（polar 极）；exacerbate 加剧＝worsen；income inequality 收入不平等；be squeezed between 被夹在……之间。",
+   "note": "词义猜测题看「上下文例证」：as 从句的两端结构就是 polarization 的定义；词根 polar（地极、两极）可辅助猜词；B、C 与 exacerbates inequality 矛盾，属方向相反型干扰，先排除。"
+  },
+  {
+   "question_id": 606,
+   "long_sentence": "定位句 In response, educators and policymakers are calling for a radical overhaul of curricula...Yet, the pace of technological change outstrips the speed of institutional adaptation：in response 表回应；call for a radical overhaul 意为「呼吁彻底改革」；outstrips 意为「超过、快于」；yet 表转折。译：为此，教育者与政策制定者呼吁彻底改革课程……然而，技术变革的速度超过了机构适应的速度。",
+   "option": "正确 B「相比技术变革，改革太慢」：call for overhaul（还在呼吁、尚未完成）加 outstrips the speed of institutional adaptation（机构适应跟不上技术），共同暗示教育体系滞后；A「已成功适应 AI 时代」正反混淆；C「过分偏重编程等技术技能」无中生有——编程在原文恰是高风险领域而非教育重点；D「把创造力置于批判性思维之上」无中生有，两者是并列强调。",
+   "keyword": "radical overhaul 彻底改革；curriculum 课程（复数 curricula）；outstrip 超过＝surpass；institutional adaptation 机构的适应。",
+   "note": "imply（暗示）题的答案常在「呼吁＋转折」的落差里：尚在呼吁＝还没做到，outstrip＝落后于技术； Yet 是本题的钥匙词——若只看前句呼吁改革会误选 A 方向，转折后才见真意。"
+  },
+  {
+   "question_id": 607,
+   "long_sentence": "定位句 The question is no longer whether AI will replace jobs, but how societies can manage the transition to ensure that the benefits of automation are broadly shared：no longer...but... 重心在 but 后；broadly shared 与 concentrated among a few 对举。译：问题不再是 AI 是否取代工作，而是社会如何管理转型，让红利广泛分享而非集中于少数人。",
+   "option": "正确 C「担忧不平等并主张主动管理」：作者用 exacerbates income inequality、precarious limbo（不稳定处境）表达忧虑，用 manage the transition、broadly shared 表达「主动管理」的主张；A「对普遍受益持乐观态度」与 concentrated among a few 的担忧相反；B「中立、纯描述」错——exacerbates、precarious 等词带明显评价；D「怀疑研究的数据估计」无中生有，作者引用 McKinsey 估计时未表怀疑。",
+   "keyword": "manage the transition 管理转型；broadly shared 广泛分享；be concentrated among 集中于；precarious 不稳定的、岌岌可危的。",
+   "note": "态度题先划评价性词汇：exacerbates（加剧）、precarious（不稳）、ensure...broadly shared（确保共享）都是带立场的词；「提出问题＋给出对策」的结尾段是判断态度的黄金位置；纯客观选项通常错在忽视这些评价词。"
+  },
+  {
+   "question_id": 608,
+   "long_sentence": "定位句 深度学习算法能够分析医学影像，识别早期肿瘤的准确率超过人类专家：句子主干为「算法能够分析影像、识别肿瘤」；「准确率超过人类专家」为比较结果。译：深度学习算法能够分析医学影像，识别早期肿瘤的准确率超过人类专家。（原文即为中文，直接对应）",
+   "option": "答案 A 段：题干「AI 在医学影像分析中识别早期肿瘤的准确率已超过人类专家」与 A 段原句「深度学习算法能够分析医学影像，识别早期肿瘤的准确率超过人类专家」几乎逐词对应，医学影像、早期肿瘤、准确率三组名词全部复现；与 E 段区分：E 段也讲 AI 能力突破（预测蛋白质结构、加速疫苗研发），但「影像分析、肿瘤」是 A 段专属词。",
+   "keyword": "医学影像＝medical imaging；早期肿瘤＝early tumor；准确率＝accuracy；深度学习＝deep learning。",
+   "note": "中文长篇匹配同样用「专有名词定位」：影像、肿瘤这类具体名词是黄金锚点；A 段还含「数据隐私和算法偏见」的挑战句，勿与之混淆——题干问的是「能力」，不是「挑战」。"
+  },
+  {
+   "question_id": 609,
+   "long_sentence": "定位句 AI决策的「黑箱」特性使得患者难以理解治疗建议，削弱了医患信任：主干为「黑箱特性使患者难以理解、削弱信任」；「黑箱」比喻算法内部不可见。译：AI 决策的「黑箱」特性使患者难以理解治疗建议，削弱了医患之间的信任。（原文即为中文，直接对应）",
+   "option": "答案 B 段：题干「AI 决策的不透明性会削弱患者对医生的信任」对应 B 段「AI 决策的『黑箱』特性……削弱了医患信任」——不透明性＝黑箱特性（同义换喻）、削弱信任＝削弱了医患信任；与 A 段区分：A 段也提挑战（数据隐私和算法偏见），但「黑箱、信任」只在 B 段出现。",
+   "keyword": "黑箱＝black box（不透明）；医患信任＝doctor-patient trust；可解释性＝explainability（B 段对策词）；算法偏见＝algorithmic bias。",
+   "note": "「不透明」到「黑箱」是比喻与直白的互换，属中文版同义替换；B 段承担伦理主题下的两个考点（黑箱信任、责任归属），同段两题时按「信任」与「责任」两个关键词切分。"
+  },
+  {
+   "question_id": 610,
+   "long_sentence": "定位句 联邦学习成为解决数据孤岛问题的关键方案。它允许医院在不共享原始数据的情况下训练模型，保护患者隐私。但联邦学习在通信效率和模型收敛性方面仍有局限：主干为「联邦学习保护隐私，但有局限」；「数据孤岛」指机构间数据不互通。译：联邦学习成为解决数据孤岛问题的关键方案——医院无需共享原始数据即可训练模型，保护患者隐私；但它在通信效率与模型收敛性上仍有局限。（原文即为中文，直接对应）",
+   "option": "答案 C 段：题干「联邦学习技术能保护患者隐私但存在通信效率问题」与 C 段「保护患者隐私。但联邦学习在通信效率和模型收敛性方面仍有局限」逐点对应——联邦学习、患者隐私、通信效率三个术语原词复现；与 F 段区分：F 段也讲数据保护，但那是「加密与合规」，联邦学习这一技术术语是 C 段专属。",
+   "keyword": "联邦学习＝federated learning；数据孤岛＝data silo；模型收敛性＝model convergence；原始数据＝raw data。",
+   "note": "术语定位是本题命脉：联邦学习全文只在 C 段出现；题干「但」字前后正反两面信息（保隐私、有效率问题）都必须落在同段——只占一半的是干扰段。"
+  },
+  {
+   "question_id": 611,
+   "long_sentence": "定位句 基层医疗机构的数字化基础薄弱，限制了AI工具的普及：句子为「基础薄弱→限制普及」的因果结构。译：基层医疗机构的数字化基础薄弱，限制了 AI 工具的普及。（原文即为中文，直接对应）",
+   "option": "答案 D 段：题干「中国基层医疗机构的数字化水平不足，阻碍AI工具推广」对应 D 段「基层医疗机构的数字化基础薄弱，限制了AI工具的普及」——数字化水平不足＝数字化基础薄弱、阻碍推广＝限制了普及，两处同义改写工整；与同段前半区分：D 段先讲中国初创公司成果（肺结节、眼底诊断工具），再讲基层短板，题干只取「短板」一侧。",
+   "keyword": "基层医疗机构＝primary care institutions；数字化基础＝digital infrastructure；普及＝popularization＝推广；薄弱＝weak。",
+   "note": "「不足、阻碍」类否定信息是长篇匹配高频考点；D 段是「成绩＋问题」的对比例证段，题干只问问题侧，注意别被段首的成果句带偏；「中国」一词是 D 段独有范围词。"
+  },
+  {
+   "question_id": 612,
+   "long_sentence": "定位句 但临床前测试和临床试验周期长，AI只能缩短部分环节，无法完全替代传统流程：主干为「AI 只能缩短部分环节、不能替代全部」；「临床前测试、临床试验」为药物研发两个阶段。译：但临床前测试和临床试验周期长，AI 只能缩短其中部分环节，无法完全替代传统流程。（原文即为中文，直接对应）",
+   "option": "答案 E 段：题干「AI在药物发现中只能缩短部分研发环节，无法完全替代传统流程」与 E 段「AI只能缩短部分环节，无法完全替代传统流程」几乎原词对应，药物发现、研发环节全部复现；与 G 段区分：G 段也讲「AI 处理常规工作、医生专注复杂病例」的分工，但那是未来医患协作模式，药物研发流程是 E 段专属。",
+   "keyword": "药物发现＝drug discovery；临床试验＝clinical trial；临床前测试＝preclinical test；替代＝replace。",
+   "note": "「只能……无法完全……」的限度表述是本题题眼——原文用同样句式承接；E 段先讲突破（蛋白质结构）再讲限度，题干问限度侧，两端信息都要核到位。"
+  },
+  {
+   "question_id": 613,
+   "long_sentence": "定位句 2024年，欧盟《人工智能法案》将医疗AI列为高风险应用，要求严格的数据保护措施：句子为「法案＋分类要求」结构；《人工智能法案》为专有法律名称。译：2024 年，欧盟《人工智能法案》将医疗 AI 列为高风险应用，要求采取严格的数据保护措施。（原文即为中文，直接对应）",
+   "option": "答案 F 段：题干「欧盟《人工智能法案》将医疗AI列为高风险应用，要求严格数据保护」与 F 段原句逐词对应——法案名称、高风险应用、数据保护三组信息全部复现；与 A 段区分：A 段讲「数据隐私是挑战」，但「法案、欧盟」这两个监管专有词只在 F 段出现。",
+   "keyword": "《人工智能法案》＝AI Act；高风险应用＝high-risk application；数据保护＝data protection；合规＝compliance（F 段后续词）。",
+   "note": "法律名称、机构名（欧盟）是最高优先级定位词，比普通名词更唯一；F 段承担本题与合规成本题（第 10 题）两个考点，靠「法案要求」与「成本后果」切分。"
+  },
+  {
+   "question_id": 614,
+   "long_sentence": "定位句 教育体系需调整，培养既懂医学又懂AI的复合型人才：句子为「教育调整→培养复合人才」的建议结构；「复合型」指跨学科。译：教育体系需要调整，培养既懂医学又懂 AI 的复合型人才。（原文即为中文，直接对应）",
+   "option": "答案 G 段：题干「未来医生需要接受医学与AI交叉领域的教育」对应 G 段「教育体系需调整，培养既懂医学又懂AI的复合型人才」——交叉领域教育＝既懂医学又懂AI、需要接受＝培养，属跨句改写；与 D 段区分：D 段讲医生对 AI 的接受度参差不齐，那是「态度」问题，而「教育体系、人才」只在 G 段。",
+   "keyword": "复合型人才＝interdisciplinary talent；教育体系＝education system；人机协作＝human-machine collaboration（G 段主题词）；健康素养＝health literacy（G 段另一信息点）。",
+   "note": "跨句合并是本题改写特点：题干把「教育体系调整」与「复合型人才」并成一句，定位时两个信息都要在同段出现才可信；G 段是展望段（展望未来），涉及教育、素养多个建议点。"
+  },
+  {
+   "question_id": 615,
+   "long_sentence": "定位句 当AI系统做出错误诊断时，责任归属存在争议：是算法开发者、医院还是医生？句子为「情境＋争议问题」结构；「责任归属」指责任由谁承担。译：当 AI 系统做出错误诊断时，责任归属存在争议：算在算法开发者、医院还是医生头上？（原文即为中文，直接对应）",
+   "option": "答案 B 段：题干「AI系统做出错误诊断时，责任归属是伦理争议焦点之一」对应 B 段首句「伦理问题在AI医疗中尤为突出。当AI系统做出错误诊断时，责任归属存在争议」——错误诊断、责任归属、争议三组信息原词复现；与同段后半区分：B 段同时承担黑箱信任题（第 2 题），靠「责任归属」与「黑箱信任」两个关键词切分信息点。",
+   "keyword": "责任归属＝liability、attribution of responsibility；错误诊断＝misdiagnosis；伦理争议＝ethical controversy；监管机构＝regulator（B 段对策词）。",
+   "note": "B 段是「一段两题」的典型：前半责任归属（本题）、后半黑箱信任（第 2 题）；问句「是开发者、医院还是医生？」是列举式证据，题干的「争议焦点」正由这个问句支撑。"
+  },
+  {
+   "question_id": 616,
+   "long_sentence": "定位句 例如，AI预测蛋白质结构的能力加速了新冠疫苗的研发：句子为「能力→成果」结构；蛋白质结构预测为 AI 的具体能力。译：例如，AI 预测蛋白质结构的能力加速了新冠疫苗的研发。（原文即为中文，直接对应）",
+   "option": "答案 E 段：题干「AI预测蛋白质结构加速了新冠疫苗的研发进程」与 E 段「AI预测蛋白质结构的能力加速了新冠疫苗的研发」逐词对应——蛋白质结构、新冠疫苗、加速研发全部复现；与 A 段区分：A 段也讲 AI 的具体能力（影像识别），但「蛋白质、疫苗」是 E 段（药物发现）专属词。",
+   "keyword": "蛋白质结构＝protein structure；新冠疫苗＝COVID-19 vaccine；药物发现＝drug discovery；研发进程＝R&D process。",
+   "note": "例子引导词「例如」提示 E 段用具体案例支撑「AI 在药物发现中取得突破」的段旨；「加速」与题干「加速……进程」完全一致，属于零改写的送分匹配，但要防 E 段后半限度句的干扰。"
+  },
+  {
+   "question_id": 617,
+   "long_sentence": "定位句 企业需采用加密技术和访问控制，但合规成本可能阻碍中小型创新企业的发展：句子为「要求＋副作用」转折结构；合规成本指满足监管所需的投入。译：企业需采用加密技术和访问控制，但合规成本可能阻碍中小型创新企业的发展。（原文即为中文，直接对应）",
+   "option": "答案 F 段：题干「合规成本可能阻碍中小型企业在医疗AI领域的创新」与 F 段「但合规成本可能阻碍中小型创新企业的发展」逐词对应——合规成本、阻碍、中小型创新企业全部复现；与同段前半区分：F 段先讲法案的严格要求（第 6 题考点），再用「但」转出成本副作用（本题），一条但字线切分两个考点。",
+   "keyword": "合规成本＝compliance cost；加密技术＝encryption；访问控制＝access control；中小型创新企业＝SMEs、startups。",
+   "note": "「但」字转折是 F 段两个考点的分界线：法案要求在前、成本后果在后；题干含「可能」与原文「可能」对应——长篇匹配中情态词的保留也是改写的一部分，注意核对。"
+  },
+  {
+   "question_id": 618,
+   "long_sentence": "定位句 While AI systems can __ complex tasks with remarkable efficiency, they also pose significant __ to privacy and employment：While 引导让步状语从句；从句主干 AI systems can ___ complex tasks；with remarkable efficiency 为方式状语。译：尽管 AI 系统能以惊人的效率执行复杂任务，但它们也对隐私与就业构成重大风险。",
+   "option": "正确 A perform：perform tasks「执行任务」是最通用的动宾搭配，与 systems 主语和 efficiency 评价匹配；B execute 侧重「执行命令、指令」（execute an order），含服从义，此处强调「完成任务的能力」而非服从；C accomplish 宾语常为 goal、mission（达成目标），不与 complex tasks 常规搭配；D conduct 侧重「组织实施」（conduct a survey、an experiment）。",
+   "keyword": "perform tasks 执行任务；with remarkable efficiency 以惊人的效率；execute 执行（命令）；conduct 组织实施（辨析）。",
+   "note": "完形动词辨析先看宾语：complex tasks 的默认搭配是 perform、carry out；四项都含「做」义时，靠宾语习惯与语域定夺——这是考研完形近义动词组的核心解法。"
+  },
+  {
+   "question_id": 619,
+   "long_sentence": "定位句 they also pose significant __ to privacy and employment：they also pose significant ___ to... 为主谓宾补框架；pose...to... 为固定搭配；privacy and employment 为并列的风险对象。译：它们也对隐私与就业构成重大风险。",
+   "option": "正确 B risks：pose risks to「对……构成风险」为最标准搭配，且与后文 minimizing its risks 原词复现，形成全文一致用词；A threats 侧重具体敌意来源的「威胁」，pose a threat to 也成立但语义更针对性；C dangers 与 D hazards 多指具体危险源（安全隐患、职业危害），与 privacy 这类抽象对象搭配不当。",
+   "keyword": "pose risks to 对……构成风险；threat 威胁（针对性强）；hazard 危害源（具体隐患）；privacy 隐私。",
+   "note": "「危险义词家族」辨析是考研完形高频考点：risk（不确定性）、threat（敌意）、danger（危险状态）、hazard（隐患源）；本题另有复现线索——第 6 空的 its risks 与本空同词呼应，前后一致定答案。"
+  },
+  {
+   "question_id": 620,
+   "long_sentence": "定位句 Critics argue that relying too heavily on machines may __ human creativity and critical thinking：Critics argue that... 中 that 从句为观点内容；从句主语 relying too heavily on machines 为动名词短语；may 后接动词原形。译：批评者认为，过度依赖机器可能会削弱人类的创造力与批判性思维。",
+   "option": "正确 A undermine：undermine「暗中削弱、逐渐损害」常接抽象能力宾语（creativity、confidence、authority），含「由内侵蚀」的过程义，与「过度依赖」的渐进危害契合；B weaken 泛指「变弱」，语域偏中性但程度笼统；C diminish 侧重数量、价值的「减少」；D decrease 仅表数量下降，不能以抽象能力为宾语。",
+   "keyword": "undermine 削弱、损害（抽象、渐进）；rely on 依赖＝depend on；critical thinking 批判性思维；creativity 创造力。",
+   "note": "动词辨析看宾语类型：creativity and critical thinking 是抽象能力，undermine 是其专属高频搭配；decrease 限数量、diminish 限程度量的干扰设计，本质考「抽象与具体」的搭配边界。"
+  },
+  {
+   "question_id": 621,
+   "long_sentence": "定位句 However, proponents __ that AI can augment human capabilities, allowing us to __ new heights in science and medicine：However 表转折对立；主干 proponents ___ that...；that 从句内 AI can augment...；allowing us to... 为现在分词作结果状语。译：然而，支持者坚称，AI 能增强人类能力，使我们得以在科学与医学领域攀上新的高度。",
+   "option": "正确 C assert：assert that「坚称、断言」语气强而正式，与 However 转折后针锋相对提出正面主张的立场句匹配；A contend 侧重「争辩、角逐」，辩论色彩浓但强调力度弱于 assert；B argue 已被上句 Critics argue 占用，考研完形忌同词复用且无强调义；D maintain 侧重「坚持既有观点」，此处是首次提出主张，时态语义不合。",
+   "keyword": "assert 坚称、断言；proponent 支持者（反义 opponent）；augment 增强；contend 争辩（辨析）。",
+   "note": "观点动词辨析看「立场强度与新旧」：转折后首次提出的正面主张用 assert；注意 argue 在上句已出现——完形填空中「同词复用」常是干扰信号，选项词库要前后贯通看。"
+  },
+  {
+   "question_id": 622,
+   "long_sentence": "定位句 allowing us to __ new heights in science and medicine：allowing... 现在分词作结果状语；to 后接动词原形；new heights 为宾语；in science and medicine 为范围状语。译：使我们得以在科学与医学领域达到新的高度。",
+   "option": "正确 B attain：attain new heights「达到新高度」为正式书面搭配，attain 兼含「经努力达到」的过程义，与前文 augment（增强能力）的铺垫衔接自然；A reach 语义可通但语域偏普通；C achieve 宾语常为 success、goal，achieve heights 搭配少见；D gain 侧重「获得利益、经验」，不与 heights 搭配。",
+   "keyword": "attain new heights 达到新高度＝reach new heights；augment 增强；attain（正式语域）达到；gain 获得（辨析）。",
+   "note": "宾语 heights 决定搭配候选：attain 与 reach new heights 是固定组合；当两项都能讲通时考「语域正式度」——本文为考研正式语篇，选 attain；此空与 augment 构成「能力增强→达到新高度」的语义链。"
+  },
+  {
+   "question_id": 623,
+   "long_sentence": "定位句 To __ the benefits of AI while minimizing its risks, governments must __ thoughtful regulations：To ___ the benefits 为目的状语；while minimizing its risks 为让步状语（省略主语与 be）；主干 governments must ___ thoughtful regulations。译：为了在利用 AI 之利的同时把风险降到最低，各国政府必须制定周全的监管条例。",
+   "option": "正确 A harness：harness 原义「给马套上挽具」，引申为「驾驭并使之为我所用」，harness the benefits、power of AI 是科技语篇的标准表达，与「趋利避害」的语境最贴；B utilize 仅表「使用」，缺「驾驭掌控」的意象；C exploit 含「剥削、不当利用」的贬义色彩；D leverage 是商业用语「借力撬动」，与政府监管语域不合。",
+   "keyword": "harness 驾驭、利用＝tap into；harness the benefits、power of 利用……之利；minimize 使最小化；exploit 贬义「不当利用」（色彩辨析）。",
+   "note": "benefits 与 risks 并存的目的句是全文枢纽：harness 的「驯服为我所用」意象正合「趋利避害」；C exploit 的感情色彩是词义色彩辨析考点——考研完形常靠褒贬定正确项。"
+  },
+  {
+   "question_id": 624,
+   "long_sentence": "定位句 governments must __ thoughtful regulations：governments must ___... 为主谓宾；must 后接动词原形；thoughtful regulations 意为「周全的监管条例」为宾语。译：各国政府必须制定周全的监管条例。",
+   "option": "正确 D establish：establish regulations「建立、创设规章」强调「从无到有」——语境中监管尚缺、需要新立；A enact 专指「（立法机关）颁布法律」，语域过窄且此处动作主体是 governments 泛指；B implement 是「执行、落实已有规定」，与「创设」义矛盾；C enforce 是「强制执行」，同样以规则已存在为前提。",
+   "keyword": "establish 建立、创设；regulation 规章、监管；enact 颁布（立法）；implement 实施、enforce 强制执行（辨析）。",
+   "note": "「规则类动词」按时间轴辨析：enact 立法颁布、establish 创立、implement 落实、enforce 强制执行——语境中监管尚属空白，须选「从无到有」的 establish；这组词是考研完形政策语篇的常客。"
+  },
+  {
+   "question_id": 625,
+   "long_sentence": "定位句 For instance, algorithms used in hiring or lending should be __ for bias to ensure fairness：algorithms 为主语（used in hiring or lending 为过去分词短语作后置定语）；should be ___ for bias 为被动结构；to ensure fairness 为目的状语。译：例如，用于招聘或放贷的算法应接受严格审查，以排查偏见、确保公平。",
+   "option": "正确 B scrutinized：scrutinize「仔细审查、细察」语域正式、程度强，be scrutinized for bias 与 ensure fairness 的监管语境最贴；A examined 语义可通但程度弱于「严格审查」，且 for bias 搭配的严密性不及 scrutinized；C checked 偏口语，义为「核对、查看」；D audited 专指「财务审计」，与 bias（偏见）属不同领域，属专业词陷阱。",
+   "keyword": "scrutinize 仔细审查＝examine closely；bias 偏见＝prejudice；hiring and lending 招聘与放贷；audit 审计（专项辨析）。",
+   "note": "be ___ for bias 的介词框架定动词；「算法公平」语境要求高强度审查——scrutinize 与 examine 的差异在程度与正式度；D audited 是「领域限定词」陷阱，考研完形爱设专业词干扰，认准语义场再选。"
+  }
+ ]
+}

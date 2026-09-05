@@ -1,0 +1,180 @@
+{
+ "chunk": 26,
+ "items": [
+  {
+   "question_id": 626,
+   "long_sentence": "定位句 Moreover, education systems need to __ students for a future where human-machine collaboration is the __：education systems need to ___ students 为主谓宾；for a future 为介词短语；where 引导定语从句修饰 future。译：此外，教育体系需要让学生为未来做好准备——到那时，人机协作将成为常态。",
+   "option": "正确 A prepare：prepare sb for sth「使某人为某事做好准备」为固定搭配，for a future 的介词框架直指 prepare；B equip 侧重「装备、使具备技能」，惯用结构是 equip sb with sth（以……装备某人），接 for 时宾语关系生硬；C arm「武装」色彩过强且多用于军事语境；D ready 作动词义为「使准备好」，但 prepare for 更常规正式。",
+   "keyword": "prepare sb for sth 使某人为……做好准备；human-machine collaboration 人机协作；equip...with 以……装备（辨析）；education system 教育体系。",
+   "note": "to ___ students for a future 的介词框架锁定「准备」类动词；prepare 与 equip 的辨析在介词搭配——equip 常接 with、prepare 常接 for；考研完形靠「介词锚点」锁定动词是常规操作。"
+  },
+  {
+   "question_id": 627,
+   "long_sentence": "定位句 a future where human-machine collaboration is the __：where 引导定语从句修饰 future；从句为主系表结构 human-machine collaboration is the ___。译：一个「人机协作成为常态」的未来。",
+   "option": "正确 A norm：the norm「常态、惯例」指某事物成为普遍状态，与「未来人机协作成为常态」的预测语义吻合；B standard 侧重「标准、规格」（质量标准、行业标准）；C rule 侧重「规则、规定」（明文条例）；D routine 侧重「个人例行程序」（daily routine），指社会协作形态时 norm 最贴。",
+   "keyword": "norm 常态＝the usual state；standard 标准（规格义）；rule 规则（条例义）；routine 例行公事（个人日常义）。",
+   "note": "四个名词都含「常规」义，辨析看搭配对象：协作方式成为社会常态用 norm；rule 是明文规定、standard 是质量标准、routine 是个人习惯——考研完形靠「语义场细分」定答案。"
+  },
+  {
+   "question_id": 628,
+   "long_sentence": "定位句 Yet, one must __ that no technology is inherently good or bad; it is how we use it that determines its impact：Yet 表转折；one must ___ that... 后接宾语从句；分号后为 it is...that... 强调句。译：然而，我们必须认识到：技术本身无所谓善恶，决定其影响的，是我们如何使用它。",
+   "option": "正确 D recognize：recognize that「认识到（客观事实或道理）」——宾语从句「技术无善恶」是中性认知，recognize 侧重「认清事实」；A acknowledge 侧重「（不情愿地）承认已存在的事实」；B admit 口语色彩浓且含「被迫承认（错误、不利）」义；C concede 侧重「（辩败后）勉强让步承认」，多用于辩论语境。",
+   "keyword": "recognize that 认识到；inherently 天生地、本质上＝by nature；acknowledge、admit、concede 承认（辨析）；it is...that... 强调句。",
+   "note": "「认识到客观道理」用 recognize，「承认错误或不利事实」才用 admit、concede；分号后的强调句是对从句内容的展开——先读懂 it is how we use it that... 的强调义，反推空格动词须带「认知」属性。"
+  },
+  {
+   "question_id": 629,
+   "long_sentence": "定位句 it is how we __ it that determines its impact：强调句 it is...that...，被强调部分为方式状语从句 how we ___ it；determines its impact 为强调句的真实主干。译：决定其影响的，正是我们使用它的方式。",
+   "option": "正确 B use：use「使用」最中性通用，how we use it 与前文 no technology is inherently good or bad 的朴素道理语域一致——决定影响的是「用」这一行为本身；A apply 侧重「应用理论、方法」（apply A to B）；C employ 侧重「聘用或采用手段」，正式度偏高；D deploy 专指「部署兵力、系统、资源」，语域过窄。",
+   "keyword": "use 使用（中性通用）；apply 应用（apply A to B）；employ 采用（手段）；deploy 部署（军事、技术语境）。",
+   "note": "强调句中的空格承接口语化道理「技术无善恶」，选最朴素的 use 最合语域；四项近义动词的辨析点是「搭配对象与正式度」——考研完形选词常「贵精不贵华」，朴素词往往是正解。"
+  },
+  {
+   "question_id": 630,
+   "long_sentence": "定位句 The ethical __ of AI development are __ debated, with some calling for a moratorium on certain applications：The ethical ___ of AI development 为主语（of 属格）；are 后接空格14的副词加过去分词；with some calling for... 为 with 复合结构作伴随状语；moratorium 意为「暂停令」。译：AI 发展的伦理影响正被激烈讨论，有人呼吁暂停某些应用。",
+   "option": "正确 A implications：implications「潜在影响、深层含义」——the ethical implications of...「……的伦理影响」为高频学术搭配，且与 are debated 的「讨论中」状态吻合：影响正在展开、尚待评估；B consequences 侧重「已发生的后果」；C repercussions 侧重「反弹性的连锁影响」；D ramifications 侧重「纷繁的分支影响」——三个干扰词都预设影响已成事实，与「正在辩论」不合。",
+   "keyword": "implication 潜在影响；consequence 后果（已发生）；repercussion 反响、连锁影响；ramification 分支影响（辨析）。",
+   "note": "「影响」义词家族是考研完形难点：implications 偏「潜在的、需探讨的」，consequences 偏「已成事实的」；后文 are hotly debated（还在辩论）决定选「尚未定论」的 implications——用后文时态反推前空是完形高阶技巧。"
+  },
+  {
+   "question_id": 631,
+   "long_sentence": "定位句 The ethical implications of AI development are __ debated, with some calling for a moratorium on certain applications：are ___ debated 为被动进行结构；空格副词修饰 debated；with 复合结构表伴随。译：AI 发展的伦理影响正被激烈讨论。",
+   "option": "正确 A hotly：hotly debated「被激烈讨论」为固定搭配，hotly 专与 debate、contested、disputed 等争议类动词连用；B heatedly 义近但搭配远不如 hotly 地道——可以说 heated debate（形容词作定语），却极少说 heatedly debated；C fiercely 修饰「竞争、反对」（fiercely competitive）；D intensely 修饰「强烈感受」（intensely painful）。",
+   "keyword": "hotly debated 激烈讨论（固定搭配）；heated debate 热烈辩论（形容词形式）；moratorium 暂停令；call for 呼吁。",
+   "note": "「副词＋动词」的固定搭配是考研完形必考：hotly debated、hotly contested 是高频组合；B heatedly 是最强干扰——记住 heated 常作定语（heated debate），副词形式与 debate 连用不地道。"
+  },
+  {
+   "question_id": 632,
+   "long_sentence": "定位句 Others __ that innovation should not be stifled by fear：Others ___ that... 后接宾语从句；从句为 should not be stifled 的被动结构；stifle 意为「扼杀、压制」。译：另一些人则坚称，创新不应被恐惧扼杀。",
+   "option": "正确 A insist：insist that「坚称」带强烈主张色彩，与上句 some calling for a moratorium（有人呼吁暂停）形成「双方各执一词」的对立结构；B persist 是不及物动词「坚持（做某事）」，须接 in doing，不能接 that 从句；C demand 接 that 从句需虚拟语气（demand that sb do）；D urge 接 that 从句也常带虚拟语气，且语义是「敦促行动」而非「主张观点」。",
+   "keyword": "insist that 坚称；stifle 扼杀；persist in doing 坚持做（不及物）；moratorium 暂停令。",
+   "note": "Some...Others... 的对比结构中，Others 的动词必须能接 that 从句；persist 的及物性陷阱（不及物、不能接从句）是本题命脉；demand、urge 的虚拟语气规则是语法辨析点——insist 表「坚称主张」时用陈述语气即可。"
+  },
+  {
+   "question_id": 633,
+   "long_sentence": "定位句 __, striking a balance between progress and precaution is __：空格为句首衔接副词；主干为动名词短语 striking a balance... 作主语；between progress and precaution 为平衡的两端。译：归根结底，在进步与审慎之间取得平衡至关重要。",
+   "option": "正确 A Ultimately：ultimately「归根结底、最终而言」用于引出全文总结性论断，与本文「各方观点讨论后的收束」结构匹配；B Eventually 侧重「经过漫长时间后最终发生」，指事件结果而非观点总结；C Finally 用于列举末项或流程收尾，无「归根结底」的论断义；D Consequently 表因果，此处前后并非因果关系。",
+   "keyword": "ultimately 归根结底；strike a balance between A and B 在 A 与 B 之间取得平衡；precaution 审慎、预防；eventually、finally（功能辨析）。",
+   "note": "收束句的衔接词考「篇章功能」：总结论断用 Ultimately 或 In the end；Eventually 是时间上的最终、Finally 是顺序上的最后、Consequently 是因果——四个词的功能分工是本题命脉。"
+  },
+  {
+   "question_id": 634,
+   "long_sentence": "定位句 striking a balance between progress and precaution is __：动名词短语 striking a balance... 作主语；is 后接表语形容词；between progress and precaution 为并列结构。译：在进步与审慎之间取得平衡是必不可少的。",
+   "option": "正确 C essential：essential「必不可少的」，动名词主语加 is essential 表「（做到某事）是必要的」，是 strike a balance 句式的惯用收尾；A crucial（关键的）与 B critical（至关重要的）语义可通但常见于 be crucial to sth 结构；D vital 与 essential 近义，但本句无 for、to 介词配合时 essential 的「不可或缺」义最完整。",
+   "keyword": "essential 必不可少的＝indispensable；strike a balance 取得平衡；precaution 审慎、预防措施；crucial、critical、vital（近义辨析）。",
+   "note": "「重要」形容词家族（crucial、critical、essential、vital）辨析无绝对规则，靠语料高频组合与句式配合判断：本句是「取得平衡是必要的」的建议句，essential 表「不可或缺」最合劝导语气；近义题按语感优先、介词结构验证兜底。"
+  },
+  {
+   "question_id": 635,
+   "long_sentence": "定位句 As we navigate this __ landscape, we must remember that the ultimate goal is to __ human well-being：As 引导时间状语从句；navigate this ___ landscape 中空格为 landscape 的定语；主干 we must remember that...。译：在穿越这片不断演变的格局时，我们必须记住：终极目标是增进人类福祉。",
+   "option": "正确 A evolving：evolving landscape「不断演变的格局」为科技、商业语篇高频搭配，evolve 含「渐进演化」义，契合 AI 技术持续发展的语境；B changing 泛指「变化」，无方向性与过程感；C shifting 侧重「位置、重心的转移」（shifting attitudes）；D developing 与 landscape 搭配易生歧义（developing country 的联想），且缺「演变」的动态感。",
+   "keyword": "evolving landscape 不断演变的格局；navigate 应对、穿行（比喻用法）；well-being 福祉；shifting 转移的（辨析）。",
+   "note": "navigate 的比喻用法（原义「航行」引申为「在复杂局面中前行」）是本文文眼，与之最搭的是「持续演化」的格局；evolving landscape 是外刊高频词组，值得整组积累。"
+  },
+  {
+   "question_id": 636,
+   "long_sentence": "定位句 the ultimate goal is to __ human well-being, not to create machines that __ humans：the goal is to do 不定式作表语；not to... 表对比否定；that 引导定语从句修饰 machines。译：终极目标是增进人类福祉，而不是造出取代人类的机器。",
+   "option": "正确 A enhance：enhance「增进、提升（质量、价值）」，enhance well-being「增进福祉」为标准搭配，且与全文 augment human capabilities 的「增强」义一致；B improve 通用但侧重「改善已有状态」，语感平淡；C boost 侧重「短期提振」（boost the economy、morale）；D elevate 侧重「升高位置、提升地位」（elevate one's status），不与 well-being 常规搭配。",
+   "keyword": "enhance 增进＝augment；well-being 福祉、安康；boost 提振（短期义）；elevate 提升（地位、高度义）。",
+   "note": "well-being 的搭配首选 enhance、promote；本文第 4 空 augment human capabilities 已埋「增强」义伏笔，enhance 与之同义呼应——考研完形的「同义复现」线索要纵向贯通全文。"
+  },
+  {
+   "question_id": 637,
+   "long_sentence": "定位句 the ultimate goal is to enhance human well-being, not to create machines that __ humans：not to create machines that ___ humans；that 引导定语从句修饰 machines，从句缺谓语动词，宾语为 humans。译：而不是造出取代人类的机器。",
+   "option": "正确 A replace：replace「取代、替换」，machines that replace humans 与全文 labor market、automation 的就业主题直接呼应；B supersede 书面语「（因过时陈旧而）取代」，宾语多为事物、制度；C displace 侧重「被迫迁离、挤占（岗位、人口）」，宾语常为群体且强调被动；D substitute 的主动用法是 substitute A for B「用 A 代替 B」，直接接 humans 时语义方向反。",
+   "keyword": "replace 取代＝take the place of；supersede 取代（旧事物）；displace 使迁离、挤占；substitute A for B 用 A 代替 B（结构辨析）。",
+   "note": "「取代」义词家族是考研完形经典辨析：replace 通用、supersede 因过时、displace 被动挤离、substitute 需 for 结构；本空宾语是 humans（人被机器取代），replace 最自然，并与首段 pose risks to employment 的就业主题首尾呼应。"
+  },
+  {
+   "question_id": 638,
+   "long_sentence": "定位句 However, the study also emphasizes that automation does not necessarily translate into mass unemployment：However 表转折；主干 the study emphasizes that...；not necessarily 为部分否定；translate into 意为「转化为、等同于」。译：然而，该研究也强调：自动化并不必然转化为大规模失业。",
+   "option": "正确 B「AI 对劳动力市场的经济影响复杂且不均衡」：首段讲自动化规模与历史经验（复杂）、第二段讲经济体间不均衡与赢家通吃（不均衡）、末段讲政策两难（管理复杂），B 的 complex and uneven 分段对应；A「必然导致全球大规模失业」与 does not necessarily translate into mass unemployment 正反混淆；C「发展中国家受益最多」无中生有——原文说其采用更慢；D「UBI 是最佳方案」过度推断，UBI 只是部分经济学家的主张且遭批评。",
+   "keyword": "translate into 转化为；mass unemployment 大规模失业；winner-takes-all 赢家通吃；asymmetry 不对称。",
+   "note": "主旨题抓「让步—转折」结构：吓人数据（30%、4-8 亿）加 However 强调未必失业等于「复杂」；第二段 not uniform 等于「不均衡」；B 的两个形容词各有段落对应，是标准的「分段概括合成主旨」。"
+  },
+  {
+   "question_id": 639,
+   "long_sentence": "定位句 The answer, as the study concludes, hinges on proactive governance and continuous learning：as the study concludes 为插入语；主干 The answer hinges on...；hinge on 意为「取决于」；proactive governance 意为「前瞻性治理」。译：正如研究结论所言，答案取决于前瞻性治理与持续学习。",
+   "option": "正确 B「中立，但强调需审慎管理」：作者客观呈现研究数据与两面观点（UBI 主张、税收激励、批评意见），末句 hinges on proactive governance 表明落点在「需要管理」；A「对失业必然性悲观」与 automation does not necessarily translate into mass unemployment 相反；C「乐观认为新岗位迅速取代旧岗」过度乐观——原文说挑战正在于转型速度；D「批评政府干预」无中生有，作者引用政策建议时未作否定。",
+   "keyword": "hinge on 取决于＝depend on；proactive governance 前瞻性治理；cushion 缓冲；inadvertently 无意中。",
+   "note": "态度题看「两面呈现＋末句落点」：作者不站队失业论或乐观论，但以 hinges on proactive governance 表达「要主动管理」；「中立＋有倾向」是考研阅读常见态度形态，纯描述无判断的选项通常不对。"
+  },
+  {
+   "question_id": 640,
+   "long_sentence": "定位句 Workers in sectors like manufacturing and retail, which are highly susceptible to automation, may face significant disruption if they lack the skills to pivot to emerging roles：主干 Workers...may face significant disruption；which 从句表「极易被自动化影响」；if 引导条件状语；pivot to＝转向。译：制造与零售业易被自动化波及，工人若缺乏转型技能将受严重冲击。",
+   "option": "正确 C「制造业与零售业」＝sectors like manufacturing and retail, which are highly susceptible to automation；A「医疗与教育」无中生有；B「数据分析与 AI 维护」张冠李戴——它们是 pivot to 的新兴去向（转型目标），恰是不易被取代的方向；D「个性化服务与咨询」同样是新兴岗位而非受冲击行业。",
+   "keyword": "susceptible to 易受……影响＝vulnerable to；disruption 冲击、扰乱；pivot to 转向＝switch to；emerging roles 新兴岗位。",
+   "note": "题干 most vulnerable 对应原文 highly susceptible——「脆弱＝易受影响」的同义替换要熟；B、D 两项都是原文并列短语，但身份是「转型去处」而非「受冲击行业」，考的是对句子逻辑方向的把握。"
+  },
+  {
+   "question_id": 641,
+   "long_sentence": "定位句 the study warns of a 'winner-takes-all' dynamic, where large corporations reap the productivity gains while small businesses struggle to invest in AI：warns of 意为「警告将有……」；where 引导定语从句解释该动态；reap the gains 意为「坐收红利」；while 表对比。译：研究警告存在一种「赢家通吃」的动态——大企业坐收生产率红利，小企业却难以投资 AI。",
+   "option": "正确 B「意味着大企业将主导 AI 收益」＝large corporations reap the productivity gains 的直接推断（dominate the gains＝reap the gains）；A「带来更平等的 AI 红利分配」与 winner-takes-all 的含义正相反；C「小企业将比大企业更快采用 AI」与 struggle to invest in AI 矛盾，正反混淆；D「发展中国家将成为赢家」张冠李戴——赢家通吃讲的是企业规模差异而非国家间差异。",
+   "keyword": "winner-takes-all 赢家通吃；reap the gains 收获红利＝dominate the gains；corporation 企业；struggle to do 难以做到。",
+   "note": "推断题的「引号概念」要看紧跟其后的 where 从句——那就是概念的定义句；winner-takes-all 的字面义（赢家拿走全部）与 B 的「大企业主导」直接互证；A 的 equal 是对「通吃」的反向改写，可秒排。"
+  },
+  {
+   "question_id": 642,
+   "long_sentence": "定位句 Advanced economies, with their higher labor costs, are more likely to adopt AI-driven automation, whereas developing nations may experience slower adoption due to cheaper manual labor：主干 Advanced economies are more likely to adopt...；whereas 表对比；due to 表原因。译：发达经济体更倾向采用 AI 自动化，而发展中国家因人工廉价采用较慢。",
+   "option": "正确 C imbalance（不平衡）：上文「发达快、发展中慢」的对比正是不对称，且下文 exacerbate global inequality（加剧全球不平等）直接复证——asymmetry 与 imbalance 的同义关系由「加剧不平等」锁定；A uniformity（一致性）正反混淆，原文强调 the impact is not uniform across economies；B cooperation（合作）与 D stability（稳定）与语境无关。",
+   "keyword": "asymmetry 不对称＝imbalance；whereas 而（对比连词）；exacerbate 加剧＝worsen；adopt 采用。",
+   "note": "词义猜测题看「对比＋结果」双重线索：whereas 前后构成两极，exacerbate inequality 证明该差异是「失衡」；A uniformity 是漏读否定词的陷阱——原文 the impact is not uniform，先找 not 再定方向。"
+  },
+  {
+   "question_id": 643,
+   "long_sentence": "答案句 Many routine jobs are being automated, freeing up human workers to focus on more complex and creative tasks：主干 routine jobs are being automated（现在进行时被动）；freeing up... 为现在分词作结果状语；focus on 意为「专注于」。译：许多常规工作正在被自动化，把人类员工解放出来，去专注于更复杂、更具创造性的任务。",
+   "option": "答案 A：空前 While some fear mass unemployment, others argue that AI will create new opportunities——A 的「常规工作被自动化、人力转向创造性任务」正是「新机会」的具体展开；空后 This shift requires workers to adapt... 中 This shift 指代 A 的「自动化解放人力」这一转变；干扰 D「专家预测 2030 年 40% 的岗位或被自动化」只承接「失业担忧」一侧，是静态预测而非「转变」，无法被 This shift 指代。",
+   "keyword": "routine job 常规工作＝repetitive work；free up 解放出；complex and creative tasks 复杂且有创造性的任务；this shift 这种转变（指代验证）。",
+   "note": "This shift 的指代是本题命脉：它必须指一个「工作形态的转变过程」——A 恰好构成 shift；D 的预测数据是静态事实，用「代词必须能落到实处」的验证法可直接排除。"
+  },
+  {
+   "question_id": 644,
+   "long_sentence": "答案句 For example, the rise of the internet created millions of jobs in e-commerce, digital marketing, and software development：主干 the rise created millions of jobs；in e-commerce, digital marketing, and software development 为岗位领域举例。译：例如，互联网的兴起在电商、数字营销和软件开发领域创造了数以百万计的岗位。",
+   "option": "答案 B：空前 technological revolutions...gave rise to entirely new industries——B 用 For example 举互联网创造新岗位的例子，正是 new industries 的实例化；空后 The key challenge lies in ensuring that the workforce can transition smoothly 顺接「产业更替」话题；干扰 C「转型伴随阵痛——煤矿与制造业衰落」是「disrupt」一侧的例子，与空前 but 之后的强调点（新产业）错位。",
+   "keyword": "give rise to 催生＝create；For example 举例信号词；e-commerce 电商；digital marketing 数字营销。",
+   "note": "For example 是七选五最直白的线索词：它必须承接一个「可举例的概括句」——空前 new industries 正是；「抽象概括＋具体例子」的配对验证是确认答案的第二重保险。"
+  },
+  {
+   "question_id": 645,
+   "long_sentence": "答案句 Some experts predict that up to 40% of current jobs could be automated by 2030：主干 experts predict that...；that 从句内 up to 40% 为程度限定、by 2030 为时间状语；could be automated 为情态动词加被动。译：一些专家预测，到 2030 年，多达 40% 的现有岗位可能被自动化。",
+   "option": "答案 D：空前 companies are increasingly investing in training programs to help employees acquire AI-related skills——D 的「40% 岗位可能被自动化」给出培训的紧迫性依据：替代规模大，才要未雨绸缪；空后 However, the speed of AI adoption varies across sectors 以 However 转折，D 的预测与后文的「行业差异」同属自动化话题链；干扰 F「政府应提供全民基本收入」是政策主张，与空前「企业投资培训」的主体动作衔接生硬，且缺乏紧迫感铺垫。",
+   "keyword": "predict 预测；up to 多达；be automated 被自动化；acquire skills 习得技能（空前复现词）。",
+   "note": "空前培训投资与空后 However 转折之间缺一个「压力证明」，D 的数据恰是承前（培训必要）启后（然而各行业速度不一）的桥梁；F 的政府主张应挂在 proactive policies 话题下而非此处，主体错位是七选五常见陷阱。"
+  },
+  {
+   "question_id": 646,
+   "long_sentence": "答案句 Moreover, the gig economy is expanding, offering flexible work arrangements but also less job security：主干 the gig economy is expanding（现在进行时）；offering... 为现在分词作伴随状语；but also 表转折递进。译：此外，零工经济正在扩张，它提供灵活的工作安排，但也带来更低的工作保障。",
+   "option": "答案 E：空前 the speed of AI adoption varies across sectors, with manufacturing and customer service experiencing the most dramatic changes——E 用 Moreover 递进补充另一变化：零工经济扩张、灵活但保障低，与「行业剧变」同属劳动力市场变动；空后 In response, educational institutions are redesigning curricula 的「应对」对象正是一连串变化；干扰 C「20 世纪煤矿与制造业衰落」时间线错位。",
+   "keyword": "gig economy 零工经济；flexible work arrangement 灵活工作安排；job security 工作保障；Moreover 递进信号词。",
+   "note": "Moreover 提示「同话题再加一点」：空格句必须与空前「行业变化」平行——E 的就业形态变化正合；In response 的回应对象是空前空格两句话共同构成的「变化群」，先理清回应范围再选句。"
+  },
+  {
+   "question_id": 647,
+   "long_sentence": "答案句 These qualities are precisely what AI cannot easily imitate, making them increasingly valuable in the job market：主干 These qualities are what...（表语从句）；making them valuable 为现在分词作结果状语；precisely 起强调作用。译：这些品质恰恰是 AI 无法轻易模仿的，正因如此，它们在就业市场上愈发有价值。",
+   "option": "答案 G：空前 redesigning curricula to emphasize critical thinking, creativity, and emotional intelligence—skills that AI struggles to replicate——G 的 These qualities 正是这三个品质的指代，what AI cannot easily imitate 与空前 struggles to replicate 同义收束；空后 humans and AI collaborate, rather than compete 顺势承接；干扰 A 已用于第 1 空且与空前品质列举无指代关系。",
+   "keyword": "quality 品质、素质；imitate 模仿＝replicate（同义换词）；precisely 恰恰（强调）；increasingly valuable 日益有价值。",
+   "note": "指代词 These qualities 是本题命脉：它必须复指空前的并列名词（critical thinking, creativity, emotional intelligence）；空前 AI struggles to replicate 与空格句 cannot easily imitate 是同义换词——replicate、imitate 的对应关系要能识别。"
+  },
+  {
+   "question_id": 648,
+   "long_sentence": "定位句 It hoped they would learn how shop-floor lighting __ workers' productivity：It hoped (that) they would learn how...；how 引导宾语从句；从句主语 shop-floor lighting（车间照明），空格为谓语，workers' productivity 为宾语；It 指代美国国家研究委员会。译：委员会希望他们能弄清车间的照明如何影响工人的生产率。",
+   "option": "正确 A affected（影响）：照明「影响」生产率是实验目的的常规表述，affected 的过去式与 hoped 的时态呼应；B achieved（达到、实现）的主语须是有目标追求的行为者，lighting 不能 achieved productivity；C extracted（提取、抽取）与 productivity 不构成动宾搭配；D restored（恢复）预设生产率曾一度下降，原文无此铺垫。",
+   "keyword": "affect 影响（动词）＝influence；shop-floor 车间的；productivity 生产率＝output；restore 恢复（辨析）。",
+   "note": "这是 2010 年考研英语一完形首空：实验目的句选 affect 最稳；时态锚点——主句 hoped 为过去时，从句空格也用过去式 affected；B、C、D 都是「动作与主语不匹配」的语义陷阱，完形动词题先做主宾匹配校验。"
+  },
+  {
+   "question_id": 649,
+   "long_sentence": "定位句 Instead, the studies ended __ giving their name to the 'Hawthorne effect', the extremely influential idea that...：Instead 表转折（与预期相反）；主干 the studies ended ___ doing sth；同位语 the extremely influential idea 解释 Hawthorne effect。译：出人意料的是，这些研究最终却催生了「霍桑效应」这一影响深远的概念……",
+   "option": "正确 B up：end up doing「最终落得、以……告终」为固定搭配，与 Instead 的「事与愿违」转折完美契合——本想查明照明与生产率的关系，结果却意外命名了一个效应；A at 后须接地点、时间名词，不接动名词；C with 的 end with 后接名词表「以……结束」，不接 doing；D off 的 end off 义为「结束、终止」，不接动名词表意外结果。",
+   "keyword": "end up doing 最终做成（常含意外结果）；give one's name to 以……命名；instead 相反地（转折信号）；Hawthorne effect 霍桑效应。",
+   "note": "介词副词搭配题先看「后接词形」：空后是动名词 giving，end up doing 是唯一成立的组合；Instead 的意外语义暗示结果出人意料，end up 恰含此义——搭配与语义双验证是此空的正解路径。"
+  },
+  {
+   "question_id": 650,
+   "long_sentence": "定位句 the extremely influential idea that the very __ of being experimented upon changed subjects' behavior：idea that... 为同位语从句；从句主干 the very ___ of being experimented upon（主语）changed...（谓语）；very 在此为形容词「正是、恰恰」，起强调作用；subject 意为「受试者」。译：仅仅因为「被做实验」这一行为本身，就改变了受试者的行为。",
+   "option": "正确 C act：the very act of doing sth「做某事这一行为本身」为固定表达，act 后接 of being experimented upon 的动名词结构自然顺畅；A truth（truth of 表「……的真相」）与「改变行为」的逻辑不合——改变行为的是行为不是真相；B sight（sight of 表「看见」）与 being experimented upon 逻辑不通；D proof（proof of 表「……的证据」）——被实验是行为而非证据。",
+   "keyword": "the very act of ……的行为本身；experiment upon 对……做实验；subject 受试者；very（形容词）正是的（强调用法）。",
+   "note": "very 的形容词用法（the very act＝正是这个行为）是考研经典考点，先读懂强调义再选名词；霍桑效应的定义就是「被观察这一行为本身改变行为」，act 是唯一能被 of being experimented upon 修饰的同位核心词。"
+  }
+ ]
+}

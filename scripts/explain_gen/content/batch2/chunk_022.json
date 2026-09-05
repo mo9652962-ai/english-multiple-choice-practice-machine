@@ -1,0 +1,180 @@
+{
+ "chunk": 22,
+ "items": [
+  {
+   "question_id": 526,
+   "long_sentence": "定位句 The researchers also were not able to __ for certain lifestyle factors that could affect lifespan, including dietary habits and changes in physical activity over time：主干 The researchers were not able to ___ for...；be able to do 后接动词原形；that could affect lifespan 为定语从句。译：研究者还无法对影响寿命的生活方式因素（如饮食习惯）加以校正。",
+   "option": "正确 A adjust（调整、校正）：adjust for 为统计学固定表达「对……作校正、控制该变量」，与观察性研究的方法学局限完全对应；最接近干扰 B alter（改变）词性可通但 alter for 不成搭配，此处是方法学惯用语；M scratch（抓、刮擦）scratch for 无此义。",
+   "keyword": "adjust for 对……作校正＝control for、account for；lifestyle factor 生活方式因素；dietary habits 饮食习惯；observational study 观察性研究。",
+   "note": "be able to 后接动词原形，先锁定动词类候选；介词 for 的搭配最终锁定 adjust for；本空与第 10 空 Despite these limitations 前后呼应，构成「方法局限」语块链。"
+  },
+  {
+   "question_id": 527,
+   "long_sentence": "定位句 Despite these __, the study's results are yet another indication of the power of physical activity, even in small amounts：Despite these ___ 为介词短语作让步状语，these 限定复数名词；主干 the study's results are yet another indication...；even in small amounts 让步强调。译：尽管有这些局限，该研究结果仍再次证明体育锻炼的力量——哪怕量很小。",
+   "option": "正确 G limitations（局限）：these 回指上文 cannot prove cause and effect、were not able to adjust for... 两大方法学缺陷，Despite 的让步转折顺理成章；最接近干扰 J patterns 已用于第 8 空不可复用，且「尽管这些模式」不合让步逻辑；E fractions（小部分、分数）语义无关。",
+   "keyword": "despite 尽管（后接名词性成分）；limitation 局限、缺陷；indication 迹象、表明；yet another 又一（叠加语气）。",
+   "note": "Despite 后必接名词，these 决定复数——回指上文两处缺陷正是解题钥匙；篇尾 Despite these limitations 是学术文章的固定收束句式，见 Despite 先找前文「不足之处」。"
+  },
+  {
+   "question_id": 528,
+   "long_sentence": "定位句 However, there has been __ little research on the influence of leisure activities：However 转折；there be 存在句，主干 there has been ___ little research；little 表否定「很少」，空格位于其前应为副词；on the influence of... 修饰 research。译：然而，关于休闲活动影响的研究却出奇地少。",
+   "option": "正确 O surprisingly（出奇地）：surprisingly little research 表「少得令人意外」，呼应上句 A number of studies have looked at...（家庭生活研究已有很多）与 However 的转折——多与少的落差正是「意外」；最接近干扰 C casually（随意地）与 little research 搭配不当；I normal 是形容词，无法修饰形容词 little。",
+   "keyword": "surprisingly 出奇地、意想不到地；little research 研究很少（little 表否定）；leisure activities 休闲活动；however 转折信号。",
+   "note": "空前 However 提示与上句「家庭研究多」形成反差，空格填「意外类」副词最顺；词库副词候选仅 casually、surprisingly 两项，靠转折语义二选一。"
+  },
+  {
+   "question_id": 529,
+   "long_sentence": "定位句 So Ciara Kelly and colleagues recruited 129 hobbyists to look at how the time spent on their hobbies __ their work life：主干 recruited 129 hobbyists；to look at how... 为目的状语；how 从句内主语 the time（spent on their hobbies 为过去分词短语作后置定语）＋空格谓语＋宾语 their work life。译：因此，西亚拉·凯利和同事招募了 129 名业余爱好者，考察花在爱好上的时间如何塑造他们的工作生活。",
+   "option": "正确 N shaped（塑造，过去式）：how 从句缺谓语，主语 the time 为单数，考察已发生的影响用过去式 shaped；最接近干扰 H interfere（干扰）需与 with、in 连用且与本句「研究影响」的中性语义不符；M scratch 词义无关——「时间塑造工作生活」才是研究目的的准确表述。",
+   "keyword": "shape one's work life 塑造某人的工作生活；recruit 招募；hobbyist 业余爱好者；spend time on 在……上花时间。",
+   "note": "how 从句缺谓语先锁定动词；shape 在此是及物动词「塑造、影响」，勿误解为名词「形状」；时态由研究性质（回顾已完成的考察）决定，过去式 shaped 与 recruited 呼应。"
+  },
+  {
+   "question_id": 530,
+   "long_sentence": "定位句 The researchers found that when participants spent longer than __ on their leisure activity, their belief in their ability to perform their job was strengthened：found 后接 that 宾语从句；when 引导时间状语从句，longer than ___ 为比较结构；主句被动语态 their belief...was strengthened。译：研究者发现，当参与者花在休闲活动上的时间超过平常水平时，他们对自己胜任工作的信心会增强。",
+   "option": "正确 I normal（平常量）：longer than normal＝longer than usual「比平时更久」，normal 作省略式名词用法（＝the normal amount）；最接近干扰 K relative（相对的）需搭配 to 构成 relative to，longer than relative 不成结构；J prevalent（普遍的）语义不合——此处是比较基准而非流行程度。",
+   "keyword": "longer than normal 比平时更久（normal 省略用法＝the normal amount）；leisure activity 休闲活动；belief in one's ability 对自身能力的信念；strengthen 增强。",
+   "note": "比较结构 longer than ___ 的空格填「基准」，normal、usual 类词最典型；normal 在此作代词式省略（than the normal amount），是选词填空常考的词性活用现象。"
+  },
+  {
+   "question_id": 531,
+   "long_sentence": "定位句 But this was only the __ when they had a serious hobby that was dissimilar to their job, or when their hobby was similar to their work but they only did it casually：主干 this was only the ___；when 从句补充条件，or 并列两种情形；dissimilar to 与 similar to 对比。译：但只有当他们拥有一项与工作截然不同的严肃爱好，或爱好虽与工作相似却只是随意为之 时，情况才是如此。",
+   "option": "正确 B case（情形）：the case 为固定搭配「情况属实」，this was only the case when... 即「仅当……时才成立」，承接上句信心增强的结论并给出限定；最接近干扰 M scratch（the scratch 不成搭配）；G faculty（才能、全体教员）语义无关；K relative 需 to 搭配。",
+   "keyword": "the case 情况＝the situation；only the case when 仅当……时成立；dissimilar to 与……不同；serious hobby 投入的、认真的爱好。",
+   "note": "空前 But 转折提示上句结论要加限制条件，空后 when 从句的先行词必须是 case、situation 类「情形」名词；「only the case when」是四级高频表达，值得整句记诵。"
+  },
+  {
+   "question_id": 532,
+   "long_sentence": "定位句 or when their hobby was similar to their work but they only did it __：when 从句内 but 转折；did it ___ 中空格为修饰动词 did 的副词；only 强调程度轻。译：或者当他们的爱好与工作相似、但只是随意玩玩时。",
+   "option": "正确 C casually（随意地）：did it casually＝随意从事，与上一种 serious hobby 形成「认真投入 vs 随意消遣」的对照，语义逻辑严密；最接近干扰 B eagerly（热切地）方向相反——eagerly 会强化影响，与本句「例外条件」的削弱逻辑矛盾；I normal 是形容词不能修饰动词 did。",
+   "keyword": "casually 随意地＝in a relaxed way；serious 认真的、投入的；only did it 只是随意为之；dissimilar、similar 相异、相似。",
+   "note": "but 前后语义对立是钥匙：爱好与工作相似（有风险）＋but only casually（随意为之）才能构成不损害工作信心的例外；修饰动词 did 锁定副词，eagerly 与 casually 的方向差异是判断核心。"
+  },
+  {
+   "question_id": 533,
+   "long_sentence": "定位句 When their hobby was both serious and similar to their job, then spending more time on it actually decreased their work __：when 引导时间状语从句；主句动名词短语 spending more time on it 作主语；decreased 为谓语，work ___ 为名词短语作宾语。译：当爱好既投入认真又与工作相似时，在上面花更多时间反而会降低他们的工作效率。",
+   "option": "正确 D efficiency（效率）：decrease work efficiency「降低工作效率」与下文 exhausted、unable to perform well 因果呼应；最接近干扰 G faculty（官能、才能）语义相近但 work faculty 不成搭配；A boost（提升）是动词且方向相反；K relative（亲属）名词义不合。",
+   "keyword": "work efficiency 工作效率；decrease 降低；actually 实际上（暗含反差）；spend time on 在……上花时间。",
+   "note": "空后 Why might that be? 与 exhausted 的线索锁定「负面结果」——效率下降；词库抽象名词候选 D、G 两项，靠搭配（decrease one's work efficiency）与下文复现词择优。"
+  },
+  {
+   "question_id": 534,
+   "long_sentence": "定位句 To maintain a serious hobby, people need to invest significant psychological resources...so if the activity has the same kinds of demands as their work, they may be left __：To maintain... 为目的状语；if 从句条件；主句 they may be left ___ 为 leave sb 加形容词的被动式，与 unable to... 并列。译：若爱好与工作需求同质，人可能精疲力竭、无法好好工作。",
+   "option": "正确 F exhausted（精疲力竭的）：be left exhausted「被弄得筋疲力尽」与上句 invest significant psychological resources、demands 因果相承，并与 unable to perform well 并列共作表语；最接近干扰 B burning（炽热的）可作形容词但语义无关；L removed（远离的）be left removed 不合「耗尽」语境。",
+   "keyword": "exhausted 精疲力竭的＝worn out；psychological resources 心理资源；demands 需求、耗费；be left... 弄得处于（某状态）。",
+   "note": "leave sb/sth + 形容词的被动式 be left ___ 锁定形容词；上句「心理资源被耗光」的逻辑直指 exhausted；与 unable to perform well 并列的表语必须同向负面，可再排除褒义候选。"
+  },
+  {
+   "question_id": 535,
+   "long_sentence": "定位句 But if their hobby is quite different from their career, it may not __ in the same way but instead help them develop other knowledge and skills：if 条件从句；主句 it may not ___ in the same way，情态动词后接动词原形；but instead 转折并列；help sb do sth。译：但如果爱好与职业截然不同，它就不会以同样方式造成干扰，反而能帮助他们发展其他知识与技能。",
+   "option": "正确 H interfere（干扰）：interfere in、with「干涉、妨碍」，may not interfere in the same way 回指上文「同质爱好耗费资源、降低效率」的负面路径；最接近干扰 K steer（引导、驾驶）steer in 不合语境；L removed 是过去分词或形容词，不能作情态动词后的原形动词。",
+   "keyword": "interfere in、with 干扰、妨碍；in the same way 以同样方式；instead 反而；different from 与……不同。",
+   "note": "may not 后接动词原形，先锁定动词；上下文对比结构（同质爱好负面 vs 异质爱好正面）说明空格填「负面动作」，interfere 与 decreased、exhausted 构成同向复现。"
+  },
+  {
+   "question_id": 536,
+   "long_sentence": "定位句 it may not interfere in the same way but instead help them develop other knowledge and skills that can __ their confidence at work：that 引导定语从句修饰 knowledge and skills；从句缺谓语，情态动词 can 后接动词原形；宾语 their confidence at work。译：它不会以同样方式造成干扰，反而帮助他们发展其他知识技能，从而提升工作自信。",
+   "option": "正确 A boost（提升、增强）：boost one's confidence「增强信心」为高频搭配，与上句 was strengthened 复现「增强」语义；最接近干扰 L stimulate（刺激）搭配勉强可通但 stimulate 常接 economy、interest、growth，接 confidence 不如 boost 地道；N shaped 已用于第 2 空不可复用。",
+   "keyword": "boost one's confidence 增强信心；develop skills 发展技能；strengthen 增强（近义复现）；instead 反而。",
+   "note": "定语从句缺谓语加 can 加 their confidence 的框架锁定「增强」类动词；boost 与 strengthen 是同义复现链；stimulate 是最强干扰，靠搭配习惯（boost confidence 是语料库高频组合）定夺。"
+  },
+  {
+   "question_id": 537,
+   "long_sentence": "定位句 Since climbing is so far __ from their day-to-day work activities, they can still recover from the demands of their job with plenty of resources：Since 引导原因状语从句；so far ___ from 为固定结构；主句 they can still recover from...。译：由于攀岩与日常工作活动相去甚远，他们仍能带着充足的心理资源从工作消耗中恢复过来。",
+   "option": "正确 L removed（远离的）：far removed from 为固定搭配「相去甚远」，removed 过去分词作形容词；so far removed from 呼应上句 if their hobby is quite different from their career；最接近干扰 M scratch 名词或动词，不能进入 far ___ from 结构；D efficiency 名词词性不符。",
+   "keyword": "far removed from 相去甚远＝very different from；day-to-day 日常的；recover from 从……中恢复；keen 热衷的。",
+   "note": "so far ___ from 是「分隔词组」考点：removed 与 far from 固定捆绑成 far removed from；本句是全文结论的例证，removed 与 different、dissimilar 构成同义复现链。"
+  },
+  {
+   "question_id": 538,
+   "long_sentence": "定位句 Each of these behaviors is important, of course, but they all __ on physical health and a growing body of research suggests that social health is just as, if not more, important to overall well-being：but 并列转折；they all ___ on physical health 中空格为谓语；of course 插入语。译：这些行为固然重要，但全都聚焦于身体健康；而研究表明社交健康对整体幸福感同样重要，甚至更重要。",
+   "option": "正确 D focus（聚焦）：focus on 为固定搭配，they all 复数主语配动词原形；与后文 social health 相对，「单一路径」正是 focus 的语义；最接近干扰 I prompt（促使）prompt on 不成搭配；A base 主动语态下 base on 不成立（须 be based on 或 base sth on sth）。",
+   "keyword": "focus on 聚焦于＝center on；a growing body of research 越来越多的研究；physical health 身体健康；social health 社交健康。",
+   "note": "空格前的线索是介词 on 与复数主语 they all：主动态动词原形加 on 锁定 focus；base 的陷阱在于 be based on 才合法，缺 be 动词即排除；physical 与 social health 的对照是语义验证。"
+  },
+  {
+   "question_id": 539,
+   "long_sentence": "定位句 a growing body of research suggests that social health is just as, if not more, important to __ well-being：suggests 后接 that 宾语从句；从句主干 social health is important to ___ well-being；just as, if not more, 为插入比较结构。译：社交健康对整体幸福感同样重要——甚至更重要。",
+   "option": "正确 F overall（整体的）：overall well-being「整体幸福感」是健康语篇高频搭配，与 physical、social 的分类讨论呼应——两者合起来才是 overall；最接近干扰 H prior（先前的）prior well-being 不成搭配；C especially 是副词不能修饰名词 well-being。",
+   "keyword": "overall well-being 整体幸福感；just as important 同样重要；if not more 甚至更多（插入比较）；well-being 幸福、安康。",
+   "note": "空格修饰名词 well-being，优先形容词；overall 与 physical、social 的「部分—整体」逻辑链是核心证据；just as, if not more 的插入语不影响词性判断，读懂即可。"
+  },
+  {
+   "question_id": 540,
+   "long_sentence": "定位句 One recent study published in the journal PLOS ONE found that the strength of a person's social circle was a better __ of self-reported stress, happiness and well-being levels than fitness tracker data：从句主干 the strength...was a better ___ of...；than 引出比较对象 fitness tracker data。译：社交圈的强度比健身手环数据更能指示人的压力与幸福感水平。",
+   "option": "正确 E indicator（指标）：a better indicator of...「……的更好指标」为固定搭配，与 of self-reported stress 衔接；最接近干扰 D focus 名词词性可通但 focus of 表「……的焦点」，与 better 比较级及数据语境不合；N story 语义无关。",
+   "keyword": "indicator of ……的指标＝sign、measure；self-reported 自我报告的；fitness tracker 健身手环；social circle 社交圈。",
+   "note": "a better ___ of 的框架锁定「指示物」类名词；indicator 与 data、measurements 同属量化语义场；比较对象是社交圈与手环数据，空格必是「衡量指标」义，indicator 唯一吻合。"
+  },
+  {
+   "question_id": 541,
+   "long_sentence": "定位句 That finding suggests that the '__ self' represented by endless amounts of health data doesn't tell the whole story：suggests 后接 that 宾语从句；从句主语 the ___ self（represented by... 为过去分词短语作后置定语）；谓语 doesn't tell。译：这一发现表明，由海量健康数据所代表的「量化自我」并不能讲述全部真相。",
+   "option": "正确 K quantified（量化的）：quantified self（量化自我）为固定概念，与空后 represented by endless amounts of health data 直接呼应——数据即量化；最接近干扰 F overall 已用于第 2 空不可复用，且「整体自我」与「被数据代表」矛盾；H prior（先前的）语义不合。",
+   "keyword": "quantified self 量化自我；be represented by 由……代表；health data 健康数据；endless amounts of 海量的。",
+   "note": "引号词组 the ___ self 是概念命名结构，quantified self 是真实流行术语；空后 represented by health data 是定义线索——数据等于量化；它还与下文 qualified self构成谐音双关（quantified、qualified），妙趣设计。"
+  },
+  {
+   "question_id": 542,
+   "long_sentence": "定位句 That finding suggests that the 'quantified self' represented by endless amounts of health data doesn't tell the whole __：从句主语 the quantified self；谓语 doesn't tell；宾语 the whole ___，whole 为形容词修饰空格名词。译：由海量健康数据代表的「量化自我」并不能讲述全部真相。",
+   "option": "正确 N story（真相、全貌）：tell the whole story 为固定习语「反映全部情况」，否定式 doesn't tell the whole story 即「数据不足以说明一切」；最接近干扰 J puzzle（tell the whole puzzle 不成搭配）；D focus 不与 tell 搭配；E indicator 已用于第 3 空。",
+   "keyword": "tell the whole story 反映全貌、说明全部真相（习语）；quantified self 量化自我；whole 全部的；suggest 表明。",
+   "note": "tell the whole story 是高频习语，本句用否定式表达「健康数据只是局部」；下文 There's also a qualified self 承接「另一半真相」，story 的叙事义与自我话题呼应。"
+  },
+  {
+   "question_id": 543,
+   "long_sentence": "定位句 There's also a qualified self, which is who I am, what are my activities, my social network, and all of these aspects are not __ in any of these measurements：There be 句型引出 a qualified self；which 从句解释其内涵；and 后并列分句 all of these aspects are not ___ in...，被动语态框架。译：还存在一个「资格自我」——我是谁、我做什么、我的社交网络如何，而这一切都不会体现在任何这些测量数据中。",
+   "option": "正确 M reflected（反映）：be reflected in「体现在……中」为固定搭配，与空前 not 连用表示「这些维度未被数据反映」；最接近干扰 A base（be based in 表「坐落于」不合语境，be based on 才是「基于」）；L recovery 名词词性不符被动语态。",
+   "keyword": "be reflected in 体现在……中；qualified self 资格自我（与 quantified self 谐音双关）；measurement 测量、衡量；aspect 方面。",
+   "note": "are not ___ in any of these measurements 是被动框架：be 加过去分词加 in；reflected in 与上一句 represented by 呼应「数据表征」主题；base 的陷阱是 based in 等于「位于」，义不合。"
+  },
+  {
+   "question_id": 544,
+   "long_sentence": "定位句 This idea is supported by plenty of __ research：This idea is supported by... 为被动语态；plenty of 后接不可数名词 research；空格为修饰 research 的成分。译：这一观点有大量先前研究的支持。",
+   "option": "正确 H prior（先前的）：prior research「先前研究」是学术写作标准搭配，支撑性引用必是「已有」研究；最接近干扰 I prompt（prompt research 不成搭配，prompt 更常见作动词「促使、提示」）；F overall 已用于第 2 空不可复用；D focus 名词不合。",
+   "keyword": "prior research 先前研究＝previous、existing research；be supported by 得到……支持；plenty of 大量的；idea 观点。",
+   "note": "「观点 + 研究支撑」的句式里，修饰 research 的形容词优先考虑 prior、previous、existing；本句极短，是「小空大用」——一词定语义方向（回顾性支撑），词库唯一吻合者即 prior。"
+  },
+  {
+   "question_id": 545,
+   "long_sentence": "定位句 Studies have shown that social support — whether it comes from friends, family members or a spouse — is __ associated with better mental and physical health：shown 后接 that 宾语从句；主语 social support（whether... or... 插入让步）；谓语 is ___ associated，with 引出关联对象。译：研究表明，无论来自朋友、家人还是配偶，社会支持都与更好的身心健康密切相关。",
+   "option": "正确 O strongly（强烈地）：be strongly associated with「与……密切相关」为统计语篇标准搭配；最接近干扰 B eagerly（热切地）只修饰人的意愿动作，eagerly associated 不成搭配；C especially（尤其）语义偏向「特别地」，此处强调关联强度而非例外情形。",
+   "keyword": "be strongly associated with 与……密切相关；social support 社会支持；spouse 配偶；mental and physical health 身心健康。",
+   "note": "is ___ associated with 中空格必为副词，词库副词仅 B、C、O 三项；associated 的强度义固定搭配 strongly；whether...or 插入结构拉长句子但不改变词性判断，先抓主干再填空。"
+  },
+  {
+   "question_id": 546,
+   "long_sentence": "定位句 A rich social life, these studies suggest, can lower stress levels, improve mood, encourage positive health behaviors and discourage damaging ones, boost heart health and improve illness __ rates：these studies suggest 为插入语；can 后接六个并列谓语；illness ___ rates 为名词堆叠结构。译：丰富的社交生活能降低压力水平、改善情绪、鼓励健康行为并抑制有害行为、促进心脏健康，并提高疾病康复率。",
+   "option": "正确 L recovery（康复）：illness recovery rates「疾病康复率」为固定搭配，与 lower stress、boost heart health 同属健康收益列举；最接近干扰 E indicator 已用于第 3 空不可复用，且 illness indicator rates 不成搭配；F overall 已用于第 2 空。",
+   "keyword": "recovery rates 康复率；a rich social life 丰富的社交生活；lower stress levels 降低压力水平；boost heart health 促进心脏健康。",
+   "note": "illness ___ rates 的三连名词结构锁定「康复、恢复」类名词；列举句中每一项都是 health benefit，recovery 与前文 better mental and physical health 语义一致；rates 是复数标志词，提示抽象名词。"
+  },
+  {
+   "question_id": 547,
+   "long_sentence": "定位句 It's a significant problem, __ since loneliness is emerging as a widespread public health problem in many countries：It's a significant problem 为主句；空格位于逗号后、since 从句前；since 引导原因状语从句；emerge as 意为「显现为」。译：这是一个重大问题，尤其是因为孤独正在许多国家演变为一种普遍的公共健康问题。",
+   "option": "正确 C especially（尤其）：especially since 为固定结构「尤其是因为」，对 problem 的严重程度作强调递进；最接近干扰 B eagerly（热切地）与 since 不成搭配，且只修饰人的意愿动作；O strongly 已用于第 8 空不可复用，strongly since 也不合语法。",
+   "keyword": "especially since 尤其是因为；emerge as 显现为、演变为；widespread 普遍的；public health problem 公共健康问题。",
+   "note": "空格位于逗号后加 since 前，是修饰整个从句的副词；especially since 是强调原因的经典组合；Social isolation 被称为 significant problem 的强调语气也提示选递进副词而非方式副词。"
+  },
+  {
+   "question_id": 548,
+   "long_sentence": "定位句 For most passersby humming through the Mojave on their way to try their luck in Las Vegas, it's just a __ stretch of land with some mountains in the distance：For most passersby 为对象状语，humming through... 现在分词短语作后置定语；主干 it's just a ___ stretch of land；with 复合结构表伴随。译：对大多数驱车穿越莫哈韦沙漠、前往拉斯维加斯碰运气的过客来说，它只是一片平坦的土地，远处有些山脉。",
+   "option": "正确 D flat（平坦的）：a flat stretch of land「一片平地」，与开头 it looks lifeless, barren, and bone-dry 的表面印象一致，mountains in the distance 反衬近处平坦；最接近干扰 M sturdy（结实的）sturdy stretch 不成搭配；C extremes 是名词词性不符；B burning（灼热的）可作形容词但 stretch of land 与热无关（bone-dry 已另有表达）。",
+   "keyword": "flat 平坦的；stretch of land 一片土地；at first glance 乍看；barren 贫瘠的。",
+   "note": "a ___ stretch of land 锁定形容词；语篇首句 The desert is deceiving（沙漠会骗人）埋下「表面 vs 实际」对比——表面 flat、barren，实际 overflowing with life，本题属于「表面印象」一侧。"
+  },
+  {
+   "question_id": 549,
+   "long_sentence": "定位句 it's just a flat stretch of land with some mountains in the distance and more __ to be a setting for a movie that takes place on Mars：and 并列两个表语；more ___ to be a setting... 中空格受 more 修饰、后接不定式；that 引导定语从句修饰 movie，takes place on Mars「发生在火星」。译：……而且更适合当作一部火星题材电影的取景地。",
+   "option": "正确 A apt（易于……的、恰当的）：be apt to do＝be likely to do「往往、易于」，more apt to be a setting for a Mars movie 即「更像火星片场」；最接近干扰 H probably（副词）more probably to be 不合语法——probably 修饰动词不能接不定式结构；O unique（独一无二的）为绝对形容词，more unique to be 语义不通。",
+   "keyword": "be apt to do 易于做某事＝be likely to do；setting 取景地、背景；take place 发生；more apt to be 更像、更有可能是。",
+   "note": "more ___ to be 的不定式框架锁定形容词 apt（apt to do 固定）；H probably 是词性陷阱——它修饰动词而不能接 to be；火星电影的比喻呼应「荒凉如外星」的刻板印象，与上题同属过客视角。"
+  },
+  {
+   "question_id": 550,
+   "long_sentence": "定位句 The desert, however, is __ with life, mystery, and magic：however 转折；主干 The desert is ___ with...；with 引出充满的对象，life、mystery、magic 三宾语并列。译：然而，这片沙漠却处处洋溢着生命、神秘与魔力。",
+   "option": "正确 F overflowing（满溢的）：be overflowing with「充满」为固定搭配，直接反转开头 lifeless, barren, bone-dry 的印象，however 是转折信号；最接近干扰 J sprinkle（点缀、撒）须用被动式 is sprinkled with 才合法，原形 sprinkle 词形不符；L stimulate 是动词原形，is ___ with 结构需分词或形容词。",
+   "keyword": "be overflowing with 充满＝be full of、be filled with；lifeless 无生命的；however 然而（转折）；mystery 神秘。",
+   "note": "The desert is deceiving 的「欺骗性」在 however 处揭晓：表面死寂 vs 实际充满生机，本题是全文转折的落点；is ___ with 框架优先考虑分词形容词，sprinkle 需被动式 sprinkled 才合法，词形形态是本题隐含考点。"
+  }
+ ]
+}

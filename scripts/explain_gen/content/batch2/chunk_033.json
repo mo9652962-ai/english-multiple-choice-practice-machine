@@ -1,0 +1,180 @@
+{
+ "chunk": 33,
+ "items": [
+  {
+   "question_id": 801,
+   "long_sentence": "定位句 This might sound small, but to 19______ the effects of such a decrease a candidate would need 30 more GMAT points；sound small 听起来微小；such a decrease 回指上句下降 0.075 分；would need 虚拟推测。译：这听起来微不足道，但要抵消这一降幅的影响，申请者需要比原本多得 30 分的 GMAT 分数。",
+   "option": "正确项 B undo：undo the effects「抵消、消除…的影响」，分数被压低的损失需靠额外 30 分来抹平，undo 与 decrease 构成消除关系；A achieve 「达成」与 the effects of a decrease 搭配后语义不明；C maintain 「维持」下降已成事实无从维持；D disregard 「无视」与需要多考 30 分的补救逻辑相反。",
+   "keyword": "undo 消除、抵消＝cancel out；decrease 下降＝drop；candidate 申请者＝applicant；effects 影响＝impact。",
+   "note": "动宾逻辑定答案：宾语是 the effects of such a decrease（下降的影响），对「坏影响」的动作只能是抵消 undo；achieve 的干扰在于它也是中性动词，但「达成下降的影响」不通，中性问题要靠宾语的正负来裁决。"
+  },
+  {
+   "question_id": 802,
+   "long_sentence": "定位句 a candidate would need 30 more GMAT points than would otherwise have been 20______；than 引导比较状语从句，从句含虚拟倒装；otherwise 否则、原本。译：申请者需要比原本所需的 GMAT 分数再多 30 分。",
+   "option": "正确项 A necessary：30 more points than would otherwise have been necessary＝比原本必需的分数再多 30 分，otherwise 与虚拟语气配合表「没有压分时的正常需要量」；B possible 「可能的」与 need 的必需义错位；C promising 「有前途的」修饰前景不修饰分数需求；D helpful 「有帮助的」程度不符。",
+   "keyword": "necessary 必需的＝required；otherwise 否则、在原本情况下；than would have been 虚拟比较结构；GMAT score 入学考试分数。",
+   "note": "otherwise 是解题暗号：它标记「若无压分事件」的虚拟对照，从句要填的正是原本的「必需量」；necessary 与前文 would need 的 need 同源呼应，possible 的干扰来自 more...than possible 的常见误记。"
+  },
+  {
+   "question_id": 803,
+   "long_sentence": "定位句 Miranda Priestly... scolds her unattractive assistant for imagining that high fashion doesn't affect her；scold sb for doing 因某事责骂；imagining 后接 that 宾语从句；affect 影响。译：梅丽尔·斯特里普饰演的米兰达·普里斯特利责骂那位不起眼的助手，因为她竟以为高级时装影响不到自己。",
+   "option": "正确项 A insensitivity to fashion：imaging that high fashion doesn't affect her＝对时尚的影响无感， Priestly 随后讲解深蓝毛衣如何从时装秀层层下渗到折扣箱正是证明时尚无处不在；B obsession with high fashion 正反混淆，助手恰恰无视时尚；C poor bargaining skill 张冠李戴，bargain bin（折扣箱）只是衣服的下场；D lack of imagination 偷换概念，imagining 是「误以为」不是缺乏想象力。",
+   "keyword": "scold 责骂＝criticize；insensitivity 不敏感、无感；descend over the years 逐年下渗；bargain bin 折扣箱、廉价处理箱。",
+   "note": "电影例子定全文基调：连自认为与时尚无缘的助手也穿着时尚产业链末端的产物；A 的 insensitivity 概括「doesn't affect her」的无知，D 项利用 imagine 的字面设阱——句义是「妄想」而非「缺乏想象力」。"
+  },
+  {
+   "question_id": 804,
+   "long_sentence": "定位句 These labels encourage style-conscious consumers to see clothes as disposable – meant to last only a wash or two... and to renew their wardrobe every few weeks；encourage sb to do 促使某人做；disposable 用完即弃的；renew one's wardrobe 更新衣橱。译：这些大众品牌促使追求时尚的消费者把衣服视为用完即弃之物——本就只打算穿一两次洗一两水——并每隔几周更新一次衣橱。",
+   "option": "正确项 B shop for their garments more frequently：renew their wardrobe every few weeks＝更频繁地购置衣物；A combat unnecessary waste 正反混淆，快时尚恰恰制造浪费；C resist the influence of advertisements 无中生有；D shut out the feverish fashion world 正反混淆，品牌是 hijack fashion cycles 的推手而非抵制者。",
+   "keyword": "disposable 用完即弃的；renew 更新＝refresh；garment 衣服＝clothes；style-conscious 追求时尚的。",
+   "note": "urge consumers to 的宾语从 encourage...to see clothes as disposable and to renew... 并列结构中找：renew every few weeks 即频繁购衣；A 项张冠李戴——waste 是 Cline 批评的结果，不是品牌鼓吹的行为。"
+  },
+  {
+   "question_id": 805,
+   "long_sentence": "定位句 This top-down conception of the fashion business couldn't be more out of date or at odds with the feverish world；couldn't be more out of date 再过时不过；at odds with 与…格格不入；indictment 在句中作 Overdressed 的同位语。译：这种自上而下的时尚业观念再过时不过，与《过度着装》——克莱恩历时三年对「快时尚」的控诉——所描绘的狂热世界格格不入。",
+   "option": "正确项 D accusation：indictment 本义「起诉书」，引申为「控诉」，与后文 Cline 历数快时尚依赖海外低薪劳工、消耗自然资源、滥用有害化学品等罪状呼应；A tolerance 宽容与批评基调相反；B indifference 冷漠与三年的投入矛盾；C enthusiasm 热情是情感误读。",
+   "keyword": "indictment 控诉、起诉＝accusation；at odds with 与…相悖；feverish 狂热的；fast fashion 快时尚。",
+   "note": "熟词僻义题：indict（起诉）的名词形式，通过冒号与下文 the victims of this revolution、harmful chemicals 等批判性内容验证情感方向；情感色彩词的正负判定先找全文基调——本文通篇是对快时尚的批判。"
+  },
+  {
+   "question_id": 806,
+   "long_sentence": "定位句 Vanity is a constant; people will only start shopping more sustainably when they can't afford not to；a constant 恒常之物；not afford 买不起、负担不起；shop sustainably 可持续地消费。译：虚荣是恒常的人性；只有当人们买不起任意消费之时，他们才会开始更可持续地购物。",
+   "option": "正确项 C Pricing is vital to environment-friendly purchasing：only when they can't afford not to＝价格压力才是促成可持续消费的关键，价格杠杆不可或缺；A Vanity has more often been found in idealists 张冠李戴，Vanity is a constant 说虚荣人皆有之；B ignores sustainability 过度推断，快时尚公司已有 Conscious Collection 等努力；D more interested in unaffordable garments 无中生有。",
+   "keyword": "vanity 虚荣（Vanity is a constant 虚荣是常态）；afford 买得起、负担得起；sustainably 可持续地；only when 只有当…才。",
+   "note": "末段推断题抓住 only...when 的必要条件结构：负担不起（价格）才可持续消费，反推「价格是环保购买的关键」；B 项被 H&M 的绿色产品线反驳——推断题不能与文中事实相抵，C 的 vital 是对 only when 的概括。"
+  },
+  {
+   "question_id": 807,
+   "long_sentence": "全文主线句 By offering on-trend items at dirt-cheap prices, Cline argues, these brands have hijacked fashion cycles, shaking an industry long accustomed to a seasonal pace；at dirt-cheap prices 以极低价格；hijack 劫持、扰乱；be accustomed to 习惯于。译：克莱恩指出，这些品牌以贱价兜售流行款，劫持了时尚周期，撼动了这个长期习惯于季节节奏的行业。",
+   "option": "正确项 C Criticism of the fast-fashion industry：全文依次批判快时尚的盘剥劳工、消耗资源、滥用化学品、诱导浪费，批判是贯穿基调；A Satire on an extravagant lifestyle 无中生有；B Challenge to a high-fashion myth 张冠李戴，高端时尚只是开篇引子；D Exposure of a mass-market secret 偷换概念，问题公开可见并非内幕揭露。",
+   "keyword": "criticism 批评＝indictment；hijack 劫持、扰乱；dirt-cheap 极便宜的；seasonal pace 季节性节奏。",
+   "note": "标题题看全文情感落点：indictment、victims、harmful chemicals、waste 等批判词链锁定「对快时尚的批评」；B 项利用首段电影例子的 high fashion 字面设阱，主旨题忌以引子代主体，快时尚才是论述对象。"
+  },
+  {
+   "question_id": 808,
+   "long_sentence": "定位句 An old saying has it that half of all advertising budgets are wasted – the trouble is, no one knows which half. In the internet age, at least in theory, this fraction can be much reduced；an old saying has it that 俗话说；fraction 比例；much reduced 大幅降低。译：俗话说，广告预算有一半都被浪费了——问题是没人知道是哪一半。在互联网时代，至少在理论上，这一比例可以大大降低。",
+   "option": "正确项 D lower their operational costs：浪费的预算减半即「降低运营成本」，behavioural 精准投放让钱花在最可能购买者身上；A provide better online services 偷换概念，受益的是广告效果不是服务；B ease competition among themselves 无中生有；C avoid complaints from consumers 无中生有，下文恰恰是被追踪引发争议。",
+   "keyword": "budget 预算；waste 浪费＝squander；fraction 比例＝proportion；behavioural ads 行为定向广告。",
+   "note": "首段逻辑链：预算一半被浪费→互联网可大幅减少浪费→精准投放，减少浪费＝省钱＝降低成本；D 是对 fraction can be much reduced 的同义改写；A 项的 services 与广告投放是两码事，注意题目问 advertisers 的获利点。"
+  },
+  {
+   "question_id": 809,
+   "long_sentence": "定位句 Microsoft's Internet Explorer and Apple's Safari both offer DNT... the FTC and the DAA agreed that the industry would get cracking on responding to DNT requests；offer DNT 提供「请勿追踪」选项；get cracking on 着手开始。译：微软 IE、苹果 Safari 均已提供「请勿追踪」功能，Chrome 也将跟进；FTC 与数字广告联盟一致同意：该行业将着手响应「请勿追踪」请求。",
+   "option": "正确项 A internet browser developers：上句连续点名 IE、Safari、Chrome 三大浏览器，the industry 紧承其后，指浏览器开发商行业；B digital information analysts 无中生有；C e-commerce conductors 无中生有；D online advertisers 张冠李戴，广告商是 DNT 请求的接收与执行方，不是提供响应选项的行业主体。",
+   "keyword": "browser 浏览器；DNT（do not track）请勿追踪；get cracking on 着手做＝set about；respond to 响应。",
+   "note": "指代题看最近的名词群：the industry 前唯一被列举的行业主体就是浏览器厂商；D 项利用 DAA（数字广告联盟）的字面设阱，但「响应 DNT 请求」的动作主体在原文语境中是提供 DNT 功能的浏览器一方。"
+  },
+  {
+   "question_id": 810,
+   "long_sentence": "定位句 Bob Liodice... says consumers will be worse off if the industry cannot collect information about their preferences. People will not get fewer ads... They'll get less meaningful, less targeted ads；worse off 处境更糟；preferences 偏好；targeted 有针对性的。译：美国广告主协会首席执行官利奥迪斯说，如果行业无法收集消费者的偏好信息，消费者的处境会更糟。广告数量不会减少，广告只会更缺乏意义、更没有针对性。",
+   "option": "正确项 C will not benefit consumers：worse off 加 less meaningful, less targeted ads＝消费者不会受益反而受损；A may cut the number of junk ads 正反混淆，原文明说 People will not get fewer ads；B fails to affect the ad industry 正反混淆，无法收集偏好正是重大影响；D goes against human nature 张冠李戴，human nature 是人们沿用默认设置的原因，与 Liodice 的观点无关。",
+   "keyword": "worse off 情况更糟＝worse situated；preference 偏好；targeted 有针对性的＝well-aimed；default setting 默认设置。",
+   "note": "人物观点题贴引语：worse off 的负面判定加「广告不会更少只会更差」，直指 DNT 默认化对消费者无益；A 项与 will not get fewer ads 正面相撞，D 项的人性表述是作者前文的解释，注意观点归属。"
+  },
+  {
+   "question_id": 811,
+   "long_sentence": "定位句 Getting a DNT signal does not oblige anyone to stop tracking... Unable to tell whether someone really objects or is just sticking with the default, some may ignore a DNT signal and press on anyway；oblige sb to do 强制某人做；press on 坚持推进。译：收到「请勿追踪」信号并不会强制任何人停止追踪……由于无法分辨用户是真心拒绝还是只是沿用默认设置，一些广告主可能对 DNT 信号置之不理、照旧追踪。",
+   "option": "正确项 B DNT may not serve its intended purpose：收到信号可不停止追踪加 some may ignore a DNT signal，DNT 可能无法达成「反追踪」的设计初衷；A Advertisers are willing to implement DNT 正反混淆，恰有 ignore 的可能；C DNT is losing its popularity among consumers 无中生有；D Advertisers are obliged to offer behavioural ads 张冠李戴，原文说不被强制停止追踪，与强制提供广告无关。",
+   "keyword": "oblige 强制＝compel；signal 信号；press on 继续推进＝carry on；intended purpose 预期目的。",
+   "note": "第六段全是「不确定性」表达：not yet clear、does not oblige、may ignore——归纳出「DNT 可能失效」；D 项玩 oblige 的文字游戏，原文的 oblige 宾语是 stop tracking 而非 offer ads，动宾搭配错位即张冠李戴。"
+  },
+  {
+   "question_id": 812,
+   "long_sentence": "定位句 Brendon Lynch, Microsoft's chief privacy officer, blogged: 「We believe consumers should have more control.」 Could it really be that simple?；chief privacy officer 首席隐私官；have more control 拥有更多控制权；反问句 Could it really be that simple? 真有那么简单吗？译：微软首席隐私官布伦丹·林奇在博客中写道：「我们相信消费者应当拥有更多控制权。」事情真有这么简单吗？",
+   "option": "正确项 D skepticism：作者以 Could it really be that simple? 的反问收尾，对微软自称的保护消费者动机表示怀疑——毕竟微软自己也有广告业务且动机不明；A indulgence 放纵与质疑语气相反；B understanding 理解与反问的讽刺不符；C appreciation 赞赏与全文对微软独行的追问相反。",
+   "keyword": "skepticism 怀疑＝doubt；blog 撰写博客；privacy 隐私；rhetorical question 反问句。",
+   "note": "末段连续三个疑问（why gone it alone、Could it really be that simple?）构成怀疑链；反问句是态度题的高频信号——答案永远是否定其表层陈述；作者上一段已指出微软动机 unclear，反问即是收网。"
+  },
+  {
+   "question_id": 813,
+   "long_sentence": "定位句 Up until a few decades ago, our visions of the future were largely glowingly positive. Science and technology would cure all the ills of humanity, leading to lives of fulfilment and opportunity for all；glowingly positive 灿烂积极；cure all the ills 治愈一切疾患。译：几十年前，我们对未来的展望大体上灿烂乐观：科学技术将治愈人类的一切疾患，为人人带来圆满而充满机遇的生活。",
+   "option": "正确项 B our faith in science and technology：过去的乐观源于「科技将治愈一切弊病」的信仰，science and technology 作主语即是信心所系；A desire for lives of fulfillment 偷换概念，圆满生活是科技带来的结果而非憧憬的源泉；C awareness of potential risks 正反混淆，风险意识是如今悲观的来源；D belief in equal opportunity 张冠李戴，opportunity for all 是愿景内容。",
+   "keyword": "vision 展望＝outlook；cure 治愈；ills 弊病、疾患＝troubles；fulfillment 圆满、实现。",
+   "note": "used to be inspired by 问过去乐观的来源：直接原因句是 Science and technology would cure all the ills；A、D 都是从结果句 lives of fulfilment and opportunity 拆出的半句，属结果与来源的错位，抓住 inspire 的因果方向。"
+  },
+  {
+   "question_id": 814,
+   "long_sentence": "定位句 Look up Homo sapiens in the IUCN's 「Red List」 of threatened species and you will read: 「Listed as Least Concern as the species is very widely distributed, adaptable, currently increasing...」；look up 查阅；Least Concern 无危等级；adaptable 适应力强。译：在 IUCN 的受威胁物种「红色名录」中查智人，你会读到：列为无危——因为该物种分布极广、适应力强、数量仍在增长，且无重大威胁致种群整体下降。",
+   "option": "正确项 A a sustained species：Least Concern、widely distributed、adaptable、currently increasing 共同表明人类是能长期延续的物种，呼应上段 many species have endured for millions of years；B the world's dominant power 无中生有；C a threat to the environment 张冠李戴，名录评的是生存状态而非环境威胁；D a misplaced race 张冠李戴，misplaced 修饰的是 gloominess（悲观情绪）。",
+   "keyword": "Least Concern 无危（物种保护等级）；sustained 可延续的＝enduring；adaptable 适应性强的；distribute 分布。",
+   "note": "例证题看引语内部证据：红色名录的无危评级加四个理由全是「人类种群稳固」的证据；A 的 sustained 概括 endure 与 increasing；D 项偷换第二段 misplaced 的修饰对象，指代题必须核对被修饰词。"
+  },
+  {
+   "question_id": 815,
+   "long_sentence": "定位句 it may be easier to think about such lengthy timescales than about the more immediate future. The potential evolution of today's technology, and its social consequences, is dazzlingly complicated；lengthy timescales 漫长时间尺度；dazzlingly complicated 令人眼花缭乱地复杂。译：思考如此漫长的时间尺度，可能反而比思考更切近的未来更容易。当今技术的潜在演化及其社会后果，复杂得令人目眩。",
+   "option": "正确项 D Our immediate future is hard to conceive：easier to think about lengthy timescales than the immediate future 反衬近期未来难想清，dazzlingly complicated 补充原因；A The interest in science fiction is on the rise 无中生有，只是建议交给科幻作家；B Arc helps limit the scope 张冠李戴，Arc 是致力于 near future 的刊物而非限制研究；C Technology offers solutions 无中生有。",
+   "keyword": "timescale 时间尺度；immediate 近期的、眼前的；conceive 构想、设想＝envisage；complicated 复杂的。",
+   "note": "第五段核心是比较级反衬：漫长的未来好想，眼前的未来难测——easier...than 结构答案是 than 之后的否定面；B 项利用 Arc 的字面设阱，作者创办 Arc 恰是想专注近期未来，不是限制其研究。"
+  },
+  {
+   "question_id": 816,
+   "long_sentence": "定位句 As so often, the past holds the key to the future: we have now identified enough of the long-term patterns to make evidence-based forecasts about the situations in which our descendants will find themselves；hold the key to 掌握…钥匙；evidence-based 以证据为基础的。译：一如既往，过去掌握着未来的钥匙：我们如今已充分辨识塑造地球与人类历史的长期模式，足以对后代将面临的境况做出基于证据的预测。",
+   "option": "正确项 B draw on our experience from the past：the past holds the key to the future 加证据性长期模式预测，即从过去经验中汲取以保障未来；A adopt an optimistic view 张冠李戴，乐观是态度结论不是保障手段；C explore our planet's abundant resources 无中生有；D curb our ambition to reshape history 无中生有。",
+   "keyword": "hold the key to 掌握…的关键；pattern 模式＝regularity；forecast 预测＝prediction；descendant 后代＝offspring。",
+   "note": "crucial to 问保障未来的关键手段：定位第六段 the past holds the key 的隐喻句——过去即经验库；A 项的乐观是全文末段的论调而非方法论，注意题干问手段（crucial to do）不问态度。"
+  },
+  {
+   "question_id": 817,
+   "long_sentence": "定位句 This long perspective makes the pessimistic view of our prospects seem more likely to be a passing fad. But we are now knowledgeable enough to reduce many of the risks, and to improve the lot of those to come；long perspective 长远视角；a passing fad 一时风尚。译：这种长远视角让悲观论调显得更像一时风尚。诚然未来并非坦途，但我们已有足够知识去减少诸多风险、改善后人境遇。",
+   "option": "正确项 A The Ever-bright Prospects of Mankind：全文脉络是「昔日乐观—当下悲观—反驳悲观—长远乐观」，excellent chance of surviving、reduce many of the risks、improve the lot 层层指向人类前景光明；B Science, Technology and Humanity 偷换概念，科技只是首段乐观的来源；C Evolution of the Human Species 偏离主题，非讲物种演化；D Uncertainty about Our Future 正反混淆。",
+   "keyword": "prospect 前景＝outlook；pessimistic 悲观的（反义 optimistic）；a passing fad 昙花一现的时髦事物；lot 命运、境遇。",
+   "note": "标题题抓感情色彩与全文结构：But such gloominess is misplaced 是转折主轴，末段 reduce risks 加 improve the lot 收束于乐观；D 项把当下的悲观当成了文章立场，与 But 转折方向相反。"
+  },
+  {
+   "question_id": 818,
+   "long_sentence": "定位句 the majority overturned three of the four contested provisions... the majority held Congress had deliberately 「occupied the field」 and Arizona had thus intruded on the federal's privileged powers；overturn 推翻；occupy the field 占据该立法领域；intrude on 侵入。译：多数意见推翻了争议方案四项条款中的三项……多数意见裁定：国会已有意「占据了这一立法领域」，亚利桑那因此侵入联邦专属权力。",
+   "option": "正确项 B overstepped the authority of federal immigration law：国会 occupied the field，州政策 ran parallel to the existing federal ones 即越权侵入联邦专属权力；A disturbed the power balance between different states 张冠李戴，是联邦与州之间的权力平衡；C deprived the federal police 无中生有；D contradicted both the federal and state policies 张冠李戴，冲突对象是联邦立法。",
+   "keyword": "overturn 推翻＝reverse；provision 条款＝clause；occupy the field 占据立法领域；intrude on 侵入＝encroach on。",
+   "note": "因果题看裁决理由句：occupied the field 的隐喻说明国会已全面立法，州再立平行政策即越权；A 项把 federal-state balance 偷换成 state-state，首段 the balance of power between the federal government and the states 是对照锚点。"
+  },
+  {
+   "question_id": 819,
+   "long_sentence": "定位句 the Justices said Arizona police would be allowed to verify the legal status... because Congress has always envisioned joint federal-state immigration enforcement and encourages state officers to share information；verify 核实；joint enforcement 联合执法。译：然而大法官们表示，州警可以核查相关人员的法律身份。这是因为国会一直设想联邦与州联合执法，并明确鼓励州警官与联邦同事共享信息。",
+   "option": "正确项 C States' legitimate role in immigration enforcement：州警被允许核查身份，且国会设想 joint federal-state enforcement，即州在移民执法中拥有合法角色；A Congress's intervention 偷换概念，国会设想的是联合执法机制而非干预；B Federal officers' duty to withhold information 正反混淆，国会鼓励 share information；D States' independence 正反混淆，允许核查恰是合作框架内的一环。",
+   "keyword": "verify 核实＝confirm；envision 设想＝foresee；joint 联合的；withhold 扣留、拒绝提供（反义干扰）。",
+   "note": "第四段是判决的「但书」：推翻三条款后保留州警核查权，理由是国会一贯鼓励合作；C 的 legitimate role 概括 allowed to verify 加国会授权；B 项的 withhold 与 encourages...share 正好相反，正反检验一票否决。"
+  },
+  {
+   "question_id": 820,
+   "long_sentence": "定位句 The only major objection came from Justice Antonin Scalia, who offered an even more robust defense of state privileges going back to the Alien and Sedition Acts；objection 异议；robust defense of state privileges 对州特权的有力辩护；go back to 可追溯到。译：唯一的重要异议来自大法官斯卡利亚——他为州权提供了更为强有力的辩护，其理据可追溯至《客籍法和惩治叛乱法》。",
+   "option": "正确项 A stood in favor of the states：Scalia 用该法案为 state privileges 辩护，可推断它在历史上站在支持州权一边；B supported the federal statute 正反混淆，与州权辩护相反；C undermined the states' interests 正反混淆；D violated the Constitution 无中生有。",
+   "keyword": "objection 异议＝dissent；robust 有力的＝strong；privilege 特权＝right；go back to 追溯到＝date back to。",
+   "note": "推断题以辩护方向反推法案立场：Scalia 是州权派，他援引的历史法案必为州权张目；go back to 表明该法案是州权传统的历史依据，A 的 in favor of the states 是 defense of state privileges 的顺推，无需外部知识。"
+  },
+  {
+   "question_id": 821,
+   "long_sentence": "定位句 In effect, the White House claimed that it could invalidate any otherwise legitimate state law that it disagrees with；in effect 实际上；invalidate 使无效；otherwise legitimate 本属合法的；disagree with 不同意。译：实际上，白宫声称，任何本属合法的州法律，只要它不同意，就可以宣布其无效。",
+   "option": "正确项 C outweighs that held by the states：能 invalidate 任何本属合法的州法，即白宫主张其执法权力高于州权；A is dependent on the states' support 无中生有；B is established by federal statutes 张冠李戴，联邦法律优先是宪法原则，白宫主张的是行政权压倒州权；D rarely goes against state laws 正反混淆，invalidate any... 表随时可以否定。",
+   "keyword": "invalidate 使无效＝nullify；in effect 实际上＝virtually；legitimate 合法的；outweigh 超过、压过。",
+   "note": "题眼是 in effect 的转述句：could invalidate any otherwise legitimate state law 的 any 与 otherwise legitimate 表明白宫自认权力凌驾州权；D 项的 rarely 与 any 直接矛盾，any 这类全称词出现时正确项往往与之同向。"
+  },
+  {
+   "question_id": 822,
+   "long_sentence": "定位句 The Administration was asserting that because it didn't want to carry out Congress's immigration wishes, no state should be allowed to do so either. Every Justice rightly rejected this remarkable claim；in essence 本质上；assert 宣称、坚称；remarkable claim 惊人主张。译：政府本质上是在宣称：因为政府自己不想执行国会的移民意愿，任何州也不应被允许这么做。每位大法官都理所当然地拒绝了这一惊人主张。",
+   "option": "正确项 D Justices intended to check the power of the Administration：8 比 0 的宪法性败诉加 Every Justice rightly rejected this remarkable claim，大法官一致制约行政当局的越权主张；A Immigration issues are usually decided by Congress 无中生有；B The Administration is dominant 正反混淆，政府败诉；C Justices wanted to strengthen coordination with Congress 无中生有。",
+   "keyword": "in essence 本质上＝substantially；assert 宣称＝claim；reject 拒绝＝turn down；check 制约＝curb。",
+   "note": "末段收束于rejected：首段 an 8-0 defeat 与末句 Every Justice rightly rejected 首尾呼应，大法官以宪法原则遏制行政扩权；B 项与 8-0 defeat 直接冲突，check（制约）是考研政治法律类文章的高频词眼。"
+  },
+  {
+   "question_id": 823,
+   "long_sentence": "答案 E 句主干 These issues all have root causes in human behavior；root cause 根源；require 后接三个并列宾语 behavioral change, social innovations, technological development；Stemming climate change 为动名词短语作主语。译：这些问题全都根源于人类行为：都需要行为改变与社会创新，也需要技术发展。例如，遏制气候变化，与其说是发展清洁能源的问题，不如说是改变消费模式与促进税收接受度的问题。",
+   "option": "答案 E：These issues 复指上句 today's global challenges, including climate change, security, sustainable development and health，指代清晰；E 的举例 stemming climate change 又引出下句 Humanity has the necessary agro-technological tools to eradicate hunger 中 hunger 的粮食议题，说明「问题在社会层面」；强干扰 A 的 integrate with other categories 需以欧盟计划为前文，此处无据。",
+   "keyword": "root cause 根源＝underlying cause；behavioral change 行为改变；stem 遏制＝curb；eradicate 根除＝eliminate。",
+   "note": "these 的复指对象是解题入口：空前句罗列的四大全球挑战正是 These issues；E 段末「气候问题也在社会层面」与下文 hunger 段 Here, too, the problems are social 形成「同样如此」的衔接链，双钩齐备。"
+  },
+  {
+   "question_id": 824,
+   "long_sentence": "答案 F 句主干 many social scientists seem reluctant to tackle such problems；despite these factors 为让步介词短语；be up in arms over 强烈反对；a proposal to drop... 取消…的提案。译：尽管有这些因素，许多社会科学家似乎仍不愿着手解决这类问题。而在欧洲，一些人对取消社会科学专项资助类别、将其并入可持续发展横向议题的提案群情激愤。",
+   "option": "答案 F：Despite these factors 承接上段「粮食问题的症结在社会层面」的论述，转折指出社会科学家却不愿介入；F 末的提案（取消专项资助并入横向议题）与下句 This is a shame – the community should be grasping the opportunity 的批评直接衔接；强干扰 B 的 solution 是对策句，出现在此会让 This is a shame 失去批评对象。",
+   "keyword": "reluctant 不情愿的＝unwilling；be up in arms over 对…强烈抗议；funding category 资助类别；cross-cutting 横向的、跨领域的。",
+   "note": "空前是「社会问题」论述、空后是 This is a shame 的批评，中间需要一个「令人遗憾的现象」——F 的 reluctant 与 up in arms 正是；B 的 solution 会让 shame 无的放矢，先看空后评价句的指向再定让步或对策。"
+  },
+  {
+   "question_id": 825,
+   "long_sentence": "答案 D 句主干 However, the numbers are still small；however 表转折；in 2010, about 1,600 of the 100,000 social-sciences papers published globally included one of these keywords 中分词短语 published globally 作后置定语。译：然而，数量仍然很小：2010 年全球发表的 10 万篇社会科学论文中，只有约 1600 篇包含了这些关键词之一。",
+   "option": "答案 D：空前句说包含 environmental change 或 climate change 关键词的论文自 2004 年以来迅速增加，D 的 However, the numbers are still small 立即转折「但仍不够多」，these keywords 原词回指两个关键词；1,600 对 100,000 的悬殊对比印证下段 social sciences largely focused on disciplinary problems 的批评；强干扰 G 的经费比例数字与本空的关键词话题无关。",
+   "keyword": "keyword 关键词；globally 全球地＝worldwide；however 然而（转折）；still small 仍然很少。",
+   "note": "these keywords 的复现是铁证：空前句刚给出两个关键词，D 是唯一含 these keywords 的选项；however 要求空前后形成「增势」与「仍少」的转折，数字型干扰段 G 讲经费占比，话题不同即可排除。"
+  }
+ ]
+}

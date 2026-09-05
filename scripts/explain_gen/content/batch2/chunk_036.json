@@ -1,0 +1,180 @@
+{
+ "chunk": 36,
+ "items": [
+  {
+   "question_id": 876,
+   "long_sentence": "拆 The study is a genome-wide analysis conducted on 1,932 unique subjects which 4 ______ pairs of unrelated friends and unrelated strangers；which 引导定语从句，先行词语义上是 analysis 而非就近的 subjects；pairs of 意为「一对对的」。译：这项研究是一项针对 1,932 名独特受试者的全基因组分析，它对「互无关系的友人配对」与「陌生人配对」进行了 __（比较）。",
+   "option": "正确项 A compared（比较）：研究的核心操作就是把朋友对与陌生人对的基因做对照，unrelated friends and unrelated strangers 两个并列宾语正是比较的两端；B sought（寻找）与文意无关；C separated（分离）虽是基因实验常见动作，但此处比较的是「配对之间」的异同；D connected（连接）无中生有。",
+   "keyword": "compare A with B 把 A 与 B 比较；pair 一对；genome-wide analysis 全基因组分析；subject 受试者。",
+   "note": "定语从句先行词要靠语义判断：which 紧邻 subjects，但能对 pairs 展开动作的只能是 analysis——完形常考先行词与从句动词的逻辑搭配；「朋友组 对 陌生人组」的双组设计是全文方法论，后文 both samples 与此呼应。"
+  },
+  {
+   "question_id": 877,
+   "long_sentence": "拆 The same people were used in both 5 ______；被动语态 were used；both 表「两者都」，回指上文 unrelated friends 与 unrelated strangers 两批人。译：这两组 __（样本）使用的是同一批人。",
+   "option": "正确项 C samples（样本）：1,932 名受试者被分为朋友与陌生人两批，科研语境中「由受试者组成的组」即样本；A tests（测试）与 used in both tests 搭配不通，人不是「用于测试中」的组；B objects（物体）与人物身份不符；D examples（例子）指举例说明，无科研分组义。",
+   "keyword": "sample n. 样本（科研高频义）；subject 受试者；be used in 被用于；both 两者都；draw from 取自、抽选自。",
+   "note": "语义场复现是线索：第 2 段 subject、第 6 段 all the subjects were drawn from a population 反复出现科研用语，sample 与 subject 同属一个语义场；both 的二分结构（朋友组、陌生人组）是选题的决定性提示。"
+  },
+  {
+   "question_id": 878,
+   "long_sentence": "拆 While 1% may seem 6 ______, it is not so to a geneticist；While 引导让步状语从句；seem 后接形容词作表语；it is not so to a geneticist 中 so 回指从句内容。译：虽然 1% 看起来 __（微不足道），但对遗传学家而言并非如此。",
+   "option": "正确项 A insignificant（微不足道的）：1% 是极小比例，常人直觉是「不值一提」，后文 it is not so to a geneticist 的转折正是要推翻这一直觉，seem 与 insignificant 搭配自然；B unexpected（出乎意料）与「数值小」无关联；C unreliable（不可靠）修饰数据而非比例本身；D incredible（难以置信）程度过强且表惊讶而非轻视。",
+   "keyword": "insignificant 微不足道的＝negligible；significant 与 insignificant 互为反义；seem 看起来（表不完全肯定）；to a geneticist 对遗传学家而言。",
+   "note": "While 让步加 not so 转折是本题主线：空格词必须是「小到看似可忽略」的程度，才能与后文「对遗传学家不然」形成反差；seem 提示这是普通人的表面判断，选词要贴「直觉上的轻视」而非「科学评价」。"
+  },
+  {
+   "question_id": 879,
+   "long_sentence": "拆 Most people do not even 7 ______ their fourth cousins but somehow manage to select as friends the people who 8 ______ our kin；do not even 表「甚至不」；but 表转折；manage to do 设法做到。译：大多数人甚至不 __（认识）自己的第四代堂亲，却总能把那些 __（像）我们亲人的人选作朋友。",
+   "option": "正确项 D know（认识）：第四代表亲血缘极远，多数人连认识都谈不上，与后文「却仍选了基因相似的人做朋友」形成反差，do not even know 是自然表达；A visit（拜访）与 even 不搭，不拜访远亲毫无反差；B miss（想念、错过）两端语义皆不通；C seek（寻找）与后文 manage to select 语义重复。",
+   "keyword": "fourth cousin 第四代堂（表）亲；know 认识；somehow 不知怎么地；manage to do 设法做到。",
+   "note": "even 是最强线索：「连 X 都不」要求 X 是门槛最低的动作——对远亲而言「认识」才是最低门槛；but 转折后的「仍能选基因相似者为友」反衬前句的「不认识」，选 visit、seek 都造不出这一反差。"
+  },
+  {
+   "question_id": 880,
+   "long_sentence": "拆 somehow manage to select as friends the people who 8 ______ our kin；who 引导定语从句修饰 the people；select as friends 的宾语 the people 被提前，正常语序为 select the people as friends。译：却总能把那些 __（像）我们亲人的人选作朋友。",
+   "option": "正确项 A resemble（与…相似）：全文主题是「朋友间基因相似」，who resemble our kin（在特质上像我们的亲人）正点题；B influence（影响）与基因相似无关；C favor（偏爱）语义颠倒——是人像亲人，不是人偏爱亲人；D surpass（超过）无比较语境。",
+   "keyword": "resemble 与…相似（近义 be similar to）；kin 亲属＝relatives；select...as... 把…选作…；resemblance n. 相似。",
+   "note": "resemble 与首段 related、后文 genetically similar 构成全文复现链，抓住「相似」这一主旨词即可锁定；favor 是「偏爱、有利于」，主语通常是受益方，主语 the people 与 our kin 之间只能是比较关系。"
+  },
+  {
+   "question_id": 881,
+   "long_sentence": "拆 The study 9 ______ found that the genes for smell were something shared in friends but not genes for immunity；that 引导宾语从句；but 表对比（嗅觉基因共享、免疫基因不共享）。译：该研究 __（还）发现，嗅觉基因是朋友间共享的东西，免疫基因则不是。",
+   "option": "正确项 B also（也）：第 2 段已报告第一个发现（朋友基因相似），本句引出另一项发现，also 表补充递进；A again（再次）暗示重复同一发现，但这是全新内容；C instead（相反）表替代关系，前后并非取舍；D thus（因此）表因果，前后无因果链。",
+   "keyword": "also 也、此外（递进连接词）；gene for... 控制某性状的基因；immunity 免疫力；share 共享、共有。",
+   "note": "逻辑连接词题先判句间关系：前文已有研究发现，此处 smell genes 是新发现，属「补充」而非「重复、转折、因果」；第 5 段 One of the remarkable findings 也暗示发现不止一个，与 also 遥相呼应。"
+  },
+  {
+   "question_id": 882,
+   "long_sentence": "拆 Why this similarity exists in smell genes is difficult to explain, for now；why 引导主语从句；for now 意为「目前、暂时」。译：为何这种相似存在于嗅觉基因中，目前还难以解释。__（或许），正如研究团队所暗示，它把我们吸引到相似的环境中，但原因不止于此。",
+   "option": "正确项 D Perhaps（或许）：前句明说 difficult to explain（难以解释），后句 as the team suggests 也只是「暗示」，推测语气一以贯之，Perhaps 恰当；A Meanwhile 表时间并列，与「给出猜测性解释」不合；B Furthermore 表递进，但此处是提出一种可能解释而非追加论据；C Likewise 表类比，前后无类比对象。",
+   "keyword": "perhaps 或许＝maybe（推测副词）；for now 目前、暂时；suggest 暗示、提出（看法）；draw sb to 把某人吸引到。",
+   "note": "情态副词题抓语气链：difficult to explain 加 suggests 是双重不确定信号，只有 Perhaps 匹配；Meanwhile、Furthermore 是强逻辑连接词，原文没有对应结构即可排除——完形中弱推测语境禁用强连接词。"
+  },
+  {
+   "question_id": 883,
+   "long_sentence": "拆 but there is more 11 ______ it；there be 存在句；but 表转折，与前句「把我们吸引到相似环境」的单一解释相对。译：但这件事 __（背后还有更多文章）。",
+   "option": "正确项 B to：there is more to it 为固定表达「事情不止如此、背后另有原因」；A about（关于）无法表达「深层归因」；C from（来自）表来源，文意不是「更多来自它」；D like（像）表类比，不合语境。",
+   "keyword": "there is more to it 事情不止如此（固定短语）；more to sth 某事另有深意；draw sb to sth 吸引某人到某处。",
+   "note": "固定短语是完形的易错点：more to it 中的 to 表抽象的「归属于」，套中文「关于它还有更多」会误选 about；见到 but there is more... 结构直接联想 more to it、more to come 等高频搭配。"
+  },
+  {
+   "question_id": 884,
+   "long_sentence": "拆 There could be many mechanisms working together that 12 ______ us in choosing genetically similar friends；that 引导定语从句修饰 mechanisms；working together 为现在分词短语作后置定语；drive sb in doing 意为「驱使某人做某事」。译：可能有许多机制共同作用，__（促使）我们在择友时倾向基因相似的人。",
+   "option": "正确项 A drive（驱使、促使）：机制对人起作用、促成选友行为，drive 与 in choosing 搭配表「在…方面驱动」；B observe（观察）主语应是研究者，机制不能观察；C confuse（使困惑）与「成功选出基因相似朋友」的结果矛盾；D limit（限制）与 many mechanisms working together（多种机制合力）的积极语气相悖。",
+   "keyword": "drive sb to do 驱使某人做；mechanism 机制；work together 共同作用；genetically similar 基因上相似的。",
+   "note": "主谓语义搭配定生死：mechanisms 是「起作用的力量」，能与之搭配的动词须有「推动」义；C、D 均为消极动词，与全文「朋友相似是普遍现象」的中性基调冲突；drive 在此取中性「驱动」义，非「驱赶」。"
+  },
+  {
+   "question_id": 885,
+   "long_sentence": "拆 that drive us in choosing genetically similar friends rather than 'functional kinship' of being friends with benefits；rather than 连接两个并列成分，表「是…而不是…」；引号内为作者戏谑性说法。译：可能有许多机制共同作用，促使我们选择基因相似的朋友，__（而）非出于「功能性的亲缘关系」——即有所图的友谊。",
+   "option": "正确项 B rather than（而非）：前文强调基因层面的相似（生物学解释），引号内 functional kinship（功利性友谊）是另一种解释，作者以 rather than 表明择友由基因驱动而非利益驱动；A according to（根据）后接名词但语义不通；C regardless of（不顾）与「机制驱使」矛盾；D along with（连同）表并列附加，方向相反。",
+   "keyword": "rather than 而不是；functional kinship 功能性亲缘（戏指利益友谊）；friends with benefits 有所图的朋友；genetically similar 基因相似的。",
+   "note": "逻辑连接词看两端关系：genetically similar friends（生物学解释）对 functional kinship（利益解释）是取此舍彼；rather than 是考研完形最高频的对比结构，两个对立解释并存时优先验证它。"
+  },
+  {
+   "question_id": 886,
+   "long_sentence": "拆 'functional kinship' of being friends with 14 ______；with 短语作后置修饰；functional kinship 带引号，是作者对「利益型友谊」的戏称。译：而非「功能性的亲缘关系」——即 __（有所图）的友谊。",
+   "option": "正确项 D benefits（利益）：friends with benefits 是现成表达「互有好处的朋友」，与 functional（有用途的）语义呼应，引号的戏谑用法也吻合；A chances（机会）无此搭配；B responses（回应）不合语境；C missions（使命）程度拔高过度。",
+   "keyword": "friends with benefits 互惠朋友、有所图的友谊；benefit 利益、好处；functional 功利性的、实用的。",
+   "note": "引号词组是命题人留的暗示：functional（功能即用处）指向 benefit（好处）；friends with benefits 已是固定说法，完形偏好这类「词组还原」题；13、14 两空是同一逻辑的两半，做完 13 对 14 有强提示。"
+  },
+  {
+   "question_id": 887,
+   "long_sentence": "拆 One of the remarkable findings of the study was that the similar genes seem to be evolving 15 ______ than other genes；that 引导表语从句；than 引导比较状语；seem to be evolving 为不定式进行式。译：研究一个引人注目的发现是，这些相似基因的进化速度似乎比其他基因更 __（快）。",
+   "option": "正确项 C faster（更快）：than 比较结构必须有可比维度，后句 why human evolution picked pace（人类进化加快）给出方向——pace 加快对应 faster；B slower 方向相反；A later、D earlier 是时间先后维度，与 picked pace（加速）不在同一维度上。",
+   "keyword": "evolve 进化；than 引出比较对象；pick pace 加快步伐＝speed up；remarkable 引人注目的。",
+   "note": "比较级题先找「比什么、朝哪比」：下一句 picked pace 是「加速」的复现信号，faster 与之同向；A、D 用时间先后设障，但 evolve 比较的是速率而非时点——跨维度的比较选项一律排除。"
+  },
+  {
+   "question_id": 888,
+   "long_sentence": "拆 Studying this could help 16 ______ why human evolution picked pace in the last 30,000 years；动名词短语 Studying this 作主语；help（to）do 省略 to；why 引导宾语从句；picked pace 意为「加快步伐」。译：研究这一点有助于 __（理解）为何人类进化在过去三万年间加快了速度。",
+   "option": "正确项 C understand（理解）：相似基因加速进化与人类进化加速之间的因果机制需要「解释、理解」，help understand 是学术文体常用搭配；A forecast（预测）与 in the last 30,000 years 的回溯时间轴冲突；B remember（记住）无语境；D express（表达）主语应是研究结论而非研究行为。",
+   "keyword": "help (to) do 有助于做；pick pace 加快速度；in the last 30,000 years 在过去三万年间（回溯时间状语）；evolution 进化。",
+   "note": "help 后的动词看「研究的功能」：科学研究回答 why 用 understand、explain 类认知动词，见到 why 从句基本锁定；A forecast 与回溯时间状语 in the last 30,000 years 直接冲突，时间轴是排除预测类选项的利器。"
+  },
+  {
+   "question_id": 889,
+   "long_sentence": "拆 with social environment being a major 17 ______ factor；with 复合结构（with+名词+being+表语）作伴随状语；contributory 意为「起促成作用的」。译：其中社会环境是一个重要的 __（促成）因素。",
+   "option": "正确项 B contributory（促成的）：它是 contribute to（促成、有助于）的形容词形式，与社会环境推动进化加速的文意一致；A unpredictable（不可预测的）与「重要因素」的肯定表述矛盾；C controllable（可控的）无语境支撑；D disruptive（破坏性的）感情色彩为负，与进化加速的中性叙述不符。",
+   "keyword": "contributory 促成的（源自 contribute to）；factor 因素；with+名词+doing 复合结构；major 主要的。",
+   "note": "词形线索最快：认识 contribute to 即可秒选 contributory；四个选项都是形容词，比的是与 factor 的语义搭配——factor 前的修饰词要回答「什么样的因素」，只有「起促成作用的」与上文因果链（基因相似加速进化）相容。"
+  },
+  {
+   "question_id": 890,
+   "long_sentence": "拆 The findings do not simply explain people's 18 ______ to befriend those of similar ethnic backgrounds；not simply 意为「不仅仅」；to befriend... 为不定式作后置定语；befriend 意为「与…交朋友」。译：研究者说，这些发现并不仅仅解释了人们 __（倾向于）与相似族群背景的人交友的现象。",
+   "option": "正确项 D tendency（倾向）：tendency to do sth 为固定搭配「做某事的倾向」，与 befriend those of similar backgrounds（与相似背景者交友）这一普遍自发行为吻合；A endeavor（努力）虽可接 to do，但「努力交友」非本文讨论的本能倾向；B decision（决定）是一次性行为，与基因层面的长期规律不符；C arrangement（安排）语义不通。",
+   "keyword": "tendency to do 做某事的倾向＝inclination；befriend 与…交朋友；not simply 不仅仅＝not merely。",
+   "note": "名词搭配题先看 to do 的兼容性，再靠语义分层：基因相似是本能层面，对应「倾向」；decision 是人为单次动作，与基因研究的宏观规律冲突；do not simply 提示前半句只是表层解释，空格词须能承载「普遍自发」义。"
+  },
+  {
+   "question_id": 891,
+   "long_sentence": "拆 people's tendency to befriend those of similar 19 ______ backgrounds；similar backgrounds 前的修饰词界定「背景」的类别；下文 population of European extraction（欧洲裔人群）为对照信息。译：并不仅仅解释了人们与相似 __（族群）背景者交友的倾向。",
+   "option": "正确项 C ethnic（族群的）：下文 Though all the subjects were drawn from a population of European extraction 直接呼应——研究特意把受试者限定在同一族群内，正是为了排除「同族群交友」这一混淆解释；A political（政治的）、B religious（宗教的）文中全无涉及；D economic（经济的）与基因研究无关。",
+   "keyword": "ethnic 族群的、民族的；background 背景；extraction 血统、出身（population of European extraction 欧洲裔人群）。",
+   "note": "完形空格词常由后文「控制变量」的说明来定义：care was taken to...same population 表明研究控制了族群因素，反推空格填 ethnic；political、religious、economic 都是 background 的常见搭配，必须回下文找限定信息。"
+  },
+  {
+   "question_id": 892,
+   "long_sentence": "拆 Though all the subjects were drawn from a population of European extraction, care was taken to 20 ______ that all subjects, friends and strangers, were taken from the same population；Though 引导让步状语从句；care was taken to do 为被动结构「审慎地做某事」；that 引导宾语从句。译：尽管所有受试者都取自欧洲裔人群，研究者仍审慎地 __（确保）朋友与陌生人都来自同一人群。",
+   "option": "正确项 A see：see (to it) that...＝ensure that...（确保）为固定用法，care was taken to see that 是研究方法描述的惯用表达；B show（表明）、C prove（证明）需要证据或研究作主语，care（谨慎态度）只能确保事实成立，不能「证明」；D tell that 搭配不成立。",
+   "keyword": "see (to it) that 确保＝ensure、make sure；care was taken 已审慎注意；draw from 取自、抽选自。",
+   "note": "see that＝ensure 是考研高频熟词僻义；判断技巧看主语：care 是态度，态度能「确保」却不能「表明、证明」，show 与 prove 需要证据类主语；让步从句强调「同一人群」的控制变量设计，确保类动词顺势而出。"
+  },
+  {
+   "question_id": 893,
+   "long_sentence": "定位句 But embarrassing scandals and the popularity of the republican left in the recent Euro-elections have forced him to eat his words and stand down；并列主语由 and 连接；eat his words 意为「食言、收回前言」；stand down 意为「退位、让位」。译：但难堪的丑闻加上共和派左翼在欧洲议会选举中的受欢迎，迫使他收回前言并宣布退位。",
+   "option": "正确项 D「在尴尬中结束统治」＝embarrassing scandals 加 forced him to...stand down，end his reign≈stand down；A「缓与对手的关系」无中生有；B「曾享有高民望」张冠李戴，popular 修饰的是 republican left（共和派左翼）而非国王；C「在欧洲王室中不受欢迎」无中生有，原文只谈西班牙国内。",
+   "keyword": "stand down 退位、退出；eat his words 收回前言、食言；scandal 丑闻；reign 统治、在位期；force sb to do 迫使某人做。",
+   "note": "前两段定位：首句 kings don't abdicate 与末句 forced him to stand down 形成「立誓—破誓」反差；B 项把 popularity 的所属对象偷换给国王，属张冠李戴——遇到原词 popular 必查它修饰谁。"
+  },
+  {
+   "question_id": 894,
+   "long_sentence": "定位句 most royal families have survived because they allow voters to avoid the difficult search for a non-controversial but respected public figure；because 引导原因状语从句；avoid the difficult search for... 意为「免于艰难寻找…」；non-controversial but respected 为并列形容词修饰 public figure。译：大多数王室得以存续，是因为他们让选民免去了寻找一位无争议却受敬重的公众人物的难题。",
+   "option": "正确项 C「因其无可争议且受尊敬的地位」＝non-controversial but respected public figure 的名词化改写，undoubted≈non-controversial、respectable≈respected；A「给选民更多可敬仰的人物」偷换概念，原文是「免去寻找」而非「提供更多」；B「在传统与现实间求平衡」无中生有；D「因其永恒的政治化身地位」正反混淆，原文强调 monarchs rise above mere politics（超越政治）。",
+   "keyword": "non-controversial 无争议的＝undoubted；respected 受尊敬的＝respectable；rise above 超越；heads of state 国家元首。",
+   "note": "原因定位在 because 之后；C 项把形容词短语打包成名词短语（undoubted and respectable status），是考研典型的「词性转换式改写」；D 项偷换方向——王室的价值恰在「非政治性」，embody a spirit of national unity 是第 2 段的语境信息，勿与本题原因混同。"
+  },
+  {
+   "question_id": 895,
+   "long_sentence": "定位句 it is bizarre that wealthy aristocratic families should still be the symbolic heart of modern democratic states；it 为形式主语；should 表惊奇的虚拟语气；bizarre 意为「怪异的」；前句背景是经济学家警告不平等加剧、inherited wealth（世袭财富）日益强势。译：富裕贵族家庭竟仍是现代民主国家的象征核心，这实在怪异。",
+   "option": "正确项 B「贵族在现代民主国家中的角色」＝still be the symbolic heart of modern democratic states，bizarre 所评论的正是这一角色；A「贵族对世袭财富的过度依赖」偷换概念，inherited wealth 是经济学家的警告背景；C「贵族家庭的简朴生活」正反混淆，第 5 段说他们 party with the international 1%；D「贵族对特权的固守」以偏概全，特权被批过时，但 bizarre 的落点是「仍居象征核心」。",
+   "keyword": "bizarre 怪异的＝odd；symbolic heart 象征核心；inherited wealth 世袭财富；aristocratic 贵族的。",
+   "note": "odd 与 bizarre 同义对应，答案就在 it is bizarre that 之后；判断「评论对象」要看 that 从句的完整表意——不是财富本身，而是「贵族仍作民主国家象征」这一角色；C 项与第 5 段细节直接矛盾，可用排除法双保险。"
+  },
+  {
+   "question_id": 896,
+   "long_sentence": "定位句 He has failed to understand that monarchies have largely survived because they provide a service – as non-controversial and non-political heads of state；that 引导宾语从句；because 从句解释王室存续原因；破折号后补充 service 的内涵。译：他未能理解：君主制之所以大体存续，是因为它提供了一种服务——充当无争议、非政治性的国家元首。",
+   "option": "正确项 A「未能适应自己未来的角色」＝failed to understand that...provide a service 的上位概括，expensive taste 与 hierarchical view 都是他不适应「无争议、非政治」角色的表现；B「未能如劝告般改变生活方式」偷换概念，原文无人劝告；C「把共和派当潜在盟友」正反混淆，末句说 it is kings, not republicans, who are the monarchy's worst enemies；D「在政治议题上立场强硬」偷换概念，hierarchical view 是世界观等级化，且王室生存之道恰是非政治性。",
+   "keyword": "fail to do 未能做；provide a service 提供服务；non-controversial 无争议的；hierarchical 等级观念的。",
+   "note": "have most to fear 的原因落在 Charles 身上：先列两大表现（expensive taste、hierarchical view），再给出病根 failed to understand；A 的 adapt to his future role 是「表现加病根」的合并概括，B 只抓表皮且虚构「劝告」，属偷换概念。"
+  },
+  {
+   "question_id": 897,
+   "long_sentence": "定位句 While Europe's monarchies will no doubt be smart enough to survive for some time to come, it is the British royals who have most to fear from the Spanish example；While 引导让步状语从句；it is...who... 为强调句型，强调 the British royals。译：尽管欧洲各王室无疑够精明、还能存续一段时间，但最该从西班牙案例中感到恐惧的，恰是英国王室。",
+   "option": "正确项 C「卡洛斯，全体欧洲君主的教训」＝西班牙退位案例（第 1 段）加 does that mean the writing is on the wall for all European royals（第 1 段末）加末段英国王室最该警惕，全文由个案推及欧洲；A「卡洛斯，荣耀与耻辱并存」以偏概全且无荣耀论述；B「查尔斯，急于继位」无中生有；D「查尔斯，对逼近威胁反应迟缓」过度推断，原文只说 danger will come with Charles。",
+   "keyword": "the writing is on the wall 凶兆已现（习语）；stand down 退位；example 榜样、前车之鉴；monarchy 君主制。",
+   "note": "标题题看「个案到全局」的写法：西班牙是引子与教训载体，第 1 段两个问句（is seeing its last days、the writing is on the wall for all European royals）已把话题抬到全欧洲；A、B、D 或只覆盖一段、或虚构心理活动，标题必须与文章辐射范围一致。"
+  },
+  {
+   "question_id": 898,
+   "long_sentence": "定位句 The Supreme Court will now consider whether police can search the contents of a mobile phone without a warrant if the phone is on or around a person during an arrest；whether 引导宾语从句；without a warrant 意为「没有令状」；if 引导条件状语从句。译：最高法院现在将考虑：在逮捕过程中，若手机在嫌疑人身上或身边，警方能否在没有令状的情况下搜查手机中的内容。",
+   "option": "正确项 C「未经授权查看嫌疑人手机内容」＝search the contents of a mobile phone without a warrant，without being authorized≈without a warrant、check≈search the contents；A「阻止嫌疑人删手机内容」张冠李戴，数据不被删除是第 6 段作者建议警方等令状期间的措施；B「无令状搜查嫌疑人的手机」偷换概念，搜的是 contents（内容）不是找手机；D「禁止嫌疑人使用手机」无中生有。",
+   "keyword": "warrant 搜查令状；search the contents 搜查内容；arrest 逮捕；without being authorized 未经授权。",
+   "note": "首段即问题本体：whether 从句的动词 search the contents 与宾语 contents 是题眼；B 项只差一个介词（search for 找手机 对 search the contents 搜内容），考研阅读爱用「动宾错位」设障；A 项是后文细节错位到首段，属张冠李戴。"
+  },
+  {
+   "question_id": 899,
+   "long_sentence": "定位句 They should start by discarding California's lame argument that exploring the contents of a smartphone – a vast storehouse of digital information – is similar to, say, going through a suspect's purse；that 引导同位语从句说明 argument；破折号内为插入语；discarding 意为「抛弃」。译：法院首先应当抛弃加州那个蹩脚的论据——即翻查智能手机（一座巨大的数字信息仓库）就如同翻查嫌疑人的手包。",
+   "option": "正确项 A disapproval（不赞成）：recklessly modest（轻率地谦抑）、lame argument（蹩脚论据）、should not swallow...whole（不应全盘吞下）三处贬义表述层层加码，否定态度明确；B indifference（漠不关心）与作者连篇论证相反；C tolerance（容忍）与 discard 相悖；D cautiousness（谨慎）张冠李戴，cautious 是作者对法院的期望（更新指导原则要审慎），对加州论据是直接否定。",
+   "keyword": "discard 抛弃＝get rid of；lame 蹩脚的、站不住脚的；swallow...whole 全盘接受；recklessly 轻率地。",
+   "note": "态度题抓感情色彩词链：lame 是最强贬义信号词，加上第 3 段 recklessly modest、末段 not swallow whole，作者对加州论据是「驳回式」否定；D 项偷换对象——作者劝法院谨慎行事，不等于对加州谨慎宽容，态度题务必分清「对谁」的态度。"
+  },
+  {
+   "question_id": 900,
+   "long_sentence": "定位句 But exploring one's smartphone is more like entering his or her home；more like... 表「更像…」；But 承上转折，否定加州的钱包类比；exploring 与 entering 为动名词比较。译：但翻查一个人的智能手机，更像是进入他或她的家。",
+   "option": "正确项 D「进入某人的住所」＝entering his or her home，getting into≈entering、residence≈home；A「翻查钱包」正反混淆，法院裁定无令状翻钱包不违宪，作者以 But 明确反对这一类比；B「处理历史记录」偷换概念，reading/financial/medical history 是手机存储的内容清单，不是类比对象；C「扫描往来信件」偷换概念，correspondence 同为内容清单项。",
+   "keyword": "entering one's home 进入住宅＝get into one's residence；go through 翻查；purse 手包、钱包；storehouse 仓库。",
+   "note": "类比题锁定 more like 结构：But 之后才是作者的类比（home），But 之前的 purse 类比是加州论据、已被作者否定；A 项照抄原文 go through the wallet 却站错了立场——同义改写题也要核对句子归属，这是「张冠李戴」在类比题中的变体。"
+  }
+ ]
+}

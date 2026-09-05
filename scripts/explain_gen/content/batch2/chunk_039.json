@@ -1,0 +1,180 @@
+{
+ "chunk": 39,
+ "items": [
+  {
+   "question_id": 951,
+   "long_sentence": "拆 whereas prosecutors should only evaluate a case based on its merits, they do seem to be influenced by a company's record in CSR；whereas 引导让步从句「尽管按理应当」；based on 意为「依据」；do seem 中 do 为强调助动词。译：尽管检察官本应仅依据案情本身来评估案件，但他们似乎确实会受到公司 CSR 记录的影响。",
+   "option": "正确项 A「对检察官的裁决有影响」＝they do seem to be influenced by a company's record in CSR 加第 4 段 more lenient penalties——CSR 项目最完善者罚款普遍低 40%；B「构成可靠证据」偷换概念，原文说 influence（影响）而非 evidence（证据）；C「增加被罚概率」正反混淆，结果是罚得更轻；D「构成调查的一部分」无中生有，检察官不消费其产品，只受光环效应影响。",
+   "keyword": "prosecutor 检察官；evaluate a case 评估案件；based on its merits 依据案情本身；record in CSR CSR 记录。",
+   "note": "第 5 段 whereas...do seem to be influenced 是直接答案句，do 的强调结构点出「实际有影响」与「按理不该有」的张力；D 项用第 3 段信息反驳——调查程序不消费产品，CSR 只能通过 halo effect 起作用，不是调查环节。"
+  },
+  {
+   "question_id": 952,
+   "long_sentence": "拆 Researchers admit that their study does not answer the question of how much businesses ought to spend on CSR；admit that... 承认；ought to 意为「应当」；how much 引导的从句作介词 of 的宾语。译：研究者承认，他们的研究没有回答「企业应当在 CSR 上投入多少」这一问题。",
+   "option": "正确项 B「企业在 CSR 上该花多少钱尚不清楚」＝does not answer the question of how much businesses ought to spend 的同义改写，necessary amount≈how much ought to spend、unknown≈does not answer；A「其负面效应常被忽视」无中生有，研究谈的是正效应与局限；C「企业的财务承受力被高估」无中生有；D「给银行业带来巨大好处」偷换概念，banking on the halo effect 中 bank on 是「指望、依赖」的习语，与银行业无关。",
+   "keyword": "admit 承认；ought to 应当＝should；bank on 指望、依赖（习语）；do-gooding 做善事的。",
+   "note": "D 项是本篇最险陷阱：bank on＝rely on，与银行毫无关系，习语的字面诱导务必警惕；末段 does not answer 与 Nor does it reveal 是「研究局限」的并列表述，B 对应第一处，末段两处局限句是细节题富矿。"
+  },
+  {
+   "question_id": 953,
+   "long_sentence": "拆 The infrastructure required to make a physical newspaper – printing presses, delivery trucks – isn't just expensive; it's excessive at a time when online-only competitors don't have the same set of financial constraints；required to make... 为后置定语；excessive 意为「过度的」。译：印刷实体报纸所需的基础设施——印刷机、运报卡车——不只昂贵，在线上对手无此负担的今天，简直是过度负担。",
+   "option": "正确项 A「运营成本高」＝printing presses、delivery trucks、expensive、financial constraints 一组词共同指向印刷业务的运营成本；B「线上广告销售增长」正反混淆，原文 print ad sales still dwarf their online counterparts（印刷广告仍远超线上）且印刷收入在降；C「来自投资者的压力」无中生有；D「读者的抱怨」无中生有，Readers are migrating away from print 是读者流失而非抱怨。",
+   "keyword": "infrastructure 基础设施；printing press 印刷机；financial constraint 财务约束；dwarf 使…相形见绌。",
+   "note": "原因定位在满是代价词的第 2 段：expensive、excessive、financial constraints、declining 都是成本压力的证据；B 项考 dwarf 的方向——是印刷广告压过线上，不是线上增长；对照类句子要把比较双方读完再判断。"
+  },
+  {
+   "question_id": 954,
+   "long_sentence": "拆 Peretti says the Times shouldn't waste time getting out of the print business, but only if they go about doing it the right way；waste time doing 浪费时间做某事；only if 只有…才；go about doing 意为「着手、以某方式做」。译：佩雷蒂说，《纽约时报》不该把时间浪费在急于摆脱印刷业务上，但前提是要以正确的方式推进。",
+   "option": "正确项 B「做战略性调整」＝Figuring out a way to accelerate that transition would make sense（设法加速过渡是明智的）加 raise prices and make it into more of a legacy product（提价、做成传世产品）——不断然停刊而是策略转型；A「永久停办印刷版」正反混淆，I wouldn't pick a year to end print；C「寻找新读者群」无中生有，他主张服务最忠诚的老读者；D「追求高效管理」偷换概念，文中的 efficiency 语境是减少决策疲劳，与报社管理无关。",
+   "keyword": "transition 过渡、转型；discontinue 停止＝end；legacy product 传世产品、情怀产品；accelerate 加速。",
+   "note": "观点题要整合三处建议：accelerate the transition、legacy product、raise prices 合成「策略性调整」；A 与 I wouldn't pick a year to end print 直接相反；C 把「留住死忠粉」偷换成「开发新读者」，方向完全反了。"
+  },
+  {
+   "question_id": 955,
+   "long_sentence": "拆 if you're going to make a print product, make it for the people who are already obsessed with it；who are already obsessed with it 为定语从句修饰 the people；obsessed 意为「痴迷的」。译：如果你要做印刷产品，就做给那些已经为它痴迷的人。",
+   "option": "正确项 B「面向最忠诚的顾客」＝The most loyal customers would still get the product they favor 加 make it for the people who are already obsessed with it，loyal customer 与 obsessed 的人群同一；A「帮助恢复昔日荣光」偷换概念，legacy 指传世情怀，原文无 restore glory；C「印刷成本会降低」无中生有，方案是 raise prices 提价；D「扩大报纸普及度」正反混淆，高价小众产品与普及相反。",
+   "keyword": "legacy product 传世产品；loyal customer 忠诚顾客；be obsessed with 痴迷于；overpay 超额支付；subscription 订阅。",
+   "note": "词义推断题用「段落功能」定：第 5、6 段围绕 loyal customers 与 obsessed 人群设计提价方案，legacy product 的内涵就是「留给死忠粉的情怀产品」；A 的 glory 与 B 的 loyal 是「情怀词」与「人群词」的区分，落点在人群。"
+  },
+  {
+   "question_id": 956,
+   "long_sentence": "拆 In those situations, it's better to be more aggressive than less aggressive；those situations 回指前文 market changes and the world changes 的情境；aggressive 意为「有进取心的、强势的」。译：在那些情况下，与其保守观望，不如更进取一些。",
+   "option": "正确项 C「进取姿态更能应对挑战」＝it's better to be more aggressive than less aggressive 的直接改写，对应「市场与世界都变了」的挑战语境；A「传统奢侈品可安然无恙」无中生有，tremendous luxury 说的是 BuzzFeed 没有 legacy business 反倒是种奢侈；B「谨慎有助于解决问题」正反混淆，better to be more aggressive 恰不主张谨慎；D「legacy business 正在被淘汰」过度推断，Peretti 说经营 legacy business 很难（a really hard thing），但建议是改造而非判其出局。",
+   "keyword": "aggressive 进取的、强势的；legacy business 历史遗留业务；be in charge 掌管；tremendous 巨大的。",
+   "note": "末段 it's better to be more aggressive than less aggressive 用比较级表态度，直接锁定 C；B、A 都顺着 luxury 的字面走偏——「没有 legacy 业务是种奢侈」是 BuzzFeed 的自况，不是主张守成，态度句要回到比较级本体。"
+  },
+  {
+   "question_id": 957,
+   "long_sentence": "拆 I would raise prices and make it into more of a legacy product...Getting the print edition seven days a week costs nearly $500 a year – more than twice as much as a digital-only subscription；more than twice as much as 表倍数比较。译：我会提高价格，把它做成更像传世产品的东西……每周七天的印刷版一年要花近 500 美元——是纯数字订阅的两倍多。",
+   "option": "正确项 B「把你的印刷报纸做成奢侈品」＝raise prices、legacy product、overpaying、nearly $500 a year（数倍于数字订阅）共同合成「高价小众情怀品」的定位，luxury good 是 legacy product 的通俗化改写；A「一夜之间全部转向线上」与 I wouldn't pick a year to end print 相反；C「让报纸永远时尚」偷换概念，文章谈定价与人群定位而非时尚度；D「珍惜手中的报纸」空泛抒情、无信息增量。",
+   "keyword": "legacy product 传世产品（本文语境＝luxury good）；raise prices 提价；digital-only subscription 纯数字订阅；obsessed 痴迷的。",
+   "note": "标题题抓方案的核心动作：raise prices 加 make it into more of a legacy product 加面向 obsessed 人群；A 与作者立场相反先排除；D 是「有情怀无内容」的标题，考研标题题必须能覆盖全文方案与态度。"
+  },
+  {
+   "question_id": 958,
+   "long_sentence": "拆 If you're in a period of change or just feeling stuck and in a rut, now may be a good time；in a period of change 处于变动期；stuck and in a rut 意为「停滞不前、陷入窠臼」；may 表委婉建议。译：如果你正处于变动期，或只是感到停滞不前、陷入窠臼，现在也许是个好时机。",
+   "option": "答案 C「判断时机是否合适」（Decide if the time is right）：空前设问 How do we know when to invest in an upgrade? 中的 when 直接指向时机；空后段连用 during transitions（求职、新角色、换环境三种变动场景）、now may be a good time、If you're not sure, ask for honest feedback——整段围绕「何时该升级」展开；与 F（Know your goals）区分：本段无目标讨论，只谈时间判断。",
+   "keyword": "transition 过渡期、转变期；in a rut 停滞不前；honest feedback 真诚的反馈；perceive 感知、看待。",
+   "note": "小标题题先抓空前设问句的疑问词：when to invest 锁定「时机」；段首 during transitions 列举变动场景、段中 now may be a good time 收束，标题必须覆盖「判断时机」这一主线，而非泛泛的形象建议。"
+  },
+  {
+   "question_id": 959,
+   "long_sentence": "拆 Get clear on what impact you're hoping to have. Are you looking to refresh your image or pivot it?；get clear on 意为「弄清楚」；look to do 打算做；pivot 意为「转变、转向」。译：弄清楚你希望产生什么影响。你是想刷新形象还是彻底转变形象？",
+   "option": "答案 F「明确你的目标」（Know your goals）：段首 Get clear on what impact you're hoping to have 是目标设定句，随后 For one person, the goal may be...、For another... 连用 goal 复现，列举不同人的目标（更专业、更亲和、更时髦、更 SoHo）；与 D（Understand the context）区分：本段问自己要什么，不是环境是什么。",
+   "keyword": "get clear on 弄清楚；refresh your image 刷新形象；pivot 转向；approachable 亲和的；characterization 描述、定性说法。",
+   "note": "小标题与段落的对应靠复现词：goal 在段中三现，Know your goals 直接提取；本段以祈使句开头后接三个 For...的排比举例，这是「标题加展开」的典型结构，标题词多藏在段首祈使句与复现名词中。"
+  },
+  {
+   "question_id": 960,
+   "long_sentence": "拆 The better you understand the cultural context, the more control you can have over your impact；the+比较级, the+比较级 结构表「越…越…」；have control over 对…有掌控。译：你越了解所处的文化语境，就越能掌控自己的影响力。",
+   "option": "答案 D「理解语境」（Understand the context）：段首祈使句 Look at your work environment like an anthropologist（像人类学家一样观察工作环境）点明方法，随后四个 what/who 疑问句追问环境规范（norms）、地位信号（conveys status）、重要受众（audiences）、可敬者的呈现方式，段尾 understand the cultural context 原词复现；与 F（Know your goals）区分：本段观察环境，不问个人目标。",
+   "keyword": "anthropologist 人类学家；norm 规范、惯例；convey status 传递地位信号；cultural context 文化语境。",
+   "note": "首尾呼应定标题：段首祈使句加段尾 understand the cultural context 原词出现，Understand the context 几乎是送分；小标题题优先看段首祈使句与段末收束句，中间的连续疑问句是「观察环境」的展开证据。"
+  },
+  {
+   "question_id": 961,
+   "long_sentence": "拆 Enlist the support of professionals and share with them your goals and context；enlist the support of 意为「获得…的支持」；share with 与…分享。译：寻求专业人士的帮助，与他们分享你的目标和处境。",
+   "option": "答案 E「与专业人士合作」（Work with professionals）：段首祈使句 Enlist the support of professionals 点题，随后 Hire a personal stylist、use the free styling service、hair stylist、professional photographer 连举四个专业服务例子，professionals 与 stylist 高密度复现；末句 It's not as expensive as you might think 预答成本疑虑，仍围绕「请专业人士」展开；与 G 区分：E 讲找人帮忙，G 讲减少消耗提效。",
+   "keyword": "enlist the support of 寻求…的支持；personal stylist 私人造型师；barber 理发师；professional photographer 专业摄影师。",
+   "note": "段首祈使句即标题原型：Enlist the support of professionals 与 Work with professionals 同义（寻求帮助＝合作）；「祈使句加举例」的段落直接提炼祈使句核心名词短语作标题，例证越多越说明标题覆盖准确。"
+  },
+  {
+   "question_id": 962,
+   "long_sentence": "拆 Instead, use it as an opportunity to reduce decision fatigue；instead 表转折替代；decision fatigue 意为「决策疲劳」；go-to options 意为「常用的可靠备选项」。译：相反，把它当作一个减少决策疲劳的机会。",
+   "option": "答案 G「让这件事高效起来」（Make it efficient）：段首先破后立——升级形象不是为了虚荣（vain）或纠结穿搭（fussing over what to wear），而是 reduce decision fatigue；随后 Pick a standard work uniform（固定工装）、a few go-to options、Buy all your clothes at once（一次购齐）全是省时省心的效率化手段；与 E（Work with professionals）区分：E 的核心词是 professionals，G 的核心是省心提效。",
+   "keyword": "decision fatigue 决策疲劳；fuss over 为…纠结操心；go-to options 常用的可靠选项；standard work uniform 固定工装。",
+   "note": "转折词 instead 之后才是段意重心：not to become more vain 先否定，reduce decision fatigue 确立「省心高效」主线；uniform 与 buy all at once 是效率的具体化，抽象标题 Make it efficient 与目的句 reduce fatigue 构成同义概括。"
+  },
+  {
+   "question_id": 963,
+   "long_sentence": "拆 Besides helping you feel close and connected to people you care about, it turns out that hugs can bring a host of health benefits；Besides 为介词「除…之外（还）」，后接动名词短语；it turns out that... 意为「结果表明」；a host of 意为「大量的」。译：除了让你与在乎的人感到亲近和相连，拥抱还能给身心带来 __（大量）健康益处。",
+   "option": "正确项 B Besides（除…之外还）：首句问答已确立「拥抱有益」，本句再添一层好处（健康益处），递进关系明确；A Unlike（不像）表对比，与递进语境相反；C Despite（尽管）表让步，前后无对立；D Throughout（自始至终）后接时间、空间名词，不接动名词短语。",
+   "keyword": "besides doing 除…之外还（表递进）；it turns out that 结果表明；a host of 大量的＝a wealth of；benefit 益处。",
+   "note": "首段逻辑词定全文基调：一问一答之后连用两层益处（亲近感加健康），Besides 的「追加」义最贴合；C 的让步方向要求前后对立，此处前后是「更多好处」，画不出转折箭头就排除让步词。"
+  },
+  {
+   "question_id": 964,
+   "long_sentence": "拆 helping you feel close and 2 ______ to people you care about；feel 后接两个并列形容词；you care about 为省略关系词的定语从句修饰 people。译：让你对在乎的人感到亲近和 __（紧密相连）。",
+   "option": "正确项 A connected（相连的）：close and connected 头韵并列，connected to 为固定搭配，与「拥抱拉近人际距离」的语义一致；B restricted（受限的）be restricted to 意为「局限于」，感情色彩消极；C equal（平等的）equal to 意为「等于、胜任」，无联结义；D inferior（低等的）be inferior to 意为「次于」，与拥抱的积极语境相反。",
+   "keyword": "feel close and connected to 感到亲近且紧密相连；care about 在乎；bonding 联结（下文 bonding hormone 呼应）。",
+   "note": "并列形容词共用介词 to：close to 与 connected to 共享 to people；文末 the bonding hormone（联结激素）是 connected 的远距呼应，拥抱—联结—催产素是全文主线，首段选词要有全篇意识。"
+  },
+  {
+   "question_id": 965,
+   "long_sentence": "拆 hugs can bring a 3 ______ of health benefits to your body and mind；bring sth to sb/sth 把…带给…；body and mind 身心。译：拥抱能给你的身心带来 __（大量）健康益处。",
+   "option": "正确项 D host：a host of 为固定量词短语「大量的」，修饰复数名词 benefits；A choice（选择）a choice of 意为「…的选择」，与「益处多」不符；B view 的 a view of 是「…的景色、观点」，无量词用法；C lesson（教训）a lesson of 不成搭配且感情色彩不合。",
+   "keyword": "a host of 大量的＝a wealth of；body and mind 身心；benefit 好处；embrace 拥抱＝hug。",
+   "note": "a...of 结构考量词：host、range、series、lot 是高频量词，先验证短语存在性再验证语义匹配；后文 brings、benefits 的复数与「大量」义互相印证——量词题的宾语数与语义方向是双重约束。"
+  },
+  {
+   "question_id": 966,
+   "long_sentence": "拆 a warm embrace might even help you 4 ______ getting sick this winter；help sb (to) do 省略 to；even 表递进「甚至」；getting sick 意为「生病」。译：一个温暖的拥抱甚至可能帮你在今年冬天 __（避免）生病。",
+   "option": "正确项 C avoid（避免）：avoid doing sth 为固定搭配「避免做某事」，与「拥抱有健康益处」的文意同向；A recall（回想起）recall doing 表「记得做过」，与防病无关；B forget（忘记）forget doing 表「忘记做过」，语义不通；D keep 需为 keep doing（持续做）结构，「持续生病」荒谬。",
+   "keyword": "avoid doing 避免做；get sick 生病；embrace 拥抱＝hug；even 甚至（递进信号）；warm embrace 温暖的拥抱。",
+   "note": "even 的递进语气提示本空是「更大的好处」：从亲近感升级到防病，avoid 是唯一方向正确的动词；D 的语法陷阱在 keep doing 与 keep sb doing 均与 help you 后接动名词的结构不合，语法加语义双排除。"
+  },
+  {
+   "question_id": 967,
+   "long_sentence": "拆 In a recent study 5 ______ over 400 healthy adults；involving... 为现在分词短语作后置定语修饰 study；over 表「超过」。译：在一项 __（涉及）400 多名健康成年人的近期研究中，宾夕法尼亚卡内基梅隆大学的研究者考察了……",
+   "option": "正确项 B involving（涉及）：a study involving sb（一项涉及某人群的研究）是学术写作的标准表达，400 多名健康成人正是研究对象；A collecting（收集）study 不会主动「收集」人；C guiding（指导）指导者应是人而非研究；D affecting（影响）定语位置表达的是研究范围，不是研究结果的影响。",
+   "keyword": "a study involving... 一项涉及…的研究；participant 受试者、参与者；over 400 超过 400。",
+   "note": "分词作定语看逻辑主谓关系：study 与 participants 的关系是「包含、涉及」，involving 是学术语篇高频定语；D 的干扰在「研究影响人」的常识联想，但定语表达的是内容范围而非结果，判断分词先还原主谓。"
+  },
+  {
+   "question_id": 968,
+   "long_sentence": "拆 examined the effects of perceived social support and the receipt of hugs 6 ______ the participants' susceptibility to developing the common cold；the effects of A on B 意为「A 对 B 的影响」；susceptibility to 意为「对…的易感性」；perceived 意为「感知到的」。译：考察了「感知到的社会支持」与「接受拥抱」对受试者感染普通感冒 __（方面的）易感性的影响。",
+   "option": "正确项 D on：effects...on... 为固定搭配「对…的影响」，空后 susceptibility（易感性）是受影响的对象；A of 会使句中接连出现 effects of、receipt of、of the 三个 of，结构纠缠；B in、C at 均不与 effects 构成「作用对象」搭配。",
+   "keyword": "the effects of A on B A 对 B 的影响；susceptibility to 对…的易感性；perceive 感知；receipt 接受。",
+   "note": "长名词化句子的介词骨架：effects of...on... 是学术文最经典的搭配骨架，先锁定 on 再切分修饰层次；A 的迷惑在于句中已密集出现 of，再填 of 会破坏「影响对象」的表达，介词题在长句中要数清 of 的个数。"
+  },
+  {
+   "question_id": 969,
+   "long_sentence": "拆 after being 7 ______ to the virus；be exposed to 意为「暴露于、接触」；after being done 为被动分词作时间状语。译：在 __（接触）病毒之后。",
+   "option": "正确项 B exposed：be exposed to the virus（暴露于病毒）是病毒研究的标准表述，与 susceptibility（易感性）构成「先接触才谈易感」的逻辑链；A devoted：be devoted to 意为「致力于、献身于」，对象应是事业而非病毒；C lost：be lost to 意为「不再属于、无动于衷」，语义不通；D attracted：be attracted to 意为「被吸引」，与致病语境荒谬。",
+   "keyword": "be exposed to 暴露于、接触到；virus 病毒；susceptibility 易感性；come down with 患上（病）。",
+   "note": "医学研究语境的固定链条：exposed to the virus（接触病毒）→ susceptibility（易感）→ come down with a cold（患病）；A 的 devoted 与 exposed 同接 to，介词相同不等于短语相同，必须看宾语与语境极性。"
+  },
+  {
+   "question_id": 970,
+   "long_sentence": "拆 People who perceived greater social support were less likely to come 8 ______ with a cold；who 引导定语从句；be likely to do 意为「可能会做」。译：感知到更多社会支持的人患感冒的可能性更低。",
+   "option": "正确项 C down：come down with a cold（患上感冒）为固定短语动词；A come across（偶遇、给人留下印象）与患病无关；B come along（进展、跟随）、D come out（出现、出版）均无「患病」义。",
+   "keyword": "come down with 患上（小病）；be less likely to 更不可能；perceive greater social support 感知到更多社会支持。",
+   "note": "短语动词靠宾语验证：宾语 a cold（感冒）决定动词短语必是 come down with；across、along、out 都是真短语但与 a cold 的适配为零——短语动词题先用宾语筛选，再核对整短语义。"
+  },
+  {
+   "question_id": 971,
+   "long_sentence": "拆 the researchers 9 ______ that the stress-reducing effects of hugging 10 ______ about 32 percent of that beneficial effect；that 引导宾语从句；stress-reducing 为复合形容词「减压的」；32 percent 表量化结果。译：研究者 __（测算）出，拥抱的减压效应解释了其中约 32% 的有益效果。",
+   "option": "正确项 A calculated（计算、测算）：32 percent 是量化数据，得出数据前的动词自然是「计算、测算」，calculated that... 是研究结论句式；B denied（否认）、C doubted（怀疑）与报告正面数据的叙事矛盾；D imagined（想象）贬损研究的严谨性，与学术语境不合。",
+   "keyword": "calculate 计算、测算＝estimate；stress-reducing 减压的；percent 百分比；beneficial effect 有益效果。",
+   "note": "数字前找认知动词：32 percent 的出现要求前面是 calculate、estimate 类动词；B、C 的否定与质疑极性和「报告发现」冲突——动词题先看宾语从句的内容极性，数据句几乎必配测算类动词。"
+  },
+  {
+   "question_id": 972,
+   "long_sentence": "拆 the stress-reducing effects of hugging 10 ______ about 32 percent of that beneficial effect；主语核心为 the stress-reducing effects；that beneficial effect 回指前文「不易感冒」的好处。译：拥抱的减压效应 __（解释、贡献）了其中约 32% 的有益效果。",
+   "option": "正确项 D explained（解释、说明）：explain 32 percent of the effect 是统计表达「解释了…的占比」，与百分比搭配自然；A served（服务）不接比例宾语；B required（需要）主语应是条件而非效应；C restored（恢复）与「贡献占比」无关。",
+   "keyword": "explain 数据语境「解释了占比」；account for 解释（占比）＝explain；beneficial effect 有益效果。",
+   "note": "explain 的熟词僻义：在数据语境是「解释了百分之多少」，与 account for 同义；统计语篇中百分比前的动词大概率是 explain、account for、calculate 三选一，A、B、C 与百分比均无动宾逻辑。"
+  },
+  {
+   "question_id": 973,
+   "long_sentence": "拆 Even among those who got a cold, the ones who felt greater social support and received more frequent hugs had less severe 12 ______；even 表让步递进「即便是」；less severe 意为「较轻的」。译：__（甚至）在那些得了感冒的人中，感受到更多社会支持、接受更频繁拥抱的人症状也更轻。",
+   "option": "正确项 A Even（甚至）：前文说支持多者不易感冒，本句退一步说「就算感冒了症状也轻」，even 表让步递进最贴切；B Still（仍然）表转折延续，无退步让之意；C Rather（相反）表替代转折；D Thus（因此）表因果，前后并非因果链。",
+   "keyword": "even among 即使在…之中；less severe 较轻的；frequent 频繁的；symptom 症状；receive more frequent hugs 接受更频繁的拥抱。",
+   "note": "递进让步判别：前句「不易感冒」与本句「病了也轻」是好上加好的让步层进，Even 最优；D 的因果箭头不成立——不是社会支持导致感冒变轻，而是即便感冒也轻，逻辑词题先画前后句语义方向。"
+  },
+  {
+   "question_id": 974,
+   "long_sentence": "拆 the ones...had less severe 12 ______；less severe 为比较级修饰空格名词；those who got a cold 已患感冒是前提。译：……的人感冒 __（症状）也较轻。",
+   "option": "正确项 B symptoms（症状）：得了感冒的人身上可「轻」可「重」的只有症状，less severe symptoms（症状较轻）是医学标准表达；A defeats（失败）与疾病语境无关；C tests（检测）severe 不修饰 tests；D errors（错误）无语境支撑。",
+   "keyword": "symptom 症状；severe 严重的；less severe symptoms 症状较轻；cold 感冒；illness 疾病。",
+   "note": "形容词定名词：severe 在医学语境的固定搭档是 symptoms、illness、case；已患感冒者的程度差异只能落在症状轻重上，A、C、D 都无法与 less severe 构成疾病叙事——先定搭配域再选具体词。"
+  },
+  {
+   "question_id": 975,
+   "long_sentence": "拆 Hugging protects people who are under stress from the 13 ______ risk for colds that's usually associated with stress；protect...from... 保护…免受…；under stress 处于压力之下；be associated with 与…相关。译：拥抱能保护处于压力之下的人，使其免受那种通常与压力相关的 __（升高了的）感冒风险。",
+   "option": "正确项 D increased（增加的）：压力大则感冒风险升高是医学常识，increased risk 让 protect...from 的保护有对象、有必要；A minimized（最小化的）与保护逻辑矛盾——风险已最小则无需保护；B highlighted（突出的）不表风险程度；C controlled（受控的）同样削弱保护的必要性。",
+   "keyword": "increased risk 升高的风险；protect...from... 保护…免受…；under stress 处于压力之下；be associated with 与…相关。",
+   "note": "protect from 的宾语必须是「值得防的坏事」：空格词要说明该人群风险比常人更高，increased 才让保护有意义；A、C 的「低风险」与「保护」自相矛盾，用「保护是否必要」反推形容词方向是本题捷径。"
+  }
+ ]
+}

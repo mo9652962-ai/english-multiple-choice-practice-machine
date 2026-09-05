@@ -1,0 +1,180 @@
+{
+ "chunk": 35,
+ "items": [
+  {
+   "question_id": 851,
+   "long_sentence": "主干是 It is financially terrifying and psychologically embarrassing；It 指代前句动名词短语 Losing a job；with a song in your heart 为介词短语作伴随状语，delighted at the prospect of... 为形容词短语作状语。译：失业令人痛苦：你不会心怀欢歌、为能从慷慨国家那里获得收入而蹦蹦跳跳地走向就业服务中心。",
+   "option": "正确项 A uneasy（不安的）是对原文 terrifying（经济上吓人）与 embarrassing（心理上难堪）的概括；B insulted（受辱）无中生有，尴尬不等于被羞辱；C enraged（愤怒）无中生有，全文未写失业者发怒；D guilty（内疚）无中生有，段落没有自责语境。",
+   "keyword": "uneasy 不安的、心神不宁的；terrifying 令人恐惧的；embarrassing 令人难堪的；skip down with a song in your heart 心情轻快地前往。",
+   "note": "情绪判断题：第 3 段连续出现 hurting、terrifying、embarrassing、not wanted、excluded 等负面词，先锁定消极方向；再选概括最准的——uneasy 涵盖 frightened 加 embarrassed 两面，insulted、enraged、guilty 都比原文语气重且无文本支撑，属过度拔高。"
+  },
+  {
+   "question_id": 852,
+   "long_sentence": "定位句主干 The principle of British welfare is no longer that you can insure yourself...and receive unconditional payments；that 引导表语从句，no longer 表明旧原则被抛弃；后句 conditional on actively seeking a job 中 conditional on 意为「以…为条件」。译：英国福利制度的原则已不再是：你可以为自己投保失业风险，并在灾难发生时获得无条件支付。",
+   "option": "正确项 A「失业救济不应附加条件」来自 no longer...unconditional payments 加 conditional on actively seeking a job 的反向推论，作者批评福利「有条件化」；B 是 Osborne 一方的说辞，作者用引号加反讽（indulge your falsehood）否定它，属张冠李戴；C 与 £71.70 a week, one of the least generous in the EU 相反；D 是改革宣称的目标，作者以 20 years of ever-tougher reforms...never happened 表怀疑。",
+   "keyword": "unconditional 无条件的；conditional on 以…为条件；entitlement 应得权益；insure...against 投保以防…。",
+   "note": "作者态度题：抓第 4 段反讽标志 Osborneland、indulge your falsehood、no entitlement and no insurance——作者立场是救济本属缴过国民保险的 earned entitlement，如今被改成有条件补贴；「作者最可能同意」的选项若与被批评论者观点相同，即为张冠李戴陷阱。"
+  },
+  {
+   "question_id": 853,
+   "long_sentence": "定位句 The best lawyers made skyscrapers-full of money, tempting ever more students to pile into law schools；skyscrapers-full of money 是夸张表达「钱多到堆满摩天楼」；现在分词短语 tempting...to... 作结果状语；pile into 意为「蜂拥进入」。译：最顶级的律师赚得盆满钵满，吸引越来越多的学生挤进法学院。",
+   "option": "正确项 D「经济回报的吸引」＝made skyscrapers-full of money 对学生的吸引，take up law...due to≈tempting...to pile into；A「客户需求增长」无中生有，原文未把 clients 与需求挂钩；B「通胀压力增大」偷换概念，spending grew twice as fast as inflation 描述的是法律服务开销，不是通胀逼人学法；C「进大所的前景」正反混淆，转折句 But most law graduates never get a big-firm job 已否定。",
+   "keyword": "tempt 吸引、诱惑；pile into 蜂拥进入；skyscrapers-full of money 天价收入（夸张）；big-firm job 大律所职位。",
+   "note": "因果细节题：题干 due to 对应原文 tempting；C 项迷惑性最强，但原文紧接 But 否定了大所前景——转折词后的信息常是排除强干扰项的钥匙；B 拿原文 inflation 一词做偷换，见到原词照搬的选项要回查它修饰的对象。"
+  },
+  {
+   "question_id": 854,
+   "long_sentence": "定位句 There is just one path for a lawyer in most American states: a four-year undergraduate degree in some unrelated subject, then a three-year law degree...；冒号后为同位语，展开解释 path；on top of undergraduate debts 意为「在本科学贷之外再叠加」。译：在美国大多数州，当律师只有一条路径：先读一个不相干专业的四年本科，再在美律协认证的 200 所法学院之一读三年法律学位，然后是昂贵的律考备考。",
+   "option": "正确项 D「读另一个专业的学士学位」＝a four-year undergraduate degree in some unrelated subject，多出的四年本科正是法律教育成本高的原因；A「本科学费更高」无中生有，原文未比较学费；B「行业协会提供的培训」偷换概念，法学院只是被 ABA authorized（认证），培训仍由法学院完成；C「律协的录取审批」偷换概念，bar exam 是执业资格考试而非录取审批。",
+   "keyword": "undergraduate degree 学士学位；unrelated subject 不相干专业；bar exam 律师资格考试；on top of 在…之外还有。",
+   "note": "本题考「路径长＝成本高」的隐含逻辑，unrelated subject 是题眼；B、C 都借原文机构名词 ABA 与 bar 做文章，属偷换概念，把原文动词（authorized、sit for）与选项动词一一核对即可排除；注意题干限定 most American states，呼应 There is just one path。"
+  },
+  {
+   "question_id": 855,
+   "long_sentence": "定位句 Sensible ideas have been around for a long time, but the state-level bodies that govern the profession have been too conservative to implement them；but 表转折；that govern the profession 为定语从句修饰 bodies；too...to... 结构表「太…而不能…」。译：合理的想法早已存在，但管理这一行业的州级机构太过保守，未能将其付诸实施。",
+   "option": "正确项 A「僵化的行业管理机构」＝the state-level bodies...too conservative，rigid≈conservative、governing the profession≈bodies that govern the profession；B「律师和客户的强烈抵抗」正反混淆，原文说改革 would help both lawyers and their customers；C「严格的律考」张冠李戴，作者反而主张早考（sit for the bar earlier）；D「非专业人士的尖锐批评」无中生有，non-lawyers 是被禁持股一方，未批评改革。",
+   "keyword": "conservative 保守的＝rigid 僵化的；implement 实施＝carry out；originate from 源于；be around 存在、已有。",
+   "note": "hindrance 与 reform 是定位词，but 之后的主语 bodies 即改革阻力所在；too conservative to implement 与 A 项 rigid 构成同义替换；C 项含原文原词 stern，但它是被作者建议「提前考」的对象而非阻力——含原词的选项必须核对句中角色。"
+  },
+  {
+   "question_id": 856,
+   "long_sentence": "定位句 Except in the District of Columbia, non-lawyers may not own any share of a law firm；Except 引出例外地点；may not own 表禁止；主干即 non-lawyers may not own any share。译：除哥伦比亚特区外，非律师不得拥有律所的任何股份。",
+   "option": "正确项 B「禁止外来者介入该行业」＝non-lawyers may not own any share of a law firm，outsiders≈non-lawyers、bans involvement≈may not own；A「阻止律师获得应得利润」正反混淆，原文说 This keeps fees high，收费反而高；C「加剧行业道德困境」张冠李戴，ethical 说法是反对改革者的辩词；D「不让律师持股」偷换概念，被禁止持股的是 non-lawyers 而非律师。",
+   "keyword": "guild 行会；restrictive 限制性的；non-lawyers 非律师＝outsiders 外来者；own shares 持有股份。",
+   "note": "题干引号 restrictive 提示回原文找其释义依据；主语判断是命门——原文禁止的是 non-lawyers 持股，D 项故意把主语换成 lawyers，属偷换主语陷阱；题干 partly because 说明只取一个原因，答案就在紧随其后的 This keeps fees high and innovation slow 之前一句。"
+  },
+  {
+   "question_id": 857,
+   "long_sentence": "定位句 Reforming the system would help both lawyers and their customers；would help 表建议性推断；both...and 并列受益双方。译：改革这一制度将对律师和客户双方都有好处。",
+   "option": "正确项 B「美国法律行业的一个问题及其解决办法」——问题：第 3 段法律教育成本高、第 5 段行会式所有权限制；办法：第 4 段本科读法、提前考律考，第 6 段允许非律师持股；A「成功律师的要素」以偏概全，首段只为引出行业问题；C「本科教育在法学教育中的作用」以偏概全，只是建议之一；D「律所所有权缺陷及其成因」以偏概全，只覆盖问题的一半且漏掉 solutions。",
+   "keyword": "mainly discuss 主旨；legal profession 法律行业；reform 改革；ownership structure 所有权结构。",
+   "note": "主旨题用结构法：2 至 4 段讲 costs 高的两大成因，4 与 6 段开出三剂药方，问题加对策齐全才选 B；只覆盖个别段落的选项都是「以偏概全」，D 项还故意只保留「问题」丢掉「对策」，是最常见的主旨题半截选项。"
+  },
+  {
+   "question_id": 858,
+   "long_sentence": "定位句 The US$3-million Fundamental Physics Prize is indeed an interesting experiment...a string of lucrative awards for researchers have joined the Nobel Prizes in recent years；as 引导方式状语（正如获奖者所说）；a string of 意为「一连串」；主语核心为 a string of lucrative awards。译：300 万美元的基础物理学奖确实是一场有趣的实验，正如波利亚科夫 3 月领奖时所说；而且它远非同类奖项中的唯一一个。",
+   "option": "正确项 B「给研究者的丰厚奖励」＝lucrative awards for researchers，handsome≈lucrative、reward≈awards；A「企业家财富的象征」偷换概念，原文说资金来自企业家的巨额账户，但奖项本身是奖励科学家；C「诺贝尔奖的可能替代品」无中生有，joined the Nobel Prizes 是「加入其行列」而非取代；D「银行家投资的例子」张冠李戴，出资方是 Internet entrepreneurs（互联网企业家）。",
+   "keyword": "lucrative 获利丰厚的＝handsome；award 奖项＝reward 奖赏；a string of 一连串；benefactor 捐助者。",
+   "note": "seen as 提示找文中对该奖的定性描述，lucrative 是解题核心词（钱多、丰厚）；D 项的张冠李戴只差一个名词（bankers 对 Internet entrepreneurs），专有名词主体务必逐一核对；首段整体是中性偏褒的介绍，态度词在后文才出现。"
+  },
+  {
+   "question_id": 859,
+   "long_sentence": "定位句 The new awards are an exercise in self-promotion for those behind them；an exercise in 意为「……的体现、演练」；those behind them 指奖项背后的设立者；self-promotion 自我推销。译：批评者说，新奖项对幕后设立者而言不过是一场自我推销。",
+   "option": "正确项 C「新奖项的创始人」＝those behind them，benefit most≈self-promotion 的受益者是设奖者自身；A「逐利的科学家」无中生有；B「基于成就的体系」正反混淆，原文说新奖 could distort the achievement-based system（扭曲该体系）；D「同行评审主导的研究」正反混淆，原文明说 They do not fund peer-reviewed research。",
+   "keyword": "self-promotion 自我推销；those behind them 幕后者；distort 扭曲；cement the status quo 固化现状。",
+   "note": "critics 的观点集中在第 2 段，一连串 They could... 否定句式全在数落新奖；题干 benefit most 要往「谁获利」想——self-promotion 的受益人正是设奖者；B、D 都是原文原词但方向被反转，属正反混淆，核对 distort 与 do not fund 的否定语气即可。"
+  },
+  {
+   "question_id": 860,
+   "long_sentence": "定位句 the Nobel Foundation's limit of three recipients per prize...has long been outgrown by the collaborative nature of modern research；as 引导非限制性定语从句指代整个主句；outgrown 意为「被超越、不再适用」。译：诺奖每项限三位得主且须在世的规则，早已被现代研究的协作性质所超越——希格斯玻色子发现归属之争即是明证。",
+   "option": "正确项 C「现代研究者的共同努力」＝the collaborative nature of modern research，joint effort≈collaborative nature；A「对新奖项的合理担忧」张冠李戴，Higgs 玻色子例子针对的是诺贝尔奖旧规则；B「关于得主身份的争议」以偏概全，row over who is ignored 只是表象，本质是多人协作与限奖三人的冲突；D「研究发现的演示」偷换概念，demonstrate 此处意为「证明」而非「演示」。",
+   "keyword": "collaborative 协作的＝joint effort 共同努力；outgrow 超出、不再适用；recipient 得主；row 争执、争吵。",
+   "note": "典型案例题：as will be demonstrated by 指明例子服务于前句结论，答案要往前句找——「限三人 对 协作性」的矛盾即考点；demonstrate 的一词多义（演示、证明）正是 D 项陷阱来源，考研阅读常拿熟词僻义设障。"
+  },
+  {
+   "question_id": 861,
+   "long_sentence": "定位句 The Nobels were, of course, themselves set up by a very rich individual who had decided what he wanted to do with his own money. Time, rather than intention, has given them legitimacy；who 引导定语从句；what 引导宾语从句；rather than 表「是…而非…」。译：诺贝尔奖本身当然也是由一位富人设立的，他决定用自己的钱去做什么。赋予其正当性的，是时间而非初衷。",
+   "option": "正确项 B「它们的长存证明了其价值」＝Time...has given them legitimacy，endurance（长久存续）≈Time、has done justice to（证明…合理）≈has given legitimacy；A「历史从未质疑过它们」无中生有，文中反而预言会有 row（争执）；C「最具代表性的荣誉」无中生有，unrepresentative 说的是 Breakthrough Prize 的评选视野；D「其合法性长期受争议」正反混淆，原文结论是时间已赋予合法性。",
+   "keyword": "legitimacy 正当性、合法性；endurance 持久、长存；do justice to 公正对待、证明…名实相符；rather than 而非。",
+   "note": "第 4 段结构：先说新奖 Breakthrough Prize 的 unrepresentative，再转 Nobels「同样由富人设奖，但时间赋予正当性」；Time 是关键词，B 项 endurance 是其名词化改写；D 项拿 row over who is ignored 的局部细节反推全文结论，属正反混淆。"
+  },
+  {
+   "question_id": 862,
+   "long_sentence": "定位句 It is fair to criticize and question the mechanism – that is the culture of research, after all – but it is the prize-givers' money to do with as they please.；but 表转折；破折号内为插入语；to do with as they please 意为「随其意愿处置」。译：批评质疑这种机制无可厚非——毕竟这就是研究文化——但这钱是设奖者的，如何处置随他们高兴；以感激与大度接受馈赠才是明智的。",
+   "option": "正确项 D「虽有批评仍可接受」来自末段 two things seem clear（多数研究者愿意受奖、钱流向科学是好事）加 but it is the prize-givers' money；A「不值得公众关注」无中生有；B「易受不良变化」张冠李戴，could distort 是批评者的观点而非作者的；C「有害于研究文化」正反混淆，作者说批评与质疑本身就是 the culture of research。",
+   "keyword": "gratitude 感激；grace 大度、得体；criticize 批评、质疑；mechanism 机制；take such gifts with gratitude and grace 以感激与大度接受馈赠。",
+   "note": "作者态度题看末段：前文大篇幅转述批评，但 two things seem clear 与 It is wise to take such gifts with gratitude and grace 表明立场是「有保留的接纳」；把「批评者观点」安到作者头上是态度题高频陷阱，务必区分引述与作者自己的判断。"
+  },
+  {
+   "question_id": 863,
+   "long_sentence": "定位句 Regrettably, however, the report's failure to address the true nature of the crisis facing liberal education may cause more harm than good；Regrettably 为评注性状语；however 表转折；failure to address 意为「未能处理」；more harm than good 用比较级表「弊大于利」。译：然而令人遗憾的是，该报告未能触及博雅教育所面临危机的实质，可能弊大于利。",
+   "option": "正确项 A Critical（批评的）：第 1 段先给 deserves praise（值得赞扬），随即用 Regrettably, however 反转，落点在 may cause more harm than good；B Appreciative（赞赏的）以偏概全，只对应前半句；C Contemptuous（蔑视的）程度过重，作者是理性批评而非鄙夷；D Tolerant（容忍的）无中生有。",
+   "keyword": "regrettably 令人遗憾的是；address 处理、应对；more harm than good 弊大于利；deserve praise 值得赞扬。",
+   "note": "态度题抓转折链：praise 之后紧跟 Regrettably, however，重心必在转折后；C 项考感情色彩分级——critical（有理有据的批评）与 contemptuous（居高临下的蔑视）强度不同，考研态度题优先选与原文语气匹配的中度负面词。"
+  },
+  {
+   "question_id": 864,
+   "long_sentence": "定位句主干为 sent letters to the AAAS asking that it identify actions...to maintain national excellence；asking that 后接虚拟语气；to maintain... 为目的状语；excellence 意为「卓越」。译：2010 年，国会两党领军人物致信美国艺术与科学院，要求其确定各级政府、大学、基金会、教育者与捐助者可采取哪些行动，以保持国家在人文与社会科学上的卓越地位。",
+   "option": "正确项 D「保持博雅教育的领先地位」＝maintain national excellence in humanities and social scientific scholarship and education，keep≈maintain、a leading position≈excellence；A「界定政府在教育中的角色」偷换概念，federal, state and local governments 只是行动主体清单；B「保障个人受教育权」无中生有；C「留住人们对博雅教育的兴趣」偷换概念，要维持的是 scholarship and education 的卓越而非兴趣。",
+   "keyword": "maintain 保持＝keep；excellence 卓越＝leading position 领先地位；congressional 国会的；identify actions 确定行动。",
+   "note": "目的状语是答案：asking that it identify actions...to maintain... 的 to maintain 之后与 D 项一一对应；maintain→keep、excellence→leading position 是标准同义替换；A 项罗列原文政府字眼却改变句法角色，属偷换概念，见到原词堆砌要回查原文功能。"
+  },
+  {
+   "question_id": 865,
+   "long_sentence": "定位句 the report calls for increased investment in research...and encourages the use of new digital technologies；calls for 意为「呼吁、提倡」；curricula 为 curriculum 的复数，coherent 意为「连贯的」。译：为鼓励创新与竞争，报告呼吁加大科研投入、制定连贯课程以提升学生解决问题与沟通的能力，并鼓励学者以所学应对当代重大挑战。",
+   "option": "正确项 C「新兴技术的应用」＝encourages the use of new digital technologies，application≈use、emerging≈new；A「只学美国史」绝对化，原文 particularly American history 是强调重点而非排他；B「更重视理论学科」无中生有；D「外语研究的资助」张冠李戴，原文对外语只说 advocates greater study（提倡多学），未提 funding。",
+   "keyword": "call for 呼吁、提倡；digital technologies 数字技术＝emerging technologies 新兴技术；curricula 课程（curriculum 的复数）；advocate 提倡、主张。",
+   "note": "细节题要给动词配平：原文对 technologies 用 encourages the use，对 foreign languages 用 advocates greater study，D 项把 funding 挪到外语头上，属动词张冠李戴；A 项的 exclusive 与 particularly 的差别是范围扩大，绝对化词汇（only、exclusive、all）出现即需回原文核对。"
+  },
+  {
+   "question_id": 866,
+   "long_sentence": "定位句 professors treat the progressive interpretation of history as the proper subject of study while portraying conservative or classical liberal ideas as falling outside legitimate intellectual investigation；while 连接对比；portray...as 意为「把…描绘成」；routinely 意为「惯常地」。译：教授们惯于把进步主义的历史阐释当作正当研究对象，却把古典自由主义思想描绘成超出正当学术探究边界的东西。",
+   "option": "正确项 C「对古典自由主义思想存有偏见」＝portraying conservative or classical liberal ideas as falling outside...legitimate intellectual investigation，biased against≈portray...as outside legitimate boundaries；A「支持自由市场」正反混淆，自由市场恰是被边缘化的思想；B「对公共政策保守」张冠李戴，progressive public policy 是教授们推崇的对象；D「对学术研究谨慎」偷换概念，原文说的是把某些思想排除在正当研究之外。",
+   "keyword": "portray...as 把…描绘成；biased 有偏见的；legitimate 正当的；falling outside the boundaries 超出边界。",
+   "note": "imply 推断题：第 5 段 while 前后是厚此薄彼结构——treat...as proper 对 portray...as outside legitimate，作者不动声色的对比暗示教授立场偏颇；A 项故意把「被排斥的思想」说成教授支持的观点，属正反混淆，先理清 while 两端各自的归属。"
+  },
+  {
+   "question_id": 867,
+   "long_sentence": "定位句 Unfortunately, despite 21/2 years in the making, 'The Heart of the Matter' never gets to the heart of the matter: the illiberal nature of liberal education at our leading colleges and universities；never gets to the heart of the matter 与报告名构成双关；冒号后为核心信息。译：遗憾的是，历时两年半打造的《事之核心》报告，从未触及真正的事之核心：美国顶尖高校博雅教育的「不博雅」本质。",
+   "option": "正确项 B「不博雅的教育与〈事之核心〉」＝报告名加文章核心批评点 illiberal nature of liberal education，覆盖全文；A「如何把握报告精髓」答非所问，文章不是报告导读；C「AAAS 对博雅教育的贡献」正反混淆，作者认为报告 may well set back reform（阻碍改革）；D「进步主义政策 对 博雅教育」以偏概全，只是第 5 段的细节。",
+   "keyword": "title 标题题；illiberal 不博雅的（il- 否定前缀）；get to the heart of the matter 触及问题核心；set back 阻碍、使倒退。",
+   "note": "标题题三查：查核心词（第 4 段冒号后 illiberal nature 点题）、查感情方向（批评报告未及要害）、查覆盖面（B 同时含报告名与作者观点）；C 项与末段 set back reform 直接矛盾，标题必须与作者立场一致，先排除立场相悖项。"
+  },
+  {
+   "question_id": 868,
+   "long_sentence": "拆 C 段首句 How do archaeologists know where to find what they are looking for when there is nothing visible on the surface of the ground?；where to find 为「疑问词+不定式」结构；what they are looking for 为宾语从句；when 引导时间状语从句。译：当地表上看不到任何痕迹时，考古学家如何知道该去哪里寻找他们要找的东西？",
+   "option": "答案 C 段：A 段（固定首段）末尾举 Olduvai Gorge（蝴蝶猎人坠谷偶然发现）与 Aztec 文物（修地铁时出土）两个偶然案例，C 段以设问 How do archaeologists know where to find... 承接「多数遗址并非肉眼可见」的话头，并首次抛出 survey and sample（勘查与取样）这对主题词，为后文分述张本。与 F 段区分：F 首句 however 表转折，需要紧邻的对比对象，且 F 是搜寻案例段，不宜作总起。",
+   "keyword": "survey 勘查、测绘；sample 取样（make test excavations 试掘）；visible 可见的；excavation 发掘。",
+   "note": "排序题先通读各段首句抓信号：设问句常承担承上启下功能；C 段的 surveys and test samples 是全文主题词，E（Aerial surveys）、G（Ground surveys）、D（Surveys can cover...）均为其分述——总起段必在分述段之前，这一结构决定了 41 空选 C。"
+  },
+  {
+   "question_id": 869,
+   "long_sentence": "拆 F 段首句 Most archaeological sites, however, are discovered by archaeologists who have set out to look for them；however 表转折；who have set out to look for them 为定语从句修饰 archaeologists；set out to do 意为「着手去做」。译：然而，大多数遗址是考古学家主动出发寻找而发现的。",
+   "option": "答案 F 段：F 的 however 与 A 段 many others have been discovered by accident（Olduvai Gorge、Aztec artifacts 两例）构成「偶然发现 对 主动搜寻」的对照；C 段设问引出寻找话题后，F 以 Such searches can take years 展开，举 Carter 耗七年找到图坦卡蒙墓、Evans 梳遍古董店寻得克诺索斯宫两例。与 G 段区分：G 开门即是 Ground surveys 的方法细节，缺转折衔接，不能紧接 C 段。",
+   "keyword": "set out to do 着手做；sift through rubble 在瓦砾中翻检；comb 彻底搜查；come to light 重见天日。",
+   "note": "however 类转折词是排序题路标：先找它对照的前文（accident 语义所在段）；再看时间锚点——F 段的 1922、1900 与 E 段首句 archaeologists today 的 today 形成古今对照，可断定 F 在 E 之前。"
+  },
+  {
+   "question_id": 870,
+   "long_sentence": "拆 G 段首句 Ground surveys allow archaeologists to pinpoint the places where digs will be successful；allow sb to do sth 使某人能做某事；pinpoint 意为「精确定位」；where 引导定语从句修饰 places。译：地面勘查使考古学家能够精确锁定发掘将会有收获的地点。",
+   "option": "答案 G 段：固定段 E 末句 Aerial surveys locate general areas of interest or larger buried features——空中勘查定出「大致区域」，G 段 Ground surveys...pinpoint 接讲地面勘查「精确定位」，general 与 pinpoint 一粗一细，衔接最紧；E 首句 systematic survey methods 为总提，G 分述其一。与 D 段区分：D 首句 Surveys can cover a single large settlement or entire landscapes 是范围扩展，宜置于 G 之后。",
+   "keyword": "pinpoint 精确定位；aerial 与 ground surveys 空中与地面勘查；surface clues 地表线索；fragments of pottery 陶器碎片。",
+   "note": "词汇呼应链是排序题命脉：aerial 对 ground 是分类分述关系，locate general areas 对 pinpoint 是粗细对照，这是 43 空选 G 的最强证据；做题时圈出每段首句的勘查类型词，按「总起—空中—地面—覆盖范围」的顺序连线即可。"
+  },
+  {
+   "question_id": 871,
+   "long_sentence": "拆 D 段首句 Surveys can cover a single large settlement or entire landscapes；主干为主谓宾加 or 并列宾语；cover 意为「覆盖、涉及」。译：勘查既可以覆盖单个大型聚落，也可以覆盖整片地貌区域。",
+   "option": "答案 D 段：G 段讲地面勘查的具体操作（walking、looking for surface clues、digging to test），D 段首句把勘查对象从「点位」扩展到 single large settlement or entire landscapes，属自然推进；D 段 Copán 案例使用 aerial photographs and by making surveys on foot，恰好综合了 E 段的空中手段与 G 段的步行地面勘查。与 B 段区分：B 首句 In another case 必须跟随一个 In one case，故 B 应排在 D 之后。",
+   "keyword": "settlement 聚落；landscape 地貌、景观；density 密度；dramatically 显著地；aerial photographs 航拍照片。",
+   "note": "in one case 与 in another case 是排序题的黄金词对：先圈出 D 的 In one case 与 B 的 In another case，两者先后立判；再用案例细节验证——Copán 一段同时出现 aerial photographs 与 surveys on foot，正好承上启下，进一步坐实 D 的位置。"
+  },
+  {
+   "question_id": 872,
+   "long_sentence": "拆 B 段首句 In another case, American archaeologists René Million and George Cowgill spent years systematically mapping the entire city of Teotihuacán；In another case 为承接性状语；spend time doing sth 花时间做某事；mapping 为动名词。译：另一例中，美国考古学家米利翁与考吉尔花费数年系统测绘特奥蒂瓦坎全城。",
+   "option": "答案 B 段：B 首句 In another case 与 D 段 In one case 构成例证并列；两段同写聚落测绘——D 段 Copán 的 settlement maps，B 段 Teotihuacán 全城地图（mapped not only the city's vast and ornate ceremonial areas, but also hundreds of simpler apartment complexes），主题词 map 复现；B 置于 D 后收束主体，全文顺序为 A-C-F-E-G-D-B。",
+   "keyword": "systematically 系统地；map 作动词「测绘」（熟词僻义）；ceremonial areas 礼仪祭祀区；apartment complexes 公寓建筑群。",
+   "note": "见到 In another case 必回头找 In one case 所在段（D）；两案例的共性是 map 词汇复现与 spent years / working around 的长期工作表述；按「现象设问—搜寻案例—方法总起—地面勘查—覆盖范围—两案例」的漏斗结构复核，可一次锁定全篇顺序。"
+  },
+  {
+   "question_id": 873,
+   "long_sentence": "拆 That is what a study, published from the University of California and Yale University in the Proceedings of the National Academy of Sciences, has concluded；That is 后接表语从句；what 在从句中作 concluded 的宾语；published from... 为过去分词短语作后置定语修饰 a study。译：这就是加州大学与耶鲁大学发表在《美国国家科学院院刊》上的一项研究 __（所得出）的结论。",
+   "option": "正确项 D what：从句中及物动词 has concluded 缺宾语，需要既起连接作用又在从句中充当成分的 what（＝the thing that）；A when、B why、C how 只能作状语，无法补足宾语空缺；前句 sharing about 1% of genes（朋友共享约 1% 基因）正是「所结论的内容」，与 what 的指代功能闭环。",
+   "keyword": "what 引导名词性从句并在从句中作主语或宾语；conclude 得出结论；publish 发表；Proceedings 学报、会议录。",
+   "note": "完形语法题三步：判定从句类型（That is 后为表语从句）→ 查从句缺何种成分（conclude 缺宾语）→ 缺主语或宾语选 what，缺状语才考虑 when、why、how；中间的长插入语可先跳读，抓住 concluded 的及物性即可秒解。"
+  },
+  {
+   "question_id": 874,
+   "long_sentence": "拆 That is what a study, published from the University of California and Yale University in the Proceedings of the National Academy of Sciences, has concluded；主干为 a study has concluded；现在完成时 has concluded 表「已经得出」；插入语交代研究发表信息。译：这就是由加州大学与耶鲁大学团队发表在《美国国家科学院院刊》上的那项研究已经 __（得出）的结论。",
+   "option": "正确项 B concluded（得出结论）：主语 a study 是研究论文，与「研究」搭配的谓语自然是「得出结论」，且前文 1% of genes 的发现内容正是结论本体；A defended（为…辩护）多接观点立场，D advised（建议）通常以人为主语提出，C withdrawn（撤回）指向撤稿或撤诉，三项都与「研究产出成果」的语境不搭。",
+   "keyword": "conclude v. 得出结论＝draw a conclusion；withdraw 撤回；defend 为…辩护；advise 建议。",
+   "note": "名词决定动词：主语 a study 加后文围绕研究发现的展开（What's not to like 等都在讨论结论），锁定 conclude；conduct 与 conclude a study 是高频学术搭配；C 项借「学术撤稿」联想设障，原文无任何撤回迹象，勿被负面联想带偏。"
+  },
+  {
+   "question_id": 875,
+   "long_sentence": "拆 The study is a genome-wide analysis conducted 3 ______ 1,932 unique subjects which 4 ______ pairs of unrelated friends and unrelated strangers；主干 The study is a genome-wide analysis；conducted... 为过去分词短语作后置定语；which 引导定语从句修饰 analysis；genome-wide 意为「全基因组的」。译：这项研究是一项 __（针对）1,932 名独特受试者开展、并 __ 了「无亲缘朋友对」与「无亲缘陌生人对」的全基因组分析。",
+   "option": "正确项 C on：conduct an analysis on...（对…开展分析）为固定搭配，1,932 unique subjects 是分析对象；A for 表受益对象（为谁而做），D by 表施动者（其后应接研究者），B with 表工具或伴随，三者都无法表达「以…为对象」。",
+   "keyword": "conduct an analysis on 对…进行分析；subject 受试者、研究对象；genome-wide 全基因组的；unrelated strangers 无亲缘关系的陌生人。",
+   "note": "介词题走搭配与语义双线：语法上 conducted 的逻辑宾语是 analysis，on 引出对象；语义上 subjects（受试者）配数量词 1,932，锁定「对象」义；D by 干扰性最强，但 by 后应出现研究者或机构，回查宾语身份即可排除。"
+  }
+ ]
+}

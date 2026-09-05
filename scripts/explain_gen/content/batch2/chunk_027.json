@@ -1,0 +1,180 @@
+{
+ "chunk": 27,
+ "items": [
+  {
+   "question_id": 651,
+   "long_sentence": "定位句 The idea arose because of the __ behavior of the women in the plant：The idea arose because of... 表因果（idea 指上文的霍桑效应）；the ___ behavior 中空格为 behavior 的定语；of the women in the plant 为行为主体的属格修饰。译：这一概念的产生，源于厂里女工们令人费解的行为。",
+   "option": "正确 B perplexing（令人费解的）：下文即给出费解的证据——灯光调亮产出上升、调暗也上升，产出与照明无关，这种反常行为唯有「费解」能概括；A controversial（有争议的）偏「引发争论」，此处行为只是奇怪并未引起争论；C mischievous（淘气的、恶作剧的）拟人化贬义，不合语境；D ambiguous（模棱两可的）指表意不明，不指行为反常。",
+   "keyword": "perplexing 令人费解的＝puzzling；arise because of 由……引起；ambiguous 模棱两可的（辨析）；mischievous 淘气的（辨析）。",
+   "note": "形容词题先找「下文证据」：rise when increased, but also when dimmed 的反常现象决定选「费解」；perplexing 与 puzzling 同义，考研完形常用「证据反推形容词」，读完空后两行再回填。"
+  },
+  {
+   "question_id": 652,
+   "long_sentence": "定位句 According to __ of the experiments, their hourly output rose when lighting was increased, but also when it was dimmed：According to ___ of the experiments 介词短语作依据状语；主干 their hourly output rose；when increased 与 when dimmed 为省略式时间状语对比。译：根据对实验的记述，灯光调亮时她们的时产量上升，调暗时也上升。",
+   "option": "正确 C accounts：account 作名词「记述、报道」是熟词僻义——according to accounts of the experiments「根据实验的记述」，产出数据正来自实验记述；A requirements（要求）「根据实验的要求产出上升」逻辑不通；B explanations（解释）是事后的解释性产物，时序上晚于数据；D assessments（评估）同样是加工后的结论，不作为原始数据来源。",
+   "keyword": "account 记述、报道（熟词僻义）；according to 根据；hourly output 时产量；assessment 评估（辨析）。",
+   "note": "account 的「账户→记述」僻义是考研高频考点；本空的逻辑锚是时序：产出数据是最原始的事实记录，requirements、explanations、assessments 都是「加工后」的产物，唯 accounts 能先于数据存在。"
+  },
+  {
+   "question_id": 653,
+   "long_sentence": "定位句 It did not __ what was done in the experiment; __ something was changed, productivity rose：It did not ___ what 从句中 it 为形式主语，what 从句为真正主语；分号后为对前句的重述。译：实验中做了什么并不重要；只要有所改变，生产率就会上升。",
+   "option": "正确 B matter：It does not matter 加 wh 从句「……无关紧要」为固定句式，与分号后「只要变了就涨」的总结完全一致——关键在「变」而非「变什么」；A conclude（下结论）主语应为人或研究，It did not conclude what 不成句；C indicate（表明）「不能表明做了什么」语义纠缠；D work（起作用）不接 what 从句作形式主语的结构。",
+   "keyword": "It does not matter 无关紧要；what was done 所做的事；matter（动词）要紧＝be important；indicate 表明（辨析）。",
+   "note": "形式主语句 It did not ___ what... 的空格锁定不及物动词，matter 是唯一自然选项；分号后的重述句是本空的语义验证——读完分号句再回填，方向更稳。"
+  },
+  {
+   "question_id": 654,
+   "long_sentence": "定位句 It did not matter what was done in the experiment; __ something was changed, productivity rose：分号连接两个分句；空格引导条件状语从句 something was changed，productivity rose 为主句。译：无论做什么无关紧要；只要有所改变，生产率就会上升。",
+   "option": "正确 D so long as：so long as「只要」表唯一必要条件——「变」本身就足够，与上句 It did not matter what was done 的「不问内容、只问变化」严丝合缝；A as far as 表「就……而言、远至」，无条件义；B for fear that「唯恐、以免」表消极目的；C in case that「以防」表预防——三者逻辑均与「充分条件」不符。",
+   "keyword": "so long as 只要＝as long as、provided that；for fear that 唯恐；in case 以防；as far as 就……而言。",
+   "note": "连接词题先判逻辑关系：分号前后是「不问内容→只问变化」的等价重述，空格须引出充分条件；「只要」类连词是唯一方向，as far as 的「范围」义是常见误选。"
+  },
+  {
+   "question_id": 655,
+   "long_sentence": "定位句 A(n) __ that they were being experimented upon seemed to be __ to alter workers' behavior __ itself：A(n) ___ that... 作主语（that 引导同位语从句说明内容）；seemed to be ___ to alter... 为系表结构；being experimented upon 为被动进行式。译：仅仅意识到「自己正被实验」，似乎就足以改变工人的行为。",
+   "option": "正确 A awareness：awareness that...「意识到……」——「被实验」是正在发生的事实，工人知道了这件事、行为随之改变，这正是霍桑效应的核心表述；B expectation（期待）指对未来的预期，与 being experimented upon 的进行时态不合；C sentiment（情绪、感想）与 that 从句陈述的客观事实不搭；D illusion（幻觉）——她们确实被实验，并非错觉。",
+   "keyword": "awareness that 意识到；be experimented upon 被做实验；illusion 幻觉（辨析）；alter 改变。",
+   "note": "同位语从句内容「她们正被实验」是真实发生的事——排除 illusion 就靠这一事实核查；awareness 接 that 从句表「知道某事」，是意识类名词中与客观事实搭配最准的一个。"
+  },
+  {
+   "question_id": 656,
+   "long_sentence": "定位句 A(n) awareness that they were being experimented upon seemed to be __ to alter workers' behavior __ itself：seemed to be ___ to alter... 为 be 加形容词加不定式的框架；alter workers' behavior 为不定式宾语结构。译：这种意识本身似乎就足以改变工人的行为。",
+   "option": "正确 C enough：be enough to do「足以做某事」为标准搭配——「仅仅意识到」这一微弱条件就「足够」改变行为，与句尾 by itself（单凭自身）呼应；A suitable（合适的）惯用结构是 suitable for，不接 to do 表程度；B excessive（过度的）程度方向与语境无涉；D abundant（丰富的）修饰数量，不与不定式构成程度关系。",
+   "keyword": "be enough to do 足以做某事；excessive 过度的；abundant 丰富的（辨析）；alter behavior 改变行为。",
+   "note": "be ___ to alter 的框架锁定「程度类」形容词；enough 的「充分性」正合「仅凭意识即生效」的极简因果——suitable、excessive、abundant 都无法与「改变行为」构成程度关系，逐一代入即可排除。"
+  },
+  {
+   "question_id": 657,
+   "long_sentence": "定位句 seemed to be enough to alter workers' behavior __ itself：空格与 itself 构成习语，修饰 alter workers' behavior 的方式状语。译：单凭这种意识本身就足以改变工人的行为。",
+   "option": "正确 D by：by itself「单凭自身、无需外力」为固定习语，强调「意识这一因素独立起效」，与「仅仅意识到就足以改变行为」的极简因果完美契合；A about 无 about itself 的习语；B for 的惯用形式是 for oneself（为自己），for itself 不表此义；C on 的习语是 on its own（独自），on itself 不成立。",
+   "keyword": "by itself 单凭自身＝on its own；in itself 就其本身而言（易混习语）；习语完整性；alter behavior 改变行为。",
+   "note": "习语题要整体记忆：by itself（凭自身）、in itself（就本身而言）、on its own（独自）、of itself（自行）——功能各不相同；本句强调「无需外因」，唯 by itself 合适。"
+  },
+  {
+   "question_id": 658,
+   "long_sentence": "定位句 After several decades, the same data were __ to econometric analysis：the same data were ___ to... 为被动语态；to econometric analysis 为介词短语；after several decades 为时间状语。译：几十年后，同一批数据被用于计量经济学分析。",
+   "option": "正确 C subjected：be subjected to「使经受、被施以（分析、处理）」为固定搭配，data were subjected to analysis 是研究语篇的标准表达；A compared 的被动惯用结构是 be compared with、to 表「与……比较」或「被比作」，「数据被比作分析」语义不通；B shown to 后接人表「出示给某人」；D conveyed（传达）的宾语应为人（convey sth to sb）。",
+   "keyword": "be subjected to 使经受、被施以；econometric analysis 计量经济学分析；be compared to 被比作（辨析）；decade 十年。",
+   "note": "be ___ to 加分析类名词的框架锁定「施以」义动词；subjected to 是学术英语高频组合；compared 的陷阱在 to 的通配感——用「数据与分析的动宾关系」（数据被施以分析）即可排除。"
+  },
+  {
+   "question_id": 659,
+   "long_sentence": "定位句 __ the descriptions on record, no systematic __ was found that levels of productivity were related to changes in lighting：空格介词短语作对照状语；no systematic ___ was found 为被动否定；that 从句为 evidence 的同位语从句；on record 意为「记录在案的」。译：与在案记录的描述相反，没有发现任何系统性证据表明生产率水平与照明变化相关。",
+   "option": "正确 A Contrary to：contrary to「与……相反」——当年的记述称产出随照明变化，几十年后的重新分析却找不到证据，新旧结论正相对立，这正是全文「另一个意外」的转折点；B Consistent with（与……一致）方向相反；C Parallel with（与……平行）无对照义；D Peculiar to「为……所特有」须接特有属性的主体，此处语义不通。",
+   "keyword": "contrary to 与……相反；on record 记录在案的；systematic evidence 系统性证据；consistent with 与……一致（反义辨析）。",
+   "note": "上下文的「结论反转」（当年：照明影响产出；如今：无证据）是选「相反」义的决定性线索；Contrary to 与 Consistent with 是一组方向相反的介词短语，先判后文结论与旧记述相容与否。"
+  },
+  {
+   "question_id": 660,
+   "long_sentence": "定位句 no systematic __ was found that levels of productivity were related to changes in lighting：no systematic ___ was found 为被动否定结构；that levels...lighting 为同位语从句，说明空格名词的具体内容；be related to 意为「与……相关」。译：没有发现系统性证据表明生产率水平与照明变化相关。",
+   "option": "正确 A evidence：evidence「证据」——no evidence was found that...「没有发现证据表明……」为研究语篇标准句式，systematic evidence（系统性证据）也是固定搭配；B guidance（指导）与 found 的内容不符；C implication（含义、暗示）——「暗示被找到」搭配生硬，且暗含之意无需发现；D source（来源）「来源被发现表明……」语义混乱。",
+   "keyword": "evidence 证据；systematic 系统性的；evidence was found that... 发现证据表明（同位语从句）；guidance、source（辨析）。",
+   "note": "同位语从句的内容是「一个待证命题」，能被「找到」并支撑该命题的只有 evidence；no evidence was found that 是阅读与完形双高频句式，值得整句积累。"
+  },
+  {
+   "question_id": 661,
+   "long_sentence": "定位句 It turns out that the peculiar way of conducting the experiments may have led to __ interpretations of what happened：It turns out that 表「结果证明」；主语 the peculiar way of conducting the experiments；may have led to 为情态动词加完成式表对过去的推测。译：事实证明，实验操作方式的古怪之处，可能导致了对所发生之事的误导性解读。",
+   "option": "正确 D misleading：misleading interpretations「误导性解读」——下文「周日调灯、周一产出自然回升」的细节正是对当年解读的颠覆，misleading 承接「旧结论错了」的走向；A disputable（有争议的）只表「可争」，未定正误方向；B enlightening（有启发的）褒义，与「推翻旧结论」相反；C reliable（可靠的）同样褒义，方向错误。",
+   "keyword": "misleading 误导性的；it turns out that 事实证明；peculiar 古怪的；interpretation 解读、解释。",
+   "note": "「褒贬色彩」是本题命脉：下文用周日调灯的巧合推翻霍桑效应，当年的解读必然是「错的」——misleading 与 enlightening、reliable 的褒贬对立即考点；may have led to 的推测语气与原文分寸一致。"
+  },
+  {
+   "question_id": 662,
+   "long_sentence": "定位句 It turns out that the peculiar way of conducting the experiments may have led to misleading interpretations. __, lighting was always changed on a Sunday：前句为概括判断；空格为句首衔接语；后句 lighting was always changed on a Sunday 为具体事实。译：例如，灯光总是在周日被调整。",
+   "option": "正确 B For example：前句提出「实验方式古怪导致误导」的概括，后句「灯光总在周日调整」正是「方式古怪」的第一个实例，For example 引出下文一组例证；A In contrast（相比之下）前后非对比关系；C In consequence（因此）「灯光在周日被调整」不是前句的结果而是其证据；D As usual（照常）与「总是周日」的规律表述冲突。",
+   "keyword": "for example 例如（举例信号）；conducting the experiments 实验操作；on a Sunday 在周日；in consequence 因此（辨析）。",
+   "note": "衔接词题先判「概括—具体」还是「因果—转折」：前句概括、后句实例，选 For example；后文「周一回升」「无实验的周一也回升」共同构成「一概多例」结构，见实例群回溯概括句。"
+  },
+  {
+   "question_id": 663,
+   "long_sentence": "定位句 When work started again on Monday, output __ rose compared with the previous Saturday and __ to rise for the next couple of days：output ___ rose 为主谓结构（空格副词修饰 rose）；compared with the previous Saturday 为过去分词比较状语；and 并列第二个谓语。译：周一重新开工时，产出果然比上周六有所上升。",
+   "option": "正确 A duly：duly「如期地、不出所料地」——按实验叙事，调灯后产出上升是「意料之中」的结果，duly 精准传达「果然如此」的口吻；B accidentally（偶然地）与实验结果的规律性相反；C unpredictably（不可预测地）同上，且与后文「接下来几天继续上升」的连贯性矛盾；D suddenly（突然地）强调速度，原文无此义。",
+   "keyword": "duly 如期地、果然＝as expected；compared with 与……相比；output rose 产出上升；unpredictably 不可预测地（辨析）。",
+   "note": "duly 的「果然」义是本题唯一解：记述中的实验结果应当如期出现——注意本文是「先立后破」结构：此处先按霍桑效应叙事，后文 However 再用无实验数据推翻，先看清叙事立场。"
+  },
+  {
+   "question_id": 664,
+   "long_sentence": "定位句 output duly rose compared with the previous Saturday and __ to rise for the next couple of days：and 并列第二个谓语 ___ to rise；for the next couple of days 为持续时间状语。译：并在接下来几天里继续上升。",
+   "option": "正确 D continued：continue to rise「继续上升」与 for the next couple of days 的持续时段搭配，并与首谓语 rose 构成「上升—持续上升」的递进；A failed to rise「未能上升」与产出上升的记述矛盾；B ceased to rise「停止上升」与 couple of days 的持续期矛盾；C started to rise「开始上升」——前句已经 rose，再「开始」逻辑重复。",
+   "keyword": "continue to do 继续做；for the next couple of days 接下来几天；cease to do 停止做；fail to do 未能做（辨析）。",
+   "note": "rose...and ___ to rise 的并列结构要求第二谓语顺承首谓语——已升则「继续升」；fail、cease 方向相反，start 与 rose 重复，逐项核对方向即可锁定 continued。"
+  },
+  {
+   "question_id": 665,
+   "long_sentence": "定位句 __ , a comparison with data for weeks when there was no experimentation showed that output always went up on Mondays：空格为句首衔接副词；主干 a comparison...showed that...；when there was no experimentation 为定语从句修饰 weeks。译：然而，与未进行实验的周份数据对比后发现：产出总是在周一上升。",
+   "option": "正确 C However：前文是「调灯后周一产出如期上升」的实验叙事，本句「没做实验的周一产出也上升」直接推翻「照明改变导致产出上升」的因果——结论反转必用 However；A Therefore 表因果，方向相反；B Furthermore 表递进，但此处是反驳而非补充；D Meanwhile 表同时，无转折力度。",
+   "keyword": "however 然而（转折）；a comparison with 与……的对比；go up 上升＝rise；experimentation 实验。",
+   "note": "全文的「破立结构」在此转折：先按霍桑效应叙事（duly rose、continued to rise），再用无实验对照数据「破」——读完本句「无实验也上升」即可反推选转折词，衔接词与语义证据互证。"
+  },
+  {
+   "question_id": 666,
+   "long_sentence": "定位句 Workers __ to be diligent for the first few days of the week in any case, before __ a plateau and then slackening off：Workers ___ to be diligent...；to be diligent 为不定式；in any case 意为「无论如何」；before 为介词，后接动名词。译：无论如何，工人们在一周头几天往往勤快，随后进入平台期再松懈下来。",
+   "option": "正确 B tended：tend to do「往往、倾向于」表一般规律，与 in any case（无论如何）及「周一总上升」的周期规律吻合——描述的是稳定倾向而非单次行为；A attempted to be diligent「试图勤快」动作义过强且与规律性不符；C chose to be「选择勤快」强调主观决定，与自发的工作节律不符；D intended to be「打算勤快」表意图且常含未实现，语义偏离。",
+   "keyword": "tend to do 往往、倾向于＝be inclined to；in any case 无论如何；slacken off 松懈；plateau 平台期。",
+   "note": "tend to 的「规律性」与 in any case、always 等词构成语义复现——描述普遍现象选「倾向于」；attempt、choose、intend 都含主观意志，与「工作节律」这种自发现象冲突。"
+  },
+  {
+   "question_id": 667,
+   "long_sentence": "定位句 Workers tended to be diligent for the first few days of the week in any case, before __ a plateau and then slackening off：before 为介词，后接动名词短语；___ a plateau 与 slackening off 并列作其宾语；plateau 意为「平台期、停滞期」。译：在到达平台期、继而松懈下来之前。",
+   "option": "正确 D hitting：hit a plateau「到达平台期、增长见顶」为固定搭配，与 rising 的曲线意象连贯——先升、后平、再降；A breaking a plateau「打破平台期」方向反——是要进入而非打破；B climbing a plateau「攀爬平台」搭配生硬；C surpassing a plateau「超越平台」同样把「到达」误写为「越过」。",
+   "keyword": "hit a plateau 到达平台期（固定搭配）；slacken off 松懈；plateau 停滞期＝period of stagnation；surpass 超越（辨析）。",
+   "note": "hit a plateau 是外刊高频习语（增长见顶），与 rise、slacken 构成「升—平—降」曲线；break、surpass 都把「进入停滞」误读为「突破停滞」——曲线方向判断是本题命门。"
+  },
+  {
+   "question_id": 668,
+   "long_sentence": "定位句 Of all the changes that have taken place in English-language newspapers during the past quarter-century, perhaps the most far-reaching has been the inexorable decline in their arts coverage：主干 the most far-reaching has been the decline（表语前置倒装）；inexorable 意为「不可阻挡的」。译：过去 25 年英文报纸最深远的变化，是艺术报道广度与严肃性不可阻挡的衰退。",
+   "option": "正确 B「英文报纸过去刊登的艺术评论更多」：decline in the scope of arts coverage（今少）加第二段 a considerable number of the most significant collections of criticism...consisted in large part of newspaper reviews（昔多），两处合并推出「过去多、现在少」；A「艺术评论已从大城市报纸消失」绝对化——decline 不等于 disappeared；C「高质量报纸留住大量读者」无中生有；D「年轻读者怀疑评论适合登日报」偷换概念——原文说 40 岁以下读者难以想象当年盛况，并非「怀疑」。",
+   "keyword": "far-reaching 深远的；inexorable 不可阻挡的＝unstoppable；arts coverage 艺术报道；decline 衰退＝fall。",
+   "note": "推断题的 used to 类答案来自「今昔对比」：decline（今少）加 newspaper reviews 收录入集（昔多）构成时间轴；A 的 disappeared 是把「衰退」放大成「消失」的绝对化陷阱——见 decline 先防 disappear。"
+  },
+  {
+   "question_id": 669,
+   "long_sentence": "定位句 We are even farther removed from the unfocused newspaper reviews published in England between the turn of the 20th century and the eve of World War II：主干 We are farther removed from...；published in England... 为过去分词短语作后置定语；unfocused 意为「不聚焦的、不拘一格的」。译：我们与 20 世纪初到二战前夕英国报纸上不拘一格的评论更加疏远了。",
+   "option": "正确 A「题材自由」：unfocused（不聚焦、不设限）正是「题材自由」的原文改写——当时评论不受领域拘束；B「风格随意」与原文 stylish arts criticism（讲究的文艺批评）及 Theirs was a serious business 相反；C「版面精致」无中生有；D「观点激进」无中生有。",
+   "keyword": "unfocused 不聚焦的、自由的；be removed from 与……疏远；stylish 时髦讲究的；write in detail and at length 详尽书写。",
+   "note": "characterized by 的答案常是原文单个形容词的同义转换：unfocused 对应 free themes；B 的 casual 用「随意」偷换「自由」——一字之差方向全变；后文 write in detail and at length 也可佐证当时评论并非「随意」。"
+  },
+  {
+   "question_id": 670,
+   "long_sentence": "定位句 So few authors have brains enough or literary gift enough to keep their own end up in journalism, that I am tempted to define 'journalism' as 'a term of contempt applied by writers who are not read to writers who are'：So few...that＝「少到以至于」；keep one's own end up＝撑住场面。译：凭头脑或天赋能在新闻界撑住场面者极少，以至于很想把新闻业定义为没读者作家对有读者作家的蔑称。",
+   "option": "正确 D「并非所有作家都胜任新闻写作」：So few authors have brains or gift enough（能胜任的作家极少）正是「并非人人胜任」的原文改写；A「履行新闻目标是作家的责任」无中生有——原文只说他们视新闻为事业（calling）；B「作家当记者是可鄙的」偷换概念——contempt 是「没读者的作家」对「有读者的作家」的蔑称，不是对记者职业的鄙视；C「作家容易被诱惑进新闻界」张冠李戴——tempted 的是 Newman（很想下定义），不是作家被诱惑。",
+   "keyword": "keep one's own end up 撑住场面；a term of contempt 蔑称；be tempted to do 很想做；literary gift 文学天赋。",
+   "note": "观点题直接读引语：So few...that 的「少」即 D 的「并非都能胜任」；B 是 contempt 方向张冠李戴的高频陷阱——谁鄙薄谁必须对准引语；C 把 Newman 的自嘲 tempting 挪到作家头上。"
+  },
+  {
+   "question_id": 671,
+   "long_sentence": "定位句 Journalistic tastes had changed long before his death, and postmodern readers have little use for the richly upholstered Vicwardian prose in which he specialized：and 并列两个分句；have little use for 意为「对……提不起兴趣」；in which he specialized 为介词前置的定语从句。译：新闻界品味早已改变，后现代读者对他在行的繁复维多利亚式文风已不感兴趣。",
+   "option": "正确 A「他的音乐评论可能无法吸引今天的读者」：tastes had changed 加 postmodern readers have little use for his prose——品味已变、读者不买账，即「今天可能不受欢迎」；B「他作为乐评人的声誉长期有争议」无中生有——原文说他是 England's foremost classical-music critics；C「他的风格主要迎合现代专家」偷换概念——unknown save to specialists（只有专家知道）是被遗忘，不是迎合；D「他的写作背离业余传统」无中生有——业余传统在退潮是背景陈述，并未说卡达斯背离它。",
+   "keyword": "have little use for 对……提不起兴趣＝not appealing to；specialize in 专攻；in print 仍在印行；postmodern 后现代的。",
+   "note": "may not appeal to 的委婉推断正合原文 little use for 的程度——推断题答案常带 may；C 的 specialists 是原文词，但「只有专家知道」与「迎合专家」方向相反，警惕「原文词陷阱」。"
+  },
+  {
+   "question_id": 672,
+   "long_sentence": "定位句（首尾呼应）首段 perhaps the most far-reaching has been the inexorable decline in the scope and seriousness of their arts coverage；末段 The prospect seems remote...the amateur tradition in music criticism has been in headlong retreat：inexorable decline 与 headlong retreat 前后呼应。译：影响最深远的，是艺术报道广度与严肃性无可阻挡的衰退；而复兴前景渺茫，业余乐评传统也在急速退潮。",
+   "option": "正确 B「报纸上逝去的地平线」：全文围绕「报纸艺术评论昔盛今衰、评论家被遗忘、复兴无望」展开——Lost Horizon 以隐喻概括「报业中消逝的版图」，含「消逝」与「视野」双关；A「报纸的美好旧时光」怀旧面过宽，重点不是报纸整体而是艺术评论；C「新闻业的哀歌式衰落」以偏概全——衰落的是 arts coverage，不是整个 journalism；D「记忆中的著名评论家」以偏概全——Cardus 只是例证。",
+   "keyword": "lost horizon 逝去的地平线（隐喻）；headlong retreat 急速退却；revival 复兴；inexorable 不可阻挡的。",
+   "note": "标题题用「首尾呼应」法：首段 decline in arts coverage 加末段 prospect seems remote 收束于「消逝且难回」；C 把 arts coverage 扩大为 journalism 是典型的范围放大陷阱——标题的外延必须与全文等宽。"
+  },
+  {
+   "question_id": 673,
+   "long_sentence": "定位句 Now the nation's top patent court appears completely ready to scale back on business-method patents, which have been controversial ever since they were first authorized 10 years ago：主干 the court appears ready to scale back...；scale back on 意为「缩减」；ever since 表「自……以来」。译：美国最高专利法院似乎已准备好缩减商业方法专利——这类专利自十年前获批以来一直有争议。",
+   "option": "正确 C「其授权可能受到限制」：scale back on（准备缩减）加 conduct a broad review（全面复审）加 eliminate an entire class of patents（或消灭整类专利）——「近期引发关注」的直接原因是「可能被收紧」；A「对企业价值有限」无中生有；B「与资产配置的关联」以偏概全——资产配置只是 Merrill Lynch 一例；D「授权引发的争议」时间错位——争议自十年前授权时就有（ever since），并非「recently」的新情况。",
+   "keyword": "scale back 缩减＝cut back；authorize 授权＝grant；a broad review 全面复审；a very big deal 重大事件。",
+   "note": "because of 后的答案要看「时间线索」：recently 对应 now ready to scale back 的新动向，而 controversial ever since 是十年前的旧闻——D 项用原文词 controversial 设时间陷阱，抓住 ever since 即可排除。"
+  },
+  {
+   "question_id": 674,
+   "long_sentence": "定位句 In re Bilski, as the case is known, is 'a very big deal', says Dennis D. Crouch...It 'has the potential to eliminate an entire class of patents'：as the case is known 为插入语「正如该案为人所知」；a very big deal 为口语化强调；has the potential to do 意为「有潜力做某事」。译：正如人们所知，比尔斯基案是「一件大事」，它「有可能消灭整类专利」。",
+   "option": "正确 D「它可能改变美国的法律实践」：broad review（全面复审）加 reconsider State Street Bank ruling（重新考虑旧判例）加 eliminate an entire class of patents（或消灭整类专利）——整类专利若被取消，相关法律实践必然改变；A「其判决符合法院裁决」时态错位——案件尚未判决，只安排由全部 12 名法官审理；B「涉及一笔大交易」偷换概念——a very big deal 是「大事」，deal 非交易；C「已被联邦巡回法院驳回」无中生有——法院是受理并全面复审。",
+   "keyword": "a very big deal 了不起的大事（口语）；eliminate 消灭＝remove；reconsider 重新考虑；panel of three 三人法官合议庭。",
+   "note": "a very big deal 的 deal 是熟词辨析：口语里 deal＝「重要的事」而非「交易」——B 正拿熟词僻义设陷；「案件进行中」的事实（would be heard、wants to evaluate）决定一切「已完成」类选项（A、C）都错。"
+  },
+  {
+   "question_id": 675,
+   "long_sentence": "定位句 Curbs on business-method claims would be a dramatic about-face, because it was the Federal Circuit itself that introduced such patents with its 1998 decision in the so-called State Street Bank case：Curbs on... 作主语（curb 意为「限制」）；because 后为强调句。译：限制商业方法专利将是大转弯——因为正是联邦巡回法院自己于 1998 年引入了这类专利。",
+   "option": "正确 C「态度的转变」：about-face 字面义「向后转」，引申「（立场、政策的）一百八十度转变」——法院 1998 年自己引入、如今准备缩减，前后立场对转，attitude change 恰切；A「善意的丧失」、B「敌意的增加」把 about-face 误解为人际关系词；D「尊严的提升」与「自己推翻自己」的语境相反。",
+   "keyword": "about-face（立场的）大转变＝U-turn；curb 限制＝restriction；dramatic 戏剧性的；introduce such patents 引入此类专利。",
+   "note": "词义猜测先看 because 因果句：1998 年引入与如今缩减的对照就是 about-face 的语境定义；about-face 的字面「向后转」提示「方向反转」——选含 change 的选项，排除 loss、hostility、dignity 等具象误读。"
+  }
+ ]
+}

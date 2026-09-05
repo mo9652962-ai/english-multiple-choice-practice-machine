@@ -1,0 +1,180 @@
+{
+ "chunk": 38,
+ "items": [
+  {
+   "question_id": 926,
+   "long_sentence": "拆 Parts of the ceremony involve ritual hair cutting, 9 ______ cotton threads soaked in holy water around the bride's and groom's wrists, and passing a candle around a circle of...；involve 后接三个并列动名词；soaked in holy water 为过去分词短语作后置定语修饰 cotton threads。译：仪式的一部分包括行剪发礼、把浸过圣水的棉线 __（系）在新人手腕上，以及让婚姻美满、受人尊敬的夫妇围圈传递蜡烛。",
+   "option": "正确项 D tying（系、绑）：tie...around...（把…系在…上）为固定搭配，棉线系腕是南亚婚礼的真实仪式；A folding（折叠）与「环绕手腕」的动作无关；B piling（堆积）无合适对象；C wrapping（包裹）强调整体缠裹，与系线的轻巧动作不符，around 搭配不如 tie 精准。",
+   "keyword": "tie...around... 把…系在…上；soak in 浸泡；ritual hair cutting 剪发礼；wrist 手腕。",
+   "note": "介词搭配定动词：空后 around the bride's and groom's wrists 指向「环绕并固定」的动作，tie 与 around 是仪式描写的常见组合；folding、piling 与棉线、手腕完全不在同一动作语义场，先排语义场外选项再辨近义。"
+  },
+  {
+   "question_id": 927,
+   "long_sentence": "拆 and passing a candle around a circle of happily married and respected couples；pass...around 意为「传递一圈」；a circle of 意为「一圈、一群」。译：以及让一圈婚姻美满、受人尊敬的夫妇 __（传递）一支蜡烛。",
+   "option": "正确项 A passing（传递）：pass a candle around（把蜡烛传一圈）与 around a circle 的环绕义完美咬合，是婚礼祝福环节的常见仪式；B lighting（点燃）虽常与蜡烛搭配，但 around a circle 要求「移动」义，点燃无须环绕；C hiding（藏匿）荒谬；D serving（侍奉、上菜）与蜡烛无搭配。",
+   "keyword": "pass...around 把…传递一圈；a circle of 一圈、一群；bless 祝福；couple 夫妇；happily married 婚姻美满的。",
+   "note": "空后 around a circle of... 是决定性线索：能「绕圈」的动词只有 pass；B 的迷惑在「蜡烛—点燃」的名词惯性搭配，但语境搭配（around a circle）优先于词项惯性搭配，这是完形猜词的第二判断层。"
+  },
+  {
+   "question_id": 928,
+   "long_sentence": "拆 to bless the 11 ______；不定式作目的状语；the 特指本场仪式所祝福的对象。译：以祝福这一 __（结合）。",
+   "option": "正确项 D union（结合、联姻）：婚礼仪式祝福的是新人的「结合」，marriage union 为固定表达，与全文 spouse、wedding、newlyweds 的语义场一致；A association（协会、关联）无婚姻义；B meeting（会面）程度太轻；C collection（收集）不合语境。",
+   "keyword": "union 结合、联姻（尤指婚姻）；bless 祝福；newlywed 新婚夫妇；ceremony 仪式；marriage union 婚姻结合。",
+   "note": "名词题靠语义场加特指：the 前有 bless，婚礼语境中祝福对象是「两人的结合」；union 兼有「婚姻结合」义（marital union）；A 的 association 常考「协会、联系」，与婚姻场景隔一层，勿被「关联」义带偏。"
+  },
+  {
+   "question_id": 929,
+   "long_sentence": "拆 Newlyweds traditionally move in with the wife's parents and may 12 ______ with them up to a year；move in with 意为「搬去与…同住」；up to a year 表上限「长达一年」。译：按传统，新婚夫妇搬去与女方父母同住，可能 __（住）长达一年。",
+   "option": "正确项 C live（居住）：live with them（与他们同住）承接前句 move in with，move 表「搬入」的动作，live 表随后的持续状态；A grow（成长）与 with them 搭配不通；B part（分离）part with 意为「舍弃」，与「入住」正相反；D deal（处理）deal with 意为「应对」，与同住语境不合。",
+   "keyword": "move in with 搬去与…同住；live with 与…同住；up to 长达、多达；newlywed 新婚夫妇。",
+   "note": "前后动词构成「动作—状态」链：move in（搬入）之后自然是 live（居住）的延续；B 的陷阱在 part with 搭配存在但语义相反；up to a year 的时间段提示要选可持续状态动词，而非瞬时动作。"
+  },
+  {
+   "question_id": 930,
+   "long_sentence": "拆 may live with them up to a year, until they can build a new house nearby；until 引导时间状语从句「直到…为止」；nearby 为副词「在附近」。译：可能同住长达一年，__（直到）他们能在附近建起新居。",
+   "option": "正确项 B until（直到）：同住一年是过渡安排，新房建成是终点节点，until 精准表达「住到能建房为止」；A whereas 表对比，两分句无对比关系；C for 表原因，住岳家不是建房的原因；D if 表条件，建房并非同住的前提，逻辑上是先住后建。",
+   "keyword": "until 直到…为止；nearby 在附近；build a new house 建新居；up to a year 长达一年。",
+   "note": "时间逻辑判断：过渡性同住（up to a year）加终态（build a new house），until 的「到…为止」义最贴合；D 的陷阱是把建房当条件，但婚俗描述是时间惯例而非假设条件，从句用 can 的能力义也暗示「达到那一步」。"
+  },
+  {
+   "question_id": 931,
+   "long_sentence": "拆 Divorce is legal and easy to 14 ______, but not common；but 表转折；easy to do 结构中不定式与主语构成隐性动宾关系（obtain a divorce）。译：离婚合法且易于 __（办理获得），但并不常见。",
+   "option": "正确项 B obtain（获得）：obtain a divorce（获得离婚）为固定搭配，legal and easy to obtain（合法且易得）与 but not common（但不常见）形成「易办而少办」的转折；A follow（遵循）follow a divorce 不成搭配；C challenge（挑战）与 easy 的「易得」角度冲突；D avoid（避免）easy to avoid 与下文存在离婚人群的叙述矛盾。",
+   "keyword": "obtain a divorce 获得离婚；legal 合法的；not common 不常见；disapproval 不赞成。",
+   "note": "easy to do 中主语兼作不定式宾语：divorce 既是主语又是 obtain 的宾语（离婚被获得）；转折 but not common 的存在说明前半句强调「可得性高」，C、D 的方向与「合法易得」的陈述角度不符。"
+  },
+  {
+   "question_id": 932,
+   "long_sentence": "拆 Divorced persons are 15 ______ with some disapproval；被动语态；with some disapproval 为介词短语作方式状语「带着些许不赞成」。译：离婚者被人 __（看待）时带着些许不赞成。",
+   "option": "正确项 C viewed（看待）：be viewed with disapproval（被投以不赞成的眼光）为高频搭配，view...with... 表「以…眼光看待」；A isolated（隔离）程度过重，且 isolate 不与 with disapproval 搭配；B persuaded（说服）persuade 不接 with 态度短语；D exposed（暴露）的固定搭配是 be exposed to，介词错配。",
+   "keyword": "view...with... 以…看待；disapproval 不赞成＝disfavor；be exposed to 接触、暴露于。",
+   "note": "介词搭配排查法：with some disapproval 的 with 表「带着某种态度」，能接态度 with 的动词是 view、regard、meet；D exposed 的固定介词是 to，属「介词错配」陷阱——完形常考固定搭配中介词的一致性，先验介词再验词义。"
+  },
+  {
+   "question_id": 933,
+   "long_sentence": "拆 Each spouse retains whatever property he or she brought into the marriage；retain 意为「保留」；whatever 引导宾语从句并在从句中作定语修饰 property；into the marriage 表「带入婚姻」。译：夫妻各方保留其婚前带入婚姻的 __（任何）财产。",
+   "option": "正确项 A whatever（无论什么）：whatever property＝any property that，强调「无论何种财产一律保留」，与后句 jointly-acquired property is divided equally（共同财产平分）构成「婚前各自保留、婚后共有平分」的对照；B however 须接形容词或副词；C whenever（无论何时）、D wherever（无论何地）为时间地点副词，不能修饰名词 property。",
+   "keyword": "whatever property 任何财产＝any property that；retain 保留；jointly-acquired 共同取得的；bring into the marriage 婚前带入。",
+   "note": "whatever 与 however 的语法分工是命门：however 修饰形容词、副词，whatever 修饰名词；空后 property 是名词，只有 whatever 成立；后句共同财产平分的对照结构反向印证本空取「任何」义。"
+  },
+  {
+   "question_id": 934,
+   "long_sentence": "拆 whatever property he or she 17 ______ into the marriage；引导词 whatever 兼作从句中 property 的定语；into the marriage 为方向状语。译：夫妻各方保留其 __（带）入婚姻的任何财产。",
+   "option": "正确项 B brought（带来）：bring...into...（把…带入）为方向搭配，婚前财产是「带进」婚姻的；A changed（改变）change into 意为「变成」，与财产归属无关；C shaped（塑造）shape into 指「塑造成形」，对象应为抽象形态；D pushed（推）无语境支撑。",
+   "keyword": "bring into 带入；retain 保留；property 财产；jointly-acquired property 共同取得的财产。",
+   "note": "与后句 jointly-acquired property is divided equally 对照出题眼：本空表达「婚前带入」，bring into 是唯一方向正确的动词；A 的 change into 是「变质、变成」义，多用于形态变化语境，财产与婚姻的关系动词是 bring。"
+  },
+  {
+   "question_id": 935,
+   "long_sentence": "拆 jointly-acquired property is 18 ______ equally；jointly-acquired 为复合形容词「共同取得的」；被动语态；equally 意为「平均地」。译：共同取得的财产则被 __（平分）。",
+   "option": "正确项 D divided（分割）：divide...equally（平分）是财产分配的固定表达，与离婚析产语境吻合；A withdrawn（撤回）的主语应是当事人，财产不会自行被撤回；B invested（投资）与 equally 不搭且方向错——是「分」不是「投」；C donated（捐献）与离婚析产无关。",
+   "keyword": "divide...equally 平分；jointly-acquired 共同取得的；property settlement 财产分割；retain 保留。",
+   "note": "离婚析产的固定说法链：婚前财产 retain（各自保留）、共同财产 divide equally（平分），两空构成对照考法；B invested 借金融词感设障，但 equally 是「分配」义强信号副词，与投资逻辑不兼容。"
+  },
+  {
+   "question_id": 936,
+   "long_sentence": "拆 but a gender prejudice shows up；but 表转折；show up 为固定短语「显现、露头」；gender prejudice 意为「性别偏见」。译：但一种性别偏见 __（显现）出来。",
+   "option": "正确项 B shows：show up（显现、暴露）符合「法律平等但偏见面世」的语境，冒号后男女再婚等待期不同正是偏见的具体表现；A clears：clear up 意为「放晴、澄清」，与偏见冒头语义相反；C warms：warm up 意为「预热」，与 prejudice 不搭；D breaks：break up 意为「分手、解散」，主语多为人或关系。",
+   "keyword": "show up 显现、露面＝appear；gender prejudice 性别偏见；waiting period 等待期；remarry 再婚。",
+   "note": "短语动词逐一验证：show up（出现）、clear up（澄清）、warm up（加热）、break up（解散），只有「出现」能接 prejudice；冒号后的具体例子（男性无等待期、女性须等十个月）是对偏见的例证，先读冒号后内容再定动词方向。"
+  },
+  {
+   "question_id": 937,
+   "long_sentence": "拆 The divorced male doesn't have a waiting period before he can remarry while the woman must wait ten months；before 引导时间从句；while 表对比「而、然而」。译：离异男性再婚前没有等待期，__（而）女性则必须等待十个月。",
+   "option": "正确项 A while（而）：男性无等待期与女性须等十个月是鲜明对照，while 是完形表对比的高频词；B once（一旦）表条件，两分句无条件关系；C so that 表目的，等待期并非再婚的目的安排；D in that 表原因「在于」，此处无因果关系。",
+   "keyword": "while 而、然而（表对比＝whereas）；waiting period 等待期；gender prejudice 性别偏见。",
+   "note": "男女待遇一反一正是经典对比结构：无等待期 对 须等十个月，while 与 whereas 是首选；C 的目的义在「偏见」语境不成立；考研完形中 while 表对比（而非「当…时」）的用法是高频考点，按分句间逻辑而非字面义判断。"
+  },
+  {
+   "question_id": 938,
+   "long_sentence": "拆 Its lawmakers gave preliminary approval last week to a law that would make it a crime to employ ultra-thin models on runways；give approval to 批准；that 引导定语从句修饰 a law；make it a crime to do 中 it 为形式宾语；preliminary 意为「初步的」。译：上周，法国立法者初步批准了一项法律：雇佣超瘦模特走秀将构成犯罪。",
+   "option": "正确项 A「身体美将被重新定义」＝法国已认定时尚业 lost an absolute right to define physical beauty，立法禁超瘦模特、封禁宣扬极端节食的网站，即美的定义权被收缴重塑；B「将建新T台」偷换概念，runways 是走秀场景而非建设对象；C「节食网站将繁荣」正反混淆，原文是 ban websites（查禁）；D「时尚业将衰落」过度推断，失去的只是「定义美的绝对权利」。",
+   "keyword": "define physical beauty 定义身体美；preliminary approval 初步批准；ultra-thin 超瘦的；incite 煽动、诱发。",
+   "note": "首段题抓「失去定义权加立法禁瘦」的组合信息，两者共同指向「美的标准被改写」；C 项与 ban 直接相反，见到原词 incite excessive thinness 先核对动词方向；D 夸大立法后果，管的是模特标准而非行业存亡。"
+  },
+  {
+   "question_id": 939,
+   "long_sentence": "拆 They suggest beauty should not be defined by looks that end up impinging on health；that 引导定语从句修饰 looks；end up doing 意为「最终落到…地步」。译：这些措施表明：美不应由那些最终 __（损害）健康的外表来定义。",
+   "option": "正确项 D doing harm to（损害）：上文立法禁超瘦模特、封禁宣扬极端节食的网站，动因正是超瘦对健康的伤害，impinging on 即「侵害、危害」；A「表明…的状态」与立法的因果方向不符；B「提升…的价值」感情色彩相反；C「对…失去信心」无语境。",
+   "keyword": "impinge on 侵害、冲击＝do harm to；end up doing 以…告终；extreme dieting 极端节食；excessive thinness 过度消瘦。",
+   "note": "猜词题用「上文立法动机」定方向：禁超瘦、禁极端节食都是为护健康，空格词必含贬义伤害义；impinge 本义「撞击、侵入」，引申为「侵害」，D 的 do harm to 是最稳妥的同义改写，选项代入后句子逻辑自洽才可选。"
+  },
+  {
+   "question_id": 940,
+   "long_sentence": "拆 In Denmark, the United States, and a few other countries, it is trying to set voluntary standards for models and fashion images that rely more on peer pressure for enforcement；voluntary 意为「自愿的」；that 引导定语从句；peer pressure 意为「同行压力」。译：在丹麦、美国等一些国家，时尚业正尝试为模特与时尚影像制定自愿性标准，其执行更多依赖同行压力。",
+   "option": "正确项 D「丹麦正在制定新标准」＝the newly revised Danish Fashion Ethical Charter（新修订的丹麦时装伦理宪章）加 agreed last month on rules and sanctions；A「法国措施已经失败」无中生有，作者只批评其 rely too much on severe punishment；B「固有弊端正在恶化」无中生有，原文仅承认 has an inherent problem；C「模特不再受同行压力」正反混淆，丹麦标准恰恰 rely on peer pressure。",
+   "keyword": "voluntary standards 自愿标准；peer pressure 同行压力；sanction 制裁；charter 宪章、章程。",
+   "note": "细节判断题逐项验伪：A、B 都把「批评」夸大成「已失败或恶化」；D 有两处原文支撑（上月达成规则、新修订宪章）；C 的「不再」类表述是正反混淆高发词，回查 rely more on peer pressure 即破。"
+  },
+  {
+   "question_id": 941,
+   "long_sentence": "拆 The charter's main tool of enforcement is to deny access for designers and modeling agencies to Copenhagen Fashion Week (CFW)；deny access for sb to sth 意为「拒绝某人进入某场合」；enforcement 意为「执行、落实」。译：该宪章的主要执行手段，是拒绝设计师与模特经纪公司参加哥本哈根时装周。",
+   "option": "正确项 C「对健康因素漠不关心」＝宪章规则涉及 the age, health, and other characteristics of models，违反规则者将被 CFW 拒之门外，漠视健康者首当其冲；A「追求完美的身体条件」偷换概念，被拒的是达不到健康等标准者，而非追求完美；B「过于关心模特品格」张冠李戴，宪章管的是年龄与健康；D「为模特设高年龄门槛」偷换概念，规则涉及年龄但未设高门槛，且设规则的是宪章不是设计师。",
+   "keyword": "deny access 拒绝准入；sanction 制裁、处罚；ethical charter 伦理宪章；compliance 遵从。",
+   "note": "反推法解题：被 CFW 拒绝等于违反宪章规则，规则内容是 age、health 等，故漠视健康者会被拒；A、D 把「宪章管的事」错安到设计师头上，属张冠李戴；细节题先明确「谁对谁做什么」再比对选项主语。"
+  },
+  {
+   "question_id": 942,
+   "long_sentence": "拆 Relying on ethical persuasion rather than law to address the misuse of body ideals may be the best step；动名词短语作主语；rather than 表「而非」；address 此处意为「应对、处理」。译：依靠伦理劝导而非法律来应对身体理想被滥用的问题，或许是最好的一步。",
+   "option": "正确项 D「对时尚业身体理想的挑战」＝全文主线：法国立法禁超瘦、丹麦立伦理宪章，都是在挑战时尚业长期把持的 body ideals，首段 define physical beauty 与末段 misuse of body ideals 首尾呼应；A「时尚业的巨大威胁」夸大且与改良立场不符；B「又一轮美的争夺战」空泛无具体信息；C「法国饥饿模特的两难」以偏概全，只覆盖首段且模特非全文主角。",
+   "keyword": "body ideals 身体理想、体形标杆；ethical persuasion 伦理劝导；misuse 滥用；elevate notions of beauty 提升美的观念。",
+   "note": "标题题抓贯穿全文的矛盾双方：时尚业的 material standards 与各国立法或行业自律的挑战；D 的 body ideals 在首尾段复现；A 的「威胁」与作者建设性口吻相悖，标题必须与文章主线和作者态度同向。"
+  },
+  {
+   "question_id": 943,
+   "long_sentence": "拆 While polls show Britons rate the countryside alongside the royal family, Shakespeare and the National Health Service as what makes them proudest of their country, this has limited political support；While 引导让步从句；rate...as... 把…评为…；alongside 表并列「与…齐名」。译：尽管民调显示英国人把乡村与王室、莎士比亚和国民医疗服务体系并列为最令他们自豪的国家名片，这一点获得的政治支持却很有限。",
+   "option": "正确项 A「在政治上没有得到很好体现」＝this has limited political support（政治支持有限）加第 3 段各大政党均不 endorse 这一情怀；B「得到王室全力支持」张冠李戴，王室只是并列的自豪项之一；C「直到莎士比亚时代才开始」无中生有；D「给 NHS 带来益处」张冠李戴，NHS 是并列自豪项，与乡村无因果。",
+   "keyword": "public sentiment 公众情绪；alongside 与…并列；limited political support 有限的政治支持；endorse 背书、支持。",
+   "note": "While 让步句重心在主句：民调热情高 对 政治支持少，这一落差即答案；B、D 把并列结构中的成员说成支持者或受益者——并列各项之间没有因果，拆清 while 前后的对照面是本题关键。"
+  },
+  {
+   "question_id": 944,
+   "long_sentence": "拆 They don't make countryside any more, and every year concrete consumes more of it；don't...any more 表「再也不会有」；consumes 为拟人化用法「吞噬」。译：乡村不会再有新增，而每年混凝土都在吞噬更多乡村。",
+   "option": "正确项 D「正被逐渐毁掉」＝national parks 与 green belts 这些成就面对 every year concrete consumes more of it 的侵蚀，且 It needs constant guardianship（需要持续守护）说明现状堪忧；A「大体被掩盖」无中生有；B「受到妥善保护」正反混淆，needs guardianship 恰说明保护不足；C「被有效加强」正反混淆。",
+   "keyword": "consume 吞噬、消耗；green belt 绿化带；guardianship 守护、监护；concrete 混凝土（代指扩张的建设）。",
+   "note": "成就与现状的转折在 They don't make countryside any more 之后：混凝土吞噬、亟需守护是「受损中」的信号；B 的 properly protected 与 needs constant guardianship 直接冲突——「需要保护」正是「保护不足」的委婉表达，转折句后的定性词是判断依据。"
+  },
+  {
+   "question_id": 945,
+   "long_sentence": "拆 Only Ukip, sensing its chance, has sided with those pleading for a more considered approach to using green land；sensing its chance 为现在分词短语作插入语「嗅到机会」；side with 意为「站在…一边」；pleading for 为分词短语作后置定语。译：只有独立党嗅到了机会，站在了那些呼吁更审慎利用绿地的人一边。",
+   "option": "正确项 C「Ukip 可能因支持乡村保护而获益」＝sensing its chance 加其他大党均不 endorse（保守党重开发、工党欲停地方规划、自民党沉默）留下的空白，可推 Ukip 站队乡村保护有利可图；A「工党因反对开发挨批」正反混淆，工党 want to discontinue local planning 恰是支持开发；B「保守党可能放弃 off-plan 建设」无中生有；D「自民党正在失去政治影响力」过度推断，原文只说 silent。",
+   "keyword": "endorse 背书、支持；side with 站在…一边；sense one's chance 意识到机会；sustainable development 可持续发展。",
+   "note": "infer 题抓「空白加姿态」：大党集体缺位而 Ukip 主动补位，获益推论唯一成立；D 项把「沉默」放大成「影响力下滑」，沉默与衰落之间没有必然通道——推断题只走原文给出的那一小步。"
+  },
+  {
+   "question_id": 946,
+   "long_sentence": "拆 Under lobby pressure, George Osborne favours rural new-build against urban renovation and renewal；under lobby pressure 在游说压力之下；favour...against... 意为「偏袒…而冷落…」。译：在游说压力之下，乔治·奥斯本偏好乡村新建而冷落城区的翻新与更新。",
+   "option": "正确项 A「显示他无视乡村特质」＝作者价值句 They do so best where building sticks to their edges and respects their character（贴边建设、尊重特质），Osborne 偏好 rural new-build 正与此相悖；B「强调缓解住房危机的必要」正反混淆，作者斥 housing crisis equals concreted meadows 为纯游说话术；C「坚决抵制游说」正反混淆，原文明说 under lobby pressure；D「对城区的强烈偏见」偷换概念，作者批评的是乡村开发方式伤害乡村特质。",
+   "keyword": "lobby pressure 游说压力；favour...against... 偏袒…冷落…；renovation and renewal 翻新与更新；character 特质。",
+   "note": "观点题定位作者价值句：building sticks to their edges and respects their character 对照 Osborne 的 rural new-build 即见「无视特质」；C 与 under lobby pressure 直接相反；B 的住房危机被作者定性为游说话术，方向完全颠倒。"
+  },
+  {
+   "question_id": 947,
+   "long_sentence": "拆 Half a century of town and country planning has enabled it to retain an enviable rural coherence, while still permitting low-density urban living；enable sb to do 使…能够；retain 意为「保留」；enviable 意为「令人羡慕的」；coherence 意为「和谐、完整感」。译：半个世纪的城乡规划使英国得以保留令人羡慕的乡村和谐面貌，同时又允许低密度的城市生活。",
+   "option": "正确项 C「英国的城乡规划」＝Half a century of town and country planning has enabled it to retain an enviable rural coherence，enviable 的褒扬最终归于规划之功；A「英国的人口规模」只是背景陈述（欧洲第二拥挤），非欣赏对象；B「令人羡慕的城市生活方式」偷换概念，enviable 修饰 rural coherence，城市生活只是被容忍的 low-density living；D「当今英国的政治生活」无中生有，末段未作政治生活评价。",
+   "keyword": "town and country planning 城乡规划；enviable 令人羡慕的；retain 保留；rural coherence 乡村的和谐整体感。",
+   "note": "appreciation 题找褒义词落点：enviable 直接修饰 rural coherence，其成句主语是 town and country planning；B 项把 enviable 挪给城市生活，属修饰对象错位；C 同时是全文解决方案（规划而非放任）的正面收束，与作者立场一致。"
+  },
+  {
+   "question_id": 948,
+   "long_sentence": "拆 But even if you accept Friedman's premise and regard corporate social responsibility (CSR) policies as a waste of shareholders' money, things may not be absolutely clear-cut；even if 引导让步状语从句；premise 意为「前提」；clear-cut 意为「清晰明确的」。译：但即便你接受弗里德曼的前提、把企业社会责任政策视为浪费股东的钱，事情也未必那么绝对分明。",
+   "option": "正确项 B skepticism（怀疑）：作者以 But 转折引出 New research suggests that CSR may create monetary value（CSR 可能创造货币价值），用新证据动摇弗里德曼「企业唯一社会责任是盈利」的断言，态度是存疑；A tolerance（容忍）与「引证据反驳」的行文不符；C approval（赞同）正反混淆；D uncertainty（不确定）张冠李戴，不确定的是研究边界（末段研究自承未解决问题），不是对 Friedman 的态度。",
+   "keyword": "premise 前提；corporate social responsibility (CSR) 企业社会责任；clear-cut 明确的；monetary value 货币价值。",
+   "note": "态度题抓转折后新证据：But 加 New research suggests 是立论反驳结构，对被转折方即怀疑；态度题要分清对象——D 项的「不确定」属于研究对自身的边界声明，不是作者对 Friedman 的立场，对象错位即错选。"
+  },
+  {
+   "question_id": 949,
+   "long_sentence": "拆 consumers may take CSR spending as a 'signal' that a company's products are of high quality；take...as... 把…视为…；that 引导同位语从句说明 signal 的内容。译：消费者可能把企业在 CSR 上的投入视为「信号」，表明其产品品质上乘。",
+   "option": "正确项 C「赢得消费者信任」＝三条途径的共同落点：quality 信号、间接捐赠心理（indirect way to donate）、halo effect 下 earn greater consideration from consumers，均指向赢得消费者好感与信任；A「防止其不当行为」无中生有，CSR 是声誉机制不是防线；B「保护其免受诽谤」无中生有；D「提升产品质量」偷换概念，原文只是被当作高质量「信号」，并非真能提升质量。",
+   "keyword": "take...as 把…视为；signal 信号；halo effect 光环效应；good deeds 善行；indirect donation 间接捐赠。",
+   "note": "三条途径找交集：信任其质量、认同其善举、光环效应带来优待，交集是「消费者好感」；D 最险——take...as a signal 是「被当作信号」而非「产品变好」，信号与事实的一步之差是本段最强陷阱。"
+  },
+  {
+   "question_id": 950,
+   "long_sentence": "拆 The study found that, among prosecuted firms, those with the most comprehensive CSR programmes tended to get more lenient penalties；among prosecuted firms 在被起诉的公司之中；comprehensive 意为「全面的」；tend to do 意为「往往会」。译：研究发现，在被起诉的公司中，CSR 项目最完善的公司往往受到更 __（宽大）的处罚。",
+   "option": "正确项 D less severe（不那么严厉）：下文 fines that generally are 40% lower than the typical punishment（罚款通常低四成）直接印证「处罚更轻」；A less controversial（争议更少）偷换概念，处罚轻重与争议度无关；B more effective（更有效）无比较对象；C more lasting（更持久）无中生有。",
+   "keyword": "lenient 宽大的、仁慈的（与 severe 相对）；penalty 处罚＝punishment；fine 罚款；prosecute 起诉。",
+   "note": "猜词题用数字证据验证：40% lower 的罚款直接锁定「更轻」的方向；lenient 是法律语境「宽大处理」的高频词，与 harsh、severe 相对；A、B、C 都偏离「处罚力度」这一比较维度，猜词先找同句或邻句的量化佐证。"
+  }
+ ]
+}

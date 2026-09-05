@@ -1,0 +1,180 @@
+{
+ "chunk": 28,
+ "items": [
+  {
+   "question_id": 676,
+   "long_sentence": "定位句 Last April, the justices signaled that too many patents were being upheld for 「inventions」 that are obvious；signaled 后接 that 宾语从句；were being upheld 为过去进行时被动语态，uphold 意为「维持（专利有效）」；that are obvious 为定语从句修饰 inventions。译：去年四月，大法官们释放信号：太多本身显而易见的所谓「发明」专利正在被裁定有效。",
+   "option": "正确项 B are often unnecessarily issued：too many patents were being upheld for inventions that are obvious——too many 对应 often、连显而易见之物也获授权即 unnecessarily issued；A are immune to legal challenges 正反混淆，专利正面临 broad review 且可能被 eliminate；C lower the esteem 无中生有，原文只说保护范围被 narrowed；D increase risks 无中生有。",
+   "keyword": "uphold 维持、裁定有效；issue 授权、颁发＝grant；obvious 显而易见的；scale back 削减、收缩。",
+   "note": "末两段定位：第四段 Bilski 案将由全部 12 名法官复审、第五段最高法院出现 anti-patent trend；B 项是对 too many...obvious 的归纳，A 项用 legal challenges 字面复现设阱——面临挑战不等于免疫挑战，先归纳后比对。"
+  },
+  {
+   "question_id": 677,
+   "long_sentence": "主干句 Now the nation's top patent court appears completely ready to scale back on business-method patents；appear ready to do 看似准备做；scale back on 削减；which have been controversial ever since they were first authorized 10 years ago 为非限制性定语从句。译：如今美国最高专利上诉法院似乎已完全准备好削减商业方法专利——此类专利自十年前获授权以来一直饱受争议。",
+   "option": "正确项 A A looming threat：court ready to scale back、It has the potential to eliminate an entire class of patents——削减风险迫在眉睫，looming（迫近的）对应 appears ready to 与 potential；B Protection 正反混淆，文章基调是收紧而非保护；C A legal case 以偏概全，Bilski 案只是引出全面复审的载体；D A prevailing trend 偷换概念，反专利趋势是最高法院层面的背景，文章主体是商业方法专利面临的威胁。",
+   "keyword": "looming 迫近的、隐现的；scale back 削减＝curb；eliminate 消除；controversial 有争议的。",
+   "note": "标题型主旨题抓首末段：首段专利授权泛滥，第二段法院 ready to scale back、可能 eliminate an entire class；A 的 looming 精确表达「将然而未然」，D 的 prevailing（已盛行）程度过重，这是考研主旨题常见的程度词陷阱。"
+  },
+  {
+   "question_id": 678,
+   "long_sentence": "首句主干 Malcolm Gladwell argues that 「social epidemics」 are driven in large part by the actions of a tiny minority of special individuals；that 引导宾语从句，被动语态；often called influentials 与 who are unusually informed, persuasive, or well connected 为插入的定语成分。译：格拉德威尔在《引爆点》中提出，「社会流行潮」很大程度由极少数特殊个体的行动驱动，这类人常被称为「有影响力者」，异常博学、有说服力或人脉广泛。",
+   "option": "正确项 B discuss influentials' function in spreading ideas：driven by influentials' actions 即其在思想传播中的作用，下文 but it doesn't explain how ideas actually spread 转入质疑；A analyze the consequences 无中生有，文中未谈后果；C exemplify intuitive response 张冠李戴，intuitively compelling 是作者评价而非引用目的；D describe essential characteristics 以偏概全，特征只是插入信息。",
+   "keyword": "epidemic 流行潮；influential 有影响力的人士；drive 驱动、推动＝propel；persuasive 有说服力的。",
+   "note": "引用目的题看引文后的评价句：The idea is intuitively compelling, but it doesn't explain...——but 后才是作者真实意图；作者借流行观点引出全文议题「有影响力者究竟如何推动传播」，切忌把引文内容本身当答案。"
+  },
+  {
+   "question_id": 679,
+   "long_sentence": "定位句 The supposed importance of influentials derives from a plausible-sounding but largely untested theory called the 「two-step flow of communication」；supposed 所谓的；derives from 源于；plausible-sounding but largely untested 为并列形容词作前置定语。译：所谓有影响力者的重要性，源自一种听起来有理却基本未经检验的理论——「两步传播论」。",
+   "option": "正确项 D requires solid evidence for its validity：largely untested＝基本未经检验，即需扎实证据；A serves as a solution to marketing problems 偷换概念，营销者只是 embraced 该理论；B has helped explain prevalent trends 与 seems to explain 不符，supposed、plausible-sounding 已表怀疑；C has won support from influentials 张冠李戴，接受该理论的是 marketers 而非 influentials。",
+   "keyword": "untested 未经检验的；plausible 貌似有理的；derive from 源于；validity 有效性、正当性。",
+   "note": "supposed、plausible-sounding but largely untested 是连续三个贬义限定词，态度信号极强；B 项照抄原文 explain trends 的字面却丢掉 seems——考研细节题里「去掉程度词的选项」几乎都是陷阱。"
+  },
+  {
+   "question_id": 680,
+   "long_sentence": "定位句 even the most influential members of a population simply don't interact with that many others；even 引出让步强调；simply 加强否定语气；主干为 don't interact with that many others。译：除奥普拉·温弗瑞等少数名人外——其超凡影响力主要来自媒体而非人际——就连人群中最有影响力的成员，直接互动的对象也并不多。",
+   "option": "正确项 A the power of influence goes with social interactions：影响须沿人际互动链传播——受影响者必须再去影响自己的熟人；B interpersonal links can be enhanced through the media 张冠李戴，原文说名人影响力是 media 而非 interpersonal；C influentials have more channels 无中生有，原文说互动对象有限；D most celebrities enjoy wide media attention 是让步状语里的例外细节，答非所问。",
+   "keyword": "interact with 与…互动；acquaintance 熟人；celebrity 名人；interpersonal 人际的。",
+   "note": "题干 What the researchers have observed 定位第四段核心观察：非名人影响者互动有限，影响须靠层层人际链；A 的 goes with 概括「影响力与人际互动相伴」，D 谈名人恰是作者排除的例外，方向相反。"
+  },
+  {
+   "question_id": 681,
+   "long_sentence": "定位句 each person so affected must then influence his or her own acquaintances, who must in turn influence theirs, and so on；so affected 为过去分词短语作后置定语；who 引导定语从句；in turn 意为「转而、依次」。译：社会流行潮要发生，每个受影响的人必须再去影响自己的熟人，这些熟人又转而影响各自的熟人，如此层层传递。",
+   "option": "正确项 C are influenced and then influence others：these people 回指 each person so affected...who must in turn influence theirs——先受影响、再影响他人，两步齐全；D are influenced by the initial influential 以偏概全，只覆盖受影响一半，漏掉再影响他人；B have little contact with the source of influence 无中生有；A stay outside the network 正反混淆，这些人恰在社会影响网络之中。",
+   "keyword": "so affected 如此被影响的；in turn 转而、依次；and so on 依此类推；refer to 指代。",
+   "note": "指代题先回读前句：these people 的先行内容是「受影响后又去影响熟人」的链条；C 的 and then 完整复刻两步结构，D 只剩前半环，是最强干扰项——指代题的答案必须覆盖指代对象的全部环节。"
+  },
+  {
+   "question_id": 682,
+   "long_sentence": "定位句 the principal requirement for what is called 「global cascades」 is the presence not of a few influentials but, rather, of a critical mass of easily influenced people；not...but... 连接并列介词短语；what is called 为插入语；principal requirement 为主语核心。译：所谓「全球级联」——影响力通过网络的大范围扩散——的首要条件，不是少数有影响力者的存在，而是大批易受影响者的存在。",
+   "option": "正确项 C The readiness to be influenced：easily influenced（易被影响的）＝随时准备被影响；B The impulse to influence others 偷换概念，原文强调易被影响而非主动影响他人的冲动；A The eagerness to be accepted 无中生有，文中未谈渴望被接纳；D The inclination to rely on others 把「易受影响」偷换成「依赖他人」。",
+   "keyword": "critical mass 临界数量、足够多数；easily influenced 易受影响的；readiness 意愿、准备；principal 首要的。",
+   "note": "not...but... 结构中 but 后才是重点；readiness to be influenced 与 easily influenced 构成形容词与名词短语的词性改写；本题与 680 题互证：社会影响的动力学主角是易感大众，而非意见领袖。"
+  },
+  {
+   "question_id": 683,
+   "long_sentence": "定位句 These rules say they must value some assets at the price a third party would pay, not the price managers and regulators would like them to fetch；value...at... 意为「按…给…估值」；a third party would pay 与 managers...fetch 均为省略关系词的定语从句；not 连接对比。译：这些规则要求银行必须按第三方愿意支付的价格为部分资产估值，而不是按管理层和监管者期望卖出的价格。",
+   "option": "正确项 A follow unfavorable asset evaluation rules：must value some assets at the price a third party would pay，银行被迫接受不利的估值规则；B collect payments from third parties 偷换概念，第三方价格是估值基准，并非向第三方收款；C cooperate with the price managers 张冠李戴，managers 是希望按另一种价格估值的一方；D reevaluate some of their assets 偷换概念，是按规则估值，不是重新估值。",
+   "keyword": "value...at... 按…给…估值；asset 资产；fetch 卖得（某价钱）；moan 抱怨＝complain。",
+   "note": "题干 complained 对应首段 moan the banks；A 的 unfavorable 概括「按第三方低价估值导致巨额报损」；B 项把估值基准偷换成收付款对象，是考研金融题材的常见概念偷换，抓住 value...at 的搭配即可识别。"
+  },
+  {
+   "question_id": 684,
+   "long_sentence": "定位句 the independence of standard-setters, essential to the proper functioning of capital markets, is being compromised；essential to... 为形容词短语作插入语；is being compromised 为现在进行时被动语态，compromise 此处意为「损害、危及」。译：对资本市场正常运转至关重要的准则制定者独立性，正在受到损害。",
+   "option": "正确项 D the weakening of its independence：游说奏效加 FASB rushed through rule changes 即独立性受损；A the diminishing role of management 正反混淆，原文 enhance the use of judgment by management 表明裁量扩大；B the revival of the banking system 张冠李戴，资产定价不吸引买家则复苏无望，改规则不等于复苏；C the banks' long-term asset losses 无中生有，改动只给损失确认更多灵活。",
+   "keyword": "compromise 损害、危及；independence 独立性；lobby 游说；flexibility 灵活性、自由度。",
+   "note": "result in 问后果：第二段 lobbying working 加 independence compromised 是总起，第三段 FASB 改规则是实例；A 项引自游说集团的说法且带 politely calls 的反讽语气，不可当作者立场，这是考研题的典型观点归属陷阱。"
+  },
+  {
+   "question_id": 685,
+   "long_sentence": "定位句 Charlie McCreevy, a European commissioner, warned the IASB that it did 「not live in a political vacuum」 but 「in the real world」 and that Europe could yet develop different rules；warn 后接两个 that 并列宾语从句；not...but... 表对比；a European commissioner 为同位语。译：欧盟委员麦克里维警告 IASB：你们不是生活在政治真空中，而是生活在现实世界里，欧洲还可能制定出不同的规则。",
+   "option": "正确项 C act on their own in rule-setting：政治真空的反话即警告 IASB 别独断独行，Europe could yet develop different rules 是施压筹码；A keep away from political influences 张冠李戴，not live in a political vacuum 是 McCreevy 的警告而非 IASB 的 attempt；B evade the pressure from their peers 无中生有；D take gradual measures in reform 是 IASB 自己的表态，并非 McCreevy 反对点。",
+   "keyword": "vacuum 真空（in a political vacuum 在政治真空中）；commissioner 委员、专员；warn 警告；do likewise 照着做、同样行事。",
+   "note": "本题三方关系要理清：IASB 表态不愿仓促照做、McCreevy 警告其别我行我素；objects to 的宾语须从警告内容反推——「不生活在政治真空中」＝不许独断；D 恰是 IASB 的挡箭牌，张冠李戴概率最高。"
+  },
+  {
+   "question_id": 686,
+   "long_sentence": "定位句 It was banks that were on the wrong planet, with accounts that vastly overvalued assets；It was...that... 强调句型，强调 banks；with 复合结构表伴随；that vastly overvalued assets 为定语从句，overvalue 意为「高估」。译：错的是银行自己——它们的账目把资产价值高估到了离谱的程度。",
+   "option": "正确项 B exaggerated the real value of their assets：vastly overvalued＝夸大资产真实价值，同义直改；A misinterpreted market price indicators 张冠李戴，称市价夸大损失的是银行的辩解而非作者定性；C neglected the likely existence of bad debts 过度推断，银行辩称市价只反映临时流动性不足而非坏账程度，这是被作者反驳的话；D denied booking losses 张冠李戴，不愿售资产以免记账亏损是后文说的银行瘫痪表现。",
+   "keyword": "overvalue 高估；on the wrong planet 完全搞错了；illiquidity 非流动性、变现困难；book losses 记账亏损。",
+   "note": "引语理解题：on the wrong planet 后的 with 短语就是原因，overvalued 与 exaggerated 直接同义；务必区分作者观点与银行观点——market prices overstate losses 是银行立场，作者以 shares trade below their book value 反驳，选错多因把银行辩解当作者判断。"
+  },
+  {
+   "question_id": 687,
+   "long_sentence": "定位句 The FASB and IASB have been exactly that, cleaning up rules on stock options and pensions, against hostility from special interests；cleaning up... 为现在分词短语作伴随状语；against hostility 表让步；exactly that 回指上句 independent and even combative standard-setters。译：FASB 与 IASB 正是如此——例如顶着特殊利益集团的敌意清理股票期权与养老金规则。",
+   "option": "正确项 D sympathy：作者先肯定二者 have been exactly that（正是这样的人），又惋惜其现在 giving in to critics 只会招致更多让步压力，对其处境持同情支持态度；A satisfaction 与惋惜语气不符；B skepticism 张冠李戴，作者质疑的是银行而非准则制定者；C objectiveness 无中生有，作者通篇褒贬鲜明。",
+   "keyword": "combative 好斗的、据理力争的；give in to 向…让步；sympathy 同情；special interests 特殊利益集团。",
+   "note": "态度题抓评价形容词加转折：independent and even combative 加 have been exactly that 是正面肯定，But by giving in to critics... inviting pressure 是惋惜——肯定加惋惜即为同情；切勿把对银行的批评情绪迁移到准则制定者身上。"
+  },
+  {
+   "question_id": 688,
+   "long_sentence": "答案 B 段关键句 The functioning of the market is based on flexible trends dominated by potential buyers；dominated by... 为过去分词短语作后置定语；后句 it is up to the buyer, rather than the seller, to decide what to buy 为 it 形式主语结构，it is up to sb 意为「由某人决定」。译：市场的运行基于由潜在买方主导的灵活趋势；换言之，买什么由买方而非卖方说了算。",
+   "option": "答案 B 段：段首设问 Will such variations bring about a change in the overall structure of the food and drink market? 紧接 Definitely not 斩钉截铁自答，such variations 回指前文「外出就餐偏好上升」与「衰退期捂紧钱包」两大消费趋势，指代与设问答答环环相扣；最易混的 C 段以总结语 All in all 开头、D 段 especially 只是半句话，均无法独立承接趋势段。",
+   "keyword": "bring about 引起、导致；overall structure 总体结构；be up to sb 由某人决定；at any rate 无论如何。",
+   "note": "排序题先抓指代与设问：such variations 必须能在前文找到复指对象；Will...? Definitely not. 的设问自答结构是天然段首信号；C 的 All in all 是总结开头、D 的 especially 不能独立成句，先排除这两类再定 B。"
+  },
+  {
+   "question_id": 689,
+   "long_sentence": "答案 F 段首句 wholesale food and drink sales came to 268 billion dollars in France, Germany, Italy, Spain, and the United Kingdom in 2000, more than 40 percent of retail sales；come to 意为「合计达」；more than 40 percent of retail sales 为补充说明的同位成分。译：例如，2000 年法、德、意、西、英五国食品饮料批发销售额合计达 2680 亿美元——超过零售额的百分之四十。",
+   "option": "答案 F 段：For example 表明这是数据例证段，以 268 billion 的销售额、超过零售额 40% 的体量、margins higher in wholesale than in retail（批发利润率更高）、more Europeans eat out more often（批发需求增长快）例证前文「批发是大有可为的机会」这一判断；与最易混的 E 段区分：E 讲四国市场由相同要素构成（same building blocks），是结构性描述，F 才是数字支撑。",
+   "keyword": "come to 合计达；margin 利润率；food service sector 餐饮服务部门；consolidate 整合、合并。",
+   "note": "For example、Moreover、and 三层递进的例证结构：example 之前必有被例证的观点句，做题先找观点再回填数据段；本段所有数字共同指向「批发比零售更有利可图」，与 E 段的构成要素描述分工不同，靠 same building blocks 与具体数字可快速分辨。"
+  },
+  {
+   "question_id": 690,
+   "long_sentence": "答案 D 段首句（承接上段句尾）especially in their customer segments and wholesale structures, as well as the competitive dynamics of individual food and drink categories；especially 引出强调部分；as well as 连接并列名词短语；their 回指上段的各国市场。译：（各国市场差异）尤其体现在客户群体、批发结构以及各食品饮料类别的竞争动态上。",
+   "option": "答案 D 段：especially 开头的半句必须紧接上段以 differences among the biggest national markets／competitive dynamics 收尾的句子，属语法延续加词汇复现；段内 these differences 回指本段列举的三类差异，形成自洽；最易混的 E 段说 Despite variations in detail...are made out of the same building blocks，强调「异中有同」，与 D 详述「差异何在」方向相反。",
+   "keyword": "customer segment 客户群体；wholesale structure 批发结构；competitive dynamics 竞争动态；entrenched 根深蒂固的、地位稳固的。",
+   "note": "以 especially、especially in 这类小写延续词开头的选项必须接上段句尾，先找以逗号加差异类词收尾的段落；D 段末 New skills and unfamiliar business models are needed too 又为 G 段 none of these requirements 埋下指代钩子，前后两钩是定位铁证。"
+  },
+  {
+   "question_id": 691,
+   "long_sentence": "答案 G 段主干 none of these requirements should deter large retailers from trying their hand；deter sb from doing sth 阻止某人做某事；for 引导原因状语从句；those that master the intricacies of wholesaling 中 that 从句修饰 those。译：然而，这些要求都不应阻止大型零售商（甚至一些大型食品生产商和现有批发商）一试身手，因为掌握欧洲批发业复杂门道者必将收获可观回报。",
+   "option": "答案 G 段：However 转折承接上段「必须理解差异、需要新技能与陌生商业模式」的困难清单，none of these requirements 逐一回指这些要求；for 引出的原因句 stand to reap considerable gains 呼应全文「批发是有利可图的机会」主题；与 B 段区分：B 设问市场结构是否改变，G 谈零售商是否该入场尝试，话题落点不同。",
+   "keyword": "deter...from doing 阻止；try one's hand 一试身手；reap gains 获得收益；intricacies 复杂细节、门道。",
+   "note": "none of these requirements 的复指对象在前段句末，However 决不能放在「困难」尚未出现的位置；G 段 stand to reap considerable gains 的鼓励语与主题词 wholesale 呼应，排序题中「转折加指代加主旨收束」三件套齐备处即答案段。"
+  },
+  {
+   "question_id": 692,
+   "long_sentence": "答案 A 段末句 But almost all have ignored the big, profitable opportunity in their own backyard: the wholesale food and drink trade, which appears to be just the kind of market retailers need；冒号后为同位语；which 引导非限制性定语从句；in one's own backyard 为比喻用法。译：但几乎所有零售商都忽视了自家后院的大好赢利机会：食品饮料批发贸易——这看似正是零售商需要的那种市场。",
+   "option": "答案 A 段：先以 Retail sales...are at a standstill（零售停滞）与 hungry for opportunities（渴求增长）摆出困境，再以 But almost all have ignored...the wholesale food and drink trade 点出全文核心议题——被忽视的批发机会；与 E 段区分：E 描述批发市场内部构成（mom-and-pop stores、horeca），与 B 段的设问和 F 段的数据相比，A 段是提出问题、奠定话题的段落。",
+   "keyword": "at a standstill 处于停滞状态；backyard 后院（喻自家地盘）；ignore 忽视；wholesale 批发。",
+   "note": "困境加转折加议题是典型主题段结构：standstill、hungry、ignored 三词奠定「零售商需找出路」的基调；凡谈市场结构的 B、谈构成的 E、谈数据的 F 都依赖 A 提出的话题，做题时先把「提出议题」的段落与其余「展开」的段落分层。"
+  },
+  {
+   "question_id": 693,
+   "long_sentence": "定位句 But 1______ some claims to the contrary, laughing probably has little influence on physical fitness；空格处需介词引导让步性插入语；to the contrary 意为「相反的」；主干为 laughing has little influence on physical fitness。译：但是，尽管有一些相反的说法，大笑恐怕对身体健康几乎没有影响。",
+   "option": "正确项 C despite：despite some claims to the contrary 构成让步介词短语，与句首 But 及 little influence 的贬抑判断形成「尽管有相反说法、事实仍是」的让步转折逻辑；A among 表示「在…之中」，among some claims 语义不通；B except 表排除，逻辑变成「除相反说法外」与文意相反；D like 表类比，「像相反的说法那样」方向颠倒。",
+   "keyword": "despite 尽管＝in spite of；to the contrary 相反的；physical fitness 身体健康；have little influence on 对…几乎没有影响。",
+   "note": "首空抓全文基调：But 之后是作者真实立场（笑对健康影响甚微），空格必须选让步介词把「相反说法」让步化；despite 与 but 的双重让步转折是完形开头段的经典搭配，among 与 like 均无法表达让步。"
+  },
+  {
+   "question_id": 694,
+   "long_sentence": "定位句 Laughter does 2______ short-term changes in the function of the heart and its blood vessels；does 为强调助动词，后接动词原形；changes in... 意为「在…方面的变化」；in the function of the heart 为后置定语。译：大笑确实会引发心脏及其血管功能的短期变化。",
+   "option": "正确项 D produce：produce changes 为标准动宾搭配，且下文 3 空 boosting heart rate and oxygen consumption 表明这些变化是大笑主动引发的生理反应；A reflect 「反映」不当，变化须先被引发才谈得上反映，主语应是指标而非笑声；B demand 「要求」与Laugh 大笑作主语的语境不符；C indicate 「表明」同理，laughter 是变化的成因而非信号。",
+   "keyword": "produce changes 产生变化；short-term 短期的；blood vessels 血管；heart rate 心率。",
+   "note": "空 2 与空 3 是连体题：能 boosting（提升）心率与耗氧量的变化必然是被「产生」的；does 强调结构后必须接实义动词原形；reflect、indicate 这类「显示类」动词的主语通常是数据或研究，不是笑声本身。"
+  },
+  {
+   "question_id": 695,
+   "long_sentence": "定位句 Laughter does produce short-term changes..., 3______ heart rate and oxygen consumption；空格处为现在分词短语作结果状语，补充说明 changes 的具体内容；heart rate and oxygen consumption 为并列宾语。译：大笑确实会引发心脏及血管功能的短期变化，使心率和耗氧量升高。",
+   "option": "正确项 B boosting：boost heart rate「提升心率」是生理唤起的标准表述，与 short-term changes 的中性描述一致；A stabilizing 「使稳定」与「变化」语境矛盾，稳定即无变化；C impairing 「损害」程度过重，下文 But 转折说大笑难以持续、益处有限，此处理应是中性生理变化而非损伤；D determining 「决定」夸大其词，大笑不能决定心率。",
+   "keyword": "boost 提升、促进＝increase；oxygen consumption 耗氧量；stabilize 使稳定；impair 损害。",
+   "note": "分词作结果状语要与前文 changes 逻辑一致：变化既可能是升也可能是降，但心率耗氧在笑的当下必然上升；C impairing 是强干扰——考研完形里「损害健康」类贬义词常在转折前的中性句中设阱，判断褒贬要看逻辑词位置。"
+  },
+  {
+   "question_id": 696,
+   "long_sentence": "定位句 But because hard laughter is difficult to 4______, a good laugh is unlikely to have 5______ benefits the way, say, walking or jogging does；because 引导原因状语从句；difficult to 后接动词原形；the way walking or jogging does 为方式类比。译：但由于剧烈的大笑难以维持，开怀一笑不太可能像散步或慢跑那样带来可测量的益处。",
+   "option": "正确项 B sustain：sustain「维持」与 difficult to 搭配，hard laughter（剧烈大笑）在生理上难以长时间持续，正解释了其后「益处有限」的结果；A transmit 「传播」与 laughter 主语搭配不当；C evaluate 「评估」与因果链无关；D observe 「观察」同样与「益处有限」的原因无关。",
+   "keyword": "sustain 维持、持续；hard laughter 剧烈的大笑；unlikely to 不太可能；jogging 慢跑。",
+   "note": "本句是 But 引导的因果链：难以「维持」大笑→不像散步慢跑那样有持续效果→益处有限；sustain 的对象是 laughter 这个动作本身，选 evaluate 或 observe 的同学混淆了「动作持续」与「效果检测」两个层面。"
+  },
+  {
+   "question_id": 697,
+   "long_sentence": "定位句 a good laugh is unlikely to have 5______ benefits the way, say, walking or jogging does；空格处为形容词作定语修饰 benefits；say 为插入语意为「比如说」；the way...does 表方式类比。译：开怀一笑不太可能像散步或慢跑那样带来可测量的益处。",
+   "option": "正确项 A measurable：前文刚说变化只是 short-term 且难以 sustain，故益处谈不上「可测量的」，measurable benefits 与短期性、难持续形成完整因果；B manageable 「可管理的」与益处搭配不当；C affordable 「可负担的」多修饰价格；D renewable 「可再生的」多修饰能源资源，均为形近 -able 词的语义干扰。",
+   "keyword": "measurable 可测量的、显著的；benefit 益处；manageable 可管理的；affordable 可负担的。",
+   "note": "四个选项全是 -able 形近词，考查语义搭配而非词形：限定 benefits 的只能是 measurable；完形选词先定逻辑（短期难持续→效果测不出），再排形近干扰，这是 2011 年考研完形的典型命题手法。"
+  },
+  {
+   "question_id": 698,
+   "long_sentence": "定位句 6______, instead of straining muscles to build them, as exercise does, laughter apparently accomplishes the 7______；instead of 意为「而不是」；as exercise does 为方式状语从句；straining muscles 现在分词短语作伴随说明。译：事实上，锻炼是拉紧肌肉以求强健，而大笑显然恰恰达成相反的效果。",
+   "option": "正确项 B In fact：上段结论是大笑不太可能有可测的健身益处，本段给出更进一步的事实——笑不练肌肉反放松肌肉，In fact 引出与预期相反或递进的事实；A In turn 表「反过来」，强调先后互换关系，不符；C In addition 表并列递增，但本段并非补充另一优点而是转折深化；D In brief 表总结，置于段首不合语篇。",
+   "keyword": "in fact 事实上、实际上；instead of 而不是；strain 拉紧、使紧张；accomplish 达成、完成。",
+   "note": "句间逻辑词题先看上段末与下段内容的关系：上段说益处有限，本段说效果与锻炼相反，是「事实上更进一步」的递进强调而非简单并列；in turn 干扰性最强，但它需要「前后互换」的语境支撑。"
+  },
+  {
+   "question_id": 699,
+   "long_sentence": "定位句 instead of straining muscles to build them, as exercise does, laughter apparently accomplishes the 7______；instead of 短语与 accomplish the... 构成对比呼应；them 回指 muscles。译：锻炼是通过拉紧肌肉来强健它们，而大笑显然达成的恰恰是相反的效果。",
+   "option": "正确项 A opposite：instead of straining muscles（不是拉紧肌肉）已明示笑的做法与锻炼相反，accomplishes the opposite「达成相反效果」承接其后 relaxes muscles 的下文；B impossible 「不可能之事」无逻辑落点；C average 「平均情况」与对比语境无关；D expected 「预期之事」方向错误，正是与预期相反才需要 instead of。",
+   "keyword": "opposite 相反；strain muscles 拉紧肌肉；apparently 显然；accomplish 达成、实现。",
+   "note": "instead of 是最强信号词：其宾语 straining muscles 与空格内容必须构成反义关系；下文 decreasing muscle tone（肌张力下降）进一步印证 opposite；完形中 the opposite 常与 instead of、rather than 形成固定呼应链。"
+  },
+  {
+   "question_id": 700,
+   "long_sentence": "定位句 Studies dating back to the 1930s indicate that laughter 8______ muscles, decreasing muscle tone for up to 45 minutes after the laugh dies down；dating back to 为现在分词短语作后置定语；decreasing muscle tone 为结果状语；die down 意为「平息、消退」。译：早在上世纪三十年代的研究就表明，大笑会使肌肉放松，其肌张力下降的效果在大笑平息后可持续长达四十五分钟。",
+   "option": "正确项 D relaxes：relax muscles「放松肌肉」与 decreasing muscle tone（肌张力下降）直接呼应，也与上空 the opposite（与锻炼的拉紧相反）一致；A hardens 「使变硬」与 C tightens 「使收紧」方向完全相反；B weakens 「使变弱无力」干扰最强，但肌张力下降是放松而非肌力衰退，且 relax 与 tone（张力）是生理学标准搭配。",
+   "keyword": "relax 放松、使松弛；muscle tone 肌张力；date back to 追溯到；die down 平息、消退。",
+   "note": "同现线索决定答案：decreasing muscle tone 是 relax 的同向复现，而 hardens、tightens 与其反相；B weakens 是近义陷阱——「放松」指张力回落，「变弱」指力量衰退，考研完形爱在近义词间考搭配精确度。"
+  }
+ ]
+}

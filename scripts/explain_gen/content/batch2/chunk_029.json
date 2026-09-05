@@ -1,0 +1,180 @@
+{
+ "chunk": 29,
+ "items": [
+  {
+   "question_id": 701,
+   "long_sentence": "定位句 Such bodily reaction might conceivably help 9______ the effects of psychological stress；Such bodily reaction 回指上段「笑使肌肉放松」的生理反应；might conceivably 表推测性可能；help 后接省略 to 的动词原形。译：这种身体反应或许有望帮助缓解心理压力的影响。",
+   "option": "正确项 C moderate：moderate the effects「缓和…影响」，放松反应与压力效应方向相反，构成缓解关系；A aggravate 加剧，与文意方向相反；B generate 产生，压力效应并非笑的反应所产生，动宾逻辑错位；D enhance 增强，同样与「放松有益」的语境相悖。",
+   "keyword": "moderate 缓和、减轻＝alleviate；aggravate 加剧（反义）；psychological stress 心理压力；conceivably 可以想见地。",
+   "note": "本空靠褒贬方向定案：上文 laughter relaxes muscles 是正面生理反应，对 stress 的 effects 只能 moderate；moderate 的形容词转动词（熟词僻义）是考点，aggravate 与 enhance 均为反方向词，generate 则偷换了效果的来源。"
+  },
+  {
+   "question_id": 702,
+   "long_sentence": "定位句 Anyway, the act of laughing probably does produce other types of 10______ feedback that improve an individual's emotional state；that 引导定语从句修饰 feedback；does 为强调助动词；emotional state 情绪状态。译：不管怎样，大笑这一行为确实会产生其他类型的身体反馈，从而改善个人的情绪状态。",
+   "option": "正确项 A physical：与上段 laughter relaxes muscles 及本段 rooted in physical reactions 呼应，笑通过身体反馈改善情绪；B mental 与 emotional state 概念重叠，若反馈是精神的则「身体行为影响情绪」的论证断裂；C subconscious 无中生有；D internal 「内部的」过泛，文段强调可观测的身体反应。",
+   "keyword": "feedback 反馈；physical 身体的＝bodily；emotional state 情绪状态；anyway 无论如何、不管怎样。",
+   "note": "上下文复现是钥匙：上句 Such bodily reaction 与下句 rooted in physical reactions 两次出现身体义；选 mental 会把「身体影响心理」改成「心理影响心理」，全段论证失效，完形填词必须服从段落主线。"
+  },
+  {
+   "question_id": 703,
+   "long_sentence": "定位句 11______ one classical theory of emotion, our feelings are partially rooted 12______ physical reactions；one classical theory of emotion 为观点出处；主句 our feelings are partially rooted... 为被动结构。译：根据一个经典的情绪理论，我们的情绪部分根植于身体反应。",
+   "option": "正确项 B According to：引述理论观点必须标明出处，According to one classical theory 引出詹姆斯式情绪理论，与下文 It was argued 呼应成引述链；A Except for 「除…之外」逻辑不通；C Due to 表原因，理论不是情绪根植于身体的原因；D As for 「至于」引出话题转换，不合观点引入语境。",
+   "keyword": "according to 根据、依据；classical theory 经典理论；emotion 情绪；partially 部分地。",
+   "note": "观点引述句式：theory、argument、study 之前常用 According to 引出，且下文 It was argued at the end of the 19th century 是同一理论的再次引述；Due to 干扰最强，但它接原因名词而非观点出处。"
+  },
+  {
+   "question_id": 704,
+   "long_sentence": "主句 our feelings are partially rooted 12______ physical reactions；be rooted in 为固定搭配「根植于、源于」；partially 作程度状语，表「部分地」。译：我们的情绪部分根植于身体反应。",
+   "option": "正确项 C in：be rooted in 是固定介词搭配，情绪「植根于」身体反应之中；A with 不与 rooted 构成搭配；B on 常见于 base...on、concentrate on，rooted on 不地道；D at 同样无此搭配。介词题先认短语再排干扰。",
+   "keyword": "be rooted in 根植于＝be grounded in；feeling 情绪；reaction 反应；partially 部分地。",
+   "note": "介词搭配题看动词：root 的标准搭配只有 in（同类还有 be embedded in、be based in）；识别 be rooted in 后还可反推 11 空应为 According to，前后两空互为印证，这是 2011 年完形连环命题的典型。"
+  },
+  {
+   "question_id": 705,
+   "long_sentence": "定位句 humans do not cry 13______ they are sad but they become sad when the tears begin to flow；not...but... 结构连接两个分句；when the tears begin to flow 为时间状语从句。译：人不是因为悲伤才哭，而是当眼泪开始流出时才变得悲伤。",
+   "option": "正确项 D because：not cry because they are sad＝不是因为悲伤而哭，but 后给出新解释「先流泪后悲伤」，与该理论主张一致；A unless 除非，条件关系与 not...but 对比结构冲突；B until 直到，会读成「不哭直到悲伤」，时序颠倒；C if 如果，条件句无法与 but 的对比衔接。",
+   "keyword": "not because 并非因为（not...because 否定原因）；but 而是；tear 眼泪；flow 流出、流淌。",
+   "note": "本句是身体先于情绪理论的例证：流泪（身体）先于悲伤（情绪）；not A but B 结构中 because 从句被整体否定，识别结构即可锁定 D；until 项利用 cry until 的常见搭配设阱，务必先断句再看逻辑。"
+  },
+  {
+   "question_id": 706,
+   "long_sentence": "定位句 Although sadness also 14______ tears, evidence suggests that emotions can flow 15______ muscular responses；Although 引导让步状语从句；主句 evidence suggests that...；flow from 意为「源于」。译：虽然悲伤也会先于眼泪出现，但有证据表明情绪也能源于肌肉反应。",
+   "option": "正确项 C precedes：让步从句先承认常识「先悲后泣」，主句再转折「情绪也可由身体引发」，前后必须对立，precedes（先于）承认可知常识；A exhausts 「耗尽眼泪」搭配荒谬；B follows 「悲伤跟随眼泪」会使从句与主句同向，让步逻辑瓦解；D suppresses 抑制，无中生有。",
+   "keyword": "precede 先于、发生在…之前；follow 跟随（反义干扰）；although 尽管；evidence suggests 证据表明。",
+   "note": "although 要求从句与主句信息对立：主句说身体反应引发情绪，从句须承认常识「悲伤在前、眼泪在后」；选 follows 的同学没看出让步结构——follows 会让「虽然…但…」前后同向，自相矛盾。"
+  },
+  {
+   "question_id": 707,
+   "long_sentence": "主句 evidence suggests that emotions can flow 15______ muscular responses；can 后接动词原形 flow；flow from 为固定搭配「从…流出、由…产生」。译：有证据表明，情绪可以从肌肉反应中流淌出来——即情绪源于身体反应。",
+   "option": "正确项 B from：flow from muscular responses＝情绪由肌肉反应产生，与「身体先于情绪」的理论完全一致，并与 13 空「先流泪后悲伤」互证；A into 方向颠倒，变成情绪流入肌肉；C towards 「朝向」无产出含义；D beyond 「超越」脱离 flow 的搭配语义。",
+   "keyword": "flow from 源于＝derive from；muscular response 肌肉反应；emotion 情绪；evidence 证据。",
+   "note": "介词辨析先定方向：理论核心是身体引发情绪，from 才能表达情绪出自肌肉反应；into 是最强干扰，方向一反则 13、14 空的论证链全部坍塌，做完介词题务必回读全句核对方向。"
+  },
+  {
+   "question_id": 708,
+   "long_sentence": "定位句 asked volunteers to 16______ a pen either with their teeth – thereby creating an artificial smile – or with their lips；ask sb to do sth；either...or... 连接两种持笔方式；破折号内 thereby creating... 为结果状语。译：请志愿者用牙齿咬住一支笔——从而形成人为的笑容——或者用嘴唇衔住它。",
+   "option": "正确项 D hold：hold a pen with their teeth「用牙衔住笔」，hold 是中性持握动词，可同时兼容 with teeth 与 with lips 两种方式；A fetch 「取来」是一次性动作，无法维持表情；B bite 「咬」与 with their teeth 语义重叠，且不能说用嘴唇 bite；C pick 「拾起」同样无法持续形成表情。",
+   "keyword": "hold 持、衔、咬住；artificial smile 人为的笑；either...or... 或者…或者…；volunteer 志愿者。",
+   "note": "实验描写题抓并列结构：either with teeth（成笑）or with lips（成皱眉）需要同一个能兼容两种持笔方式的动词，只有 hold 中性百搭；bite 是最大陷阱——语义重复且与 lips 冲突，两种条件必须靠同一动词成立。"
+  },
+  {
+   "question_id": 709,
+   "long_sentence": "定位句 or with their lips, which would produce a(n) 17______ expression；which 引导非限制性定语从句；a(n) 提示所填词以元音开头；produce an expression 形成某种表情。译：或者用嘴唇衔住笔，这会形成一种失望撅嘴的表情。",
+   "option": "正确项 A disappointed：与 with teeth 形成的 artificial smile 构成对照，嘴唇衔笔时嘴型下撇近似撅嘴失望，下文 contracted in a frown（皱紧）印证消极表情；B excited 兴奋是积极情绪，方向相反；C joyful 快乐与 smile 组重复，两种持笔条件必须有别；D indifferent 冷漠虽属消极但与嘴型无关。",
+   "keyword": "disappointed 失望的；frown 皱眉；expression 表情；indifferent 冷漠的、无所谓的。",
+   "note": "对照实验的两个条件必须成对立组：smile 对 disappointed；先找与 frown 呼应的消极词，再用「表情须由嘴型产生」排除 indifferent——冷漠可以面无表情，无法由衔笔的嘴型直接产生。"
+  },
+  {
+   "question_id": 710,
+   "long_sentence": "定位句 Those forced to exercise their smiling muscles 18______ more enthusiastically to funny cartoons than did those whose mouths were contracted in a frown；those forced to... 为过去分词短语作后置定语；than 引导比较从句，did 前置构成倒装。译：被迫活动笑肌的人对有趣漫画的反应比那些撇嘴皱眉的人更热烈。",
+   "option": "正确项 D reacted：react to「对…作出反应」，与 more enthusiastically 搭配描述实验观测到的行为差异；A adapted to 「适应」与 enthusiastically 的即时热情矛盾；B catered to 「迎合」的主语是人迎合需求，不能对漫画；C turned to 「转向、求助于」与实验语境不符。",
+   "keyword": "react to 对…作出反应；enthusiastically 热情地；contract 收缩、皱紧；funny cartoons 有趣的漫画。",
+   "note": "空前 exercise their smiling muscles 与空后 to funny cartoons 双向限制：能接 to 且被程度副词修饰的反应类动词只有 react to；adapted to 干扰性强，但实验测量的是即时反应而非长期适应，比较级 more enthusiastically 也提示反应强度差异。"
+  },
+  {
+   "question_id": 711,
+   "long_sentence": "定位句 19______ that expressions may influence emotions rather than just the other way around；现在分词短语作结果状语，逻辑主语是前面整个实验结果；rather than just the other way around 意为「而不仅仅是相反的情况」。译：这表明表情可能影响情绪，而不仅仅是情绪影响表情。",
+   "option": "正确项 A suggesting：实验结果 suggesting that... 是标准学术表述，现在分词表结果与推断；B requiring 「要求」程度过强，实验只能提示不能强令；C mentioning 「提及」主语应是人，不该是实验结果；D supposing 「假设」与实验已得出结论的事实矛盾。",
+   "keyword": "suggest 表明、暗示＝indicate；rather than 而不是；the other way around 反过来；expression 表情。",
+   "note": "分词状语题看逻辑主语：前面整个比较结果「暗示」结论，suggest 用主动现在分词衔接；supposing 也接 that 从句故有干扰，但它表假设且多置句首，与已完成的实验结果冲突，考研完形常在此设阱。"
+  },
+  {
+   "question_id": 712,
+   "long_sentence": "末句 20______, the physical act of laughter could improve mood；could 表委婉推断；the physical act of laughter 为主语；improve mood 改善情绪。译：同样地，笑这一身体行为也可能改善情绪。",
+   "option": "正确项 C Similarly：Strack 实验证明表情影响情绪，笑作为另一种身体行为「同样地」能改善情绪，属同类现象的类比收束；A Eventually 「最终」强调时间终点，无此意；B Consequently 「因此」因果过强，实验与笑改善情绪是类比而非直接因果；D Conversely 「相反地」方向颠倒。",
+   "keyword": "similarly 同样地、类似地；conversely 相反地；eventually 最终；consequently 因此＝as a result。",
+   "note": "全文结论句的逻辑：表情实验与笑的主题是平行类比，用 Similarly 收束最稳；Consequently 是最强干扰——若选它则要求笑直接由实验推得，但文中笑只是同类证据，无直接因果链，逻辑词题必须核验推理强度。"
+  },
+  {
+   "question_id": 713,
+   "long_sentence": "定位句 For the most part, the response has been favorable, to say the least. 「Hooray! At last!」 wrote Anthony Tommasini, a sober-sided classical-music critic；For the most part 大体上；to say the least 至少可以这么说；引语 Hooray 表欢呼。译：大体而言，反应至少称得上正面。以严肃著称的古典乐评人托马西尼写道：「万岁！终于等到了！」",
+   "option": "正确项 C received acclaim：favorable（正面评价）加 Hooray! At last!（欢呼）即喝彩称赞；A incurred criticism 正反混淆，首段无批评；B raised suspicion 无中生有；D aroused curiosity 张冠李戴，第二段说任命 come as such a surprise 是意外而非好奇。",
+   "keyword": "favorable 正面的、赞同的；acclaim 称赞、喝彩＝praise；appointment 任命；critic 评论家。",
+   "note": "首段态度题抓评价词与引语：favorable 定基调，Hooray 是最直白的欢呼证据；D 项的 curiosity 利用第二段 surprise 设阱——题干限定 Paragraph 1，跨段信息即答非所问，务必守住定位范围。"
+  },
+  {
+   "question_id": 714,
+   "long_sentence": "定位句 Even Tommasini, who had advocated Gilbert's appointment in the Times, calls him 「an unpretentious musician with no air of the formidable conductor about him」；who had advocated 为过去完成时定语从句；with 复合结构修饰 musician；formidable 意为「令人敬畏的」。译：连曾在《纽约时报》撰文支持任命的托马西尼也称他是「一位朴实无华的音乐家，毫无令人望而生畏的指挥家风范」。",
+   "option": "正确项 B modest：unpretentious（不张扬的）＝modest，no air of the formidable conductor 亦指无大腕架子；A influential 无中生有；C respectable 张冠李戴，sober-sided 修饰的是 Tommasini 本人而非 Gilbert；D talented 无中生有，评价集中于气质而非才华。",
+   "keyword": "unpretentious 朴实无华的、不摆架子的＝modest；formidable 令人敬畏的；air 气质、神态＝manner。",
+   "note": "词汇题核心是 unpretentious：un- 否定前缀加 pretentious（自命不凡的）；Even Tommasini 的 Even 暗示连支持者也只给出朴素评价，第二段末 faint praise（敷衍的称赞）进一步佐证，C 项把这种克制误读成尊敬。"
+  },
+  {
+   "question_id": 715,
+   "long_sentence": "定位句 Devoted concertgoers who reply that recordings are no substitute for live performance are missing the point；who 引导定语从句修饰 concertgoers；A is no substitute for B 意为「A 无法替代 B」；missing the point 意为「没抓住要点」。译：那些坚称录音无法替代现场演出的忠实乐迷没有抓住问题的要害。",
+   "option": "正确项 D overestimate the value of live performances：作者随后列出录音 cheap、available everywhere、often much higher in artistic quality，现场未必更优，乐迷高估了现场价值；A ignore the expenses 无中生有；B reject most kinds of recorded performances 偷换概念，「不能替代现场」不等于拒绝大多数录音；C exaggerate the variety 张冠李戴，variety 是作者形容 Gilbert 曲目之广。",
+   "keyword": "be no substitute for 无法替代；miss the point 没抓住要点；overestimate 高估；devoted 忠实的、挚爱的。",
+   "note": "are missing the point 是作者的否定评价，其后四句全是录音优势的论据——便宜、随处可得、质量常更高、随时可听，结论自然落在「现场被高估」；B 把「不可替代」偷换成「拒绝大多数」是程度偷换，注意范围词 most。"
+  },
+  {
+   "question_id": 716,
+   "long_sentence": "定位句 These recordings are cheap, available everywhere; moreover, they can be 「consumed」 at a time and place of the listener's choosing；cheap 与 available everywhere 为并列表语；at a time and place of one's choosing 意为「在自己选定的时间地点」。译：这些录音便宜、随处可得，而且可在听者自选的时间地点欣赏。",
+   "option": "正确项 B They are easily accessible to the general public：available everywhere 加 cheap＝大众易于获得；A often inferior to live concerts in quality 正反混淆，原文说质量常更高；C help improve the quality of music 无中生有，录音不改变音乐质量；D have only covered masterpieces 绝对化，only 无从谈起。",
+   "keyword": "available 可获得的；accessible 易获得的＝available；consume 欣赏、消费；artistic quality 艺术质量。",
+   "note": "判断正误题逐项回文：B 是 available everywhere 加 cheap 的合并改写；A 与 much higher in artistic quality 直接相反；D 的 only 属绝对化标签，考研真题中 only、all、never 一类全称词优先怀疑。"
+  },
+  {
+   "question_id": 717,
+   "long_sentence": "定位句 Merely expanding the orchestra's repertoire will not be enough. If Gilbert and the Philharmonic are to succeed, they must first change the relationship between the orchestra and the new audience it hopes to attract；Merely 强调不足；be to succeed 表条件假设。译：仅仅扩展乐团的曲目是不够的。Gilbert 和爱乐乐团若要成功，必须首先改变乐团与其希望吸引的新观众之间的关系。",
+   "option": "正确项 A doubtful：作者先承认 Gilbert 对新音乐的兴趣，再以 Merely...will not be enough 加 If...are to succeed 的条件句表达对其能否成功的怀疑；B enthusiastic 与 C confident 与保留态度相反；D puzzled 张冠李戴，作者明确知道问题在观众关系，并非困惑不解。",
+   "keyword": "merely 仅仅＝only；repertoire 保留曲目、常演剧目；doubtful 怀疑的＝skeptical；revitalize 使复兴。",
+   "note": "态度题看让步与条件的搭配：But what will be the nature of that difference? 的设问加 Merely...not enough 的否定，怀疑层层递进；D 的 puzzled 与 doubtful 区分在「不知答案」还是「不信能成」，作者显然属于后者。"
+  },
+  {
+   "question_id": 718,
+   "long_sentence": "定位句 Rather than cloaking his exit in the usual vague excuses, he came right out and said he was leaving 「to pursue my goal of running a company」；rather than 而不是；cloak...in... 意为「用…掩盖」；come right out 意为「直截了当地说」。译：他没有用惯常的含糊托辞掩盖自己的离职，而是直言不讳地说离开是为了实现经营一家公司的目标。",
+   "option": "正确项 B frank：surprisingly straight up（直截了当）加 came right out（直说）共同指向坦率；A arrogant 傲慢无中生有；C self-centered 过度推断，谈个人目标不等于自我中心；D impulsive 与文不符，第二段说离职让他有时间反思想经营什么公司，是深思熟虑的规划。",
+   "keyword": "frank 坦率的＝straight up；cloak 掩饰＝cover up；vague 含糊的、模糊的；come right out 直言不讳。",
+   "note": "人物态度题抓描写词链：straight up、rather than cloaking、came right out 三个表达同向叠加；D 的 impulsive 可用第二段 time to reflect on what kind of company he wanted to run 排除——主动规划不是冲动行事。"
+  },
+  {
+   "question_id": 719,
+   "long_sentence": "定位句 In recent weeks the No.2 executives at Avon and American Express quit with the explanation that they were looking for a CEO post；with the explanation that... 介词短语加同位语从句说明辞职原因；look for 寻求。译：近几周，雅芳与美国运通的二号高管相继辞职，理由是他们正在寻求 CEO 职位。",
+   "option": "正确项 D their pursuit of new career goals：looking for a CEO post、his aspirations（抱负）、未获任命者 may wish to move on 全部指向职业目标；A expectation of better financial status 无中生有；B need to reflect on their private life 偷换概念，McGee 反思的是想经营什么公司（事业方向）；C strained relations with the boards 过度推断，未获任命不等于与董事会关系紧张。",
+   "keyword": "spur 促使、激励＝prompt；aspiration 抱负、志向；executive 高管；get the nod 获得任命、得到点头。",
+   "note": "第二段论据同向：找 CEO 职位、传达抱负、未获擢升想跳槽，全部指向职业发展；B 偷换 reflect on 的宾语，C 把「未获提名」升级成「关系紧张」，考研阅读常以小幅度语义升级设阱。"
+  },
+  {
+   "question_id": 720,
+   "long_sentence": "定位句 For years executives and headhunters have adhered to the rule that the most attractive CEO candidates are the ones who must be poached；adhere to 坚守；that 引导同位语从句解释 rule；who must be poached 为定语从句。译：多年来高管与猎头恪守一条行规：最有吸引力的 CEO 人选必然是那些被别家挖走的人。",
+   "option": "正确项 C hunted for：poach 本义「偷猎」，引申为「挖角」，被挖即被猎头寻猎，下文 Carey 引语 look at sitting CEOs first 印证猎头主动寻访在任 CEO；A approved of 认可，无此义；B attended to 照料、处理，与语境无关；D guarded against 防范，方向完全相反。",
+   "keyword": "poach 挖角（本义偷猎）；headhunter 猎头；hunt for 猎取、搜寻；adhere to 坚守、遵循。",
+   "note": "猜词题靠上下文例证：Carey 说每一次搜寻董事会都要求先看在任 CEO——被盯上、被挖走者最抢手；poach 的「偷猎→挖人」引申是考研高频熟词僻义，hunted for 是其标准释义，D 的 guarded 与「吸引」相反。"
+  },
+  {
+   "question_id": 721,
+   "long_sentence": "定位句 The traditional rule was it's safer to stay where you are, but that's been fundamentally inverted. The people who've been hurt the worst are those who've stayed too long；表语从句 it's safer to stay...；be inverted 被颠倒；who've stayed too long 为定语从句。译：传统法则是留在原地更安全，但这一法则已被彻底颠覆。受伤最重的恰是那些在原位停留太久的人。",
+   "option": "正确项 A top performers used to cling to their posts：traditional rule（过去的规则）称留下更安全，可反推过去高管倾向固守职位；B loyalty is getting out-dated 过度推断，文章谈留任风险反转，未否定忠诚品质本身；C care more about reputations 无中生有；D it's safer to stick to the traditional rules 正反混淆，被颠覆的恰是「留守更安全」的旧规则。",
+   "keyword": "invert 颠倒＝turn upside down；cling to 紧抓不放＝stick to；fundamentally 根本地；disgrace 耻辱、不体面。",
+   "note": "推断题以 the old disgrace is fading（旧的耻辱感消退）反推过去：过去跳槽不体面，故大家固守职位；A 的 used to 对应 traditional rule 的时间指向；D 玩文字游戏，原文否定的是规则内容而非「守规则」本身。"
+  },
+  {
+   "question_id": 722,
+   "long_sentence": "全文题眼在第三段 As the first signs of recovery begin to take hold, deputy chiefs may be more willing to make the jump without a net；without a net 意为「没有安全网」，比喻未找好下家就辞职；take hold 生根、稳固。译：随着复苏的最初迹象逐渐稳固，二把手们可能更愿意不带安全网（未找好下家）就纵身一跳。",
+   "option": "正确项 C Top Managers Jump without a Net：jump without a net 原文复现，比喻高管未找好下家即辞职，首段 McGee 与后续 Avon、AmEx 例子都是此喻的展开；A CEOs: Where to Go? 过泛，未点出「裸辞」现象；B CEOs: All the Way Up? 偷换概念，文章非讲步步高升；D The Only Way Out 绝对化，only 无从体现。",
+   "keyword": "make the jump 纵身一跳（喻跳槽）；without a net 没有安全网（喻无退路）；deputy chief 二把手、副职；turnover 人事更替率。",
+   "note": "标题题标准：覆盖全文核心现象且形象；C 直接借用第三段比喻 without a net，与首段 McGee 裸辞、末段留守者受伤最重首尾呼应；标题题中含 only 的 D 绝对化、疑问式且宽泛的 A 失焦，均可快排。"
+  },
+  {
+   "question_id": 723,
+   "long_sentence": "定位句 Consumers passionate about a product may create 「earned」 media by willingly promoting it to friends；passionate about... 为形容词短语作后置定语；by willingly promoting... 方式状语；promote 推广、宣传。译：对某一产品充满热情的消费者会自愿向朋友推广它，从而创造「赢来」的免费媒体。",
+   "option": "正确项 D enthusiastic about recommending their favorite products：passionate about≈enthusiastic about、promoting it to friends≈recommending products，双重同义对应；A obsessed with online shopping 无中生有；B inspired by product-promoting e-mails 张冠李戴，发邮件推销是 owned media 的公司行为；C eager to help their friends promote 偷换概念，是消费者向朋友推荐，不是帮朋友推广。",
+   "keyword": "passionate 热情的＝enthusiastic；promote 推广＝recommend；earned media 赢来的免费口碑媒体；willingly 自愿地。",
+   "note": "三种媒体的定义是全篇主轴：earned（消费者自愿宣传）、owned（企业自有渠道如邮件提醒）、paid（付费广告）；B 项把 owned media 的 e-mail alerts 挪到消费者头上，属典型张冠李戴，定义题逐字比对主语。"
+  },
+  {
+   "question_id": 724,
+   "long_sentence": "定位句 We define such sold media as owned media whose traffic is so strong that other organizations place their content or e-commerce engines within that environment；define...as... 定义句式；whose traffic is so strong that... 为 so...that 结果状语从句。译：我们把这种「售出媒体」定义为流量大到足以让其他机构在其环境中放置内容或电商引擎的自有媒体。",
+   "option": "正确项 C strong user traffic：定义句原词复现 traffic is so strong，即自有媒体流量强到可出售广告位；A a safe business environment 无中生有；B random competition 偷换概念，BabyCenter 推广 complementary and even competitive products 是有意经营而非随机竞争；D flexibility in organization 无中生有。",
+   "keyword": "sold media 售出媒体；user traffic 用户流量；e-commerce engine 电商引擎；feature 特征＝characteristic。",
+   "note": "特征题优先找定义句：we define such sold media as... 之后的 whose traffic is so strong 就是答案原句；段末列出流量强的三项收益（收入、显得客观、扩大流量），可反向佐证 C，凡与定义句脱节的选项一律排除。"
+  },
+  {
+   "question_id": 725,
+   "long_sentence": "定位句 Such hijacked media are the opposite of earned media: an asset or campaign becomes hostage to consumers, other stakeholders, or activists；冒号后为解释性同位结构；become hostage to 沦为…的人质。译：这种「被劫持媒体」是免费口碑媒体的反面：资产或营销活动沦为消费者、其他利益相关者或活动人士的人质，任由他们对品牌产品提出负面指控。",
+   "option": "正确项 B can be used to produce negative effects in marketing：earned media 一旦被劫持即反转为负面武器——Members of social networks learn they can hijack media to apply pressure，营销资产可被用于产生负面效果；A invite constant conflicts 绝对化，constant 无从体现；C may be responsible for fiercer competition 无中生有；D deserve all the negative comments 绝对化，all 以偏概全。",
+   "keyword": "hijack 劫持（hijacked media 被劫持媒体）；hostage 人质（become hostage to 沦为…的人质）；allegation 指控、主张；stakeholder 利益相关者。",
+   "note": "第三段逻辑链：技术变革放大风险→消费者发声更快更有害→earned media 被劫持成 hijacked media；B 的 can be used 与 hijack 的主动利用义呼应；A、D 的 constant 与 all 是绝对化标签，先排除再核对 B 的语义方向。"
+  }
+ ]
+}
