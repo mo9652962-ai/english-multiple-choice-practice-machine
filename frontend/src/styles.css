@@ -1,5 +1,5 @@
 :root {
-  font-family: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
+  font-family: "Segoe UI Variable Text", "Segoe UI", -apple-system, "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
   color: #2e2a23;
   background: #f7f3ee;
   font-synthesis: none;
@@ -313,8 +313,8 @@ h2, h3 { margin: 0; }
 .stat-value { font: 500 30px Georgia, serif; margin-top: 10px; }
 .section-title { margin: 34px 0 16px; display: flex; justify-content: space-between; align-items: center; }
 .button { min-height: 42px; border: 1px solid transparent; border-radius: 12px; padding: 10px 16px; background: var(--primary); color: white; font-weight: 650; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s var(--ease); }
-.button:hover:not(:disabled) { background: var(--primary-hover); box-shadow: 0 8px 20px rgba(76,102,67,.18); transform: translateY(-1px); }
-.button:active:not(:disabled) { transform: translateY(0) scale(.97); box-shadow: 0 3px 10px rgba(76,102,67,.14); }
+.button:hover:not(:disabled) { background: var(--primary-hover); box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 16%, transparent); transform: translateY(-1px); }
+.button:active:not(:disabled) { transform: translateY(0) scale(.97); box-shadow: 0 3px 10px color-mix(in srgb, var(--ink) 12%, transparent); }
 .button.secondary { background: var(--surface-solid); color: var(--ink); border-color: var(--line); }
 .button.ghost { background: transparent; color: var(--muted); }
 .button.danger { background: var(--danger); }
@@ -1019,7 +1019,7 @@ h2, h3 { margin: 0; }
 .ai-composer>div { display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .ai-composer small { min-width:0; padding-left:7px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--muted); font-size:10px; }
 .ai-send-button { width:40px; height:40px; flex:0 0 40px; display:grid; place-items:center; border:0; border-radius:12px; color:white; background:var(--primary); transition:background-color .18s ease,box-shadow .18s ease; }
-.ai-send-button:hover:not(:disabled) { background:var(--primary-hover); box-shadow:0 7px 18px rgba(76,102,67,.2); }
+.ai-send-button:hover:not(:disabled) { background:var(--primary-hover); box-shadow:0 7px 18px color-mix(in srgb, var(--ink) 18%, transparent); }
 .ai-send-button:disabled { opacity:.38; cursor:not-allowed; }
 .ai-send-button.stop { color:var(--danger); background:var(--danger-soft); }
 
@@ -4824,4 +4824,106 @@ button:not(:disabled):active,
   pointer-events: none;
   opacity: 0.82;
   box-shadow: 0 0 0 2px var(--accent-vermilion) !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   v11 精致化令牌层 (2026-09 搜索调研落地)
+   来源: Stripe 字号/圆角收敛 · Josh Comeau 分层阴影 · M3 动效阶梯 150/250/400ms
+        W3C clreq 中文排版 · 暗色 elevation-by-lightness (Material/Atlassian)
+   原则: 克制增量 — 本层位于文件末尾统一质感, 不改写既有结构
+   ════════════════════════════════════════════════════════════════ */
+:root {
+  --text: var(--ink);               /* 修复历史散落的 var(--text) 引用 */
+  /* 字号阶梯 (全站收敛目标: 11 / 12.5 / 15 / 16.5 / 20 / 26 六级) */
+  --text-xs: 11px;
+  --text-sm: 12.5px;
+  --text-base: 15px;
+  --text-md: 16.5px;
+  --text-lg: 20px;
+  --text-xl: 26px;
+  /* 圆角收敛 (xs 6 / sm 10 / md 14 / lg 20 / pill) */
+  --r-xs: 6px; --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-pill: 999px;
+  /* 分层阴影: 暖墨色相多层半影 (替代单层大阴影, Josh Comeau 配方) */
+  --shadow-card: 0 1px 2px rgba(46, 42, 35, .05), 0 2px 4px rgba(46, 42, 35, .04), 0 6px 16px rgba(46, 42, 35, .05);
+  --shadow-card-hover: 0 2px 4px rgba(46, 42, 35, .05), 0 10px 22px rgba(46, 42, 35, .08), 0 20px 40px rgba(46, 42, 35, .07);
+  /* 卡片顶缘 1px 受光高光 (新极简质感) */
+  --edge-highlight: inset 0 1px 0 rgba(255, 255, 255, .55);
+}
+:root.dark {
+  /* 暗色 elevation-by-lightness: 阴影弱化, 用 1px 亮边 + 顶缘微光分层 */
+  --shadow-card: 0 0 0 1px rgba(255, 255, 255, .04), 0 2px 6px rgba(0, 0, 0, .25), 0 10px 24px rgba(0, 0, 0, .2);
+  --shadow-card-hover: 0 0 0 1px rgba(255, 255, 255, .06), 0 12px 28px rgba(0, 0, 0, .3);
+  --edge-highlight: inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+/* 统一卡片质感: 分层阴影 + 顶缘高光 (覆盖此前多轮各自为政的 shadow) */
+.card { box-shadow: var(--edge-highlight), var(--shadow-card); }
+.card:hover { box-shadow: var(--edge-highlight), var(--shadow-card-hover); }
+
+/* 中文排版 (W3C clreq): 标题 balance 防孤字, 正文 pretty 避孤词; 数字纵向对齐 */
+h1, h2, h3, .section-title h2 { text-wrap: balance; }
+p, .lead, .passage, .recommend-paper p { text-wrap: pretty; }
+.stat-value, .stat-value *, .countdown-item b, .radar-rate, .plan-min, .today-plan-total,
+.weekly-text, .timer-value, .due-link { font-variant-numeric: tabular-nums; }
+
+/* 选项字母徽章化 (多邻国式选项质感): 圆形字母章, 随答题状态变色 */
+.option .option-letter {
+  min-width: 26px; width: 26px; height: 26px; margin-top: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--r-pill); background: var(--primary-soft);
+  color: var(--primary); font-size: var(--text-sm); font-weight: 800; line-height: 1;
+  transition: background-color .18s var(--ease), color .18s var(--ease);
+}
+.option.selected .option-letter { background: var(--primary); color: var(--bg); }
+.option.correct .option-letter { background: var(--success); color: var(--bg); }
+.option.wrong .option-letter { background: var(--danger); color: var(--bg); }
+
+/* 列表 stagger 入场 (M3: 30-50ms 递增, 整组 ≤500ms) */
+@keyframes v11-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.bento-stats > *, .practice-actions > *, .recommend-papers > *, .ai-trinity-row > *, .today-plan-list > * {
+  animation: v11-rise .38s var(--ease) backwards;
+}
+.bento-stats > :nth-child(2), .practice-actions > :nth-child(2), .recommend-papers > :nth-child(2),
+.ai-trinity-row > :nth-child(2), .today-plan-list > :nth-child(2) { animation-delay: 45ms; }
+.bento-stats > :nth-child(3), .practice-actions > :nth-child(3), .recommend-papers > :nth-child(3),
+.ai-trinity-row > :nth-child(3), .today-plan-list > :nth-child(3) { animation-delay: 90ms; }
+.bento-stats > :nth-child(4), .practice-actions > :nth-child(4), .recommend-papers > :nth-child(4),
+.ai-trinity-row > :nth-child(4), .today-plan-list > :nth-child(4) { animation-delay: 135ms; }
+.bento-stats > :nth-child(n+5), .practice-actions > :nth-child(n+5),
+.recommend-papers > :nth-child(n+5), .today-plan-list > :nth-child(n+5) { animation-delay: 180ms; }
+
+/* 宣纸噪点纹理 (2026 grain trend: 仅铺背景层, 不叠卡片, 保持文字清晰) */
+body.ink-landscape::before {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+:root.dark body.ink-landscape::before { opacity: .06; }
+
+/* 图标化标题容器: lucide 图标与文字对齐 (替代 emoji 的弹性布局基座) */
+.today-plan-title { display: inline-flex; align-items: center; gap: 7px; }
+.plan-icon { display: grid; place-items: center; color: var(--primary); flex-shrink: 0; }
+.countdown-label { display: inline-flex; align-items: center; gap: 6px; }
+.ai-pick-chip { display: inline-flex; align-items: center; gap: 6px; }
+.trinity-title { display: inline-flex; align-items: center; gap: 7px; }
+
+/* 答错抖动反馈 (多邻国: 色+形+动三通道) — 叠加在既有 pop-in 之后 */
+@keyframes v11-shake {
+  0%, 100% { transform: none; }
+  25% { transform: translateX(-5px); }
+  55% { transform: translateX(4px); }
+  80% { transform: translateX(-2px); }
+}
+.option.wrong { animation: pop-in .3s var(--ease-bounce), v11-shake .34s ease-out .16s; }
+
+/* 打卡火焰常燃呼吸 (idle 1→1.06, 2.4s 循环) */
+@keyframes v11-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+.streak-flame.lit svg, .streak-flame.lit { animation: v11-breathe 2.4s ease-in-out infinite; transform-origin: center; }
+
+/* reduced-motion: 关闭 stagger 与徽章动效 */
+@media (prefers-reduced-motion: reduce) {
+  .bento-stats > *, .practice-actions > *, .recommend-papers > *,
+  .ai-trinity-row > *, .today-plan-list > * { animation: none; }
+  .option.wrong { animation: pop-in .3s var(--ease-bounce); }
+  .streak-flame.lit svg, .streak-flame.lit { animation: none; }
 }

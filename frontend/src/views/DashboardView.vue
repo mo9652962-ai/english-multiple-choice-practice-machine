@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, BookOpen, Flame, Headphones, Share2, Sparkles, Star } from 'lucide-vue-next'
+import { ArrowRight, BookMarked, BookOpen, ClipboardList, Flame, Headphones, Highlighter, Hourglass, ListOrdered, MessageCircle, NotebookPen, PenLine, Repeat, Share2, Sparkles, Star, Target } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
@@ -273,6 +273,13 @@ function runPlanTask(task: any) {
   else { randomPractice(task.action) }
 }
 
+// v11: 计划任务图标 — 后端下发 emoji，前端按 action 映射为统一线性图标
+const PLAN_ICONS: Record<string, any> = {
+  words: BookMarked, wrong: Repeat, cloze: Highlighter,
+  reading: BookOpen, part_b: ListOrdered, listening: Headphones,
+}
+function planIcon(action: string) { return PLAN_ICONS[action] || NotebookPen }
+
 const UNIT_TYPE_NAMES: Record<string, string> = {
   cloze: '完形填空', reading: '阅读理解', paragraph_matching: '阅读 Part B', part_b: '阅读 Part B',
   translation: '翻译', writing: '写作', listening: '听力理解',
@@ -424,13 +431,13 @@ async function sharePoster() {
     <div class="ai-trinity-row">
       <div class="ai-trinity-card" @click="router.push('/chat')">
         <span class="ai-trinity-badge badge-speaking">陪伴</span>
-        <span class="trinity-title">💬 学习聊天室</span>
+        <span class="trinity-title"><MessageCircle :size="16" aria-hidden="true" />学习聊天室</span>
         <p class="trinity-desc">研友同在 · @阿墨 随问随答</p>
       </div>
     </div>
     <!-- v2.18: 备考倒计时条 (研究: 练题狗/好题库 备考节点) -->
     <div v-if="data?.exam_countdown?.length" class="exam-countdown-bar">
-      <span class="countdown-label">⏳ 备考倒计时</span>
+      <span class="countdown-label"><Hourglass :size="15" aria-hidden="true" />备考倒计时</span>
       <span v-for="ex in data.exam_countdown" :key="ex.name" class="countdown-item">
         <strong>{{ ex.name }}</strong>
         <b>{{ ex.days_left }}</b> 天
@@ -449,7 +456,7 @@ async function sharePoster() {
     <!-- v2.18/19: 今日学习计划 (研究: AI智能推题/艾宾浩斯新学+复习) -->
     <div v-if="data?.today_plan?.plan?.length" class="card today-plan-card">
       <div class="today-plan-head">
-        <h3 class="today-plan-title">📌 今日学习计划</h3>
+        <h3 class="today-plan-title"><ClipboardList :size="17" aria-hidden="true" />今日学习计划</h3>
         <span class="today-plan-total">预计 {{ data.today_plan.total_minutes || 0 }} 分钟</span>
       </div>
       <div class="today-plan-list">
@@ -459,7 +466,7 @@ async function sharePoster() {
           :class="{ done: task.done }"
           @click="!task.done && runPlanTask(task)"
         >
-          <span class="plan-icon">{{ task.icon }}</span>
+          <span class="plan-icon"><component :is="planIcon(task.action)" :size="15" aria-hidden="true" /></span>
           <span class="plan-label">{{ task.label }}</span>
           <span class="plan-min">{{ task.minutes }}分</span>
           <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
@@ -470,7 +477,7 @@ async function sharePoster() {
     <div class="grid grid-2 home-goal-row">
       <div class="card today-plan-card">
         <div class="today-plan-head">
-          <h3 class="today-plan-title">🎯 今日目标</h3>
+          <h3 class="today-plan-title"><Target :size="17" aria-hidden="true" />今日目标</h3>
           <span class="today-plan-total">{{ todayAnswered }} / {{ dailyGoal }} 题</span>
         </div>
         <div class="goal-bar"><i :style="{ width: goalPct + '%' }"></i></div>
@@ -482,7 +489,7 @@ async function sharePoster() {
         </div>
       </div>
       <div class="card today-plan-card word-of-day" @click="router.push('/vocabulary')">
-        <div class="today-plan-head"><h3 class="today-plan-title">📖 每日一词</h3></div>
+        <div class="today-plan-head"><h3 class="today-plan-title"><BookMarked :size="17" aria-hidden="true" />每日一词</h3></div>
         <template v-if="wordOfDay">
           <p class="wod-word">{{ wordOfDay.term }}</p>
           <p class="wod-mean">{{ wordOfDay.common_meaning || wordOfDay.contextual_meaning || '' }}</p>
@@ -506,16 +513,16 @@ async function sharePoster() {
           </div>
           <div class="ai-picks-row">
             <button v-if="aiPicks.weak_type" class="ai-pick-chip" type="button" @click="randomPractice(aiPicks.weak_type)">
-              🎯 强化{{ aiPicks.weak_label }}（薄弱）
+              <Target :size="14" aria-hidden="true" />强化{{ aiPicks.weak_label }}（薄弱）
             </button>
             <button v-if="aiPicks.redo?.length" class="ai-pick-chip" type="button" @click="router.push('/wrong')">
-              🔁 重做 {{ aiPicks.redo.length }} 道高频错题
+              <Repeat :size="14" aria-hidden="true" />重做 {{ aiPicks.redo.length }} 道高频错题
             </button>
             <button v-if="aiPicks.vocab?.length" class="ai-pick-chip" type="button" @click="router.push('/vocabulary')">
-              📖 背 {{ aiPicks.vocab.length }} 个生词
+              <BookOpen :size="14" aria-hidden="true" />背 {{ aiPicks.vocab.length }} 个生词
             </button>
             <button class="ai-pick-chip" type="button" @click="router.push('/exam')">
-              ✍️ 模拟考试
+              <PenLine :size="14" aria-hidden="true" />模拟考试
             </button>
           </div>
         </div>
@@ -524,18 +531,18 @@ async function sharePoster() {
       <div class="ai-trinity-row">
         <div class="ai-trinity-card" @click="router.push('/essay')">
           <span class="ai-trinity-badge badge-review">精批</span>
-          <span class="trinity-title">✍️ 作文精批</span>
+          <span class="trinity-title"><PenLine :size="16" aria-hidden="true" />作文精批</span>
           <p class="trinity-desc">考研阅卷组标准 · 逐句批注 + 满分范文</p>
         </div>
         <div class="ai-trinity-card" @click="router.push('/speaking')">
           <span class="ai-trinity-badge badge-speaking">陪练</span>
-          <span class="trinity-title">🎧 口语陪练</span>
+          <span class="trinity-title"><Headphones :size="16" aria-hidden="true" />口语陪练</span>
           <p class="trinity-desc">复试仿真 · 考官问答 · 语音识别</p>
         </div>
         <div class="ai-trinity-card" @click="router.push('/library')">
           <span class="ai-trinity-badge badge-explain">精讲</span>
-          <span class="trinity-title">📖 真题精讲</span>
-          <p class="trinity-desc">刷题时点 ✨AI 精讲 · 选项陷阱拆解</p>
+          <span class="trinity-title"><BookOpen :size="16" aria-hidden="true" />真题精讲</span>
+          <p class="trinity-desc">刷题时点 AI 精讲 · 选项陷阱拆解</p>
         </div>
       </div>
       <!-- 继续练习 -->
@@ -608,7 +615,7 @@ async function sharePoster() {
     <div v-if="hasAnyPractice" class="grid practice-actions" :class="practiceGridClass">
       <button v-if="hasPracticeType('cloze')" class="card action-card" type="button" @click="randomPractice('cloze')">
         <span class="feature-icon orange"><img src="/assets/icons/cloze.png" alt="" /></span>
-        <span class="action-copy"><small>20 个空 · 整篇提交</small><h3>完型填空</h3><p>随机抽取一整篇，在完整语境中完成练习。</p></span>
+        <span class="action-copy"><small>20 个空 · 整篇提交</small><h3>完形填空</h3><p>随机抽取一整篇，在完整语境中完成练习。</p></span>
         <ArrowRight class="action-arrow" :size="19" />
       </button>
       <button v-if="hasPracticeType('reading')" class="card action-card" type="button" @click="randomPractice('reading')">

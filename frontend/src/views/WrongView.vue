@@ -295,7 +295,7 @@ async function retryScope(
 
 // v9.24: 题型枚举转人类可读（脏枚举 → 中文标签）
 const TYPE_LABELS: Record<string, string> = {
-  cloze: '完型填空', paragraph_matching: '段落匹配', part_b: '新题型',
+  cloze: '完形填空', paragraph_matching: '段落匹配', part_b: '新题型',
   reading: '阅读理解', listening: '听力', translation: '翻译', writing: '写作',
   vocabulary: '词汇', grammar: '语法', fill_blank: '填空', multiple_choice: '选择',
 }
