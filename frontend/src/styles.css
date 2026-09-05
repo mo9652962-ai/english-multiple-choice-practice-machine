@@ -4960,3 +4960,36 @@ body.ink-landscape::before {
   .modal-fade-leave-active, .drawer-fade-leave-active, .sheet-fade-leave-active,
   .celebrate-fade-leave-active, .vocabulary-flip-leave-active { transition-duration: .01ms !important; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v13 词汇模块精致化 (2026-09: 竞品调研 不背单词/LookUp 单词卡 + 多邻国按压手感)
+   ════════════════════════════════════════════════════════════════ */
+.icon-h3 { display: inline-flex; align-items: center; gap: 7px; }
+.plan-book-icon, .cloze-entry-icon, .quick-result-icon { display: grid; place-items: center; color: var(--primary); }
+.cloze-entry-icon { color: var(--accent-vermilion); }
+.quick-result-icon { color: var(--gold); }
+.freq-star { color: var(--gold); flex-shrink: 0; }
+.quick-timer { display: inline-flex; align-items: center; gap: 4px; }
+.pos-chip { font-size: 12px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 1px 9px; margin-left: 7px; vertical-align: 1px; }
+/* 单词卡层次 (不背单词式): 词头更大, 音标/词性次级 */
+.word-sheet-title h3 { font-size: 26px; }
+
+/* ── 多邻国式按压物理感: 底边厚度 + 按下下沉 (box/edge 不参与布局, 零位移副作用) ── */
+.option, .cloze-option, .quick-option { position: relative; isolation: isolate; }
+.option::after, .cloze-option::after, .quick-option::after {
+  content: ''; position: absolute; left: 10px; right: 10px; bottom: -3px; height: 4px;
+  border-radius: 0 0 10px 10px; z-index: -1;
+  background: color-mix(in srgb, var(--line-strong) 85%, transparent);
+  transition: opacity .12s var(--motion-standard);
+}
+.option:active:not(:disabled), .cloze-option:active, .quick-option:active { transform: translateY(3px); }
+.option:active:not(:disabled)::after, .cloze-option:active::after, .quick-option:active::after { opacity: 0; }
+
+/* ── 打卡热力图: 朱砂单色五档 (GitHub 式单色系, 告别竹青) ── */
+.heatmap-cell[data-level="0"], .heat-cell[data-level="0"] { background: rgba(60, 50, 40, 0.05); }
+.heatmap-cell[data-level="1"], .heat-cell[data-level="1"] { background: rgba(184, 74, 57, 0.16); }
+.heatmap-cell[data-level="2"], .heat-cell[data-level="2"] { background: rgba(184, 74, 57, 0.38); }
+.heatmap-cell[data-level="3"], .heat-cell[data-level="3"] { background: rgba(184, 74, 57, 0.64); }
+.heatmap-cell[data-level="4"], .heat-cell[data-level="4"] { background: var(--accent-vermilion); }
+:root.dark .heatmap-cell[data-level="0"], :root.dark .heat-cell[data-level="0"] { background: rgba(255, 255, 255, 0.05); }
+.page-vocab .page-head .button { white-space: nowrap; }
