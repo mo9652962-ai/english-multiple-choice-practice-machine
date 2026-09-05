@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BookOpen, Check, FileText, RefreshCw, Search, Settings, Star, Trash2, Headphones } from 'lucide-vue-next'
+import { BookMarked, BookOpen, Check, FileText, Flame, Gauge, GraduationCap, PenLine, RefreshCw, School, Search, Settings, Star, Timer, Trash2, Headphones, Medal, Target, Trophy, Zap } from 'lucide-vue-next'
 import { computed, onMounted, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { del, get, post, put } from '../api'
@@ -452,10 +452,11 @@ function closeQuick() {
 const quickLevel = computed(() => {
   const total = quickItems.value.length || 10
   const rate = quickScore.value / total
-  if (rate >= 0.9) return { label: '词汇大师', icon: '🏆' }
-  if (rate >= 0.7) return { label: '掌握扎实', icon: '🥇' }
-  if (rate >= 0.5) return { label: '继续加油', icon: '🥈' }
-  return { label: '需要复习', icon: '📚' }
+  // v13: 奖级图标统一线性化（原 emoji）
+  if (rate >= 0.9) return { label: '词汇大师', icon: Trophy }
+  if (rate >= 0.7) return { label: '掌握扎实', icon: Medal }
+  if (rate >= 0.5) return { label: '继续加油', icon: Target }
+  return { label: '需要复习', icon: BookOpen }
 })
 const quickCurrent = computed(() => quickItems.value[quickIndex.value])
 
@@ -463,9 +464,9 @@ function toggleQuizReveal() {
   quizRevealed.value = !quizRevealed.value
 }
 
-// v2.36: 词文串学风格标签 (薄荷阅读式)
+// v2.36: 词文串学风格标签 (薄荷阅读式) — v13 去 emoji, 纯文字标签
 const STYLE_LABELS: Record<string, string> = {
-  interview: '🗣 访谈', argument: '📊 论述', news: '📰 新闻', story: '📖 故事', article: '📄 文章',
+  interview: '访谈', argument: '论述', news: '新闻', story: '故事', article: '文章',
 }
 function styleLabel(style: string) {
   return STYLE_LABELS[style] || style
@@ -507,6 +508,13 @@ function highlightContext(c: any): string {
 }
 
 onMounted(() => { load(); loadPlans() })
+
+// v13: 词书图标线性化 — 后端仍下发 emoji 字段(兼容旧版), 前端按 key 映射统一线性图标
+const PLAN_ICONS: Record<string, any> = {
+  cet4_core: BookMarked, cet6_core: BookOpen, kaoyan_freq: GraduationCap,
+  gaokao_core: School, hot_words: Flame,
+}
+function planIcon(key: string) { return PLAN_ICONS[key] || BookMarked }
 </script>
 
 <template>
@@ -530,12 +538,12 @@ onMounted(() => { load(); loadPlans() })
     <!-- v2.22: 分级背诵计划 (墨墨/扇贝式词书) -->
     <div v-if="plans.length" class="card vocab-plans-card">
       <div class="vocab-plans-head">
-        <h3>📚 分级背诵计划</h3>
+        <h3 class="icon-h3"><BookMarked :size="17" aria-hidden="true" />分级背诵计划</h3>
         <span class="vocab-plans-sub">选一本词书，按每日任务背新词 + 复习到期词</span>
       </div>
       <div class="vocab-plans-grid">
         <button v-for="p in plans" :key="p.key" class="vocab-plan-item" type="button" @click="openPlan(p)">
-          <span class="plan-book-icon">{{ p.icon }}</span>
+          <span class="plan-book-icon"><component :is="planIcon(p.key)" :size="22" aria-hidden="true" /></span>
           <span class="plan-book-info">
             <strong>{{ p.name }}</strong>
             <small>{{ p.desc }}</small>
@@ -550,7 +558,7 @@ onMounted(() => { load(); loadPlans() })
     <div v-if="activePlan" class="plan-drawer" @click.self="closePlan">
       <div class="plan-drawer-panel">
         <div class="plan-drawer-head">
-          <h3>{{ activePlan.icon }} {{ activePlan.name }} · 今日任务</h3>
+          <h3 class="icon-h3"><component :is="planIcon(activePlan.key)" :size="18" aria-hidden="true" />{{ activePlan.name }} · 今日任务</h3>
           <button class="button ghost" @click="closePlan">关闭</button>
         </div>
         <p class="lead" style="margin-bottom:12px">新词 {{ planWords.filter((w:any) => w.study_status === 'new').length }} 个 + 到期复习 {{ planWords.length - planWords.filter((w:any) => w.study_status === 'new').length }} 个</p>
@@ -570,7 +578,7 @@ onMounted(() => { load(); loadPlans() })
     </Teleport>
     <!-- v2.32: 短文填词入口 -->
     <div class="cloze-entry card" @click="loadCloze">
-      <div class="cloze-entry-icon">✏️</div>
+      <div class="cloze-entry-icon"><PenLine :size="22" aria-hidden="true" /></div>
       <div class="cloze-entry-main">
         <strong>短文填词</strong>
         <small>真题句子挖空 · 在语境里检验单词（扇贝同款）</small>
@@ -579,7 +587,7 @@ onMounted(() => { load(); loadPlans() })
     </div>
     <!-- v2.33: 词汇量自测入口 -->
     <div class="cloze-entry card" @click="loadQuiz">
-      <div class="cloze-entry-icon">📊</div>
+      <div class="cloze-entry-icon"><Gauge :size="22" aria-hidden="true" /></div>
       <div class="cloze-entry-main">
         <strong>词汇量自测</strong>
         <small>10 个词快速定位词汇量等级（百词斩式初测）</small>
@@ -588,7 +596,7 @@ onMounted(() => { load(); loadPlans() })
     </div>
     <!-- v2.64: 快答挑战入口 (百词斩 PK 式) -->
     <div class="cloze-entry card quick-entry" @click="startQuick">
-      <div class="cloze-entry-icon">⚡</div>
+      <div class="cloze-entry-icon"><Zap :size="22" aria-hidden="true" /></div>
       <div class="cloze-entry-main">
         <strong>快答挑战</strong>
         <small>10 题限时 4 选 1 · 每题 10 秒 · 最佳 {{ quickBest }}/10</small>
@@ -600,7 +608,7 @@ onMounted(() => { load(); loadPlans() })
         <!-- v3.4: 今日推荐 20 词（紧凑横版卡片——竞品借鉴） -->
         <div v-if="recommended.length" class="card recommended-section">
           <div class="recommended-head">
-            <h3>📖 今日推荐</h3>
+            <h3 class="icon-h3"><BookOpen :size="17" aria-hidden="true" />今日推荐</h3>
             <span class="recommended-sub">随机 20 词 · 快速浏览</span>
             <button class="button ghost compact" @click="router.push('/vocab-bank')">
               <Search :size="14" />查看全部单词库
@@ -622,8 +630,8 @@ onMounted(() => { load(); loadPlans() })
           <div class="word-sheet-panel">
             <div class="word-sheet-head">
               <div class="word-sheet-title">
-                <h3><span v-if="recDetail.is_frequent">🌟 </span>{{ recDetail.lemma || recDetail.term }}<TtsButton :text="recDetail.term" :speed="0.85" /></h3>
-                <p class="word-sheet-sub">{{ recDetail.phonetic }}<span v-if="recDetail.part_of_speech"> · {{ recDetail.part_of_speech }}</span></p>
+                <h3><Star v-if="recDetail.is_frequent" class="freq-star" :size="18" fill="currentColor" aria-hidden="true" />{{ recDetail.lemma || recDetail.term }}<TtsButton :text="recDetail.term" :speed="0.85" /></h3>
+                <p class="word-sheet-sub">{{ recDetail.phonetic }}<span v-if="recDetail.part_of_speech" class="pos-chip">{{ recDetail.part_of_speech }}</span></p>
               </div>
               <span class="vocab-status-tag" :class="getStatusClass(recDetail.study_status)">{{ vocabStatusText(recDetail.study_status) }}</span>
             </div>
@@ -687,7 +695,7 @@ onMounted(() => { load(); loadPlans() })
           <div class="flip-face flip-front">
             <button class="button ghost review-close" @click.stop="reviewMode=false">退出复习</button>
             <span class="eyebrow">今日 {{ reviewIndex + 1 }} / {{ reviewItems.length }}</span>
-            <div class="review-term"><span v-if="reviewWord.is_frequent">🌟</span>{{ reviewWord.lemma || reviewWord.term }}<TtsButton :text="reviewWord.term" :speed="0.85" /></div>
+            <div class="review-term"><Star v-if="reviewWord.is_frequent" class="freq-star" :size="26" fill="currentColor" aria-hidden="true" />{{ reviewWord.lemma || reviewWord.term }}<TtsButton :text="reviewWord.term" :speed="0.85" /></div>
             <div class="review-phonetic">{{ reviewWord.phonetic }}</div>
             <button class="button secondary reveal-button" @click.stop="reveal=true"><span class="flip-hint">点击翻开</span><RefreshCw :size="15" /></button>
           </div>
@@ -716,7 +724,7 @@ onMounted(() => { load(); loadPlans() })
     <div v-if="articleMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="AI 文章练词">
       <div class="review-card cloze-card" style="max-height:86vh;overflow:auto">
         <div class="cloze-card-head">
-          <h3 style="margin-bottom:8px">📄 AI 文章练词</h3>
+          <h3 class="icon-h3" style="margin-bottom:8px"><FileText :size="17" aria-hidden="true" />AI 文章练词</h3>
           <button class="button ghost compact" @click="closeArticle">✕ 关闭</button>
         </div>
         <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:12px">按你的弱词生成专属短文 · 在语境里巩固（扇贝词文串学 + 锐满分 AI 文章练词）</p>
@@ -747,7 +755,7 @@ onMounted(() => { load(); loadPlans() })
     <div v-if="clozeMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="短文填词">
       <div class="review-card cloze-card">
         <div class="cloze-card-head">
-          <h3 style="margin-bottom:8px">✏️ 短文填词</h3>
+          <h3 class="icon-h3" style="margin-bottom:8px"><PenLine :size="17" aria-hidden="true" />短文填词</h3>
           <button class="button ghost compact" @click="closeCloze">✕ 退出</button>
         </div>
         <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:14px">真题句子挖空 · 选择最合适的单词（扇贝同款练习）</p>
@@ -770,7 +778,7 @@ onMounted(() => { load(); loadPlans() })
         <template v-else-if="clozeDone">
           <div class="cloze-result">
             <div class="cloze-score">{{ clozeScore }} / {{ clozeItems.length }}</div>
-            <p>{{ clozeScore === clozeItems.length ? '🎉 全对！语感很棒' : clozeScore >= 3 ? '👍 不错，继续巩固' : '📖 多看看单词本，再试一次' }}</p>
+            <p>{{ clozeScore === clozeItems.length ? '全对！语感很棒' : clozeScore >= 3 ? '不错，继续巩固' : '多翻翻单词本，再试一次' }}</p>
             <p v-if="clozeWrong.length" class="cloze-wrong">需要巩固：{{ clozeWrong.join('、') }}</p>
           </div>
           <div style="display:flex;justify-content:center;gap:10px;margin-top:18px">
@@ -784,7 +792,7 @@ onMounted(() => { load(); loadPlans() })
     <div v-if="quizMode" class="review-overlay" role="dialog" aria-modal="true" aria-label="词汇量自测">
       <div class="review-card cloze-card">
         <div class="cloze-card-head">
-          <h3 style="margin-bottom:8px">📊 词汇量自测</h3>
+          <h3 class="icon-h3" style="margin-bottom:8px"><Gauge :size="17" aria-hidden="true" />词汇量自测</h3>
           <button class="button ghost compact" @click="closeQuiz">✕ 退出</button>
         </div>
         <p class="lead" style="font-size:12px;line-height:1.7;margin-bottom:14px">10 个词 · 认识 / 模糊 / 不认识，快速定位词汇等级</p>
@@ -795,9 +803,9 @@ onMounted(() => { load(); loadPlans() })
           <button v-if="!quizRevealed" class="button ghost" style="margin-bottom:16px" @click="toggleQuizReveal">显示释义</button>
           <p v-else class="quiz-meaning" style="margin-bottom:16px" @click="toggleQuizReveal">{{ quizCurrent.meaning || '（暂无释义）' }}</p>
           <div class="cloze-options" style="grid-template-columns:repeat(3,1fr)">
-            <button class="cloze-option" @click="rateQuiz(0)">😵 不认识</button>
-            <button class="cloze-option" @click="rateQuiz(1)">🤔 模糊</button>
-            <button class="cloze-option" @click="rateQuiz(2)">😎 认识</button>
+            <button class="cloze-option" @click="rateQuiz(0)">不认识</button>
+            <button class="cloze-option" @click="rateQuiz(1)">模糊</button>
+            <button class="cloze-option" @click="rateQuiz(2)">认识</button>
           </div>
         </template>
         <template v-else-if="quizResult">
@@ -843,7 +851,7 @@ onMounted(() => { load(); loadPlans() })
           </div>
           <!-- 结果 -->
           <div v-if="quickDone" class="quick-result">
-            <span class="quick-result-icon">{{ quickLevel.icon }}</span>
+            <span class="quick-result-icon"><component :is="quickLevel.icon" :size="44" aria-hidden="true" /></span>
             <h3 class="quick-result-title">{{ quickLevel.label }}</h3>
             <p class="quick-result-score"><b class="rank-num">{{ quickScore }}</b> / {{ quickItems.length }}</p>
             <p class="quick-result-best">最佳成绩 {{ quickBest }}/{{ quickItems.length }}</p>
@@ -859,7 +867,7 @@ onMounted(() => { load(); loadPlans() })
             </div>
             <div class="quick-meta">
               <span>{{ quickIndex + 1 }} / {{ quickItems.length }}</span>
-              <span class="quick-timer" :class="{ low: quickRemain <= 3 }">⏱ {{ quickRemain }}s</span>
+              <span class="quick-timer" :class="{ low: quickRemain <= 3 }"><Timer :size="13" aria-hidden="true" />{{ quickRemain }}s</span>
               <span>得分 {{ quickScore }}</span>
             </div>
             <h3 class="quick-word">{{ quickCurrent.word }}</h3>
