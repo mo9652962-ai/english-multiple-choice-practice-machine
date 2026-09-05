@@ -1,0 +1,180 @@
+{
+ "chunk": 82,
+ "items": [
+  {
+   "question_id": 2026,
+   "long_sentence": "定位句 The parks also help keep America's past alive, working with thousands of local jurisdictions...to protect historical sites and to bring the stories of these places to life；主干为 The parks help keep America's past alive；working with... 现在分词作伴随状语，后接不定式并列。译：国家公园还与全国数千个地方辖区合作保护历史遗迹、让这些地方的故事鲜活，使美国的过去保持生命力。",
+   "option": "正确项 B：protect historical sites、keep America's past alive 共同对应 historical significance（历史意义）；A「引领旅游业」以偏概全，tourism 只是价值列举的一项且无引领之意；C「赞助气候研究」偷换概念，原文是 carbon sequestration（碳封存）对气候的积极影响，不是出钱赞助研究；D「为当地人提供收入」无中生有。",
+   "keyword": "keep...alive 使…保持鲜活；historical sites 历史遗迹；jurisdiction 辖区；carbon sequestration 碳封存。",
+   "note": "价值列举段以 On top of this 串起教育、气候、文化、旅游多点信息，historical sites 是 B 的直接锚点；C 的 climate 最易误选——原文 impact on the climate 是公园自身的碳封存作用，主语与动作（赞助研究）根本对不上，动宾关系必须核对。"
+  },
+  {
+   "question_id": 2027,
+   "long_sentence": "定位句 Congress allocates only $3 billion a year to the national park system—an amount that has been flat since 2001 with the exception of a onetime boost in 2009；主干为 Congress allocates only $3 billion；an amount... 同位语，that has been flat 定语从句，flat 即「不增长」。译：国会每年只拨款 30 亿美元——按通胀调整计，除 2009 年一次性增加外，该数额自 2001 年以来一直未变。",
+   "option": "正确项 D：chronically starved of funding（长期资金匮乏）、拨款 20 年不涨、游客却增 50% 三条证据汇聚成「需要增加资金」；A「能应对人手短缺」无中生有；B「能满足游客需求」正反混淆，backlog 与 crumbling 基建说明无力满足；C「需要新的定价政策」无中生有，全文未提定价。",
+   "keyword": "starve of 使…匮乏；allocate 拨款；flat 未增长的＝unchanged；onetime boost 一次性增加。",
+   "note": "结论题顺着论证线走：危机（backlog）→商业化非良方→真问题是缺钱→调查支持多缴税→拨款却长期停滞，汇合点即 funding increase；正确项 D 常是末段数字与第五段判断的合成，只读单段推不出完整结论，结论题要全文收网。"
+  },
+  {
+   "question_id": 2028,
+   "long_sentence": "定位句 They didn't remember the information, but they remembered how to find the folders. In other words, human memory is not deteriorating but 'adapting to new communications technology'；but 连接转折；not...but... 结构否定前者、肯定后者；in other words 承接上句作解释。译：他们没有记住信息本身，却记住了如何找到那些文件夹。换言之，人类记忆并非在退化，而是在「适应新的通讯技术」。",
+   "option": "正确项 C：记住「在哪找」而非「内容是什么」，即记忆重心从信息内容转向存放位置，switch its focus of memory 是对两组实验结果的概括；A「详细分析信息」无中生有；B「高效收集信息」偷换概念，实验考记忆不考收集效率；D「延长记忆时长」正反混淆，saved 组被测时根本没努力回忆。",
+   "keyword": "recall 回忆＝remember；deteriorate 恶化、退化；adapt to 适应；folder 文件夹。",
+   "note": "实验题看对比结果：信息会被擦除的组努力回忆、会被保存的组放弃回忆、文件夹组记住位置不记内容，三条结果共同指向「记忆重心转移」；Sparrow 的原话 adapting to new communications technology 是 C 的理论包装，从现象到结论要连起来看。"
+  },
+  {
+   "question_id": 2029,
+   "long_sentence": "定位句 In a very practical way, the Internet is becoming an external hard drive for our memories, a process known as 'cognitive offloading.'；主干为 The Internet is becoming an external hard drive；for our memories 表服务对象；a process known as... 同位语，known as 意为「被称为」。译：从非常实际的角度看，互联网正在成为我们记忆的外接硬盘，这一过程被称为「认知卸载」。",
+   "option": "正确项 D：外接硬盘替大脑存储，offload（卸载）本义就是把负担卸下，lessens our memory burdens 是 external hard drive 比喻的功能化改写；A「帮我们识别假信息」无中生有；B「防止记忆衰退」偷换概念，Sparrow 说的是 adapting（适应）而非防止衰退；C「帮我们分类琐碎事实」无中生有。",
+   "keyword": "offload 卸载、分摊；external hard drive 外接硬盘；cognitive 认知的；fulfill the role 承担这一角色。",
+   "note": "术语题看定义句与比喻：cognitive offloading 的定义就藏在「外接硬盘」里——硬盘替大脑分担存储，即减轻记忆负担；下文父亲从不记生日因为母亲记得，是 offloading 的生活实例，定义与实例两条线索互相印证选 D。"
+  },
+  {
+   "question_id": 2030,
+   "long_sentence": "定位句 Perhaps, she suggests, the trend will change our approach to learning from a focus on individual facts and memorization to an emphasis on more conceptual thinking.；主干为 the trend will change our approach to learning；from...to... 表示转变前后两端；she suggests 为插入语。译：她提出，这一趋势或将把我们的学习方式从聚焦单个事实与死记硬背，转向更强调概念性思维——后者是互联网所不具备的。",
+   "option": "正确项 A：change our approach to learning≈reform our learning approach，从 memorization 到 conceptual thinking 的转向是「改革学习方式」的内涵；B「对社会有负面影响」张冠李戴，那是 Some worry 的观点，Sparrow 看到的是 upside；C「增强对技术的适应力」偷换概念，适应的是记忆方式；D「干扰概念性思维」正反混淆，conceptual thinking 恰是互联网给不了、学习要转向的方向。",
+   "keyword": "approach to sth 做某事的方式；memorization 死记硬背；conceptual thinking 概念性思维；upside 好处＝benefit。",
+   "note": "观点匹配先划人名归属：Some worry 的 destructive effect 是反方声音，Sparrow 的 upside 是正方，B 用反方观点冒充 Sparrow；A 的 reform 对应原文 change our approach，from...to... 的落点还能反向排除 D，人名对应是本题命门。"
+  },
+  {
+   "question_id": 2031,
+   "long_sentence": "定位句 Still other experts say it's too soon to understand how the Internet affects our brains.；主干为 experts say + 宾语从句；too soon to do 意为「为时尚早、还不足以做某事」；how 引导的从句作 understand 的宾语；下文 There is no experimental evidence showing that... 补充佐证。译：另一些专家表示，要理解互联网究竟如何影响我们的大脑，现在还为时尚早。",
+   "option": "正确项 A：too soon to understand 加 no experimental evidence showing...（尚无实验证据）说明该问题证据不足、有待研究，requires further academic research 是两处信息的合并概括；B「在老年人身上研究最多」偷换概念，2008 年研究仅 24 名精通电脑的老年人，是举例不是「最多」；C「体现在阅读速度上」无中生有；D「取决于上网习惯」过度推断。",
+   "keyword": "too soon to do 为时尚早；experimental evidence 实验证据；interfere with 干扰；involve 涉及、包含。",
+   "note": "段落态度题抓否定性限定词：no experimental evidence、too soon 都指向「尚待研究」；B 的陷阱在拿老年人研究的数据说事，样本仅 24 人却推成「研究最多」，以偏概全是本段设错法，看到具体数字先问覆盖面。"
+  },
+  {
+   "question_id": 2032,
+   "long_sentence": "定位句两处：Sparrow 说 human memory is not deteriorating but 'adapting to new communications technology'，not...but... 直接否定退化；Storm 说 It seems pretty clear that memory is changing, but is it changing for the better? At this point, we don't know.，but 引出疑问，we don't know 表存疑。译：人类记忆并非退化，而是在适应新技术；记忆显然在变化，但是否变好了？目前尚不清楚。",
+   "option": "正确项 B：Sparrow 明言 not deteriorating，Storm 只承认 changing、对变好变坏存疑，二人都不支持「互联网正在削弱记忆」的判断；A「依赖互联网有代价」是 Storm 原话 There may be costs associated...，他会同意；C「记忆练习必不可少」文中双方均未表态，非共同立场点；D「专注力随年龄下降」与二人无关，第三段说的是无证据显示干扰专注力。",
+   "keyword": "deteriorate 退化＝weaken；outweigh 超过；reliance on 对…的依赖；changing for the better 变好、好转。",
+   "note": "双人交集题：分别提取两人的表态再求交集——Sparrow 否定 deteriorating，Storm 中立存疑，B 是双方明确的共同不认同点；注意「有代价」（Storm 承认的 costs）与「记忆被削弱」是两回事，A 的迷惑性正在于半真半假。"
+  },
+  {
+   "question_id": 2033,
+   "long_sentence": "定位句 In adolescence, helpless and dependent children who have relied on grown-ups for just about everything become independent people who can take care of themselves.；两个 who 定语从句分别修饰 children 与 people；become 为系动词，引出前后对照。译：进入青春期后，原本事事依赖大人的无助孩子，会变成能照顾自己、互相帮助的独立个体。",
+   "option": "正确项 A：dependent→independent 与 cheerful/compliant→rebellious 两组 become 前后对照，说明孩子发展出相反的性格侧面，opposite personality traits 是两处对照的合并概括；B「不理性地看世界」无中生有；C「怀念过去」无中生有；D「对父母表达感情」无中生有，首段只讲依赖与叛逆的转变。",
+   "keyword": "adolescence 青春期；dependent 依赖的，反义 independent 独立的；compliant 顺从的，反义 rebellious 叛逆的；paradoxical 自相矛盾的。",
+   "note": "首段是两组 become 对照句，答案即把「依赖→独立、顺从→叛逆」升华为「相反特质并存」；A 的 opposite 呼应段首 paradoxical——主旨词在段首埋伏笔、细节题与之闭环，是英语二阅读的常见命题结构，见到 paradox 先想「并存」。"
+  },
+  {
+   "question_id": 2034,
+   "long_sentence": "定位句 The study is part of a new wave of thinking about adolescence. 与 The new work emphasizes that adolescence is a time of opportunity as well as risk.；new wave of thinking 意为思想新浪潮；emphasizes 后接宾语从句；as well as 并列「既…又…」。译：这项研究是青春期研究新思潮的一部分。这项新工作强调：青春期既是风险期，也是机遇期。",
+   "option": "正确项 C：new wave of thinking 与 opportunity as well as risk 表明研究提供了看待青春期的新视角，provides a new insight≈a new wave of thinking；A「探索社会责任」偷换概念，研究的是 prosocial（亲社会）行为而非社会责任；B「考察情绪问题」无中生有；D「突出负面行为」正反混淆，新研究恰恰纠正了只盯着问题的旧思路。",
+   "keyword": "a new wave of 一股新的浪潮；opportunity as well as risk 机遇与风险并存；prosocial 亲社会的；concentrate on 聚焦于。",
+   "note": "「新 vs 旧」对照是本题骨架：旧观念视 teenagers 为 a problem that needed to be solved，新研究强调 opportunity as well as risk——凡见 new wave、new work 即联想「新视角」类选项；D 用首段叛逆描述张冠李戴，注意新旧立场之别。"
+  },
+  {
+   "question_id": 2035,
+   "long_sentence": "定位句 But the new study shows that, interestingly, the same pattern holds for prosocial behavior.；same pattern 回指上句 rebellious behavior increases as you become a teenager and then fades away as you grow older；holds for 意为「适用于」。译：但有趣的是，这项新研究表明，同样的规律也适用于亲社会行为。",
+   "option": "正确项 D：same pattern 回指叛逆行为的「青春期上升、成年后回落」曲线，即亲社会行为同样在青春期达到峰值，peak in adolescence 是 increases then fades away 的凝练改写；A「源于合作意愿」无中生有；B「通过教育培养」无中生有；C「受家庭影响」无中生有，三项都与研究发现无关。",
+   "keyword": "pattern 模式、规律；hold for 适用于；fade away 逐渐消退；peak 达到峰值＝reach the highest point。",
+   "note": "指代链解题：same pattern 必须回读上一句找到「先升后降」的具体曲线，peak 是对曲线顶点的同义压缩；「图形语言↔文字语言」的转换（上升回落↔峰值）是英语二细节题高频手法，回指句读不懂就等于丢分。"
+  },
+  {
+   "question_id": 2036,
+   "long_sentence": "定位句 Teenagers are particularly sensitive to social rewards—winning the game, impressing a new friend, getting that boy to notice you.；主干为 Teenagers are sensitive to social rewards；破折号后三个动名词短语列举 social rewards 的具体内容。译：青少年对社会性回报格外敏感——赢得比赛、给新朋友留下好印象、让那个男孩注意到自己。",
+   "option": "正确项 B：winning the game、impressing a new friend、getting that boy to notice you 的共同点是他人的目光与认可，care a lot about social recognition 是 sensitive to social rewards 的同义改写；A「高估自己对他人影响」无中生有；C「对未来焦虑」无中生有；D「努力过快乐生活」偷换概念，30 岁与 couch 的对比是成人视角，非青少年的人生目标。",
+   "keyword": "be sensitive to 对…敏感；social reward 社会性回报；impress sb 给某人留下印象；recognition 认可＝approval。",
+   "note": "列举归纳题：破折号后三个例子的公约数是「被他人看见、被认可」，抽象成 social recognition；reward sensitivity 是解释青春期矛盾的核心变量，第七段社会回报敏感与第六段 Reward sensitivity measures how much reward it takes to outweigh risk 前后呼应，连读可锁 B。"
+  },
+  {
+   "question_id": 2037,
+   "long_sentence": "定位句 Is there some common factor that underlies these apparently contradictory developments?；疑问句提出全文核心问题；underlie 意为「构成…的基础、位于…之下」；that 引导定语从句修饰 common factor；apparently contradictory developments 回指亲社会与叛逆并存的发现。译：是否存在某种共同因素，构成了这些看似矛盾的发展背后的基础？",
+   "option": "正确项 A：全文从 paradoxical（矛盾）现象出发，经 positive correlation 确认矛盾并存，再用 reward sensitivity 解释成因，正是「为什么青少年自相矛盾」的完整回答；B「为何青少年对风险敏感」偷换概念，reward sensitivity 是奖励敏感而非风险敏感；C「如何发展出亲社会性」以偏概全，只覆盖一半现象；D「如何变得独立」只是首段一处细节。",
+   "keyword": "paradoxical 自相矛盾的＝self-contradictory；positive correlation 正相关；underlie 构成…的基础；reward sensitivity 奖励敏感性。",
+   "note": "主旨题抓首段点题词 paradoxical 与第六段设问 Is there some common factor——设问句之后就是全文的答案方向；B 是最强干扰，reward sensitivity 的 sensitive 宾语是 reward 不是 risk，宾语被偷换即可排除，主旨题四个选项都要回原文验身。"
+  },
+  {
+   "question_id": 2038,
+   "long_sentence": "定位句 Brian Berry 引语 All this comes at an increased cost during a time when prices are already sky high. Inevitably, consumers will have to pay more.；when 引导定语从句修饰 a time；increased cost 增加的成本；inevitably 意为不可避免地。译：这一切都产生额外成本，而当下价格已然高企。消费者不可避免地将付出更多。",
+   "option": "正确项 D：Berry 说新规带来 increased cost、且 prices already sky high、消费者必多付，合起来即「新规把房价推向更高」，even higher level≈sky high 再加 increased cost；A「房价上涨是暂时的」张冠李戴，temporary 是 John Kelly 的观点；B「建筑商可能需重新报价」是 Marcus Jefford 的观点；C「扩建限玻璃防热损」是 Goodman 的信息。",
+   "keyword": "chief executive 首席执行官；sky high 极高的；inevitably 不可避免地；come at a cost 伴随成本。",
+   "note": "人名匹配题先圈人名再读引语：Berry 的标签词是 increased cost、pay more，指向「价格更高」；本文五个人名观点各占一段，先给每段贴标签（更高价/门窗/重新报价/暂时回落/长期利好）再对号入座，可避免段落间张冠李戴。"
+  },
+  {
+   "question_id": 2039,
+   "long_sentence": "定位句 Belsham 引语 There are new rules concerning the amount of glazing used in extensions, and any new windows or doors must be highly insulated.；concerning 为介词「关于」；glazing 意为玻璃装配（量）；and 连接两条新规。译：关于扩建中使用玻璃的量有新规出台，且任何新窗户和新门都必须是高度隔热的。",
+   "option": "正确项 F：new windows or doors must be highly insulated 直接对应「新规将影响扩建中包含新门窗的人」，F 句的 whose home extensions include new windows or doors 复现原文 windows or doors；C「扩建玻璃限 25% 防热损」是 Thomas Goodman 给出的具体数字，属最易混段——Belsham 定性说「有新规」，Goodman 定量给「25% 上限」，把细则安到 Belsham 头上即张冠李戴。",
+   "keyword": "insulation 隔热、保温；glazing 玻璃安装量；insulated 隔热的；be directly affected 直接受影响。",
+   "note": "Belsham 与 Goodman 两段都谈门窗玻璃，区分在层次：Belsham（测量师）给出「新规关乎门窗玻璃」的定性信息，Goodman（MyJobQuote）给出「不超过 25% floor area」的定量细则；F 以 windows or doors 复现锁定 Belsham，C 的具体百分比归 Goodman。"
+  },
+  {
+   "question_id": 2040,
+   "long_sentence": "定位句 Builders which have costed projects, but have not filed the paperwork, may need to go back and submit fresh estimates, says Marcus Jefford of Build Aviator.；which 引导定语从句修饰 Builders；have costed 与 have not filed 现在完成时并列；says 后置引出说话人。译：Build Aviator 的马库斯·杰福德说，已为项目核算过成本、但尚未提交报批文件的建筑商，可能需要回头重新提交报价。",
+   "option": "正确项 B：submit fresh estimates≈submit new estimates of their projects，may need to 对 possibly，B 句是对定语从句限定条件（已核算未报批）的概括；A「房价上涨是暂时的」张冠李戴；E「房价已超承受力」是 Rolande 引语内容；G「新规最终利好房主」是 Mellor 的观点。",
+   "keyword": "cost a project 为项目核算成本；file the paperwork 提交文件报批；estimate 估算、报价＝quotation；go back and 回头再。",
+   "note": "本题暗考情态一致性：引语用 may need to、选项用 possibly，可能语气必须对应；注意时间线——deadline 前报批的按旧规执行，只有「已核算未报批」者才需重新报价，B 的限定条件（possibly）正是这一群体的不确定状态。"
+  },
+  {
+   "question_id": 2041,
+   "long_sentence": "定位句 John Kelly...believes prices will eventually come down. But not in the immediate future.；believes 后接宾语从句；But not in the immediate future 为省略结构，补全为 prices will not come down in the immediate future；eventually 意为最终。译：Freeths 律所的建筑律师约翰·凯利认为，价格终将回落，但不会在短期内实现。",
+   "option": "正确项 A：prices will eventually come down≈the rise of home prices is a temporary matter，not in the immediate future（短期内不会回落）即「涨价是暂时的」；D「新规把房价推得更高」是 Berry 的短期判断，与 Kelly 的长期预期方向相反；G「新规最终利好房主」是 Mellor 的节能收益视角，不是价格回落视角。",
+   "keyword": "eventually 最终＝in the long run；come down 下降＝fall；in the immediate future 短期内；scaling up 规模化推广。",
+   "note": "A 与 G 都含「最终」语义，区分在落点：Kelly 谈价格（prices come down），Mellor 谈居住收益（energy bill savings、comfortable homes）；But not in the immediate future 的转折不可丢——只看到 come down 会误以为与 Berry 矛盾，实则是「短期涨、长期落」的完整表态。"
+  },
+  {
+   "question_id": 2042,
+   "long_sentence": "定位句 the long-term effects of the changes will be more comfortable and energy-efficient homes 加引语 Homeowners will probably recoup that cost over time in energy bill savings.；recoup 意为「收回、弥补（成本）」；over time 随时间推移；in energy bill savings 以节省能源账单的方式。译：建筑师 Andrew Mellor 补充道，新规的长期效应是更舒适、更节能的住宅；房主或能通过节省能源账单，随时间收回那笔成本。",
+   "option": "正确项 G：长期看住宅更舒适节能、房主能 recoup cost（收回成本），即 rule changes will benefit homeowners eventually，long-term effects 与 eventually、benefit 与 comfortable/energy-efficient/recoup 层层对应；A「房价上涨是暂时的」张冠李戴，那是 Kelly 的价格观点；E「房价已超出承受力」是 Rolande 的感叹；D 是 Berry 的短期涨价判断。",
+   "keyword": "recoup 收回（成本）＝recover；energy-efficient 节能的；over time 随时间推移＝eventually；volatile 剧烈波动的。",
+   "note": "五个人名匹配成链：Berry=价格更高、Belsham=门窗受影响、Jefford=重新报价、Kelly=涨价暂时、Mellor=长期利好，剩余 E 项（Rolande 的话）是干扰项；G 的 eventually 与原文 long-term effects、over time 构成时间维度同义链，匹配题找时间尺度呼应最稳。"
+  },
+  {
+   "question_id": 2043,
+   "long_sentence": "定位句 Some of us feel energised by spending lots of time with others, ______ some of us may feel drained, even if it's doing something we enjoy.；两个 some of us 引导的并列分句，energised（充满活力）与 drained（被掏空）构成反义对照；even if 引导让步状语从句。译：我们中一些人与他人共处许久会精力充沛，而另一些人则会感到疲惫，哪怕做的是自己喜欢的事。",
+   "option": "正确项 C whereas：「充电 vs 耗竭」的对举需要表对比的连词，whereas（然而、反之）专用于并列分句间的对照；A because 表因果，两分句间无因果关系；B unless 表条件，逻辑不通；D until 表时间，「直到一些人感到疲惫」把对照关系割裂。",
+   "keyword": "however反之；energised 充满活力的；drained 精疲力竭的＝exhausted；even if 即使。",
+   "note": "逻辑连词题抓对举结构：两个 some of us 平行主语加 energised/drained 反义形容词，是 whereas 的教科书场景；先给两分句标注褒贬极性再选连词，because/until 的方向性与 unless 的条件性都能快速排除。"
+  },
+  {
+   "question_id": 2044,
+   "long_sentence": "定位句 This is why finding a ______ in your social life is key.；finding... 动名词短语作主语；is key 为系表结构，key 作名词意为「关键」；this 回指上段「有人社交充电、有人独处耗竭」的个体差异。译：这就是为什么在社交生活中找到平衡是关键。",
+   "option": "正确项 B balance：上段「社交充电 vs 独处耗竭因人而异」的结论必然是「平衡」，find a balance（找到平衡）为高频搭配；A contrast（对比）与 finding 搭配不当；C link（联系）无中生有，文中未谈社交要素的联结；D gap（差距、空档）与后文「独处太久孤独、社交太多 burnout」的双向警示不符。",
+   "keyword": "find a balance 找到平衡＝strike a balance；be key 至关重要＝be crucial；social life 社交生活；downtime 休息放松时间。",
+   "note": "this is why 强制回指：答案词必须概括前段「过与不及皆伤」的双面性，balance 恰是双向调和；下文「独处太多孤独、社交太多 burnout」两个极端再次验证，完形名词题用前后双语境夹逼，比单点语感可靠得多。"
+  },
+  {
+   "question_id": 2045,
+   "long_sentence": "定位句 Spending too much time on your own, not ______ others, can make you feel lonely and ______.；Spending... 动名词短语作主语；not ______ others 为现在分词否定形式，补充说明独处的内涵；make you feel... 为使役结构。译：花太多时间独处、不见他人，会让你感到孤独且与人疏离。",
+   "option": "正确项 A seeing：not seeing others（不见他人）是独处的具体化，与 spending too much time on your own 同义呼应；B pleasing（取悦）偷换概念，问题不在取悦他人；C judging（评判）无中生有；D teaching（教导）无中生有，社交缺失与教导无关。",
+   "keyword": "on one's own 独自、单独；see sb 与某人见面；lonely 孤独的；disconnected 疏离的、脱节的。",
+   "note": "分词短语与主语互证：not ______ others 必须是 spending time on your own（独处）的同义展开，see（见面）是社交的最基本动作；完形中动名词否定 not doing 常作伴随解释，抓住「独处＝不见人」的等价关系即可锁定。"
+  },
+  {
+   "question_id": 2046,
+   "long_sentence": "定位句 Spending too much time on your own, not seeing others, can make you feel lonely and ______.；make you feel 后接并列形容词，and 连接的 lonely 与空格词须语义同向；lonely 意为孤独的。译：花太多时间独处、不见他人，会让你感到孤独且与人疏离。",
+   "option": "正确项 D disconnected：lonely and disconnected（孤独且疏离）为同类消极情绪的递进，且与下文 Loneliness is known to impact on your mental health 承接自然；A misguided（被误导的）答非所问；B surprised（惊讶的）情感色彩不符；C spoiled（被宠坏的）张冠李戴，与独处后果无关。",
+   "keyword": "disconnected 疏离的＝isolated；lonely 孤独的；impact on 影响；low mood 情绪低落。",
+   "note": "并列形容词先看语义方向：and 连接的两个词必须同褒贬，lonely 已定消极基调；再核后文复现——Loneliness 的健康影响紧随其后，disconnected（与人群断连）正是 lonely 的延展，前后两处语境互证选 D。"
+  },
+  {
+   "question_id": 2047,
+   "long_sentence": "定位句 Loneliness is known to impact on your mental health and ______ a low mood.；be known to 意为「被认为是、众所周知」；impact on 与空格动词并列，共用不定式结构；a low mood 意为低落的情绪。译：众所周知，孤独会影响心理健康，并导致情绪低落。",
+   "option": "正确项 A contribute to：contribute to a low mood（导致情绪低落）表因果，与 impact on mental health 并列递进，同为孤独的危害；B rely on（依赖）主客颠倒，是孤独导致低落而非依赖低落；C interfere with（干扰）惯接过程或活动，与 a low mood 搭配不当；D go against（违背）语义不合。",
+   "keyword": "contribute to 导致、促成＝lead to；impact on 影响；low mood 情绪低落；be known to 被公认为。",
+   "note": "并列动词看因果链方向：impact on your mental health 已确立「孤独为因、恶果为果」，空格动词须延续该方向；contribute to 既表「导致」又能接抽象名词 a low mood，B、D 的方向性错误可直接排除，并列结构是完形的天然线索。"
+  },
+  {
+   "question_id": 2048,
+   "long_sentence": "定位句 This might be especially true if, ______, you are working from home and you are ______ on the usual social conversations that happen in an office.；if 引导条件状语从句，空格词为插入语；上句 Anyone can feel lonely at any time 为总述句。译：比如说，如果你居家办公、错过了办公室里惯常的社交闲聊，这一点（人人都会孤独）可能尤其成立。",
+   "option": "正确项 C for example：上句 Anyone can feel lonely at any time 是普遍陈述，居家办公是具体个例，for example 引出例证；A in fact 表强调转折，与举例功能不符；B of course 表让步认同，无承接对象；D on average 表平均数据，此处无统计内容。",
+   "keyword": "for example 例如＝for instance；work from home 居家办公；especially true 尤其成立；usual social conversations 惯常的社交闲聊。",
+   "note": "总分关系识别：Anyone can feel lonely at any time（人人可能孤独）→ work from home（其中一种情形），抽象到具体必是 for example；双逗号间的插入语常考语篇逻辑词，先判断前后是总分、转折还是让步，再对号入座。"
+  },
+  {
+   "question_id": 2049,
+   "long_sentence": "定位句 you are working from home and you are ______ on the usual social conversations that happen in an office.；that 引导定语从句修饰 conversations；are ______ 为现在进行时，空格填短语动词并接介词 on。译：你居家办公，错过了办公室里惯常发生的社交闲聊。",
+   "option": "正确项 B missing out：miss out on sth（错过、错失）为固定搭配，居家办公而错过办公室闲聊，搭配与语义双合；A cutting back on（削减）主语须主动控制量，此处是被动的错失；C breaking in（闯入、插话）与语境不通；D looking down on（看不起）宾语应为被轻视的对象，语义不合。",
+   "keyword": "miss out on 错过、错失；cut back on 削减；look down on 看不起；break in 闯入、插嘴。",
+   "note": "短语动词题双保险：先核搭配（四个选项中接 on 的有 cut back/miss out/look down），再用语境裁决——居家办公对办公室闲聊是被动错失，miss out on 的身不由己与 cutting back 的主动削减构成关键差异，语义极性定答案。"
+  },
+  {
+   "question_id": 2050,
+   "long_sentence": "定位句 Other life changes can ______ periods of loneliness too, such as retirement, changing jobs or becoming a parent.；情态动词 can 后接动词原形；such as 引出三种生活变迁的例证；too 呼应上句居家办公的例子。译：其他人生变动也可能引发孤独期，例如退休、换工作或为人父母。",
+   "option": "正确项 B trigger：trigger periods of loneliness（引发孤独期）是「诱因→状态」的因果搭配，trigger 常用于事件触发情绪反应；A shorten（缩短）无中生有，前文没有缩短孤独的对象；C follow（跟随）时序颠倒，是变动引发孤独而非孤独招致变动；D interrupt（打断）语义相反，变动催生孤独而非打断孤独。",
+   "keyword": "trigger 引发、触发＝set off；periods of loneliness 孤独期；retirement 退休；life changes 人生变动。",
+   "note": "逻辑方向题：主语 life changes（因）→ 空格动词 → loneliness（果），必须填引发类动词；too 字提示与上文居家办公例子并列，居家办公正是「引发」孤独的例证，方向统一选 trigger；follow 的时序陷阱与 interrupt 的反向语义都要警惕。"
+  }
+ ]
+}

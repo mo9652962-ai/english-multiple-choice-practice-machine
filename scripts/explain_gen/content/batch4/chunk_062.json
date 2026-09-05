@@ -1,0 +1,180 @@
+{
+ "chunk": 62,
+ "items": [
+  {
+   "question_id": 1526,
+   "long_sentence": "定位句为两个并列假设：If the district finds homework to be unimportant..., it should move to reduce or eliminate the assignments, not make them count for almost nothing 与 Conversely, if homework matters, it should account for a significant portion of the grade；Conversely 引出对立假设。译：若认为作业对学业不重要，就应减少或取消作业，而非几乎不计分；反之若重要，就应占成绩的显著份额。",
+   "option": "正确项 B it counts much in schooling：原文反复追问 if homework matters 与 if homework to be unimportant，counts much 正是 matters 的同义改写，而政策恰恰没有回答「作业究竟重不重要」；A「是否应取消作业」偷换概念，reduce or eliminate 只是假设下的推论动作；C「是否给教师添负担」答非所问，那是段末确保教师愿批改的另一话题；D「是否对成绩重要」区分度不足，第三段已说 It is quite possible that the homework helped，成绩关联并非悬而未决。",
+   "keyword": "unanswered 未被回答的；count 占分量、要紧＝matter；eliminate 取消；a significant portion of 显著份额；conversely 相反地。",
+   "note": "信号词 the truly thorny questions：address none of... 说明本段要列未解之问；两个 if 加 Conversely 的结构把核心问题夹在正中，找到这对假设即锁定「重要与否」；B 与 D 都含重要义，差别在 D 限定 grades，而原文问的是 schooling 层面的分量取舍。"
+  },
+  {
+   "question_id": 1527,
+   "long_sentence": "主旨需覆盖全文态度链：首段 an inflexible policy which mandates that homework may no longer count for more than 10% of a student's academic grade；第二段 unclear and contradictory；第三段 a flat, across-the-board rule；末段 should be put on hold。译：不幸的是，洛杉矶联合学区出台了一项僵化政策，规定作业占成绩比例不得超过 10%。",
+   "option": "正确项 A A Faulty Approach to Homework：faulty 概括 inflexible、unclear and contradictory、across-the-board 等全文批评；B A Welcomed Policy for Poor Students 无中生有，政策并未受欢迎，作者通篇否定；C Thorny Questions about Homework 以偏概全，只是第四段一处论据；D Wrong Interpretations 无中生有，文章批评政策本身而非对政策的解读。",
+   "keyword": "faulty 有缺陷的＝flawed；inflexible 僵化的；across-the-board 一刀切的；put on hold 暂停、搁置；mandate 规定、强制执行。",
+   "note": "标题题先汇总全文评价词：Unfortunately、unclear and contradictory、Yet rather than...、should be put on hold 连成一条批评主线，标题必须涵盖「政策有缺陷待修正」；C 只是局部细节，B 与作者态度相反，D 的 interpret 无文本依据。"
+  },
+  {
+   "question_id": 1528,
+   "long_sentence": "定位句 it is not that pink is intrinsically bad, but it is such a tiny slice of the rainbow，not that...but... 结构表「并非…而是…」；such a tiny slice of the rainbow 强调粉色只是彩虹中极小的一片。译：并不是粉色本身有多糟，而是它在整个彩虹中只占如此微小的一片。",
+   "option": "正确项 should not be the sole representation of girlhood：粉色虽不坏但 it is such a tiny slice of the rainbow——少女气质不应被粉色这一种象征垄断；cannot explain girls' lack of imagination 是对末句的字面拼贴，颜色无法「解释」想象力匮乏；cannot influence girls' lives and interests 正反混淆，首句已说粉色 pervasive in our young girls' lives，后文 fuses identity to appearance 也印证影响之深。",
+   "keyword": "a tiny slice 一小片、一小部分；pervasive 无处不在的；fuse...to... 把…与…捆绑；despair 绝望；girlhood 少女时代。",
+   "note": "句意题抓转折与后果：not intrinsically bad 让步之后，tiny slice of the rainbow 的言外之意是「不应只有这一种色彩」，下文想象力匮乏的绝望正是反证；复现原词 lack of imagination 的干扰项是把结论局部字面拼进题干，属高频陷阱，正确项是对作者言外之意的概括。"
+  },
+  {
+   "question_id": 1529,
+   "long_sentence": "定位句 Blue, with its intimations of the Virgin Mary, constancy and faithfulness, symbolised femininity；with 复合结构插入说明蓝色的联想来源（圣母玛利亚、坚贞与忠诚）；symbolised femininity 为谓语部分。译：蓝色因令人联想到圣母玛利亚、坚贞与忠诚，曾象征女性气质。",
+   "option": "正确项 Blue used to be regarded as the colour for girls：symbolised femininity 对应；Colours are encoded in girls' DNA 正反混淆，原文说 it is not；White is preferred by babies 偷换概念，all babies wore white as a practical matter 出于实用而非偏好；Pink used to be a neutral colour 张冠李戴，pink was actually considered the more masculine colour，中性的是连衣裙。",
+   "keyword": "intimation 暗示、联想；symbolise 象征；femininity 女性气质；masculine 男性化的；gender-neutral 不分性别的。",
+   "note": "判断题逐项核对第二段时间线：20 世纪前婴儿皆穿白→童装引入色彩时粉男蓝女→80 年代营销才逆转；只有蓝色象征女性一句能原样支撑选项，其余三项均被原文否定或偷换，注意 practical matter 与 preferred 的语义差别。"
+  },
+  {
+   "question_id": 1530,
+   "long_sentence": "定位句 I had not realised how profoundly marketing trends dictated our perception of what is natural to kids, including our core beliefs about their psychological development；how 引导宾语从句表程度，including 介词短语补充范围。译：我此前没有意识到，营销潮流多么深刻地支配着我们对儿童天性的认知，包括对儿童心理发展的核心信念。",
+   "option": "正确项 the marketing of products for children：marketing trends dictated our perception 直接对应，幼儿期概念更是 popularised as a marketing trick；researches into children's behaviour 正反混淆，作者明说 assumed...: wrong；studies of childhood consumption 张冠李戴，那是 Cook 的学者身份；the observation of children's nature 无中生有，原文说的是营销支配认知。",
+   "keyword": "dictate 支配、决定；perception 认知、观念；psychological development 心理发展；popularise 使流行；toddler 学步幼儿。",
+   "note": "题干 influenced by 对应原文 dictated，先锁定第三段；破题点是冒号后的 wrong——作者自我纠正，否定「专家研究塑造认知」的常识，引出营销真相；researches into children's behaviour 恰是被否定项，属「用原文原词设错」的典型。"
+  },
+  {
+   "question_id": 1531,
+   "long_sentence": "定位句 Trade publications counselled department stores that, in order to increase sales, they should create a third stepping stone between infant wear and older kids' clothes；that 引导宾语从句说明建议内容，in order to increase sales 为目的状语。译：行业刊物建议百货公司：为了提升销售，应在婴儿装与大童装之间创造一块「第三垫脚石」。",
+   "option": "正确项 A classify consumers into smaller groups：对应 Splitting kids, or adults, into ever-tinier categories has proved a sure-fire way to boost profits；B「同等重视不同性别」正反混淆，原文说 magnify gender differences or invent them；C「专注婴儿装与大童装」偷换概念，建议是在两者之间加设新品类；D「创造购物常用语」颠倒因果，toddler 流行是细分的结果。",
+   "keyword": "counsel 建议＝advise；stepping stone 垫脚石、跳板；segment 细分（市场）；sure-fire 稳赚的、必定成功的；boost profits 提升利润。",
+   "note": "counselled 的宾语从句是建议内容，但更贴合选项的是段末总结句 splitting into ever-tinier categories；ever-tinier 与 smaller 的比较级对应是同义替换核心；C 字面复现 infant wear and older kids' clothes 最具迷惑性，务必看清 create between 的动作方向是新增中间层。"
+  },
+  {
+   "question_id": 1532,
+   "long_sentence": "结论依据第二段 Girls' attraction to pink may seem unavoidable, somehow encoded in their DNA, but...it is not，but 转折否定先天论；末段 one of the easiest ways to segment a market is to magnify gender differences。译：女孩对粉色的迷恋看似编码在 DNA 里、不可避免，但事实并非如此；细分市场最简单的手段之一就是放大性别差异。",
+   "option": "正确项 mainly imposed by profit-driven businessmen：第二段否认先天，第三、四段以幼儿期为例点明是 clothing manufacturers 的 marketing trick，目的在 boost profits，合起来即「逐利商人强加」；B clearly explained by their inborn tendency 正反混淆，encoded in their DNA 已被作者明确否定；A「被服装商完全理解」过度推断，文中只说厂商制造流行；D「被心理专家很好解释」无中生有，专家研究反被证明是想当然（wrong）。",
+   "keyword": "impose 强加；profit-driven 逐利的；encode 编码；inborn 先天的；segment a market 细分市场。",
+   "note": "结论题纵览证据链：否认 DNA（第二段）→营销把戏（第三段）→细分牟利（第四段），三点汇聚即商业强加；inborn tendency 与原文 DNA 呼应度最高，恰是作者亲手否定的说法，警惕「原文有词但方向相反」的陷阱。"
+  },
+  {
+   "question_id": 1533,
+   "long_sentence": "定位句 Companies had won patents for isolated DNA for decades – by 2005 some 20% of human genes were patented；had won 过去完成时表长期既有事实，破折号后用数据佐证规模。译：数十年来，各公司一直为分离出的 DNA 获取专利——到 2005 年，约两成的人类基因已被注册专利。",
+   "option": "正确项 genes to be patentable：2010 年法官裁定基因不可专利后，公司 executives were violently agitated，BIO 安抚成员称这只是 a preliminary step in a longer battle——可见公司希望基因可继续获得专利；the BIO to issue a warning 偷换概念，BIO 是 assured（安抚）而非警告；their executives to be active 张冠李戴，agitated 是焦躁不安；judges to rule out gene patenting 正反混淆，这一裁定恰是公司不愿看到的挫折而非愿望。",
+   "keyword": "patent 专利、取得专利权；isolated DNA 分离的 DNA；preliminary step 初步步骤；agitated 焦躁不安的；ruling 裁决。",
+   "note": "would like 的愿望要靠第一段情绪词反推：agitated 加 longer battle 说明公司立场是「要继续争取专利」；题干问意愿，别选成已发生的事实——judge ruled unpatentable 是已发生的挫折而非愿望；题库选项数组有位移，正确项文本以真题选项为准。"
+  },
+  {
+   "question_id": 1534,
+   "long_sentence": "定位句 Critics make three main arguments against gene patents: a gene is a product of nature, so it may not be patented; gene patents suppress innovation rather than reward it; and patents' monopolies restrict access to genetic tests。译：批评者提出三条反对基因专利的论据：基因是自然产物因而不可获专利；基因专利压制而非奖励创新；专利垄断限制了基因检测的可及性。",
+   "option": "正确项 only man-made products are patentable：它是 a gene is a product of nature, so it may not be patented 的等价换算——自然产物不可专利，即只有人造产物才能获专利；patents on genes depend much on innovation 正反混淆，原文是 suppress innovation rather than reward it；courts should restrict access to genetic tests 偷换主语；genetic tests are not reliable 无中生有。",
+   "keyword": "argument against 反对论据；product of nature 自然产物；suppress 压制；monopoly 垄断；access 可及性、获取途径。",
+   "note": "三论据与选项逐一核对：只有论据一能换算出正确项；论据二的关键是 rather than（是压制不是奖励），干扰项恰反着说；论据三的 restrict access 主语是 patents' monopolies，干扰项把动作主体换成 courts，属偷换主语陷阱。"
+  },
+  {
+   "question_id": 1535,
+   "long_sentence": "定位句 Firms are now studying how genes interact, looking for correlations that might be used to determine the causes of disease or predict a drug's efficacy. Companies are eager to win patents for connecting the dots；looking for... 现在分词作伴随状语。译：公司正研究基因如何相互作用，寻找可确定病因或预测药效的关联；各公司急于为「连点成线」赢得专利。",
+   "option": "正确项 discovering gene interactions：connecting the dots（把点连起来）正是上文 studying how genes interact 的比喻说法，介词 for 后的宾语即专利对象；establishing disease correlations 偷换概念，correlations 是研究成果的用途（定病因、测药效），不是专利标的本身；drawing pictures of genes 把习语 connecting the dots 字面化；identifying human DNA 无中生有，且原文说 most are already patented，此路已基本走完。",
+   "keyword": "interact 相互作用；correlation 关联；efficacy 功效；connecting the dots 连点成线、发现关联；eager to do 急于做。",
+   "note": "人名引语是定位点，connecting the dots 必须还原为上句 how genes interact——习语回指具体动作是本题钥匙；for 后的宾语才是专利对象，别把用途当成对象；identifying human DNA 与第一段 DNA 专利呼应，但题干限定 companies are eager to 的当下新方向。"
+  },
+  {
+   "question_id": 1536,
+   "long_sentence": "定位句 The BIO recently held a convention which included sessions to coach lawyers on the shifting landscape for patents. Each meeting was packed；which 引导定语从句修饰 convention，packed 表「挤满的」。译：BIO 最近召开了一场大会，其中包括培训律师以应对专利格局变化的多场分会，每场会议都人满为患。",
+   "option": "正确项 C gene patenting was a great concern：分会主题是 shifting landscape for patents，场场爆满说明基因专利问题牵动全行业、备受关注；A「最高法院很有权威」张冠李戴，最高法院只是将审理相关案件；B「BIO 是强大组织」偷换概念，爆满反映议题热度而非组织实力；D「律师热衷参会」停留在字面，是事实本身而非作者言外之意。",
+   "keyword": "packed 挤满的、爆满的；convention 大会；session 分会、场次；shifting landscape 变化的格局；coach 培训、辅导。",
+   "note": "句意理解题问隐含义：packed 的直接原因是律师要应对专利规则剧变，深层含义是行业高度关切；D 是最典型的字面复现陷阱——它复述事实而非表达观点，含原词 packed 的选项往往不是答案，要选对 packed 这一现象的解读。"
+  },
+  {
+   "question_id": 1537,
+   "long_sentence": "全文呈现方式：Executives were violently agitated 与 Critics make three main arguments against gene patents 并列出现，末段 it is unclear whether the sequencing of a whole genome violates the patents...The case may yet reach the Supreme Court 保留判断。译：高管们极度不安；批评者提出三条反对基因专利的论据；全基因组测序是否侵犯其中单个基因的专利尚不清楚，案件可能还会上诉到最高法院。",
+   "option": "正确项 D objective：作者先写公司的胜诉与振奋（a blessing to firms and patients alike），再转述批评者三论据与司法部立场，最后以 unclear、may yet 收尾，双方观点并列、不下结论；A critical 与 B supportive 各只对应一方材料，以偏概全；C scornful 的蔑视语气全篇未出现。",
+   "keyword": "objective 客观的；critical 批评的；scornful 蔑视的；supportive 支持的；present both sides 并陈双方观点。",
+   "note": "态度题把全文褒贬词分栏：公司的 blessing、relieved 对批评者的 argue、filed a brief；作者只用转述动词（argue、explain、assure）不加评语，结尾 unclear 与 may yet reach 表明悬而未决——无倾向即客观，这是考研阅读态度题的高频答案。"
+  },
+  {
+   "question_id": 1538,
+   "long_sentence": "定位句 No one tries harder than the jobless to find silver linings in this national economic disaster；no one...than... 用否定比较表最高程度；silver lining 源自谚语 every cloud has a silver lining。译：在这场全国性经济灾难中，没有人比失业者更努力地寻找一线希望了。",
+   "option": "正确项 D look on the bright side of the recession：silver lining（乌云的金边）即坏事中好的一面，下文 Many said that unemployment, while extremely painful, had improved them in some ways 佐证；A「向政府寻求补贴」无中生有；B「从萧条经济中牟利」过度推断，文中的收获是心态与习惯而非利润；C「探究失业原因」无中生有，原文未提归因。",
+   "keyword": "silver lining 一线希望；the jobless 失业者＝the unemployed；look on the bright side 看到光明面；disaster 灾难。",
+   "note": "习语题靠谚语积累：every cloud has a silver lining 类似「黑暗中总有一线光明」；下文 less materialistic、more financially prudent 等具体好处都是 bright side 的展开，可反向验证；A、C 两项动宾搭配合理但原文无据，属无中生有的常规配置。"
+  },
+  {
+   "question_id": 1539,
+   "long_sentence": "定位句 they had become less materialistic and more financially prudent; they were more aware of the struggles of others，比较级描述变化；At the very least, it has awoken us from our national fever dream of easy riches and bigger houses。译：他们变得不那么物质、理财更谨慎，也更体察他人的挣扎；至少，萧条把我们从轻易发财、住大房子的狂热梦中唤醒。",
+   "option": "正确项 D reconsider their lifestyle：less materialistic、more financially prudent、end to reckless spending 都指向「重新审视生活方式」；A「彼此斗争」张冠李戴，struggles of others 指他人的困境；B「实现国家梦想」偷换概念，awoken us from our fever dream 是从梦中醒来而非圆梦；C「挑战自身的谨慎」正反混淆，原文是变得更 prudent。",
+   "keyword": "materialistic 物质主义的；prudent 谨慎的、精打细算的；reckless 鲁莽的；fever dream 狂热的梦；awake from 从…中觉醒。",
+   "note": "题干问 recession made people 的结果，定位段二 had improved them in some ways；比较级结构 less...more... 是变化信号；B 项复现 dream 一词但方向相反，属「原词设错」，注意 wake from a dream 的否定含义是幻灭而非实现。"
+  },
+  {
+   "question_id": 1540,
+   "long_sentence": "定位句 lengthy periods of economic stagnation or decline have almost always left society more mean-spirited and less inclusive, and have usually stopped or reversed the advance of rights and freedoms；主语是 lengthy periods，leave sth + 形容词结构表「使…处于某状态」。译：长期的经济停滞或衰退几乎总是使社会更加刻薄、更不包容，并且通常使权利与自由的进步停滞甚至倒退。",
+   "option": "正确项 B bring out more evils of human nature：more mean-spirited（更刻薄）与 less inclusive（更不包容）即人性之恶被放大；A「给移民带来更重负担」偷换概念，原文是 anti-immigrant sentiment（反移民情绪）上升；C「促进权利与自由」正反混淆，原文是 stopped or reversed the advance；D「缓和种族与阶级冲突」正反混淆，as does conflict between races and classes 表冲突同样在增加。",
+   "keyword": "stagnation 停滞；mean-spirited 刻薄的、气量小的；inclusive 包容的；reverse 逆转；sentiment 情绪、舆情。",
+   "note": "人名观点题直接定位 Benjamin Friedman argues that；as does conflict... 是倒装替代结构，表「冲突也同样加剧」，看不懂倒装就会误选 D；B 的 evils 是对 mean-spirited、less inclusive、anti-immigrant 等一系列贬义表述的归纳，概括改写是正确项常态。"
+  },
+  {
+   "question_id": 1541,
+   "long_sentence": "定位句 those with degrees from elite universities catch up fairly quickly to where they otherwise would have been if they had graduated in better times；where 引导宾语从句，otherwise 暗含虚拟（若非萧条），if they had graduated 为虚拟条件句。译：拥有精英大学学位的毕业生会相当快地追回到他们若在好年景毕业本应达到的位置。",
+   "option": "正确项 D recover more quickly than the others：catch up fairly quickly 对应 recover more quickly，下句 it is the masses beneath them that are left behind 反衬名校生恢复更快；A「因机会减少而落后」张冠李戴，落后的是 the masses beneath them；B「快速追上有经验的雇员」偷换比较对象，追上的是原本应达到的位置；C「与别人一样觉得机会暗淡」正反混淆，not all people...see their life chances dimmed，名校生恰是例外。",
+   "keyword": "elite universities 精英大学；catch up 追上、弥补差距；otherwise 若非如此；the masses 普通大众；dim 使暗淡。",
+   "note": "研究结论题抓 not all...: those with degrees... 的例外结构——先说并非人人黯淡，再分名校生与他人两类；强调句 it is the masses that are left behind 与名校生形成对照，是 D 项比较级 more quickly than the others 的出处；B 偷换比较对象要警惕。"
+  },
+  {
+   "question_id": 1542,
+   "long_sentence": "定位句 We will have to wait and see exactly how these hard times will reshape our social fabric. But they certainly will reshape it, and all the more so the longer they extend；but 转折后 certainly 强调确定性，the longer...all the more so 表「延续越久改变越大」。译：我们只能拭目以待，看艰难岁月究竟会如何重塑社会结构；但它必然会造成重塑，而且持续越久，重塑越深。",
+   "option": "正确项 C certain：作者对「如何变」存疑（wait and see、mixed results），但对「必然改变」十分确定（certainly will reshape）；A trivial 微不足道与 reshape it 矛盾；B positive 积极的与 But for the most part, these benefits seem thin 不符，作者已削弱乐观结论；D destructive 破坏性的过度定性，作者只说必然重塑，未断言是破坏。",
+   "keyword": "reshape 重塑；social fabric 社会结构；wait and see 拭目以待；certainly 必然、无疑；all the more so 更加如此。",
+   "note": "态度题抓语气升级链：首段 might change、likely to reshape 是推测，末段 But they certainly will reshape it 升级为 certainly——「方式未知、改变确定」两层信息分开，答案落在确定层；B 的诱惑在第二段的 silver linings，但作者以 thin, uncertain 自我修正。"
+  },
+  {
+   "question_id": 1543,
+   "long_sentence": "定位句 In 1337, Petrarch began work on his rambling writing De Viris Illustribus – On Famous Men, highlighting the virtus (or virtue) of classical heroes；highlighting... 现在分词作伴随状语；virtus 为拉丁语，括号内给出英文释义 virtue。译：1337 年，彼特拉克开始写他的长篇著作《论名人》，着力突出古典英雄的美德。",
+   "option": "答案 A：emphasized the virtue of classical heroes 中 virtue 与原文 virtus (or virtue) 对应、emphasized 对应 highlighting；最易混的 B highlighted the public glory of the leading artists——public glory 出自 Romantics 段且被原文否定（stressing the uniqueness...rather than public glory），把不同人物的动作拼接属张冠李戴。",
+   "keyword": "virtue 美德；exemplary 可作楷模的；highlight 突出、强调＝emphasize；classical heroes 古典英雄；celebrate 赞颂。",
+   "note": "左栏人名 Petrarch 定位第三段：began work on...highlighting... 即他做的事；匹配题先抓动词——emphasized、highlighted、focused、depicted、held、dismissed、opened up 分别绑定不同人物，动词与宾语的搭配比名词更难替换，可作快速判据。"
+  },
+  {
+   "question_id": 1544,
+   "long_sentence": "定位句 This was the biographical tradition which Niccolò Machiavelli turned on its head. In The Prince, he championed cunning, ruthlessness, and boldness, rather than virtue, mercy and justice；turn on its head 表「彻底颠覆」，rather than 表取舍。译：马基雅维利颠覆了这一传记传统；在《君主论》中他推崇狡诈、冷酷与大胆，而非美德与正义，视之为成功统治者的技能。",
+   "option": "答案 F：dismissed virtue as unnecessary for successful leaders 中 dismissed 对应 rather than virtue（弃美德不取）、successful leaders 原词复现；E（历史应是大众及其斗争的记录）是 Marx and Engels 的观点，D（开辟理解新领域）属末段新史学传统，均与马基雅维利无关，属张冠李戴。",
+   "keyword": "turn on its head 彻底颠覆；champion 拥护、推崇；cunning 狡诈；ruthlessness 冷酷无情；dismiss...as 不屑一顾地摒弃。",
+   "note": "rather than 结构是钥匙：champion 之后是推崇项，rather than 之后是舍弃项，F 的 dismissed 正对应后者；定位可由人名 Machiavelli 直接锁定第三段末；书名 The Prince 君主论可作文化背景补充，帮记忆其权术主张。"
+  },
+  {
+   "question_id": 1545,
+   "long_sentence": "定位句 the Victorian author Samuel Smiles wrote Self-Help as a catalogue of the worthy lives of engineers, industrialists and explorers；wrote...as... 表「以…形式写就」，catalogue 此处指汇编、名录。译：维多利亚时代作家塞缪尔·斯迈尔斯写下《自助论》，将其写成了工程师、实业家和探险家们有价值人生的汇编。",
+   "option": "答案 G：depicted the worthy lives of engineers, industrialists and explorers，worthy lives 与 engineers, industrialists and explorers 两处原词复现，depicted 对应 wrote as a catalogue；易混项 A 也含褒扬（emphasized the virtue），但其对象是 Petrarch 笔下的 classical heroes，与斯迈尔斯的实业人物属不同时代类型，勿因褒扬色彩相近而混选。",
+   "keyword": "catalogue 汇编、名录；worthy 有价值的、高尚的；industrialist 实业家；explorer 探险家；self-help 自助、自立。",
+   "note": "人名加书名双定位：Samuel Smiles 与 Self-Help 同现第四段；引语中 power of self-help、patient purpose、steadfast integrity 佐证这些人物的典范意义；匹配题干扰项常用「同一话题不同人物」，用宾语身份（classical heroes 与 engineers）切分最可靠。"
+  },
+  {
+   "question_id": 1546,
+   "long_sentence": "定位句 This was all a bit bourgeois for Thomas Carlyle, who focused his biographies on the truly heroic lives of Martin Luther, Oliver Cromwell and Napoleon Bonaparte. These epochal figures represented lives hard to imitate；who 引导非限制性定语从句。译：卡莱尔把传记聚焦于路德、克伦威尔和拿破仑的真正英雄人生，这些划时代人物的人生难以模仿。",
+   "option": "答案 C：focused on epochal figures whose lives were hard to imitate，focused、epochal figures、hard to imitate 均为原词复现，whose lives were hard to imitate 即 represented lives hard to imitate；易混项 G 也谈人物类型，但 engineers, industrialists and explorers 是斯迈尔斯的书写对象，卡莱尔专注的是 Luther、Cromwell、Napoleon 这类 epochal figures，宾语身份不同。",
+   "keyword": "epochal 划时代的；bourgeois 市侩的、平庸的；biography 传记；imitate 模仿；heroic 英雄的。",
+   "note": "this was all a bit bourgeois 的 this 回指上段斯迈尔斯式实业人物传记——卡莱尔嫌其格局不足，转向真正英雄；由「看不上前一种」到「专注后一种」的对比可同时验证 43 与 44 两题；代词 this 的指代是匹配题常用链头。"
+  },
+  {
+   "question_id": 1547,
+   "long_sentence": "定位句 The history of all hitherto existing society is the history of class struggles 与 And history should be the story of the masses and their record of struggle；前句化用《共产党宣言》名言，hitherto 表「迄今为止」。译：迄今一切社会的历史都是阶级斗争的历史；而历史应当是人民群众的故事及其斗争的记录。",
+   "option": "答案 E：held that history should be the story of the masses and their record of struggle，与原文几乎逐词复现，held 对应 wrote；易混项 D opened up new realms of understanding——原文 opened up 用于末段新史学成果（from gender to race to cultural studies），其主语是马恩开启的传统而非其主张本身，张冠李戴。",
+   "keyword": "the masses 人民群众、大众；class struggle 阶级斗争；hitherto 迄今为止；record of struggle 斗争记录；manifesto 宣言。",
+   "note": "引语定位：《共产党宣言》与 Marx and Engels 并现；先引语后观点的段落结构中，And history should be... 才是答案句，前面 class struggles 是背景引文；E 的 story of the masses 与 D 的新领域分工明确，按宾语内容切分即可。"
+  },
+  {
+   "question_id": 1548,
+   "long_sentence": "定位句 Given the advantages of electronic money, you might think that we would move quickly to the cashless society in which all payments are made electronically. ____, a true cashless society is probably not around the corner；Given 表「考虑到」。译：考虑到电子货币的优势，你或以为我们会迅速迈向无现金社会；然而真正的无现金社会恐怕不会马上到来。",
+   "option": "正确答案 However：前句「你可能以为很快实现」与后句「probably not around the corner（不会马上到来）」语义相反，需要转折连词；Moreover 表递进、Therefore 表因果、Otherwise 表反向条件，均与「预期与现实的反差」不合。",
+   "keyword": "given 考虑到；cashless 无现金的；around the corner 即将到来、近在咫尺；move quickly to 迅速走向；whereas 然而（近义转折）。",
+   "note": "逻辑词题先概括前后句关系：might think（预期）与 probably not（现实）构成转折；around the corner 是固定短语，与 not 连用即「远未到来」；完形首段第一题常定全文基调——本文即「电子货币虽好、普及尚远」，转折词是关键。"
+  },
+  {
+   "question_id": 1549,
+   "long_sentence": "定位句 Indeed, predictions have been ____ for two decades but have not yet come to fruition；现在完成时 have been 表状态持续，but 后 have not yet come to fruition 表转折。译：事实上，这类预言已经流传了二十年，却至今没有实现。",
+   "option": "正确答案 around：be around 是固定搭配，表「存在、流传、为人所知」，predictions have been around 即「预言已流传多年」，与 for two decades 的时段状语搭配自然；off 表离开、back 表返回、over 表结束，都与「预言存在二十年」的持续义不吻合。",
+   "keyword": "be around 存在、流传；come to fruition 实现、结出果实；for two decades 达二十年（持续时段）；prediction 预言。",
+   "note": "for two decades 是信号词：与完成时连用的时段要求持续状态动词或副词，around 的「一直在」恰好满足；fruition 是果实比喻，not come to fruition 即「未兑现」；下文 1975 年《商业周刊》的预言举例正是流传而未实现的实例，可反向验证。"
+  },
+  {
+   "question_id": 1550,
+   "long_sentence": "定位句 Business Week predicted in 1975 that electronic means of payment would soon revolutionize the very ____ of money itself, only to ____ itself several years later；that 引导宾语从句，only to do 表「结果却…」的意外转折。译：《商业周刊》1975 年曾预言电子支付手段将很快彻底变革货币本身的概念，结果几年后却又自我推翻。",
+   "option": "正确答案 concept：电子支付改变的是货币的存在形态与人们对货币的理解，the very concept of money itself 中 very 与 itself 双重强调根本概念；A power 表力量，语义过大且文中无货币力量之变；C history 与支付方式革新不符，技术不会改写货币史；D role 表职能，货币的交换职能并未改变，改变的是形态与观念。",
+   "keyword": "revolutionize 彻底变革；concept 概念；very（形容词用法）正是那个、恰恰；only to do 结果却、不料；means of payment 支付手段。",
+   "note": "very...itself 的双重强调指向抽象本质词，concept 最合；后半句 only to itself 的自我指代（推翻自己）暗示预言落空，为全文「预言不可信」埋伏笔；2013 年英语二完形首段三空连成「预期—转折—例证」论证链，抓住 very 修饰即可秒定。"
+  }
+ ]
+}

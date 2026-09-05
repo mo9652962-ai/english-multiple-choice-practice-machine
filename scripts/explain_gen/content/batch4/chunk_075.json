@@ -1,0 +1,180 @@
+{
+ "chunk": 75,
+ "items": [
+  {
+   "question_id": 1851,
+   "long_sentence": "定位句 One survey found that bureaucratic delays led the average H-2A worker to arrive on the job 22 days late：主干 One survey found that...；宾语从句内 delays led sb to do sth；前句 The process is cumbersome, expensive, and unreliable 三个形容词并列作表语。译：一项调查发现，官僚程序造成的延误使 H-2A 工人平均晚到岗 22 天。",
+   "option": "正确项 A：slow granting procedures＝The process is cumbersome, expensive, and unreliable 加 bureaucratic delays，slow≈cumbersome/delay；B「限制停留时长」张冠李戴，stay longer 是国会未批准的新签证设想；D「控制年度名额」张冠李戴，原文 H-2A has no numerical cap，有 66,000 上限的是 H-2B；C「收紧要求」无中生有。",
+   "keyword": "cumbersome 繁琐的、难办的；bureaucratic delays 官僚延误；numerical cap 数量上限；complain about 抱怨。",
+   "note": "由题干 H-2A 定位第五段 Even so 之后；易错点是 B/D——原文特意用 unlike 对比 H-2A 与 H-2B（限时、限额），对比处必设张冠李戴项，先分清两签证各自特点再选。"
+  },
+  {
+   "question_id": 1852,
+   "long_sentence": "点题句 In effect, the U.S. can import food or it can import the workers who pick it：主干为 can...or...can... 的选择结构；who pick it 定语从句修饰 workers；in effect 为评注性状语。译：实际上，美国要么进口食物，要么进口采摘食物的工人。",
+   "option": "正确项 B：Import Food or Labor? 直接改写末段 the U.S. can import food or it can import the workers，labor≈workers；A「美国农业衰退？」以偏概全，全文只谈劳力短缺与签证；C「墨西哥拯救美国？」无中生有，原文只说部分农场主把业务搬到墨西哥；D「人力对自动化？」正反混淆，原文明确 Mechanization isn't the answer – not yet。",
+   "keyword": "in effect 实际上＝in fact；import 进口；labor shortage 劳动力短缺；pick crops 采摘庄稼。",
+   "note": "标题题看首尾呼应：首段 labor shortages 起题，末段 import food or import workers 收束，B 的问号式标题恰概括两难；A、D 均为文中局部信息放大，属以偏概全型干扰。"
+  },
+  {
+   "question_id": 1853,
+   "long_sentence": "定位句 They're part of a bunch of celebrities starring in a new video for World Environment Day – encouraging you, the consumer, to swap out your single-use plastic staples like straws and cutlery：主干 They're part of...；starring in... 现在分词作后置定语；encouraging... 现在分词作伴随状语。译：他们是世界环境日新视频中的一批明星——鼓励你这位消费者换掉吸管、餐具等一次性塑料常用品。",
+   "option": "正确项 B：urge consumers to cut the use of plastics≈encouraging you, the consumer, to swap out your single-use plastic staples，urge≈encourage、cut≈swap out；A「要求新立法」张冠李戴，立法呼吁针对 governments 且是 key messages 而非视频内容；C「征集公众意见」、D「披露危机成因」均无中生有。",
+   "keyword": "swap out 换掉、替换；single-use 一次性的；staple 常用品；combat 对抗、打击；crisis 危机。",
+   "note": "细节题看破折号后的 encouraging...：视频的直接对象是消费者；A 项的 legislation 出自第二段对政府的信息，命题人把两个呼吁对象对调，属典型张冠李戴。"
+  },
+  {
+   "question_id": 1854,
+   "long_sentence": "定位句 They could even be detrimental, satisfying a need to have done our bit without ever progressing onto bigger, bolder, more effective actions – a kind of moral licensing that...stops us doing more：主干 They could even be detrimental；satisfying... 现在分词作结果状语。译：这些小行动甚至可能有害——满足「尽了一份力」的需要，却让人不再迈向更大胆有效的行动。",
+   "option": "正确项 B：prevent us from making further efforts≈stops us doing more and asking more，further efforts≈doing more；A「误导我们做无价值的事」偷换概念，带环保袋并非无价值，只是不足以带来改变；C「削弱成就感」正反混淆，原文 satisfying a need 是满足而非削弱；D「压制成功欲」无中生有。",
+   "keyword": "detrimental 有害的＝harmful；allay concerns 缓解担忧；do our bit 尽一份力；moral licensing 道德许可。",
+   "note": "破折号后 that allays... and stops... 两个并列定语是答案区；C 最具迷惑性——moral licensing 恰是靠制造满足感让人停步，与「削弱成就感」方向相反，读清 satisfying 的施动方向即可。"
+  },
+  {
+   "question_id": 1855,
+   "long_sentence": "定位句 we're ignoring the balance of power that implies that as consumers we must shop sustainably, rather than as citizens hold our governments and industries to account to push for real systemic change：主句 we're ignoring...；that implies... 定语从句；rather than 对举两种身份的动作。译：我们忽视了权力的平衡——它意味着作为「消费者」我们须可持续购物，而不是作为「公民」去问责政府和行业。",
+   "option": "正确项 D：press our government to lead the combat≈hold our governments and industries to account to push for real systemic change，press≈hold to account；A「转向社区福利」偷换概念，原文谈公民问责；B「与产业关系改善」无中生有；C「已在积极行使公民权」正反混淆——we're ignoring 说明尚未做到。",
+   "keyword": "hold sb to account 问责于某人；citizen 公民（vs consumer 消费者）；systemic change 系统性变革；press 施压、敦促。",
+   "note": "rather than 前后对举是答案所在：作者主张 citizen 身份的问责行为而非 consumer 身份的购物行为；只读 consumers 半句就会误选与购物相关项，务必读到 rather than 之后。"
+  },
+  {
+   "question_id": 1856,
+   "long_sentence": "定位句 professor Elizabeth R. DeSombre argues that the best way to collectively change the behavior of large numbers of people is for the change to be structural：argues that 后接宾语从句；不定式 to collectively change... 作 way 的后置定语；is for the change to be structural 为表语结构。译：DeSombre 教授认为，从整体上改变大量人群行为的最佳方式，是让改变具有结构性。",
+   "option": "正确项 D：top-down（自上而下的）是对 structural 的概括，下文 implementing policy、a plastic tax、banning single-use plastics 全是政府层面的自上而下手段；B「自我驱动」正反混淆，那恰是作者批评的个人途径；A「双赢安排」、C「高性价比」无中生有。",
+   "keyword": "structural 结构性的＝top-down；implement policy 执行政策；plastic tax 塑料税；incentive-based 基于激励的。",
+   "note": "top-down 是抽象改写，需靠例证定性质：plastic tax 与 banning 都是政策自上而下推行，反推 structural＝top-down；遇到抽象选项时回读其后例子归类。"
+  },
+  {
+   "question_id": 1857,
+   "long_sentence": "定位句 It's just that individual actions are too slow, she says, for that to be the only, or even primary, approach to changing widespread behavior：too...to 结构表示「太慢以至于不足以」；she says 为插入语；primary 与 only 递进。译：她指出，只是个人行动太慢，不足以成为改变普遍行为的唯一乃至主要途径。",
+   "option": "正确项 C：are far from sufficient＝accomplish little、too slow to be the only or even primary approach；A「过于激进」、B「缺乏连贯」无中生有；D「远非理性」无中生有——末段 None of this is about writing off the individual 表明作者承认个人行动价值，只是不够。",
+   "keyword": "accomplish little 收效甚微；primary 主要的；approach 途径、方法；write off 全盘否定。",
+   "note": "作者态度是「有价值但不够」，D「不理性」的极端否定必错；结论题定位在倒数两段 DeSombre isn't saying...It's just that...，It's just that 后才是结论本体。"
+  },
+  {
+   "question_id": 1858,
+   "long_sentence": "引语 Children may face serious difficulties in coping with significant moves, especially if it removes them from their current school or support system：主干 may face difficulties in doing；especially if 条件从句补充强调；it 指代 significant moves。译：孩子面对重大搬家可能遭遇严重困难，尤其是搬家使他们离开现有学校或支持系统时。",
+   "option": "答案 A：significant moves 原词复现，face serious difficulties≈pose challenges；Hooper 先说让孩子参与大决定有助获得 a sense of control and ownership，随后以 Children may face... 提醒搬家挑战，两点合观即 A 的 remarks that significant moves may pose challenges to children。",
+   "keyword": "significant moves 重大搬家；cope with 应对＝deal with；pose challenges 带来挑战；support system 支持系统。",
+   "note": "人物匹配题先圈人名再读其全部话语：Hooper 两句话分属「支持参与」与「提醒困难」，A 取后半；B 的 leave kids in the dark 是第三段旧一代做法的描述，非任何受访者的主张，勿张冠李戴。"
+  },
+  {
+   "question_id": 1859,
+   "long_sentence": "定位句 Asking them questions about what they like about the backyard of a potential home will make them feel like they're being included in the decision-making process：动名词短语 Asking... 作主语；what they like 宾语从句；feel like 后接从句，内含进行式被动 being included。译：就意向房的后院问孩子喜欢什么，会让他们感觉被纳入了决策过程。",
+   "option": "答案 D：a sense of involvement＝feel like they're being included in the decision-making process，前句 Younger children should feel like they're choosing their home – without actually getting a choice 同义铺垫：给参与感但不给真实决定权，正是 D 的 given a sense of involvement。",
+   "keyword": "involvement 参与＝being included；decision-making process 决策过程；potential home 意向房；without actually getting a choice 无实际决定权。",
+   "note": "Bailey 强调「参与感」而非「反对依赖孩子意见」，后者是 Hampson 的观点（C 项）；本题型五个受访者观点相邻易混，逐人核对动词（remarks/thinks/advises）与原文评价方向。"
+  },
+  {
+   "question_id": 1860,
+   "long_sentence": "引语 Speaking with your children before you make a real estate decision is wise, but I wouldn't base the purchasing decision solely on their opinions：动名词 Speaking... 作主语；before 时间从句；but 转折连接两个分句；solely 意为「仅仅」。译：做房产决定前与孩子聊聊是明智的，但我不会仅凭他们的意见来决定购买。",
+   "option": "答案 C：should not be based only on children's opinions＝wouldn't base the purchasing decision solely on their opinions，only≈solely 直接对应；前半句 is wise 承认沟通价值，but 之后才是核心主张；其前文 placing too much emphasis on their opinions can ruin a fantastic home purchase 进一步支撑。",
+   "keyword": "solely 仅仅、完全地＝only；base...on... 把…建立在…上；place emphasis on 重视；purchasing decision 购买决定。",
+   "note": "C 项 only 是解题钥匙，对应原文 solely；若漏看 but，会把 Hampson 误当「全力支持孩子参与」派，与 D（Bailey）混淆；人物匹配题务必读到转折词之后。"
+  },
+  {
+   "question_id": 1861,
+   "long_sentence": "定位句 The other issue is that many children – especially older ones – may base their real state knowledge on HGTV shows：表语从句 that many children...may base...on...；破折号插入 especially older ones 补充限定。译：另一个问题是，许多孩子——尤其是大孩子——对房地产的认知可能建立在 HGTV 节目之上。",
+   "option": "答案 G：influenced by the media＝base their real estate knowledge on HGTV shows，引语 HGTV has seriously changed how people view real estate 直接印证；HGTV（家居装修电视频道）是 the media 的具体化；It's not shelter, it's a lifestyle 说明节目重塑了孩子的房产观。",
+   "keyword": "media 媒体（具体化为 HGTV 电视频道）；base...on 基于；shelter 住所；lifestyle 生活方式。",
+   "note": "G 与 F 的区分在证据：F（按需求而非意见）是 Julie Gurner 的话；Norris 的关键词是 HGTV——抽象词 media 落到具体媒体名，是本题唯一同义替换点，圈出电视节目即可锁定。"
+  },
+  {
+   "question_id": 1862,
+   "long_sentence": "引语 Harsh as it may be to say, that decision should likely not be made contingent on a child's opinions, but rather made for them with great consideration into what home can meet their needs best：Harsh as it may be 为让步倒装；be made contingent on 意为「依…而定」。译：话说得虽扎心，但那个决定很可能不应取决于孩子的意见，而应充分考虑何种房子最能满足他们的需求来替他们做出。",
+   "option": "答案 F：based on children's needs rather than their opinions 恰是 not be made contingent on opinions, but rather...meet their needs best 的合并改写，contingent on≈based on；其前句 Their opinions can change tomorrow（意见易变）进一步支撑 F。",
+   "keyword": "contingent on 取决于＝dependent on；meet one's needs 满足需求；customize 定制；harsh 扎心的、严苛的。",
+   "note": "F 与 C 的分界：Hampson 只说「不 solely 基于意见」，Gurner 更进一步「按需求替孩子决定」——rather than 结构是 F 的标志；让步倒装 Harsh as it may be 后必接真正的观点。"
+  },
+  {
+   "question_id": 1863,
+   "long_sentence": "定位句 But defining what it means to be a good parent is undoubtedly very tricky, particularly since children respond differently to the same style of parenting：动名词 defining... 作主语；what it means to be... 从句作其宾语；particularly since 原因从句。译：但界定「好父母」意味着什么无疑非常棘手，尤其是因为孩子对同一种养育风格的反应各不相同。",
+   "option": "正确项 D：tricky「棘手的」——since children respond differently 说明孩子反应各异、难以统一标准，选「难」顺理成章；A tedious「乏味的」评价感受而非难度；B pleasant「愉快的」与 But 转折方向相反；C instructive「有教益的」无语境支持。",
+   "keyword": "tricky 棘手的＝difficult；define 界定；respond to 对…作出反应；parenting style 养育风格。",
+   "note": "首空看转折：上文 what every parent would like to be 是美好愿望，But 引出难度；since 从句的 differently 是选「难」词的直接证据，先找空格后的解释再定词。"
+  },
+  {
+   "question_id": 1864,
+   "long_sentence": "定位句 A calm, rule-following child might respond better to a different sort of parenting than, for example, a younger sibling：比较结构 A might respond better to X than Y；插入语 for example 隔开比较对象；rule-following 复合形容词作定语。译：一个安静守规的孩子，比方说，可能比年幼的弟妹对另一种养育方式反应更好。",
+   "option": "正确项 B：for example 引出 a younger sibling，以手足对比具体印证上句 children respond differently；A in addition 表递进追加，但弟妹是例证而非新增观点；C at once「立刻」、D by accident「偶然」插入句中语义不通。",
+   "keyword": "sibling 兄弟姐妹；for example 例如；rule-following 守规矩的；respond better to 对…反应更好。",
+   "note": "逻辑衔接题先判关系：前句是观点（孩子反应不同），本句出现具体人物（弟妹），观点到例证选 for example；逗号隔开的插入语位置是举例信号，in addition 需要并列新信息。"
+  },
+  {
+   "question_id": 1865,
+   "long_sentence": "定位句 Fortunately, there's another sort of parent that's a bit easier to describe: a patient parent：there be 句型；that's a bit easier to describe 定语从句；冒号引出同位解释。译：所幸，还有另一类比较容易描述的父母：有耐心的父母。",
+   "option": "正确项 A：Fortunately「所幸」承接上段「好父母难界定」的困境，庆幸存在一个更易描述的类型，情感由暗转明；B Occasionally「偶尔」表频率、D Eventually「最终」表结局，均无时间语境；C Accordingly 表因果，但 easier to describe 与上段是转机而非因果。",
+   "keyword": "fortunately 幸运地、所幸＝luckily；a sort of 一类；describe 描述、刻画；patient 有耐心的。",
+   "note": "句首副词题看情感走向：上段结尾是 tricky（难），本句出现 easier（易），情绪转好选 Fortunately；冒号后 a patient parent 是解释性内容，不与上段构成因果，排除 Accordingly。"
+  },
+  {
+   "question_id": 1866,
+   "long_sentence": "定位句 Fortunately, there's another sort of parent that's a bit easier to describe: a patient parent：easier to 后接动词原形构成比较；冒号后的 a patient parent 是对空格动作的解释。译：所幸，还有另一类比较容易描述的父母：有耐心的父母。",
+   "option": "正确项 C：describe「描述」——冒号后 a patient parent 正是对这类父母的描述，且与首段 defining（界定）同属「用语言刻画」语义场，构成「界定难→描述易」的呼应；A amuse「逗乐」、B assist「帮助」、D train「训练」的宾语虽可是人，但无法统领冒号后的例子。",
+   "keyword": "describe 描述、刻画；define 下定义（与 describe 辨析：define 给出定义，describe 描绘特点）；there's another sort of 另有一类。",
+   "note": "第 4 空与第 1 空 defining 呼应：defining...tricky → easier to describe；完形前后空常同属一个语义场，遇到冒号举例时，空格词必须能概括例子的性质。"
+  },
+  {
+   "question_id": 1867,
+   "long_sentence": "定位句 Still, while every parent would like to be patient, this is no easy task：while 引导让步状语从句；Still 表转折承接；no easy task 为否定强调。译：尽管每位父母都想有耐心，但这绝非易事。",
+   "option": "正确项 A：while「尽管」——「人人想有耐心」与「绝非易事」语义相逆，构成让步；B because 因果方向颠倒，想有耐心并非「难」的原因；C unless「除非」、D once「一旦」引入条件关系，前后句无条件逻辑。",
+   "keyword": "while 尽管（让步连词，区别于表对比的「然而」）；no easy task 绝非易事；would like to 想要。",
+   "note": "while 表让步是完形高频考点，判断法：从句内容（人人想做）与主句（不容易做到）相逆即让步；句首 Still 已给转折信号，双重确认选 A。"
+  },
+  {
+   "question_id": 1868,
+   "long_sentence": "定位句 Still, while every parent would like to be patient, this is no easy task：this 指代「做有耐心的父母」这件事；no easy + 名词构成否定强调结构。译：尽管每位父母都想有耐心，但这绝非易事。",
+   "option": "正确项 B：task「任务」——no easy task 为固定搭配「绝非易事」，this 的指代是「保持耐心」这件事；A answer 需与 question/to 搭配；C choice 指选择项，语义不接；D access 指「通道、使用权」，no easy access 意为难以获得，与耐心无关。",
+   "keyword": "no easy task 绝非易事（固定搭配）；task 任务、功课；access 通道、获取权；choice 选择项（强干扰）。",
+   "note": "名词辨析先找 this 的指代再配名词；no easy task 属习语级搭配，四选项中唯有 task 与「做某事的难度」同框，遇到固定搭配直接锁定，勿逐词纠结。"
+  },
+  {
+   "question_id": 1869,
+   "long_sentence": "定位句 Sometimes parents get exhausted and frustrated and are unable to maintain a tolerant and composed style with their kids：and 并列三个谓语动作；be unable to maintain 否定 maintain；tolerant 与 composed 并列作定语。译：有时父母会疲惫沮丧，无法在孩子面前保持宽容沉着的风格。",
+   "option": "正确项 A：tolerant「宽容的」——全文主题是 patient parenting，tolerant 是其近义复现，且与 composed（沉着的）构成褒义并列；C rigid「刻板的」、D critical「挑剔的」为贬义，与应「保持」的风格冲突；B formal「正式的」与亲子相处语境无关。",
+   "keyword": "tolerant 宽容的≈patient；composed 沉着的、镇定的＝calm；exhausted 筋疲力尽的；maintain 保持。",
+   "note": "并列形容词共用褒贬色彩：composed 已是褒义，空格词必为褒义，先排 C/D；再由全文 patience 主题锁定 tolerant——全文复现词是完形第一线索。"
+  },
+  {
+   "question_id": 1870,
+   "long_sentence": "定位句 You're only human, and sometimes your kids can push you just a little too far：主系表 You're only human；and 并列分句；just a little too far 为程度状语。译：你只是个凡人，有时孩子会把你逼得稍微过了头。",
+   "option": "正确项 C：push sb too far 为固定搭配「把某人逼过头」，与下文 lose your patience（失去耐心）构成因果衔接；A move「打动」无逼迫义；B drag「拖拽」常搭配 drag sb into sth；D send「发送、派遣」不能接 sb too far 表逼迫。",
+   "keyword": "push sb too far 把某人逼过头（固定搭配）；only human 只是凡人、难免犯错；lose one's patience 失去耐心。",
+   "note": "下一句 the ... happens: You lose your patience 直接给出结果——push you too far（被逼过头）是因，失去耐心是果；「逼迫」义的动词搭配非 push 莫属。"
+  },
+  {
+   "question_id": 1871,
+   "long_sentence": "定位句 And then the inevitable happens: You lose your patience and either scream at your kids or say something that was a bit too harsh：主干 the inevitable happens；冒号后解释内容；either...or... 并列谓语；that 定语从句修饰 something。译：然后不可避免的事发生了：你失去耐心，要么冲孩子尖叫，要么说了句稍显刻薄的话。",
+   "option": "正确项 D：inevitable「不可避免的」——上文 it's common 与 We've all been there 铺垫「人人如此」，冒号后失去耐心即其内容；A mysterious「神秘的」、B illogical「不合逻辑的」、C suspicious「可疑的」均与「常态化的失控」相斥。",
+   "keyword": "inevitable 不可避免的＝unavoidable；scream at 冲…尖叫；the + 形容词 表一类事物；We've all been there 我们都经历过。",
+   "note": "the + 形容词表抽象事物（the inevitable＝必然发生的事）；线索是前文 We've all been there 与上空 push you too far——大众化语境只能选 inevitable，mysterious/illogical 无从谈起。"
+  },
+  {
+   "question_id": 1872,
+   "long_sentence": "定位句 You lose your patience and either scream at your kids or say something that was a bit too harsh and does nobody any good：that 定语从句内两个并列谓语 was too harsh 与 does nobody any good；scream at 与 say something 由 either...or 并列。译：你失去耐心，要么冲孩子尖叫，要么说了句稍显刻薄、对谁都没好处的话。",
+   "option": "正确项 C：harsh「刻薄的」——从句内 does nobody any good 说明话伤人无用，与 scream at 并列印证失控时的攻击性言语；A boring「无聊的」与伤害无关；B naive「天真的」不构成伤害；D vague「模糊的」无贬义攻击色彩。",
+   "keyword": "harsh 刻薄的、严厉的；does nobody any good 对谁都没好处；a bit too 稍微过了点；scream at 尖叫。",
+   "note": "定语从句内部因果：too harsh 是因，does nobody any good 是果；本空与 1871 空同句互证——失控后果必是伤人之语，贬义攻击词只有 harsh。"
+  },
+  {
+   "question_id": 1873,
+   "long_sentence": "定位句 You wish that you could turn back the clock and start over：wish 后接虚拟语气宾语从句（could + 动词原形），表示难以实现的愿望；and 并列 turn back the clock 与 start over 两个动作。译：你多希望能让时光倒流、重新来过。",
+   "option": "正确项 A：turn back the clock 为习语「让时钟倒转（回到过去）」，与 start over（重新开始）语义顺承，虚拟语气 could 印证这是无法实现的懊悔；B take apart「拆开」、C set aside「留出、搁置」、D cover up「掩盖」与 the clock 搭配均不成立。",
+   "keyword": "turn back the clock 让时光倒流（习语）；start over 重新开始＝start again；wish + could 虚拟语气。",
+   "note": "动词短语题先看宾语：the clock 锁定 turn back；start over 提示「重来」义；wish 后虚拟语气说明是追悔莫及的心愿，四个短语唯有 turn back the clock 与 clock 搭配成立。"
+  },
+  {
+   "question_id": 1874,
+   "long_sentence": "定位句 However, even though it's common, it's important to keep in mind that in a single moment of fatigue, you can say something to your child that you may regret for a long time：even though 让步从句；it 形式主语；that 宾语从句内再嵌 that 定语从句修饰 something。译：然而，尽管这很常见，但要记住：在疲惫的一瞬间，你可能对孩子说出让自己后悔很久的话。",
+   "option": "正确项 C：However「然而」——上段以 We've all been there 宽慰「失控人人有」，本段转向「后果须重视」，段间转折；A Overall「总的来说」用于总结收尾，不合语境；B Instead 表「取而代之」；D Otherwise 表「否则」，均无对应逻辑关系。",
+   "keyword": "however 然而（段首转折，后加逗号）；keep in mind 记住＝bear in mind；fatigue 疲劳；regret 后悔。",
+   "note": "段首逻辑词题看上段尾句情感：We've all been there 是宽慰缓和，本段 it's important to keep in mind 是警醒收紧，一缓一紧用 However；even though 在句内的让步不影响段际转折判断。"
+  },
+  {
+   "question_id": 1875,
+   "long_sentence": "定位句 in a single moment of fatigue, you can say something to your child that you may regret for a long time：in...of fatigue 介词短语作时间状语；that you may regret... 定语从句修饰 something；for a long time 持续时间状语。译：在疲惫的一瞬间，你可能对孩子说出让自己后悔很久的话。",
+   "option": "正确项 D：regret「后悔」——一时气话留下长久悔意，与下句 do damage to your relationship 顺承；A like「喜欢」与伤害后果矛盾，正反混淆；B miss「错过、想念」与 say something 搭配不合；C believe「相信」无法与 for a long time 构成持续性懊悔。",
+   "keyword": "regret 后悔、懊悔；do damage to 损害；self-esteem 自尊心（下句核心词）；for a long time 长时间（提示持续义）。",
+   "note": "本空与下句 this may not only do damage... 构成因果链：说错话→后悔→伤害关系与自尊；for a long time 提示持续负面情感，四选项中唯有 regret 具备此义。"
+  }
+ ]
+}

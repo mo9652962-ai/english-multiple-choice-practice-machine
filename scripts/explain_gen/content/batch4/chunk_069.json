@@ -1,0 +1,180 @@
+{
+ "chunk": 69,
+ "items": [
+  {
+   "question_id": 1701,
+   "long_sentence": "定位句 It's not hard to imagine that local culture and sentiment would help 19 ______ how executives think about the future，It 作形式主语，that 从句为真正主语；help 后接省略 to 的不定式；how 从句作空格动词的宾语。译：不难想象，当地文化与情绪会有助于塑造高管们思考未来的方式。",
+   "option": "正确项 D shape：shape how executives think about the future（塑造高管思考未来的方式），地方文化与情绪「塑造」思维方式，与全文「情绪影响决策」主线一致；A share 分享（help share how...搭配生硬，文化不是拿来「分享」思维的）、B rediscover 重新发现、C simplify 简化，均无法与 how executives think 构成合理动宾关系。",
+   "keyword": "shape 塑造、影响＝influence；executive 高管；local culture 当地文化；help (to) do 有助于做。",
+   "note": "本句承接 17/18 空的可能性论证：研究只是「暗示」快乐或影响公司，此句顺势给出机制——文化情绪塑造高管思维；shape 与首段 influence how firms work 远端呼应，完形末段常回扣开头。"
+  },
+  {
+   "question_id": 1702,
+   "long_sentence": "定位句 It surely seems plausible that happy people would be more forward-thinking and creative and 20 ______ R&D more than the average，that 从句作 seems plausible 的真正主语；空格与 more forward-thinking and creative 并列，同受 more than the average 比较结构约束。译：快乐的人比一般人更有前瞻性、更有创造力、更倾向于研发投入，这看来确实说得通。",
+   "option": "正确项 B lean towards：lean towards R&D（倾向于研发）与 more than the average 搭配，呼应开头 spend more on R&D 与 R&D intensity；A pray for 祈求、C send out 发送、D give away 赠送或泄露，均不能表达资源与意愿上「偏向研发」的投资倾向。",
+   "keyword": "lean towards 倾向于＝be inclined to；forward-thinking 有前瞻性的；plausible 貌似合理的、说得通的；the average 一般水平。",
+   "note": "研究者引语收束全文：more forward-thinking and creative 复现首段 more productive, more creative，末空回到 R&D 主题形成首尾闭环；完形末句常是主旨回响，选词要顾全全文倾向。"
+  },
+  {
+   "question_id": 1703,
+   "long_sentence": "定位句 It's not as hard for them to transform their thought processes as it is for older students，it 作形式主语，真正主语是不定式 to transform...；not as...as 同级比较的否定式，表「不像…那么难」。译：对小孩子来说，转变思维过程不像对大孩子那么难。",
+   "option": "正确项 B：transform their thought processes＝remodel the way of thinking，remodel（重塑）与 transform 同义，后文 Breaking down problems into bite-sized chunks...becomes normal 是思维转变的具体表现。A「完成未来职业培训」无中生有，原文只说 help fill the jobs gap；C「构建逻辑假设」偷换概念，test hypotheses 是编程作为工具的用途之一，不是「变得更容易」的对象；D「完善艺术创作」同样只是工具用途举例，过度推断。",
+   "keyword": "transform 转变＝remodel 重塑；thought processes 思维过程；early exposure 早期接触；hypothesis 假设（复数 hypotheses）。",
+   "note": "人名观点题：Cortina 的话集中在前两段；题干 makes it easier to 提示找比较结构，not as hard...as 正是「更容易」的原文改写；孩子与大学生的对比是本题命门。"
+  },
+  {
+   "question_id": 1704,
+   "long_sentence": "定位句 The high-schoolers get the same curriculum, but we try to gear lessons toward things they're interested in，but 连接转折；gear A toward B 把 A 调向 B；For instance 引出的电影推荐 app 是例证。译：高中生学的是同样的课程，但我们尽量把课程导向他们感兴趣的东西。",
+   "option": "正确项 B：gear lessons toward things they're interested in＝considered their interest，app 例子（suggests movies based on your mood 按心情推荐电影）佐证课程按兴趣设计。A experience 张冠李戴，第一段说的是无经验也能 catch up；C career prospects 无中生有，career change 描述的是成人学员的动机；D academic backgrounds 原文未提。",
+   "keyword": "gear...toward 把…导向、使适应；curriculum 课程；instructor 讲师；be interested in 对…感兴趣＝interest。",
+   "note": "转折词 but 之后是观点落点；例证是题眼：学生开发的按心情荐片 app 正是兴趣导向的证据；coding bootcamp 面向成人改行是背景信息，勿与高中生课程的考虑因素混淆。"
+  },
+  {
+   "question_id": 1705,
+   "long_sentence": "定位句 But the skills they learn – how to think logically through a problem and organize the results – apply to any coding language，破折号内同位语解释 skills 的内容；apply to 意为「适用于」。译：但他们学到的技能——如何有逻辑地思考问题并组织结果——适用于任何编程语言。",
+   "option": "正确项 A：apply to any coding language（适用于任何编程语言）＝help students learn other computer languages，强调技能的可迁移性。B「新技术出现时须升级」张冠李戴，会过时的是 Ruby on Rails 这门语言（may not even be relevant），skills 恰恰不受影响；C「找工作时需改进」无中生有；D「让学生快速赚大钱」无中生有，原文明说他们不太可能 build the next Facebook。",
+   "keyword": "turnover 更替速度；apply to 适用于；think logically 逻辑地思考；coding language 编程语言。",
+   "note": "But 转折后的让步对比是 Seehorn 观点核心：语言 quick turnover 会淘汰、思维技能长存，「语言速朽、技能迁移」的对照轴直接指向 A；D 项利用 Facebook 的财富联想设「偷换概念」陷阱。"
+  },
+  {
+   "question_id": 1706,
+   "long_sentence": "定位句 The younger they learn how computers think, how to coax the machine into producing what they want – the earlier they learn that they have the power to do that – the better，the＋比较级，the＋比较级 结构；破折号内插入语补充说明。译：越早学会计算机如何思考、学会哄劝机器产出自己想要的——越早知道自己有这种能力——就越好。",
+   "option": "正确项 C：These kids are going to be surrounded by computers...for the rest of their lives 加 learn how computers think，说明课程的期许是让孩子为数字化生存做好准备，better prepared for the digitalized world 是其概括。A「带来创新计算机技术」无中生有；B「更久留在 IT 行业」正反混淆，原文 might not go into IT at all；D「与未来码农大军竞争」偷换概念，army of coders 是课程可能的副产品且 not the sole purpose。",
+   "keyword": "be surrounded by 被…环绕；digitalized 数字化的；sole purpose 唯一目的；coax 哄劝、耐心引导。",
+   "note": "末段 the better 是作者态度句；区分两个层面：职业层面（不一定入行 IT）与生活层面（终身被电脑包围），C 走生活层面；D 把「培养码农大军非唯一目的」歪用成竞争关系。"
+  },
+  {
+   "question_id": 1707,
+   "long_sentence": "定位句 The younger they learn how computers think, how to coax the machine into producing what they want，coax sb into doing sth 为固定搭配，意为「哄劝、耐心劝说某人做某事」。译：越早学会计算机如何思考、学会哄劝机器产出自己想要的东西越好。",
+   "option": "正确项 A：coax the machine into producing what they want 中的 coax 意为「哄劝、好言相劝」，与 persuade（劝说）最接近；孩子没有强制机器的能力，只能耐心地「劝」机器按自己的意愿输出。B frighten（吓唬）与哄劝的温和语义相反；C misguide（误导）指把人引向错误方向，机器不是被误导的对象；D challenge（挑战）与语境不符，无中生有。",
+   "keyword": "coax 哄劝＝persuade gently；coax sb into doing sth 劝某人做某事；produce what they want 产出所需；machine 机器。",
+   "note": "词义题看搭配与语境：coax...into doing 的核心义是「劝」；语境是孩子学编程、让机器顺从自己意愿，温和耐心义可同时排除 frighten 与 challenge。"
+  },
+  {
+   "question_id": 1708,
+   "long_sentence": "定位句 The crash was a major reason the U.S. Fish and Wildlife Service (USFWS) decided to formally list the bird as threatened，主干是 The crash was a major reason；(that) the USFWS decided... 为定语从句修饰 reason。译：数量骤减是美国鱼类及野生动物管理局决定正式将这种鸟列为受威胁物种的主要原因。",
+   "option": "正确项 A：the crash 回指首段 2 million→22,000 的数量对比，drastically decreased population（数量骤减）是其改写，occupying about 16% of the species' historic range 佐证萎缩。B「草场面积被低估」无中生有；C「生物学家的绝望呼吁」偷换概念，in a desperate situation 是 USFWS 主管对鸟现状的描述，不是 appeal；D「私人土地所有者的坚持」无中生有，土地所有者是合作对象。",
+   "keyword": "crash 骤减、暴跌；list...as 把…列为；threatened 受威胁的（级别低于 endangered）；historic range 历史分布区。",
+   "note": "指代回指法：the crash 的具体内容在上一段的数字对比里；22,000、16% 这类数字是细节题的定位锚点；grasslands（辽阔草原）只是鸟的栖息背景，勿与 B 项的 acreage 混搭。"
+  },
+  {
+   "question_id": 1709,
+   "long_sentence": "定位句 They had pushed the agency to designate the bird as 'endangered,' a status that gives federal officials greater regulatory power to crack down on threats，a status that... 为同位语加定语从句；push sb to do 力促某人做某事。译：他们曾力促管理局把这种鸟定为濒危物种——该身份能让联邦官员拥有更大的监管权力来打击威胁。",
+   "option": "正确项 C：环保者想要 endangered 是为了 greater regulatory power，实际只拿到 threatened，granted less federal regulatory power（授予的联邦监管权力更小）正是失望的原因，属比较级反推。A「向政府压力让步」无中生有；B「牵涉的机构更少」无中生有；D「违背保护政策」无中生有。",
+   "keyword": "designate...as 把…定为＝list...as；regulatory power 监管权力；crack down on 严厉打击；endangered 濒危的。",
+   "note": "in that（因为）引导原因；本题考权力的相对大小：endangered＞threatened，抓住两个保护级别的关系即可反推；环保者的 pushed 与 disappointed 是定位信号词。"
+  },
+  {
+   "question_id": 1710,
+   "long_sentence": "定位句 the plan requires individuals and businesses that damage habitat as part of their operations to pay into a fund to replace every acre destroyed with 2 new acres of suitable habitat，require sb to do 结构；that damage habitat 为定语从句；replace A with B 以 B 替换 A。译：该计划要求在经营中破坏栖息地的个人和企业向基金付款，每毁掉一英亩就以两英亩新的适宜栖息地来替换。",
+   "option": "正确项 A：pay into a fund（向基金付款）≈agree to pay a sum for compensation，免责前提是签署 range-wide management plan，签约即须按计划注资补偿。B「自愿建同等大小栖息地」双重失真，是基金统一置换且 1 亩换 2 亩，既非自建也非同等大小；C「支持 WAFWA 监测工作」张冠李戴，监测是 WAFWA 的职责；D「承诺为 USFWS 运作筹资」张冠李戴，基金用于栖息地置换与补偿土地所有者。",
+   "keyword": "prosecute 起诉；unintentionally 无意地；pay into a fund 向基金注资；compensate 补偿。",
+   "note": "条件链题：as long as they had signed a plan 到 plan requires pay into a fund，两步合并成 A；数字细节 2 new acres 是 B 项 equally big 的命门，例证关系必须精确到数量与方式。"
+  },
+  {
+   "question_id": 1711,
+   "long_sentence": "定位句 Overall, the idea is to let 'states remain in the driver's seat for managing the species,' Ashe said，let sb do 结构；in the driver's seat 为比喻，字面「坐在驾驶座上」。译：总体而言，阿什说，这一思路是让各州在管理该物种上继续坐在主导位上。",
+   "option": "正确项 D：remain in the driver's seat（掌握方向盘＝主导）≈the leading role，引语直接点明 states 主导物种管理。A「联邦政府」正反混淆，方案恰恰是让州而非联邦主导（西部各州常对 federal action 不安）；B「野生动物机构」张冠李戴，WAFWA 只负责 monitoring progress；C「土地所有者」张冠李戴，他们是签约参与方。",
+   "keyword": "in the driver's seat 处于主导地位＝play the leading role；remain 保持；species 物种；coalition 联盟。",
+   "note": "比喻引语先译义再匹配：driver's seat＝主导权；Ashe 在第二段（威胁标签的灵活性）与第三段（州主导）各有引语，本题问管理主导权，对应第三段末句。"
+  },
+  {
+   "question_id": 1712,
+   "long_sentence": "定位句 The federal government is giving responsibility for managing the bird to the same industries that are pushing it to extinction，that are pushing it to extinction 为定语从句修饰 industries；same 强调讽刺意味。译：联邦政府正把管理这种鸟的责任交给那些正把它推向灭绝的行业。",
+   "option": "正确项 C：Lininger 是批评计划的生物学家，其立场与文中 challenge the plan 的 three environmental groups 一致，他最可能支持环保阵营。A industry groups 正反混淆，他指责的正是 these industries；B the win-win rhetoric 正反混淆，Not everyone buys the win-win rhetoric 引出的正是他这类不相信该论调的批评者；D the plan under challenge 正反混淆，他恰恰反对该计划。",
+   "keyword": "buy（论调）相信、接受；win-win 双赢；push...to extinction 把…推向灭绝；challenge 质疑、挑战。",
+   "note": "观点推断题抓引语褒贬：Lininger 的引语全是批评，据此把他归入环保批评阵营；Not everyone buys the win-win rhetoric 是阵营分界句，紧跟其后的例子都不买双赢账。"
+  },
+  {
+   "question_id": 1713,
+   "long_sentence": "定位句 Deep reading requires not just time, but a special kind of time which can't be obtained merely by becoming more efficient，not just...but 并列结构；which 引导定语从句。译：深度阅读需要的不只是时间，而是一种特殊的时间——它无法仅靠提高效率来获得。",
+   "option": "正确项 D：a special kind of time which can't be obtained merely by becoming more efficient＝深度阅读所需的东西是常规时间管理技巧保证不了的，obtain→guarantee、special kind of time→what deep reading requires。A「技巧所能提供的无法抚慰现代心灵」偷换概念，Parks 说的是现代心灵倾向被打断（inclined to interruption），不是需要抚慰；B「有挑战的书需要反复读」无中生有；C「人们总忘记随身带书」偷换概念，Carry a book 恰是文中被检讨的技巧之一。",
+   "keyword": "deep reading 深度阅读；obtain 获得＝guarantee 保证；efficient 高效的；free up 挤出、腾出。",
+   "note": "因果链：such methods...doesn't work 到 The modern mind is inclined to interruption 再到 requires a special kind of time；D 的 cannot be guaranteed 概括两层原因，A 把「倾向打断」曲解为「心灵需要抚慰」。"
+  },
+  {
+   "question_id": 1714,
+   "long_sentence": "定位句 we feel a pressure to fill these different-sized bottles (days, hours, minutes) as they pass, for if they get by without being filled, we will have wasted them，as 引导时间状语从句；for 并列表原因；if 从句说明后果。译：当这些大小不一的瓶子（天、小时、分钟）经过时，我们感到一种要把它们填满的压力，因为若任由它们空着溜走，我们就算浪费了它们。",
+   "option": "正确项 B：fill the bottles (days, hours, minutes)＝让流逝的时间被填满、不虚度，即 make passing time fulfilling。A「更新待办清单」张冠李戴，to-do list 出现在上段 slot it in as a to-do list item；C「把计划贯彻到底」无中生有；D「追求无忧无虑的阅读」正反混淆，这种填瓶压力恰是深度阅读的敌人，段末 No mind-set could be worse for losing yourself in a book 点明其负面。",
+   "keyword": "metaphor 隐喻；conveyor belt 传送带；fill 填满＝make fulfilling 使充实；waste 浪费。",
+   "note": "修辞题三步：本体是时间（括号内 days, hours, minutes 直接点明）、喻体特征是「空瓶待填」、对应「让时间充实」；先译透隐喻再匹配选项，勿被 to-do list 等前文词汇带偏。"
+  },
+  {
+   "question_id": 1715,
+   "long_sentence": "定位句 You'd think this might fuel the efficiency mind-set, but in fact, Eberle notes, such ritualistic behaviour helps us 'step outside time's flow' into 'soul time.'，You'd think...but in fact 让步转折；Eberle notes 为插入语。译：你会以为定期安排阅读时间会助长效率心态，但事实上，埃伯莱指出，这种仪式化行为帮助我们「走出时间之流」，进入「心灵时间」。",
+   "option": "正确项 D：step outside time's flow into soul time＝摆脱效率心态、进入沉浸状态，与上段 Immersive reading depends on being willing to risk inefficiency 呼应，即 achieve immersive reading。A「助长效率心态」正反混淆，but in fact 否定的正是这一猜测；B「培养在线阅读习惯」张冠李戴，原文建议读 physical books 或单一功能阅读器；C「推广仪式化阅读」偷换概念，ritualistic behaviour 是手段，目的是沉浸。",
+   "keyword": "ritualistic 仪式性的；step outside time's flow 跳出时间之流；immersive reading 沉浸式阅读；mind-set 心态。",
+   "note": "观点题抓 but in fact 之后的内容；「手段与目的」是本题陷阱轴：定期安排、仪式行为都是手段，沉浸才是目的；D 与上段 Immersive reading 词汇复现，跨段复现常是答案信号。"
+  },
+  {
+   "question_id": 1716,
+   "long_sentence": "定位句 providing you dip in often enough, so that reading becomes the default state from which you temporarily surface to take care of business，providing（只要）引导条件状语从句；so that 引导结果；from which 定语从句修饰 the default state。译：只要你泡得够勤，阅读就会成为默认状态——你只是偶尔浮出水面处理事务，然后又沉回阅读。",
+   "option": "正确项 A：reading becomes the default state（阅读成为默认状态）＝reading becomes your primary business of the day，事务只是暂时浮出处理的插曲。B「所有日常事务都被及时办完」正反混淆，原文是读书为主、事务见缝插针；C「读完后再回到事务」偷换概念，dropping back down 回到的是阅读这一默认态；D「时间均分」无中生有。",
+   "keyword": "providing 只要＝if；dip in 浸入、随手读；default state 默认状态＝primary business 首要事务；surface 浮出、暂离。",
+   "note": "providing 引导的条件是题眼；判断「谁是默认态、谁是插曲」即可锁定 A；C 故意调换 surface 与 drop back down 的方向，水面的比喻要读完整。"
+  },
+  {
+   "question_id": 1717,
+   "long_sentence": "全文主旨链：首段 There's never any time to read 提出问题，第二段末 Deep reading requires...a special kind of time 点出症结，末段 So what does work? Perhaps surprisingly, scheduling regular times for reading 给出解法。译：根本没有时间读书——那么什么才管用？出人意料的是，为阅读安排固定的时间。",
+   "option": "正确项 B：全文围绕「没时间读→挤时间的常规技巧为何失效→怎样真正为阅读腾出时间（定期安排、随身带书泡进去）」展开，How to Find Time to Read 概括最准。A「享受轻松读物」无中生有，文中读的是 challenging book；C「设定阅读目标」正反混淆，goal-focused reading 被明确贬为 useful, sometimes, but not the most fulfilling kind；D「广泛阅读」无中生有，全文谈时间而不谈阅读量。",
+   "keyword": "title 标题＝main idea 主旨；make time to read＝find time to read 挤时间读书；schedule regular times 安排固定时间；fulfilling 充实的。",
+   "note": "标题题＝主旨题：问题（never any time）与解法（scheduling、carry a book）都落在「时间」上；C 与原文对 goal-focused reading 的批评正面冲突，是反向陷阱，标题必须与作者态度一致。"
+  },
+  {
+   "question_id": 1718,
+   "long_sentence": "定位句 Across generational lines, Americans continue to prize many of the same traditional milestones of a successful life, including getting married, having children, owning a home, and retiring in their sixties，including 引出列举；across generational lines 意为「跨代际」。译：跨代际来看，美国人依然珍视许多相同的成功人生传统里程碑：结婚、生子、有房、六十多岁退休。",
+   "option": "正确项 B：getting married, having children＝having a family with children（成家生子），是两代人共同珍视的传统里程碑之一。A「尝试不同生活方式」无中生有；C「退休后继续工作」正反混淆，原文是 retiring in their sixties；D「创办盈利企业」无中生有。",
+   "keyword": "across generational lines 跨代际＝cross-generation；milestone 里程碑＝mark 标志；prize 珍视＝value；retire 退休。",
+   "note": "题干 cross-generation 对应原文 across generational lines，mark 对应 milestone；including 列举与选项逐项核对是细节题最稳路径；第二段末句点明分歧在路径（paths）而非终点（finish line）。"
+  },
+  {
+   "question_id": 1719,
+   "long_sentence": "定位句 ...to agree that couples should be financially secure before getting married or having children，that 从句作 agree 的宾语；before getting married or having children 为动名词短语作时间状语。译：年轻人更倾向于认同：伴侣在结婚或生子之前应当有财务保障。",
+   "option": "正确项 C：financially secure before getting married＝attach importance to pre-marital finance（重视婚前财务保障）。A「偏好慢节奏生活」正反混淆，原文 a faster pace of life；B「一份职业干更久」正反混淆，原文 regularly changing jobs；D「优先外部育儿」偷换概念，children are best served by two parents working outside the home 说的是双职工父母最利于孩子，不是优先把育儿交给外部。",
+   "keyword": "financially secure 财务有保障；pre-marital 婚前的；advance one's career 推进职业；pace of life 生活节奏。",
+   "note": "第三段五个 to 短语并列，每项都可单独命题；先读题干确定考哪一项再核对；A、B 是把原文方向反转的低级陷阱，D 的干扰来自 work outside the home 的字面拼接。"
+  },
+  {
+   "question_id": 1720,
+   "long_sentence": "定位句 ...priorities and expectations that will increasingly spread through virtually all aspects of American life，that 定语从句修饰 priorities and expectations；from consumer preferences to housing patterns to politics 为三项列举。译：年轻人界定的优先事项与期望将日益渗透到美国生活的几乎所有方面——从消费偏好、住房模式到政治。",
+   "option": "正确项 D：spread through virtually all aspects of American life＝reach almost all aspects of American life，virtually＝almost、spread through＝reach。A「日益清晰」偷换概念，increasingly 修饰的是 spread（扩散）而非 clear；B「聚焦物质议题」以偏概全，还有 politics、housing patterns；C「主要取决于政治偏好」张冠李戴，politics 是被波及的领域而非决定因素。",
+   "keyword": "aftermath 余波；the Great Recession 大衰退；spread through 蔓延至＝reach；virtually 几乎＝almost。",
+   "note": "副词与动词的改写是本题核心：virtually→almost、spread→reach；from A to B to C 列举是「范围广」类选项的证据，警惕把列举项偷换为「决定因素」的 C。"
+  },
+  {
+   "question_id": 1721,
+   "long_sentence": "定位句 Young and old converge on one key point: Overwhelming majorities of both groups said they believe it is harder for young people today to get started in life than it was for earlier generations，冒号后解释 key point；than it was for earlier generations 为比较状语从句。译：年轻人与年长者在一个关键点上趋同：两代人中的压倒性多数都认为，如今的年轻人比前辈更难起步。",
+   "option": "正确项 D：converge on one key point（趋同点）＋it is harder...to get started in life＝getting established is harder for the young（年轻人立足更难）。A「好工作更少」以偏概全，securing a good-paying job 只是 tough climb 的例证之一，且共识是「起步难」而非「好工作变少」；B「老一辈人生成就更多」无中生有，比较的是起步难度；C「如今房贷易得」无中生有。",
+   "keyword": "converge on 趋同＝agree；get started in life 起步＝get established 立业；overwhelming majority 压倒性多数；tough climb 艰难攀登。",
+   "note": "agree/converge 是定位词，直指第五段首句；manage debt、finding affordable housing 都是「难」的例证，切勿从单个例证反推 C 这类反向结论；signpost achievements 是列举信号词。"
+  },
+  {
+   "question_id": 1722,
+   "long_sentence": "定位句 he is struck that his parents could provide a comfortable life for their children even though neither had completed college when he was young，even though 引导让步状语从句；be struck that 对…深感惊讶；从句用过去完成时 had completed。译：令他感慨的是，父母当年连大学都没读完，却能为孩子们提供舒适的生活。",
+   "option": "正确项 C：provide a comfortable life even though neither had completed college＝父母的好生活与大学文凭关系不大，I still grew up in an upper middle-class home with parents who didn't have college degrees 再次佐证。A「毕业后找到梦想工作」偷换概念，原文是 struggled to find a job；B「父母认为稳定工作是成功必需」无中生有，working steadily 是 Schneider 自己的现状；D「觉得技师工作很有挑战」无中生有，他感慨的是起步难。",
+   "keyword": "be struck that 对…印象深刻；even though 尽管；complete college 读完大学；upper middle-class 中上层阶级。",
+   "note": "例证题：Schneider 段支撑上一段「起步更难」的共识；even though 的让步逻辑「无文凭＋舒适生活」直接合成 C；A 利用 dream job 的联想设陷阱，原文动词是 struggled。"
+  },
+  {
+   "question_id": 1723,
+   "long_sentence": "定位句 As we grow up, we learn to control our emotions so they are manageable and don't dictate our behaviours, which is in many ways a good thing，as 引导时间状语从句；so 表目的；which 引导非限制性定语从句指代前述做法。译：长大后我们学会控制情绪，使其可控、不支配行为——这在很多方面是好事。",
+   "option": "答案 D：Express your emotions 与段末 What we need to do is find a way to acknowledge and express what we feel appropriately 直接对应；suppressing emotions（压抑情绪）如 brushing dirt under a carpet（把脏往地毯下扫）是反面论证，孩子 sad 就哭、angry 就喊是正面示范。E 项 Don't overthink it 是第 45 段（别太用力追求快乐）的标题，与本段「表达情绪」无关。",
+   "keyword": "suppress 压抑；acknowledge 承认；express 表达＝acknowledge and show；move on 走出来、向前看。",
+   "note": "段落结构为「孩子示范→成人过度压抑之弊→建议表达后 move on」；建议句 What we need to do is 之后是标题答案区；brushing dirt under a carpet 的讽刺比喻是「压抑无效」的证据。"
+  },
+  {
+   "question_id": 1724,
+   "long_sentence": "定位句 Too often we believe that a new job, bigger house or better car will be the magic silver bullet that will allow us to finally be content，that 从句作 believe 的宾语；that will allow us... 为定语从句修饰 silver bullet。译：我们总以为新工作、更大的房子或更好的车会是让我们最终满足的灵丹妙药。",
+   "option": "答案 F：Be easily pleased（容易满足）＝九岁女孩收到不到五英镑的 Superman T-shirt 就 overjoyed、说个不停，段末 being grateful for small things every day is a much better way to improve wellbeing 点题；反面是迷信物质银弹。B 项 Have fun 对应第 44 段 schedule in time to enjoy the things we love，本段核心是「满足感的来源」而非「玩乐的安排」。",
+   "keyword": "overjoyed 欣喜若狂；a fiver 五英镑纸币；silver bullet 灵丹妙药；be grateful for 对…心怀感激＝be pleased 满足。",
+   "note": "例证开路、道理收尾的段落，标题看道理句：small things 与 grateful 是关键词；silver bullet 被否定（very little lasting impact），提示别往物质满足方向选标题。"
+  },
+  {
+   "question_id": 1725,
+   "long_sentence": "定位句 If we adults could indulge in a bit of silliness and giggling, we would reduce the stress hormones...，if 引导虚拟条件句（could...would），would 后接四个并列谓语。译：如果我们成年人也能纵情傻乐、咯咯笑一阵，就能降低压力激素、增加内啡肽等有益激素、改善心脏供血，甚至更抗感染。",
+   "option": "答案 A：Be silly 与段内 indulge in a bit of silliness and giggling 对应（silly→silliness 词形转换），Have you ever noticed how much children laugh 以孩子的大笑引出成人效仿的收益。B 项 Have fun 的段落（第 44 题）讲的是在严肃事务之外安排玩乐时间，本段核心是「傻乐」的生理益处，两段落点不同。",
+   "keyword": "indulge in 纵情于；silliness 傻气＝be silly；giggle 咯咯笑；endorphin 内啡肽。",
+   "note": "标题区分点：A 来自原词 silliness 的词形转换；B 看似通用但本段有激素、血流等生理机制细节，且 Have fun 另有归属段落；虚拟条件句表达「不妨学孩子」的建议语气。"
+  }
+ ]
+}

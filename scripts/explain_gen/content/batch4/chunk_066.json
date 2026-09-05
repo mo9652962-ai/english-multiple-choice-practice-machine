@@ -1,0 +1,180 @@
+{
+ "chunk": 66,
+ "items": [
+  {
+   "question_id": 1626,
+   "long_sentence": "定位句 As Hagel notes, Brynjolfsson and McAfee indeed touched on this point in their book. We need to reframe race against the machine as race with the machine；as Hagel notes 为插入语，touch on 表「触及、谈到」，reframe...as 表「把…重新定义为」。译：正如哈格尔所言，布氏与麦氏二人在书中确实触及了这一点——我们需要把「与机器赛跑」重构为「与机器并肩共进」。",
+   "option": "正确项 D the necessity of human involvement in the workplace：this point 回指上段 we need people...who can take initiative and exercise their imagination，即职场需要人；A 是论据复现非要点；B the formula for how work is conducted 张冠李戴，是 Hagel 的主张；C the ways machines replace human labor 与 augment rather than replace 相反。",
+   "keyword": "touch on 触及、谈及；reframe...as 把…重新定义为；augment 增强＝enhance；take initiative 主动作为。",
+   "note": "指代题先回读 this point 的先行内容：需要能主动、有想象力的人去应对意外事件——人的不可替代性；A 复现 predictable 原词但属论据层，问 discussed 要找论点；C 的 replace 与原文 rather than replace 正好相反。"
+  },
+  {
+   "question_id": 1627,
+   "long_sentence": "定位句 We need to reframe race against the machine as race with the machine. In other words, we need to look at the ways in which machines can augment human labor rather than replace it；in other words 引出同义重述，augment...rather than replace 表「增强而非取代」。译：我们需要把「与机器赛跑」重新定义为「与机器并肩共进」；换言之，要关注机器增强而非取代人类劳动的方式。",
+   "option": "正确项 C Can We Win the Race Against Machines?：保留贯穿全文的 race 隐喻，以疑问句覆盖「威胁存在但可经改变工作方式取胜」的全文争论；A How to Innovate Our Work Practices? 只是末段 Hagel 的落点，以偏概全；B Machines Will Replace Human Labor 与作者 augment rather than replace 的立场相反；D Economic Downturns Stimulate Innovations 无中生有，下行期只是背景。",
+   "keyword": "race against/with 与…赛跑/并肩；reframe 重新框定；innovation 创新；appropriate title 恰当标题。",
+   "note": "标题题抓核心隐喻的走向：race against 到 race with 的转换正是文章主张；疑问式标题适合存在分歧的话题，本题正以两种观点交锋展开；A 是对策局部、B 是被否定的悲观论、D 的因果链原文没有，均可排除。"
+  },
+  {
+   "question_id": 1628,
+   "long_sentence": "定位句 But perhaps the most significant reason is that the issue has always been so politically charged；that 引导表语从句，politically charged 表「政治上敏感、易起争议」。译：但也许最重要的原因是，住房问题历来在政治上高度敏感。",
+   "option": "正确项 B involves certain political factors：politically charged 表明住房受政治因素牵动，involves certain political factors 是其同义改写；A has attracted much attention 正反混淆，首段明说 Housing is seldom mentioned；C shoulders too much responsibility 偷换概念，原文是 shoulder the blame（承担指责），非责任过重；D has lost its real value 偷换概念，原文说行业没把住房的真实价值宣传出来，不是价值消失。",
+   "keyword": "politically charged 政治敏感的；shoulder the blame 承担指责；seldom mentioned 很少被提及；prejudice 偏见。",
+   "note": "题干问住房行业的属性，第二段给出三个原因，significant reason 提示最后一条最重——politically charged；D 含原词 real value 但方向不同，是「没沟通好」而非「没价值」；细节题对原词复现项要核对动词与方向。"
+  },
+  {
+   "question_id": 1629,
+   "long_sentence": "定位句 It needs to put historical prejudices to one side and take some steps to address our urgent housing need；put...to one side 表「搁置、放下」，address 表「处理、解决」。译：政府需要把历史上的偏见放到一边，并采取措施解决我们紧迫的住房需求。",
+   "option": "正确项 C suffered government biases：要求政府搁置 historical prejudices，反证可负担住房一直遭政府偏见对待，prejudice 与 bias 同义替换；A increased its home supply 正反混淆，原文是 not building enough new homes；B offered spending opportunities 偷换概念，spending review 是政府支出审议，非住房提供的机会；D disappointed the government 因果颠倒，是政府对住房关注不足。",
+   "keyword": "prejudice 偏见＝bias；affordable housing 可负担住房；waiting list 等候名单；desperate 令人绝望的、极紧缺的。",
+   "note": "put prejudices to one side 的前提是偏见存在且针对住房——推断题正向推出 suffered biases；prejudice 到 bias 是同义改写核心；A 与 not building enough 直接相反；B 复现 spending 一词但那是政府审议的名称，勿被带偏。"
+  },
+  {
+   "question_id": 1630,
+   "long_sentence": "定位句 Don Foster has hinted that George Osborne, Chancellor of the Exchequer, may introduce more flexibility to the current cap on the amount that local authorities can borrow against their housing stock debt；hint that 引导宾语从句，cap 表「上限」，borrow against 表「以…为抵押借款」。译：社区大臣唐·福斯特暗示，财政大臣乔治·奥斯本可能放宽现行的地方政府以住房存量债务为抵押的借款额度上限，使之更具弹性。",
+   "option": "正确项 A allow greater government debt for housing：introduce more flexibility 即放宽借款上限，if the cap were lifted 可多建 6 万套佐证；B stop local authorities from building homes 正反混淆，放宽正是为了多建；C prepare to reduce housing stock debt 偷换概念，放宽的是上限而非削减债务；D release a lifted GDP growth forecast 张冠李戴，GDP 增 0.6% 是 evidence 的推算非其预测。",
+   "keyword": "cap 上限、限额；flexibility 弹性；Chancellor of the Exchequer（英）财政大臣；hint 暗示；lift the cap 解除上限。",
+   "note": "cap 与 flexibility 的组合是钥匙：给上限加弹性＝放宽借款；if the cap were lifted 的虚拟句给出预期效果——多建 6 万套、GDP 增 0.6%；C 把「放宽借债」偷成「减少债务」，方向不同；D 的 GDP 数据主语是 evidence，注意句子的真正主语。"
+  },
+  {
+   "question_id": 1631,
+   "long_sentence": "定位句 Ministers should also look at creating greater certainty in the rental environment, which would have a significant impact on the ability of registered providers to fund new developments from revenues；which 引导非限制性定语从句，certainty 表「确定性」，revenues 表「租金收入」。译：大臣们还应设法增强租赁环境的确定性，这将显著影响注册供应商以租金收入为新开发项目融资的能力。",
+   "option": "正确项 C contribute to funding new developments：稳定租赁环境将显著影响 providers 用租金收入为新房项目融资的能力——正向推断即有助于融资；A lower the costs of registered providers 偷换概念，提升的是融资能力而非降低成本；B lessen the impact of government interference 无中生有，impact 指租赁稳定对融资的影响；D relieve the ministers of responsibilities 无中生有。",
+   "keyword": "rental environment 租赁环境；registered provider 注册供应商；fund 融资、出资；revenue 收入（此处租金收益）。",
+   "note": "which 从句的落点在 the ability...to fund new developments：环境稳定→收益可预期→融资能力增强，infer 即 contribute to funding；A 把能力偷换成成本；B 复现 impact 一词但搭配对象完全不同，注意 which 从句内的修饰关系。"
+  },
+  {
+   "question_id": 1632,
+   "long_sentence": "定位句 the existing 4.5bn programme of grants to fund new affordable housing, set to expire in 2015, is unlikely to be extended beyond then；set to expire 过去分词短语作定语，be unlikely to 表可能性低。译：现有的为新建可负担住房注资的 45 亿英镑拨款计划定于 2015 年到期，此后不太可能延续。",
+   "option": "正确项 D stop generous funding to the housing sector：unlikely to be extended 加 unlikely to ever return to the era of large-scale public grants，双重表明拨款将终止；A implement more policies to support housing 正反混淆，拨款时代走向结束；B review the need for large grants 无中生有，原文未提审查；C renew the programme 正反混淆，与 unlikely to be extended 相反。",
+   "keyword": "grant 拨款、补助金；expire 到期；extend 延长；scale 规模；adjust to 适应；coalition 联合政府。",
+   "note": "时间锚 2015：set to expire in 2015 加 unlikely to be extended，答案直接指向停止慷慨拨款；下文 unlikely to ever return to the era of large-scale public grants 是第二次强调；A、C 与文义相反，B 的 review 是无据动作，抓 unlikely 的两次复现即可定案。"
+  },
+  {
+   "question_id": 1633,
+   "long_sentence": "定位句 his Stone Circle, a perfect ring of purplish rocks from Portishead beach laid out on the gallery floor, represents the elegant, rarefied side of the form；主语后接长同位语，laid out 过去分词作定语说明摆放方式。译：他的《石环》——用波蒂斯黑德海滩的紫色岩石在展厅地面摆出的完美圆环——代表了英国大地艺术优雅高致的一面。",
+   "option": "答案 D represents the elegance of the British land art：represents the elegant...side 原词对应，代表优雅一面；最易混的 E depicts the ordinary side 是 Boyle Family 作品 Olaf Street Study 的特征（dirty, urban aspect、commonplaceness），两件作品一雅一俗互为对照；A 属于 Fulton 的 Seven Days；C 属于 Towards Avebury。",
+   "keyword": "elegant 优雅的＝refined；rarefied 高雅脱俗的；ring 环形；gallery floor 展厅地面；represent 代表。",
+   "note": "作品名定位法：Stone Circle 在第四段有独立描述句，represents the elegant...side 与 D 项几乎逐词对应；本组题的最大陷阱是 elegant 与 ordinary 的一面之别，Boyle Family 的 dirty, urban aspect 与 Stone Circle 的 rarefied side 构成对照记忆点。"
+  },
+  {
+   "question_id": 1634,
+   "long_sentence": "定位句 Their Olaf Street Study, a square of brick-strewn waste ground, is one of the few works here to embrace the commonplaceness that characterises most of our experience of the landscape most of the time；同位语补充作品形态，that 引导定语从句修饰 commonplaceness。译：他们的《奥拉夫街研究》——一块满是碎砖的荒地——是此处少数拥抱平凡性的作品，而平凡性正是我们大多数时候风景体验的特征。",
+   "option": "答案 E depicts the ordinary side of the British land art：commonplaceness（平凡性）加 dirty, urban aspect（脏兮兮的都市一面），与 ordinary side 同义对应；D represents the elegance 是 Stone Circle 的专属描述，勿混；A、C、F 分别对应 Seven Days、Towards Avebury 与干扰项。",
+   "keyword": "commonplaceness 平凡性＝ordinariness；brick-strewn 满地碎砖的；waste ground 荒地；embrace 拥抱、接纳。",
+   "note": "ordinary 的证据链：waste ground 的题材加 embrace the commonplaceness 的评价；本句的 few works to embrace 反衬平凡题材罕见，更显其独特；与上题 Stone Circle 的 elegant 成对记忆，作品与气质一一挂钩后匹配题可秒解。"
+  },
+  {
+   "question_id": 1635,
+   "long_sentence": "定位句 John Hilliard's very funny Across the Park, in which a long-haired stroller is variously smiled at by a pretty girl and unwittingly assaulted in a sequence of images that turn out to be different parts of the same photograph；in which 引导定语从句，turn out 表「原来是」。译：希利德的《穿过公园》——长发漫步者时而获美女微笑、时而遭无意袭击，一系列图像原来是同一照片的不同局部。",
+   "option": "答案 G contains images from different parts of the same photograph：that turn out to be different parts of the same photograph 原词对应，作品由同一照片的不同局部构成；A 的长途徒步属 Fulton 的 Seven Days；B 的 landscape-orientated light conceptual art 是对英国大地艺术整体的定性；C 的风景画传统属 Towards Avebury。",
+   "keyword": "stroller 漫步者；unwittingly 无意中；a sequence of images 一系列图像；turn out to be 原来是。",
+   "note": "作品名 Across the Park 直接定位第五段；本段趣味点在「一图多格」的错觉——被微笑与被袭击的不同画面同出一照，G 项的 different parts of the same photograph 几乎照抄原文；幽默表述 very funny 是段落信号词。"
+  },
+  {
+   "question_id": 1636,
+   "long_sentence": "定位句 Derek Jarman's yellow-tinted film Towards Avebury, a collection of long, mostly still shots of the Wiltshire landscape, evokes a tradition of English landscape painting stretching from Samuel Palmer to Paul Nash；同位语说明影片形式，evokes 表「唤起、使人想起」。译：德里克·贾曼的黄色调影片《驶向埃夫伯里》——一组以威尔特郡风景为对象的长镜头且多为静止画面——唤起了从塞缪尔·帕尔默到保罗·纳什的英国风景画传统。",
+   "option": "答案 C reminds people of the English landscape painting tradition：evokes a tradition of English landscape painting 与 C 项同义对应，remind 对应 evoke；最强干扰 F embodies a romantic escape into the Scottish outdoors——同段确有 romantic escapism 一词，但 Towards Avebury 拍的是 Wiltshire（英格兰威尔特郡），Scottish outdoors 属于 Fulton（Scottish artist），属张冠李戴。",
+   "keyword": "evoke 唤起＝remind sb of；tint 色调、染色；landscape painting 风景画；escapism 逃避主义。",
+   "note": "evokes 与 remind 是本题同义替换核心；两个地理信息要分清：Wiltshire 是 Towards Avebury 的取景地，Scottish 是 Fulton 的国籍与题材，F 项拿同段的 romantic 与他段的 Scottish 拼接，属跨句嫁接；作品名定位后须核对整句信息。"
+  },
+  {
+   "question_id": 1637,
+   "long_sentence": "定位句 A typical work, such as Seven Days, consists of a single beautiful black-and-white photograph taken on an epic walk, with the mileage and number of days taken listed beneath；consist of 表由…组成，taken on... 过去分词作定语，with 复合结构作状语。译：典型作品如《七天》，由一张史诗式徒步中拍下的单幅黑白照片构成，下方列着里程与天数；其作者的 love of walking 由此变现。",
+   "option": "答案 A originates from a long walk that the artist took：taken on an epic walk 加 making his love of walking pay，作品源自艺术家的长途徒步，originate from 对应 taken on；B 的 landscape-orientated light conceptual art 是末段对英国大地艺术的整体定性，并非 Seven Days 独有；F 的 Scottish outdoors 貌似相关但 F 是「浪漫逃逸」定性，与徒步变现的表述不同。",
+   "keyword": "epic walk 史诗式远足；mileage 里程；consist of 由…构成；make...pay 使…有回报、变现。",
+   "note": "作品名 Seven Days 定位末段：photo taken on an epic walk 与 beneath 列出的里程天数都指向「源于长途徒步」；originate 与 take 之间的被动主动转换是本题改写点；B 是全文定性虽真实，但匹配题要求作品与信息一一对应，整体定性不作选项。"
+  },
+  {
+   "question_id": 1638,
+   "long_sentence": "定位句 Everyone around us seems to agree by the way they cling to their phones, even without a ____ on a subway；by the way 表「从…的样子看」，cling to 表「紧抓不放」，even without 表「即使没有」。译：身边每个人似乎都赞同这一点，看他们紧抓手机的样子就知道——甚至在地铁里没有信号时也如此。",
+   "option": "正确答案 signal：地铁里没有手机信号，人们仍抱着手机不放，极端行为凸显对手机的依赖；permit 表许可证，在地铁看手机无需许可，逻辑不通；ticket 表车票，逃票看手机偏离主题；record 表记录，与场景无关。",
+   "keyword": "cling to 紧抓不放；signal 信号；subway 地铁＝underground；even without 即使没有。",
+   "note": "even without 表让步递进：连「没有信号」这样的障碍都不妨碍刷手机；首段通过地铁场景引出当代文化里回避陌生人这一主题；permit 与 ticket 是场景词干扰，判断依据是 even 句要与前文 cling to phones 构成程度递进而非新事件。"
+  },
+  {
+   "question_id": 1639,
+   "long_sentence": "定位句 It's a sad reality – our desire to avoid interacting with other human beings – because there's ____ to be gained from talking to the stranger standing by you；破折号内为同位解释，because 引导原因状语从句，there's...to be gained 表「有…可获取」。译：这是一个可悲的现实——我们竟渴望回避与他人的交流——因为与身边的陌生人交谈本可获得很多。",
+   "option": "正确答案 much：正因为与陌生人交谈收益良多，回避交流才成为 sad reality，much 与可惜语气呼应；nothing 或 little 表无可获得，那么回避就无可指摘，与 sad reality 矛盾；another 表另一个，与 to be gained 搭配不当。",
+   "keyword": "sad reality 可悲的现实；interact with 与…交流；be gained 被获得、有所得；stranger 陌生人。",
+   "note": "逻辑方向题：sad 表明「该做而未做」，空格词必须支撑「交流有价值」；nothing、little 与 sad 矛盾，正反方向即可排除；much to be gained 与后文实验结论（交谈后更愉悦、更连接）首尾呼应。"
+  },
+  {
+   "question_id": 1640,
+   "long_sentence": "定位句 But you wouldn't know it, ____ into your phone；插入语补充状态，know it 的 it 指上句「交流有收益」的事实。译：但你不会知道这一点——只要你埋头插在手机里。",
+   "option": "正确答案 plugged：be plugged into 表「插接于、沉迷于」，plugged into your phone 形象描绘埋头刷机的状态；beaten into 表被打入，搭配不当；guided into 表被引导进入，主语是人却缺施动者；brought into 表被带入，同样不合语境。",
+   "keyword": "plug into 插入、接入（引申沉迷于）；tuck...in pockets 把…塞进口袋；look up 抬头；state 状态。",
+   "note": "plugged into 是本文的生动隐喻：像插头插进电源一样嵌在手机里；后文 rip off the band-aid, tuck smartphones in pockets and look up 与之形成动作对照——拔掉插头才能开始交流；分词状语的逻辑主语是 you，动作须人可发出。"
+  },
+  {
+   "question_id": 1641,
+   "long_sentence": "定位句 This universal protection sends the ____: Please don't approach me；冒号后为信息内容，universal protection 表「普遍的自我保护」。译：这种普遍的自我保护姿态传递出一个讯息：请勿靠近我。",
+   "option": "正确答案 message：send the message 表「传递讯息」，是固定搭配，冒号后的 Please don't approach me 即讯息内容；code 表代码，send a code 多指发送验证码；notice 表通知，指正式书面公告，与肢体姿态语境不符；sign 表标志，惯用 give a sign，send the sign 搭配生硬。",
+   "keyword": "send the message 传递讯息（固定搭配）；approach 接近、靠近；universal 普遍的；protection 保护。",
+   "note": "冒号后引出的直接内容说明空格词是「讯息」类名词，send the message 为首选搭配；sign 的干扰在于义近，但 send 与 sign 不构成惯用组合；notice 的书面公告色彩与地铁刷机的肢体语言场景不符。"
+  },
+  {
+   "question_id": 1642,
+   "long_sentence": "定位句 What is it that makes us feel we need to hide ____ our screens?；it is...that 为强调句型，强调 what；feel 后接省略 that 的宾语从句。译：究竟是什么让我们觉得需要躲到屏幕后面？",
+   "option": "正确答案 behind：hide behind our screens 躲在屏幕后面，以屏幕为屏障回避他人，与全文「回避交流」主题一致；hide under 表藏在…下面，屏幕无法藏身其下；beyond 表在…之外，hide beyond 不成搭配；hide from 表躲避，但躲避的对象应是人不该是屏幕，方向颠倒。",
+   "keyword": "hide behind 躲在…后面；screen 屏幕；shield 屏障（近义联想）；avoidance 回避；barrier 障碍。",
+   "note": "介词靠空间关系定：人是躲在「屏幕后」看世界，behind 表屏障义；hide from 的陷阱最大——我们不是躲避屏幕，而是借屏幕躲避人，宾语方向要分清；强调句 What is it that... 提示此问是全文核心设问，答案是后文 fear 的总起。"
+  },
+  {
+   "question_id": 1643,
+   "long_sentence": "定位句 We fear rejection, or that our innocent social advances will be ____ as weird；that 引导宾语从句与 rejection 并列，be ____ as 表「被…为」。译：我们害怕被拒绝，害怕自己善意的社交示好会被误解为古怪。",
+   "option": "正确答案 misinterpreted：be misinterpreted as 表「被误解为」，善意示好被曲解成怪异，正与 fear 语境相扣；misapplied 表被误用，用于技能或规则，不与 as weird 搭配；misadjusted 表被误调，用于器械参数；mismatched 表被错配，用于配对事物，均无「解读错」义。",
+   "keyword": "misinterpret 误解＝misread；social advances 社交示好；innocent 无恶意的；weird 古怪的。",
+   "note": "mis- 前缀家族辨析：misinterpret 是「解读错误」，与本句「别人怎么理解我们的示好」完全对口；as weird 的补语结构要求动词含「判断、解读」义；社交场景的担忧清单（被拒、被误解、被评、被嫌打扰）是下文排比的预告。"
+  },
+  {
+   "question_id": 1644,
+   "long_sentence": "定位句 We fear we'll be ____. We fear we'll be disruptive. We fear we'll be disruptive.；三个 We fear 引导的排比句，空格处为被动语态谓语。译：我们害怕被人评头论足，害怕自己扰人，害怕自己造成干扰。",
+   "option": "正确答案 judged：怕被别人评判指点，与怕被误解、怕打扰人构成社交焦虑三连，语义场统一；fired 表被解雇，属于职场事件，与陌生人社交场景无关；replaced 表被取代，无关联；delayed 表被耽搁，与情感担忧不搭。",
+   "keyword": "judge 评判、说三道四；disruptive 扰乱的、捣乱的；fear doing/be done 害怕（被）…；rejection 拒绝。",
+   "note": "排比结构里各分句共享「社交恐惧」主题：judged（被评）与 disruptive（扰人）分别从被看与被嫌两个角度展开；fired 的职场色彩与 subway、stranger 的场景错位；被动词的选择由场景与情绪统一性决定，不靠单句语法。"
+  },
+  {
+   "question_id": 1645,
+   "long_sentence": "定位句 Strangers are inherently ____ to us, so we are more likely to feel ____ when communicating with them compared with our friends and acquaintances；inherently 表「天生地」，so 引导结果，compared with 引出比较对象。译：陌生人对我们而言天然是陌生的，因此与朋友熟人交流相比，我们与他们交流时更容易感到不安。",
+   "option": "正确答案 unfamiliar：Strangers are inherently unfamiliar to us——陌生人的本质属性即陌生，与后文因陌生而不安的因果链吻合；unreasonable 表不讲理的，是贬义评价而非属性；ungrateful 表不感恩的，无关联；unconventional 表非传统的，不构成不安的原因。",
+   "keyword": "inherently 天生地、本质上；unfamiliar 陌生的＝not familiar；acquaintance 熟人；stranger 陌生人。",
+   "note": "因果链解题：Strangers 天生如何→交流时更不安；能同时充当「陌生人属性」并导致不安的只有 unfamiliar；be unfamiliar to sb 是固定搭配；un- 家族四个词靠语义场排除，unreasonable 已含评价色彩而非客观属性。"
+  },
+  {
+   "question_id": 1646,
+   "long_sentence": "定位句 so we are more likely to feel ____ when communicating with them compared with our friends and acquaintances. To avoid this uneasiness, we turn to our phones；more likely to feel 表可能性，To avoid this uneasiness 承接空格词的情绪。译：因此与朋友熟人相比，我们与陌生人交流时更容易感到不安；为避免这种不安，我们转向手机。",
+   "option": "正确答案 anxious：下文 To avoid this uneasiness 中的 uneasiness（不安）与 anxious（焦虑不安）构成词汇复现，前果后指；comfortable 表舒适，与 avoid uneasiness 矛盾；confident 表自信，同样与回避行为相反；angry 表愤怒，uneasiness 指不安而非愤怒。",
+   "keyword": "anxious 焦虑的、不安的；uneasiness 不安＝anxiety；turn to 转向、求助；security blanket 安全毯、安慰物。",
+   "note": "词汇复现是本题钥匙：空格的情绪词须与下一句 uneasiness 同义呼应；comfortable 与 confident 都站在回避行为的对立面，方向即可排除；angry 的强度与性质不对——原文怕的是被评判被拒绝，是焦虑不是愤怒。"
+  },
+  {
+   "question_id": 1647,
+   "long_sentence": "定位句 To avoid this uneasiness, we ____ to our phones；不定式作目的状语，we ____ to our phones 为主谓宾结构。译：为了避免这种不安，我们求助于手机。",
+   "option": "正确答案 turn：turn to 表「转向、求助于」，躲避不安而转向手机，与下文 phones become our security blanket 呼应；attend to 表照料、处理，宾语通常是人或事务；take to 表开始喜欢上，语境无喜爱义；point to 表指向，动作方向不合。",
+   "keyword": "turn to 求助于、转向；security blanket 安全毯（心理慰藉物）；avoid 避免；retreat to 退至（近义联想）。",
+   "note": "turn to phones 的「求助、依托」义与 security blanket 的比喻一致：手机成了躲开社交不安的安慰物；attend 的干扰在 to 搭配常见，但 attend to 表照料，宾语语义不合；目的状语 To avoid this uneasiness 决定动词须含「转移、依托」义。"
+  },
+  {
+   "question_id": 1648,
+   "long_sentence": "定位句 They are our happy glasses that protect us from what we perceive is going to be more ____；that 定语从句修饰 happy glasses，perceive 表「认为、觉得」，protect...from 表「使免受」。译：它们是护住我们的快乐眼镜，让我们免受那些自认为将会更具危险的事物。",
+   "option": "正确答案 dangerous：上文害怕被拒、被误解、被评判、扰人——与陌生人交流被视为有危险的社交冒险，手机替我们挡住这份「危险」；mysterious 表神秘的，全文未提神秘感；violent 表暴力的，程度过重无据；boring 表无聊的，与 fear 的情绪清单不符。",
+   "keyword": "perceive 认为、感知＝deem；protect...from 使…免受；happy glasses 快乐眼镜（比喻滤镜）；threat 威胁。",
+   "note": "protect us from 后接的是被防御的对象——前文 fear 系列所指向的社交风险即 dangerous；mysterious 与 boring 与恐惧清单（拒绝、评判、打扰）不匹配；happy glasses 的比喻暗示滤镜外世界被想得更可怕，dangerous 的程度正合适。"
+  },
+  {
+   "question_id": 1649,
+   "long_sentence": "定位句 But once we rip off the band-aid, tuck our smartphones in our pockets and look up, it doesn't ____ so bad；once 引导条件句，三个并列动作 rip off、tuck、look up 描写放下手机的过程。译：但一旦撕开创可贴、把手机塞进口袋、抬起头来，（与陌生人交谈）并没有那么难受。",
+   "option": "正确答案 hurt：it doesn't hurt so bad 表「没那么疼、没那么难受」，呼应撕创可贴的比喻——想象中的痛并没发生；bend 表弯曲，主语 it（交流这件事）无法弯曲；resist 表抵制，与语义不符；decay 表衰减、腐朽，用于事物衰败，不合。",
+   "keyword": "rip off 撕掉；band-aid 创可贴；tuck...in 塞进；hurt 疼痛、使难受；imagine 想象、预想。",
+   "note": "band-aid 的比喻是钥匙：撕创可贴怕痛，但实际 doesn't hurt so bad——预想的社交之痛被夸大；it 指代与陌生人交谈这件事本身；resist 的主语应是人，it 作形式主语指事件时 hurt 最为自然。"
+  },
+  {
+   "question_id": 1650,
+   "long_sentence": "定位句 behavioral scientists Nicholas Epley and Juliana Schroeder asked commuters to do the unthinkable: Start a ____. They had Chicago train commuters talk to their fellow ____；冒号后解释 the unthinkable，have sb do 表「让某人做」。译：行为科学家埃普利与施罗德请通勤者做一件不可思议的事：开启一段交谈。他们让芝加哥火车上的通勤者与同车乘客交谈。",
+   "option": "正确答案 conversation：Start a conversation 表「开启交谈」，与下句 talk to their fellow commuters 完全对应；lecture 表讲座，乘客之间无授课关系；debate 表辩论，程度与场景均不符；negotiation 表谈判，用于利益协商，日常攀谈谈不上谈判。",
+   "keyword": "commuter 通勤者；the unthinkable 不可思议之事；start a conversation 开启交谈＝strike up a conversation；fellow 同车的、同伴的。",
+   "note": "下句 talk to their fellow... 是空格词的同义展开——能与陌生人 talk 的只能是 conversation；the unthinkable 表明此举在当下文化里罕见，呼应首段回避陌生人的现实；debate 与 negotiation 的隆重色彩与火车闲聊场景不匹配。"
+  }
+ ]
+}

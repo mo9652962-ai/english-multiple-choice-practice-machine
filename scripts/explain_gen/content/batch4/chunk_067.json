@@ -1,0 +1,180 @@
+{
+ "chunk": 67,
+ "items": [
+  {
+   "question_id": 1651,
+   "long_sentence": "定位句 They had Chicago train commuters talk to their fellow ____；have sb do 表「让某人做某事」，fellow 表「同…的、同伴的」。译：他们让芝加哥火车上的通勤者与同车乘客交谈。",
+   "option": "正确答案 passengers：fellow passengers 表「同车乘客」，train commuters 的交谈对象自然是其乘客同伴，与实验场景严丝合缝；trainees 表受训者，实验对象不是培训关系；employees 表雇员，通勤火车上谈的不是同事；researchers 表研究者，他们是实验设计者而非被试的交谈对象。",
+   "keyword": "fellow passengers 同车乘客；commuter 通勤者＝daily traveler；have sb do 让某人做；fellow 同类的、同伴的。",
+   "note": "fellow 是共指前缀：fellow 后的名词须与主语同属一类——主语是 train commuters，能与之同车的是 passengers；trainees 与 employees 是场景词干扰，用「同车」这一空间关系即可锁定；此空与上一空 Start a conversation 连成实验设计链。"
+  },
+  {
+   "question_id": 1652,
+   "long_sentence": "定位句 When Dr. Epley and Ms. Schroeder asked other people in the same train station to ____ how they would feel after talking to a stranger；ask sb to do 表「请某人做某事」，how they would feel 为宾语从句，would 表将来推测。译：埃普利博士与施罗德女士请同一车站的其他人预测：与陌生人交谈之后自己会作何感受。",
+   "option": "正确答案 predict：实验设计是先「预测」感受、后与真实体验对照，predict 与下文实际经历后 not a single person reported... 形成预期与结果的双栏；reveal 表揭示，事情尚未发生无从揭示；choose 表选择，how they would feel 不是选项；design 表设计，被试不设计实验。",
+   "keyword": "predict 预测＝forecast；would feel 将会感受；experiment 实验；expect 预期（近义）。",
+   "note": "实验类文章的时间轴是解题关键：先请人 predict 预期感受，再让另一批人 went through 实际体验，最后对比——预期悲观、实际愉快，正是文章主旨「交流没那么可怕」的证据；reveal 的时态矛盾可直接排除。"
+  },
+  {
+   "question_id": 1653,
+   "long_sentence": "定位句 the commuters thought their ____ would be more pleasant if they sat on their own；thought 后接省略 that 的宾语从句，if they sat on their own 为虚拟条件。译：通勤者认为，如果独自坐着，他们的乘车旅程会更愉快。",
+   "option": "正确答案 ride：their ride 表「乘车行程」，与 Chicago train commuters 的火车通勤场景精确对应；voyage 表海上或长途航行，火车行程不用 voyage；flight 表乘飞机飞行，与 train 矛盾；walk 表步行，与坐火车通勤不符。",
+   "keyword": "ride 乘车（行程）＝trip；commute 通勤；sit on one's own 独自坐；pleasant 愉快的。",
+   "note": "场景限定词 train 决定交通工具名词：ride 覆盖火车汽车行程，voyage 与 flight 的交通方式均不符；此处 ride 是名词化的「行程」义，与动词 ride（骑、乘）区分；被试的预期是独自坐更愉快，后文被实验推翻。"
+  },
+  {
+   "question_id": 1654,
+   "long_sentence": "定位句 Though the participants didn't expect a positive experience, after they ____ with the experiment, not a single person reported having been embarrassed；though 表让步，after 引导时间状语从句，not a single 表「没有一个」。译：尽管参与者并未期待积极的体验，但在经历了这一实验之后，没有一个人报告说自己感到尴尬。",
+   "option": "正确答案 went through：go through 表「经历、完成（一段过程）」，与 the experiment 搭配表完成实验流程；did away with 表废除，实验不会被参与者废除；caught up with 表赶上，无追赶对象；put up with 表忍受，虽可搭配但语义消极，且强调忍耐而非参与完成。",
+   "keyword": "go through 经历、完成；be embarrassed 尴尬；participant 参与者＝subject；report doing 报告做过某事。",
+   "note": "with 短语结构提示四个选项都是动词短语加 with：go through with 表把事情进行到底；put up with 的干扰最强，但「忍受实验」无法解释 not a single person 的积极结果；经历完成之后才有资格报告感受，时间逻辑锁定 went through。"
+  },
+  {
+   "question_id": 1655,
+   "long_sentence": "定位句 ____, these commutes were reportedly more enjoyable compared with those without communication, which makes absolute sense；reportedly 表「据报道」，compared with 引出对比对象，which 引导非限制性定语从句。译：事实上，据报道这些通勤旅程比无交流的旅程更愉快，这完全说得通。",
+   "option": "正确答案 In fact：上句说「没有人报告尴尬」，本句进一步说「实际上更愉快」——由不糟到更好的递进确认，In fact 表「事实上」；In turn 表依次或转而，无先后交替关系；In particular 表尤其，无特举对象；In consequence 表因此，愉快并非由前一事实直接推导。",
+   "keyword": "in fact 事实上、实际上；enjoyable 愉快的；make sense 说得通；reportedly 据报道。",
+   "note": "插入语先辨逻辑关系：没人尴尬（底线）→更愉快（增量）是同向递进强化，In fact 的确认语气最合；In consequence 的因果陷阱在于「不尴尬」推不出「更愉快」，需要的是事实层面的加强而非推理；which makes absolute sense 是作者对实验结果的态度。"
+  },
+  {
+   "question_id": 1656,
+   "long_sentence": "定位句 which makes absolute sense, ____ human beings thrive off of social connections；which 指代前句整体，thrive off of 表「靠…茁壮成长」。译：这完全说得通，因为人类正是靠社会连接而蓬勃发展的。",
+   "option": "正确答案 since：makes absolute sense（完全合理）的原因由 since 引出——人类天性依赖社会连接；unless 表条件，逻辑不通；whereas 表对比，前后是对因果关系而非对立；if 表假设，社会连接是既有事实非假设。",
+   "keyword": "thrive off of 靠…繁荣、茁壮成长；social connections 社会连接；make sense 合理＝make absolute sense；since 因为。",
+   "note": "makes absolute sense 之后必须补「为何合理」——since 表已知原因，是四选一的唯一因果词；thrive off of social connections 点出全文人类学依据：连接是天性，回避交流才有违天性；本句与结尾 feel connected 首尾呼应。"
+  },
+  {
+   "question_id": 1657,
+   "long_sentence": "定位句 It's that ____: Talking to strangers can make you feel connected；冒号后为具体内容，It's that... 为强调总结句式。译：道理就是这么简单：与陌生人交谈能让你感到彼此相连。",
+   "option": "正确答案 simple：全文长篇论证最后归于一句话，It's that simple 是固定表达「就这么简单」；funny 表滑稽，全文并无幽默定位；logical 表合逻辑的，与前句 makes absolute sense 重复累赘；rare 表罕见的，与「道理人人可用」的收束义相悖。",
+   "keyword": "it's that simple 就这么简单（固定表达）；feel connected 感到相连；stranger 陌生人；wind up 以…告终（近义联想）。",
+   "note": "冒号总结句的填空看收束语气：长文之后化繁为简，simple 最自然；logical 与前句 makes absolute sense 语义重叠，完形避免同义赘述；It's that simple 的 that 指代冒号后的内容，记住这一口语化句型可秒解。"
+  },
+  {
+   "question_id": 1658,
+   "long_sentence": "定位句 Researchers measured people's cortisol, which is a stress marker, while they were at work and while they were at home and found it higher at what is supposed to be a place of refuge；which 引导非限制性定语从句，what is supposed to be 表「本应是…的」。译：研究人员测量人们在工作与在家时的皮质醇——一种压力标志物——发现这个本应是庇护所的地方数值反而更高。",
+   "option": "正确项 A offered greater relaxation than the workplace：contrary to most surveys 表新研究推翻旧调查——如今发现家更紧张，旧调查自然认为家比职场更放松；B was an ideal place for stress measurement 偷换概念，家是测量场所之一而非理想测量地；C generated more stress than the workplace 正反混淆，那是新研究的发现；D was an unrealistic place for relaxation 无中生有。",
+   "keyword": "cortisol 皮质醇；stress marker 压力标志物；contrary to 与…相反；refuge 庇护所、避难所。",
+   "note": "contrary to most surveys 是反向推理的钥匙：新结论为「家更紧张」，旧调查即为「家更放松」；a place of refuge 是人们对家的传统定位，暗示旧观念家的放松形象；C 恰是新研究结论，方向反了的选项往往是命题人放的事实干扰。"
+  },
+  {
+   "question_id": 1659,
+   "long_sentence": "定位句 It is men, not women, who report being happier at home than at work. Another surprise is that the findings hold true for both those with children and without, but more so for nonparents；It is...who 为强调句，hold true 表「成立」。译：自称在家比在工作更快乐的是男性而非女性；另一个意外是，该发现在有无子女者中均成立，但在无子女者中更为明显。",
+   "option": "正确项 B Childless husbands：两个条件叠加——在家更快乐者为男性（It is men, not women），且无子女者更甚（more so for nonparents），交集即无子女的丈夫；A working mothers 与「女性在家压力更大」相反；C working fathers 只满足性别条件，未取更快乐的强化组合；D childless wives 性别条件就错了。",
+   "keyword": "hold true 成立、适用；nonparent 无子女者；surprise 意外之事；report doing 自称做过某事。",
+   "note": "复合条件题把两个限制条件列出来求交集：性别（男）加子女状况（无），答案即 childless husbands；C 的迷惑在于性别对但缺 more so 的强化条件，比较级 more so for nonparents 指明最优组合；强调句 It is men, not women 砍掉全部女性选项。"
+  },
+  {
+   "question_id": 1660,
+   "long_sentence": "定位句 With the blurring of roles, and the fact that the home front lags well behind the workplace in making adjustments for working women, it's not surprising that women are more stressed at home；with 复合结构作原因状语，lag behind 表「落后于」，that 同位语从句。译：由于角色的模糊，加上家庭一线在为职业女性作出调整方面远远落后于职场，女性在家压力更大也就不足为奇了。",
+   "option": "正确项 B they are both bread winners and housewives：职场女性 catch-up-with-household tasks——既挣钱又追家务，即 roles blurring；A their home is also a place for kicking back 张冠李戴，那是男性的放松；C there is often much housework left behind 偷换概念，是追赶非搁下；D difficult to leave their office 张冠李戴，never get to leave the office 指全职主妇。",
+   "keyword": "blur 使模糊；bread winner 养家糊口的人；housewife 家庭主妇；play catch-up 追赶补做。",
+   "note": "指代题回读角色清单：男性下班放松、全职主妇从不下班、职业女性追赶家务——blurring 的主体是职业女性，双角色重叠加压；A 与 D 分别是男性与全职主妇的特征，命题人常用相邻人物的细节互相干扰，注意主语对应。"
+  },
+  {
+   "question_id": 1661,
+   "long_sentence": "定位句 The bargain is very pure: Employee puts in hours of physical or mental labor and employee draws out life-sustaining moola；bargain 表「交易、契约」，puts in 与 draws out 构成投入与取出的对仗。译：这笔交易非常纯粹：雇员投入数小时的体力或脑力劳动，雇员取出赖以生存的薪水。",
+   "option": "正确项 C earnings：life-sustaining（赖以维生）的东西是劳动换来的报酬，draws out（取出）呼应工资领取，moola 是俚语「钱」；A skills 表技能，是投入项不是取出项；B energy 表精力，同样属于投入；D nutrition 表营养，虽能维生但不是雇员与雇主交易的内容。",
+   "keyword": "moola（俚语）钱、钞票；bargain 交易；draw out 取出、领取；life-sustaining 维持生计的。",
+   "note": "猜词靠句内逻辑：puts in labor 与 draws out moola 的对仗表明后者是劳动所得；life-sustaining 的搭配对象在职场语境里只能是被支付的报酬；moola 与 dough、bucks 同属钱的俚语，认知这类词的核心是上下文等式而非词形。"
+  },
+  {
+   "question_id": 1662,
+   "long_sentence": "定位句 On the home front, however, people have no such clarity. Rare is the household in which the division of labor is so clinically and methodically laid out；Rare is... 为表语前置的倒装，in which 引导定语从句修饰 household。译：然而在家庭一方，人们没有这般清晰；很少有家庭能把劳动分工安排得如此清晰而有条理。",
+   "option": "正确项 D division of labor at home is seldom clear-cut：Rare is the household... 倒装句强调家中分工鲜有明确，seldom clear-cut 即其改写；A family labor is adequately rewarded 正反混淆，原文是 inadequate rewards；B home is hardly a cozier working environment 无中生有，未比舒适度；C household tasks are generally more motivating 正反混淆，末句说 harder to motivate。",
+   "keyword": "division of labor 劳动分工；clinically 冷静精确地；methodically 有条理地；rare 罕见的。",
+   "note": "however 划开职场与家庭两半：职场任务清晰、交易纯粹；家庭 no such clarity 加倒装句 Rare is the household——两处证据同指分工不清；A、C 与 inadequate rewards、harder to motivate 两处原文相反；倒装句是强调信号，常为细节题考点。"
+  },
+  {
+   "question_id": 1663,
+   "long_sentence": "定位句 This has created a paradox in that recruiting first-generation students, but then watching many of them fail, means that higher education has continued to reproduce and widen, rather than close, an achievement gap；in that 表「原因在于」。译：这造成一个悖论：招收第一代学生却眼看许多学生失败，意味着高等教育在继续扩大而非缩小基于社会阶级的成就差距。",
+   "option": "正确项 C missed its original purpose：初衷是让最有可能借高等教育实现经济跃升的群体受益（most likely to advance economically），结果却扩大差距，事与愿违即偏离初衷；A reduced their dropout rates 正反混淆，原文说 their dropout rates are higher；B narrowed the achievement gap 正反混淆，原文是 widen rather than close；D depressed college students 词性嫁接，depressing 修饰的是论文开头的记述，不是学生情绪。",
+   "keyword": "paradox 悖论；first-generation student 第一代大学生（父母无大学学历）；achievement gap 成就差距；reproduce 再生产、复制。",
+   "note": "paradox 是钥匙词：招收多加失败多等于差距扩大，正是「好心办坏事」的背离初衷；找初衷要回读上句 push for decades to recruit more of them 的动因；D 复现 depress 词根但修饰对象是 beginning，词性嫁接陷阱。"
+  },
+  {
+   "question_id": 1664,
+   "long_sentence": "定位句 But the article is actually quite optimistic, as it outlines a potential solution to this problem, suggesting that an approach...can close 63 percent of the achievement gap；as 表原因，suggesting 现在分词作伴随状语。译：但这篇文章其实相当乐观，因为它概述了该问题的潜在解决方案，指出一种方法能缩小 63% 的成就差距。",
+   "option": "正确项 C the problem is solvable：乐观的根据是 outlines a potential solution 加 can close 63 percent——问题有解且效果可量化；A their findings appeal to students 无中生有；B the recruiting rate has increased 张冠李戴，招募更多恰是悖论的一面；D their approach is costless 偷换概念，next-to-no-cost（近乎零成本）只是方法优点，乐观的根源是问题可解。",
+   "keyword": "optimistic 乐观的；outline 概述；potential solution 潜在解决方案；close the gap 缩小差距。",
+   "note": "as 引导的原因从句直接给出乐观理由：有 solution 且能 close 63 percent，抽出来即问题可解；D 复现 cost 原词但「几乎免费」是附加信息，回答 because 要找主因；细节题的因果链条要看连接词（as）之后的第一层内容。"
+  },
+  {
+   "question_id": 1665,
+   "long_sentence": "定位句 Most of the first-generation students (59.1 percent) were recipients of Pell Grants, a federal grant for undergraduates with financial need, while this was true only for 8.6 percent...；while 表对比，a federal grant... 为同位语。译：多数第一代学生（59.1%）领取佩尔助学金——面向有经济需求本科生的联邦资助；而父母有四年制学位的学生中该比例仅 8.6%。",
+   "option": "正确项 C are in need of financial support：Pell Grants 专发给有经济需求的本科生，59.1% 的第一代学生领取，即多数需要经济资助；A are from single-parent families 偷换概念，第一代的定义是父母无四年制学位，与单亲无关；B study at private universities 以偏概全，样本来自一所未具名私立大学，不代表多数人就读私立；D have failed their college 偷换概念，many of them fail 是悖论背景，非本研究对多数人的结论。",
+   "keyword": "recipient 领受者；Pell Grants 佩尔助学金；financial need 经济需求；undergraduate 本科生。",
+   "note": "数字定位法：59.1 percent 锁定 Pell Grants 句，同位语 a federal grant for undergraduates with financial need 直接解释助学金性质；A 把 first-generation 的定义换成 single-parent，概念偷换最典型；B 的 private university 属于研究样本描述，勿上升为总体结论。"
+  },
+  {
+   "question_id": 1666,
+   "long_sentence": "定位句 first-generation students may be most lacking not in potential but in practical knowledge about how to deal with the issues that face most college students；not...but... 表取舍，that face most college students 为定语从句。译：第一代学生最缺的不是潜力，而是应对大多数大学生都会面临的问题的实用知识。",
+   "option": "正确项 B are inexperienced in handling their issues at college：lacking practical knowledge about how to deal with the issues 即缺处理问题的实务经验；A may lack opportunities to apply for projects 无中生有；C can have a potential influence on other students 偷换概念，potential 修饰干预措施；D are actually indifferent to the achievement gap 无中生有。",
+   "keyword": "thesis 论点；modest 适度的、不大的；intervention 干预；practical knowledge 实用知识＝know-how。",
+   "note": "not in potential but in practical knowledge 的取舍结构是答案所在：缺的是处理具体问题的实用知识，B 的 inexperienced 与 lacking practical knowledge 对应；C 复现 potential 一词但修饰对象是 intervention，原词陷阱；A、D 在原文毫无落点。"
+  },
+  {
+   "question_id": 1667,
+   "long_sentence": "定位句 Because US colleges and universities seldom acknowledge how social class can affect students' educational experiences, many first-generation students lack insight about why they are struggling；because 引导原因状语从句，acknowledge 表「承认」。译：由于美国高校很少承认社会阶级会如何影响学生的教育经历，许多第一代学生不明白自己为何挣扎、也不懂像他们这样的学生如何进步。",
+   "option": "正确项 D colleges are partly responsible for the problem in question：高校很少承认阶级影响，致学生不知为何挣扎——推论即大学负有部分责任；A universities often reject the middle-class culture 偷换概念，struggle to navigate the culture 的主语是学生，大学是文化载体；B students are usually to blame 无中生有；C social class greatly helps enrich educational experiences 正反混淆，原文只说影响。",
+   "keyword": "acknowledge 承认＝admit；navigate 驾驭、应对；insight 洞察、领悟；responsible 负有责任的。",
+   "note": "infer 题从 because 的因果链推出责任归属：大学不谈阶级差异在前，学生不知为何挣扎在后——校方难辞其咎；A 把 navigate 的主语从学生偷换成大学，属主语嫁接；D 的 partly 与原文 seldom acknowledge 的部分性吻合，推断题慎选绝对化选项。"
+  },
+  {
+   "question_id": 1668,
+   "long_sentence": "定位句 If you and I parachuted back to Fortune 500 companies in 1990, we would see much less frequent use of terms like journey, mission, passion；parachute back 表「空降回到」，虚拟语气（parachuted 与 would see），much less frequent 表频率低得多。译：如果你我空降回 1990 年的财富 500 强公司，会看到 journey、mission、passion 这类词的使用频率低得多。",
+   "option": "正确项 D more emotional：the lingua franca of corporate America has gotten much more emotional and much more right-brained，引语直接给出 more emotional 原词；A less strategic 无中生有，原文只说不谈 energy 与 passion，未否定战略词；B less energetic 偷换概念，didn't talk about energy 指不使用该词汇，不是语言缺乏活力；C more objective 正反混淆，more emotional 恰与客观相对。",
+   "keyword": "lingua franca 通用语；right-brained 右脑的（直觉感性）；parachute 空降；mission 使命。",
+   "note": "人名观点题定位引语：has gotten much more emotional 是直接陈述，D 原词送分；C 与 emotional 一正一反可秒排；B 的陷阱在 energy 一词——原文说的是「不谈论」这个话题，不是语言「无活力」，引申要克制。"
+  },
+  {
+   "question_id": 1669,
+   "long_sentence": "定位句 Let's not forget sports – in male-dominated corporate America, it's still a big deal. It's not explicitly conscious; it's the idea that I'm a coach, and you're my team, and we're in this together；a big deal 表「了不起的大事」，破折号后解释 sports 的影响。译：别忘了体育——在男性主导的美国企业界，它仍分量十足；这并非明确的有意为之，而是一种观念：我是教练，你们是我的团队，我们同舟共济。",
+   "option": "正确项 A sports culture：team-oriented 词汇源于体育隐喻——coaches、team、want to win 一整套体育观念移植进企业管理，not by coincidence 提示二者相关；B gender difference 偷换概念，male-dominated 只是背景描述，不是 team 词汇的来源；C historical incidents 无中生有；D athletic executives 偷换概念，CEO 自比教练是比喻，他们并非真运动员。",
+   "keyword": "team-oriented 以团队为导向的；coach 教练；a big deal 大事、要紧事；dominated 由…主导的。",
+   "note": "not by coincidence（并非巧合）是关联信号：team 词汇与 sports 之间有直接渊源；coach、team、win 三个词构成体育语义场，A 即其来源；B 的 male-dominated 与 D 的 athlete 都是原词拼接，前者只是状语背景，后者把比喻坐实。"
+  },
+  {
+   "question_id": 1670,
+   "long_sentence": "定位句 These terms are also intended to infuse work with meaning – and, as Rakesh Khurana, another professor, points out, increase allegiance to the firm；be intended to 表「旨在」，infuse...with 表「注入」，allegiance 表「忠诚」。译：这些术语还旨在为工作注入意义——并且，正如另一位教授拉凯什·库拉纳指出的，增强员工对公司的忠诚度。",
+   "option": "正确项 D strengthen employee loyalty：increase allegiance to the firm 中 allegiance（忠诚）与 loyalty 同义替换，strengthen 对应 increase；A revive historical terms 偷换概念，historically used to be associated with 说的是这些术语的历史出身，不是引用目的；B promote company image 无中生有；C foster corporate cooperation 偷换概念，team 意象易联想合作，但 Khurana 点明的是忠诚度。",
+   "keyword": "allegiance 忠诚＝loyalty；importation 引进、输入；infuse...with 把…注入；non-profit organization 非营利组织。",
+   "note": "人名定位 Khurana：as Rakesh Khurana points out 之后的 increase allegiance to the firm 即答案句，allegiance to loyalty 是本题核心同义替换；A 复现 historically 但那是术语的前身描述，注意 intended to（目的）指向的是使用效果而非词汇来源。"
+  },
+  {
+   "question_id": 1671,
+   "long_sentence": "定位句 The mommy wars of the 1990s are still going on today, prompting arguments about why women still can't have it all and books like Sheryl Sandberg's Lean In, whose title has become a buzzword；prompting 现在分词作结果状语。译：90 年代的「妈妈战争」延续至今，引发关于女性为何仍无法兼顾一切的争论，也催生了桑德伯格的《向前一步》等著作——其书名本身已成流行语。",
+   "option": "正确项 A voices for working women：书出现在女性为何不能兼顾事业与家庭的争论语境中，Lean In（向前一步）正是为职场女性争取事业与家庭话语权发声；B appeals to passionate workaholics 张冠李戴，passion 是 office speak 的术语，与该书主题无关；C triggers debates among mommies 偷换概念，mommy wars 是既存背景，书不是在妈妈间挑起争论；D praises motivated employees 无中生有。",
+   "keyword": "mommy wars 妈妈战争；have it all 拥有一切（事业家庭两全）；buzzword 流行语；lean in 前倾、进取。",
+   "note": "推断题靠语境定位：Lean In 与 why women still can't have it all 并列，主题即职场女性困境，为女性发声；C 复现 mommy 一词但 wars 与书是两回事，原词陷阱；B 用前文 passion 拼接，注意书名 Lean in 的进取意象与职场女性的呼应。"
+  },
+  {
+   "question_id": 1672,
+   "long_sentence": "定位句 Everyone makes fun of it, but managers love it, companies depend on it, and regular people willingly absorb it. In a workplace that's fundamentally indifferent to your life, office speak can help you figure out how you relate to your work；make fun of 表「取笑」。译：人人拿它打趣，但管理者爱它，公司依赖它，普通人欣然接受；在漠视你生活的职场里，它能帮你想明白自己与工作的关系。",
+   "option": "正确项 C Companies find it to be fundamental：companies depend on it——公司依赖它，即视之为不可或缺的根本；A Linguists believe it to be nonsense 偷换概念，原文说人们可一边视其为胡说一边接受，非语言学家认定 nonsense；B Regular people mock it but accept it 主语错位，regular people 的谓语是 willingly absorb，mock 属 everyone；D Managers admire it but avoid it 正反混淆，managers love it。",
+   "keyword": "make fun of 取笑＝mock；depend on 依赖；absorb 接受、吸收；figure out 弄明白。",
+   "note": "四连排比与四个选项一一对应：mock 属于 everyone，love 属于 managers，depend on 属于 companies，absorb 属于 regular people；C 把 depend on 抽象为 fundamental；B 的陷阱在把 everyone 的嘲弄安到 regular people 头上，主语归属是本题考点。"
+  },
+  {
+   "question_id": 1673,
+   "long_sentence": "定位句 However, there is another important part of the jobs picture that was largely overlooked. There was a big jump in the number of people who report voluntarily working part-time；that 引导定语从句，largely overlooked 表「在很大程度上被忽视」，a big jump 表激增。译：然而，就业图景中还有另一个重要部分在很大程度上被忽视了：自愿从事兼职工作的人数大幅跃升。",
+   "option": "正确项 B The increase of voluntary part-time jobs：overlooked 与 neglected 同义对应，被忽视的正是 voluntary part-time 人数的大增；A The prospect of a thriving job market 正反混淆，蓬勃前景是第一段被广泛报道的好消息；C The possibility of full employment 是第一段的背景陈述，未被忽视；D The acceleration of job creation 正反混淆，岗位创造加速同属好消息部分。",
+   "keyword": "overlook 忽视＝neglect；voluntary 自愿的；a big jump 大幅跃升；unemployment rate 失业率。",
+   "note": "However 转折之后才是被忽视的信息：voluntarily working part-time 人数大涨；overlooked 加 neglected 是同义复现信号；A、D 复现第一段好消息的关键词，C 属铺垫信息，凡与 However 之前内容对应的选项都不是答案。"
+  },
+  {
+   "question_id": 1674,
+   "long_sentence": "定位句 Many people who work part-time jobs actually want full-time jobs. They take part-time work because this is all they can get；actually 表「实际上」，转折暗示与表面意愿相反；this is all they can get 表「仅能得到的全部」。译：许多从事兼职的人其实想要全职工作；他们做兼职是因为这已是他们所能找到的全部。",
+   "option": "正确项 C cannot get their hands on full-time jobs：this is all they can get 即找不到全职、只能屈就兼职；A prefer part-time jobs to full-time jobs 正反混淆，actually want full-time 直接否定偏好；B feel that is enough to make ends meet 正反混淆，原文说他们 will be having a very hard time making ends meet；D haven't seen the weakness of the market 无中生有。",
+   "keyword": "make ends meet 收支相抵、维持生计；involuntary 非自愿的；evidence of weakness 疲软的证据；take part-time work 接受兼职。",
+   "note": "本段区分两类兼职者：本文讨论的 many people 是非自愿者，原因即 all they can get；actually 是语气信号词，提示事实与偏好相反；B 复现 make ends meet 原词但方向相反——正是难以糊口才被迫兼职，原词陷阱须核对方向。"
+  },
+  {
+   "question_id": 1675,
+   "long_sentence": "定位句 There was an increase in involuntary part-time in June, but the general direction has been down...but it is down by 640,000 (7.9 percent) from its year ago level；but 连接转折，the general direction 表总体走向。译：6 月非自愿兼职有所增加，但总体方向向下；非自愿兼职仍远高于衰退前水平，但较一年前减少 64 万（7.9%）。",
+   "option": "正确项 A shows a general tendency of decline：the general direction has been down 加 down by 640,000，两处证据同指总体下降；B is harder to acquire than one year ago 无中生有，原文谈人数非获取难度；C satisfies the real need of the jobless 正反混淆，非自愿兼职是被迫之选；D is lower than before the recession 正反混淆，原文是 still far higher。",
+   "keyword": "involuntary part-time 非自愿兼职；general direction 总体方向；recession 衰退；down by 下降了（幅度）。",
+   "note": "双 but 结构先抑后扬：6 月虽有增加，但总体向下且同比降 64 万——趋势题抓 general direction 与 down by 的组合；D 与 still far higher 相反，是最直接的照抄式错误；C 的 satisfy 与 involuntary 的被迫义冲突，理解 involuntary 是前提。"
+  }
+ ]
+}

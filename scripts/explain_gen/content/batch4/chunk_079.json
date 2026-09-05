@@ -1,0 +1,180 @@
+{
+ "chunk": 79,
+ "items": [
+  {
+   "question_id": 1951,
+   "long_sentence": "定位句 You might feel your heart racing or your face turning red, but do whatever you can to remain neutral in both your words and actions：feel + 宾语 + 现在分词（heart racing）为感知结构；but 转折；in both...and... 并列范围。译：你可能会感到心跳加速、脸涨得通红，但要尽力让言行都保持中立。",
+   "option": "答案 A：Stay calm——remain neutral in both your words and actions、Deep breaths can help、slowing the pace and talking in an even tone、cool down 全段围绕「平复情绪」展开，calm≈neutral/even tone；D「正视风险」、E「不作判断」在本段无对应；与 B 的区分：本段管理的是情绪生理反应而非姿态高低。",
+   "keyword": "remain neutral 保持中立＝stay calm；undercut 削弱；even tone 平稳的语调；panicky 惊慌的。",
+   "note": "本段信号词成链：heart racing（生理反应）→remain neutral→deep breaths→cool down，全是情绪管理链条；标题 Stay calm 与 even tone 的 even（平稳）呼应，抓住从生理到行为的整条链即可锁定。"
+  },
+  {
+   "question_id": 1952,
+   "long_sentence": "定位句 It may be a well-informed, well-researched opinion, but it's still an opinion, so talk tentatively and slightly understate your confidence：well-informed 与 well-researched 复合形容词并列；so 引出结果；tentatively 意为「试探性地」。译：那可能是个有依据、有研究支撑的观点，但它仍然只是观点，所以要试探着说、略微压低你的自信。",
+   "option": "答案 B：Stay humble——only offering your opinion, not gospel truth、talk tentatively and slightly understate your confidence、invite critique、Be open to hearing other opinions 全是谦逊姿态；A「保持冷静」是 44 段的情绪主题；B 的 humble≈understate your confidence，标题词与段落逐点对应。",
+   "keyword": "gospel truth 绝对真理；tentatively 试探性地；understate 淡化、少说；invite critique 邀请批评。",
+   "note": "尾段主张在首句：only an opinion, not gospel truth 定下谦逊基调；This is just my opinion 话术与 invite critique 是谦逊的操作化；与 A 的区分靠主题词——本段无情绪词、全是姿态词。"
+  },
+  {
+   "question_id": 1953,
+   "long_sentence": "定位句 For him writing is a normal job—a job like any other：for him 评注性状语；破折号后 a job like any other 为同位语，解释空格词。译：对他而言，写作是一份普通的工作——和其他任何工作一样。",
+   "option": "正确项 B：normal「普通的」——破折号后 a job like any other 是 normal 的同位解释，呼应首句「有时间就写、没时间说明写作不是 priority」的平常职业观；A difficult「困难的」与 like any other（无特殊性）矛盾；C steady「稳定的」、D pleasant「愉快的」均无破折号解释支撑。",
+   "keyword": "normal 正常的、普通的＝ordinary；a job like any other 一份和任何工作一样的工作；priority 优先事项。",
+   "note": "同位语是空格的释义来源：见 a job like any other 即选 normal——「写作无特殊性」正是 Coben 的观点；破折号解释是完形最常见线索结构，先读破折号再选词。"
+  },
+  {
+   "question_id": 1954,
+   "long_sentence": "定位句 He has compared it with plumbing, pointing out that a plumber doesn't wake up and say that he can't work with pipes today：现在分词 pointing out 作伴随状语；that 从句作 say 的宾语。译：他把写作与管道工作比较，指出管道工不会一觉醒来就说今天干不了管道活。",
+   "option": "正确项 B：compared「比较」——compare...with... 为固定搭配，下文管道工类比是对比论证的展开；A combined「结合」不合逻辑，写作与管道并非合体；C confused「混淆」表「把…误当成」，语义不通；D confronted「面对」不与 with 搭配表比较义。",
+   "keyword": "compare...with... 把…与…比较；plumbing 管道工程；plumber 管道工；point out 指出。",
+   "note": "动词搭配题看介词 with 与下文类比：compare with 表「与…比较」，combined/confused/confronted 虽可接 with 但语义全不合；管道工类比属打比方，锁定比较义动词。"
+  },
+  {
+   "question_id": 1955,
+   "long_sentence": "定位句 If, like most writers these days, you're holding down a job to pay the bills, it's not easy to find the time to write：if 条件从句；like most writers these days 介词短语插入；hold down a job 意为「保住一份工作」。译：如果你像如今的大多数作家一样要靠一份工作来付账单，那就很难找到写作的时间。",
+   "option": "正确项 A：If「如果」——「有全职工作」是「难找写作时间」的条件，主句 it's not easy 顺势推出；B Though「尽管」表让步，与「正因打工才难」的因果方向相反；C Once「一旦」表时间条件，此处是假设而非时序；D Unless「除非」表否定条件，逻辑不通。",
+   "keyword": "hold down a job 保住工作；pay the bills 支付账单、谋生＝earn a living；not easy 难＝hard。",
+   "note": "从句（打工）与主句（难找时间）是顺承条件关系，选 If；Though 是最强干扰——「虽然打工」与「难找时间」并非转折而是因果，条件与让步的方向判断是本题关键。"
+  },
+  {
+   "question_id": 1956,
+   "long_sentence": "定位句 it's not easy to find the time to write. But it's not impossible. It requires determination and single-mindedness：it 形式主语；not easy 与 not impossible 构成两级让步；requires 后接两个抽象名词并列。译：要找到写作时间并不容易。但也并非不可能。这需要决心与专注。",
+   "option": "正确项 D：easy「容易的」——not easy 与下句 But it's not impossible 形成「难但可为」的让步递进，requires determination 印证难度存在；A enough 与 not 搭配后语义不通；B strange「奇怪」、C wrong「错误」与「找时间」搭配无逻辑。",
+   "keyword": "not easy 不容易；not impossible 并非不可能（双重否定）；determination 决心；single-mindedness 专注。",
+   "note": "双重否定链是线索：not ___ → But not impossible → requires determination，填 easy 恰好构成「不容易但可能」的坡度；若填 enough 或 strange，下文 But 转折便失去落点。"
+  },
+  {
+   "question_id": 1957,
+   "long_sentence": "定位句 Remember that most bestselling authors began writing when they were doing other things to earn a living：that 宾语从句；when 时间从句；to earn a living 目的状语。译：记住，大多数畅销书作家都是在做别的事谋生时开始写作的。",
+   "option": "正确项 C：Remember「记住」——作者以祈使句提醒读者：名作家也有一边谋生一边写作的先例，为「难但可为」提供事实依据；A Accept「接受」后接事实句语气不合；B Explain「解释」的主语应是第三方；D Suppose「假设」不当——畅销作家兼职写作是事实而非假设。",
+   "keyword": "bestselling author 畅销书作家；earn a living 谋生＝make a living；began writing 开始写作。",
+   "note": "祈使动词的选择看后续句性质：后句是公认事实（most bestselling authors...），宜用 Remember 提醒读者；Suppose 引假设、Accept 表认同，与「引用事实增强说服」的语用不符。"
+  },
+  {
+   "question_id": 1958,
+   "long_sentence": "定位句 And today, even writers who are fairly well-known often have to do other work to supplement their writing income：even 让步强调；who are fairly well-known 定语从句；to supplement 目的状语。译：而如今，即便是相当有名的作家也常常不得不做别的工作来补贴写作收入。",
+   "option": "正确项 A：well-known「有名的」——even 让步的落点：连有名作家都要兼职贴补收入，反差最强，呼应上句 bestselling authors；B well-advised「明智的」、C well-informed「见多识广的」、D well-chosen「精选的」与 even...often have to do other work 不构成反差张力。",
+   "keyword": "well-known 出名的＝famous；supplement 补充、贴补；even 甚至（让步强调词）；writing income 写作收入。",
+   "note": "even 是信号词：让步强调需要极端案例——有名的作家仍要兼职，反差才成立；well- 复合词辨析靠语义张力判断，唯有 well-known 与「仍需补贴收入」形成对照。"
+  },
+  {
+   "question_id": 1959,
+   "long_sentence": "定位句 even writers who are fairly well-known often have to do other work to supplement their writing income：不定式 to supplement... 作目的状语；writing income 意为「写作收入」。译：即便是相当有名的作家也常常不得不做别的工作来补贴写作收入。",
+   "option": "正确项 C：supplement「贴补、补充」——写作收入不足、靠其他工作补足，supplement income 为标准搭配；A donate「捐赠」对象不符；B generate「产生」逻辑颠倒，其他工作产生的是其他收入而非写作收入；D calculate「计算」与语境无关。",
+   "keyword": "supplement 补充、增补＝add to；income 收入；do other work 做其他工作（兼职）；subsidize 贴补（近义）。",
+   "note": "动宾逻辑核对：other work 的收入是「补充」writing income 而非「产生」它，方向别颠倒；本空与上一空 well-known 同句互证，先定「有名的」再定「贴补」。"
+  },
+  {
+   "question_id": 1960,
+   "long_sentence": "定位句 As Harlan Coben has suggested, it's a question of priorities：as 引导非限制性定语从句（正如…所说）；a question of... 为固定表达。译：正如哈兰·科本所言，这是一个优先级问题。",
+   "option": "正确项 C：question「问题」——a question of priorities 为固定搭配「优先级问题」，回扣首段 writing isn't a priority 的论断；A cause「原因」、B purpose「目的」、D condition「条件」与 of priorities 搭配后均不合逻辑。",
+   "keyword": "a question of ……的问题；priority 优先事项；as sb has suggested 正如某人所说。",
+   "note": "习语型名词题：a question of（……的问题）是高频固定搭配；本空复现首段 Coben 的 priority 一词，前后呼应的概念复现是完形高分线索。"
+  },
+  {
+   "question_id": 1961,
+   "long_sentence": "定位句 To make writing a priority, you'll have to sacrifice some of your day-to-day activities and some things you really enjoy：不定式作目的状语；have to 不得不；and 并列两个宾语，第二个宾语带省略 that 的定语从句。译：要让写作成为优先事项，你就得牺牲一些日常活动和一些你真正喜欢的事。",
+   "option": "正确项 B：sacrifice「牺牲」——要腾时间给写作就必须放弃部分活动与爱好，与下文 spending less time watching television、less socialising 全段一致；A highlight「突出」与「让出时间」相反；C continue「继续」正反混淆，继续不产生时间；D explore「探索」无语境。",
+   "keyword": "sacrifice 牺牲＝give up；day-to-day 日常的；make...a priority 使…成为优先。",
+   "note": "本段是「舍弃清单」（少看电视、少社交、少陪家人），sacrifice 是总领词；C continue 是方向性干扰——腾时间靠减法不做加法，先判正反再选词。"
+  },
+  {
+   "question_id": 1962,
+   "long_sentence": "定位句 Depending on your interests and your lifestyle, that might mean spending less time watching television or listening to music：depending on 依据；that 指代「牺牲部分活动」；spend less time doing 花更少时间做某事。译：取决于你的兴趣与生活方式，这可能意味着少花时间看电视或听音乐。",
+   "option": "正确项 B：interests「兴趣」——电视、音乐是典型的兴趣娱乐活动，与上文 some things you really enjoy 呼应；A relations「关系」、C memories「回忆」、D skills「技能」与 watching television or listening to music 的娱乐举例不对应。",
+   "keyword": "depending on 取决于；interests 兴趣、爱好＝hobbies；lifestyle 生活方式；watching television 看电视。",
+   "note": "举例定名词：or 后的 watching television or listening to music 是空格词的具体化，能与二者归为一类的只有 interests；与上文 enjoy 构成同义复现，复现词优先。"
+  },
+  {
+   "question_id": 1963,
+   "long_sentence": "定位句 though some people can write while they listen to music：though 让步从句；while 表「与此同时」引导时间状语从句。译：不过有些人可以边听音乐边写作。",
+   "option": "正确项 C：while「同时」——write 与 listen to music 是可同时进行的两个动作，while 表伴随；A until「直到」、D before「之前」表时序先后，与「边写边听」矛盾；B because「因为」因果不成立。",
+   "keyword": "while 与…同时＝at the same time；listen to music 听音乐；multitask 同时处理多件事（相关表达）。",
+   "note": "判断两动作能否并行：写作与听音乐可同时发生，选 while；本句与上文「少听音乐」构成 though 让步——多数人需少听，例外者可边听边写，逻辑链完整。"
+  },
+  {
+   "question_id": 1964,
+   "long_sentence": "定位句 You might have to cut down on the amount of exercise or sport you do：have to 不得不；the amount of exercise... (that) you do 定语从句省略关系词。译：你可能得削减自己运动或锻炼的量。",
+   "option": "正确项 D：cut down on「削减」——本段「舍弃清单」的延续：减少运动量以腾时间，与 spending less time、less socialising 平行；A put up with「忍受」与「减量」无关；B make up for「弥补」不合逻辑；C hang on to「保留」正反混淆，与腾时间矛盾。",
+   "keyword": "cut down on 削减＝reduce；the amount of ……的量；exercise or sport 锻炼或运动。",
+   "note": "短语动词题看段落主基调：本段做减法，只有 cut down on 是减义；C hang on to（保住）与 D（削减）方向相反，靠 sacrifice 主旨一票定夺。"
+  },
+  {
+   "question_id": 1965,
+   "long_sentence": "定位句 You'll have to make social media an occasional activity rather than a daily, time-consuming habit：make + 宾语 + 宾语补足语结构；rather than 前后对比；time-consuming 耗时的复合形容词。译：你得把社交媒体变成偶尔为之的活动，而非每天耗费大量时间的习惯。",
+   "option": "正确项 B：occasional「偶尔的」——rather than 前后须反义对举：occasional（偶尔）对 daily（每天），正是频率轴上的减时方案；C intensive「密集的」与 daily 同向，无法构成对比；A intelligent「智能的」、D emotional「情绪化的」与频率话题无关。",
+   "keyword": "occasional 偶尔的；time-consuming 耗时的；rather than 而不是；daily 每天的。",
+   "note": "rather than 要求前后对比：daily（每天）的反义是 occasional（偶尔），在频率轴上选词；C intensive 是强度词、不在频率轴上，对比不成立直接排除。"
+  },
+  {
+   "question_id": 1966,
+   "long_sentence": "定位句 You'll have to make social media an occasional activity rather than a daily, time-consuming habit：rather than 连接 an occasional activity 与 a daily, time-consuming habit 两个名词短语作对比。译：你得把社交媒体变成偶尔为之的活动，而非每天耗费大量时间的习惯。",
+   "option": "正确项 A：habit「习惯」——刷社交媒体每天进行、耗时长久，正是 habit 的定义，与 occasional activity 形成「习惯对偶发」的对照；B test「测试」、C decision「决定」、D plan「计划」均非 daily, time-consuming 所能修饰的持续重复行为。",
+   "keyword": "habit 习惯；time-consuming 耗时的；daily, time-consuming habit 每天耗时的习惯；occasional activity 偶尔的活动。",
+   "note": "名词与修饰语互证：daily（每天）＋time-consuming（耗时）指向长期重复行为，唯有 habit；activity 已用于前半句，habit 与 activity 恰成「习惯对偶发」的修辞对照。"
+  },
+  {
+   "question_id": 1967,
+   "long_sentence": "定位句 It's a tough learning curve and it won't always make you popular：learning curve 为比喻「适应过程」；and 并列两个分句。译：这是一条艰难的学习曲线，而且不会总让你受欢迎。",
+   "option": "正确项 A：tough「艰难的」——后半句 it won't always make you popular（可能惹人不满）印证过程之难，与全段牺牲清单的基调一致；B gentle「平缓的」正反混淆，平缓与不受欢迎矛盾；C rapid「快速的」与「难」不搭；D funny「滑稽的」无语境。",
+   "keyword": "learning curve 学习曲线（适应过程的比喻）；tough 艰难的＝hard；make sb popular 使某人受欢迎。",
+   "note": "learning curve 的惯用搭配是 steep（陡峭）或 tough（艰难），与后文「不讨好」的结果一致；B gentle 是反义陷阱——曲线若平缓就不会「不讨喜」，前后矛盾即排除。"
+  },
+  {
+   "question_id": 1968,
+   "long_sentence": "定位句 There's just one thing you should try to keep at least some time for, in addition to your writing—and that's reading：keep time for 为…留出时间；in addition to 介词短语插入；and that's... 强调句型。译：除了写作之外，还有一件事你应尽量保留一些时间——那就是阅读。",
+   "option": "正确项 D：in addition to「除…之外还」——写作之外仍需保留阅读时间，与 just one thing...keep some time for 的补充关系吻合；A in place of「代替」正反混淆，阅读不是写作的替代品；B in charge of「负责」、C in response to「回应」语义不通。",
+   "keyword": "in addition to 除…之外（还）；keep time for 为…留出时间；in place of 代替（强干扰）。",
+   "note": "介词短语题看句间关系：写作是主活动、阅读是另外保留的补充活动，addition 义直接对应；A 项与 in addition to 形近，语义却是「替代」，方向相反须警惕。"
+  },
+  {
+   "question_id": 1969,
+   "long_sentence": "定位句 Any writer needs to read as much and as widely as they can; it's the one indispensable supporter—something you can't do without：as...as they can 表「尽可能」；the one...supporter 比喻阅读是「支持者」；破折号后同位解释。译：任何写作者都需尽可能广泛大量地阅读；它是那个不可或缺的支持者——你离不开的东西。",
+   "option": "正确项 A：indispensable「不可或缺的」——破折号后 something you can't do without 是其同位释义，can't do without＝indispensable；B innovative「创新的」、C invisible「看不见的」、D instant「即时的」与「离不开」的必需义不符。",
+   "keyword": "indispensable 不可或缺的＝essential；can't do without 离不开；supporter 支持者（比喻用法）。",
+   "note": "破折号同位语是释义线索：can't do without 直接对应「不可或缺」；词根拆解辅助验证——dispensable（可舍弃的）加否定前缀 in- 即「不可舍弃」。"
+  },
+  {
+   "question_id": 1970,
+   "long_sentence": "定位句 Time is finite. The older you get, the quicker it seems to go：the + 比较级..., the + 比较级... 结构；it 指代 time；finite 意为「有限的」。译：时间是有限的。年纪越大，它似乎流逝得越快。",
+   "option": "正确项 D：quicker「更快」——描述时间流逝的主观速度，the quicker it seems to go 为惯用表达；A duller「更乏味」、B harder「更难」、C quieter「更安静」与 go（流逝）搭配均不成立。",
+   "keyword": "the + 比较级, the + 比较级 越…越…；finite 有限的＝limited；go 流逝（时间流逝的惯用搭配）。",
+   "note": "时间流逝速度的惯用搭配：time goes quickly/slowly；本句用比较级结构把年龄与速度挂钩，go 的修饰语须为速度词，D 唯一成立。"
+  },
+  {
+   "question_id": 1971,
+   "long_sentence": "定位句 We need to use it as carefully and as productively as we can, that means prioritising our activities so that we spend most time on the things we really want to do：as...as we can 并列两个副词；that means 总括前句；so that 目的从句。译：我们要尽可能仔细且富有成效地利用时间，这意味着给活动排优先级，把最多时间花在真正想做的事上。",
+   "option": "正确项 C：productively「富有成效地」——so that we spend most time on the things we really want 解释「有效利用」，与 carefully 并列构成「用好时间」的两翼；A peacefully「平和地」、B generously「慷慨地」、D gratefully「感激地」与 prioritising activities 的产出逻辑不符。",
+   "keyword": "productively 富有成效地＝effectively；prioritise 按优先级排序；as...as we can 尽可能。",
+   "note": "副词与后文解释互证：that means prioritising...spend most time on what we really want 指向产出导向的时间使用；productively 与 carefully 同为褒义方法词，其余三词情感或方向不符。"
+  },
+  {
+   "question_id": 1972,
+   "long_sentence": "定位句 If you're a writer, that means—above all—writing：that means 总括上文；above all 破折号插入表强调。译：如果你是作家，那就意味着——首要的——写作。",
+   "option": "正确项 D：above all「最重要的是」——全文结论是「把最多时间给最想做的事」，对作家而言头等大事即写作，above all 表强调递进；A at most「至多」表上限，与强调语气矛盾；B in turn「反过来」、C on average「平均」与结论的强调功能不合。",
+   "keyword": "above all 最重要的是＝most importantly；that means 这意味着；at most 至多（形近干扰）。",
+   "note": "破折号间插入语是全文落点：prioritising 的顶端就是 writing，above all 表「首当其冲」；A at most 与 above all 形近义远——一个表上限一个表首要，靠破折号的强调功能区分。"
+  },
+  {
+   "question_id": 1973,
+   "long_sentence": "定位句 These eggs...are still labeled organic, but they're also from birds that live on farms using regenerative agriculture—special techniques to cultivate rich soils that can trap greenhouse gases：using... 现在分词作后置定语；破折号引出解释。译：这些鸡蛋仍贴着有机标签，但也产自采用再生农业——培育可锁住温室气体的肥沃土壤的特殊技术——的农场。",
+   "option": "正确项 D：on specially designed farms＝farms using regenerative agriculture（special techniques），special≈specially designed；A「成本相当低」正反混淆，售价 up to $8 a dozen 属高端定价；B「应普通顾客需求」无中生有，是行业押注的 next big thing；C「作为有机蛋替代」正反混淆，still labeled organic 是标签叠加而非替代。",
+   "keyword": "regenerative agriculture 再生农业；trap greenhouse gases 锁住温室气体；debut 首次亮相；premium 高端的。",
+   "note": "细节题抓破折号定义：regenerative agriculture＝special techniques，D 的 specially designed 与 special 复现；C 项利用 still labeled organic 设「替代」陷阱，still 表明是在原有标签之上加成。"
+  },
+  {
+   "question_id": 1974,
+   "long_sentence": "定位句 is adding more cover crops that draw worms and crickets for the chickens to eat. The birds' waste then fertilizes fields：that draw... 定语从句；for the chickens to eat 不定式复合结构；then 承接循环。译：（他）正在增种覆盖作物，以吸引蠕虫和蟋蟀供鸡食用。鸡的粪便随后又为田地施肥。",
+   "option": "正确项 C：creating a sustainable system——覆盖作物养虫喂鸡、鸡粪肥田构成闭环，且引语 good for the land, the hens, and the eggs 三方受益，正是可持续循环系统；A「减少蠕虫危害」偷换概念，worms 是被吸引来喂鸡的食物；B「加速废料处理」偷换概念，waste 是去 fertilizes fields 变资源；D「吸引顾客」无中生有，Brown 兴奋的是农艺循环。",
+   "keyword": "cover crops 覆盖作物；forage 觅食；fertilize 施肥；sustainable 可持续的＝eco-friendly。",
+   "note": "例证结构题：Brown 的进步是「作物→虫→鸡→粪→田」的物质循环，A/B 正是摘出 worms、waste 单环后扭曲其角色；sustainable 是循环系统的标签词，引语三受益是佐证。"
+  },
+  {
+   "question_id": 1975,
+   "long_sentence": "定位句 In barely more than a decade, organic eggs went from being dismissed as a niche product in natural foods stores to being sold at Walmart：went from...to... 表「从…到…」的转变；dismissed as 被斥为；niche product 小众产品。译：在短短十来年间，有机蛋从在天然食品店被当作小众产品遭人看扁，走到了在沃尔玛上架销售。",
+   "option": "正确项 C：the potential of regenerative products——有机蛋、益生菌、植物肉的「被质疑→爆红」轨迹为 sustainable-egg rollout 的前景作铺垫，结尾 open the floodgates for regenerative beef, broccoli, and beyond 点明再生产品的潜力；A「对天然饲料的质疑」偷换概念，质疑对象是产品前景；B「蛋业挫折」无中生有，例子讲的是逆袭；D「超市促销成功」张冠李戴，Walmart 只是渠道细节。",
+   "keyword": "niche product 小众产品；open the floodgates 打开闸门（喻引出大量同类）；rollout 推出、上市；explode into 爆发成。",
+   "note": "例证题看例子服务的结论：organic eggs→probiotics→plant-based meats 三例连排，共同指向 If the sustainable-egg rollout is successful 的类推，C 的 potential 即 floodgates 的比喻义；D 的超市只是例子细节，例证题不选细节。"
+  }
+ ]
+}
