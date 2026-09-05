@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Flame, NotebookPen, Sprout, Target, Zap } from 'lucide-vue-next'
 // v9.33: 新手引导 Onboarding——4 步完成激活（选目标→选题库→首练→勋章）
 // 设计依据: 千轮研究 2026-08-23《墨题用户体验完善》
 //   - 引导 ≤4 步, 完成首练即 Aha Moment（错题自动进错题本）
@@ -16,9 +17,9 @@ const step = ref(1)
 
 // 步骤 1: 学习目标（3 选 1, 鼓励中高目标）
 const goals = [
-  { key: 'casual', label: '轻松练', desc: '每天 10 题 · 保持手感', value: 10, icon: '🌱' },
-  { key: 'steady', label: '稳步提升', desc: '每天 30 题 · 系统刷完', value: 30, icon: '⚡' },
-  { key: 'sprint', label: '冲刺备考', desc: '每天 50 题 · 全力以赴', value: 50, icon: '🔥' },
+  { key: 'casual', label: '轻松练', desc: '每天 10 题 · 保持手感', value: 10, icon: Sprout },
+  { key: 'steady', label: '稳步提升', desc: '每天 30 题 · 系统刷完', value: 30, icon: Zap },
+  { key: 'sprint', label: '冲刺备考', desc: '每天 50 题 · 全力以赴', value: 50, icon: Flame },
 ]
 const pickedGoal = ref<number>(0)
 const exam = localStorage.getItem('epm_exam_type') || ''
@@ -70,13 +71,13 @@ defineExpose({ markOnboardDone })
 
         <!-- Step 1: 选学习目标 -->
         <template v-if="step === 1">
-          <h2 class="onb-title">👋 欢迎！设个小目标</h2>
+          <h2 class="onb-title">欢迎！设个小目标</h2>
           <p class="onb-sub">有目标的练习者坚持率高出 3 倍。选一个适合自己的节奏：</p>
           <button
             v-for="g in goals" :key="g.key"
             class="goal-card" @click="pickGoal(g)"
           >
-            <span class="goal-icon">{{ g.icon }}</span>
+            <span class="goal-icon"><component :is="g.icon" :size="20" aria-hidden="true" /></span>
             <span class="goal-body">
               <b>{{ g.label }}</b>
               <small>{{ g.desc }}</small>
@@ -87,10 +88,10 @@ defineExpose({ markOnboardDone })
 
         <!-- Step 2: 最短路径入口 -->
         <template v-else-if="step === 2">
-          <h2 class="onb-title">🎯 目标 {{ pickedGoal }} 题/天</h2>
+          <h2 class="onb-title"><Target :size="18" aria-hidden="true" />目标 {{ pickedGoal }} 题/天</h2>
           <p class="onb-sub">{{ entryRoute.hint }}。完成第一次练习后，错题会自动收进错题本。</p>
           <button class="goal-card primary" @click="goEntry">
-            <span class="goal-icon">📝</span>
+            <span class="goal-icon"><NotebookPen :size="20" aria-hidden="true" /></span>
             <span class="goal-body"><b>{{ entryRoute.label }}</b><small>完成首练 → 解锁「初出茅庐」徽章</small></span>
             <span class="goal-arrow">›</span>
           </button>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { CalendarDays } from 'lucide-vue-next'
 // v2.49: 目标中心 (独立目标页 — 每日答题目标 + 达成历史)
 import { computed, onMounted, ref } from 'vue'
 import { get } from '../api'
@@ -72,7 +73,7 @@ onMounted(async () => {
         </svg>
         <div class="goal-ring-text">
           <b class="rank-num">{{ goalPct }}%</b>
-          <span>{{ goalDone ? '🎉 今日达标' : '今日目标' }}</span>
+          <span>{{ goalDone ? '今日达标' : '今日目标' }}</span>
         </div>
       </div>
       <div class="goal-info">
@@ -93,9 +94,9 @@ onMounted(async () => {
 
     <!-- 近 14 天达成历史 -->
     <div class="card report-panel">
-      <h3>📆 近 14 天达成</h3>
+      <h3 class="icon-h3"><CalendarDays :size="15" aria-hidden="true" />近 14 天达成</h3>
       <div class="goal-history">
-        <div v-for="(h, i) in history" :key="i" class="goal-day" :class="{ done: h.done }" :title="`${h.day} · ${h.count} 题${h.done ? ' ✅' : ''}`">
+        <div v-for="(h, i) in history" :key="i" class="goal-day" :class="{ done: h.done }" :title="`${h.day} · ${h.count} 题`">
           <span class="goal-day-bar" :style="{ height: Math.max(4, Math.min(100, (h.count / Math.max(dailyGoal, 1)) * 100)) + '%' }"></span>
           <span class="goal-day-label">{{ h.day.slice(5).replace('-', '/') }}</span>
         </div>

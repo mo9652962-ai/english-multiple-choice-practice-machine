@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import {
+  BookMarked,
+  CalendarDays,
+  Lightbulb,
+  NotebookPen,
+  Repeat,
   BookOpenText,
   Brain,
   ChevronDown,
@@ -448,25 +453,25 @@ function analysisLabel(unitIds: number[]): string {
       </div>
       <div style="display:flex;gap:8px">
         <button class="button primary" type="button" @click="router.push('/diagnostic')">
-          🧠 学习诊断
+          <Brain :size="15" aria-hidden="true" />学习诊断
         </button>
         <button class="button ghost" type="button" :disabled="exporting" @click="exportWrong">
           {{ exporting ? '导出中…' : '导出错题' }}
         </button>
         <!-- v2.37: 打印错题卷 (粉笔式出卷) -->
         <button class="button" type="button" :disabled="paperExporting" @click="exportWrongPaper">
-          {{ paperExporting ? '生成中…' : '📄 错题卷' }}
+          {{ paperExporting ? '生成中…' : '<FileText :size="15" aria-hidden="true" />错题卷' }}
         </button>
         <!-- v9.28: Gemini batch5 任务4——精讲典藏入口 -->
         <button class="button ghost" type="button" @click="router.push('/collections')">
-          📌 典藏
+          <BookMarked :size="15" aria-hidden="true" />典藏
         </button>
       </div>
     </div>
 
     <!-- v9.28: Gemini batch5 任务3——错题 SRS 今日复习 -->
     <div v-if="reviewDue > 0" class="card report-panel freq-card">
-      <h3>🗓️ 今日复习 <small class="freq-sub">{{ reviewDue }} 题到期 · 按遗忘曲线排序 · 考前每天巩固</small></h3>
+      <h3><CalendarDays :size="17" aria-hidden="true" class="icon-h3" />今日复习 <small class="freq-sub">{{ reviewDue }} 题到期 · 按遗忘曲线排序 · 考前每天巩固</small></h3>
       <div class="freq-grid">
         <button
           v-for="(item, i) in reviewItems.slice(0, 10)" :key="item.question_id"
@@ -476,7 +481,7 @@ function analysisLabel(unitIds: number[]): string {
           <span class="freq-body">
             <span class="freq-stem">{{ item.stem }}</span>
             <span class="freq-meta">
-              <i class="freq-badge" style="background:var(--zhuqing-light,rgba(74,95,78,.12));color:var(--zhuqing,#4A5F4E)">🔄 {{ item.interval }} 天间隔</i>
+              <i class="freq-badge" style="background:var(--zhuqing-light,rgba(74,95,78,.12));color:var(--zhuqing,#4A5F4E)"><RefreshCw :size="11" aria-hidden="true" />{{ item.interval }} 天间隔</i>
               <i>ease {{ item.ease }}</i>
               <i v-if="item.wrong_count">错 {{ item.wrong_count }} 次</i>
             </span>
@@ -487,7 +492,7 @@ function analysisLabel(unitIds: number[]): string {
 
     <!-- v2.42: 高频错题 TOP + 错因分布 (猿题库考点归因) -->
     <div v-if="wrongStats?.top?.length" class="card report-panel freq-card">
-      <h3>🔁 高频错题 TOP{{ wrongStats.top.length }} <small class="freq-sub">按重复出错次数排序 · 考前优先攻克</small></h3>
+      <h3><Repeat :size="17" aria-hidden="true" class="icon-h3" />高频错题 TOP{{ wrongStats.top.length }} <small class="freq-sub">按重复出错次数排序 · 考前优先攻克</small></h3>
       <div class="freq-grid">
         <button
           v-for="(item, i) in wrongStats.top.slice(0, 5)" :key="item.id"
@@ -503,7 +508,7 @@ function analysisLabel(unitIds: number[]): string {
             </span>
             <!-- v2.46: 我的分析笔记 (粉笔式) -->
             <span class="freq-note" :class="{ has: item.note }" @click.stop="toggleNote(item)">
-              📝 <span>{{ item.note ? '我的分析' : '记笔记' }}</span>
+              <NotebookPen :size="12" aria-hidden="true" /><span>{{ item.note ? '我的分析' : '记笔记' }}</span>
             </span>
             <span v-if="noteEditing === item.id" class="freq-note-editor" @click.stop>
               <textarea v-model="noteDraft" rows="2" maxlength="500" placeholder="写下你的分析：错因、思路、提醒…"></textarea>
@@ -714,7 +719,7 @@ function analysisLabel(unitIds: number[]): string {
   <div v-if="aiVariantOpen" class="modal-backdrop" @click.self="aiVariantOpen = false">
     <div class="modal-card ai-variant-modal">
       <div class="modal-header">
-        <h3>🧠 AI 变体题</h3>
+        <h3><Brain :size="17" aria-hidden="true" class="icon-h3" />AI 变体题</h3>
         <button class="modal-close" type="button" @click="aiVariantOpen = false">×</button>
       </div>
       <p class="ai-variant-note">基于你的错题考点，AI 生成的相似题（举一反三）</p>
@@ -728,8 +733,8 @@ function analysisLabel(unitIds: number[]): string {
               <span class="ai-variant-key">{{ ['A','B','C','D'][oi] }}.</span> {{ o }}
             </div>
           </div>
-          <div class="ai-variant-answer">✅ 答案：{{ q.answer || '见解析' }}</div>
-          <div v-if="q.explain" class="ai-variant-explain">💡 {{ q.explain }}</div>
+          <div class="ai-variant-answer">答案：{{ q.answer || '见解析' }}</div>
+          <div v-if="q.explain" class="ai-variant-explain"><Lightbulb :size="13" aria-hidden="true" /> {{ q.explain }}</div>
         </div>
       </div>
     </div>

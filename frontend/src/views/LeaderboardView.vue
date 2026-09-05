@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { BarChart3, Gem, Medal, Sprout } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
 import { get } from '../api'
 
@@ -66,7 +67,7 @@ function maxCount(): number {
 
       <!-- 本周每日答题柱状 -->
       <div class="card report-panel">
-        <h3>📊 本周每日答题</h3>
+        <h3 class="icon-h3"><BarChart3 :size="15" aria-hidden="true" />本周每日答题</h3>
         <div class="answered-trend">
           <div v-for="(t, i) in data.days" :key="i" class="answered-bar-wrap" :title="`${t.day} 答题 ${t.count} 题`">
             <div class="answered-bar" :style="{ height: Math.max(4, (t.count / maxCount()) * 100) + '%' }"></div>
@@ -77,13 +78,13 @@ function maxCount(): number {
 
       <!-- 段位说明 -->
       <div class="card report-panel">
-        <h3>🏅 段位规则</h3>
+        <h3 class="icon-h3"><Medal :size="15" aria-hidden="true" />段位规则</h3>
         <div class="rank-rules">
-          <span class="rank-rule"><i>💎</i> 钻石 · 本周 300+ 题</span>
-          <span class="rank-rule"><i>🥇</i> 黄金 · 本周 150+ 题</span>
-          <span class="rank-rule"><i>🥈</i> 白银 · 本周 60+ 题</span>
-          <span class="rank-rule"><i>🥉</i> 青铜 · 本周有练习</span>
-          <span class="rank-rule"><i>🌱</i> 未开始</span>
+          <span class="rank-rule"><i class="tier tier-diamond"><Gem :size="12" aria-hidden="true" /></i> 钻石 · 本周 300+ 题</span>
+          <span class="rank-rule"><i class="tier tier-gold"><Medal :size="12" aria-hidden="true" /></i> 黄金 · 本周 150+ 题</span>
+          <span class="rank-rule"><i class="tier tier-silver"><Medal :size="12" aria-hidden="true" /></i> 白银 · 本周 60+ 题</span>
+          <span class="rank-rule"><i class="tier tier-bronze"><Medal :size="12" aria-hidden="true" /></i> 青铜 · 本周有练习</span>
+          <span class="rank-rule"><i class="tier"><Sprout :size="12" aria-hidden="true" /></i> 未开始</span>
         </div>
       </div>
     </div>

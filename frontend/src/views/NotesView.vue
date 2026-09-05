@@ -3,7 +3,7 @@
 // v3.2: 合并入口 — 错题本 / 单词本 / 我的笔记 三合一（移动端底部导航"笔记"）
 import { onMounted, ref, computed } from 'vue'
 import { get, put, del } from '../api'
-import { BookMarked, Search, Download, RefreshCw, Tag } from 'lucide-vue-next'
+import { BookMarked, PenLine, RefreshCw, Search, Download, Tag, Trash2 } from 'lucide-vue-next'
 import WrongView from './WrongView.vue'
 import VocabularyView from './VocabularyView.vue'
 
@@ -196,8 +196,8 @@ async function refreshStats() {
             <time class="note-item-time">{{ n.created_at }}</time>
           </span>
           <div class="note-item-actions">
-            <button type="button" class="note-action-btn" title="编辑笔记" @click="editing = { id: n.id, note: n.note || '', tag: n.tag || '' }">✏️</button>
-            <button type="button" class="note-action-btn danger" title="删除" @click="removeNote(n.id)">🗑</button>
+            <button type="button" class="note-action-btn" title="编辑笔记" @click="editing = { id: n.id, note: n.note || '', tag: n.tag || '' }"><PenLine :size="14" aria-hidden="true" /></button>
+            <button type="button" class="note-action-btn danger" title="删除" @click="removeNote(n.id)"><Trash2 :size="14" aria-hidden="true" /></button>
           </div>
         </div>
         <blockquote class="note-item-quote"><mark :class="colorClass(n.color)">{{ n.text }}</mark></blockquote>
@@ -210,7 +210,7 @@ async function refreshStats() {
     <div v-if="reviewMode" class="ann-note-overlay" @click.self="reviewMode = false">
       <div class="ann-note-card review-card-note">
         <div class="ann-note-head">
-          <span class="ann-note-title">🔄 复习笔记 · {{ reviewIndex + 1 }}/{{ reviewItems.length }}</span>
+          <span class="ann-note-title"><RefreshCw :size="13" aria-hidden="true" />复习笔记 · {{ reviewIndex + 1 }}/{{ reviewItems.length }}</span>
           <button type="button" class="ann-note-close" @click="reviewMode = false">✕</button>
         </div>
         <template v-if="reviewItems[reviewIndex]">
@@ -235,7 +235,7 @@ async function refreshStats() {
     <div v-if="editing" class="ann-note-overlay" @click.self="editing = null">
       <div class="ann-note-card">
         <div class="ann-note-head">
-          <span class="ann-note-title">✏️ 编辑笔记</span>
+          <span class="ann-note-title"><PenLine :size="13" aria-hidden="true" />编辑笔记</span>
           <button type="button" class="ann-note-close" @click="editing = null">✕</button>
         </div>
         <div class="edit-tag-row">

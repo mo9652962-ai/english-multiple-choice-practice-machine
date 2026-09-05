@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { BarChart3, Brain, ClipboardList, Flame, LayoutGrid, Lightbulb, Target, TrendingUp } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { get } from '../api'
 import CountUp from '../components/CountUp.vue'
@@ -118,7 +119,7 @@ const memoryCurvePoints = computed(() => {
 
       <!-- 级别汇总 (全部类别) -->
       <div v-if="report.by_profile?.length" class="report-panel card">
-        <h3>🗂️ 全部级别汇总</h3>
+        <h3><LayoutGrid :size="15" aria-hidden="true" />全部级别汇总</h3>
         <div class="profile-grid">
           <div v-for="p in report.by_profile" :key="p.profile_id" class="profile-card" :class="{ 'profile-active': p.profile_id === report.active_profile?.id }">
             <div class="profile-head">
@@ -137,7 +138,7 @@ const memoryCurvePoints = computed(() => {
 
       <!-- v2.35: 学习热力图 (GitHub 风格打卡) -->
       <div v-if="heatmap?.cells?.length" class="card report-panel heatmap-panel">
-        <h3>🔥 学习热力图（近 16 周）</h3>
+        <h3><Flame :size="15" aria-hidden="true" />学习热力图（近 16 周）</h3>
         <p class="lead" style="font-size:12px;color:var(--muted);margin-bottom:12px">颜色越深，当天学习越投入 · 共 {{ heatmap.total }} 次活动</p>
         <div class="heatmap-grid">
           <div v-for="(week, wi) in heatmapWeeks()" :key="wi" class="heatmap-week">
@@ -159,7 +160,7 @@ const memoryCurvePoints = computed(() => {
       <div class="grid grid-2 report-main">
         <!-- 正确率趋势 -->
         <div class="card report-panel">
-          <h3>📈 正确率趋势（近30天 · 全级别）</h3>
+          <h3><TrendingUp :size="15" aria-hidden="true" />正确率趋势（近30天 · 全级别）</h3>
           <div v-if="report.trend.length" class="trend-chart">
             <div v-for="(t, i) in report.trend" :key="i" class="trend-bar-wrap">
               <div class="trend-bar" :class="rateClass(t.rate)" :style="{ height: Math.max(6, t.rate) + '%' }" :title="`${t.day} 正确率 ${t.rate}% (${t.total}题)`"></div>
@@ -171,7 +172,7 @@ const memoryCurvePoints = computed(() => {
 
         <!-- v3.3: 词汇记忆曲线（墨墨式——近30天复习认识率） -->
         <div class="card report-panel">
-          <h3>🧠 词汇记忆曲线（近30天）</h3>
+          <h3><Brain :size="15" aria-hidden="true" />词汇记忆曲线（近30天）</h3>
           <div v-if="report?.vocabulary_trend?.length" class="memory-curve">
             <svg :viewBox="`0 0 ${Math.max(280, report.vocabulary_trend.length * 24)} 120`" preserveAspectRatio="none" class="memory-curve-svg">
               <polyline :points="memoryCurvePoints" fill="none" stroke="#486d5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -184,7 +185,7 @@ const memoryCurvePoints = computed(() => {
 
         <!-- v2.41: 本周战报 (墨墨式数据亮点: 本周 vs 上周) -->
         <div class="card report-panel week-report-card">
-          <h3>📈 本周战报</h3>
+          <h3><ClipboardList :size="15" aria-hidden="true" />本周战报</h3>
           <div v-if="report?.week_compare" class="week-report-grid">
             <div class="week-report-item">
               <span class="wr-label">本周答题</span>
@@ -220,7 +221,7 @@ const memoryCurvePoints = computed(() => {
 
         <!-- v2.38: 练习量趋势 (近14天) -->
         <div class="card report-panel">
-          <h3>📊 练习量趋势（近14天）</h3>
+          <h3><BarChart3 :size="15" aria-hidden="true" />练习量趋势（近14天）</h3>
           <div v-if="answeredTrendMax" class="answered-trend">
             <div v-for="(t, i) in report.answered_trend" :key="i" class="answered-bar-wrap" :title="`${t.day} 答题 ${t.count} 题`">
               <div class="answered-bar" :style="{ height: Math.max(4, (t.count / answeredTrendMax) * 100) + '%' }"></div>
@@ -232,7 +233,7 @@ const memoryCurvePoints = computed(() => {
 
         <!-- 题型能力雷达 -->
         <div class="card report-panel">
-          <h3>🎯 题型能力（全级别汇总）</h3>
+          <h3><Target :size="15" aria-hidden="true" />题型能力（全级别汇总）</h3>
           <div v-if="report.by_type.length" class="radar-wrap">
             <svg viewBox="0 0 120 120" class="radar">
               <polygon points="60,12 108,60 60,108 12,60" fill="none" stroke="var(--line)" stroke-width="0.5" />
@@ -253,7 +254,7 @@ const memoryCurvePoints = computed(() => {
 
       <!-- 智能建议 -->
       <div v-if="report.suggestions?.length" class="card report-panel">
-        <h3>💡 智能建议</h3>
+        <h3><Lightbulb :size="15" aria-hidden="true" />智能建议</h3>
         <ul class="suggest-list">
           <li v-for="(s, i) in report.suggestions" :key="i">{{ s }}</li>
         </ul>

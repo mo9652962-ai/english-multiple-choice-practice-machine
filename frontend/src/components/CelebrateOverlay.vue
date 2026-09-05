@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Flame } from 'lucide-vue-next'
 // v2.40: 庆祝动效覆盖层 (多邻国式 micro-interaction)
 // 触发: 练习高正确率撒花 / 打卡里程碑火焰
 import { onMounted, ref } from 'vue'
@@ -46,7 +47,7 @@ onMounted(() => {
         ></span>
         <!-- 火焰 (打卡里程碑) -->
         <div v-if="kind === 'flame'" class="celebrate-flame-wrap">
-          <span class="celebrate-flame">🔥</span>
+          <span class="celebrate-flame"><Flame :size="64" aria-hidden="true" /></span>
         </div>
         <!-- 墨滴扩散 (撒花) -->
         <div v-else class="celebrate-ink" aria-hidden="true"></div>

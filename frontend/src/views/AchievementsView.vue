@@ -35,7 +35,7 @@ onMounted(async () => {
             <i :style="{ width: b.percent + '%' }"></i>
           </div>
           <span class="achieve-meta">
-            <template v-if="b.earned">✅ {{ b.earned_at }}</template>
+            <template v-if="b.earned">{{ b.earned_at }}</template>
             <template v-else>{{ b.progress }}/{{ b.target }}</template>
           </span>
         </div>

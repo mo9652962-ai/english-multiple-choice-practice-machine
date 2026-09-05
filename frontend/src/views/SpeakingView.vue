@@ -1,7 +1,7 @@
 <template>
   <div class="page speaking-page">
     <div class="page-head">
-      <h2>🎧 AI 口语陪练</h2>
+      <h2><Headphones :size="18" aria-hidden="true" />AI 口语陪练</h2>
       <p class="muted">考研复试仿真 · 日常流利度 · 发音纠偏 —— 浏览器原生语音（零服务器开销）</p>
     </div>
 
@@ -20,7 +20,7 @@
         <div class="orbit-wrap" :class="{ speaking: listening || speaking }">
           <div class="orbit-ring ring-1"></div>
           <div class="orbit-ring ring-2"></div>
-          <div class="orbit-core">{{ listening ? '🎙' : '🤝' }}</div>
+          <div class="orbit-core"><component :is="listening ? Mic : Hand" :size="30" aria-hidden="true" /></div>
         </div>
         <div class="orbit-status">
           {{ listening ? '倾听中…' : (speaking ? '考官播报中…' : '点击按钮或按空格说话') }}
@@ -33,7 +33,7 @@
           <!-- 考官开场/回应 -->
           <div v-if="t.role === 'assistant'" class="bubble examiner">
             <p class="bubble-text">{{ t.content }}</p>
-            <button v-if="t.audio" class="bubble-audio" @click="speakText(t.content)">🔊 重听</button>
+            <button v-if="t.audio" class="bubble-audio" @click="speakText(t.content)"><Volume2 :size="13" aria-hidden="true" />重听</button>
           </div>
           <!-- 学生回答 -->
           <div v-else class="bubble student">
@@ -44,26 +44,26 @@
                 <span class="corr-reason">{{ c.reason }}</span>
               </div>
             </div>
-            <p v-if="t.feedback?.native_upgrade" class="native-upgrade">✨ {{ t.feedback.native_upgrade }}</p>
+            <p v-if="t.feedback?.native_upgrade" class="native-upgrade"><Sparkles :size="13" aria-hidden="true" /> {{ t.feedback.native_upgrade }}</p>
           </div>
         </div>
 
         <!-- 输入区 -->
         <div class="speaking-input">
           <button class="button auto-btn" :class="{ active: autoMode }" @click="autoMode ? stopAutoMode() : startAutoMode()" :disabled="speaking">
-            {{ autoMode ? '⏹ 关闭自动切句' : '✨ 自动切句' }}
+            {{ autoMode ? '关闭自动切句' : '自动切句' }}
           </button>
           <button class="button offline-btn" :class="{ active: offlineMode }" @click="offlineMode = !offlineMode" :disabled="autoMode || speaking">
-            {{ offlineMode ? '📶 离线识别已开' : '📴 离线识别' }}
+            {{ offlineMode ? '离线识别已开' : '离线识别' }}
           </button>
           <button class="mic-btn" :class="{ active: listening }" @click="toggleListen" :disabled="speaking || autoMode">
-            {{ listening ? '⏹ 完成' : '🎙 按住说话' }}
+            {{ listening ? '完成' : '按住说话' }}
           </button>
           <input v-model="textInput" class="text-input" placeholder="或直接输入英文回答…" @keyup.enter="sendTurn()" :disabled="listening || speaking" />
           <button class="button send-btn" @click="sendTurn()" :disabled="!textInput.trim() || listening || speaking">发送</button>
         </div>
         <div class="speaking-actions">
-          <button class="button ghost compact" @click="finish">📜 结束并评分</button>
+          <button class="button ghost compact" @click="finish"><FileText :size="14" aria-hidden="true" />结束并评分</button>
           <span class="hint">PC 端按 <kbd>Space</kbd> 开始/停止录音</span>
         </div>
       </div>
@@ -71,7 +71,7 @@
 
     <!-- 结课报告 -->
     <div v-if="report" class="card speaking-report">
-      <h3>📜 口语诊断报告</h3>
+      <h3><FileText :size="16" aria-hidden="true" />口语诊断报告</h3>
       <div class="report-grid">
         <div v-for="(v, k) in report.dimensions" :key="k" class="report-dim">
           <span class="dim-label">{{ dimLabel(String(k)) }}</span>
@@ -82,7 +82,7 @@
       <p class="report-summary">{{ report.summary }}</p>
       <!-- v9.28: Gemini batch5 任务4——本场亮点表达 -->
       <div v-if="nativeHighlights.length" class="native-highlights">
-        <h4>✨ 本场 Native 亮点表达</h4>
+        <h4><Sparkles :size="14" aria-hidden="true" />本场 Native 亮点表达</h4>
         <div v-for="(h, i) in nativeHighlights" :key="i" class="native-highlight-item">{{ h }}</div>
       </div>
       <button class="button ghost" @click="resetAll">再来一场</button>
@@ -91,6 +91,7 @@
 </template>
 
 <script setup lang="ts">
+import { FileText, Hand, Headphones, Mic, Sparkles, Volume2 } from 'lucide-vue-next'
 import { onBeforeUnmount, ref } from 'vue'
 import { get, post } from '../api'
 import { VADAudioManager } from '../libs/vad/manager'

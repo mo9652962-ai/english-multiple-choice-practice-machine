@@ -4993,3 +4993,59 @@ body.ink-landscape::before {
 .heatmap-cell[data-level="4"], .heat-cell[data-level="4"] { background: var(--accent-vermilion); }
 :root.dark .heatmap-cell[data-level="0"], :root.dark .heat-cell[data-level="0"] { background: rgba(255, 255, 255, 0.05); }
 .page-vocab .page-head .button { white-space: nowrap; }
+.report-panel h3 { display: flex; align-items: center; gap: 6px; }
+.freq-card h3 { display: flex; align-items: center; gap: 7px; }
+.freq-card h3 .icon-h3 { display: inline-flex; }
+.ann-bubble-btn, .ann-note-title { display: inline-flex; align-items: center; gap: 5px; }
+.vocab-cat-chip, .vocab-cat-chip.active, .bubble-audio, .native-upgrade { display: inline-flex; align-items: center; gap: 5px; }
+.orbit-core { display: grid; place-items: center; }
+/* R19 扫尾适配 */
+.drawer-body h4, .ai-variant-modal h3 { display: flex; align-items: center; gap: 6px; }
+.wa-kp-guidance, .rank-rule { display: inline-flex; align-items: center; gap: 5px; }
+.rank-rule i.tier { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--primary-faint); color: var(--bamboo); font-style: normal; }
+.rank-rule i.tier-diamond { color: #7aa7c7; }
+.rank-rule i.tier-gold { color: var(--gold); }
+.rank-rule i.tier-silver { color: #9aa0a6; }
+.rank-rule i.tier-bronze { color: #b0793d; }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; background: var(--muted); }
+.status-dot.on { background: var(--success); box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 18%, transparent); }
+.onb-title { display: inline-flex; align-items: center; gap: 7px; }
+.goal-icon { display: grid; place-items: center; color: var(--primary); }
+.ok-count { color: var(--success); font-weight: 800; }
+.bad-count { color: var(--danger); font-weight: 800; }
+.word-freq-tag { display: inline-flex; align-items: center; gap: 4px; }
+
+/* ════════════════════════════════════════════════════════════════
+   v20-v23 十轮收尾 (2026-09): 空状态印章 / 徽章弹性入场 / AI 打字指示器
+   ════════════════════════════════════════════════════════════════ */
+/* R20 空状态: 水墨印章 "空" 字 + 语气引导 (NN/g: 空状态 = 图形 + 人话 + 下一步) */
+.card.empty::before {
+  content: '空'; display: grid; place-items: center;
+  width: 46px; height: 46px; margin: 0 auto 12px;
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: var(--r-sm); color: var(--accent); opacity: .55;
+  font-family: "STKaiti", "KaiTi", "Noto Serif SC", serif; font-size: 21px; font-weight: 700;
+  transform: rotate(-2deg);
+}
+.card.empty .button { margin-top: 4px; }
+
+/* R21 成就徽章解锁弹性入场 (--motion-spring 强调曲线 + stagger) */
+@keyframes badge-pop { from { opacity: 0; transform: scale(.55) rotate(-3deg); } to { opacity: 1; transform: none; } }
+.achieve-card.earned { animation: badge-pop .5s var(--motion-spring) backwards; }
+.achieve-card.earned:nth-child(2) { animation-delay: 60ms; }
+.achieve-card.earned:nth-child(3) { animation-delay: 120ms; }
+.achieve-card.earned:nth-child(4) { animation-delay: 180ms; }
+.achieve-card.earned:nth-child(5) { animation-delay: 240ms; }
+.achieve-card.earned:nth-child(n+6) { animation-delay: 300ms; }
+
+/* R23 AI 打字指示器: 三点跳动 (2026 AI 对话标配) */
+.typing-dots { display: inline-flex; align-items: center; gap: 4px; }
+.typing-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: typing-bounce 1.2s var(--ease) infinite; }
+.typing-dots i:nth-child(2) { animation-delay: .15s; }
+.typing-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes typing-bounce { 0%, 60%, 100% { transform: none; opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .achieve-card.earned { animation: none; }
+  .typing-dots i { animation: none; opacity: .6; }
+}

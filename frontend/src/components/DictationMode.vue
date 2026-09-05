@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // 单词听写模式 — 听发音 → 拼写 → 判分
 // 参考: 不背单词"随身听" + 墨墨听写 (研究 2026-08)
-import { Check, RefreshCw, Volume2, X } from 'lucide-vue-next'
+import { Check, Headphones, RefreshCw, Volume2, X } from 'lucide-vue-next'
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { speak, stop as stopTts } from '../services/tts'
 
@@ -131,7 +131,7 @@ const accuracy = computed(() => {
     <div class="dictation-card">
       <header class="dictation-header">
         <div>
-          <h3>🎧 听写模式</h3>
+          <h3 class="icon-h3"><Headphones :size="16" aria-hidden="true" />听写模式</h3>
           <span class="muted">{{ idx + 1 }} / {{ words.length }}</span>
         </div>
         <div class="dictation-mode-switch">
@@ -184,11 +184,11 @@ const accuracy = computed(() => {
               <X :size="18" /> 正确答案：<strong>{{ current.term }}</strong>
               <span class="meaning">{{ current.common_meaning || current.contextual_meaning }}</span>
             </template>
-            <button class="dictation-listen" @click="playWord">🔊 再听一遍</button>
+            <button class="dictation-listen" @click="playWord"><Volume2 :size="13" aria-hidden="true" />再听一遍</button>
           </div>
 
           <div v-if="current.latest_sentence" class="dictation-sentence">
-            <button class="button ghost compact" @click="playSentence">🔊 听例句</button>
+            <button class="button ghost compact" @click="playSentence"><Volume2 :size="13" aria-hidden="true" />听例句</button>
             <p>{{ current.latest_sentence }}</p>
           </div>
 
@@ -203,8 +203,8 @@ const accuracy = computed(() => {
       </div>
 
       <footer class="dictation-footer">
-        <span class="ok-count">✅ {{ correctCount }}</span>
-        <span class="bad-count">❌ {{ wrongCount }}</span>
+        <span class="ok-count">{{ correctCount }}</span>
+        <span class="bad-count">{{ wrongCount }}</span>
         <span class="muted">准确率 {{ accuracy }}%</span>
         <button v-if="finished" class="button compact" @click="restart"><RefreshCw :size="15" />再来一轮</button>
       </footer>

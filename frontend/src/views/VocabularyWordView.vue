@@ -6,6 +6,16 @@ import { useRoute, useRouter } from 'vue-router'
 import { get, put } from '../api'
 import { sanitizeHtml } from '../services/sanitize'  // v9.24: XSS 防护
 import { ArrowLeft, BookOpen, Check, Headphones, RefreshCw, Star, Volume2 } from 'lucide-vue-next'
+
+// R22: 例句目标词朱砂高亮 (词根+常见词形后缀, 与词文串学同款 mark)
+function highlightForms(sentence: string): string {
+  const term = String(word.value?.lemma || word.value?.term || '').trim()
+  if (!term || !sentence) return sentence
+  const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  try {
+    return sentence.replace(new RegExp('\\b(' + esc + "(?:s|es|ed|ing|d|'s)?)\\b", 'ig'), '<mark class="vocab-context-mark">$1</mark>')
+  } catch { return sentence }
+}
 import TtsButton from '../components/TtsButton.vue'
 
 const route = useRoute()
@@ -19,7 +29,7 @@ const accented = ref('us')   // 发音口音 us / uk
 const expandedAll = ref(false)
 
 const STYLE_LABELS: Record<string, string> = {
-  interview: '🗣 访谈', argument: '📊 论述', news: '📰 新闻', story: '📖 故事', article: '📄 文章',
+  interview: '访谈', argument: '论述', news: '新闻', story: '故事', article: '文章',
 }
 function styleLabel(style: string) { return STYLE_LABELS[style] || style }
 
@@ -108,7 +118,7 @@ onMounted(load)
           <strong class="word-main-meaning">{{ word.common_meaning || word.contextual_meaning }}</strong>
         </div>
         <div class="word-hero-tags" v-if="word.is_frequent">
-          <span class="word-freq-tag">🌟 高频词</span>
+          <span class="word-freq-tag"><Star :size="11" fill="currentColor" aria-hidden="true" />高频词</span>
         </div>
       </section>
 
@@ -163,11 +173,11 @@ onMounted(load)
         <div v-if="!word.occurrences?.length && !word.examples?.length && !contexts.length" class="muted">暂无真题例句。</div>
         <template v-else>
           <article v-for="occ in (word.occurrences || []).slice(0, expandedAll ? 99 : 3)" :key="occ.id" class="word-sentence">
-            <p>{{ occ.context_sentence }}</p>
+            <p v-html="highlightForms(occ.context_sentence)"></p>
             <small><TtsButton :text="occ.context_sentence" :speed="0.9" :size="13" /> {{ occ.year || '未知年份' }} · {{ occ.unit_title || occ.unit_type }}</small>
           </article>
           <article v-for="example in (word.examples || []).slice(0, expandedAll ? 99 : 3)" :key="`example-${example.id}`" class="word-sentence bilingual-example">
-            <p>{{ example.english_sentence }}</p>
+            <p v-html="highlightForms(example.english_sentence)"></p>
             <p class="example-translation">{{ example.chinese_translation }}</p>
             <small><TtsButton :text="example.english_sentence" :speed="0.9" :size="13" /> {{ example.source || '双语例句' }}</small>
           </article>

@@ -147,7 +147,7 @@ async function confirmDelete() {
   <Teleport to="body">
     <div v-if="showDeleteConfirm" class="modal-overlay" @click.self="showDeleteConfirm = false">
       <div class="modal-xuanzhi-confirm">
-        <h3>🗑 移入回收站</h3>
+        <h3 class="icon-h3"><Trash2 :size="15" aria-hidden="true" />移入回收站</h3>
         <p>销毁卷宗将无法复原练习记录。<b>确认将选中的 {{ selectedIds.size }} 套试卷移入回收站？</b></p>
         <div class="modal-actions">
           <button class="button ghost" @click="showDeleteConfirm = false">再想想</button>

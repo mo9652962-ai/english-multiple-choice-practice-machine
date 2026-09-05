@@ -118,7 +118,7 @@ function seek(e: Event) {
         <div class="controls-row">
           <span class="controls-label">语速</span>
           <button v-for="s in [0.75, 1, 1.25, 1.5]" :key="s" class="speed-btn" :class="{ active: speed === s }" @click="setSpeed(s)">{{ s }}x</button>
-          <button class="button ghost compact" :class="{ 'loop-on': loop }" @click="toggleLoop">{{ loop ? '🔁 循环开' : '🔁 循环关' }}</button>
+          <button class="button ghost compact" :class="{ 'loop-on': loop }" @click="toggleLoop">{{ loop ? '循环开' : '循环关' }}</button>
           <button class="button ghost compact" @click="replay"><RotateCcw :size="14" /> 复读</button>
         </div>
         <div class="controls-progress">

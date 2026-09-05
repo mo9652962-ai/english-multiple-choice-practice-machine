@@ -9,7 +9,7 @@ const items = ref<any[]>([])
 const loading = ref(true)
 
 const TYPE_LABELS: Record<string, string> = {
-  long_sentence: '📐 长难句', option: '🔀 选项', keyword: '🔑 关键词', note: '📝 笔记',
+  long_sentence: '长难句', option: '选项', keyword: '关键词', note: '笔记',
 }
 
 async function load() {

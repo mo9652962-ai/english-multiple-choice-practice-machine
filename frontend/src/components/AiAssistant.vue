@@ -376,7 +376,7 @@ onBeforeUnmount(() => {
           </article>
           <article v-if="loading" class="ai-message assistant">
             <span class="ai-message-avatar"><Bot :size="15" /></span>
-            <div class="ai-thinking"><LoaderCircle :size="16" class="spinning" />正在思考…</div>
+            <div class="ai-thinking"><span class="typing-dots" aria-hidden="true"><i></i><i></i><i></i></span>正在思考…</div>
           </article>
         </div>
 
