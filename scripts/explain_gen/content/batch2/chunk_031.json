@@ -1,0 +1,180 @@
+{
+ "chunk": 31,
+ "items": [
+  {
+   "question_id": 751,
+   "long_sentence": "定位句 Our legal system was designed to set law apart from politics precisely because they are so closely 14______；be designed to do 为目的句型；set A apart from B 使 A 与 B 分离；precisely because 强调原因从句。译：我们的法律制度被设计成让法律与政治分离，恰恰因为二者联系是如此紧密。",
+   "option": "正确项 D tied：closely tied「紧密相连」，正因为法律与政治牵连极深才需要刻意设计分离，precisely because 的强调语气要求前后构成「分离—牵连」的对照；A guarded 被守护、B followed 被遵循、C studied 被研究均与 closely 搭配后语义不通。",
+   "keyword": "closely tied 紧密相连＝closely linked；set apart from 使分离；precisely 恰恰、正是；legal system 法律制度。",
+   "note": "本空的逻辑枢纽是 precisely：恰恰因为太紧密才要分离，tied 与上句 set apart 形成「果—策」呼应；closely followed、closely guarded 虽是常见搭配，但放进 because 从句后因果不成立，做完搭配题必须回验因果。"
+  },
+  {
+   "question_id": 752,
+   "long_sentence": "定位句 Constitutional law is political because it results from choices rooted in fundamental social 15______ like liberty and property；rooted in 植根于；like liberty and property 为举例成分。译：宪法是政治性的，因为它源自植根于自由、财产这类基本社会观念的选择。",
+   "option": "正确项 A concepts：liberty 与 property 属于基本社会「概念、观念」，fundamental social concepts 是标准表述；B theories 理论，自由与财产不是理论；C divisions 「划分」与 rooted in 搭配后语义不明；D conventions 「惯例」程度不足，二者是价值观念而非习俗。",
+   "keyword": "concept 概念、观念＝notion；be rooted in 植根于；liberty 自由；property 财产。",
+   "note": "举例信号词 like 是解题钥匙：空格必须能统摄 liberty 和 property 两个下位词；概念类名词里 concept 最中性贴切，theory 是体系化学说，convension 偏习俗惯例，范围词与举例必须上下兼容。"
+  },
+  {
+   "question_id": 753,
+   "long_sentence": "定位句 When the court deals with social policy decisions, the law it 16______ is inescapably political；when 引导时间状语从句；it 16______ 为省略 that 的定语从句修饰 the law；inescapably 不可避免地。译：当法院处理社会政策判决时，它所塑造的法律就不可避免地带有政治性。",
+   "option": "正确项 C shapes：the law it shapes「法院塑造的法律」，法院通过裁决塑造法律，与宪法源于社会观念选择的论述一致；A excludes 「排除」与 the law 搭配后语义不通；B questions 「质疑」法院不是质疑法律的一方；D controls 「控制」程度过重，法院适用并塑造法律而非控制法律。",
+   "keyword": "shape 塑造、决定＝mold；inescapably 不可避免地；social policy 社会政策；deal with 处理。",
+   "note": "定语从句省略 that 的结构需先补全：the law (that) it...；法院对法律的关系是「通过判例塑造」，shape 兼有形成与影响之义；controls 的干扰在于把司法权夸大为控制权，与三权分立的常识相悖。"
+  },
+  {
+   "question_id": 754,
+   "long_sentence": "定位句 which is why decisions split along ideological lines are so easily 17______ as unjust；which is why 引导结果；split along ideological lines 为过去分词短语作后置定语；be...as 结构表「被视作」。译：这就是为什么按意识形态阵营分裂的判决如此容易被斥为不公正。",
+   "option": "正确项 A dismissed：be dismissed as「被斥为、被当作…而不予理会」，政治化判决轻易被贴上不公正标签，搭配与语义双合；B released 「释放」不与 as unjust 搭配；C ranked 「排名」be ranked as 表列为某等级，无贬斥义；D distorted 「歪曲」的宾语应是事实而非判决被歪曲为不公。",
+   "keyword": "dismiss...as 把…斥为、对…不屑一顾；split along ideological lines 按意识形态分裂；unjust 不公正的；inevitably 不可避免地。",
+   "note": "be V-ed as 搭配群辨析：dismissed as（贬斥）、ranked as（分级）、seen as（中性）；本句 which is why 之前是「判决带政治性」的负面结论，空格须承接贬义走向，dismissed 的「一口否决」义最贴切。"
+  },
+  {
+   "question_id": 755,
+   "long_sentence": "定位句 The justices must 18______ doubts about the court's legitimacy by making themselves 19______ to the code of conduct；must 后接动词原形；by making... 方式状语；doubts about 对…的疑虑。译：法官们必须通过让自己对行为准则负责来消除外界对法院合法性的疑虑。",
+   "option": "正确项 C address：address doubts「应对、处理疑虑」，正面回应合法性质疑，与 by making themselves accountable 的建设性手段一致；A suppress 「压制」与后文公开守则的透明做法矛盾；B exploit 「利用」疑虑只会损害法院；D ignore 「忽视」与 must 的必要性相反。",
+   "keyword": "address 处理、应对＝deal with；doubt 疑虑＝concern；legitimacy 合法性；code of conduct 行为准则。",
+   "note": "address 的熟词僻义是考点（处理问题、发表讲话）；本空与手段状语连读：靠让自己受准则约束来「回应」疑虑，suppress、ignore 都是回避式负向词，与 making themselves accountable 的开放姿态冲突。"
+  },
+  {
+   "question_id": 756,
+   "long_sentence": "定位句 The justices must address doubts... by making themselves 19______ to the code of conduct；make oneself + 形容词 + to 结构；code of conduct 行为准则。译：法官必须让自己对行为准则担负起责任。",
+   "option": "正确项 D accountable：be accountable to「对…负责、须向…交代」，法官对行为准则负责方能回应合法性质疑；A accessible 「可接近的」语义偏向便于获取，不表担责；B amiable 「和蔼的」修饰性格；C agreeable 「同意的、宜人的」不与准则构成责任关系。",
+   "keyword": "be accountable to 对…负责＝answer to；accessible 可接近的；amiable 和蔼可亲的；agreeable 欣然同意的。",
+   "note": "四个 -able 形近词辨责任关系：accountable to 的受责对象是人或准则，呼应第 6 空 subject to 与第 5 空 not bound by 的约束语义场；access amiable agreeable 都无「担责」义，靠语义场一致即可锁定。"
+  },
+  {
+   "question_id": 757,
+   "long_sentence": "末句 That would make rulings more likely to be seen as separate from politics and, 20______, convincing as law；would make...more likely 推测结果；seen as separate from politics 被视为独立于政治；convincing as law 作为法律有说服力。译：那将使裁决更有可能被视为与政治分离，从而作为法律更有说服力。",
+   "option": "正确项 D as a result：先「与政治分离」后「有说服力」，后者是前者的递进结果，as a result 表因果承接；A by all means 「务必、无论如何」表强调；B at all costs 「不惜一切代价」程度过重且无此意；C in a word 「总之」用于归纳而非承接两个并列结果。",
+   "keyword": "as a result 因此＝consequently；by all means 务必、当然；at all costs 不惜一切代价；in a word 总之。",
+   "note": "and 连接的两组补语有先后逻辑：separate from politics 是手段状态，convincing as law 是效果，中间插入语需表因果；in a word 是最强干扰——它要求前文罗列多项后总结，此处只有一条因果链。"
+  },
+  {
+   "question_id": 758,
+   "long_sentence": "定位句 It usually leads to no good – drinking, drugs and casual sex；It 回指 peer pressure；lead to no good 导致不好的结果；破折号后为三个负面行为举例。译：同辈压力通常导致不好的结果——酗酒、吸毒和随意的性行为。",
+   "option": "正确项 D a cause of undesirable behaviors：leads to no good 加 drinking, drugs and casual sex 即「不良行为的诱因」；A a supplement to the social cure 张冠李戴，social cure 是 Rosenberg 对同辈压力的正面利用；B a stimulus to group dynamics 偷换概念，group dynamics 是社会疗法的工具；C an obstacle to social progress 无中生有。",
+   "keyword": "lead to 导致＝result in；undesirable 不良的、不受欢迎的；peer pressure 同辈压力；casual sex 随意的性行为。",
+   "note": "首段让步结构：But 前 peer pressure 的常规形象就是负面的（It usually leads to no good），D 是对 no good 的名词化改写；注意题干问 often emerges as 的常规面貌，而非 Rosenberg 主张的正面潜能，勿被首段末句带偏。"
+  },
+  {
+   "question_id": 759,
+   "long_sentence": "定位句 Rosenberg argues convincingly that public-health advocates ought to take a page from advertisers, so skilled at applying peer pressure；argue convincingly 有说服力地主张；take a page from 借鉴；so skilled at... 为形容词短语作后置定语。译：Rosenberg 有说服力地指出，公共卫生倡导者应当向广告人取经——他们太擅长运用同辈压力了。",
+   "option": "正确项 B learn from advertisers' experience：take a page from advertisers＝借鉴广告人的经验，习语改写是唯一考点；A recruit professional advertisers 偷换概念，是学其方法不是招其人；C stay away from commercial advertisers 正反混淆；D recognize the limitations of advertisements 无中生有，文中广告是被表扬的一方。",
+   "keyword": "take a page from 向…借鉴＝learn from；advocate 倡导者；skilled at 擅长＝adept at；apply 运用。",
+   "note": "习语 take a page from（从…抄一页）＝learn from，是本题唯一命点；A 项利用 advertisers 字面设「招人」陷阱，考研阅读中「学习经验」被偷换成「招募人员」是高频偷换概念套路。"
+  },
+  {
+   "question_id": 760,
+   "long_sentence": "定位句 Join the Club is filled with too much irrelevant detail and not enough exploration of the social and biological factors that make peer pressure so powerful；be filled with 充满；not enough exploration 探讨不足；that make... powerful 为定语从句。译：《加入俱乐部》一书充斥着太多无关细节，而对使同辈压力如此强大的社会与生理因素探讨不足。",
+   "option": "正确项 A adequately probe social and biological factors：not enough exploration of the social and biological factors 即探究不充分，adequately probe 是其反写；B effectively evade the flaws 无中生有；C illustrate the functions of state funding 张冠李戴，资金削减只是失败例证；D produce a long-lasting social effect 张冠李戴，不能持久的是社会疗法项目，不是书。",
+   "keyword": "exploration 探究＝probe；irrelevant 无关的；glaring 明显的、刺眼的；flaw 缺陷＝fault。",
+   "note": "fails to 问书本身的不足，题眼在 not enough exploration 的主语是书；D 项把第四段项目的效果问题嫁接到书上，属张冠李戴——书可以「探讨不足」，但「产生持久社会效果」是项目的任务。"
+  },
+  {
+   "question_id": 761,
+   "long_sentence": "定位句 This is a subtle form of peer pressure: we unconsciously imitate the behavior we see every day；subtle 隐微的、不易察觉的；unconsciously 无意识地；we see every day 为省略关系词的定语从句。译：这是同辈压力的一种隐微形式：我们会无意识地模仿每天看到的行为。",
+   "option": "正确项 C occurs without our realizing it：unconsciously imitate＝在我们未察觉时发生，subtle 亦提示难以觉察；A is harmful to our networks of friends 正反混淆，好习惯坏习惯都在友伴网络传播，网络本身非受害方；B will mislead behavioral studies 无中生有；D can produce negative health habits 以偏概全，模仿可传播正面习惯也可传播负面习惯，原文以 positive 举隅。",
+   "keyword": "subtle 微妙的、难以察觉的；unconsciously 无意识地＝without realizing；imitate 模仿＝copy；exert influence 施加影响。",
+   "note": "第五段逻辑链：朋友网络传播习惯（正负皆有）→这是隐形的同辈压力→无意识模仿；C 的 without realizing 与 unconsciously 直接对应；D 只截取 negative half 且把「传播」说成「产生」，范围与动词双重失真。"
+  },
+  {
+   "question_id": 762,
+   "long_sentence": "定位句 Far less certain, however, is how successfully experts and bureaucrats can select our peer groups and steer their activities in virtuous directions；Far less certain 置句首构成倒装；steer...in virtuous directions 把…引向良善方向；however 承接转折。译：然而，远不能确定的是，专家和官员能在多大程度上成功挑选我们的同伴群体，并把其活动引向良善方向。",
+   "option": "正确项 D questionable：Far less certain 加 The tactic never really works 表明作者对「外部设计同伴压力」的效果持怀疑态度；A harmful 有害，第五段只说影响巨大未说有害；B desirable 与作者质疑立场相反；C profound 张冠李戴，enormous influence 在第五段说的是影响范围，末段质疑的是可控性。",
+   "keyword": "questionable 存疑的＝doubtful；far less certain 远不确定；steer 引导、操纵；bureaucrat 官僚、政府官员。",
+   "note": "题干 the effect of peer pressure 落在末段的「被设计的同辈压力」：老师拆开后排捣蛋鬼的类比加 we insist on choosing our own friends 的结论，指向「人工干预难奏效」；A 把「效果存疑」升级为「有害」，程度越权。"
+  },
+  {
+   "question_id": 763,
+   "long_sentence": "定位句 The company... provoked justified outrage in Vermont last week when it announced it was reneging on a longstanding commitment to abide by the state's strict nuclear regulations；provoke justified outrage 引发理所当然的愤怒；reneging on 违背；longstanding commitment 长期承诺。译：这家公司上周宣布背弃其遵守佛蒙特州严格核法规的长期承诺，在该州激起了理所当然的愤怒。",
+   "option": "正确项 C dishonoring：reneging on a commitment＝不履行、背弃承诺，dishonor（使蒙羞、不履行）义合；A condemning 「谴责」与承诺搭配后语义不通；B reaffirming 「重申」方向相反，重申承诺不会激起公愤；D securing 「获得」与 commitment 搭配不当。",
+   "keyword": "renege on 违背、食言＝go back on；dishonor 背弃、玷污；commitment 承诺＝pledge；justified 有正当理由的。",
+   "note": "猜词题靠情感线索：provoked justified outrage（引发公愤）说明公司做了错事，四个选项中只有 dishonoring 与 commitment 构成负面动宾；reaffirming 是最强干扰——代入后「重申承诺却惹怒众人」逻辑崩塌。"
+  },
+  {
+   "question_id": 764,
+   "long_sentence": "定位句 As a condition of receiving state approval for the sale, the company agreed to seek permission from state regulators to operate past 2012；as a condition of 以…为条件；state approval for the sale 州政府对出售的批准；agree to do 同意做。译：作为获得州政府批准这项出售交易的条件，公司同意在 2012 年后继续运营须征得州监管机构的许可。",
+   "option": "正确项 D get permission to purchase a power plant：2002 年协议与 receiving state approval for the sale（购买佛蒙特唯一核电站）直接挂钩，签约动机即换取购厂许可；A obtain protection from Vermont regulators 偷换概念，州监管方是审批者不是保护者；B seek favor from the federal legislature 张冠李戴，联邦议会与 2002 协议无关；C acquire an extension of its business license 偷换概念，延期许可是后续争议焦点，非签约目的。",
+   "keyword": "as a condition of 以…为条件；approval 批准＝permission；regulator 监管机构；extension 延期、延长。",
+   "note": "时间线定位法：2002 签约购厂→2012 运营到期须续批→2006 州立法要求延期须经议会→如今毁约；D 把协议锁定在「购厂许可」这一原始目的，C 的 extension 是 2006 年后的话题，勿混淆时间点。"
+  },
+  {
+   "question_id": 765,
+   "long_sentence": "定位句 A string of accidents raised serious questions about both Vermont Yankee's safety and Entergy's management；a string of 一连串；raise serious questions about 引发对…的严重质疑。译：一连串事故——包括 2007 年冷却塔局部坍塌与地下管道泄漏——对核电站安全和 Entergy 的管理都提出了严重质疑。",
+   "option": "正确项 A managerial practices：Entergy's management 加 misleading statements 直指管理行为失当；B technical innovativeness 无中生有，事故说明的是运维失职而非创新不足；C financial goals 无中生有；D business vision 无中生有。",
+   "keyword": "a string of 一连串＝a series of；misleading 误导性的；management 管理＝managerial practices；leakage 泄漏。",
+   "note": "problems with 的宾语从 raised serious questions about 的并列结构找：safety 对应电站、management 对应公司；misleading statements 是管理层的诚信问题，属管理行为范畴；B、C、D 都是原文未提及的经营维度。"
+  },
+  {
+   "question_id": 766,
+   "long_sentence": "定位句 The Supreme Court has ruled that states do have some regulatory authority over nuclear power, legal scholars say that Vermont case will offer a precedent-setting test of how far those powers extend；precedent-setting 开创先例的；those powers 回指 states' regulatory authority。译：最高法院虽已裁定各州对核电确有监管权，但学者称佛蒙特案将检验这些权力究竟能延伸多远，树立先例。",
+   "option": "正确项 D the limits of states' power over nuclear issues：those powers 回指 states' regulatory authority，how far they extend＝州权力界限何在；A Entergy's capacity to fulfill all its promises 偷换概念，测的是法律权力不是履约能力；B the nature of patchwork regulations 张冠李戴，各自为政的担忧是另一话题；C the federal authority over nuclear issues 正反混淆，测的是州的权力不是联邦的。",
+   "keyword": "precedent-setting 树立先例的；regulatory authority 监管权；extend 延伸；whereas 然而、鉴于。",
+   "note": "指代还原是本题钥匙：those powers 必须回指上句 states do have some regulatory authority；C 项偷换成联邦权力，方向全反；B 的 patchwork regulations 出现在 but 后的次要让步里，非检验对象。"
+  },
+  {
+   "question_id": 767,
+   "long_sentence": "定位句 Entergy runs 11 other reactors, including Pilgrim Nuclear station in Plymouth... as the Nuclear Regulatory Commission reviews the company's application, it should keep in mind what promises from Entergy are worth；keep in mind 记住、掂量。译：Entergy 在美国还运营另外 11 座反应堆，包括普利茅斯的 Pilgrim 核电站；核管理委员会审查其申请时，应当掂量其承诺还值几分。",
+   "option": "正确项 A Entergy's business elsewhere might be affected：作者提醒 NRC 审查 Pilgrim 延期申请时掂量其承诺信用，暗示佛蒙特的毁约将波及其在其他州的业务；B the authority of the NRC will be defied 无中生有，NRC 权威未被挑战；C Entergy will withdraw its Plymouth application 过度推断；D Vermont's reputation 张冠李戴，受损的是 Entergy 的声誉。",
+   "keyword": "public trust 公众托付；reactor 反应堆；application 申请；have nothing left to lose 再无什么可失去。",
+   "note": "推断题抓末段递进：Vermont 声誉受损→what promises from Entergy are worth 的反问→NRC 审查其他申请时应提高警惕；A 的 elsewhere 对应 11 other reactors 的信息，C 的 withdraw 无人说过，推断不能越过原文暗示的强度。"
+  },
+  {
+   "question_id": 768,
+   "long_sentence": "定位句 But in the everyday practice of science, discovery frequently follows an ambiguous and complicated route；But 表转折；frequently 频繁地；ambiguous 模糊不明的；complicated 复杂的。译：但在科学的日常实践中，发现常常循着一条模糊而复杂的路径。",
+   "option": "正确项 A uncertainty and complexity：ambiguous and complicated route＝不确定且复杂的路径，形容词名词化是本题改写；B misconception and deceptiveness 张冠李戴，misinterpretation, error, self-deception 是过程中的风险「机会」，非过程本身的特征；C logicality and objectivity 正反混淆，客观是目标非起点；D systematicness and regularity 与 ambiguous and complicated 相反。",
+   "keyword": "ambiguous 模糊的＝uncertain；complicated 复杂的＝complex；route 路径＝path；objective 客观的。",
+   "note": "首段 But 是理想与现实的分水岭：理想化版本（objective researchers, scientific method）对应 C、D 的正面特征，现实实践才对应 A；B 项把 risks 的三个名词偷换成过程特征，注意原文说 opportunities for...abound 而非过程本身。"
+  },
+  {
+   "question_id": 769,
+   "long_sentence": "定位句 But it takes collective scrutiny and acceptance to transform a discovery claim into a mature discovery；it takes sth to do 做…需要某物；collective 集体的；scrutiny 审查；transform...into 把…转变成。译：但要把一项发现声明转化为成熟的发现，需要集体的审查与接纳。",
+   "option": "正确项 B shared efforts：collective scrutiny and acceptance 加 me, here, now 变成 the community's anyone, anywhere, anytime 的改写，皆指向共同参与；A strict inspection 只覆盖 scrutiny 一半，遗漏 acceptance 与后续社会互动；C individual wisdom 正反混淆，可信化恰恰要超越个体；D persistent innovation 无中生有。",
+   "keyword": "collective 集体的＝shared；scrutiny 审查＝examination；acceptance 接纳＝recognition；credibility 可信度。",
+   "note": "credibility process 的核心是去个体化：me becomes anyone，个人声明经集体审查加接纳才成真发现；A 的 inspection 与 scrutiny 同义但以偏概全，推断题的答案应覆盖 take 后的全部要求。"
+  },
+  {
+   "question_id": 770,
+   "long_sentence": "定位句 As a discovery claim works its way through the community, the interaction and confrontation... transforms an individual's discovery claim into the community's credible discovery；as 引导时间状语从句；transform...into 把…转变成。译：当发现声明在科学共同体中逐步流转时，共享与竞争信念间的互动交锋，会把个人声明变成共同体的可信发现。",
+   "option": "正确项 B has been examined by the scientific community：声明须在 community 中经受 interaction and confrontation 的检验方可可信；A attracted the attention of the general public 张冠李戴，公众是最后接收者；C received recognition from editors and reviewers 以偏概全，编辑审稿人只是 gatekeepers 一环；D frequently quoted by peer scientists 无中生有。",
+   "keyword": "interaction 互动；confrontation 交锋、对抗；gatekeeper 把关者；credible 可信的＝trustworthy。",
+   "note": "第三段是流水线结构：研究者发现→编辑审稿把关→其他科学家使用→公众接收；「变得可信」发生在整个社区流转过程中，C 只取守门一环，A 把终点当条件，用流程顺序即可排除。"
+  },
+  {
+   "question_id": 771,
+   "long_sentence": "定位句 Albert Szent-Györgyi once described discovery as 「seeing what everybody has seen and thinking what nobody has thought」；describe A as B 把 A 描述为 B；what everybody has seen 名词性从句作宾语。译：诺贝尔奖得主圣捷尔吉曾把发现描述为「看见所有人都看见过的东西，想到没有人想到过的东西」。",
+   "option": "正确项 D scientific work calls for a critical mind：thinking what nobody has thought＝敢于想他人之未想，需要独立批判的头脑；A scientific claims will survive challenges 过度推断，引语未保证新观点必胜；B discoveries today inspire future research 无中生有；C efforts to make discoveries are justified 无中生有。",
+   "keyword": "critical mind 批判性思维＝independent thinking；novelty 新颖性；provoke disbelief 引发怀疑；laureate 得主。",
+   "note": "人物观点题贴引语本身：看见人人所见、想及人人所未想，重心在「想」的独特性；下文 novelty provokes disbelief 加 thinking...may not change their views 反衬这种思考之难，D 的 calls for 恰是从引语反推的必要条件。"
+  },
+  {
+   "question_id": 772,
+   "long_sentence": "全文主线句 This is the credibility process, through which the individual researcher's me, here, now becomes the community's anyone, anywhere, anytime；through which 引导定语从句；credibility process 可信化过程。译：这就是可信化过程——研究者个体的「我、此时、此地」由此变成共同体的「任何人、任何地、任何时」。",
+   "option": "正确项 C Evolution of Credibility in Doing Science：全文按「发现声明→集体审查→可信发现」的时间演化展开，credibility 是贯穿词；A Novelty as an Engine 以偏概全，新颖性只是第二悖论；B Collective Scrutiny 以偏概全，只覆盖可信化的一环；D Challenge to Credibility 偷换概念，挑战是过程动力而非文章靶子。",
+   "keyword": "evolution 演化、演变＝development；credibility 可信度；paradox 悖论；scrutiny 审查。",
+   "note": "标题题看核心概念加动态：第二段提出 credibility process，第三段展开流程，第四段两个悖论，末段以 reasoning together 收束，全程讲可信度如何生成演化；A、B 各截一段，D 把辅助手段当主题。"
+  },
+  {
+   "question_id": 773,
+   "long_sentence": "定位句 When Hoffa's Teamsters were in their prime in 1960, only one in ten American government workers belonged to a union; now 36% do；in one's prime 在全盛时期；one in ten 十分之一；分号连接今昔对比。译：当 Hoffa 的卡车司机工会在 1960 年如日中天时，美国政府雇员中只有十分之一加入工会；如今比例达到 36%。",
+   "option": "正确项 C unions have enlarged their public-sector membership：十分之一到 36% 的跃升加 2009 年公共部门工会人数超过私营部门，即工会公共部门成员壮大；A Teamsters still have a large body of members 无中生有；B Hoffa used to work as a civil servant 张冠李戴，他是工会领袖且原文是虚拟语气；D the government has improved its relationship with unionists 无中生有。",
+   "keyword": "in one's prime 在鼎盛时期；civil servant 公务员＝government worker；union 工会；public sector 公共部门。",
+   "note": "首段全是数字对比：1960 十分之一→如今 36%→2009 反超私营部门→英国过半，四个数据同指「公共部门工会化程度攀升」；B 项的虚拟语气 would probably represent 是修辞不是事实陈述，注意would 的假设性质。"
+  },
+  {
+   "question_id": 774,
+   "long_sentence": "定位句 First, they can shut things down without suffering much in the way of consequences；shut...down 使停摆、罢工关闭；without suffering much in the way of consequences 几乎不承担后果。译：第一，公共部门工会能让事情停摆，却几乎不用承担什么后果。",
+   "option": "正确项 D Public-sector unions seldom get in trouble for their actions：without suffering consequences＝很少为行动惹麻烦；A prudent in taking actions 偷换概念，是「无后果」不是「行事谨慎」；B Education is required for membership 张冠李戴，四分之一有大学学位是成员画像非入会条件；C Labor Party has long been fighting against 正反混淆，工党 long been associated with 工会主义。",
+   "keyword": "shut down 停摆、关闭；consequence 后果；be associated with 与…有关联；owe...to 把…归功于。",
+   "note": "判断正误题逐项回文：D 是 without...consequences 的同义改写；A 把「不怕后果」读成「小心行事」，方向微妙相反；C 项的 associated 与 fighting against 感彩相反，识别 without 结构的语义是关键。"
+  },
+  {
+   "question_id": 775,
+   "long_sentence": "定位句 Politicians have repeatedly 「backloaded」 public-sector pay deals, keeping the pay increases modest but adding to holidays and especially pensions that are already generous；backload 后置偿付、迂回加码；keeping...but adding... 为现在分词作结果状语；generous 丰厚的。译：政客们一再把公共部门的薪酬协议「向后加载」——工资涨幅保持温和，却不断增加假期，尤其是本已丰厚的养老金。",
+   "option": "正确项 B indirectly augmented：工资涨幅 modest 但假期与养老金暗中加码，即总收入经由福利「间接增加」；A illegally secured 无中生有，文中未提违法；C excessively increased 过度推断，backload 恰是要让明面涨幅温和；D fairly adjusted 无中生有，作者语气是批评而非赞其公平。",
+   "keyword": "backload 把成本后置、迂回加码；modest 温和的、适度的；pension 养老金；augment 增加＝increase。",
+   "note": "词义题变体：backload 的引号提示比喻用法，解释全在分词结构里——modest 与 adding to 的对照即「明降暗升」；B 的 indirectly 对应 via benefits and work practices，C 的 excessively 与 modest 直接矛盾。"
+  }
+ ]
+}

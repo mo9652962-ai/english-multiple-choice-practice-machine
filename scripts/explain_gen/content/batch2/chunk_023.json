@@ -1,0 +1,180 @@
+{
+ "chunk": 23,
+ "items": [
+  {
+   "question_id": 551,
+   "long_sentence": "定位句 The Mojave desert sees less than two inches of rain a year, and like most deserts, is a land of __：主干 The Mojave desert sees...；and 连接并列谓语 is a land of ___；like most deserts 为插入比较。译：莫哈韦沙漠年降雨量不足两英寸，与大多数沙漠一样，是一片极端之地。",
+   "option": "正确 C extremes（极端）：a land of extremes「极端之地」为固定表达，呼应上句降雨极少与下句温差悬殊（freezing 到 burning hot）——少雨、极端温度都是「极端」的实例；最接近干扰 E fractions（小部分、分数）a land of fractions 不成搭配；G parasites（寄生虫）语义无关。",
+   "keyword": "a land of extremes 极端之地；fluctuation 波动、变化；less than two inches 不足两英寸；vary from...to... 从……到……不等。",
+   "note": "a ___ of 结构先定名词；上下文的「少雨、温差大」两处证据都指向极端，extremes 是例证的归纳词；可连带记忆 a land of extremes 与 extreme weather 两处搭配。"
+  },
+  {
+   "question_id": 552,
+   "long_sentence": "定位句 Temperature fluctuations vary from freezing to __ hot, not only between seasons, but even within the same day：主干 Temperature fluctuations vary from... to...；from freezing to ___ hot 对举两极；not only...but even 递进强调。译：温度波动从冰点到灼热不等，不仅在季节之间，甚至在同一天之内也是如此。",
+   "option": "正确 B burning（灼热的）：burning hot「酷热」为固定搭配，与 freezing 构成温度两极对举；最接近干扰 D flat 已用于第 1 空不可复用，且 flat hot 不成搭配；M sturdy（结实的）不能修饰 hot。",
+   "keyword": "burning hot 酷热＝scorching hot；freezing 冰冻的、极冷的；fluctuation 波动；within the same day 同一天之内。",
+   "note": "from freezing to ___ hot 的对称结构提示空格与 freezing 同类（温度形容词），burning hot 是熟语；not only between seasons but even within the same day 的递进说明温差极端，反向验证 burning。"
+  },
+  {
+   "question_id": 553,
+   "long_sentence": "定位句 The folks managing and working there wear the wide-brimmed hats that have become __ with places like Yosemite：主干 The folks...wear the wide-brimmed hats；managing and working there 现在分词短语作后置定语；that have become ___ with... 为定语从句，become ___ with 为介词框架。译：在保护区管理与工作的人员，戴着那种已与优胜美地等地紧紧联系在一起的宽檐帽。",
+   "option": "正确 N synonymous（同义的）：become synonymous with「与……等同、成为……的代名词」为固定搭配——宽檐帽已成 Yosemite 类国家公园的标志性符号；最接近干扰 A apt 须接不定式（apt to do），不与 with 搭配；F overflowing 已用于第 3 空不可复用。",
+   "keyword": "be、become synonymous with 与……同义、成为……的代名词；wide-brimmed 宽边的；iconic 标志性的（近义语境词）；Yosemite 优胜美地（国家公园代称）。",
+   "note": "become ___ with 的介词框架在词库中锁定 synonymous（唯一与 with 连用的形容词）；「帽子＝公园标志」的象征关系需要读懂，synonymous 的「等同」义恰能表达符号化。"
+  },
+  {
+   "question_id": 554,
+   "long_sentence": "定位句 The preserve is rich with history, culture, biodiversity, and endless opportunities to __ your interest, especially for anyone who loves the outdoors：主干 The preserve is rich with...；to ___ your interest 为不定式作后置定语修饰 opportunities；especially 举例强调。译：保护区富含历史、文化与生物多样性，还有无穷无尽的机会激发你的兴趣——对热爱户外的人尤其如此。",
+   "option": "正确 L stimulate（激发）：stimulate one's interest「激发兴趣」为固定搭配，to 后接动词原形；最接近干扰 K steer（引导、操控）steer your interest 搭配生僻且语义偏「掌控方向」；J sprinkle（撒、点缀）语义无关。",
+   "keyword": "stimulate one's interest 激发兴趣＝spark、arouse one's interest；be rich with 富含；biodiversity 生物多样性；endless opportunities 无尽的机会。",
+   "note": "to ___ your interest 的不定式框架锁定「激发」类动词；opportunities to do 是常见搭配；stimulate 与 spark、arouse 同义，词库只收其一即靠唯一性作答。"
+  },
+  {
+   "question_id": 555,
+   "long_sentence": "定位句 For a photographer, it requires patience and __ a few spare tires to maneuver the network of unpaved 'roads', but the rewards are plenty：For a photographer 为对象状语；主干 it requires patience and ___ a few spare tires；to maneuver... 为目的状语；but 转折。译：对摄影师而言，这需要耐心，可能还需要几个备用轮胎，才能在未铺装的「道路」网络中穿行，但回报丰厚。",
+   "option": "正确 H probably（可能）：patience and probably a few spare tires——probably 作插入式副词表不确定的列举，「耐心＋大概几个备胎」语气自然；最接近干扰 I sparingly（节俭地、少量地）语义错位——备胎是「可能需要」不是「少量需要」；A apt 是形容词不能修饰 a few spare tires。",
+   "keyword": "probably 可能、大概；spare tire 备用轮胎；maneuver 穿行、操纵＝navigate；unpaved 未铺装的。",
+   "note": "空格位于 and 与名词短语之间：若为形容词须能修饰 tires，若为副词则是插入语气，probably 的列举式语气与 patience 并列最顺；sparingly 是「用量少」义，与「要不要带」的问题错位。"
+  },
+  {
+   "question_id": 556,
+   "long_sentence": "定位句 Photographing here requires a good, __ pair of shoes and a lot of preparation：Photographing here 动名词短语作主语；requires 为谓语；a good, ___ pair of shoes 为并列形容词修饰；and a lot of preparation 并列宾语。译：在这里拍照需要一双好而结实的鞋，以及大量准备工作。",
+   "option": "正确 M sturdy（结实的）：a good, sturdy pair of shoes——沙漠野外拍照的鞋需「结实耐穿」，sturdy 与 good 并列递进；最接近干扰 B burning（burning shoes 不成搭配）；D flat 已用于第 1 空不可复用；O unique 已用于第 10 空。",
+   "keyword": "sturdy 结实的、耐用的＝durable、strong；a pair of shoes 一双鞋；require 需要；preparation 准备。",
+   "note": "a good, ___ pair of shoes 的并列形容词框架锁定「优点类」形容词；语篇语境（沙漠、未铺装路、长途探索）决定选「结实」；sturdy 与 durable 同属「耐用」家族，写作可直接借用。"
+  },
+  {
+   "question_id": 557,
+   "long_sentence": "定位句 During my last outing, I was surprised to see how much of the area was shaped by ancient volcanoes and geological forces, much of which remains today, giving the area a __ feel：how much... 为宾语从句；giving the area a __ feel 为现在分词作结果状语。译：上次出行我惊讶地发现，此地许多地貌由古火山与地质力量塑造留存至今，赋予这里独特气质。",
+   "option": "正确 O unique（独特的）：a unique feel「独特气质」——火山与地质遗迹造就与众不同的风貌，unique 与 was surprised（惊叹）的语气呼应；最接近干扰 D flat 已用于第 1 空不可复用，且 flat feel 不合「惊叹」语境；M sturdy 已用于第 9 空不可复用。",
+   "keyword": "unique 独特的＝one of a kind；geological forces 地质力量；give...a...feel 赋予……某种气质；a colorful background 多彩背景。",
+   "note": "give the area a ___ feel 的名词短语框架锁定形容词；was surprised to see 的惊叹语气决定选褒义的「独特」；unique feel 与 painting a colorful background 都是摄影视角的正面评价，语义同向。"
+  },
+  {
+   "question_id": 558,
+   "long_sentence": "定位句 Their work offers new insights into the impact word choice has on how we __ between statements expressing what is real versus what is merely possible：主干 Their work offers new insights into...；the impact (that) word choice has on... 为省略关系词的定语从句；how we ___ between... 为宾语从句。译：该研究为「用词如何影响我们区分真实与可能」提供了新见解。",
+   "option": "正确 E differentiate（区分）：differentiate between A and B「区分 A 与 B」为固定搭配，between 是强信号；最接近干扰 D deliberate（权衡、深思）deliberate between 偶见但语义是「抉择」非「辨别真假」；C ascertain（查明）不与 between 搭配。",
+   "keyword": "differentiate between A and B 区分 A 与 B＝distinguish between；versus 与……相对；statement 陈述；merely possible 仅是可能的。",
+   "note": "between 是最强介词线索，词库中可接 between 的动词极少；differentiate 与 distinguish 同义；本句是全文主旨句——大脑如何区分事实与可能，先读懂它全篇做题更稳。"
+  },
+  {
+   "question_id": 559,
+   "long_sentence": "定位句 Some of this is __, as is the case with deceptive advertisements：主干 Some of this is ___，空格为表语；as is the case with... 为非限制性定语从句举例；deceptive advertisement 意为「欺骗性广告」。译：其中一些虚假信息是蓄意为之，欺骗性广告就是如此。",
+   "option": "正确 D deliberate（蓄意的）：deliberate 形容词「故意的」，与空后 but 从句「自以为在分享正确信息」的无意传播者形成「故意 vs 无意」对比；最接近干扰 M speculative（猜测性的）与 deceptive advertisements 的「欺骗」义不合；N unanimous（一致的）语义无关。",
+   "keyword": "deliberate 蓄意的＝intentional；deceptive advertisement 欺骗性广告；as is the case with 正如……的情况；false information 虚假信息。",
+   "note": "but 转折链是钥匙：前半「故意造假」对后半「无意扩散」；deceptive 一词直指 deliberate；注意 deliberate 兼有动词「深思」与形容词「故意的」两个词性，表语位置取形容词。"
+  },
+  {
+   "question_id": 560,
+   "long_sentence": "定位句 but the problem is __ by individuals who believe they are sharing correct information：the problem is ___ by... 被动语态；who believe they are sharing correct information 为定语从句，believe 后接省略 that 的宾语从句。译：但那些自以为在分享正确信息的人使问题更加严重。",
+   "option": "正确 B aggravated（加剧）：be aggravated by「被……加剧」为固定被动搭配，与 Some of this is deliberate 并列构成「故意造假＋无意扩散」的双重危害；最接近干扰 A activated（激活）is activated by 语法可通但「问题被激活」语义不通；H inhibit（抑制）方向相反。",
+   "keyword": "aggravate 加剧、恶化＝worsen；be aggravated by 被……加剧；unwitting 无意的（语境近义词）；spread misinformation 传播错误信息。",
+   "note": "is ___ by 的被动框架锁定及物动词过去分词；语义须「使问题更糟」，aggravate 与 worsen 同义；activated 是形近加语法的双重陷阱，靠语义排除。"
+  },
+  {
+   "question_id": 561,
+   "long_sentence": "定位句 Thus, it is more important than ever to separate the factual from the possible or merely __ in how we communicate：it 作形式主语，真正主语为不定式 to separate A from B；the factual、the possible、merely ___ 为「定冠词加形容词」的名词化并列；in how we communicate 为范围状语。译：因此，在交流中把事实与可能之事、乃至纯属猜测之事区分开来，比以往任何时候都更重要。",
+   "option": "正确 M speculative（猜测性的）：merely speculative「纯属猜测」与 the factual、the possible 构成「事实→可能→猜测」的递进序列，呼应下文 may、might、if 等可能性词汇；最接近干扰 D deliberate 已用于第 2 空不可复用；N unanimous（一致的）语义无关。",
+   "keyword": "speculative 猜测性的＝conjectural；the 加形容词 表一类事物（the factual）；separate...from... 把……与……分开；merely 仅仅、纯属。",
+   "note": "the factual from the possible or merely ___ 是名词化并列结构，空格必为形容词且同属「信息可靠性」语义场；merely 的「降级」语气决定选可靠性最低的一档 speculative。"
+  },
+  {
+   "question_id": 562,
+   "long_sentence": "定位句 as the study makes clear that information presented as fact __ special responses in our brains：as 引导原因状语从句；makes clear that 后接宾语从句；从句主语 information（presented as fact 为过去分词短语作后置定语）；谓语 ___ special responses。译：这一点尤其正确，因为研究明确表明：以事实形式呈现的信息会在大脑中引发特殊反应。",
+   "option": "正确 G evokes（引发）：evoke responses「引发反应」为固定搭配，主语 information 不可数按单数处理，谓语加 s；最接近干扰 A activated（激活）过去式与全篇一般现在时的叙述不合，且此处尚未到结果段；L scenarios 名词词性不符。",
+   "keyword": "evoke responses 引发反应＝trigger、elicit responses；presented as fact 以事实形式呈现；be distinct from 与……不同；process 处理。",
+   "note": "主语 information 为不可数名词，谓语用单数 evokes——词尾 s 是语法线索；时态一致：研究发现的叙述用一般现在时，activated 的过去式在此是时态陷阱。"
+  },
+  {
+   "question_id": 563,
+   "long_sentence": "定位句 which are distinct from when we process the same content with clear indicators of __：which are distinct from... 为定语从句（which 指代 special responses）；when 引导时间状语从句；with clear indicators of ___ 为介词短语作方式状语。译：（这些反应）不同于我们处理带有明显不确定性标记的相同内容时的反应。",
+   "option": "正确 O uncertainty（不确定性）：indicators of uncertainty「不确定性的标记」——下文 may、might、if 正是「可能性、不确定」的标志词，与 factual 形成对照；最接近干扰 C ascertain（查明）动词词性不符 of 后的名词位；L scenarios 已用于第 8 空。",
+   "keyword": "uncertainty 不确定性；indicator of ……的标记；may、might、if 可能性与条件的标志词；distinct from 与……不同。",
+   "note": "of 后必接名词；「clear indicators of ___」在下文有直接呼应——such words as may, might, and if，先读后文再回填是选词填空的高频技巧。"
+  },
+  {
+   "question_id": 564,
+   "long_sentence": "定位句 In their new study, the scientists intended to __ how the brain computes possibilities as expressed by words such as 'may,' 'might,' and 'if'：In their new study 为范围状语；主干 the scientists intended to ___；to 后接动词原形，how 引导宾语从句；as expressed by... 为方式状语。译：在新的研究中，科学家们意在查明大脑是如何计算由 may、might、if 等词所表达的可能性的。",
+   "option": "正确 C ascertain（查明）：ascertain how...「查明如何……」为学术语篇高频搭配，intended to 后接动词原形；最接近干扰 D deliberate 已用于第 2 空不可复用；H inhibit（抑制）语义无关；K steer（引导）steer how 不成搭配。",
+   "keyword": "ascertain 查明、确定＝find out、determine；intend to do 打算做；compute 计算、处理；possibility 可能性。",
+   "note": "intend to ___ 加 how 从句的框架锁定「探究类」动词；ascertain 与 determine、find out 同义，语域偏学术；本空与第 1 空 differentiate 同属研究目的描述，动词都偏「认知」类。"
+  },
+  {
+   "question_id": 565,
+   "long_sentence": "定位句 The researchers compared brain responses to statements expressing factual __ and those expressing possibility：主干 The researchers compared A and B；to statements expressing factual ___ 为介词短语修饰 responses；expressing... 现在分词作后置定语；those 替代 statements。译：研究者比较了大脑对「陈述事实情境」与「表达可能性」两类语句的反应。",
+   "option": "正确 L scenarios（情境、情形）：factual scenarios「事实性情境」，statement 表达的是一种情形，与下文例句 There is a monster under my bed 对应；最接近干扰 I manuscript（手稿）语义无关；J marvels（奇迹）语义无关。",
+   "keyword": "scenario 情境、情形＝situation；factual 事实的；brain response 大脑反应；possibility 可能性。",
+   "note": "compared A and B 的对比结构提示空格与 possibility 同类（表达方式类别）；factual ___ 与 expressing possibility 对举，scenarios 表「情形类别」最贴切；下文的怪物例句是情境的具体化。"
+  },
+  {
+   "question_id": 566,
+   "long_sentence": "定位句 The results of the study showed that factual language __ a rapid increase in brain activity, with the brain responding more powerfully and showing more engagement with factual phrases：showed 后接 that 宾语从句；从句主语 factual language；谓语 ___ a rapid increase；with 复合结构表伴随。译：研究结果显示，事实性语言激活了大脑活动的快速提升，大脑对事实性短语的反应更强烈、投入更多。",
+   "option": "正确 A activated（激活）：activate a rapid increase「引发快速提升」，研究结果是已发生之事，用过去式；最接近干扰 G evokes 已用于第 5 空不可复用且为现在时；B aggravated（加剧）语义不合——increase 是提升不是「恶化」。",
+   "keyword": "activate 激活＝trigger；a rapid increase 快速提升；brain activity 大脑活动；engagement 投入、参与度。",
+   "note": "showed that 的过去时态决定谓语用过去式 activated；activate 与 trigger 同义，「激活反应」是脑科学语篇标配；evokes 的双重陷阱在词尾时态与不可复用。"
+  },
+  {
+   "question_id": 567,
+   "long_sentence": "定位句 Brain regions involved in processing __ rapidly distinguish facts from possibilities：主语 Brain regions（involved in processing ___ 为过去分词短语作后置定语）；谓语 rapidly distinguish；facts from possibilities 为 distinguish A from B 框架。译：参与处理话语的大脑区域能迅速区分事实与可能性。",
+   "option": "正确 F discourse（话语）：processing discourse「处理话语」——本篇研究对象是语言陈述，discourse 指语言交流单位，与 statements、phrases 同义场；最接近干扰 I manuscript（手稿）与本研究「陈述、语句」的处理对象不合；K remnants（残余）语义无关。",
+   "keyword": "discourse 话语、语篇＝language in use；be involved in 参与、涉及；distinguish A from B 区分 A 与 B；rapidly 迅速地。",
+   "note": "processing ___ 的动宾框架锁定「语言类」名词；discourse 是 statements、phrases 的上位概括词；末段总结句常收拢全文关键词，本题对应开头 word choice、statements 的语义链。"
+  },
+  {
+   "question_id": 568,
+   "long_sentence": "定位句 many people find it difficult to __ away from their screens：find it difficult to do 中 it 作形式宾语，真正宾语为不定式；away from 为搭配成分。译：许多人发现很难从屏幕前抽身离开。",
+   "option": "正确 C disconnect（抽离、断开）：disconnect away from their screens「从屏幕中抽身」，呼应段旨 overuse 的负面效应；最接近干扰 D reduce（减少）reduce away from 不成搭配；M ignore（忽视）ignore away from 不成搭配——away from 是本题的硬约束。",
+   "keyword": "disconnect 断开、抽离＝tear oneself away；find it difficult to do 觉得做某事很难；screen 屏幕抽身义；away from 远离。",
+   "note": "to ___ away from 的不定式加介词框架是硬线索：词库中能自然接 away from 的动词基本只有 disconnect；先扫介词搭配再辨词义，可快速锁定。"
+  },
+  {
+   "question_id": 569,
+   "long_sentence": "定位句 which can __ face-to-face communication：which 引导非限制性定语从句，指代前句「难离屏幕」这一状况；can 后接动词原形；face-to-face communication 为宾语。译：而这可能妨碍面对面的交流。",
+   "option": "正确 F hinder（妨碍）：hinder face-to-face communication「妨碍面对面交流」，与 overuse 的负面主题一致；最接近干扰 L disrupt（扰乱）语义相近，但 disrupt 更常接 sleep、service 等对象，此处 hinder 更贴合「阻碍交流」；E encourage（鼓励）方向相反。",
+   "keyword": "hinder 妨碍＝impede、hamper；face-to-face communication 面对面交流；which 指代前文整句；negative effects 负面效应。",
+   "note": "can ___ 加宾语的框架锁定动词原形；语义须负面（overuse 主题），encourage、promote 先排除；hinder 与 disrupt 二选一时看搭配习惯，hinder 是更稳的书面用词。"
+  },
+  {
+   "question_id": 570,
+   "long_sentence": "定位句 Studies have shown that excessive screen time can __ sleep quality and increase anxiety：shown 后接 that 宾语从句；从句主语 excessive screen time；can 后接两个并列动词原形（空格与 increase 并列）。译：研究表明，过长的屏幕时间会扰乱睡眠质量并加重焦虑。",
+   "option": "正确 L disrupt（扰乱）：disrupt sleep quality「扰乱睡眠质量」为高频搭配，与 increase anxiety 并列同向负面；最接近干扰 F hinder 已用于第 2 空不可复用；D reduce（减少）reduce sleep quality 语法可通但语义不如 disrupt 准确——屏幕对睡眠是「打乱节律」而非「减量」。",
+   "keyword": "disrupt 扰乱＝disturb；excessive 过度的；screen time 屏幕时间；sleep quality 睡眠质量。",
+   "note": "can ___ ... and increase 的并列结构锁定动词原形且须与 increase 同向（负面）；hinder 已被第 2 空占用，同一词不可复用是选词填空铁律；disrupt sleep 是新闻报道高频词组。"
+  },
+  {
+   "question_id": 571,
+   "long_sentence": "定位句 To __ these issues, some experts suggest setting specific time limits：To ___ these issues 为目的状语；主干 some experts suggest setting...，suggest 后接动名词。译：为解决这些问题，一些专家建议设定明确的时限。",
+   "option": "正确 K address（解决、应对）：address these issues「解决这些问题」为书面高频搭配，these issues 回指上文 negative effects、hinder、disrupt 等负面内容；最接近干扰 M ignore（忽视）方向相反——提出建议必为「解决」而非「忽视」；D reduce（减少）reduce issues 不成搭配。",
+   "keyword": "address issues 解决问题＝tackle、deal with；set time limits 设定时限；suggest doing 建议做某事；specific 明确的。",
+   "note": "To ___ these issues 的目的状语锁定「应对类」动词；issues 的复指对象是上文负面效应，动词方向必为正面干预；ignore 是方向性陷阱，见 issues 优先想 address、tackle。"
+  },
+  {
+   "question_id": 572,
+   "long_sentence": "定位句 Additionally, using apps that __ mindful usage can help：using apps... 动名词短语作主语；that ___ mindful usage 为定语从句修饰 apps；can help 为主句谓语。译：此外，使用能鼓励有意识用机的应用也会有帮助。",
+   "option": "正确 E encourage（鼓励）：encourage mindful usage「鼓励有意识的使用」，apps 的功能是「促成」好习惯，与 can help 的正面基调一致；最接近干扰 N promote（促进）语义相近但 encourage 与 mindful 的「引导自觉」意味更贴；L disrupt 方向相反。",
+   "keyword": "encourage 鼓励＝prompt、foster；mindful usage 有意识的使用；app 应用程序；additionally 此外。",
+   "note": "that ___ mindful usage 定语从句缺谓语；mindful usage 是正面概念，动词必为「促进、鼓励」类；E 与 N 近义时优先选与 mindful「自觉」语气更贴的 encourage。"
+  },
+  {
+   "question_id": 573,
+   "long_sentence": "定位句 Another approach is to __ digital detox periods, during which we avoid using devices：Another approach is to ___（不定式作表语）；digital detox periods 为宾语；during which 引导非限制性定语从句。译：另一种方法是实行「数字排毒」时段——在这段时间里我们避免使用电子设备。",
+   "option": "正确 G adopt（采用、实行）：adopt periods、strategies「采取、实行」与 Another approach 的「方法」语义呼应；最接近干扰 H cultivate（培养）cultivate periods 不成搭配（cultivate 接 habits、interests）；J slaves 名词词性不符。",
+   "keyword": "adopt 采用、采取（措施、方法）＝take up；digital detox 数字排毒（戒断电子设备）；another approach 另一种方法；avoid doing 避免做某事。",
+   "note": "to ___ 加宾语的表语不定式锁定动词；approach is to adopt 的「方法—采取」搭配是常规逻辑；during which we avoid using devices 给出 detox 的定义，读懂即可锁定「实行」类动词。"
+  },
+  {
+   "question_id": 574,
+   "long_sentence": "定位句 While technology brings convenience, we must learn to __ its benefits with potential harms：While 引导让步状语从句；主干 we must learn to ___；its benefits 与 potential harms 为并列两端。译：科技带来便利，但我们必须学会在它的益处与潜在危害之间取得平衡。",
+   "option": "正确 A balance（平衡）：balance A with B「权衡 A 与 B」为固定搭配，benefits with harms 的两端正是 balance 的结构信号；最接近干扰 D reduce（减少）reduce benefits with harms 不成搭配；K address 已用于第 4 空不可复用。",
+   "keyword": "balance A with B 权衡、平衡 A 与 B；potential harms 潜在危害；while 尽管（让步）；convenience 便利。",
+   "note": "its benefits with potential harms 的「两端并列」结构是 balance 的专属信号——with 在此表示平衡的另一端而非「用」；while 开头的让步句提示「利与弊并存」主题，先读出两极再配动词。"
+  },
+  {
+   "question_id": 575,
+   "long_sentence": "定位句 The key is to find a __ that works for each individual：The key is to find a ___（不定式作表语）；that works for each individual 为定语从句修饰空格名词；work 在此意为「起作用、奏效」。译：关键在于找到一个对每个人都行之有效的解决办法。",
+   "option": "正确 O solution（解决办法）：a solution that works「奏效的解决办法」，与上句时限、正念应用、数字排毒的多种对策呼应；最接近干扰 I masters、J masters 的反义 slaves 虽是名词但语义与 works for each individual 不合；A balance 已用于第 7 空不可复用。",
+   "keyword": "solution 解决办法＝answer、remedy；work 起作用、奏效；the key is to... 关键在于；each individual 每个人。",
+   "note": "a ___ that works 的定语从句锁定「可奏效」的抽象名词；find a solution 是万能搭配；the key 提示本句是全文对策的收束——上文列举的时限、应用、排毒时段正是 solution 的具体化。"
+  }
+ ]
+}

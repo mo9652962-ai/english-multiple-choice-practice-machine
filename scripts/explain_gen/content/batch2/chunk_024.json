@@ -1,0 +1,180 @@
+{
+ "chunk": 24,
+ "items": [
+  {
+   "question_id": 576,
+   "long_sentence": "定位句 By doing so, we can __ a healthier relationship with technology：By doing so 为方式状语；can 后接动词原形；宾语 a healthier relationship with technology。译：这样做，我们就能与技术培养出一种更健康的关系。",
+   "option": "正确 H cultivate（培养）：cultivate a relationship「培养关系」为固定搭配，a healthier relationship 与全文「健康使用手机」的主旨呼应；最接近干扰 B improve（改善）improve a relationship 可通但侧重「改良已有关系」，cultivate 强调「逐步养成」，与 By doing so 的积累义更贴；N promote（促进）promote a relationship 不成搭配。",
+   "keyword": "cultivate 培养＝develop、foster；a healthier relationship with 与……更健康的关系；by doing so 通过这样做；adopt 采取（已用于第 6 空）。",
+   "note": "can ___ 加抽象名词宾语锁定动词；relationship 与 cultivate、build、develop 是高频搭配家族；improve 的干扰在于词性词义皆可，但「从习惯改变中养成新关系」的动态义与全文建议逻辑更合。"
+  },
+  {
+   "question_id": 577,
+   "long_sentence": "定位句 Ultimately, the goal is to use smartphones as tools, not as __ of our attention：the goal is to use smartphones as A, not as B 为 as...not as 对比结构；of our attention 限定空格名词；ultimately 意为「归根结底」。译：归根结底，目标是把智能手机当作工具来使用，而不是让它沦为只受注意力驱使的东西。",
+   "option": "正确 J slaves（奴隶）：as tools, not as ___ 要求填与 tools 对举的复数名词；全文反复警告注意力被屏幕占据（excessive screen time、digital detox、mindful usage），slaves of our attention 承接这一批判——手机若沦为只伺候注意力、助长无意识刷屏的存在，人便失去对使用的掌控，与上句 mindful usage（有意识地使用）形成正反对照；干扰 I masters（主人）与 tools 的对仗看似工整，构成最强干扰，但全文主线是「人有意识地主动使用」，落脚点在工具的功能定位而非谁支配谁。",
+   "keyword": "slave 奴隶；tool 工具；mindful usage 有意识的使用（反义语境词）；ultimately 归根结底（总结信号词）。",
+   "note": "as..., not as... 的对比结构是硬框架：先定复数名词，再在 masters、slaves 间抉择；抓全文关键词 mindful usage——「有意识使用」的对立面正是「被注意力牵着走」，据此定 slaves；ultimately 提示这是全文升华句，语气须与主旨一致。"
+  },
+  {
+   "question_id": 578,
+   "long_sentence": "定位句 A study by Stanford University found that employees working from home increased their productivity by 13% compared to their office-based counterparts：主干 A study found that...；that 从句主语 employees（working from home 现在分词作后置定语）；compared to... 为比较状语；counterpart 意为「对应的同行」。译：斯坦福大学的一项研究发现，居家办公的员工比在办公室工作的同行生产率提高了 13%。",
+   "option": "正确 C：Their productivity increased by 13% compared to office workers 与原句 productivity by 13% compared to... counterparts 逐点对应；A「生产率更低」正反混淆；B「多工作 13% 的小时数」偷换概念——13% 修饰的是 productivity 而非工时；D「休假的概率高 50%」张冠李戴——50% 属于「超标准工时工作」的数据。",
+   "keyword": "productivity 生产率；counterpart 对应的人、同行；compared to 与……相比；work from home 居家办公。",
+   "note": "数字细节题：13% 全文只出现一次，直接定位 Stanford study 句；B 项用 productivity 与 hours 偷换最易误选——回原文核对数字修饰的对象即可排除；D 项的 50% 是另一处数据的挪用。"
+  },
+  {
+   "question_id": 579,
+   "long_sentence": "定位句 While remote work offers flexibility, it also demands self-discipline and a clear separation between work and rest：While 引导让步状语从句（尽管）；主干 it also demands...；and 并列 demands 的两个宾语。译：远程工作虽提供了灵活性，却也需要自律，以及在工与歇之间划出清晰界线。",
+   "option": "正确 B「审慎乐观、承认弊端」：作者既引远程的好处（productivity +13%、flexibility），又列问题（burnout、virtual meeting fatigue），末句 hybrid model combines the best of both worlds 是典型的折中肯定；A「完全支持、毫无担忧」绝对化；C「强烈反对」与作者引用增产数据的立场相反；D「冷漠、无个人观点」错——While...demands... 与 hybrid model 都是明确的评价性表述。",
+   "keyword": "cautiously optimistic 审慎乐观；drawback 缺点、弊端；flexibility 灵活性；the best of both worlds 两全其美。",
+   "note": "态度题抓三处信号：However、Yet 的转折内容、While 让步句、结尾的展望与建议；「既说好处又说问题、结尾给折中方案」等于 cautiously optimistic；含 fully、without any concerns 的绝对化选项在态度题中几乎必错。"
+  },
+  {
+   "question_id": 580,
+   "long_sentence": "定位句 The future of work may not be fully remote, but a hybrid model that combines the best of both worlds：主干 The future of work may not be..., but...；not...but... 结构对举；that combines... 为定语从句修饰 hybrid model。译：工作的未来或许不会完全远程，而是一种兼具两者之长的混合模式。",
+   "option": "正确 B「Remote Work: A Double-Edged Sword（远程工作：一把双刃剑）」：全文结构是「增产的好处＋超时、倦怠、会议疲劳的坏处＋平衡之策」，双刃剑比喻恰合两面性；A「办公室文化的衰落」无中生有；C「如何在家提高生产率」以偏概全，生产率只是首段一个数据；D「视频会议的未来」以偏概全，会议疲劳只是中间一个细节。",
+   "keyword": "double-edged sword 双刃剑；hybrid model 混合模式；title 标题题＝主旨题；the best of both worlds 两全其美。",
+   "note": "标题题＝全文主旨概括，须覆盖正反两面且不含未提及内容；先排除「只讲局部细节」的 C、D（都是段落级信息），再排除「无中生有」的 A；double-edged sword 是主旨类标题的高频意象。"
+  },
+  {
+   "question_id": 581,
+   "long_sentence": "定位句 some companies have adopted 'asynchronous communication' policies to reduce real-time pressure, allowing workers to respond to messages at their own pace：主干 some companies have adopted...policies；to reduce... 为目的状语；allowing... 现在分词作结果状语；at one's own pace 意为「按自己的节奏」。译：一些公司已采用「异步沟通」政策以减轻实时压力，让员工按自己的节奏回复消息。",
+   "option": "正确 B：To reduce real-time pressure on employees 与原句 to reduce real-time pressure 原词对应，allowing workers to respond at their own pace 是其补充说明；A「增加视频会议数量」与减少会议疲劳的方向相反，正反混淆；C「迫使员工工作更长时间」无中生有；D「鼓励更多面对面会议」无中生有。",
+   "keyword": "asynchronous communication 异步沟通；real-time pressure 实时压力；at one's own pace 按自己的节奏；adopt 采用（政策）。",
+   "note": "目的细节题：题干 Why 直接对应原文的 to do 不定式；asynchronous 的构词（a- 表非＋synchronous 同步）可辅助理解；A 项挪用原文 video conferences 设陷，但方向与「减少疲劳」相反。"
+  },
+  {
+   "question_id": 582,
+   "long_sentence": "定位句 The future of work may not be fully remote, but a hybrid model that combines the best of both worlds：may not be fully remote 为委婉否定；but 转出正面预测；hybrid 意为「混合的」。译：工作的未来或许不会完全远程，而是一种混合模式——兼取远程与办公室两者之长。",
+   "option": "正确 C「很可能是远程与办公室结合的混合模式」＝a hybrid model that combines the best of both worlds；A「所有公司都完全远程」与 may not be fully remote 正反混淆且绝对化；B「彻底放弃远程」过度推断；D「只聚焦异步沟通」绝对化，asynchronous 只是部分公司的政策。",
+   "keyword": "hybrid model 混合模式；fully remote 完全远程；infer 推断；combine 结合＝integrate。",
+   "note": "推断题答案常是原文的「折中表述」：may not be...but... 的句式重心在 but 之后；A、D 两项的 completely、only 都是绝对化标志词，见到即警惕；hybrid（混合）一词是本题的唯一直接证据。"
+  },
+  {
+   "question_id": 583,
+   "long_sentence": "定位句 adults who sleep less than six hours per night are 20% more likely to develop hypertension or heart attacks：主干 adults are 20% more likely to develop...；who sleep less than six hours per night 为定语从句；hypertension 意为「高血压」。译：每晚睡眠不足六小时的成年人患高血压或心脏病发作的可能性要高 20%。",
+   "option": "答案 A 段：题干 increases the risk of developing high blood pressure and heart attacks 对应原句 are 20% more likely to develop hypertension or heart attacks——high blood pressure＝hypertension（同义替换）、increases the risk＝20% more likely to develop；与 E 段区分：E 段讲体重增加（ghrelin、leptin 激素），不含心血管词，heart attacks 只在 A 段出现。",
+   "keyword": "hypertension 高血压＝high blood pressure；cardiovascular disease 心血管疾病；heart attack 心脏病发作；insufficient sleep 睡眠不足。",
+   "note": "专有医学词是长篇匹配的黄金定位词：heart attacks、high blood pressure 直指 A 段的 hypertension；记住 hypertension＝high blood pressure 这组同义替换，四六级阅读反复考。"
+  },
+  {
+   "question_id": 584,
+   "long_sentence": "定位句 Research shows that people who sleep fewer than seven hours are nearly three times more likely to catch a cold when exposed to a virus：主干 Research shows that...；who sleep fewer than seven hours 为定语从句；when exposed to a virus 为省略结构的时间状语（when 加过去分词）。译：研究表明，睡眠少于七小时的人接触病毒时感冒的可能性几乎是常人的三倍。",
+   "option": "答案 B 段：题干 The immune system's ability to fight infections is weakened by insufficient sleep 对应段首句 lack of sleep weakens the immune system——is weakened by 是 weakens 的被动化改写、fight infections＝fight infection；与 A 段区分：A、B 都出现 inflammation，但 immune system 与 infections 是 B 段专属锚词。",
+   "keyword": "immune system 免疫系统；weaken 削弱＝impair；infection 感染；catch a cold 感冒。",
+   "note": "主动与被动的互换是长篇匹配常见改写：原文主动 weakens、题干被动 is weakened by；inflammation 在 A、B 两段跨段复现，不能作定位依据，要用 immune system 锁段。"
+  },
+  {
+   "question_id": 585,
+   "long_sentence": "定位句 Without enough rest, individuals experience difficulty concentrating, slower reaction times, and poor decision-making：Without enough rest 介词短语作条件状语；主干 individuals experience...；三个并列宾语。译：休息不足时，人们会出现注意力难以集中、反应变慢和决策力差的问题。",
+   "option": "答案 C 段：题干 Poor sleep makes it harder to concentrate and make good decisions 对应 difficulty concentrating（更难集中＝difficulty concentrating）与 poor decision-making（好决策变差＝poor）；与 D 段区分：C、D 都涉及 brain，但 C 段主题句是 Cognitive functions（认知功能）、D 段是 Emotional stability（情绪稳定），题干 concentrate 与 decisions 属认知词。",
+   "keyword": "cognitive function 认知功能；concentrate 集中注意力；decision-making 决策；reaction time 反应时间。",
+   "note": "段首主题句 Cognitive functions are also severely affected by sleep loss 决定本段管辖「认知类」细节；长篇匹配先扫各段首句再比对细节，主题词 cognitive 对 emotional 的分工是 C、D 两段的切分线。"
+  },
+  {
+   "question_id": 586,
+   "long_sentence": "定位句 Sleep deprivation increases activity in the amygdala, the brain's fear center, while reducing connections to the prefrontal cortex that regulates emotions：主干 Sleep deprivation increases activity...；the brain's fear center 为 amygdala 的同位语；while reducing... 为对比状语。译：睡眠不足使杏仁核（大脑恐惧中枢）更活跃，同时削弱其与前额叶皮层（掌管情绪）的连接。",
+   "option": "答案 D 段：题干 Lack of sleep can cause emotional problems like increased anxiety and irritability 对应段首 Emotional stability suffers as well 与 This leads to heightened anxiety, irritability, and mood swings——increased anxiety＝heightened anxiety、irritability 原词复现；与 C 段区分：C 认知、D 情绪，题干 emotional 直接锁定 D 段。",
+   "keyword": "emotional stability 情绪稳定；irritability 易怒；mood swing 情绪波动；amygdala 杏仁核。",
+   "note": "题干 emotional problems 与段首 Emotional stability 词汇复现，这是「主题词定位法」；同段的 amygdala（第 8 题考点）与 anxiety、irritability（本题考点）同段两题，注意按细节词切分信息点。"
+  },
+  {
+   "question_id": 587,
+   "long_sentence": "定位句 When you are sleep-deprived, your body produces more ghrelin (the hunger hormone) and less leptin (the satiety hormone)：when 引导时间状语从句；主干 your body produces more...and less...；括号内为同位解释。译：当睡眠不足时，身体会分泌更多饥饿素（ghrelin）、更少的瘦素（leptin，饱腹激素）。",
+   "option": "答案 E 段：题干 Sleep loss leads to hormonal changes that stimulate appetite for unhealthy food 对应 This hormonal imbalance makes you crave high-calorie, sugary foods——hormonal changes＝hormonal imbalance、unhealthy food＝high-calorie, sugary foods 的归纳；与 F 段区分：F 段讲改善建议，E 段讲后果（段首 Another consequence is weight gain）。",
+   "keyword": "hormone 激素；ghrelin 饥饿素；leptin 瘦素、饱腹激素；crave 渴望、想吃＝have a strong desire for。",
+   "note": "hormonal changes 的 changes 对应原文 more ghrelin and less leptin 的「一多一少」结构；括号释义（the hunger hormone）是命题改写的素材点；E 段与 F 段「后果 vs 对策」的分工靠段首词区分。"
+  },
+  {
+   "question_id": 588,
+   "long_sentence": "定位句 Experts recommend maintaining a consistent sleep schedule, even on weekends：recommend 后接动名词 maintaining；even on weekends 为让步强调。另一句 Creating a cool, dark, and quiet bedroom environment can help：动名词短语作主语。译：专家建议保持规律的作息，连周末也不例外；营造凉爽、黑暗、安静的卧室环境也有帮助。",
+   "option": "答案 F 段：题干 Keeping a regular sleep schedule and a comfortable bedroom environment can improve sleep quality 对应 maintaining a consistent sleep schedule（regular＝consistent）与 Creating a cool, dark, and quiet bedroom environment（comfortable 是三形容词的归纳）；与其他段区分：A-E 讲危害，F 段以 Fortunately 开头是唯一「对策」段。",
+   "keyword": "consistent＝regular 一贯的、规律的；maintain 保持；bedroom environment 卧室环境；recommend doing 建议做某事。",
+   "note": "Fortunately 是「问题—对策」结构的强信号词：讲 solutions 的题先扫含 fortunately、strategy、recommend 的段落；comfortable bedroom 是对 cool, dark, and quiet 的上位归纳，属「具体变概括」型同义改写。"
+  },
+  {
+   "question_id": 589,
+   "long_sentence": "定位句 sleep deprivation reduces the production of cytokines, proteins that help fight infection and inflammation：主干 sleep deprivation reduces the production of cytokines；proteins that... 为同位语加定语从句，解释 cytokines 的功能。译：睡眠不足会减少细胞因子的分泌——这类蛋白质能帮助对抗感染与炎症。",
+   "option": "答案 B 段：题干 Cytokines, which protect against infection, are produced less when people are sleep-deprived 与原句逐点对应——cytokines 原词复现、protect against infection＝help fight infection、are produced less＝reduces the production；与 A 段区分：A 段讲 stress hormones 而非 cytokines，专有名词是唯一定位锚。",
+   "keyword": "cytokine 细胞因子；production 分泌、生成；protect against 防御；reduce the production of 减少……的分泌。",
+   "note": "专有名词定位是长篇匹配最稳的方法：cytokines 全文只在 B 段出现，先扫生僻术语再核对方向（减少）；题干 which protect against infection 是对原文 proteins that help fight infection 的定语从句改写。"
+  },
+  {
+   "question_id": 590,
+   "long_sentence": "定位句 Sleep deprivation increases activity in the amygdala, the brain's fear center：主干 Sleep deprivation increases activity in...；the brain's fear center 作 amygdala 的同位语。译：睡眠不足会使杏仁核（大脑的恐惧中枢）的活动增强。",
+   "option": "答案 D 段：题干 Sleep-deprived individuals show more activity in the brain region associated with fear 对应 increases activity in the amygdala, the brain's fear center——more activity＝increases activity、the brain region associated with fear＝the brain's fear center（同位语的解释性改写）；与 C 段区分：C 段讲大脑的记忆与清理废物，无 fear 与 amygdala。",
+   "keyword": "amygdala 杏仁核；fear center 恐惧中枢；associated with 与……相关；activity（脑部）活动。",
+   "note": "「大脑区域＋恐惧」的组合只能落在 amygdala 所在的 D 段；原文生僻词后常跟解释性同位语（the brain's fear center），这正是题干改写的素材——记住「同位语＝自带释义」这一阅读技巧。"
+  },
+  {
+   "question_id": 591,
+   "long_sentence": "定位句 feeling tired often reduces physical activity, creating a vicious cycle of weight gain and poor sleep：feeling tired 动名词短语作主语；creating a vicious cycle 为现在分词作结果状语。译：疲倦感常会减少体力活动，形成体重增加与睡眠不佳的恶性循环。",
+   "option": "答案 E 段：题干 Reduced physical activity due to tiredness contributes to weight gain 对应 feeling tired often reduces physical activity...weight gain——reduced physical activity 原词复现、due to tiredness＝feeling tired、contributes to weight gain＝creating a vicious cycle of weight gain；与同段前半区分：E 段前半讲激素与食欲（第 5 题考点），本题取后半运动减少的信息。",
+   "keyword": "physical activity 体力活动；vicious cycle 恶性循环；weight gain 体重增加；contribute to 促成、导致。",
+   "note": "E 段是「一段两题」的典型：前半 hormonal imbalance、后半 reduces physical activity；同段多题时务必读完整段再切分信息点，用 appetite 与 physical activity 两个细节词分界。"
+  },
+  {
+   "question_id": 592,
+   "long_sentence": "定位句 A famous study found that sleep-deprived doctors made 36% more serious medical errors than their well-rested colleagues：主干 A study found that...；than their well-rested colleagues 为比较状语；well-rested 复合形容词「休息充分的」。译：一项著名研究发现，睡眠不足的医生犯的严重医疗差错比休息充分的同行多 36%。",
+   "option": "答案 C 段：题干 Medical errors are more common among doctors who do not get enough sleep 对应 sleep-deprived doctors made 36% more serious medical errors——medical errors 原词复现、more common＝36% more、do not get enough sleep＝sleep-deprived；与 B 段区分：B 段也有数字（three times），但 catch a cold 与 doctors 无关，doctors、medical errors 是 C 段专属。",
+   "keyword": "medical error 医疗差错；sleep-deprived 睡眠不足的；well-rested 休息充分的；colleague 同事、同行。",
+   "note": "题干的抽象表述 more common 在原文落成具体数字 36% more——「题干概括、原文具体」是长篇匹配的标准改写方向；著名研究加数字的句子是高频命题点，见 study found that 优先标记。"
+  },
+  {
+   "question_id": 593,
+   "long_sentence": "定位句 One major __ is the potential for AI to widen the digital divide, as students from underprivileged backgrounds may lack access to advanced technologies：One major ___ is... 为主系表结构；the potential for AI to do 中不定式作后置定语；as 引导原因从句；lack access to 意为「缺乏获取渠道」。译：一个主要挑战是，AI 可能扩大数字鸿沟——因为弱势背景的学生可能难以获得先进技术。",
+   "option": "正确 A challenge（挑战）：One major challenge is... 为固定句式，与上句 raises critical questions about equity and ethics 的「提出问题」语气衔接；最接近干扰 N compromise（妥协）语义不合——本段在提出问题而非达成妥协；I increase 是动词，不能填入表语的名词位。",
+   "keyword": "challenge 挑战；digital divide 数字鸿沟；underprivileged 弱势的、贫困的；access (to) 获取渠道、使用机会。",
+   "note": "One major ___ is 的表语位锁定单数可数名词；challenge 与上句 questions、concerns 构成「问题类」语义链；widen the digital divide（扩大数字鸿沟）正是 challenge 的具体内容，先读例子再定词。"
+  },
+  {
+   "question_id": 594,
+   "long_sentence": "定位句 Another concern involves data privacy, since AI systems often __ vast amounts of personal information：since 引导原因状语从句；从句主语 AI systems；谓语 ___ vast amounts of personal information；often 表频率。译：另一个担忧涉及数据隐私，因为 AI 系统常常收集海量个人信息。",
+   "option": "正确 B collect（收集）：collect information「收集信息」为高频搭配，vast amounts of personal information 与 data privacy 的担忧因果相承；最接近干扰 L restrict（限制）restrict information 方向相反——正因为收集才引发隐私担忧；K ignore（忽视）ignore information 不成语境。",
+   "keyword": "collect 收集＝gather；vast amounts of 大量的；personal information 个人信息；data privacy 数据隐私。",
+   "note": "主语 systems 复数加 often 提示一般现在时动词原形；「数据隐私」担忧的原因必然是「收集」，先定方向再选词；restrict 是方向性陷阱——若限制收集就不会有隐私问题。"
+  },
+  {
+   "question_id": 595,
+   "long_sentence": "定位句 To __ these risks, educators must develop clear __ for the use of AI in classrooms：To ___ these risks 为目的状语，to 后接动词原形；主干 educators must develop...。译：为降低这些风险，教育者必须为课堂使用 AI 制定明确的准则。",
+   "option": "正确 C mitigate（缓解、减轻）：mitigate risks「降低风险」为学术高频搭配，these risks 回指上文的 digital divide 与 data privacy；最接近干扰 L restrict（限制）restrict risks 不成搭配（restrict 接行为、自由）；I increase（增加）方向相反；K ignore（忽视）语义消极且与对策语境冲突。",
+   "keyword": "mitigate 缓解＝reduce、ease；risk 风险；educator 教育者；address、tackle（近义家族）。",
+   "note": "To ___ these risks 的目的状语锁定「降低」类动词；mitigate 是六级高频学术词，与 alleviate、reduce 同义；increase 与 mitigate 构成正反对，靠「风险需要被处理」的逻辑选减不选增。"
+  },
+  {
+   "question_id": 596,
+   "long_sentence": "定位句 educators must develop clear __ for the use of AI in classrooms：educators must develop clear ___ 为主谓宾；clear 为形容词修饰空格；for the use of AI in classrooms 为用途范围状语。译：教育者必须为课堂使用 AI 制定明确的准则。",
+   "option": "正确 D guidelines（准则、指南）：develop guidelines「制定准则」为固定搭配，clear guidelines 与「规范 AI 使用」的管理语境匹配；最接近干扰 M alternative（替代方案）冠词搭配生硬且语义不合；N compromise（妥协）develop clear compromise 不成搭配；O excessive 是形容词，词性不符。",
+   "keyword": "guideline 准则、指南（常用复数）；develop 制定＝formulate；clear 明确的；for the use of 用于……的场景。",
+   "note": "develop clear ___ 的动宾框架锁定「规范类」名词；guidelines 常以复数出现，与 use of AI 的管理话题呼应；本空与第 3 空 mitigate risks 构成「风险—对策」的逻辑链。"
+  },
+  {
+   "question_id": 597,
+   "long_sentence": "定位句 Meanwhile, AI can __ learning by adapting to individual students' needs, providing instant feedback：Meanwhile 表转折递进；主干 AI can ___ learning；by 加并列动名词（adapting、providing）表方式。译：与此同时，AI 能够促进学习——通过适应学生的个体需求、提供即时反馈来实现。",
+   "option": "正确 E enhance（提升、增强）：enhance learning「促进学习」与 Meanwhile 之后的正面转折一致，by 后的动名词都是 AI 的助益；最接近干扰 I increase（增加）increase learning 搭配生硬且无「质量提升」义；B collect 已用于第 2 空不可复用；N promote（促进）语义可通但此处 enhance 与 by 方式链更贴。",
+   "keyword": "enhance 提升＝improve、boost；adapt to 适应；instant feedback 即时反馈；individual needs 个体需求。",
+   "note": "can ___ learning 加 by doing 方式状语的框架锁定「促进」类动词；Meanwhile 提示与上段「风险」的转折，此处必为正面义；by 后并列动名词的语法平行是本题隐藏考点。"
+  },
+  {
+   "question_id": 598,
+   "long_sentence": "定位句 AI can enhance learning by adapting to individual students' needs, providing instant feedback, and __ repetitive tasks for teachers：by 后为三个并列动名词，空格与 adapting、providing 平行；repetitive tasks for teachers 为宾语。译：（AI 通过）为教师自动完成重复性任务来促进学习。",
+   "option": "正确 F automating（使自动化）：automating repetitive tasks「将重复性任务自动化」与并列的 adapting、providing 保持 -ing 形式平行，AI 的功能定位也吻合；最接近干扰 E enhance 已用于第 5 空不可复用，且 enhance repetitive tasks 语义不通；B collect 词义不合。",
+   "keyword": "automate 使自动化；repetitive task 重复性任务；parallel structure 平行结构；for teachers 为教师代劳。",
+   "note": "and 连接的三个动名词必须同形——-ing 词尾是硬约束，词库中仅 automating 符合；「语法平行先行、词义辨析在后」是选词填空的秒杀技巧，遇到并列结构先看词形。"
+  },
+  {
+   "question_id": 599,
+   "long_sentence": "定位句 Yet, the __ of human interaction in education cannot be fully replaced by machines：Yet 表转折；主语 the ___ of human interaction（of 属格结构）；谓语 cannot be fully replaced 为被动否定；by machines 为施动者。译：然而，教育中人际互动的价值无法被机器完全取代。",
+   "option": "正确 G value（价值）：the value of human interaction「人际互动的价值」——cannot be replaced 的对象正是「价值」；最接近干扰 N compromise（妥协）the compromise of human interaction 语义不合；M alternative（替代品）与 replaced 语义重复且 the alternative of 搭配不通；I increase 动词词性不符。",
+   "keyword": "value 价值＝worth；human interaction 人际互动；be replaced by 被……取代；yet 然而（转折）。",
+   "note": "Yet 提示与上文 AI 优势的转折——AI 再强也替代不了人际互动；the ___ of human interaction 的属格结构锁定抽象名词；cannot be fully replaced 的 fully 是「留有余地」的限定，说明只是部分不可替代。"
+  },
+  {
+   "question_id": 600,
+   "long_sentence": "定位句 A __ approach that combines AI with traditional teaching methods may be the most effective：A ___ approach 为主语，that combines... 为定语从句修饰 approach；may be the most effective 为谓语；combine A with B 为固定搭配。译：一种将 AI 与传统教学方法相结合的平衡路径，可能是最有效的。",
+   "option": "正确 H balanced（平衡的）：a balanced approach「平衡的做法」与 combines AI with traditional teaching methods 的「两者结合」直接呼应；最接近干扰 M alternative（替代的）alternative approach 搭配通顺但与 combines（结合）矛盾——替代即二选一，结合则并存；O excessive（过度的）贬义不合语境。",
+   "keyword": "balanced approach 平衡的做法；combine A with B 把 A 与 B 结合；traditional teaching 传统教学；most effective 最有效的。",
+   "note": "that combines AI with traditional teaching 的定语从句是定义线索——「结合两者」等于 balanced；alternative 的陷阱在搭配通顺但语义与「结合」冲突；本题与第 7 空 value 构成「技术为辅、人为主」的立场句对。"
+  }
+ ]
+}

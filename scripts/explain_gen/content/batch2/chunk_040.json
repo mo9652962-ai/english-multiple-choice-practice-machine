@@ -1,0 +1,180 @@
+{
+ "chunk": 40,
+ "items": [
+  {
+   "question_id": 976,
+   "long_sentence": "拆 Hugging protects people who are under stress from the increased risk for colds that's usually 14 ______ with stress；that 引导定语从句修饰 risk；protect...from... 保护…免受。译：拥抱能保护处于压力之下的人，使其免受那种通常 __（关联）于压力的感冒风险升高。",
+   "option": "正确项 B associated：be associated with（与…相关）是医学与社科描述相关性的标准表达，压力与感冒风险升高相关正是研究结论；A equipped：be equipped with 意为「配备有」，主语多为人或设备，不接 stress；C presented：be presented with 意为「被给予、面临」，语义不符；D compared：be compared with 意为「与…比较」，此处无比较对象。",
+   "keyword": "be associated with 与…相关＝be linked to；risk for... 患…的风险；under stress 处于压力之下。",
+   "note": "相关性表达的固定搭档：医学语境中「某风险与某因素」关联必用 associated 或 linked with；四个分词都自带 be...with 搭配，是「同介词不同短语」的连环陷阱，须用「风险与压力的语义关系」定夺而非只看介词。"
+  },
+  {
+   "question_id": 977,
+   "long_sentence": "拆 Hugging is a marker of intimacy and helps 15 ______ the feeling that others are there to help；marker 意为「标志」；that 引导同位语从句说明 feeling 的内容。译：拥抱是亲密的标志，并有助于 __（产生）「他人会在困难时帮助你」的感受。",
+   "option": "正确项 C generate（产生）：generate the feeling（产生这种感受）为高频搭配，拥抱带来的亲密感「生出」被支持感，符合心理学表述逻辑；A assess（评估）感受不是被评估对象；B moderate（缓和）moderate the feeling 语义别扭，且无「调节情绪波动」的语境；D record（记录）无人记录感受。",
+   "keyword": "generate the feeling 产生感受；marker of intimacy 亲密的标志；intimacy 亲密；helps (to) do 有助于做。",
+   "note": "动词与 feeling 的搭配域：产生（generate）、唤起（evoke）都通，评估、记录不通；本句是研究者阐释拥抱的心理机制，应选「正向生成」类动词，B 的 moderate 有「缓和」迷惑但缓和的对象应是冲突或过度反应。"
+  },
+  {
+   "question_id": 978,
+   "long_sentence": "拆 others are there to help 16 ______ difficulty；in the face of 意为「面对」；there to help 表「随时可以提供帮助」。译：让你感到他人随时会在 __（面对）困难时伸出援手。",
+   "option": "正确项 A in the face of（面对）：help in the face of difficulty（在困难面前施以援手）为地道搭配，与前文压力、感冒的困境语境一致；B in the form of（以…形式）代入后成为「以困难的形式提供帮助」，语义颠倒；C in the way of 有「妨碍」义，逻辑不通；D in the name of（以…名义）无名义可言。",
+   "keyword": "in the face of 面对＝when confronted with；in the form of 以…的形式；in the name of 以…的名义；difficulty 困难。",
+   "note": "介词短语辨析看逻辑搭配：help 与 difficulty 之间需要「在……情境之下」的关系词，只有 in the face of 表「面对困难时」；四个选项都是 in the...of 家族的高频短语，完形爱成串考查，须逐个记场景而非只记介词。"
+  },
+  {
+   "question_id": 979,
+   "long_sentence": "拆 Some experts 17 ______ the stress-reducing, health-related benefits of hugging to the release of oxytocin；attribute...to... 把…归因于…；oxytocin 意为「催产素」；release 意为「释放」。译：一些专家把拥抱的减压与健康益处 __（归因）于催产素的释放。",
+   "option": "正确项 C attribute：attribute A to B（把 A 归因于 B）为固定搭配，益处（果）归于催产素释放（因），与前文数据发现形成「现象加机制」的完整链条；A transfer（转移）transfer...to 表「把…转移到」，益处不能被搬运；B commit：commit...to 意为「把…托付于、承诺于」，方向不合；D return（归还）return...to 表「把…还给」，益处并非被归还物。",
+   "keyword": "attribute...to... 把…归因于；oxytocin 催产素；release 释放；stress-reducing 减压的。",
+   "note": "「因果归因」句型是本文的方法论线索：前文用数据（32%）建立相关，本段用生理机制解释原因，attribute A to B 是标准句式；四个动词都接 to，但只有 attribute 表归因——同介词短语题必须看主宾之间的语义角色。"
+  },
+  {
+   "question_id": 980,
+   "long_sentence": "拆 often called 'the bonding hormone' 18 ______ it promotes attachment in relationships；called 为过去分词作后置定语；promote attachment 意为「促进依恋」；including that between... 中 that 回指 attachment。译：它常被称为「联结激素」，__（因为）它能促进人际关系中的依恋，包括母婴之间的依恋。",
+   "option": "正确项 A because（因为）：「促进依恋」正是催产素得名「联结激素」的原因，绰号与理由之间是因果关系；B unless（除非）表条件，此处无条件语境；C though（尽管）表让步，前后无转折；D until（直到）表时间，逻辑不通。",
+   "keyword": "bonding hormone 联结激素；promote attachment 促进依恋；newborn baby 新生儿；relationship 人际关系。",
+   "note": "绰号与理由是「因称果」关系：因为促进依恋（bonding），所以叫联结激素，because 顺势成立；bonding 与 attachment 的同根呼应（联结与依恋）是因果关系的语义锚点，抓词根复现即可锁定连词。"
+  },
+  {
+   "question_id": 981,
+   "long_sentence": "拆 But some of it 19 ______ in the brain, where it 20 ______ mood, behavior and physiology；But 表转折；some of it 回指 oxytocin；where 引导非限制性定语从句修饰 the brain；physiology 意为「生理机能」。译：但有些催产素会 __（留存）在大脑中，在那里影响情绪、行为与生理机能。",
+   "option": "正确项 C remains（留存）：前句说一部分被释放进入血液，But 转折后自然是「另一部分留在脑内」，remains in the brain 与 released into the bloodstream 一出一留，对照清晰；A emerges（出现）与 But 的转折衔接弱；B vanishes（消失）与后文「在大脑发挥作用」矛盾；D decreases（减少）说的是数量而非位置分布。",
+   "keyword": "remain in 留存于；bloodstream 血流；mood 情绪；physiology 生理机能；be released into 被释放进入。",
+   "note": "But 的转折要找到对照面：released into the bloodstream（进入血流）对 remains in the brain（留在脑内），一「出」一「留」构成分布描述；B 若成立则后半句 where it influences... 无从谈起，可用后句作用反推本空动词。"
+  },
+  {
+   "question_id": 982,
+   "long_sentence": "拆 where it 20 ______ mood, behavior and physiology；where 引导定语从句；it 回指 oxytocin；三个并列宾语 mood、behavior、physiology。译：在那里它 __（影响）情绪、行为与生理机能。",
+   "option": "正确项 D influences（影响）：催产素留存于脑并「影响」情绪、行为、生理，是生理学因果的标准动词；A experiences（经历）主语应是人，激素不会「经历」情绪；B combines（结合）combine A with B 的结构不符且无结合语境；C justifies（证明…正当）与生理作用无关。",
+   "keyword": "influence 影响＝affect；mood 情绪；behavior 行为；physiology 生理机能；oxytocin 催产素。",
+   "note": "主语 it（激素）与宾语（情绪、行为、生理）之间只有「作用、影响」的关系成立；A 的陷阱在「体验情绪」通常与人搭配，激素是施加者不是体验者——「谁对谁做什么」的主谓宾逻辑是长难从句选词的通用检验法。"
+  },
+  {
+   "question_id": 983,
+   "long_sentence": "拆 The crash of EgyptAir Flight 804, which terrorists may have downed over the Mediterranean Sea, provides another tragic reminder of why；which 引导非限制性定语从句；down 作动词意为「击落」；provides a reminder of why 回指上句的理由。译：可能被恐怖分子在地中海上空击落的埃及航空 804 航班坠机事件，再一次悲剧性地提醒人们个中缘由。",
+   "option": "正确项 A「解释美国人对现行安检的容忍」＝上句 Americans are willing to tolerate time-consuming security procedures in return for increased safety 加本句 reminder of why——坠机惨剧说明「换安全值得忍」；B「强调全球加强安检的紧迫性」过度推断，例子服务于美国安检语境；C「突出升级美国大机场的必要性」张冠李戴，机场拥挤是后文问题；D「强调隐私保护的重要性」无中生有。",
+   "keyword": "tolerate 忍受＝put up with；in return for 作为回报；down v. 击落；reminder 让人想起之物。",
+   "note": "例证题看例子的服务对象：坠机例子紧跟「愿意忍受安检换安全」的陈述，reminder of why 的 why 即回指该句；B 的 worldwide、C 的机场升级都把例子拔离原语境——例证题答案永远在例子前后的观点句里。"
+  },
+  {
+   "question_id": 984,
+   "long_sentence": "拆 Enhanced security measures since then, combined with a rise in airline travel due to the improving economy and low oil prices, have resulted in long waits at major airports；combined with 加上；due to 由于；result in 导致。译：此后强化的安检措施，加之经济好转与低油价带来的航空出行增长，共同导致芝加哥奥黑尔等大机场排起长队。",
+   "option": "正确项 C「旅客数量增加」＝a rise in airline travel due to the improving economy and low oil prices 的同义改写；A「随身行李的新限制」无中生有，overpack carry-on bags 是旅客避托运费的行为且航空公司 dispute（否认）；B「TSA 效率下降」偷换概念，原文是措施增强加人手不足（rushing to get new screeners）；D「频繁的意外秘密检查」张冠李戴，secret check 是发现漏洞的调查行动，不是排队原因。",
+   "keyword": "enhanced security measures 强化的安检措施；a rise in airline travel 航空出行增长；result in 导致；carry-on bag 随身行李。",
+   "note": "多因归并题：原因链是「措施强化加出行增长加场地有限」，C 直接对应 a rise in airline travel；B 把「人手不够」偷换成「效率下降」，A、D 是细节词错位安放——因果题干扰项常是「细节真、因果假」。"
+  },
+  {
+   "question_id": 985,
+   "long_sentence": "拆 Passengers who pass a background check are eligible to use expedited screening lanes；who pass a background check 为定语从句；be eligible to do 意为「有资格做」。译：通过背景审查的旅客有资格使用 __（快速）安检通道。",
+   "option": "正确项 D faster：下文 saving time for everyone involved（为所有人节省时间）直接印证 expedited 的「加速」义；A quieter（更安静）无语境；B cheaper（更便宜）反而与后文 $85 收费矛盾；C wider（更宽）无支撑。",
+   "keyword": "expedited 加快的＝speeded up；be eligible to do 有资格做；background check 背景审查；screening lane 安检通道。",
+   "note": "猜词题找邻句的量化证据：saving time 是「快」的直白改写；expedite 在生活语境外见于 expedited shipping（加急配送），语感即「加急」；B 的 cheaper 与 85 美元收费细节互相矛盾，可双保险排除。"
+  },
+  {
+   "question_id": 986,
+   "long_sentence": "拆 one big reason is sticker shock: Passengers must pay $85 every five years to process their background checks；sticker shock 意为「标价震惊」（见价吓一跳）；process 作动词意为「办理」。译：注册人数远未达标，一个主要原因是「标价惊吓」：旅客每五年须支付 85 美元办理背景审查。",
+   "option": "正确项 D「注册收费不合理」＝sticker shock 加 $85 every five years 加 this price tag has been PreCheck's fatal flaw（价格是其致命缺陷），三层证据锁定定价问题；A「规模急剧缩减」偷换概念，是「远未达到 2500 万的目标」而非缩减；B「实施方向错误」无中生有；C「政府不愿支持」过度推断，Congress should look into doing so directly 是呼吁政府出手，未证其不愿。",
+   "keyword": "sticker shock 标价震惊；fatal flaw 致命缺陷；enroll 注册、加入；process v. 办理。",
+   "note": "flaw 题抓 price tag 与数字：85 美元每五年加 fatal flaw 把问题钉在定价上；A 的 reduction 与「从未接近目标」方向不同——未达标不等于缩减；习语 sticker shock 本身就是「嫌贵」的强信号。"
+  },
+  {
+   "question_id": 987,
+   "long_sentence": "拆 The TSA cannot continue diverting resources into underused PreCheck lanes while most of the traveling public suffers in unnecessary lines；divert...into 把（资源）转投到…；underused 意为「未充分利用的」。译：TSA 不能一边把资源继续投向闲置的 PreCheck 通道，一边任由大多数旅客在不必要的长队中煎熬。",
+   "option": "正确项 C「卡在安检长队里」＝全文问题主轴：首段 first two hours, now three hours、第 3 段 long waits、末段 suffers in unnecessary lines 反复回扣排队之苦，C 概括这一贯穿矛盾；A「少安检换多安全」与作者立场相反，作者要的是更高效而非更少；B「PreCheck——迟来的解决方案」以偏概全，belated（迟来的）无据；D「闲置的 PreCheck 通道」以偏概全，只是末段一个侧面。",
+   "keyword": "security line 安检长队；underused 未充分利用的；divert resources 转移资源；win-win 双赢。",
+   "note": "标题题抓「问题主轴加全文复现」：排队之苦在首、中、末段反复出现，是文章真正的主角，PreCheck 只是解药之一；B、D 把「解药」抬成标题主角，主次颠倒即错——标题应覆盖文章最大公约数。"
+  },
+  {
+   "question_id": 988,
+   "long_sentence": "拆 The ancient Hawaiians were astronomers... Star watchers were among the most esteemed members of Hawaiian society；among the most esteemed 意为「最受尊崇的…之一」；esteem 意为「尊重」。译：「古代夏威夷人就是天文学家，」夏威夷末代在位君主利留卡拉尼女王 1897 年写道。观星者曾是夏威夷社会最受尊崇的成员之一。",
+   "option": "正确项 B「天文学在古代夏威夷社会的重要地位」＝star watchers were among the most esteemed members 直接说明观星者地位崇高，天文在古夏威夷受重视；A「她对天文学历史作用的保守看法」无中生有；C「古代天文学的遗憾衰落」张冠李戴，Sadly all is not well 说的是 today 的争议；D「她赞赏同时代观星者的功绩」时间错位，女王说的是 ancient Hawaiians。",
+   "keyword": "esteem 尊重＝respect；astronomer 天文学家；reigning monarch 在位君主；star watcher 观星者。",
+   "note": "引言题看引文的信息功能：女王的引语（astronomers 加 esteemed）用于确立「天文在夏威夷的古老根基」，为后文「天文与文化同源」张本；C 项偷换 Sadly 所在句的时间状语 today——引文内容与作者评论必须分开看。"
+  },
+  {
+   "question_id": 989,
+   "long_sentence": "拆 Rested in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity；Rested in the Pacific Ocean 为过去分词短语作状语；where 引导定语从句；unsurpassed clarity 意为「无与伦比的清晰度」。译：莫纳克亚山矗立太平洋中，山峰高耸于地球大部分浓密大气之上，那里的条件使望远镜能获得无比清晰的图像。",
+   "option": "正确项 A「其地理特征」＝高耸于浓密大气之上、太平洋海岛的位置带来绝佳观测条件，全是自然地理禀赋；B「受保护的环境」偷换概念，原文谈的是观测条件而非环保；C「宗教意涵」张冠李戴，piko（连接天地的脐带）是夏威夷人的信仰，也是争议来源而非选址理由；D「现有基础设施」偷换概念，山上有其他望远镜是事实，但原文给出的理由是海拔与大气。",
+   "keyword": "dormant volcano 休眠火山；dense atmosphere 浓密大气；unsurpassed clarity 无与伦比的清晰度；peak 山峰。",
+   "note": "原因定位看 where 从句的条件链：海拔高→大气薄→图像清晰，环环都是地理条件；C 的宗教意涵是反对者的理由，与「理想台址」的提问方向相反——问 why good 的题，干扰项常拿 why contested 的料。"
+  },
+  {
+   "question_id": 990,
+   "long_sentence": "拆 A small but vocal group of Hawaiians and environmentalists have long viewed their presence as disrespect for sacred land and a painful reminder of the occupation of what was once a sovereign nation；vocal 意为「直言的、高声的」；sovereign nation 意为「主权国家」。译：一小群直言不讳的夏威夷人与环保人士长期把望远镜视为对圣地的不敬，以及「曾经的独立王国遭占领」的痛苦提醒。",
+   "option": "正确项 B「它让他们想起屈辱的历史」＝a painful reminder of the occupation of what was once a sovereign nation（对昔日主权国家被占领的痛苦记忆）加 disrespect for sacred land；A「可能毁了他们的精神生活」无中生有；C「他们的文化将失去复兴机会」张冠李戴，原文说夏威夷文化 is a living culture undergoing a renaissance（正在复兴）；D「担心失去对莫纳克亚山的控制」过度推断，原文只谈圣地不敬与历史创伤。",
+   "keyword": "sacred land 圣地；occupation 占领；sovereign nation 主权国家；vocal 直言不讳的。",
+   "note": "partly because 提示取反对理由之一即可：昔日主权国家被占领的记忆正是 humiliating history 的对应；D 的「控制」与原文「神圣、被占领之痛」不在同一层——反对理由必须回原文找定性词（disrespect、painful）而非自行推演。"
+  },
+  {
+   "question_id": 991,
+   "long_sentence": "拆 The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today；that first brought... 为定语从句修饰 curiosity；the same 表古今同源；beyond the horizon 意为「地平线之外」。译：当年最早把波利尼西亚人引到夏威夷海岸的那种「看看地平线之外有什么」的好奇心，正激励今天的天文学家探索天空。",
+   "option": "正确项 A「正在实现古代夏威夷人的梦想」＝the same curiosity 的古今同源论：先民跨海探求与今日天文学探索是同一种精神，天文事业即先民志业的延续；B「帮助夏威夷文化传播世界」无中生有；C「可能揭示夏威夷文化的起源」偷换概念，同源的是好奇心而非「研究文化起源」；D「终将软化夏威夷人的敌意」过度推断，第 6 段讲妥协但未承诺敌意消解。",
+   "keyword": "curiosity 好奇心；beyond the horizon 地平线之外；inspire sb to do 激励某人做；the heavens 天空、天界。",
+   "note": "infer 题抓 the same...that...结构：same 一词把古波利尼西亚人与今天的天文学家连在同一条精神线上，故「实现先民之梦」成立；C 的「文化起源」与 D 的「敌意软化」都把类比放大成因果或承诺，推断题不越原文半步。"
+  },
+  {
+   "question_id": 992,
+   "long_sentence": "拆 There is no reason why everyone cannot be welcomed on Mauna Kea to embrace their cultural heritage and to study the stars；no reason why...cannot 为双重否定表强烈肯定；embrace 意为「拥抱、接纳」。译：没有任何理由不让所有人登上莫纳克亚山，既拥抱其文化遗产，又研究星辰。",
+   "option": "正确项 D full approval（完全支持）：第 4 段承认天文学家有过失（Some blame...belongs to astronomers），第 5 段论证天文与文化同根，第 6 段列 TMT 的让步措施（选址避让、旧镜拆除还地），末句双重否定收束为坚定支持；A severe criticism 张冠李戴，批评只针对天文学家曾经的草率而非选址本身；B passive acceptance 贬抑过度；C slight hesitancy 无犹豫迹象。",
+   "keyword": "compromise 妥协、让步；minimize the visibility 把可见度降到最低；cultural heritage 文化遗产；double negation 双重否定。",
+   "note": "态度题抓「先抑后扬」的落点：承认失误是铺垫，the same curiosity 与 compromises 是支持证据，末段 no reason why...cannot 是双重否定的强肯定；态度题以最终收束句的语气强度为准，D 的 full 与之匹配。"
+  },
+  {
+   "question_id": 993,
+   "long_sentence": "拆 a country's GDP measures 'everything except that which makes life worthwhile'；except that which... 中 that which＝what（……的东西）；worthwhile 意为「有价值的」。译：罗伯特·肯尼迪曾说，一个国家的 GDP 衡量「一切，唯独不衡量让生活有价值的东西」。",
+   "option": "正确项 D「对 GDP 评价不高」＝measures everything except that which makes life worthwhile——把「生活之价值」排除在 GDP 的衡量范围外，即轻视其衡量力；A「称赞英国 GDP」张冠李戴，GDP 数据亮眼是英国的语境信息，与肯尼迪无关；B「把 GDP 等同于幸福」正反混淆，他说的恰是 GDP 衡量不了有价值之物；C「误解了 GDP 的作用」无中生有，作者第 6 段明确采纳其观点。",
+   "keyword": "measure 衡量；except that which 唯独不……；worthwhile 值得的；well-being 福祉。",
+   "note": "引用名人观点题先判断作者立场：第 6 段 what Kennedy was referring to was that...it is no longer enough 表明作者采纳其批评，D 的 low opinion 与 except 的排除句式对应；B 把「衡量不了幸福」反转成「等同于幸福」，正反混淆是引言题首坑。"
+  },
+  {
+   "question_id": 994,
+   "long_sentence": "拆 If everything was going so well, then why did over 17 million people vote for Brexit, despite the warnings about what it could do to their country's economic prospects?；if 引导让步式条件，then why 反问；despite 尽管；economic prospects 意为「经济前景」。译：如果一切真的那么好，那为什么在明知脱欧可能损害国家经济前景的警告之下，仍有超过 1700 万人投票支持脱欧？",
+   "option": "正确项 B「GDP 作为成功标尺在英国受到普遍质疑」＝第 2 段逻辑链：GDP 数据亮眼（the envy of the Western world）与 1700 万人仍投脱欧形成矛盾，反问推出「光鲜数据未获民众认同」；A「英国不愿重塑经济模式」无中生有；C「英国对世界经济的贡献将减少」过度推断，警告说的是本国前景；D「英国决策者越来越不关注 GDP」正反混淆，the question has annoyed policymakers for over half a century 说明他们一直围着 GDP 转。",
+   "keyword": "Brexit 脱欧；the envy of the Western world 西方世界艳羡的对象；economic prospects 经济前景；vote for 投票支持。",
+   "note": "反问句是推断的引擎：数据好 加 民众仍脱欧，只能推出「GDP 未反映民众真实感受」；D 与 annoyed policymakers 矛盾——被困扰半个世纪恰证明仍以 GDP 为中心，推断题答案须覆盖整个反问的张力。"
+  },
+  {
+   "question_id": 995,
+   "long_sentence": "拆 A recent annual study of countries and their ability to convert growth into well-being sheds some light on that question；convert...into... 把…转化为…；shed light on 意为「照亮、阐明」。译：最近一项针对各国「将增长转化为福祉之能力」的年度研究，为这个问题提供了一些线索。",
+   "option": "正确项 D「其结果富有启发」＝sheds some light on that question（为此问题带来光亮）加第 5 段 This is a lesson that rich countries can learn（富国可汲取的教训），研究结果有启示价值；A「由 163 国赞助」偷换概念，163 countries measured 是被测对象非赞助方；B「把 GDP 排除在指标外」正反混淆，rather than just focusing on GDP 是「不只看」而非「不看」；C「其指标可疑」无中生有。",
+   "keyword": "convert...into 把…转化为；shed light on 阐明、揭示；criteria（pl.）标准；well-being 福祉。",
+   "note": "D 的证据链是习语 shed light on 加 a lesson...can learn 两处；A 考 measured 的被动关系——被测量的国家不是主办方；B 考 rather than just 的部分否定，「不唯一」与「不包含」是两个概念，细节判断题逐词核对限定语。"
+  },
+  {
+   "question_id": 996,
+   "long_sentence": "拆 policymakers who refocus efforts on improving well-being rather than simply worrying about GDP figures could avoid the forecasted doom and may even see progress；refocus...on 把注意力重新集中于；rather than 而非；forecasted doom 意为「预言的厄运」。译：把精力重新聚焦于改善福祉、而非只盯着 GDP 数字的决策者，能够避开预言中的厄运，甚至可能看到进步。",
+   "option": "正确项 C「必须考虑 GDP 之外的因素」＝第 6 段 It does not include important factors such as environmental quality or education outcomes 加末段 refocus efforts on improving well-being rather than simply worrying about GDP，建议同向；A「英国正准备迎接经济繁荣」正反混淆，预测的是 sharp hit to growth（增长受重创）；B「高 GDP 预示经济衰退」过度推断，文说 GDP 高不等于福祉高；D「处理经济问题需谨慎」空泛无细节支撑。",
+   "keyword": "refocus...on 把…重新聚焦于；well-being 福祉；forecasted doom 预言的厄运；environmental quality 环境质量。",
+   "note": "末两段连用 it is no longer enough（第 6 段）与 refocus...rather than（末段），建议句式密集指向「超越 GDP」；B 把「相关」说成「预言」，A 与 sharp hit 直接相反——建议题抓 rather than 前后的取舍方向。"
+  },
+  {
+   "question_id": 997,
+   "long_sentence": "拆 When GDP is no longer regarded as the sole measure of a country's success, the world looks very different；sole measure 意为「唯一的衡量标准」；no longer 不再。译：当 GDP 不再被视为衡量国家成功的唯一标准时，世界的面貌会大不相同。",
+   "option": "正确项 A「高 GDP 但福祉不足——英国的一课」＝第 2 段 GDP 亮眼（the envy of the Western world）加第 3 段 the UK is one of the poorest performers in converting growth into well-being 加第 5 段 This is a lesson that rich countries can learn，三段合成「高增长、低转化、有教训」的完整框架；B「GDP 数字是全球经济之窗」与全文批判立场相反；C「肯尼迪——GDP 的终结者」过度拔高，他只是提出质疑；D「脱欧——通往福祉之门」无中生有，Brexit 只是引子。",
+   "keyword": "lesson 教训、借鉴；convert growth into well-being 把增长转化为福祉；sole measure 唯一标准；flawed concept 有缺陷的概念。",
+   "note": "标题题抓「矛盾加落点」：高 GDP 对 低福祉的落差是全文张力，第 5 段的 lesson 定下「英国之鉴」框架；B、C 把工具或人物抬成主角；标题必须同时含「问题」与「案例载体」，A 的 UK Lesson 直接对应 a lesson that rich countries can learn。"
+  },
+  {
+   "question_id": 998,
+   "long_sentence": "拆 But it did so while holding its nose at the ethics of his conduct, which included accepting gifts such as a Rolex watch and a Ferrari automobile from a company seeking access to government；hold one's nose at 为习语「捏着鼻子对待……」，喻「嫌弃、勉强」；which 引导非限制性定语从句。译：但最高法院在推翻定罪的同时，对他行为的操守捏着鼻子——这些行为包括收受一家谋求接近政府之门的公司赠送的劳力士手表与法拉利汽车。",
+   "option": "正确项 C「对他的行为表示鄙夷」＝hold its nose at the ethics of his conduct 的比喻义——捏着鼻子即嫌弃不齿，第 4 段 distasteful（令人反感的）与 nasty（下作的）直接印证；A「回避界定其职权范围」无中生有，法院恰恰明确了 official acts 的边界；B「定罪毫不妥协」正反混淆，法院推翻了定罪；D「拒绝对其操守表态」正反混淆，法院明确表达了厌恶态度。",
+   "keyword": "hold one's nose at 厌恶地勉强接受（习语）；ethics 操守、道德；conviction 定罪；overturn 推翻。",
+   "note": "习语题：hold one's nose 是「虽接受但厌恶」的身体隐喻，与第 4 段 distasteful、nasty 构成态度链；B、D 把「推翻定罪」误解为「无态度」，法院实为「行为可赦、操守可鄙」的双轨表态——习语义加后文印证双保险。"
+  },
+  {
+   "question_id": 999,
+   "long_sentence": "拆 But under anti-bribery laws, proof must be made of concrete benefits, such as approval of a contract or regulation；proof must be made of... 意为「必须证明存在…」；concrete benefits 意为「具体利益」；approval of a contract 意为「批准合同」。译：但在反贿赂法之下，必须证明存在具体利益，例如批准一项合同或法规；仅安排会面、打个电话或办一场活动，都不算「官方行为」。",
+   "option": "正确项 C「给送礼者带来具体回报」＝proof must be made of concrete benefits, such as approval of a contract or regulation——须证明有批准合同之类的实质利益；A「故意泄露机密」无中生有；B「数额巨大的礼品」偷换概念，关键在回报的具体性而非礼品大小，Rolex 与 Ferrari 只是收礼示例；D「正式撕毁合同」无中生有。",
+   "keyword": "concrete benefits 具体利益；anti-bribery law 反贿赂法；official act 官方行为；approval of a contract 批准合同。",
+   "note": "构成要件题：第 3 段 Merely helping...is not corruption（除非有明确施压意图）加第 4 段 concrete benefits 的列举，合成「须有具体回报」的入罪标准；B 用礼品金额设障，但原文强调的是回报性质——要件题逐字核对原文限定词（concrete）。"
+  },
+  {
+   "question_id": 1000,
+   "long_sentence": "拆 'The basic compact underlying representative government,' wrote Chief Justice John Roberts, 'assumes that public officials will hear from their constituents and act on their concerns.'；underlying 为现在分词作定语「作为基础的」；compact 此处取熟词僻义「契约」；act on 意为「依…行事」。译：首席大法官罗伯茨代表法院写道：「代议制政府的基本契约，预设公职人员会倾听选民并回应其关切。」",
+   "option": "正确项 A「有正当理由回应选民需求」＝第 5 段 elected leaders must be allowed to help supporters without fear of prosecution，加 compact assumes that officials will hear from constituents and act on their concerns——倾听并回应选民是制度预设；B「独立处理官僚事务」偷换概念，预设是联系并回应选民而非独立处置；C「只关注支持者的关切」偷换概念，constituents（全体选民）不等于 supporters，偏袒支持者恰被第 6 段禁止；D「免于偏袒指控」无中生有。",
+   "keyword": "compact 熟词僻义「契约」；constituent 选民、选区居民；act on 依据…行事；representative government 代议制政府。",
+   "note": "assumption 题直接找 assumes that 从句：倾听选民并回应关切是契约预设；C 把 constituents（全体选民）偷换成 supporters（支持者），正是第 6 段 play favorites 批评的对象；compact 的「契约」义是本句的熟词僻义考点。"
+  }
+ ]
+}

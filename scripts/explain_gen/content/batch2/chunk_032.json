@@ -1,0 +1,180 @@
+{
+ "chunk": 32,
+ "items": [
+  {
+   "question_id": 776,
+   "long_sentence": "定位句 As the cost to everyone else has become clearer, politicians have begun to clamp down. In Wisconsin the unions have rallied thousands of supporters against Scott Walker, the hardline Republican governor；clamp down 整治、压制；rally 集结；hardline 强硬路线的。译：随着其他所有人承担的代价日益清晰，政客们已开始整治。在威斯康星州，工会集结了数千名支持者对抗共和党强硬派州长斯科特·沃克。",
+   "option": "正确项 C may be a barrier to public-sector reforms：上段 Reform has been vigorously opposed 是论点，工会集结对抗推动改革的州长正是「改革障碍」的实例；A often run against the current political system 绝对化加过度推断，反对的是改革措施而非政治制度本身；B can change people's political attitudes 无中生有，集结支持者是施压不是改变态度；D are dominant in the government 过度推断。",
+   "keyword": "clamp down 整治、钳制；rally 集结、召集；hardline 强硬的；barrier 障碍＝obstacle。",
+   "note": "例证题回读论点句：Reform has been vigorously opposed 加教育领域 drawn-out battles 是论点与例一，Wisconsin 对抗州长是例二；A 把「反对改革」放大为「对抗现行政治制度」，例证题的例子永远不能大于论点。"
+  },
+  {
+   "question_id": 777,
+   "long_sentence": "定位句 John Donahue at Harvard's Kennedy School points out that the norms of culture in Western civil services suit those who want to stay put but is bad for high achievers；points out 后接 that 宾语从句；stay put 意为「原地不动、安于现状」；suit...but is bad for... 表对比。译：哈佛大学肯尼迪学院的约翰·多纳休指出，西方公务员体系的文化规范适合安于现状的人，却对高成就者不利。",
+   "option": "正确项 A disapproval：suit those who want to stay put but is bad for high achievers 指出体制压抑高成就者，末句 a public-sector system that does not reward high achievers may be a much bigger problem for America 更是直接批评；B appreciation 正反混淆；C tolerance 与 much bigger problem 的警示语气不符；D indifference 无中生有。",
+   "keyword": "disapproval 不赞成＝disfavor；norm 规范、准则；stay put 原地不动；high achiever 高成就者。",
+   "note": "态度题抓转折与收尾：suit...but is bad for... 先扬后抑，Bankers' fat pay packets have attracted much criticism, but... 的对比进一步反衬——银行家挨骂而公共部门问题更大，不满层层递进，A 与末段批评基调一致。"
+  },
+  {
+   "question_id": 778,
+   "long_sentence": "答案 C 句主干 Not only did they develop such a device but...they had also managed to embed it in a worldwide system；Not only 置句首引发部分倒装；embed...in 将…嵌入；accessed by billions of people 为过去分词短语作后置定语。译：他们不仅研制出了这样一台设备，而且在千禧年之交已成功把它嵌入每天有数十亿人访问的全球系统。",
+   "option": "答案 C：they 回指上句 a collection of geniuses, warriors, entrepreneurs and visionaries，such a device 复指 the fabulous machine（集打字机、印刷厂、演播室等于一身的神奇机器）；C 的 worldwide system 又为下段 The networked computer is an amazing device 铺垫；强干扰 G 虽谈 networked computer，但它是「未来机会」句，无法承接上文的制造者们。",
+   "keyword": "embed...in 将…嵌入；the turn of the millennium 千禧年之交；access 访问、使用；fabulous 极好的、神奇的。",
+   "note": "七选五先验代词与复指：they 与 such a device 必须在空前句找到先行词；C 用「研制并嵌入全球系统」补完创造叙事，再由下段 networked computer 接棒；G 谈未来 50 年逆转，时态与方向均不符。"
+  },
+  {
+   "question_id": 779,
+   "long_sentence": "答案 D 句主干 This is because the networked computer has sparked a secret war between downloading and uploading；spark 引发、点燃；破折号内 between passive consumption and active creation 为同位解释；whose outcome... 为定语从句。译：这是因为联网计算机引发了一场「下载」与「上传」之间的秘密战争——被动消费与主动创造之战——其结果将以我们尚只能开始想象的方式塑造人类的共同未来。",
+   "option": "答案 D：This is because 承接上句 we must also act with caution（必须谨慎行事的原因），且下文 I call it a secret war for two reasons 的 it 只能回指 D 中的 a secret war，前后双钩；强干扰 G 谈「逆转流向的机会」，与 caution 的警惕语境不合，也无从被 it 指代。",
+   "keyword": "spark 引发＝trigger；passive consumption 被动消费；active creation 主动创造；collective future 共同的未来。",
+   "note": "空后句 I call it a secret war 是本题最强证据：it 的指代对象必须前有原词，七选五常考「先读空后句再回选」；D 的 downloading 与 uploading 对照还总领后文动物界皆下载、人类能上传的段落。"
+  },
+  {
+   "question_id": 780,
+   "long_sentence": "答案 A 句为强调结构 it is precisely these superfluous things that define human culture；it is...that... 强调句；strip oneself of 剥夺自己的某物；a defining constituent of humanity 人性的决定性组成部分。译：当然，正是这些「多余之物」定义了人类文化，并最终定义了人之为人；下载与消费文化需要高超技能，但止步于下载，无异于剥除自身人性中一个决定性成分。",
+   "option": "答案 A：these superfluous things 回指上段末 superfluous material goods（绘画、雕塑、建筑）与 superfluous experiences（音乐、文学、宗教、哲学），原词复现显豁；A 的 failing to move beyond downloading 与下段 most people are still stuck in download mode 顺承；强干扰 C 的 they 与 such a device 在此处无先行词。",
+   "keyword": "superfluous 多余的、过剩的＝redundant；define 定义；strip...of 剥夺＝deprive...of；constituent 组成部分＝component。",
+   "note": "读到上段并列举例（paintings, sculpture...philosopy）就该预判下文用 these 总括；若把 A 放 41 空，they 与 such a device 找不到指代对象——每个空都做指代链验证，是七选五防错的核心动作。"
+  },
+  {
+   "question_id": 781,
+   "long_sentence": "答案 F 句主干 One reason for the persistence of this pyramid of production is that...；persistence 持续存在；that 从句说明原因；破折号插入语 a single medium – television – 点明单一媒介。译：这一「生产金字塔」得以延续的一个原因是：过去半个世纪，世界媒体文化大多由单一媒介——电视——来定义，而电视是由下载定义的。",
+   "option": "答案 F：this pyramid of production 回指上句 a pyramid of production remains（少数人上传、稍多者评论修改、大多数人只消费），复指精准；F 用电视解释金字塔延续的成因，又引出下段 Television is a one-way tap 的电视专题，承上启下；强干扰 E 也谈电视与计算机，但它讲的是「挑战不同于格式更替」，与本空所需的成因句无关。",
+   "keyword": "pyramid of production 生产金字塔；persistence 持续＝continuance；medium 媒介（复数 media）；one-way tap 单向水龙头。",
+   "note": "this 加名词的复指是七选五铁律：pyramid of production 上句刚出现，F 是唯一衔接句；E 的话题重叠最具迷惑性——话题一致不等于逻辑衔接，本空需要的是「为什么金字塔还在」，即成因解释。"
+  },
+  {
+   "question_id": 782,
+   "long_sentence": "答案 G 句主干 The networked computer offers the first chance in 50 years to reverse the flow；reverse the flow 逆转流向；to encourage... 不定式作后置定语；even more importantly 为递进插入语。译：联网计算机提供了 50 年来第一次逆转流向的机会——鼓励有思考的下载，更重要的是鼓励有意义的上传。",
+   "option": "答案 G：空前两句说电视是 one-way tap（单向水龙头）、最难的任务只是关掉电源，G 的 reverse the flow 正对「单向流动」提出逆转方案；in 50 years 呼应 F 的 the past half-century；G 末的 meaningful uploading 更被下段首句 What counts as meaningful uploading? 原词接住；强干扰 E 只有对比而无双向衔接。",
+   "keyword": "reverse 逆转＝turn around；flow 流动、流向；thoughtful 有思考的；meaningful uploading 有意义的上传。",
+   "note": "空后段首 What counts as meaningful uploading? 是本题的终审证据：meaningful uploading 三词原词复现；七选五做题时空前指代与空后复现要两头扣合，G 与电视段的「单向—逆转」对照是全文的关键转折。"
+  },
+  {
+   "question_id": 783,
+   "long_sentence": "定位句 At first glance this might seem like a strength that 1______ the ability to make judgments which are unbiased by 2______ factors；that 引导定语从句修饰 strength；unbiased by 不受…偏影响；at first glance 乍看之下。译：乍看之下，这似乎是一种优点——它赋予人做出不受外部因素左右之判断的能力。",
+   "option": "正确项 A grants：that grants the ability「赋予这种能力」，grants 与 ability 是标准动宾搭配，strength 作定语从句先行词；B submits 「提交」须接 to；C transmits 「传输」多接信号、疾病；D delivers 「递送」多接货物、演讲，与 ability 搭配均不当。",
+   "keyword": "grant 赋予、授予＝endow；at first glance 乍一看；unbiased 无偏的＝impartial；strength 优点、长处。",
+   "note": "先行词是 strength（优点），定语从句必须是正向动词——赋予某种能力；submit、transmit、deliver 都有各自的固定宾语类型，靠动宾搭配即可排除；本句看似优点，But 后将反转，注意先扬后抑结构。"
+  },
+  {
+   "question_id": 784,
+   "long_sentence": "定位句 a strength that grants the ability to make judgments which are unbiased by 2______ factors；which are unbiased by... 为定语从句修饰 judgments；空格处为形容词作定语修饰 factors。译：赋予人做出不受外部因素左右的判断的能力。",
+   "option": "正确项 B external：unbiased by external factors「不受外部因素影响」，与首句 background information（背景信息）呼应——不考虑背景即不受外部干扰；A minor 「次要的」与 background 的「外部」属性错位；C crucial 关键因素恰是判断应纳入的；D objective 「客观的」因素被排除于判断之外不合常理。",
+   "keyword": "external 外部的＝outside；unbiased by 不受…偏移；background information 背景信息；factor 因素。",
+   "note": "本空是首句的改写：poor at considering background information 中的背景信息即 external factors；external 与 internal 的外内对照是考研完形高频词对；先在首句找到同义源，再回空格定位同义改写。"
+  },
+  {
+   "question_id": 785,
+   "long_sentence": "定位句 But Dr Uri Simonsohn speculated that an inability to consider the big 3______ was leading decision-makers to be biased by the daily samples of information they were working with；speculate 推测；an inability to do 无法做；the big... 为固定短语空缺。译：但西蒙松博士推测，无法通观全局正导致决策者被手头每日接触的零散信息所左右。",
+   "option": "正确项 C picture：the big picture「全局、大局」为固定习语，与上句 background information、unbiased 的语境一致——不考虑全局即被局部样本带偏；A issue 「议题」无 the big issue of considering 的搭配；B vision 「视力、愿景」与 consider 搭配不当；D moment 「时刻」与 daily samples 的语境相悖。",
+   "keyword": "the big picture 全局＝the overall situation；speculate 推测＝theorise；sample 样本；daily samples 每日接触的零散信息。",
+   "note": "习语题直接锁定 the big picture（大局）；上句说人考虑背景信息能力差，本句指出其后果——被 daily samples（局部）带偏，全局对局部是本段的对比轴心，big moment、big issue 均无此对应。"
+  },
+  {
+   "question_id": 786,
+   "long_sentence": "定位句 4______, he theorised that a judge 5______ of appearing too soft 6______ crime might be more likely to send someone to prison 7______ he had already sentenced five or six other defendants only to community service on that day；theorise 推想。译：例如，他推想：一位担心在罪行面前显得太宽纵的法官，如果当天已将五六名被告仅判以社区服务，就更可能把下一个人送进监狱。",
+   "option": "正确项 D For example：法官判案的推想是前文理论（无法通观全局导致被当日样本左右）的实例演示，for example 引出例证；A Above all 「最重要的是」表强调排序，此处并非列举要点；B On average 「平均而言」表统计，与理论举例不符；C In principle 「原则上」与推测性例证冲突。",
+   "keyword": "for example 例如＝for instance；theorise 推想＝hypothesise；defendant 被告；sentence...to 判处…（某刑罚）。",
+   "note": "语篇逻辑词题看前后抽象与具体的关系：前文是 theorised 的抽象命题，本句给出 judge 的具体情景，抽象到具体即 for example；本空与第 8 空 To test this idea 前后呼应——先举例假想、再实证检验，是研究类文章的标准推进。"
+  },
+  {
+   "question_id": 787,
+   "long_sentence": "定位句 a judge 5______ of appearing too soft 6______ crime might be more likely to send someone to prison；fearful of 为形容词短语作后置定语修饰 judge；appearing too soft 显得太宽纵。译：一位担心在罪行面前显得太宽纵的法官……",
+   "option": "正确项 B fearful：fearful of appearing too soft「担心显得太宽纵」，担心形象过软才会从严量刑，与后文 more likely to send someone to prison 因果一致；A fond of 「喜欢」显得宽纵与从严矛盾；C capable of 「有能力显得软」逻辑不通；D thoughtless of 「不顾及」与介意形象的动机构势相反。",
+   "keyword": "be fearful of 担心、害怕＝be afraid of；soft 宽纵的、心软的；be fond of 喜爱；appear 看起来＝seem。",
+   "note": "本空与量刑方向联动：fearful of appearing too soft（怕显软）→从严判刑，情绪词决定行为方向；fond 与 thoughtless 都无法解释「更可能送人进监狱」的从严倾向，做完情感词空要回验句内因果。"
+  },
+  {
+   "question_id": 788,
+   "long_sentence": "定位句 a judge fearful of appearing too soft 6______ crime might be more likely to send someone to prison；too soft 为表语性形容词短语，空格处为介词，引出 soft 所针对的对象 crime。译：一位担心在罪行问题上显得太宽纵的法官……",
+   "option": "正确项 B for：too soft for crime 表「就罪行而言（量刑）太宽软」，for 引出 soft 所针对的对象——判决相对罪行显得过宽，法官因此从严；A in、C to 与 soft 无对象搭配关系；D on 虽有 be soft on crime 的惯用影响，但此处按原文行文取 for 的对象义。",
+   "keyword": "soft 宽纵的、仁厚的；for 就…而言、对…来说；be soft on crime（惯用）对犯罪心软；lenient 宽大的。",
+   "note": "本空是 2013 完形争议题：多数人背过 be soft on crime 而倾向 on，但原文行文为 for，表「相对于罪行显得太软」；启示是惯用搭配不能凌驾原文语料，介词题以文章实际用法为最终依据。"
+  },
+  {
+   "question_id": 789,
+   "long_sentence": "定位句 might be more likely to send someone to prison 7______ he had already sentenced five or six other defendants only to forced community service on that day；sentenced...to only forced community service 仅判社区服务；on that day 在当天。译：……就更可能把某人送进监狱——如果他当天已把五六名被告仅判以强制社区服务。",
+   "option": "正确项 A if：if 引导条件从句——当天已判多人仅社区服务（样本偏软），法官才更可能对下一人从严，条件与结果构成「补偿心理」；B until 「直到」时序逻辑不通；C though 「尽管」让步关系无从成立；D unless 「除非」会使句义反转为「不判软刑就不从严」，与推测相悖。",
+   "keyword": "if 如果（条件）；sentence sb to sth 判处某人…；community service 社区服务；on that day 当天。",
+   "note": "连词题先还原实验逻辑：前面的被告判得轻（软样本），法官怕显得软，就往后判得重——「如果…就…」的条件关系只有 if 能承载；unless 代入后正负颠倒，与 783-788 题一贯的先辨方向再验搭配思路相同。"
+  },
+  {
+   "question_id": 790,
+   "long_sentence": "定位句 To 8______ this idea, he turned to the university-admissions process；To do 表目的；turn to 转向、求助于；university-admissions process 大学录取流程。译：为了检验这一想法，他转向了大学录取流程。",
+   "option": "正确项 A test：test this idea「检验这一想法」，从法官判决的假想转向可量化的录取数据，是标准的实证验证；B emphasize 「强调」理论尚待验证谈不上强调；C share 「分享」与转向数据的科研行为不符；D promote 「推广」为时过早。",
+   "keyword": "test 检验＝verify；turn to 转向；admission 录取、准入；process 流程＝procedure。",
+   "note": "研究类文章的动作链：speculate/theorise（提出假说）→test（转向实际数据验证）→find（发现结果）；本空选 test 正是承上启下的动词，emphasize、promote 都是「结论之后」才可能发生的动作。"
+  },
+  {
+   "question_id": 791,
+   "long_sentence": "定位句 In theory, the 9______ of an applicant should not depend on the few others 10______ randomly for interview during the same day；in theory 理论上；depend on 取决于；applicant 申请者。译：理论上，一名申请者的成败不应取决于同一天随机挑来面试的少数其他申请者。",
+   "option": "正确项 D success：the success of an applicant「申请者的成败（能否被录取）」，与后文面试评分加 GMAT 分数决定 accept 的语境吻合；A decision 「决定」是招生官的行为而非申请者的属性；B quality 「素质」理论上恰恰该被考察，说其不取决于自身会自相矛盾；C status 「地位」与录取场景无关。",
+   "keyword": "success 成功、成败＝outcome；applicant 申请者＝candidate；in theory 理论上；randomly 随机地。",
+   "note": "抽象名词靠下文反推：录取场景中申请者追求的「成功」就是被 accept；本句 In theory 是让步铺垫，but 之后 Dr Simonsohn suspected the truth was otherwise 才是实验要证的真命题，前后正反对照。"
+  },
+  {
+   "question_id": 792,
+   "long_sentence": "定位句 the few others 10______ randomly for interview during the same day；the few others 后接过去分词短语作后置定语；randomly 随机地；for interview 用于面试。译：同一天里被随机挑选来面试的少数其他人。",
+   "option": "正确项 C chosen：the few others chosen randomly「被随机选中的少数他人」，choose...for interview 挑人面试是录取流程的固定说法；A found 「找到」无随机挑选义；B studied 「研究」与面试流程无关；D identified 「识别、确认」多指认出既有对象，无抽样义。",
+   "keyword": "chosen 被挑选的＝selected；randomly for interview 随机挑选面试；a few others 少数其他人；interviewee 面试者。",
+   "note": "过去分词作后置定语：others 与 choose 是被动关系；randomly 决定了动词必须含「抽取、挑选」义，chosen 与下文 9,323 MBA interviews 的实验设计呼应——正是随机抽样的同日面试样本才有研究价值。"
+  },
+  {
+   "question_id": 793,
+   "long_sentence": "定位句 but Dr Simonsohn suspected the truth was 11______；suspect 怀疑、料想；the truth 实际情况；but 表转折。译：但西蒙松博士怀疑实际情况并非如此。",
+   "option": "正确项 A otherwise：the truth was otherwise「事实恰恰相反」，承接 In theory...should not depend 的让步，为实验发现埋下伏笔；B defensible 「可辩护的」与 truth 搭配后语义不明；C replaceable 「可替换的」无对象；D exceptional 「例外的」程度不当，他要否定的是整个「理论应然」。",
+   "keyword": "otherwise 不同地、相反地＝differently；suspect 怀疑（料想）；in theory 理论上；the truth 实情。",
+   "note": "otherwise 的指代性副词用法：指代前句 In theory 内容的否定面，是科研文章「应然与实然」转折的标志性表达；本空与 791 空的 In theory 构成一正一反，otherwise 即实然之答。"
+  },
+  {
+   "question_id": 794,
+   "long_sentence": "定位句 He studied the results of 9,323 MBA interviews 12______ by 31 admissions officers；过去分词短语作后置定语修饰 interviews；admissions officer 招生官。译：他研究了由 31 名招生官进行的 9323 场 MBA 面试的结果。",
+   "option": "正确项 C conducted：interviews conducted by「由…进行的面试」，conduct interviews 为固定动宾搭配，被动式作定语；A inspired 「受启发」与面试搭配不通；B expressed 「表达」主语应为人；D secured 「获得」与 by 31 admissions officers 搭配后语义错位。",
+   "keyword": "conduct 进行、实施＝carry out；interview 面试；admissions officer 招生官；results 结果、数据。",
+   "note": "被动定语句型：interviews (that were) conducted by...；conduct 的宾语常是 survey、interview、experiment、research 等研究类名词，考研完形高频；inspired 的干扰在于它是唯一带「人味」的动词，但与 results 研究语境不符。"
+  },
+  {
+   "question_id": 795,
+   "long_sentence": "定位句 The interviewers had 13______ applicants on a scale of one to five；on a scale of one to five 以一到五分的量表；had done 过去完成时。译：面试官们曾按一到五分的量表给申请者打分。",
+   "option": "正确项 B rated：rate applicants on a scale of...「按…量表给申请者评分」，rate 与量表分数是标准搭配；A assigned 「分配」多接任务、任务对象；C matched 「匹配」与 on a scale 搭配不当；D arranged 「安排」面试可以安排，但给分不能安排。",
+   "keyword": "rate 评定、打分＝score；on a scale of... 以…为量表；numerous 众多的；take...into consideration 将…考虑在内。",
+   "note": "on a scale of... 是 rate 的标志搭配：凡接量表、分数区间，动词首选 rate；本空与 14 空 take...into consideration、16 空 marked out of 共同构成评分流程链，注意 assigned 的干扰来自面试场景词。"
+  },
+  {
+   "question_id": 796,
+   "long_sentence": "定位句 This scale 14______ numerous factors into consideration；take...into consideration 为固定搭配「将…考虑在内」；numerous factors 众多因素；this scale 主语。译：这一评分量表将诸多因素考虑在内。",
+   "option": "正确项 C took：take...into consideration 是唯一标准搭配；A put...into consideration 为中式拼凑；B got...into 不存在此搭配；D gave...into 介词搭配错误。",
+   "keyword": "take...into consideration 将…考虑在内＝take into account；numerous 众多的；scale 量表；factor 因素。",
+   "note": "纯搭配题四个选项中三个是伪短语，直接锁定 take；同义替换积累：take...into consideration＝take...into account＝consider；此空几乎送分，考的是搭配库的准确度而非语境推理。"
+  },
+  {
+   "question_id": 797,
+   "long_sentence": "定位句 The scores were 15______ used in conjunction with an applicant's score on the Graduate Management Admission Test, or GMAT；in conjunction with 与…相结合；standardised exam 标准化考试。译：这些分数随后与申请者在 GMAT（经企管理研究生入学考试，满分为 800 分的标准化考试）中的得分结合使用。",
+   "option": "正确项 B then：then 表时间承接——先有面试评分，随后与 GMAT 分数结合，流程顺序词；A instead 「而是」表替代，与 in conjunction with（结合）矛盾；C ever 「曾经」与流程叙述不合；D rather 「宁愿、相当」无衔接功能。",
+   "keyword": "then 然后、接着；in conjunction with 与…相结合＝together with；standardised 标准化的；GMAT 经企管理研究生入学考试。",
+   "note": "流程副词题：录取决策的先后是「面试评分→再结合 GMAT」，then 承接动作链；instead 是最强干扰，但 instead 意味着弃面试分而用 GMAT，与 conjunction 的「合并」义正好相反。"
+  },
+  {
+   "question_id": 798,
+   "long_sentence": "定位句 a standardised exam which is 16______ out of 800 points；which 引导定语从句修饰 exam；out of 800 points 以 800 分为满分。译：GMAT 是一项以 800 分为满分的标准化考试。",
+   "option": "正确项 C marked：be marked out of 800 points「按 800 分满分评分」，mark 与 out of（满分）是评分标准搭配；A selected 「被选出」与考试无搭配；B passed 「通过」后接考试本身而非分数体系；D introduced 「推出」主语应是机构。",
+   "keyword": "mark 评分、给分＝grade；out of 以…为满分；standardised exam 标准化考试；points 分数。",
+   "note": "out of 800 points 是标志信号：英语中「满分 X」用 marked/graded out of X 表达；passed 的干扰来自 pass an exam 的常见搭配，但此处被动对象是分数体系而非考生，方向别混。"
+  },
+  {
+   "question_id": 799,
+   "long_sentence": "定位句 if the score of the previous candidate in a daily series of interviewees was 0.75 points or more higher than that of the one 17______ that；the previous candidate 前一位候选者；that 代指 score；比较结构 higher than。译：如果当日一系列面试者中，前一位候选者的分数比再前一位高出 0.75 分或更多……",
+   "option": "正确项 D before：the one before that「再往前的那一位」，previous（前一位）相对更早的一位是 before，时间层层前推，与实验的「同日序列」设计吻合；A below 「低于」表分数排名而非时间顺序；B after 「之后」方向颠倒；C above 「高于」同为排名义。",
+   "keyword": "previous 前一个的；the one before that 再前一位；a series of 一系列；candidate 候选者＝applicant。",
+   "note": "本空靠时间链锁定：previous candidate→the one before that（再前一位），before 与 previous 同向递推；below、above 把时间关系偷换成分数高低，是空间义对时间义的干扰，注意 that 指代的是前一位而非分数。"
+  },
+  {
+   "question_id": 800,
+   "long_sentence": "定位句 then the score for the next applicant would 18______ by an average of 0.075 points；the next applicant 下一位申请者；by an average of 平均以…幅度。译：那么下一位申请者的得分平均会下降 0.075 分。",
+   "option": "正确项 D drop：前一位分数高出 0.75 分以上，下一位得分被压低——前高后低的补偿效应，drop by 0.075 points 表下降幅度；A jump 「跳涨」方向相反；B float 「浮动」无方向义；C fluctuate 「波动」与前高后低的单向规律不符。",
+   "keyword": "drop 下降、回落＝fall；by an average of 平均以…幅度；compensate 补偿（补偿心理）；bias 偏差、偏向。",
+   "note": "方向由实验逻辑定：法官怕软则从严的假说迁移到招生——前面的分数高（样本偏硬），后面就被压低；本空与 17 空 before 的前推链条一致，下一位对再前一位的高分作出负向修正，jump 是方向陷阱。"
+  }
+ ]
+}

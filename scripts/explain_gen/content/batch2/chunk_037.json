@@ -1,0 +1,180 @@
+{
+ "chunk": 37,
+ "items": [
+  {
+   "question_id": 901,
+   "long_sentence": "拆 As so often is the case, stating that principle doesn't ease the challenge of line-drawing；As so often is the case 为「情况常常如此」的评注性从句；动名词 stating that principle 作主语；line-drawing 意为「划界、划定边界」。译：情况往往如此：宣布这一原则，并不能缓解「划定边界」的难题。",
+   "option": "正确项 D「公民隐私未获有效保护」＝第 5 段 Citizens still have a right to expect...to remain private 加第 6 段 doesn't ease the challenge of line-drawing、invalidate Fourth Amendment protections、allow room for police...more freedom——原则易立、落实打折扣；A「原则难以清晰表达」偷换概念，难的是划界执行而非表达；B「给警方的空间变小」正反混淆，原文是 more freedom；C「手机被用来存敏感信息」以偏概全，属背景事实而非担忧。",
+   "keyword": "line-drawing 划界；prohibition on unreasonable searches 对无理搜查的禁止（宪法第四修正案）；invalidate 使无效；burdensome 繁重的。",
+   "note": "concern 题找「作者担忧的落点」：第 5 段先立原则（隐私应受宪法保护），第 6 段连用 doesn't ease、invalidate、allow room for police 三个让步信号，说明保护会漏风；C 项是无争议的背景常识，担忧必须是「有问题且未解决」的事。"
+  },
+  {
+   "question_id": 902,
+   "long_sentence": "拆 Orin Kerr...compares the explosion and accessibility of digital information in the 21st century with the establishment of automobile use as a virtual necessity of life in the 20th；compare...with... 把…与…比较；a virtual necessity of life 意为「实际上的生活必需品」。译：法学教授奥林·克尔把 21 世纪数字信息的爆炸式增长与唾手可得，比作 20 世纪汽车成为实际生活必需品的过程。",
+   "option": "正确项 D「新技术需要重新解读宪法」＝对偶句 had to specify novel rules for the passenger car then; must sort out how the Fourth Amendment applies to digital information now——当年为汽车定新规，如今须厘清第四修正案如何适用于数字信息；A「宪法应灵活实施」过度泛化，原文落在 novel rules 与 sort out；B「宪法原则永不改变」正反混淆；C「加州论据违宪」张冠李戴，引 Kerr 讲的是技术与法律适配，非驳加州。",
+   "keyword": "compare...with 把…与…相比；virtual necessity 实际必需品；specify novel rules 制定新规则；sort out 厘清、理顺。",
+   "note": "例证题答案在例子的前后：Kerr 类比后紧跟 then 与 now 的对偶句，now 分句即引用意图；「汽车—数字信息」按世纪对应（20 世纪对 20 世纪规则、21 世纪对新领域），D 的 reinterpretation 正对应 sort out how the Fourth Amendment applies。"
+  },
+  {
+   "question_id": 903,
+   "long_sentence": "拆 The policy follows similar efforts from other journals, after widespread concern that basic mistakes in data analysis are contributing to the irreproducibility of many published research findings；that 引导同位语从句说明 concern 的内容；contribute to 意为「促成、导致」。译：这一政策效仿了其他期刊的类似做法——此前人们普遍担忧，数据分析中的低级错误正导致许多已发表成果不可重复。",
+   "option": "正确项 B「期刊正在加强统计审查」＝Science adding an extra round of statistical checks 加 follows similar efforts from other journals，两家以上行动可推出「期刊界集体加强」；A「《科学》想简化同行评审」正反混淆，是 adding（增加）环节；C「很少期刊因数据分析错误受指责」正反混淆，widespread concern 说明问题普遍、指责广泛；D「研究项目普遍缺数据分析」偷换概念，原文是数据分析中有 basic mistakes（有错），不是缺分析。",
+   "keyword": "statistical checks 统计审查；peer-review 同行评审；irreproducibility 不可重复性；follow suit 效仿。",
+   "note": "首段推断题抓两个动作合成结论：《科学》新增一轮 checks、其他期刊已有 similar efforts，合起来是「多刊加强」；D 项偷换点在 lack 与 mistakes 一词之差，推断题最忌把原文词放大半格——「分析有错」推不出「没有分析」。"
+  },
+  {
+   "question_id": 904,
+   "long_sentence": "拆 Manuscripts will be flagged up for additional scrutiny by the journal's internal editors, or by its existing Board of Reviewing Editors or by outside peer reviewers；被动语态；for additional scrutiny 表目的「以供进一步审查」；三个 by 并列表施动者。译：稿件将被内部编辑、现有评审编辑委员会或外部同行评审 __（标记出来），以接受额外审查。",
+   "option": "正确项 C marked（标记）：flag 本义「旗帜」，作动词即「标示出」，flagged up for scrutiny 就是「被标出以待细查」，与 mark 同义；A found（发现）只有「找到」义，无「标示待处理」的过程；B revised（修改）与后文 additional scrutiny（尚待审查）时序矛盾；D stored（存储）无语境支撑。",
+   "keyword": "flag up 标出＝mark out；scrutiny 仔细审查；manuscript 手稿、投稿；additional 额外的。",
+   "note": "猜词题用「后文动作」验证：flagged up 之后接 for additional scrutiny，说明被标出的稿件要进入下一道审查，只有 marked 同时满足「标示」与「待处理」；flag 的名词本义（旗子）是最稳的猜词锚点，看见小写动词先想名词义。"
+  },
+  {
+   "question_id": 905,
+   "long_sentence": "拆 This impact will not only be through the publications in Science itself, but hopefully through a larger group of publishing places that may want to model their approach after Science；not only...but... 并列结构；that 引导定语从句修饰 publishing places；model...after... 意为「以…为范本」。译：这种影响不仅将通过《科学》自身的发表体现，更有望通过一大群可能想以《科学》为范本的出版机构体现。",
+   "option": "正确项 D「为其他期刊树立榜样」＝model their approach after Science（仿效《科学》做法），set an example≈model after；A「对同行构成威胁」无中生有；B「遭遇强烈反对」正反混淆，Parmigiani 全程褒扬（novel, unique, likely to have a lasting impact）；C「增加《科学》的发行量」偷换概念，circulation 未被提及，谈的是出版机构仿效方法。",
+   "keyword": "model...after 以…为范本、效仿；advisory role 咨询角色；foresight 远见；have a lasting impact 产生持久影响。",
+   "note": "观点题先锁人名：Giovanni Parmigiani 的两处评价——play primarily an advisory role 与 model their approach after Science；D 的 set an example 是 model after 的地道改写；C 项拿期刊场景词 circulation 设障，但「被仿效」不等于「卖得多」。"
+  },
+  {
+   "question_id": 906,
+   "long_sentence": "拆 Science's idea to pass some papers to statisticians 'has some merit, but a weakness is that it relies on the board of reviewing editors to identify the papers that need scrutiny' in the first place；to pass... 为不定式作后置定语修饰 idea；in the first place 意为「首先、在一开始」。译：《科学》把部分论文交给统计学家的做法「有其可取之处，但弱点在于：一开始就要依靠评审编辑委员会去识别哪些论文需要细查」。",
+   "option": "正确项 C「有进一步改进的空间」＝has some merit, but a weakness...的「肯定加但书」结构——有优点也有弱点，即仍有改进余地；A「增加研究者工作量」无中生有；B「削弱审稿人的作用」偷换概念，Vaux 只说识别环节依赖编辑，未说削弱审稿人；D「注定在不远的将来失败」过度推断，has some merit 已明确肯定价值。",
+   "keyword": "merit 优点＝worth；weakness 缺点、弱点；rely on 依赖；identify 识别、鉴别；has some merit 有其可取之处。",
+   "note": "观点题抓让步转折结构：has some merit（先肯定）加 but a weakness（后指摘）＝有保留的认可，C 的 room for improvement 是这种两面评价的等价改写；D 把 weakness 夸大为 fail，but 后的批评强度要与选项措辞对表。"
+  },
+  {
+   "question_id": 907,
+   "long_sentence": "拆 The journal Science is adding an extra round of statistical checks to its peer-review process；主干为主谓宾加介宾补足结构；add...to... 意为「把…加进…」。译：《科学》杂志主编麦克纳特今日宣布：该刊将在同行评审流程中增加一轮统计审查。",
+   "option": "正确项 A「《科学》加入筛查论文统计问题的行列」＝adding an extra round of statistical checks 加 follows similar efforts from other journals（故为 joins push 之列），screen statistics≈statistical checks；B「职业统计师应获更多尊重」无中生有；C「数据分析登上编辑桌面」以偏概全，进入流程的是统计审查环节而非数据分析本身；D「统计师随《科学》回归」无中生有，文章讲的是审查机制增设，不是统计师群体回潮。",
+   "keyword": "screen 筛查、审查；push（n.）大力推动、联合行动；extra round 额外一轮；editorial（刊物）社论。",
+   "note": "标题题抓首段事件加全文基调：全文是「《科学》采取行动 加 各方评价（welcome、has some merit）」，A 的 joins push 恰好概括「效仿其他期刊」的集体行动背景；C、D 都把「审查机制」偷换成「统计师个人」，标题主语必须与文章主线一致。"
+  },
+  {
+   "question_id": 908,
+   "long_sentence": "拆 Integrity had collapsed, she argued, because of a collective acceptance that the only 'sorting mechanism' in society should be profit and the market；that 引导同位语从句说明 acceptance 的内容；she argued 为插入语；sorting mechanism 意为「分选机制」。译：她认为，诚信已然崩塌，因为人们集体接受了「利润与市场应是社会唯一的分选机制」这一观念。",
+   "option": "正确项 A「现行分选机制的后果」＝以 profit 为唯一 sorting mechanism 导致 integrity had collapsed，upset 的对象正是这一崩塌后果；B「公司因不道德行为蒙受经济损失」张冠李戴，第 2 段说道德缺失令公司 lose its way（迷失方向），非财务亏损；C「政府在道德问题上的低效」偷换概念，the absence of...within government 指道德话语缺失，非行政效率；D「机构间诚信被广泛滥用」偷换概念，原文是 dearth（缺失）而非 misuse（滥用）。",
+   "keyword": "sorting mechanism 分选机制；integrity 诚信、正直；collective acceptance 集体接受；dearth 缺乏＝lack。",
+   "note": "细节题抓因果链：upset by 的宾语要落在「诚信崩塌」这一后果上，其前因是 profit 主导的分选机制；D 项 dearth 与 misuse 一字之差区分「缺什么」与「怎么坏」，考研爱考这类近因词偷换，回查原文定性词即可。"
+  },
+  {
+   "question_id": 909,
+   "long_sentence": "拆 Journalists are known to have hacked the phones of up to 5,500 people. Others await trial；be known to have done 意为「据知曾做过某事」；up to 表上限「多达」；await trial 意为「等候审判」。译：据知记者们窃听了多达 5,500 人的手机。其他人还在等候审判。",
+   "option": "正确项 B「更多记者可能被判窃听有罪」＝Others await trial（尚有人候审）加 This long story still unfolds（事件仍在展开），Coulson 已被定罪而他人候审，可推「还会有定罪」；A「Mulcaire 可能否认窃听是犯罪」无中生有，他 acknowledged 的正是 hacking on an industrial scale；C「Coulson 应被判无罪」正反混淆，原文明说 finding guilty；D「窃听在某些场合可被接受」无中生有。",
+   "keyword": "await trial 等候审判；find sb guilty 判某人有罪；on an industrial scale 产业级规模；unfold 展开、继续发酵。",
+   "note": "infer 题靠「已决加未决」推下一步：Coulson 被定罪是既成事实，Others await trial 是进行中事件，两者合成唯一推理链；A、C、D 或与原文陈述相抵、或全无依据——推断题答案是原文事实的自然延伸，不可逆推或加戏。"
+  },
+  {
+   "question_id": 910,
+   "long_sentence": "拆 One of the astonishing revelations was how little Rebekah Brooks knew of what went on in her newsroom, how little she thought to ask and the fact that she never inquired how the stories arrived；两个 how little 引导的从句与 the fact that 同位语从句并列作表语；go on 意为「发生」。译：令人震惊的真相之一是：布鲁克斯对新闻编辑室里发生的事知之甚少、几乎不想到去问，也从不追问稿子是怎么来的。",
+   "option": "正确项 A「几乎不令人信服」＝作者以 astonishing（令人震惊的）修饰 revelations，再补第 5 段反讽 it has become normal that well-paid executives should not be accountable，暗示「一无所知」的辩解难以服人；B「纠缠细枝末节」无中生有；C「暴露狡诈人格」过度推断，作者批的是制度性失责而非人格；D「是阴谋的一部分」无中生有。",
+   "keyword": "revelation 揭示、惊人内幕；inquire 询问＝ask；accountable 负有责任的；defence 辩护、抗辩。",
+   "note": "态度看修饰词与反讽：astonishing 表明作者觉得「如此不知情」本身不可信，The core of her successful defence was that she knew nothing 语气已带讥讽；A 的 hardly convincing 是考研态度题的标准弱否定表达，比 dishonest 更贴合原文克制的笔调。"
+  },
+  {
+   "question_id": 911,
+   "long_sentence": "拆 The words that have mattered are efficiency, flexibility, shareholder value...Words degraded to the margin have been justice, fairness, tolerance...；第一个 that 从句修饰 words（举足轻重的词）；degraded to the margin 为过去分词短语作后置定语（被贬至边缘的词）。译：举足轻重的词是效率、灵活、股东价值、财富创造、销量、影响力以及发行量；被边缘化的词则是公正、公平、宽容、相称与问责。",
+   "option": "正确项 C「普遍扭曲的价值观」＝把 profit 类词奉为中心、把 justice/fairness 类词 degrade to the margin，价值排序本末倒置即价值观扭曲；A「边缘化的生活方式」偷换概念，被边缘化的是道德词汇而非生活方式；B「不公平的财富分配」无中生有，文谈价值排序不谈分配；D「僵化的道德准则」正反混淆，问题恰是道德准则被抛弃而非僵化。",
+   "keyword": "degrade to the margin 被贬至边缘；shareholder value 股东价值；accountability 问责；proportionality 相称性。",
+   "note": "本题考「核心词—边缘词」对举结构的理解：matter 对 degrade 是一抬一压，两张词表的错位即价值观失衡；C 的 distorted values 是全文 moral purpose 缺失主旨的凝练；D 的 rigid 与原文方向相反，属正反混淆。"
+  },
+  {
+   "question_id": 912,
+   "long_sentence": "拆 The purpose of editing the News of the World was not to promote reader understanding, to be fair in what was written or to betray any common humanity；三个不定式并列作表语；betray 此处取熟词僻义「显露、体现」。译：《世界新闻报》的办报目的不是增进读者理解、不是公平报道，也不是体现共同的人性。",
+   "option": "正确项 B「道德意识对办报很重要」＝反面立论：办报目的中 fair 与 common humanity 缺位，结果便是 ruin lives in the quest for circulation and impact，反推正面结论即办报须有道德意识；A「写作质量最重要」偷换概念，批评的是目的失德而非文笔；C「共同人性是新闻报道的核心」以偏概全，common humanity 只是三个被弃目的之一，原文未说 central；D「记者需要更严格的行业监管」无中生有，末段未提监管。",
+   "keyword": "betray 熟词僻义「显露」；in the quest for 追逐、追求；circulation 发行量；suspicion 怀疑。",
+   "note": "suggest 题从反面段落取正面结论：末段用 not A、not B、not C 加 it was to ruin lives 的否定排比反证道德之必需；C 项把并列项之一拔高为核心，属以偏概全；推断题答案须覆盖整段逻辑而非单句细节。"
+  },
+  {
+   "question_id": 913,
+   "long_sentence": "拆 If you are unfamiliar with words or idioms, you guess at their meaning, using clues presented in the context；if 引导条件状语从句；guess at 意为「猜测」；using clues... 为现在分词短语作方式状语。译：如果遇到不认识的单词或习语，你会利用上下文提供的线索猜测其含义。",
+   "option": "答案 C：空前句 identifying meanings...working out relationships between them 停在「词层」，C 的 unfamiliar with words or idioms 加 guess at their meaning 正是词义处理的延续，尾句 possible links between them 又呼应 relationships between them；空后 You begin to infer a context 由词层升入语境层。与 D 区分：D 的 reconstruct the likely meanings 属句子与意象层面的重建，是后一阶段动作。",
+   "keyword": "guess at 猜测；idiom 习语；discourse entity 话语实体（篇章中提及的人与物）；mental note 心记。",
+   "note": "七选五先看空前句的层级信号：words、relationships 锁定词层，C 是唯一继续讲词与习语处理的选项；C 尾句 links between them 与空前 relationships between them 词汇复现是双保险；D 的 In effect 是总结语气，不宜用在首空。"
+  },
+  {
+   "question_id": 914,
+   "long_sentence": "拆 You make further inferences, for instance, about how the text may be significant to you, or about its validity；make inferences about 作出关于…的推断；for instance 引出举例；破折号后 inferences that... 为同位语式补充。译：你会作出进一步的推断，比如这段文字对你可能意味着什么、它是否可信——这些推断构成了个人回应的基础。",
+   "option": "答案 E：空前 You infer information you feel the writer has invited you to grasp（推断作者邀你把握的信息），E 首词 further 直接续写「更多推断」，推断对象从「文本内信息」推进到「对你的意义、其有效性」，递进清晰；本段主题句 active engagement in inference and problem-solving 的 inference 词三次复现，是选 E 的最强锚点。与 D 区分：D 的 reconstruct 讲重建可能意义，无 further 的递进衔接力。",
+   "keyword": "make inferences 作推断；validity 有效性、可信度；personal response 个人回应；passive assimilation 被动吸收。",
+   "note": "复现词加递进词双锁：infer 在本段反复出现，42 空选带 further inferences 的 E 几乎是送分；若空格在段中而选项以 In effect、Rather 开头，先怀疑其位置——总结与转折词必须找到对应的上文否定或收束语境。"
+  },
+  {
+   "question_id": 915,
+   "long_sentence": "拆 Rather, we ascribe meanings to texts on the basis of interaction between what we might call textual and contextual material；ascribe...to... 意为「把…归于…」；on the basis of 在…基础上；between...and... 说明互动双方。译：毋宁说，我们把意义归于文本，是基于「文本性材料」与「语境性材料」的互动：即从文本形式结构中感知的组织模式，与我们带入文本的背景、社会知识、信念和态度之间的互动。",
+   "option": "答案 G：空前 What is in question is not the retrieval of an absolute, fixed or 'true' meaning（问题不在于获取绝对、固定或「真实」的意义），G 以 Rather 接续「不是…而是…」的否定肯定结构，是 43 空的决定性信号；G 尾部 background, social knowledge, belief and attitude 还为下段 Such background material 提供指代对象，一选连通两空。与 D 区分：D 谈 reconstruct meanings 但无转折衔接，且属第 1 段层面的动作。",
+   "keyword": "ascribe...to 把…归于；Rather 而是（否定之后的转折）；textual 与 contextual material 文本性与语境性材料；background material 背景材料。",
+   "note": "见「not X. 43 ______」结构直接锁定 Rather/Instead/But 开头的选项；G 尾部的背景词列表与下段 Such background material 构成跨段指代，先定 G 再定 44 空 B，是本篇的连环保；做七选五要随时为下一空埋线索。"
+  },
+  {
+   "question_id": 916,
+   "long_sentence": "拆 Factors such as the place and period in which we are reading, our gender, ethnicity, age and social class will encourage us towards certain interpretations but obscure or even close off others；such as 引出列举；in which we are reading 为介词前置的定语从句。译：阅读的地点与时代、性别、族裔、年龄与社会阶层等因素，会促使我们走向某些解读，同时遮蔽甚至关闭另一些解读。",
+   "option": "答案 B：上段 G 尾列出 background, social knowledge 等，本段首句 Such background material inevitably reflects who we are，B 的 place, period, gender, ethnicity, age, social class 正是「我们是谁」的具体化；encourage...but obscure 的两面性与 reflects 呼应；空后 This doesn't...make interpretation merely relative 顺势回应「解读因人而异」。干扰项 F 讲文学人物，与本段背景因素无关。",
+   "keyword": "factor 因素；ethnicity 族裔；encourage sb towards 促使某人趋向；close off 封堵、关闭。",
+   "note": "Such background material 的指代对象必须在前文出现——只有 G 尾部的 background 列表能承接，故 G、B 两空连动；B 的因素列举与 reflects who we are 构成「抽象—具体」展开，这是七选五段内展开的高频模式，先找总说句再配列举项。"
+  },
+  {
+   "question_id": 917,
+   "long_sentence": "拆 Are we studying that text and trying to respond in a way that fulfils the requirement of a given course?；that fulfils... 为定语从句修饰 way；fulfil the requirement of 意为「满足…的要求」；三个疑问句并列构成自问。译：我们是在研读文本、努力以符合某门课程要求的方式作出回应吗？只是为了消遣而读？还是为了获取信息而略读？",
+   "option": "答案 A：空前 How we read a given text also depends on our particular interest in reading it，A 用三个并列疑问句列出目的（完成课程、消遣、获取信息），正是 particular interest 的展开；A 尾句 Ways of reading on a train or in bed...differ from reading in a seminar room 又被空后 Such dimensions of reading 概括指代。与 B 区分：B 讲读者身份因素，属「谁在读」而非「为何读」，且与 44 空重叠。",
+   "keyword": "fulfil the requirement 满足要求；skim 略读、浏览；for pleasure 为消遣；seminar room 研讨教室。",
+   "note": "interest 是 45 空题眼：A 的三个问句全在回答「为什么读」；空后 Such dimensions of reading 要求前文给出可列举的「阅读维度」，A 的问句加场景对比恰好供给；同一选项被两空争夺时（B 在 44、45 都可用），比较前后衔接强度再定。"
+  },
+  {
+   "question_id": 918,
+   "long_sentence": "拆 It may involve not only his parents and his friends, as well as those of the young woman, but also a matchmaker；It 指代 the choice of a spouse；not only...but also 连接两大部分；those of the young woman 中 those 回指 parents and friends。译：择偶之事可能不仅涉及男方自己的父母与朋友——以及女方的父母与朋友——还涉及一位媒人。",
+   "option": "正确项 A as well as（以及）：his parents and his friends 与 those of the young woman 是同类并列（双方的父母与朋友），as well as 表「连同、以及」；B by way of（经由）表路径；C on behalf of（代表）表代理；D with regard to（关于）表话题，三者均不表并列且会破坏 those of 的回指关系。",
+   "keyword": "as well as 以及、连同（并列连词）；not only...but also 不但…而且；matchmaker 媒人；spouse 配偶。",
+   "note": "见 not only...but also 框架即知中间仍是并列成分的延伸：双方父母朋友属「同类人」，只有 as well as 能续接并列；三个介词短语选项代入后 those of the young woman 会失去并列对象，句法检验比词义判断更快。"
+  },
+  {
+   "question_id": 919,
+   "long_sentence": "拆 A young man can 2 ______ a likely spouse on his own and then ask his parents to arrange the marriage negotiations；on his own 意为「独自、靠自己」；and then 连接先后动作。译：年轻人可以独自 __（选定）一个合适的人选，然后请父母去安排婚姻磋商。",
+   "option": "正确项 D decide on（选定、决定）：decide on sb/sth 为固定搭配「选定」，与 on his own（自己做主）呼应，构成「自主择偶」路径；A adapt to（适应）对象通常是环境而非人；B provide for（供养、提供）与择偶决策无关；C compete with（与…竞争）无竞争语境。",
+   "keyword": "decide on 选定＝choose；on one's own 独自地；likely 熟词僻义「合适的、有希望的」；negotiation 磋商。",
+   "note": "与下文另一路径（父母代选，giving the child little to say）对照：本空属「孩子做主」路径，动词须表自主决定；likely 是熟词僻义，likely spouse 指「候选的合适对象」而非「可能的配偶」，词义辨析先于搭配判断。"
+  },
+  {
+   "question_id": 920,
+   "long_sentence": "拆 ask his parents to 3 ______ the marriage negotiations；ask sb to do 请求某人做某事；the marriage negotiations 意为「婚姻磋商」。译：然后请父母去 __（安排）婚姻磋商。",
+   "option": "正确项 C arrange（安排）：arrange negotiations（安排磋商）是高频搭配，父母出面安排提亲合乎婚俗叙事；A renew（续签、重启）磋商尚未开始，无「再」可言；B close（了结）方向相反，磋商才要启动；D postpone（推迟）与上下文无任何延迟信息。",
+   "keyword": "arrange negotiations 安排磋商；arrange a marriage 安排婚事；negotiation 谈判、协商。",
+   "note": "动词与宾语的时序要匹配：negotiations 尚未启动，需先「安排」；B、D 都是「结束、推迟」类动作，与 then 表顺承的时间链冲突；本空与前空 decide on 构成「自己选人、父母跑流程」的分工链，按动作先后选词。"
+  },
+  {
+   "question_id": 921,
+   "long_sentence": "拆 In theory, a girl may veto the spouse her parents have chosen；veto 意为「否决」；her parents have chosen 为省略关系词的定语从句修饰 spouse。译：__（理论上），女孩可以否决父母为她选定的配偶。",
+   "option": "正确项 A In theory（理论上）：前文两条路径（自选、父母代选）都未给女孩发言权，且明说 giving the child little to say，此处补出「她可否决」的名义权利，与实际发言权小形成虚实对照，In theory 恰当；B In time（及时、终究）表时间；C Above all（首要的是）表强调排序；D For example（例如）前文无可例举的总述。",
+   "keyword": "in theory 理论上＝in principle（与 in practice 相对）；veto 否决＝reject；have little to say 几乎没有发言权。",
+   "note": "逻辑副词题看前后语义落差：刚说「孩子说不上话」，紧接着的 veto 是纸面权利，in theory 的「理论上如此、实际未必」正合此意；For example 需要前文有总说句，此处两条例子尚未出现，逻辑副词题先验「总—分」关系。"
+  },
+  {
+   "question_id": 922,
+   "long_sentence": "拆 After a spouse has been selected, each family investigates the other to make sure its child is marrying into a good family；After 引导时间状语从句，从句用现在完成时；to make sure... 为目的状语；investigate 意为「调查」。译：__（在）配偶选定之后，双方家庭互相调查，以确保自己的孩子嫁入好人家。",
+   "option": "正确项 C After（在…之后）：从句 has been selected 为完成体，语义上「调查」必发生在「选定」之后，时间序成立；A Although 表让步，两分句无转折；B Lest（以免）从句须用虚拟语气，与 has been selected 的直陈语气冲突；D Unless（除非）表条件，与「先选后查」的时间顺序不符。",
+   "keyword": "after 引导时间从句（从句可用完成时）；investigate 调查＝look into；make sure 确保＝ensure；lest 以免（须接虚拟语气）。",
+   "note": "时间连接词与从句时态联动：has been selected 的完成体提示「此前发生」，After 顺势成立；Lest 是完形高频陷阱词，其虚拟语气要求与原句直陈式直接冲突，语法层面即可排除，不必纠结语义。"
+  },
+  {
+   "question_id": 923,
+   "long_sentence": "拆 each family investigates the other to make sure its child is marrying into a good family；marry into 为固定搭配「嫁入、通过婚姻进入某家庭」；现在进行时 is marrying 表临近实现。译：双方家庭互相调查，以确保自己的孩子 __（嫁、娶）进好人家。",
+   "option": "正确项 B into：marry into a family＝通过婚姻成为该家庭一员，方向由外入内，与调查对方家庭的目的严丝合缝；A within（在…内部）表静态位置，与「进入」的方向义不符；C from（来自）表出身，但 marry from 不成搭配；D through（通过）表手段，marry through a family 语义不通。",
+   "keyword": "marry into 嫁入某家；investigate 调查；a good family 好人家、体面人家；make sure 确保。",
+   "note": "介词题盯动词的方向性：marry into 强调「进入对方家族」，正与前文 investigating the other（查对方）呼应；C from 有「出身」迷惑性，但本句对象是对方家庭（the other），不是孩子自己的出身，方向理清即可锁定。"
+  },
+  {
+   "question_id": 924,
+   "long_sentence": "拆 Formerly it lasted three days, but by the 1980s it more commonly lasted a day and a half；Formerly 与 by the 1980s 形成时间对照；last 作动词意为「持续」。译：从前婚礼持续三天，__（但）到 20 世纪 80 年代，通常只持续一天半。",
+   "option": "正确项 D but（但是）：three days 对 a day and a half 是时长缩短，Formerly（从前）与 by the 1980s（到 80 年代）两个时间状语强化今昔对比，须转折词衔接；A since 引导时间从句且须配完成时；B or 表选择，两分句无选择关系；C so 表结果，前后并非因果链。",
+   "keyword": "formerly 从前＝in the past；by the 1980s 到 20 世纪 80 年代（截至某时点）；last v. 持续；affair 事情、活动（a long and colorful affair）。",
+   "note": "对比信号双保险：时间状语对照（formerly 对 by the 1980s）加数量对照（three days 对 a day and a half），只有 but 能承载今昔转折；判断连词先问「两分句是什么关系」——并列、因果还是转折，对照结构几乎必是 but。"
+  },
+  {
+   "question_id": 925,
+   "long_sentence": "拆 Buddhist priests offer a short sermon and 8 ______ prayers of blessing；主语 Buddhist priests；offer 与空格动词并列共用主语；prayers of blessing 意为「祝福祷文」。译：佛教僧侣作简短布道并 __（诵念）祝福祷文。",
+   "option": "正确项 B recite（背诵、诵念）：recite prayers（诵祷文）是宗教仪式固定搭配，僧侣念祷文合乎婚礼仪式语境；A test（测试）对祷文荒谬；C copy（抄写）与口头仪式不符；D create（创作）方向颠倒——祷文是既成经文，僧侣是诵念者而非创作者。",
+   "keyword": "recite 诵念、背诵；sermon 布道、讲经；prayers of blessing 祝福祷文；Buddhist priest 佛教僧侣。",
+   "note": "场景词锁定搭配：sermon、prayers、priest 构成宗教仪式语义场，空格动词必属「仪式动作」；D create 的陷阱在僧侣与经文的关系——念的是既有经文；recite prayers 与 offer a sermon 都是仪式语境高频表达，词汇搭配按场景记忆最省力。"
+  }
+ ]
+}

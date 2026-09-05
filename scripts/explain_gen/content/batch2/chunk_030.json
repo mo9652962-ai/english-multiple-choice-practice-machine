@@ -1,0 +1,180 @@
+{
+ "chunk": 30,
+ "items": [
+  {
+   "question_id": 726,
+   "long_sentence": "定位句 Toyota Motor, for example, alleviated some of the damage from its recall crisis earlier this year with a relatively quick and well-orchestrated social-media response campaign；alleviated 意为「减轻、缓解」；well-orchestrated 精心策划的。译：例如丰田汽车今年以一场相对迅速、组织有序的社交媒体回应行动，减轻了召回危机的部分损害，其中包括在 Twitter、Digg 等网站直接与消费者互动。",
+   "option": "正确项 A responding effectively to hijacked media：丰田的召回危机正属 hijacked media 舆情，alleviated some of the damage 加 quick and well-orchestrated 即有效应对；B persuading customers into boycotting 正反混淆，丰田是被抵制风险的受害方；C cooperating with supportive consumers 张冠李戴，互动是回应质疑而非与支持者合作；D taking advantage of hijacked media 偷换概念，是应对而非利用。",
+   "keyword": "alleviate 减轻、缓解＝ease；recall crisis 召回危机；orchestrate 精心策划；engage with 与…互动。",
+   "note": "例证题先看例子服务的观点句：第四段 If that happens...company's response may not be sufficiently quick 加 learning curve has been steep，丰田是「快速得体回应」的正例；D 项利用 hijacked 字面设阱，分清「被劫持后如何应对」与「利用劫持」的方向。"
+  },
+  {
+   "question_id": 727,
+   "long_sentence": "主题句 The way consumers now approach the process of making purchase decisions means that marketing's impact stems from a broad range of factors beyond conventional paid media；means 后接 that 宾语从句；stems from 源于；beyond conventional paid media 超越传统付费媒体。译：如今消费者作购买决策的方式意味着，营销的影响力源自传统付费媒体之外的广泛因素。",
+   "option": "正确项 A Alternatives to conventional paid media：全文依次介绍 earned、owned、sold、hijacked media，都是 paid media 之外的新媒介形式，首段 beyond conventional paid media 是总纲；B conflict between hijacked and earned media 以偏概全，第三四段只是链条一环；C dominance of hijacked media 过度推断，文章未说其占主导；D popularity of owned media 以偏概全，owned 只是其中一类。",
+   "keyword": "alternative 替代选择＝option；conventional 传统的；stem from 源于＝derive from；impact 影响。",
+   "note": "主旨题按结构归纳：paid→earned/owned→sold→hijacked，层层展开 paid media 之外的形态，A 的复数 Alternatives 精确覆盖；B 只截取后两段的局部冲突，考研主旨题最忌以段代篇。"
+  },
+  {
+   "question_id": 728,
+   "long_sentence": "定位句 instead of thinking of it as something that can be measured by moment-to-moment joy, we should consider being happy as a past-tense condition；instead of 表对比；that can be measured by... 为定语从句；past-tense condition 「过去时状态」。译：不应把幸福看作能靠时时刻刻的快乐来衡量的东西，而应把幸福视为一种回望时才成立的状态。",
+   "option": "正确项 C happiness in retrospect：past-tense condition 与 later be sources of intense gratification and delight 共同指向「回首时方显的幸福」，in retrospect＝回顾；A temporary delight 正反混淆，文章说的是当下辛苦、日后甘甜；B enjoyment in progress 无中生有；D lasting reward 偷换概念，重点是回望视角而非回报持续时间。",
+   "keyword": "in retrospect 回顾、回想＝looking back；past-tense 过去时的；gratification 满足、欣慰；moment-to-moment 时时刻刻的。",
+   "note": "观点题抓 Senior 的核心改写：把幸福从进行时改成过去时；D 项的 lasting 与 later 是两个时间概念——文章强调「回望时才觉幸福」，不是「快乐持续很久」，past-tense condition 是本题唯一钥匙。"
+  },
+  {
+   "question_id": 729,
+   "long_sentence": "定位句 Practically every week features at least one celebrity mom, or mom-to-be, smiling on the newsstands；features 意为「以…为特色、登载」；mom-to-be 准妈妈；practically 几乎。译：几乎每周都有至少一位名人妈妈或准妈妈微笑着登上报刊亭封面。",
+   "option": "正确项 D having children is highly valued by the public：报刊亭每周推出 Madonna-and-child 式封面、名人妈妈权当主角，反映社会对生育的推崇，下文 celebrates procreation 点明主旨；A a permanent source for gossip 绝对化加无中生有；B single mothers deserve greater attention 无中生有；C pregnant celebrities news is entertaining 以偏概全，怀孕新闻只是例举之一。",
+   "keyword": "feature 以…为特色；newsstand 报刊亭；procreation 生育、繁殖；celebrate 推崇、颂扬＝praise。",
+   "note": "第二段无观点句，需从现象归纳态度：反复出现的名人母亲封面＋第三段 In a society that so persistently celebrates procreation 的评论共同指向「生育受推崇」；D 是对现象的概括，A、C 停留在娱乐八卦表层，属答非所问。"
+  },
+  {
+   "question_id": 730,
+   "long_sentence": "定位句 unhappy childless folks are bothered with the message that children are the single most important thing in the world: obviously their misery must be a direct result of the gaping baby-size holes；bothered with 为…所困扰；gaping 大而张开的。译：不幸福的无子女者则被一种论调所困扰：孩子是世界上唯一最重要的东西——他们的痛苦显然必是生命中孩子形状的空洞直接造成的。",
+   "option": "正确项 A are constantly exposed to criticism：无子女者不断被告知「不幸皆因没孩子」，加上悔育等于支持虐杀小猫（kitten-killing）的荒谬类比，均为舆论施压；B largely ignored by the media 正反混淆，媒体恰恰紧盯他们；C fail to fulfill social responsibilities 无中生有；D less likely to be satisfied 张冠李戴，原文是「被认定不幸福」的指责而非真实满意度。",
+   "keyword": "be bothered with 被…困扰；childless 无子女的；be equivalent to 等同于；misery 痛苦＝suffering。",
+   "note": "第三段对比两类人：不幸福的父母很少被追问悔意，不幸福的无子女者却背锅（misery 归因于无孩）；A 的 constantly exposed to criticism 概括「孩子至上」论调加「杀小猫」类比的围攻，B 与原文方向相反，用正反检验最快。"
+  },
+  {
+   "question_id": 731,
+   "long_sentence": "定位句 the image of parenthood that celebrity magazines like Us Weekly and People present is hugely unrealistic, especially when the parents are single mothers like Bullock；that celebrity magazines present 为定语从句；hugely unrealistic 极不真实。译：《美国周刊》《人物》这类名人杂志呈现的养育形象极其不真实，尤其是当父母是布洛克这样的单身母亲时。",
+   "option": "正确项 D misleading：unrealistic（不真实）加「单身妈妈称独自带娃是 a piece of cake，实则 round-the-clock help（全天候帮手）」的遮掩，信息具有误导性；A soothing 安抚的与「制造幻觉」不符；B ambiguous 模棱两可，杂志信息恰恰言之凿凿；C compensatory 补偿性无中生有。",
+   "keyword": "unrealistic 不真实的；misleading 误导性的＝deceptive；a piece of cake 轻而易举的事；round-the-clock 全天候的。",
+   "note": "态度题抓评价加例证：hugely unrealistic 是定性，Sandra and Britney tell it...a piece of cake 加 read: with round-the-clock help 的括号拆穿是例证；soothing 的迷惑在于「让读者舒服」，但作者批判的是失真而非安慰。"
+  },
+  {
+   "question_id": 732,
+   "long_sentence": "定位句 it's interesting to wonder if the images of stress-free, happiness-enhancing parenthood aren't in some small, subconscious way contributing to our own dissatisfactions with the actual experience；wonder if...aren't... 双重否定表肯定推测；subconscious 潜意识的。译：有趣的是，每周映入眼帘的毫无压力、幸福满溢的养育形象，是否正以某种潜意识方式加深我们对真实养育体验的不满。",
+   "option": "正确项 B Celebrity moms have influenced our attitude towards child rearing：名人形象潜意识地影响我们对养育的真实感受，即影响态度；A contributes little to the glamour 正反混淆，Reese and Angelina make it look so glamorous；C Having children intensifies our dissatisfaction 偷换概念，造成不满的是完美形象而非生育本身；D neglect the happiness 无中生有。",
+   "keyword": "stress-free 无压力的；subconscious 潜意识的；dissatisfaction 不满；glamorous 光鲜的、有魅力的。",
+   "note": "末段推断题抓类比句：如同有人希望剪 the Rachel 发型就变得像 Aniston，我们也被名人完美父母形象暗示；B 的 influenced our attitude 是对 subconscious contributing to 的概括，C 把施动者从「形象」偷换成「生育」，是最强干扰。"
+  },
+  {
+   "question_id": 733,
+   "long_sentence": "答案 B 段关键句 These are disciplines that are going out of style: 22% of American college graduates now major in business compared with only 2% in history and 4% in English；that are going out of style 为定语从句；compared with 与…相比。译：这些学科正在过时：如今 22% 的美国大学毕业生主修商科，而主修历史的仅 2%、英语仅 4%。",
+   "option": "答案 B 段：段首 His concern is mainly with the humanities 的 His 回指给定首段 G 的 Louis Menand，humanities 与 G 段 a professor of English 呼应；B 段末 difficult to agree on what a 「general education」 should look like 引出通识课程难题，为下文埋钩；与 A 段区分：A 谈博士学位的专业化耗时，与 G 段荐书开场无直接衔接。",
+   "keyword": "concern 关注、关切；humanities 人文学科；go out of style 过时＝out of fashion；general education 通识教育。",
+   "note": "排序题先锁代词：His 只能回指 G 段的 Louis Menand；再验后钩——B 的 general education 正是后文 such courses 的先行话题；C 段以 Equally unsurprisingly 开头必须有前句 Not surprisingly，可先排除其段首资格。"
+  },
+  {
+   "question_id": 734,
+   "long_sentence": "答案 D 段首句 One reason why it is hard to design and teach such courses is that they cut across the insistence by top American universities that liberal-arts education and professional education should be kept separate；why 引导定语从句；cut across 违背、与…冲突。译：这类课程难以设计与教授的原因之一，在于它们与美国顶尖大学坚持的「通识教育与专业教育分离开来、分院教授」的原则相冲突。",
+   "option": "答案 D 段：such courses 回指 B 段末 what a 「general education」 should look like（通识课程），衔接唯一；D 段末 kept separate, taught in different schools 又为 E 段 Besides professionalising the professions by this separation 的 this separation 埋下指代；与 E 段区分：E 讲专业化对教授群体的塑造，须以 separation 为前提，不能顶替 D 的位置。",
+   "keyword": "cut across 违背、与…相冲突；insistence 坚持、坚决主张；liberal-arts education 博雅教育；keep...separate 使…保持分离。",
+   "note": "双钩定位法：前钩 such courses（指向 B 段的 general education），后钩 this separation（指向 E 段 Besides...by this separation），D 段是承上启下的枢纽；排序题中「指示词加名词」的复现链比同义改写更可靠，优先排查。"
+  },
+  {
+   "question_id": 735,
+   "long_sentence": "答案 A 段关键句 Not surprisingly, up to half of all doctoral students in English drop out before getting their degrees；Not surprisingly 为评注性状语；up to 高达；drop out 中途退出。译：毫不意外，多达一半的英语专业博士生在拿到学位之前便中途退学。",
+   "option": "答案 A 段：A 承接 E 段——E 末 professionalism 已使博士学位成为学术职业前提并点出 disciplines，A 段 No disciplines have seized on professionalism... 词汇复现 professionalism 与 disciplines，人文博士九年之长正是「博士为前提」的后果展开；后钩：A 末 Not surprisingly 与下段首 Equally unsurprisingly 呼应；与 C 区分：C 谈毕业后的教职结局，是退学之后的话题。",
+   "keyword": "seize on 抓住、热衷利用；professionalism 职业化、专业化；drop out 中途退学；doctoral degree 博士学位。",
+   "note": "E→A→C 链条靠两处复现焊死：professionalism（E 到 A）与 Not surprisingly 到 Equally unsurprisingly（A 到 C）；A 段三年获律师、四年获医师与九年读博士的对比，呼应 E 段「博士是前提」，两个钩都落空即位置错误。"
+  },
+  {
+   "question_id": 736,
+   "long_sentence": "答案 C 段首句 Equally unsurprisingly, only about half end up with professorships for which they entered graduate school；Equally unsurprisingly 承接上段 Not surprisingly；end up with 最终获得；for which they entered graduate school 为介词前置的定语从句。译：同样毫不意外的是，只有约一半人最终获得了他们当初读研时所追求的教授职位。",
+   "option": "答案 C 段：Equally unsurprisingly 直接回指 A 段末 Not surprisingly, up to half...drop out，句式呼应且「约一半」数量相扣；C 段末 many humanities students leave the profession 收束人文学科的个体困境，为 F 段改革结论铺垫；与 E 区分：E 讲制度成因（教授专业化、垄断知识的再生产），C 讲个体结局（退学、无教职、转行）。",
+   "keyword": "end up with 最终落得、获得；professorship 教授职位；unequivocally... 亏；post 职位＝position。",
+   "note": "「同样毫不意外」是排序题最强信号之一：必须紧跟同类结论句（A 的 Not surprisingly）；A 与 C 各有一个「一半」——退学的一半与得教职的一半，两句对照印证先后，若把 C 提到 A 前，Equally 将失去呼应对象。"
+  },
+  {
+   "question_id": 737,
+   "long_sentence": "答案 F 段首句 The key to reforming higher education, concludes Mr. Menand, is to alter the way in which 「the producers of knowledge are produced」；concludes Mr. Menand 为插入语；the way in which... 中 in which 引导定语从句；alter 改变。译：门德总结道，改革高等教育的关键在于改变「知识的生产者被生产出来」的方式。",
+   "option": "答案 F 段：F 的 concludes Mr. Menand 是全文收束信号，the producers of knowledge are produced 回指 E 段末 the production of the producers of knowledge，复现显豁；F 段末 Yet quite how that happens, Mr. Menand does not say 以悬置笔法作结，符合末段特征；与 B 区分：B 以 His concern 开头是话题引入段，只能紧随给定的 G。",
+   "keyword": "reform 改革；alter 改变＝change；detached 脱离的、疏离的；exclusionary 排他的、关门主义的。",
+   "note": "F 被两处锁定：concludes 的总结性插入语加与 E 段末 producers of knowledge 的复现；全篇链条 G-B-D-E-A-C-F，先排双钩段 B、D，再以 unsurprisingly 链定 A、C，F 自然收尾，从强信号到弱信号逐步锁定。"
+  },
+  {
+   "question_id": 738,
+   "long_sentence": "定位句 The court cannot 1______ its legitimacy as guardian of the rule of law 2______ justices behave like politicians；legitimacy 合法性；as guardian of the rule of law 为主语补足成分；主干 cannot...its legitimacy。译：如果法官行为举止如同政客，法院便无法维护其作为法治守护者的合法性。",
+   "option": "正确项 B maintain：maintain its legitimacy「维护其合法性」与下文 Yet, in several instances, justices acted in ways that weakened the court's reputation 的负面语境一致——行为失范则合法性难保；A emphasize 「强调」与 cannot 搭配后语义空洞；C modify 「修改」合法性不能被法院修改；D recognize 「承认」与主语 court 搭配不通。",
+   "keyword": "maintain 维持、维护＝preserve；legitimacy 合法性；guardian 守护者；rule of law 法治。",
+   "note": "首空定全文基调：文章批评法官政治化行为损害法院声誉，legitimacy 只能被「维护」而不能被强调、修改；下文 Yet 转折加 weakened 的语义场帮助锁定 maintain 的「保住」义。"
+  },
+  {
+   "question_id": 739,
+   "long_sentence": "主句 The court cannot maintain its legitimacy as guardian of the rule of law 2______ justices behave like politicians；空格处为状语从句连词，从句 justices behave like politicians 为一般现在时完整句。译：当法官的言行举止像政客时，法院便无法维护其作为法治守护者的合法性。",
+   "option": "正确项 A when：when 引导时间状语从句，表达「一旦法官 behaves like politicians，合法性便无从维持」的触发条件；B lest 「以免」后接虚拟语气且逻辑不通；C before 「在…之前」时序错乱；D unless 「除非」会使句义变成「除非法官像政客否则无法维持」，与文意正好相反。",
+   "keyword": "when 当…时（表条件触发）；lest 以免（后接虚拟语气）；unless 除非（否定条件）；behave 举止、表现。",
+   "note": "连词题先译通句义再验搭配：本句是「条件触发」关系，when 最顺；unless 是最强干扰——代入后正反颠倒，考研完形里 unless 与 when 的辨析常考「句义方向」而非语法形式。"
+  },
+  {
+   "question_id": 740,
+   "long_sentence": "定位句 Yet, in several instances, justices acted in ways that 3______ the court's reputation for being independent and impartial；Yet 表转折；in several instances 在若干事例中；that 从句修饰 ways；reputation for being... 因…而有的声誉。译：然而，在若干事例中，法官的所作所为损害了法院独立、公正的声誉。",
+   "option": "正确项 B weakened：Yet 转折后接负面事例（法官现身政治活动），其行为只能「削弱」独立公正的声誉，与下文 less likely to be accepted as impartial judgments 呼应；A restored 「恢复」与 Yet 的转折方向矛盾，前文并无声誉受损语境；C established 「确立」声誉早已存在；D eliminated 「消除」程度过重，声誉尚存只是受损。",
+   "keyword": "weaken 削弱＝impair；reputation 声誉；impartial 公正的、不偏不倚的；instance 事例＝case。",
+   "note": "逻辑词 Yet 是本题命门：转折后必须与首段「合法性受威胁」的负面基调一致；restored、established 都把声誉往好处写，与转折及全文批评立场冲突；weakened 的「程度适中受损」也比 eliminated 更符合分寸。"
+  },
+  {
+   "question_id": 741,
+   "long_sentence": "定位句 That kind of activity makes it less likely that the court's decisions will be 4______ as impartial judgments；make it less likely that... 中 it 为形式主语；be accepted as 被接受为。译：这种行为使法院的裁决 less 可能被接受为公正的判断。",
+   "option": "正确项 D accepted：be accepted as「被接受为」，法官参与政治活动使公众更难把裁决当作公正判断来接受，语义通顺且为固定搭配；A challenged 「被质疑」与 less likely 连用意思变成「更不容易被质疑」，恰与文意相反；B compromised 「受损」不与 as impartial judgments 搭配；C suspected 「被怀疑」同样与 less likely 连用后方向颠倒。",
+   "keyword": "be accepted as 被接受为；make it less likely that 使…更不可能；impartial 公正的；judgment 裁决。",
+   "note": "本空藏双重否定陷阱：less likely 后面要接「期望发生的事」，法官政治化→裁决更难被接受；若选 challenged 或 suspected，less likely 会把贬义翻转成褒义，做完务必回读整句核对正负号。"
+  },
+  {
+   "question_id": 742,
+   "long_sentence": "定位句 Part of the problem is that the justices are not 5______ by an ethics code；表语从句；be bound by 为固定搭配「受…约束」；ethics code 道德准则。译：问题的一部分在于，法官不受任何道德准则的约束。",
+   "option": "正确项 C bound：be bound by「受…约束」，法官不受道德守则约束正是问题所在，与下文建议法院 self subject to the code of conduct 呼应；A advanced 「被推进」与 by an ethics code 搭配不通；B caught 「被抓住」无 be caught by a code 的说法；D founded 「被创立」主语应是准则而非法官。",
+   "keyword": "be bound by 受…约束＝be tied by；ethics code 道德准则；at the very least 至少；code of conduct 行为准则。",
+   "note": "被动语态题先看 by 短语：约束主体是 an ethics code，能与之搭配的只有 bound；本空与 6 空 subject to 同属「约束」语义场，上下句互证，bound 与 subject 是同义呼应链。"
+  },
+  {
+   "question_id": 743,
+   "long_sentence": "定位句 At the very least, the court should make itself 6______ to the code of conduct that 7______ to the rest of the federal judiciary；At the very least 至少；make oneself...to 使自己…于；that 引导定语从句修饰 code of conduct。译：至少，法院应当使自己也遵守适用于联邦司法系统其他机构的行为准则。",
+   "option": "正确项 B subject：be subject to「服从于、受…支配」，法院让自己也受行为准则约束，与 5 空不受约束形成对策呼应；A resistant 「抗拒」方向相反；C immune 「免疫」同样与文意相反；D prone 「易于」后接不良倾向且不与 code 搭配。",
+   "keyword": "be subject to 服从、受…约束＝be bound by；be immune to 对…免疫；be prone to 易于、倾向于；code of conduct 行为准则。",
+   "note": "三组形容词 to 搭配的方向辨析：subject 顺向约束、resistant 与 immune 逆向逃避、prone 接负面结果；上文法官 not bound by an ethics code 是问题，此处 make itself subject to 是药方，一负一正方向不能乱。"
+  },
+  {
+   "question_id": 744,
+   "long_sentence": "定语从句 the code of conduct that 7______ to the rest of the federal judiciary；that 指代 the code of conduct 作从句主语；the rest of the federal judiciary 联邦司法系统的其余部分。译：适用于联邦司法系统其他部门的行为准则。",
+   "option": "正确项 D applies：apply to「适用于」，准则适用于司法系统其他机构，正是最高法院应当同样遵守的理由；A resorts to 「诉诸」主语应为人；B sticks to 「坚持」主语也须是人；C leads to 「导致」语义不通。",
+   "keyword": "apply to 适用于＝be applicable to；resort to 诉诸；stick to 坚持；federal judiciary 联邦司法系统。",
+   "note": "主谓搭配定答案：that 的先行词是 code（物），其后的 to 短语只能用 applies to 表「适用于」；resorts、sticks 都要求人作主语，考研完形常借「及物方向」区分这类同尾介词短语。"
+  },
+  {
+   "question_id": 745,
+   "long_sentence": "定位句 This and other similar cases 8______ the question of whether there is still a 9______ between the court and politics；主语 This and other similar cases；whether 引导同位语从句说明 question。译：这一事件与其他类似事件提出了一个问题：法院与政治之间是否还存在界限。",
+   "option": "正确项 B raise：raise the question「提出问题」，斯卡利亚事件引出「法院与政治界限何在」的讨论，全文正是围绕这一疑问展开；A evade 「回避」与作者展开讨论的行为相反；C deny 「否认」主语是案例不能否认问题；D settle 「解决」过早，文章只提出问题与建议并未解决。",
+   "keyword": "raise the question 提出问题＝bring up；evade 回避＝avoid；settle 解决＝resolve；whether 是否。",
+   "note": "动宾搭配加全文进程双重判断：案例只能「引发」问题，raise 是标准搭配；settle 的迷惑在于「好像文章给出了答案」，但结尾只是建议法官 self-subject，问题并未解决，注意文章的论证阶段。"
+  },
+  {
+   "question_id": 746,
+   "long_sentence": "同位语从句 whether there is still a 9______ between the court and politics；whether 从句说明 question 的内容；there be 存在句；between the court and politics 在法院与政治之间。译：法院与政治之间是否还存在一条分界线。",
+   "option": "正确项 A line：a line between「…之间的界限」，与下文 set law apart from politics（使法律与政治分离）的 apart 呼应，全文讨论的正是界限模糊；B barrier 「屏障」指阻碍通行的障碍物，与「界限是否模糊」的语境不合；C similarity 「相似性」与批评法官政治化的基调相反；D conflict 「冲突」偷换概念，问题在于区分度而非对抗。",
+   "keyword": "line 界限＝boundary（a line between 之间的界限）；apart from 与…分开；barrier 屏障、障碍；conflict 冲突。",
+   "note": "名词辨析靠下文反哺：第三段 Our legal system was designed to set law apart from politics 正回答此问——apart 指向「分界线」；similarity 与 conflict 都是方向性错误，前者否认问题、后者转移论域。"
+  },
+  {
+   "question_id": 747,
+   "long_sentence": "定位句 The framers of the Constitution envisioned law 10______ having authority apart from politics；envision A as B 把 A 设想为 B；framers 制宪者；apart from 脱离、独立于。译：宪法制定者们将法律设想为一种独立于政治而拥有权威的存在。",
+   "option": "正确项 B as：envision...as... 为固定搭配「把…设想为…」，law as having authority 即「视法律为具有权威之物」；A by、C through 都表方式，envision 不接这类介词；D towards 表方向，同样不构成搭配。",
+   "keyword": "envision...as 把…设想为＝imagine...as；framer 制订者、起草者；authority 权威；apart from 独立于。",
+   "note": "固定搭配题直接锁定：envision、view、regard、see 等视觉类动词后接 as；本空与 12 空 upset、13 空 cultivate 同在制宪者意图句中，先搭好 as 的骨架再核语义方向。"
+  },
+  {
+   "question_id": 748,
+   "long_sentence": "定位句 They gave justices permanent positions 11______ they would be free to 12______ those in power and have no need to 13______ political support；give sb sth；so that 引导目的状语从句；those in power 当权者。译：他们授予法官终身职位，以便法官能够自由地触怒当权者，而无需培植政治支持。",
+   "option": "正确项 A so：so that 引导目的状语从句，授予终身职位的目的正是保障法官独立、敢于得罪当权者；B since 表原因，逻辑变成「因为他们会反对当权者所以给职位」，因果倒置；C provided 「假如」引导条件从句，语义不通；D though 「尽管」让步关系无从谈起。",
+   "keyword": "so that 以便、为了；permanent 永久的、终身的；those in power 当权者；free to do 自由地做。",
+   "note": "目的与因果的方向判断：先给职位（手段）后得自由（目的），so that 才符合「制度设计意图」的叙述；since 的干扰在于两句都有因果关系相，但方向反了，判断连词要问「谁为谁服务」。"
+  },
+  {
+   "question_id": 749,
+   "long_sentence": "并列谓语 they would be free to 12______ those in power and have no need to 13______ political support；be free to do 自由地做；those in power 指当权者；and 连接两个不定式短语。译：（法官）能够自由地触怒当权者，并且无需培植政治支持。",
+   "option": "正确项 C upset：upset those in power「触怒当权者」，终身职位保障法官无需讨好权力，正体现司法独立；A serve 「服务」与独立意图相反；B satisfy 「使满意」同样是依附性行为，与 free to 的褒义语境矛盾；D replace 「取代」无中生有，法官无意取而代之。",
+   "keyword": "upset 使不安、触怒＝offend；those in power 当权者；independent 独立的；have no need to 无需。",
+   "note": "语义方向题：so that 从句整体在讲「保障独立性」，free to 后接的必须是独立带来的能力——敢得罪权贵；serve、satisfy 都是向权力靠拢的动作，方向全反，抓住 independent 的文眼即可。"
+  },
+  {
+   "question_id": 750,
+   "long_sentence": "并列结构 have no need to 13______ political support；have no need to do 无需做；political support 政治支持。译：（法官）无需去培植政治支持。",
+   "option": "正确项 C cultivate：cultivate support「培植支持、拉拢人脉」，与 upset those in power 构成正反对照——正因为无需拉拢支持，才能放心触怒当权者；A confirm 「确认」与 support 搭配生硬；B express 「表达」支持是表态动作，与「获得支持」的需求无关；D offer 「提供」方向反了，法官是寻求支持者而非给予支持。",
+   "keyword": "cultivate 培植、培养（support/connections）；political support 政治支持；confirm 确认；express 表达。",
+   "note": "cultivate 的宾语搭配是考点：cultivate support、cultivate ties 属高频搭配，本义「耕作」引申为「慢慢培植」；offer 的陷阱在方向——no need to offer political support 会把法官写成支持供给方，与独立主旨相悖。"
+  }
+ ]
+}

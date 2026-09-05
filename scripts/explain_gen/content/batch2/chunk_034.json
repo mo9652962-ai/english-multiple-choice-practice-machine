@@ -1,0 +1,180 @@
+{
+ "chunk": 34,
+ "items": [
+  {
+   "question_id": 826,
+   "long_sentence": "答案 G 句主干 national spending on social sciences and the humanities as a percentage of all research and development funds varied from around 4% to 25%；as a percentage of 占…的比例；破折号内 including... 为插入举例；vary from...to... 在…之间浮动。译：上世纪九十年代末，社会科学与人文学科经费占全部研发经费（含政府、高校、非营利机构与企业）的比例约在 4% 到 25% 之间浮动；在多数欧洲国家，这一比例约为 15%。",
+   "option": "答案 G：空前句 The problem is not necessarily the amount of available funding（问题未必在经费数量）需要数据支撑，G 用 4% 到 25%、约 15% 的经费占比证明「钱不算少」；空后句 This is an adequate amount（这一数目是够用的）中的 This 正回指 G 的 15%，前后双钩；强干扰 F 的 despite these factors 是让步转折句，无法被 adequate amount 承接。",
+   "keyword": "spending on... 经费支出；as a percentage of 占…的比例；vary from...to... 在…之间变化；adequate 充足的＝sufficient。",
+   "note": "本空是「观点加数据」结构：先有 not necessarily the amount 的判断，再补 G 的比例数据，最后由 This is an adequate amount 收束——This 的指代对象必须是一个具体数目，G 是唯一提供数字的选项，指代链直接锁定。"
+  },
+  {
+   "question_id": 827,
+   "long_sentence": "答案 A 句主干 The idea is to force social scientists to integrate their work with other categories；force sb to do 强制某人做；integrate...with... 将…与…整合；including 后接五个并列领域。译：这一设想的实质是迫使社会科学家把自己的工作与其他类别整合起来，包括健康与人口变化、粮食安全、海洋研究与生物经济、清洁高效能源，以及包容、创新与安全的社会。",
+   "option": "答案 A：空前句 the intention is not to neglect social science; rather, the complete opposite 需要一个说明「完全相反之意图」的句子，A 的 force...to integrate 正面回答「不是忽视而是强制整合」；空后 That should create more collaborative endeavors 的 That 回指 A 的整合设想；强干扰 B 的 solution 是改变学术圈心态，与 funding 计划的语境不合。",
+   "keyword": "integrate...with 将…与…整合＝combine...with；force sb to do 强制某人做；collaborative endeavor 合作事业；demographic 人口（变化）的。",
+   "note": "rather, the complete opposite（恰恰完全相反）是悬念句：空格必须兑现「相反的意图」是什么，A 的强制整合恰与 neglect 构成反义；That 的指代验证再锁一层——能 create collaborative endeavors 的只能是跨类别的整合方案 A。"
+  },
+  {
+   "question_id": 828,
+   "long_sentence": "定位句 We suddenly can't remember 1______ we put the keys just a moment ago, or an old acquaintance's name, or the name of an old band we used to love；remember 后接宾语从句；just a moment ago 就在片刻之前。译：我们突然想不起刚才把钥匙放在哪儿了，想不起一位老熟人的名字，或一支曾热爱的老乐队的名字。",
+   "option": "正确项 D where：where we put the keys「把钥匙放在哪儿」，放置地点是典型的健忘对象，与老熟人名字、乐队名字并列；A that 代入后「忘记我们把钥匙放好了」语义不通；B when 「何时放」与 just a moment ago 的时间信息重复；C why 「为何放钥匙」不合生活逻辑。",
+   "keyword": "can't remember 想不起；put 放置；acquaintance 熟人；just a moment ago 刚才、片刻之前。",
+   "note": "首空从生活常识切入：忘钥匙忘的是「地点」，与后面 name 的并列保持信息类型一致；B 项的 when 被 just a moment ago 预先排除，完形首空常靠常识加并列结构双重定位。"
+  },
+  {
+   "question_id": 829,
+   "long_sentence": "定位句 As the brain 2______, we refer to these occurrences as 「senior moments」；as 引导时间状语从句；refer to...as 把…称作；senior moments 「老糊涂时刻」。译：随着大脑的衰退，我们把这些情形称作「上了年纪的瞬间」。",
+   "option": "正确项 A fades：the brain fades「大脑衰退」，与首段记忆下降、senior moments 的语境一致；B improves 好转与 forget 的困境相反；C collapses 「崩溃」程度过重，忘钥匙尚非脑功能崩塌；D recovers 「恢复」方向相反，正在失忆何谈恢复。",
+   "keyword": "fade 衰退、逐渐消失＝decline；occurrence 情形、事件＝incident；senior 年长的；refer to...as 把…称为。",
+   "note": "fade 的「渐弱」义与 senior moments 的渐进老化相称；C 的 collapses 是最强干扰，但 collapse 多用于系统、市场、身体的骤然垮塌，第一段描述的是普遍的轻度健忘，程度词要贴语境。"
+  },
+  {
+   "question_id": 830,
+   "long_sentence": "定位句 3______ seemingly innocent, this loss of mental focus can potentially have a(n) 4______ impact on our professional, social, and personal 5______；seemingly innocent 为形容词短语作让步成分；主语 this loss of mental focus；potentially 潜在地。译：尽管看似无害，这种精神专注力的丧失可能对我们的职业、社交与个人福祉造成有害影响。",
+   "option": "正确项 B While：While seemingly innocent（尽管看似无害）引导让步，与后文 damaging impact 的负面判断形成转折；A Unless 「除非」条件关系不通；C Once 「一旦」表时间条件，与 innocent 的评价语义不搭；D If 「如果」代入后成为假设，丢失「让步转折」的对比力量。",
+   "keyword": "while 尽管＝although；seemingly 表面上＝ostensibly；innocent 无害的、清白的；loss 丧失。",
+   "note": "状语从句省略结构：While (they are) seemingly innocent，让步连词加形容词短语；前扬后抑的转折是本句骨架——看似无害实则有 damaging impact，Unless 与 Once 都无法表达「表面 vs 实质」的对立。"
+  },
+  {
+   "question_id": 831,
+   "long_sentence": "定位句 this loss of mental focus can potentially have a(n) 4______ impact on our professional, social, and personal 5______；have an impact on 对…产生影响；potentially 潜在地；冠词 a(n) 提示所填词以元音音素开头。译：这种精神专注力的丧失可能对我们的职业、社交与个人福祉造成有害的影响。",
+   "option": "正确项 A damaging：damaging impact「有害影响」，与上文 loss of mental focus 的负面事件一致，though seemingly innocent 的转折正要引出危害；B limited 「有限的」与 potentially 的威胁语气矛盾；C uneven 「不均衡的」与影响好坏无关；D obscure 「模糊的」不构成损害义。",
+   "keyword": "damaging 有害的＝harmful；impact 影响＝effect；potentially 潜在地；mental focus 精神专注。",
+   "note": "转折后的语义落点：While seemingly innocent 的让步必然引出「实际有害」，damaging 与 innocent 构成正反对；B 的 limited 之所以诱人，是把它读成了中性陈述，忽视 although 结构的方向暗示。"
+  },
+  {
+   "question_id": 832,
+   "long_sentence": "定位句 have a(n) damaging impact on our professional, social, and personal 5______；professional, social, and personal 三个形容词并列，共同修饰空格名词。译：对我们的职业、社交与个人福祉造成有害影响。",
+   "option": "正确项 C wellbeing：personal wellbeing「个人身心健康」，wellbeing 能同时被 professional、social、personal 三个维度修饰，统指生活各方面的良好状态；A relationship 只能搭配 social 或 personal，与 professional 并列后语义失衡；B environment 「环境」非个人属性；D outlook 「前景、看法」与 impact 的受损对象不符。",
+   "keyword": "wellbeing 身心健康、福祉＝welfare；professional 职业的；personal 个人的；have an impact on 对…产生影响。",
+   "note": "三形容词并列共挑一个名词：找最大公约数——职业表现、社交生活、个人状态的总和即 wellbeing；A 的 relationship 是最强干扰，但它无法与 professional 构成自然的「职业关系受损」表述，并列检验是解这类题的关键。"
+  },
+  {
+   "question_id": 833,
+   "long_sentence": "定位句 It 6______ out that the brain needs exercise in much the same way our muscles do；It...out that... 为固定句型；in much the same way... 与…方式非常相像；省略 that 的方式状语从句。译：事实证明，大脑需要锻炼，其方式与我们的肌肉非常相似。",
+   "option": "正确项 D turns：It turns out that「事实证明、原来是」，引出神经科学研究揭示的结论；A figures out 「想明白」主语须为人；B finds out 「查明」同样要求人作主语；C points out 「指出」的主语也是人，且与 It 形式主语结构冲突。",
+   "keyword": "it turns out that 事实证明＝it proves that；in the same way 以同样的方式；muscle 肌肉；nervous system 神经系统。",
+   "note": "It...out that 句型三兄弟辨主语：turns out 用于事实揭晓，figures、finds、points 的逻辑主语都必须是人；本空是第二段的总起句，turns out 的「揭示」义与 neuroscientists are increasingly showing 呼应。"
+  },
+  {
+   "question_id": 834,
+   "long_sentence": "定位句 the right mental 7______ can significantly improve our basic cognitive 8______；mental 与 cognitive 并行提示本空与大脑训练相关；significantly 显著地。译：恰当的大脑锻炼能显著改善我们的基本认知功能。",
+   "option": "正确项 C workouts：mental workouts「大脑锻炼」，与上句 the brain needs exercise 的 exercise 直接呼应，复现显豁；A responses 「反应」是训练的结果而非训练本身；B associations 「联想」与 improve 搭配后语义不清；D roundabouts 「环岛」为形近词干扰，roundabout 多义含旋转木马、迂回路线。",
+   "keyword": "workout 锻炼＝exercise；mental workout 大脑锻炼；significantly 显著地＝greatly；cognitive 认知的。",
+   "note": "上下句复现是铁证：brain needs exercise→mental workouts，exercise 与 workout 同义呼应；D 的 roundabouts 纯属词形干扰——它与 roundabouts（迂回）形近，考研完形爱放这类无关联词测试词汇牢度。"
+  },
+  {
+   "question_id": 835,
+   "long_sentence": "定位句 the right mental workouts can significantly improve our basic cognitive 8______；basic cognitive... 为「形容词加认知类名词」结构；improve 改善。译：恰当的大脑锻炼能显著改善我们的基本认知功能。",
+   "option": "正确项 D functions：cognitive functions「认知功能」为心理学术语固定搭配，锻炼改善的是记忆、注意力等认知机能；A genre 「体裁」用于文学艺术分类；B criterion 「标准」单复数常为 criteria，与 basic 搭配生硬；C circumstances 「境况」指外部条件，认知能力不属此列。",
+   "keyword": "cognitive function 认知功能；improve 改善＝enhance；basic 基本的；circumstance 情况、环境。",
+   "note": "学科术语搭配是考点：cognitive functions（认知功能）在神经科学语境高频出现；本空与 7 空 workouts 构成「锻炼—功能」的因果对，A 的 genre 与 C 的 circumstances 都是语境外词汇，直接排除。"
+  },
+  {
+   "question_id": 836,
+   "long_sentence": "定位句 Thinking is essentially a 9______ of making connections in the brain；essentially 本质上；making connections in the brain 为动名词短语；of 结构连接抽象名词。译：思维本质上是在大脑中建立联结的过程。",
+   "option": "正确项 B process：a process of making connections「建立联结的过程」，思维即神经联结不断生成的动态过程，与下文 these connections are made through effort and practice 呼应；A channel 「渠道」与 of making connections 搭配不当；C condition 「条件」语义不通；D sequence 「顺序」强调先后次序，联结建立并无固定次序。",
+   "keyword": "process 过程＝course；make connections 建立联结；essentially 本质上＝fundamentally；sequence 顺序＝order。",
+   "note": "essentially 提示下定义句式：a process of doing 是「X 本质上是…过程」的标准写法；本空为下段「联结可通过努力建立」埋下伏笔，选 sequence 的同学误把建立联结当成了有先后的序列。"
+  },
+  {
+   "question_id": 837,
+   "long_sentence": "定位句 To a certain extent, our ability to 10______ in making the connections that drive intelligence is inherited；to a certain extent 在某种程度上；that drive intelligence 为定语从句；inherited 遗传的。译：在某种程度上，我们在建立驱动智力的联结方面的出色能力是天生的。",
+   "option": "正确项 C excel：excel in doing「在…方面出类拔萃」，ability to excel in making connections 即建立联结的超群能力，与 inherited（天赋）呼应；A persist in 「坚持做」与 ability 搭配后「坚持建立联结的能力是天生的」逻辑欠通；B feature in 「在…中占重要地位」主语应为事物；D believe in 「相信」与 making the connections 搭配不当。",
+   "keyword": "excel in/at 在…方面出色＝be good at；to a certain extent 某种程度上；inherit 遗传；drive 驱动。",
+   "note": "ability to excel 与 is inherited 构成「天赋」语义场：擅长建立联结的能力是遗传的，与下句 However 转折「联结可通过努力建立」形成让步结构；persist 的干扰在于 in 搭配相同，须凭语义取舍。"
+  },
+  {
+   "question_id": 838,
+   "long_sentence": "定位句 11______, because these connections are made through effort and practice, scientists believe that intelligence can expand and fluctuate；because 引导原因状语从句；through effort and practice 通过努力与练习；expand and fluctuate 扩展并波动。译：然而，由于这些联结可以通过努力和练习建立，科学家们相信智力能够扩展，并随脑力投入而波动。",
+   "option": "正确项 A However：上句说这种能力 is inherited（天生的），本句转出 can expand（可扩展），前后是「天赋 vs 后天」的转折关系；B Moreover 「此外」表递进，无法承载对立；C Otherwise 「否则」表条件后果；D Therefore 「因此」会让「天生」推出「可变」，因果倒置。",
+   "keyword": "however 然而（前后转折）；effort and practice 努力与练习；expand 扩展＝grow；fluctuate 波动。",
+   "note": "inherited 与 can expand 是本题的对立轴：天赋论与可塑论正面相撞，逻辑词必须表转折；D 的 Therefore 最具迷惑性，考生易把「联结靠努力建立」当成天生能力的推论，方向一反即错。"
+  },
+  {
+   "question_id": 839,
+   "long_sentence": "定位句 scientists believe that intelligence can expand and fluctuate 12______ mental effort；fluctuate 波动；mental effort 脑力投入；空格处为介词短语修饰 expand and fluctuate。译：科学家们相信，智力能够依据脑力投入的程度而扩展和波动。",
+   "option": "正确项 A according to：expand and fluctuate according to mental effort「随脑力投入而扩展波动」，智力与用脑程度成正变，与 effort and practice 的可塑论一致；B regardless of 「不管」会使智力与努力脱钩，与前文矛盾；C apart from 「除…之外」逻辑不通；D instead of 「而非」将脑力投入变成对立项。",
+   "keyword": "according to 根据、依据＝in line with；fluctuate 波动；regardless of 不管＝despite；mental effort 脑力投入。",
+   "note": "本空续写可塑论：联结靠努力建立→智力随 effort 浮动，according to 表「依…而定」；B 的 regardless of 是方向性陷阱——若智力与努力无关，上一句的努力练习论就全部作废，做完介词题须回验全文立场。"
+  },
+  {
+   "question_id": 840,
+   "long_sentence": "定位句 a new Web-based company has taken it a step 13______ and developed the first 「brain training program」；take it a step further 将其更进一步；developed 与 taken 并列谓语；brain training program 大脑训练程序。译：如今一家新的网络公司把这一理念向前推进了一步，开发出首个旨在真正帮助人们改善并重获思维敏锐的「大脑训练程序」。",
+   "option": "正确项 B further：take it a step further 为固定搭配「更进一步」，承接上段科学发现走向商业应用；A back 「后退」与开发新程序的推进方向相反；C aside 「搁置」与 developed 矛盾；D around 「周围」无此搭配。",
+   "keyword": "take it a step further 更进一步＝go a step further；Web-based 基于网络的；program 程序、项目；regain 重获。",
+   "note": "固定搭配题：take sth a step further 是科研转应用的标志性表达；从 scientists believe（科学发现）到 company developed（商业落地）的递进关系由 further 承载，back 与 aside 方向全反。"
+  },
+  {
+   "question_id": 841,
+   "long_sentence": "定位句 developed the first 「brain training program」 designed to actually help people improve and regain their mental 14______；designed to 为过去分词短语作后置定语；improve and regain 并列谓语；regain 重获。译：开发出首个旨在真正帮助人们改善并重获思维敏锐度的「大脑训练程序」。",
+   "option": "正确项 D sharpness：mental sharpness「思维敏锐度」，与首段 memory and mental clarity are not what they used to be 的失而复得语境对应——improve and regain（改善并重获）；A framework 「框架」无法被 regain；B stability 「稳定」与波动失智的语境不合；C flexibility 「灵活性」多指身姿或安排的变通，非记忆清晰。",
+   "keyword": "sharpness 敏锐＝acuity；regain 重获＝recover；mental clarity 思维清晰；designed to 旨在＝intended to。",
+   "note": "回扣首段是解题钥匙：文章开头丢失的是 memory 和 mental clarity，程序要帮人重获的正是 sharpness（敏锐）；C 的 flexibility 是最强干扰，但它对应的是「灵活」而非「清晰」，与 regain 的「失而复得」搭配最紧的是 D。"
+  },
+  {
+   "question_id": 842,
+   "long_sentence": "定位句 The Web-based program 15______ you to systematically improve your memory and attention skills；systematically 系统地；enable 类动词结构 V sb to do。译：这一网络程序让你能够系统地改善记忆与注意力技能。",
+   "option": "正确项 C allows：allow sb to do「使某人能够做」，程序提供训练让用户得以系统提升，与 help people improve 的积极基调一致；A hurries 「催促」与系统训练的从容节奏矛盾；B reminds 「提醒」只能催促记忆，不能促成能力改善；D forces 「强迫」与自愿使用训练程序的场景相反。",
+   "keyword": "allow sb to do 使某人能够＝enable sb to do；systematically 系统地；attention skill 注意力技能；memory 记忆。",
+   "note": "情感方向定动词：程序是帮助者而非强迫者，allow 与 help people improve 的善意一致；D 的 forces 与 A 的 hurries 都带有压迫感，与 first brain training program 的产品定位相悖。"
+  },
+  {
+   "question_id": 843,
+   "long_sentence": "定位句 The program keeps 16______ of your progress and provides detailed feedback 17______ your performance and improvement；keep...of 为固定搭配空缺；your progress 你的进步；provide feedback 提供反馈。译：该程序跟踪记录你的进步，并就你的表现与提升提供详细反馈。",
+   "option": "正确项 B track：keep track of「跟踪、掌握…的动态」，程序记录用户进度是训练类产品的核心功能；A order 搭配 keep order 意为「维持秩序」；C pace 搭配 keep pace with 意为「跟上」；D hold 搭配 get hold of 意为「抓住」，均与 of your progress 语义不合。",
+   "keyword": "keep track of 跟踪记录＝keep a record of；progress 进步；feedback 反馈；performance 表现。",
+   "note": "keep 加名词加 of 的搭配群辨析：track（记录动态）、pace（跟上前进步伐须接 with）、order（秩序）；程序与 progress 的关系是持续记录，track 为唯一语义与搭配双合的选项。"
+  },
+  {
+   "question_id": 844,
+   "long_sentence": "定位句 provides detailed feedback 17______ your performance and improvement；feedback 后接介词短语说明反馈的内容对象；detailed 详细的。译：就你的表现与提升提供详细反馈。",
+   "option": "正确项 A on：feedback on sth「关于某事的反馈」为标准搭配，on 引出反馈针对的内容；B to 的惯用是 feedback to sb（给某人的反馈），接对象人；C for 与 D with 均不与 feedback 构成内容指向搭配。",
+   "keyword": "feedback on sth 关于某事的反馈；provide 提供＝offer；detailed 详细的＝thorough；performance 表现。",
+   "note": "介词搭配辨方向：feedback on＋内容、feedback to＋人，本空宾语是 performance and improvement（内容），故选 on；考研完形高频复考 feedback on、influence on 一类 on 系搭配，可归类记忆。"
+  },
+  {
+   "question_id": 845,
+   "long_sentence": "定位句 Most importantly, it 18______ modifies and enhances the games you play to 19______ on the strengths you are developing；most importantly 最重要的是；you play 为省略关系词的定语从句；modify 调整；enhance 增强。译：最重要的是，它会不断调整并增强你所玩的游戏，以便在你正在发展的优势上持续加码。",
+   "option": "正确项 B constantly：constantly modifies「不断调整」，智能训练的动态适配特征，与下文 much like an effective exercise routine 的持续优化类比呼应；A habitually 「习惯性地」描述人的惯性动作；C irregularly 「不规则地」与 systematic 的科学训练相反；D unusually 「异常地」含贬义意外。",
+   "keyword": "constantly 不断地＝continually；modify 调整＝adjust；enhance 增强＝boost；routine 例行程序、常规训练。",
+   "note": "修饰语与产品逻辑对齐：训练程序需随进度持续调整难度（与 843 空 track your progress 呼应），constantly 表持续不断；C 的 irregularly 直接与科学性冲突，A 的 habitually 是拟人化错位。"
+  },
+  {
+   "question_id": 846,
+   "long_sentence": "定位句 it constantly modifies and enhances the games you play to 19______ on the strengths you are developing；to 不定式表目的；the strengths you are developing 中省略关系词的定语从句。译：它会不断调整并增强你所玩的游戏，以便在你正在发展的优势上持续加码。",
+   "option": "正确项 C build：build on「在…基础上继续发展、依托」，在已培养的优势上叠加训练，与 increase resistance and vary muscle use 的渐进加码一致；A carry on 「继续」后续不接 on the strengths 的依托义；B put on 「穿上、增加」与 strengths 搭配不当；D take on 「承担」与优势语义不合。",
+   "keyword": "build on 在…基础上发展＝draw on；strength 优势、长处；carry on 继续；take on 承担、呈现。",
+   "note": "动词加 on 的短语群辨析：build on 依托既有优势发展，是训练类文本的高频表达；本空与 845 空 constantly、847 空 effective 连成「持续优化」的语义链，put on 的干扰纯靠词组壁垒。"
+  },
+  {
+   "question_id": 847,
+   "long_sentence": "定位句 much like a(n) 20______ exercise routine requires you to increase resistance and vary your muscle use；much like 正如；exercise routine 健身常规；increase resistance 加大阻力；vary muscle use 变换肌肉使用。译：这很像一套有效的健身常规——它要求你加大阻力并变换肌肉的用法。",
+   "option": "正确项 D effective：an effective exercise routine「有效的健身计划」，加大阻力、变换肌肉正是有效训练的特征，类比凸显大脑训练的科学性；A idle 「闲置的」与 requires you to increase 的积极要求矛盾；B risky 「危险的」与变着方法用肌肉的安全增益相反；C familiar 「熟悉的」与不断变化调整的动态不符。",
+   "keyword": "effective 有效的＝efficient；routine 常规训练＝regimen；resistance 阻力；vary 使多样化＝diversify。",
+   "note": "类比句的情感色彩必须一致：把大脑训练比作健身，两者都应是科学有效的；本空与 845 空 constantly、846 空 build on 共同支撑「动态科学训练」的形象，idle 与 risky 的反义排除最为直接。"
+  },
+  {
+   "question_id": 848,
+   "long_sentence": "定位句 Only if the jobless arrive at the jobcentre with a CV, register for online job search, and start looking for work will they be eligible for benefit；Only if 置句首引发倒装；be eligible for 有资格获得； CV 简历；jobcentre 就业服务中心。译：失业者只有带着简历到就业服务中心、注册在线求职并开始找工作，才有资格领取救济金。",
+   "option": "正确项 A encourage jobseekers' active engagement in job seeking：先求职后领救济的门槛设计，旨在促使失业者主动投入求职（upfront work search 亦即「先找工作」）；B provide easier access to benefits 正反混淆，领取条件是加严；C guarantee legitimate right to benefits 正反混淆，第四段明说 no fundamental right；D motivate the unemployed to report voluntarily 偷换概念，是强制 weekly report 而非自愿。",
+   "keyword": "eligible for 有资格获得＝qualified for；register for 注册；benefit 救济金＝allowance；upfront 预先的、 upfront 前置的。",
+   "note": "方案目的题看门槛设计：Only if 倒装句把「先求职」设为领救济前提，正向解读即「促使主动求职」；C 项与第四段 no entitlement 的批判相冲突，注意首段的 What could be more reasonable? 是反讽伏笔。"
+  },
+  {
+   "question_id": 849,
+   "long_sentence": "定位句 Those first few days should be spent looking for work, not looking to sign on；spend time doing 花时间做；not 连接对比；sign on 为短语动词。译：头几天应该用来找工作，而不是用来登记领救济。",
+   "option": "正确项 C to register for an allowance from the government：looking for work 与 looking to sign on 对举，与领救济相对的动作即「登记领取政府补助」，sign on 为英式英语「登记领取失业救济」；A to check on the availability of jobs 与 looking for work 同义，无法构成 not 的对比；B to accept the government's restrictions 无中生有；D to attend a governmental job-training program 无中生有。",
+   "keyword": "sign on 登记领取失业救济＝register for benefits；allowance 津贴、救济金；jobseeker's allowance 求职者津贴；spend...doing 花…做某事。",
+   "note": "猜词题靠对举结构：not 前后必须语义相对——找工作 vs 登记领钱；A 项的「查工作机会」与找工作是一回事，若选 A 则 not 对比失效，这是对举猜词题最稳的验证法。"
+  },
+  {
+   "question_id": 850,
+   "long_sentence": "定位句 What motivated him, we were to understand, was his zeal for 「fundamental fairness」 – protecting the taxpayer and ensuring that only the most deserving claimants received their benefits；motivate 驱动；zeal for 对…的热忱；we were to understand 为插入语，含反讽。译：我们将被如此告知：驱动他的是对「根本公平」的热忱——保护纳税人，确保只有最应得的申领者才能领到救济。",
+   "option": "正确项 D A passion to ensure fairness for taxpayers：zeal for fundamental fairness 加 protecting the taxpayer 的破折号解释，即「为纳税人守护公平」的热忱；A desire to secure a better life for all 张冠李戴，change lives for the better 只是官方包装的说辞；B eagerness to protect the unemployed 正反混淆，保护的是纳税人；C urge to be generous 正反混淆，救济是 least generous in the EU。",
+   "keyword": "motivate 驱动＝prompt；zeal 热忱＝passion；claimant 申领者；taxpayer 纳税人。",
+   "note": "细节题抓破折号解释：fundamental fairness 之后 protecting the taxpayer 才是真实动机清单；注意 we were to understand 的反讽口吻——作者在下文 Help? Really? 拆穿说辞，但本题问的还是财政大臣自称的动机，D 是原文同义改写。"
+  }
+ ]
+}
