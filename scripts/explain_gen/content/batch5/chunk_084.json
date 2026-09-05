@@ -1,0 +1,180 @@
+{
+ "chunk": 84,
+ "items": [
+  {
+   "question_id": 2076,
+   "long_sentence": "定位句 Primary care providers...may not be able to follow through with patients who have trouble driving because they can't turn their heads or remember where they are going.——who have trouble driving 定语从句修饰 patients；because 引导原因状语从句；can't turn... or remember... 两个并列困难。译：初级保健医生分身乏术，可能无法跟进那些因转头困难或记不住要去哪里而难以驾驶的病人。",
+   "option": "正确项 B：remember where they are going（记不住要去哪里）即记忆衰退，weakened memory 是其同义改写；A「固守坏驾驶习惯」无中生有；C「饱受慢性疼痛」无中生有，原文列举的困难是转头、记忆、身高；D「忽视汽车保养」张冠李戴，seat settings（座椅设置）说的是人变矮后没调座椅、够不到踏板，不是车辆保养。",
+   "keyword": "primary care provider 初级保健医生；follow through with 跟进、贯彻到底；memory decline 记忆衰退＝weakened memory；pedal 踏板。",
+   "note": "题干 tend to 弱化语气对应 because 从句的列举：转头困难、记忆失灵、身高变化三因并列，B 只取记忆一项即成立；D 的陷阱在 seat settings——原文是「人变矮没调座椅」的身体原因，与汽车保养无关，抓住 because 从句的三个原因逐一对号即可。"
+  },
+  {
+   "question_id": 2077,
+   "long_sentence": "定位句 If we're going to have 100-year lives, we need cars that a 90-year-old can drive comfortably.——if 引导条件状语从句；that a 90-year-old can drive comfortably 定语从句修饰 cars。译：如果我们注定要活到百岁，就需要 90 岁老人也能舒适驾驶的汽车。",
+   "option": "正确项 B：cars that a 90-year-old can drive comfortably 即「适合老年人开的汽车」，senior-friendly cars 是其浓缩改写；A「升级自动驾驶车」正反混淆，Dugan 明说 As long as there are other cars on the roads, self-driving cars won't solve the problems；C「改造交通设施」无中生有；D「调整驾驶年龄限制」无中生有。",
+   "keyword": "senior-friendly 适老、对老年人友好的；comfortably 舒适地；self-driving car 自动驾驶汽车；algorithm 算法。",
+   "note": "末段「先破后立」：先否定 self-driving cars（路上还有人类司机，无人车救不了事故），再抛出正面诉求 need cars that a 90-year-old can drive——立论句才是答案；A 用自动驾驶做干扰项，恰是 Dugan 否定的方案，识别 as long as 从句的让步否定即可排 A。"
+  },
+  {
+   "question_id": 2078,
+   "long_sentence": "定位句 Recent research from the Organization for the Review of Care and Health Applications found that 350,000 health apps were available on the market, 90,000 of which launched in 2020 alone.——found that 宾语从句；350,000...of which 非限制性定语从句；alone 表「仅仅」。译：一项来自「照护与健康应用评审组织」的最新研究发现，市场上有 35 万款健康应用，其中仅 2020 年一年就新上线 9 万款。",
+   "option": "正确项 A：35 万款在售、单年新增 9 万，两组数字共同描绘健康应用的「遍地开花」，prevalence（普遍流行）是对数据的抽象概括；B「公众健康关注」偷换概念，数据计量的是应用数量不是关注度；C「智能手机流行」答非所问；D「技术进步」过度推断，数字说明规模而非技术水平。",
+   "keyword": "prevalence 普遍、流行＝popularity；available on the market 市面上有售；launch 上线、发布；alone 仅仅（强调数字之巨）。",
+   "note": "例证目的题：首段数据为下文「隐私监管跟不上」埋伏笔，答案是对数据的抽象化；B 的迷惑在 health 一词的联想，注意计量对象是 350,000 apps 不是人；正确项常用上义概括词（prevalence）而非复现原词，例证题找「数字的共同指向」。"
+  },
+  {
+   "question_id": 2079,
+   "long_sentence": "定位句 Existing health privacy law...is primarily focused on the way hospitals, doctors' offices, clinics and insurance companies store health records online.——主干为 law is focused on...；下句补充 these apps...typically does not receive the same legal protections。译：现有健康隐私法主要关注医院、诊所与保险公司在线存储病历的方式，而应用与可穿戴设备收集的信息通常得不到同等保护。",
+   "option": "正确项 A：法律「主要」覆盖医疗机构，而 app 与 wearables 的数据 typically does not receive the same legal protections——保护范围存在空档，coverage needs to be extended（覆盖面需扩大）是对两处信息的合并推断；B「执法需加强」偷换概念，问题是管不到而非执行不力；C「已遏制医疗不端」无中生有；D「令保险公司失望」张冠李戴，保险公司恰是被法律覆盖的一方。",
+   "keyword": "primarily 主要地；legal protections 法律保护；coverage 覆盖范围＝scope；wearable 可穿戴设备。",
+   "note": "imply 题靠空档推理：法律管医院/诊所/保险 vs 不管 app/wearables，落差即「需扩大覆盖」；B 的 enforcement 与 coverage 是不同维度——FTC 事后执法的吃力在第四段，第二段只谈适用范围；跨段挪证据是 imply 题设错常法，守住段落边界。"
+  },
+  {
+   "question_id": 2080,
+   "long_sentence": "定位句 a Consent Order requiring the company to get app users' express affirmative consent before sharing their health information.——requiring... 现在分词短语作后置定语修饰 Consent Order；before sharing... 时间状语。译：一份同意令要求该公司在共享用户健康信息之前，先获得用户明确的肯定式同意，并指示第三方删除其已获取的数据。",
+   "option": "正确项 D：get app users' express affirmative consent≈obtain their explicit permission，express affirmative（明确的、肯定的）对 explicit，consent 对 permission，同义替换工整；A「先获 FTC 批准」偷换概念，同意令要求征得的是用户同意；B「寻找合格第三方」无中生有；C「删除无关数据」张冠李戴，删除数据是对第三方的要求，且删的是其已获取的数据。",
+   "keyword": "consent 同意＝permission；express/affirmative/explicit 明确的；Consent Order 同意令（FTC 和解文书）；settle 达成和解。",
+   "note": "处罚条款题抓「对谁要求」：同意令两个要求主语不同——对用户（征得同意）、对第三方（删数据）；D 的 their 指用户，与 get users' consent 对齐；A 的迷惑在 FTC 一词复现，但 FTC 是裁决方不是审批方，案例题要先分清各方角色。"
+  },
+  {
+   "question_id": 2081,
+   "long_sentence": "定位句 the rate at which these health apps are hitting the market demonstrates just how immense of a challenge this is.——at which 引导定语从句修饰 rate；demonstrate 后接宾语从句；hit the market 意为「涌入市场」。译：这些健康应用涌入市场的速度表明，这项挑战是何等巨大。",
+   "option": "正确项 B：the rate at which apps are hitting the market（应用上市之快）即新健康应用激增，rapid increase 是 rate 的语义化改写；A「健康信息的复杂性」偷换概念；C「应用欺骗性的隐蔽」答非所问，deceptive 是 FTC 打击的对象不是挑战本体；D「评估消费者损害的困难」无中生有。",
+   "keyword": "rate 速度、比率；hit the market 上市、涌入市场；immense 巨大的＝enormous；after the fact 事后。",
+   "note": "首尾呼应解题：首段 90,000 launched in 2020 alone 的数字在末段以 the rate at which...hitting the market 回收，同一事实指向同一结论——新应用增长太快、监管只能 after the fact（事后）应对；C 的 deceptive 是第五节法案打击的行为属性，勿与「挑战」本体混淆。"
+  },
+  {
+   "question_id": 2082,
+   "long_sentence": "定位句 States have begun implementing their own solutions to shore up protections for consumer-generated health data.——主干为 States have begun implementing...；to shore up protections 不定式作目的状语；shore up 意为加固、支撑。译：各州已开始实施自己的方案，以加强对消费者产生的健康数据的保护。",
+   "option": "正确项 D：加州领跑加 Virginia、Colorado、Utah 跟进，先后通过 state consumer data privacy legislation，即「已在部分州获得立法支持」，legislation 原词复现；A「受应用开发商欢迎」无中生有；B「是联邦政策焦点」正反混淆，原文明说 comprehensive federal privacy legislation seems unlikely in the short term；C「在加州遭反对」正反混淆，加州是 forefront（最前沿）不是反对者。",
+   "keyword": "shore up 加固、支撑＝strengthen；at the forefront 处于最前沿；legislation 立法＝lawmaking；implement 实施、执行。",
+   "note": "州级立法列举是「部分支持」的证据链：加州领跑加三州跟进，D 的 some states 与列举范围精确匹配；B 是最强干扰——unlikely in the short term 直接否定联邦层面立法，unlikely 与 a focus 一反一正，正反混淆的排除靠 unlikely 这个否定锚点。"
+  },
+  {
+   "question_id": 2083,
+   "long_sentence": "定位句 Rexford 引语 No college will expect that a student has a huge laundry list of extracurriculars that they have been passionately involved in each for an extended period of time.——No...expect 部分否定；that 从句作宾语，内含定语从句；laundry list 意为冗长清单。译：没有哪所大学会期待学生拥有一份长长的活动清单，且每项都长期投入热情。",
+   "option": "库标答案 C：a huge laundry list of extracurriculars（冗长活动清单）对应 Undertaking too many extracurricular activities，No college will expect 即 hardly be seen as a plus——数量多非但无加分反显敷衍；注意 E 项句首 Smith Jewish Day School 亦指向 Rexford 的任职学校（本库节选缺失该机构句），C/E 的最终归属请以完整真题核对。",
+   "keyword": "laundry list 冗长清单；participate in 参与；quality over quantity 重质不重量；passionately 热情地。",
+   "note": "本单元纲领句 quality matters more than the number 统领全部匹配：Rexford 的清单说与 C 的「太多不算加分」是同一主旨的具体化；做匹配题先给每位专家贴一句话标签（数量无用/热门活动要做到最好/某项出众/贴合专业/回馈社区），再与选项对号，效率最高。"
+  },
+  {
+   "question_id": 2084,
+   "long_sentence": "定位句 Harberson 引语 The competition to stand out and make an impact is going to be much stiffer, and so if they're going to do a popular activity, I'd say, be the best at it.——and so 承接因果；if 引导条件从句；stiffer 为 stiff（激烈的）比较级。译：想脱颖而出、产生影响的竞争会激烈得多，所以如果非要参加热门活动，我建议把它做到最好。",
+   "option": "库标答案 E：E 的核心信息是「填 Common App 无需列满 10 项活动」，与全文 quality matters more than the number 的主线一致——列满清单不如做精一项；但 E 句首的 Smith Jewish Day School 在本库节选原文中找不到归属句（疑似截断丢失），且 Harberson 的可见引语是「热门活动要做到最好」，答案归属（Rexford/Harberson）疑与 41 题互换，请以完整真题核对。",
+   "keyword": "the Common Application 美国大学通用申请表；make an impact 产生影响；stiffer 更激烈的；stand out 脱颖而出。",
+   "note": "Harberson 的可见材料讲热门活动竞争更激烈、要做就做到最好，与 E 的「无需列满 10 项」只能借「重质不重量」主旨桥接，库内无直接对应句；本段上方 Experts say it is tougher to distinguish oneself in a school-affiliated... activity 一句可作为活动选择的语境补充。"
+  },
+  {
+   "question_id": 2085,
+   "long_sentence": "定位句 Kelley 引语 Distinguishing yourself in one focused type of extracurricular activity can be a positive in the admissions process, especially for highly selective institutions.——动名词短语作主语；especially for... 强调适用范围。译：在某一类专注的课外活动中脱颖而出，在录取过程中是加分项，尤其是对那些高分已不够看的顶尖选拔型院校而言。",
+   "option": "正确项 A：stand out in a specific extracurricular activity≈distinguishing yourself in one focused type of extracurricular activity，favored by top-tier institutions≈a positive...for highly selective institutions，两组同义对应工整；B「社区贡献得奖学金」是 Gwyn 段内容；C「活动太多非加分」是 Rexford 段内容，均属串段干扰。",
+   "keyword": "distinguish yourself 使自己脱颖而出；highly selective institutions 选拔极严的顶尖院校；hook 吸引点、亮点；a positive 加分项。",
+   "note": "本条左栏人名在库内丢失（题干显示「位置 43」，原文对应 Katie Kelley——其名字被错并进选项 G 末尾）；Kelley 段题眼是 hook（招生官要的 quality or hook），与 A 的 top-tier institutions 通过 especially for highly selective institutions 对应，specific 对 one focused type。"
+  },
+  {
+   "question_id": 2086,
+   "long_sentence": "定位句 Levine 引语 If you already know your major, having an extracurricular that fits into that major can be a big plus.——if 引导条件从句；having... 动名词短语作主语；that fits into that major 定语从句修饰 extracurricular。译：如果你已经确定了专业，那么拥有一项与该专业契合的课外活动将是一大加分项。",
+   "option": "正确项 G：an extracurricular that fits into that major≈an extracurricular activity that is related to their future study at college，fits into（契合）对 related to，major 即未来的大学专业学习；A「特定活动出众受顶尖院校青睐」是 Kelley 段内容——两段都谈「加分」，区分点在 Kelley 强调院校层次、Levine 强调专业匹配。",
+   "keyword": "major 专业；fit into 契合、融入＝be related to；a big plus 一大加分项＝beneficial；declare 填报、申明（专业）。",
+   "note": "本条左栏人名同样丢失（题干「位置 44」，原文对应 Mayghin Levine）；Levine 段首句 Extracurricular activities related to the college major...are beneficial 已把 G 说尽，引语再具体化；与 A 区分看关键词——A 找 top-tier，G 找 major，各段唯一关键词是防串段的抓手。"
+  },
+  {
+   "question_id": 2087,
+   "long_sentence": "定位句 High school students who have had a strong positive influence on their community through an extracurricular activity may impress a college and win a scholarship.——who 引导定语从句修饰 students；through an extracurricular activity 介词短语作方式状语；impress 与 win 并列谓语。译：通过课外活动对社区产生强有力正面影响的高中生，可能给大学留下深刻印象并赢得奖学金。",
+   "option": "正确项 B：a strong positive influence on their community≈activity has benefited their community，win a scholarship 原词复现，may impress a college 对 are likely to win；D「经商才能打动大学」是 Valdes 段（创办盈利小公司）的内容——D 与 F 正是本题设置的两个多余选项。",
+   "keyword": "have an influence on 对…产生影响；community 社区；win a scholarship 赢得奖学金；impress 给…留下印象。",
+   "note": "末段定位后按词对应：community、scholarship 在 B 中原词复现，是五条匹配中最直白的一题；多余选项 D（Valdes 的创业段）与 F（Adegboyega-Edun 的非常规活动段）未被设题——凡与 entrepreneurship、unconventional 相关的选项先排除，匹配题要用「人名—内容」双向锁定。"
+  },
+  {
+   "question_id": 2088,
+   "long_sentence": "定位句 Psychologists have been interested in this ______ for decades, not least because people's widespread reluctance to ask for help has led to some high-profile failures.——have been interested in 现在完成时表持续兴趣；this 回指首句「为何人们难以求助」；not least because 意为「尤其是因为」。译：几十年来，心理学家一直对这个问题很感兴趣，尤其是因为人们对求助的普遍抗拒已导致一些备受瞩目的失败。",
+   "option": "正确项 D question：this question 回指「为何人难以求助」这一待解问题，首句 There are many understandable reasons why... 正是其内容；A illusion（错觉）无中生有；B discussion（讨论）偷换概念，心理学家感兴趣的是问题本身不是讨论；C tradition（传统）无中生有。",
+   "keyword": "question 问题＝issue；not least because 尤其是因为；high-profile 备受瞩目的、高调的；reluctance 不情愿。",
+   "note": "this 指代题：答案必须能被首句「难求助的诸多原因」概括，question 是研究对象的通用指称；this/that + 空格名词先回读上句找指代对象，A/B/C 等具体名词若无法涵盖「难求助」这一现象即排除，指代词是完形的第一路标。"
+  },
+  {
+   "question_id": 2089,
+   "long_sentence": "定位句 not least because people's widespread ______ to ask for help has led to some high-profile failures.——because 引导原因状语从句；widespread 形容词修饰空格名词；has led to 现在完成时加导致。译：尤其是因为，人们对求助的普遍不情愿已经导致了一些备受瞩目的失败。",
+   "option": "正确项 A reluctance：reluctance to do（不愿做某事）与首句 find it difficult to ask for help 呼应——难开口即不愿求助，语义闭环；B ambition（抱负）情感色彩相反；C tendency（倾向）中性词，撑不起「导致失败」的负面因果；D enthusiasm（热情）正反混淆。",
+   "keyword": "reluctance to do 不愿做某事＝unwillingness；lead to 导致＝result in；high-profile 备受瞩目的；widespread 普遍的。",
+   "note": "首尾呼应定极性：首句 difficult to ask for help 已定「难求助」基调，空格名词须延续「不情愿」义；C 的迷惑在搭配自然（tendency to do），但中性词无法解释 high-profile failures，完形名词题要看后文结果的褒贬再定词的极性。"
+  },
+  {
+   "question_id": 2090,
+   "long_sentence": "定位句 Asking for help takes ______.——动名词短语作主语；take + 名词表「需要（某种品质）」；下文 broadcasting your own weaknesses（暴露自身弱点）解释为何需要该品质。译：开口求助需要勇气。",
+   "option": "正确项 C courage：求助意味着暴露弱点、怕被视作无能，这正是需要 courage 的心理动因，与下文 worry about coming across as incompetent 衔接；A attention（关注）搭配虽通但与「暴露弱点」语境无关；B talent（才能）无中生有；D patience（耐心）偷换概念，文章谈的是开口难不是过程熬人。",
+   "keyword": "take courage 需要勇气＝require bravery；broadcast 张扬、散播；weakness 弱点＝shortcoming；come across as 给人…的印象。",
+   "note": "take + 抽象名词表「需要品质」，论据在后文：You might worry about coming across as incompetent——怕被看作无能才需要勇气；A 的迷惑在 broadcast（广播→吸引注意），但 broadcast your weaknesses 是「自曝其短」，语境指向勇气而非关注度。"
+  },
+  {
+   "question_id": 2091,
+   "long_sentence": "定位句 It involves communicating a need on your part—there's something you can't do. ______, you're broadcasting your own weaknesses.——involve doing 意为涉及、需要做；on your part 在你这一方；破折号后为解释性分句。译：求助意味着你要传递一个需求——有件事你做不到。换句话说，你是在张扬自己的弱点。",
+   "option": "正确项 B In other words：前句「传递需求＝有做不到的事」与本句「张扬弱点」是同一事实的两种说法，属复述关系；A At any time（随时）表时间；C By all means（务必、当然可以）表许可或强调；D On the contrary（相反）表转折，与复述关系正好相反。",
+   "keyword": "in other words 换言之＝that is to say；involve doing 涉及、需要做；on one's part 在某人一方；broadcast 张扬、散播。",
+   "note": "两句连读判关系：a need—there's something you can't do 与 broadcasting your own weaknesses 互为换言，选复述信号词 in other words；D 迷惑最强——「暴露弱点」看似与前句「做不到」相反，实则同一件事的两种表述，逻辑词题要分清「复述」与「转折」。"
+  },
+  {
+   "question_id": 2092,
+   "long_sentence": "定位句 you're broadcasting your own weaknesses, which can be ______.——which 引导非限制性定语从句，指代前面整个主句内容；broadcast 意为张扬、散播。译：你是在张扬自己的弱点，这可能令人不适。",
+   "option": "正确项 D uncomfortable：自曝其短令人难堪不适，uncomfortable 与求助者的心理障碍一致，衔接下文 You might worry about coming across as incompetent 的担忧；A unrealistic（不切实际的）无中生有；B deceptive（欺骗性的）无中生有；C tiresome（烦人的）偷换概念，问题在心理不适不在事务繁琐。",
+   "keyword": "uncomfortable 令人不适的＝embarrassing；which 指代前文整句；incompetent 无能的、不胜任的；self-esteem 自尊。",
+   "note": "which 指代前句整体时，从句形容词须概括「暴露弱点」的心理感受；下句 worry about coming across as incompetent 是不适感的原因，D 与担忧链同向；C tiresome 描述事务繁琐，与心理障碍不在同一维度，形容词题先定「感受类」还是「事物类」。"
+  },
+  {
+   "question_id": 2093,
+   "long_sentence": "定位句 You might have ______ about losing control of whatever it is you're asking for help with.——have...about 搭配；losing control 失去掌控；whatever it is you're asking for help with 中 whatever 从句作 of 的宾语。译：你可能会担心，对自己求助的那件事失去掌控。",
+   "option": "正确项 B concerns：have concerns about（对…有顾虑）为固定搭配，担心「失去对事情的掌控」正是求助者的典型顾虑，与上文 You might worry about 同义复现；A doubts（怀疑）虽可接 about，但怀疑的对象通常是说法的真实性；C suggestions（建议）无中生有；D secrets（秘密）搭配不当。",
+   "keyword": "have concerns about 对…有顾虑；lose control of 失去对…的掌控；whatever 无论什么；nuisance 讨厌的人/事（下文复现）。",
+   "note": "搭配加语义双筛：have ______ about 中 doubts/concerns 可入围；「怕失去掌控」是担忧不是怀疑——doubts about sth 多指对某事存疑，而 losing control 是担心的内容，concerns 与上句 worry 构成同义复现，复现词是完形的暗线。"
+  },
+  {
+   "question_id": 2094,
+   "long_sentence": "定位句 ______ someone starts to help, perhaps they'll take over, or get credit for your earlier efforts.——空格词引导状语从句；take over 意为接管、接手；get credit for 因…获得功劳。译：一旦有人开始帮你，也许他们会接管此事，或者因你先前的努力而坐享功劳。",
+   "option": "正确项 A Once：Once（一旦）表条件触发——帮手一介入，接管与抢功的担忧随即产生，与主句 will take over 的将来推测衔接；B Unless（除非）表否定条件，语义不通；C Although（尽管）表让步，「尽管开始帮」与担忧无让步关系；D Before（在…之前）时间倒置，担忧针对的是介入后的行为。",
+   "keyword": "once 一旦（表条件）；take over 接管＝take control；get credit for 因…获好评；earlier efforts 先前的努力。",
+   "note": "主从句时间关系定连词：主句 will take over 是将要发生的事，从句 starts to help 是触发点，「一旦…就…」的即时性对应 once；before 的时序陷阱最隐蔽——担忧的对象是帮手介入后的行为，触发逻辑只能由 once 构成。"
+  },
+  {
+   "question_id": 2095,
+   "long_sentence": "定位句 Yet another ______ that you might be worried about is being a nuisance or ______ the person you go to for help.——that 引导定语从句修饰空格名词；being a nuisance 动名词作表语；you go to for help 省略关系词的定语从句修饰 the person。译：你可能担心的另一个因素，是自己惹人厌烦，或给求助对象带来不便。",
+   "option": "正确项 C factor：前文已列出暴露弱点、失去掌控、被抢功等多项顾虑，Yet another factor（又一个因素）承接种种担忧的列举；A theory（理论）无中生有；B choice（选择）无中生有；D context（背景）偷换概念，担忧的不是背景而是构成顾虑的具体因素。",
+   "keyword": "factor 因素＝element；yet another 又一（承接列举）；nuisance 令人厌烦的人/事；be worried about 担心。",
+   "note": "Yet another 强制回指：前文 worry about...、You might have concerns... 已多次列举顾虑，another 表明本空是列举的延续，factor 是「列举项」的通用名词；扫描前文的 worry 复现即可确认列举结构，A/B/D 都无法承接递进列举。"
+  },
+  {
+   "question_id": 2096,
+   "long_sentence": "定位句 ...is being a nuisance or ______ the person you go to for help.——being... 与空格词并列作表语；the person 后接省略关系词的定语从句 you go to for help（你去求助的那个人）。译：你可能担心的另一个因素，是自己惹人厌烦，或给求助对象带来不便。",
+   "option": "正确项 D inconveniencing：in-（不）+convenience（方便），给对方添麻烦，与 being a nuisance（惹人厌）同向并列，or 连接同义递进；A overpraising（过度夸奖）无中生有；B outperforming（胜过）无中生有；C reassessing（重新评估）无中生有。",
+   "keyword": "inconvenience 给…带来不便；a nuisance 讨厌的人/事＝a bother；go to sb for help 向某人求助；or 表同义并列。",
+   "note": "or 并列同向：being a nuisance 与空格词共同描述「给他人添麻烦」的顾虑，D 的「添不便」是 nuisance 的动词化对偶；前缀辨析——in- 表否定（不方便），over-/out-/re- 表过量、超越、再评估，方向均与「添麻烦」语境无关，前缀是快速排除工具。"
+  },
+  {
+   "question_id": 2097,
+   "long_sentence": "定位句 If you struggle with low self-esteem, you might find it especially difficult to ______ for help.——if 引导条件从句；struggle with 意为「受…困扰」；find it + adj. + to do 结构中 it 为形式宾语。译：如果你深受低自尊困扰，你会发现开口求助格外困难。",
+   "option": "正确项 A reach out：reach out for help（伸手求助）为固定搭配，与全文 ask for help 的主题复现；B settle down（安定下来）无中生有；C turn over（翻转、移交）与 for help 搭配不当；D look back（回顾）无中生有。",
+   "keyword": "reach out for help 伸手求助＝ask for help；struggle with 受…困扰；low self-esteem 低自尊；find it difficult to do 觉得做某事困难。",
+   "note": "主题词复现加介词约束：for help 是硬搭配，四个短语动词中仅 reach out 能接 for help 表求助；C turn over 的「移交」义易与本文 take over 混淆，注意两篇文章的词块不可串用，短语动词题先核介词宾语再核语义。"
+  },
+  {
+   "question_id": 2098,
+   "long_sentence": "定位句 you have the added worry of the other person ______ your request.——the added worry of 后接动名词复合结构；added 意为额外的、叠加的；your request 你的请求。译：因为你还要多一层担忧：对方拒绝你的请求。",
+   "option": "正确项 A declining：decline one's request（拒绝请求）为标准搭配，与下文 such refusals 的复现呼应——先有「拒绝」才有 refusals 的指代；B considering（考虑）语义过轻，构不成担忧；C criticizing（批评）无中生有；D evaluating（评估）偷换概念，担忧的是被拒不是被评估。",
+   "keyword": "decline 拒绝＝turn down；request 请求＝appeal；added 额外的＝extra；refusal 拒绝（名词形式）。",
+   "note": "后文回指锚定：such refusals 指代「对方拒绝」，故空格必须是「拒绝」义动词；decline、turn down、reject 同义，decline 语气最委婉、常用于请求场合；C 批评与 D 评估都无法被 refusals 指代，指代词与动词的呼应是完形暗线。"
+  },
+  {
+   "question_id": 2099,
+   "long_sentence": "定位句 You might see such refusals as implying something ______ about the status of your relationship with them.——see...as 把…视为；imply 意为暗含、暗示；the status of your relationship 关系的状况。译：你可能把这类拒绝看作在暗示你们的关系出现了负面状况。",
+   "option": "正确项 B negative：被拒绝后怀疑关系变差，negative（负面的）与 see...as implying 的解读方向一致，契合低自尊者的敏感心理；A unnecessary（不必要的）无中生有；C strange（奇怪的）程度过轻，且非关系属性；D impractical（不切实际的）无中生有。",
+   "keyword": "see...as 把…视为＝regard...as；imply 暗示＝suggest；status 状况、地位；negative 负面的，反义 positive。",
+   "note": "心理链推词义：低自尊者把拒绝归因于自身，「关系疏远」是典型的负面解读，something ______ about the relationship 需要消极形容词；A/C/D 都不构成对「关系」的属性评价，negative about 搭配自然，且与首段 reluctance 的消极基调一致。"
+  },
+  {
+   "question_id": 2100,
+   "long_sentence": "定位句 To ______ these difficulties, try to remind yourself that everyone needs help sometimes.——不定式短语作目的状语置于句首；remind oneself that 提醒自己；these difficulties 回指前文列出的种种求助障碍。译：要克服这些困难，试着提醒自己：每个人都有需要帮助的时候。",
+   "option": "正确项 D overcome：overcome difficulties（克服困难）为高频搭配，these difficulties 回指前文的心理障碍，此处转入应对建议；A explain（解释）无中生有；B identify（识别）偷换概念，困难已识别完毕，现在是解决阶段；C predict（预测）无中生有。",
+   "keyword": "overcome difficulties 克服困难＝get over；remind oneself that 提醒自己；these 指代前文列举；by oneself 独自、靠自己。",
+   "note": "行文阶段判断：第二段 worry about... 列障碍，本句 To ______ these difficulties 转入对策——识别（identify）早已完成，需要的是「克服」；these 指代题连读上文 worry、concerns 即明，remind yourself that everyone needs help 的自我宽慰正是克服之法。"
+  }
+ ]
+}
