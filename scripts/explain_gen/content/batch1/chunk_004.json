@@ -1,0 +1,180 @@
+{
+ "chunk": 4,
+ "items": [
+  {
+   "question_id": 76,
+   "long_sentence": "定位句 It only means that the gender gap disappears when we plug in the negative reciprocity variable；主干是 the gender gap disappears；when 引导时间状语从句；plug in 意为「代入、引入（变量）」；variable 意为「变量」。译：这只是说，当我们把「负向互惠」这一变量代入模型后，性别差距就消失了。",
+   "option": "正确项 C「机票花费上的性别差异不复存在」＝the gender gap disappears 的同义改写，no longer existed≈disappears；A「男女都表现出负面行为」偷换概念，原文说男性表现出更多负面行为；B「男女都不视晚订为不良行为」无中生有；D「差距显著缩小」偷换概念，disappear 是消失而非缩小，程度不符。",
+   "keyword": "negative reciprocity 负向互惠；variable 变量；plug in 代入、引入；disappear 消失＝no longer exist。",
+   "note": "实验类文章中「加入某变量后发生什么」直接找 when we plug in... 句式；C 与 D 都谈差距变化，差异在 disappear 与 narrow 的程度——消失与缩小是两码事，程度动词是本题唯一考点。"
+  },
+  {
+   "question_id": 77,
+   "long_sentence": "定位句 Prior research on negative reciprocity among workers found that it can result in lower employee motivation, business performance and workplace morale and culture；主干是 Prior research found that...；从句内 result in 接三个并列名词短语；morale 意为「士气」。译：此前针对员工负向互惠的研究发现，它会导致员工积极性、企业业绩以及职场士气与文化的降低。",
+   "option": "正确项 C「它在多个方面被证明适得其反」＝result in lower motivation, performance, morale 的概括改写，counterproductive≈result in lower、in a number of ways≈三个并列对象；A「对职场的危害大于对员工」无中生有，原文无比较；B「造成职场男女对立」张冠李戴，那是本文的机票研究；D「导致劳资冲突增多」无中生有。",
+   "keyword": "prior research 先前的研究；result in 导致；counterproductive 适得其反、事与愿违；morale 士气。",
+   "note": "题干 prior research 原词定位即可，found that 后的三个并列宾语是答案本源；counterproductive 是「结果与目的相反」的高级概括词，把「降低积极性与业绩」升格为该词是正确项的典型写法；三个并列项对应 in a number of ways。"
+  },
+  {
+   "question_id": 78,
+   "long_sentence": "定位句 While that $18 difference per ticket may seem small, it adds up. Our analysis suggests early booking by women can translate into savings of $1 million a year...；While 引导让步状语从句；add up 意为「积少成多」；translate into 意为「转化为」。译：18 美元的差价看似很小，但积少成多——女性提前订票可为大型跨国公司每年节省 100 万美元。",
+   "option": "正确项 A「能帮助公司显著增加节省」＝savings of $1 million a year 加 it adds up 的概括，significantly≈100 万美元的量级；B「有助于公司业绩」张冠李戴，business performance 属先前研究的结论；C「把女性的订票习惯转化为男性行为」偷换概念，translate into 的宾语是 savings；D「增强跨国公司竞争力」过度推断，原文只谈省钱。",
+   "keyword": "add up 积少成多；translate into 转化为；savings 节省、储蓄；significant 数额可观的。",
+   "note": "末段强调题抓数字论证：18 美元看似小、但积少成多年省百万——「小差价大回报」的让步结构是作者落点；A 项的 significantly 落在百万美元的例证上；C 项借 translate into 原词设陷阱，核对宾语即可排除。"
+  },
+  {
+   "question_id": 79,
+   "long_sentence": "定位句 The US is one of only three countries in the world not to offer statutory paid leave...So far, eight states and the District of Columbia have their own paid family leave laws；主干是 The US is one of only three countries；So far 表「迄今为止」。译：美国是全球仅有的三个不提供法定带薪假的国家之一，但迄今已有八个州和哥伦比亚特区有了自己的带薪家庭假法律。",
+   "option": "答案 D 段：one of only three countries not to offer statutory paid leave≈In the absence of Federal legislation、eight states...have their own paid family leave laws≈some states have passed laws concerning paid family leave——国家缺位与州级补位两层信息对应；E 段也谈公司提供假期的比例，但那是企业行为而非州立法，张冠李戴。",
+   "keyword": "statutory 法定的；in the absence of 在缺乏…的情况下；take up 着手处理；legislation 立法。",
+   "note": "absence of Federal legislation 是抽象说法，原文落到「全球仅三国无法定带薪假」的具体事实——抽象与具体的对应是本题改写核心；D 段 but 转折后的 eight states 是题干 some states 的落点，两级立法主体要分清。"
+  },
+  {
+   "question_id": 80,
+   "long_sentence": "定位句 While about 75% of employees said both genders should give the same amount of care, the majority of men...admitted that in reality the female actually did most of it；While 引导对比状语从句；主干是 the majority of men...admitted + that 宾语从句。译：虽然约 75% 的员工说男女应承担同等照料，但大多数男性承认现实中主要是女性在做。",
+   "option": "答案 J 段：the majority of men...admitted that in reality the female actually did most of it——Most fathers≈the majority of men、did much less childcare≈the female actually did most of it；同段前半 97% men said...to share caregiving 是「主观动机」，本题问「实际作为」，同段两半信息分工明确。",
+   "keyword": "caregiving 育儿照料；admit 承认；in reality 实际上；a tiny fraction 极小一部分。",
+   "note": "J 段是「理想与现实」对比段：想分担（97%）与实际没分担（女性做了大部分）构成反差，本题取现实半句；题干 even during their paternity leave 呼应 in reality 的转折感——同段多数据时先分清「说的」与「做的」。"
+  },
+  {
+   "question_id": 81,
+   "long_sentence": "定位句 Attitudes towards paternity leave have drastically changed in America in the last five years as more fathers feel comfortable taking extended time off；主干是 Attitudes have drastically changed；as 引导原因从句；drastically 意为「剧烈地」。译：过去五年美国人对陪产假的态度剧变，更多父亲能自在地休较长的假期了。",
+   "option": "答案 A 段：according to a new study≈One survey indicated、Attitudes...have drastically changed 加 more fathers feel comfortable≈less objection——「态度剧变」即抵触减少；B 段也讲 81% 认为父亲休假更可接受，但那是后续段落对同一研究的具体数据铺陈，题干无比例信息，总起句 A 段与「反对减少」的语义对应最直接。",
+   "keyword": "paternity leave 陪产假；attitude 态度；drastically 剧烈地；objection 反对、抵触。",
+   "note": "less objection 的反义正说即 attitudes changed 与 feel comfortable——「反对少=接受度高」的正反转换是长篇阅读高频改写；A 段为全文总起段，段尾 according to a new study 点明信息来源，与题干 one survey 互相锁定。"
+  },
+  {
+   "question_id": 82,
+   "long_sentence": "定位句 I did not expect 80% of people to say the organisation finds dads taking this leave acceptable and three-quarters to say it's equally supportive of women and men taking leave；主干是 I did not expect + 两个并列不定式宾语；equally supportive 意为「同样支持」。译：我没想到 80% 的人说组织认为父亲休陪产假可以接受，四分之三的人说对男女休假一视同仁。",
+   "option": "答案 F 段：We did a study on paternity leave five years ago. Compared with those findings, these numbers were shocking to me——one researcher≈Harrington、Compared to five years ago≈five years ago 加 Compared with those findings、gave the same support≈equally supportive of women and men；引语内的惊讶语气印证 many more people 的对比感。",
+   "keyword": "supportive 支持的＝give support；acceptable 可接受的；findings 调查结果；shocking 令人震惊的。",
+   "note": "题干三个要素（五年前对比、某研究者、同等支持）在 F 段引语中一一落位，人物名 Harrington 是最快定位锚；C 段也有 equally supportive 的四分之三数据，但无「与五年前对比」语境，F 段的研究对比结构是唯一对应。"
+  },
+  {
+   "question_id": 83,
+   "long_sentence": "定位句 the study also shows how traditional gender roles endure both at work...and at home—even among workers who claim to have a strong desire for equality；主干是 the study shows how traditional gender roles endure；both...and... 连接两个场合；even 表强调。译：研究显示传统性别角色在职场和家庭中都在延续——甚至在声称渴望平等的员工中也如此。",
+   "option": "答案 I 段：traditional gender roles endure≈stick to traditional gender roles、both at work...and at home 原词对应、even among workers who claim to have a strong desire for equality≈even workers who claim to desire gender equality——让步结构 even among 是本题命门；J 段用数据展示传统分工的现实，但无「声称平等却固守传统」的概括句，I 段是论点句所在。",
+   "keyword": "gender roles 性别角色；endure 延续、持续＝stick to；career potential 职业潜力；desire for equality 对平等的渴望。",
+   "note": "claim to desire 与 claim to have a strong desire for 几乎原词对应，是本题最强锚点；However 转折段通常承载「另一面」结论，题干 even 的让步语气与原文 even among 完全同构；定位后优先核对 even 句。"
+  },
+  {
+   "question_id": 84,
+   "long_sentence": "定位句 around three-quarters of workers said their employer was equally supportive of mothers and fathers taking parental leave and over half said leave policies had made workplace culture better；and 连接两个并列宾语从句；had made...better 为使役结构。译：约四分之三的员工说雇主对休育儿假的母亲和父亲一视同仁，超过一半的人说休假政策让职场文化变得更好。",
+   "option": "答案 C 段：over half said leave policies had made workplace culture better——The majority of workers≈over half、improved workplace culture≈made workplace culture better；易混点在同句前半 three-quarters said equally supportive，那是 q82 的答案区，本题问 culture 必须取 and 之后的半句。",
+   "keyword": "parental leave 育儿假；workplace culture 职场文化；the majority 大多数＝over half；equally supportive 同等支持的。",
+   "note": "C 段一句话含两个百分比对应两道题：四分之三讲支持公平、过半讲文化改善——「一句两题」是长篇阅读高频命题手法，靠题干关键词 culture/supportive 切分；majority 与 over half 的模糊对应属合理改写。"
+  },
+  {
+   "question_id": 85,
+   "long_sentence": "定位句 Despite progress, the struggle for women to reach the highest positions of power is demonstrated in this year's Fortune 500 list...but this still represents a tiny fraction of the total；Despite 引导让步短语；a tiny fraction 意为「极小的一部分」。译：尽管有进步，女性登上权力最高层依然艰难——今年《财富》500 强女性 CEO 创纪录地达 33 位，但仍只占极小一部分。",
+   "option": "答案 L 段：Despite progress 加 this still represents a tiny fraction of the total——In spite of progress≈Despite progress、top positions of big companies≈the highest positions of power 加 Fortune 500 female CEOs、remains extremely small≈a tiny fraction；段首 59% of women feared impact on progress 是另一信息点，本题取段尾例证。",
+   "keyword": "Fortune 500 《财富》500 强；CEO 首席执行官；a tiny fraction 极小部分＝extremely small；despite 尽管＝in spite of。",
+   "note": "让步加转折是本题结构：Despite progress..., but... still...——题干 In spite of progress...remains extremely small 与之完全同构；数字 33 是具体锚点，把「女性高层极少」落到「500 强中 33 位」，这种例证化改写要能反向识别。"
+  },
+  {
+   "question_id": 86,
+   "long_sentence": "定位句 Brad Harrington, executive director of the center and lead author of the study, estimates only 20% to 30% of companies in the US offer paid parental leave；主干是 Brad Harrington estimates + that 宾语从句（省略 that）；两个同位语补充其身份；only 限定数字之低。译：该中心执行主任、该研究的第一作者布拉德·哈林顿估计，美国只有 20% 到 30% 的公司提供带薪育儿假。",
+   "option": "答案 E 段：estimates only 20% to 30% of companies in the US offer paid parental leave——According to one estimate≈estimates、less than one third≈only 20% to 30%、provide≈offer；同段后句 He feels the research findings reflect an obvious change 是另一信息点，本题只取数字句。",
+   "keyword": "estimate 估计、估算；executive director 执行主任；lead author 第一作者；offer 提供＝provide。",
+   "note": "比例换算是本题核心：20%–30% 即 less than one third（不到三分之一）；题干 one estimate 的模糊指代对应原文人名加 estimates 的表达——「估计类动词」是数字题的定位信号，与硬数据（81%、97%）区分开。"
+  },
+  {
+   "question_id": 87,
+   "long_sentence": "定位句 Since then, there have been a number of legal cases...which have helped put pressure on companies to make their parental leave policies gender neutral；主干是 there have been a number of legal cases；which 指代前述案件。译：自那以后出现多起陪产假诉讼案（如摩根大通、雅诗兰黛），促使公司把育儿假政策调整为性别中立。",
+   "option": "答案 H 段：a number of legal cases against companies≈A number of lawsuits、put pressure on companies≈pressured companies to、make their parental leave policies gender neutral≈formulate gender neutral policies on parental leave——三组替换逐一对应；N 段也讲诉讼（JPMorgan 集体和解），但那是单个案件的结果叙述，H 段才是「多起诉讼施压改政策」的概括。",
+   "keyword": "lawsuit 诉讼＝legal case；put pressure on 向…施压；gender neutral 性别中立的；settlement 和解。",
+   "note": "lawsuit 与 legal case 是本题同义链；H 段与 N 段都涉诉讼，区分在层级：H 段总述「多起案件促成政策改变」，N 段展开其中一个案件的始末——题干 a number of lawsuits 的复数指向 H。"
+  },
+  {
+   "question_id": 88,
+   "long_sentence": "定位句 Having a rival can keep you committed to achieving your goals and enhance your overall performance；动名词短语 Having a rival 作主语；keep sb committed to doing 意为「使某人坚定致力于做某事」；and 并列两个谓语。译：拥有一个对手能让你坚定地投身于实现目标，并提升你的整体表现。",
+   "option": "正确项 D「帮助他们保持目标导向」＝keep you committed to achieving your goals 加第二段 stay focused on your goals 的合并改写，stay goal-oriented≈committed to/stay focused on goals；A「使他们能胜过其他创业者」偷换概念，outcompete 是找对手的行为本身；B「使创业成功」张冠李戴，成功是结果且文中竞争也会危害成功；C「达成长期目标」偷换概念，原文 long-term 出现在诚信损失的后果里。",
+   "keyword": "rival 对手、竞争者；be committed to 致力于；stay focused on 保持专注于；goal-oriented 以目标为导向的。",
+   "note": "benefit 题落点在首句与第二段首句的 goals 复现——goal 是全文第一个关键词；D 项 goal-oriented 是把两个动词短语压成一个复合形容词，识别「同词根合并」可秒判；A 项用原词 outcompete 设陷阱，原词选项先存疑。"
+  },
+  {
+   "question_id": 89,
+   "long_sentence": "定位句 They found that when people compete against their rivals, they are more willing to behave unethically to win；主干是 They found + that 宾语从句；从句内 when 引导时间状语从句；unethically 意为「不道德地」。译：他们发现，当人们与对手竞争时，为了获胜会更愿意做出不道德的行为。",
+   "option": "正确项 B「他们可能诉诸不道德手段来胜过对手」＝more willing to behave unethically to win 的同义改写，resort to unethical means≈behave unethically、outperform≈to win；A「采用注定毁掉创业的策略」绝对化，bound to 过度；C「急于成功却忽视巨大人力成本」无中生有，labor cost 文中未提；D「专注在当前市场层面取胜」偷换概念，原文 win-at-all-costs 说的是不择手段的心态。",
+   "keyword": "unethical 不道德的＝unethically；resort to 诉诸、求助于；trap 陷阱；win-at-all-costs 不惜一切代价取胜。",
+   "note": "trap 类题目按段落顺序对应：第二段第一个陷阱就是不道德行为，One group of researchers 引出实验证据；B 项 unethical 的词性转换（形容词转名词短语）是本题唯一改写点；win-at-all-costs mentality 是该段主旨词，先圈它再找研究者发现。"
+  },
+  {
+   "question_id": 90,
+   "long_sentence": "定位句 One way to avoid this trap is to stop and reflect on what's important；主干是 One way is to stop and reflect...；what's important 为宾语从句作 reflect on 的宾语；this trap 指代上句为赢而不道德的行为。译：避开这个陷阱的一个方法是停下来，反思什么才是真正重要的。",
+   "option": "正确项 A「思考真正要紧的事」＝stop and reflect on what's important 的同义改写，deliberate on≈reflect on、what really matters≈what's important；B「优先获取眼前利益」正反混淆，short-term benefits 是要警惕的诱惑；C「估算长期后果」偷换概念，long-term consequences 是警示句内容而非建议动作；D「反思哪些成功可实现」偷换概念，reflect 的宾语是 what's important。",
+   "keyword": "reflect on 反思、思考＝deliberate on；what matters 要紧的事；integrity 正直、诚信；short-term benefits 短期利益。",
+   "note": "建议句式 One way to avoid... is to... 是四级阅读的高频命题点，直接取 to 后的动作；A 项 deliberate 与 reflect 属「思考类」同义家族；D 项沿用 reflect 原词但偷换宾语，核对动词宾语即可排除。"
+  },
+  {
+   "question_id": 91,
+   "long_sentence": "定位句 it's possible to avoid such costly mistakes by making a habit of engaging in critical thinking, such as considering opposing viewpoints and conducting cost-benefit analyses；by 引导方式状语；make a habit of doing 意为「养成做某事的习惯」。译：通过养成批判性思维的习惯——考虑对立观点、做成本收益分析——就有可能避免这类代价高昂的错误。",
+   "option": "正确项 A「让自己投入批判性思考」＝engaging in critical thinking 的原义改写，critical reasoning≈critical thinking；B「养成保持诚信的习惯」张冠李戴，make a habit 的对象是 critical thinking 而非诚信；C「为以往糟糕表现自我批评」偷换概念，critical thinking 是理性分析不是批评自己；D「克制对成功的兴奋」无中生有。",
+   "keyword": "critical thinking 批判性思维＝critical reasoning；make a habit of 养成…的习惯；opposing viewpoints 对立观点；impulsive 冲动的。",
+   "note": "题干 impulsive and insensible decisions 对应第三段 make impulsive, insensible decisions 原词，建议方案在 by 之后；A 项 reasoning 与 thinking 的近义替换是唯一考点；C 项借 critical 形近设陷阱——critical thinking 与 criticize 语义无关。"
+  },
+  {
+   "question_id": 92,
+   "long_sentence": "定位句 One way you can overcome the risk-inducing effects of rivalry...is to remain attentive to your emotional state and actively monitor how such feelings are affecting your decision-making；主干是 One way is to remain attentive...and monitor...；risk-inducing 意为「诱发风险的」。译：克服竞争诱险效应的一个办法，是留意自己的情绪状态，并监控这些情绪如何影响决策。",
+   "option": "正确项 D「管控好情绪以免做出糟糕决策」＝remain attentive to your emotional state and monitor how such feelings are affecting your decision-making 的概括，keep emotions in check≈remain attentive and monitor；A「密切关注当前业绩」偷换概念，关注对象是情绪不是业绩；B「采取危及对手成功的步骤」张冠李戴，endanger 的宾语是自己的 venture；C「监控决策如何影响心态」正反混淆，原文是情绪影响决策。",
+   "keyword": "emotional state 情绪状态＝emotions；monitor 监控＝keep in check；decision-making 决策；in peril 处于危险中。",
+   "note": "建议题抓 One way...is to 结构，to 后两个动作（留意情绪、监控影响）合并成 D 项的 keep emotions in check；C 项把「情绪→决策」的因果方向倒置，是正反混淆的经典样本——读原文时先画出箭头方向再对选项。"
+  },
+  {
+   "question_id": 93,
+   "long_sentence": "定位句 The concept does indeed come from the realms of technology, where it is used to refer to an operating system that can execute multiple tasks at the same time；where 引导非限制性定语从句；that 引导定语从句修饰 operating system；execute 意为「执行」。译：这一概念确实源自技术领域，在那里它被用来指能够同时执行多个任务的操作系统。",
+   "option": "正确项 A「能同时处理多项任务的操作系统」＝an operating system that can execute multiple tasks at the same time 的同义改写，capable of doing≈that can execute；B「熟练工人」张冠李戴，那是多任务者的当代义；C「某种尖端技术」偷换概念，本义精确到操作系统；D「能同时做多项任务的高效人」张冠李戴，这是文章开头的定义而非 origin。",
+   "keyword": "operating system 操作系统；execute 执行＝perform；realm 领域＝field；originally 最初＝come from the realms of technology。",
+   "note": "originally 对应 come from the realms of technology——词源题的落点在「来源句」；首段对 multitasker 的「人」的定义（D 项）是干扰项，务必分清「本义（机器）」与「今义（人）」两层；A 项 capability of 与 that can 的转换是唯一改写。"
+  },
+  {
+   "question_id": 94,
+   "long_sentence": "定位句 according to experts in neuroscience, our brains do not handle multitasking situations well. As soon as two tasks require our attention, productivity suffers；as soon as 引导时间状语从句「一旦」；require our attention 意为「需要我们投入注意力」。译：根据神经科学专家的观点，我们的大脑并不能很好地处理多任务情境。一旦两个任务同时需要我们投入注意力，效率就会受损。",
+   "option": "正确项 C「他们的大脑不允许他们同时处理多项任务」＝our brains do not handle multitasking situations well 的同义改写，do not allow≈do not handle well；A「接触多任务情境不够多」无中生有；B「无法与机械操作系统相比」无中生有，原文无此比较；D「注意广度无法扩展」偷换概念，原文讲两个任务争抢注意力导致效率受损，非注意广度问题。",
+   "keyword": "neuroscience 神经科学；handle 处理＝allow；productivity suffers 效率受损；attention 注意力。",
+   "note": "题干 neuroscientists 对应 experts in neuroscience，答案在 according to 之后的观点句；C 项把「处理不好」升格为「不允许」，语气加重属可接受改写；D 项借 attention 原词设陷阱，注意「注意力被分抢」与「注意广度」是两回事。"
+  },
+  {
+   "question_id": 95,
+   "long_sentence": "定位句 A recent study concluded that regardless of whether people are actually handling several tasks or not, the mere fact that they perceive this activity as multitasking has a positive effect on their performance；regardless of 表「不管是否」；the mere fact that... 同位语从句作主语。译：研究结论：仅「把所做之事视为多任务」这一事实就对表现有积极影响，无论是否真的在多任务。",
+   "option": "正确项 B「人们对所做之事是多任务的感知使表现受益」＝they perceive this activity as multitasking has a positive effect on their performance 的同义改写，benefits from≈has a positive effect on、perception≈perceive；A「坚持认定自己在做多任务就能取得更大成就」偷换概念且绝对化；C「活跃的心理加工产生积极影响」张冠李戴，different mental processes 是第二段的双任务条件；D「通过实际处理多任务提高能力」偷换概念，起作用的是感知而非实际处理。",
+   "keyword": "perceive...as 把…视为＝perception；regardless of 不论；mere 仅仅的；positive effect 积极影响＝benefit。",
+   "note": "本题命门在 regardless of whether...or not 的让步——起作用的不是「实际多任务」而是「觉得自己在多任务」；B 项 perception 对应 perceive 的名词化；A 项 whatever 表述绝对化，先排除绝对化选项再核对让步逻辑。"
+  },
+  {
+   "question_id": 96,
+   "long_sentence": "定位句 you can not only be multitasking but this ability can also be taught: something that is easier in fluid organizations...；not only...but also... 连接两个分句；which 引导定语从句修饰 fluid organizations。译：不仅可以做到多任务处理，这种能力还可以被教授——在崇尚灵活工作方式的流动型组织里更容易。",
+   "option": "正确项 D「它是一种可以培养的理想能力」＝many companies look for people who are skilled in multitasking（企业渴求＝desirable）加 this ability can also be taught（可培养＝can be developed）的合并改写；A「流动组织中常见的稀缺技能」偷换概念，fluid organizations 是更易培训之处；B「所有员工都必须具备」绝对化，required of all 无据；C「许多员工缺乏的必备素质」无中生有。",
+   "keyword": "be taught 被教授＝can be developed；fluid organization 流动型组织；productivity 生产力、效率；flexibility 灵活性。",
+   "note": "商业视角段有两个信息：企业想找多任务人才（需求）加能力可教（培养），D 项把两者合为一句话；题干 How does the business world view 的 view 落在 can also be taught 这一颠覆性结论上；A 项的 rare 与 fluid 属原词错配陷阱。"
+  },
+  {
+   "question_id": 97,
+   "long_sentence": "定位句 But having to pay attention to several things at once means that the powers of concentration are reduced and that can lead to more mistakes；动名词短语 having to pay attention 作主语；means that 后接宾语从句；and that 中 that 指代前述「专注力下降」这回事。译：但必须同时注意几件事，意味着专注力会下降，而这可能导致更多错误。",
+   "option": "正确项 C「避免多任务处理」＝专注力降低、错误增多的反推——想专注做好一件事就不应同时处理多项任务；A「灵活地工作」张冠李戴，flexibility 是商业段 fluid organizations 的特征；B「从错误中学习」表面关联 mistakes 原词，但原文未提学习改进；D「提高效率」与题干「专注做好一件事」无直接建议关系。",
+   "keyword": "concentration 专注力；pay attention to 注意；lead to 导致；at once 同时。",
+   "note": "imply 类题目考末段逻辑反推：多任务伤专注、增错误，那么「要把事做好」的隐含建议就是少一心多用；B 项用原词 mistakes 设「表面相关」陷阱，核对「作者是否建议这么做」即可排除；末段 But 转折句通常是 implications 题的唯一依据。"
+  },
+  {
+   "question_id": 98,
+   "long_sentence": "定位句 social scientists who study young people have found that their digital use can be inventive and even beneficial. This is true not just in terms of their social lives, but their education too；found that 后接宾语从句；not just...but... 连接两个受益领域。译：社会科学家发现，青少年的数字技术使用可以富有创造性甚至有益，不仅体现在社交上，也体现在学业上。",
+   "option": "答案 C 段：social scientists...have found that their digital use can be inventive and even beneficial 加 not just in terms of their social lives, but their education too——Research has found≈scientists have found、benefits...social lives but also studies≈social lives...education too 的双层受益对应；E 段讲隐私保护、D 段讲面对面社交不减，均非「双领域受益」的论断。",
+   "keyword": "digital use 数字技术使用；beneficial 有益的＝benefit；in terms of 在…方面；education 教育＝studies。",
+   "note": "not only...but also 的并列结构在题干与原文各出现一次，双要素齐全才算命中——只含 social 的段落（如 D）是半个答案；C 段后文 Lenhart 的研究是 evidence 细节，本题取段首论断句即可，勿被后文例子拖走。"
+  },
+  {
+   "question_id": 99,
+   "long_sentence": "定位句 studies show that pupils don't fact-check information online — 'smart searching' is a skill schools need to teach urgently；schools need to teach 为省略关系词的定语从句；fact-check 意为「核实事实」；urgently 意为「紧迫地」。译：研究表明，学生们不会在网上核实信息——「聪明检索」是学校亟需教授的一项技能。",
+   "option": "答案 L 段：pupils don't fact-check information online 加 smart searching is a skill schools need to teach urgently——verify online information≈fact-check information online、It is urgent≈urgently 原词对应；本段还谈分心与作息，本题只取 fact-check 句；M 段谈家长管教对策，与学校技能教育无关。",
+   "keyword": "fact-check 核实事实＝verify；smart searching 聪明检索；urgently 紧迫地＝urgent；skill 技能。",
+   "note": "题干 It is urgent 的急迫感对应原文 urgently 原词，这类副词复现是长篇阅读的送分锚点；verify 与 fact-check 是「核实」的同义链；L 段首句 Distraction is also a serious issue 是段旨，fact-check 在段中，定位后要读到段中后部。"
+  },
+  {
+   "question_id": 100,
+   "long_sentence": "定位句 But even as error rates stayed stable, student essays have blossomed in size and complexity. They are now six times longer...；even as 引导让步状语从句；blossom 意为「蓬勃发展」；six times longer 为倍数表达。译：尽管错误率保持稳定，学生作文的篇幅与复杂性已突飞猛进——如今是过去的六倍长，还能提供有证据支撑的论证。",
+   "option": "答案 H 段：even as error rates stayed stable 加 student essays have blossomed in size and complexity——error rates remain unchanged≈stayed stable、longer and more complex essays≈blossomed in size and complexity 加 six times longer、counterparts in previous decades≈older essays；G 段只讲错误率持平，H 段才同时给出两个信息。",
+   "keyword": "error rate 错误率；stable 稳定的＝unchanged；blossom 蓬勃发展；complexity 复杂性＝complex。",
+   "note": "本题是 G/H 两段的连体题：G 段管「错误率不变」，H 段管「作文更长更复杂」，题干把两段信息合并时答案取含 blossomed 的 H 段；six times longer 是数字锚点，倍数表达（six times）与比较级（longer）同现的句子优先圈出。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 12,
+ "items": [
+  {
+   "question_id": 276,
+   "long_sentence": "拆解填空句：{3} you get lost without a phone or a compass, and you literally can't find north, a few tricks to help you navigate back to civilization——主句是 a few tricks 省略谓语的倒装式表达（全句为 you may use a few tricks），空前为假设情境。译：如果你在没有手机和指南针的情况下迷了路，又真的找不到北，这里有几个帮你导航回到文明世界的小技巧。",
+   "option": "正确项 B：If——「迷路」是假设情境而非既成事实，后文给出一串应对技巧，条件从句用 If 最合逻辑；A「Since」表既然（既成原因），但读者并未真的迷路，语境是建议而非归因；C「Though」让步关系与主句「提供技巧」不构成转折；D「Until」表时间先后，此处无时间延续关系。",
+   "keyword": "If 引导条件状语从句；since 既然／自从（多义）；get lost 迷路；trick 技巧、窍门。",
+   "note": "考研完形逻辑连词题先判断主从句关系：后文是「一系列建议」，前提是虚拟情境，条件词 If 优先；Since 的干扰在于它能表原因，但此处迷路并非已知事实。"
+  },
+  {
+   "question_id": 277,
+   "long_sentence": "拆解填空句：and you {4} can't find north——状语修饰 can't find，强调「找不到北」的真实性。译：而且你真的彻底找不到北方。",
+   "option": "正确项 D：literally——literally can't find north＝「字面意义上／真的」找不到北，强调迷失程度之深，与迷路情境呼应；A「formally」正式地，与方位判断无关；B「relatively」相对地，削弱语气且不合语境；C「gradually」逐渐地，找北是即时能力问题，无渐进过程。",
+   "keyword": "literally 字面上地、真正地（强调用法）；can't find north 找不到北；relatively 相对地；gradually 逐渐地。",
+   "note": "词义辨析靠搭配与语域：literally 在口语化自救指南中表「确实、彻底」，修饰否定短语强化程度；前空 If 已定假设框架，本空只需选强调副词，D 的「真实感」与 A/B/C 的语义均不搭。"
+  },
+  {
+   "question_id": 278,
+   "long_sentence": "拆解填空句：a few tricks to help you navigate {5} to civilization——navigate 与 to civilization 之间填方向副词，与「迷路」的前提呼应。译：（几个）帮你导航回到文明世界的小技巧。",
+   "option": "正确项 A：back——navigate back to civilization＝导航「回」到文明世界，迷路者要返回有人烟处，back 表回归方向；B「next to」意为紧挨着，与 to civilization 连用语义错乱；C「around to」无此搭配；D「away」表远离，与「找路回到人烟」的目的相反。",
+   "keyword": "navigate back to 返回、回到；civilization 文明社会（指有人烟之地）；back 方向副词「回」；away from 远离。",
+   "note": "方向副词题抓「起点与终点」：全文主题是迷路自救，终点是 civilization，故需「回」向它；末句 can lead you to civilization 与本空 back to civilization 首尾呼应，验证 A。"
+  },
+  {
+   "question_id": 279,
+   "long_sentence": "拆解填空句：When you find yourself well {6} a trail, but not in a completely unfamiliar area——find oneself + 方词短语表处境；well 修饰偏离程度。译：当你发现自己已远远偏离小路、但所在地并非完全陌生时。",
+   "option": "正确项 B：off——well off a trail＝远远偏离小径，off 表「离开、偏离」既定路线，与迷路语境吻合；A「onto」走上小路，与迷路矛盾；C「across」横穿小路，无「偏离」义；D「alone」不能与 a trail 构成方位搭配。",
+   "keyword": "off 偏离（off the trail／off the point）；well 修饰语＝远远地、大大地；trail 小路、小径；find oneself 发现自己（处于某状态）。",
+   "note": "介词题看处境逻辑：前文讲没电迷路，此处「偏离小路」是迷路的具体表现；off a trail 与后文 head downhill、find a way out 构成完整自救链，B 的「偏离」义不可替代。"
+  },
+  {
+   "question_id": 280,
+   "long_sentence": "拆解填空句：but not in a completely {7} area——not 与 completely 双重限定形容词，but 表与「偏离小路」的让步对比。译：但（此地）并非完全陌生。",
+   "option": "正确项 D：unfamiliar——not completely unfamiliar＝不是完全陌生，为下文 If you've explored the area before（若你以前来过）埋伏笔；A「unattractive」无吸引力，与自救无关；B「uncrowded」不拥挤，文中未谈人流；C「unchanged」未改变，无比较基准。",
+   "keyword": "unfamiliar 陌生的（un- 否定前缀）；completely 完全地；not completely 并非完全（部分否定）；explore 探索、走过。",
+   "note": "上下文复现定答案：下句 If you've explored the area before 说明「此地可能熟悉」，正是 not completely unfamiliar 的展开；否定前缀 un- 词群中只有 unfamiliar 承接「熟悉度」话题。"
+  },
+  {
+   "question_id": 281,
+   "long_sentence": "拆解填空句：Which {8} is downhill, in this particular area?——Which 疑问限定词＋名词构成问方向的句型；in this particular area 为地点状语。译：在这片区域，哪条路／哪个方向是下坡？",
+   "option": "正确项 C：way——Which way is downhill 问「哪个方向」下坡，way 兼有「路／方向」义，与后文 head downhill 呼应；A「site」地点，which site 问场所而非方向；B「point」点，无方向义；D「place」地方，与下坡的方向性不匹配。",
+   "keyword": "way 路、方向；downhill 下坡（go downhill 往低处走）；head 朝…行进；particular 特定的。",
+   "note": "名词选择看动词搭配：is downhill 问的是方向而非地点，way 是唯一兼表「道路与方向」的词；way 与 head downhill、follow 构成全套指路词汇链。"
+  },
+  {
+   "question_id": 282,
+   "long_sentence": "拆解填空句：Humans overwhelmingly live in valleys, and on supplies of fresh water. {9}, if you head downhill, and follow any H2O you find, you should eventually see signs of people——前句陈述事实，后句推出策略。译：人类绝大多数居住在山谷、依傍淡水水源生活。因此，只要你往低处走、沿着找到的任何水源前进，最终就会看到人类的踪迹。",
+   "option": "正确项 A：So——前句「人住山谷傍水」是原因，后句「往下坡走、顺水找人」是推论，So 表因果承接；B「Yet」表转折，前后并无对立；C「Instead」表替代，此处无取舍关系；D「Besides」表递进附加，后句并非补充新论点而是前句的直接推论。",
+   "keyword": "overwhelmingly 绝大多数地；valley 山谷；head downhill 往下坡走；so 因此（承接推论）。",
+   "note": "句间逻辑题：识破「事实→策略」的因果链是关键——住在山谷是因，顺谷找水能遇人是果；考研完形高频考点即 So／Yet／Instead 的方向辨析，先划前后句再定词。"
+  },
+  {
+   "question_id": 283,
+   "long_sentence": "拆解填空句：you should {10} see signs of people——频度／时间副词修饰 see，与条件句 if you head downhill... 形成期望值描述。译：（只要坚持沿谷顺水走，）你最终会看到人的迹象。",
+   "option": "正确项 D：eventually——eventually see＝最终会看到，强调过程需要时间但不落空，与自救指南的稳健口吻一致；A「immediately」立即，过于绝对，沿谷找人不保证马上见效；B「intentionally」故意地，主语是人而非「看到」这一结果；C「unexpectedly」出乎意料地，与「有依据的推断」语气相悖。",
+   "keyword": "eventually 最终、终于；signs of people 人的踪迹；immediately 立即；unexpectedly 出乎意料地。",
+   "note": "副词题体会作者语气：自救建议讲究「有希望但不打包票」，eventually 恰到好处；immediately 的干扰在于把「终会见到」偷换成「立刻见到」，绝对化选项慎选。"
+  },
+  {
+   "question_id": 284,
+   "long_sentence": "拆解填空句：you may be {11} how quickly identifying a distinctive rock or tree can restore your bearings——be + 形容词 + how 从句（省略 at）表情绪反应；restore your bearings 意为「恢复方位感」。译：你可能会惊讶于：认出一块特别的岩石或一棵特别的树，竟能这么快帮你找回方向感。",
+   "option": "正确项 A：surprised——be surprised (at) how quickly...＝对…之快感到惊讶，认出熟悉地标迅速恢复方向感是惊喜体验；B「annoyed」恼怒，情绪方向不符；C「frightened」害怕，与「成功定位」的积极结果矛盾；D「confused」困惑，恰是 restore your bearings 要消除的状态。",
+   "keyword": "be surprised at 对…惊讶；distinctive 独特的、易辨认的；restore your bearings 恢复方向感；how quickly 多快。",
+   "note": "情绪形容词题看从句内容：how quickly...can restore 是积极结果，四个选项中只有 surprised 与惊喜匹配；D 的 confused 与 bearings 原词形成反向呼应，属反向陷阱。"
+  },
+  {
+   "question_id": 285,
+   "long_sentence": "拆解填空句：Another {12}: Climb high and look for signs of human habitation——冒号后为祈使句，对空格名词作具体解释；another 表「再一条」。译：另一个办法：爬到高处，寻找人类居住的迹象。",
+   "option": "正确项 B：option——another option＝另一个选择，与前文 a few tricks...one of which is to follow the land 的列举结构呼应，此处是第二条自救法；A「problem」问题，冒号后是方法不是难题；C「view」观点，与祈使句的「做法」性质不符；D「result」结果，冒号后非结果性内容。",
+   "keyword": "option 选择、办法；human habitation 人类居住地；signs 迹象；climb high 爬到高处。",
+   "note": "列举结构题：a few tricks→one of which→another... 全文是「技巧清单」，another 后接冒号加祈使句，填「办法」类名词；problem 恰好反用——冒号后给的是解法而非问题。"
+  },
+  {
+   "question_id": 286,
+   "long_sentence": "拆解填空句：{13}, even in dense forest, you should be able to spot gaps in the tree line due to roads, train tracks...——even 表让步强调；due to 引出缺口成因。译：例如，即使在茂密的森林里，你也应该能发现林线上的缺口——那是道路、铁轨等造成的。",
+   "option": "正确项 D：For example——前句刚提出 climb high and look for signs of human habitation，本句给出具体实例（密林中的林线缺口），For example 表举例；A「Above all」表首要强调，此处非排序；B「In contrast」表对比，前后无对立；C「On average」表平均，与语境无关。",
+   "keyword": "for example 例如；dense forest 茂密森林；tree line 林线；due to 由于。",
+   "note": "语篇衔接题：判断本句与前句是「总说→举例」关系——climb high 找人居迹象是总，林线缺口是例；even in dense forest 的让步语气也符合例证强化手法。"
+  },
+  {
+   "question_id": 287,
+   "long_sentence": "拆解填空句：you should be able to {14} gaps in the tree line due to roads, train tracks, and other paths——be able to + 动词原形，宾语为 gaps（缺口）。译：（在高处）你应该能发现林线上因道路、铁轨而形成的缺口。",
+   "option": "正确项 C：spot——spot gaps＝发现、识别缺口，spot 表「从远处／杂乱背景中认出」，与登高瞭望情境契合；A「bridge」架桥跨过，把缺口当障碍处理，与找路目的相悖；B「avoid」避开，方向相反——缺口正是出路；D「separate」分开，与及物搭配的语义不合。",
+   "keyword": "spot 发现、认出（及物）；gap 缺口、豁口；tree line 林线；carve 开辟、刻出。",
+   "note": "动词题看宾语与目的：gaps 是要找的目标而非要躲避的障碍，spot（辨认出）最贴切；avoid 的干扰性强在「避险」惯性思维，但本文缺口＝人迹＝出路。"
+  },
+  {
+   "question_id": 288,
+   "long_sentence": "拆解填空句：gaps in the tree line due to roads, train tracks, and other paths people carve {15} the woods——carve + 介词短语表开路位置；(that) people carve 为省略关系词的定语从句。译：（那些）人们在树林中开辟出的道路。",
+   "option": "正确项 B：through——carve through the woods＝在林中开辟穿过，through 表「穿越内部」，道路从林中通过；A「from」表起点，carve from the woods 意为从林中雕出，方向错位；C「beyond」表越过之外，路不会开辟在林外；D「under」表下方，与地面道路不符。",
+   "keyword": "carve through 穿…开辟出；the woods 树林；train tracks 铁轨；path 小路。",
+   "note": "介词题看空间关系：道路与树林是「穿过内部」的关系，through 最准确；carve 本义雕刻，carve out／carve through 均为「开辟」高频搭配，记住与 through 的空间默契。"
+  },
+  {
+   "question_id": 289,
+   "long_sentence": "拆解填空句：Head toward these {16} to find a way out——these 复数指代前文 gaps in the tree line；to find a way out 为目的状语。译：朝这些缺口走去，就能找到出路。",
+   "option": "正确项 D：breaks——these breaks 指代前文 gaps in the tree line，break 与 gap 构成同义复现（林间豁口）；A「posts」柱子，前文未提；B「links」联系、环节，无豁口义；C「shades」树荫，与「走出森林」的目标无关。",
+   "keyword": "break 熟词僻义：豁口、间断（另义：休息、打破）；gap 缺口（break 的同义复现）；head toward 朝…去；way out 出路。",
+   "note": "指代复现题：these 限定复数名词必指前文已现的 gaps；break 的「豁口」义是考研熟词僻义高频考点，由「休息／打破」到「裂缝豁口」的引申要专门记忆。"
+  },
+  {
+   "question_id": 290,
+   "long_sentence": "拆解填空句：At night, scan the horizon for {17} light sources, such as fires and streetlights——such as 引出对空格形容词的举例限定；scan the horizon 表「扫视地平线」。译：夜间，扫视地平线寻找人造光源，比如篝火和路灯。",
+   "option": "正确项 A：artificial——fires and streetlights 都是人类活动产生的人造光源，artificial light sources＝人造光源，与自然光相对；B「mysterious」神秘的，举例皆是常见光源；C「hidden」隐藏的，路灯篝火恰恰显眼；D「limited」有限的，与光源性质无关。",
+   "keyword": "artificial 人造的、人工的（natural 的反义词）；light source 光源；streetlight 路灯；light pollution 光污染。",
+   "note": "形容词题用 such as 例证反推：fires（人用火）＋streetlights（人造灯）共同指向「人造」；artificial 与下文 light pollution 呼应——光污染本身就是人造光的产物。"
+  },
+  {
+   "question_id": 291,
+   "long_sentence": "拆解填空句：{18}, assuming you're lost in an area humans tend to frequent, look for the marks we leave on the landscape——assuming 引导假设条件；祈使句 look for 为最后一条建议。译：最后，假设你迷路在人类经常出没的区域，那就寻找我们在地貌上留下的痕迹。",
+   "option": "正确项 A：Finally——全文列举多条自救技巧（顺地走→爬高看→夜寻灯光），Finally 收束清单，表「最后一条」；B「Consequently」表结果，此处是列举终结不是推论；C「incidentally」顺便提及，语气随意不合指南体；D「Generally」通常，与列举收尾功能不符。",
+   "keyword": "finally 最后（列举收束信号）；assuming 假设、倘若；frequent 熟词僻义：动词「常去」；mark 痕迹。",
+   "note": "篇章结构题：考研完形爱考列举衔接词——首段 a few tricks 总起，one of which／Another／For example／At night 依次展开，Finally 是清单结尾的标配信号词。"
+  },
+  {
+   "question_id": 292,
+   "long_sentence": "拆解填空句：look for the {19} we leave on the landscape——the + 名词 + 定语从句 we leave；下文 Trail blazes, tire tracks 即其例证。译：寻找我们在地貌上留下的痕迹。",
+   "option": "正确项 B：marks——the marks we leave on the landscape＝人类在地表留下的印记，Trail blazes（步道标记）与 tire tracks（车辙）正是 marks 的实例；A「memories」记忆，抽象且无法被看见；C「notes」笔记，指书面记录；D「belongings」随身物品，trail blazes 与 tracks 并非遗落物品。",
+   "keyword": "mark 痕迹、印记；leave marks 留下痕迹；trail blaze 步道标记；tire track 车辙。",
+   "note": "下文例证反推词义：Trail blazes, tire tracks, and other features 是对空格名词的列举，能同时涵盖两者且与 leave...on the landscape 搭配的只有 marks；belongings 的干扰在「人类留下的」字面联想。"
+  },
+  {
+   "question_id": 293,
+   "long_sentence": "拆解填空句：Trail blazes, tire tracks, and other features can {20} you to civilization——can + 动词 + sb + to 地点，主语是各类人类痕迹。译：步道标记、车辙等特征能把你引向文明世界。",
+   "option": "正确项 C：lead——lead you to civilization＝把你引向文明社会，lead sb to 是「引导到达」的标准搭配，且与首段 navigate back to civilization 首尾呼应；A「restrict」限制，把人限制在原地，与自救目标相反；B「adopt」采用，及物搭配不合；D「expose」使暴露，expose sb to 后接危险或影响，语义不当。",
+   "keyword": "lead sb to 把某人引向；civilization 文明世界（与首段呼应）；restrict 限制；expose...to 使暴露于。",
+   "note": "收尾动词题抓全文主线：所有技巧的终点都是「回到人烟」，lead 是唯一正向引导义动词；与首空 back to civilization 的呼应是考研完形「首尾闭环」命题的典型手法。"
+  },
+  {
+   "question_id": 294,
+   "long_sentence": "拆解填空句：I was considering this while working as a {1} just a few weeks ago——while working as... 为省略主语的时间状语，职业名词待定。译：几周前，当我以护士身份工作时，我一直在思考这个问题。",
+   "option": "正确项 C：nurse——下文多重证据锁定：we had a woman patient（病房语境）、each of us in the nursing team（护理团队口吻）、we were all just doing our job，作者自述属护理团队；A「清洁工」B「药剂师」与病房护理叙事无关联；D「医生」与 nursing team 的身份表述冲突。",
+   "keyword": "nurse 护士；nursing team 护理团队；discharge 出院；patient 病人。",
+   "note": "高考完形职业推断题：答案依据分散在后文（patient、nursing team），需「向后找证据」；nursing team 中的 each of us 表明叙述者是护理一员，医生身份则说 medical team。"
+  },
+  {
+   "question_id": 295,
+   "long_sentence": "拆解填空句：how much easier it would be if we had a range of words that express different {2} of gratitude——that 定语从句修饰 words；different + 名词 + of gratitude 为搭配核心。译：如果我们有一系列词语，能表达不同程度的感谢，事情会容易多少啊。",
+   "option": "正确项 A：grades——different grades of gratitude＝不同程度的感激，a range of words（一系列词）对应「分等级」的表达需求；B「meanings」意义，different meanings of gratitude 指感谢的不同含义，与「词语不够用」的开篇痛点错位；C「needs」需要，语境不涉及感谢的用途；D「expectations」期待，无期待对象。",
+   "keyword": "grade 等级、程度（熟词僻义：非「年级」）；a range of 一系列；gratitude 感激；express 表达。",
+   "note": "开篇主旨题：Simply saying thank you doesn't seem enough——抱怨的是「感谢的程度无法细分」，grades（等级）正对痛点；grade 此处是「程度、等级」的熟词僻义，勿按「年级」理解。"
+  },
+  {
+   "question_id": 296,
+   "long_sentence": "拆解填空句：My thoughts were soon {3}——被动语态，主语 my thoughts（我的想法），下文讲述真实病例。译：我的想法很快便受到了检验。",
+   "option": "正确项 B：put to the test——be put to the test＝受到检验，随后的病人事件正是对「感谢需要分级」想法的现实验证；A「brushed aside」被置之不理，与下文展开叙事矛盾；C「brought under discussion」被拿来讨论，文中无讨论场景；D「taken into account」被考虑在内，主语应是想法的接受方，搭配错位。",
+   "keyword": "put to the test 经受检验；brush aside 漠视、不顾；take into account 考虑到；soon 不久。",
+   "note": "短语动词题靠篇章推进判断：作者刚提出想法，下文立即出现真实病例——「想法遇现实」即「检验」；brush aside 的干扰在于形近 think 语境，但「被搁置」与后文详叙不符。"
+  },
+  {
+   "question_id": 297,
+   "long_sentence": "拆解填空句：We had a woman patient who was {4} from a knee replacement operation——who 定语从句；from 与空格动词构成搭配。译：我们有位女病人，刚做完膝关节置换手术，正在恢复中。",
+   "option": "正确项 D：recovering——recover from an operation＝术后恢复，recovering from 是「痊愈、康复」的固定搭配；A「departing」离开，depart from 表「背离、启程离开」，与手术语境不合；B「escaping」逃离，escape from 指逃脱监禁或危险；C「retiring」退休，retire from 指从职位退出。",
+   "keyword": "recover from 从…中恢复；knee replacement 膝关节置换（手术）；operation 手术；discharge 出院。",
+   "note": "搭配题认准 from 的动词家族：recover from（康复）、escape from（逃脱）、depart from（离开）共用 from 但义域不同；术后病人＋后文 recovered 原词复现，双重锁定 D。"
+  },
+  {
+   "question_id": 298,
+   "long_sentence": "拆解填空句：One afternoon, while {5} to get into bed she collapsed——while + 现在分词作时间状语，主语 she 承前；collapse 意为「倒下、晕倒」。译：一天下午，她正试图上床时突然倒下了。",
+   "option": "正确项 A：attempting——attempt to get into bed＝试图上床，attempt to do 表「努力尝试」，与突发晕倒的动作场景吻合；B「choosing to」选择上床，无「费力做某事」的过程感；C「pausing to」停下（去上床），与急于就寝的动作矛盾；D「promising to」承诺上床，语义荒谬。",
+   "keyword": "attempt to do 试图做；collapse 倒下、晕倒；get into bed 上床；while doing 当…时。",
+   "note": "动作链推断：术后恢复期「上床」是个费力动作，attempting 体现吃力感，为后文晕倒铺垫；choosing／promising 是意志行为，pausing 与「上床」目的相逆，逐一排除。"
+  },
+  {
+   "question_id": 299,
+   "long_sentence": "拆解填空句：she collapsed from what was {6} discovered to be a heart attack——what 引导名词性从句作 from 的宾语；was discovered 为被动结构。译：她晕倒了，后来查明原因是一次心脏病发作。",
+   "option": "正确项 A：eventually——eventually discovered＝最终查明，确诊需要检查过程，「事后才知」符合病情揭示的时间线；B「fortunately」幸运地，与晕倒凶险（disastrous）的语境相冲突；C「casually」随意地，诊断是严肃过程；D「secretly」秘密地，医疗诊断无保密之义。",
+   "keyword": "eventually 最终；heart attack 心脏病发作；discover 查明；collapse 晕倒。",
+   "note": "副词题看医学叙事逻辑：晕倒当时不知病因、事后确诊，eventually 呈现「查明过程」；fortunately 的迷惑点在于「幸亏查明」，但被修饰的是 discovered 而非结果好坏。"
+  },
+  {
+   "question_id": 300,
+   "long_sentence": "拆解填空句：The collapse was disastrous, {7} the emergency medical team and good teamwork——分词短语（表需要）接两个并列宾语。译：这次晕倒后果严重，（病人）需要急救医疗队和良好的团队协作。",
+   "option": "正确项 B：requiring——requiring the emergency medical team＝（情况）需要急救医疗队参与，require 表「需要」，主语是 disastrous 的病情，逻辑顺畅；A「assessing」评估，医疗队是被召唤来抢救的，非被评估对象；C「forming」组建，teams 已存在，无需组建；D「proving」证明，医疗队与协作无「被证明」关系。",
+   "keyword": "require 需要；emergency medical team 急救医疗队；teamwork 团队协作；disastrous 灾难性的。",
+   "note": "分词逻辑主语题：空格动作的逻辑主语是 The collapse（病情），病情「需要」急救力量——require 搭配成立；forming 的干扰在于字面贴近 medical team，但「组队」与救治场景错位。"
+  }
+ ]
+}

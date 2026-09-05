@@ -1,0 +1,180 @@
+{
+ "chunk": 14,
+ "items": [
+  {
+   "question_id": 326,
+   "long_sentence": "拆解填空句：They rushed to the window, 30 or 40 birds all trying to {13} at the same time——rush to the window 表方向；all trying to... 为分词短语补充状态。译：它们冲向窗户，三四十只鸟同时都想逃出去。",
+   "option": "正确项 B：get out——鸟群被关在屋里，冲向窗口的目的就是逃出去，get out＝出去、逃离；A「wake up」醒来，鸟是闯入后被困，非睡着；C「take off」起飞，先得出了屋子才谈得上飞，与 rushed to the window 顺序矛盾；D「break in」闯入，方向相反——它们是要出去不是进来。",
+   "keyword": "get out 出去、逃离；rush to 冲向；take off 起飞；break in 闯入（方向词）。",
+   "note": "方向逻辑定短语：上一句 went wild＋rush to the window 已锁定「被困求出」的处境，C/D 的干扰在飞行与闯入的字面联想，认准「向窗口冲＝想出去」即可。"
+  },
+  {
+   "question_id": 327,
+   "long_sentence": "拆解填空句：The curtains were falling down, the lamps were falling down, It was a real {14}——两个 were falling down 并列铺陈现场；a real + 名词作总结评价。译：窗帘纷纷坠落，灯具也摔落下来，真是一团狼藉。",
+   "option": "正确项 A：mess——a real mess＝一片狼藉，是窗帘灯具坠落的总结性名词，mess 常用于描述混乱现场；B「puzzle」谜团，现场无难解之谜；C「fight」打斗，无争斗双方；D「challenge」挑战，与破坏现场无关。",
+   "keyword": "mess 狼藉、混乱（make a mess of）；fall down 坠落；curtain 窗帘；lamp 灯具。",
+   "note": "总结词由前文细节反推：窗帘灯具齐坠＋香肠遍地（pepperoni—everywhere）的堆叠描写只有一个指向——狼藉；mess 是英语叙事里「闯祸现场」的高频总结词。"
+  },
+  {
+   "question_id": 328,
+   "long_sentence": "拆解填空句：I have {15} and I admit responsibility of my {16}——have + 过去分词现在完成时；and 并列承认的两个方面。译：我已经成熟了，并且我为自己的行为承担责任。",
+   "option": "正确项 D：matured——I have matured＝我已经成熟，与上段 Older and wiser now（如今更年长也更有智慧）直接呼应，是他道歉的资格前提；A「recovered」恢复，文中无生病或受伤的恢复对象；B「retired」退休，与年岁不符；C「escaped」逃脱，与承担责任的态度相反。",
+   "keyword": "mature 成熟（动词／形容词）；Older and wiser 更年长更有智慧；admit responsibility 承担责任；youthful indiscretion 年少轻狂。",
+   "note": "跨段呼应定词：youthful indiscretion（年少莽撞）→Older and wiser→have matured 是「少年莽撞—而今成熟」的成长线，matured 是 mature 的完成时，认准段落间的复现关系。"
+  },
+  {
+   "question_id": 329,
+   "long_sentence": "拆解填空句：I admit responsibility of my {16}——admit responsibility + 介词短语，宾语为抽象名词；my 限定所属。译：我承认要为自己的行为负责。",
+   "option": "正确项 D：actions——admit responsibility of my actions＝为我的行为负责，actions（行为）是承担责任的通用对象，指当年放纵海鸥闯祸之举；A「suffering」痛苦，承担责任的对象不是痛苦；B「plans」计划，闯祸不是计划；C「madness」疯狂，madness 是状态评述，不宜作负责的对象。",
+   "keyword": "admit responsibility for/of 为…担责；actions 行为；chalk up...to 把…归因于；indiscretion 轻率。",
+   "note": "固定语义场：承担责任→actions／behavior／conduct，actions 最常用；madness 的干扰在于它承接 indiscretion 的情绪色彩，但负责的对象是具体行为而非状态。"
+  },
+  {
+   "question_id": 330,
+   "long_sentence": "拆解填空句：I come to you, {17}, to apologize for the damage I had indirectly caused——双逗号之间为插入语，描摹道歉时的姿态；to apologize 表目的。译：我登门致歉——毕恭毕敬地——为我间接造成的损失赔不是。",
+   "option": "正确项 C：hat in hand——hat in hand＝手执帽子，西方文化中脱帽持于手前表示谦卑求恕，与登门道歉（come to apologize）的姿态吻合；A「hands in pocket」双手插兜，是散漫无礼的姿态；B「nose in the air」鼻孔朝天，形容傲慢，与道歉相反；D「feet on the ground」脚踏实地，形容务实，非道歉语境。",
+   "keyword": "hat in hand 毕恭毕敬地（习语）；nose in the air 目中无人；apologize for 为…道歉；insert 插入语。",
+   "note": "文化习语题：三个身体部位短语中只有 hat in hand 传达谦卑；道歉信的语气链（admit→apologize→ask）要求插入语与谦恭一致，A/B 恰是反面姿态，D 中性但跑题。"
+  },
+  {
+   "question_id": 331,
+   "long_sentence": "拆解填空句：to apologize for the damage I had {18} caused——had + 副词 + caused 过去完成时；damage 的成因是海鸥而非本人动手。译：为我（间接）造成的损失道歉。",
+   "option": "正确项 A：indirectly——indirectly caused＝间接造成：撕扯窗帘灯具的是海鸥，他的过错只是留下满箱香肠引鸟入室，故损失是间接所致；B「deliberately」故意地，他并无故意破坏，与道歉的辩解逻辑冲突；C「cautiously」谨慎地，修饰 caused 语义不通；D「secretly」秘密地，事件公开可知。",
+   "keyword": "indirectly 间接地；deliberately 故意地；cause damage 造成损失；过去完成时 had caused。",
+   "note": "责任边界题：信中既要认责又需说明非直接动手——indirectly 一词兼顾诚意与事实；deliberately 是最强干扰，若故意破坏则无道歉必要，叙事逻辑自洽性是检验标准。"
+  },
+  {
+   "question_id": 332,
+   "long_sentence": "拆解填空句：to ask you to {19} my lifetime ban from the hotel——ask sb to do 请求句式；宾语为 my lifetime ban（终身禁令）。译：请求贵店重新考虑对我的终身禁令。",
+   "option": "正确项 C：reconsider——reconsider my lifetime ban＝重新考虑终身禁令，re-（再次）consider（考虑），被禁十七年后求解除，正是「请再想想」的诉求；A「replace」取代，replace a ban 表以新禁令替换，不妥；B「remember」记得，禁令一直生效无须想起；D「renew」续期，renew a ban 是延长禁令，方向完全相反。",
+   "keyword": "reconsider 重新考虑（re- 前缀表再）；lifetime ban 终身禁令；renew 续期、延长；lift a ban 解除禁令。",
+   "note": "诉求方向题：道歉的落点是解除禁令，reconsider 表「再考虑以改变决定」；renew 的干扰在形近 re- 开头，但「续期禁令」与写信目的背道而驰，方向感是排除利器。"
+  },
+  {
+   "question_id": 333,
+   "long_sentence": "拆解填空句：His letter {20}——主谓结构独立成句，后文 Banned from the hotel since 2001, Burchill is now welcome to come back 为结果。译：他的信起作用了。",
+   "option": "正确项 B：worked——work 不及物＝奏效、起作用，下文「自 2001 年被禁如今欢迎回来」正是信件奏效的证据；A「arrived」送达，信早已送达酒店，抵达不是结果；C「ended」结束，信的完成无意义；D「disappeared」消失，无消失情节。",
+   "keyword": "work 不及物：奏效（the plan worked）；be welcome to do 获准、欢迎；banned 被禁的（前置定语）。",
+   "note": "结果验证题：His letter worked 的答案藏在后句——禁令取消即「奏效」；work 作「起作用」讲是不及物高频义，与 work hard（工作）区分开，凭结果句锁定。"
+  },
+  {
+   "question_id": 334,
+   "long_sentence": "拆解填空句：{1} ______, if you're out of your comfort zone or if you're wandering into somebody's house for the first time——if 从句表情境；主句（选项）与 So 引导的总结句衔接。译：第一步是去探索——无论是你走出了舒适区，还是初次踏进别人家的门。",
+   "option": "正确项 B：The first step is to go exploring——第一步是探索，if 从句给出两种探索情境（出舒适区／初进陌生人家），与下句 So the main thing is just to show up and be adventurous（勇于尝试）形成「建议→总结」链；D「准备好与陌生人进行尴尬对话」与后文 adventurous 的积极基调相悖，也无 first step 的统领性。",
+   "keyword": "go exploring 去探索；out of one's comfort zone 走出舒适区；show up 到场；adventurous 敢于冒险的。",
+   "note": "七选五首空抓段落统摄性：B 的 first step 与 So the main thing 构成「第一步→总之」的建议框架；D 的尴尬对话与全文「让今晚变有趣」的主旨方向相反。"
+  },
+  {
+   "question_id": 335,
+   "long_sentence": "拆解填空句：{2} ______, it can bring in I have this old, broken-down vehicle or I rode the bus with these crazy people——it 回指空格中的提问行为；bring in 引出回应内容。译：如果你问对方「你是怎么来的？」，就会引出「我有辆破旧的旧车」或「我和一车讲冷笑话的人挤公交」这样的回答。",
+   "option": "正确项 C：If you ask the question How did you get here?——提问「怎么来的」恰能引出 vehicle、rode the bus 两种回答，it 的指代与 bring in 的内容无缝对接；G 描述尴尬者的感受，与引出话题无关；A「你怎么认识主人的」虽是问句，但引不出交通类回答。",
+   "keyword": "How did you get here? 你怎么来的；bring in 引出、带来；broken-down 破旧的；open up conversation 打开话匣子。",
+   "note": "代词指代＋内容对应双验证：it can bring in 的 it 指提问，回答里的 vehicle／bus 反向锁定问句内容——「答案在冒号与引语里」是七选五最稳的解题路径。"
+  },
+  {
+   "question_id": 336,
+   "long_sentence": "拆解填空句：{3} ______? If you can't take their wine away, you should certainly try to take away their soapbox——前句为问句，后句给出对策；wine 与 soapbox（讲台，喻滔滔不绝）双关。译：那遇到喝多了或者滔滔不绝说个不停的人怎么办？酒你收不走，那就务必设法收走他的「讲台」。",
+   "option": "正确项 F：What about that person who had too much to drink or won't stop talking——自设问句引出对策段，too much to drink 呼应 take their wine away，won't stop talking 呼应 take away their soapbox，词汇复现成对出现；A「How do you know the host」虽是问句，但后文无认识主人的相关内容。",
+   "keyword": "What about...? 那…怎么办；soapbox 讲台（喻发表长篇大论的机会）；take away 收走；too much to drink 饮酒过量。",
+   "note": "问答配对题：空格后是 If you can't...you should 的对策句，空格必为「提出问题」的句子；F 的两个毛病与对策的两个动作一一咬合，词汇复现是铁证。"
+  },
+  {
+   "question_id": 337,
+   "long_sentence": "拆解填空句：If you're the host, you can ask them to help you in the kitchen...and just remove them from the situation. {4} ______——remove them from the situation 与空格句并列，均为应对滔滔不绝者的手段。译：（或者）把话题转到对方说不出什么内容的领域。",
+   "option": "正确项 E：Or turn the conversation into a topic where they have little to say——Or 表并列补充：支走（remove）之外，还可换话题让对方无话可说，与「对付说个不停的人」的段旨一致；G「他／她正是对尴尬感受最深的人」对应的是沉默话题，位置应在段末 compliment 之后。",
+   "keyword": "turn...into 把…转为；have little to say 无话可说；Or 表并列的另一种办法；remove them from the situation 让其离场。",
+   "note": "并列信号词定句：前句已给一策（支去厨房），Or 开头的选项天然续接第二策；G 的干扰在 also 出现 awkward 词群，但它属于下一段 awkward silence 的话题，跨段勿串。"
+  },
+  {
+   "question_id": 338,
+   "long_sentence": "拆解填空句：the only thing that always gets everyone talking again is to give the host a compliment. {5} ______ Just quickly turn around and say, This cake is extremely delicious——compliment（赞扬主人）为策略，其后给出具体台词。译：打破尴尬沉默屡试不爽的一招是夸主人；因为他／她正是被这种尴尬压得最沉的人。",
+   "option": "正确项 G：He or she is the person who is feeling the weight of that awkwardness the most——解释为何夸主人有效：气氛冷场时主人压力最大，一句赞美即可让其带动全场；He or she 回指 the host，awkwardness 复现本段 awkward silence；C 的提问与「夸主人」无衔接，E 是对付「话痨」的策略。",
+   "keyword": "compliment 赞扬；awkwardness 尴尬（awkward silence 的名词化）；feel the weight of 深感…之重；host 主人。",
+   "note": "解释性空位：策略句（give the host a compliment）与示范台词（This cake is...）之间缺的正是「为什么夸主人」的原理句；He or she 与 host 的指代呼应是定位关键。"
+  },
+  {
+   "question_id": 339,
+   "long_sentence": "拆解填空句：So what to do with all those...clothes piled on your bedroom floor? {1} ______ It's the best way to get rid of your used clothes, score clothes from your friends, and have a party all at the same time——设问后空格为答案句。译：那些完好却略穿腻、堆在卧室地板上的衣服怎么办？办一场换衣会——处理旧衣、淘朋友的好衣、还能开派对，三合一。",
+   "option": "正确项 B：Hold a clothing swap——举办换衣会，正是标题 Swap, Don't shop! 的展开与设问的答案，It's the best way to... 三重好处全部指向 swap；E「捐出剩余衣服」只解决弃置一环，与「score clothes from friends＋开派对」不符。",
+   "keyword": "swap 交换；hold a swap 举办交换会；get rid of 处理掉；score 熟词僻义：淘到、弄到。",
+   "note": "设问即路标：what to do with...? 的答句必是祈使句方案，且须能同时满足后文三重好处；标题 Swap 是全文题眼，首空把标题落成动作 Hold a clothing swap。"
+  },
+  {
+   "question_id": 340,
+   "long_sentence": "拆解填空句：Invite 5—10 people so you have a nice selection. {2} ______, and there may not be enough things to choose from; more than that, and it becomes uncontrollable——分号连接人数过少／过多两种后果。译：（若）人数少于这个数，可挑的东西就可能不够；多于这个数，场面又会失控。",
+   "option": "正确项 A：Less people than that——少于 5-10 人，that 回指前文人数，与 more than that 构成对称对照；C「If two people are competing」两人竞争，与「衣物不够选」的因果脱节；B「举办换衣会」与前后比较句式不搭。",
+   "keyword": "less than that 少于此数；there may not be enough... 可能不够；more than that 多于此数；uncontrollable 失控。",
+   "note": "指代对称题：that 指前文 5-10 people，空格与 more than that 形成「少则…多则…」的双向比较；填入后句子重构为 Less people than that, and there may not be enough... 的省略结构。"
+  },
+  {
+   "question_id": 341,
+   "long_sentence": "拆解填空句：{3} ______. They should also prepare plenty of reusable bags to carry their new clothes home——also 表追加要求；they 指参与者。译：（另外）要告诉大家带上干净、品相完好的衣服；他们还应准备大量环保袋，把换到的「新」衣服带回家。",
+   "option": "正确项 G：Tell everyone to bring clean clothes in good condition——告知大家带来干净完好的衣服，They should also prepare bags 中的 also 表这是「带衣服」之外的附加要求；F「让每个人把衣服放到对应位置」属于布置场地的步骤，与 bags 的衔接远。",
+   "keyword": "in good condition 品相完好；reusable bag 环保袋；also 追加信号；pointer 建议、提示。",
+   "note": "also 是本空的解码钥匙：also prepare bags 意为「除了带衣服，还要备袋子」——空格必是「带衣服」的要求句；they 的指代（所有参与者）也要求空格先建立「人人带衣」的前提。"
+  },
+  {
+   "question_id": 342,
+   "long_sentence": "拆解填空句：Put different types of clothing on different surfaces in the room. {4} ______. Place a few mirrors around your room so people can see how things look when they try them on——布置场地的步骤链：分类摆放→空格→摆镜子。译：（要）让每个人把自己的衣服放到对应的摆放位置上。",
+   "option": "正确项 F：Have everyone put their clothes in the right spots——让各人把衣服放到对应位置，是「分类摆放到不同台面」的执行句，与后文摆镜子、试穿规矩同属场地布置；E「捐出剩衣」是活动收尾步骤，位置应在流程末尾；G 是活动前的要求。",
+   "keyword": "surface 台面；in the right spots 在对应位置；place...around 在四周摆放；try on 试穿。",
+   "note": "步骤链排序：场地布置段落按「分类→摆放→镜子→试穿」推进，F 是摆放环节的执行者视角复述；七选五在小标题式步骤文中，前后句的动作主体与阶段一致性是核心。"
+  },
+  {
+   "question_id": 343,
+   "long_sentence": "拆解填空句：Set a starting time. Maybe you say go, or turn on a certain song, or whatever. {5} ______. And don't forget to put out some cookies and fruits. Remember, it's a party!——发令方式与派对氛围并列。译：（活动全程）就放着音乐吧。别忘了摆上饼干和水果——记住，这是一场派对！",
+   "option": "正确项 D：Just keep music playing throughout——全程放音乐，与 turn on a certain song（开启某首歌）音乐意象复现，与 cookies and fruits＋it's a party 的氛围营造并列；A「人数少于那个数」属于第一段的规模建议；E「捐出剩余衣服」是散场后事项。",
+   "keyword": "keep music playing 让音乐持续播放（keep + 宾 + doing）；throughout 自始至终；put out 摆出。",
+   "note": "词汇复现＋话题一致：song→music 是同域复现，party 的派对属性要求氛围类建议；keep music playing 的 keep doing 结构表示持续状态，与 throughout 呼应。"
+  },
+  {
+   "question_id": 344,
+   "long_sentence": "拆解填空句：how hard it could be to create fabric and {1} ______ it into a shirt shape——create 与空格动词由 and 并列，共用宾语 it（fabric），均应为原形动词。译：把布料做出来、再缝制成衬衫的形状，这能有多难呢？",
+   "option": "正确项 L：sew——sew it into a shirt shape＝把它缝制成衬衫形状，sew（缝制）与 create（制造）并列构成服装制作的两道工序；H「mend」缝补，mend 是修补破损（mend clothes／a hole），不能表达「从布料到成衣」的制作义。",
+   "keyword": "sew 缝制（sew...into 把…缝成）；mend 缝补、修补；fabric 布料；into a shirt shape 成衬衫形状。",
+   "note": "词义辨析＋语法双关：and 并列要求动词原形，sew／mend 同属缝纫义场但方向不同——sew 制作、mend 修补；本文讲从棉到成衣的生产链，选制作义。"
+  },
+  {
+   "question_id": 345,
+   "long_sentence": "拆解填空句：creating fabric from cotton, which is the most {2} ______ clothing material——which 非限制性定语从句修饰 cotton；most + 形容词构成最高级。译：用棉花织布——棉是最常见的服装原料——实际上极其耗水。",
+   "option": "正确项 B：abundant——the most abundant clothing material＝最丰富的服装原料，棉产量大、使用广，与全文讨论棉花产业规模（how large the...industries are）呼应；G「intense」强烈的，most intense clothing material 搭配不成立。",
+   "keyword": "abundant 丰富的、充裕的；material 原料；the most + 多音节形容词；cash crop 经济作物（末段复现）。",
+   "note": "选词填空先定词性：空格在 the most 之后需形容词原级；abundant 的证据在文末 one of the most useful cash crops——「量大且重要」的双向呼应锁死 B。"
+  },
+  {
+   "question_id": 346,
+   "long_sentence": "拆解填空句：a process that involves a lot of water, 2,700 liters per shirt to be {3} ______——to be + 形容词作插入语，对 2,700 liters 的表述性质加以说明。译：每件衬衫耗水 2700 升——确切数字如此。",
+   "option": "正确项 E：exact——to be exact＝确切地说，是引出精确数字的固定插入语，2700 升正是精确值；I「nearly」几乎，to be nearly 2700 liters 需直接修饰数字而非置于 to be 后作评注，且与 exact 义相反。",
+   "keyword": "to be exact 确切地说（插入语）；liter 升；nearly 几乎（约数）；per shirt 每件衬衫。",
+   "note": "插入语搭配题：to be exact 与 to be honest／to be fair 同族，用于插话修正或精确化前文；nearly 与 exact 是反义干扰——数字后带逗号时优先考虑评注性插入语。"
+  },
+  {
+   "question_id": 347,
+   "long_sentence": "拆解填空句：for some more mind-blowing {4} ______ about cotton clothing production——mind-blowing + 复数名词 + about...；for 引导目的。译：看看下面国家地理的视频，了解更多关于棉花服装生产的惊人数据。",
+   "option": "正确项 N：statistics——mind-blowing statistics＝令人震惊的数据，与上句 2,700 liters per shirt 的数字性质一致，statistics about production 是常见搭配；A「abstracts」摘要，视频展示的是数据不是文献摘要；J「reckoning」计算／清算，与 mind-blowing 的惊叹语气不搭。",
+   "keyword": "statistics 统计数据（复数）；mind-blowing 令人瞠目的；about 关于；take a look at 看一看。",
+   "note": "名词义场题：前文刚给出 2700 升的具体数字，视频是「更多数据」的来源，statistics 承接数字话题；abstracts 的干扰在学术词联想，注意视频语境是科普展示。"
+  },
+  {
+   "question_id": 348,
+   "long_sentence": "拆解填空句：Clean water is {5} ______ becoming one of the most sought-after resources in the world——is + 副词 + becoming 现在进行时；sought-after 意为「受追捧的、抢手的」。译：清洁水正日益成为全球最抢手的资源之一。",
+   "option": "正确项 F：increasingly——is increasingly becoming＝正日益成为，进行时中用副词修饰 becoming 表程度递进，与「水资源紧缺」的文章主旨一致；E「exact」是形容词不能修饰动词；I「nearly」表接近，nearly becoming 语义别扭。",
+   "keyword": "increasingly 日益、越来越；sought-after 抢手的、供不应求的；become 成为；resource 资源。",
+   "note": "词性先行：空格位于 is 与 becoming 之间，必须是副词；备选副词仅 increasingly 与 nearly——程度递进选 increasingly，约数修饰才用 nearly。"
+  },
+  {
+   "question_id": 349,
+   "long_sentence": "拆解填空句：Given how large the {6} ______ and cotton industries are——given 复合介词「考虑到」；the + 名词 + and cotton industries 为并列产业。译：考虑到纺织与棉花产业规模如此之大，它们占用了全球大量淡水需求。",
+   "option": "正确项 O：textile——the textile and cotton industries＝纺织业与棉花业，textile（纺织品）作定语修饰 industries，与全文「棉花织布—耗水」的主线一致；N「statistics」数据，the statistics industry 无此产业说法。",
+   "keyword": "textile 纺织品、纺织（作定语）；industry 产业；given that／given 考虑到；take up 占用。",
+   "note": "并列名词题：空格与 cotton industries 由 and 并列，需填一个能与 cotton 并列的产业名词；textile industry（纺织业）是固定搭配，与棉花产业构成上下游。"
+  },
+  {
+   "question_id": 350,
+   "long_sentence": "拆解填空句：The video was created to spread {7} ______ of how environmentally harmful cotton is——spread + 名词 + of + how 从句；how environmentally harmful 表评估内容。译：这段视频旨在提升公众对棉花（生产）危害环境的认识。",
+   "option": "正确项 C：awareness——spread awareness of＝传播…的意识／认识，awareness of how harmful... 是固定框架，科普视频的功能正是唤起认知；D「conscience」良心，spread conscience 搭配不成立，conscience 指内心的道德感，不与 of how 从句连用。",
+   "keyword": "awareness 意识、认识（raise／spread awareness of）；conscience 良心、良知；spread 传播；environmentally harmful 对环境有害的。",
+   "note": "近义辨析题：awareness 与 conscience 同源但分工明确——awareness 是「对某事的认知」（接 of），conscience 是「道德良心」；科普传播目标用 spread awareness of 是标准表达。"
+  }
+ ]
+}

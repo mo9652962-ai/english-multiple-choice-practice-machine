@@ -1,0 +1,180 @@
+{
+ "chunk": 7,
+ "items": [
+  {
+   "question_id": 151,
+   "long_sentence": "定位句 Many oppose workplace surveillance, because of the inherent dehumanizing effect it has and the relentless pressure it brings；because of 引导原因状语，接两个并列名词短语；inherent 意为「固有的」，dehumanizing 意为「非人化的」，relentless 意为「无休止的、不留情的」。译：许多人反对职场监控，因为它具有固有的非人化效应，并带来无休止的压力。",
+   "option": "正确项 A「它使员工处在持续的压力之下」＝the relentless pressure it brings 的同义改写，constant≈relentless、workers under pressure≈pressure it brings；B「被普遍认为本性反人类」绝对化，dehumanizing 是部分人的理由且无 universally；C「造成身心双重伤害」无中生有；D「让企业榨取最大生产力」张冠李戴，那是监控行为兴起的企业侧原因，不是反对者的理由。",
+   "keyword": "surveillance 监控；relentless 无休止的＝constant；dehumanizing 非人化的；oppose 反对。",
+   "note": "原因题定位首段 because of 之后的并列结构——两个理由中 A 项对应第二个 pressure；D 项拿 but 之后 firms 想提高效率的信息设因果错位陷阱，注意「谁反对、为什么」与「谁推行、为什么」是两组因果。"
+  },
+  {
+   "question_id": 152,
+   "long_sentence": "定位句 While this may sound intrusive, exponents argue that it can also protect employees against bullying and sexual harassment；While 引导让步状语从句；主干是 exponents argue that...；exponent 意为「倡导者、拥护者」；protect...against... 意为「保护…免受…」。译：尽管这听起来具有侵扰性，但支持者辩称，它也能保护员工免受霸凌与性骚扰。",
+   "option": "正确项 D「它能保护员工免受攻击性行为」＝protect employees against bullying and sexual harassment 的概括改写，aggressive behavior 概括 bullying（霸凌）与 sexual harassment（性骚扰）；A「避免主导谈话」偷换概念，even if you do not dominate conversations 是监控可测的内容；B「增强员工对企业的认同」无中生有；C「提醒员工隐私受侵」正反混淆，intrusive 说的是监控本身。",
+   "keyword": "exponent 倡导者、拥护者；bullying 霸凌；sexual harassment 性骚扰＝aggressive behavior；intrusive 侵扰性的。",
+   "note": "supporters 对应 exponents argue——支持者的理由在让步（While...intrusive）之后；D 项把两个具体侵害形式升格为 aggressive behavior，属「列举上概括」；A 项借原词 dominate conversations 设陷阱，核对它是监控对象不是功效。"
+  },
+  {
+   "question_id": 153,
+   "long_sentence": "定位句 Some of this data analysis can produce unexpected results. For example, it was found that people who sat at 12-person lunch tables tended to outperform those at four-person tables — a fact that would have gone undetected without data analysis；a fact 为同位语。译：数据分析能产生意想不到的结果：12 人桌食客交流更多、表现更佳。",
+   "option": "正确项 B「分析员工数据能带来意想不到的发现」＝produce unexpected results 加 gone undetected without such data analysis 的合并改写，yield something unexpected≈produce unexpected results；A「数据分析是监控成功实施的关键」过度推断；C「12 人桌更促交流」以偏概全，例子本身是论据非论点；D「没有数据难定餐桌人数」无中生有。",
+   "keyword": "unexpected 意想不到的；go undetected 未被察觉；outperform 胜过；lunch table 午餐桌。",
+   "note": "举例目的题：论点在前（unexpected results），例子在后——12 人桌 vs 4 人桌是为「意外发现」服务的例证，选例证本身的 C 是典型「以偏概全」陷阱；a fact that would have gone undetected 反证「意外」，与 B 的 unexpected 呼应。"
+  },
+  {
+   "question_id": 154,
+   "long_sentence": "定位句 A lot depends on how such monitoring initiatives are communicated and this could prevent possible revolts being staged；主干是 A lot depends on...；how 引导宾语从句；monitoring initiatives 意为「监控举措」；revolt 意为「反抗、抵制」。译：很大程度上取决于这些监控举措是如何沟通传达的，而这能防止可能的抵制行为发生。",
+   "option": "正确项 D「老板能否清楚告知监控的目的」＝how such monitoring initiatives are communicated 加下句 if they're open about the information they're collecting 的合并改写，make known≈communicated 与 be open about；A「监控频率」无中生有；B「排除了哪些个人信息」偷换概念，原文说 open about the information collected 而非排除信息；C「采取何种措施减少危害」张冠李戴，detrimental 属芯片段内容。",
+   "keyword": "depend on 取决于；communicate 沟通传达＝make known；voluntary 自愿的；revolt 抵制、反抗。",
+   "note": "depends on 直接给出答案框架——题干 positive effect depend on 原词对应；定位后必须连读下一段：don't communicate effectively→assume the worst 与 open about→46% okay 是正反论证闭环；D 项把 communicate 升格为「告知目的」，沟通的内容即目的与用途。"
+  },
+  {
+   "question_id": 155,
+   "long_sentence": "定位句 Although many such monitoring schemes use anonymised data and participation is voluntary, many staffers remain skeptical and fear an erosion of their civil liberties；Although 引导让步状语从句；erosion 意为「侵蚀」；civil liberties 意为「公民自由」。译：尽管监控方案用匿名数据且自愿参与，许多员工仍疑虑，担心公民自由受侵蚀。",
+   "option": "正确项 C「它们可能侵犯员工应享的自由」＝fear an erosion of their civil liberties 的同义改写，infringe upon entitled freedom≈an erosion of civil liberties；A「过度赋权雇主」无中生有；B「侵蚀职场环境」偷换概念，被侵蚀的是公民自由非职场环境；D「长远看适得其反」张冠李戴，counterproductive 是末段实施不当的后果，非员工的担忧。",
+   "keyword": "anonymised 匿名化的；skeptical 怀疑的；erosion 侵蚀＝infringement；civil liberties 公民自由。",
+   "note": "concern 对应 fear 之后的内容——员工担忧句是本题唯一落点； Although 让步从句（匿名加自愿）与主句 skeptical 形成反差，说明担忧不因技术保障而消失；C 项 erosion→infringe 与 liberties→entitled freedom 的双重替换是本题考点。"
+  },
+  {
+   "question_id": 156,
+   "long_sentence": "定位句 Located on a working cattle ranch on the California-Nevada border, Deep Springs is a private, residential, two-year college for men, committed to educating students for 'a life of service to humanity'；Located on... 为过去分词作地点状语；committed to... 作后置定语。译：深泉学院坐落于加州内华达交界处的牧牛场上，是私立寄宿制两年制男校，致力于教育学生「过服务于人类的生活」。",
+   "option": "答案 G 段：Located on a working cattle ranch...committed to educating students for 'a life of service to humanity'——cattle farm≈working cattle ranch、devoted to...serve mankind≈committed to...a life of service to humanity；I 段 Sterling College 也是微型学院但讲环境与正义课程，无牧场与服役人类使命，张冠李戴。",
+   "keyword": "cattle ranch 牧牛场＝cattle farm；be committed to 致力于＝be devoted to；humanity 人类＝mankind；residential 寄宿制的。",
+   "note": "地点（牧场）加使命（服务人类）双要素定位 G 段；devoted to 与 committed to、service to humanity 与 serve mankind 是两组直接同义链；G 段还含 26 students、1917 年创办等信息，本题只取校址与校训两句。"
+  },
+  {
+   "question_id": 157,
+   "long_sentence": "定位句 I've also been profoundly disappointed in each of these institutions... Little deliberate attention is given to how students mature as individuals and social beings；主干是 I've been disappointed in...；Little 为半否定词；mature as 意为「成长为」。译：我对这三所院校都深感失望……几乎没有刻意关注学生如何作为个体与社会人而成熟。",
+   "option": "答案 D 段：I've also been profoundly disappointed...Little deliberate attention is given to how students mature as individuals and social beings——Much to the author's disappointment≈profoundly disappointed、largely ignore≈Little deliberate attention is given to...social beings。",
+   "keyword": "profoundly 深深地＝much to one's disappointment；deliberate 有意的、刻意的；institution 院校；mature 成熟、成长＝growth。",
+   "note": "题干三要素（失望、三所院校、忽视社会性成长）与 D 段逐一对应，half 否定词 Little 是「忽视」的信号；C 段讲微型学院怎么做（对照面），E 段讲作者要办学的动机，D 段才是「失望的原因」陈述——按叙述顺序：失望（D）→动机（E）。"
+  },
+  {
+   "question_id": 158,
+   "long_sentence": "定位句 If tiny schools are to become a player on the higher education scene, they will need to find a way to be truly affordable；if 引导条件状语从句；主干是 they will need to find a way to be truly affordable；a player 意为「一个重要角色」；scene 意为「领域、舞台」。译：微型学校要想在高等教育舞台上成为一支重要力量，就需要找到真正让人负担得起的方法。",
+   "option": "答案 J 段：If tiny schools are to become a player on the higher education scene, they will need to find a way to be truly affordable——play a role in higher education≈become a player on the higher education scene、must be made affordable≈need to find a way to be truly affordable；段内学费对比与 Deep Springs 全免特例是背景数据。",
+   "keyword": "affordable 负担得起的；a player 重要参与者、一股力量；scene 舞台、领域；tuition 学费；room and board 食宿。",
+   "note": "条件句即「前提」：become a player 是目标、affordable 是条件，题干把条件与目标拆成 must 与 in order to；J 段谈学费与成本，K 段谈现有规范推高成本，L 段给出简洁方案——本题取 J 段结论句，先定条件再扫数据验证。"
+  },
+  {
+   "question_id": 159,
+   "long_sentence": "定位句 'Living in close community with one's teachers and fellow students, and being forced to take on adult responsibilities, makes for one's growth as a person,' says William Hunt, who graduated last year；两个动名词短语并列作主语；makes for 意为「促成、有助于」。译：「与老师同学亲密共处、被迫承担成人责任，能促成一个人的成长，」去年毕业的亨特说。",
+   "option": "答案 H 段：Living in close community with one's teachers and fellow students...makes for one's growth as a person, says William Hunt, who graduated last year——According to a recent graduate≈says William Hunt...who graduated last year、conducive to growth≈makes for one's growth、living together≈in close community with...",
+   "keyword": "make for 促成、有助于＝be conducive to；community 共同体、群落；take on responsibilities 承担责任；graduate 毕业生。",
+   "note": "人物身份（去年毕业=recent graduate）与观点（共处促成长）双锚定 H 段；make for 与 be conducive to 是「有助于」的同义链；观点在引语内——长篇阅读中毕业生、校友类证言常单独设题，见到 says sb, who graduated 字样优先核对。"
+  },
+  {
+   "question_id": 160,
+   "long_sentence": "定位句 In higher education the trend is mostly in the opposite direction: Universities with 20,000 or 30,000 students are considered 'mid-sized'；主干是 the trend is in the opposite direction；冒号后举例说明；mid-sized 意为「中等规模的」。译：在高等教育领域，趋势大多朝着相反的方向：两三万学生的大学只算「中等规模」。",
+   "option": "答案 B 段：In higher education the trend is mostly in the opposite direction 加 Arizona State University has 80,000 students...aims to enroll another 100,000 students online——Rather than going small≈the opposite direction（与 A 段 smallness 复兴相对）、trying to go big≈扩招目标；段末 fewer than a hundred students 的 tiny colleges 是另一极信息。",
+   "keyword": "opposite direction 相反方向；mid-sized 中等规模的；enroll 招收；spectrum 光谱、范围。",
+   "note": "本题是跨段逻辑题：A 段讲 smallness 复兴，B 段首句 the opposite direction 指「高教界逆小而行」——题干 Rather than going small 正是这一指代的展开；at the other end of the spectrum 提示 B 段一端大、另一端小，本题取大的一端。"
+  },
+  {
+   "question_id": 161,
+   "long_sentence": "定位句 According to its catalog, a college education at Sterling combines 'rigorous academics, roll-up-your-sleeves challenges, and good old hard work'；主干是 a college education combines...；rigorous 意为「严格的」；catalog 意为「学校简章」。译：据其简章，斯特灵学院的教育把严谨学术、实干挑战与货真价实的辛苦劳动结合在一起。",
+   "option": "答案 I 段：a college education at Sterling combines 'rigorous academics...and good old hard work'——rigorous academic work≈rigorous academics、traditional manual labor≈good old hard work 加 manual labor 原词、integrated≈combines；G 段 Deep Springs 也重 labor，但 I 段简章引语与「学术与劳动并重」对应最直接。",
+   "keyword": "rigorous 严格的、严谨的；manual labor 体力劳动；combine 结合＝integrate；curriculum 课程体系。",
+   "note": "integrated 对应 combines，学术与劳动两个宾语分别对应 academics 与 hard work；G 与 I 两段都涉劳动，区分标志：G 段讲 Deep Springs 的 ranch 劳动与自治，I 段讲 Sterling 的简章概括——题干 rigorous 一词在 I 段引语中原词出现。"
+  },
+  {
+   "question_id": 162,
+   "long_sentence": "定位句 They replace concerns about institutional growth with attention to the growth of students as fully developed participants in their communities；主干是 They replace A with B；replace...with... 意为「以…取代…」；institutional growth 意为「机构自身的扩张」。译：它们用「关注学生作为充分发展的社区参与者如何成长」取代「对机构规模扩张的关切」。",
+   "option": "答案 C 段：They replace concerns about institutional growth with attention to the growth of students as fully developed participants——well-rounded citizens≈the young person as a whole、instead of seeking their own expansion≈replace concerns about institutional growth；replace...with... 的宾语互换是本题理解核心。",
+   "keyword": "institutional growth 机构扩张；replace...with 以…取代…；well-rounded 全面发展的；flourishing 蓬勃发展、幸福。",
+   "note": "instead of 与 replace A with B 是同一逻辑的两种表达——「不要自身扩张、要学生成长」；well-rounded citizens 概括 the young person as a whole 加 fully developed participants 两处；C 段首句 focus not just on...but on... 也强调「整人教育」，可作第二锚点。"
+  },
+  {
+   "question_id": 163,
+   "long_sentence": "定位句 At its core, education is a human-to-human interaction；主干是 education is a human-to-human interaction；at its core 意为「就其本质而言」；human-to-human 为复合形容词「人与人之间的」。译：就本质而言，教育是人与人之间的互动。",
+   "option": "答案 L 段：At its core, education is a human-to-human interaction——essence≈at its core、lies in the interaction between people≈is a human-to-human interaction，复合词 human-to-human 拆解为 between people；段内 Garfield 的「圆木两端论」（Mark Hopkins 坐一端学生坐另一端）是本句的经典注脚。",
+   "keyword": "at its core 就本质而言＝essence；interaction 互动；human-to-human 人与人之间的；log 圆木。",
+   "note": "essence 类题目优先搜 at its core / in essence 等本质信号词；human-to-human 这类复合形容词要会拆解改写为 between people；L 段主旨是 affordable 的 trick（简洁），本题只取 At its core 引出的教育本质句。"
+  },
+  {
+   "question_id": 164,
+   "long_sentence": "定位句 Having just retired from teaching at a public university, I'm now returning to my hometown of Flagstaff, Arizona, to establish a tiny college—Flagstaff College；Having just retired 为完成式分词短语作时间状语，表先于主句动作；establish 意为「创办」。译：刚从公立大学退休，我正回到家乡弗拉格斯塔夫，创办一所微型学院——弗拉格斯塔夫学院。",
+   "option": "答案 E 段：Having just retired from teaching at a public university, I'm now returning to my hometown of Flagstaff, Arizona, to establish a tiny college——After her retirement≈Having just retired、has decided to set up≈to establish、in her hometown≈my hometown of Flagstaff, Arizona；完成式分词表的先后关系与题干 after 的时序对应。",
+   "keyword": "retire 退休；establish 创办＝set up；hometown 家乡；having done 完成式分词（先于主句动作）。",
+   "note": "D 段讲在三所院校任教的失望，E 段讲退休返乡办学——两段构成「因」与「行」的链条，本题取行动句；Having just retired 的完成式分词是「先后关系」的语法标志，与题干 After retirement 的时序呼应；set up 与 establish 为近义动词对。"
+  },
+  {
+   "question_id": 165,
+   "long_sentence": "定位句 Investigative reporter Michael Moss says processed food is engineered to hook you, not unlike alcohol, cigarettes, or other harmful substances；主干是 processed food is engineered to hook you；not unlike 为双重否定表「与…并无不同、很像」；hook 意为「钩住、使上瘾」。译：调查记者迈克尔·莫斯说，加工食品是被精心设计来钩住你的，与烟酒或其他有害物质没什么两样。",
+   "option": "正确项 A「它们都让人上瘾」＝engineered to hook you, not unlike alcohol, cigarettes 的同义改写，addictive≈hook；B「都是必要之恶」无中生有；C「都被设计得令人享受」偷换概念，engineer 的目标是 hook 上瘾而非 enjoy；D「需求都越来越大」无中生有，原文未比较需求趋势。",
+   "keyword": "be engineered to do 被设计来；hook 钩住、使上瘾＝addictive；not unlike 与…无异；processed food 加工食品。",
+   "note": "comparable to 问「可比点」——答案在 hook 一词的瘾品语义；not unlike 的双重否定语气值得注意（委婉但肯定）；C 项借 engineered 原词换目的，核对 hook 的含义即可排除；记忆链 hook→hooked（其新书名）→addiction 贯穿全文。"
+  },
+  {
+   "question_id": 166,
+   "long_sentence": "定位句 Memory, nostalgia in particular, plays a big role in the foods we crave；主干是 Memory plays a big role；nostalgia in particular 为插入语「尤其是怀旧」；we crave 为省略关系词的定语从句修饰 the foods；crave 意为「渴望」。译：记忆——尤其是怀旧——在我们渴求的食物中扮演着重要角色。",
+   "option": "正确项 D「记忆」＝plays a big role in the foods we crave 的主语原词复现；A「食品环境」张冠李戴，So the food environment is one of those key things 说的是食品环境使问题更严重，非 crave 的关键；B「激进营销」张冠李戴，那是第一段书的主题；C「便利」张冠李戴，inexpensive 和 convenient 是末段产业依赖的特征。",
+   "keyword": "nostalgia 怀旧；crave 渴望＝craving；play a big role in 在…中起重要作用；ball game 球赛。",
+   "note": "plays a key role 与 plays a big role 的直接对应使本题定位极快；要区分两处 role：food environment 使问题更糟（社会层面）、memory 决定渴望什么（个体层面）；题干 the foods we crave 原词复现 crave，跟着 crave 找主语即可。"
+  },
+  {
+   "question_id": 167,
+   "long_sentence": "定位句 Knowing this, the food industry spends lots of time trying to shape the memories that we have for their products；Knowing this 为现在分词短语作原因状语；主干是 the food industry spends lots of time trying to shape...；that we have for their products 为定语从句修饰 memories。译：明白了这一点，食品行业花费大量时间努力塑造我们对它们产品的记忆。",
+   "option": "正确项 A「它们努力影响消费者对其产品的记忆」＝trying to shape the memories that we have for their products 的同义改写，influence how consumers remember≈shape the memories；B「利用长期记忆促进成瘾」过度推断，长期性是记忆特征非手段目的；C「尽早利用消费者的记忆」过度推断，soda 例子说明童年记忆持久，但并非越早越好的策略表述；D「设法探查消费者记住了什么」偷换概念，是塑造不是探查。",
+   "keyword": "shape 塑造＝influence；capitalize on 利用；joyous moment 欢乐时刻；associate...with 把…与…联系起来。",
+   "note": "capitalize on 的答案区在 Knowing this 之后的 shape memories——「利用记忆」的具体方式是「塑造记忆」；soda 与球赛绑定的例子说明「一次联结，终生受用」，C 项的 as early as possible 属强加策略；D 项 shape 与 find 的方向相反：塑造是主动干预。"
+  },
+  {
+   "question_id": 168,
+   "long_sentence": "定位句 Everything in the industry is about speed, from manufacturing to packaging；主干是 Everything is about speed；from...to... 表范围「从…到…」。译：这个行业的一切都在拼速度，从制造到包装皆是如此。",
+   "option": "正确项 C「专注工作完成得多快」＝Everything in the industry is about speed, from manufacturing to packaging 的同义改写，how quickly the work is done≈speed；A「给快餐概念赋予全新含义」张冠李戴，puts the notion of fast food in an entirely new light 是 Moss 的观点转变；B「快餐连锁数量不设限」无中生有；D「优先产品质量」无中生有。",
+   "keyword": "speed 速度；manufacturing 制造；packaging 包装；hit the brain 刺激大脑、作用于大脑。",
+   "note": "题干 from manufacturing to packaging 原词定位，答案即整句 is about speed；fast food 的新解是「一切食物都快」（物质入脑快），B 项拿 fast food chains 设偷换陷阱；C 项把名词 speed 还原为 how quickly the work is done 的从句，词性转换是唯一障碍。"
+  },
+  {
+   "question_id": 169,
+   "long_sentence": "定位句 Now that more and more people care about what they put in their bodies...these companies are finding it really difficult to meet that new demand because of their own addiction to making these convenience foods；now that 引导原因状语从句；it 为形式宾语；because of 表原因。译：既然人们越来越想吃得更健康，这些公司发现难以满足新需求，因为它们自己已「上瘾」于制造便捷食品。",
+   "option": "正确项 D「它们痴迷于制造便捷食品」＝because of their own addiction to making these convenience foods 的同义改写，be hooked on≈addiction to；A「认为生产速度重于健康」无中生有；B「认为没有快餐行业就会消亡」无中生有；C「必须在口味与营养间权衡」无中生有，super delicious 是依赖特征而非权衡难题。",
+   "keyword": "addiction 成瘾＝be hooked on；now that 既然；convenience food 便捷食品；meet the demand 满足需求。",
+   "note": "because of 之后的 their own addiction 是本题唯一原因——addiction 的主语是 companies 自身，构成「以瘾喻商」的巧妙呼应（人被食物钩住，公司被便捷食品钩住）；D 项 hooked 呼应 Moss 新书 Hooked 与首句 hook you；A、B、C 均为无据推断，用 because of 句逐词核对。"
+  },
+  {
+   "question_id": 170,
+   "long_sentence": "定位句 One obvious answer is our big brains. It could be that our raw intelligence gave us an unprecedented ability to think outside the box...；It could be that 表推测；think outside the box 意为「跳出框框思考」。译：显而易见的答案是发达的大脑——可能原始智力赋予人类前所未有的跳出框框思考的能力。",
+   "option": "正确项 C「他们拥有最出色的思考能力」＝our big brains 加 unprecedented ability to think outside the box 的概括；A「原始力量」偷换概念，raw intelligence 非 raw strength，原文强调 despite our physical weaknesses；B「比近亲更有效应对外界」张冠李戴，那是模仿论；D「知道在哪都能生存」偷换概念，colonized every corner 是事实非解释。",
+   "keyword": "raw intelligence 原始智力；unprecedented 前所未有的；think outside the box 跳出框框思考；dwarf 使相形见绌。",
+   "note": "题干 What might explain 对应 One obvious answer is...It could be that 的推测链——大脑子是第一个候选答案；A 项借 raw 一词偷换 intelligence 为 strength，是「形近词」陷阱；本题为后文「模仿论」的铺垫，注意作者在下一段拒绝了此解释，但本题问的是这个解释本身。"
+  },
+  {
+   "question_id": 171,
+   "long_sentence": "定位句 They think that, rather than making our living as innovators, we survive and thrive precisely because we don't think for ourselves. Instead, people cope with challenging climates and ecological contexts by carefully copying others；precisely 表强调「恰恰」；cope with 意为「应对」。译：人类恰因不独立思考而生存繁衍，靠仔细模仿他人来应对严酷气候与生态环境。",
+   "option": "正确项 D「他们通过仔细模仿他人来应对挑战」＝people cope with challenging climates and ecological contexts by carefully copying others 的同义改写，meet challenges≈cope with challenging...contexts、imitating others carefully≈carefully copying others；A「更擅长创新」正反混淆，该解释被 growing number of scientists rejecting；B「靠创造性策略繁荣」正反混淆，同上；C「天生适应生态环境」无中生有。",
+   "keyword": "copy 模仿＝imitate；cognitive scientist 认知科学家；thrive 繁衍兴旺；ecological context 生态环境。",
+   "note": "growing number of scientists are rejecting that explanation 是「观点更替」信号——本题要取新观点（模仿论）而非旧观点（创新论）；A、B 都是旧观点的改写；D 项 carefully 与 copying 两个词原位复现，此类高重合度配对需再核对人名与主张（a growing number of scientists）。"
+  },
+  {
+   "question_id": 172,
+   "long_sentence": "定位句 Oddly, the children carefully copied all the steps to open the box, even when they could see that the stick had no practical effect...children slavishly imitated every action they'd witnessed；even when 引导让步状语从句；slavishly 意为「盲从地」。译：奇怪的是，孩子们把所有步骤都照做，哪怕明知敲棍毫无作用——他们非理性地模仿，把目睹的每个动作都盲从照搬。",
+   "option": "正确项 A「孩子们非理性地模仿了实验者的每一个动作」＝they copied irrationally 加 slavishly imitated every action they'd witnessed 的合并改写，irrationally 原词复现；B「黑猩猩能区分透明与不透明盒」张冠李戴，那是黑猩猩的表现且非 odd 之处；C「黑猩猩取食更快」无中生有；D「孩子省去敲击步骤」正反混淆，孩子恰恰照做了敲击。",
+   "keyword": "oddly 奇怪的是；over-imitate 过度模仿；irrationally 非理性地；opaque 不透明的；transparent 透明的。",
+   "note": "Oddly 是本题信号词——其后内容即「奇怪之处」；even when 让步从句（明知无用仍照做）是「非理性」的注脚；A 项 every action 与 every action they'd witnessed 对应；D 项把「照做敲击」反说成「省略敲击」，正反混淆的经典构造。"
+  },
+  {
+   "question_id": 173,
+   "long_sentence": "定位句 Anthropologist Joseph Henrich points out that people around the world rely on technologies that are often so complex that no one can learn them rationally. Instead, people must learn them step by step...；so...that... 表「如此…以致」。译：亨里奇指出，技术复杂到无人能凭理性学会，只能一步步学，信赖更有经验的长者与同伴。",
+   "option": "正确项 B「它源于人们学习复杂技术的方式」＝technologies that are often so complex that no one can learn them rationally 加 learn them step by step 的概括，stems from the way people learn≈the manner of learning step by step；A「源于人们的理性」正反混淆，no one can learn them rationally；C「源于不信任自身智慧」偷换概念，是信赖长者智慧而非怀疑自己；D「源于逐步获取知识的愿望」偷换概念，step by step 是被迫的方式非主观愿望。",
+   "keyword": "rely on 依赖；so...that... 如此…以致…；step by step 一步一步地；peer 同龄人、同伴。",
+   "note": "解释题定位人名加 points out——that 从句即解释内容；so complex that no one can learn rationally 是本题逻辑核：复杂到无法理性习得，故只能一步步模仿；B 项 the way people learn 概括「学法」，A 项把 rationality 方向调反，注意 no one...rationally 的否定。"
+  },
+  {
+   "question_id": 174,
+   "long_sentence": "定位句 So the next time you hear someone arguing passionately that everyone should embrace nonconformity and avoid imitating others, you might laugh a little bit. We're not chimpanzees, after all；nonconformity 意为「特立独行」；after all 意为「毕竟」。译：下次听到有人主张人人该特立独行、避免模仿时，你不妨笑一笑。毕竟，我们不是黑猩猩。",
+   "option": "正确项 B「善于模仿他人正是人类的特征」＝We're not chimpanzees, after all 的反推——黑猩猩更理性不过度模仿，而人类恰靠模仿生存繁衍，模仿是「人之为人」的特征；A「是否该避免模仿尚存争议」偷换概念，作者立场明确反对避免模仿；C「信任更有学识的同伴值得提倡」张冠李戴，那是 Henrich 的解释；D「嘲笑特立独行者很幼稚」正反混淆，作者建议 laugh a little bit。",
+   "keyword": "nonconformity 特立独行；embrace 拥抱、接受；imitate 模仿＝copy；after all 毕竟；point 论点、要点。",
+   "note": "结尾点题句 We're not chimpanzees 需结合全文反推：全文论证「人类靠过度模仿成功」，黑猩猩反而理性——所以说「我们不是黑猩猩」即「模仿是我们的本性」；D 项把 you might laugh 的轻松语气误读为嘲讽幼稚，注意作者对该主张的否定态度而非对人的嘲讽。"
+  },
+  {
+   "question_id": 175,
+   "long_sentence": "定位句 'Farm productivity hasn't improved in many parts of Africa for 100 years,' says Jennifer Blanke, a vice-president of the African Development Bank in charge of agriculture；现在完成时加 for 时间段表「一百年来一直未改善」。译：非洲开发银行主管农业的副行长布兰克说：「非洲许多地区的农业生产率一百年来都没有提高。」",
+   "option": "答案 E 段：Farm productivity hasn't improved in many parts of Africa for 100 years, says Jennifer Blanke...——It is said≈says Jennifer Blanke 的转述对应、agricultural productivity≈farm productivity、remained low for a century≈hasn't improved for 100 years；D 段讲非洲农业落后的多方面原因（地块小、单产低），但「百年未变」这句引语只在 E 段，人物引语是唯一锚点。",
+   "keyword": "productivity 生产率；for 100 years 一百年来＝for a century；in charge of 主管；vice-president 副行长。",
+   "note": "It is said 的模糊转述对应具体人物引语 says sb——长篇阅读中「有人说过」类的题干优先搜引号句；for 100 years 与 a century 的数字换算同 q40 的 four decades 一样是常考改写；E 段由 GDP 占比 15% 与百年未变两个信息构成，本题取后者。"
+  }
+ ]
+}

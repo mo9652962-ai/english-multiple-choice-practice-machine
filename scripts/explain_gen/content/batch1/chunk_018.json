@@ -1,0 +1,180 @@
+{
+ "chunk": 18,
+ "items": [
+  {
+   "question_id": 426,
+   "long_sentence": "定位句 She had to say goodbye to her two dogs and to the beach, where she loved to ride waves on her board；where 引导非限制性定语从句修饰 the beach；ride waves 冲浪习语；on her board 踩着冲浪板。译：她不得不向两只狗和海滩告别——她曾喜欢在那里踩着冲浪板冲浪。",
+   "option": "C ride 正确：ride the waves 是固定表达「冲浪」，与 on her board（冲浪板）搭配完整，呼应海滩场景；A cause「引发波浪」搭配不当；B observe「观察」与踩板冲浪的运动场景不符；D strike「拍打、撞击」与 waves 搭配不表冲浪义。",
+   "keyword": "ride the waves 冲浪；board 冲浪板＝surfboard；ride 的引申义「乘驾」；observe 观察。",
+   "note": "宾语 waves 与工具 board 锁定水上运动场景；ride 的「乘驾」义项不仅指骑车还可接波浪——熟词扩展义是高考完形常考点，不要只背 ride a bike。"
+  },
+  {
+   "question_id": 427,
+   "long_sentence": "定位句 But it was time to take the leap, however heartbreaking it would be；it is time to do 该做某事了；take the leap 冒险一跃、迈出大胆一步；however + adj. 表让步「无论多么」。译：但该是迈出这一跃的时候了，无论这会多么令人心碎。",
+   "option": "B time 正确：it was time to do 表「时机已到」，But 转折后强调尽管艰难也必须行动，与 Even at 14, Douglas knew that 的坚定呼应；A common「普遍的」与 take the leap 不构成语义；C fun「有趣的」与 however heartbreaking 的让步矛盾；D tough 与从句 heartbreaking 语义重复，且 it was time to take the leap 是固定句式。",
+   "keyword": "it is time to do 到做某事的时候了；take the leap 迈出大胆一步；however + adj. 无论多么；让步与决心的搭配。",
+   "note": "however 引导的让步从句是解题钥匙：主句给「时机/决心」，从句给「困难」；若主句再填 tough 就与 heartbreaking 重复——主从句语义要互补不要重叠。"
+  },
+  {
+   "question_id": 428,
+   "long_sentence": "定位句 But it was time to take the leap, however heartbreaking it would be；however + 形容词引导让步状语；it 指代离开熟悉一切这件事；would be 表对未来情形的推测。译：但该迈出这一跃了，无论这会有多令人心碎。",
+   "option": "B heartbreaking 正确：前文离开最熟悉的一切、告别爱犬与海滩，heartbreaking「令人心碎的」精准匹配离别之痛；A breathtaking「惊艳的」是正面词，与让步的困难语境相反，属正反混淆；C eye-catching「引人注目的」形容外观；D head-spinning「令人头晕的」对象与程度均不合。",
+   "keyword": "heartbreaking 令人心碎的＝heart-wrenching；breathtaking 惊艳的；however + adj. 无论多么；复合形容词辨析。",
+   "note": "复合形容词矩阵题：四个 -ing 复合词中只有 heartbreaking 表负面情感；前文 leave、goodbye 皆是离别信号——空格词情感方向与语境一致即可锁定。"
+  },
+  {
+   "question_id": 429,
+   "long_sentence": "定位句 So she went off about 1,200 miles away from home, to train with a coach from China；so 表结果；go off 离开、动身；about 1,200 miles away from home 离家约 1200 英里；不定式表目的。译：于是她离家约 1200 英里，去跟随一位中国教练训练。",
+   "option": "D went off 正确：go off 表「离开、动身前往」，与 1,200 miles away from home 的远行方向一致；A dropped out「退学、退赛」与为夺冠而训练的目标矛盾；B moved on「继续前行」多指生活翻开新篇，不带「动身去远方」的空间义；C pulled over「靠边停车」是驾驶行为，与语境无关。",
+   "keyword": "go off 离开、动身；drop out 退出、辍学；move on 继续前行；pull over 靠边停车。",
+   "note": "动词短语考「行进方向」：off 含「离开原地」的空间义，匹配 away from home；A 的 dropout 是体育语境常见词，但 Douglas 是去追梦不是退赛——先辨方向再辨褒贬。"
+  },
+  {
+   "question_id": 430,
+   "long_sentence": "定位句 So she went off about 1,200 miles away from home, to train with a coach from China；不定式 to do 表目的；train with sb 跟随某人训练；a coach from China 来自中国的教练。译：她离家约 1200 英里，为的是跟随一位来自中国的教练训练。",
+   "option": "D train 正确：train with a coach「跟随教练训练」，离家 1200 英里的目的正是接受专业指导，与下文 The Chinese coach transformed Douglas 的教练线呼应；A reason 是名词，词性不符；B talk with a coach「与教练谈话」不足以支撑千里离家；C compete with「与……竞争」把教练误当对手，张冠李戴。",
+   "keyword": "train 训练＝practice；train with sb 跟某人训练；coach 教练＝instructor；不定式 to do 表目的。",
+   "note": "千里离家的「目的」只能是为夺冠而训练；下文 The Chinese coach 的复现是明牌——C compete 的迷惑在 with 短语，但 coach 是指导者不是竞争者。"
+  },
+  {
+   "question_id": 431,
+   "long_sentence": "定位句 She lived with a family she had never met and everything was new to her；定语从句省略关系词修饰 family；had never met 过去完成时表「此前从未」；and 并列结果分句。译：她住在一个从未见过的家庭里，一切对她来说都是陌生的。",
+   "option": "A met 正确：meet 表「见（人）」，a family she had never met「从未见过的家庭」与 everything was new to her 的陌生感互为因果；B helped「帮助过」与寄宿关系不符；C understood「理解」多用于观点、语言，不用于首次见面；D needed「需要」与语境无关。",
+   "keyword": "meet 见到、认识；had never met 从未见过（过去完成时）；live with 与……同住；strange＝new 陌生的。",
+   "note": "everything was new 是验证句：与「从未见过」构成因果；过去完成时强调住宿之前从未谋面——B、C、D 均无法支撑 new 的陌生感，因果链定答案。"
+  },
+  {
+   "question_id": 432,
+   "long_sentence": "定位句 As it turned out, Douglas did exactly what she needed to do to become Olympic champion when she defeated two Russians；as it turned out 事实证明；what 引导宾语从句；exactly 恰好、正是。译：事实证明，当她击败两名俄罗斯选手时，道格拉斯恰恰做了她成为奥运冠军所需要做的一切。",
+   "option": "C exactly 正确：did exactly what she needed to do 表「分毫不差地做了该做的」，与 As it turned out（结果证明）呼应——做的与需要的完全对应；A approximately「大约」修饰不确切数量，与 did what 不搭；B gradually「逐渐地」强调过程缓急，此处强调精准对应；D possibly「可能」与事实陈述相反。",
+   "keyword": "exactly 恰好、正是＝precisely；as it turned out 事实证明；approximately＝about 大约；what she needed to do 所需之事。",
+   "note": "副词题看前后逻辑呼应：As it turned out 引出「结果验证」，只有 exactly 能表达「做的＝需要的」这种对应；A、B 是程度与过程副词，与精准对应无关。"
+  },
+  {
+   "question_id": 433,
+   "long_sentence": "定位句 Douglas did exactly what she needed to do to become Olympic champion when she defeated two Russians；when 引导时间状语从句；defeat sb 击败某人。译：当她击败两名俄罗斯选手时，她恰恰完成了成为奥运冠军所需的一切。",
+   "option": "A defeated 正确：defeat「击败」是夺冠语境的核心动词，击败两名俄罗斯对手即兑现奥运冠军；B pleased「使高兴」、C respected「尊重」、D assisted「协助」都无法构成「成为冠军」的因果，答非所问；B 的「取悦对手」在赛场上逻辑荒谬。",
+   "keyword": "defeat 击败＝beat；champion 冠军；defeat 与 victory 的词族；when 表夺冠时刻。",
+   "note": "空前后是「做该做的事→成为冠军」的因果链，能兑现「夺冠」的动词只有击败对手；B、C、D 都是积极动词但不指向胜负——夺冠题只认胜负动词。"
+  },
+  {
+   "question_id": 434,
+   "long_sentence": "定位句 The Chinese coach transformed Douglas into one of the best gymnasts in the world, helping her skyrocket from an average member of the national team to the top of the sport；transform...into 把……变成；helping... 现在分词作伴随状语；skyrocket from...to... 从……一跃至……。译：这位中国教练把道格拉斯变成了世界顶尖体操运动员之一，助她从国家队普通一员一跃登上该项目之巅。",
+   "option": "B transformed 正确：transform...into「把……彻底改变成」，与 skyrocket（火箭式蹿升）的巨变语义匹配；A forced「强迫」与 into 的转变义不搭且色彩消极；C persuaded sb into doing 接动名词不接名词短语作结果，且「说服」无质变义；D put...into「把……放进」无蜕变义。",
+   "keyword": "transform...into 把……转变成＝turn...into；skyrocket 猛升；persuade sb into doing 说服做某事；force sb into 强迫。",
+   "note": "into 的转变义是关键：transform 强调质变，与 skyrocket 呼应；C 的 persuade into doing 是真实搭配但接 doing 且无质变义——「搭配真实不等于语义匹配」。"
+  },
+  {
+   "question_id": 435,
+   "long_sentence": "定位句 The Chinese coach transformed Douglas into one of the best gymnasts in the world；one of the + 最高级 + 复数名词「最……之一」；in the world 世界上。译：这位中国教练把道格拉斯变成了世界顶尖体操运动员之一。",
+   "option": "A world 正确：in the world 与 one of the best 搭配，奥运冠军的量级是世界级，与 to the top of the sport（登顶该项目）呼应；B city、D state 的量级远低于奥运冠军；C team 与下文 from an average member of the national team 重复——她本就在国家队，「队内最佳之一」解释不了 skyrocket 到 top 的飞跃。",
+   "keyword": "one of the best... in the world 世界最佳……之一；the top of the sport 该项目之巅；量级匹配：奥运→世界。",
+   "note": "「范围词的量级」要与成就匹配：奥运冠军对应 world；C 的陷阱是 team 在原文出现过，但范围太小、撑不起「登顶」——from...to... 的落差需要够大的舞台。"
+  },
+  {
+   "question_id": 436,
+   "long_sentence": "定位句 helping her skyrocket from an average member of the national team to the top of the sport；help sb do；skyrocket 火箭般上升；from...to... 构成起点与终点的对比。译：帮助她从国家队的普通一员一跃登顶该项目。",
+   "option": "C average 正确：average「普通的」与 to the top of the sport 构成从平庸到巅峰的巨大反差，正是 skyrocket 的铺垫；A amateur「业余的」与国家队队员身份矛盾——国家队必是职业选手；B elected「当选的」与 member 搭配生硬；D enthusiastic「热情的」是性格描述，与水平飞跃无关。",
+   "keyword": "average 普通的＝ordinary；amateur 业余的（反义 professional）；skyrocket 一飞冲天；from...to... 反差结构。",
+   "note": "from...to... 两端必须有落差才撑得起 skyrocket：C 与 top 的反差最大；A 的陷阱在于 amateur 与「普通」近义，但国家队队员不可能是业余——身份事实即可排除。"
+  },
+  {
+   "question_id": 437,
+   "long_sentence": "定位句 By winning the Olympic all-around title, she became the first black woman to do so；by + 动名词表方式、凭借；the first...to do 第一个做某事的人。译：凭借赢得奥运会全能冠军，她成为第一位做到这一点的黑人女选手。",
+   "option": "C winning 正确：by winning「通过赢得」，与 the Olympic all-around title（全能金牌）搭配，呼应首句 To become the Olympic champion 的目标达成；A clarifying「澄清」与 title 不搭；B defending「卫冕」与 first（首位）矛盾——卫冕的前提是曾经获得过；D demanding「要求得到」无法表达「赢得」义。",
+   "keyword": "win the title 赢得头衔；by doing 通过……方式；defend the title 卫冕；the first...to do 首位做某事的人。",
+   "note": "the first...to do so 的 so 指代赢得全能冠军，说明此前无人做到——B defending 直接矛盾；by + doing 表「凭手段达成结果」，动词须能「获得」冠军。"
+  },
+  {
+   "question_id": 438,
+   "long_sentence": "定位句 She led the competition from beginning to end；lead the competition 领跑比赛；from beginning to end 自始至终。译：她自始至终领跑着整场比赛。",
+   "option": "D led 正确：lead「领先」与 from beginning to end（自始至终）构成全程碾压的统治级表现，呼应 win the title；A followed「跟随」方向相反，正反混淆；B organized「组织」是赛事方行为，运动员不组织比赛；C watched「观看」与参赛者身份矛盾。",
+   "keyword": "lead the competition 领跑＝be in the lead；from beginning to end 自始至终；follow 跟随（反义）；organize 组织。",
+   "note": "「领先还是跟随」看结果：她是赢家，led 呼应 winning the title；A followed 是反义陷阱；C watched 的迷惑在于「观赛」，但主语是参赛者 herself——身份决定动词。"
+  },
+  {
+   "question_id": 439,
+   "long_sentence": "定位句 She said she had felt confident all along that she would win；间接引语；had felt 过去完成时；all along 自始至终；that she would win 为 confident 的内容从句。译：她说她一直都很自信自己会赢。",
+   "option": "A confident 正确：feel confident that...「确信……」与最终夺冠呼应——自信兑现为金牌，all along 强调从未动摇；B nervous「紧张」、D uneasy「不安」与夺冠的从容矛盾；C excited「兴奋」程度不足且不接 that 从句表达信念内容。",
+   "keyword": "feel confident that 确信；all along 自始至终＝all the time；nervous 紧张；uneasy 不安。",
+   "note": "that she would win 是信念内容：能接信念从句的只有 confident；结果「赢了」可反推心态是自信不是紧张——结果反推心态是完形常用逻辑。"
+  },
+  {
+   "question_id": 440,
+   "long_sentence": "定位句 Not so long ago, Martha Karolyi, the coordinator of the women's national team, did not think Douglas had what it took to be an Olympian；the coordinator... 同位语；have what it takes to do 固定表达「具备做成某事所需的素质」。译：不久前，女子国家队联络人玛莎·卡罗利还不认为道格拉斯具备成为奥运选手的素质。",
+   "option": "D took 正确：have what it takes to do 是习语「具备所需素质」，took 为 take 的过去式，指成为奥运选手所需的实力；A viewed「看待」无此搭配；B appeared「出现」语义不通；C mattered「要紧」用于 it matters that 结构，无法与 what it 构成习语。",
+   "keyword": "have what it takes 具备所需素质（习语）；take 表「需要」（it takes time to do）；coordinator 联络人；not think 否定转移。",
+   "note": "what it takes 是高频习语，take 的「需要」义项在此扩展为「素质」；did not think 是否定转移「认为不」——先识别习语再看 Karolyi 的质疑态度。"
+  },
+  {
+   "question_id": 441,
+   "long_sentence": "定位句 As time went by, she thought more and more that she could make the London Games — and win；as 引导时间状语从句「随着」；more and more 越来越（程度递增）；make the Games 入选奥运会。译：随着时间推移，她越来越相信自己能入选伦敦奥运会——并能赢。",
+   "option": "B more and more 正确：As time went by（随着时间推移）暗示态度渐进变化，thought more and more「越来越认为」，破折号后的 and win 显出信心增强；A now and then「偶尔」是频率概念，与渐进变化无关；C far and wide「到处」修饰空间范围；D on and on「不停地」修饰动作持续，不能修饰 thought 的程度。",
+   "keyword": "more and more 越来越；as time went by 随着时间推移；now and then 偶尔；make the Games 入选奥运会。",
+   "note": "As time went by 是「渐进」信号词：时间推移对应程度递增，more and more 是唯一匹配；A 的迷惑在于也含时间感，但「偶尔想」与「逐渐确信」方向相反。"
+  },
+  {
+   "question_id": 442,
+   "long_sentence": "定位句 I'm ready to shine. And shine she did；ready to do 准备好做；And shine she did 为倒装强调句（shine 前置），did 代替前文动词。译：我准备好闪耀了。而她也确实闪耀了。",
+   "option": "A shine 正确：末句 And shine she did 原词复现 shine，且 shine 呼应 I'm going to inspire so many people 的明星效应；B fly「飞」、C dance「跳舞」、D score「得分」虽都是运动员动作，但无法被 And ___ she did 的倒装强调回收——原文末句已给出答案词。",
+   "keyword": "shine 闪耀、出彩；And...she did 倒装强调结构；ready to do 准备好做；inspire 激励。",
+   "note": "尾句 And shine she did 是明牌：空格词必须与 shine 复现——完形最后一空常由末句点破；B、C、D 的干扰在「都是运动动作」，但复现原则优先于语义场。"
+  },
+  {
+   "question_id": 443,
+   "long_sentence": "定位句 Melanie Bailey should have finished the course earlier than she did；should have done 本应做而实际未做；earlier than... 比较状语；she did 中 did 替代 finished the course。译：梅拉妮·贝利本应比实际更早跑完赛程。",
+   "option": "D finished 正确：should have finished earlier than she did 表「本应更快完成」，与下文 Her delay came 的 delay 呼应——正因未按时完成才有延误；A designed「设计赛程」主语错位，运动员不设计赛道；B followed「跟随路线」与 earlier than she did 的时间落差语义不接；C changed「改变赛程」无中生有。",
+   "keyword": "should have done 本应做而未做（虚拟语气）；course 赛程＝route；delay 延误（下文复现）；than she did 中 did 替代动词。",
+   "note": "should have done 的「未实现」义是题眼：本应更早完成，实际延误；下文 Her delay 是验证句——A 的 designed 是「主语职业错位」陷阱。"
+  },
+  {
+   "question_id": 444,
+   "long_sentence": "定位句 Her delay came because she was carrying a competitor across the finish line；delay 延误；because 引导原因状语从句；carry sb across the finish line 背某人过终点线；过去进行时描绘当时场景。译：她的延误来自她背着一名参赛者穿越终点线。",
+   "option": "A delay 正确：与上句 should have finished earlier 严丝合缝——没更早完成即是延误，delay 是对时间落差的精准概括；B chance「机会」与负面语境矛盾；C trouble「麻烦」虽含负面义，但泛指困境，无法对应 earlier than she did 的时间概念；D excuse「借口」无中生有。",
+   "keyword": "delay 延误、耽搁；carry sb 背、扛某人；finish line 终点线；should have done→delay 的因果。",
+   "note": "上句 should have finished earlier 是 delay 的同义铺垫：时间落差选时间词，不选泛义负面词；C trouble 的迷惑在「帮人惹麻烦」，但原文是客观陈述延误事实。"
+  },
+  {
+   "question_id": 445,
+   "long_sentence": "定位句 she was carrying a competitor across the finish line；carry sb across... 背某人穿过……；competitor 竞争者、参赛者。译：她正背着一名参赛者穿越终点线。",
+   "option": "D competitor 正确：下文 a runner in front of her、her fellow runner、Neither won the race 三处证据证明被背者是参赛选手，competitor 与 fellow runner 同义呼应；A judge「裁判」无证据，且在前方哭泣受伤的应是选手；B volunteer「志愿者」与 runner in front of her 矛盾；C classmate「同学」关系无中生有。",
+   "keyword": "competitor 竞争者、参赛者＝racer；fellow runner 同为跑者的人（复现）；judge 裁判；cross-country race 越野赛。",
+   "note": "名词身份靠后文证据链：runner、fellow runner、Neither won the race 三处复现锁定参赛者；A judge 的迷惑是赛场角色词，但「前方哭泣受伤」只能是选手。"
+  },
+  {
+   "question_id": 446,
+   "long_sentence": "定位句 Bailey was more than two-thirds of the way through her race when a runner in front of her began crying in pain；more than two-thirds of the way 完成超过三分之二路程；when 引导时间状语从句「此时」；in pain 疼痛地。译：贝利的比赛进行到超过三分之二时，前方一名跑者开始痛苦地哭泣。",
+   "option": "A race 正确：开篇 hundreds of runners competed in a cross-country race 交代赛事，two-thirds of the way through her race 表赛程进度，与 course、finish line 的比赛语境一致；B school、C town 是地点名词，不与 two-thirds of the way 的路程比例搭配；D training「训练」与 hundreds of runners competed 的正式比赛矛盾。",
+   "keyword": "two-thirds of the way 三分之二路程；cross-country race 越野赛；compete 参赛；in pain 痛苦。",
+   "note": "数字比例（two-thirds of the way）只能修饰「赛程」；D training 的迷惑是跑步语境词，但 competed in a race 已锁定正式比赛——比赛与训练不可混。"
+  },
+  {
+   "question_id": 447,
+   "long_sentence": "定位句 She stopped to help her fellow runner, Danielle Lenoue；stop to do 停下来去做（另一件事）；fellow runner 同为跑者的人；人名 Danielle Lenoue 作同位语。译：她停下来去帮助同跑者丹妮尔·勒努埃。",
+   "option": "C stopped 正确：stop to help「停下比赛去帮忙」，与赛程中的突发状况衔接，也呼应最终 delay 的结局；A agreed to help 需要协商对象，独自参赛无对象；B returned「返回」方向不明；D promised「承诺」无对象且与紧迫场景不符。",
+   "keyword": "stop to do 停下来去做（与 stop doing 辨析）；fellow runner 同跑者；agreed to do 同意做；delay 的伏笔。",
+   "note": "stop to do 与 stop doing 是经典辨析：stop to help 是「停赛去帮」；A agreed 的硬伤是没有商量的对象——独自比赛的场景没有承诺或同意的另一方。"
+  },
+  {
+   "question_id": 448,
+   "long_sentence": "定位句 Bailey took her arm to see if she could walk forward with aid；take one's arm 挽起某人的手臂；see if... 看看是否；with one's aid 在……的帮助下。译：贝利挽起她的手臂，看她能否在搀扶下继续前行。",
+   "option": "B aid 正确：with aid 表「在帮助下」，具体指挽臂搀扶这一动作，与 took her arm 呼应；A courage「勇气」错在受伤者的问题是身体而非勇气，挽臂提供的是物理支撑；C patience「耐心」、D advice「建议」都无法转化为行走能力。",
+   "keyword": "aid 帮助、搀扶＝help；first aid 急救；take one's arm 挽住手臂；with the help of 在……帮助下。",
+   "note": "took her arm 是空格的物理证据：搀扶＝physical help＝aid；A courage 是情感抽象词，无法由「挽臂」提供——具体动作要配具体帮助词。"
+  },
+  {
+   "question_id": 449,
+   "long_sentence": "定位句 Bailey then bent down to let Lenoue climb onto her back and carried her all the way to the finish line；bend down 弯下腰；let sb do 让某人做；climb onto 爬上；carry sb 背起某人。译：贝利随即弯下腰，让勒努埃爬上她的背，一路把她背到了终点线。",
+   "option": "D bent down 正确：让人爬上背必先弯腰降低重心，bend down 与 climb onto her back、carried her 构成连贯动作链；A went away「走开」与帮助行为相反；B stood up「站起来」与爬背动作在物理上矛盾；C stepped aside「侧身让路」是让行不是施救。",
+   "keyword": "bend down 弯腰；climb onto 爬上；stand up 站起来（反义）；carry sb on one's back 背某人。",
+   "note": "动作链定答案：bend down→climb onto→carry 三步连贯；B 是典型反义陷阱——「站直」与「让人上背」物理上冲突，身体常识即可排除。"
+  },
+  {
+   "question_id": 450,
+   "long_sentence": "定位句 ...carried her all the way to the finish line, then another 300 feet to where Lenoue could get medical attention；another + 数量 表「再、又」；where 引导地点从句；get medical attention 接受医疗救治。译：（背到终点线后）又往前 300 英尺，到勒努埃能获得医疗救治的地方。",
+   "option": "A medical 正确：get medical attention「接受医疗救治」是高频搭配，与下文 taken to a hospital、serious injuries 的伤情线呼应；B public「公众的」public attention 是舆论关注，处理不了膝伤；C constant「持续的」与 attention 搭配生硬；D equal「平等的」无语境支撑。",
+   "keyword": "medical attention 医疗救治＝medical care；another 300 feet 又 300 英尺；hospital（下文复现）；serious injuries 重伤。",
+   "note": "下文 hospital 与 serious injuries 是医疗线的明牌证据；B public attention 的迷惑在「关注」义，但受伤者需要的是「救治」不是「围观」——搭配与语境双筛。"
+  }
+ ]
+}

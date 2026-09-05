@@ -1,0 +1,180 @@
+{
+ "chunk": 1,
+ "items": [
+  {
+   "question_id": 1,
+   "long_sentence": "主干是 their speech-based weather information service was meant to be inexpensive and easy to use；According to Francis Dittoh 为评注性状语，引出观点来源；be meant to be 表示「设计意图是」。译：据弗朗西斯·迪托所说，他们这项基于语音的天气信息服务旨在做到便宜且易用。",
+   "option": "答案 F 段原句 The service was designed to be cheap and easy to run：designed to be≈was meant to be、cheap≈inexpensive、easy to run≈easy to use，三组同义改写一一对应；其余段落讲语音助手、隐私、医疗听写等，均无此信息。",
+   "keyword": "be meant to do 旨在做某事；inexpensive＝cheap 不贵的；speech-based 复合形容词「基于语音的」；同义替换链 meant→designed、inexpensive→cheap。",
+   "note": "人名定位法：题干含 According to Francis Dittoh，先找 Dittoh 出现的 D/E/F 段再比对观点细节；长篇阅读正确项必是同义改写，警惕照抄原词却换段落归属的干扰项。"
+  },
+  {
+   "question_id": 2,
+   "long_sentence": "主干是 Using voice instead of typing enables doctors to spend more time...；动名词短语 Using voice instead of typing 作主语；enable sb to do sth 使某人能做某事；spend time doing 花时间做某事。译：用语音代替打字使医生能花更多时间照护病人。",
+   "option": "答案 K 段：Doctors...can dictate 150 words a minute, three times faster than typing...spend less time on administration and more time with patients；「少花时间在行政上、多花时间陪病人」与题干「more time taking care of patients」同义对应。",
+   "keyword": "instead of 而不是；enable sb to do 使某人能做；take care of patients 照护病人≈more time with patients；dictate 口述、听写。",
+   "note": "由 doctors、typing、time 等实词锁定 K 段；题干说「更多时间照顾病人」，原文是「less time on administration」，同一事实的正反表述，属典型同义转述，不要因措辞不同而排除。"
+  },
+  {
+   "question_id": 3,
+   "long_sentence": "原文 turning your voice into text is one of the hardest problems to solve；as 引导原因状语从句，内含 as many ways to pronounce things as there are people on the planet 的 as...as 同级比较。译：把语音转成文字是最难解决的问题之一，因为发音方式像地球上的人数一样多。",
+   "option": "答案 H 段：turning your voice into text...is one of the hardest problems to solve，原因是发音因人而异；题干 extremely difficult≈one of the hardest problems、different pronunciations≈as many ways to pronounce things as there are people。",
+   "keyword": "convert...into 把…转成…；pronunciation 发音；one of the + 最高级 最…之一；hardest≈extremely difficult 同义强化。",
+   "note": "题干含 because of 因果结构，定位后需同时满足「难」与「发音」两要素；H 段用 as...as 句式表原因，勿误选 I 段——那是 Siri 误解指令的「理解」问题，不是语音转写问题。"
+  },
+  {
+   "question_id": 4,
+   "long_sentence": "主干是 African farmers don't have access to important information；unable to read 为形容词短语作后置定语；conveyed online 为过去分词短语修饰 information。译：不识字的非洲农民往往无法获取网上传达的重要信息。",
+   "option": "答案 D 段 They are often denied crucial information the web offers many others：denied≈don't have access to、crucial≈important、the web offers≈conveyed online、illiterate≈unable to read，全句是标准的被动同义改写。",
+   "keyword": "have access to 能获得、能使用；illiterate 不识字的＝unable to read；deny sb sth 拒绝给予某人某物；crucial＝important 至关重要的。",
+   "note": "段落开头反问句 What use is written online content if you can't read? 是主旨信号；替换集中在 deny→not have access、illiterate→unable to read，可顺带积累否定前缀 ill- 的猜词法。"
+  },
+  {
+   "question_id": 5,
+   "long_sentence": "主干是 Some people have other concerns 与 They worry assistants will one day be used to deliver advertising directly to us；worry 后接省略 that 的宾语从句；be used to do 被用来做。译：有些人还有别的担忧：他们担心语音助手有一天会被用来直接向我们投放广告。",
+   "option": "答案 J 段末两句 Some people have other concerns. They worry assistants will one day be used to deliver advertising directly to us：advertisers will send ads≈will be used to deliver advertising、directly to them≈directly to us，题干几乎逐词对应，仅把主动改为被动。",
+   "keyword": "take advantage of 利用；deliver advertising 投放广告；be used to do 被用来做；concern/worry 担忧、顾虑。",
+   "note": "J 段有两处担忧：前半是黑客隐私威胁（对应 q9），段末才是广告投放（本题）；同段多信息点是长篇阅读「张冠李戴」陷阱的温床，定位后务必读完整个段落再作答。"
+  },
+  {
+   "question_id": 6,
+   "long_sentence": "原文主干 Some think voice could soon take over from typing and clicking as the main way to interact online；take over from 表示「接替、取代」；as the main way 为方式状语。译：有人认为语音可能很快会取代打字和点击，成为网上互动的主要方式。",
+   "option": "答案 C 段 Some think voice could soon take over from typing and clicking as the main way to interact online：believe≈think、depend mainly on≈take over from...as the main way、online interaction≈interact online；动词与名词形式的互相转换是本题改写核心。",
+   "keyword": "take over from 接替、取代；interact online 网上互动＝online interaction；main way 主要方式；depend on 依赖、取决于。",
+   "note": "观点动词替换：题干 believe 对应原文 think；名词 online interaction 与动词短语 interact online 的词性转换要敏感；C 段只有两句话，勿因段落短而漏看。"
+  },
+  {
+   "question_id": 7,
+   "long_sentence": "题干主干 Setting up a spoken web is by no means an easy task；动名词短语作主语；by no means 为双重否定式强调「绝不」。原文 building the spoken web — web-to-voice and voice-to-web — isn't straightforward，破折号插入语解释构成。译：搭建语音网络绝非易事。",
+   "option": "答案 G 段 building the spoken web...isn't straightforward：by no means an easy task≈isn't straightforward（straightforward 意为「简单直接的」）；G 段随后举例「理解披萨在意大利餐厅供应很容易，覆盖所有话题仍遥遥无期」，进一步支撑「不容易」。",
+   "keyword": "by no means 绝不、决不是；straightforward 简单的、直截了当的；set up＝build 搭建；a long way off 还差得很远。",
+   "note": "否定改写是难点：原文 isn't straightforward 与题干 by no means easy 表达同一含义；straightforward 属熟词僻义（直白的→简单的），四六级词汇题高频考点。"
+  },
+  {
+   "question_id": 8,
+   "long_sentence": "原文主干 knowing when it's going to rain is vital for farmers；动名词 knowing... 作主语；wanting to sow seeds... 现在分词短语作后置定语修饰 farmers；sow/irrigate/take out 三个动作并列。译：对想播种、灌溉庄稼或把牲口牵到地里吃草的农民来说，知道何时下雨至关重要。",
+   "option": "答案 E 段 knowing when it's going to rain is vital for farmers：weather information≈knowing when it's going to rain、extremely important≈vital；该段还点出祖辈预测天气的方法因气候变化失灵，呼应农民对天气信息的迫切依赖。",
+   "keyword": "vital＝extremely important 至关重要的；sow seeds 播种；irrigate crops 灌溉庄稼；be vital for 对…至关重要。",
+   "note": "抽象表述「天气信息很重要」要落到具体语境（下雨、播种、灌溉）；D/E/F 段都在讲 Dittoh 与农民，注意分工：D 讲不识字困境、E 讲天气重要性、F 讲服务设计，三段连读成链。"
+  },
+  {
+   "question_id": 9,
+   "long_sentence": "题干主干 Some people are concerned about privacy；because 从句 phones are constantly collecting their personal information 用现在进行时强调持续收集；be concerned about 对…感到担忧。译：由于手机在不断收集他们的个人信息，一些人对隐私感到担忧。",
+   "option": "答案 J 段 Our phones are always near us and they are collecting data about us all the time. This has already raised privacy concerns：constantly≈all the time、collecting personal information≈collecting data about us、concerned about≈raised privacy concerns；原文先因后果，题干先果后因。",
+   "keyword": "be concerned about 对…担忧；privacy 隐私；constantly＝all the time 不断地；raise concerns 引发担忧。",
+   "note": "本题与 q5 同在 J 段，靠关键词区分：广告题找 advertising，隐私题找 privacy/data；定位标准是「因果两侧信息都在段内出现」，只占一半信息的是干扰段。"
+  },
+  {
+   "question_id": 10,
+   "long_sentence": "定位句 Big houses are adverted as a reward for hard work and diligence，turning housing from a basic necessity into a luxury 为现在分词作结果状语，from...into... 表示「从…变成…」。译：大房子被宣传为努力与勤奋的回报，使住房从基本必需品变成了奢侈品。",
+   "option": "正确项 B：A reward for industriousness 中 industriousness（勤劳）≈hard work and diligence，reward 原词复现；A「无家可归者的奢侈品」无中生有；C「舒适的充足来源」偷换概念，原文营销的是 space 和 amenities；D「幸福的绝对必需品」与原文 from a basic necessity into a luxury 方向相反，属正反混淆。",
+   "keyword": "promote 宣传、推销≈advertise；industriousness 勤劳＝hard work and diligence；luxury 奢侈品；necessity 必需品。",
+   "note": "细节题：题干 promoted 对应原文 adverted；D 项最具迷惑性——原文说大房子「从必需品变成奢侈品」，D 反说成 necessity，抓住 from...into... 的方向即可排除。"
+  },
+  {
+   "question_id": 11,
+   "long_sentence": "定位句 once-public spaces...have increasingly become privatized，leading to a reduction in the number of public facilities available to all, and a reduced quality of life for many；where 从句修饰 spaces，leading to... 现在分词作结果状语，带两个并列宾语。译：曾经的公共空间日益被私有化，导致面向所有人的公共设施减少、许多人的生活质量下降。",
+   "option": "正确项 A「许多美国人生活质量下降」＝a reduced quality of life for many；B「不同背景的人不再交往」过度推断，原文只是公共空间减少；C「人们再也用不上公共泳池」绝对化，原文是 often closed；D「私生活受负面影响」偷换概念，原文说的是公共生活质量。",
+   "keyword": "consequence 后果、结果；privatize 使私有化；a reduction in… 在…方面的减少；quality of life 生活质量。",
+   "note": "consequence 提示定位到 There are consequences of living big 段；本题四个干扰项恰好覆盖绝对化、过度推断、偷换概念三种套路，逐一对照原文限定词即可排除。"
+  },
+  {
+   "question_id": 12,
+   "long_sentence": "定位句 The trend for bigger housing thus poses ethical questions 为主谓宾结构；pose questions 提出、引发问题；thus 承上启下，表明这是「居住变大」种种现象的推论。译：因此，住房越建越大的趋势引发了伦理层面的问题。",
+   "option": "正确项 A：ethical（伦理的）＝related to moral principles（与道德原则相关），同义替换是本题唯一考点；B「劳动力成本」张冠李戴，原文 low-wage labor 描述的是现象而非问题的性质；C、D 文中并未作为「问题」提出，无中生有。",
+   "keyword": "ethical 伦理的、道德的＝moral；pose questions 引发问题；trend 趋势；arise from 由…引起。",
+   "note": "词汇型细节题：考 ethical 的同义改写，moral principles 是其标准释义；「文中最难的词＝选项里最直白的词」是细节题常见命题手法，遇到生词先找选项中的解释性表达。"
+  },
+  {
+   "question_id": 13,
+   "long_sentence": "定位句为两个并列疑问句：Should Americans accept a system in which the middle and upper classes enjoy a luxurious lifestyle, using the low-wage labor of others? 第二问 Are we willing to accept a system in which... 则问富人添置设施是否意味着穷人的减少。译：美国人应该接受中上产享受奢华生活、使用他人低薪劳动的体系吗？",
+   "option": "正确项 D：the affluent enjoy a more comfortable life≈enjoy a luxurious lifestyle 加 amenities 增加，at the expense of the poor≈reduction in amenities for the poor，是两个问句信息的合并改写；A 夸大为「剥削盖房工人」，B 的 unjustifiable price 无中生有，C「剥夺可负担住房」张冠李戴。",
+   "keyword": "affluent 富裕的＝the rich/the wealthy；at the expense of 以…为代价；amenity 便利设施；lifestyle 生活方式。",
+   "note": "态度句在疑问段之后：I believe neither is acceptable——先确认「不接受什么」再对照选项；D 把两问合并成一个选项，这种「合并改写」是考研阅读设正确项的常用手法。"
+  },
+  {
+   "question_id": 14,
+   "long_sentence": "定位句 A better goal than building bigger houses for some is to create more publicly accessible spaces and amenities for all；主语核心是 A better goal，than 短语作比较状语，表语为不定式；前句 living well does not need to mean having more private spaces 动名词作主语。译：比为某些人建更大的房子更好的目标，是为所有人创造更多可公共使用的空间与设施。",
+   "option": "正确项 C「为所有人创造更多公共空间」＝create more publicly accessible spaces...for all；A「把私人空间转成公共空间」偷换概念，原文是少建私人、多建公共；B「建更多可负担住房」无中生有；D「所有设施贫富同享」以偏概全，原文限定 spaces and amenities。",
+   "keyword": "advocate 提倡、主张；accessible 可使用的、可到达的；publicly accessible spaces 公共空间；for all 为所有人。",
+   "note": "主旨题落在末段观点句 I believe...We must change the way we think；D 的 alike 看似公平实则扩大范围，是「绝对化」陷阱的代表；正确项 C 与原文 create 的用词呼应最紧。"
+  },
+  {
+   "question_id": 15,
+   "long_sentence": "定位句 Most of us in the entrepreneurial community are blessed — or cursed — with higher-than-average ambition；be blessed/cursed with 意为「有幸/不幸具有」，破折号插入语 or cursed 制造自嘲式反差。译：创业圈的大多数人都有幸——或者说不幸——拥有高于平均水平的雄心。",
+   "option": "正确项 B：more ambitious than ordinary people＝higher-than-average ambition 的形容词化改写；A「更愿冒生命危险」偷换概念，原文 take more risks 指商业风险；C 的 nonconventional success 无中生有；D「拥有更多积极品质」以偏概全，原文只谈 ambition 一项。",
+   "keyword": "entrepreneur 创业者；ambition 雄心、抱负；be blessed with 天生具有、有幸拥有；higher-than-average 高于平均水平的。",
+   "note": "首段首句常考「作者对某群体的看法」；把抽象的 risk 具体化成 own lives 的选项几乎必错，属「偷换概念」典型样本，可直接建立排除直觉。"
+  },
+  {
+   "question_id": 16,
+   "long_sentence": "this isn't always the case 中 this 指代上句「更有目标驱动力的人更可能成功」，the case 意为「情况如此」；not always 为部分否定。译：实际上，情况并不总是这样。",
+   "option": "正确项 A「有雄心的人未必更可能成功」正是对 you are more likely to succeed 的部分否定；指代题必须回读前句——this 的指代对象加上否定词即答案；C「好坏参半」程度过度，本句只说「不总是」；B、D 与指代对象「成功」无关。",
+   "keyword": "this is (not) the case 情况（不）是这样；imply 暗示、隐含；not always 并非总是（部分否定）；driven 有干劲的。",
+   "note": "句意理解题三步：找 this 指代→确认否定范围（always）→选项选「部分否定」；B 项故意沿用指代句句式，但指代的是「成功」而非「品质」，属答非所问。"
+  },
+  {
+   "question_id": 17,
+   "long_sentence": "定位句 This is problematic because it hinders your ability to adapt to new circumstances, which is vital if you want to be a successful entrepreneur；which 引导非限制性定语从句，指代「适应新环境的能力」；hinder 意为「阻碍」。译：这有问题，因为它会阻碍你适应新环境的能力——而想成为成功的创业者，这种能力至关重要。",
+   "option": "正确项 B：Being able to adapt to new situations≈adapt to new circumstances, which is vital；A「坚持原有愿景」与原文 change direction 相反，正反混淆；C「专注单一目标」恰是原文批评的行为；D「避免职业方向的激进转变」同样是作者反对的做法。",
+   "keyword": "adapt to 适应；circumstances＝situations 环境、情况；vital 至关重要的＝of extreme importance；hinder 阻碍、妨碍。",
+   "note": "of extreme importance 是 vital 的介词短语升级写法，写作可借用；四个选项全部来自原文短语，但 A/C/D 是作者否定的做法——选项全含原文词时，必须核对作者褒贬。"
+  },
+  {
+   "question_id": 18,
+   "long_sentence": "定位句 a failure is seen as disastrous, and impossible to recover from；see...as 把…视为；and 连接两个表语，impossible to recover from 前省略了 which is。译：不幸的是，对最有雄心的创业者而言，失败被视为灾难性的，且无法从中恢复。",
+   "option": "正确项 C「意味着职业生涯的终结」＝disastrous and impossible to recover from 的语义改写；A「让他们认清现实」与 B「必须吸取的教训」是有限雄心者对失败的态度，张冠李戴；D「导致缓慢恢复」与 impossible to recover 矛盾，程度不符。",
+   "keyword": "disastrous 灾难性的；recover from 从…中恢复；regard/see...as 把…视为；endeavor 事业、努力。",
+   "note": "对比记忆：最有雄心者视失败为灾难且无法恢复，有限雄心者视之为接近现实；every failure you survive is a learning experience 是作者观点——「谁的观点」是本题陷阱核心，问的是创业者不是作者。"
+  },
+  {
+   "question_id": 19,
+   "long_sentence": "定位句 such success means nothing for their health and happiness — and if you don't have health and happiness, what else could possibly matter? 破折号后是反问句，强调健康与快乐才是根本；mean nothing for 对…毫无意义。译：这种（物质）成功对健康和快乐毫无意义——若没有健康和快乐，还有什么更重要呢？",
+   "option": "正确项 D「把健康和快乐置于物质成功之上」来自 health and happiness 反问句加末段 burnout、a shorter life 的警示；A「区分传统成功与人生目标」是合理推断但非作者建议；B 与全文批评态度相反；C「避免不必要的冒险」无中生有。",
+   "keyword": "prioritize...over... 把…置于…之上；conventional success 传统意义上的成功；burnout 职业倦怠；matter 重要、要紧。",
+   "note": "建议题定位在末段 Clearly, some amount of ambition is good...But an excess...can also be dangerous 加 health and happiness 反问；反问句表达强烈观点，是「作者建议」题的高频信号词。"
+  },
+  {
+   "question_id": 20,
+   "long_sentence": "题干主干 greater use should be made of digital technology，是 make use of 的被动式；to make Formula One more accessible to its fans 为目的状语，accessible to 意为「对…可及、易接触」。译：蔡斯·凯里认为应更充分地利用数字技术，让车迷更容易接触 F1。",
+   "option": "答案 G 段：Increased digital access for fans...are among the possibilities 加引语 It doesn't do anything digitally...the tools you have to do that, we're not using at all；greater use of digital technology≈tools not using at all，more accessible≈connect to the live experience。",
+   "keyword": "make use of 利用；accessible 可接触的、可获得的；digital access 数字接入；underserved 服务不足的。",
+   "note": "人名观点题：Carey 引语密集的 G 段是定位区；引语里「工具完全没用上」反推出「应更多利用」，这种正反转换要熟悉；G 段还提到虚拟现实等可能性，是同段多信息点。"
+  },
+  {
+   "question_id": 21,
+   "long_sentence": "题干主干 Chase Carey was deeply impressed by the ceremony，preceding last year's Monaco race 为现在分词短语作后置定语；原文 He recalled attending...and being overwhelmed by the ceremony leading up to the event，be overwhelmed by 意为「被…深深震撼」。译：蔡斯·凯里对去年摩纳哥站赛前的仪式印象深刻。",
+   "option": "答案 L 段 He recalled attending Formula One's Monaco race last year and being overwhelmed by the ceremony leading up to the event：deeply impressed≈overwhelmed、the ceremony preceding≈the ceremony leading up to the event，overwhelm 是「印象深刻」的高分同义词。",
+   "keyword": "be impressed by 对…印象深刻；overwhelm 使…深深折服；lead up to 在…之前、为…作铺垫；precede 先于、在…之前发生。",
+   "note": "leading up to＝preceding 是本题核心替换；impressed/overwhelmed/awed 构成「感受类」同义家族；M 段的 fascinated 描述的是正赛日的感受，与本题的赛前仪式是两件事，勿混。"
+  },
+  {
+   "question_id": 22,
+   "long_sentence": "原文 Among the goals...is one that just about every global sport seems interested in chasing: increasing interest in the United States 为表语前置的倒装，正常语序是 One of the goals is increasing interest in the United States。译：目标之一——几乎每项全球性运动都在追逐的——是提升在美国的关注度。",
+   "option": "答案 D 段 increasing interest in the United States 加引语 there are some elements of Americanization that the sport could use：more appealing to Americans≈increasing interest in the United States／Americanization，appealing（有吸引力的）是 interest 的形容词化表达。",
+   "keyword": "appealing 有吸引力的；interest 兴趣、关注度；Americanize 使美国化；goal 目标。",
+   "note": "题干 goals 复数对应原文 Among the goals；「one of」命题意味着原文有并列信息只取其一：D 段两个目标中本题取「美国化」，F 段 two-fold plan 的第一点（商业模式）是另一题的答案区，注意切分。"
+  },
+  {
+   "question_id": 23,
+   "long_sentence": "原文主干 the leader of Formula One was Bernie Ecclestone；For the past four decades 为时间状语；a former motorcycle parts dealer 作同位语，后接 who built it into an international presence 定语从句。译：过去四十年，F1 车赛的领军人物是伯尼·埃克莱斯顿——一个基本靠一己之力把它打造成国际品牌的摩托车零件商。",
+   "option": "答案 A 段：former motorbike parts dealer≈a former motorcycle parts dealer（同位语）、led Formula One for the past forty years≈For the past four decades, the leader of Formula One was...；motorcycle→motorbike、four decades→forty years 属基础同义改写。",
+   "keyword": "decade 十年；former 前任的、曾经的；leader 领军人物＝led；essentially on his own 基本上靠一己之力。",
+   "note": "长篇阅读爱考数字替换：four decades＝forty years；题干人名是 Ecclestone 而非 Carey，先圈人名再扫段落首句即可快锁 A 段。"
+  },
+  {
+   "question_id": 24,
+   "long_sentence": "题干主干 Chase Carey used to serve as a top advisor，used to do 表示「曾经、过去常常」，serve as 意为「担任」；原文 At Fox Broadcasting Company, he was a top advisor for years。译：蔡斯·凯里曾长期担任一家大型广播公司的高层顾问。",
+   "option": "答案 J 段 At Fox Broadcasting Company, he was a top advisor for years：used to serve as≈was...for years、a major broadcasting company≈Fox Broadcasting Company；J 段还交代他后来在 DirecTV 的经历，与 C 段履历呼应。",
+   "keyword": "used to do 曾经、过去常常；serve as 担任、充当；advisor 顾问；broadcasting company 广播公司。",
+   "note": "程度词 major 在原文常落成具体公司名——抽象题干加具体原文是长篇阅读的常见改写；Carey 履历分散在 C/F/J/K 段，按时间线梳理可一次解多题。"
+  },
+  {
+   "question_id": 25,
+   "long_sentence": "原文 alter the way fans experience the sport, both in person and remotely, so that connections between the audience and people within the series are easier to make；so that 引导目的状语从句；in person 与 remotely 对举「现场与远程」。译：改变车迷体验这项运动的方式——无论现场还是远程——以便观众与 F1 内部人士之间更容易建立联系。",
+   "option": "答案 F 段 two-fold plan 的第二点：alter the way fans experience the sport...so that connections...are easier to make；intends to≈plans to、make connections easier≈are easier to make，题干与原文语序几乎一致，识别 so that 目的句即可。",
+   "keyword": "intend to do 打算做＝plan to do；in person 现场、亲身；remotely 远程地；two-fold 两方面的、双重的。",
+   "note": "F 段 two-fold: first...and second... 明示两个计划：本题考 second（观众连接），first（商业模式改组）另属他题；first/second 这类序列词是长篇阅读定位神器，见题干有 plan/goal 先找它们。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 20,
+ "items": [
+  {
+   "question_id": 476,
+   "long_sentence": "定位句 She did not have a chance to go to school；have a chance to do 有机会做；go to school 上学；否定 not have a chance 表机会被剥夺。译：她没有机会去上学。",
+   "option": "B school 正确：go to school「上学」与下文 seize to study、Chinese lessons、learn to read and write 的学习线索形成「没机会上学→偷学」的叙事链；A work「上班」与童年身份不符；C court「法院」与语境无关；D press「出版社、新闻界」无中生有。",
+   "keyword": "go to school 上学；have a chance to do 有机会做；study（下文复现）；tutor 家庭教师（复现）。",
+   "note": "后文 learn to read and write、Chinese lessons 全是学习线索：第 4 空是否定总起——「没学上」才有后面偷偷学的辛酸；A work 的迷惑在「女孩打工」，但下文她做的是 housework 不是 work。"
+  },
+  {
+   "question_id": 477,
+   "long_sentence": "定位句 Like in typical families, where boys were favored much more than girls；like 引出类比；where 引导定语从句修饰 typical families；much more than 表程度悬殊。译：就像在当时的典型家庭中那样，男孩远比女孩受偏爱。",
+   "option": "A favored 正确：favor「偏爱」，boys were favored much more than girls 即「重男轻女」，精准交代奶奶失学的社会原因；B tolerated「被容忍」程度过轻，男孩地位不是被容忍而是被优待；C trusted「被信任」与教育资源分配无关；D acknowledged「被认可」程度不足且不指资源倾斜。",
+   "keyword": "favor 偏爱＝prefer；favored 受宠的；typical families 典型家庭；重男轻女的表达 boys were favored over girls。",
+   "note": "因果链定位：失学（前句）必有社会原因——重男轻女是二战前家庭的 typical 现象；B tolerated 的迷惑在也是「消极对待」，但 much more than 的比较结构要求的是「偏爱」这种倾斜。"
+  },
+  {
+   "question_id": 478,
+   "long_sentence": "定位句 my grandma had to stay at home to do housework；have to do 不得不；stay at home 待在家里；do housework 做家务。译：我奶奶不得不待在家里做家务。",
+   "option": "D housework 正确：housework「家务」与 stay at home 的场景绑定——不上学的女孩在家承担家务，与首段 wash dishes 的场景呼应；A gardening「园艺」是户外庭院劳作，与 stay at home 矛盾；B homework「作业」是学生的任务，她没学上；C business「生意」与儿童身份不符。",
+   "keyword": "housework 家务＝household chores；stay at home 待在家里；do the housework 做家务；homework 作业（易混词）。",
+   "note": "场所定名词：at home 对应 housework；B homework 与 housework 是一字母之差的经典易混词——前缀 house（家）与 home（家）不同，homework 是学校语境的作业。"
+  },
+  {
+   "question_id": 479,
+   "long_sentence": "定位句 The only opportunity she could seize to study was when her brother was having Chinese lessons with the family tutor；the only opportunity 唯一机会；seize to study 不定式修饰 opportunity；when 引导表语从句。译：她唯一能抓住的学习机会，是弟弟跟着家庭教师上中文课的时候。",
+   "option": "B study 正确：study「学习」与下文 Chinese lessons、listening、learn to read and write 的偷学叙事一致——机会的性质就是学习；A exercise「锻炼」与课堂场景无关；C explore「探索」语义空泛；D teach「教」主语错位——她是旁听者不是教师。",
+   "keyword": "seize an opportunity 抓住机会；study 学习；have lessons 上课（下文复现）；family tutor 家庭教师。",
+   "note": "opportunity to __ 的不定式揭示机会内容：旁听弟弟的课能做的只有 study；D teach 的迷惑在课堂场景，但 sit quietly at the far end 的位置描写表明她是偷学者。"
+  },
+  {
+   "question_id": 480,
+   "long_sentence": "定位句 her brother was having Chinese lessons with the family tutor；have lessons 上课；Chinese lessons 中文课；with the family tutor 跟着家庭教师。译：她弟弟正跟着家庭教师上中文课。",
+   "option": "C lessons 正确：have lessons「上课」是固定搭配，Chinese lessons 与 family tutor（家庭教师）构成完整的私塾场景；A food、B guests、D tea 虽可出现在家庭餐桌旁（dinner table 复现），但都无法与 have 构成「上课」的搭配，也不能解释她学读写。",
+   "keyword": "have lessons 上课＝take lessons；tutor 家庭教师；lesson 课程；have Chinese lessons 上中文课。",
+   "note": "have + 名词的搭配题：tutor 在场必有 lessons；下文 This training taught her to read and write 反推空格是「课程」——餐桌上旁听的正是弟弟的中文课。"
+  },
+  {
+   "question_id": 481,
+   "long_sentence": "定位句 She would sit quietly at the far end of the long dinner table, listening closely；sit quietly 安静地坐；at the far end 在远端；listening closely 现在分词作伴随状语。译：她会安静地坐在长餐桌的远端，专注地听着。",
+   "option": "A closely 正确：listen closely「专注地听」，与 sit quietly 的克制、偷学的紧张感一致——怕被发现所以又静又专注；B directly「直接地」与远端旁听的间接方式矛盾；C nervously「紧张地」描述心理状态而非听的方式；D freely「自由地」与偷偷旁听的处境相反。",
+   "keyword": "listen closely 专注地听＝listen carefully；at the far end 在远端；伴随状语 listening...；freely 自由地（反义）。",
+   "note": "副词修饰「听」的方式：远端偷听必须 close（凑近听、用心听）；B directly 的迷惑在「直接听老师讲」，但她在 far end 且无资格发言——closely 的专注义才符合偷学。"
+  },
+  {
+   "question_id": 482,
+   "long_sentence": "定位句 This training taught her to read and write her Chinese upside down — a skill that has turned out to be quite practical, especially whenever we share the newspaper；turn out to be 结果证明是；whenever 引导时间状语从句；share the newspaper 共读报纸。译：这种偷学训练让她学会了倒着读写中文——事实证明这门技能相当实用，尤其在我们一起看报纸的时候。",
+   "option": "D practical 正确：practical「实用的」，倒读技能在祖孙对坐共读报纸时派上用场（奶奶从对面读倒字），whenever we share the newspaper 是实用性的具体场景；A professional「专业的」程度过高；B awkward「尴尬的」与正面评价 turn out to be 相悖；C simple「简单的」与 upside down 的难度不符。",
+   "keyword": "practical 实用的＝useful；turn out to be 结果是；upside down 倒着；share the newspaper 共读报纸。",
+   "note": "破折号后的场景（共读报纸）是实用性的证据：对坐看报，倒着读恰好方便——practical 呼应 turned out to be 的正面评价；B awkward 的负面色彩与文中自豪语气相反。"
+  },
+  {
+   "question_id": 483,
+   "long_sentence": "定位句 On most weekends, my grandmother, a young girl then, and her brother would go to the beach；a young girl then 作同位语插入；would 表过去习惯；on most weekends 周末常去。译：大多数周末，当时还是小女孩的奶奶会和她弟弟去海滩。",
+   "option": "C beach 正确：beach「海滩」与下文 walk through deep water（涉深水）、underwater（水下）、seabed（海床）的海滨意象链完全吻合；A market「市场」与下水活动无关；B mountain「山」无水域；D class「课堂」与周末玩水场景矛盾。",
+   "keyword": "beach 海滩；walk through deep water 涉过深水；underwater 水下；seabed 海床（下文复现）。",
+   "note": "下义词复现定场所：deep water、underwater、seabed 三个词共同指向海滩；先读空后两句再回填是七选五式的做法——完形遇到地点词也要看后文场景证据。"
+  },
+  {
+   "question_id": 484,
+   "long_sentence": "定位句 There, they would walk through deep water, sit down cross-legged underwater and hold their breath while they watched all action going on around them；sit down cross-legged 盘腿坐下；hold one's breath 屏住呼吸；while 引导时间状语。译：在那里，他们会涉过深水，盘腿坐在水下，屏住呼吸，观看周围发生的一切。",
+   "option": "B breath 正确：hold one's breath「屏住呼吸」是固定搭配，水下无法呼吸只能屏息，与 underwater 的场景物理绑定；A secret 用于 keep a secret 保守秘密；C view 用于 get a view of 观看；D tongue 用于 hold one's tongue「闭嘴不言」——D 是字面最近的最强干扰。",
+   "keyword": "hold one's breath 屏住呼吸；hold one's tongue 缄默不言（易混）；cross-legged 盘腿的；underwater 水下。",
+   "note": "hold one's __ 的辨析：水下场景选 breath；D tongue 的迷惑最大——hold one's tongue 是真实习语但指「忍住不说」，与水下憋气的物理需求无关——习语要看字面义与场景是否双合。"
+  },
+  {
+   "question_id": 485,
+   "long_sentence": "定位句 This is something I admire — her ability to open her eyes underwater and still sit comfortably on the seabed；this is something I... 强调句式；破折号后解释 admire 的对象。译：这是我所钦佩的——她在水下睁开眼睛、还能舒舒服服坐在海床上的本领。",
+   "option": "A admire 正确：admire「钦佩」，破折号后的 ability 是令人叹服的本领，本文整体是孙辈对奶奶的敬慕视角；B notice「注意到」只表观察无情感强度；C adopt「采纳」用于方法建议不用于能力；D value「重视」程度不及 admire，且 value 的对象多为品质或建议。",
+   "keyword": "admire 钦佩＝look up to；notice 注意到；value 重视；强调句 This is something I...。",
+   "note": "对「本领」的情感词选 admire：空前的 This is something I 与破折号解释构成情感表达框架——注意 notice 是中性观察动词，撑不起全文的敬慕基调。"
+  },
+  {
+   "question_id": 486,
+   "long_sentence": "定位句 her ability to open her eyes underwater and still sit comfortably on the seabed；ability to do 做某事的能力；open one's eyes 睁开眼睛；still 仍然。译：她在水下睁开眼睛、还能舒舒服服坐在海床上的本领。",
+   "option": "C eyes 正确：open one's eyes「睁眼」是固定搭配，与 underwater 的水中观看、前文 watched all action around them 的视觉动作呼应——水下睁眼看世界才是本领；A hands、D arms 与 open 的搭配不当且无观看功能；B mouth「张嘴」无法解释观看能力。",
+   "keyword": "open one's eyes 睁眼；watch 观看（视觉线索）；ability to do 做某事的能力；seabed 海床。",
+   "note": "视觉链定器官：watched all action→open her eyes 是同一条观看线索；A hands 的迷惑在「动手」类本领，但空后的 watched 证明这是视觉天赋——身体部位由动作功能决定。"
+  },
+  {
+   "question_id": 487,
+   "long_sentence": "定位句 My childhood is quite happy compared with hers；compared with 与……相比；quite 修饰程度。译：与她的童年相比，我的童年相当快乐。",
+   "option": "C happy 正确：happy 与下文 I am grateful that I did not need to go through the hardships（庆幸没经历苦难）构成「她的苦、我的甜」的对照；A difficult「艰难」方向相反——奶奶的才艰难；B complex「复杂」无证据；D similar「相似」与 different childhood background 的总结矛盾。",
+   "keyword": "compared with 与……相比；happy 快乐的；hardship 艰难（下文复现）；对照结构 my childhood vs hers。",
+   "note": "compared with 的两端必须方向相反：奶奶是 hardships，我的自然是 happy；D similar 与段末 different childhood background 正面冲突——总结句是验证词。"
+  },
+  {
+   "question_id": 488,
+   "long_sentence": "定位句 I am grateful that I did not need to go through the hardships like she did；be grateful that 对……心怀感激；not need to do 不必做；like she did 像她那样。译：我很庆幸自己不必像她那样经历那些艰辛。",
+   "option": "A grateful 正确：grateful「感激的、庆幸的」，表达对不必吃苦的感恩，与 happy childhood 的基调一致；B surprised「惊讶」无意外事件；C convinced「确信」后常接观点而非幸运事实；D regretful「后悔的」与文中满足感相反——她没有可后悔的事。",
+   "keyword": "be grateful that 庆幸、感激；grateful to sb for sth 因某事感激某人；surprised 惊讶；regretful 后悔的（反义）。",
+   "note": "「不必吃苦」的心理是感恩而非其他：grateful 承接 happy 的正面基调；D regretful 是方向陷阱——若选后悔则与 quite happy 矛盾，情感词必须全文同向。"
+  },
+  {
+   "question_id": 489,
+   "long_sentence": "定位句 I did not need to go through the hardships like she did；go through 经历、经受；the hardships 艰难困苦；like she did 如同她那样。译：我不必像她那样经历那些艰辛。",
+   "option": "B go through 正确：go through「经历（苦难）」与 hardships 是固定搭配，与前文奶奶 experienced an entirely different childhood 呼应；A reflect upon「反思」是事后思考不是承受；C ask about「打听」无对象；D prepare for「为……做准备」与已发生的过去不符。",
+   "keyword": "go through 经历＝experience；hardship 艰难；reflect upon 反思；prepare for 为……做准备。",
+   "note": "go through hardships 是高频搭配，动词短语与宾语的语义适配是关键；前文 experienced 的复现也指向「经历」义——A reflect 的迷惑在也接抽象宾语，但缺「承受」义。"
+  },
+  {
+   "question_id": 490,
+   "long_sentence": "定位句 I've never faced the problem of education；face the problem of 面对……的问题；never 从未；现在完成时表至今。译：我从未面临过教育方面的问题。",
+   "option": "C education 正确：education「教育」回扣第 4 空 She did not have a chance to go to school——奶奶失学之痛与「我」从未有教育之忧形成对照；A unemployment「失业」她是学生无失业问题但与奶奶的经历无关；B health「健康」无生病线索；D communication「沟通」与失学主题无关。",
+   "keyword": "face the problem of 面对……问题；education 教育；go to school（第 4 空复现）；对照叙事的呼应。",
+   "note": "首尾呼应法则：奶奶的失学（第 4 空）在本段的对应概括词就是 education；两代人的对比靠「她缺什么、我不缺什么」展开——回读前文即可锁定。"
+  },
+  {
+   "question_id": 491,
+   "long_sentence": "定位句 I guess our different childhood background is what makes my grandmother such an amazing person to talk to；make sb + n. 使某人成为；person to talk to 值得交谈的人；不定式作后置定语。译：我想，正是我们迥异的童年背景，让奶奶成为一位如此值得倾诉交谈的奇妙的人。",
+   "option": "D talk 正确：talk to「与……交谈」，person to talk to 是高频表达，与段首 would tell me stories、下文 her stories 的故事线一致——奶奶的故事让她成为好的倾诉对象；A attend to「照料」方向相反；B refer to「提及、查阅」的 person to refer to 意为「可咨询者」程度生硬；C lead 不构成 to talk 类搭配。",
+   "keyword": "person to talk to 值得交谈的人；tell stories 讲故事（呼应）；make sb sth 使某人成为；refer to 提及。",
+   "note": "不定式 to __ to 与 person 搭配：talk to 与前文 tell stories 的「言说」线索同链；B refer to 的迷惑在介词结构相同，但「咨询对象」与奶奶讲故事的温馨场景不符。"
+  },
+  {
+   "question_id": 492,
+   "long_sentence": "定位句 her stories always make my history textbooks come alive；make sth do 使某物……；come alive 生动起来、鲜活起来；always 表一贯。译：她讲的故事总能让我死板的历史课本变得鲜活起来。",
+   "option": "D come alive 正确：come alive「生动起来」，亲历二战前夕的奶奶讲故事，让课本上的历史有了体温，是全文的点睛升华；A come true「实现」的主语应是梦想愿望；B come round「拜访、苏醒」与课本不搭；C come out「出版、出来」课本已出版，语义不通。",
+   "keyword": "come alive 生动起来＝come to life；come true 实现；make sth do 使……；点题句在段末收束全文。",
+   "note": "make + 宾语 + 动词原形的结构中，come alive 与 textbooks 构成「死板→鲜活」的对比；A come true 的迷惑在 come 短语家族，但主语 textbooks 不能「实现」——宾语性质定短语。"
+  },
+  {
+   "question_id": 493,
+   "long_sentence": "定位句 Here's a riddle: What do traffic jams, long lines and waiting for a vacation to start all have in common? There is one answer. __；riddle 谜语；have in common 有共同点；traffic jams 堵车。译：谜语来了：堵车、排长队、等假期开始，这三者有什么共同点？答案只有一个。它们都是我们需要多一点耐心的情境。",
+   "option": "正确项 G：They're all situations 与题面 traffic jams、long lines、waiting 三种情境一一复现，could use a little extra patience 回答谜底「耐心」，且与文章标题 Tricks To Becoming A Patient Person 呼应；D 的 a state of hurry 只概括「匆忙」未给出谜底，且 all this 指代下文而非上文的三个例子；A、B 是小标题式祈使句，不能回答谜语。",
+   "keyword": "have in common 有共同点；could use 正需要（委婉表达）；patience 耐心；situation 情境（复现 traffic jams 等例子）。",
+   "note": "谜语题的答案必须「点名谜底」：三个例子（堵车、排队、等假期）都需要耐心，G 逐一对位；D 的迷惑是也概括了例子，但 hurry 不是谜底——耐心才是标题线索。"
+  },
+  {
+   "question_id": 494,
+   "long_sentence": "定位句 Thankfulness has a lot of benefits: Research shows it makes us happier, less stressed and even more optimistic. __ 'Showing thankfulness can foster self-control,' said Ye Li；benefits 好处；foster self-control 培养自控。译：感恩有很多好处：研究显示它让我们更快乐、压力更小甚至更乐观。它还能帮我们练习更多耐心。「表达感恩能培养自控力，」加州大学研究员叶力说。",
+   "option": "正确项 E：It can also help us practice more patience 中 also 承接前文 happier、less stressed 等好处清单，practice more patience 与引语 foster self-control 语义呼应（耐心即自控的体现）；C 是总起句式但与冒号后已列举的好处重复；F 的 uncomfortable 与感恩话题无关；G 已用于第 1 空。",
+   "keyword": "thankfulness 感恩＝gratitude；foster self-control 培养自控；also 表递进补充；benefit 好处。",
+   "note": "also 是本题最强信号：前文已列三好处，空格句必须「再补一个」且与引语相扣；E 的 practice patience 恰是引语 self-control 的同义落点——小标题 Practice gratitude 与 E 的 practice 构成词汇复现。"
+  },
+  {
+   "question_id": 495,
+   "long_sentence": "定位句 And the only way for us to get into the habit of waiting is to practice. __ Put off watching your favorite show until the weekend or wait 10 extra minutes before going for that cake；get into the habit of 养成……习惯；put off 推迟。译：而养成等待习惯的唯一方法就是练习。从小事开始吧：把追剧推迟到周末，或者等上多出来的 10 分钟再去吃那块蛋糕。",
+   "option": "正确项 B：Start with small tasks 与空后两个例子（推迟看剧、多等 10 分钟再吃蛋糕）完全对应——都是日常小事，start 起总起作用、small tasks 统摄例子；A 的 find your causes（找原因）与本段「练习等待」主题无关；D 的 a state of hurry 属第 1 空语境；F 用于第 5 空。",
+   "keyword": "start with 从……开始；small tasks 小事＝small practices；put off 推迟＝delay；get into the habit 养成习惯。",
+   "note": "例子归纳法：put off watching... 与 wait 10 extra minutes 都是「小练习」，能统摄它们的上义句是 B；B 的小标题式写法也提示它可充当段落的方法总起句。"
+  },
+  {
+   "question_id": 496,
+   "long_sentence": "定位段：__ So many of us have the belief that being comfortable is the only state we will tolerate, and when we experience something outside of our comfort zone, we get impatient；comfort zone 舒适区；tolerate 容忍；get impatient 变得不耐烦。译：接受不适。我们许多人都认为舒适是唯一能忍受的状态，一旦身处舒适区之外就会对境况不耐烦。",
+   "option": "正确项 C：Accept the uncomfortable 作小标题，与段内 comfort zone、uncomfortable、tolerate 的词汇场完全复现，且与其他三个小标题（Practice gratitude、Make yourself wait）同为祈使句式；A 的 find your causes 与「舒适区」无关；B 已用于上段（第 3 空）；D、G 均非祈使句，不构成标题平行结构。",
+   "keyword": "comfort zone 舒适区；accept the uncomfortable 接受不适；tolerate 容忍；impatient 不耐烦的（反义 patient）。",
+   "note": "小标题题三看：祈使句式、与段内词汇复现、与并列标题平行；C 的 uncomfortable 与 comfort zone 是同根词复现——标题与段落首句的词汇呼应是七选五标题题的标准解法。"
+  },
+  {
+   "question_id": 497,
+   "long_sentence": "定位句 You should learn to say to yourself, '__.' You'll then gradually become more patient；say to yourself 对自己说；gradually 逐渐地；become more patient 变得更有耐心。译：你应该学会对自己说：「这只是不舒服，并非难以忍受。」这样你会渐渐变得更有耐心。",
+   "option": "正确项 F：This is merely uncomfortable, not intolerable 是一句自我暗示的话，与空前的 say to yourself 语法相扣（引语），语义上承接舒适区话题——不适（uncomfortable）但可忍（not intolerable）；E 的 it 指代感恩与语境脱节；G 是第 1 空答案；A、B 为祈使句不能作说的内容。",
+   "keyword": "merely 仅仅＝only；intolerable 难以忍受的（tolerate 的形容词）；uncomfortable 不适的；self-talk 自我暗示。",
+   "note": "引语题看语法接口：say to yourself 后必须是第一人称口吻的完整句子；F 的 uncomfortable 复现小标题、not intolerable 化用 tolerate——三个同根词织成词汇网，答案呼之欲出。"
+  },
+  {
+   "question_id": 498,
+   "long_sentence": "定位句 Indoor plants might look as if they just sit around not doing much, but in many ways they are the unsung heroes of the home. __, but studies have shown that they can promote people's wellbeing；unsung heroes 无名英雄；promote wellbeing 促进健康。译：室内植物看似只是静静待着不做什么，但许多方面它们是家中无名的英雄。它们不仅美观，而且研究表明它们能通过改善心情、减压和助记来增进人们的健康。",
+   "option": "正确项 B：Not only do they look beautiful 为倒装结构，与空后 but（also）studies have shown 构成 not only...but also 搭配——「不仅好看，还有研究证实的好处」；C 有总起义但不是倒装句，无法与 but 衔接成固定结构；A 的 all plants are different 与本段好坏评价无关；E、F、G 分属后文具体话题。",
+   "keyword": "not only...but also 不仅……而且（句首倒装）；unsung hero 无名英雄；wellbeing 健康＝health；promote 促进。",
+   "note": "空后 but 是最强语法信号：not only 位于句首须部分倒装（Not only do they...），七选五中满足此结构只有 B——语法形式先于语义筛选。"
+  },
+  {
+   "question_id": 499,
+   "long_sentence": "定位句 Many of these species are not ideally suited to growing outside in the UK, especially in the winter. __；be suited to 适合；especially in the winter 尤其在冬天。译：这些物种中许多并不特别适合在英国户外生长，尤其在冬天。相反，它们在更温暖的室内长得更好。",
+   "option": "正确项 D：Instead, they grow better inside 表转折递进——户外（尤其冬天）不合适，那么「相反地」室内更温暖更适合生长，inside 与 outdoor、warmer 与 winter 形成正反对应；C 的 many benefits 讲好处而非生长条件，答非所问；A 的 all plants are different 与「不适合户外」衔接松散；E 是品种推荐属末段内容。",
+   "keyword": "be suited to 适合；instead 相反地（转折连接词）；indoor 与 outdoor 的对应；warmer 与 winter 的呼应。",
+   "note": "Instead 是转折信号：前句否定户外（not suited to growing outside），后句必然肯定室内——D 的 inside、warmer 与前句 outside、winter 逐点对应，词汇反义链是解题锚。"
+  },
+  {
+   "question_id": 500,
+   "long_sentence": "定位句 Will Spoelstra, who works at the Royal Botanic Gardens, says, '__. I find during the winter months, plants around the house can really lift your mood.'；who 引导非限制性定语从句；lift your mood 提振心情。译：就职于英国皇家植物园的威尔·斯波尔斯特拉说：「在室内种植物有很多好处。我发现冬季里，屋内的植物真的能提振心情。」",
+   "option": "正确项 C：There are many benefits to growing plants indoors 是引语的总起句——先总说「室内种植物好处多」，再以 I find...lift your mood 具体展开，与段落标题 Why are indoor plants good for you? 的设问一脉相承；B 的 not only 倒装无 but 呼应；E 推荐品种属 Which plants 段；G 讲了解植物需求与好处总起无关。",
+   "keyword": "benefits to doing 做某事的好处；lift your mood 提振心情；总起句与例证的关系；段落标题与引语的一致。",
+   "note": "引语第一句通常是「总起」：空后 I find...lift your mood 是具体好处之一，需一句总述兜住；C 与小标题 good for you 的问答结构对应——标题问 why，引语答 benefits。"
+  }
+ ]
+}

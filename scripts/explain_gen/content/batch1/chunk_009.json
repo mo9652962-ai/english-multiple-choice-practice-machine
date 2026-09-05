@@ -1,0 +1,180 @@
+{
+ "chunk": 9,
+ "items": [
+  {
+   "question_id": 201,
+   "long_sentence": "拆题干：主干 salvors now can detect the invaluable man-made objects；with technological advancement in recent years 为原因状语；lying buried under the sea 为现在分词短语作后置定语修饰 objects。译：随着近年技术进步，打捞人员如今能够探测到埋藏海下的珍贵人工制品。",
+   "option": "答案 C 段：advances in radar, diving, detection equipment, computers, and GPS≈technological advancement、technology can reveal the precious artifacts≈detect the invaluable man-made objects、lie hidden on the ocean floor≈lying buried under the sea，改写齐全；D 段同样有 technology，但落点是打捞权被法庭质疑，无探测到人工制品的信息，属答非所问。",
+   "keyword": "advancement 进步＝advances；detect 探测、发现≈reveal 揭示；artifact 人工制品；invaluable＝precious 极珍贵的（勿与 valueless 混淆）。",
+   "note": "双线索定位：technological advancement + man-made objects；C 段 The naked eye might see a pile of rocks, but technology can reveal 是「肉眼 vs 技术」对比句，信息在 but 之后；D 段是强干扰，注意两段分工：C 讲技术发现、D 讲法律争议。"
+  },
+  {
+   "question_id": 202,
+   "long_sentence": "拆题干：主干 many treasure hunters are susceptible to loss；because 从句内 they are unaware (that) they face a financially stronger opponent in court，unaware 后接省略 that 的宾语从句。译：据一位律师说，许多寻宝者容易蒙受损失，因为他们没有意识到自己在法庭上面对财力更雄厚的对手。",
+   "option": "答案 J 段 attorney Concannon 引语：Many treasure hunters don't understand they are going to have to fight for their rights against a government that has an endless supply of money——unaware≈don't understand、financially stronger opponent≈government with endless money、susceptible to loss≈likely to lose；lawyer≈attorney。",
+   "keyword": "attorney 律师＝lawyer；be susceptible to 易遭受、易受影响；endless supply of money 用之不竭的钱≈financially stronger；naive 天真的、缺乏经验的。",
+   "note": "题干 According to a lawyer 提示观点题：认引语不认案例；I 段 Pritchett 败诉给 France 是实例，但「律师评论」在 J 段；引语三层信息（不理解、对抗政府、终将败诉）与题干因果链一一对应。"
+  },
+  {
+   "question_id": 203,
+   "long_sentence": "拆题干：并列主语 Salvors of treasures in sunken ships and marine archaeologists + are now hostile to each other；of treasures in sunken ships 为后置定语。译：打捞沉船宝藏者与海洋考古学家如今相互敌视。",
+   "option": "答案 E 段：pit archaeologists against treasure hunters in a vicious cycle of accusations 点出对立，结尾 Where once salvors and archaeologists worked side by side, now they belong to opposing, and equally contemptuous, tribes 与题干 now hostile to each other 直接对应；D 段虽同现 salvors 与 archaeologists，但讲的是「谁拥有沉船」的权利之争，没有相互敌意的信息，属答非所问。",
+   "keyword": "salvor 打捞人员；hostile 敌对的；pit...against 使…与…对立；contemptuous 轻蔑的；work side by side 并肩共事（与 now 敌对形成今昔对比）。",
+   "note": "题干 now 是时间信号词，E 段正是 once...now 对比句；段首 vicious cycle of accusations 与段尾 opposing tribes 首尾呼应锁定答案；排除 D 段的关键是它只讲单方面的法律挑战，非双方敌对。"
+  },
+  {
+   "question_id": 204,
+   "long_sentence": "拆题干：主干 Archaeologists want to see artifacts help humans understand their past；instead of being sold to private collectors at an outrageous price 为介词短语作状语，being sold 为被动动名词。译：考古学家希望看到人工制品帮助人类了解自身过去，而不是被以天价卖给私人收藏家。",
+   "option": "答案 K 段：Putting an inflated price on artifacts...irritates many archaeologists 加 don't want artifacts ending up in a private collection instead of a journey of understanding——inflated price≈outrageous price、ending up in private collection≈sold to collectors、journey of understanding≈understand their past。",
+   "keyword": "inflated price 虚高价格≈outrageous price 天价；transcend 超越；end up in 最终沦为；take humanity on a journey of understanding 带人类踏上求知之旅≈understand their past。",
+   "note": "K 段两句一反一正：irritates 句反对「标价」，don't want 句提出期望；instead of 前后对举是钥匙——想要 understanding、拒绝 private collection，题干的 instead of 结构与原文同构。"
+  },
+  {
+   "question_id": 205,
+   "long_sentence": "定位句 Could you get by without using the internet for four and a half years? That's exactly what singer and actress Selena Gomez has done in a bid to improve her mental health——what 引导表语从句；in a bid to do 表示「为了做某事」。译：四年半不上网你也能过吗？这正是歌手兼演员赛琳娜·戈麦斯为改善心理健康所做的事。",
+   "option": "正确项 C：refrained from using social media≈get by without using the internet，refrain from（克制不做）对应 without using；A「心理问题恶化」正反混淆，原文目的是 improve her mental health；B「赢得 Instagram 最多粉丝」张冠李戴，most followed 是 2016 年旧事，如今是 second most-followed；D「在网上竞标成功」偷换概念，in a bid to 是「为了」，bid 此处非「出价竞标」。",
+   "keyword": "get by 过活、应付过去；refrain from 克制不做；in a bid to do 为了做某事；bid 熟词僻义：努力、企图（另有「竞标」义）。",
+   "note": "数字定位：four and a half years 仅在首段出现；D 项专考 bid 一词多义，凭 bid＝竞标 的第一反应必错——这是六级熟词僻义高频陷阱，结合不定式 to 判断词义。"
+  },
+  {
+   "question_id": 206,
+   "long_sentence": "定位句 The increasing digitisation of our society means that everything from paying a gas bill to plotting a route to a friend's house and even making a phone call is at the mercy of your internet connection——that 引导宾语从句；from...to... 并列举例；at the mercy of 受…支配。译：社会日益数字化，意味着从交燃气费、规划去朋友家的路线到打电话，一切都取决于网络连接。",
+   "option": "正确项 C：growing digitisation≈increasing digitisation 原词、can hardly get by without the internet≈everything is at the mercy of your internet connection；A「觉得放弃网络微妙复杂」答非所问，subtle and complicated 形容 ditching the web 这件事本身，非 privilege 的原因；B「避开仇恨与比较」张冠李戴，那是 Gomez 断网的私人动机；D「成瘾而不自知」无中生有，原文只说 Gomez 自觉像 an addict。",
+   "keyword": "digitisation 数字化；at the mercy of 受…摆布、取决于；opt out of 选择退出；privilege 特权（文中指有条件者才享有的选择）。",
+   "note": "因果题定位后看定位词前一句：digitisation 是因、becomes a matter of privilege 是果；「答案常在因果链的另一侧」是 why 细节题常见布局，勿盯着 privilege 所在句反复读。"
+  },
+  {
+   "question_id": 207,
+   "long_sentence": "定位句 The UK's digital divide has worsened..., so witnessing companies like Facebook championing the metaverse...when schoolchildren are struggling to complete their homework feels particularly irritating——leaving 现在分词作结果状语表「使贫困家庭无宽带」。译：英国数字鸿沟两年间不断恶化，因此看到脸书等公司把元宇宙捧为下一个大前沿、而学童却连作业都难完成，尤其令人恼火。",
+   "option": "正确项 A：digital divide would further worsen≈The UK's digital divide has worsened，metaverse 原词复现——公司力推更依赖网络的元宇宙而穷孩子无网可用，说明鸿沟将被进一步拉大；B「元宇宙概念仍虚幻」无中生有；C「孩子更远离现实世界」无中生有，原文是难完成作业；D「多数家庭没有稳定宽带」以偏概全，原文限定 poorer families。",
+   "keyword": "digital divide 数字鸿沟；champion 熟词僻义：拥护、力推（另义：冠军）；irritating 令人恼火的；exclusion 排斥、被排除在外。",
+   "note": "句意题：irritating 的根源是「推元宇宙的公司 vs 连作业都做不了的孩子」这一反差，指向鸿沟加深，A 的 would worsen 是合理顺承；D 把 poorer families 扩成 most families，程度词 is 排除利器。"
+  },
+  {
+   "question_id": 208,
+   "long_sentence": "定位句 while deleting all social media accounts will undoubtedly make some feel infinitely better, many other people benefit from the strong sense of community that sharing platforms can breed——while 引导让步状语从句；that 定语从句修饰 community。译：虽然删光社交媒体账号无疑会让一些人感觉好得多，但还有许多人从分享平台能培养出的强烈社区感中获益。",
+   "option": "正确项 B：feel connected with others≈benefit from the strong sense of community；A「促进社会平等」正反混淆，原文 digital exclusion is a major threat to societal equality；C「提供数字戒瘾所需设备」张冠李戴，even the concept of a digital detox requires having a device 说的是戒瘾的前提而非平台功能；D「创造虚拟社区」偷换概念，原文是 sense of community。",
+   "keyword": "bear in mind 记住、牢记；sense of community 社区感；breed 孕育、培养；detox 戒瘾、排毒。",
+   "note": "while 让步句重心在主句——「许多人获益」；D 故意保留 community 原词但加 virtual 变味，属原词陷阱；题干 worth bearing in mind 与原文 it's worth bearing in mind 呼应，定位极稳。"
+  },
+  {
+   "question_id": 209,
+   "long_sentence": "定位句 greater resources and initiatives are needed to provide the underprivileged with the connectivity they desperately need to learn, work, and live——被动语态；to provide sb with sth 为目的；they desperately need 为省略 that 的定语从句修饰 connectivity。译：需要更多资源与举措，为弱势群体提供其学习、工作与生活亟需的网络连接。",
+   "option": "正确项 A：Having access to the internet≈connectivity／to be able to switch on in the first place，access 与 connectivity 同义；B「迈向 web 3.0」张冠李戴，Internet access will continue to grow...as we edge further towards web 3.0 只是背景陈述；C「更多教育资源」无中生有，learn 只是上网的用途之一；D「开设更多社交媒体账号」与作者呼吁的方向无关。",
+   "keyword": "connectivity 网络连接≈access；the underprivileged 弱势群体；desperately 亟需地；switch on 接通上网（与 switch off 关闭对举）。",
+   "note": "末段 It's crucial that... 是作者观点句，crucial 对应题干 really important；switch off（社交媒体受害者关闭）与 switch on（数字排斥者接通）对举覆盖两类人群，本题问后者，认准 access。"
+  },
+  {
+   "question_id": 210,
+   "long_sentence": "拆题干：定位句 you cannot but recognize the effect competition is exerting in academics and many other areas of contemporary life——cannot but do 表「不得不、必然」；effect 后接省略关系词的定语从句 competition is exerting。译：你不得不承认竞争正在学术界及当代生活许多领域产生的影响。",
+   "option": "正确项 D：The impact of competition≈the effect competition is exerting，impact≈effect、easy to see≈cannot but recognize；A「关于竞争必然性的分歧」张冠李戴，首段分歧在于 competition is a learned or a genetic component；B「心理学调查的结果」无中生有；C「human drives 的效果」偷换概念，原文 effect 的逻辑主语是 competition 而非 drives。",
+   "keyword": "cannot but do 不得不；exert an effect 施加影响；impact 影响＝effect；genetic 基因的、天生的。",
+   "note": "双重否定 cannot but recognize＝很容易注意到，对应题干 easy to see；C 项借原文 drives 一词混淆施加者，判断「谁 exert 影响于谁」即可排除。"
+  },
+  {
+   "question_id": 211,
+   "long_sentence": "定位句 Thereafter, we are at the mercy of a battle between our base impulses for self-fulfillment and social and cultural norms which prohibit pure indulgence——between...and... 连接 battle 双方；which 定语从句修饰 norms。译：此后，我们便受制于一场拉锯：一方是追求自我满足的基本冲动，另一方是禁止纯粹放纵的社会文化规范。",
+   "option": "正确项 D：Satisfy their own desires while observing social conventions——desires≈base impulses for self-fulfillment、observing conventions≈social and cultural norms、following the initial stage≈Thereafter；A「不产生 drive 的不良影响」无中生有；B「沉迷文化追求」偷换概念，indulgence 恰是被禁对象；C「获得广泛认可」张冠李戴，initial stage 争取的是父母的 attention。",
+   "keyword": "base impulses 基本冲动；self-fulfillment 自我满足；norms 规范≈conventions；indulgence 放纵、沉溺；thereafter 此后。",
+   "note": "时间链定位：Initially→Thereafter 构成两阶段，题干 following the initial stage 锁定 Thereafter 句；D 项的 desires 与 conventions 恰是 battle 双方的同义改写，两个要素缺一不可，只含其一的选项是残缺干扰。"
+  },
+  {
+   "question_id": 212,
+   "long_sentence": "定位句 Thomas Hobbes...is perhaps best remembered for his characterization of the natural world, that is, the world before the imposition of the will of humanity, as being nasty, brutish, and short——that is 插入语给出定义；characterize...as 把…描述为。译：十七世纪大哲学家托马斯·霍布斯最令人铭记的，也许是他把「自然世界」——即人类意志施加之前的世界——描述为肮脏、野蛮而短促。",
+   "option": "正确项 C：free from the rational intervention of humans≈the world before the imposition of the will of humanity，free from 对应 before the imposition；A「被哲学家与人类学家歪曲」过度推断，原文只说人类学新研究认为该观点 may be incorrect，无「有意歪曲」之意；B「在《物种起源》中被歪曲」张冠李戴，Darwin 的著作是 reinforce（强化）这一形象而非 distort；D「如今很少被认可」正反混淆，原文是 still widely held。",
+   "keyword": "imposition 强加；the will of humanity 人类意志；characterization 描述、刻画；pre-rational 前理性的。",
+   "note": "that is 插入语是定义信号，natural world 的内涵紧随其后；D 故意沿用原文 pre-rational world 原词，却把 widely held 反说成 rarely appreciated，识别「原词＋反向」组合即可排除。"
+  },
+  {
+   "question_id": 213,
+   "long_sentence": "定位句 Darwin asserted in The Origin of Species that the struggles he was describing should be viewed as metaphors and could easily include dependence and cooperation——that 引导宾语从句；he was describing 为定语从句；and 并列 viewed 与 include。译：达尔文在《物种起源》中断言，他所描述的斗争应被视为隐喻，完全可以包含依赖与合作。",
+   "option": "正确项 B：Struggles for survival do not exclude mutual support——do not exclude≈could easily include，mutual support≈dependence and cooperation，双重否定与肯定式互为改写；A「所有物种天生依赖他者」绝对化，all＋inherently 过度放大原文；C「竞争与合作作为生存策略权重相当」无中生有，原文未比较两者分量；D「最强物种即适者」张冠李戴，survival of the fittest 是他人总结的短语，Darwin 本人从未使用。",
+   "keyword": "assert 断言；metaphor 隐喻；dependence 依赖；cooperation 合作≈mutual support 相互支持。",
+   "note": "本题考「断言内容」而非他人总结：D 借文中 survival of the fittest 设陷，注意原文明确标注 a phrase Darwin himself never used；B 的 not exclude 与原文 include 是标准正反改写。"
+  },
+  {
+   "question_id": 214,
+   "long_sentence": "拆题干：定位句 Mead's final conclusion was that competitiveness is a culturally created aspect of human behavior, and that its prevalence in a particular society is relative to how that society values it——that 表语从句内含 and 并列的两个 that 从句；be relative to 与…相关。译：米德的最终结论是：竞争性是人类行为中由文化塑造的一面，它在某个社会的盛行程度取决于该社会对它的重视程度。",
+   "option": "正确项 D：culture-bound≈culturally created＋relative to how that society values it，两处信息合并成「态度受文化制约」；A「竞争是人类的天性特征」正反混淆，Mead 恰认为它是文化产物而非天生；B「美国人反对合作」偷换概念，原文是美国人 uniquely praise competition，未说反对合作；C「竞争在西方社会更普遍」过度推断，结论只谈各社会价值取向决定盛行度，未做西方比较。",
+   "keyword": "competitiveness 竞争性；culturally created 文化塑造的；prevalence 盛行、流行；culture-bound 受文化制约的。",
+   "note": "人名＋结论定位：final conclusion 直接给出答案句；前文 Zuni 印第安人重合作轻竞争是例证——「结论在例证之后」此处成立，读段时先找 conclusion/ conclude 信号词。"
+  },
+  {
+   "question_id": 215,
+   "long_sentence": "拆题干：定位句 For research to serve its full purpose, the results must leave the confines of research laboratories and academic journals——for...to do 结构点明条件；leave the confines of 意为「走出…的局限」。译：要让研究充分发挥作用，研究结果就必须走出实验室与学术期刊的局限。",
+   "option": "正确项 D：properly communicated beyond the academic circle≈leave the confines of research laboratories and academic journals；A「研究者了解公众利益」无中生有；B「发表于知名期刊」正反混淆，原文恰说要走出 academic journals；C「创造促进发展的产品」张冠李戴，raising awareness 与 creating products 是研究 benefit society 的一般途径，非 serve its full purpose 的条件。",
+   "keyword": "confines 界限、局限；serve its full purpose 充分发挥作用；communicate 传播、传达（熟词僻义，非通讯）；academic circles 学术界。",
+   "note": "首段设问：题干 How can research serve its full purpose 原样对应 For research to serve its full purpose，定位零成本；B 项拿 prominent journals 混淆——期刊是研究成果的「出发点」而非终点，看清 leave 的方向。"
+  },
+  {
+   "question_id": 216,
+   "long_sentence": "定位句 Even articles freely available are usually written in academic language incomprehensible to the average reader——even 让步强调；freely available 为后置定语；incomprehensible to the average reader 为形容词短语作后置定语修饰 academic language。译：即便是免费可得的文章，通常也以普通读者无法理解的学术语言写成。",
+   "option": "正确项 A：cannot understand the academic language≈written in academic language incomprehensible to the average reader；B「被术语吓退」偷换概念，incomprehensible 是读不懂而非 intimidated（被吓住）；C「不参加会议」答非所问，conferences 是研究者分享成果的场合；D「很难找到期刊」偷换概念，few journals allow everybody to read 是阅读权限问题，非 locate（查找）困难。",
+   "keyword": "freely available 免费可得的；incomprehensible 难以理解的；academic language 学术语言；the average reader 普通读者。",
+   "note": "even 是信号词——「连免费文章都读不懂」说明障碍不在获取而在语言，正是 A 的思路；B 的 jargon 与 academic language 近义但 intimidated 感情色彩过重，近义＋变义是干扰标配。"
+  },
+  {
+   "question_id": 217,
+   "long_sentence": "定位句 For researchers in the tenure-track system, their main goal is winning tenure, which in part can be achieved by getting a number of papers published in prominent journals——动名词 winning tenure 作表语；which 非限制性定语从句指代 winning tenure。译：对终身轨制下的研究者而言，首要目标是赢得终身教职，而这部分可通过在知名期刊发表多篇论文实现。",
+   "option": "正确项 B：top consideration≈their main goal，win tenure 原词复现；A「靠发表论文名利双收」无中生有，发表论文是通向 tenure 的手段，非 thrive 的来源；C「获得领域内认可」偷换概念，目标是 tenure 而非 recognition；D「不得不艰难接触社区」答非所问，community-level outreach is not prioritized 是压力导致的结果而非原因。",
+   "keyword": "tenure 终身教职；tenure-track 预聘／终身轨制；prioritize 优先考虑；outreach 外展、面向社区的工作。",
+   "note": "因果链：Pressures like this mean outreach is not prioritized——压力指向前句 tenure 目标；题干问 reason，答案在 not prioritized 的上游，勿把结果句当原因选项（D 即此陷阱）。"
+  },
+  {
+   "question_id": 218,
+   "long_sentence": "定位句 Engaging with other researchers and the public can lead to unexpected new connections and new ideas that could suggest fruitful new directions for research——动名词短语作主语；that 定语从句修饰 new ideas。译：与其他研究者及公众交流能带来意想不到的新联系与新想法，为研究提示富有成效的新方向。",
+   "option": "正确项 A：identify new research directions≈suggest fruitful new directions for research；B「理解困扰社会的危机」张冠李戴，understand and respond to crises 的对象是 families、policymakers 等公众；C「有效解决社会不公」张冠李戴，address social injustices 是研究传播服务公众的途径；D「与政府机构建立纽带」无中生有，invest in partnerships 是对 institutions 的建议。",
+   "keyword": "lead to 带来、导致；fruitful 富有成效的；flow both ways 双向受益；new directions 新方向。",
+   "note": "题干 benefit researchers themselves 对应 The benefits of sharing findings flow both ways 之后的句子——flow both ways 提示好处分两侧，前文讲公众、本段才轮到研究者，按段落顺序定位即可。"
+  },
+  {
+   "question_id": 219,
+   "long_sentence": "拆题干：定位句 There could be misunderstanding of the findings presented by the researcher because of technical terms. But this can be resolved by engaging the services of professional writers——presented by 为过去分词作后置定语；this 回指 misunderstanding。译：由于专业术语，研究成果可能被误解；这可通过聘请专业写手把研究转化为更通俗的语言来解决。",
+   "option": "正确项 C：correctly understood by the public≈resolve the misunderstanding＋more accessible language，误解被化解即「公众正确理解」；A「满足伦理委员会的强制要求」张冠李戴，mandatory 针对的是与参与者分享结果（opt in or out）；B「译成海外读者可懂的语言」偷换概念，translating into more accessible language 是语体通俗化而非外语翻译；D「被知名期刊接受」无中生有。",
+   "keyword": "misunderstanding 误解；technical terms 专业术语；accessible language 通俗易懂的语言；engage the services of 聘请。",
+   "note": "this can be resolved 的 this 回指 misunderstanding——先因（术语致误解）后果（请人化解）；B 考 translating 熟词陷阱：此处是「转化表达方式」，不是翻译外语，凭 translate＝翻译 的直觉必错。"
+  },
+  {
+   "question_id": 220,
+   "long_sentence": "定位句 But they are a constant source of human anxieties — with a cultural association with witches and wickedness dating back to the middle ages——破折号后 with 复合结构补充缘由；dating back to 现在分词短语表「可追溯到」。译：但蜘蛛一直是人类焦虑的持续来源——它与巫婆和邪恶的文化联想可追溯到中世纪。",
+   "option": "正确项 A：generally misconceived 概括 Fear of spiders is common、its prevalence appears unrelated to any rational assessment of risk、almost all harmless——恐惧缺乏理性依据即「普遍误解」；B「危害作物生长」正反混淆，farmland species 以作物竞争者为食，是有益的；C「厄运的不祥提示」偷换概念，原文是 witches and wickedness 的文化联想；D「结网时刷存在感」张冠李戴，make their presence felt 说的是交配季现身。",
+   "keyword": "misconceive 误解；rational assessment of risk 对风险的理性评估；wickedness 邪恶；date back to 追溯到。",
+   "note": "题干 since the middle ages 对应 dating back to the middle ages；A 的 misconceived 是对「无害却被怕」的归纳——细节题选项有时需一小步概括，抓住 unrelated to rational assessment 即可落地。"
+  },
+  {
+   "question_id": 221,
+   "long_sentence": "拆题干：定位句 with a cultural association with witches and wickedness dating back to the middle ages——association with 表示「与…的联想」；dating back to 现在分词作后置定语，点明延续时间。译：（蜘蛛）带着一种与巫婆和邪恶相关的文化联想，自中世纪延续至今。",
+   "option": "正确项 B：Evil≈wickedness（邪恶），witches 巫婆正是西方文化中的邪恶符号，for centuries≈dating back to the middle ages；A「伤害」偷换概念，原文明说 Spiders in the UK are almost all harmless；C「痛苦」无中生有，sufferers 指恐惧症患者的痛苦，非文化联想内容；D「攻击性」无中生有，原文未提蜘蛛主动攻击人。",
+   "keyword": "association with 与…的联想；wickedness 邪恶＝evil；witch 巫婆；harmless 无害的。",
+   "note": "同义替换直接对位：wickedness→evil 属同根词义转述；A 借前文 harmful 一词反向设陷——原文说 almost all harmless，把否定改成肯定关联是最省力的排除。"
+  },
+  {
+   "question_id": 222,
+   "long_sentence": "定位句 A recent landmark study identified a 75% fall in insect populations between 1989 and 2016, with pesticide use thought to be to blame along with the destruction of wild areas for development——with 复合结构表归因；to blame 意为「应担责」。译：一项里程碑研究发现 1989 至 2016 年间昆虫数量骤降 75%，杀虫剂的使用与荒野因开发被毁被认为是罪魁祸首。",
+   "option": "正确项 C：Chemicals used for killing insects≈pesticide（杀虫剂，pest 害虫＋-cide 杀灭剂），而昆虫正是 spiders' food supply；A「采集昆虫的悠久传统」张冠李戴，long tradition of collecting and observing 解释的是英国蝴蝶被研究最多；B「竞争者快速繁殖」无中生有；D「大量野生动物灭绝」过度推断，destruction of wild areas 是栖息地被毁，非物种灭绝。",
+   "keyword": "pesticide 杀虫剂（pest＋-cide）；landmark study 里程碑式研究；food supply 食物来源；to blame 应负责任的。",
+   "note": "食物链推理：飞虫减少→蜘蛛食物减少→蜘蛛堪忧；题干 partly accounts for 提示找原因之一，with...along with 给出两个原因，C 对应前者即可；chemicals 是 pesticide 的上位词改写。"
+  },
+  {
+   "question_id": 223,
+   "long_sentence": "定位句 But conservationists are most concerned about those varieties that are threatened due to habitat loss and fragmentation, which makes it impossible for them to migrate——that 定语从句限定 varieties；which 非限制性定语从句指代整个主句。译：但保护主义者最担心的，是那些因栖息地丧失与碎片化而受威胁的蜘蛛种类——这使它们无法迁徙。",
+   "option": "正确项 B：certain species of spiders≈those varieties、endangered≈threatened、loss of natural homes≈habitat loss and fragmentation；A「沼泽与荒地受污染威胁蜘蛛」张冠李戴，原文说多数蜘蛛 thrive in marshes and wasteland，未提污染；C「剧毒农药杀死蜘蛛」偷换概念，农药作用于昆虫即蜘蛛的食物；D「越来越多蜘蛛物种失去迁徙能力」偷换概念，impossible to migrate 是栖息地碎片化的后果从句。",
+   "keyword": "habitat loss 栖息地丧失；fragmentation 破碎化；be concerned about 担忧；migrate 迁徙。",
+   "note": "biggest worry 对应 most concerned——最高级定位；B 的 natural homes 是 habitat 的通俗化改写；C 把「食物减少」偷成「蜘蛛被杀」，核对动作的承受者即可排除。"
+  },
+  {
+   "question_id": 224,
+   "long_sentence": "定位句 it would be a good thing if more animal lovers recognised the ways in which spiders are simply terrific——it 形式主语；if 从句为真实条件；in which 介词前置引导定语从句。译：如果更多动物爱好者能认识到蜘蛛其实非常了不起，那将是一件好事。",
+   "option": "正确项 D：more people appreciating spiders' splendour≈more animal lovers recognised...in all their splendour，splendour 原词复现；A「认可蜘蛛独特生态地位」偷换概念，unique status 是 despite 让步里的信息；B「热情超过蝴蝶」正反混淆，原文说 unlikely to attract the same level of enthusiasm as butterflies；C「有足够走廊」张冠李戴，wildlife corridors 是前段政策的期许，非临末愿望。",
+   "keyword": "splendour 光彩、壮丽；recognise 认识到、认可；terrific 极好的；it would be a good thing if... 但愿…就好了。",
+   "note": "作者愿望题：末句 it would be a good thing if... 是建议信号句式；despite／让步结构与主句信息的主次之分是本题关键——A 拿让步内容设陷，优先核对句子重心。"
+  },
+  {
+   "question_id": 225,
+   "long_sentence": "定位句 A special low entrance charge of 2 pounds per person is available to all in full-time education...in organised groups with teachers——be available to 对…开放；up to and including 插入语限定学历范围；in organised groups with teachers 为条件状语。译：全日制学生（直至并含第一学位层次）凡由教师带领组团前来，可享每人 2 英镑的特别优惠票价。",
+   "option": "正确项 C：must be led by teachers≈in organised groups with teachers，led≈with teachers；A「周日上午前往」无中生有，Sunday 12.00-17.45 是开放时间且与团体票无关；B「来自艺术学校」偷换概念，all in full-time education 不限专业门类；D「必须携带证件」无中生有，原文无任何证件要求。",
+   "keyword": "entrance charge 入场费；full-time education 全日制教育；organised group 有组织的团体；admission 入场、入场费。",
+   "note": "应用文细节题：group discounts 对应 Schools and Colleges 栏的 special low entrance charge，优惠前提抓 with teachers；广告类干扰项惯用其他版块信息拼接（如 A 拿 Sunday 时间凑数），核对信息所属版块即可秒排。"
+  }
+ ]
+}
