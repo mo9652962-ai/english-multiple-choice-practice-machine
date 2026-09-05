@@ -89,7 +89,7 @@ onBeforeUnmount(() => { if (timer !== null) window.clearInterval(timer) })
       </div>
       <div class="focus-today">
         <span class="focus-today-item"><Timer :size="13" aria-hidden="true" />今日 {{ todayPomodoros }} 个番茄</span>
-        <span class="focus-today-item">⏱ {{ Math.round(todayFocusMin) }} 分钟</span>
+        <span class="focus-today-item"><Timer :size="13" aria-hidden="true" />{{ Math.round(todayFocusMin) }} 分钟</span>
       </div>
     </div>
 

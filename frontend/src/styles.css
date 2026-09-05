@@ -5049,3 +5049,31 @@ body.ink-landscape::before {
   .achieve-card.earned { animation: none; }
   .typing-dots i { animation: none; opacity: .6; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v24-v32 质量巡检层 (2026-09): 窄屏 / 暗色 / 触控目标 / 字号下限
+   ════════════════════════════════════════════════════════════════ */
+/* R24 窄屏: 倒计时条由横向滚动改为换行 (360px 四条考试不溢出) */
+@media (max-width: 720px) {
+  .exam-countdown-bar { flex-wrap: wrap; gap: 8px 16px; overflow-x: visible; }
+  .countdown-item { font-size: 12.5px; }
+}
+/* R25 暗色: 新增元素的亮色硬编码提亮 */
+:root.dark .cloze-entry-icon { color: var(--accent); }
+:root.dark .tier-diamond { color: #9cc4e4; }
+:root.dark .tier-silver { color: #b8bec4; }
+:root.dark .tier-bronze { color: #cf9257; }
+:root.dark .rank-rule i.tier { background: rgba(255, 255, 255, 0.06); }
+/* R27 移动端触控目标 ≥40px (图标小按钮与 chips) */
+@media (max-width: 720px) {
+  .note-action-btn, .ann-note-close, .drawer-close, .modal-close { min-width: 40px; min-height: 40px; }
+  .ann-bubble-btn, .ai-pick-chip, .vocab-cat-chip, .notes-tag.small, .due-chip { min-height: 40px; }
+}
+/* R28 字号下限: 轴标签 9px→10px, eyebrow 10px→11px */
+.goal-day-label { font-size: 10px; }
+.eyebrow { font-size: 11px !important; }
+/* R29 徽章图标容器 */
+.achieve-icon { display: grid; place-items: center; }
+/* R31 专注/目标细节 */
+.focus-today-item { display: inline-flex; align-items: center; gap: 5px; }
+.goal-day-bar { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25); }

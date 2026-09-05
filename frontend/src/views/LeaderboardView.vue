@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { BarChart3, Gem, Medal, Sprout } from 'lucide-vue-next'
+
+// R30: 段位图标线性化 — 后端 icon 字段(emoji)保留兼容旧版, 前端按名称映射
+const RANK_ICONS: Record<string, any> = { 钻石: Gem, 黄金: Medal, 白银: Medal, 青铜: Medal, 未开始: Sprout }
+function rankIcon(name: string) { return RANK_ICONS[name] || Medal }
 import { onMounted, ref } from 'vue'
 import { get } from '../api'
 
@@ -33,7 +37,7 @@ function maxCount(): number {
         <p class="lead">本周学习战报 · 与自己赛跑，每天进步一点点（多邻国式激励）</p>
       </div>
       <div v-if="data?.level" class="rank-level" :style="{ color: data.level.color }">
-        <span class="rank-icon">{{ data.level.icon }}</span>
+        <span class="rank-icon"><component :is="rankIcon(data.level.name)" :size="30" aria-hidden="true" /></span>
         <b>{{ data.level.name }}</b>
       </div>
     </div>
