@@ -1,0 +1,180 @@
+{
+ "chunk": 60,
+ "items": [
+  {
+   "question_id": 1476,
+   "long_sentence": "空所在句：The plan has also been greeted with skepticism by some computer security experts, who worry that the 'voluntary ecosystem' envisioned by Mr. Schmidt would still leave much of the Internet 19 __。who 引导定语从句说明担忧内容；leave...adj. 使…处于某状态。译：一些计算机安全专家对该计划持质疑态度，他们担心施密特设想的「自愿生态系统」仍会让互联网的大部分区域 __。",
+   "option": "正确项 C vulnerable：自愿而非强制的体系覆盖不全，大部分网络仍易受攻击，vulnerable（脆弱的）与安全专家的 worry 呼应；A manageable 可管理、B defendable 可防御都与「担忧」方向相反；D invisible 不可见与安全议题无关。",
+   "keyword": "vulnerable 易受攻击的＝open to attack；envision 设想＝imagine；leave...+ adj. 使…保持某状态；greet with 以…态度对待。",
+   "note": "担忧句定形容词：worry 之后的状态必是负面的安全隐患，vulnerable 一词定音；manageable 与 defendable 是把担忧读成安心的反向陷阱，invisible 是 security 话题的凑数词。"
+  },
+  {
+   "question_id": 1477,
+   "long_sentence": "空所在句：They argue that all Internet users should be 20 __ to register and identify themselves, in the same way that drivers must be licensed to drive on public roads。in the same way 表类比；drivers must be licensed 为类比基准。译：他们认为所有互联网用户都应被 __ 注册并表明身份，就像司机必须持照才能上路一样。",
+   "option": "正确项 D forced：类比驾照强制持照，批评者主张实名注册须带强制性，forced 与 must be licensed 的强制义对齐；A invited 邀请与施密特的自愿方案无异，起不到批评效果；B appointed 任命对象是人职不是用户行为；C allowed 允许语义过弱，与 argue 的强烈主张不符。",
+   "keyword": "force 强制＝compel；register 注册＝sign up；identify oneself 表明身份；be licensed 持有执照。",
+   "note": "类比结构定力度：must be licensed 是强制标杆，空格动词须同级，forced 恰好；invited/allowed 是「自愿派」的措辞，填入则批评者的论点自我瓦解。"
+  },
+  {
+   "question_id": 1478,
+   "long_sentence": "定位句 But by the end of 2009 Ms. Simmons was under fire for having sat on Goldman's compensation committee; how could she have let those enormous bonus payouts pass unremarked?under fire 遭到抨击；how could... 反问表责难。译：但到 2009 年底，西蒙斯因身在高盛薪酬委员会而遭到抨击——她怎能坐视巨额奖金发放而未置一词？",
+   "option": "正确项 B failing to fulfill her duty：let those enormous bonus payouts pass unremarked（对巨额奖金未加质疑地放行）＝没有尽到外部董事审核之责；A 获取过多利润 无中生有；C 拒绝妥协 无中生有；D 在困难时期离开董事会 张冠李戴，离职是其解释且发生在批评之后。",
+   "keyword": "under fire 遭到抨击＝be criticized；compensation committee 薪酬委员会；payout 支出、付款；unremarked 未被注意的、未受质疑的。",
+   "note": "反问句即指控书：how could she have let... 的责难对象是「不作为」，B 的 failing to fulfill her duty 是它的名词化；批评时点在离职之前，D 把后事当罪名。"
+  },
+  {
+   "question_id": 1479,
+   "long_sentence": "定位句 Outside directors are supposed to serve as helpful, yet less biased, advisers on a firm's board. Having made their wealth and reputations elsewhere, they presumably have enough independence to disagree with the chief executive。supposed to 表应然角色。译：外部董事本应在董事会充当有益而较少偏见的顾问；他们的财富与名望得自别处，想必有足够的独立性去反对首席执行官的提案。",
+   "option": "正确项 D independent advisers：less biased 加 enough independence to disagree＝独立顾问，helpful 对应 adviser 的价值面；A 慷慨的投资者 无中生有；B 无偏见的执行官 偷换概念，advisers 不是 executives；C 股价预测者 张冠李戴，share price falling 只是提供咨询的情境。",
+   "keyword": "outside director 外部董事；biased 有偏见的＝prejudiced；independence 独立性；chief executive 首席执行官。",
+   "note": "角色题抓 supposed to 的定位句：less biased＋independence 两个词合成「独立顾问」；B 用 biased 的近义词 unbiased 换掉了 adviser 的身份，词义对了角色错了。"
+  },
+  {
+   "question_id": 1480,
+   "long_sentence": "定位句 after a surprise departure, the probability that the company will have to restate earnings increases by nearly 20%. The likelihood of being named in a federal class-action lawsuit also increases, and the stock is likely to perform worse。三个后果并列。译：意外离任后，公司随后被迫重述财报的概率上升近 20%；被列入联邦集体诉讼的可能性也增加，股价还可能表现更糟。",
+   "option": "正确项 C do less well in the stock market：the stock is likely to perform worse＝股价表现变差；A 变得更稳定 无中生有；B 报告收益增长 张冠李戴，是被迫 restate earnings（重述收益）不是增长；D 在诉讼中表现更差 张冠李戴，原文是被列入集体诉讼的可能性上升，不是诉讼表现。",
+   "keyword": "surprise departure 意外离任；restate earnings 重述财报；class-action lawsuit 集体诉讼；likelihood 可能性＝probability。",
+   "note": "三后果各配一个选项陷阱：B 把重述偷成增长、D 把被诉偷成败诉，唯有 C 的股价走弱与 perform worse 逐词对应；细节题盯紧动词方向即可。"
+  },
+  {
+   "question_id": 1481,
+   "long_sentence": "定位句 Firms who want to keep their outside directors through tough times may have to create incentives. Otherwise outside directors will follow the example of Ms. Simmons, once again very popular on campus。otherwise 反推条件；incentives 激励。译：想在艰难时期留住外部董事的公司可能不得不创设激励；否则外部董事将步西蒙斯的后尘——她如今在校园里又大受欢迎了。",
+   "option": "正确项 A may stay for the attractive offers from the firm：留住董事需 create incentives＝有吸引力的待遇才能留人，反推董事可能因优厚条件留下；B 常有不良行为记录 无中生有，原文说即便案发时在任也能免于声名受损；C 习惯于无压力工作 无中生有；D 会拒绝公司激励 正反混淆，incentives 正是为留住他们而设。",
+   "keyword": "incentive 激励＝enticement；tough times 艰难时期；reputation 声誉；follow the example of 效仿……的先例。",
+   "note": "推断题抓条件句的隐含交换：公司须出激励→董事看待遇行事，A 是条件句的反向解读；B 利用 wrongdoing 字面设陷，原文恰恰说离任可避开声誉打击。"
+  },
+  {
+   "question_id": 1482,
+   "long_sentence": "全文主线：外部董事应是独立有益的顾问（第二段立论）→ 意外离任预示公司噩耗（第三段实证）→ 公司须以激励留人，否则董事如西蒙斯般抽身（末段建议）。译：作者对外部董事这一角色的态度总体是肯定的。",
+   "option": "正确项 B positive：helpful, yet less biased, advisers 加 enough independence、able to give advice based on weathered crises，作者肯定外部董事的制度价值；A permissive 放任无从谈起；C scornful 轻蔑与立论段褒义相抵；D critical 批评的对象是西蒙斯的失职个案，不是外部董事角色本身。",
+   "keyword": "positive 肯定的＝approving；scornful 轻蔑的＝contemptuous；critical 批评的；weather crises 经历危机。",
+   "note": "态度题分清对象：作者批评的是「未尽责的个别董事」，肯定的是「外部董事」这一设置；首段的 under fire 是引子，第二段才是角色定调段，勿以个案论制度。"
+  },
+  {
+   "question_id": 1483,
+   "long_sentence": "定位句 Newspapers like the San Francisco Chronicle were chronicling their own doom。chronicle 作动词意为「把…载入编年史」，与名词 Chronicles（报纸名）构成双关。译：像《旧金山纪事报》这样的报纸正在记录着自己的末日。",
+   "option": "正确项 D were in a desperate situation：自录末日＝报业已陷绝境，与上句 the end seemed near 呼应；A 忽视危机信号 正反混淆，chronicling 恰是直面记录；B 未获州补贴 张冠李戴， subsidize 只是 FTC 讨论的设想；C 不是慈善公司 张冠李戴，charitable corporations 同为讨论选项。",
+   "keyword": "chronicle 记录、载入编年史；doom 末日、厄运＝downfall；recession 衰退；charitable corporation 慈善机构。",
+   "note": "双关修辞是本题题眼：chronicle 既是报业动作又是报名，报纸「记录自己的死亡」即身处险境；A/B/C 都把首段的背景设问当成了报业事实。"
+  },
+  {
+   "question_id": 1484,
+   "long_sentence": "定位句 Many papers stayed afloat by pushing journalists overboard... Some papers even had the nerve to refuse delivery to distant suburbs. Yet these desperate measures have proved the right ones。by doing 表手段；desperate measures 总括前文。译：许多报纸靠把记者推下水（裁员）才得以漂浮；一些报纸甚至厚着脸皮拒绝向远郊送报。然而这些孤注一掷的措施已被证明是正确的。",
+   "option": "正确项 B newspapers wanted to reduce costs：裁员、减版、停送远郊同属 desperate measures，目的都是压缩成本求生存；A 读者威胁少付钱 无中生有；C 记者对这些地区报道少 张冠李戴，被推下水的是岗位不是选题；D 订户抱怨产品缩水 偷换概念，slimmer products 是结果不是拒送原因。",
+   "keyword": "stay afloat 维持不倒＝keep surviving；push overboard 推下水（喻裁撤）；have the nerve to do 竟敢做；desperate measures 孤注一掷的措施。",
+   "note": "desperate measures 是归纳伞：拒送远郊与裁员并列同一目的——省钱活命；Yet these measures proved right 提示判断标尺是「活下去」，凡脱离成本逻辑的因果都是脑补。"
+  },
+  {
+   "question_id": 1485,
+   "long_sentence": "定位句 Fully 87% of their revenues came from advertising in 2008, according to the OECD. In Japan the proportion is 35%. Not surprisingly, Japanese newspapers are much more stable。Fully 强调比例之高；Not surprisingly 承接因果。译：经合组织数据显示，2008 年美国报纸足足 87% 的收入来自广告；在日本这一比例是 35%。难怪日本报纸稳定得多。",
+   "option": "正确项 C are less dependent on advertising：日本广告收入占比 35% 对美国 87%，对广告依赖更低故更稳；A 有更多收入来源 偷换概念，双方都是读者加广告两类，差别在比例；B 新闻编辑部更均衡 张冠李戴，newsroom 是裁员话题；D 更少受读者影响 正反混淆，日本更倚重读者收入。",
+   "keyword": "revenue 收入＝income；proportion 比例＝percentage；reliance on 对…的依赖；stable 稳定的。",
+   "note": "数字对比定因果：87% 对 35% 的悬殊即依赖度之差，Not surprisingly 一词把比例差与稳定差焊成因果；A 的「更多来源」是把「比例更低」偷成「种类更多」。"
+  },
+  {
+   "question_id": 1486,
+   "long_sentence": "定位句 much of the damage has been concentrated in areas where newspapers are least distinctive. Car and film reviewers have gone... Newspapers are less complete as a result. But completeness is no longer a virtue in the newspaper business。But 转折定性。译：重创主要落在报纸最缺乏特色的版块——车评影评人没了，驻外记者站被狠砍，报纸不再完整；但在报业，完整已不再是美德。",
+   "option": "正确项 A Distinctiveness is an essential feature of newspapers：受创最重处恰是 least distinctive 的版块，反推特色才是报纸的立身之本；B 完整性是失败罪魁 过度推断，原文只说完整不再是美德；C 驻外记者站至关重要 正反混淆，它已被大砍；D 读者对车评影评失去兴趣 张冠李戴，裁撤是报社的自救选择。",
+   "keyword": "distinctive 独特的、有特色的；be concentrated in 集中于；savage 猛烈地砍削；virtue 美德、优点。",
+   "note": "推断题抓 least 的反向信息：被砍的是无特色部分，存活的逻辑就是靠特色，A 是它的正向表述；B 把 But 后的让步夸大成失败原因，注意 virtue 的评价对象。"
+  },
+  {
+   "question_id": 1487,
+   "long_sentence": "全文主线：一年前报业末日论甚嚣尘上（旧金山纪事报自录末日、FTC 两度开会商讨拯救）→ 但全球多数市场危机迹象寥寥，美国报纸不仅存活还多数重归盈利 → 靠裁员瘦身等绝望措施止亏见效 → 收入结构更均衡。译：本文讲美国报业在绝境中挣扎求生并初见起色。",
+   "option": "正确标题是 American Newspapers: Struggling for Survival（挣扎求生）：the end seemed near 的困境与 returned to profit、desperate measures have proved the right ones 的转机合成了「挣扎求生」的主线；Gone with the Wind（随风而逝）与 A Hopeless Story（无望的故事）都被 survived 与 profit 直接否定；A Thriving Business（生意兴隆）又言过其实——裁员减版、记者下岗谈不到繁荣。",
+   "keyword": "survival 生存＝surviving；struggle 挣扎＝strive；return to profit 重归盈利；go under 倒闭。",
+   "note": "标题题抓全文态度拐点：首段渲染死亡预言，But the discussions now seem out of date 一转，正确标题必须同时容纳困境与生路两面；只写惨（Hopeless）或只写好（Thriving）都以偏概全。"
+  },
+  {
+   "question_id": 1488,
+   "long_sentence": "定位句 During the Depression and the war, Americans had learned to live with less, and that restraint, in combination with the postwar confidence in the future, made small, efficient housing positively stylish。in combination with 并列两因素。译：大萧条与战争年代让美国人学会了节俭度日，这种克制加上战后 对未来的信心，使小型高效住宅蔚然成风。",
+   "option": "正确项 C restraint and confidence：made...positively stylish 的主语是 restraint 与 confidence 的结合，住房风格正是这两种心态的映射；A 繁荣与增长 是首段的泛化背景；B 效率与实用 偷换概念，efficient housing 是结果不是民众心态；D 骄傲与忠诚 无中生有。",
+   "keyword": "restraint 克制＝self-restraint；in combination with 加上＝combined with；stylish 时髦的＝fashionable；Depression 大萧条。",
+   "note": "因果句找 made 的主语：克制＋信心造就住房风尚，C 与原词 restraint、confidence 直接对应；B 用房子本身的形容词冒充民众心态，主客要对位。"
+  },
+  {
+   "question_id": 1489,
+   "long_sentence": "定位句 These designers came to exert enormous influence on the course of American architecture, but none more so than Mies。These designers 复指包豪斯人马（密斯等二战前移居美国任教）。译：这些设计师对美国建筑进程施加了巨大影响，其中尤以密斯为甚。",
+   "option": "正确项 D It had a great influence upon American architecture：These designers came to exert enormous influence＝包豪斯人马深刻影响美国建筑；A 由密斯创立 无中生有，原文只说 associated with；B 理念受二战影响 无中生有，二战只是移民时间点；C 多数美国建筑师出身包豪斯 过度推断，受影响不等于出身。",
+   "keyword": "be associated with 与…有关联；emigrate 移居；exert influence on 对…施加影响＝have an impact on；course 进程＝development。",
+   "note": "指代链定答案：These designers 复指包豪斯人马，influence 落在美国建筑上，D 是其改写；C 把「影响美国建筑」偷成「美国建筑师多出身于此」，方向与范围都变了。"
+  },
+  {
+   "question_id": 1490,
+   "long_sentence": "定位句 Mies's signature phrase means that less decoration, properly organized, has more impact than a lot. Elegance, he believed, did not derive from abundance。signature phrase 招牌短语；derive from 源自。译：密斯的招牌短语意指：恰当选用的少量装饰比繁复装饰更有冲击力；他认为优雅并非源自 abundance（繁复堆砌）。",
+   "option": "正确项 C was not reliant on abundant decoration：did not derive from abundance＝优雅不依赖繁复装饰，与 less is more 同构；A 与大空间相关 正反混淆，他设计的空间 small and efficient；B 等同于空旷 正反混淆，原文否定 big and often empty；D 与效率无关 正反混淆，小而高效正是其空间特征。",
+   "keyword": "signature phrase 招牌用语；derive from 源自＝come from；abundance 大量、充裕＝plenty；decoration 装饰。",
+   "note": "less is more 的哲学落点在装饰观：少量恰置的装饰胜过堆砌，C 的 not reliant on abundant 是 derive from abundance 的否定改写；A/B/D 都与第四段的空间表述相反。"
+  },
+  {
+   "question_id": 1491,
+   "long_sentence": "定位句 the apartments... were smaller than those in their older neighbors... But they were popular because of their airy glass walls, the views and the elegance of the details and proportions, the architectural equivalent of the abstract art。equivalent 对应物。译：湖滨路公寓比黄金海岸老楼户型更小；但通透玻璃墙、开阔视野与细部比例之优雅使其大受欢迎——堪称当时抽象艺术的建筑对应物。",
+   "option": "正确项 D They shared some characteristics of abstract art：the architectural equivalent of the abstract art＝这批建筑与抽象艺术有共通特质；A 忽视细节与比例 正反混淆，elegance of the details and proportions 恰是卖点；B 用当时流行材料 张冠李戴，metal 与 glass 在 1940s 象征未来而非流行；C 比邻近建筑宽敞 正反混淆，原文明言 smaller。",
+   "keyword": "equivalent 对应物＝counterpart；abstract art 抽象艺术；airy 通透的；proportion 比例。",
+   "note": "同位语是本题答案句：equivalent of the abstract art 直接给出建筑与抽象艺术的亲缘关系，D 的 shared some characteristics 是 its 改写；B 偷换时间属性，C 与 smaller 相抵。"
+  },
+  {
+   "question_id": 1492,
+   "long_sentence": "定位句 Aesthetic effect came from the landscape, new materials and forthright detailing。come from 引出美学效果的三个来源；landscape 景观。译：「案例研究住宅」的美学效果来自景观、新材料与直率的细部处理。",
+   "option": "正确项是 Natural scenes were taken into consideration（设计将自然景观纳入考量）：landscape 表明自然环境被纳入美学构图，与 come from 的来源列举一一对应；A 机械装置被广泛使用 正反混淆，Rapson 只是 mispredicted 机械革命的影响（few acquired helicopters）；C 细部为整体效果牺牲 正反混淆，forthright detailing 明说细部被坦率呈现；D 采用环保材料 无中生有，new materials 不等于 eco-friendly。",
+   "keyword": "landscape 景观＝natural scenery；aesthetic 美学的；forthright 直率的；detailing 细部处理。",
+   "note": "设计特征题抓效果来源句：come from 后的三项并列就是设计清单，与选项逐一对号；B 是 landscape 的同义展开，C 把 forthright detailing 读反是本题最强陷阱。"
+  },
+  {
+   "question_id": 1493,
+   "long_sentence": "定位句 Now even the project's greatest cheerleaders talk of a continent facing a 'Bermuda triangle' of debt, population decline and lower growth。even 递进强调；cheerleader 拥护者；Bermuda triangle 比喻三重危机。译：如今连欧盟计划最热忱的拥护者都在谈论这片大陆正面临债务、人口下降与低增长的「百慕大三角」。",
+   "option": "正确项 B even its supporters begin to feel concerned：greatest cheerleaders 也谈危机＝连支持者都开始担忧，even 是递进关键；A 市场对欧盟失去信心 正反混淆，失去信心的是 markets 对欧元区经济，主语错位；C 部分成员国计划放弃欧元 无中生有；D 否认贬值可能 张冠李戴，denies the quick fix of devaluation 说的是单一货币机制。",
+   "keyword": "cheerleader 拥护者＝supporter；Bermuda triangle 百慕大三角（喻多灾之地）；chronic 长期的；acute 急性的、严重的。",
+   "note": "even 是程度信号：拥护者尚且唱衰，担忧之深可见，B 的 supporters 与 cheerleaders 同义对应；A 偷换主语，句子主语是欧盟而非市场。"
+  },
+  {
+   "question_id": 1494,
+   "long_sentence": "定位句 It is stuck because the euro zone's dominant powers, France and Germany, agree on the need for greater harmonisation within the euro zone, but disagree about what to harmonise。stuck 陷入僵局；agree...but disagree... 对比结构。译：关于拯救欧洲单一货币免于解体的辩论陷入僵局，因为欧元区主导大国法德两国在「需要更深度协调」上意见一致，却在「协调什么」上分歧重重。",
+   "option": "正确项 C fail to reach an agreement on harmonisation：agree on the need...but disagree about what to harmonise＝就协调本身无法达成一致；A 争夺主导地位 无中生有；B 忙于处理自身危机 无中生有；D 在走向解体的步骤上分歧 张冠李戴，两国都主张救欧元，分歧在协调内容而非解体路径。",
+   "keyword": "be stuck 陷入僵局＝be deadlocked；harmonisation 协调＝coordination；dominant power 主导大国；disintegrate 解体。",
+   "note": "对比句找分歧点：一致的只是「要协调」，分歧的是「协调什么」，C 的 on harmonisation 精准覆盖；D 把 saving the currency 偷成 steps towards disintegration，立场词方向即错。"
+  },
+  {
+   "question_id": 1495,
+   "long_sentence": "定位句 Germany thinks the euro must be saved by stricter rules on borrowing, spending and competitiveness, backed by quasi-automatic sanctions for governments that do not obey。by stricter rules 表手段；backed by 补充保障。译：德国认为必须以更严格的借贷、支出与竞争力规则来拯救欧元，并以对违规政府的准自动制裁作为支撑。",
+   "option": "正确项 B stricter regulations be imposed：stricter rules backed by sanctions＝实施更严格的规则与制裁；A 增加对贫困地区的欧盟资金 正反混淆，德国威胁冻结 EU funds；C 仅由核心成员参与经济协调 正反混淆，德国坚持 involve all 27 members；D 保障成员投票权 正反混淆，德国扬言暂停投票权。",
+   "keyword": "stricter rules 更严格的规则＝tougher regulations；quasi-automatic sanctions 准自动制裁；freeze 冻结；suspension 暂停。",
+   "note": "提案题抓手段句：must be saved by stricter rules 是德国方案的核心，B 逐词对应；A/C/D 三项都是德国主张的反面，把「威胁做某事」误读成「主张做某事」即中招。"
+  },
+  {
+   "question_id": 1496,
+   "long_sentence": "定位句 a system of redistribution from richer to poorer members, via cheaper borrowing for governments through common Eurobonds or complete fiscal transfers。redistribution 再分配；via 表途径。译：（法国主张的）从富国向穷国的再分配体系——通过共同欧元债券让各国政府以更低成本借贷，或进行彻底的财政转移。",
+   "option": "正确项 A poor countries are more likely to get funds：redistribution from richer to poorer members 加 cheaper borrowing＝穷国更易获得资金；B 对穷国实施严格货币政策 张冠李戴，intervening in monetary policy 没有针对穷国的严格化；C 富国易获贷款 正反混淆，cheaper borrowing 面向的是负债的穷国政府；D 富国控制欧元债券 无中生有。",
+   "keyword": "redistribution 再分配；Eurobond 欧元债券；fiscal transfer 财政转移；murmur 低声说、私下抱怨。",
+   "note": "方向词是本题命门：from richer to poorer 的箭头指向穷国，A 顺势而立；C 把 via cheaper borrowing 的受益方换成富国，箭头一反即错。"
+  },
+  {
+   "question_id": 1497,
+   "long_sentence": "定位句 It is too soon to write off the EU. It remains the world's largest trading block. At its best, the European project is remarkably liberal... an ambitious attempt to blunt the sharpest edges of globalisation。write off 唱衰、一笔勾销。译：现在就断言欧盟失败为时尚早。它仍是全球最大的贸易体；处于最佳状态时，欧洲计划相当自由开放——这是一个钝化全球化最尖锐棱角、让资本主义变得温和的宏大尝试。",
+   "option": "正确项 D hopeful：too soon to write off 加 largest trading block、remarkably liberal、make capitalism benign，作者连摆四条积极证据，态度是审慎的乐观；A pessimistic 悲观与 write off 的否定相抵；B desperate 绝望程度更重；C conceited 自负无从谈起。",
+   "keyword": "write off 唱衰、认定失败＝dismiss；trading block 贸易集团；blunt the edges 钝化棱角＝soften；benign 温和的＝harmless。",
+   "note": "末段态度题数积极证据：too soon to write off 是旗帜性表态，后文连用褒义词收束，hopeful 与之同向；A/B 都被末段的开列优点反驳，态度题看收束段的色彩密度。"
+  },
+  {
+   "question_id": 1498,
+   "long_sentence": "定位句 Lansley has alarmed health campaigners by suggesting he wants industry rather than government to take the lead. He said that manufacturers of crisps and candies could play a central role in the Change4Life campaign。play a central role＝contribute significantly。译：兰斯利主张由行业而非政府牵头，令健康活动人士不安；他说薯片糖果制造商可在「为生活而改变」运动中发挥核心作用。",
+   "option": "正确项 E the producers of crisps and candies could contribute significantly to the Change4Life campaign：play a central role in the Change4Life campaign＝可对 Change4Life 运动作出重大贡献，crisps and candies manufacturers＝the producers；A 的 fat taxes 是顶尖医生们的主张，恰是兰斯利反对政府强制的反面；C 的 lecturing 有效 正反混淆，兰斯利批评 Oliver 的 lecturing 不是改变行为的最佳方式。",
+   "keyword": "play a central role 发挥核心作用＝contribute significantly；manufacturer 制造商＝producer；take the lead 牵头；alarm 使不安。",
+   "note": "人物观点题锁定 He said 引语：兰斯利的立场是「行业牵头、政府松手」，E 是其引语的同义改写；C 是他批评别人的话，把批判对象反贴给他是常见设陷。"
+  },
+  {
+   "question_id": 1499,
+   "long_sentence": "定位句 'If we were really bold, we might even begin to think of high-calorie fast food in the same way as cigarettes – by setting strict limits on advertising, product placement and sponsorship of sports events,' he said。in the same way as 表类比；虚拟语气表大胆设想。译：斯蒂芬森说：如果我们真有魄力，甚至可以开始像对待香烟那样对待高热量快餐——严格限制其广告、植入与体育赞助。",
+   "option": "正确项 D cigarette-style warnings should be introduced to children about the dangers of a poor diet：把快餐比作香烟（in the same way as cigarettes）＝用烟盒式警示提醒儿童劣质饮食之害，与首段 leading doctors 的诉求呼应；A 的 fat taxes 是医生群体的集体主张且未出自他口；B 的禁开快餐店是 Bhugra 呼吁的 fast-food-free zones，张冠李戴。",
+   "keyword": "bold 有魄力的；in the same way as 与…同样对待＝treat...like；product placement 产品植入；sponsorship 赞助。",
+   "note": "类比是观点的浓缩：像控烟一样控快餐，正是「香烟式警示」的逻辑源点，D 与首段 demands 里的 cigarette-style warnings 扣合；B 的 fast-food-free zones 属于 Bhugra 段，按人名归位即可。"
+  },
+  {
+   "question_id": 1500,
+   "long_sentence": "定位句 He has also criticised the celebrity chef Jamie Oliver's high-profile attempt to improve school lunches in England as an example of how 'lecturing' people was not the best way to change their behaviour。criticise...as an example of 把…当作反面例证。译：他还批评名厨杰米·奥利弗高调改善英格兰校餐的行动，称它是「说教」并非改变人们行为的最佳方式的例证。",
+   "option": "正确项 C 'lecturing' was an effective way to improve school lunches in England：兰斯利批评的正是奥利弗的校餐行动，反推奥利弗本人相信「说教式改善校餐」行之有效；A 的 fat taxes 与 D 的香烟式警示均出自医生群体的主张，与奥利弗无关；B 的禁开快餐店属 Bhugra 的呼吁。",
+   "keyword": "high-profile 高调的；lecture 说教＝preach；criticise...as 把…批评为；reverse 反推。",
+   "note": "批评句要反着读：被兰斯利当成反例的奥利弗行动，恰说明奥利弗相信说教有用，C 是反推所得；本题人物三方（兰斯利/奥利弗/斯蒂芬森）立场各异，先画阵营再配观点。"
+  }
+ ]
+}

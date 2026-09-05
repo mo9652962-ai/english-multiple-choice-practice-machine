@@ -1,0 +1,180 @@
+{
+ "chunk": 46,
+ "items": [
+  {
+   "question_id": 1126,
+   "long_sentence": "either freely available from the moment of publication, or paywalled for a year or more so that the publishers can make a profit before being placed on general release：either...or... 并列两种开放获取模式；so that 引导目的从句；before being placed on general release 为被动结构。译：英国一半以上的科研成果如今以开放获取条款发表：要么发表即免费可得，要么先设付费墙一年以上，让出版商在全面公开前先盈利。",
+   "option": "正确项 A：paywalled for a year or more so that the publishers can make a profit——开放获取条款给出版商留出盈利空间；B「让科学家发表更容易」无中生有；C「大幅降低出版成本」与向作者收取文章制作费相反；D「解放大学财务负担」与 Yet the new system has not yet worked out any cheaper for the universities 相反。",
+   "keyword": "open access 开放获取；paywall 付费墙；general release 全面公开；article preparation costs 文章制作费。",
+   "note": "题干限定 Paragraphs 5 and 6——答案落在 either...or... 的第二支（付费墙留利）；C/D 的「省钱」方向被 Yet not any cheaper 的转折直接否定，转折后的落点始终是细节题的解题锚。"
+  },
+  {
+   "question_id": 1127,
+   "long_sentence": "labour is provided free in exchange for the hope of status, while huge profits are made by a few big firms who run the market places：in exchange for 表「作为交换」；while 表对比；who run the market places 定语从句修饰 firms。译：劳动被免费提供，换取的只是对地位的期望；而巨额利润则由少数掌控市场的大公司赚走。",
+   "option": "正确项 D：多数人（科学家）免费供稿审稿、少数大公司（Elsevier 们）赚取巨额利润——The few feed on the many 是对这一对比的概括；A「提供试用订阅」无中生有；B「劳动战胜地位」曲解——labor 与 status 是交换关系而非胜负；C「成本控制良好」与 costs rising above inflation 相反。",
+   "keyword": "feed on 以…为食、靠…获利；in exchange for 作为交换；rebalancing of power 权力再平衡；marketplace 市场。",
+   "note": "特征概括题抓末段的 while 对比：free labour 对 huge profits by a few big firms——D 的 the few／the many 双向压缩了对比两端；作者结论 we need a rebalancing of power 恰证「少数汲取多数」的失衡特征。"
+  },
+  {
+   "question_id": 1128,
+   "long_sentence": "But all too often such policies are an insincere form of virtue-signaling that benefits only the most privileged and does little to help average people：virtue-signaling 表「美德标榜」；that 定语从句内 benefits...and does little... 双谓语并列。译：但这类政策往往只是一种不真诚的「美德标榜」，仅惠及最有特权的人，对普通人帮助甚微。",
+   "option": "正确项 A：首段 does little to help average people 加末段 do little to help average women——Lewis 与 Haddad 的议案作为此类政策的样本，对减少性别偏见（惠及普通女性）帮助甚微；B「威胁州政府」无中生有；C「提升女性政治地位」正反混淆——作者恰恰否定其效果；D「大大拓宽职业选择」过度推断。",
+   "keyword": "virtue-signaling 美德标榜；privileged 特权阶层；self-serving 自利的；gender parity 性别均等。",
+   "note": "作者对议案的判断在首段 But 之后与末段 remember that——首尾呼应的「帮助甚微」；C 的干扰是政策宣称的目标，注意「政策想达成的」与「作者评估它能达成的」是两回事。"
+  },
+  {
+   "question_id": 1129,
+   "long_sentence": "California Governor Jerry Brown admitted that the law, which expressly classifies people on the basis of sex, is probably unconstitutional：admit that 宾语从句；which 引导非限制性定语从句；expressly 意为「明确地」。译：加州州长杰里·布朗在签署该法案时承认，这部以性别为依据明确划分人群的法律很可能是违宪的。",
+   "option": "正确项 C：州长自认 probably unconstitutional 加 courts are likely to rule that the law violates the constitutional guarantee of equal protection——可能违背宪法；A「激怒私营业主」无中生有；B「受最高法院欢迎」正反混淆——The US Supreme Court frowns on sex-based classifications（不悦）；D「平息先前争议」无中生有。",
+   "keyword": "unconstitutional 违宪的；equal protection 平等保护条款；frown on 不赞成、皱眉反对；classify on the basis of sex 按性别分类。",
+   "note": "细节判断题用双证据：州长的 probably unconstitutional＋法院可能裁其违反 equal protection；B 的干扰在 Supreme Court 一词——frown on 表明法院态度相反，「点名的机构≠支持该机构」是常见陷阱。"
+  },
+  {
+   "question_id": 1130,
+   "long_sentence": "The number of women on corporate boards has been steadily increasing without government interference：现在完成进行时 has been increasing 表持续增长；without government interference 表「在没有政府干预的情况下」。译：在没有政府干预的情况下，公司董事会中的女性人数一直在稳步增长。",
+   "option": "正确项 D：without government interference 仍 steadily increasing——Catalyst 数据（2010-2015 增 54%）证明政府干预没有必要；A「董事会武断决策之害」张冠李戴；B「宪法保障的重要性」张冠李戴；C「全球公司女性的压力」无中生有，数据谈的是增长不是压力。",
+   "keyword": "mandate 强制令＝quota；interference 干预＝government interference；share 份额；steadily 稳步地。",
+   "note": "例证题看例子的上级设问：But are such government mandates even necessary? ——Catalyst 数据以「无干预也在涨」作答；「设问＋例证」结构中例子永远服务于设问的倾向性答案。"
+  },
+  {
+   "question_id": 1131,
+   "long_sentence": "Requiring companies to make gender the primary qualification for board membership will inevitably lead to less experienced private sector boards：动名词短语 Requiring... 作主语；make A the primary qualification 为复合宾语结构；lead to 导致。译：强制企业把性别当作董事会成员的首要资格，必然导致私营部门董事会经验水平的下降。",
+   "option": "正确项 C：性别成为首要资格→董事会 less experienced（经验不足）加 golden skirt 现象（合格女性储备不足）——不够格的人进入董事会；A「低估精英女性作用」无中生有；B「反对女性参与」正反混淆——作者反对的是配额手段不是女性参与；D「劳资关系紧张」无中生有。",
+   "keyword": "qualification 资格；quota 配额；pool of qualified women 合格女性储备；golden skirt 金裙现象。",
+   "note": "因果链题：primary qualification＝gender→less experienced boards——「资历让位于性别」即不合格者入选；golden skirt（同一批精英女性连占多席）是「人才池不足」的另一佐证，C 的 unqualified 正对 qualified pool 的缺口。"
+  },
+  {
+   "question_id": 1132,
+   "long_sentence": "Next time somebody pushes corporate quotas as a way to promote gender equity, remember that such policies are largely self-serving measures that make their sponsors feel good but do little to help average women：push...as 把…鼓吹为；that 定语从句修饰 measures。译：下次有人鼓吹企业配额是促进性别平等之道时，请记住：这类政策多半是让发起人自我感觉良好的自利措施，对普通女性帮助甚微。",
+   "option": "正确项 B：作者从违宪风险（California probably unconstitutional）、必要性存疑（自然增长已足够）、实效不彰（less experienced boards、golden skirt）三个层面批评配额政策——可推知政策制定须以可行性与实效为首要考量；A「就业中的女性需求应被考虑」无中生有；C「人人应促进社会公正」与批评形式主义的立场错位；D「重大社会问题应成为立法焦点」过度推断。",
+   "keyword": "feasibility 可行性＝practicability；inference 推断；self-serving 自利的；sponsor 发起人。",
+   "note": "推断题从「作者批评的三依据」反推其价值立场：合法性＋必要性＋有效性——共同指向「政策要讲可行」；C/D 属「正确但与论证无关」的干扰，正确推断必须落在文章论证的延长线上。"
+  },
+  {
+   "question_id": 1133,
+   "long_sentence": "the French Senate passed a digital services tax, which would impose an entirely new tax on large multinationals that provide digital services to consumers or users in France：which 引导非限制性定语从句；impose a tax on 对…征税；that provide... 定语从句修饰 multinationals。译：法国参议院通过了一项数字服务税，将对向法国消费者或用户提供数字服务的大型跨国公司征收一项全新的税。",
+   "option": "正确项 C：impose an entirely new tax on large multinationals＝对跨国科技企业征税（GAFA tax 点名 Google、Apple、Facebook、Amazon）；A「规范数字服务平台」偷换概念——是征税不是监管；B「保护法国企业利益」过度推断——税的直指对象是跨国巨头；D「遏制广告影响」无中生有，定向广告只是应税服务之一。",
+   "keyword": "levy 征税＝impose a tax on；digital services tax 数字服务税；GAFA tax GAFA 税；multinational 跨国公司。",
+   "note": "法案目的题抓 impose an entirely new tax on 的宾语——large multinationals；A 的 regulate 与 tax 是「监管 vs 征税」的近义偷换；in other words, multinational tech companies based in the United States 把征税范围说死。"
+  },
+  {
+   "question_id": 1134,
+   "long_sentence": "it has already sparked significant controversy, with the United States trade representative opening an investigation into whether the tax discriminates against American companies, which in turn could lead to trade sanctions against France：with 复合结构表伴随。译：它已引发重大争议：美国贸易代表正调查该税是否歧视美国公司，进而可能招致对法贸易制裁。",
+   "option": "正确项 A：could lead to trade sanctions against France＝可能招致针对法国的反制措施；B「引发国内外批评」偷换——争议来自美国贸易代表，法国内部是 Macron 的支持；C「旨在缓和贸易紧张」正反混淆——它点燃了紧张；D「促使科技巨头退出法国」过度推断，文中无退出之说。",
+   "keyword": "sanction 制裁；discriminate against 歧视；countermeasure 反制措施；in turn 进而。",
+   "note": "题干限定 Paragraph 2——trade sanctions against France 即「反制」，countermeasure 是 sanctions 的同义概括；D 的 quit 是无原文支撑的行为推断，B 的「国内外」双线批评无对应信息。"
+  },
+  {
+   "question_id": 1135,
+   "long_sentence": "they all share a view that the international tax system has failed to keep up with the current economy：share a view that 持有共同观点，that 引导同位语从句；fail to keep up with 跟不上。译：换言之，这些单边措施都持有一个共同观点：国际税收体系未能跟上当前经济的发展。",
+   "option": "正确项 B：has failed to keep up with the current economy＝现行国际税收体系需要升级；A「必须确保重新分配巨头收入」过度推断——共同点是要回征税权，未谈再分配；C「应防止科技巨头垄断」无中生有；D「所有国家应享有平等征税权」偷换——单边措施争的是本国认为应得的征税权，非平等原则。",
+   "keyword": "keep up with 跟上＝catch up with；upgrading 升级＝reform；unilateral 单边的；tax provision 税收条款。",
+   "note": "share a view that 的同位语从句是集体观点的原文锚——「跟不上经济」即「需要升级」；D 的干扰来自各国各自行动的画面，但「各争各的权」推不出「平等权」这一原则性共识。"
+  },
+  {
+   "question_id": 1136,
+   "long_sentence": "France's digital services tax and the American response raise questions about what the future holds for the international tax system：raise questions about 引发对…的疑问；what the future holds 将来会怎样，作介词 about 的宾语从句。译：法国的数字服务税与美国的反应，让人对国际税收体系的未来走向打上了问号。",
+   "option": "正确项 C：美国启动调查、法美针锋相对 raise questions about what the future holds——OECD 力促 2020 年底共识的前景不明；A「遭到美国公司抵制」张冠李戴——发起调查的是 trade representative（政府机构）；B「需立即调整」无中生有；D「需更多国家参与」与 working with 131 countries 相反。",
+   "keyword": "consensus 共识；uncertain prospects 前景不明；raise questions 引发疑问；involved 参与。",
+   "note": "题干限定 Paragraph 5——raise questions about what the future holds 的疑问句式即「前景不确定」；A 把调查主体从美国政府换成公司属主体偷换；D 的干扰数字 131 恰说明参与面已够广。"
+  },
+  {
+   "question_id": 1137,
+   "long_sentence": "France's planned tax is a clear warning: Unless a broad consensus can be reached on reforming the international tax system, other nations are likely to follow suit, and American companies will face a cascade of different taxes from dozens of nations：follow suit 效仿。译：法国此税是明确警告：除非国际税制改革达成共识，否则他国将效仿，美国公司将面临数十国的一连串税收。",
+   "option": "正确项 B：法国率先通过数字服务税、直指 GAFA、其税案成为多国效仿的风向标——France leads the charge（法国带头冲锋）概括全文；A「面临贸易制裁」只是第 2 段的一个可能后果；C「对科技巨头说不」情绪化且只写对抗面；D「要求在数字经济中的角色」无中生有。",
+   "keyword": "lead the charge 带头冲锋；follow suit 效仿＝follow the example；cascade 一连串；trend 趋势。",
+   "note": "标题题抓「主角＋动作＋影响」：法国是主语（率先开征）、数字税是动作、引领国际趋势是意义；A 以单一后果当标题、C 情绪化、D 凭空杜撰——标题必须能覆盖英澳印与欧盟跟进的主体内容。"
+  },
+  {
+   "question_id": 1138,
+   "long_sentence": "This mutual gaze is a major part of the attachment between mother and child：mutual gaze 表「相互对视」；a major part of... 为表语；between mother and child 限定依恋关系的双方。译：这种相互对视是母婴依恋关系的重要组成部分。",
+   "option": "答案 C：41 段从婴儿与母亲的 mutual gaze（依恋）讲到成人 pleasant looking 的 complimentary sign、signal availability and confidence——全段论证「目光接触是友好的社交信号」，与引言首句 can show that you are paying attention in a friendly way 顺承；与 G 区分——aggressive 是引言 But 之后、43 段展开的对抗义，41 段无对抗内容。",
+   "keyword": "mutual gaze 相互对视＝eye contact；attachment 依恋；complimentary 赞许的；signal 信号。",
+   "note": "小标题题先看引言框架：首句 friendly way 与 But antagonistic 给出两个分支，41 先接「友好」分支 C；段末 signal availability and confidence 直接复现小标题关键词 signal——信号词复现是配对铁证。"
+  },
+  {
+   "question_id": 1139,
+   "long_sentence": "Specific brain regions that respond during direct gaze are being explored by other researches, using advanced methods of brain scanning：are being explored 现在进行时被动语态；using... 现在分词短语作方式状语；that respond during direct gaze 定语从句。译：直接对视时产生反应的特定脑区，正被其他研究者用先进的脑扫描方法加以探索。",
+   "option": "答案 E：oxytocin（催产素）hormone、autistic spectrum symptoms（自闭谱系症状）、brain regions、brain scanning——全段都是「目光接触背后的生物因素在被研究」，小标题 are being investigated 与段内 are being explored 的进行时被动呼应；与 D 区分——性格差异是 45 段的 neuroticism 主题，本段讲的是激素与脑区。",
+   "keyword": "oxytocin 催产素；hormone 激素；autistic spectrum 自闭症谱系；brain scanning 脑扫描。",
+   "note": "小标题与段落的时态呼应：are being investigated 对应 are being explored——「正在被研究」的进行时被动是 E 的标志；识别段落中的生物学科词（hormone、brain regions）即可快速配对。"
+  },
+  {
+   "question_id": 1140,
+   "long_sentence": "While eye contact may be a sign of connection or trust in friendly situations, it's more likely to be associated with dominance or intimidation in adversarial situations：while 引导让步对比；be associated with 与…相关联；adversarial 表「对抗性的」。译：虽然在友好情境中目光接触可以是联结或信任的标志，但在对抗情境中它更可能与支配或威吓相关联。",
+   "option": "答案 G：引言 But it can also be antagonistic...signals hostility 与本段 dominance or intimidation、backfire 呼应——目光接触「也」可能是攻击性的，also 呼应 41 段 C 的友好信号构成两分支；与 B 区分——B 的「过多对视显无礼」是社交礼仪层面，本段是对抗情境中的支配与威吓。",
+   "keyword": "aggressive 攻击性的＝antagonistic；dominance 支配；intimidation 威吓；backfire 适得其反。",
+   "note": "also 是 G 的题眼——41 讲友好、43 讲攻击，两分支由引言的 But antagonistic 预告；intimidation／dominance 与 hostility 构成同义链，配标题时认准「also 的递进方向」与引言的分支预告。"
+  },
+  {
+   "question_id": 1141,
+   "long_sentence": "These pauses typically occur at about three per second, and the eyes then jump to another spot, until several important points in the image are registered like a series of snapshots：three per second 每秒约三次；jump to another spot 跳向另一点；like a series of snapshots 明喻。译：这种停顿通常每秒约发生三次，随后目光跳向另一点，直到图像中的几个要点如一连串快照般被记录下来。",
+   "option": "答案 A：pause on one spot at a time 加 three per second、jump to another spot——注视停顿短促，小标题 Eye fixations are brief 中 fixations 是段落 pauses 的术语化改写；与 F 区分——F 说「与陌生人保持对视不自在」是社交感受，本段是眼球运动的生理机制，无陌生人话题。",
+   "keyword": "fixation 注视、凝视；pause 停顿＝brief stop；per second 每秒（频度）；snapshot 快照。",
+   "note": "fixations 与 pauses 的同义替换是本题核心——「每秒三次、不断跳跃」即「短暂」；44 是五段中唯一的生理机制段，抓住频度描述 per second 即可锁定 brief，排除社交感受类的 B/F。"
+  },
+  {
+   "question_id": 1142,
+   "long_sentence": "In people who score high in a test of neuroticism, a personality dimension associated with self-consciousness and anxiety, eye contact triggered more activity associated with avoidance：who score high 定语从句；a personality dimension 为 neuroticism 的同位语；associated with... 过去分词短语作后置定语。译：在神经质测试中得分高的人身上，目光接触触发了更多与回避相关的脑活动。",
+   "option": "答案 D：neuroticism（人格维度）加 people do not only feel different...their brain reactions also differ、negative emotions 的人 look for shorter periods——性格影响人对目光接触的反应；与 B／F 区分——两者讲礼仪与普遍感受，本段聚焦「人格差异」变量；D 的 affect how a person reacts 对应 triggered more activity 与 reactions also differ。",
+   "keyword": "neuroticism 神经质；personality dimension 人格维度；self-consciousness 自我意识；avoidance 回避。",
+   "note": "小标题 D 的 Personality 与段内 a personality dimension 上下义对应——同位语是明示锚；「不同人反应不同」（brain reactions also differ）与 affect how a person reacts 逐点对应，排除讲普遍现象的 B/F。"
+  },
+  {
+   "question_id": 1143,
+   "long_sentence": "It peaks in young adulthood, levels out for a period of time, and then generally starts to slowly decline as we age：三个谓语动词 peaks、levels out、starts 并列；in young adulthood 时间状语；as we age 时间从句。译：流体智力在成年早期达到顶峰，平稳保持一段时间，然后总体上随年龄增长开始缓慢下降。",
+   "option": "正确项 C peaks：peak「达到顶峰」——与 levels out（趋平）、decline（下降）构成「峰→平→降」的人生曲线；A pauses 「暂停」与 levels out 功能重复；B returns 「回归」无先前回落的前提；D fades 「消退」与「先升后降」的时序矛盾。",
+   "keyword": "peak 达到顶峰＝reach a peak；level out 趋于平稳；decline 下降；young adulthood 成年早期。",
+   "note": "曲线词的时序题：peak→level out→decline 必须按「先升后平再降」排列——peak 只能居首；这条曲线是全篇「智力可护」论证的底图，首空定调后 2、3 空的转折都挂在其上。"
+  },
+  {
+   "question_id": 1144,
+   "long_sentence": "then generally starts to slowly decline as we age：generally 作状语表「总体上」；start to slowly decline 为分裂不定式（副词插入 to 与动词间）。译：然后总体上开始随年龄增长而缓慢下降。",
+   "option": "正确项 D generally：流体智力随龄下降是群体的一般趋势，概括副词与科学语体的总体口吻一致；A alternatively 「二者择一地」，无并列选项；B formally 「正式地」与衰退无关；C accidentally 「意外地」——衰退是规律不是意外。",
+   "keyword": "generally 总体上＝on the whole；decline 下降；trend 趋势；inevitable 不可避免的（下文呼应）。",
+   "note": "趋势描述配概括性副词：个体有差异但「总体上」下降，才与下文 But certain changes may not be (inevitable) 的转折兼容；accidentally 与 inevitable 构成反义陷阱——规律性趋势必选 generally 类副词。"
+  },
+  {
+   "question_id": 1145,
+   "long_sentence": "But while aging is inevitable, scientists are finding out that certain changes in brain function may not be：while 引导让步从句；may not be 承前省略 inevitable；that 宾语从句。译：但是，尽管衰老不可避免，科学家们正在发现：大脑功能的某些变化或许并非不可避免。",
+   "option": "正确项 A while：让步——承认衰老必然，转出「某些变化可免」的新发现，But 与 while 双重转折铺垫；B since 表「既然」，两句是让步关系非因果；C once 表「一旦」，条件关系不合；D until 表时间界限，主句无相应持续义。",
+   "keyword": "while 尽管＝although；inevitable 不可避免的；ellipsis 承前省略（may not be）；brain function 脑功能。",
+   "note": "while 让步加 may not be 的省略是本句难点：may not be＝may not be inevitable；since 的干扰在「衰老确是事实」，但句子重心是「变化可抗」的新发现——让步逻辑才能让转折成立。"
+  },
+  {
+   "question_id": 1146,
+   "long_sentence": "One study found that muscle loss and the accumulation of body fat around the abdomen are associated with a decline in fluid intelligence：that 宾语从句；A and B are associated with C 并列主语结构；be associated with 表「与…相关」。译：一项研究发现，肌肉流失与腹部脂肪堆积与流体智力的下降存在关联。",
+   "option": "正确项 B accumulation：accumulation of body fat「脂肪堆积」——与 muscle loss（流失）构成一失一积的身体成分变化；A detection 「探测」，脂肪无需探测；C consumption 「消耗」——堆积恰因消耗不足，且研究变量是堆积量；D separation 「分离」与语境无关。",
+   "keyword": "accumulation 堆积＝build-up；abdomen 腹部；be associated with 与…相关；lean muscle 瘦肌肉。",
+   "note": "muscle loss 与 fat 的对照：流失（loss）对堆积（accumulation）是身体变化的两端；consumption 的干扰在「脂肪消耗」的常识联想，但研究测量的是 higher measures of abdominal fat——变量是堆积量不是消耗量。"
+  },
+  {
+   "question_id": 1147,
+   "long_sentence": "This suggests the possibility that lifestyle factors might help prevent or delay this type of decline：suggest 接名词 possibility 作宾语；that 引导同位语从句；might help prevent or delay 并列谓语。译：这提示了一种可能性：生活方式因素或许有助于预防或延缓这类智力衰退。",
+   "option": "正确项 A possibility：由相关性发现推出「提示可能性」——从相关到干预的审慎推断，might 再加一层不确定；B decision 「决定」——研究不能替人决定；C goal 「目标」与上下文不符；D requirement 「要求」语气过强，超出证据。",
+   "keyword": "possibility 可能性；lifestyle factors 生活方式因素；suggest 提示；hedging 谨慎措辞。",
+   "note": "科学语体的推断链：相关性→suggests the possibility——「提示可能」而非「证明必然」；might 与 possibility 的双重弱断言是科研文章标配，decision/goal/requirement 都越过了证据强度红线。"
+  },
+  {
+   "question_id": 1148,
+   "long_sentence": "lifestyle factors might help prevent or delay this type of decline：prevent or delay 并列谓语；this type of decline 回指 fluid intelligence 的衰退。译：生活方式因素或许有助于预防或延缓这类衰退。",
+   "option": "正确项 A delay：prevent or delay「预防或延缓」为惯用并列——即便防不住也可推迟；B ensure 「确保」——ensure this decline 会变成「确保衰退」，方向反了；C seek 「寻求」衰退不能被寻求；D utilize 「利用」与衰退不搭。",
+   "keyword": "prevent or delay 预防或延缓；decline 衰退；intervention 干预；ward off 避免。",
+   "note": "prevent or delay 的并列逻辑：理想是「防住」、底线是「推迟」，两词递进不矛盾；ensure 的「确保衰退」是方向性错误——宾语的消极义（decline）决定动词必须取「阻止／推迟」向。"
+  },
+  {
+   "question_id": 1149,
+   "long_sentence": "The researchers looked at data that included measurements of lean muscle and abdominal fat from more than 4,000 middle-to-older-aged men and women：that included 定语从句修饰 data；measurements of... 的测量数据；from more than 4,000... 表数据来源。译：研究者查看了包含 4000 多名中老年男女瘦肌肉与腹部脂肪测量数据的数据集。",
+   "option": "正确项 C included：数据集「包含」两类测量数据——included 表数据的内容构成；A modified 「修改数据」无据；B supported 「支持」——是数据被分析，不是数据支持数据；D predicted 「预测」——测量是既有记录而非预测值。",
+   "keyword": "included 包含＝contain；measurement 测量数据；lean muscle 瘦肌肉；data set 数据集。",
+   "note": "data that included 的定语从句说明数据构成：measurements 是被「包含」的对象；modified／supported／predicted 都把数据当作动作的结果或工具，与「查阅既有数据库」的研究设计不符——方法题先还原研究流程。"
+  },
+  {
+   "question_id": 1150,
+   "long_sentence": "and compared that data to reported changes in fluid intelligence over a six-year period：compared A to B 把 A 与 B 比较；reported changes 所报告的变化；over a six-year period 跨六年的时段。译：并将这些数据与六年间所报告的流体智力变化进行了比较。",
+   "option": "正确项 B compared：compare A to B「把 A 与 B 对比」——研究设计是将体脂数据与智力变化对照以寻找相关；A devoted 「奉献」，devote...to 表「致力于」，语义不通；C converted 「转换」，convert...to 表「转变为」，数据并未变形；D applied 「应用」，apply...to 表「应用于」，非本句动作。",
+   "keyword": "compare A to B 把 A 与 B 比较；correlation 相关性；six-year period 六年周期；longitudinal study 纵向研究。",
+   "note": "研究方法动词链：looked at data（查数据）→compared...to...（作对比）→found...（得发现）——compare 是「找相关」的核心步骤；devoted／converted／applied 都能接 to 但语义全偏，方法题按流程顺序选动词。"
+  }
+ ]
+}

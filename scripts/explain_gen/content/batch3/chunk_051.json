@@ -1,0 +1,180 @@
+{
+ "chunk": 51,
+ "items": [
+  {
+   "question_id": 1251,
+   "long_sentence": "定位句 It is believed that around 12,000 to 15,000 caravanserais were built along the Silk Road, although only about 3,000 are known to remain today, many of which are in ruins。although 引导让步状语从句；only about 3,000 are known to remain 为惯用被动表达；many of which 引导定语从句。译：据信丝绸之路沿线约修建了 12000 到 15000 座商队驿站，尽管如今已知仅存约 3000 座，其中许多已成废墟。",
+   "option": "正确项 D although：修建上万座与如今仅存三千之间是让步转折——数量对比的反差必须用 although 缓和；A until（直到）表时间终点，与 remain today 的现存状态不合；B because（因为）因果关系颠倒，存量少不是修建多的原因；C unless（除非）表条件，两句无条件关系。",
+   "keyword": "although 尽管＝while；remain 存留；be known to 已知的；let alone 更不必说（数量反差句式）。",
+   "note": "数字反差是让步信号：1.2-1.5 万与仅 3000 的落差是『量虽大、存者少』结构，先让步后转折；because 类干扰看方向——存量少的原因应是损毁，不是修建多。"
+  },
+  {
+   "question_id": 1252,
+   "long_sentence": "定位句 only about 3,000 are known to remain today, many of which are in ruins。many of which 引导非限制性定语从句修饰 3,000 座残存驿站；be in ruins 成为废墟。译：如今已知仅存约 3000 座，其中许多已成废墟。",
+   "option": "正确项 A ruins：be in ruins（沦为废墟）是描述古建筑残存状态的固定搭配，与『仅存约 3000 座』的沧桑语境衔接自然；B debt（负债）in debt 表财务状态，建筑无债务；C fashion（流行）in fashion 表时髦，与废弃语境相反；D series（系列）in series 表串联连续，与存留状态无关。",
+   "keyword": "in ruins 成为废墟＝in a state of decay；in debt 负债；in fashion 流行中；remain 存留＝survive。",
+   "note": "in + 名词短语辨析看主语：主语是 many of which（许多驿站建筑），能描述建筑状态的是 ruins；fashion 是最常见的 in 搭配干扰，方向为『受追捧』与废墟正相反。"
+  },
+  {
+   "question_id": 1253,
+   "long_sentence": "定位句 The weather in Texas may have cooled..., but the temperature will be high at the State Board of Education meeting... as officials debate how climate change is taught in Texas schools。but 转折连接天气与会议气氛的双关。译：得州天气虽已降温，但本月州教育委员会会议的『温度』将居高不下——官员们要辩论气候变化该如何进课堂。",
+   "option": "正确项 C indicate the atmosphere at the board meeting：temperature will be high 是双关——明写气温、暗指会议气氛紧张（officials debate），天气铺垫只为烘托这场交锋；A 预告政策转向 无中生有，辩论尚未有结果；B 强调气候变化后果 偏离主线，天气是引子不是说酷热危害；D 引起对能源短缺的关注 无中生有，第一段未提能源短缺。",
+   "keyword": "temperature will be high 双关（气温高/气氛紧张）；debate 辩论；State Board of Education 州教育委员会；cool down 降温、缓和。",
+   "note": "开篇天气句是修辞引子：cooled 与 will be high 一降一升制造反差，落点在会议 not 天气本身；判断引子目的看它紧接的 but 主句——后文全部围绕 board meeting 的争论展开。"
+  },
+  {
+   "question_id": 1254,
+   "long_sentence": "定位句 Board members like her 'casually dismiss the career work of scholars and scientists as just another misguided opinion,' says Dan Quinn。dismiss...as 把…斥为；career work 终生事业成果；say 插入语引出观点来源。译：夸 says，像她这样的委员会成员随意否定学者与科学家毕生的研究成果，将其贬为又一种被误导的意见。",
+   "option": "正确项 B She denies the value of scientific work：casually dismiss the career work of scholars and scientists（随意否定学者科学家的毕生工作）＝denies the value of scientific work，dismiss 与 deny 同向；A 夸大现有恐慌 偷换概念，Hardy 引用『对抗恐慌的科学家』是淡化而非夸大；C 不关心儿童 无中生有，她抵制的是课标修改方式；D 观点自相矛盾 无中生有，Quinn 未指其前后不一。",
+   "keyword": "dismiss...as 把…斥为、不屑一顾＝deny the value of；misguided 被误导的；career work 终生研究成果；dispute 强烈反对。",
+   "note": "人物观点题认准引语：Quinn 的话 dismiss...as just another misguided opinion 是唯一依据；A 把 Hardy 自己的 claim（对抗恐慌的科学家很多）与 Quinn 的批评混在一起，分清『谁说的』即可排除。"
+  },
+  {
+   "question_id": 1255,
+   "long_sentence": "定位句 A study... looking at how state public schools across the country address climate change in science classes, gave barely half of US states a grade B+ or higher。looking at... 现在分词作后置定语；barely half 不到一半。译：该研究考察全美各州公立学校科学课如何处理气候变化，结果只有不到一半的州拿到 B+ 或更高评级。",
+   "option": "正确项 A climate education is insufficient at state public schools：barely half of US states a grade B+ or higher 加得州垫底 F，评分整体偏低＝各州公立学校气候教育不足；B 政策制定者缺乏动力 过度推断，研究评的是学校课程不是政策者意愿；C 得州不愿改教材 无中生有，研究未谈改教材的意愿；D 缺乏监督 无中生有，评级体系本身就是一种监督。",
+   "keyword": "barely half 不到一半＝less than half；grade B+ 评级；the worst performers 表现最差者；disproportionate influence 不成比例的影响力。",
+   "note": "数据题抓『评级分布』：barely（勉强、几乎不）自带否定色彩，一半不到 B+ 即普遍不足；C 的得州只说明它是最差州之一并因教材外销影响放大，与『不愿改教材』无涉。"
+  },
+  {
+   "question_id": 1256,
+   "long_sentence": "定位句 Glenn Branch... cautions that setting state-level science standards is only one limited benchmark in a country that decentralises decisions to local school boards。caution that 警告说；decentralise 分权。译：布兰奇警告，在这个把决策权下放给地方学区的国家，制定州级科学标准只是一个有限的基准；即使某州被评为优等也不等于内容真会被教授。",
+   "option": "正确项 C have limited influence：only one limited benchmark 加 that does not mean it will be taught——标准定得再好也管不到课堂，影响力有限；A 需要定期修订 无中生有；B 需要紧急执行 张冠李戴，Branch 说的是标准不等于落实，不是催促执行；D 迎合地方需求 偷换概念，原文说的是决策权下放（decentralises）给地方学区，不是标准去迎合地方。",
+   "keyword": "benchmark 基准、标尺；decentralise 分权、下放；standard 标准；be taught 被教授＝be implemented in classrooms。",
+   "note": "cautions 与 even if 是态度路标：先警告『只是有限基准』再让步『评优也不等于教学』，两处都压低标准的作用；D 的 local 与 decentralise 字面相近，但 cater（迎合）改变了句子的主客关系。"
+  },
+  {
+   "question_id": 1257,
+   "long_sentence": "定位句 even if official guidelines and textbooks reflect scientific consensus, unofficial educational materials that convey more slanted perspectives are being distributed to teachers。even if 让步；slanted 偏颇的；sponsored by 过去分词作后置定语。译：尽管官方指南与教材日益反映科学共识，传递更偏颇视角的非官方教学材料正被分发给教师，其中包括能源行业协会赞助的材料。",
+   "option": "正确项 D can be swayed by external forces：能源行业协会赞助的偏颇材料流进课堂＝外部势力（能源业）能左右教学内容；A 迎合公众主要诉求 无中生有，末段谈的是非官方材料的渗透；B 反映教师个人偏见 偷换概念，slanted perspectives 是材料自带的角度，不是教师个人的偏见；C 可能歪曲能源行业 正反混淆，材料由能源行业赞助，偏向而非歪曲能源业。",
+   "keyword": "slanted 偏颇的、有倾向性的＝biased；sponsor 赞助＝fund；consensus 共识；distribute 分发。",
+   "note": "implied 题看材料的来源与去向：来源＝energy industry associations（利益方），去向＝distributed to teachers（课堂），二者连线即『外部影响教学』；B 与 C 都换了偏见的持有方或受害者，对照 sponsored by 即破。"
+  },
+  {
+   "question_id": 1258,
+   "long_sentence": "定位句 Now, with record-high home prices and historically low inventory... the rental vacancy rate has dropped below 1 percent... 'We are at a crisis level on the supply of rental housing'。with 复合结构表背景；historically low 历史低位。译：如今房价创纪录、房源存量历史低位，新罕布什尔州租房空置率已跌破 1%，租赁住房供应处于危机水平。",
+   "option": "正确项 A Its housing supply is at a very low level：historically low inventory 加 vacancy rate below 1 percent 加 crisis level on the supply of rental housing，三重证据都指向供应极低；B 社区需要资金 无中生有，缺的是房源不是钱；C 空置率缓慢上升 正反混淆，空置率是 dropped below（跌穿）；D 房价受严格管控 正反混淆，房价 record-high（创纪录）恰是失控表现。",
+   "keyword": "inventory 存量房源＝housing stock；vacancy rate 空置率；crisis level 危机水平；record-high 创纪录的。",
+   "note": "首段细节题用『证据叠加』法：房源低、空置率低、供应危机三句互证 A；C 与 D 都是方向反转的经典陷阱——下降说成上升、失控说成受控，核对动词方向即可。"
+  },
+  {
+   "question_id": 1259,
+   "long_sentence": "定位句 The state Legislature recently voted against a bill that would've made it illegal for towns to create legislation restricting short-term rentals。would've made it illegal for sb to do 虚拟含义（法案若通过将使…违法）；restricting 现在分词作后置定语。译：该州议会近期否决了一项法案——若获通过，该法案将使城镇制定限制短租的法规成为违法。",
+   "option": "正确项 D allow a free short-term rental market：法案内容＝让『城镇限制短租』违法，即禁止地方设限，效果是让短租市场自由发展；A 遏制短租投机 正反混淆，法案禁止的是『限制』而非投机；B 保障廉价房供应 无中生有，法案未涉及供应条款；C 惩罚非法住房交易 无中生有，make it illegal 针对的是城镇立法行为，不是交易。",
+   "keyword": "vote against 否决；make it illegal for...to do 使…做某事成为违法；restrict 限制＝regulate；legislation 法规。",
+   "note": "双重否定拆解：bill 使『限制短租』违法→等于保护短租自由；题干问 intended to（法案意图），与它被 voted against（被否决）是两件事，勿把立法机关的否决当成法案目的；A 正是把法案内容读反的典型。"
+  },
+  {
+   "question_id": 1260,
+   "long_sentence": "定位句 'We are at a crisis level on the supply of rental housing,' said Nick Taylor... Without enough affordable housing, 'employers are having a hard time attracting employees, and workers are having a hard time finding a place to live'。without 表条件；have a hard time doing 做某事艰难。译：泰勒说租赁住房供应已到危机水平；可负担住房不足使雇主难以招到员工、工人难以找到住处。",
+   "option": "正确项 B an increase in affordable housing：Taylor 身为劳动力住房联盟执行总监，痛陈 affordable housing 不足引发的招聘与安居两难，自然支持增加可负担住房；对比 Castle（房产经纪人协会 CEO）为短租辩护、强调旅游业的 cyclical effect，A 的追加旅游投资是 Castle 的立场；C 严管房产中介 无中生有；D 对短工的友好政策 偷换概念，short-term rentals 是短租房不是短工，Taylor 关心的是工人住房困境。",
+   "keyword": "affordable housing 可负担住房＝low-cost housing；vacancy 空置；cyclical effect 循环效应；rental 出租（物）。",
+   "note": "立场对比题先分阵营：Taylor（住房联盟）=缺房危机派，Castle（经纪人协会）=短租辩护派；比人物更稳的是比机构立场——为谁的利益说话决定他支持什么；D 利用 short-term 一词制造租房/短工偷换。"
+  },
+  {
+   "question_id": 1261,
+   "long_sentence": "定位句 Issues arise, however, when developers attempt to create large-scale short-term rental facilities—de facto hotels—to bypass taxes and regulations。de facto 事实上的；bypass 规避；disguise...as 把…伪装成。译：然而当开发商打造大规模短租设施——事实上的酒店——以规避税收与监管时，问题就来了；伪装酒店者难道不应像酒店一样被征税监管吗？",
+   "option": "正确项 C The necessity to stop developers from evading taxes：bypass taxes and regulations 加 shouldn't...be taxed and regulated like a hotel（应按酒店征税监管）＝强调阻止开发商逃税的必要；A 升级短租设施的紧迫性 无中生有，Hom 不反对设施本身；B 当地住房市场高效运转 无中生有；D 出租闲置房屋的正确程序 偷换概念，Hom 支持个人出租第二套房（a good thing），强调的是规模化伪装酒店的问题。",
+   "keyword": "bypass 规避、绕开＝evade；de facto 事实上的（拉丁借词）；disguise...as 把…伪装成；regulate 监管。",
+   "note": "转折 however 后是强调重点：前半让步（个人出租是好事），后半矛盾点（开发商假借短租逃税），Hom 的反问句 shouldn't...like a hotel 用疑问表强烈主张；D 项把矛盾点偷换成出租程序，核对Issues arise 的宾语即可。"
+  },
+  {
+   "question_id": 1262,
+   "long_sentence": "定位句 Hom said similar registration requirements could benefit struggling cities and towns, but 'if we want to make a change in the housing market, the main one is we have to build a lot more.'。but 转折；the main one is 主系表强调根本措施；struggling 挣扎求存的。译：霍姆说类似的登记要求能让困境中的城镇受益，但要想真正改变住房市场，主要的办法是必须大量增建住房。",
+   "option": "正确项 D an inadequate solution：could benefit...but the main one is to build a lot more——登记制度有益但非主要解法＝不够充分的应对；A 不理智的决定 正反混淆，她说 could benefit；B 不可行的提案 无中生有，未谈可行性；C 不必要的措施 正反混淆，有 benefit 就不是不必要，只是不充分。",
+   "keyword": "benefit 使受益＝help；inadequate 不充分的＝insufficient；make a change 带来改变；the main one 主要的（措施）。",
+   "note": "评价题抓 but 后的程度定位：肯定（benefit）加主次之分（main one is build more）=『有用但不够』；A/B/C 三项要么全盘否定要么质疑必要，都越过了『部分肯定』这条线，inadequate 恰好落在中间。"
+  },
+  {
+   "question_id": 1263,
+   "long_sentence": "定位句 Both of these books are published next week by Penguin Random House (PRH), a company currently involved in a stand-off with Waterstones。a company... 为 PRH 的同位语；currently involved in a stand-off 卷入对峙。译：这两本书都将于下周由企鹅兰登（PRH）出版——这家公司目前正与水石书店陷入对峙。",
+   "option": "正确项 A an ongoing conflict：currently involved in a stand-off（当前陷入对峙）＝正在进行的冲突，两本书找不到只是引子，引出 PRH 与水石的纠纷主线；B 思想概念 无中生有；C 普遍情绪 无中生有；D 文学现象 偷换概念，stand-off 是出版商与书店的商业博弈，不是文学创作现象。",
+   "keyword": "stand-off 对峙、僵局＝conflict/standstill；be involved in 卷入；prominent 显眼的；retire...to 使退至。",
+   "note": "开篇例子的作用看例子后第一句：both of these books 之后紧跟 involved in a stand-off，例子的任务就是引入冲突；用 conflict 视角读第二段的 credit limit 即可贯通全文。"
+  },
+  {
+   "question_id": 1264,
+   "long_sentence": "定位句 The problem began... when PRH confirmed that it had introduced a credit limit with Waterstones... branch managers were told to remove PRH books from prominent areas... 'quietly retiring them to their relevant sections'。credit limit 信贷限额；prominent areas 显要位置。译：问题始于 PRH 设信贷限额后，分店经理被要求把 PRH 书从显要位置撤下、悄悄退回书架。",
+   "option": "正确项 C To respond to PRH's business move：PRH 先设 credit limit 施压（商业动作），水石再撤书回架（回应），The problem began...when 的因果链明确；A 使其容易被注意 正反混淆，从 prominent areas 撤下正是降低曝光；B 遵从 PRH 的要求 张冠李戴，PRH 限的是信贷，没有要求书店撤书；D 系统性整理书架 无中生有，retire 是『撤下』不是整理。",
+   "keyword": "credit limit 信贷额度；prominent 显要的＝noticeable；retire...to 使退到、撤回；respond to 回应＝in reaction to。",
+   "note": "时序词锁定因果：began...when PRH introduced（因）→ managers were told to remove（果），先因后果一气呵成；A 与原文 prominent 反向，B 把信贷动作偷换成撤书指令，均可用时序核对。"
+  },
+  {
+   "question_id": 1265,
+   "long_sentence": "定位句 'We are hopeful with our shops now open again that normality will return and that we will be allowed to buy appropriately. Certainly, our shops are exceptionally busy.'。be hopeful that 抱有希望；normality 常态；surpass 超过。译：发言人称，随着门店重新开业，他们期望一切恢复正常、能被允许正常采购；门店生意异常红火，五月图书销量超过 2018 年以来任何一个月。",
+   "option": "正确项 B The credit limit will be removed：We will be allowed to buy appropriately（被允许正常采购）加 normality will return（恢复常态），言外之意是信贷限制有望解除；A 顾客依然忠诚 偷换概念，busy 与 sales 高说明生意好，不等于顾客忠诚度；C 库存被低估 无中生有，发言人承认 lower overall levels of stock；D 图书市场相当低迷 正反混淆，exceptionally busy 与 surpassed 表明生意兴隆。",
+   "keyword": "normality 常态＝business as usual；be allowed to 被允许＝permission restored；exceptionally busy 异常繁忙；slack 萧条的、清淡的。",
+   "note": "seem to convey 提示读言外之意：发言人不说『希望解除限额』而说『希望恢复正常采购』，同一件事的两副面孔；D 与 busy 直接相抵，A 用生意好偷换顾客态度，注意区分销量数据与情感词汇。"
+  },
+  {
+   "question_id": 1266,
+   "long_sentence": "定位句 In the meantime, PRH authors have been the losers... it's those mid-list authors, who normally rely on Waterstones staff's passion for promoting books by lesser-known writers, who will be praying for an end to the dispute。强调句 it's...who 突出 mid-list authors。译：PRH 作者成了输家：大牌受损有限，依赖店员热情推广无名作家作品的中游作者只能祈祷纷争早日结束。",
+   "option": "正确项 A Sales of books by mid-list PRH writers fall off considerably：书被撤出展台橱窗，中游作家失去店员推广这个主渠道，销量大幅下滑是 dispute 的直接后果；B 无名作家成为批评靶子 无中生有，没人批评他们；C 店员犹豫推广大牌作家 张冠李戴，依赖店员热情的是 mid-list 作者，大牌 suffer a bit 而已；D 水石分店收入剧减 无中生有，发言人还说门店 exceptionally busy。",
+   "keyword": "mid-list 中游的（知名度一般的）；rely on 依赖＝count on；lesser-known 知名度较低的；fall off 下跌＝slump。",
+   "note": "强调句 it's those mid-list authors...who 是命题靶心：谁受害最重=中游作家；受害机制是失去『店员热情推广』的曝光渠道，所以销量下滑；C/D 分别错置了受害者与受损方。"
+  },
+  {
+   "question_id": 1267,
+   "long_sentence": "定位句 'This is all part of a wider change towards concentration of power,' says literary agent Andrew Lownie... it also needs a plurality of ways of delivering... different voices。concentration of power 权力集中；plurality 多元性；casualty 牺牲品。译：这一切都是权力集中这一更大变化的一部分；出版业同样需要传播思想与不同声音的多元渠道，这种多元性会不会成为牺牲品，拭目以待。",
+   "option": "正确项 D The merger of publishers is a worrying trend：PRH 与 Simon & Schuster 并购→权力集中（concentration of power）→多元性可能沦为牺牲品（a casualty），Lownie 对集中化的担忧贯穿两段；A 小出版社应抱团 无中生有；B 大出版商将失去主导 正反混淆，趋势恰恰是集中壮大；C 出版业日子难过 过度泛化，Lownie 批评的是集中化，不是说全行业困境。",
+   "keyword": "concentration of power 权力集中＝consolidation；plurality 多元性＝diversity；casualty 受害者、牺牲品；merger 并购。",
+   "note": "观点题抓比喻与反问：a casualty（牺牲品）一词已亮明态度；把 merger（第五段）与 concentration（Lownie 的话）连起来即得 D；B/C 都是围绕 industry 的泛化选项，不如 D 精准对应并购话题。"
+  },
+  {
+   "question_id": 1268,
+   "long_sentence": "定位句 The careers of scientists and the reputation of their institutions depend on the number and prestige of the papers they produce, but even more so on the citations attracted by these papers。depend on A, but even more so on B（取决于A，但更取决于B）；attracted by 过去分词作后置定语。译：科学家的职业生涯与其机构的声誉，取决于他们发表论文的数量与声望，但更取决于这些论文吸引到的引用。",
+   "option": "正确项 B how many times their papers are cited：the citations attracted by these papers（论文吸引的引用）＝论文被引用的次数，even more so 强调这一权重最高；A 作品包含多少引用 偷换概念，contain 指论文里引了别人多少次，attracted 指被别人引用多少次，方向相反；C 共事者的声望 无中生有；D 在学术圈的地位 无中生有，原文说的是论文的 prestige 不是人的地位。",
+   "keyword": "citation 引用＝reference by others；attract citations 吸引引用＝be cited；even more so 更是如此；prestige 声望。",
+   "note": "attract 的主宾方向是本题命门：论文 attract citations（被引），不是论文 contain citations（引他）；A 与 B 一字之差考的就是主动与被动；even more so 的递进提示『引用次数』是最关键的生涯决定因素。"
+  },
+  {
+   "question_id": 1269,
+   "long_sentence": "定位句 Recently, another expression of this predatory behavior has emerged: so-called support service consultancies... sometimes advise contributors to add a number of citations to their articles。advise sb to do 建议某人做某事；predatory 掠夺性的。译：近来掠夺性行为又出现新形态：一些向作者与期刊提供语言编辑支持的咨询公司，有时会建议投稿人给文章添加一定数量的引用。",
+   "option": "正确项 C ask authors to include extra citations：advise contributors to add a number of citations to their articles 的同义改写，contributors＝authors、add citations＝include extra citations；A 无中生有，它们提供的是语言与编辑支持；B 张冠李戴，识别 suspicious citation patterns 的是 2016 年的算法；D 张冠李戴，互引是 citation cartels 中作者群体的行为，咨询公司只是让作者加引用。",
+   "keyword": "consultancy 咨询公司；advise sb to do 建议某人做＝ask/urge sb to do；contributor 投稿人＝author；predatory behavior 掠夺性行为。",
+   "note": "定义句就是答案句：such-so-called 支持服务咨询公司后紧跟 advise...to add citations，照抄语义即可；B/D 都把其他主体的行为（算法、互引团伙）安到咨询公司头上，核对动作发出者即可排除。"
+  },
+  {
+   "question_id": 1270,
+   "long_sentence": "定位句 These journals can act as milk cows where every single article in an issue may cite a specific paper... Such practices can lead an article to accrue more than 150 citations in the same year that it was published。act as 充当；where 引导定语从句；accrue 累积。译：这些期刊可充当「奶牛」——一期刊物里每篇文章都可能引用某篇特定论文；这种做法能让一篇文章在发表当年就累积超过 150 次引用。",
+   "option": "正确项 A boost citation counts for certain authors：every single article may cite a specific paper（每篇文章都引用同一篇特定论文）＝为特定作者的论文刷高引用数，150 citations in the same year 是效果佐证；B 帮学者低成本发文 无中生有；C 指导新手作者引用 无中生有；D 提高新期刊阅读量 无中生有，且后文明说该期刊编辑所在期刊毫无盈利（not profiting at all），动机不在经营期刊。",
+   "keyword": "milk cow 奶牛（比喻榨取工具）；accrue citations 累积引用；specific paper 特定论文；in the same year 当年。",
+   "note": "比喻题找机制句：milk cow 的功能藏在 where 从句里——全员引用一篇特定论文；再验数据（150 citations 当年达成）与反常点（本刊不盈利、只为他刊供引用），A 的 boost...counts 与 accrue 同义对应。"
+  },
+  {
+   "question_id": 1271,
+   "long_sentence": "定位句 Scopus itself has all the data necessary to detect this malpractice. Red flags include a large number of citations to an article within the first year。have the data necessary to do 拥有做某事所需的全部数据；red flags 危险信号。译：Scopus 本身拥有识别这种舞弊所需的全部数据；危险信号包括一篇文章在发表第一年内引用数畸高。",
+   "option": "正确项 B It has the capability to identify suspicious citations：has all the data necessary to detect this malpractice＝具备识别可疑引用的能力，red flags 是识别的具体线索；A 培育引用供应商间的竞争 无中生有；C 阻碍『国际』期刊增长 正反混淆，Scopus 收录了大量新『国际』期刊（includes a high number of），反而成为被操纵的目标；D 它为防止引用操纵而建 过度推断，Scopus 是引用数据库，不是为防操纵专门设立，只是有能力检测。",
+   "keyword": "detect 识别、发现＝identify；malpractice 舞弊、不当行为；red flag 危险信号；database 数据库。",
+   "note": "capability 题看 has all the data necessary to：能力=数据+信号（red flags），B 是能力层面的忠实改写；D 把『能查』拔高成『为此而建』，属目的型过度推断，注意 establish 的主语与初衷。"
+  },
+  {
+   "question_id": 1272,
+   "long_sentence": "定位句 when an editor, a reviewer, or a support service asks you to add inappropriate references, do not oblige and do report the request to the journal。do not oblige 不要照办；do report 祈使句用 do 加强语气；inappropriate references 不当引用。译：当编辑、审稿人或支持服务机构要求你添加不恰当的参考文献时，不要照办，并且务必把这一要求报告给期刊。",
+   "option": "正确项 D Reveal their misconduct：do report the request to the journal（务必上报该要求）＝揭露操纵者的不当行为，do not oblige 从反向配合；A 采取法律行动 无中生有；B 要求道歉 无中生有；C 寻求专业建议 无中生有，文中的 advice 是操纵者的诱导，不是作者的对策。",
+   "keyword": "oblige 照办、答应要求；report...to 向…举报＝reveal/expose；祈使句 do + 动词表强调；inappropriate 不恰当的。",
+   "note": "对策题抓 do not...and do...的祈使对仗：不照办+上报，两个动作合起来就是『揭发』；A/B/C 都是文中完全没出现的行动，细节题最后一段最后一句出答案的规律再次应验。"
+  },
+  {
+   "question_id": 1273,
+   "long_sentence": "答案段 B：Two centuries ago, the idea of preserving nature, rather than exploiting it, was a novel one to many US settlers. One of the turning points... came in the form of vivid photographs。主干 turning points came in the form of vivid photographs；rather than 而非。译：两个世纪前，保护自然而非开发自然的观念对许多美国拓荒者还很新鲜；公众支持土地保护的转折点之一，以生动照片的形式到来。",
+   "option": "答案 B 段居首（41 框）：Two centuries ago 交代时代背景开篇，提出保护自然观念之新；末句 came in the form of vivid photographs 点出『照片』这一转折点，与紧随其后的 A 段（已定）首句 the 150th anniversary of a series of Yellowstone photographs（Jackson 的照片）词汇复现、由抽象到具体；干扰判断：A 若居首则缺『为什么要讲照片』的背景铺垫，C 的 these visuals、D 的 Throughout the trip、G 的 The bill 都依赖前文实体，均不能开头。",
+   "keyword": "novel 新颖的＝new；turning point 转折点；conservation 保护（≠exploitation 开发）；in the form of 以…的形式。",
+   "note": "排序题首段找『时间背景+全文主旨句』：B 同时具备 Two centuries ago 的时间锚点与 photographs 的主旨引线，是唯一无指代依赖的段落；排除法验证其余段首都有 this/these/the bill 类回指。"
+  },
+  {
+   "question_id": 1274,
+   "long_sentence": "答案段 F：Though Native Americans... had long recognized the area's riches, most Americans did not. That's why Hayden's expedition... the team also included artists... charged with capturing this astounding natural beauty。Though 让步；be charged with 被委以。译：尽管印第安人等早已知晓此地富饶，多数美国人并不了解——这正是海登考察队的由来；团队还包括受命记录自然之美的画家莫兰与摄影师杰克逊。",
+   "option": "答案 F 段居 42 框（A 与 E 之间）：A 末句 The team included a meteorologist, a zoologist, a mineralogist...（科学家阵容）与 F 的 In addition to the entourage of scientists, the team also included artists（科学家之外添艺术家）直接咬合，F 末句 Jackson 受命拍摄又为 E 段 The journey officially began（考察启程）铺路，构成『组队→出发』链条；强干扰 C 谈 Hayden 向议员分发照片，须在照片产生（D 段）之后，不能插在这里。",
+   "keyword": "entourage 随行队伍；be charged with 被委以＝be assigned to；astounding 惊人的；flora and fauna 动植物。",
+   "note": "衔接靠『团队名单的递进』：A 列科学家→F 补艺术家（In addition to）→E 启程，三段构成完整的事件链；排序题抓这种列举式咬合最可靠；C/G 都在事件后段，出现即错位。"
+  },
+  {
+   "question_id": 1275,
+   "long_sentence": "答案段 D：Throughout the trip, Jackson juggled multiple cameras and plate sizes using the collodion process... captured dozens of striking photos... these vivid photographs were another thing entirely。juggle 同时应对；While 对比。译：整个旅途中，杰克逊用火棉胶法同时摆弄多台相机与多种底片，靠经验猜曝光；尽管困难重重仍拍下数十张震撼照片——从老忠实喷泉到营地快照；老手虽已用文字详述美景，这些鲜活照片完全是另一回事。",
+   "option": "答案 D 段居 43 框（E 与 H 之间）：E 段交代旅程（1871 年 6 月 8 日自奥格登启程、历时近四个月、秋收队）→D 的 Throughout the trip 承接『旅途』展开拍摄细节；D 末句 these vivid photographs 又被 H 段首句 these images provided documentary evidence 指代承接，前后双钩；强干扰 C：向议员分发放大照片须以照片已拍成为前提，只能排在 D 与 H 之后（C 段 capitalise on the expedition's stunning visuals），放 43 框则 H 的 these images 无所指。",
+   "keyword": "juggle 同时应对；collodion process 火棉胶（湿版）摄影法；portable darkroom 手提暗房；striking 震撼的＝vivid。",
+   "note": "本空靠『指代链』定位：E（启程）→D（旅中拍成照片）→H（these images 作证），D 是唯一同时被 E 的时间线接纳、又能为 H 提供先行词的段落；these 指代是排序题最强的接缝剂。"
+  }
+ ]
+}

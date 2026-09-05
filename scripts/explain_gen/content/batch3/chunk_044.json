@@ -1,0 +1,180 @@
+{
+ "chunk": 44,
+ "items": [
+  {
+   "question_id": 1076,
+   "long_sentence": "In France, shareholders who hold onto a company investment for at least two years can sometimes earn more voting rights in a company：who 定语从句修饰 shareholders；hold onto 表「持有不卖」；at least 表最低限度。译：在法国，持有某公司投资至少两年的股东，有时能在该公司获得更多投票权。",
+   "option": "正确项 C：美国 Sarbanes-Oxley 法案延迟高管奖金、法国长期持股换更多投票权，两例都是鼓励 long-termism 的具体手段；A「防止短期主义的障碍」偷换概念，例子是可行做法而非困难；B「长期思维的重要性」过于宽泛，例子展示的是方法不是意义；D「短期思维的盛行」与例证方向相反——那是第 2-4 段的内容。",
+   "keyword": "hold onto 持有、保住；voting rights 投票权；tax code 税法；disclosure 披露。",
+   "note": "例证题答案在例子的上级观点句：such as changes in the tax code 之前的 Much more could be done to encourage long-termism 是总起；比较美法两例的共同点（都在拉长持有或考核周期）即可锁定「促进长期主义的途径」。"
+  },
+  {
+   "question_id": 1077,
+   "long_sentence": "society has an interest in their performance, not just for the short term but for the long term：has an interest in 表「对…有关切、利害」；not just...but... 并列两个时间维度。译：英国的新规提醒银行家：社会关注的不仅是他们的短期表现，还有长期表现。",
+   "option": "正确项 B：全文批判「孩子挑李子马上吃」式的金融急躁、推崇长期决策——Patience（耐心）是 long-termism 的具象词，Corporate Virtue 呼应对银行家与高管的提醒；A「季度资本主义的失败」程度过度，文中只述其弊端；C「高管需要的果决」偷换概念，decisiveness 与耐心无涉；D「冒风险银行家的沮丧」张冠李戴，全文谈监管不谈情绪。",
+   "keyword": "patience 耐心＝long-termism 的关键词；virtue 美德；quarterly capitalism 季度资本主义；compensation design 薪酬设计。",
+   "note": "标题题抓正面中心词：文章的结构是「批短期主义、立长期主义」，正题落在 patience；股票持有期从 7 年缩到 7 个月与布丁比喻都是「没耐心」的证据链——标题须扣耐心而非某一层的 quarterly capitalism。"
+  },
+  {
+   "question_id": 1078,
+   "long_sentence": "主干 Grade inflation is often considered a product of a consumer era；破折号内 the gradual increase in average GPAs 为同位语解释；in which 引导定语从句修饰 era；to be pleased 作 customers 的后置定语。译：分数膨胀——过去几十年平均绩点的逐渐攀升——常被视为高等教育消费时代的产物：在这个时代，学生被当作需要取悦的顾客。",
+   "option": "正确项 D：a product of a consumer era（消费时代的产物）＝consumer culture 的影响，同义改写；A「课程目录的变化」张冠李戴——被埋进目录的是 grade forgiveness 政策，目录本身没变；B「学生对绩点漠不关心」无中生有；C「大学忽视绩点」无中生有，大学恰恰高度在意。",
+   "keyword": "grade inflation 分数膨胀；consumer era 消费者时代；GPA 绩点；treat...like... 把…当作…对待。",
+   "note": "cause 题对应原文 product of a consumer era；B/C 属「编造因果」型无中生有——分数通胀的原因在时代文化而非态度；in which 从句里 customers to be pleased 是消费文化的注脚，取悦顾客正是给分放水的动因。"
+  },
+  {
+   "question_id": 1079,
+   "long_sentence": "主干 it was usually limited to freshmen；When this practice first started 为时间状语从句；to give them a second chance 不定式作目的状语；if they struggled 为条件从句。译：这项做法几十年前刚兴起时，通常仅限于大一新生——为的是当他们适应大学课程遇到困难时，给他们一次重修的机会。",
+   "option": "正确项 A：struggled in their transition to college-level courses＝适应大学学习有困难，second chance 即帮助其过渡；B「维持毕业率」与 D「增加学费收入」偷换概念——那是近年加速推广的动机（keep students in school and improve graduation rates），非最初目的；C「为有挑战的未来做准备」无中生有。",
+   "keyword": "original purpose 最初目的；freshman 大一新生；transition 过渡、适应；second chance 第二次机会。",
+   "note": "original 限定词要求区分「起源动机」与「当前动机」：first started decades ago 是时间锚，起源只为帮新生适应；毕业率与学费是近年加速阶段的动因——时间分层是本题的唯一解法。"
+  },
+  {
+   "question_id": 1080,
+   "long_sentence": "主干 state funds are sometimes tied partly to their success on metrics；be tied to 表「与…挂钩」；such as 后举 graduation rates 与 student retention 两例；by boosting figures 方式状语插入；破折号后 so 引出结论。译：对公立院校而言，州拨款有时部分与毕业率、学生留存率等指标挂钩——因此更好的成绩可以通过推高这些数字，意味着更多经费。",
+   "option": "正确项 A：state funds...mean more money＝获得更多财政支持（financial support）；B「扩大招生」偷换概念——retention 是「留住已入学学生」不是新招；C「提高教学质量」无中生有，better grades 只是数字变化；D「满足地方政府需要」张冠李戴，是资金与指标挂钩的机制，不是迎合政府。",
+   "keyword": "be tied to 与…挂钩；state funds 州拨款＝financial support；retention 留存率；metrics 指标。",
+   "note": "题干限定 Paragraph 5——state funds...mean more money 一句即答案；B 的干扰来自 student retention，但 retention（留存）与 enrollment（招生）是两个指标，近形概念辨析是本题暗考点。"
+  },
+  {
+   "question_id": 1081,
+   "long_sentence": "第一句 Since 引导原因状语从句，主句用形式主语 it is in the best interest of a school to turn out graduates...；破折号后 or at least appear to be 为省略补充；第二句 aligned 意为「一致」。译：既然学生和家长期待文凭能带来工作，学校培养尽可能合格——或至少看起来合格——的毕业生便符合其最大利益；在这一点上，学生与大学的动机似乎是一致的。",
+   "option": "正确项 C：双方动机同向——学生要文凭换工作、学校要毕业生合格以保声誉与经费，aligned＝identical（彼此一致）；A「相互抵消」与「一致」相反；B「互补」指不同功能拼合，而文中动机同向非拼合；D「相互矛盾」与 aligned 反义。",
+   "keyword": "be aligned 对齐、一致＝identical；incentive 动机＝motive；in the best interest of 最符合…的利益；turn out 培养出、生产出。",
+   "note": "猜词题回读上文具体内容：On this 概括的是「学生要工作、学校要合格毕业生」的共同利益；identical（相同）才够「动机一致」的强度——complement（互补）是强干扰，互补的前提是动机不同。"
+  },
+  {
+   "question_id": 1082,
+   "long_sentence": "The use of this little-known practice has accelerated in recent years, as colleges continue to do their utmost to keep students in school (and paying tuition) and improve their graduation rates：as 表原因；do their utmost to do 竭尽全力做；括号内补充并缴学费的信息。译：这项鲜为人知的做法近年加速推行，因为各大学仍在竭力让学生留在校园（并持续缴纳学费）、提高毕业率。",
+   "option": "正确项 B：全文逐层剖析 grade forgiveness 的动因链——消费时代取悦学生、留住学生与学费、毕业率指标、州拨款、消费者期待，属「分析背后原因」的写法；A「评估可行性」无中生有；C「比较不同观点」——官方目的与学校自利是层层揭底，非观点对垒；D「列举长期影响」——文中谈的是动机与即期利益，非长期后果清单。",
+   "keyword": "accelerate 加速；do one's utmost 竭尽全力；motivation 动因；examine（写作）考察、剖析。",
+   "note": "篇章手法题看各段回答的问题：几乎每段都在答「为什么推行」——consumer era、retention、funds、expectations 是因果链的四个环节；C 的迷惑在于官方说法与真实动机并陈，但那是深入剖析而非并列比较观点。"
+  },
+  {
+   "question_id": 1083,
+   "long_sentence": "Even before the invention of the electric light bulb, the author produced a remarkable work of speculative fiction that would foreshadow many ethical questions to be raised by technologies yet to come：even before 强调时间之早；that 定语从句修饰 fiction；to be raised 不定式被动作后置定语。译：早在电灯泡发明之前，这位作者就写出了一部杰出的思辨小说，预示了日后技术将引发的众多伦理问题。",
+   "option": "正确项 C：foreshadow many ethical questions to be raised by technologies＝与今日 AI 引发的关切相通，与末句 Frankenstein's out-of-control monster 首尾呼应；A「令全球 AI 科学家着迷」无中生有；B「200 年畅销不衰」曲解——200 年只是出版时长，未谈流行度；D「自身引发严肃伦理争议」偷换概念——小说是「预示」问题，引发问题的主语是 technologies。",
+   "keyword": "foreshadow 预示＝herald；speculative fiction 思辨小说；raise questions 引发问题；out-of-control 失控的。",
+   "note": "例证目的题看例子后的评价句：foreshadow many ethical questions 是提及该小说的理由；D 的陷阱在 raise 的主语——原文是 technologies raise questions，D 换成小说自身引发争议，主语错位即偷换概念。"
+  },
+  {
+   "question_id": 1084,
+   "long_sentence": "We are just in a situation where there are no good theories explaining what consciousness actually is and how you could ever build a machine to get there：where 定语从句修饰 situation；explaining... 现在分词作后置定语，内含 what 与 how 两个宾语从句。译：我们正处在这样的境地：没有任何好的理论能解释意识究竟是什么、又如何能造出抵达意识的机器。",
+   "option": "正确项 D：far too complex to be understood, let alone reproduced（复杂到无法理解，更遑论复制）加 no good theories，说明当前对意识的认识不足以复制它；A「帮助解释 AI」正反混淆；B「会误导机器人制造」无中生有——原文是不能复制而非误导；C「激发科幻剧集」张冠李戴，Westworld 等是类比物非被激发者。",
+   "keyword": "let alone 更不用说；consciousness 意识；reproduce 复制＝recreate；neuroscientist 神经科学家。",
+   "note": "let alone 表递进否定——「理解尚且不能，复制更不能」，D 的 too limited 正是此意；C 的干扰来自第三段科幻剧，但人物观点题须锁定 Eagleman 的引语范围，跨段挪用的例子是张冠李戴。"
+  },
+  {
+   "question_id": 1085,
+   "long_sentence": "to anticipate every imaginable driving situation is a difficult programming problem：不定式短语作主语；every imaginable 强调穷尽所有情况之难。译：要预见每一种可以想见的驾驶状况，是一个困难的编程问题。",
+   "option": "正确项 B：AI 视觉 not nearly as sophisticated as that of humans 加预见所有路况是 difficult programming problem，说明自动驾驶伦理问题的解决「尚超出当前能力」；A「几乎永远找不到」绝对化，原文只说当下做不到；C「鲜有公众关注」无中生有；D「引发强烈好奇」偷换概念——引发的是 thorny questions（棘手问题）而非好奇。",
+   "keyword": "autonomous vehicles 自动驾驶汽车；thorny 棘手的；sophisticated 精密的；anticipate 预见＝foresee。",
+   "note": "程度判断题抓限定词：not nearly as（远不如）与 difficult（困难）都指向「当下能力不足」，beyond our capacity 的「暂时超出」恰合；A 的 hardly ever 把暂时问题升格为永远无解，是程度绝对化陷阱。"
+  },
+  {
+   "question_id": 1086,
+   "long_sentence": "While the statement is vague, it represents one starting point：while 引导让步从句承认含糊；主句 represents one starting point 给予正面定位。译：尽管这份声明含糊其辞，它仍代表了一个起点。",
+   "option": "正确项 A：While the statement is vague, it represents one starting point 加 So does the idea that decisions...should be explainable, transparent, and fair——有保留但总体肯定，即 affirmation；B「怀疑」与 starting point 的正面评价不符；C「蔑视」程度过重，vague 只是含糊非欺诈；D「尊重」多对人或权威，对声明的恰当态度是认可其价值。",
+   "keyword": "affirmation 肯定＝approval；vague 模糊的；starting point 起点；transparent 透明的、公开的。",
+   "note": "让步句 While..., it represents... 的重心在主句——「虽然含糊仍是起点」＝有限度的肯定；态度题匹配强度与对象：affirmation 针对声明内容，respect 针对主体人格，Google 承诺可被 affirm 而非被 respect。"
+  },
+  {
+   "question_id": 1087,
+   "long_sentence": "How can we make sure that the thinking of intelligent machines reflects humanity's highest values? Only then will they be useful servants and not Frankenstein's out-of-control monster：make sure that 确保；Only then 置句首引起倒装（will they be）。译：我们如何确保智能机器的思维反映人类最高的价值观？只有到那时，它们才会是有用的仆人，而非弗兰肯斯坦那失控的怪物。",
+   "option": "正确项 C：Conscience（良知）概括「伦理问题」的主线，Complex 对应意识难解与编程之难，Inevitable 对应 ethical issues aren't at hand 与各国纷纷立规——三要素覆盖全文；A「AI 的未来在科技巨头手中」以偏概全，Google 只是例证之一；B「弗兰肯斯坦：预言 AI 时代的小说」以引子当主体；D「AI 一旦失控即杀手」歪曲比喻，monster 是警示意象非定论。",
+   "keyword": "conscience 良知、道德感；inevitable 不可避免的＝at hand；complex 复杂的；pledge 承诺＝promise。",
+   "note": "标题题验证覆盖度：全文是「伦理良知既复杂又必须面对」的双线；B 以首段引子命名、D 把末段比喻当结论，都以偏概全——标题须能涵盖中段各国立规与 Google 承诺的主体内容。"
+  },
+  {
+   "question_id": 1088,
+   "long_sentence": "主干 States will be able to force more people to pay sales tax；under a Supreme Court decision 表「依据…裁决」；that 引导定语从句修饰 decision，从句内 but 连接 shoppers 与 states 的得失两面。译：根据最高法院周四的裁决，各州将能强制更多人在网购时缴纳销售税——这让购物者钱包变瘪，但对各州是一大财政胜利。",
+   "option": "正确项 C：force more people to pay sales tax（when they make online purchases）＝让更多网购者缴税；A「改善企业与州的关系」无中生有；B「把多数电商推入两难」绝对化——受直接冲击的是跨州小卖家；D「迫使某些州减税」正反混淆——是州获得征税权而非减税。",
+   "keyword": "sales tax 销售税；under a decision 依据…裁决；lighter wallets 钱包变瘪；financial win 财政上的胜利。",
+   "note": "首段主旨句已给出裁决效果 force more people to pay；D 的陷阱在 force 的宾语——原文强制的是「人缴税」不是「州减税」，动词宾语错位即正反混淆，抓住 pay 的施动者是关键。"
+  },
+  {
+   "question_id": 1089,
+   "long_sentence": "The Supreme Court's opinion Thursday overruled a pair of decades-old decisions that states said cost them billions of dollars in lost revenue annually：overrule 意为「推翻（判例）」；that states said cost... 定语从句，states said 为插入语；cost them billions in lost revenue 使其损失数十亿税收。译：最高法院周四的裁决意见推翻了两项数十年历史的旧判例——据各州所说，这些判例使其每年损失数十亿美元的税收。",
+   "option": "正确项 D：cost them billions in lost revenue 加 The decisions made it more difficult for states to collect sales tax——各州认为旧判例于己不利；A「导致电商主导地位」因果无据；B「让消费者多年破费」张冠李戴——受损的是州的税收，且多数消费者根本没缴税；C「遭网购者广泛批评」无中生有，有怨言的是各州。",
+   "keyword": "overrule 推翻（判例）；revenue 财政收入；decades-old 历经数十年的；annually 每年地。",
+   "note": "states said 是观点归属信号——「数十亿损失」是州的控诉，unfavorable 由此概括；B 的陷阱在 them 的指代——先行词是 states 而非 consumers，代词回指是本题的基本功考点。"
+  },
+  {
+   "question_id": 1090,
+   "long_sentence": "Kennedy wrote that the rule limited states' ability to seek long-term prosperity and has prevented market participants from competing on an even playing field：wrote that 引宾语从句；prevent...from doing 阻止…做；an even playing field 公平竞争环境。译：肯尼迪大法官写道，实体存在规则限制了各州谋求长期繁荣的能力，并使市场参与者无法在公平的赛场上竞争。",
+   "option": "正确项 C：prevented...from competing on an even playing field＝损害公平的市场竞争；A「阻碍经济发展」偷换概念——受限的是各州「谋求繁荣的能力」，非整体经济；B「带来繁荣」正反混淆；D「推高州财政收入」正反混淆——旧规则造成的是税收流失。",
+   "keyword": "even playing field 公平竞争环境＝level playing field；prevent...from 阻止；prosperity 繁荣；market participant 市场参与者。",
+   "note": "Kennedy 的两个并列谓语分工：limited...prosperity 与 prevented...even playing field——C 精准对应后者；A 把「州的能力受限」放大成「经济发展受阻」，范围升级即偷换概念，细节题以原文搭配为界。"
+  },
+  {
+   "question_id": 1091,
+   "long_sentence": "The ruling is a victory for big chains with a presence in many states, since they usually collect sales tax on online purchases already：with a presence in many states 介词短语作后置定语；since 表原因；already 强调既成事实。译：这一裁决是在多州设有实体的大型连锁企业的胜利，因为它们通常本就在网购中代收销售税。",
+   "option": "正确项 B：big chains...is a victory 加 Now, rivals will be charging sales tax where they hadn't before——对手也被拉平到同一缴税水平，大连锁的相对优势得以保全；A「互联网创业者」与 D「小零售商」是末段点名的 the losers；C「第三方卖家」原文说 Amazon 平台的 third-party sellers 本不必缴税，裁决后将被要求征收。",
+   "keyword": "big chain 大型连锁；physical presence 实体存在；level the playing field 使竞争环境公平；comply with 遵守。",
+   "note": "「谁欢迎」题抓 victory 的主语：The ruling is a victory for big chains 是明示句；Retail trade groups praised 易误读为答案，但那是行业组织且其理由 levels the playing field 恰说明赢家是本地实体与大连锁——受益与受损名单要列全。"
+  },
+  {
+   "question_id": 1092,
+   "long_sentence": "Under the ruling Thursday, states can pass laws requiring out-of-state sellers to collect the state's sales tax from customers and send it to the state：requiring... 现在分词短语作后置定语修饰 laws；collect...from... 向…收取。译：根据周四的裁决，各州可通过法律，要求跨州卖家向顾客代收本州销售税并上交州政府。",
+   "option": "正确项 D：文章先述被推翻的 decades-old decisions（相关案例），再依次分析对 states、big chains、Amazon、eBay/Etsy 小卖家及零售行业的影响（implications），即「援引案例＋分析含义」；A「客观记述＋讨论后果」未抓住案例主线；B「描述漫长复杂的立法过程」无中生有；C「呈现要点并附对立观点」——文中州与小卖家的得失是影响分析，非围绕要点的正反辩驳。",
+   "keyword": "cite 援引；implication 影响、含义＝consequence；overrule 推翻；out-of-state 跨州的。",
+   "note": "篇章手法题看材料类型：第 2-3 段的旧判例是 cases、第 5-7 段的各方得失是 implications——「案例先行、影响随后」对应 D；A 的迷惑在「事实＋后果」的笼统表述，手法概括须与材料重心（案例）一致。"
+  },
+  {
+   "question_id": 1093,
+   "long_sentence": "主干 This aversion to arguments is common, but it depends on a mistaken view；that 定语从句修饰 view，内含 causes...and misses... 两个并列谓语；in the first place 表「从一开始」。译：这种对争论的反感很普遍，但它基于一种错误认识——这种认识给个人与社会生活带来深刻问题，并在许多方面从一开始就错失了争论的意义。",
+   "option": "答案 E 段：位置 41 为全文开篇——E 段引 Dale Carnegie 名言（唯一避免争论之法）并树起全文靶子 aversion depends on a mistaken view，为后文 C、D、F 段展开「错误争论观」设题；与 A 段区分——A 以 Of course, many discussions are not so successful 的让步开头，属收束段语气，不能开篇。",
+   "keyword": "aversion 反感＝dislike；get the best of an argument 在争论中占上风；miss the point 错失要义；mistaken view 错误认识。",
+   "note": "开篇段的功能是引名言＋树靶子：mistaken view（错误争论观）是全文要批驳的对象，后文 C D F 依次展开其危害；41 选 E 后，C 段 Carnegie would be right 的明示人名复现可顺藤锁定下一段。"
+  },
+  {
+   "question_id": 1094,
+   "long_sentence": "Pairs of opponents hit the ball back and forth until one winner emerges from all who entered：hit the ball back and forth 来回击球（网球隐喻）；until one winner emerges 直到一名赢家产生；who entered 定语从句修饰 all。译：对阵双方来回击球，直到一名赢家从所有参赛者中产生，其余皆输。",
+   "option": "答案 D 段：C 段末尾以名词复数 Pairs 悬空断尾，D 段开头 of opponents 语法上拼合为 Pairs of opponents hit the ball back and forth——拆分句缝合是最强衔接；D 段末 This kind of thinking is why so many people try to avoid arguments 回扣 E 段的 aversion；与 F 区分——F 以 These views 开头，须在 C＋D 的「争吵观／比赛观」铺完后才能指代。",
+   "keyword": "pairs of 成对的；back and forth 来回地；emerge 胜出、出现；this kind of thinking 这种思维。",
+   "note": "拆词断句是考研排序的标志性缝合点：Pairs 与 of opponents 跨段成句，42 必选 D；D 末的 This kind of thinking 前指 fight/competition 观、后联 avoid arguments——双向指代锁定位置。"
+  },
+  {
+   "question_id": 1095,
+   "long_sentence": "There is a better way to win arguments：there be 句型亮出分论点；better 与前文的赢法形成比较级对照。译：有一种更好的赢得争论的方式。",
+   "option": "答案 G 段：F 段末 but they can help you win – in one way（只能算一种赢法）为 G 段 There is a better way to win arguments 埋下 in one way→better way 的递进；G 段以最低工资的正反场景（yell 对峙 vs reasonable argument 往来）示范「讲理式争论」的双赢，回应 E 段 miss the point of arguing；与 A 区分——A 是让步收束段，位置在最后。",
+   "keyword": "in one way 从某种意义上；in contrast 相比之下；counter with 以…回击；shared values 共同价值观。",
+   "note": "win – in one way → a better way to win 的词汇复现是 43 选 G 的铁证；G 段 Imagine that... 的两个对照场景（对喊 vs 讲理）是全文从「批驳错误观」转向「建设新方式」的枢纽， Locate 时盯紧 win 的同现。"
+  },
+  {
+   "question_id": 1096,
+   "long_sentence": "None of these will be easy but you can start even if others refuse to：none of these 指代前文列出的做法；even if 引导让步从句；refuse to 后省略 start。译：这些都不容易，但即使别人拒绝开始，你也可以先行。",
+   "option": "答案 B 段：G 段示范「合理争论」之后，B 段 None of these will be easy but you can start 承接，these 指代 G 段与 PASSAGE 首段的 tools，随后给出操作清单（Next time you state your position... ask them to give you a reason... Assess its strength impartially）；与 F 区分——F 已固定且先于 G，B 的祈使句群是行动指南语气，居建设段之后、总结段之前。",
+   "keyword": "formulate an argument 构建论据；spell out 详尽阐述；impartially 公正地；raise objections 提出异议。",
+   "note": "None of these 的 these 是指代题眼——先有清单（G 的示范）再谈「不容易但可开始」；Next time... 系列祈使句是行动建议段的文体特征，常位于「提出方法」与「总结告诫」之间。"
+  },
+  {
+   "question_id": 1097,
+   "long_sentence": "Of course, many discussions are not so successful. Still, we need to be careful not to accuse opponents of bad arguments too quickly：Of course 让步；still 表转折递进；accuse sb of 指责某人某事。译：当然，许多讨论并不那么成功。尽管如此，我们仍需谨慎，不要过快指责对方的论证糟糕。",
+   "option": "答案 A 段：位置 45 为收尾段——A 段以 Of course, many discussions are not so successful 承认实践不完美，Still 引出告诫（勿急于否定对方、对己用同一标准），落点 Humility requires you to recognize weakness in your own arguments 与 PASSAGE 末段重新定义 win 的积极结论衔接；与 G 区分——G 是中部的建设示范段，A 的谦逊主题属品格收束。",
+   "keyword": "humility 谦逊；accuse sb of 指责某人；apply the same standards to 用同一标准衡量；admit good arguments 承认对方的好论点。",
+   "note": "Of course＋Still 的让步转折是总结段标志：先承认理想与现实有差距，再给出双向告诫——既批对方也审自己；Humility requires... 与 B 段的 critical standards 呼应，全文落在「谦逊」的品格升华。"
+  },
+  {
+   "question_id": 1098,
+   "long_sentence": "Even if families don't sit down to eat together as frequently as before, millions of Britons will nonetheless have got a share this weekend of one of that nation's great traditions: the Sunday roast：even if 让步从句；nonetheless 表转折；冒号后 the Sunday roast 为 traditions 的同位语。译：即使一家人不再像从前那样频繁围桌共餐，这个周末数百万英国人仍将分享这个国家的伟大传统之一：周日烤肉。",
+   "option": "正确项 C On：On a cold winter's day 表「在某个寒冷的冬日」——具体到某一天用 on；A In 与单数 day 搭配时还可表「一天之内」，引起歧义且精确度不足；B Towards 表「将近某时刻」（towards evening），不接具体日；D Till 表「直到」，逻辑不通。",
+   "keyword": "on a...day 在某一天；Sunday roast 周日烤肉；culinary 烹饪的、美食的；nonetheless 尽管如此＝nevertheless。",
+   "note": "时间介词规则：具体某天（on Monday／on a rainy day）用 on，in a day 的「一天之内」义是干扰源——「冬日」是时点不是时长，语义决定介词；首段 the Sunday roast 与下文 it 的指代链是全文主题词。"
+  },
+  {
+   "question_id": 1099,
+   "long_sentence": "On a cold winter's day, few culinary pleasures can match it：few 表否定「很少有」；match it 与之匹敌；it 指代 the Sunday roast。译：在寒冷的冬日，很少有美食能与之媲美。",
+   "option": "正确项 A match：can match it「能与它匹敌」，与 few 连用构成「几乎无可匹敌」的盛赞；B express 「表达」——pleasures 不能「表达」烤肉；C satisfy 「满足」——satisfy 通常食物满足人，此处主语 pleasures 宾语 it（烤肉），方向不通；D influence 「影响」与赞美语境无关。",
+   "keyword": "match 与…匹敌＝rival；culinary pleasures 美食之乐；few＋复数名词 表否定；it 回指 the Sunday roast。",
+   "note": "few...can match it 的「否定＋匹敌」等于最高级赞美（同 nothing can compare with）；辨析点在主宾关系：match 双向对称、satisfy 单向供给，pleasures 作主语时只有 match 语义顺畅。"
+  },
+  {
+   "question_id": 1100,
+   "long_sentence": "Yet as we report now, the food police are determined that this enjoyment should be rendered yet another guilty pleasure, reputed to damage our health：as we report now 为插入语；be determined that 决意；render A B 使 A 成为 B；guilty pleasure 带负罪感的享受。译：然而正如我们本期所报道，食品警察们执意要把这份享受变成又一种据称有损健康的罪恶快感。",
+   "option": "正确项 B enjoyment：this enjoyment 复指上文 the Sunday roast 带来的美食之乐（culinary pleasures），与 guilty pleasure 构成「乐事变罪事」的张力；A patience 「耐心」与美食话题无关；C surprise 「惊讶」无对应；D concern 「担忧」——担忧是 food police 的态度，不是「被变成 guilty pleasure」的对象。",
+   "keyword": "guilty pleasure 罪恶快感；food police 食品警察（戏称监管者）；render 使成为＝make；be reputed to 被认为。",
+   "note": "this＋名词是完形高频指代题：先回上文找复现——culinary pleasures 与 this enjoyment 同指周日烤肉之乐；guilty pleasure 的 pleasure 明示空格须填「享受」类名词，concern 与 pleasure 语义相抵可直接排除。"
+  }
+ ]
+}

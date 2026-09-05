@@ -1,0 +1,180 @@
+{
+ "chunk": 49,
+ "items": [
+  {
+   "question_id": 1201,
+   "long_sentence": "定位句 However, the signaling in a plant is only superficially similar to the firing in a complex animal brain。主干 the signaling is similar to the firing；only superficially 仅仅表面上。译：然而，植物体内的信号传导只是表面上类似复杂动物大脑的放电。",
+   "option": "正确项 C superficially：only superficially similar（仅表面相似）与作者反驳植物意识的立场一致，只是类比而非实质相同；A temporarily（暂时地）无中生有，相似性与时间无关；B literally（字面上地、确实地）方向相反，若选它等于承认植物信号与脑放电完全相同，与全文否定基调冲突；D imaginarily（想象中地）无此用法且语义荒谬。",
+   "keyword": "superficially 表面上＝on the surface；literally 字面上地、确实地；firing 放电；be similar to 与…相似。",
+   "note": "副词题跟作者立场走：本段先让步（makes sense / also communicate）后转折（However），only 已经预告弱化，选词必须顺着『削弱相似性』的方向，literally 是最强的反方向陷阱。"
+  },
+  {
+   "question_id": 1202,
+   "long_sentence": "定位句 For consciousness to evolve, a brain with a threshold level of complexity and capacity is required。主干 a brain is required；For consciousness to evolve 为不定式作目的状语（for + 名词 + to do 结构）；with 短语作后置定语；threshold level 临界水平。译：要让意识演化出来，需要一个复杂度与容量达到临界水平的大脑。",
+   "option": "正确项 B level：threshold level of complexity and capacity 意为『复杂度与容量的门槛水平』，threshold（门槛、临界值）与 level（水平）是固定搭配，quantity 语义在 complexity and capacity 上也落得住；A list（清单）threshold list 无此搭配；C label（标签）不与 threshold 构成量级概念；D load（负荷）threshold load 语义不通，此处谈的是能力高低而非负担。",
+   "keyword": "threshold 门槛、临界值；a level of 某一水平的；capacity 容量、能力；complexity 复杂度。",
+   "note": "名词辨析靠搭配锁定：threshold 后接表示『量级』的名词才通（level/degree）；load 是认知负载语境的熟词干扰，本句讨论的是『意识需要多强的大脑』，不是大脑的负担。"
+  },
+  {
+   "question_id": 1203,
+   "long_sentence": "定位句 'For consciousness to evolve, a brain with a threshold level of complexity and capacity is required,' he added。he added 中 added 表『补充道』，引出同一说话人的又一层论述。译：他补充说：要让意识演化出来，需要一个复杂度与容量达到临界水平的大脑。",
+   "option": "正确项 D added：此句在『信号只是表面相似』之后，Taiz 继续补充新论据（意识需要门槛级大脑），added 表示同一人的追加论述，无冲突也无悬念；A recalled（回忆道）无中生有，这不是在回忆往事；B agreed（同意）缺乏可同意的前述观点，此前他在陈述自己的反驳；C questioned（质疑）内容是陈述句而非疑问，方向不符。",
+   "keyword": "add 补充说；recall 回忆道；question 质疑；reporting verb 引述动词的语义细分是完形高频考点。",
+   "note": "引述动词题看话轮关系：同一说话人连续两段引语，第二段是论据递进而非回忆或质疑；考研完形爱考 reporting verbs（added/noted/argued/admitted），先判断内容性质再选动词。"
+  },
+  {
+   "question_id": 1204,
+   "long_sentence": "定位句 Since plants don't have nervous systems, the chances that they have consciousness are effectively zero。主干 the chances are effectively zero；that they have consciousness 为同位语从句说明 chances 的内容；Since 原因状语从句；effectively 实际上。译：由于植物没有神经系统，它们拥有意识的可能性实际上为零。",
+   "option": "正确项 A chances：chances that... 表『…的可能性』，谓语 are zero 与复数 chances 呼应，chances are（that）...是概率表达的高频句式；B risks（风险）指负面后果的可能性，『有意识』并非风险事件；C excuses（借口）与概率语义无关；D assumptions（假设）assumptions are zero 不成话，假设只能被推翻而非『为零』。",
+   "keyword": "chances that... …的可能性；effectively zero 实际上为零＝virtually zero；since 由于；nervous system 神经系统。",
+   "note": "同位语从句名词看概率搭配：the chances that...are zero 是固定表达；risk 与 chance 的辨析点在『负面性』——风险必是坏事，而本句只是陈述可能性趋零，不涉好坏。"
+  },
+  {
+   "question_id": 1205,
+   "long_sentence": "定位句 Plants can't run away from danger, so investing energy in a body system which recognizes a threat and can feel pain would be a very poor evolutionary strategy。so 引导结果从句；investing... 动名词短语作主语；which 引导定语从句。译：植物无法逃离危险，因此把能量投入一个能识别威胁并会感到疼痛的身体系统，将是非常糟糕的演化策略。",
+   "option": "正确项 A danger：run away from danger（逃离危险）是固定搭配，且与后文 which recognizes a threat 的 threat（威胁）语义复现，植物扎根不能跑正是全文逻辑起点；B failure（失败）run away from failure 虽语法可通但语境无源；C warning（警告）逃离警告不合常理；D control（控制）脱离原文威胁-逃逸的演化语境。",
+   "keyword": "run away from danger 逃离危险；threat 威胁＝danger；invest energy in 把能量投入；evolutionary strategy 演化策略。",
+   "note": "上下文复现是完形金线索：空后 threat 与所选 danger 同义呼应，先读完整句再填空；『植物不能逃』这一常识也是验证器——能逃跑的对象只能是危险而非失败或控制。"
+  },
+  {
+   "question_id": 1206,
+   "long_sentence": "定位句 so investing energy in a body system which recognizes a threat and can feel pain would be a very poor evolutionary strategy。which 引导定语从句修饰 a body system，从句内 recognizes a threat 与 can feel pain 并列。译：因此把能量投入一个能识别威胁并会感到疼痛的身体系统，将是一种非常糟糕的演化策略。",
+   "option": "正确项 D recognizes：recognize a threat 意为『识别、察觉威胁』，与 can feel pain 并列描述系统的感知能力，正是『意识』的功能体现；A represents（代表）系统不能代表威胁，主宾关系错位；B includes（包括）威胁不是系统的组成部分；C reveals（揭示）系统揭示威胁语义不通，揭示的主语通常是研究或数据。",
+   "keyword": "recognize a threat 识别威胁＝detect/perceive a threat；feel pain 感到疼痛；body system 身体系统；invest...in 把…投入。",
+   "note": "定语从句动词选『感知』义：与 feel pain 并列的动词必须同为感知类；represent/include/reveal 都是认知词汇高频词，用『系统与威胁的关系』（感知者与被感知物）即可锁定。"
+  },
+  {
+   "question_id": 1207,
+   "long_sentence": "定位句 Plants can't run away from danger, so investing energy in a body system which recognizes a threat and can feel pain would be a very poor evolutionary strategy。so 表因果；主语为动名词短语 investing energy...；would be a very poor evolutionary strategy 为表语。译：植物无法逃离危险，因此把能量投入能识别威胁、会感到疼痛的身体系统，将是非常糟糕的演化策略。",
+   "option": "正确项 B poor：poor strategy 意为『糟糕的策略』，前文逻辑是植物不能逃跑却要为感知威胁付费，得不偿失，poor 与 very 连用强化否定评价；A humble（谦卑的）不修饰策略的优劣；C practical（实用的）方向相反，语境是浪费能量；D easy（容易的）与演化策略的成本考量无关。",
+   "keyword": "poor 糟糕的、差的＝bad（poor strategy 糟糕策略）；humble 谦卑的；practical 实用的；at the cost of 以…为代价。",
+   "note": "评价词题先找因果链：『不能逃+仍要投资感知系统』必然推出负面评价，poor 是最朴素的结果词；practical 是最强的方向反转陷阱，抓住 so 的推理方向即可排除。"
+  },
+  {
+   "question_id": 1208,
+   "long_sentence": "定位句 All of which creates huge headaches for institutions, such as museums, trying to preserve culturally important objects。which 指代前文塑料开裂、渗添加剂、化为污泥等变化，作 create 的主语；trying to preserve... 现在分词短语作后置定语修饰 institutions。译：这一切给博物馆等试图保存重要文化物品的机构带来了巨大麻烦。",
+   "option": "正确项 A maintaining their plastic items：maintain（保存、维护）≈preserve culturally important objects，头痛的直接来源是塑料随时间变化（crack/frizzle/weep out additives/melt into sludge）难以保存；B obtaining durable artifacts 无中生有，博物馆的问题是藏品在变而非难获取；C handling outdated exhibits 偷换概念，困难不在『过时』而在『变质』；D classifying collections 无中生有，原文未提分类。",
+   "keyword": "preserve 保存、保护＝maintain；headache 头疼事、麻烦；deteriorate 变质＝crack and frizzle；at risk 处于危险中。",
+   "note": "首段细节题定位在 headaches for institutions 句；四个选项的动名词都要回原文找对应动词，preserve→maintain 是唯一闭环；注意题干问的是『哪方面的困难』，用名词核心词（items/objects）配对。"
+  },
+  {
+   "question_id": 1209,
+   "long_sentence": "定位句 Certain artifacts are especially vulnerable because some pioneers in plastic art didn't always know how to mix ingredients properly... 'The object you make is already a time bomb.' 主干 artifacts are vulnerable；because 原因从句；how to mix 作 know 的宾语。译：某些制品格外脆弱，因为塑料艺术先驱并不总知道如何正确调配原料——就像配比不对蛋糕就失败，成品本身就是定时炸弹。",
+   "option": "正确项 C inherently flawed：inherently flawed（先天有缺陷）＝the object you make is already a time bomb 加 didn't know how to mix ingredients properly，出生即带病；A immune to decay 正反混淆，原文明说 especially vulnerable；B improperly shaped 偷换概念，配比不当（mix ingredients）不等于形状不当；D complex in structure 无中生有，原文未谈结构复杂。",
+   "keyword": "vulnerable 脆弱的、易受损的；ingredient 原料、成分；time bomb 定时炸弹（比喻先天隐患）；polymer chemist 聚合物化学家。",
+   "note": "人物观点题抓引语：van Oosten 的 cake 与 time bomb 两个比喻都在说『先天缺陷』；B 的 improperly 挪用原文 improperly，但对象从 ingredients 换成了 shaped，属偷换宾语的典型陷阱。"
+  },
+  {
+   "question_id": 1210,
+   "long_sentence": "定位句 the polyurethane foam he used is inherently unstable. It's especially vulnerable to light damage... Museums locked some of them away in the dark。he used 省略 that 的定语从句；vulnerable to 易受…损害；lock away 锁藏。译：他使用的聚氨酯泡沫先天不稳定，尤其怕光损，到 90 年代中期作品已开裂剥落，博物馆把其中一些锁进了暗处。",
+   "option": "正确项 D prevent them from further damage：locked some of them away in the dark（锁进暗处避光）正对应 especially vulnerable to light damage，目的是阻止继续开裂剥落；A keep them from hurting visitors 无中生有，藏起的原因是作品受损而非伤人；B duplicate them for future display 无中生有，原文未提复制；C have their ingredients analyzed 张冠李戴，做原料分析的是 van Oosten 的保存研究，不是博物馆藏画的原因。",
+   "keyword": "light damage 光损伤；lock away 锁藏、封存；split and crumble 开裂剥落；inherently unstable 先天不稳定。",
+   "note": "动作目的题看因果链：藏进 dark ← 怕 light damage ← 防进一步损坏，三步连读即出答案；D 的 further damage 与 splitting and crumbling 的进行状态对应，注意 already 变质是背景，防『继续』变质是目的。"
+  },
+  {
+   "question_id": 1211,
+   "long_sentence": "定位句 Despite success stories like van Oosten's, preservation of plastics will likely get harder... Worse, biodegradable plastics, designed to disintegrate, are increasingly common。Despite 引导让步；designed to disintegrate 过去分词作插入定语；Worse 更糟的是。译：尽管有成功案例，塑料保存将会更难——旧藏品持续劣化，更糟的是本就设计为可降解的塑料日益普及。",
+   "option": "正确项 D challenging：get harder（愈发艰难）→challenging，且旧物劣化加可降解塑料增多两重压力都指向难度上升；A costly 无中生有，原文未谈费用；B unworthy 正反混淆，末段 more is at stake 表明意义重大；C unpopular 无中生有，文中无人不愿保存。",
+   "keyword": "get harder 变得更难＝challenging；deteriorate 恶化＝wear away；biodegradable 可生物降解的；at stake 处于险境、利害攸关。",
+   "note": "作者态度题认准转折 Despite：先承认成功再强调 will likely get harder，态度落在 harder 上；Worse 是递进信号，两层难处叠加坐实 challenging，勿被 success stories 的让步内容带偏。"
+  },
+  {
+   "question_id": 1212,
+   "long_sentence": "定位句 We now live in an age of plastic, and what we decide to collect today, what we decide to preserve...will have a strong impact on how in the future we'll be seen。两个 what 引导的主语从句并列；will have a strong impact on 对…有重大影响；how we'll be seen 未来后人如何看待我们。译：我们如今生活在塑料时代，今天决定收藏什么、保存什么，将强烈影响未来世界如何看待我们。",
+   "option": "正确项 B has profound historical significance：影响 future 我们如何被看待＝关乎后人的历史评价，保存行为具有深远历史意义；A inspire future scientific research 无中生有，Ferreira 谈的是历史认知不是科研；C help us separate the material ages 张冠李戴，考古学家据文物划分石器、铁器时代是已有事实，不是保存塑料的目的；D impact on today's cultural life 偷换概念，影响的是 future 的评价而非今天的文化生活。",
+   "keyword": "an age of plastic 塑料时代；have an impact on 对…有影响；be seen 被看待、被评价；conservation and restoration 文物保护与修复。",
+   "note": "人物观点题抓末句 will have a strong impact on how...we'll be seen：影响对象是『未来的我们』，时间方向定生死——B 的 historical 与 D 的 today 一字之差即分对错。"
+  },
+  {
+   "question_id": 1213,
+   "long_sentence": "定位句 it may be worth considering just how the point, purpose and value of a degree has changed and what Generation Z need to consider as they start the third stage of their educational journey。it 为形式主语，真正主语是 considering...；how 与 what 引导两个并列的宾语从句。译：值得注意的是，学位的意义、目的与价值已经发生了怎样的变化，Z 世代在开启教育旅程第三阶段时又需要考虑什么。",
+   "option": "正确项 C reassess the necessity of college education： reconsider the value of degree＝全文主线——学位贬值（devalued）、not for everyone、other options are available，建议重新评估读大学是否必要；A careful in choosing a college 偷换概念，问题不是选哪所而是要不要读；B diligent at each stage 无中生有，原文不谈勤奋；D postpone application 无中生有，未建议推迟申请。",
+   "keyword": "point/purpose/value of a degree 学位的意义、目的与价值；Generation Z Z 世代；be worth doing 值得做；devalue 贬值。",
+   "note": "首段即观点段：worth considering...need to consider 双重提示作者的『建议』属性；本文主题是『学位是否人人必需』，凡偏离该主线（选校、推迟、勤奋）的选项都是答非所问。"
+  },
+  {
+   "question_id": 1214,
+   "long_sentence": "定位句 As degrees became universal, they became devalued. Education was no longer a secure route of social mobility. Today, 28 per cent of graduates in the UK are in non-graduate roles...。As 引导原因状语；no longer 不再；a percentage 为同位语。译：随着学位普及、学历贬值，教育不再是社会流动的可靠途径；如今英国 28% 的毕业生在从事非毕业生岗位。",
+   "option": "正确项 B the shrinking value of a degree：28% 数据紧跟 devalued（贬值）之后，是学历价值缩水的实证——大量毕业生只能干非毕业生岗位；A Millennials' opinion 张冠李戴，数据是客观事实不是千禧一代的观点；C public discontent 无中生有，原文未调查民意；D the desired route of social mobility 正反混淆，原文说教育已 no longer 是可靠途径。",
+   "keyword": "devalue 使贬值；non-graduate roles 非毕业生岗位；social mobility 社会流动；OECD 经合组织。",
+   "note": "数据例证题看数据支撑的观点：As...became devalued 是观点，Today, 28 per cent 是证据，二者是『论点+论据』关系；A/C/D 都把论据安到别的主语上，抓 devalue 原词方向即可。"
+  },
+  {
+   "question_id": 1215,
+   "long_sentence": "定位句 Thankfully, there are signs that this is already happening... Many too are seeing the advantages of scrapping a degree requirement for certain roles。even if 引导让步从句；scrap a degree requirement 取消学历门槛。译：所幸变化已在发生；尽管家长教师仍固守学位思维，雇主也看到了为部分岗位取消学历门槛的优势。",
+   "option": "正确项 C employers are taking a realistic attitude to degree：scrapping a degree requirement for certain roles（为部分岗位取消学历门槛）正是务实的用人态度，与 Thankfully 的好迹象呼应；A Z 世代寻求体面学位 正反混淆，他们 seeking to learn from millennial predecessors（吸取教训）；B 离校生愿当技工 偷换概念，原文讲雇主看到雇他们的优势，不是离校生的意愿；D 家长改变观念 正反混淆，家长和教师仍 set in the degree mindset。",
+   "keyword": "scrap 取消、废弃＝do away with；degree mindset 学位思维；school leaver 中学毕业生；set in 固守于。",
+   "note": "good sign 的判断标准在 Thankfully 与 even if 之间：作者欣慰的是 Z 世代与雇主的变化，家长老师是被 even if 让步否定的一方；D 直接反向使用让步从句，是让步结构设陷的典型。"
+  },
+  {
+   "question_id": 1216,
+   "long_sentence": "定位句 For those for whom a degree is the desired route, consider that this may well be the first of many... it pays to have specific knowledge or skills... it makes sense to have two。for whom 介词前置定语从句；it pays to do 做某事划算。译：对把学位当理想路径的人，这很可能只是第一个学位；在通才时代拥有专门知识技能才划算，人人都有学位时再读一个才明智。",
+   "option": "正确项 D further their studies in a specific field：specific knowledge or skills 加 makes sense to have two（再读一个学位），建议在专门领域继续深造；A make an early decision on career 无中生有，第五段不谈职业决策时间点；B attend on-the-job training 张冠李戴，文中说的是校园学位深造而非在职培训；C team up with high-paid postgraduates 偷换概念，40% 是收入对比数据，不是建议与研究生组队。",
+   "keyword": "generalist 通才；specific knowledge or skills 专门知识与技能；postgraduate 研究生＝graduate student；it pays to do 做…是划算的。",
+   "note": "段落建议题抓 it pays/makes sense 两个评价句式：作者建议=拥有 specific 的第二个学位；B 的 on-the-job 与 C 的 40% 都是原文碎片拼装，核对『动作发出者与动作内容』即可排除。"
+  },
+  {
+   "question_id": 1217,
+   "long_sentence": "定位句 It is unlikely that Generation Z will be done with education at 18 or 21; they will need to be constantly upskilling throughout their career。it is unlikely that 形式主语；constantly upskilling 持续更新技能。译：Z 世代不太可能在 18 或 21 岁就结束教育，整个职业生涯都需持续更新技能以保持就业竞争力。",
+   "option": "正确项 A Lifelong learning will define them：constantly upskilling 与 Education will be a core part of career trajectory 表终身学习将定义其职业；末段 degree won't define them 的 define 原词复现，定义者从学位换成学习；B qualified educators 偷换概念，教育是职业核心不等于当教育者；C no longer appeal 正反混淆，Z 世代仍读学位只是不被定义；D limited choice 正反混淆，17 employers、five careers 说明选择多样。",
+   "keyword": "constantly upskilling 持续提升技能；career trajectory 职业轨迹＝career path；stay employable 保持就业竞争力；define 定义。",
+   "note": "末两段总结题抓贯穿词：define 在末段原词出现，A 反用其义（不是学位定义而是学习定义）；C 与 D 都方向反转，C 忽略了 Z 世代仍深造的事实，D 忽略了 17 个雇主的数据。"
+  },
+  {
+   "question_id": 1218,
+   "long_sentence": "定位句 Enlightening, challenging, stimulating, fun. These were some of the words that Nature readers used to describe their experience of art-science collaborations... almost all said they would consider doing so in future。段首四个褒义形容词并列；that 引导定语从句修饰 words。译：富有启发、具挑战、令人振奋、有趣——这是《自然》读者描述艺术与科学合作体验的词汇；受访者几乎全都表示未来愿意考虑合作。",
+   "option": "正确项 B received favorable responses：Enlightening/challenging/stimulating/fun 四个褒义词加 almost all would consider doing so，读者反馈积极；A caught the attention of critics 偷换概念，回应者是 Nature 读者与调查对象，不是评论家；C promoted academic publishing 无中生有，文章说的是合作而非发文；D sparked heated public disputes 正反混淆，第二段明说 Such an encouraging result。",
+   "keyword": "favorable 积极的、赞同的＝positive；collaboration 合作＝partnership；poll 民意调查＝survey；enlightening 富有启发的。",
+   "note": "段首形容词串是态度信号：四个褒义词连排即『反馈积极』，无需逐个翻译；第二段 Such an encouraging result 是作者对此的定性，可反向验证 B；D 的 disputes 与 encouraging 相抵。"
+  },
+  {
+   "question_id": 1219,
+   "long_sentence": "定位句 They reimagined the 300-year-old score by injecting the latest climate prediction data for each season—provided by Monash University's Climate Change Communication Research Hub。by injecting 方式状语；provided by... 过去分词作插入定语修饰 data。译：他们为这部 300 年前的乐谱重新想象：注入莫纳什大学气候变化传播研究中心提供的最新各季气候预测数据。",
+   "option": "正确项 A art can offer audiences easy access to science：音乐会把气候预测数据送进观众耳边，支撑第二段 artists help scientists reach a broader audience 的论点——艺术为大众提供接触科学的途径；B 张冠李戴，方向反了，是艺术帮科学传播；C 无中生有，例子讲科学传播而非公众参与科研；D 偷换概念，演出是 creative call to action 而非推动创新。",
+   "keyword": "reach a broader audience 触达更广受众；inject...into 注入；reimagine 重新演绎；a call to action 行动倡议。",
+   "note": "例证题答案在例子前的观点句：第三段的例子直接支撑第二段 reach a broader audience；A 的 easy access to science 与之同义，B/D 都把艺术与科学的作用方向对调，方向判断是本题命门。"
+  },
+  {
+   "question_id": 1220,
+   "long_sentence": "定位句 several respondents noted that artists do not simply assist scientists with their communication requirements. Nor should their work be considered only as an object of study。noted that 引导宾语从句；nor 引导倒装的否定并列句（Nor should...）；not simply 不只是。译：一些回应者指出，艺术家不只是协助科学家满足其传播需求，他们的作品也不应只被视为研究对象。",
+   "option": "正确项 A their role may be underestimated：not simply assist（不只是辅助）加 not...only as an object of study（不只是研究对象），两重 not only 的反向表述都指向『艺术家的作用被看低了』的担忧；B their reputation may be impaired 偷换概念，谈的是作用定位而非名誉受损；C their creativity may be inhibited 过度推断，原文未说创作受压制；D their work may be misguided 无中生有。",
+   "keyword": "assist 协助（潜台词：辅助性角色）；object of study 研究对象；respondent 回应者；role 角色、作用。",
+   "note": "担忧藏在双重否定里：not simply + Nor should...only，把两句的『只是』合并即『被低估』；本题需从 artists do not simply assist 反推 worry，属推断型细节题，抓 assist 的『辅助』义是钥匙。"
+  },
+  {
+   "question_id": 1221,
+   "long_sentence": "定位句 Light was something that both artists and scientists had an interest in, and therefore could form the basis of collaboration... looking to a time when leading researchers could also be artists, writers and poets。that...in 介词后置定语从句；vice versa 反之亦然。译：光是艺术家与科学家共同感兴趣的东西，因此能成为合作的基础；中心同时展望顶尖研究者也可以是艺术家作家的时代，反之亦然。",
+   "option": "正确项 B It exemplified valuable art-science alliances：CAVS 以艺术家与科学家对光的共同兴趣为基础开展合作，正是第四段 valuable alliance 理想的实例化；A headed alternately 张冠李戴，researchers could also be artists 是未来展望不是轮流执掌；C aimed at advancing visual studies 偷换概念，visual studies 只因光得名，目标本为探索技术在文化中的角色；D raise the status of artists 无中生有。",
+   "keyword": "form the basis of collaboration 构成合作的基础；sub-discipline 子学科；vice versa 反之亦然；exemplify 例证、体现。",
+   "note": "作者对 CAVS 的态度藏在第四五段的衔接里：第四段提出 alliance 的理想标准，第五段 CAVS 是标准的历史先例；C 的 visual studies 是字面陷阱，认准 founders 的真实目的 explore the role of technology in culture。"
+  },
+  {
+   "question_id": 1222,
+   "long_sentence": "定位句 The reach of art-science tie-ups needs to go beyond the necessary purpose of research communication, and participants must not fall into the trap of stereotyping each other。needs to go beyond 需要超越；tie-ups 联合、合作；fall into the trap of 落入…的陷阱。译：艺术-科学合作的影响范围需要超越科研传播这一必要目的，参与者也决不能落入彼此刻板印象的陷阱。",
+   "option": "正确项 C should do more than communicating science：needs to go beyond the necessary purpose of research communication 的同义改写；A go beyond public expectations 偷换概念，beyond 的宾语是科研传播不是公众预期；B intensify competition 无中生有，原文讲合作不讲竞争；D more popular than before 偷换概念，as strong as ever 意为一如既往强劲，并非比过去更流行。",
+   "keyword": "go beyond 超越＝do more than；tie-up 合作、联合＝collaboration；stereotype 对…形成刻板印象；as strong as ever 一如既往强劲。",
+   "note": "末段作者主张看 needs to/must 两个情态结构：needs to go beyond 是唯一建议句，C 与之逐词对应；D 利用 as strong as ever 的字面相似设陷，ever 表『一贯』不表『比较级』。"
+  },
+  {
+   "question_id": 1223,
+   "long_sentence": "定位句 Personal grievance procedures were designed to guard the jobs of ordinary workers from 'unjustified dismissals'。be designed to do 旨在；guard...from 保护…免于。译：个人申诉程序的设计初衷是保护普通劳动者的工作免遭无正当理由的解雇。",
+   "option": "正确项 D protect the rights of ordinary workers：were designed to guard the jobs of ordinary workers 的同义改写，guard the jobs≈protect the rights；A punish dubious practices 偷换概念，条款是阻止不当解雇而非惩罚公司；B improve hiring procedures 张冠李戴，规范的是解雇不是招聘；C exempt employers from duties 正反混淆，条款是加重而非免除雇主义务。",
+   "keyword": "provision 条款；personal grievance 个人申诉；unjustified dismissal 无正当理由解雇；guard...from 保护…免于＝protect...from。",
+   "note": "立法目的题抓 designed to 原文定性句：目的=guard the jobs of ordinary workers；B 与 C 都把 dismissal 偷换成 hiring/exemption，动宾搭配核对即可排除；题干 intended to 与 designed to 直接对应。"
+  },
+  {
+   "question_id": 1224,
+   "long_sentence": "定位句 But these provisions create difficulties for businesses when applied to highly paid managers... is a handbrake on boosting productivity。when applied 为状语从句省略结构；a handbrake on 比喻「像手刹一样拖住」。译：但这些条款用于高薪经理时给企业制造困难——限制解雇表现差的高薪管理者，等于给生产率提升拉了手刹。",
+   "option": "正确项 A hinder business development：create difficulties for businesses 加 a handbrake on boosting productivity and overall performance，两处比喻与直陈都指向条款阻碍企业发展；B undermine managers' authority 偷换概念，被限制的是企业解雇差经理的权力，不是经理的权威；C affect the public image of the firms 无中生有；D worsen labor-management relations 无中生有，第三段未谈劳资关系。",
+   "keyword": "handbrake 手刹（比喻阻碍＝hindrance）；constrain...from doing 限制…做；productivity 生产率；boost 提升。",
+   "note": "比喻是态度路标：handbrake on boosting productivity 的画面即『拖后腿』；题干 may 提示选可能性而非既成事实，A 的 hinder 与 difficulties/handbrake 构成双重同义，B 的 authority 是利用 managers 字面设陷。"
+  },
+  {
+   "question_id": 1225,
+   "long_sentence": "定位句 the Productivity Commission singled out the low quality of managerial capabilities as a cause of the country's poor productivity growth record。single out...as 把…点名为…；a cause of …的一个原因。译：生产力委员会点名指出，管理层能力低下是该国生产率增长疲弱的一个原因。",
+   "option": "正确项 D Dismissing poorly performing managers：管理层能力低下是生产率差的元凶，委员会必然支持解雇差经理，这与全文批评解雇难的困境一致；A wage restraints 偷换概念，firms pay staff less 是法律的副作用而非其支持的措施；B enforcing employment protection laws 正反混淆，低生产率正是保护法的后果；C limiting powers of business owners 正反混淆，限制业主解雇权正是问题根源。",
+   "keyword": "single out 点名、挑出；managerial capabilities 管理能力；productivity growth 生产率增长；dismiss 解雇＝fire。",
+   "note": "支持什么=反对什么的反面：委员会把 manager 能力差列为病因，则『解雇差经理』是它乐见的药方；B/C 顺着 ERA 现状走恰是委员会批评的方向，立场题先理清作者与委员会的批评对象。"
+  }
+ ]
+}

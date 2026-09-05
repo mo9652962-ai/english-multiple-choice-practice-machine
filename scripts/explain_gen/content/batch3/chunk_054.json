@@ -1,0 +1,180 @@
+{
+ "chunk": 54,
+ "items": [
+  {
+   "question_id": 1326,
+   "long_sentence": "定位句 For millennia, the city's remains lay unseen below some 13 feet of water. They were covered by a thick layer of sand。for millennia 数千年间；lay unseen 系表结构表状态；below some 13 feet of water 在约 13 英尺深的水下。译：数千年来，这座城市的遗迹静静躺在约 13 英尺深的水下无人得见，其上覆盖着一层厚厚的泥沙。",
+   "option": "正确项 C remains：城市沉没三千年，水下所藏正是 its remains（城市遗迹），与下文 The team identified some 15 buildings, courtyards, a network of streets（辨认出 15 座建筑等）互为印证；A legends（传说）文章讲的是实物考古不是神话；B programs（程序）与考古语境无关；D surroundings（周边环境）they 指代需与后文建筑遗存对应，周边环境不是被覆盖再被发掘的对象。",
+   "keyword": "remains 遗迹、遗骸＝ruins；millennia 千年（millennium 复数）；unseen 无人得见的；excavation 发掘。",
+   "note": "名词题向下找复现：They were covered...与 identified some 15 buildings 说明水下的实体是建筑遗存；remains 是考古文常见主语词，legends 是利用『古城』话题的惯性干扰。"
+  },
+  {
+   "question_id": 1327,
+   "long_sentence": "定位句 They were covered by a thick layer of sand off the island of Laconia。off 介词表『在…近岸的海面上／离岸不远处』。译：这些遗迹被拉科尼亚岛近海的一层厚厚泥沙所覆盖。",
+   "option": "正确项 B off：off the island of Laconia（拉科尼亚岛近岸海域）是海洋地理描写的惯用介词，沉城正在岛外海底；A across（横跨）沙层横跨岛屿不合地貌事实；C under（在…之下）沙层在岛下方逻辑颠倒；D via（经由）表途径，与方位描写无关。",
+   "keyword": "off the coast/island 在近岸海域；layer 层；peninsula 半岛；submerge 淹没。",
+   "note": "小介词考地理方位感：off 表『离岸海域』是航海英语高频用法（off the coast）；首段 Located in the southern Peloponnesian peninsula 已定位海湾场景，验证近岸介词的选择。"
+  },
+  {
+   "question_id": 1328,
+   "long_sentence": "定位句 In recent decades, shifting currents and climate change have eroded a natural barrier that protected Pavlopetri。shifting 变动不居的；erode 侵蚀；that 引导定语从句修饰 barrier。译：近几十年来，变幻的水流与气候变化侵蚀了曾庇护帕夫洛佩蒂的天然屏障。",
+   "option": "正确项 A currents：shifting currents（变化的水流）正是侵蚀海底天然屏障的主力，与海洋环境、泥沙覆盖的场景连贯；B rivers（河流）爱琴海海底屏障非河流作用对象；C seasons（季节）季节更替不直接侵蚀屏障；D winds（风）风力作用于地表，难以侵蚀水下屏障。",
+   "keyword": "current 水流、洋流＝ocean current；erode 侵蚀＝wear away；barrier 屏障＝natural buffer；shifting 变幻的。",
+   "note": "侵蚀逻辑链找作用者：水下屏障被侵蚀，能到达水下的是水流（currents）而非风、季节；shifting 与 currents 是环境报道的固定搭配。"
+  },
+  {
+   "question_id": 1329,
+   "long_sentence": "定位句 shifting currents and climate change have eroded a natural barrier that protected Pavlopetri。that 引导定语从句；erode 侵蚀。译：变幻的水流与气候变化侵蚀了曾保护帕夫洛佩蒂的天然屏障。",
+   "option": "正确项 D protected：屏障（barrier）的天然职能就是『保护』——屏障失守，城市遗址才面临被扰动的风险，为下文 Flemming 得以发现沉城作铺垫；A elevated（抬升）屏障抬升城市不合地理逻辑；B separated（分隔）屏障分隔城市与谁？语义不完整；C comprised（包含）屏障包含城市搭配错误。",
+   "keyword": "barrier 屏障；protect...from 保护…免受；erode 侵蚀；expose 使暴露（屏障失效的结果）。",
+   "note": "定语从句动词看名词职能：barrier 的语义指向 protect；barrier 一词本身就是『保护性阻隔』的名词化，选动词时让名词自证其义即可。"
+  },
+  {
+   "question_id": 1330,
+   "long_sentence": "定位句 In 1967 a scientific survey of the Peloponnesian coast was gathering data to analyze changes in sea levels when British oceanographer Nicholas Flemming first spotted the submerged structures。过去进行时 was gathering 表背景动作；to analyze 目的状语。译：1967 年，一项针对伯罗奔尼撒海岸的科学考察正在收集数据以分析海平面变化，就在此时，英国海洋学家尼古拉斯·弗莱明首次发现了水下的建筑遗存。",
+   "option": "正确项 A gathering：gather data（收集数据）是科学考察的标准动宾搭配，was gathering 构成进行中的背景事件；B restoring（恢复）恢复数据搭配不当；C updating（更新）更新已有数据与分析新变化的目的不符；D supplying（提供）考察是采集方不是数据供给方。",
+   "keyword": "gather data 收集数据＝collect data；survey 考察、勘测；oceanographer 海洋学家；spot 发现＝catch sight of。",
+   "note": "was doing...when... 句型：正在做的事作背景，when 引导突发事件（first spotted）；判别进行中动词看考察目的——analyze changes 需要先 gather；supplying 的方向（谁给谁）一辨即倒。"
+  },
+  {
+   "question_id": 1331,
+   "long_sentence": "定位句 a scientific survey of the Peloponnesian coast was gathering data to analyze changes in sea levels when British oceanographer Nicholas Flemming first spotted the submerged structures。when 并列连词接续过去进行时主干，表『正在…之际』。译：科学考察正在收集数据、分析海平面变化之时，英国海洋学家弗莱明首次发现了水下建筑遗存。",
+   "option": "正确项 A when：was doing...when... 是『正在做某事时突然发生另一事』的固定句式，偶然发现正需要这种背景打断结构；B until（直到）表动作延续到某点，发现不是收集的终点；C after（之后）先收集后发现的时间顺序弱化了『偶然』；D once（一旦）表条件，与叙事时序不合。",
+   "keyword": "be doing...when... 正在…这时；spot 发现；first spotted 首次发现；by chance 偶然。",
+   "note": "句型题认准进行时+first：first spotted（首次发现）的偶然性由 was gathering 的背景时态衬托，when 是唯一适配连词；after/once 都会把偶然发现改写成计划步骤。"
+  },
+  {
+   "question_id": 1332,
+   "long_sentence": "定位句 British oceanographer Nicholas Flemming first spotted the submerged structures。submerged 被淹没的；structures 建筑物、构筑物。译：英国海洋学家弗莱明首次发现了水下的建筑遗存。",
+   "option": "正确项 D structures：后文 A year later...The team identified some 15 buildings, courtyards, a network of streets（辨认出约 15 座建筑、庭院、街道网络）——Flemming 首先看到的是成片的建筑遗迹，structures 是其统称；A belongings（随身物品）沉城遗存是建筑不是个人财物；B resources（资源）考古发现不称资源；C products（产品）建筑遗存不是商品。",
+   "keyword": "structure 建筑物、构筑物＝building；submerged 水下的；identify 辨认；chamber tomb 石室墓。",
+   "note": "下文列举是本空的答案库：15 buildings/courtyards/streets 全属 structures 的下位概念，先读后文再选名词；belongings/products 是复数名词的凑数项，用『考古发现的主体是建筑』即可排除。"
+  },
+  {
+   "question_id": 1333,
+   "long_sentence": "定位句 A year later, he returned with a few students to examine the location and map the site。return to do 返回去做某事；examine the location 勘察该地点；map the site 给遗址绘图。译：一年后，他带着几名学生重返此地，对地点进行勘察并为遗址绘制地图。",
+   "option": "正确项 D examine：examine the location and map the site（勘察地点、绘制遗址图）是初勘阶段的两步动作，与 team identified some 15 buildings 的勘察成果衔接；A preserve（保护）1968 年的二度到访目的是勘查而非保护；B select（挑选）无挑选语境；C display（展示）遗址尚未发掘谈何展示。",
+   "keyword": "examine 勘察、检查＝survey；map 绘制地图；location 地点；site 遗址。",
+   "note": "动作链定动词：发现（spotted）→重返勘察（examine+map）→辨认遗存（identified），1968 年之行是勘察环节；preserve/display 都是后续阶段的动作，时序错位即错。"
+  },
+  {
+   "question_id": 1334,
+   "long_sentence": "定位句 Despite the exciting initial finds, the site would lie undisturbed for decades before archaeologists would return。Despite 介词表让步；initial finds 初步发现；would lie undisturbed 将一直沉寂不受打扰。译：尽管有这些激动人心的初步发现，遗址仍将沉寂数十年，考古学家才会再度归来。",
+   "option": "正确项 A Despite：exciting initial finds（发现喜人）与 lie undisturbed for decades（沉寂数十年）构成让步反差——虽有收获却长期搁置；B Unlike（不像）需要比较对象；C Besides（此外）表追加，与后文的停滞矛盾；D Among（在…之中）介词语境不合。",
+   "keyword": "despite 尽管＝in spite of；initial 最初的；finds 发现物（名词复数）；lie undisturbed 沉寂不受扰。",
+   "note": "让步介词题先找反差对：exciting（喜）与 undisturbed for decades（搁置）一扬一抑，Despite 缝合反差；Besides 表『连同喜讯一起』则逻辑自相矛盾。"
+  },
+  {
+   "question_id": 1335,
+   "long_sentence": "定位句 the site would lie undisturbed for decades before archaeologists would return。lie undisturbed 系表结构表持续状态；before 在…之前。译：遗址将不受打扰地沉寂数十年，直到考古学家重返。",
+   "option": "正确项 D undisturbed：lie undisturbed（静静沉眠、不受打扰）既呼应发现后无人再至的事实，又暗含遗址保存完好的庆幸语气；A unchallenged（未受质疑）多修饰观点纪录；B unknown（不为人知）与已 spotted/identified 的情节矛盾——已发现何来未知；C unorganized（无组织的）不修饰遗址状态。",
+   "keyword": "undisturbed 不受打扰的＝untouched；lie + adj. 保持某种状态；decades 数十年；return 重返。",
+   "note": "情态词辨析看叙事一致性：遗址已被发现但无人行动，是『知而不扰』而非『不知』，B 与前文 spotted 直接冲突；lie un- 系列中只有 undisturbed 兼顾状态与语气。"
+  },
+  {
+   "question_id": 1336,
+   "long_sentence": "定位句 In 2009 archaeologists Chrysanthi Gallou and Jon Henderson resumed the excavation of Pavlopetri in cooperation with the Greek Ministry of Culture。resume 及物动词表『中断后重新开始』；in cooperation with 与…合作。译：2009 年，考古学家加卢与亨德森与希腊文化部合作，重启了对帕夫洛佩蒂的发掘。",
+   "option": "正确项 C resumed：前文遗址 lie undisturbed for decades（沉寂数十年），2009 年的发掘必然是『重启』，resume 的中断-再启语义与 decades 的空白严丝合缝；A suspended（暂停）与重启的动作方向相反；B transferred（转移）发掘未换地点；D canceled（取消）与后文 2009-2013 的持续成果矛盾。",
+   "keyword": "resume 重启＝recommence；excavation 发掘＝dig；in cooperation with 与…合作；ministry 部（政府）。",
+   "note": "时间线索定动词方向：undisturbed for decades→2009 年动作必为『恢复中断之事』；resume 既可及物（resume the excavation）也可不及物， suspended/canceled 是方向反转陷阱。"
+  },
+  {
+   "question_id": 1337,
+   "long_sentence": "定位句 Since the 1960s, underwater archaeology techniques and tools had made huge advances。since the 1960s 自 20 世纪 60 年代以来；had made huge advances 过去完成时表到 2009 年前已取得的进步。译：自 20 世纪 60 年代以来，水下考古技术与工具已取得长足进步。",
+   "option": "正确项 D techniques：techniques and tools（技术与工具）是谈考古能力进步的标准并列，与下文 robotics, sonar mapping, and state-of-the-art graphics（机器人、声呐测绘、尖端图形技术）一一对应；A policies（政策）政策进步不解释技术手段；B theories（理论）文中未涉及理论革新；C documents（文件）与考古作业无关。",
+   "keyword": "technique 技术方法＝method；tool 工具；advance 进步＝progress；sonar mapping 声呐测绘。",
+   "note": "并列名词互证：空后 and tools 锁定并列域，下文 robotics/sonar/graphics 三件套正是 techniques 的实例；做完形时先把下文例子圈出再回填空，名词题最忌孤立选词。"
+  },
+  {
+   "question_id": 1338,
+   "long_sentence": "定位句 The team employed robotics, sonar mapping, and state-of-the-art graphics to survey the site。employ 及物动词表『运用、使用』；state-of-the-art 最先进的。译：团队运用机器人技术、声呐测绘与最先进的图形技术来勘察遗址。",
+   "option": "正确项 C employed：employ tools/technology to do（运用…来做）是技术手段类动词的正选，与 made huge advances 的技术进步叙事衔接；A ordered（订购）订购三件技术来勘察搭配生硬且无采购语境；B provided（提供）团队是使用者不是供给者；D adjusted（调整）调整机器人声呐来勘察语义别扭。",
+   "keyword": "employ 运用＝use/utilize；robotics 机器人技术；survey 勘察；state-of-the-art 最先进的＝cutting-edge。",
+   "note": "employ 是 use 的高级替换词，考研完形高频：手段类名词（technology/tools/methods）前优先考虑 employ；ordered 的买卖义与 provided 的给予方向都与主语 team 的使用者身份相悖。"
+  },
+  {
+   "question_id": 1339,
+   "long_sentence": "定位句 From 2009 to 2013 they were able to bring the underwater town to light。bring...to light 使…重见天日、揭示；from 2009 to 2013 时间跨度。译：2009 至 2013 年间，他们得以让这座水下古城重见天日。",
+   "option": "正确项 B light：bring...to light（使显露于世）是描述考古发现成果的固定习语，与 excavation/resumed 的叙事闭环——发掘的目的就是让沉城重见天日；A effect（bring...to effect 实施）宾语通常是计划；C reality（bring...to reality 使成真）古城本已存在，不是把梦想变成现实；D mind（bring...to mind 使想起）主语通常是人或事勾起回忆。",
+   "keyword": "bring...to light 使重见天日＝unearth；come to light 被披露；excavation 发掘；underwater town 水下古城。",
+   "note": "习语题背搭配族：bring to light/come to light 专表『显露真相』，考古、新闻语体高频；reality 与 effect 都要与『从无到有』的宾语配合，沉城是从『不可见』到『可见』。"
+  },
+  {
+   "question_id": 1340,
+   "long_sentence": "定位句 Covering about two and a half acres, Pavlopetri's three main roads connected some 50 rectangular buildings, all of which had open courtyards。Covering... 现在分词作状语；all of which 非限制性定语从句。译：这座占地约两英亩半的古城，三条主街连接起约 50 座矩形建筑，全部带有开放式庭院。",
+   "option": "正确项 B connected：三主街与 50 座建筑之间是道路连接建筑的常规城市格局，connected 也与 identified a network of streets（街道网络）的网络概念呼应；A crossed（交叉穿过）道路交叉的是道路，说街道穿过 50 座建筑不合常理；C blocked（阻挡）街道阻挡建筑与城市功能相悖；D altered（改变）街道不改变建筑。",
+   "keyword": "connect 连接＝link up；rectangular 长方形的；courtyard 庭院；acre 英亩。",
+   "note": "道路与建筑的语义关系选连接：城市街道的功能就是 connect；crossed 的主语通常是两条线状物，blocked/altered 与道路服务建筑的本质相反。"
+  },
+  {
+   "question_id": 1341,
+   "long_sentence": "定位句 Excavations revealed a large number of Minoan-style loom weights, suggesting Pavlopetri was a thriving trade center with a robust textile industry。revealed 揭示；loom weights 织机坠（纺坠）；suggesting 现在分词作结果状语。译：发掘揭示出大量米诺斯风格的织机坠，表明帕夫洛佩蒂曾是一个贸易繁荣、纺织业兴旺的中心。",
+   "option": "正确项 B suggesting：物证（织机坠）推出结论（纺织业兴旺），suggesting 作结果状语表『这表明』，是证据-结论衔接的标准分词；A expecting（期待）物证不会期待；C predicting（预测）对已发生的古城史是推断不是预测未来；D recalling（回忆）物证不回忆。",
+   "keyword": "suggest 表明＝indicate；loom weight 织机坠；textile industry 纺织业；thriving 兴旺的＝prosperous。",
+   "note": "证据推论句背结构：reveal A, suggesting B（发现A，表明B）是考古科普文的高频句式；suggest 此处取『表明』义而非『建议』义，后接完整句子不接 doing。"
+  },
+  {
+   "question_id": 1342,
+   "long_sentence": "定位句 Pavlopetri was a thriving trade center with a robust textile industry。thriving 与 robust 并列表积极评价；with 短语作后置定语。译：帕夫洛佩蒂曾是一个贸易兴旺、纺织业强劲的（贸易）中心。",
+   "option": "正确项 A robust：robust（强劲的、蓬勃的）与 thriving（兴旺的）同向叠加，共同支撑 trade center 的繁荣定位，也与大量织机坠的物证规模匹配；B diverse（多样的）文中只提织机坠一种物证，谈不到多样；C marginal（边缘的、次要的）与 thriving 直接矛盾；D dependent（依赖的）dependent textile industry 依赖型纺织业语义消极，与贸易中心的繁荣定性不符。",
+   "keyword": "robust 强劲的＝flourishing；thriving 兴旺的；marginal 边缘的、微不足道的；textile 纺织品。",
+   "note": "评价形容词看同向搭配：with 前后是并列的褒义定语（thriving + robust），填词须与 thriving 同频；marginal 是最强反义陷阱，dependent 消极义与全文繁荣叙事相抵。"
+  },
+  {
+   "question_id": 1343,
+   "long_sentence": "定位句 The target group was given a 30-minute drama-based activity to accompany the passage... [target] group put themselves in the shoes of a literary character and express that character's emotion。drama-based activity 戏剧化活动；put oneself in the shoes of 设身处地代入。译：实验组获得一段 30 分钟的戏剧化活动来配合选文——他们把自己放进文学角色的处境中，表达角色的情感。",
+   "option": "正确项 C play the roles in Shakespeare：rehearsal room 排练室法的核心是扮演（as Ferdinand 写漂流瓶信息、in role 写作、put themselves in the shoes of a literary character），即进入莎士比亚剧中人物；A 改写莎翁台词 无中生有，写的是 bottle message 不是改写原文；B 观看 RSC 演员表演 无中生有，文中无观演环节；D 师从 RSC 艺术家学戏剧 无中生有，RSC 只是委托研究的机构。",
+   "keyword": "rehearsal room 排练室；in role 入戏、以角色身份；put oneself in the shoes of 代入…的处境；shipwreck 海难。",
+   "note": "方法名是题眼：rehearsal room 意味着『演』而非『看』『改』『学』， act him out（首段）与 in role 的复现是三重证据；A/B/D 都是围绕 RSC 与 Shakespeare 词汇的拼装干扰。"
+  },
+  {
+   "question_id": 1344,
+   "long_sentence": "定位句 The randomised control trial involved hundreds of year 5 pupils—aged nine and ten—at 45 state primary schools that had not been previously exposed to RSC pedagogy. They were split into target and control groups。randomised control trial 随机对照试验；be exposed to 接触过。译：试验涉及 45 所未接触过 RSC 教学法的公立小学数百名九至十岁学生，分为实验组与对照组。",
+   "option": "正确项 A the change in instruction enhances learning outcomes：对照试验的自变量是教学法（drama-based 活动有无），因变量是学习结果（vocabulary、writing complexity、emotional literacy），检验的正是『教学方式改变能否提升学习成效』；B 扩词汇是否促进阅读流利度 张冠李戴，词汇量是结果指标不是自变量，fluency 文中未提；C 情感是否影响理解复杂作品 偷换概念，emotional literacy 是成果维度；D 课堂活动是否激发艺术兴趣 无中生有，研究未测兴趣。",
+   "keyword": "randomised control trial 随机对照试验；target/control group 实验组/对照组；pedagogy 教学法＝instruction；outcome 成效。",
+   "note": "实验类题目拆变量：教学法变化（因）→词汇、写作、情感素养（果）；A 的 instruction 与 outcomes 恰好对应两端；B/C/D 都把因变量错当自变量或加了文中没有的指标。"
+  },
+  {
+   "question_id": 1345,
+   "long_sentence": "定位句 The Time to Act study also found that while control pupils relied on 'desert island cliches' such as palm trees, target pupils were 'more expansive [giving] a broader picture of the sky, the sea and the atmospheric conditions'。while 表对比；expansive 开阔的。译：对照组学生依赖棕榈树之类的荒岛陈词滥调，实验组则写得更为开阔，对天空、海洋与天气给出更宽广的画面。",
+   "option": "正确项 A weakness in description：对照组只有 palm trees 式的套路化意象，而实验组能铺开 sky/sea/atmospheric conditions 的立体画面，两组对比反衬对照组描写能力薄弱；B 遗漏小细节 偷换概念，问题是画面套路化不是漏掉细节；C 随意的文风 偷换概念，cliche 指陈词滥调不是随意散漫；D 偏爱大词 正反混淆，用 sophisticated or rarer words 的是实验组。",
+   "keyword": "cliche 陈词滥调＝stereotype；expansive 开阔的；atmospheric conditions 天气状况；draw on a wider vocabulary 调用更广词汇。",
+   "note": "对比句看两组分野：while 前后一句贬一句褒，对照组的 cliche 对应『描写力弱』；D 是最险陷阱——大词属实验组，方向一反即错。"
+  },
+  {
+   "question_id": 1346,
+   "long_sentence": "定位句 The emotional understanding was very evident and it is probably related to the [rehearsal room process]... part of what you do in drama is put yourself in different shoes。be related to 与…相关；put yourself in different shoes 把自己放进不同（角色）处境。译：这种情感理解非常明显，大概与排练室训练有关——你习惯靠想象走通角色之路；戏剧的一部分就是把自己放进不同处境。",
+   "option": "正确项 B Identifying with literary characters：put yourself in different shoes 加 target 组 put themselves in the shoes of a literary character and express that character's emotion——情感素养的提升源于对文学角色的共情代入；A 富于想象地写作 偷换概念，想象是代入角色的手段，O'Hanlon 强调的是代入本身；C 从自然汲取灵感 无中生有；D 专注于现实情境 正反混淆，代入的是剧中人物处境，不是现实自身（那正是对照组的做法）。",
+   "keyword": "identify with 与…共情、认同＝relate to；emotional literacy 情感素养；in different shoes 处于不同（角色）处境；resilient 有韧性的。",
+   "note": "人物归因题抓 she added 的解释句：O'Hanlon 把情感理解归因于 put yourself in different shoes 的戏剧训练；B 的 identify with 正是 in the shoes of 的同义改写，D 用现实与想象的对立反向设陷。"
+  },
+  {
+   "question_id": 1347,
+   "long_sentence": "定位句 But could the results be replicated with any old dramatist? ... Shakespeare's 20,000 words, compared with the everyday 2,000, gave a 'massive expansion of language into children's lives'... 'using their whole bodies to bring words to life'。replicate 复现。译：换任何老剧作家还能复现吗？她称需更多研究，但莎翁两万词汇（日常两千）给孩子的语言带来大规模扩展，孩子还用整个身体把词演活。",
+   "option": "正确项 A the new teaching method may work best with Shakespeare：设问 could the results be replicated with any old dramatist? 加莎翁 20,000 词对 2,000 词的 unique 优势，暗示这套教法与莎翁的巨量语言素材最匹配，换人未必同样有效；B 莎翁语言令学生望而生畏 正反混淆，研究显示学生在莎翁文本中如鱼得水；C 其他老剧作家可能进入小学课堂 过度推断，more research would be needed 恰是审慎保留；D 学生可能不愿碰其他老剧作家 无中生有。",
+   "keyword": "replicate 复现＝reproduce；massive expansion 大幅扩展＝huge enlargement；bring words to life 让词语鲜活起来；dramatist 剧作家。",
+   "note": "末段推断题抓设问与对比数字：could...? 的疑问句式暗示否定倾向（未必能复现），20,000 对 2,000 的悬殊是莎翁不可替代性的证据；C 把 more research 误读成肯定结论。"
+  },
+  {
+   "question_id": 1348,
+   "long_sentence": "定位句 I was shocked to learn recently that some scientists want to scale back their research in an effort to decrease carbon emissions。be shocked to do 震惊于；scale back 缩减；in an effort to do 为了。译：最近得知一些科学家想缩减自己的研究以减少碳排放，我深感震惊。",
+   "option": "正确项 B intention to reduce their research：shocked 的对象是 want to scale back their research（想缩减研究）这一意图；A 不愿减排 正反混淆，他们正是为了减排才要缩研究；C 怀疑可持续能源 无中生有；D 项目中浪费电力 偷换概念，作者承认科研耗能 unarguable（无可争辩），但震惊点不在浪费而在因噎废食的打算。",
+   "keyword": "scale back 缩减＝cut back on；in an effort to 旨在＝in a bid to；energy-intensive 高耗能的；shocked 震惊的。",
+   "note": "情感句找 that 从句的宾语核心：震惊的是 want to scale back research 这一打算本身；A 把他们的动机读反，D 用第二段的耗能事实偷换第一段的情绪落点，注意 shocked 所在句的信息边界。"
+  },
+  {
+   "question_id": 1349,
+   "long_sentence": "定位句 However, this is a price we must pay for understanding the world... The carbon emissions from technological research are well spent: ultimately this research will safeguard the future of our planet。a price we must pay 必须付出的代价；well spent 花得值；safeguard 捍卫。译：然而，这是认识世界必须付出的代价——技术科研产生的碳排放是值得的：这些研究终将捍卫我们星球的未来。",
+   "option": "正确项 D are justifiable in the long run：are well spent（花得值）加 ultimately...safeguard the future（终将守护地球未来），时间落点在长远，正当性成立；A 造成了严重后果 无中生有，作者为排放辩护；B 引发了无谓担忧 正反混淆，作者不否认耗能事实（unarguable），反对的是停研究的结论；C 目前难以处理 无中生有，后文 LUMI 例子正说明可持续计算可行。",
+   "keyword": "well spent 花得值＝justified；safeguard 捍卫＝protect；ultimately 最终＝in the long run；net-zero 净零排放。",
+   "note": "观点题抓评价短语：well spent 是作者的价值判断，ultimately 给出长时段视角，justifiable in the long run 是两者的合并改写；B 的 groundless 与作者承认事实的态度相抵。"
+  },
+  {
+   "question_id": 1350,
+   "long_sentence": "定位句 Recognising the hope that science and engineering can bring was the impetus behind the... Prize。往届得主 Martin Green 的 PERC 技术现用于全球大多数太阳能板；Thanks to his invention, we have a real chance to decrease the world's carbon emissions。impetus 动力；thanks to 多亏。译：认可科学与工程带来的希望是创设千年技术奖的初衷；多亏格林教授的发明，我们才有真实机会削减全球碳排放。",
+   "option": "正确项 C the rewards of scientific endeavours：例子支撑段首论点 Recognising the hope that science and engineering can bring——Green 的科研（endeavour）结出 PERC 技术，为全球减排带来真实希望（reward），例证科学投入的回报；A 伟大科学家的成就 过度泛化，例子服务于『科学带来希望』的论点，不是个人成就颂扬；B 应对气候变化的紧迫性 偏离，段落基调是希望不是紧迫；D 培养人类创造力的价值 偷换概念，ingenuity 是奖项宗旨的背景词，例子的落点是 Green 发明的减排回报。",
+   "keyword": "impetus 动力＝driving force；ingenuity 独创才智；endeavour 努力、事业＝effort；thanks to 多亏＝owing to。",
+   "note": "例证题答案在例子前的观点句：Recognising the hope that science...can bring 定调，Green 的 invention→chance to decrease emissions 是『努力有回报』的实例；A 的成就与 D 的培养都在论点之外打转。"
+  }
+ ]
+}

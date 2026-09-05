@@ -1,0 +1,180 @@
+{
+ "chunk": 57,
+ "items": [
+  {
+   "question_id": 1401,
+   "long_sentence": "定位句 A woman says there have been fewer street fights since the arrival of the wireless but also less stopping and 'talking on the brush handle'；第六段 lost the neighbourly habit of 'talking on the brush handle'。but also 表并列失去的两样东西；neighbourly 邻里间的。译：一位女士说自从有了无线电，街头争吵少了，但停下来「拿着扫帚柄闲聊」的时候也少了。",
+   "option": "正确项 B having a casual chat：第六段 neighbourly habit（邻里习惯）直接定性，街头持帚闲谈即日常闲聊；A 大声喧哗 无中生有；C starting a trivial quarrel 张冠李戴，street fights 是另一个被减少的对象，不是本短语含义；D 哼唱流行歌 无中生有。",
+   "keyword": "casual chat 闲聊＝chat idly；neighbourly 邻里的、友好的；street fight 街头争吵；handle 柄。",
+   "note": "短语释义题靠两处语境互证：第三段与 street fights 对举、第六段有 neighbourly habit 定性，两处相加只能得出「闲聊」；C 项是把并列项 street fights 的性质错安到本短语上。"
+  },
+  {
+   "question_id": 1402,
+   "long_sentence": "定位句 it is worth noticing when techno-social habits do change, and asking whether to control them a bit or shield the youngest. Whatever we do, innovation will happen。worth noticing 值得留意；whether...or... 表权衡；Whatever we do 让步。译：值得留意的是技术社会习惯何时真的改变，并追问是否该稍加控制或保护最年幼者；无论我们做什么，创新都会发生。",
+   "option": "正确项 D people should adopt a sensible attitude to innovations：留意变化、权衡控制与保护、承认创新不可挡＝对创新持理性务实的态度；A 技术应造福人类 泛化无出处；B 应采取行动复兴倾听艺术 过度推断，作者只提出疑问 is the art endangered 未呼吁行动；C 青少年应养成健康社媒习惯 张冠李戴，shield the youngest 只是待权衡的选项。",
+   "keyword": "techno-social 技术社会的；shield 保护＝protect；innovation 创新；sensible 理性的＝reasonable。",
+   "note": "末段观点题抓 worth doing 与 Whatever we do 两层：既承认要审视又不否认创新必然，合起来是「理性态度」；B 的行动呼吁与 A 的技术目的论都是把局部词句升格成主张。"
+  },
+  {
+   "question_id": 1403,
+   "long_sentence": "定位句 he was surprised to find a record of repeated blazes dating back hundreds of years before European colonists arrived on the continent. Some of the trees he analyzed bore more than 20 fire scars among their rings。surprised to find 惊讶地发现；dating back... 后置定语。译：他惊讶地发现一段早在欧洲殖民者抵达数百年前、反复起火的记录；他分析的一些树轮中带有超过 20 道火疤。",
+   "option": "正确项 D the number of wildfires in precolonial times：repeated blazes 加 more than 20 fire scars＝殖民前野火次数之多超出想象；A 美国树轮研究稀缺 正反混淆，他正是在树轮研究室读到丰富记录；B 古代欧洲的消防措施 无中生有；C 1970 年代的森林管理 张冠李戴，那是他的任务而非惊讶对象。",
+   "keyword": "blaze 火焰、大火＝fire；fire scar 火疤；date back to 追溯到；precolonial 殖民前的。",
+   "note": "惊讶对象看 surprised to find 的宾语从句内容：反复起火的记录与 20 多道火疤都在说「次数多」；A 与 his mandate（put everything out）的背景相扣，把「任务」误当「惊讶」。"
+  },
+  {
+   "question_id": 1404,
+   "long_sentence": "定位句 a growing body of research showed that frequent, low-severity fires made many ecosystems healthier. They rid the forest of dead and sick trees, reducing competition and curbing the spread of disease。made healthier 为段旨句；rid...of 清除；两个现在分词表结果。译：越来越多研究表明，频繁的低强度火烧让许多生态系统更健康——它们清走病死树木，减少竞争并遏制疾病蔓延。",
+   "option": "正确项 C the benefits of low-severity fires：made ecosystems healthier 加清病树、减竞争、抑疾病三大益处，全段围绕低强度火的好处；A 既往火烧的原因 无中生有；B 病树的治疗 张冠李戴，清除病树是火的益处而非医疗手段；D 森林生态系统的重要性 过度泛化，主角是「低强度火」。",
+   "keyword": "low-severity 低强度的；ecosystem 生态系统；rid...of 清除；curb 遏制＝check。",
+   "note": "段落主旨看段首观点句：made many ecosystems healthier 是总起，三个分词短语是分述；D 偷换主角，把「火的益处」泛化成「生态系统」，主旨题抓限定词 low-severity。"
+  },
+  {
+   "question_id": 1405,
+   "long_sentence": "定位句 the researchers compared the historical fire cadence with the wildfires recorded over the past few decades, and uncovered a striking shortfall. The NAFSN sites experienced less than a quarter of the number of fires expected without fire suppression。shortfall 缺口。译：研究者将历史火节奏与近几十年野火对比发现惊人缺口：样点火灾次数不到无扑救情形下预期的四分之一。",
+   "option": "正确项 B Their frequency has markedly decreased：less than a quarter of the number of fires＝火灾次数锐减，frequency≈the number of fires、markedly≈striking；A 强度剧烈波动 无出处；C 威胁被低估 无中生有；D 记录被误读 无中生有。",
+   "keyword": "cadence 节奏、频度；shortfall 缺口＝deficit；fire suppression 火灾扑救；a quarter of 四分之一。",
+   "note": "数据题看比较结构：historical cadence 对 decades 的 wildfires，落差落在「次数」上；A 用 intensity 偷换 number，回文核对比较维度即可秒杀。"
+  },
+  {
+   "question_id": 1406,
+   "long_sentence": "定位句 Yet the combined consequences of suppression and climate change have eroded humanity's ability to suppress fires, particularly those that ignite under the most dangerous weather conditions。combined consequences 叠加后果；eroded 侵蚀。译：然而扑救与气候变化叠加的后果侵蚀了人类灭火的能力，尤其是在最危险天气条件下燃起的火灾。",
+   "option": "正确项 D It may make severe fires harder to put out：eroded the ability to suppress fires, particularly dangerous-weather fires＝（长期扑救的）后果使严重火灾更难扑灭；A 需要更多训练 无中生有；B 有效性受公众质疑 正反混淆， deficit is a testament to effectiveness；C 使传统战术无用 过度推断。",
+   "keyword": "erode 侵蚀＝weaken；suppress 扑灭、压制＝put out；ignite 点燃；testament 证明＝proof。",
+   "note": "推断题抓 eroded 的宾语与限定：能力被侵蚀的恰是「最危险天气下的火」，D 的 severe fires harder to put out 与之对应；B 用 testament to effectiveness 反向设陷，注意本段 Yet 转折。"
+  },
+  {
+   "question_id": 1407,
+   "long_sentence": "定位句 Martin：people must bring healthy fire back to places that need it... prescribed burns...；Prichard：It's a double-edged sword because wildfires are getting more severe... and we need this work even more。must 表必要性；double-edged sword 双刃剑。译：马丁说必须让健康的火回归需要它的地方（计划烧除）；普里查德说这是把双刃剑——气候变化下野火更猛、这项工作更加必要却也更难。",
+   "option": "正确项 C it is necessary to introduce prescribed burns：Martin 的 must bring healthy fire back 与 Prichard 的 we need this work even more 共同指向「实施计划烧除的必要性」；A 预测大型野火很困难 无出处；B 评估计划火烧迫在眉睫 张冠李戴，讨论的是实施而非评估；D 加倍火灾探测投入 无中生有。",
+   "keyword": "prescribed burn 计划烧除（计划烧毁）；resilient 有韧性的；double-edged sword 双刃剑；necessary 必要的＝must。",
+   "note": "观点共识题找两人的交集：Martin 正面主张（must）、Prichard 让步后仍肯定（need even more），交集是「该做计划烧除」；分歧只在难度，B 把难度讨论偷换成评估需求。"
+  },
+  {
+   "question_id": 1408,
+   "long_sentence": "答案段 B 居 41 框（紧随固定的 F 段）：F 段建言商人 what you really need to do is stay in more, sit down—and read a book，B 段首 But for the most part, this isn't what the business community does 用 this 回指 F 的建议并急转现实——高管不读书。译：但多数情况下，商界并不这么做：我还没见过定期读书的首席执行官。",
+   "option": "答案 B 段填 41 框：F 与 B 构成「建议—现实背离」的转折衔接，this 指代是硬证据；B 末句 a vast ocean awaits...imaginative refreshment 又为后文读什么铺垫；强干扰 C 以 Neuroscientists 开头讲读书好处，但它已被固定，E 的 golden age 开头无法承接 F 的建议句。",
+   "keyword": "for the most part 多数情况下；at a pinch 不得已时；foolproof recipe 万无一失的配方；imaginative refreshment 想象力的滋养。",
+   "note": "排序衔接先看段首指代与转折词：B 的 But this 必须有先行建议句，全篇只有 F 匹配；已固定的 F、H、C 是排序锚点，候选段先与锚点连线再排自由段。"
+  },
+  {
+   "question_id": 1409,
+   "long_sentence": "答案段 E 居 42 框（C 与 A 之间）：C 段（固定）末 Our imagination—remember that?—is rekindled 收在「想象力被重燃」，E 段 We are living through a golden age of science writing 顺势展开「可读之物」，末句 Rovelli 引语 We are never sure of anything 保留悬念。译：我们正身处科普写作的黄金时代，它清晰易读，连门外汉都能品味发现的不可预测性。",
+   "option": "答案 E 段填 42 框：C（读的好处）到 E（读什么：科普）话题顺承；E 末的不确定感又与 A 段 And just read a single poem 的递进相接——小说（H）、科普（E）、诗歌（A）构成推荐链；强干扰 G 的 also 表好处递进，应跟在好处清单后而非此处。",
+   "keyword": "golden age 黄金时代；lucid 清晰的＝clear；lay reader 门外汉读者；stamina 耐力、毅力。",
+   "note": "推荐链结构是本篇骨架：H 小说→E 科普→A 诗歌依次铺开读物；E 段首 golden age 与 H 段末 golden age of translation 呼应但不相邻，靠「读物类型」分层定序。"
+  },
+  {
+   "question_id": 1410,
+   "long_sentence": "答案段 A 居 43 框（E 之后）：A 段首 And just read a single poem 用 And 承接 E 段的科普推荐再加一类读物；Heaney 的 glimpsed alternative 与两问 What does the poet see that you don't? 展开读诗的对话感。译：就读一首诗吧。希尼在牛津讲座中说，诗描绘现实的图景——一个与你自身现实相映成趣的「惊鸿一瞥的替代」。",
+   "option": "答案 A 段填 43 框：And 开头必须承接另一读物推荐，唯一前邻是 E；A 末 Forget self-help books; reading is self-help in action 完成从「读什么」到「为何读」的收拢，再交棒给 G 的好处清单；强干扰 G 若置 43 则 And 无法着落，且把好处清单从 C 处割裂。",
+   "keyword": "glimpsed alternative 惊鸿一瞥的替代；negotiation 协商、交流；self-help 自助、自我提升；in action 落到实处的。",
+   "note": "段首连词定邻：And 表追加，前段必须是同为「推荐读物」的段落；A 与 H、E 构成三类读物的并列推进，Forget self-help books 的收束句提示本段接近推荐链尾声。"
+  },
+  {
+   "question_id": 1411,
+   "long_sentence": "答案段 G 居 44 框（A 与 D 之间）：G 段首 Reading has also been found to... 用 also 递进 C 段开启的好处清单——更乐助人、减少偏见、延年益寿，括号补注纸质书优于数字书。译：阅读还被发现能使人更乐于助人、减少偏见，甚至延年益寿——手握好书更享此福。",
+   "option": "答案 G 段填 44 框：also 呼应 C 的 better informed、concentration、social understanding 等好处，G 是好处清单的第二波；G 之后 D 以 all work and no play 收束全文；强干扰 A 的 And 须接读物而非好处，G 若置于 42 则与固定段 C 的好处列举断开。",
+   "keyword": "longevity 长寿；reduce bias 减少偏见；physical books 纸质书；be associated with 与…相关。",
+   "note": "also 是好处清单的接力棒：见到 Reading has also been found 就找前文的好处句（C 段）；本篇结构为「建议（F）—现实（B）—读物三连（H/E/A）—好处（C/G）—收尾（D）」，按功能分层排最稳。"
+  },
+  {
+   "question_id": 1412,
+   "long_sentence": "答案段 D 居 45 框（末位）：D 段 It is undoubtedly true that all work and no play really does make Jack, or Jill, dull 呼应 F 的商人劳碌，The cure is right at hand 承接全文，末句被截为 Liberate your，与原文残句 imagination this year. 直接续接。译：毫无疑问，只工作不玩耍让人乏味；良方就在手边——阅读便宜、简单，最重要的是有趣。今年就解放你的想象力吧。",
+   "option": "答案 D 段填 45 框：D 末句 Liberate your 与原文残句 imagination this year. 构成一句完整话，截断续接是排序题最强证据；all work and no play 回扣 F 段的 dashing from office to plane，首尾呼应；强干扰 E 的黄金时代句只能作分述不能收尾，G 的 also 也不能作结。",
+   "keyword": "all work and no play 只工作不玩；the cure is right at hand 良方近在咫尺；liberate 解放＝set free；imagination 想象力。",
+   "note": "残句续接是本空的决定性证据：先扫原文 PASSAGE 只剩 imagination this year.，再找含半截句的段落，D 的 Liberate your 一拍即合；排序末段常带号召或总结，D 兼具两者。"
+  },
+  {
+   "question_id": 1413,
+   "long_sentence": "空所在句：It is the first worldwide epidemic 1 __ by the World Health Organization in 41 years。过去分词短语作后置定语修饰 epidemic，逻辑主语是 WHO。译：这是世界卫生组织 41 年来首次 __ 的全球流行病。",
+   "option": "正确项 D designated：designate（宣布、指定）与 epidemic 搭配，WHO 宣布疫情为全球流行病是固定表达；A criticized 批评疫情搭配不当且与 declared a global epidemic 矛盾；B appointed 任命的对象是人不是疫情；C commented 不及物，须接 on 才能评论。",
+   "keyword": "designate 宣布、指定＝declare；epidemic 流行病；worldwide 全球性的＝global；criticize 批评。",
+   "note": "首空顺承上句 declared a global epidemic：declared 与 designated 同义复现， announcement 语境锁定「宣布」类动词；appointed 的「任命」义只用于职位，主语 WHO 是陷阱方向。"
+  },
+  {
+   "question_id": 1414,
+   "long_sentence": "空所在句：The heightened alert 2 __ an emergency meeting with flu experts in Geneva that assembled after a sharp rise in cases in Australia。that assembled 为修饰 meeting 的定语从句。译：这次升高的警报 __ 在日内瓦与流感专家召开的紧急会议——会议是在澳大利亚病例激增后召集的。",
+   "option": "正确项 C followed：followed 表「警报之后接着开会」，时间顺序与 after a sharp rise 呼应——病例激增→开会→发警报；A proceeded 不及物，须接 with；B activated 激活会议搭配生硬；D prompted 促使方向颠倒，成了「警报引发病例上升」。",
+   "keyword": "heightened alert 升级的警报；emergency meeting 紧急会议；assemble 召集；a sharp rise in cases 病例激增。",
+   "note": "时间链定动词：病例激增（因）→会议（动作）→警报（果），警报在会议之后，followed 是唯一顺向词；prompted 是最强干扰，把「警报」读成「原因」即中招。"
+  },
+  {
+   "question_id": 1415,
+   "long_sentence": "空所在句：...after a sharp rise in cases in Australia, and rising 3 __ in Britain, Japan, Chile and elsewhere。rising 与 sharp rise 复现，空格为名词被 rising 修饰。译：澳大利亚病例激增之后，英国、日本、智利等地的病例数字也在上升。",
+   "option": "正确项 B numbers：rising numbers（数量上升）是疫情报道的固定搭配，numbers 表可数病例的数量；A digits 指数字位数，不表数量多少；C amounts 修饰不可数名词，cases 可数不合；D sums 表金额或总和，与病例语境无关。",
+   "keyword": "rising numbers 数量上升；a sharp rise in cases 病例激增；digit 数字位数；amount 量（不可数）。",
+   "note": "复现是硬线索：前半句 sharp rise in cases 已给「病例数上升」，空格与 cases 同指，须用可数概念的 numbers；amounts/sums 是不可数与金钱的惯性搭配陷阱。"
+  },
+  {
+   "question_id": 1416,
+   "long_sentence": "空所在句：But the epidemic is '4 __' in severity, according to Margaret Chan...，But 承接上文的全球流行病定性。译：但据世卫组织总干事陈冯富珍说，这次疫情在严重程度上是「__」的。",
+   "option": "正确项 A moderate：But 转折——虽是全球大流行但程度温和，与下文 overwhelming majority...only mild symptoms 严丝合缝；B normal 正常不构成与 global epidemic 的转折对比；C unusual 不寻常方向相反；D extreme 极端方向相反，且与 mild 症状矛盾。",
+   "keyword": "moderate 温和的＝mild；severity 严重程度；in terms of severity 在严重性上；overwhelming majority 绝大多数。",
+   "note": "But 后找反差：前文渲染「全球大流行」，转折必落「没那么严重」；下文 mild symptoms 是 moderate 的复现证据，unusual/extreme 都顺着大流行说，方向即反。"
+  },
+  {
+   "question_id": 1417,
+   "long_sentence": "空所在句：...5 __ the overwhelming majority of patients experiencing only mild symptoms and a full recovery。the majority...experiencing... 为复合结构。译：绝大多数患者仅出现轻微症状并完全康复，往往无需任何治疗。",
+   "option": "正确项 A with：with the majority experiencing... 是 with 复合结构（with＋名词＋doing）表伴随补充，说明「温和」的具体表现；B in 后接 doing 不接完成性 experiencing；C from 表来源，句子结构不成立；D by 表方式，主句无对应动作。",
+   "keyword": "with＋宾语＋doing 复合结构；the overwhelming majority 绝大多数；mild symptoms 轻微症状；full recovery 完全康复。",
+   "note": "语法结构题认准 with 复合结构：名词 majority 与 experiencing 的主谓关系只能由 with 引导；本空与 blank 6 的 in the absence of 连读，完整表达「多数轻症、常无药自愈」。"
+  },
+  {
+   "question_id": 1418,
+   "long_sentence": "空所在句：a full recovery, often in the 6 __ of any medical treatment。in the __ of 为固定介词短语框架。译：（患者）往往在 __ 任何治疗的情况下完全康复。",
+   "option": "正确项 B absence：in the absence of（在没有…的情况下）与 full recovery 搭配，恰好支撑「症状轻微」的论点；A progress in the progress of 在…进程中，与「无需治疗即康复」矛盾；C presence 在有治疗的情况下，削弱而非支撑轻症论点；D favor in favor of 支持，语义不通。",
+   "keyword": "in the absence of 在缺乏…时＝without；presence 出席、存在；full recovery 完全康复；medical treatment 医疗。",
+   "note": "逻辑验证选短语：轻症自愈的语境要「没有治疗」，absence 一词定音；presence 与 absence 是反义对，抓住「支持温和论」的方向即可排除。"
+  },
+  {
+   "question_id": 1419,
+   "long_sentence": "空所在句：The outbreak came to global 7 __ in late April 2009, when Mexican authorities noted an unusually large number of hospitalizations and deaths。when 从句解释该名词的由来。译：2009 年 4 月下旬，疫情开始受到全球 __——当时墨西哥当局注意到住院与死亡病例异常之多。",
+   "option": "正确项 D notice：come to global notice（受到全球关注）是固定搭配，when 从句的「被注意到」正是 notice 的复现；A reality come to reality 不成话，实现不用 come to；B phenomenon 与 come to 不构成搭配；C concept 概念更无从「来到」。",
+   "keyword": "come to notice 受到关注＝attract attention；outbreak 爆发；hospitalization 住院；authorities 当局。",
+   "note": "固定搭配秒选：come to global notice 是新闻英语高频短语；when 从句里的 noted 一词与 notice 同源复现，先锁定 notice 再排除三个抽象名词。"
+  },
+  {
+   "question_id": 1420,
+   "long_sentence": "空所在句：Mexican authorities noted an unusually large number of hospitalizations and deaths 8 __ healthy adults。介词短语作后置定语修饰 hospitalizations and deaths。译：墨西哥当局注意到健康成年人中异常众多的住院与死亡病例。",
+   "option": "正确项 C among：deaths among healthy adults（健康成年人中的死亡）表范围，是疫情报道的标准介词；A over 表超过，deaths over adults 不成话；B for 表目的或对象，与死亡分配场景不合；D to 表对象，住院死亡属于人群内而非指向人群。",
+   "keyword": "among 在…之中＝in the middle of；hospitalization 住院治疗；unusually 异常地；healthy adults 健康成年人。",
+   "note": "「人群内分布」用 among：死亡与住院发生在健康成年人这一群体内部；over/for/to 都是介词高频面孔，用「部分与整体」关系核对即得 among。"
+  },
+  {
+   "question_id": 1421,
+   "long_sentence": "空所在句：As much of Mexico City shut down at the height of a panic, cases began to 9 __ in New York City, the southwestern United States and around the world。as 表伴随；began to 后接动词原形。译：当墨西哥城在恐慌高峰大面积停摆时，病例开始在纽约市、美国西南部乃至世界各地 __。",
+   "option": "正确项 B crop up：crop up（涌现、突然出现）描述病例在多地冒头，与 begin to 连用表疫情扩散的开端；A stay up 熬夜不眠，主语不能是 cases；C fill up 填满，病例填满城市搭配不当；D cover up 掩盖，与疫情蔓延的事实相反。",
+   "keyword": "crop up 涌现、突然出现＝spring up；at the height of 在…顶峰；panic 恐慌；shut down 关闭、停摆。",
+   "note": "动词短语辨析看主宾搭配：cases 作主语要「出现」义，crop up 恰好；cover up 是「掩盖」的方向反转陷阱，fill up 需要容器宾语，逐一代入即排空。"
+  },
+  {
+   "question_id": 1422,
+   "long_sentence": "空所在句：In the United States, new cases seemed to fade 10 __ warmer weather arrived。fade 减退；arrived 一般过去时。译：在美国，随着天气转暖，新增病例似乎有所消退。",
+   "option": "正确项 A as：as warmer weather arrived（随着天气转暖）表同期伴随的背景变化，因果并置自然；B if 表条件，天气转暖不是假设；C unless 除非，逻辑不通；D until 直到，fade until arrived 时序混乱。",
+   "keyword": "as 随着（表伴随）；fade 消退、减弱＝die down；warmer weather 转暖的天气；arrive 到来。",
+   "note": "伴随背景用 as：病例消退与天气回暖同步发生，as 一词缝合因果；if/unless 的虚拟条件会改变事实走向，until 则把「消退」挂错时间终点。"
+  },
+  {
+   "question_id": 1423,
+   "long_sentence": "空所在句：But in late September 2009, officials reported there was 11 __ flu activity in almost every state and that virtually all the 12 __ tested are the new swine flu。But 承接上文 fade 的回落。译：但 2009 年 9 月下旬，官员报告几乎所有州都有 __ 的流感活动，且检测的样本几乎全是新型猪流感。",
+   "option": "正确项 C significant：significant flu activity（相当规模的流感活动）是中性偏正式的量级表达，与 But 的回升转向匹配；A excessive 过度的含贬义评价，报告不宜用；B enormous 程度过重， Activity 无从谈巨大；D magnificent 壮丽的搭配荒谬。",
+   "keyword": "significant 相当数量的＝considerable；flu activity 流感活动；virtually 几乎＝almost；state 州。",
+   "note": "But 转折定基调：由「消退」转「回升」，空格只表量级不带褒贬，significant 最稳；excessive 的贬义与 enormous 的夸张都超出官方报告的语体。"
+  },
+  {
+   "question_id": 1424,
+   "long_sentence": "空所在句：officials reported... that virtually all the 12 __ tested are the new swine flu, also known as (A) H1N1, not seasonal flu。tested 为后置定语；also known as 作插入语。译：几乎全部受检 __ 都是新型猪流感（甲型 H1N1），而非季节性流感。",
+   "option": "正确项 D samples：the samples tested（受检样本）是检测语境的标配名词，与 are the new swine flu 主谓一致；A categories 类别不与 tested 搭配；B examples 例子是举例用语非检测对象；C patterns 模式无法被检测出病毒。",
+   "keyword": "sample 样本＝specimen；tested 受检的；be known as 被称为；seasonal flu 季节性流感。",
+   "note": "检测语境锁名词：tested 修饰的对象应是送检实物，samples 一词定音；patterns 是「流感模式」的话题惯性干扰，注意谓语 are 要求可数复数。"
+  },
+  {
+   "question_id": 1425,
+   "long_sentence": "空所在句：In the U.S., it has 13 __ more than one million people, and caused more than 600 deaths and more than 6,000 hospitalizations。has __ 与 has caused 并列，宾语为 people。译：在美国，它已 __ 超过一百万人，并造成 600 多人死亡、6000 多人住院。",
+   "option": "正确项 D infected：infect more than one million people（感染百万人）是疫情数据句的标准动词；A imparted 传授、告知与疫情无关；B immersed 使沉浸，immersed people 搭配错位；C injected 注射，病毒不会「注射」人群，主语方向颠倒。",
+   "keyword": "infect 感染＝be passed to；impart 传授、告知；immerse 使浸没；inject 注射。",
+   "note": "数据并列看动宾一致：has infected people 与 has caused deaths 并列共享主语 it（病毒）；injected 是「医疗动作」的近形陷阱，方向是人对药不是病毒对人。"
+  }
+ ]
+}

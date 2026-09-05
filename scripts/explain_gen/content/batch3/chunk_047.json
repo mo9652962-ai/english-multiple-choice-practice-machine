@@ -1,0 +1,180 @@
+{
+ "chunk": 47,
+ "items": [
+  {
+   "question_id": 1151,
+   "long_sentence": "定位句 They found that middle-aged people __ higher measures of abdominal fat __ worse on measures of fluid intelligence as the years __；found 后接 that 宾语从句；__ higher measures of abdominal fat 为介词短语作后置定语；as 引导时间状语从句。译：他们发现，随着岁月流逝，腹部脂肪指标偏高的中年人在流体智力测试中表现更差。",
+   "option": "正确项 A with：with higher measures of abdominal fat 为 with 复合结构作后置定语，即「腹部脂肪指标偏高的」中年人；B above 表「在…之上」，不能引出所属特征；C by 表方式手段，语义不通；D against 表「与…相对」，此处并非两组人群的对照。",
+   "keyword": "with 复合结构作定语；measure（衡量的）指标＝indicator；abdominal fat 腹部脂肪；fluid intelligence 流体智力。",
+   "note": "本句连考三空（9、10、11），先抓住「腹部脂肪多的人」这一主体定 9 空 with；against 的干扰来自全文对比语境，但原文对比的是智力得分高低，不是人群分组对照。"
+  },
+  {
+   "question_id": 1152,
+   "long_sentence": "定位句 middle-aged people __ higher measures of abdominal fat __ worse on measures of fluid intelligence；__ worse on... 为谓语部分，on measures of fluid intelligence 为范围状语。译：腹部脂肪指标偏高的中年人，在流体智力各项测验中得分更差。",
+   "option": "正确项 C scored：score worse on measures/tests「在测验中得分更差」是实验类文章的标准表达，与 on measures（测验指标）呼应；A lived worse on 不构成搭配；B managed worse（管理得更差）语义不通；D played worse 口语化且不与 on measures 连用。",
+   "keyword": "score worse on 在…上得分更低；measure（测验）指标；perform badly on 在…上表现差；achieve lower scores 得分更低。",
+   "note": "抓住 on measures of fluid intelligence 的「测验」语境即可锁定 scored——与分数共现的核心动词就是 score；manage/play/lived 都无法与 on measures 构成完整动宾搭配，凭搭配可秒选。"
+  },
+  {
+   "question_id": 1153,
+   "long_sentence": "定位句 as the years __；as 引导时间状语从句，主句为 middle-aged people...scored worse on measures of fluid intelligence。译：随着岁月流逝，腹部脂肪多的中年人在流体智力测验中的得分变得更差。",
+   "option": "正确项 D went by：go by 指时间「流逝」，as the years go by 为高频时间表达；A ran out（物资、耐心等）用完耗尽，主语不能是 years；B set off 出发、引发；C drew in（白昼）变短或（车辆）进站——三者都无法形容岁月推移。",
+   "keyword": "go by（时间）流逝＝pass；as the years go by 随着岁月流逝；run out 用完、耗尽；set off 出发／引发。",
+   "note": "时间从句动词题先看主语 the years：能与「年份」搭配的不及物动词只有 go by/pass 一类；run out 的干扰在「耗尽」与衰退话题气氛相近，但它支配的是资源与耐心，不是时间本身。"
+  },
+  {
+   "question_id": 1154,
+   "long_sentence": "定位句 For women, the association may be __ to changes in immunity that resulted from excess abdominal fat；may be __ to 为系表结构；that resulted from... 定语从句修饰 changes in immunity。译：对女性而言，这种关联可能要归因于腹部脂肪过多引起的免疫力变化。",
+   "option": "正确项 B attributable：be attributable to「可归因于」，把 association（关联）落到免疫力变化这一原因上；A superior to「优于」比较级语义无处着落；C parallel to「与…平行」不合因果语境；D resistant to「对…有抵抗力」主语应是人或免疫系统本身。",
+   "keyword": "be attributable to 可归因于＝be ascribed to；association 关联；result from 由…引起；immunity 免疫力。",
+   "note": "空前是 the association、空后是 to changes——「关联归因于某变化」的因果表达只有 attributable；四个选项全可接 to，命题人故意堆叠 to 搭配，必须由主语 association 的因果语义定夺。"
+  },
+  {
+   "question_id": 1155,
+   "long_sentence": "定位句 in men, the immune system did not appear to be __；appear to be 为系动词结构，分号前是女性情形（关联可归因于免疫变化），两句形成男女对照。译：而在男性中，免疫系统似乎并未牵涉其中。",
+   "option": "正确项 C involved：be involved「被牵涉、参与其中」，与前半句女性的免疫归因对照——女性有关、男性无关；A restored「被恢复」无恢复语境；B isolated「被隔离」与实验设计无关；D controlled「被控制」文中没有控制变量的表述。",
+   "keyword": "be involved 被牵涉、参与；immune system 免疫系统；appear to be 似乎；in contrast 相比之下。",
+   "note": "分号两侧是男女对照：女性 the association may be attributable to immunity，男性 did not appear to be involved——「牵涉与否」的对照逻辑是唯一线索；controlled 的干扰来自统计学术语联想。"
+  },
+  {
+   "question_id": 1156,
+   "long_sentence": "定位句 It is hoped that future studies could __ these differences and perhaps lead to different __ for men and women；It is hoped that... 形式主语句；could __...and lead to... 两个并列谓语。译：人们期望未来的研究能解释这些差异，并或许能为男性和女性带来不同的应对方案。",
+   "option": "正确项 D explain：explain these differences「解释这些差异」，future studies 的功能正是给出解释；A alter「改变」差异不是被改变的对象；B spread「传播」语义不通；C remove「消除」——研究的第一步是解释，谈不上消除。",
+   "keyword": "explain differences 解释差异＝account for；It is hoped that 人们期望；future study 未来研究；lead to 带来。",
+   "note": "空前 It is hoped that future studies 决定动词须是「研究动作」：alter/remove 是干预行为、spread 是传播行为，只有 explain 符合研究的功能定位；differences 与 explain 是科研文章高频共现。"
+  },
+  {
+   "question_id": 1157,
+   "long_sentence": "定位句 lead to different __ for men and women；lead to 表示「带来、产生」，for men and women 为对象状语。译：或许能为男性和女性带来不同的应对（治疗）方案。",
+   "option": "正确项 D treatments：different treatments for men and women「针对男女的不同治疗方案」，与免疫差异、腹部脂肪的健康话题构成「发现差异→分性干预」的逻辑链；A compensations「补偿」B symptoms「症状」（症状是被发现的对象，不是研究产出）C demands「需求」均不合逻辑。",
+   "keyword": "treatment 治疗方案＝therapy；lead to 带来、导致；intervention 干预；differentiated 差异化的。",
+   "note": "由因推果：研究解释男女差异的落点是「区别对待」，只有 treatments 能承接 for men and women 的分性表述；symptoms 是强干扰，但「带来不同的症状」逻辑荒谬——症状是发现而非成果。"
+  },
+  {
+   "question_id": 1158,
+   "long_sentence": "定位句 __, there are steps you can __ to help reduce abdominal fat and maintain lean muscle mass as you age；句首副词作过渡性状语；there be 存在句；to help reduce...and maintain... 不定式作目的状语。译：与此同时，你可以采取一些措施来减少腹部脂肪、保持瘦肌肉量。",
+   "option": "正确项 B Meanwhile：前文谈研究者期望未来研究解释差异（学术层面），本句转到「你可以采取措施」（个人层面），两条线并行推进，Meanwhile「与此同时」衔接自然；A Likewise 表「同样地」需同类类比前提；C Therefore 的因果不成立；D Instead 表替代，前文并未被否定。",
+   "keyword": "meanwhile 与此同时＝in the meantime；take steps 采取措施；there are steps 有一些可行办法；likewise 同样地。",
+   "note": "句首逻辑词题先辨两段主体：研究者的期望与读者可做的事是并行不悖的两条线，选 Meanwhile；Therefore 的干扰在「所以有办法」的伪因果——研究尚未证实干预对智力的效果，推不出必然结论。"
+  },
+  {
+   "question_id": 1159,
+   "long_sentence": "定位句 there are steps you can __ to help reduce abdominal fat；you can __ 为省略 that 的定语从句修饰 steps，to help reduce... 表目的。译：你可以采取一些措施来帮助减少腹部脂肪。",
+   "option": "正确项 D take：take steps「采取措施」为固定搭配；A change steps「改变步骤」B watch steps「观看步骤」C count steps「数步骤」均不构成搭配且语义荒谬，无需多想。",
+   "keyword": "take steps 采取措施＝take measures/action；step 措施、步骤；reduce abdominal fat 减少腹部脂肪；lean muscle mass 瘦肌肉量。",
+   "note": "高频搭配送分题：steps 的标准动词是 take，见到 steps/measures/action 直接锁定 take；此空几乎零语境依赖，考场上不必在其余三项上浪费犹豫时间。"
+  },
+  {
+   "question_id": 1160,
+   "long_sentence": "定位句 in order to protect both your physical and mental __；in order to 引导目的状语；both...and... 并列两个形容词共同修饰空格名词。译：以保护你的身心健康。",
+   "option": "正确项 A well-being：physical and mental well-being「身心健康」为固定搭配，与减脂增肌的健康话题吻合；B process「过程」C formation「形成」D coordination「协调」均无法被 physical and mental 合理修饰。",
+   "keyword": "well-being 健康、幸福＝health；physical and mental 身心的；protect 保护；in order to 为了。",
+   "note": "physical and mental 是天然信号词，其后常接 well-being/health 类状态名词；process/formation/coordination 都是抽象过程名词，与「身体和精神的」这层修饰语格格不入，可直接排除。"
+  },
+  {
+   "question_id": 1161,
+   "long_sentence": "定位句 The two highly recommended lifestyle approaches are maintaining or increasing your __ of aerobic exercise and following Mediterranean-style __；主系表结构，maintaining...and following... 两个动名词短语并列表语。译：两种最受推荐的生活方式是：维持或增加你的有氧运动量，以及遵循地中海式饮食。",
+   "option": "正确项 A level：your level of aerobic exercise「有氧运动的量／水平」，maintaining or increasing 的宾语只能是可增可维持的「量」；B love「热爱」increasing your love 与建议语境不符；C knowledge「知识」与运动量无关；D space「空间」无法被 increase 合理修饰。",
+   "keyword": "level of exercise 运动量＝amount；aerobic exercise 有氧运动；maintain 保持；highly recommended 强烈推荐的。",
+   "note": "maintaining or increasing 提示宾语是「可量化、可调节」的东西——level/amount 一类；love 与 increasing 搭配看似通顺，但「增加热爱」不是生活方式建议的落点，属语义陷阱。"
+  },
+  {
+   "question_id": 1162,
+   "long_sentence": "定位句 following Mediterranean-style __ that is high in fiber and eliminates highly processed foods；that 引导定语从句，从句谓语 is high...and eliminates... 并列。译：遵循高纤维、剔除高度加工食品的地中海式饮食。",
+   "option": "正确项 C diet：Mediterranean-style diet「地中海式饮食」为营养学固定术语，high in fiber（高纤维）与 eliminates highly processed foods（剔除深加工食品）都是典型的饮食特征；A design「设计」无搭配；B routine「例行安排」多指作息；D prescription「处方」由医生开具，与生活方式推荐不符。",
+   "keyword": "Mediterranean-style diet 地中海式饮食；be high in 富含；processed foods 加工食品；fiber 纤维。",
+   "note": "后置定语从句是解题钥匙：high in fiber 与 eliminates processed foods 描述的内容物只能是食物；routine 的干扰来自 lifestyle approaches 的大语境，但「富含纤维」的只能是一类饮食。"
+  },
+  {
+   "question_id": 1163,
+   "long_sentence": "定位句 This year's rise, an average of 2.7 per cent, may be a fraction lower than last year's, but it is still well above the official Consumer Price Index (CPI) measure of inflation；主干为 The rise may be lower..., but it is still well above...；but 转折后才是重心。译：今年平均 2.7% 的涨幅或许比去年略低，但仍远高于官方 CPI 通胀指标。",
+   "option": "正确项 C：作者连用 grimly reliable annual ritual（令人沮丧的年度例行节目）、imposing a significant extra burden、well above CPI——涨价毫无合理依据，remains an unreasonable measure 概括准确；A「与通胀同步」正反混淆，原文是远超通胀；B「令通勤者吃惊」无中生有，annual ritual 恰说明在意料之中；D「减轻运营方负担」张冠李戴，加重的是乘客的负担。",
+   "keyword": "grimly reliable 令人沮丧地准时；ritual 例行公事；fare 票价＝the cost of travelling；CPI 消费者价格指数。",
+   "note": "首段态度题抓贬义修饰：grimly、burden、well above 三处叠加指向「不合理」；A 的干扰是数字 2.7%，但比较对象是去年涨幅而非 CPI，转折词 but 之后才是作者的真实判断。"
+  },
+  {
+   "question_id": 1164,
+   "long_sentence": "定位句为反问句 Why, the argument goes, should a car-driving pensioner from Lincolnshire have to subsidise the daily commute of a stockbroker from Surrey?；why 引导反问表强烈质疑；the argument goes 为插入语「按照这种说法」；两个 from 短语分别限定人物。译：按照这种说法，凭什么让林肯郡开车出行的退休老人去补贴萨里郡股票经纪人的每日通勤？",
+   "option": "正确项 B：stockbroker 有 daily commute（每日通勤），对应原文 those who have no option but to use the rail network to get to work——靠铁路上班的通勤旅客；A「开车族」张冠李戴，开车的是 pensioner；C「本地投资者」无中生有，股票经纪人的职业被字面化误读；D「普通纳税人」反了，那正是 car-driving pensioner 代表的一方。",
+   "keyword": "subsidise 补贴＝pay for；daily commute 每日通勤；pensioner 领退休金者；have no option but to do 别无选择只能。",
+   "note": "例证指代题：人物代表什么，看其行为特征而非职业字面义——daily commute 锁定「通勤者」；本反问句服务于上句「铁路成本应由使用者而非全体纳税人承担」的观点，两方阵营切勿对调。"
+  },
+  {
+   "question_id": 1165,
+   "long_sentence": "定位句 It is all very well train operators trumpeting the improvements they are making to the network, but passengers should be able to expect a basic level of service for the substantial sums they are now paying to travel；It is all very well...but... 表「…说得好听，但是…」；trumpeting 现在分词作状语。译：运营方大肆宣传改善网络固然好听，但乘客花了大价钱，理应享受基本水平的服务。",
+   "option": "正确项 C：but 之后 passengers should be able to expect a basic level of service 反衬运营方连基本服务都未提供——加上本段开头的 worst rail strikes，have failed to provide an adequate service 成立；A「正在提供补偿」正反混淆，作者只是主张 should receive compensation，尚无其事；B「试图修复与工会关系」无中生有；D「因罢工损失惨重」无中生有。",
+   "keyword": "trumpet 大肆鼓吹＝tout；a basic level of service 基本服务水平；substantial sums 大笔款项；rail strike 铁路罢工。",
+   "note": "推断题靠「说得好听 but 实际如何」的转折结构：宣传的改进与基本服务缺失形成反差；A 的陷阱在 compensation 一词确有出现，但那是作者的建议而非运营方的行动，时态与主语都要核对。"
+  },
+  {
+   "question_id": 1166,
+   "long_sentence": "定位句 The threat of nationalisation may have been seen off for now, but it will return with a vengeance if the justified anger of passengers is not addressed in short order；but 转折；if 引导条件从句；see off 击退；with a vengeance 来势汹汹；in short order 立刻。译：国有化的威胁眼下或许已被击退，但若乘客的正当愤怒得不到迅速回应，它将变本加厉地卷土重来。",
+   "option": "正确项 D：nationalisation（国有化）即铁路所有权从私营转为国家所有——无法平息乘客愤怒就 face a change of ownership；A「投资流失」无中生有；B「运营崩溃」过度推断，原文只说威胁回归；C「收入减少」无中生有，乘客愤怒的后果指向国有化而非营收。",
+   "keyword": "nationalisation 国有化；see off 击退、摆脱；with a vengeance 变本加厉地；address the anger 回应愤怒。",
+   "note": "条件后果题：if the justified anger...is not addressed 的结果就是 it（the threat of nationalisation）will return——「国有化」与「所有权变更」是具体与抽象的同义改写；B 的崩溃说是程度放大，原文没有运营失败的信息。"
+  },
+  {
+   "question_id": 1167,
+   "long_sentence": "全文主线句：It has become a grimly reliable annual ritual: every January the cost of travelling by train rises, imposing a significant extra burden on those who have no option but to use the rail network；imposing... 现在分词作结果状语；who have no option but to use 定语从句。译：这已成了一场令人沮丧却准时上演的年度例行节目：每年一月火车出行成本上涨，给别无选择只能乘火车的人加上沉重负担。",
+   "option": "正确项 D：全文从 yet another increase 开篇，经「涨价高于通胀—罢工毁服务—乘客愤怒—国有化威胁」层层递进，落点是乘客不会无限埋单（will not be willing to pay more indefinitely）——不断上涨的票价难以为继；A「谁该为罢工负责」以偏概全，罢工只是第三段素材；B「不断抱怨没有用」无中生有；C「国有化能带来希望吗」张冠李戴，国有化只是末段的威胁项。",
+   "keyword": "sustainable 可持续的；indefinitely 无限期地；annual ritual 年度例行节目；fare increase 涨价。",
+   "note": "标题题抓首尾呼应：首段 annual ritual 的讽刺与末段 pay more indefinitely 的警告共同指向「涨价不可持续」；A 的干扰性在罢工话题显眼，但它只是论证链一环，标题必须覆盖全文而非某段。"
+  },
+  {
+   "question_id": 1168,
+   "long_sentence": "定位句 In 2007, Indonesia started phasing in a program that gives money to its poorest residents under certain conditions, such as requiring people to keep kids in school or get regular medical care；that 引导定语从句修饰 program；phase in 逐步推行；such as 举例。译：2007 年，印尼开始逐步推行一项计划：在特定条件下向最贫困居民发放现金，比如要求让孩子留在学校或定期就医。",
+   "option": "正确项 B：designed to reduce inequality and break the cycle of poverty（旨在减少不平等、打破贫困循环）加 has provided enough food and medicine——CCT 的目标是帮贫困家庭改善境况，get better off 是其同义概括；A「推动医疗改革」以偏概全，定期就医只是领钱条件之一；C「改善当地教育」以偏概全，keep kids in school 同样是条件；D「降低毁林率」答非所问，那是后文研究发现的效果，不是设计初衷。",
+   "keyword": "conditional cash transfers 有条件现金转移支付（CCT）；phase in 逐步推行；break the cycle of poverty 打破贫困循环；under certain conditions 在特定条件下。",
+   "note": "目的题抓 designed to：条件（上学、就医）与效果（减砍伐）都不是 aim，命题人爱用「条件项」和「效果项」冒充目标；B 的 get better off 对应 break the cycle of poverty，是标准的同义改写。"
+  },
+  {
+   "question_id": 1169,
+   "long_sentence": "定位句 The only previous study analyzing causality, based on an area in Mexico that had instituted CCTs, supported the traditional view；analyzing causality 现在分词短语作后置定语；based on... 过去分词短语作状语。译：此前唯一一项分析因果关系的研究以实施了 CCT 的墨西哥某地区为样本，支持了传统观点——人们钱一多，就可能开垦更多土地养牛取肉。",
+   "option": "正确项 D：墨西哥研究支持的 traditional view 即上句 economic growth can be correlated with environmental degradation——脱贫增收伴随环境破坏，economists 的引证功能是给传统观点提供因果证据；A「养牛是主要谋生手段」以偏概全，原文只是 some of them 且用 may 表推测；B「有助保留传统生活方式」无中生有；C「扶贫需要农民参与」无中生有。",
+   "keyword": "causality 因果关系；traditional view 传统观点；clear land 开垦土地；correlate with 与…相关。",
+   "note": "例证题先找被支持的论点：supported the traditional view 中的传统观点＝前句「经济增长与环境退化相关」；A 的干扰在 cattle 细节真实存在，但它是支撑材料不是引证目的，注意 may have 的推测语气。"
+  },
+  {
+   "question_id": 1170,
+   "long_sentence": "定位句 Ferraro wanted to see if Indonesia's poverty-alleviation program was affecting deforestation；see if... 查看是否；was affecting 过去进行时；下句 Indonesia has the third-largest area of tropical forest in the world and one of the highest deforestation rates 为并列表语。译：法拉罗想弄清楚印尼的扶贫计划是否正在影响毁林——印尼拥有世界第三大的热带森林面积，砍伐率也位居世界前列。",
+   "option": "正确项 C：wanted to see if the program was affecting deforestation 加 analyzed satellite data showing annual forest loss——研究意图就是查 CCT 与森林消失之间的关系；A「对 CCT 的接受度」无中生有；B「扶贫的年度速率」张冠李戴，他分析的是 forest loss 年度数据；D「森林在气候变化中的角色」无中生有，全篇只谈砍伐不谈气候功能。",
+   "keyword": "poverty-alleviation program 扶贫计划；deforestation 毁林＝forest loss；satellite data 卫星数据；phase-in 逐步推行期。",
+   "note": "研究意图题定位在 wanted to see if 句型，if 后的宾语从句就是答案原型；C 的 relation 对应 affecting 的双向关联语义；先于选项读动词 see if 可避免被 B 的 poverty 字面词带偏。"
+  },
+  {
+   "question_id": 1171,
+   "long_sentence": "定位句 And regardless of transferability, the study shows that what's good for people may also be good for the environment；regardless of 表「不论、姑且不论」；what's good for people 为主语从句；even if 引导的让步句强调环境价值超过计划成本。译：姑且不论能否推广，研究表明：对人有益的也可能对环境有益——哪怕计划没减贫，仅避免砍伐的碳减排价值就已超过其成本。",
+   "option": "正确项 C：Ferraro 认为 even if didn't reduce poverty，avoided deforestation 的碳减排价值已超计划成本——最有价值处是保护环境；A「将惠及亚洲他国」张冠李戴，may transfer 只是推广可能性的谨慎推测；B「减少地区不平等」张冠李戴，reduce inequality 是 CCT 的设计目标；D「有助粮食生产」张冠李戴，种稻是毁林行为的解释机制。",
+   "keyword": "regardless of 不论；transferability 可推广性；avoided deforestation 避免的毁林；carbon dioxide emissions 二氧化碳排放。",
+   "note": "most valuable 是比较级信号：Ferraro 用 even if not reduce poverty 的让步把环境价值抬到首位；A 的干扰在 Asian countries 确有提及，但那是 transferability 的附注，让步句 even if 之后才是价值判断。"
+  },
+  {
+   "question_id": 1172,
+   "long_sentence": "主线结构：首段 One reason for the turnaround may be the country's antipoverty program 提出计划与毁林放缓的关联；中段用卫星数据证实 30 percent reduction in deforestation；后段解释机制并讨论推广性。译：（全文围绕）一项计划所产生的效果展开——从减贫到环境收益的多重影响。",
+   "option": "正确项 A：全文以印尼 CCT 计划为圆心，依次写其设计目标、对毁林的实际效果、起效机制与外推可能——The effects of a program 覆盖全文；B「围绕一项计划的争论」无中生有，文中没有观点交锋；C「一项研究的过程」以偏概全，研究过程只是第四至六段的手段；D「研究的可推广性」以偏概全，仅倒数第二段涉及。",
+   "keyword": "centered on 以…为中心；turnaround 转机；a 30 percent reduction 减少 30%；mechanism 机制。",
+   "note": "主旨题用「首段主题＋各段功能」双重验证：首段已把 program 与 deforestation 挂钩，其后每段都在丰富效果维度；C/D 的干扰是「文章确实讨论过的局部内容」，主旨必须能罩住全部段落。"
+  },
+  {
+   "question_id": 1173,
+   "long_sentence": "定位句 People are noting that the Victorians suddenly seem to become more human as the hundred-or-so years that separate us fade away through our common experience of laughter；that 宾语从句；as 引导时间从句；that separate us 定语从句修饰 years；through 方式状语。译：人们注意到，随着隔开我们的百余年时光在共同的欢笑体验中消散，维多利亚人似乎突然变得更有人情味了。",
+   "option": "正确项 A：causing quite a stir、People have been surprised to see evidence that Victorians had fun and could, and did, laugh——微笑照片颠覆了「维多利亚人古板压抑」的刻板印象，changed people's impression 成立；B「凸显社交媒体在维多利亚研究中的作用」无中生有，Twitter 只是发布渠道；C「重新评估维多利亚人的公众形象观」偷换概念，re-evaluate the past 是作者的初心，不是推文的功效；D「展示维多利亚摄影的发展」答非所问，那是后两段的解释内容。",
+   "keyword": "cause a stir 引起轰动；have fun 玩得开心；prudery 古板、拘谨；fade away 逐渐消散。",
+   "note": "细节题抓「人们对推文的反应」：surprised、more human 都指向印象改变；C 的干扰在 re-evaluate 一词确实出现于首句，但其主语是作者本人，注意句子主体与选项动作发出者的对应。"
+  },
+  {
+   "question_id": 1174,
+   "long_sentence": "定位句 my collection of 'Smiling Victorians' makes up only a tiny percentage of the vast catalogue of photographic portraiture created between 1840 and 1900；makes up 表「占（比例）」；created between... 过去分词短语作后置定语。译：我收藏的「微笑维多利亚人」仅占 1840 至 1900 年间海量肖像摄影的一小部分，多数照片里人物都痛苦僵硬地摆姿势。",
+   "option": "正确项 B：only a tiny percentage of the vast catalogue——微笑肖像只是那个年代照片中的极少数，rare 是 tiny percentage 的同义改写；A「在历史学家中广泛使用」无中生有，文中只说发在 Twitter 上；C「反映 19 世纪社会习俗」张冠李戴，反映习俗的是多数不笑的照片，作者收藏的恰是例外；D「展示不同曝光时间的效果」答非所问，曝光时间是解释「为何不笑」的原因分析。",
+   "keyword": "make up 占（比例）；a tiny percentage 极小比例；portraiture 肖像摄影；stiffly 僵硬地。",
+   "note": "作者对自己的收藏先肯定再让步：Of course I need to concede...only a tiny percentage——让步内容即本题答案；C 的干扰来自 the majority 的习俗描述，注意问的是「他收藏的照片」而非「那个年代的照片」。"
+  },
+  {
+   "question_id": 1175,
+   "long_sentence": "定位句 'Nature gave us lips to conceal our teeth,' ran one popular Victorian maxim, alluding to the fact that before the birth of proper dentistry, mouths were often in a shocking state of hygiene；ran one maxim 为倒装；alluding to... 现在分词短语作伴随状语；that 同位语从句。译：「自然赋予我们嘴唇来遮住牙齿」，一句流行的维多利亚格言如此说，暗指在正规牙科诞生之前，人们的口腔卫生往往糟糕透顶。",
+   "option": "正确项 D：1890 年代曝光已近 instantaneous，作者说 we must look elsewhere——答案在牙齿：正规牙科诞生前 mouths were in a shocking state of hygiene，洁白整齐的「珍珠白」牙齿是 super-rich 的专属，unhealthy dental condition 让人不敢露齿笑；A「天生的社交敏感」无中生有；B「镜头前的紧张」张冠李戴，那是早期曝光长达数分钟时的原因，1890 年代已被排除；C「不信任新发明」无中生有。",
+   "keyword": "maxim 格言＝saying；dentistry 牙科；hygiene 卫生；pearly whites 洁白的牙齿。",
+   "note": "时间定位是关键：题干限定 in the 1890s，先排除曝光时间（第四段已说 almost instantaneous），再看第五、六段的牙齿与阶级两个解释——lacked class 补强了牙齿因素，四个选项里唯一属于 1890 年代语境的是 D。"
+  }
+ ]
+}

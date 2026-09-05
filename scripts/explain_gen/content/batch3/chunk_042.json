@@ -1,0 +1,180 @@
+{
+ "chunk": 42,
+ "items": [
+  {
+   "question_id": 1026,
+   "long_sentence": "Among the children who had not been tricked, the majority were willing to cooperate with the tester in learning a new skill：Among... 介词短语作范围状语；who had not been tricked 定语从句修饰 children；were willing to cooperate 系表加不定式。译：在未被骗的孩子中，大多数愿意配合测试者学习新技能；相比之下，与「不可靠」测试者配对的 30 名孩子只有 5 人参加了后续活动。",
+   "option": "正确项 A In contrast：前句「未被骗组大多数愿意合作」与本句「被骗组 30 人仅 5 人参与」是两组数据的反向对照，in contrast 表对比；B As a result 表因果——两组数据不是因果而是平行对照；C On the whole 表总结，此处是中段对比非收束；D For instance 表举例，后半句是新数据不是前句例证。",
+   "keyword": "in contrast 相比之下；cooperate with 与…合作；follow-up activity 后续活动；the majority 大多数。",
+   "note": "衔接词题看数据关系：majority willing 对 only five of the 30，「多数愿意」对「极少参与」是典型对比组；实验报告类文章里 in contrast 常连接两组受试者结果，as a result 的陷阱是把对照误读成因果。"
+  },
+  {
+   "question_id": 1027,
+   "long_sentence": "only five of the 30 children paired with the unreliable tester participated in a follow-up activity：paired with... 过去分词短语作后置定语修饰 children；only five of the 30 作主语，强调数量之少。译：与「不可靠」测试者配对的 30 名孩子中，只有 5 人参加了后续活动。",
+   "option": "正确项 C unreliable：引号内形容词是对「骗孩子测试者」的标签，呼应上文 the tester had fooled them（愚弄＝不可靠），也与下句 who had not been tricked 形成正反对照；A inflexible 「僵化的」与骗人行径无关；B incapable 「无能力的」——测试者是有意行骗而非能力不足；D unsuitable 「不合适的」程度太轻，不涉诚信问题。",
+   "keyword": "unreliable 不可靠的＝dishonest；fool sb 愚弄某人；paired with 与…配对；scare quotes 表反语的引号。",
+   "note": "完形末题回收全文主题：开头 credible person（可信）与结尾 unreliable（不可靠）首尾呼应；引号用法表「所谓的那种」测试者，从 fooled/tricked 的语义链反推标签词即可锁定。"
+  },
+  {
+   "question_id": 1028,
+   "long_sentence": "About half of U.S. jobs are at high risk of being automated, with the middle class disproportionately squeezed：at high risk of being automated 表「面临被自动化的高风险」；with 复合结构（with 名词 过去分词）作伴随状语；disproportionately 修饰 squeezed。译：据牛津大学研究，约一半的美国工作岗位面临被自动化的高风险，其中中产阶级受到的挤压尤为严重。",
+   "option": "正确项 D：middle class disproportionately squeezed 加 many middle-class occupations（trucking、financial advice、software engineering）have aroused their interest，直指中产最受冲击；A「政要」无中生有；B「低薪劳动者」正反混淆——原文 Lower-income jobs like gardening or day care don't appeal to robots；C「机器人拥有者」与 The rich own the robots, so they will be fine 方向相反。",
+   "keyword": "at high risk 处于高风险；disproportionately 不成比例地；squeeze 挤压；occupation 职业＝job。",
+   "note": "威胁程度题找比较级信号：disproportionately（尤甚地）是「最受威胁」的原文锚点；原文按富人→低薪→中产三层展开，逐层排除后 D 浮出——分层列举是「谁最」类题目的命题母版。"
+  },
+  {
+   "question_id": 1029,
+   "long_sentence": "末段 But policies to help workers adapt will be indispensable：主语 policies (to help workers adapt)；will be indispensable 表「必将不可或缺」；But 承接前句 Destroying the machines...would be nuts 的让步。译：但帮助劳动者适应自动化的政策将是必不可少的。",
+   "option": "正确项 C：四至六段依次给出 rethink education and job training、revive business dynamism、taxes...rethought 三套对策，末句 policies...indispensable 收束——自动化带来的问题需要应对；A「担忧毫无根据」与 Don't dismiss that possibility entirely 相反；B「乐观派观点缺乏支持」与作者认可 Optimists point out...has benefited workers 相悖；D「新技术的负面后果可以避免」绝对化，作者只主张须有对策。",
+   "keyword": "tackle 解决＝cope with；indispensable 必不可少＝essential；upheaval 剧变；medium term 中期。",
+   "note": "作者观点题看篇章走向：前三段提问题、后三段全是对策（The first step / Finally），「需应对」是唯一与结构一致的观点；含 groundless、can be avoided 的选项都属绝对化，可直接排除。"
+  },
+  {
+   "question_id": 1030,
+   "long_sentence": "Curriculums – from grammar school to college – should evolve to focus less on memorizing facts and more on creativity and complex communication：focus less on...and more on... 为比较结构；from grammar school to college 为插入语，限定课程范围；evolve to do 表「逐步演进到」。译：从文法小学到大学的课程都应逐步演进：减少对事实记忆的强调，更多聚焦创造力与复杂沟通。",
+   "option": "正确项 A：creativity（创造力）与 creative potential（创造潜能）同义对应，more on creativity 是重心所在；B「求职技能」偷换概念——原文是职业学校的 fostering problem-solving skills，且题干问的是课程重心；C「个人需求」无中生有；D「合作精神」偷换 complex communication（复杂沟通）与 work alongside robots（与机器人并肩），都不等于团队合作精神。",
+   "keyword": "creativity 创造力；focus on 聚焦于；memorize 记忆；complex communication 复杂沟通。",
+   "note": "less...more... 结构明示「重心转移」，答案在 more 之后；D 的干扰来自 work alongside robots——「与机器人协作」是能力场景不是「合作精神」，注意把具体场景升格为抽象美德是常见偷换。"
+  },
+  {
+   "question_id": 1031,
+   "long_sentence": "because automation threatens to widen the gap between capital income and labor income, taxes and the safety net will have to be rethought：because 引导原因状语从句；threaten to do 表「有…之虞」；between A and B 分隔 gap 的两端。译：由于自动化有可能扩大资本收入与劳动收入之间的差距，税收与社会保障网必须重新设计。",
+   "option": "正确项 D：题干 preventing the income gap from widening 正是 widen the gap 威胁的反向表述，句末 reduce inequality 再证税收目标；A「鼓励自动化发展」张冠李戴——税收是应对其后果；B「提高资本回报」正反混淆，政策保护的是劳动收入一侧；C「缓和贫富敌意」偷换概念，原文针对 inequality（不平等）而非 hostility（敌意）。",
+   "keyword": "widen the gap 扩大差距；capital income 资本收入；wage subsidy 工资补贴；inequality 不平等。",
+   "note": "因果句 because automation threatens to widen the gap 交代税收改革的目的——防止差距扩大是其反写；C 把经济差距升级成情感敌意，是「概念升温」型偷换，注意 inequality 与 hostility 的词义距离。"
+  },
+  {
+   "question_id": 1032,
+   "long_sentence": "The challenge of coping with automation underlines the need for the U.S. to revive its fading business dynamism: Starting new companies must be made easier：underline 意为「强调、凸显」；冒号后引出具体做法；must be made easier 为被动建议。译：应对自动化这一挑战，凸显了美国重振其日渐衰退的商业活力的必要：必须让创办新公司变得更容易。",
+   "option": "正确项 B：四至六段给出 rethink education、revive business dynamism（创业）、taxes rethought 三方面对策，是「问题+解决方案」的并呈结构；A「对立观点」——Optimists 的观点只是第三段的衬托，非文章主体；C「惊人影响」只是前三段铺垫；D「主要变化」文中无对应维度，无中生有。",
+   "keyword": "solution 解决方案；underline 凸显＝highlight；revive 重振；dynamism 活力＝vitality。",
+   "note": "篇章结构题抓段首信号词：The first step / Finally 都在提示「对策清单」；考研阅读的 organization 题常考「提问题+给方案」，这类结构下标题与主旨都落在对策段的综合上。"
+  },
+  {
+   "question_id": 1033,
+   "long_sentence": "And a survey conducted for BuzzFeed News found 44 percent of Facebook users rarely or never trust news from the media giant：conducted for... 过去分词短语作后置定语修饰 survey；rarely or never 并列否定副词强化程度。译：一项为 BuzzFeed 新闻所作的调查发现，44% 的 Facebook 用户很少或从不信任这家媒体巨头的新闻。",
+   "option": "正确项 D：第 1 段 two-thirds disapprove Trump's use of Twitter 加第 2 段 distrust has risen toward all media、rarely or never trust news from the media giant，指向怀疑「社交媒体作为可靠新闻源」；A「新闻过滤做法的正当性」正反混淆——年轻人正是希望新闻经其他来源过滤；B「人们对社交平台的偏好」张冠李戴；C「政府处理信息的能力」偷换概念，被怀疑的是 Trump 用 Twitter 发新闻的方式。",
+   "keyword": "cast doubts on 对…表示怀疑；media literacy 媒介素养；distrust 不信任；filter 过滤。",
+   "note": "题干限定 Paragraphs 1 and 2，答案不得越界；distrust toward all media 的落点是「媒体可信度」，C 偷换主语为政府能力——怀疑某人的「发推行为」不等于怀疑其「执政能力」，注意怀疑对象的精确范围。"
+  },
+  {
+   "question_id": 1034,
+   "long_sentence": "Yet as distrust has risen toward all media, people may be starting to beef up their media literacy skills：as 引导伴随/原因状语从句；has risen 现在完成时表已然趋势；beef up 为动词短语。译：然而，随着对所有媒体的不信任上升，人们可能已开始强化自己的媒介素养技能。",
+   "option": "正确项 A sharpen：本义「磨快」，引申「强化、提升」，与 beef up（加料增重→增强）同指提高技能水平；下文 becoming more skillful at separating fact from fiction 印证「提升」义；B define 界定，与 skills 搭配不出此义；C boast 夸耀，语义相反；D share 分享，与提升无关。",
+   "keyword": "beef up 增强＝sharpen/strengthen；media literacy 媒介素养；separate fact from fiction 辨别真伪；collocation 搭配。",
+   "note": "猜词题用下文印证：beef up their media literacy skills→becoming more skillful，只有 sharpen 保留「提升」方向；beef up 属口语习语（给菜加牛肉→加料），C 项 boast 另有「拥有（名望）」义，此处是「夸口」，双重干扰勿中招。"
+  },
+  {
+   "question_id": 1035,
+   "long_sentence": "They cross-check sources and prefer news from different perspectives – especially those that are open about any bias：cross-check 为复合动词「交叉核对」；破折号后 especially 引出强调；those 指代 perspectives 对应的 news。译：他们会交叉核对信源，偏爱来自不同视角的新闻——尤其是那些对自身立场坦诚相告的媒体。",
+   "option": "正确项 B：use distributed trust to verify stories 加 cross-check sources，即「通过多元信源核验新闻」，与 referring to diverse sources 同义对应；A「爱在网络上发声」偷换概念——核验不是发表；C「责任感强」张冠李戴，personal responsibility 出自 Many young people assume... 的结论引语，非 Knight 调查的直接发现；D「交流 distributed trust 观点」曲解——它是使用的方法不是讨论话题。",
+   "keyword": "distributed trust 分布式信任；cross-check 交叉核对；verify 验证＝confirm；perspective 视角。",
+   "note": "调查类细节题先圈调查主体：Knight 调查的发现是「多信源核验」，C 的责任感应答属 survey concluded 的另一引语且非本调查数据；遇到题干含 According to某调查，答案必须能回指该调查的具体内容。"
+  },
+  {
+   "question_id": 1036,
+   "long_sentence": "the top reason given by Americans for the fake news phenomenon is reader error, more so than made-up stories or factual mistakes in reporting：given by Americans 过去分词短语作后置定语；more so than 表「比起…更是如此」的轻重比较。译：Barna 研究集团的调查发现，美国人认为假新闻现象的首要原因是「读者失误」，其成分高于编造的故事或报道中的事实错误。",
+   "option": "正确项 C：reader error 加 misinterpretation or exaggeration of actual news，都指向「读者误读」；B「记者的偏颇报道」与 D「记者编造故事」正反混淆——调查明确说读者原因的成分高于 made-up stories or factual mistakes in reporting，记者侧原因被比下去；A「读者过时的价值观」无中生有，原文未谈价值观过时。",
+   "keyword": "reader error 读者失误；misinterpretation 误解＝misreading；exaggeration 夸大；made-up stories 编造的故事。",
+   "note": "more so than 是轻重比较——答案在「更重」一端（读者侧），B、D 恰是被比下去的记者侧选项；做比较结构题先圈出比较两端再定方向，可同时排除两个干扰项。"
+  },
+  {
+   "question_id": 1037,
+   "long_sentence": "末段 So when young people are critical of an over-tweeting president, they reveal a mental discipline in thinking skills – and in their choices on when to share on social media：when 引导时间状语从句；critical of 表「对…持批评态度」；破折号后补充第二方面。译：因此，当年轻人批评一位过度发推的总统时，他们展现出思维技能上的心智纪律——也体现在何时在社交媒体上分享的选择上。",
+   "option": "正确项 A：A Rise in Critical Skills＝becoming more skillful at separating fact from fiction，Sharing News Online 覆盖 re-share、when to share 的全文主线；B「对抗过度发推趋势」以偏概全，特朗普只是引子；C「社交媒体上互信的积累」偷换概念，distributed trust 是核验方法不是人际互信；D「投射个人利益的平台」断章取义，projection of values 仅是分享机制的一处细节。",
+   "keyword": "critical 批判性的；discipline 纪律、自制＝self-discipline；re-share 转发；title 标题主旨。",
+   "note": "标题题三步：抓主线（媒介素养提升）、查覆盖度（首尾都要管）、排干扰（B 以偏概全、C 偷换 trust、D 断章取义）；末段 mental discipline 是点题句，标题须含「技能提升」义，与首段 disapprove 的批判行为首尾呼应。"
+  },
+  {
+   "question_id": 1038,
+   "long_sentence": "定位句 which handed over to DeepMind the records of 1.6 million patients on the basis of a vague agreement which took far too little account of the patients' rights：hand over A to B 把 A 移交给 B；第二个 which 从句修饰 agreement。译：该信托基于一份模糊协议，于 2015 年把 160 万患者的记录移交给 DeepMind，而协议对患者权利及其隐私期待的关注少得可怜。",
+   "option": "正确项 B：took far too little account of the patients' rights＝failed to pay due attention to patients' rights，「关注过少」与「未能充分重视」同义否定改写；A「引发科技巨头冲突」无中生有；C「辜负后者期待」张冠李戴——被辜负的是患者的隐私期待（their expectations of privacy）；D「使双方陷入危险处境」过度推断，原文只指协议有缺陷。",
+   "keyword": "take account of 考虑；vague 模糊的；hand over 移交；expectation of privacy 隐私期待。",
+   "note": "far too little account of 的「过少」与 failed to pay due attention 的「未足额」互换是本题核心改写；C 的陷阱在代词 their 的指向——先行词是 patients 而非 DeepMind，抓准代词回指可破「张冠李戴」。"
+  },
+  {
+   "question_id": 1039,
+   "long_sentence": "主干 Further arrangements...will be carefully scrutinised；破折号内 and there may be many 为插入语；to ensure that 为目的状语，后接 permissions have been asked of patients 与 unnecessary data has been cleaned 两个并列从句。译：NHS 与 DeepMind 之间进一步的安排——可能还有很多——都将受到仔细审查，以确保向患者征求了一切必要许可、并清除了所有不必要的数据。",
+   "option": "正确项 C：The NHS trust has mended its ways（已改过自新）加后续安排被仔细审查、许可与数据清理的措施，属「必要调整」；D「真诚道歉」张冠李戴——almost apologized 的是 DeepMind 而非 NHS trust，且 almost 已打折扣；A「空头承诺」与 carefully scrutinised 的实在措施矛盾；B「强硬抵制」无中生有。",
+   "keyword": "mend one's ways 改过自新；scrutinise 仔细审查；informed consent 知情同意；verdict 裁定、结论。",
+   "note": "细节归属题盯主语：almost apologized 的主语是 DeepMind，D 的张冠李戴由此而来；mended its ways（纠正做法）对应「调整」，配合 scrutinised、cleaned 等手段动词可锁定 C。"
+  },
+  {
+   "question_id": 1040,
+   "long_sentence": "it is processing and aggregation, not the mere possession of bits, that gives the data value：强调句型 it is...that...，被强调的主语为 processing and aggregation，与 not the mere possession of bits 对举；gives the data value 为双宾结构。译：赋予数据价值的是对数据的处理与聚合，而非对数据位的单纯占有。",
+   "option": "正确项 D：强调句直接亮出论点——数据价值来自 processing and aggregation，与 the value of data comes from the processing of it 同义对应；A「不惜一切代价保护隐私」与 But privacy is not the only angle and not even the most important 相反；B「泄露数据比出售更糟」无中生有；C「利用患者数据牟利违法」无中生有，原文讨论价值归属而非违法性。",
+   "keyword": "aggregation 聚合；process 处理；possession 占有；miss the point 没抓住要点。",
+   "note": "强调句 it is...that... 是作者亮观点的修辞信号，强调部分就是答案；段落论点题找 But 之后的首个论断——本段先转述 Denham 的 distinction 再用 misses the point 加强调句反驳，反驳处即论点。"
+  },
+  {
+   "question_id": 1041,
+   "long_sentence": "What matters is that they will belong to a private monopoly which developed them using public resources：What matters is that... 主语从句加表语从句；which 定语从句修饰 monopoly；using public resources 现在分词短语作方式状语。译：重要的是，这些算法将归属一家利用公共资源开发它们的私人垄断企业。",
+   "option": "正确项 D：private monopoly（私人垄断企业）加 avoid a future of digital feudalism（数字封建主义），指向「科技巨头对大数据的垄断」；A「药企恶性竞争」张冠李戴——big pharma 是类比对象不是担忧本体；B「隐私法执行不力」以偏概全，原文说 privacy law 用在此处 feels slightly maladapted，担忧不在执行；C「新软件失控使用」偷换概念，担忧的是归属权而非使用失控。",
+   "keyword": "monopoly 垄断；digital feudalism 数字封建主义；public resources 公共资源；maladapted 不适配的。",
+   "note": "real worry 要看 What matters is that... 的表语从句；D 的 monopoly 与 digital feudalism 互相印证——封建主义的本质即资源垄断；B 的 maladapted 说的是「工具不趁手」，不是「担忧本身」，注意题干问 worry 而非 law 的缺陷。"
+  },
+  {
+   "question_id": 1042,
+   "long_sentence": "The potential of this work applied to healthcare is very great, but it could also lead to further concentration of power in the tech giants：主句肯定潜力；but 转折指出集中化风险；applied to healthcare 过去分词短语作后置定语。译：这项工作应用于医疗的潜力非常大，但它也可能导致权力进一步向科技巨头集中。",
+   "option": "正确项 B：作者既承认 potential very great（肯定面），又警示 concentration of power、digital feudalism（风险面），末句 Ms Denham's report is a welcome start 表明立场明确——支持但设防，即审慎；A「模棱两可」指立场不清，与作者明确的评价不符；C「赞赏」只取前半；D「蔑视」与 both sides mean well、welcome start 的语气相反。",
+   "keyword": "cautious 谨慎的；potential 潜力；concentration of power 权力集中；welcome start 可喜的开端。",
+   "note": "态度题抓 but 两侧：「承认潜力+警示风险」是 cautious 的标准公式；区分 cautious 与 ambiguous——前者立场清晰（支持但设防），后者摇摆不定；welcome start 与 a long struggle 的搭配正体现「肯定现状、警惕长远」。"
+  },
+  {
+   "question_id": 1043,
+   "long_sentence": "主干 the USPS is in a historic squeeze between A and B，squeeze between 表「夹在…之间」；第一个 that 定语从句修饰 technological change，bread-and-butter product 指赖以为生的核心产品平信；第二个 that 从句修饰 regulatory structure，deny sth to sb 表「使得不到」。译：美国邮政处于历史性夹击：一边是永久压低其核心产品平信需求的技术变革，一边是不许管理层灵活调整运营以适应新现实的监管架构。",
+   "option": "正确项 B：a regulatory structure that denies management the flexibility＝管理被剥夺灵活性，即「管理僵化」；A「预算失衡」是问题的表现（expenses have exceeded revenue）而非原因；C「技术升级成本」无中生有，原文谈的是技术变革压低需求；D「银行撤资」无中生有。",
+   "keyword": "regulatory structure 监管架构；flexibility 灵活性；bread-and-butter product 核心产品；squeeze 夹击、挤压。",
+   "note": "原因题盯 Fundamentally 之后的 squeeze between...and...：第二支（监管不让调整）对应 rigid management；A 的陷阱是「把问题当原因」——预算失衡是亏损的同义重述，注意题干问 cause 还是 phenomenon。"
+  },
+  {
+   "question_id": 1044,
+   "long_sentence": "leaving the Postal Service unable to pay its bills except by deferring vital modernization：leaving... 现在分词短语作结果状语；except by 表「除…之外别无他法」；defer 意为「推迟」。译：这就是近年改革立法屡屡失败的原因，使邮政除了推迟关键现代化之外，已无力支付账单。",
+   "option": "正确项 A：interest groups ranging from postal unions to greeting-card makers exert self-interested pressure on Congress＝利益集团施压，导致改革立法失败、现代化搁置；B「国会拨款不足」偷换概念——国会是被游说的监督者（overseer），非出资方；C「邮政需求萎缩」是第 1 段的背景原因，答非所问；D「邮政工会无能」偷换概念——工会是施压的利益集团之一，并非无能。",
+   "keyword": "interest group 利益集团；exert pressure on 对…施压；status quo 现状；defer 推迟＝put off。",
+   "note": "This is why 明示因果链：利益集团施压→改革立法失败→现代化推迟；B 的干扰来自 Congress 一词，但其角色是「被游说者」；题干限定 Paragraph 2，C 属于跨段挪用的答非所问。"
+  },
+  {
+   "question_id": 1045,
+   "long_sentence": "The latter step would largely offset the financial burden of annually pre-funding retiree health care, thus addressing a long-standing complaint by the USPS and its unions：offset 意为「抵消」；of annually pre-funding... 介词短语修饰 burden；thus addressing... 结果状语。译：把邮政退休人员转入联邦医疗保险这一步，将大体抵消每年为退休人员医疗预筹资金的财务负担，从而解决 USPS 及其工会由来已久的抱怨。",
+   "option": "正确项 A：offset the financial burden of...retiree health care＝卸下退休人员医疗负担，与 removing its burden of retiree health care 同义对应；B「投资新车」张冠李戴——购车是救助金的用途之一，非解决抱怨之策；C「新的涨价机制」张冠李戴——penny-per-letter 是资金来源；D「吸引更多平信用户」无中生有。",
+   "keyword": "offset 抵消＝counterbalance；pre-fund 预先筹资；Medicare 联邦医疗保险；address 解决＝tackle。",
+   "note": "thus addressing a long-standing complaint 是解题铁证——addressing 之前的措施（转入 Medicare、抵消医疗预筹负担）即答案；题干 can be addressed by 与原文 thus addressing 构成动词同义复现，同词根呼应是细节题的定位捷径。"
+  },
+  {
+   "question_id": 1046,
+   "long_sentence": "It is not, however, a sign that they're getting serious about transforming the postal system for the 21st century：not 与 however 连用表双重转折；that 从句说明 sign 的具体内容；get serious about 认真对待。译：然而，这并不表明他们对 21 世纪邮政体系的转型动了真格。",
+   "option": "正确项 C：legislators are getting frightened about a politically embarrassing short-term collapse（怕的是难看的崩溃）加 It is not...a sign that they're getting serious，作者点破议员「怕出事而非谋转型」，不满之情显然；A「尊重」与 B「容忍」无语气对应；D「感激」与批评语气相反。",
+   "keyword": "discontent 不满；consensus 共识；legislator 立法者＝lawmaker；get serious about 认真对待。",
+   "note": "It is not, however, a sign that... 是态度落点：共识的动机是 frightened 而非 serious——「怕难看」与「真改革」的对照即不满的依据；态度题问对人时，看作者如何评价行为「动机」而非行为本身。"
+  },
+  {
+   "question_id": 1047,
+   "long_sentence": "someone is bound to point out that it amounts to the bare, bare minimum necessary to keep the Postal Service afloat, not comprehensive reform：be bound to 表「必定」；amount to 相当于；bare minimum 最低限度；afloat 本义「浮在水面」，此处喻「勉强维持」。译：即便法案在众议院过关，还要过参议院一关——那里必定有人指出，这不过是让邮政勉强维系的最低限度措施，谈不上全面改革。",
+   "option": "正确项 D：Band-Aid（创可贴）比喻治标不治本的临时措施，对应 bare minimum...not comprehensive reform 加末句 not...serious about transforming——「需要的不只是创可贴」＝需要全面改革；A「怀念旧日好时光」无中生有；B「离我的奶酪远点」歪曲文意，原文未写利益争夺的守成心态；C「慢性病需速治」正反混淆——文章主张 comprehensive reform（根治）而非 quick cure（速治）。",
+   "keyword": "Band-Aid 创可贴（喻临时措施）；bare minimum 最低限度；comprehensive reform 全面改革；afloat 勉强维持。",
+   "note": "标题题抓末段评价句：bare, bare minimum 的叠用与 not...serious about transforming 双重否定「救急不足」；D 的 Band-Aid 与 C 的 quick cure 方向相反——作者要根治（transform），比喻的「药理方向」是标题题的隐藏考点。"
+  },
+  {
+   "question_id": 1048,
+   "long_sentence": "The Eisenhower Executive Office Building (EEOB) commands a unique position in both the national history and the architectural heritage of the United States：commands 此处意为「占据、拥有」（熟词僻义）；Designed by Supervising Architect of the Treasury, Alfred B. Mullett 为过去分词短语作状语。译：艾森豪威尔行政办公楼（EEOB）在美国国家历史与建筑遗产中都占据着独特地位。",
+   "option": "答案 E 段：位置 41 是全文首段，E 段首次点出 EEOB 全称并总述其历史与建筑双地位、设计者 Mullett、1871-1888 建造年代，commands a unique position 是开篇定调句；与 B 段区分——B 讲楼内三大部门与名人事件，属功能与人物介绍，须在建筑落成之后才能展开。",
+   "keyword": "command a position 占据地位；architectural heritage 建筑遗产；Second Empire style 第二帝国风格；Supervising Architect 总建筑师。",
+   "note": "排序题先认总起段：首次给出 EEOB 全称、评价句 unique position、设计师与年代三要素齐备的 E 是标准开篇；首空锁定后，42 空需找承接「历史地位」的段落。"
+  },
+  {
+   "question_id": 1049,
+   "long_sentence": "In 1866, the construction of the North Wing of the Treasury Building necessitated the demolition of the State Department building：necessitated 意为「使成为必要、导致」；the construction of... 作主语；of the Treasury Building 与 of the State Department building 分别限定两个建筑名。译：1866 年，财政部大楼北翼的修建使拆除旧国务院大楼成为必然。",
+   "option": "答案 G 段：位置 42 承接 E 段的 national history——G 段 The history of the EEOB began long before its foundations were laid 从楼史前传讲起（1799-1820 最早行政办公室、1814 英军纵火、1866 拆除旧国务院大楼）；G 末 1866 拆除旧国务院大楼，正好由 A 段 1875 年新南翼竣工接续，旧拆新建；与 B 段区分——B 的 housed diplomats、historic events 概括须由 C 段名人实例承接，不能占 42。",
+   "keyword": "necessitate 使成为必要；demolition 拆除；foundation 地基；long before 远在…之前。",
+   "note": "衔接依据是时间链：引言段（1869 立项、1871 开工）→E（地位与年代总述）→G（楼史前传，止于 1866）→A（1875 新南翼竣工）；G 段末句的 1866 拆除旧楼与 A 段新翼启用构成「旧拆新建」递进，long before its foundations were laid 是承接「历史」话题的信号句。"
+  },
+  {
+   "question_id": 1050,
+   "long_sentence": "Completed in 1875, the State Department's south wing was the first to be occupied：Completed in 1875 为过去分词短语作状语；the first to be occupied 中不定式作后置定语含被动义。译：国务院南翼于 1875 年竣工，是第一个投入使用的部分。",
+   "option": "答案 A 段：引言段末 construction...began in June of 1871 之后，A 段 Completed in 1875 承接开工讲首批竣工启用（南翼 1875、东翼 1879），与已给 F 段回溯整体耗时 17 年（1871-1888）构成「先局部启用、后整体完工」的顺序；与 F 段区分——F 段 When the EEOB was finished 讲全楼建成时是华盛顿最大办公楼，属完工总结，须在 A 之后。",
+   "keyword": "completed 竣工＝be finished；occupy 入驻、投入使用；wing 侧楼、配楼；stencil 镂印花纹装饰。",
+   "note": "衔接依据是时间与范围递进：1871 开工→1875 南翼→1879 东翼（A）→17 年整体完工（F）→楼的功能（B）→人物事件（C D）；Completed in 1875 的分词状语直接挂在 began in June of 1871 之后，先细节后总结，A→F 勿倒置。"
+  }
+ ]
+}

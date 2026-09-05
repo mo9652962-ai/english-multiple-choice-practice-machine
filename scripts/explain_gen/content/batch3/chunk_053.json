@@ -1,0 +1,180 @@
+{
+ "chunk": 53,
+ "items": [
+  {
+   "question_id": 1301,
+   "long_sentence": "定位句 Nails themselves have changed over the years, but Sichel studied them because they haven't changed much. Roman lamps and Roman chariots are very different from LED strips and sports cars, but Roman nails are still clearly nails。but 转折；because 原因从句。译：钉子这些年也有变化，但 Sichel 研究它恰因其变化不大——罗马灯具战车与 LED 灯带跑车迥异，罗马钉子却依然是钉子。",
+   "option": "正确项 B have remained basically the same since Roman times：Roman nails are still clearly nails（罗马钉子仍是钉子）＝自罗马时代以来基本未变，haven't changed much 是 Sichel 选它作研究对象的理由；A 经历诸多技术改进 正反混淆，原文强调变化不大；C 比其他日常产品更少被研究 无中生有；D 世界最重大发明之一 过度推断，第五段未作此断言。",
+   "keyword": "hoard 贮藏物；chariot 战车；absurd 荒谬的；track the changing price 追踪价格变化。",
+   "note": "段中 but 是方向开关：先让步 have changed 再强调 haven't changed much，考点落在后半；A 挪用 have changed 字面设反向陷阱，C/D 均为无源之水，抓 Roman nails are still clearly nails 的类比即可。"
+  },
+  {
+   "question_id": 1302,
+   "long_sentence": "定位句 while it is the enchantingly sophisticated technologies that get all the hype, it's the cheap technologies that change the world。两个 it is...that 强调句对举；get all the hype 备受追捧；下文古腾堡印刷机因改变书写成本而变革文明、太阳能板因便宜而改造全球能源体系。译：令人着迷的尖端技术赚尽眼球，但改变世界的却是廉价技术。",
+   "option": "正确项 A Cheap technologies bring about revolutionary change：cheap technologies that change the world 加印刷机改变书写成本、太阳能板变便宜后改造能源体系，两例同证『便宜带来变革』；B 技术创新是经济成功之要 偏离主线，末两段谈『便宜』不谈经济成功学；C 技术定义人类对世界的理解 无中生有；D 尖端技术由小发明发展而来 偷换概念，原文只对比 hype 与变革力，无派生关系。",
+   "keyword": "hype 炒作、追捧；sophisticated 尖端复杂的；transform 改变＝revolutionize；collapse in price 价格骤降。",
+   "note": "末两段总结题抓重复词：cheap 出现两次、transform/change 出现三次，主线即『便宜→变革』；D 用 sophisticated 与 cheap 的原文词做拼接，但把对比关系偷换成发展关系，警惕原词陷阱。"
+  },
+  {
+   "question_id": 1303,
+   "long_sentence": "定位句 The idea is based on studies of communities such as the Kung of Botswana, where each child is cared for by many adults. Kung children as young as four will help to look after younger ones... 'baby-wearing'... is considered the norm。where 引导定语从句。译：该想法基于对博茨瓦纳昆人等社群的研究——每个孩子由许多成人共同照料；四岁孩子就会帮忙照看幼童，背带背婴被视为常态。",
+   "option": "正确项 A sharing childcare among community members：each child is cared for by many adults（每个孩子由许多成人照料）加四岁孩子帮看幼儿，即社区成员分担育儿，known as alloparenting 正是对这些做法的命名；B 把婴儿指派给特定照料者 偷换概念，是多人共育而非指定专人；C 教大孩子育儿技能 无中生有，孩子是直接参与照料而非接受培训；D 父母背婴出行 张冠李戴，baby-wearing 只是举例且不限于父母。",
+   "keyword": "alloparenting 替代育儿（非父母照料）＝shared childcare；norm 常态；sling 背带；contented 满足的。",
+   "note": "术语定义题看 known as 的先行内容：these practices 复指前文『多人照料+孩童互助+背婴』等做法，概括其共性即『社区共育』；B/D 各抓一个例子以偏概全，C 则凭空加戏。"
+  },
+  {
+   "question_id": 1304,
+   "long_sentence": "定位句 Dr Annie Swanepoel believes that there are ways to incorporate them into western life. In Germany, one scheme has paired an old people's home with a nursery... an arrangement akin to alloparenting。incorporate...into 把…融入；akin to 类似于。译：斯瓦内普尔博士相信有办法把这些做法融入西方生活：德国一个项目将养老院与托儿所结对，老人帮忙照看孩子——这种安排与替代育儿如出一辙。",
+   "option": "正确项 B an approach to integrating alloparenting into western society：there are ways to incorporate them into western life（有办法融入西方生活）是观点句，德国项目是佐证例——养老院配托儿所正是把共育模式嫁接进西方社会的路径；A 促进代际交流 偷换概念，配对的目的在育儿互助，代际交流只是副产品；C 西方传统养育方式 正反混淆，西方核心家庭是 recent invention，此项目恰是新尝试；D 对比西方与非洲生活方式 偏离，例子讲借鉴不讲对比。",
+   "keyword": "incorporate 融入＝integrate；nursery 托儿所；scheme 项目＝program；akin to 类似于＝similar to。",
+   "note": "例子功能题答案在例子前的观点句：believes that there are ways to incorporate...（融入西方生活）一句话定性，德国只是 ways 的实例；A 抓 residents 与 children 的年龄差做文章，方向偏成『交流』。"
+  },
+  {
+   "question_id": 1305,
+   "long_sentence": "定位句 the western nuclear family was a recent invention which broke with evolutionary history. This abrupt shift to an 'intensive mothering narrative'... was likely to have been harmful。which broke with 定语从句；abrupt 突然的；narrative 叙事。译：西方核心家庭是晚近发明，背离了演化历程；向主张母亲独自育儿的「密集母职叙事」的突然转变很可能有害——这类叙事会导致母亲身心俱疲。",
+   "option": "正确项 D departs from the course of evolution：a recent invention which broke with evolutionary history（晚近发明、背离演化历史）加 abrupt shift（突变），即密集母职脱离了人类演化的轨道；A 缓解育儿压力 正反混淆，原文说 maternal exhaustion；B 巩固家庭关系 无中生有；C 造成以孩子为中心的家庭 无中生有，原文批评的是母亲独自承担而非以孩子为中心。",
+   "keyword": "nuclear family 核心家庭；break with 与…决裂＝depart from；maternal exhaustion 母亲身心耗竭；abrupt 突然的。",
+   "note": "评价对象看定语从句：which suggests that mothers should manage childcare alone 是叙事的内容，which broke with evolutionary history 是作者对其性质的判断；A/B/C 都绕开了『背离演化』这一定性。"
+  },
+  {
+   "question_id": 1306,
+   "long_sentence": "定位句 An infant born to a hunter-gatherer society could have more than ten caregivers—this contrasts starkly to nursery settings in the UK where regulations call for a ratio of one carer to four children。this 指代前文照料者数量；contrast starkly to 形成鲜明对比。译：狩猎采集社会的婴儿可能有十多位照料者——这与英国托儿所形成鲜明反差：按规定两到三岁儿童每四人才配一名照料者。",
+   "option": "正确项 C They ought to improve their carer-to-child ratio：狩猎采集婴儿 10 余名照料者与英国托儿所 1:4 的 stark contrast，暗含『1:4 偏低、应增配照料者』的推断方向；A 达不到官方要求 无中生有，1:4 本身就是 regulations 的要求，托儿所是合规的；B 难以找到足够照料者 过度推断，原文未谈招聘困难；D 应设法预防父母抑郁 张冠李戴，减少 maternal depression 说的是引入额外照料者的家庭场景，不是托儿所的职能。",
+   "keyword": "caregiver 照料者＝carer；ratio 比例；contrast starkly to 与…形成鲜明对比；nursery settings 托儿所环境。",
+   "note": "推断题抓对比的不平衡点：作者摆出 10 余比 1:4 的悬殊差距，隐含批评在『比例低』而非『违规』；A 把规定与执行混为一谈，D 把家庭结论平移到机构，均为越界推断。"
+  },
+  {
+   "question_id": 1307,
+   "long_sentence": "全文主线：Parenting tips obtained from hunter-gatherers... may be the key to bringing up more contented children（首段），中段 alloparenting 可减轻孩子与父母的焦虑、引入额外照料者可减少压力与 maternal depression，末段建议探索年长子女帮忙育儿的社交发展价值。译：研究者建议，从非洲狩猎采集者那里获得的育儿诀窍，可能是培养更快乐孩子的关键。",
+   "option": "正确项 B For a happier family, learn from the hunter-gatherers：全文结构=狩猎采集多成人共育→好处（less anxiety、reduce stress and maternal depression）→西方可借鉴（incorporate into western life），标题须同时含「向狩猎采集者学习」与「更幸福」两层；A 以 instructive teaching 立题，只是末段次要批评点，以偏概全；C 的 mixed-age playgroup 同为局部措施且 lonely children 无从谈起；D 追溯养育史，文章是建议借鉴不是历史溯源。",
+   "keyword": "alloparenting 替代育儿；contented 快乐满足的＝happier；knock-on benefit 连带好处；incorporate 融入。",
+   "note": "标题题两步走：先确认全文是『问题+借鉴』结构（学习对象=狩猎采集者），再核对关键词复现（hunter-gatherers 首末段均现）；A/C/D 各抓文中一个名词短语做标题，都是以偏概全的典型。"
+  },
+  {
+   "question_id": 1308,
+   "long_sentence": "定位句 His distinctive style is now one of the most commonly used prompts in... Stable Diffusion... type in '... Greg Rutkowski,' and the system will produce something not a million miles away from his style。not a million miles away from 与…相差无几。译：他的标志性风格如今是 Stable Diffusion 最常用提示词之一——输入带其名字的提示语，就会生成与其风格相差无几的图。",
+   "option": "正确项 B He is popular with users of an AI art generator：his style is one of the most commonly used prompts（他的名字是最常用提示词之一）＋后文 93,000 次引用，说明他深受 AI 生成器用户欢迎；A 热衷使用 AI 模型 无中生有，他用古典油画风格手工创作，未说自己用 AI；C 受其他插画师钦佩 偷换概念，欢迎他的是 AI 用户群体，文中未提同行评价；D 专攻古典绘画数字化 偷换概念，他是用古典绘画风格画数字奇幻风景，不是把古典画做数字化。",
+   "keyword": "prompt 提示词；text-to-image 文生图；distinctive style 独特风格；a sudden hit 突然走红。",
+   "note": "人物细节题定位在 style prompts：受欢迎的主体是 AI 生成器用户（输入他名字的人）；D 是最强干扰——classical painting 是他的风格来源，digitalization（数字化古画）偷换了创作方式。"
+  },
+  {
+   "question_id": 1309,
+   "long_sentence": "定位句 But these open-source programs are built by scraping images from the internet, often without permission and proper attribution to artists. As a result, they are raising tricky questions about ethics and copyright。scrape 抓取；without permission 未经许可。译：这些开源程序靠从互联网抓取图片搭建，往往未经许可、未恰当署名——由此引发伦理与版权的棘手问题。",
+   "option": "正确项 C make unauthorized use of online images：scraping images from the internet...without permission and proper attribution（未经许可与署名抓网图）＝擅自使用网络图片，unauthorized 恰是 without permission 的同义转述；A 对提示词响应缺乏灵活性 无中生有；B 生成风格不可预测 无中生有，例子恰恰说明风格可定向模仿；D 未经同意收集用户信息 张冠李戴，被抓取的是艺术家的作品图，不是用户个人信息。",
+   "keyword": "scrape 抓取＝harvest；unauthorized 未经授权的＝without permission；attribution 署名；ethics and copyright 伦理与版权。",
+   "note": "问题句常有 without/often 负面限定：without permission and proper attribution 双重否定直接指向『擅用』；D 利用 privacy 话题的字面联想设陷，抓宾语 images 与 information 的差异即可。"
+  },
+  {
+   "question_id": 1310,
+   "long_sentence": "定位句 Then he tried searching for his name to see if a piece he had worked on had been published. The online search brought back work that had his name attached to it but wasn't his。search for 搜索；brought back 返回结果；attached to it 附着其上（过去分词短语）。译：随后他试着搜索自己的名字，想看是否有自己参与的作品被发布——搜索结果返回了一些挂着他的名字、却并非他所作的作品。",
+   "option": "正确项 C AI-generated work bearing his name：work that had his name attached to it but wasn't his（挂他名字却非他所作的作品）＝带有其姓名的 AI 生成作品；A 独特的触达受众方式 张冠李戴，起初 thought it might be a good way to reach new audiences 是搜索前的想法，搜索结果粉碎了它；B 识别 AI 图的新方法 无中生有；D 关于其版权的激烈争论 无中生有，版权争议由 Karla Ortiz 等其他人掀开，鲁特科夫斯基搜索时未见。",
+   "keyword": "attach to 附加、挂靠；bear one's name 带有某人的名字＝have one's name attached；publish 发布；flooded with 充斥着。",
+   "note": "转折叙事看情绪落点：先 might be a good way（期待）后 concerning（担忧），搜索发现『挂名非己作』是转折点；A 用他搜索前的乐观想法设陷，答案要看 search brought back 之后的事实。"
+  },
+  {
+   "question_id": 1311,
+   "long_sentence": "定位句 One suggestion is that AI models could be trained on images in the public domain, and AI companies could forge partnerships with museums and artists, Ortiz says。suggest 后接虚拟含义的建议；be trained on 用…训练；forge partnerships with 与…结成伙伴。译：奥尔蒂斯说，一条建议是 AI 模型可以改用公共领域的图像来训练，AI 公司可以与博物馆和艺术家建立合作关系。",
+   "option": "正确项 D adopt a different strategy for AI model training：trained on images in the public domain＝改变 AI 训练的数据策略，与此前抓取受版权保护图片不同；A 张冠李戴，pushing for new policies 是艺术家联盟的方向，不是给 AI 公司的建议；B 偷换概念，partnerships 是合作共建不是提供服务；C 偷换概念，合作对象是 museums and artists，不是用户。",
+   "keyword": "public domain 公共领域（不受版权保护）；forge partnerships 建立伙伴关系＝form alliances；train on 用…训练；coalition 联盟。",
+   "note": "建议句看主语分工：artists 推动政策（A 的主语），AI 公司被建议做的是换训练数据与合作（D）；B/C 都在 partner 一词上偷换对象，核对 with 的宾语即可。"
+  },
+  {
+   "question_id": 1312,
+   "long_sentence": "全文结构：Rutkowski 因名字成为 AI 文生图最常用提示词而走红→搜索发现挂名非己作、担忧互联网被 AI 艺术淹没（Artists like Rutkowski have had enough）→Ortiz 发现作品进入训练集，提高公众意识、艺术家面临收入与隐私风险→艺术家联盟 mobilizing，建议公共领域训练与合作。译：本文主旨是艺术家们对 AI 艺术生成的回应。",
+   "option": "正确项 A Artists' responses to AI art generation：全文两条人物线（Rutkowski 的发现与担忧、Ortiz 的呼吁与联盟建议）都是『艺术家的回应』，have had enough 与 fighting back 定下回应基调；B AI 在艺术创作中作用扩大 偏离，AI 生成只是背景，落点在艺术家反应；C AI 应用中的隐私问题 以偏概全，privacy 只是 Ortiz 提到的一方面；D 对 AI 发展的对立观点 偷换概念，文中是艺术家的应对行动，不是正反观点论战。",
+   "keyword": "response 回应＝reaction；fight back 反击；raise awareness 提高意识；mobilization 动员。",
+   "note": "主旨题数人物线：Rutkowski（担忧）+Ortiz（行动）+artists 联盟，主体统一为 artists，动作统一为 respond；B/D 都把镜头对准 AI，偏离文章以艺术家为主角的叙事，C 把次要细节放大成主旨。"
+  },
+  {
+   "question_id": 1313,
+   "long_sentence": "定位句 The miracle... lies not in its depths, but in the complexity of its natural construction。The shallows provide homes for hundreds of species while storing floodwaters, filtering pollutants and protecting communities from storm surges。lie not in...but in 不在于…而在于。译：切萨皮克湾的奇迹不在深处而在构造之复杂；浅滩为数百物种安家，兼蓄洪水、滤污染物、护社区免受风暴潮。",
+   "option": "正确项 A a valuable natural environment：miracle（奇迹）加 provide homes/store floodwaters/filter pollutants/protect communities 四大生态功能，全是宝贵自然属性的铺陈；B 有争议的保护区 无中生有，第一段没有争议字眼，争议从第二段法院裁决才开始；C 具商业潜力 无中生有；D 令附近社区头疼 正反混淆，是 protecting nearby communities（保护社区）而非困扰。",
+   "keyword": "miracle 奇迹；shallows 浅滩；filter pollutants 过滤污染物；storm surge 风暴潮。",
+   "note": "首段态度题看功能罗列：四个 while 并列动词（provide/storing/filtering/protecting）全是正面生态服务，结论自然落在『宝贵』；D 把 protect 读反成 headache，是方向型陷阱。"
+  },
+  {
+   "question_id": 1314,
+   "long_sentence": "定位句 the U.S. Supreme Court issued a ruling... that provides the EPA far less authority to regulate wetlands... This narrowing... was a victory for builders, mining operators and other commercial interests；受保护湿地须有 'continuous surface connection'。narrowing 收窄。译：最高法院裁决使 EPA 监管湿地权力大减——受保护湿地须与水体有「连续地表连接」；收窄是商业利益的胜利。",
+   "option": "正确项 B weakens the EPA's regulatory power：provides the EPA far less authority 加 narrowing of the regulatory scope，两处都指向削弱 EPA 监管权；A 加强水污染治理 正反混淆；C 将终结当地居民间冲突 无中生有；D 可能招致矿业经营者反对 正反混淆，矿业经营者正是裁决的受益方（a victory for builders, mining operators...）。",
+   "keyword": "ruling 裁决；authority 权力＝power；narrowing 收窄＝weakening；victory for 是…的胜利。",
+   "note": "裁决影响看两个信号：far less authority（直接陈述）与 victory for commercial interests（受益方反推），双方都指向『削弱监管』；D 把受益方说成反对方，核对 a victory for 的宾语即可。"
+  },
+  {
+   "question_id": 1315,
+   "long_sentence": "定位句 The reality is that water... don't respect state boundaries... Will those jurisdictions extend the same protections now denied under Sackett v. EPA? Perhaps some, but all? That seems unlikely。don't respect 不受…约束；Perhaps some, but all? 连串设问。译：现实是水以及常随水而来的污染物并不遵守州界；各辖区会延续在 Sackett 诉 EPA 案中被否决的保护吗？也许有些会，但全部？似乎不太可能。",
+   "option": "正确项 A Worried：州法不足以跨州（water don't respect state boundaries）、其他州未必跟进（That seems unlikely）、后果 dire（so dire for their neighbors），层层设问与警示词构成担忧基调；B 困惑 无中生有，作者对局势看得很清楚；C 如释重负 正反混淆，州法存在只是 shortsighted view 下的局部安慰；D 备受鼓舞 正反混淆，全文是警示与呼吁。",
+   "keyword": "watershed 流域；jurisdiction 辖区；dire 严重的＝grave；shortsighted 目光短浅的。",
+   "note": "情感题找设问与贬义词：Perhaps some, but all? That seems unlikely 的自问自答是最强忧虑信号；C/D 可用 But that's a very shortsighted view 的转折排除——好消息被作者亲手按下了。"
+  },
+  {
+   "question_id": 1316,
+   "long_sentence": "定位句 it's a reminder that the EPA's involvement in the Chesapeake Bay Program has long been crucial as the means to transcend the influence of deep-pocketed special interests in neighboring states。transcend 超越；deep-pocketed 财大气粗的；as the means to do 作为…的手段。译：这也提醒我们：EPA 之于切萨皮克湾项目的长期参与至关重要——它是超越邻近各州财大气粗的特殊利益影响的手段。",
+   "option": "正确项 D It has ensured the coordination of protection efforts：EPA 参与＝跨州超越特殊利益影响的手段，隐含其作用是把各州保护行动协调起来（湾跨 64000 平方英里、6 个辖区）；A 恢复了辖区间的平衡 偷换概念，transcend（超越利益影响）不等于恢复平衡；B 引发渔业 radical reform 无中生有；C 尊重州权的典范 正反混淆，EPA 的价值恰在于凌驾各州特殊利益之上做统一协调。",
+   "keyword": "transcend 超越＝go beyond；deep-pocketed 财大气粗的＝wealthy；crucial 至关重要；runoff 径流污染。",
+   "note": "推断题抓 means to transcend 的功能定义：EPA 的角色是跨州协调者；C 项用 respect state authorities 反向利用美国政治语境，而原文强调的恰是联邦介入打破地方利益藩篱。"
+  },
+  {
+   "question_id": 1317,
+   "long_sentence": "定位句 And so we would call on state lawmakers from Richmond to Albany to consider reviewing their own wetlands protections and see for themselves the enormous stakes involved。call on 号召；consider reviewing 考虑审视；enormous stakes 巨大利害攸关。译：因此我们呼吁从里士满到奥尔巴尼的各州议员，审视本州的湿地保护，并亲眼看看其中牵涉的巨大利害。",
+   "option": "正确项 B attach due importance to wetlands protections：call on lawmakers to consider reviewing their own wetlands protections（审视本州湿地保护）＝给予湿地保护应有的重视；A 谨防土地所有者的影响 偷换概念，第四段批评的是把裁决简单看作维护土地所有者权利，不是要议员防谁；C 承认扩建保护区的必要 张冠李戴，Blackwater 保护区是邀请议员参观的示例，不是扩建提议；D 改善濒危物种福祉 无中生有。",
+   "keyword": "call on 号召＝urge；review 审视；stakes 利害关系；tidal marshes 潮汐沼泽。",
+   "note": "建议题抓 call on 的动作宾语：consider reviewing their own wetlands protections 是唯一明确诉求；C/D 从参观例子中枝生，A 从第四段挪用词组，细节题末段末句出答案的规律再次应验。"
+  },
+  {
+   "question_id": 1318,
+   "long_sentence": "答案句（Hannah 评论）：There are people in Nigeria who cannot travel to the Smithsonian Institution... These should be available to them... They serve no purpose in a museum in the United States or elsewhere except as curious objects。译：尼日利亚有人无法远赴史密森尼观看贝宁青铜器承载的历史文化，文物应让他们触手可及；它们在美国或其他地方的博物馆里毫无用处，不过是猎奇物件。",
+   "option": "答案 E 对应 Hannah：E 表述 The real value of artifacts can only be recognized in their countries of origin rather than anywhere else——与 Hannah 论证严丝合缝：尼日利亚人看不到展品、文物应作其 cultural heritage and national pride、serve no purpose except as curious objects（别处无用）；注意 D 只是 E 的前半截，缺「别处无用」的对照义；A 的 flawed reasoning 属 Julia，F 的合法获得属 Sara。",
+   "keyword": "cultural heritage 文化遗产；national pride 民族自豪感；curious objects 猎奇物件＝mere curiosities；be beyond the reach of 触不可及。",
+   "note": "评论匹配先找立场强句：serve no purpose...except as curious objects 是 Hannah 的落点——价值只在原产国；E 与 D 是拆分陷阱，完整句才与『别处无用』的对照逻辑闭合。"
+  },
+  {
+   "question_id": 1319,
+   "long_sentence": "答案句（Buck 评论）：very exact reproductions... are regularly produced. Perhaps museums and governments might explore some role for nearly exact reproductions as a means of resolving issues of returning art... the story an exhibit is trying to tell is what matters。译：精确复制品能且常被制作；博物馆政府或可用近精确复制品化解归还难题；展览要讲的故事才要紧，金钱价值居次。",
+   "option": "答案 C 对应 Buck：整段评论围绕复制品与真品的关系——very exact reproductions、real object or forgery 聚焦一个命题：复制品再逼真也只是复制品；他提议用复制品化解归还难题，前提正是真品归还原主、复制品只作展陈替身，C 的 even if perfectly made cannot take the place of the authentic objects 与此对应；易混项 B 把学习价值说满（learn as much），超出 Buck 的 some role/might explore 试探语气；A 的 flawed reasoning 属 Julia。",
+   "keyword": "reproduction 复制品＝replica；authentic 真品的＝genuine；forgery 赝品；monetary value 金钱价值。",
+   "note": "唯一大谈复制品的评论锁定命题域：真品与复制品之辨；在 A-G 中只有 C 站在『复制品不能取代真品』这一博物馆语境的主流判断上，与 Buck 提议复制品方案的讨论形成呼应。"
+  },
+  {
+   "question_id": 1320,
+   "long_sentence": "答案句（Sara 评论）：whatever artifacts find their way to public museums should... be sanctioned as obtained on loan, legally purchased, or by treaty. Stealing artifacts from other peoples' cultures is obscene。sanction 认可；on loan 借展；treaty 条约。译：凡进入公立博物馆的文物应被认可为经借展、合法购买或依条约取得；窃取他民族文化是可憎的——掠夺的不只实物，还有创造者的尊严与精神。",
+   "option": "答案 F 对应 Sara：Ways to get artifacts from other countries must be decent and lawful（从别国获得文物的方式必须体面合法）正是 Sara 评论后半段的凝练——合法途径三种（on loan/legally purchased/by treaty）加 stealing is obscene（偷窃可憎）的正反对照；易混项 C 的复制品话题 Sara 只字未提（她被 15 世纪中国雕塑真品启发），D 的『只有在原产国才有价值』也与她肯定博物馆启发力（Artifacts in museums have the power to inspire）的表述相悖。",
+   "keyword": "sanction 认可、批准；on loan 借展；treaty 条约；obscene 可憎的＝outrageous。",
+   "note": "一段两论点时抓落点：Sara 先讲被真品启发（让步铺垫），却把重心放在获得方式必须合法上（in fact, should be sanctioned），F 是全段结论；注意 distinguish 三种合法途径的并列列举是段落重心信号。"
+  },
+  {
+   "question_id": 1321,
+   "long_sentence": "答案句（Victor 评论）：Yes, there is the risk that the original will not have as good security as do the foreign countries. But look at what happened to Boston's Gardner Museum theft in 1990... Nothing is absolutely safe, nowhere。译：诚然有风险：归还后文物的安保可能不如外国。但看看 1990 年波士顿加德纳博物馆失窃案——伦勃朗等名作尽失；没有什么地方是绝对安全的，气候激进者还在袭击欧洲博物馆展品。",
+   "option": "答案 G 对应 Victor：Concern over security is no excuse for refusing to return artifacts to their countries of origin 正是其论证概括——先承认安全风险（there is the risk），再连举 Gardner 失窃、Nothing is absolutely safe、气候激进者袭击三例，证明西方博物馆也非安全港，拒绝归还的安全理由站不住；易混项 A 的 flawed line of reasoning 属 Julia，F 的合法获得属 Sara。",
+   "keyword": "security 安保＝safety；excuse 借口＝justification；theft 盗窃案；agitator 激进鼓动者。",
+   "note": "让步反驳结构秒识别：Yes, there is the risk...But...（先让步承认风险再用实例反驳）是『X 不是借口』类观点的标配；G 中的 no excuse 与 Victor 的 But 转折一一对应。"
+  },
+  {
+   "question_id": 1322,
+   "long_sentence": "答案句（Julia 评论）：why do Americans have more of a right to easily access the Benin Bronzes than the people of Nigeria? Why are people near London entitled to see the Elgin Marbles, but Athenians aren't? ... think about why you're assuming that to be true。译：为何美国人比尼日利亚人更有权方便接触贝宁青铜器？伦敦附近的人随时可看额尔金石雕，雅典人为何不能？若说西方更善保存，想想凭什么作此假设。",
+   "option": "答案 B 对应 Julia：连串反问逐条拆解反对归还的理由——接触便利非西方独占权利（more of a right?）、观看自由不应有地理特权、「西方更善保存」只是未检验的假设（why you're assuming that to be true）——落点是文物理应归还原产国；归还后西方公众的学习需求可由复制品承接，B 的 Museum visitors can still learn as much from artifacts' copies after the originals are returned 正是「归还+学习两不误」的出路；易混项 D/E 的原产国价值论属 Hannah，F 属 Sara。",
+   "keyword": "entitle to 有权做；intrinsic factors 内在因素；assume 假定＝presuppose；compensate 补偿。",
+   "note": "连续反问是立场探测器：Julia 不直接下结论，而用三个 why 质疑反归还阵营的每个前提；匹配时抓她文章的最终指向（文物应归还、西方没有特权），再看哪个选项是归还逻辑的自然延伸。"
+  },
+  {
+   "question_id": 1323,
+   "long_sentence": "定位句 This area of the Aegean Sea is prone to earthquakes and tsunamis, which caused the city to gradually sink。be prone to 易遭受；which 引导非限制性定语从句指代地震海啸。译：爱琴海的这片区域地震与海啸频发，正是它们使这座城市逐渐沉没。",
+   "option": "正确项 B prone：be prone to natural disasters（易受…侵袭）是描述地理位置风险的标准搭配，与后文 caused the city to sink 的灾难叙事衔接；A relevant to（与…相关）相关性不表灾害频度；C available to（可获得的）主语应是资源机会而非海域；D alien to（与…格格不入）语义相反——地区与灾害是易发关系不是疏离关系。",
+   "keyword": "be prone to 易于遭受＝be susceptible to；earthquake 地震；tsunami 海啸；Aegean Sea 爱琴海。",
+   "note": "地理风险句式积累：be prone to 后接灾害类名词表『多发』；首空顺承首句语境（古城沉没），灾害易发是沉没的原因铺垫；alien 的『相异』义与因果链方向相反。"
+  },
+  {
+   "question_id": 1324,
+   "long_sentence": "定位句 This area of the Aegean Sea is prone to earthquakes and tsunamis, which caused the city to gradually sink。cause...to do 使…做；gradually 逐渐地。译：这片爱琴海海域地震海啸多发，致使城市逐渐沉没。",
+   "option": "正确项 C gradually：地震海啸反复侵袭导致的是漫长的沉降过程，与下句 The slow sea level rise（海平面缓慢上升）的 slow 呼应，gradually 与 slow 构成节奏一致的副词链；A accidentally（意外地）灾害成因是自然规律不是偶然事故；B frequently（频繁地）修饰事件发生次数，不能修饰 sink 的过程；D temporarily（暂时地）与城市永久沉没水底的事实相反。",
+   "keyword": "gradually 逐渐地＝little by little；sink 沉没；sea level rise 海平面上升；submerged 被淹没的。",
+   "note": "副词题找文内呼应：下句 slow sea level rise 已给出沉降节奏是『慢』，gradually 与之同频；temporarily 是最强反义陷阱——城市沉了三千年，绝非临时。"
+  },
+  {
+   "question_id": 1325,
+   "long_sentence": "定位句 The slow sea level rise in the Mediterranean submerged the city more than 3,000 years ago。主干 The slow sea level rise submerged the city；more than 3,000 years ago 时间状语。译：地中海海平面的缓慢上升在 3000 多年前淹没了这座城市。",
+   "option": "正确项 B submerged：submerge（淹没）与首段 submerged settlement（水下半 sunk 城）及下文 below some 13 feet of water（水下约 13 英尺）构成同话题复现，海平面上升的直接后果就是淹没；A disguised（伪装）城市不能被伪装；C relocated（迁址）海平面上升不会搬走城市；D isolated（隔离）与沉入水底的事实不符。",
+   "keyword": "submerge 淹没＝engulf；settlement 聚落；emerge 出现（与 submerge 反义同源）；underwater archaeology 水下考古。",
+   "note": "全文话题词复现是金线索：文章讲水下古城，submerged 是贯穿全文的核心词，第 3 空与下文 below 13 feet of water 直接挂钩；emerge/submerge 是同源反义词对，认识词根 merge（沉入）可秒辨。"
+  }
+ ]
+}

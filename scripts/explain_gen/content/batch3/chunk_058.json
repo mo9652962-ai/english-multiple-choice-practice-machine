@@ -1,0 +1,180 @@
+{
+ "chunk": 58,
+ "items": [
+  {
+   "question_id": 1426,
+   "long_sentence": "空所在句：Federal health officials 14 __ Tamiflu for children from the national stockpile and began 15 __ orders from the states。from the national stockpile 表来源，空格与 from 搭配。译：联邦卫生官员从国家储备中为儿童 __ 达菲，并开始 __ 各州的订单。",
+   "option": "正确项 A released：release...from the stockpile（从储备中发放）是疫情应对的固定表达；B relayed 转达消息，药不能被转达；C relieved 减轻，relieved Tamiflu 不成话；D remained 保持，不及物动词不接宾语。",
+   "keyword": "release 发放、释放＝distribute；stockpile 储备物资；relay 转达；relieve 减轻、缓解。",
+   "note": "from the stockpile 锁定「从库存取出发放」的方向；relayed/relieved 是 release 的近形干扰，remain 是及物陷阱——四个干扰词都能与 from 沾边，但只有 release 能接药物作宾语。"
+  },
+  {
+   "question_id": 1427,
+   "long_sentence": "空所在句：...and began 15 __ orders from the states for the new swine flu vaccine。began 后接动名词；orders from the states 为宾语。译：并开始 __ 各州对新猪流感疫苗的订单。",
+   "option": "正确项 C taking：take orders（接受订单）是固定搭配，官员接收来自各州的疫苗订单；A placing 下订单，下单方是各州不是联邦官员；B delivering 递送的是疫苗不是订单；D giving 给予订单方向错位。",
+   "keyword": "take orders 接受订单；place an order 下订单；vaccine 疫苗；federal 联邦的。",
+   "note": "orders 的方向定动词：订单来自各州（from the states），官员是「接单方」用 take；place 是「下单方」的动作，把主客颠倒即错，give/deliver 与 order 的搭配也不成立。"
+  },
+  {
+   "question_id": 1428,
+   "long_sentence": "空所在句：The new vaccine, which is different from the annual flu vaccine, is 16 __ ahead of expectations。which 引导非限制性定语从句；ahead of expectations 早于预期。译：与年度流感疫苗不同的新疫苗，比预期更早地 __ 了。",
+   "option": "正确项 B available：is available（可获得的）与下文 three million doses were to be made available 原词呼应，疫苗提前可供使用；A feasible 可行的主语通常是计划方案；C reliable 可靠的与「提前」的时间概念无关；D applicable 适用的与上市进度无关。",
+   "keyword": "available 可获得的＝obtainable；ahead of expectations 早于预期＝earlier than expected；dose 剂量；annual flu vaccine 年度流感疫苗。",
+   "note": "ahead of expectations 表时间进度：能「提前」的只有可用性；下文 made available 是本空的复现答案库，feasible/reliable/applicable 都不与进度概念搭配。"
+  },
+  {
+   "question_id": 1429,
+   "long_sentence": "空所在句：More than three million doses were to be made available in early October 2009, though most of those 17 __ doses were of the FluMist nasal spray type。though 让步；those __ doses 指十月先行投放的那批。译：2009 年 10 月初将有超过 300 万剂可用，不过那批 __ 剂量大多是 FluMist 鼻喷剂型。",
+   "option": "正确项 D initial：initial doses（最初批次的剂量）与 early October 的时间线索呼应，指先行上市的那一批；A prevalent 流行的形容疾病不形容批次；B principal 主要的与批次先后无关；C innovative 创新的与鼻喷剂型的投产进度无关。",
+   "keyword": "initial 最初的＝first/earliest；dose 剂；nasal spray 鼻喷剂；be to do 计划将做。",
+   "note": "those 回指十月初投放的剂量，时间上是「第一批」，initial 顺理成章；principal 是 initials 的近形干扰，注意 those __ doses 的定语要能被 early October 印证。"
+  },
+  {
+   "question_id": 1430,
+   "long_sentence": "空所在句：...though most of those initial doses were of the FluMist nasal spray type, which is not 18 __ for pregnant women, people over 50 or those with breathing difficulties, heart disease or several other 19 __。which 指代 FluMist 剂型。译：不过那批最初的剂量大多是 FluMist 鼻喷剂型，它不被 __ 用于孕妇、50 岁以上人群及有呼吸疾病、心脏病或其他若干 __ 的人。",
+   "option": "正确项 C recommended：not recommended for（不被推荐用于）是用药说明的固定表达，与高危人群限定搭配；A presented 呈现与用药资格无关；B restricted 若填入则 not restricted 变成「不限制」，语义正好相反；D introduced 引入与人群限定不搭。",
+   "keyword": "recommend 推荐＝advise；be recommended for 被推荐用于；pregnant women 孕妇；nasal spray type 鼻喷剂型。",
+   "note": "not 是方向开关：not __ for pregnant women 要表达「不推荐」，填 restricted 就成了「不限制」，与高危警示相反；recommend 是药品说明的标配动词。"
+  },
+  {
+   "question_id": 1431,
+   "long_sentence": "空所在句：...people over 50 or those with breathing difficulties, heart disease or several other 19 __。or 引导并列，空格名词与 breathing difficulties、heart disease 同类。译：50 岁以上人群，或有呼吸疾病、心脏病及其他若干健康 __ 的人。",
+   "option": "正确项 A problems：other problems（其他健康问题）与 difficulties、heart disease 并列同属病症类；B issues 偏指议题、争议，不作病症讲；C agonies 极度痛苦程度过重，且与前文轻症基调不符；D sufferings 苦难偏精神层面，不与具体病名并列。",
+   "keyword": "health problems 健康问题＝medical conditions；breathing difficulties 呼吸困难；heart disease 心脏病；high-risk groups 高危人群。",
+   "note": "并列结构锁语义场：difficulties 与 disease 已定「病症」域，problems 顺位接入；issues 是 problems 的最强近形干扰，但 issue 指「议题」，不进病名清单。"
+  },
+  {
+   "question_id": 1432,
+   "long_sentence": "空所在句：But it was still possible to vaccinate people in other high-risk groups: health care workers, people 20 __ infants and healthy young people。冒号后列举三类高危人群，people __ infants 为后置定语。译：但仍可为其他高危人群接种：医护工作者、__ 婴儿的人以及健康年轻人。",
+   "option": "正确项 B caring for：caring for infants（照顾婴儿的人）是接 Exposure to 病毒的照护者，属高危人群；A involved in 涉及某事，不与 infants 搭配；C concerned with 与…有关，语义过泛不表照护关系；D warding off 挡开，与婴儿搭配成「挡开婴儿」荒谬。",
+   "keyword": "care for 照顾＝look after；high-risk group 高危人群；infant 婴儿；vaccinate 给…接种疫苗。",
+   "note": "高危人群的资格看「接触病毒的可能」：医护、照婴者、健康年轻人都是密切接触者，caring for 表照护关系；concerned with 是 care 的弱化替身，表「有关」不表「贴身照料」。"
+  },
+  {
+   "question_id": 1433,
+   "long_sentence": "定位句 It was a last victory. As the auctioneer called out bids, in New York one of the oldest banks on Wall Street, Lehman Brothers, filed for bankruptcy。last 既表「最后的」也暗示终结；as 从句给出同时刻的另一事件。译：这是一场最后的胜利——当拍卖师唱价之时，纽约华尔街最古老的银行之一雷曼兄弟申请了破产。",
+   "option": "正确项 D it was successfully made just before the world financial crisis：Hirst 拍卖大捷与雷曼破产同刻发生＝成功恰在世界金融危机爆发前夜，last victory 是牛市终结前的绝唱；A 连串胜利 张冠李戴，last 指终结不指接续；B 两件未拍出 正反混淆，All but two pieces sold 是除两件外全售出；C 战胜所有杰作 无中生有。",
+   "keyword": "file for bankruptcy 申请破产；auctioneer 拍卖师；bid 出价；fetch 卖得＝sell for。",
+   "note": "last victory 的因果在 as 从句：拍卖的辉煌与雷曼破产同框，胜利之所以「最后」是因金融危机旋即吞没市场；A 利用 victory 的复数惯性设陷，B 把 sold 的让步对象读成战利品。"
+  },
+  {
+   "question_id": 1434,
+   "long_sentence": "定位句 In the weeks and months that followed Mr. Hirst's sale, spending of any sort became deeply unfashionable. In the art world that meant collectors stayed away from galleries and salerooms。that meant 承接解释，unfashionable 的艺术界具体化。译：赫斯特拍卖后的数周数月里，任何形式的消费都变得极不合时宜——在艺术界，这意味着收藏者不再光顾画廊与拍卖厅。",
+   "option": "正确项 A collectors were no longer actively involved in art-market auctions：stayed away from galleries and salerooms＝不再积极参与拍卖市场；B 停止一切消费 过度引申，unfashionable 限于艺术界的消费语境；C 收藏作为时尚失去吸引力 偷换概念，unfashionable 说的是花钱行为不是收藏本身；D 艺术品不值得买 无中生有。",
+   "keyword": "unfashionable 不合时宜的；stay away from 避开＝keep away from；collector 收藏者；saleroom 拍卖厅。",
+   "note": "句意理解看 that meant 的解释句：作者亲口把 unfashionable 落到「收藏者不光顾」，A 与之一一对应；B 把 any sort 扩到全社会的消费，C 把「花钱」偷成「收藏」，都是越界改写。"
+  },
+  {
+   "question_id": 1435,
+   "long_sentence": "定位句 But the market generates interest far beyond its size because it brings together great wealth, enormous egos, greed, passion and controversy in a way matched by few other industries。generates interest 产生关注；far beyond its size 远超其体量。译：但艺术品市场产生的关注远超其体量，因为它把巨额财富、膨胀的自负、贪婪、激情与争议聚于一身，罕有行业能比。",
+   "option": "正确项 B The art market surpassed many other industries in momentum（不正确项）：原文只说「关注度」远超体量，且第二段明言 had already been losing momentum（势头已在衰减），「势头胜过多数行业」与原文相悖；A 正确——contemporary art 销售额跌去三分之二；C 正确——价格平均下挫约 40%；D 正确——不必卖的人在等信心回归。",
+   "keyword": "momentum 势头＝impetus；generate interest 产生关注；go down 下跌；await 等待。",
+   "note": "否定式细节题逐项回文：A/C/D 都能找到原文支点，B 把「关注度超体量」偷成「增长势头超行业」，再用 losing momentum 一句坐实其假；beyond its size 的宾语是 interest 不是 momentum。"
+  },
+  {
+   "question_id": 1436,
+   "long_sentence": "定位句 The three Ds – death, debt and divorce – still deliver works of art to the market. But anyone who does not have to sell is keeping away, waiting for confidence to return。破折号内为三个 D 的内容；deliver...to 把…送入。译：三个 D——死亡、债务与离婚——仍在把艺术品送入市场；而并非不得不卖的人都袖手旁观，等待信心回归。",
+   "option": "正确项 C factors promoting artwork circulation：deliver works of art to the market＝促使艺术品流通的因素，与「非卖不可者观望」形成对照；A 拍卖行的最爱 无中生有；B 当代潮流 无中生有；D 印象派的风格 张冠李戴，Impressionists 是 1989 年日本人停买的例子。",
+   "keyword": "deliver...to 把…送达＝bring...to；circulation 流通＝movement；divorce 离婚；debt 债务。",
+   "note": "still deliver 是理解钥匙：市场低迷中唯有三 D 造成的「被迫出售」仍供货，故它们是流通的推手；抓住 deliver 的宾语 works of art 即可锁定「促进流通」，排除风格与潮流类无关联想。"
+  },
+  {
+   "question_id": 1437,
+   "long_sentence": "全文主线：Hirst 拍卖成绝唱（牛市终结）→ 市场从 650 亿美元峰值缩水 → 当代艺术品销售暴跌三分之二、最热板块跌近 90% → 拍卖行赔付 2 亿美元保证金 → 自 1989 年以来最严重的低迷。译：本文主线是艺术品市场的下行——最长的牛市就此收场。",
+   "option": "正确项 C Art Market in Decline：全文各段都在写市场的衰退链条，Dolman 的「我们已在底部」也只是跌势中的判断；A Fluctuation of Art Prices 以偏概全，波动只是现象之一；B Up-to-date Art Auctions 偏离主线，拍卖只是引子；D Shifted Interest in Arts 无中生有，文中不谈兴趣转移。",
+   "keyword": "downturn 低迷＝decline；slump 暴跌；bull run 牛市；rebound 反弹（文中未发生）。",
+   "note": "标题题先抽主线词：bull run ended、losing momentum、worst downturn、slump 贯穿首尾，C 的 decline 一词覆盖全部；A/B/D 分别抓局部、引子与无中生有，标题须与全文走势同向。"
+  },
+  {
+   "question_id": 1438,
+   "long_sentence": "定位句 I found, as Hacker observed years before, that most wives want their husbands to be, first and foremost, conversational partners, but few husbands share this expectation of their wives。first and foremost 强调首位期待。译：我发现——正如哈克多年前观察到的——大多数妻子首先希望丈夫成为交谈伙伴，但很少有丈夫对妻子抱有同样期待。",
+   "option": "正确项 A Talking to them：conversational partners（交谈伙伴）＝希望丈夫与自己交谈，与投诉 He doesn't talk to me 呼应；B 信任他们 无中生有；C 支持她们的事业 张冠李戴，放弃事业恰是被淡化的 tangible inequities；D 分担家务 同属次要抱怨，非主要期待。",
+   "keyword": "conversational partner 交谈伙伴；first and foremost 首要地＝above all；tangible inequity 有形的不公；complaint 抱怨。",
+   "note": "题干 main expectation 对应 first and foremost：妻子抱怨的重点不是「不平等的家务」而是「他不听、不说」；C/D 是原文承认存在但被 not on 否定的干扰项。"
+  },
+  {
+   "question_id": 1439,
+   "long_sentence": "空所在句：And this pattern is wreaking havoc with marriage。this pattern 回指上文「公开场合男多话、居家男少话」。译：而这一模式正在对婚姻 __。",
+   "option": "正确项 C causing damage：wreak havoc with（对…造成严重破坏）＝造成损害，下文离婚率与「对话失败的流行病」印证破坏之重；A generating motivation 产生动力，与婚姻危机语境相反；B exerting influence 施加影响，中性词程度不足；D creating pressure 制造压力，程度轻于离婚后果。",
+   "keyword": "wreak havoc 肆虐、造成严重破坏＝do damage；crystallize 使清晰呈现；divorce rate 离婚率；epidemic 流行病（比喻泛滥）。",
+   "note": "词义猜测看下文证据：第三段立刻给出离婚率近 50%、数百万案例，havoc 的分量必须是「破坏」；B 的中性 influence 是猜词题最常见的程度陷阱。"
+  },
+  {
+   "question_id": 1440,
+   "long_sentence": "定位句 Given the current divorce rate of nearly 50 percent, that amounts to millions of cases in the United States every year – a virtual epidemic of failed conversation。that 指代「以缺乏沟通为离婚理由的女性」，given 表考虑到。译：考虑到目前近 50% 的离婚率，这相当于美国每年数百万案例——一场名副其实的对话失败流行病。",
+   "option": "正确项 B nearly 50 percent of recent divorces are caused by failed conversation（不正确项）：原文 50% 是全体离婚率，以沟通为由离婚的是「多数受访女性、少数男性」，把总体离婚率说成近期离婚的成因占比属偷换概念；A 正确——men tend to talk more than women in public；C 正确——women focused on communication；D 正确——his wife 才是家里的 talker。",
+   "keyword": "divorce rate 离婚率；amount to 相当于＝equal；virtual 实际上的；epidemic 流行病。",
+   "note": "EXCEPT 题逐项验数字：50% 的挂靠对象是 divorce rate 而非 failed conversation 的占比，B 把分母偷换了；A/C/D 均可在原文找到一一对应的句子，数据题先看数字修饰谁。"
+  },
+  {
+   "question_id": 1441,
+   "long_sentence": "全文主线：聚会上丈夫健谈妻子沉默→irony：美国男性公开场合多话、回家少话→Hacker 与 Riessman 的研究：女性多以缺乏沟通诉离婚→作者调查：妻子最想要交谈伙伴→卡通意象收束。译：本文主旨是夫妻交谈模式的差异及其对婚姻的冲击。",
+   "option": "正确项 D Conversational patterns between man and wife are different：公开多话与居家少话的 ironical 反差是全文骨架，妻子要交谈伙伴而丈夫不接话是差异的展开；A 道德滑坡 无中生有；B 婚姻破裂源于性别不平等 张冠李戴，原文恰否定了 tangible inequities；C 夫妻对婚姻期待不同 过度泛化，核心是「交谈」一维。",
+   "keyword": "irony 讽刺、反差；conversational pattern 交谈模式；first and foremost 首要地；glare at 怒视。",
+   "note": "主旨题抓贯穿词：talk/conversation 从首段轶事贯穿到卡通场景，D 的 conversational patterns 精准覆盖；B 借第四段的 inequities 反向设陷——作者明说不聚焦于此。"
+  },
+  {
+   "question_id": 1442,
+   "long_sentence": "定位结构：第三段 Sociologist Catherine Kohler Riessman reports in her new book Divorce Talk that most of the women she interviewed...只引了书名与一句结论；末段以卡通场景作全文收束。译：接下来作者最可能展开的是对《离婚对话》一书的生动介绍。",
+   "option": "正确项 A a vivid account of the new book Divorce Talk：该书的核心研究（女性以缺乏沟通诉离婚）只被一笔带过，下文详述其访谈发现最顺理成章；B 卡通场景详述 张冠李戴，末段已用它收束，无需再展开；C 离婚的其他原因 偏离「沟通」主线；D 介绍 Hacker 张冠李戴，其观察已在第四段转述完毕。",
+   "keyword": "crystallize 使清晰呈现；vivid 生动的；account 描述、叙述＝description；report 转述。",
+   "note": "续写推断题看「已用完的牌」与「未展开的牌」：卡通与 Hacker 的内容都已交代完毕，唯独 Divorce Talk 只报名未展开，A 是唯一有实质空间的话题。"
+  },
+  {
+   "question_id": 1443,
+   "long_sentence": "定位句 There are fundamental public health problems, like dirty hands instead of a soap habit, that remain killers only because we can't figure out how to change people's habits。that remain killers 为定语从句；instead of 对比脏手与肥皂习惯。译：一些根本公共卫生问题——如脏手代替肥皂习惯——仍是杀手，只因我们不知如何改变人们的习惯；柯蒂斯想向企业学习创造自动发生的新行为。",
+   "option": "正确项 A should be further cultivated：脏手当道、肥皂习惯缺位，Curtis 想向企业学习创造新习惯＝洗手这类习惯应被进一步培养；B 应被逐渐改变 方向反了，缺的是新习惯不是改旧习惯；C 深植于历史 无中生有；D 基本是私事 无中生有，原文定性为 public health problems。",
+   "keyword": "soap habit 用肥皂的习惯；cultivate 培养＝foster；public health 公共卫生；create new behaviors 创造新行为。",
+   "note": "抓住 dirty hands instead of a soap habit 的对比：问题是「没有肥皂习惯」，对策是 create new behaviors， cultivate 对应 create；B 的 change 与 can't figure out how to change 相反。"
+  },
+  {
+   "question_id": 1444,
+   "long_sentence": "定位句 If you look hard enough, you'll find that many of the products we use every day – chewing gums, skin moisturizers, disinfecting wipes, air fresheners... – are results of manufactured habits。破折号内为产品列举；manufactured habits 被制造出的习惯。译：仔细观察就会发现，我们每天使用的许多产品——口香糖、保湿霜、消毒湿巾、空气清新剂等——都是被制造出来的习惯的产物。",
+   "option": "正确项 A reveal their impact on people's habits：列举三类产品接 manufactured habits 的论断，意在展示企业广告对人们习惯的塑造力；B 显示日常必需品的迫切需求 无中生有；C 表明对购买力的影响 无中生有；D 彰显好习惯的重要作用 张冠李戴，例子讲被制造的习惯而非好习惯。",
+   "keyword": "manufactured habit 被制造的习惯；moisturizer 保湿霜；disinfecting wipe 消毒湿巾；ritual 仪式、惯例。",
+   "note": "例证题答案在例子前后的观点句：are results of manufactured habits 是定性句，产品清单是其证据；D 用 good habits 的字面做文章，但例子讲的是习惯被「制造」而非习惯之「好」。"
+  },
+  {
+   "question_id": 1445,
+   "long_sentence": "定位句 The companies that Dr. Curtis turned to – Procter & Gamble, Colgate-Palmolive and Unilever – had invested hundreds of millions of dollars finding the subtle cues...；文中 Colgate, Crest 是牙膏品牌，Tide 是宝洁旗下洗衣产品。译：柯蒂斯博士求助的公司——宝洁、高露洁棕榄与联合利华——已投入数亿美元寻找生活中可用于培养新惯常行为的细微线索。",
+   "option": "正确项 D Unilever：联合利华在文中只以「公司」身份出现（被求助的三巨头之一），并非塑造习惯的具体产品；而 Tide（洗衣液）、Crest 与 Colgate（牙膏）都是文中明确出现、与习惯塑造直接挂钩的产品品牌，三者均属习惯产品，唯 Unilever 不是。",
+   "keyword": "brand 品牌；product 产品；company 公司＝corporation；invest...in doing 投入…做某事。",
+   "note": "NOT 题找类别异项：Tide/Crest/Colgate 在文中都是直接塑造刷牙、洗衣习惯的产品名，Unilever 只是幕后公司；见到企业名与产品名混列，先分「谁生产、谁被用」两个层面。"
+  },
+  {
+   "question_id": 1446,
+   "long_sentence": "定位句 Today, because of shrewd advertising and public health campaigns, many Americans habitually give their pearly whites a cavity-preventing scrub twice a day, often with Colgate, Crest or one of the other brands。because of 引出习惯成因；shrewd 精明的。译：如今，由于精明的广告与公共卫生运动，许多美国人习惯性地每天两次用高露洁、佳洁士等品牌的牙膏洁齿防蛀。",
+   "option": "正确项 C commercial promotions：刷牙习惯源于 shrewd advertising（精明的广告）与品牌营销，属于商业推广的产物；A 完美的产品工艺 无中生有，文中谈的是营销不是工艺；B 自动行为的创造 张冠李戴，那是企业想掌握的艺术，不是消费者习惯的成因；D 科学实验 张冠李戴，experiments 是研究者用来说明习惯机制的手段。",
+   "keyword": "shrewd advertising 精明的广告；campaign 运动、宣传；cavity-preventing 防蛀的；scrub 刷洗。",
+   "note": "因果句找 because of：消费习惯的成因被明确定位在广告与宣传运动，commercial promotions 直接对应；A 的 perfected art 是企业视角的迷雾，题干问的是消费者习惯因何形成。"
+  },
+  {
+   "question_id": 1447,
+   "long_sentence": "定位句 Through experiments and observation, social scientists like Dr. Berning have learned that there is power in tying certain behaviors to habitual cues through ruthless advertising。ruthless 无情的。译：通过实验与观察，社会科学家发现用铺天盖地的广告把行为绑到惯常线索上大有威力；当这些手段被用于推销可疑美容霜或不健康食品时，争议随之爆发。",
+   "option": "正确项 A indifferent：作者只客观呈现「广告造习惯的威力」与「引发的争议」两面事实，未作褒贬评判，态度是不偏不倚的；B negative 否定过度，ruthless 是引语内的描述词非作者断语；C positive 过度，作者未替广告唱赞歌；D biased 无端偏袒更无从谈起。",
+   "keyword": "indifferent 冷淡的、不偏不倚的＝neutral/objective；ruthless 无情的；controversy 争议；tactic 手段＝tactics。",
+   "note": "态度题找作者的评述动词：全文用 learn、emerge、erupt 等中性动词铺陈事实，无褒贬形容词出自作者之口；ruthless 出自转述语境，勿把引语色彩算到作者头上。"
+  },
+  {
+   "question_id": 1448,
+   "long_sentence": "定位句 that verdicts should represent the conscience of the community and not just the letter of the law。that 引导同位语从句解释 principles 之一；conscience 良知；letter of the law 法律字面。译：陪审团的裁决应当体现共同体的良知，而不仅是法律的字面条文。",
+   "option": "正确项 D judgment should consider the opinion of the public：verdicts represent the conscience of the community＝裁决要反映公众良知，即判决应考虑民意；A 被告可免于同龄人审判 正反混淆，原文是 entitled to（有权获得）；B 不应设年龄限制 无中生有，原文有 minimal qualifications of age；C 文盲也可当陪审员 正反混淆，literate 是资格门槛。",
+   "keyword": "verdict 裁决；conscience 良知＝moral sense；the letter of the law 法律条文；be entitled to 有权享有。",
+   "note": "同位语从句列原则逐条核对：conscience of the community 对应民意，D 是它的改写；A 把 entitled 读成 immune，C 把 literacy 门槛抹掉，正反核对即可排除。"
+  },
+  {
+   "question_id": 1449,
+   "long_sentence": "定位句 Although the Supreme Court had prohibited intentional racial discrimination as early as 1880, the practice of selecting so-called elite or blue-ribbon juries provided a convenient way around... antidiscrimination laws。way around 绕开…的途径。译：尽管最高法院早在 1880 年就禁止陪审团遴选中的蓄意种族歧视，但遴选所谓精英「蓝绶带」陪审团的做法，为绕开反歧视法提供了便利。",
+   "option": "正确项 A the inadequacy of antidiscrimination laws：elite 陪审团能 convenient way around antidiscrimination laws＝反歧视法存在可钻的空子，即其不完善；B 针对某些种族的普遍歧视 无中生有，文中谈的是遴选策略漏洞；C 甄选程序中理想冲突 无中生有；D 最高法院法官的傲慢 无中生有。",
+   "keyword": "prohibit 禁止＝ban；blue-ribbon jury 精英陪审团；a way around 绕开…的捷径＝loophole；antidiscrimination 反歧视的。",
+   "note": "让步转折的落点在后半句：法律早已禁止歧视，却仍被 elite 陪审团绕开——问题出在法律不严密；B 的种族歧视是把被禁止的对象错当成 prácticas 的内容。"
+  },
+  {
+   "question_id": 1450,
+   "long_sentence": "定位句 Even then several states automatically exempted women from jury duty... This practice was justified by the claim that women were needed at home, and it kept juries unrepresentative of women through the 1960s。exempt...from 免除。译：一些州自动免除女性的陪审义务（除非本人申请列入名单）；依据是「家里需要女性」，这使陪审团在整个 1960 年代都缺少女性代表。",
+   "option": "正确项 C they were supposed to perform domestic duties：women were needed at home＝女性被认定应留在家中操持家务，即承担家庭职责；A 被州法律自动禁止 正反混淆，是自动豁免且可申请加入，并非法律禁止；B 远不符合资格 无中生有；D 倾向于逃避公共事务 无中生有，是州的做法而非女性意愿。",
+   "keyword": "exempt...from 免除；be needed at home 被需要留在家里；domestic duties 家务职责＝household responsibilities；jury list 陪审员名单。",
+   "note": "because 题抓 justified by the claim：州里的理由就是 women were needed at home，C 的 domestic duties 是 its 同义改写；A 利用 automatically 一词偷换 exempt 与 ban。"
+  }
+ ]
+}
