@@ -110,13 +110,13 @@ def ai_recommend(
     # ⑤ AI 策略文本
     strategy = []
     if weak_type:
-        strategy.append(f"📌 你的{label_map.get(weak_type, weak_type)}正确率偏低（{ability[0]['correct']}/{ability[0]['total']}），建议先专项强化")
+        strategy.append(f"你的{label_map.get(weak_type, weak_type)}正确率偏低（{ability[0]['correct']}/{ability[0]['total']}），建议先专项强化")
     if redo_items:
-        strategy.append(f"🔁 {len(redo_items)} 道高频错题等待重做，二刷巩固记忆效果最佳")
+        strategy.append(f"{len(redo_items)} 道高频错题等待重做，二刷巩固记忆效果最佳")
     if vocab_items:
-        strategy.append(f"📖 {len(vocab_items)} 个生词待掌握，建议今天完成词书任务")
+        strategy.append(f"{len(vocab_items)} 个生词待掌握，建议今天完成词书任务")
     if not strategy:
-        strategy.append("🌟 各题型表现均衡，建议进入模拟考试检验综合能力")
+        strategy.append("各题型表现均衡，建议进入模拟考试检验综合能力")
 
     return {
         "weak_type": weak_type,
