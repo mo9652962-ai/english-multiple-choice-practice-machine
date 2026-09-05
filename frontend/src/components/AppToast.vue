@@ -93,9 +93,9 @@ function iconFor(type: ToastItem['type']) {
 .toast-error .toast-progress { background: #f29b95; }
 @keyframes toast-shrink { from { width: 100%; } to { width: 0; } }
 
-/* 入场/出场动画 */
-.toast-enter-active { transition: all .3s var(--ease, cubic-bezier(.22,1,.36,1)); }
-.toast-leave-active { transition: all .22s ease; }
+/* 入场减速 / 出场加速 (v12 运动曲线: 消失比出现快) */
+.toast-enter-active { transition: all .3s var(--motion-enter, cubic-bezier(.22,1,.36,1)); }
+.toast-leave-active { transition: all .18s var(--motion-exit, cubic-bezier(.3,0,.8,.15)); }
 .toast-enter-from { opacity: 0; transform: translateY(16px) scale(.95); }
 .toast-leave-to { opacity: 0; transform: translateX(30px); }
 </style>

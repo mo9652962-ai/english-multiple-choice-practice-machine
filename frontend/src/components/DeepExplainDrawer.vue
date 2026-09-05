@@ -286,7 +286,9 @@ defineExpose({ open, close })
 .cached-mark { font-family: var(--font-serif); font-size: 11px; color: var(--accent-ochre); }
 .drawer-loading, .drawer-error { padding: 40px 20px; text-align: center; color: var(--text-faint); }
 .drawer-fade-enter-active, .drawer-fade-leave-active { transition: opacity 0.2s; }
-.drawer-fade-enter-active .deep-explain-drawer, .drawer-fade-leave-active .deep-explain-drawer { transition: transform 0.3s cubic-bezier(.22, 1, .36, 1); }
+/* v12 运动曲线: 进抽屉减速停稳, 出抽屉加速滑走 (离场更短) */
+.drawer-fade-enter-active .deep-explain-drawer { transition: transform 0.3s var(--motion-enter, cubic-bezier(.22,1,.36,1)); }
+.drawer-fade-leave-active .deep-explain-drawer { transition: transform 0.22s var(--motion-exit, cubic-bezier(.3,0,.8,.15)); }
 .drawer-fade-enter-from, .drawer-fade-leave-to { opacity: 0; }
 .drawer-fade-enter-from .deep-explain-drawer, .drawer-fade-leave-to .deep-explain-drawer { transform: translateX(100%); }
 
