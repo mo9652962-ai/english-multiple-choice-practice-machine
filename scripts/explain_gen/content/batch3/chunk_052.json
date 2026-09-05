@@ -1,0 +1,180 @@
+{
+ "chunk": 52,
+ "items": [
+  {
+   "question_id": 1276,
+   "long_sentence": "答案段 C：As an effective Washington operator, Hayden sensed that he could capitalize on the expedition's stunning visuals. He asked Jackson to print out large copies and distributed them... to each member of Congress。capitalize on 利用；along with 连同。译：作为华盛顿的老练操盘手，海登意识到可借考察队的震撼影像一搏；他请杰克逊印出大尺寸照片，连同莫兰画作复制品分发给每位国会议员。",
+   "option": "答案 C 段居 44 框（H 与 G 之间）：H 段末 report aimed at convincing senators and representatives 之后，C 段顺势向每位议员分发照片与画作（capitalize on the stunning visuals），游说升级；C 段末引语 has to be protected 又被 G 段 The bill...sailed through Congress 接续，C 是 H 到 G 的必经桥段；强干扰 G 若置于 44，则议员尚未被游说法案却已通过，事件链断裂。",
+   "keyword": "capitalize on 利用＝make use of；operator 操盘手、能人；distribute 分发；hit home 使深刻认识到。",
+   "note": "排序题的时间与事件推进链：报告送达官员（H）→照片送达议员（C）→法案过会（G），三级递进缺一不可；『向国会分发』与『法案过国会』的先后关系是本空的决定性证据。"
+  },
+  {
+   "question_id": 1277,
+   "long_sentence": "答案段 G：The bill proved largely popular and sailed through Congress with large majorities in favor... Grant signed an act into law that established Yellowstone as the world's first national park。sail through 轻松通过；that 引导定语从句修饰 act。译：法案大受欢迎、顺利通过国会；1872 年初参众两院先后通过保护黄石立法，3 月格兰特总统签署法案，将黄石确立为世界第一个国家公园。",
+   "option": "答案 G 段居末（45 框，C 之后）：C 段末引语 hit home that this is something that has to be protected（必须保护的意识已深入人心）→ G 段 The bill...sailed through Congress（游说奏效、法案通过），事件链闭合；G 段末 Jackson's photos played a key role 加 Hansen 的引语 without those images 回扣全文照片主线，收束全篇；其余段落均有未闭合的指代或事件，不能作结。",
+   "keyword": "sail through 轻松通过＝pass easily；in quick succession 紧接着；act 法案；designation 设立、命名。",
+   "note": "尾段找『结果+回扣』双要素：G 既有立法结果（世界第一国家公园）又有 photos played a key role 的主旨回环；排序题最后一段常以引语收束呼应开头，本题 Hansen 的话与 B 段 vivid photographs 首尾相扣。"
+  },
+  {
+   "question_id": 1278,
+   "long_sentence": "定位句 There's nothing more welcoming than a door opening for you. Without the need to be touched to open or close, automatic doors are essential in improving disabled access to buildings。Without 短语作状语表条件缺失；the need to be touched 被触碰的需要。译：没有什么比一扇为你打开的门更友好；无需触碰即可开合，自动门对改善残障人士进入建筑的条件至关重要。",
+   "option": "正确项 D Without：自动门的核心特征就是『无需触碰即开合』，Without the need to be touched（不必被触碰）与首句 welcoming 的欢迎感一脉相承；A Through（通过）表借助，借助触碰需要反而与自动门特点相悖；B Despite（尽管）让步逻辑不通，触碰需要不是被克服的障碍；C Besides（除…之外）表追加，与后文 essential 无并列关系。",
+   "keyword": "automatic doors 自动门；without the need to 无需；disabled access 无障碍通道；essential 至关重要的。",
+   "note": "首段首空定全文基调：自动门『免触碰』是全文第一卖点，Without 引出该特征；Through/Despite/Such 类介词题先想『该特征与触碰需要的关系』——是没有，不是借助或让步。"
+  },
+  {
+   "question_id": 1279,
+   "long_sentence": "定位句 automatic doors are essential in improving disabled access to buildings and helping provide general convenience to commercial buildings。be essential in doing 在…方面不可或缺；and 并列两个动名词短语。译：自动门在改善残障人士进入建筑的条件、为商业建筑提供普遍便利方面不可或缺。",
+   "option": "正确项 C improving：improve access（改善进入条件）是残障议题的标配动宾搭配，与 and 后 helping provide... 并列，都是自动门的正面作用；A revealing（揭示）access 无法被『揭示』；B demanding（要求）自动门不是在要求进入；D tracing（追踪）与无障碍进入无关且涉隐私负面色彩。",
+   "keyword": "improve access 改善进入条件＝facilitate entry；disabled 残障人士的；essential in 在…方面不可或缺；general 普遍的。",
+   "note": "并列结构互证：and 前后两个动名词都是『自动门带来的好处』，improve 与 help provide 同向；revealing/demanding/tracing 都会把好事读歪，improving 是唯一正向搭配。"
+  },
+  {
+   "question_id": 1280,
+   "long_sentence": "定位句 automatic doors are essential in improving disabled access to buildings and helping provide general convenience to commercial buildings。help (to) do 帮助做；provide convenience to 为…提供便利。译：（自动门）帮助为商业建筑提供普遍的便利。",
+   "option": "正确项 B convenience：convenience（便利）与 disabled access（无障碍进入）并列，同属自动门带来的好处，provide convenience to 是固定搭配；A experience（体验）provide experience 搭配生硬且与 access 的『通行』义不并列；C guidance（指引）自动门不提供导引服务；D reference（参考）与建筑通行场景无关。",
+   "keyword": "convenience 便利＝ease；provide...to 为…提供；access 通道、进入权；commercial buildings 商业建筑。",
+   "note": "抽象名词题看与 access 的并列关系：access 是『进得去』，convenience 是『进得方便』，两者同域；experience 是近五年热门干扰词，见到先核对是否与前后名词构成同类并列。"
+  },
+  {
+   "question_id": 1281,
+   "long_sentence": "定位句 Self-sliding doors began to emerge as a commercial product in 1960 after being invented six years previously by Americans Dee Horton and Lew Hewitt。after being invented 被动动名词作介词宾语；previously 此前。译：自动平移门于 1960 年作为商品问世，此前六年由美国人迪·霍顿与卢·休伊特发明。",
+   "option": "正确项 A previously：1960 商用与发明之间是『此前六年』（即 1954 年），previously 表『在此以前』，时间线严格自洽；B temporarily（暂时地）发明不是临时行为；C successively（接连地）与六年这一明确间隔矛盾；D eventually（最终）指向过程的终点，发明在商用之前而非终点。",
+   "keyword": "previously 此前＝earlier；emerge as 以…面貌问世；commercial product 商用产品；six years earlier 六年前。",
+   "note": "数字时间题先算时间轴：1960 前推六年即发明年，空格在 invented 之前必填『以前』义副词；eventually 是叙述性副词陷阱，它只能修饰句中最后发生的事。"
+  },
+  {
+   "question_id": 1282,
+   "long_sentence": "定位句 They started out as a novelty feature, but as their use has grown, their benefits have extended within our technologically advanced world。start out as 起初是；but 转折；as their use has grown 随着使用增长。译：它们起初只是个新奇玩意儿，但随着使用不断增长，其益处已在这个技术发达的世界里不断扩展。",
+   "option": "正确项 B started out：start out as（以…起步、起初是）与 but 形成『最初只是新奇功能→如今益处扩展』的今昔对比；A held on（坚持）held on as 搭配不成立；C settled down（安定下来）与 novelty feature 语义不合；D went by（流逝）主语应为时间，they（门）不能流逝。",
+   "keyword": "start out as 起初是＝begin as；novelty feature 新奇功能；but as... 但随着；extend 扩展。",
+   "note": "转折句配对读：as a novelty feature（起点低）与 benefits have extended（如今广）之间必须选『起初』义短语；start out/settle down 都含『安顿』义需辨析——start out as 才能接身份类补语。"
+  },
+  {
+   "question_id": 1283,
+   "long_sentence": "定位句 They started out as a novelty feature, but as their use has grown, their benefits have extended within our technologically advanced world。主干 their benefits have extended；as 引导伴随/原因从句。译：随着使用的普及，自动门的益处已在这个科技发达的世界里不断扩展。",
+   "option": "正确项 C benefits：使用越广、好处越多越远，their benefits have extended（益处扩展）顺承 but 的转折升级，并与下文『繁忙地点、紧急时刻有用』的具体化呼应；A relations（关系）门的关系扩展无意义；B volumes（量、体积）volume 作『量』不可数，作『体积』与逻辑不合；D sources（来源）门的来源扩展违背『门数量增加』的事实。",
+   "keyword": "benefit 好处＝advantage；extend 扩展＝spread；use 使用；technologically advanced 技术发达的。",
+   "note": "『as use has grown』是推理起点：使用增长→受益面扩大，benefits 是唯一能被 extend 的抽象物；relations/volumes/sources 都是复数名词凑数项，回到『转折升级』的语义方向即可。"
+  },
+  {
+   "question_id": 1284,
+   "long_sentence": "定位句 Particularly useful in busy locations or during times of emergency, the doors act as crowd management by reducing the obstacles put in people's way。形容词短语作状语前置；during times of emergency 在紧急时刻。译：（自动门）在繁忙地点或紧急时刻尤为有用，它通过减少挡在人们路上的障碍来发挥人流管理作用。",
+   "option": "正确项 A useful：busy locations（繁忙地点）与 emergency（紧急时刻）都是『人多、需快速通行』的场景，正是自动门发挥用处之地，useful 与 act as crowd management 前后呼应；B simple（简单）简单不等于在紧急时刻有价值；C flexible（灵活）门的灵活性未被提及；D stable（稳定）稳定与繁忙场景无对应。",
+   "keyword": "busy locations 繁忙地点＝crowded areas；emergency 紧急情况；particularly 尤其；crowd management 人流管理。",
+   "note": "场景定形容词：文给两个场景（人多、紧急），推出『有用』而非『简单/灵活/稳定』；本空形容词短语前置修饰主语 the doors，先确认逻辑主语再选词。"
+  },
+  {
+   "question_id": 1285,
+   "long_sentence": "定位句 the doors act as crowd management by reducing the obstacles put in people's way。act as 充当、起…作用；by doing 通过…方式；put in people's way 挡在人路上的（过去分词作后置定语）。译：自动门通过减少挡在人们路上的障碍，起到人流管理的作用。",
+   "option": "正确项 D act as：act as crowd management（充当人流管理手段）与 by reducing obstacles 的方式状语衔接自然——减少障碍就是管理人流的机制；A call for（需要）doors 需要人流管理主宾倒置；B yield to（屈服于）语义方向完全相反；C insist on（坚持）doors 不能坚持要求。",
+   "keyword": "act as 充当＝function as/serve as；obstacle 障碍＝hindrance；crowd management 人流管理；by means of 通过。",
+   "note": "介词 by 是线索：by reducing obstacles 说明前空填『起作用』类动词短语，act as 是标准搭配；call for 与 insist on 的主语通常是人，doors 作主语只有充当类动词成立。"
+  },
+  {
+   "question_id": 1286,
+   "long_sentence": "定位句 As well as making access both in and out of buildings easier for people, the difference in the way many of these doors open helps reduce the total area occupied by them。As well as 除…之外还；both in and out 进出双向；occupied by 过去分词作后置定语。译：除了让人进出建筑更方便之外，许多自动门开启方式的不同还有助于减少它们所占的总面积。",
+   "option": "正确项 A As well as：上段讲自动门利于人流管理（好处一），本段讲减少占用面积（好处二），As well as 表优点追加并列；B In terms of（就…而言）把前项变成讨论角度，逻辑断裂；C Thanks to（多亏）前项应是原因，但『进出方便』不是『省面积』的原因，两个优点无因果；D Rather than（而非）把两个优点对立，与全文褒扬基调相反。",
+   "keyword": "as well as 除…之外（还）＝in addition to；occupy 占用；in and out 进出；reduce 减少。",
+   "note": "段落功能判连接词：第一段『便利』、本段『省空间』是两个并列卖点，用追加型 As well as；Thanks to 表因果最易误选——前后不是因果是并列。"
+  },
+  {
+   "question_id": 1287,
+   "long_sentence": "定位句 the difference in the way many of these doors open helps reduce the total area occupied by them。occupied by them 为过去分词短语作后置定语修饰 area；them 指代 automatic doors。译：许多自动门开启方式的差异，有助于减少它们所占据的总面积。",
+   "option": "正确项 D occupied：the total area occupied by them（被它们占用的总面积）与后文 maximise the usable space inside（最大化室内可用空间）互为因果——占得少才用得多；A connected（连接的）area connected by them 不成搭配；B shared（共享的）门不共享面积；C represented（代表的）被门代表的面积语义不通。",
+   "keyword": "occupy 占用＝take up；usable space 可用空间；maximise 最大化；area 面积。",
+   "note": "分词定语题看动词与主语的受动关系：area 是被门『占用』的，occupied by 与后文 swing doors（平开门）凸出占地的对比互证；connected/shared/represented 都无法与 maximise usable space 形成逻辑。"
+  },
+  {
+   "question_id": 1288,
+   "long_sentence": "定位句 Replacing swing doors, these allow smaller buildings to maximise the usable space inside without having to clear the way for a large, sticking-out door。Replacing... 现在分词作状语；these 指代 automatic doors；allow sb to do 使某人能做。译：取代平开门之后，这些（自动门）使小型建筑得以最大化室内可用空间，无需为一个大而凸出的门留出回转余地。",
+   "option": "正确项 A allow：allow...to maximise（使…能够最大化）表赋能，与 replacing swing doors 后空间解放的逻辑一致——换门带来能力；B expect（期待）建筑不会期待；C require（要求）使小建筑『必须』最大化语义别扭，且与前文好处叙述相悖；D direct（指引）direct sb to do 表指示方向，与空间利用无关。",
+   "keyword": "replace 取代＝take the place of；allow...to do 使…能做＝enable...to do；maximise 最大化；swing door 平开门（回转门）。",
+   "note": "these 复指自动门，谓语选『使能』义：取代平开门的结果是『让小楼也能省出空间』；allow 与 enable 是写作用词，require 的强制义与文意相反。"
+  },
+  {
+   "question_id": 1289,
+   "long_sentence": "定位句 without having to clear the way for a large, sticking-out door。without having to do 无需做某事；clear the way for 为…腾出通道／清出空间。译：无需为一个大而凸出的门清出回转空间。",
+   "option": "正确项 C clear：clear the way for（为…清道、腾出空间）是固定搭配，平开门开启时会扫过一片扇形区域，自动门免去这道『清场』；A adopt（采用）adopt the way 采用方式与 for a door 不搭；B lead（引导）lead the way for（为…引路）是人带路场景；D change（改变）change the way 改变方式与 a large door 的宾语错位。",
+   "keyword": "clear the way for 为…腾出通道＝make room for；stick out 凸出；swing 回转；have to 不得不。",
+   "note": "习语题认准整体搭配：clear the way for 是『腾地方』的标准习语，stick-out door（凸出的门）暗示需要清出的正是门的回转空间；lead the way 是最强音形干扰，语义是人引路。"
+  },
+  {
+   "question_id": 1290,
+   "long_sentence": "定位句 There are many different types of automatic door, with each relying on specific signals to tell them when to open。with 复合结构（with + each + doing）；rely on 依靠；tell them when to open 告知何时打开。译：自动门有许多不同类型，每一种都依靠特定信号来获知开门时机。",
+   "option": "正确项 C relying on：with each relying on specific signals（各自依靠特定信号）与下文 Each automatic door system analyses the light, sound... as a signal（把光声重量移动作为信号）前后咬合——门靠信号触发；A adapting to（适应）门是被动响应信号而非适应信号；B deriving from（源自）信号不是门的来源；D pointing at（指向）门不指向信号。",
+   "keyword": "rely on 依靠＝depend on；signal 信号；sensor 传感器；in the vicinity 在附近。",
+   "note": "with 复合结构里填持续状态动词：relying on 表『依赖』的状态，正好统摄下文光、声、重量、移动四类信号；adapting to 是与 to 的熟面孔干扰，辨析『适应环境』与『依靠信号』的对象差异。"
+  },
+  {
+   "question_id": 1291,
+   "long_sentence": "定位句 Although these methods differ, the main principles remain the same。Although 引导让步状语从句；differ 不同；remain the same 保持不变。译：尽管这些方法各不相同，其背后的主要原理是一致的。",
+   "option": "正确项 D Although：从句『方法各异』与主句『原理相同』是标准的让步转折——异中有同；A Once（一旦）表条件时间，无法容纳 differ 与 the same 的对立；B Since（既然/自从）原因或时间，与『异中求同』不合；C Unless（除非）条件缺失义不合。",
+   "keyword": "although 尽管＝while；differ 不同＝vary；principle 原理；remain the same 保持一致。",
+   "note": "让步题看反义对：differ 与 the same 一反一正，只有让步连词能缝合；Since 有『既然』义貌似可讲通，但『方法不同→原理相同』不是因果是让步。"
+  },
+  {
+   "question_id": 1292,
+   "long_sentence": "定位句 Although these methods differ, the main principles remain the same。主干 the principles remain the same；although 让步从句。译：尽管方法各异，主要原理保持一致。",
+   "option": "正确项 C principles：与 methods（方法）对应的概念是 principles（原理）——操作法多样而基本原理一致，且下文 Each automatic door system analyses... as a signal 正是原理的具体展开；A records（记录）方法不同与记录无关；B positions（位置）位置不同与 remain the same 无对接；D reasons（原因）『主要原因相同』与上下文『怎么开门』的话题脱节。",
+   "keyword": "principle 原理＝underlying mechanism；method 方法＝approach；remain the same 不变；differ 相异。",
+   "note": "名词题找上下位的呼应：methods 是表层做法，principles 是底层逻辑，二者构成『异中有同』的标准组合；下段 analyses...as a signal 即原理的实例，先读后文再定名词。"
+  },
+  {
+   "question_id": 1293,
+   "long_sentence": "定位句 Each automatic door system analyses the light, sound, weight or movement in their vicinity as a signal to open。analyses...as 把…分析为／把…当作信号加以分析；in their vicinity 在其附近。译：每套自动门系统都会分析其附近的光线、声音、重量或移动，以此作为开门信号。",
+   "option": "正确项 B analyses：系统的工作机制是『分析』周边的光声重量移动再决定开门，analyse...as a signal 与上句 relying on specific signals 呼应；A controls（控制）控制的是门不是光线声音；C produces（产生）系统不产生光声移动；D mixes（混合）混合信号与开门决策无关。",
+   "keyword": "analyse 分析＝process/interpret；vicinity 附近＝surroundings；signal 信号；sensor system 传感系统。",
+   "note": "机制题按『感知→判断→动作』链：先分析信号（analyses）才谈得上开门；controls 的宾语应是门本身，produces/mixes 与传感器的被动接收属性相悖。"
+  },
+  {
+   "question_id": 1294,
+   "long_sentence": "定位句 Sensor types are chosen to complement the different environments they are needed in。be chosen to do 被选用以做某事；they are needed in 为省略 that/which 的定语从句。译：传感器类型的选择，是为了与它们所处的不同环境相适配。",
+   "option": "正确项 D complement：complement 意为『与…互补、相配』——不同环境配不同传感器，与下文『繁忙街道不适合运动传感器』的举例互证；A decorate（装饰）装饰环境与功能选择无关；B compare（比较）比较环境不构成选型目的；C protect（保护）传感器保护环境语义错位，是环境决定传感器。",
+   "keyword": "complement 与…相配、互补＝match/suit；sensor type 传感器类型；be needed in 被用于；environment 环境。",
+   "note": "选型逻辑题：环境（_BUSY 街道/安静大堂）决定传感器类型，二者是匹配关系；complement 的『互补』义在考研语境常考『适配』，protect 与 decorate 都把主客关系读反。"
+  },
+  {
+   "question_id": 1295,
+   "long_sentence": "定位句 For example, a busy street might not suit a motion-sensored door, as it would constantly be opening for passers-by。For example 举例；as 引导原因；constantly 不断地。译：例如，繁忙的街道可能不适合运动感应门，因为门会为来往行人不停地开合。",
+   "option": "正确项 C For example：上句抽象说『按环境选传感器』，本句给出繁忙街道的具体情形，For example 引出实例；A In conclusion（总之）收束全篇，但这是段落中段的例证；B By contrast（相比之下）前后无对比对象；D Above all（首要的是）表强调递进，与例证功能不符。",
+   "keyword": "for example 例如＝for instance；motion-sensored 运动感应的；passer-by 过路人；constantly 不停地。",
+   "note": "抽象句后接具体场景（a busy street）即举例结构：For example 是标配；In conclusion 出现在段中必错，判断例证还是总结看句子是具体个案还是抽象概括。"
+  },
+  {
+   "question_id": 1296,
+   "long_sentence": "定位句 a busy street might not suit a motion-sensored door, as it would constantly be opening for passers-by。might not suit 可能不适合；as 原因从句；would constantly be opening 会不停地开。译：繁忙街道可能不适合运动感应门——它会给过路人不停地开门。",
+   "option": "正确项 B suit：suit 表『适合』，busy street（环境）与 motion-sensored door（设备）之间是适配关系，与上句 complement the different environments 同义呼应；A identify（识别）街道不识别门；C secure（确保、保护）语义与例证无关；D include（包括）街道包括门搭配荒谬。",
+   "keyword": "suit 适合＝be suitable for；not suit 不适合＝be ill-suited to；passer-by 行人；constantly be opening 一直在开。",
+   "note": "环境与设备的『适配』义一以贯之：complement（上一空）与 suit（本空）同向；identify 是 sensor 话题的惯性干扰，但主语是 street 不是传感器，主体核对即可排除。"
+  },
+  {
+   "question_id": 1297,
+   "long_sentence": "定位句 A pressure-sensitive mat would be more appropriate to limit the surveyed area。would be 更为；to limit the surveyed area 表目的；surveyed 感应覆盖的。译：压敏地垫会更合适，因为它能把感应范围限制住。",
+   "option": "正确项 A appropriate：运动感应门在闹市误开，压敏地垫能把感应区域限死，more appropriate（更合适）是对替代方案的正面评价，与 might not suit 形成正反呼应；B obvious（明显的）明显不解决问题；C impressive（令人印象深刻的） impressiveness 与选型无关；D delicate（精致的、脆弱的）与工程语境不符。",
+   "keyword": "appropriate 合适的＝suitable；pressure-sensitive mat 压敏地垫；limit the surveyed area 限制感应范围；alternative 替代方案。",
+   "note": "评价词题跟前后正反链：motion 门 not suit→pressure 垫 more appropriate，一反一正完成例证闭环；delicate 是形容设备精巧的常用词干扰，注意语境要的是『合适』不是『精美』。"
+  },
+  {
+   "question_id": 1298,
+   "long_sentence": "定位句 The likely explanation is that the withdrawal was rushed, and they didn't want the local Caledonians getting their hands on 10 tons of weapon-grade iron... buried the nails so deep that they would not be discovered。get one's hands on 弄到手；so...that 结果状语从句。译：撤退仓促，罗马人不想让当地加里东人得到十吨武器级铁料，于是把钉子埋得极深，使其近两千年无人发现。",
+   "option": "正确项 D hiding them from the locals：didn't want the local Caledonians getting their hands on（不想让当地加里东人得到）＝藏起来不给当地人；A 留作将来使用 无中生有，撤退中埋钉是弃用不是储备；B 防止生锈 无中生有，原文未提防锈动机；C 让其升值 无中生有，埋钉不是投资行为。",
+   "keyword": "withdrawal 撤退；get one's hands on 把…弄到手＝obtain；weapon-grade 武器级的；millennia 千年（millennium 复数）。",
+   "note": "目的题抓 didn't want 的否定对象：防的对象是 Caledonians（当地人），so deep that 佐证『深埋防发现』；A/B/C 都是合理化的脑补，回到 didn't want sb getting 的原文结构即可排除。"
+  },
+  {
+   "question_id": 1299,
+   "long_sentence": "定位句 early 17th-century Virginians would sometimes burn down their homes if they were planning to relocate... The idea... underlines how scarce, costly and valuable the simple-seeming technology was。would sometimes do 过去常常；underline 强调。译：17 世纪初的弗吉尼亚人若打算搬家，有时会烧掉自家房屋以回收贵重钉子；为取钉而烧掉整栋房子，凸显了这门看似简单的技术何其稀缺昂贵。",
+   "option": "正确项 D show the preciousness of nail-making technology at that time：underlines how scarce, costly and valuable the simple-seeming technology was 是例子直接结论——烧屋取钉凸显制钉技术珍贵；A 偷换概念，烧房是回收贵重物不是节俭；B 张冠李戴，原文 value the skilled blacksmith's labour in a nail 指重视钉子中凝结的劳动，非铁匠本人地位；C 无中生有，本段讲后来文明同样重视，是一致性而非对比。",
+   "keyword": "burn down 烧毁；reclaim 回收＝recover；sift the ashes 筛灰烬；underlines 凸显＝highlights。",
+   "note": "例子结论句在段末：underlines how scarce, costly and valuable 三个形容词就是答案坐标系，preciousness 与之同义；A 把回收行为道德化为节俭，C 把纵向一致读成横向对比，都是对例证功能的误判。"
+  },
+  {
+   "question_id": 1300,
+   "long_sentence": "定位句 although the falling price of nails was driven partly by cheaper iron and cheaper energy, most of the credit goes to nail manufacturers who simply found more efficient ways to turn steel into nails。although 让步；partly 部分地；most of the credit 功劳主要归于。译：钉价下跌部分得益于更便宜的铁料与能源，但最大功劳属于制钉厂商——他们找到了把钢变成钉子的更高效办法。",
+   "option": "正确项 A Increased productivity：found more efficient ways to turn steel into nails（更高效的生产方式）＝生产率提升，且 most of the credit 明示这是主因；B 更广泛使用新能源 张冠李戴，cheaper energy 只是 partly 的次要因素；C 更激烈的市场竞争 无中生有；D 原材料成本降低 张冠李戴，cheaper iron 同属 partly 次要因素。",
+   "keyword": "most of the credit 功劳大头＝the main driver；efficient 高效的＝productive；partly 部分地；manufacturer 制造商。",
+   "note": "主次之分看程度词：partly（次要）与 most of the credit（主要）两相对照，问 major role 只认 efficient ways；B/D 都把次要因素升格为主要原因，C 则是原文完全没有的机制。"
+  }
+ ]
+}

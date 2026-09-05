@@ -1,0 +1,180 @@
+{
+ "chunk": 45,
+ "items": [
+  {
+   "question_id": 1101,
+   "long_sentence": "the food police are determined that this enjoyment should be rendered yet another guilty pleasure guaranteed to damage our health：be determined that 决意；render A B 使 A 成为 B；guaranteed to damage our health 为过去分词短语作后置定语修饰 pleasure。译：食品警察们执意要把这份享受变成又一种「必定」损害健康的罪恶快感。",
+   "option": "正确项 D guaranteed：guaranteed to do 表「注定会、必然」，以反讽摹写监管方断言之强——把周日烤肉说成必然伤身；A intensified 「被强化的」，intensified pleasure 语义偏移；B privileged 「享有特权的」与 pleasure 搭配不合；C compelled 「被迫的」修饰 pleasure 不通。",
+   "keyword": "guaranteed to do 注定会；guilty pleasure 罪恶快感；render 使成为＝make；irony 反讽。",
+   "note": "此处是作者转述监管方的强硬语气：guaranteed 的绝对性与后文 no conclusive evidence 形成对照——「断言之强 vs 证据之弱」是全文批判线；分词定语的修饰对象是 pleasure 而非 police，先定被修饰语再选词。"
+  },
+  {
+   "question_id": 1102,
+   "long_sentence": "The Food Standards Authority (FSA) has issued a public warning about the risks of a compound called acrylamide that forms in some foods cooked at high temperatures：has issued 现在完成时表已然；that 定语从句修饰 acrylamide；cooked at high temperatures 过去分词短语修饰 foods。译：食品标准局已就一种名为丙烯酰胺的化合物发出公开警告——该化合物形成于一些经高温烹制的食物中。",
+   "option": "正确项 A issued：issue a warning「发布警告」是权威机构发声的固定搭配；B received 「收到警告」方向反——FSA 是发布方；C ignored 「忽视警告」与 FSA 发出警告的行为矛盾；D cancelled 「取消警告」无语境依据。",
+   "keyword": "issue a warning 发布警告；compound 化合物；acrylamide 丙烯酰胺；authority 监管机构。",
+   "note": "机构配 warning 的动词题靠方向判断：发出方用 issue、接收方用 receive；FSA 的 Food Standards Authority 之名与 public warning 的公开性已锁定其「发布者」身份，完成时 has issued 提示动作已成。"
+  },
+  {
+   "question_id": 1103,
+   "long_sentence": "a compound called acrylamide that forms in some foods cooked at high temperatures：called acrylamide 过去分词作后置定语；that forms in... 定语从句；cooked at high temperatures 为过去分词短语作后置定语修饰 foods。译：一种名为丙烯酰胺的化合物，形成于一些以高温烹制的食物之中。",
+   "option": "正确项 B at：at high temperatures「在高温下」是温度表达的标准介词（at 100 degrees／at room temperature 同款）；A under 表「低于某数值」（under 30 degrees），方向相反；C for 不与 temperature 搭配表烹饪条件；D by 表「借助手段」，温度是条件不是工具。",
+   "keyword": "at high temperatures 在高温下；form 形成；roast 烤制；preposition collocation 介词搭配。",
+   "note": "温度、速度、价格等「数值点」用 at（at high speed／at that price）；under 的「低于」义是反义干扰——高温烹制正是丙烯酰胺的生成条件，方向不能反；此空与 7、8 空的措施链共同构成第一段警告的具体化。"
+  },
+  {
+   "question_id": 1104,
+   "long_sentence": "This means that people should avoid crisping their roast potatoes, reject thin-crust pizzas and only partially toast their bread：means that 宾语从句；avoid doing 避免做；avoid、reject、toast 三个动作并列。译：这意味着人们应避免把烤土豆烤得焦脆、拒绝薄底披萨、并且只把面包烤到半熟。",
+   "option": "正确项 D avoid：avoid crisping「避免烤脆」——警告的焦点是焦脆食物含丙烯酰胺，对应措施是避免；A forget 「忘记烤脆」语义荒谬；B regret 「后悔」不合建议语气；C finish 「完成烤脆」与警告方向相反，变成鼓励烤脆。",
+   "keyword": "avoid doing 避免做；crisp（动词）使焦脆；roast potatoes 烤土豆；reject 拒绝＝say no to。",
+   "note": "措施动词与警告对象的方向必须一致：acrylamide 高温生成→避免焦脆；avoid 与 reject 并列同向（都是「不做」），only partially toast 是「少做」——三动作同属「降低焦化程度」的措施链。"
+  },
+  {
+   "question_id": 1105,
+   "long_sentence": "only partially toast their bread：only partially 表「只部分地」；toast 为动词「烤（面包片）」。译：只把面包烤到半熟（部分烘烤的程度）。",
+   "option": "正确项 A partially：与 only 搭配表「只烤到半熟」，与 avoid crisping、reject thin-crust 同属降低高温烘烤程度的措施；B regularly 「定期地」与措施无关；C easily 「容易地」修饰 toast 不构成建议；D initially 「最初地」与烹饪程度无关。",
+   "keyword": "partially 部分地（反义 entirely）；toast 烤面包；thin-crust 薄底的；degree of cooking 烹制程度。",
+   "note": "only partially 呼应「降低焦化」的措施链：avoid（不做）→reject（拒绝）→only partially（少做），程度递减一致；entirely（18 空答案）恰是其反义——两空构成 not entirely but partially 的措辞镜像，可对照记忆。"
+  },
+  {
+   "question_id": 1106,
+   "long_sentence": "While studies have shown that acrylamide can cause neurological damage in mice, there is no conclusive evidence that it causes cancer in humans：while 引导让步状语从句；that 宾语从句；there is no...evidence that... 中 that 为同位语从句。译：尽管研究表明丙烯酰胺会对小鼠造成神经损伤，但没有确凿证据表明它会诱发人类癌症。",
+   "option": "正确项 D While：小鼠有损 vs 人类无证是让步对照——while 表「尽管」，先承认动物证据再落回人类证据不足；A Unless 表条件否定，逻辑不通；B Since 表因果，动物证据推不出人类结论，非因果；C If 表假设条件，前后是让步关系。",
+   "keyword": "while 尽管＝although；neurological damage 神经损伤；conclusive evidence 确凿证据；mice 小鼠。",
+   "note": "动物实验与人类证据的落差是「让步」典型语境：鼠损（让步）→人证不足（主句重心）；while 的让步义是完形高频考点——信息重心永远落在主句的「但是」一侧，即「证据不足」。"
+  },
+  {
+   "question_id": 1107,
+   "long_sentence": "there is no conclusive evidence that it causes cancer in humans：conclusive evidence 表「确凿证据」；that 引导同位语从句说明 evidence 的内容。译：没有确凿证据表明它会在人类身上引发癌症。",
+   "option": "正确项 C conclusive：conclusive「决定性的、确凿的」，no conclusive evidence 表「无确凿证据」，是科学论断的标准措辞；A secondary 「次要的」——证据不分主次；B external 「外部的」无对应维度；D negative 「否定的」——negative evidence 指「反向证据」，此处要的是「充分确凿」义。",
+   "keyword": "conclusive 确凿的＝definitive；evidence that 同位语从句；hard proof 硬证明（下文复现）；in humans 在人类身上。",
+   "note": "no conclusive evidence 与下文 no hard scientific proof 前后复现——同一论点（证据不足）的两种表达；conclusive 源自 conclude，「能下结论的」即「确凿的」，构词法可辅助辨析 secondary/negative 的错位。"
+  },
+  {
+   "question_id": 1108,
+   "long_sentence": "Scientists say the compound is likely to cause cancer but have no hard scientific proof：say 后省略 that；be likely to do 表可能性；but 转折引出证据缺失。译：科学家们说这种化合物可能致癌，但并没有硬性的科学证明。",
+   "option": "正确项 C likely：be likely to do「有可能」——审慎的科学表述，与 but have no hard scientific proof 的证据不足相配；A insufficient 「不足的」，be insufficient to do 表「不足以做某事」，语义方向反了；B bound 「必然」，be bound to do 表「必定」，断言过强与证据缺失矛盾；D slow 「缓慢」与致癌可能性无关。",
+   "keyword": "be likely to do 有可能做；be bound to do 必定做；hard proof 硬证明；caution 谨慎措辞。",
+   "note": "可能性量表的选词：likely（可能）＜bound（必然）——有 but 证据不足的转折就必须用审慎的 likely；bound 的「必然」呼应不了 no hard proof，科学语体的确定性程度是本题标尺。"
+  },
+  {
+   "question_id": 1109,
+   "long_sentence": "On the basis of the precautionary principle, it could be argued that it is advisable to follow the FSA advice：on the basis of 表「基于」；it could be argued that 形式主语被动句；it is advisable to do 做某事是明智的。译：基于预防原则，可以认为遵循 FSA 的建议是明智之举。",
+   "option": "正确项 A On the basis of：以「预防原则」为依据推出「可采建议」——原则是论证的基座；B At the cost of 「以…为代价」，遵循建议不是付出代价；C In addition to 「除…之外」，无叠加关系；D In contrast to 「与…相对」，无对立关系。",
+   "keyword": "on the basis of 基于＝based on；precautionary principle 预防原则；it is advisable to do 明智的做法；argue 主张。",
+   "note": "「原则→建议」的推理关系选依据类介词短语：precautionary principle 的要义正是「宁预防、勿放任」——即便无确凿证据也先防范，读懂原则之名即可锁定 On the basis of。"
+  },
+  {
+   "question_id": 1110,
+   "long_sentence": "it could be argued that it is advisable to follow the FSA advice：could be argued 被动谓语表「可以说」；it is advisable to do 中 it 为形式主语。译：可以说，遵循 FSA 的建议是明智可取的。",
+   "option": "正确项 B advisable：与 On the basis of the precautionary principle 配套——预防原则下「听建议」是审慎可取的，且 advisable 与空后 advice 同根呼应；A interesting 「有趣的」无评价功能；C urgent 「紧迫的」程度过强，与作者整体保留态度不符；D fortunate 「幸运的」与建议无关。",
+   "keyword": "advisable 明智的、可取的（与 advice 同根）；follow the advice 采纳建议；precautionary 预防性的；weak assertion 弱断言。",
+   "note": "advisable 与 advice 的同根复现是明线；作者立场是 could be argued（尚可论证）的弱断言——配 advisable（可取）而非 urgent（紧迫），语气梯度必须与 could be argued 匹配。"
+  },
+  {
+   "question_id": 1111,
+   "long_sentence": "After all, it was rumoured that smoking caused cancer for years before the evidence was found to prove a connection：it was rumoured that 据传；before the evidence was found 时间从句；to prove a connection 不定式作目的状语。译：毕竟，吸烟致癌的说法在坊间流传多年之后，人们才找到证明这一关联的证据。",
+   "option": "正确项 D After all：为「无确凿证据也可采预防措施」追加史实支持——毕竟吸烟致癌也曾先传闻后证实，after all 表「别忘了、毕竟」；A As usual 「照例」与史实例证无关；B In particular 「尤其」无强调对象；C By definition 「按定义」与举例论证不符。",
+   "keyword": "after all 毕竟（追加理由）；it was rumoured that 据传；prove a connection 证明关联；precedent 先例。",
+   "note": "after all 引出支持性先例：吸烟致癌「先传闻、后证据」是预防原则的经典案例；注意 after all 的两义之分——「毕竟」（给理由）与「终究」（与预期相反），此处是为前文主张补理由。"
+  },
+  {
+   "question_id": 1112,
+   "long_sentence": "before the evidence was found to prove a connection：prove 及物动词「证明」；a connection 指（吸烟与癌症）之间的关联。译：……才找到证据证明（吸烟与癌症之间的）关联。",
+   "option": "正确项 C connection：吸烟与癌症之间的「关联」，prove a connection 是流行病学的标准表述；A resemblance 「相似」指外形相像，非因果关联；B combination 「组合」指两者结合为一体，不能被「证明」；D pattern 「模式」与 prove 搭配不当。",
+   "keyword": "connection 关联＝link；prove a link 证明关联；correlation 相关性；causation 因果关系。",
+   "note": "X causes Y 的证明对象就是「关联」——吸烟与癌症是科学史经典案例；resemblance 的干扰在语义近似，辨析点是方向：关联是「A 影响 B」，相似是「A 像 B」，rumour 与 evidence 围绕的都是因果关联。"
+  },
+  {
+   "question_id": 1113,
+   "long_sentence": "Doubtless a piece of boiled beef can always be served up on Sunday alongside some steamed vegetables, without the Yorkshire pudding and no wine：be served up 被端上桌；alongside 表「与…同席」；without...and no... 列举缺失项。译：无疑，周日的餐桌上总可以端上一块水煮牛肉，配一些蒸蔬菜——只是没有约克郡布丁，也没有葡萄酒。",
+   "option": "正确项 B served：serve up「端上（饭菜）」是餐桌语境的标准动词，被动 be served up 成立；A made up 表「编造／组成」，与上菜无关；C saved up 表「储蓄、攒」，不合语境；D used up 表「用完」，与「替代烤肉上桌」的语义不符。",
+   "keyword": "serve up 端上饭菜；boiled beef 水煮牛肉；steamed vegetables 蒸蔬菜；Yorkshire pudding 约克郡布丁（烤肉标配）。",
+   "note": "serve up 是餐桌动词短语——食物被「端上」；made up 的干扰来自 make up a meal 的搭配惯性，但 be made up 表「构成／编造」，与「端上桌」的画面不同；本句的水煮牛肉是作者反讽「无趣替代品」的道具。"
+  },
+  {
+   "question_id": 1114,
+   "long_sentence": "To be fair, the FSA says it is not telling people to cut out roast foods entirely, but to reduce their lifetime intake：to be fair 评注性状语「平心而论」；not...but... 结构对照两种主张；lifetime intake 终身摄入量。译：平心而论，FSA 说它并非要让人们完全戒掉烤制食品，而是降低一生的摄入量。",
+   "option": "正确项 A To be fair：作者在下文批评 FSA 之前先还对方一个公道——to be fair「平心而论」引出让步性转述；B For instance 表举例，后文非例子；C To be brief 表「简言之」，此处不是小结；D In general 表概括，与针对性辩护不符。",
+   "keyword": "to be fair 平心而论；cut out 戒除、完全去除；lifetime intake 终身摄入量；concession 让步。",
+   "note": "To be fair 是「先扬后抑」策略：先转述 FSA 的温和立场（不全禁、只减量），再用 However 转折批评其做法给人 pushy 之感——评注性状语是衔接题与作者态度的双重信号。"
+  },
+  {
+   "question_id": 1115,
+   "long_sentence": "it is not telling people to cut out roast foods entirely, but to reduce their lifetime intake：not...but... 结构；cut out 表「完全戒除」；reduce their lifetime intake 降低终身摄入量。译：它并非要人们完全戒掉烤制食品，而是要降低一生的摄入量。",
+   "option": "正确项 B entirely：not...entirely「并非完全」——与 but to reduce（只是减少）构成程度对照；A reluctantly 「不情愿地」与 cut out 搭配后语义偏移；C gradually 「逐渐地」——not gradually 与 reduce 不成对照；D carefully 「谨慎地」与戒除程度无关。",
+   "keyword": "entirely 完全地＝completely；cut out 戒除；reduce 降低；not...but... 并列对照结构。",
+   "note": "not A entirely but B 的程度对照：entirely（全戒）对 reduce（减量）是「全有或部分」的反差；entirely 与第 8 空 partially 互为反义——完形前后空的措辞镜像常可互为验证。"
+  },
+  {
+   "question_id": 1116,
+   "long_sentence": "However, their campaign risks coming across as being pushy and overprotective：campaign 指宣传活动；risk doing 冒「…」之险；come across as 给人的印象是。译：然而，他们的这场宣传运动有可能给人留下强人所难、过度保护的印象。",
+   "option": "正确项 C campaign：指 FSA 发警告、劝少烤的系列行动——与上文 a public warning、follow the FSA advice 呼应；A promise 「承诺」——警告不是承诺；B experience 「经历」与 pushy 的评价对象不合；D competition 「竞争」无竞争语境。",
+   "keyword": "campaign 宣传运动＝drive；come across as 给人…印象；pushy 强人所难的；overprotective 过度保护的。",
+   "note": "their＋名词的指代题：回上文找 FSA 的行为链（发警告、劝减烤食）——统称这场行动即 campaign；risk coming across as 的「冒…之险」表明作者是批评方，campaign 中性词承载数落。"
+  },
+  {
+   "question_id": 1117,
+   "long_sentence": "Constant health scares just end up with one listening：end up with 表「以…告终、落得」；one listening 为介词宾语加现在分词结构，极言听者之寡。译：接连不断的健康恐慌，最终只会落到几乎无人再听的境地。",
+   "option": "正确项 D end up：end up with「以…告终、落得」——恐慌泛滥的最终结局是没人再听；A follow up 「跟进」与 with one listening 不搭；B pick up 「捡起／接（电话）」，pick up with 不成搭配；C open up 「打开、开业」，open up with 表「以…开场」，方向相反。",
+   "keyword": "end up with 以…告终；health scare 健康恐慌；constant 接连不断的；finally 结局。",
+   "note": "作者结论句：警告泛滥即「狼来了」效应——听得越多越不信；end up with 承接上句 risks coming across as pushy 的批评线，完形尾空回收全文「惊吓过度反失效」的中心论点。"
+  },
+  {
+   "question_id": 1118,
+   "long_sentence": "Cooper and her colleagues argue that the success of the crown for Hull, where it brought in £220m of investment and an avalanche of arts, ought not to be confined to cities：argue that 宾语从句；where 引导非限制性定语从句补充赫尔市的收获；be confined to 局限于。译：库珀和她的同事们主张，赫尔市夺得该称号的成功——带来了 2.2 亿英镑投资与井喷式的艺术活动——不应只限于城市。",
+   "option": "正确项 C：attracting funding and creating jobs 加 brought in £220m of investment——增强英国城镇的经济实力；A「巩固城镇与城市的纽带」无中生有；B「促进城镇间合作」偷换——原文说城镇缺资源难敌大城市，无合作之意；D「把有限资源集中于文化活动」张冠李戴，lack the resources 描述的是申办困难。",
+   "keyword": "bring in 带来（投资、收入）；avalanche of 井喷般的大量；be confined to 局限于；bid 申办。",
+   "note": "主张题抓 argue 从句内的实效词：£220m、funding、jobs 全是「经济」向证据；B 的干扰来自 competitors——原文是「城镇难敌城市」，不是「城镇彼此合作」，竞争与合作的方向错位即偷换概念。"
+  },
+  {
+   "question_id": 1119,
+   "long_sentence": "A cynic might speculate that the UK is on the verge of disappearing into an endless fever of self-celebration in its desperation to reinvent itself for the post-Brexit world：speculate that 猜测；on the verge of 濒于；in its desperation to do 出于做某事的困兽之斗。译：愤世嫉俗者可能会猜测：英国正拼命想在后脱欧时代重塑自我，以至于快要陷入一场无休止的自我陶醉狂热之中。",
+   "option": "正确项 B：booby prize（安慰奖）加 endless fever of self-celebration——一些人视该提案为「自我安慰式的自欺之举」；A「明智的妥协」与 booby prize 的贬义相反；C「夺目的奖赏」与嘲讽语气相反；D「无法企及的目标」张冠李戴——它是退而求其次的替代品，不是够不着的目标。",
+   "keyword": "booby prize 安慰奖、末奖；cynic 愤世嫉俗者；self-celebration 自我陶醉；desperation 绝望的挣扎。",
+   "note": "Some might see...as 的观点归属题：booby prize 与 village of culture? Suburb of culture? 的连环追问全是讥讽——自欺式安慰；cynic 的 speculate 提示这是「他人视角」，作者后文转而支持提案，注意观点的持有者。"
+  },
+  {
+   "question_id": 1120,
+   "long_sentence": "A badly run year of culture washes in and washes out of a place like the tide, bringing prominence for a spell but leaving no lasting benefits to the community：like the tide 明喻；bringing...but leaving... 两个现在分词短语作结果状语，but 表对照。译：办得糟糕的文化年如潮水般涌来又退去，带来一时的风光，却不给社区留下任何持久的好处。",
+   "option": "正确项 D：反面 leaving no lasting benefits 加正面 They transform the aspirations...nudge the self-image——成功标尺是「持久的改变」，即致力于长期发展；A「维持形象」偷换，self-image 是被提升的结果；B「满足人民抱负」偷换，原文是 transform aspirations（改变抱负）；C「让本地艺术出名」以偏概全，high-profile events 恰是「还不够」的部分。",
+   "keyword": "lasting benefits 持久的好处；wash in and out 如潮来去；transform the aspirations 改变抱负；a spell 一段时间。",
+   "note": "only if 句式考必要条件：反面（潮来潮去无留痕）与正面（转变人的抱负与自我认知）对照出「长期性」标准；B 的陷阱在动词——transform（改变）被换成 meet（满足），动词语义方向决定正误。"
+  },
+  {
+   "question_id": 1121,
+   "long_sentence": "主干 Glasgow's year...can certainly be seen as one of a complex series of factors；that have turned the city into... 定语从句修饰 factors；句末 that it remains today 为第二个定语从句修饰 powerhouse。译：格拉斯哥担任欧洲文化之都的那一年，无疑可视为一系列复杂因素之一——正是这些因素把这座城市变成了延续至今的艺术、音乐与戏剧重镇。",
+   "option": "正确项 B：But it can be done 是观点（可行），Glasgow 是证明「做得到且有好结果」的正面例证；A「对比案例」正反混淆——Glasgow 是成功面非反例；C「背景故事」功能错位——它与论点直接挂钩；D「相关话题」过弱，例证有明确支撑功能。",
+   "keyword": "supporting example 正面例证；powerhouse 重镇；turn...into 把…变成；it can be done 这是能做到的。",
+   "note": "例证功能题看信号词：But it can be done 后以冒号引出实例——「观点：例证」结构锁定 supporting；Glasgow 在第 2 段（1990 获称号）与第 3 段（效果证明）两次出现，同一城市两用，功能各不同。"
+  },
+  {
+   "question_id": 1122,
+   "long_sentence": "Jeremy Wright, the culture secretary, should welcome this positive, hope-filled proposal, and turn it into action：the culture secretary 为同位语；this positive, hope-filled proposal 双重前置定语；turn...into action 付诸行动。译：文化大臣杰里米·赖特应当欢迎这份积极而充满希望的提案，并将其付诸行动。",
+   "option": "正确项 C：作者称提案 positive, hope-filled 并呼吁大臣 welcome it and turn it into action——立场明确支持；A「怀疑」与 hope-filled 的褒扬相反；B「客观」指不偏不倚，但作者有清晰倾向；D「批评」只对应第 2 段的 cynic 转述与第 3 段的告诫，非终评。",
+   "keyword": "favourable 赞成的＝supportive；hope-filled 充满希望的；turn into action 付诸行动；welcome 乐见。",
+   "note": "态度题看末段落点：positive, hope-filled 与 should welcome 是旗帜性支持语；中段的 booby prize 讥讽是「他人视角」、not a cure-all 告诫是「有条件支持」——终评落在欢迎提案，Favourable 成立。"
+  },
+  {
+   "question_id": 1123,
+   "long_sentence": "Scientists need journals in which to publish their research, so they will supply the articles without monetary reward：in which to publish 为介词＋不定式结构修饰 journals；so 表因果；without monetary reward 无报酬。译：科学家需要期刊来发表研究，因此他们无偿供稿——同行评议的专业工作同样免费，因为这是赢得学术地位、产出科学知识的关键环节。",
+   "option": "正确项 D：supply the articles without monetary reward 加 peer review also for free——内容获取分文不花，出版因此成为「印钞执照」；A「资金持续增长」无中生有；B「营销策略成功」过度推断——暴利源自免费供稿结构而非营销；C「同行评议报酬被削减」正反混淆——本就免费，无所谓削减。",
+   "keyword": "licence to print money 印钞执照（喻稳赚暴利）；peer review 同行评议；monetary reward 金钱回报；acquisition 获取。",
+   "note": "印钞执照的喻义要有「成本近零」支撑：第一段供稿免费、审稿免费，第二段才接 40% 利润率——因果链跨段整合是本题关键；C 的 reduce 无据，free 与 reduced 是两个概念。"
+  },
+  {
+   "question_id": 1124,
+   "long_sentence": "UK universities alone spent more than £210m in 2016 to enable researchers to access their own publicly funded research：alone 后置强调「仅英国大学」；to enable...to access 目的状语。译：仅英国大学 2016 年就花费逾 2.1 亿英镑，为的是让研究者能访问他们自己靠公共资金产出的研究成果。",
+   "option": "正确项 A：university libraries were not very price sensitive 加 universities spent £210m——出版商的暴利主要建立在大学图书馆对价格不敏感与巨额订阅支出上；B「经历存在危机」张冠李戴——existential crisis 属于 the rest of the publishing industry；C「复兴出版业」无中生有；D「慷慨资助研究者」正反混淆——是大学付钱给出版商。",
+   "keyword": "price sensitive 对价格敏感的；profit margin 利润率；approaching 接近；existential crisis 生存危机。",
+   "note": "thrive on 的「靠…兴旺」需两段证据合成：图书馆不砍价（第 2 段）＋大学年付 2.1 亿（第 3 段）；B 的干扰在同一句的对比从句里——主语归属（publishers vs the rest of the industry）是张冠李戴的分界线。"
+  },
+  {
+   "question_id": 1125,
+   "long_sentence": "主干 The success of Sci-Hub shows the legal ecosystem has lost legitimacy and must be transformed；which 引导非限制性定语从句，rely on sb doing 表「依靠某人做某事」；legitimacy 意为「正当性」。译：Sci-Hub 靠研究者传发自己合法获取的副本而运转，它的成功表明合法出版生态已在其用户中失去正当性，必须转型。",
+   "option": "正确项 C：作者称 Sci-Hub 为 the most drastic, and thoroughly illegal reaction，其成功折射 legal ecosystem has lost legitimacy——非法站点坐大、体系失灵的局面令人忧虑，即 Concerned；A「欣慰」无依据；B「困惑」——作者对成因看得清楚；D「鼓舞」错——作者不鼓励盗版，而是警示体系必须变革。",
+   "keyword": "concerned 担忧的；legitimacy 合法性、正当性；ecosystem 生态；transform 转型＝reform。",
+   "note": "态度题抓定性词：thoroughly illegal 定下基调，success 只是「症状」——盗版站越成功越说明合法体系病得不轻；D 的干扰在 must be transformed 的变革呼吁，但呼吁变革的前提是对现状的忧虑而非鼓舞。"
+  }
+ ]
+}

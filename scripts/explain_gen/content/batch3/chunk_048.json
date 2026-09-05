@@ -1,0 +1,180 @@
+{
+ "chunk": 48,
+ "items": [
+  {
+   "question_id": 1176,
+   "long_sentence": "定位句 Even Mark Twain, a man who enjoyed a hearty laugh, said that when it came to photographic portraits there could be 'nothing more damning than a silly, foolish smile fixed forever'。主干 Even Mark Twain said that...；a man who... 为同位语加定语从句；when it came to 当谈及。译：连爱开怀大笑的马克·吐温也说，就人物摄影而言，没有什么比永远定格的傻笑更糟糕的了。",
+   "option": "正确项 A a deep-root belief：连爱笑的吐温都断言傻笑 nothing more damning（无可更糟），说明反笑态度根深蒂固，支撑上段 not a becoming look for properly bred persons；B misguided attitude 偷换概念，作者用牙齿卫生、阶级观念解释态度来源，但未评判它是错的；C controversial view 无中生有，文中无任何争论；D thought-provoking idea 无中生有，无人受其启发。",
+   "keyword": "hearty laugh 开怀大笑；damning 定罪的、糟透的；deep-rooted 根深蒂固的＝entrenched；when it comes to 当谈到、涉及。",
+   "note": "例证题答案看例子支撑的观点：even 是信号词——连最不该反对的人都反对，证明该看法普遍而顽固；A 项 deep-root 原文无原词，是 even 让步逻辑推出的结论，属推断型改写，勿因无原词复现而漏选。"
+  },
+  {
+   "question_id": 1177,
+   "long_sentence": "第二段末设问 How do we explain this trend? 引出全文主线；第三段定位句 During the 1840s and 1850s, exposure times were notoriously long...resulting in blurred images as sitters shifted position。主干 exposure times were long；notoriously 出了名地；resulting in 现在分词作结果状语。译：19 世纪四五十年代摄影早期，曝光时间出了名地长，被拍者一动就成像模糊。",
+   "option": "正确项 A：全文即回答 why did most Victorians look stern in photographs——曝光太长只能 blank stare 成为常态、牙齿卫生差不敢露齿（pearly whites 是稀缺）、咧嘴笑 lacked class，三层原因贯穿后半篇；B start to view photographs 无中生有，文章未讲观看照片的起源；C 摄影为何发展 答非所问；D 微笑成为后维多利亚时代常态 过度推断，原文只说 1890s 抓拍微笑变得容易（relatively easy to capture）。",
+   "keyword": "stern 严肃的、板着脸的≈miserably and stiffly；exposure time 曝光时间；norm 常态；contemplate 设想、考虑。",
+   "note": "问文章回答了什么问题＝考全文主线：第二段 How do we explain this trend? 是总开关，其后每段给一个原因；干扰项爱用文中局部词（Brownie、1890s）拼装，认准『拍照不笑的原因』这条主线即可排除。"
+  },
+  {
+   "question_id": 1178,
+   "long_sentence": "定位句 advocates... worried that the cable and phone companies... had the power and incentive to favor affiliated websites over their rivals'。主干 advocates worried that...；selling broadband connections 为现在分词后置定语；favor...over... 厚此薄彼。译：倡导者担心，出售宽带接入的公司有能力有动机偏袒自家关联网站而冷落对手网站。",
+   "option": "正确项 C show partiality in treating clients：partiality（偏袒）≈favor affiliated websites over their rivals，被区别对待的 clients 正是各家网站；A bring web-based firms under control 偷换概念，原文是厚此薄彼而非控制网络公司；B slow down the traffic 无中生有，原文未提降速；D intensify competition 正反混淆，偏袒自家网站恰恰是破坏公平竞争。",
+   "keyword": "partiality 偏袒＝favor A over B；affiliated 附属的、关联的；rival 对手＝competitor；incentive 动机、刺激。",
+   "note": "首段首句出细节题；favor...over... 是『厚此薄彼』结构，先把它读成偏袒再对 C 的 partiality；D 项把『排挤对手』说成『加剧竞争』，正反混淆的典型——不公平竞争本身就是反竞争。"
+  },
+  {
+   "question_id": 1179,
+   "long_sentence": "定位句 The Republican-penned order not only eliminated the strict net neutrality rules... but rejected the commission's authority。主干 The order not only eliminated...but rejected...；rules 后省略 that 的定语从句；not only...but... 并列谓语。译：这份命令不仅废除了 FCC 在 2015 年通过的网络中立严规，还否决了该委员会要求宽带商做事的权力。",
+   "option": "正确项 B takes an anti-regulatory stance：废除中立规则加否决自身监管权，动作全是去监管，anti-regulatory 在第二段 pushback 处原词出现；A sticks to an out-of-date order 张冠李戴，anachronism（过时之物）是 Millett 批评法院判决的用词；C has issued a special resolution 答非所问，未给出 resolution 的是上诉法院；D allowed the states to intervene 正反混淆，命令宣布州与地方政府不得监管宽带商。",
+   "keyword": "net neutrality 网络中立；anti-regulatory 反监管的；eliminate 废除＝scrap；stance 立场＝position；abdication 放弃（职责）。",
+   "note": "题干 Faced with the demand 对应第二段 pushback（抵制）；FCC 三连动作 eliminated/rejected/declared 都指向松绑，抓『方向』比逐词核对快；A 的 out-of-date 与 D 的 states 是原词陷阱，务必核对动作发出者。"
+  },
+  {
+   "question_id": 1180,
+   "long_sentence": "定位句 The commission argued that other agencies would protect against anti-competitive behavior, such as...AT&T favoring its own service at the expense of Netflix and Apple TV。主干 The commission argued that...；such as 引出例子；at the expense of 以…为代价。译：委员会辩称，其他机构会防范反竞争行为，例如 AT&T 偏袒自家流媒体服务而牺牲 Netflix 与 Apple TV。",
+   "option": "正确项 B engages in anti-competitive practices：AT&T 被当作 anti-competitive behavior 的例证——偏袒自家视频服务、挤占 Netflix 与 Apple TV；A protects against unfair competition 正反混淆，protect against 的主语是其他机构，AT&T 是被防范的对象；C is under the FCC's investigation 正反混淆，FCC 已结束（ended the investigations）调查；D in pursuit of quality service 无中生有，原文只谈排挤对手。",
+   "keyword": "anti-competitive 反竞争的；conglomerate 企业集团；at the expense of 以…为代价；impose data caps on 对…施加流量上限。",
+   "note": "such as 后的例子是命题高发区； Yet 转折句 FCC ended the investigations 反证其曾被调查且确有偏袒行为，两处信息叠加锁死 B；A 项整句挪用原文 protect against，属原词陷阱，先看主语再判断。"
+  },
+  {
+   "question_id": 1181,
+   "long_sentence": "定位句 But Judge Patricia Millett rightly argued in a concurring opinion that 'the result is unhinged from the realities of modern broadband service'。主干 Judge argued that...；in a concurring opinion 在协同意见书中；unhinged from 与…脱节；rightly 正当地（作者表态）。译：但帕特里夏·米利特法官在协同意见中正确地指出，这一结果脱离了现代宽带服务的现实。",
+   "option": "正确项 D is out of touch with reality：unhinged from the realities of modern broadband service 的直接改写，unhinge（使脱轨）→out of touch；A focus on trivialities 无中生有；B conveys an ambiguous message 无中生有，Millett 批评态度鲜明不含糊；C is at odds with its earlier rulings 正反混淆，法院正是援引 2005 年最高法院同类裁决（citing a Supreme Court ruling）作出判决，与先例一致而非冲突。",
+   "keyword": "unhinged from 与…脱节＝out of touch with；concurring opinion 协同意见；intervene 干预；anachronism 时代错误、过时之物。",
+   "note": "引语题认准说话人：问的是 Millett 的看法，选她原话的同义句即可；rightly argued 表明作者站在她一边；C 项的反向证据在 citing a Supreme Court ruling——判决与先例一致。"
+  },
+  {
+   "question_id": 1182,
+   "long_sentence": "定位句 It needs to give the commission explicit authority once and for all to bar broadband providers from meddling in the traffic on their network。主干 It needs to give the commission explicit authority；bar...from doing 禁止…做；meddle in 干预。译：国会需要一劳永逸地授权 FCC，禁止宽带商干预网络流量，并制定保护开放与创新的清晰规则。",
+   "option": "正确项 A：末段首句 The endless legal battles...cry out for Congress to act（急切呼吁国会行动）加 It needs to give the commission explicit authority，主张由国会立法确保网络中立；B 应严格监督 FCC 张冠李戴，作者要的是授权 FCC 而非监督它；C diversify online services 偷换概念，规则保护的是 openness and innovation；D 保护宽带商权利 正反混淆，作者恰恰要 bar 宽带商干预流量。",
+   "keyword": "cry out for 迫切需要＝call for；meddle in 干预、插手＝interfere in；bar...from 禁止…做；once and for all 一劳永逸地。",
+   "note": "末段观点题看强呼吁信号 cry out for 与情态 need；作者态度链：批评法院拖延（prolonged the fight）、赞同 Millett（rightly）、呼吁国会行动，全程站网络中立一边，问『谁该做』认准 Congress 而非 FCC。"
+  },
+  {
+   "question_id": 1183,
+   "long_sentence": "答案句 AI looks at resumes in greater numbers than humans would be able to, and selects the more promising candidates。主干 AI looks at resumes...and selects...；than humans would be able to 为比较状语从句的省略形式；more promising candidates 中 promising 有前途的。译：AI 能以人类无法企及的数量审阅简历，并筛选出更有前途的候选人。",
+   "option": "答案 G 在引语末尾呼应 Better hiring practices 段：空前 Domingos 说面试结果比 AI 的判断偏见更多（more biased than what AI does），G 用 resumes、candidates 复现招聘话题，且后文 One company that's doing this 的 this 正指『用 AI 筛简历』；强干扰 A 讲 AI 替代研究中的枯燥工作，与文首 without replacing employees 的主旨相悖；B 讲会计审计合同，属 Improved accuracy 段内容。",
+   "keyword": "resume 简历；candidate 候选人＝applicant；promising 有前途的；unconscious bias 无意识偏见；hiring 招聘。",
+   "note": "先读空后一句找指代：doing this 的 this 必须有明确先行内容，G 的筛简历恰可被指代；小标题 Better hiring practices 是最强定位词；注意 44 空才是 B 配 Improved accuracy，别在本题提前占用。"
+  },
+  {
+   "question_id": 1184,
+   "long_sentence": "答案句 There are also companies like Acquisio, which analyzes advertising performance across multiple channels... and suggests where advertising funds will yield best results。主干 There are also companies；which 定语从句内 analyzes...and suggests... 并列；where 从句作宾语。译：还有像 Acquisio 这样的公司，分析多渠道广告表现，并就广告资金投向何处收益最大给出建议。",
+   "option": "答案 C 呼应 More effective marketing 段：空前 Phrasee 优化邮件标题是一个例子，空后 These are 'tools that help people use data' 的 These 为复数，要求空格处再引入并列例子，There are also companies like Acquisio 正承接并列，advertising 与小标题 marketing 同义复现；强干扰 E 讲保险承保与收费，属 Saving customers money 段；D 讲预测与指引员工，属基础设施段。",
+   "keyword": "advertising performance 广告表现；yield results 产生成效；multiple channels 多渠道；optimize 优化＝提升效果。",
+   "note": "指代 clue：空后 These are tools... 的复数主语锁定空前须有另一家公司例；There are also 是并列例证的标志语；C 项长，先抓首句定性即可，analyze/yield 细节用于验证与 marketing 的对应。"
+  },
+  {
+   "question_id": 1185,
+   "long_sentence": "答案句 Before, they might not insure the ones who felt like a high risk or charge them too much, or they would charge them too little and then it would cost the company money。三个 or 并列出定价失误情形；who 定语从句修饰 the ones；cost sb money 让人破财。译：以前保险公司可能不给高风险者承保，或收费过高，也可能收费过低而让公司亏钱。",
+   "option": "答案 E 呼应 Saving customers money 段：空前提及 insurance companies 按 AI 模型更准确地评估风险来定保费（base their premiums on AI models that more accurately assess risk），E 以 Before 开头对比过去的两种失误——拒保或收费过高、收费过低而亏本，insure/charge 与段内 Insurance/premiums 词汇复现；强干扰 F 讲给客户更好的渠道以完成超越人力规模的事，与省钱无关；B 属会计审计。",
+   "keyword": "premium 保费；insure 承保、给…上保险；assess risk 评估风险；charge 收费；high risk 高风险。",
+   "note": "Before 是强对比信号：空前的 can（现在能力）与 Before（过去失误）构成今昔对照，正好补全 Domingos 的引语话轮；they 回指空前的 insurance companies，先定指代再读细节，insure+charge 双词即可锁定。"
+  },
+  {
+   "question_id": 1186,
+   "long_sentence": "答案句 One accounting firm, BY, uses an AI system that helps review contracts during an audit. This process, along with employees reviewing the contracts, is faster and more accurate。首句 that 引导定语从句；第二句 along with... 为插入语，谓语 is 与 This process 单数一致。译：会计公司 BY 使用 AI 系统在审计中协助复核合同；该流程加上员工复核，更快更准确。",
+   "option": "答案 B 呼应 Improved accuracy 段：空前 Winston 说机器学习提供更可靠的统计、帮人做更聪明的决定（a more reliable form of statistics），B 随即举审计复核合同的实例，句末 more accurate 与小标题 accuracy 原词复现，是全组最直白的对应；强干扰 A 讲 AI 替代研究中的枯燥部分，虽也是帮人干活，但与 accuracy 无关，且 replaces 与文首 without replacing employees 冲突。",
+   "keyword": "audit 审计；accuracy 精确性＝precision；along with 连同、与…一起；review contracts 复核合同。",
+   "note": "原词复现秒杀题：Improved accuracy 对 more accurate；along with 是就近原则语法点，谓语跟 This process 不跟 employees；A 项出现 replace 字样即与全文『AI 不取代人』的主旨相抵，可直接排除。"
+  },
+  {
+   "question_id": 1187,
+   "long_sentence": "答案句 You want to predict if something needs attention now and point to where it's useful for employees to go to。主干 You want to predict...and point to...；if 引导宾语从句作 predict 的宾语；where 引导宾语从句作 point to 的宾语；两个并列谓语共享 want to。译：你需要预测现在是否有东西需要处理，并指出员工到哪里去处理才有用。",
+   "option": "答案 D 呼应 Protecting and maintaining infrastructure 段：空前 Domingos 说设备先坏再修代价很高（If they fail first and then you fix them, it's very expensive），D 顺势提出要预测何处需要关注、指引员工前往，predict 与段首 prevent equipment failure or leaks before they happen 的『事前预防』思路衔接；强干扰 F 的 better channels 与 beyond human scale 讲客户沟通渠道，A 的 research 讲查资料，均与设备检修无关。",
+   "keyword": "predict 预测＝forecast；infrastructure 基础设施；equipment failure 设备故障；prevent...before they happen 防患于未然。",
+   "note": "引语填空要接话轮：Domingos 前句说 fail first 代价高，D 的 you want to predict 接续『事后补救→事前预测』的逻辑链；you 指能源、交通领域的公司，与段首 particularly in energy and transportation 对上即可确认。"
+  },
+  {
+   "question_id": 1188,
+   "long_sentence": "定位句 The idea that plants have some degree of consciousness first took root in the early 2000s; the term 'plant neurobiology' was coined around the notion that some plant behavior could be compared to intelligence in animals。that 同位语从句说明 idea 内容；took root 生根、兴起。译：植物有某种意识的观点在 21 世纪初流行；『植物神经生物学』一词围绕『植物某些行为可比动物智能』的概念创造。",
+   "option": "正确项 A coined：coin a term/word 是『创造新词』的固定搭配，term（术语）只能被造出；B discovered 张冠李戴，被发现的是现象规律，术语是人为创造的；C collected 收集，与 term 无搭配逻辑；D issued 发布，多接声明、命令、邮票，不与 term 连用。",
+   "keyword": "coin a term 创造新词；take root 生根、兴起；notion 概念＝idea/concept；neurobiology 神经生物学。",
+   "note": "完形首空常考名词-动词搭配：见到 term/word/phrase 优先联想 coin；本空是背景介绍句，抓住 term 与动词的搭配即可；issued 是 issue an order/statement 搭配的惯性误导。"
+  },
+  {
+   "question_id": 1189,
+   "long_sentence": "定位句 the term 'plant neurobiology' was coined around the notion that some aspects of plant behavior could be compared to intelligence in animals。notion 后接 that 同位语从句；be compared to 被比作、与…相提并论；some aspects of... 部分结构。译：该术语围绕『植物行为的某些方面可与动物的智能相提并论』这一概念创造。",
+   "option": "正确项 C compared：be compared to 意为『与…相比、被比作』，把植物行为与动物智能放在同一标尺上，正是这一新学科概念的核心主张；A attributed to（被归因于）语义不通，植物行为并非由动物智能引起，因果不成立；B directed to（被指向）主宾搭配不当；D confined to（被局限于）与『某些方面可类比』的开放比较无关。",
+   "keyword": "be compared to 与…相比、被比作；attribute...to 把…归因于；confine...to 把…局限于；intelligence 智能、智力。",
+   "note": "compare to 兼有『比作』义，compare with 偏『与…对比』，此处两义皆通，不构成陷阱；真正的干扰来自 attributed to——它需要『行为由智能导致』的因果链，而原文是横向类比，辨析因果与类比两种关系即可。"
+  },
+  {
+   "question_id": 1190,
+   "long_sentence": "定位句 Though plants lack brains, the firing of electrical signals in their stems and leaves nonetheless triggered responses that hinted at consciousness。Though 让步状语从句；主句主干 the firing triggered responses；nonetheless 副词呼应让步；that 引导定语从句修饰 responses。译：尽管植物没有大脑，其茎叶中的电信号放电仍会触发一些暗示意识的反应，研究人员此前如此报告。",
+   "option": "正确项 D Though：从句『植物没有大脑』与主句『仍触发近似意识的反应』是让步转折关系，主句中 nonetheless（尽管如此仍）是让步结构的标配词；A Unless（除非）表条件，与 nonetheless 矛盾；B When 表时间、C Once 表条件，均无法容纳『没有大脑却仍…』的反差逻辑。",
+   "keyword": "though 尽管＝although；nonetheless 尽管如此＝nevertheless；lack 缺乏；trigger 触发＝set off。",
+   "note": "连词题先扫句内信号：从句有 lack（否定）、主句有 nonetheless（转折），两句必为让步关系；Unless/Once 这类条件连词在此是凑数项，遇到『否定从句+转折主句』直接锁定让步连词。"
+  },
+  {
+   "question_id": 1191,
+   "long_sentence": "定位句 the firing of electrical signals in their stems and leaves nonetheless triggered responses that hinted at consciousness。that 引导定语从句修饰 responses；hint at 暗示、露出…的迹象；firing 此处指电信号放电。译：其茎叶中的电信号放电仍会触发一些暗示植物存在意识的反应。",
+   "option": "正确项 C hinted at：电信号引发的反应只是『暗示』有意识，留有余地，与首句 some degree of consciousness（某种程度的意识）的谨慎措辞一致；A coped with（应对）responses 无法应对意识，搭配不通；B consisted of（由…组成）语义颠倒，反应并非由意识构成；D extended to（延伸至）把意识当作可延伸的空间对象，不成立。",
+   "keyword": "hint at 暗示＝suggest indirectly；response 反应；cope with 应对、处理；consist of 由…组成＝be composed of。",
+   "note": "定语从句动词看『迹象—本体』关系：responses 是现象，consciousness 是其背后可能的本体，二者只有『暗示』关系成立；首段介绍正方主张，用词都是弱化表达，填词不可过强，consist of 方向即反。"
+  },
+  {
+   "question_id": 1192,
+   "long_sentence": "定位句 Plant biology is complex and fascinating, but it differs so greatly from that of animals that so-called evidence of plants' intelligence is inconclusive。but 转折；differ from 与…不同；so...that 引导结果状语从句；that of animals 中 that 复指 biology 避免重复。译：植物生物学复杂而迷人，但它与动物生物学差异极大，以至于所谓植物拥有智能的证据并不确定。",
+   "option": "正确项 D differs：differ from 表『与…不同』，植物生物学与动物生物学差异巨大，正是『证据不足以下结论』的原因，so...that 因果链完整；A suffers from（遭受）搭配虽通但语义无源，文中未说植物生物学受害；B benefits from（获益于）同样无从谈起；C develops from（由…发展而来）违背学科常识。",
+   "keyword": "differ from 与…不同＝be distinct from；so...that 如此…以至于；inconclusive 无定论的；that of... …的那一个（指代前文单数名词）。",
+   "note": "so...that 结果从句是放大镜：『差异大→无法下结论』因果才通，suffers/benefits 与结果从句接不上；先看清 that of animals 的指代（＝biology），再验动词，避免被 suffer from 的熟面孔带偏。"
+  },
+  {
+   "question_id": 1193,
+   "long_sentence": "定位句 it differs so greatly from that of animals that so-called evidence of plants' intelligence is inconclusive。结果从句主干 evidence is inconclusive；so-called 所谓的（含怀疑语气）；of plants' intelligence 后置定语修饰 evidence。译：植物生物学与动物生物学差异极大，以至于所谓植物拥有智能的证据并不确定。",
+   "option": "正确项 B evidence：so-called 与 inconclusive 双存疑信号词叠加，evidence is inconclusive（证据不足定论）是科学语境的高频搭配，贴合本文『新论文反驳旧说』的立场；A acceptance 与 so-called 搭配生硬，且首段只说观点流行而非被接受；C cultivation（培养）、D creation（创造）与 intelligence 构不成『所谓…无定论』的语义链。",
+   "keyword": "inconclusive 无定论的、悬而未决的；so-called 所谓的（常含贬义）；evidence 证据；conclusive 决定性的（反义词）。",
+   "note": "形容词共现是线索：so-called 与 inconclusive 都是存疑信号，修饰 evidence 最自然；第二段已亮明 untrue 的反驳基调，选词须与作者怀疑立场一致，acceptance 会与之顶牛。"
+  },
+  {
+   "question_id": 1194,
+   "long_sentence": "定位句 Beginning in 2006, some scientists have argued that plants possess neuron-like cells that interact with hormones and neurotransmitters。Beginning in... 现在分词短语作时间状语；argue that 主张；第二个 that 引导定语从句修饰 neuron-like cells。译：自 2006 年起，一些科学家一直主张植物拥有与神经元类似的细胞，这些细胞与激素和神经递质相互作用。",
+   "option": "正确项 C argued：argue that 表『主张、论证』，与下句 They even claimed 递进呼应，是引述正方观点的常规动词；A doubted（怀疑）与 B denied（否认）方向完全相反——从句内容是肯定性主张而非质疑；D requested（要求）接 that 从句需虚拟语气，且『要求植物拥有细胞』语义荒谬。",
+   "keyword": "argue that 主张、认为＝contend/maintain；possess 拥有＝have；neuron-like 类神经元的；interact with 与…相互作用。",
+   "note": "主从句方向判断：that 从句内容（植物有类神经元）是正方立场，动词必须表肯定主张；读完从句再选动词可秒杀 doubted/denied；have argued 现在完成时表主张延续至今。"
+  },
+  {
+   "question_id": 1195,
+   "long_sentence": "定位句 plants possess neuron-like cells that interact with hormones and neurotransmitters, forming 'a plant nervous system, suitable to that in animals'。forming 现在分词作结果状语，逻辑主语是『细胞相互作用』这一整体事件；that interact... 定语从句。译：主张者认为植物拥有与激素和神经递质相互作用的类神经元细胞，从而形成『一个与动物体内（系统）相应的植物神经系统』。",
+   "option": "正确项 B forming：细胞相互作用的结果是构成『植物神经系统』，现在分词表自然结果，『要素（细胞）→系统』的构建逻辑通顺；A adapting（使适应）后虽可直接接宾语，但细胞互动不是在适应一个系统；C repairing（修复）无中生有，文中无损坏与修复语境；D testing（测试）与观察主张无关。",
+   "keyword": "form 形成、构成＝constitute；nervous system 神经系统；hormone 激素；neurotransmitter 神经递质。",
+   "note": "分词题抓逻辑主语：forming 的发出者是『类神经元细胞相互作用』这件事，结果是系统成形；与第 9 空连读互验——后文既然要说明该系统与动物系统的关系，此处必是『构建』义动词。"
+  },
+  {
+   "question_id": 1196,
+   "long_sentence": "定位句 forming 'a plant nervous system, suitable to that in animals,' said lead study author Lincoln Taiz。suitable to that in animals 为形容词短语作后置定语修饰 a plant nervous system；that 复指 nervous system 避免重复。译：该研究第一作者林肯·泰兹转述正方主张：（这些细胞相互作用）形成了一个与动物体内神经系统相适应的『植物神经系统』。",
+   "option": "正确项 C suitable：suitable to 意为『与…相称、相适应』，只说正方主张该系统与动物神经系统相对应，语气中性；最强干扰 A analogous to（与…类似的）看似通顺，但等于替正方坐实『二者实质相似』，而后文（第 14 空起）正是要拆解这一类比，转述者 Taiz 又是反驳方作者，措辞不会越位；B essential to（对…必不可少）方向颠倒，正方未说动物系统对植物必需；D sensitive to（对…敏感）主宾关系错乱。",
+   "keyword": "suitable to 与…相适应、相称；analogous to 与…类似的（最强干扰）；essential to 对…必不可少；sensitive to 对…敏感。",
+   "note": "转述语气判断：说话人 Taiz 是反驳论文的第一作者，转述正方主张时会用留有余地的词；A 是本题最大陷阱，辨析点在『相似』是实质判断而『相称』只是声称的匹配关系，与全文否定基调保持张力。"
+  },
+  {
+   "question_id": 1197,
+   "long_sentence": "定位句 They even claimed that plants have 'brain-like command centers' at their root tips。even 递进副词修饰 claimed；claimed that 引导宾语从句；at their root tips 地点状语。译：他们甚至声称植物的根尖处存在『类脑指挥中心』。",
+   "option": "正确项 D even：前句说类神经元细胞形成植物神经系统，本句『脑样指挥中心』程度再进一步，even 引出递进，与 claimed 搭配凸显正方主张的大胆；A just（仅仅）与递进方向相反，弱化语气不合；B ever（曾经）用于完成时的疑问否定句，此处不搭；C still（仍然）表动作持续，无程度升级义。",
+   "keyword": "even 甚至（表递进）；claim 声称＝assert；command center 指挥中心；root tip 根尖。",
+   "note": "递进逻辑词看两句程度阶梯：神经系统→类脑指挥中心，明显『更进一步』；even 是完形高频逻辑词，常与 claimed、more、最高级连用表升级，just/ever/still 均无此功能。"
+  },
+  {
+   "question_id": 1198,
+   "long_sentence": "定位句 This perspective makes sense if you simplify the workings of a complex brain, reducing it to an array of electrical pulses。主干 This perspective makes sense；if 引导条件状语从句；reducing... 现在分词作方式状语；it 指代 the workings；an array of 一连串。译：如果把复杂大脑的运作简化为一连串电脉冲，这种观点就说得通了。",
+   "option": "正确项 C perspective：This 回指前文正方『植物有类神经系统与意识』的整套主张，perspective（观点、视角）是对其的概括名词；A restriction（限制）与 make sense 语境无关；B experiment（实验）张冠李戴，本段是观点剖析而非实验报告；D demand（要求）无中生有。",
+   "keyword": "perspective 观点、视角＝viewpoint；make sense 说得通；simplify...to 把…简化为；an array of 一系列。",
+   "note": "This + 名词的指代概括是高频考点：先确认 This 指代什么（正方整套主张），再选能概括它的名词；experiment 利用全文科学语境设陷，注意本段并未描述任何实验操作。"
+  },
+  {
+   "question_id": 1199,
+   "long_sentence": "定位句 if you simplify the workings of a complex brain, reducing it to an array of electrical pulses。reducing it to 中 it 复指 the workings；reduce...to 把…简化为、归结为；与 simplify 同向呼应。译：把复杂大脑的运作简化为一连串电脉冲（这种观点便成立）。",
+   "option": "正确项 B reducing：reduce...to 表『把…简化、归结为』，与空前 simplify 同义强化，把大脑运作归结为电脉冲正是正方类比的简化逻辑；A attaching...to（把…附加到）语义不通；C returning...to（把…归还给）与语境无关；D exposing...to（使…暴露于）多接风险、光照等对象，不接运作方式。",
+   "keyword": "reduce...to 把…简化为＝boil down to；expose...to 使…暴露于；attach...to 把…附在；an array of 一连串。",
+   "note": "分词题看同义链：simplify 与 reduce 一先一后描述同一动作，前后印证；expose...to 是高频熟词设陷，先检查宾语是否为风险类名词，不是则果断排除。"
+  },
+  {
+   "question_id": 1200,
+   "long_sentence": "定位句 However, the signaling in a plant is only superficially similar to the firing in a complex animal brain, which is more than 'a mass of cells that communicate by electricity'。However 连接两段论述；only superficially 只是表面上；which 非限制性定语从句修饰 animal brain。译：然而，植物的信号传导只是表面上类似复杂动物大脑的放电——后者远不止『一堆靠电交流的细胞』。",
+   "option": "正确项 A However：上句让步承认植物细胞也靠电信号交流（顺着正方类比），本句以 only + similar 限制『只是表面相似』，由顺转逆必须用转折词；B Moreover 表递进，与 only 的弱化方向相反；C Therefore 表因果，前后并非推导关系；D Otherwise 表『否则』，条件义不沾边。",
+   "keyword": "however 然而（转折副词）；superficially 表面上；signaling 信号传导；more than 不只是。",
+   "note": "逻辑词题先判顺逆：上句 also 是让步性认同，下句 only 是限制性削弱，一顺一逆锁定转折；Moreover/Therefore 都是顺承词，见到 only、just、merely 等限制词要预判转折关系。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 59,
+ "items": [
+  {
+   "question_id": 1451,
+   "long_sentence": "定位句 In 1968, the Congress... passed the Jury Selection and Service Act... This law abolished special educational requirements for federal jurors and required them to be selected at random from a cross section of the entire community。abolish 废除。译：1968 年国会通过《陪审团遴选与服务法》；该法废除了对联邦陪审员的特殊学历要求，并要求从整个社区的横断面中随机遴选陪审员。",
+   "option": "正确项 B educational requirements became less rigid in the selection of federal jurors：abolished special educational requirements＝联邦陪审员遴选的学历要求变得不再严苛；A 性别歧视违宪须废除 张冠李戴，那是 1975 年 Taylor 判决的内容；C 州级陪审员须代表社区 张冠李戴，扩展到州级也是 1975 年判决；D 各州应效仿联邦法院改革 无中生有。",
+   "keyword": "abolish 废除＝do away with；educational requirement 学历要求；at random 随机；cross section 横断面、代表性样本。",
+   "note": "时间线锁定答案：法案（1968）的条款只有「废除学历要求＋随机遴选」，B 与前者对应；A/C 都是 Taylor 判决（1975）的内容，D 题干问的是法案后果而非各州义务。"
+  },
+  {
+   "question_id": 1452,
+   "long_sentence": "全文结构：首段陪审制的民主原则传统（直接民主的典范）→ 第二三段 1968 年前的问题（精英陪审团绕开反歧视法、女性长期缺席）→ 末段 1968 年法案与 1975 年 Taylor 判决带来的民主改革。译：本文围绕美国陪审制度的传统与沿革展开。",
+   "option": "正确项 D its tradition and development：先立民主原则之传统，再叙遴选实践之弊与立法、判例推动的变革，传统与发展的双线贯穿全文；A its nature and problems 缺「改革演进」一半；B its characteristics and tradition 缺发展线；C its problems and solutions 缺首段的原则传统铺垫。",
+   "keyword": "principle 原则；usher in 开创、迎来＝introduce；democratic reform 民主改革；landmark decision 里程碑式判决。",
+   "note": "中心话题题抓段落功能：一二段是「传统与背离」，三四段是「立法与判例的演进」，唯有 D 同时覆盖两头；C 的 solution 忽略了首段大篇幅的原则陈述。"
+  },
+  {
+   "question_id": 1453,
+   "long_sentence": "定位句 a group of researchers at Stanford University, led by Ilan Kroo, has suggested that airlines could take a more naturalistic approach to cutting jet-fuel use and it would not require them to buy new aircraft。would not require 为判断关键。译：斯坦福大学克鲁带领的研究小组提出，航空公司可以用更仿生的办法节省燃油，且无需购买新飞机。",
+   "option": "答案 F（该说法为假）：研究发现的是仿鸟编队省油的「不换新机」方案，would not require them to buy new aircraft 明确否定购买新机，因此不会促进波音与空客新机的销售；命题在 buy new aircraft 上直接与原文相抵。",
+   "keyword": "naturalistic approach 仿生方法＝bird-like way；cut jet-fuel use 降低燃油消耗；require 需要＝call for；trumpet 大力宣传。",
+   "note": "判断题先抓否定信息：not require to buy new aircraft 与 promote the sales 是正面对撞；首句 Boeing 与 Airbus 的宣传只是背景，别让首段的新机型字面带偏判断。"
+  },
+  {
+   "question_id": 1454,
+   "long_sentence": "定位句 The air flowing over a bird's wings curls upwards behind the wingtips, a phenomenon known as upwash. Other birds flying in the upwash experience reduced drag, and spend less energy propelling themselves。known as upwash 同位语；两个并列谓语 experience 与 spend。译：流过鸟翼的气流在翼尖后方向上卷起，即上升气流（upwash）；处于上升气流中的其他鸟阻力减小，推进自身耗能更少。",
+   "option": "答案 T（该说法为真）：reduced drag＝减少阻力，spend less energy propelling＝节省推进能量，两效应并列出现，与题干 as well as 结构一一对应；Lissaman 的 25 鸟编队航程提升 71% 是效果的旁证。",
+   "keyword": "upwash 上升气流；drag 阻力＝resistance；propel 推进；expend energy 消耗能量＝spend energy。",
+   "note": "并列结构是判断依据：原文「减阻＋省推进能」两个事实同现，题干用 may save...as well as reducing 复现并列关系；drag 与 resistance 的同义对应是本题锚点。"
+  },
+  {
+   "question_id": 1455,
+   "long_sentence": "定位句 Would passengers feel comfortable travelling in companion?... the aircraft could be separated by several nautical miles... A passenger peering out of the window might not even see the other planes。疑问句表未决；might not even 表推测让步。译：乘客与同伴编队飞行会感到舒适吗？克鲁指出飞机之间可相隔数海里，乘客隔着舷窗甚至可能看不到其他飞机。",
+   "option": "答案 F（该说法为假）：舒适性是尚未解决的疑问（knots to be worked out 之一），原文用问句提出而非断言「更舒适」；且看不到其他飞机只是编队间距大的描述，未被说成舒适的原因，命题把未决问题与让步细节捏合成因果。",
+   "keyword": "companion 同伴＝company；nautical mile 海里；peer out of the window 隔窗张望；perception 观感。",
+   "note": "疑问句是态度信号：Would passengers feel comfortable? 说明舒适与否仍是顾虑，命题却断言 more comfortable；把 might not even see 说成舒适原因属强加因果。"
+  },
+  {
+   "question_id": 1456,
+   "long_sentence": "定位句 It remains to be seen how weather conditions affect the air flows that make formation flight more efficient... Dr. Kroo says this is one of the areas his team will investigate further。It remains to be seen 尚待观察。译：天气条件如何影响编队飞行的气流尚待观察——湍流增强区尾流衰减更快、效果减弱；克鲁说这是团队将进一步研究的领域之一。",
+   "option": "答案 T（该说法为真）：remains to be seen 加 will investigate further＝天气在编队飞行中的作用尚未被明确界定，题干 has not yet been clearly defined 与之同义；湍流区效果减弱只是已知的一种推测方向。",
+   "keyword": "remain to be seen 尚待观察＝be not yet clear；turbulence 湍流；wake 尾流；decay 衰减＝weaken。",
+   "note": "同义替换定判断：remains to be see＝not yet clearly defined，两处都是「未定」义；凡见 investigate further 的段落，对应「尚不明确」类命题多为真。"
+  },
+  {
+   "question_id": 1457,
+   "long_sentence": "定位句 There are reports that some military aircraft flew in formation when they were low on fuel during the Second World War, but Dr. Lissaman says they are unsubstantiated。report 与 unsubstantiated 构成转折；low on fuel 燃油不足。译：有报告称二战期间一些军机在燃油不足时曾编队飞行，但利萨曼博士说这些说法并无实据。",
+   "option": "答案 F（该说法为假）：命题称二战编队救油「已被证实记录」（has been documented），原文却明言 unsubstantiated（未经证实的），命题与原文的实证状态直接相反。",
+   "keyword": "unsubstantiated 无实据的＝unverified；document 证实、记录＝verify；be low on fuel 燃油不足；skipper 机长、船长。",
+   "note": "转折词 but 后是态度落点：reports 是传闻，unsubstantiated 才是 Lissaman 的裁定；has been documented 与 unsubstantiated 是一对反义表述，判断题盯紧实证措辞。"
+  },
+  {
+   "question_id": 1458,
+   "long_sentence": "空所在句：But that very anonymity is also behind the explosion of cyber-crime that has 1 __ across the Web。that has __ 为定语从句修饰 cyber-crime；across the Web 表范围。译：但正是这种匿名性也助长了席卷网络的网络犯罪激增。",
+   "option": "正确项 A swept：sweep across the Web（席卷网络）是描写犯罪浪潮蔓延的固定搭配，与 explosion 的爆发语义衔接；B skipped 跳过与蔓延无关；C walked walked across 平淡不显浩劫之势；D ridden 骑乘不合语境。",
+   "keyword": "sweep across 席卷＝spread rapidly across；cyber-crime 网络犯罪；anonymity 匿名性；explosion 激增。",
+   "note": "explosion 定画面感：犯罪呈爆发蔓延之势，sweep 的席卷义最贴切；四个动词都可接 across，但只有 swept 能承接 explosion 的迅猛语势。"
+  },
+  {
+   "question_id": 1459,
+   "long_sentence": "空所在句：Can privacy be preserved 2 __ bringing safety and security to a world that seems increasingly 3 __?被动语态疑问句；preserved 与 bringing 两个动作并存。译：能否在一个日益 __ 的世界里，在带来安全保障的 __ 保护隐私？",
+   "option": "正确项 C while：while bringing（在带来…的同时）表两个动作并行，正是「隐私与安全能否兼得」的设问核心；A for 表目的，preserved for bringing 语义扭曲；B within 在…之内不连接两个动作；D though 表让步，两动作无让步关系。",
+   "keyword": "while doing 在做…的同时；preserve 保护、保存；safety and security 安全保障；privacy 隐私。",
+   "note": "两全设问找同时性：privacy（果）与 bringing safety（动作）须并行不悖，while 是唯一能缝合两个动作的连词；though 的让步义会把「兼得」读成「取舍」。"
+  },
+  {
+   "question_id": 1460,
+   "long_sentence": "空所在句：Can privacy be preserved while bringing safety and security to a world that seems increasingly 3 __?that 引导定语从句修饰 world，increasingly 修饰空格形容词。译：能否给这个似乎日益 __ 的世界带来安全保障的同时保护隐私？",
+   "option": "正确项 B lawless：网络犯罪席卷网络，世界显得愈发「无法无天」，lawless 与 cyber-crime 语义呼应；A careless 粗心指人的疏忽，不形容世界秩序；C pointless 无意义与犯罪猖獗无关；D helpless 无助偏受害者视角，与「乱象」的主语 world 不合。",
+   "keyword": "lawless 无法无天的＝anarchic；cyber-crime 网络犯罪；increasingly 日益；safety and security 安全保障。",
+   "note": "形容词题回扣犯罪语境：世界乱的根源是犯罪横行，lawless 的「无法」义直指 crime；-less 四选项是词形陷阱，辨「无序/无心/无义/无助」四个方向。"
+  },
+  {
+   "question_id": 1461,
+   "long_sentence": "空所在句：Last month, Howard Schmidt... offered the federal government a 4 __ to make the Web a safer place – a 'voluntary trusted identity' system...。破折号后为该名词的具体内容。译：上个月，网络安全协调官施密特向联邦政府提出一项让网络更安全的 __——一个「自愿可信身份」系统。",
+   "option": "正确项 D proposal：offer a proposal（提出一项建议）与破折号后的系统方案构成「总述—具体」关系；A reason 提出理由不成话；B reminder 提醒与方案内容不合；C compromise 妥协与自愿身份系统的积极定性相悖。",
+   "keyword": "offer a proposal 提出建议＝put forward a proposal；cyber-czar 网络安全协调官；voluntary 自愿的；identity system 身份系统。",
+   "note": "破折号是解释信号：冒号破折号后的具体方案揭示空格是「提案」类名词；下文 Mr. Schmidt described it 也印证这是一个被提出来的 plan。"
+  },
+  {
+   "question_id": 1462,
+   "long_sentence": "空所在句：a 'voluntary trusted identity' system that would be the high-tech 5 __ of a physical key, a fingerprint and a photo ID card, all rolled 6 __ one。that 引导定语从句；the __ of 前后是新旧对应关系。译：该系统将是实体钥匙、指纹与照片身份证三合一的高科技 __。",
+   "option": "正确项 D equivalent：the high-tech equivalent of（…的高科技等价物）表达新旧对应，实体凭证的数字化身；A information information of 不构成对应关系；B interference 干涉语义无关；C entertainment 娱乐与身份凭证风马牛不相及。",
+   "keyword": "equivalent 等价物＝counterpart；credential 凭证；photo ID card 带照片的身份证；high-tech 高科技的。",
+   "note": "the X of A, B and C 结构考对应词：虚拟系统对应实体三物，equivalent 是标准表达；见「虚拟对实体」的类比语境先想 counterpart/equivalent。"
+  },
+  {
+   "question_id": 1463,
+   "long_sentence": "空所在句：...a physical key, a fingerprint and a photo ID card, all rolled 6 __ one。all 与 one 构成「多合为一」的习语结构。译：实体钥匙、指纹与照片身份证，三者 __ 为一体。",
+   "option": "正确项 B into：roll...into one（合而为一）是固定习语，三者合成一个身份凭证；A by rolled by one 不成搭配；C from 表来源与合成方向相反；D over 无 rolled over one 的习语义。",
+   "keyword": "roll...into one 合而为一＝combine into one；credential 凭证；fingerprint 指纹；identity identity 身份。",
+   "note": "习语题背整体搭配：all rolled into one 是英语里「集…于一体」的地道表达；三个并列凭证名与 one 的归一关系只有 into 能表达。"
+  },
+  {
+   "question_id": 1464,
+   "long_sentence": "空所在句：The system might use a smart identity card, or a digital credential 7 __ to a specific computer。or 并列两种载体；to a specific computer 表关联对象。译：该系统可能使用智能身份卡，或与特定计算机 __ 的数字凭证。",
+   "option": "正确项 A linked：linked to（与…关联、绑定）是描述数字凭证与设备关系的标准搭配；B directed to 指向，凭证不「指向」计算机；C chained to 用链锁住，字面义与数字语境不合；D compared to 与…比较，语义完全脱节。",
+   "keyword": "be linked to 与…关联＝be tied to；digital credential 数字凭证；specific 特定的；smart identity card 智能身份卡。",
+   "note": "技术语境选绑定义：凭证与特定计算机关联才能核验身份，linked to 是 IT 英语的高频搭配；chained 是 link 的字面近形干扰，注意虚拟与实体的语域差异。"
+  },
+  {
+   "question_id": 1465,
+   "long_sentence": "空所在句：The idea is to 8 __ a federation of private online identity systems. Users could 9 __ which system to join...。to 后接动词原形；a federation of 为宾语。译：这一设想的目的是 __ 一个由私营在线身份系统组成的联盟。",
+   "option": "正确项 C create：create a federation（创建联盟）与下文 Users could select which system to join 的新制度设计呼应，方案从无到有；A dismiss 解散与建设方案相反；B discover 发现，联盟非既存事物；D improve 改进，文中无旧联盟可改。",
+   "keyword": "create 创建＝establish/set up；federation 联盟＝alliance；private online identity systems 私营在线身份系统；initiative 倡议。",
+   "note": "方案类动词看「从无到有」：施密特的 idea 是全新制度，create 顺理成章；dismiss/create 是一组方向相反的干扰，improve 需要既存对象作支点。"
+  },
+  {
+   "question_id": 1466,
+   "long_sentence": "空所在句：Users could 9 __ which system to join, and only registered users whose identities have been authenticated could navigate those systems。which system to join 为疑问词加不定式结构作宾语。译：用户可以 __ 加入哪个系统，且只有身份通过认证的注册用户才能进入这些系统。",
+   "option": "正确项 C select：select which system to join（自选加入哪个系统）与 voluntary（自愿）的方案定性呼应；A recall 回忆不构成选择行为；B suggest 建议的对象应是他人，与 join 的执行者错位；D realize 意识到与「加入」的决策无关。",
+   "keyword": "select 选择＝choose；voluntary 自愿的；registered user 注册用户；authenticate 认证、验证。",
+   "note": "voluntary 是本题钥匙：方案自愿参与，用户必有「自选」权，select 呼应自愿；realize/suggest 都不能与 which system to join 构成决策搭配。"
+  },
+  {
+   "question_id": 1467,
+   "long_sentence": "空所在句：The approach contrasts with one that would require an Internet driver's license 10 __ by the government。contrasts with 表对比；by the government 表施动者。译：这一方案与另一种做法形成对比——后者要求由政府 __ 一张「网络驾照」。",
+   "option": "正确项 B issued：issue a license（签发证照）是政府发证的固定搭配，与 driver's license 搭配自然；A released 发布消息或发放库存，不与 license 搭配；C distributed 分发实物，证照讲究签发主体；D delivered 递送与证照颁发无关。",
+   "keyword": "issue a license 签发执照＝grant a license；driver's license 驾照；contrast with 与…形成对比；require 要求。",
+   "note": "政府＋证照锁定 issue：license 的规范动词是 issue（签发）；released 是与上批完形 released Tamiflu 的近义干扰，注意发证与发货的搭配差异。"
+  },
+  {
+   "question_id": 1468,
+   "long_sentence": "空所在句：Google and Microsoft are among companies that already have these 'single sign-on' systems that make it possible for users to 11 __ just once but use many different services。single sign-on 单点登录是题眼。译：谷歌、微软等公司已拥有这种「单点登录」系统，用户只需 __ 一次即可使用多种不同服务。",
+   "option": "正确项 D log in：log in（登录）与 single sign-on 的 on 呼应，登录一次畅行多服务正是单点登录的定义；A carry on 继续，与网络身份验证无关；B linger on 徘徊流连不合语境；C set in 开始并持续，多指坏事物降临。",
+   "keyword": "log in 登录＝sign in；single sign-on 单点登录；credential 凭证；service 服务。",
+   "note": "术语复现是硬线索：single sign-on 中的 sign on 即 log in 的同义表达，登录一次用多项服务就是它的定义；carry/linger/set 与「登录」的语义场无关。"
+  },
+  {
+   "question_id": 1469,
+   "long_sentence": "空所在句：12 __, the approach would create a 'walled garden' in cyberspace, with safe 'neighborhoods' and bright 'streetlights'...。前文描述方案的机制，本句给出其总体效果。译：实际上，这一方案将在网络空间建起一座「带围墙的花园」，有安全的「街区」与明亮的「路灯」。",
+   "option": "正确项 B In effect：in effect（实际上、从效果上看）承接机制描述引出综合效果，前后是同一方案的两面；A In vain 徒劳与方案的正面描绘相反；C In return 作为回报需有交换对象；D In contrast 相比之下，本句与上文非对立关系。",
+   "keyword": "in effect 实际上＝in essence；walled garden 带围墙的花园（比喻封闭安全区）；cyberspace 网络空间；neighborhood 街区。",
+   "note": "比喻句前看衔接词：walled garden 是对方案效果的总结性比喻，In effect 的「说白了」功能最贴切；In contrast 需要对比对象，上文不是反方方案。"
+  },
+  {
+   "question_id": 1470,
+   "long_sentence": "空所在句：...with safe 'neighborhoods' and bright 'streetlights' to establish a sense of a 13 __ community。safe 与 bright 为并列定语，共同修饰 community 的氛围。译：以安全的「街区」与明亮的「路灯」营造一种 __ 社区的氛围。",
+   "option": "正确项 A trusted：方案名为 voluntary trusted identity，trusted community 呼应「可信身份」的核心目标；B modernized 现代化与安全氛围无关；C thriving 繁荣偏离身份互信主题；D competing 竞争与安心社区相悖。",
+   "keyword": "trusted 可信的＝reliable；a sense of community 社区归属感；identity 身份；establish 营造、确立。",
+   "note": "复现词定形容词：上文 trusted identity 原词现成，社区的营造目标是「互信」；thriving 是褒义词干扰，但本文主线是身份可信而非经济繁荣。"
+  },
+  {
+   "question_id": 1471,
+   "long_sentence": "空所在句：Mr. Schmidt described it as a 'voluntary ecosystem' in which 'individuals and organizations can complete online transactions with 14 __, trusting the identities of each other...'。in which 引导定语从句；trusting... 解释空格名词。译：施密特称其为「自愿生态系统」——个人与组织能 __ 地完成在线交易，信任彼此的身份以及交易所赖以运行的基础设施。",
+   "option": "正确项 C confidence：with confidence（有信心地）与分词 trusting the identities 构成同义互注，互信带来交易信心；A caution 谨慎与 trust 的坦然相反；B delight 高兴是情绪不是交易心理；D patience 耐心与身份信任无关。",
+   "keyword": "with confidence 有信心地＝trustingly；transaction 交易；ecosystem 生态系统（比喻体系）；infrastructure 基础设施。",
+   "note": "trusting 是空格的解释者：能信任彼此身份，交易才能「放心」完成，confidence 与 trust 同源呼应；caution 是 trust 的反义干扰，方向核对即可。"
+  },
+  {
+   "question_id": 1472,
+   "long_sentence": "空所在句：trusting the identities of each other and the identities of the infrastructure 15 __ which the transaction runs。介词前置的定语从句；the transaction runs __ the infrastructure 为正常语序。译：信任彼此的身份以及交易赖以 __ 运行的那些基础设施。",
+   "option": "正确项 A on：run on the infrastructure（在基础设施上运行）是固定搭配，介词 on 前置构成 on which；B after 与 run 搭配成 run after 追逐，语义不通；C beyond 超出，交易不会在超出基础设施处运行；D across 横跨，与「依托运行」不符。",
+   "keyword": "run on 在…上运行＝operate on；介词＋which 定语从句；infrastructure 基础设施；transaction 交易。",
+   "note": "介词题把从句还原：the transaction runs on the infrastructure，介词取自动词搭配 run on；还原法是介词前置定语从句的唯一稳解。"
+  },
+  {
+   "question_id": 1473,
+   "long_sentence": "空所在句：Still, the administration's plan has 16 __ privacy rights activists. Some applaud the approach; others are concerned。still 表转折；some...others... 揭示分野。译：不过，政府的这项计划已使隐私权活动人士 __ ：有人赞成这一做法，有人表示担忧。",
+   "option": "正确项 A divided：divide（使意见分歧）与 some applaud...others are concerned 的两派对立严丝合缝；B disappointed 失望无法解释 applaud 的存在；C protected 保护主宾颠倒，是活动人士保护隐私；D united 团结与两派分化相反。",
+   "keyword": "divide 使分化＝split；applaud 赞赏＝approve；privacy rights activist 隐私权活动人士；concerned 担忧的。",
+   "note": "some...others... 是 divide 的标配证据：褒贬两派对同一方案态度分裂；united 是 divide 的直接反义陷阱，still 转折后必现分歧。"
+  },
+  {
+   "question_id": 1474,
+   "long_sentence": "空所在句：It seems clear that such a scheme is an initiative push toward what would 17 __ be a compulsory Internet 'driver's license' mentality。initiative（自愿起步）与 compulsory（强制）构成时间演进。译：很明显，这一方案是迈向 __ 变成强制「网络驾照」心态的第一步。",
+   "option": "正确项 D eventually：eventually（最终）刻画从自愿起步到强制的演变终点，与 initiative push toward 的方向语呼应；A frequently 频繁地指次数，不指结局；B incidentally 偶然附带，与趋势演进无关；C occasionally 偶尔同为频率副词。",
+   "keyword": "eventually 最终＝finally/in the end；compulsory 强制的＝mandatory；initiative 起步性举措；mentality 心态。",
+   "note": "initiative 与 compulsory 的落差要靠时间填平：voluntary 起步、eventually 强制是批评者的滑移论证；frequently/occasionally 是频率副词的凑数干扰。"
+  },
+  {
+   "question_id": 1475,
+   "long_sentence": "空所在句：The plan has also been greeted with 18 __ by some computer security experts, who worry that the 'voluntary ecosystem' envisioned by Mr. Schmidt would still leave much of the Internet 19 __。who 从句解释该名词的态度内容。译：这项计划还遭到一些计算机安全专家的 __ ，他们担心施密特设想的「自愿生态系统」仍会让互联网大部分区域处于危险之中。",
+   "option": "正确项 A skepticism：greeted with skepticism（遭到质疑）与 who worry 的担忧内容一致，专家怀疑方案的有效性；B tolerance 容忍与 worry 相反；C indifference 冷漠者不会忧虑；D enthusiasm 热情与担忧南辕北辙。",
+   "keyword": "skepticism 质疑＝doubt；greet with 以…回应、对待；envision 设想＝imagine；leave...unprotected 使…无防护。",
+   "note": "who worry 定态度：担忧即质疑，skepticism 与 worry 同向；enthusiasm/tolerance/indifference 三种态度都无法与 worry 共存，情绪词核对一票定夺。"
+  }
+ ]
+}

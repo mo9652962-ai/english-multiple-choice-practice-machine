@@ -1,0 +1,180 @@
+{
+ "chunk": 55,
+ "items": [
+  {
+   "question_id": 1351,
+   "long_sentence": "定位句 Established in an old paper mill, it is powered by a nearby river and its remote heat warms the people who live in the surrounding town of Kajaani。Established 过去分词短语作状语；and 并列「河能供电」与「余热供暖」两个事实；who live in... 为定语从句修饰 people。译：LUMI 建在一座旧造纸厂里，由附近的河流供电，其废热为周边卡亚尼镇的居民供暖。",
+   "option": "正确项 A「可持续努力的典范」：原文 astonishingly carbon-negative（惊人的负碳）、河流供电、余热供暖三项事实，加末段 deliver more LUMIs（希望复制更多这样的超算），说明 LUMI 是可持续计算的样板；B「战胜能源短缺的胜利」无中生有，全文未提能源短缺；C「归功于全球净零倡议」偷换概念，净零是目标，LUMI 是实现手段而非受益者；D「旨在探索智能的力量」张冠李戴，power our intelligence 说的是科研整体，LUMI 的亮点在可持续。",
+   "keyword": "carbon-negative 负碳的；be powered by 由…供电；net-zero ambitions 净零目标；sustainable computing 可持续计算。",
+   "note": "题干 last two paragraphs 提示答案需综合倒数两段：倒数第二段摆事实（负碳、供电、供暖），末段下判断（要更多 LUMIs）；「事实＋要复制更多」即「典范」的证据链，只看单段容易漏掉末段的升华。"
+  },
+  {
+   "question_id": 1352,
+   "long_sentence": "定位句 How can we inform decision makers about the best ways to bring down carbon emissions if we can't track the amount of carbon dioxide in the atmosphere, where it's coming from and who's producing it? 反问句 how can we...if... 表「若不…怎能…」。译：若无法追踪大气中二氧化碳的总量、来源与排放者，我们怎能向决策者提供减排最佳方案？",
+   "option": "正确项 C「高耗能研究工作不可避免」：第三段 this is a price we must pay（必须付出的代价）＋The carbon emissions from technological research are well spent（花得值），「必须付＋值得花」即不可避免；A「无排放建模需要额外约束」无中生有，emission-free 与 binding 均无出处；B「超算需求难以满足」无中生有；D「研究者目标应现实」无中生有。",
+   "keyword": "a price we must pay 必须付出的代价；well spent 花得值；bring down carbon emissions 减排；track 追踪。",
+   "note": "作者观点题优先抓转折与评价词：However、must pay、well spent 都是态度信号；A 项的 binding、D 项的 realistic 属于「半生不熟」的词，回文核实均无出处，直接按无中生有排除。"
+  },
+  {
+   "question_id": 1353,
+   "long_sentence": "定位句 But the age of streaming has been a boon for some unintended winners: pirates that rip films from legitimate platforms... which rake in about $2 billion annually from ads and subscriptions。boon 恩惠；that 从句含 rip 与 host 两个并列谓语。译：但流媒体时代惠及了意外的赢家——盗版者：他们几秒内从正规平台扒取影视放上自己的非法服务，靠广告与订阅年入约 20 亿美元。",
+   "option": "正确项 D「面临真实威胁」：第一段先说 Disney+ 等合法流媒体每年亏损数十亿美元、担心永难达到有线电视的利润水平，再说盗版年入约 20 亿美元——自身亏损＋盗版抢食即「真实威胁」；A「从好莱坞吸取教训」偷换概念，old Hollywood 正是这些平台背后的运营方，不存在谁教训谁；B「收入超过有线电视」正反混淆，原文担心的是 never be as profitable as cable；C「不受广告商欢迎」无中生有，广告出现在盗版收入的语境中。",
+   "keyword": "boon 恩惠、好处；unintended winners 意外的赢家；rip 扒取、盗录；rake in 迅速敛财。",
+   "note": "首段细节题按「亏损—担忧—盗版受益」三层读：threat 对应的正是盗版年入 20 亿的事实；But 之后的信息常是命题点，题干 legitimate streaming services 与原文 legitimate online video platforms 的 legitimate 呼应。"
+  },
+  {
+   "question_id": 1354,
+   "long_sentence": "定位句 Initially the rise of legitimate online businesses such as Netflix actually helped curb digital piracy, which had largely been based on file uploads。Initially 为时间状语；actually 表强调「实际上」；which 非限制性定语从句修饰 digital piracy，补充其旧形态。译：起初，以 Netflix 为代表的正规在线业务的崛起实际上帮助遏制了数字盗版——当时的盗版主要靠文件上传。",
+   "option": "正确项 A「在打击非法文件共享中出过力」：helped curb digital piracy 即 played a part in the fight against illegal file-sharing，curb（遏制）对应 fight，file uploads 对应 file-sharing；B「从与盗版的战争中获益」张冠李戴，受益的是 pirates（盗版者），a boon for pirates 指盗版方；C「承诺创造就业」无中生有，25 万个岗位是盗版造成的流失；D「曾与文件上传平台合作」偷换概念，curb 是遏制而非合作。",
+   "keyword": "curb 遏制、抑制；crack down on 严厉打击；file uploads 文件上传；play a part in 在…中发挥作用。",
+   "note": "题干 streamers like Netflix 定位第三段；actually 是隐藏态度词——正规平台曾无意中帮了反盗版这一细节易被忽略；B 项借首段 boon 混淆受益主体，抓「谁受益」的主语即可排除。"
+  },
+  {
+   "question_id": 1355,
+   "long_sentence": "定位句 Rivkin joined the MPA in 2017 after the organization failed five years earlier to build consensus between Hollywood and Silicon Valley to win passage of legislation in Congress aimed at stopping online piracy。failed to do 未能做成；aimed at stopping 后置定语。译：里夫金 2017 年加入 MPA；此前五年该组织未能促成好莱坞与硅谷建立共识，以推动国会通过制止网络盗版的立法。",
+   "option": "正确项 A「被硅谷拒绝了合作」：failed to build consensus between Hollywood and Silicon Valley 说明双方谈不拢，可推断硅谷不予配合，denied cooperation 是合理的推断式改写；B「领导全国抗议」无中生有；C「被敦促成立执法工作组」偷换概念，ACE 是 MPA 在 2017 年主动组建的；D「未获地方当局支持」张冠李戴，原文是 ACE 协助 local authorities 抓捕盗版者，属合作关系。",
+   "keyword": "build consensus 建立共识；win passage of legislation 推动立法通过；task force 特别工作组；infer 推断。",
+   "note": "题干含 infer，正确项常是原文的合理转述而非原词照搬；时间线是本题钥匙：five years earlier（约 2012 年立法失败）到 2017 年入职并组建 ACE，理顺先后即得 A 的推断依据。"
+  },
+  {
+   "question_id": 1356,
+   "long_sentence": "定位句 While there is some optimism that emerging countermeasures and best practices may see piracy begin to plateau by 2027, there is no consensus among stakeholders as to when it may begin to decline。while 引导让步从句；as to when... 点出分歧所在。译：尽管有人乐观地认为新的对策和最佳实践或使盗版在 2027 年前趋于平稳，但利益相关各方对其何时开始下降并无共识。",
+   "option": "正确项 C「近期不太可能减少」：plateau（进入平稳期）加上 no consensus as to when it may begin to decline，说明「下降」遥遥无期，unlikely to diminish in the near future 是对这句的稳妥概括；A「有新立法也挡不住」过度推断，Hawley 并未评价立法；B「将压垮合法流媒体」无中生有；D「被一些分析家低估」无中生有，Hawley 本人就是 analyst。",
+   "keyword": "plateau （增速）趋于平稳；countermeasures 对策；stakeholders 利益相关方；diminish 减少、下降＝decline。",
+   "note": "人名观点题：Steve Hawley 只在末段出现，says 引语即答案区；抓住 no consensus as to when it may begin to decline 的否定信息，C 的 unlikely 正是对「何时下降无共识」的同义收束。"
+  },
+  {
+   "question_id": 1357,
+   "long_sentence": "定位句 But now piracy involving illegal streaming services costs the US economy about $30 billion in lost revenue a year and some 250,000 jobs, estimates the US Chamber of Commerce's Global Innovation Policy Center。本句倒装，正常语序为 The Center estimates that...。译：美国商会全球创新政策中心估计，涉及非法流媒体与文件共享的盗版每年使美国损失约 300 亿美元收入和 25 万个岗位。",
+   "option": "正确项 D「非法流媒体造成的经济损害」：全文贯穿一连串数字——好莱坞每年亏损数十亿、盗版年入 20 亿、利润率近 90%、美国年损 300 亿与 25 万岗位、全球 710 亿、未来累计 1130 亿，经济之害是贯穿线索；A「协调反盗版行动的必要性」文中只呈现 ACE 的行动，未谈协调必要；B「侵权的刑事性质」以偏概全，仅第五段 a serious crime 一处；C「消除网络盗版的前景」正反混淆，末段明确何时下降并无共识。",
+   "keyword": "lost revenue 损失的收入；revenue 收入；profit margin 利润率；emphasize 强调。",
+   "note": "全文强调题看「反复出现的要素」：本文美元数字密集出现，是经济损害的最强信号；B 项的 organized crime 虽有原词但只出现一次，撑不起「全文强调」，属局部信息冒充全文。"
+  },
+  {
+   "question_id": 1358,
+   "long_sentence": "定位句 Visit any antiques store and you'll encounter artifacts from the past: photographs, letters, a brochure detailing the Sinclair dinosaur exhibit from the 1964-1965 World's Fair, the ephemera of history。祈使句＋and 表条件；detailing 现在分词作后置定语；ephemera 易逝之物。译：走进任何古董店都会遇到往昔物件：老照片、信件、介绍 1964-1965 世博会恐龙展的小册子——历史的易逝之物。",
+   "option": "正确项 C「引出保存问题」：首段末 Yet these objects aren't truly ephemeral...Because they're tangible 自问自答，点出实物因「有形」而留存，第二段随即追问数字信息的 life cycle 与 long-term preservation——实物例子只是引子，落点在保存议题；A「介绍古董的出现」无中生有；B「与日常物品对比」无中生有，文中并无日常物品；D「评论其历史价值」答非所问，作者谈的是「为何还在」，不是价值高低。",
+   "keyword": "artifact 人工制品、器物；ephemeral 易逝的、转瞬即逝的；tangible 有形的；make provision for 为…作准备、安排。",
+   "note": "写作目的题看「例子之后作者做什么」：Why? Because they're tangible 一句自问自答，直接把话题推向 intangible formats 的保存难题，C 的 bring up the issue 对应的正是这一衔接动作。"
+  },
+  {
+   "question_id": 1359,
+   "long_sentence": "定位句 The thing itself is the medium that delivers the information。主干为「主系表」，that delivers the information 为定语从句修饰 medium；前句 For millennia, we've known what we've known due to artifacts that have survived, often despite their original creators' neglect 中 despite 短语表让步。译：实物本身就是传递信息的媒介——千百年来我们之所知，正来自那些在创造者疏于照管之下仍幸存下来的器物。",
+   "option": "正确项 B「以更直接的方式传递信息」：the thing itself is the medium 意为实物自体即媒介，无需额外载体与格式转换，direct 是对「自体即媒介」的概括；A 偷换概念，原文 despite their original creators' neglect——忽视照样发生，实物是被忽视仍幸存；C 正反混淆，原文说 no attempts were made at intentional preservation，且 Digital information requires a great deal more care than analog；D 无中生有。",
+   "keyword": "medium 媒介、载体；deliver information 传递信息；analog 模拟的；intentional preservation 有意的保存。",
+   "note": "比较题抓「对比轴」：实物＝本身即媒介（直接），数字＝载体与信息可分离（间接）；A 项把「被忽视仍幸存」偷成「较少被忽视」，主语一换语义即变，是典型偷换概念样本。"
+  },
+  {
+   "question_id": 1360,
+   "long_sentence": "定位句 Librarians' selfless devotion can act against us when users point to universality of access by holding up a cellphone and saying, it's all in here, as evidence that libraries are less vital for researchers today。when 引导时间状语从句；that 同位语从句解释 evidence。译：馆员的无私奉献反而可能对我们不利——当用户举起手机说「这里什么都有」，以此证明图书馆对如今的研究者不再那么重要时。",
+   "option": "正确项 B「图书馆被低估」：act against us（对我们不利）加 libraries are less vital for researchers today，说明馆员的工作反而助长了「图书馆不再重要」的低估；A「材料过剩」答非所问，embarrassment of historical riches 是第二段数字化的结果，且本段未再提；C「研究者表现不佳」无中生有；D「用户过度依赖技术」过度推断，用户举手机是低估图书馆的论据，原文并未批判技术依赖。",
+   "keyword": "selfless devotion 无私奉献；act against 对…不利、起反作用；universality of access 获取的普遍性；less vital 不再那么重要。",
+   "note": "段落推断题的题眼是 selfless devotion can act against us 这一「好心办坏事」的反常表达；B 项是把 act against 的后果（被认为 less vital）落成名词 undervaluation，需要完成一跳同义概括。"
+  },
+  {
+   "question_id": 1361,
+   "long_sentence": "定位句 Even when a digital object is preserved, it may only be the carrier that's saved, not the information itself。even when 引导让步状语从句；it may only be...that... 为强调结构，突出 the carrier；not the information itself 补充否定。译：即使一个数字对象被保存下来，保住的也可能只是载体而非信息本身——随着技术进步、格式被淘汰，这个对象便成了废物。",
+   "option": "正确项 C「过时格式中信息丢失的可能」：ZIP 磁盘之问 how do I get the files off this 正是「载体还在、文件取不出」的格式过时困境，例证前句 As technology advances and a format becomes obsolete, the object is useless；A「用非常规手段检索文件的困难」答非所问，例子重点不在检索手段新奇；B「持续迁移不可行」偷换概念，原文 Without constant migration... 表明迁移恰恰是必需手段；D「在模拟设备上存储的不便」张冠李戴，ZIP disk 是数字载体。",
+   "keyword": "carrier 载体；obsolete 被淘汰的、过时的；migration 迁移；digital assets 数字资产。",
+   "note": "例证题的答案在例子前后找观点句：前一句格式过时则对象无用即论点，ZIP disk 只是具象化；B 项把「需要迁移」扭曲成「迁移不可行」，方向完全相反，是本题最强的干扰项。"
+  },
+  {
+   "question_id": 1362,
+   "long_sentence": "定位句 Thus we play an integral role in identifying, preserving, and providing accessibility to digital artifacts so that, while future researchers may find the digital realm a challenging place..., they won't find it an impossible one。so that 目的从句。译：我们在识别、保存数字文物并保障其可获取性上发挥不可或缺的作用，让未来研究者虽觉数字领域充满挑战，却不至于寸步难行。",
+   "option": "正确项 D「保存数字历史记录是一项挑战」：全文从数字信息需要更多照料、格式过时取不出文件，到历史记录可能戛然而止的噩梦（night terrors），主线即「数字记录保存难」，图书馆员的努力恰好反衬难而未解；A「应努力保存文物」以偏概全，实物恰恰容易保存，重点是数字；B「应认可图书馆员的贡献」以偏概全，只是支线；C「访问数据库必不可少」无中生有。",
+   "keyword": "integral role 不可或缺的作用；digital artifacts 数字文物；ply one's trade 从事本行、执业；night terrors 夜惊（喻挥之不去的恐惧）。",
+   "note": "主旨题对比「数字与实物」两条线：实物幸存容易（tangible）是铺垫，数字保存之难才是主角；A 把铺垫当主旨，B 只取支线，D 的 challenge 一词覆盖全文的 challenging、night terrors 等焦虑表述。"
+  },
+  {
+   "question_id": 1363,
+   "long_sentence": "答案 D 段关键句 He typically takes between 10,000 and 20,000 shots to get one butterfly take-off sequence in focus。takes...shots 意为拍摄；to get...in focus 为目的状语「使…合焦」；后句 At such high shutter speeds, the depth of field is tiny 中介词短语含条件意味。译：他通常要拍一万到两万张，才能得到一组合焦的蝴蝶起飞序列——在如此高的快门速度下景深极小。",
+   "option": "答案 D 段填入位置 41（全篇首个框）：开头 That makes it sound easy, and artificial 承接上文中借助高速相机（A 段 120 帧/秒）拍摄的叙述——技术加持显得「容易且人造」，本段随即用 1-2 万张、景深极小、蝴蝶不直线飞行（swiftly flutter out of focus）反证 massive challenge；与 G 段区分：G 讲「怎么解决」（半按快门存前 70 帧再合成），D 讲「有多难」，先立问题后给方案，故 D 在前 G 在后。",
+   "keyword": "take-off （蝴蝶）起飞；in focus 合焦、清晰的；depth of field 景深；shutter speed 快门速度。",
+   "note": "排序题先认清框图中已固定的 C、H、A，再排自由段：That makes it sound easy 的 That 必须有先行内容，且「提出难—给出解法」的问答逻辑锁定 D 与 G 相邻且 D 居前。"
+  },
+  {
+   "question_id": 1364,
+   "long_sentence": "答案 G 段关键句 A butterfly takes off so quickly it is still impossible to react quickly enough... but if he half-presses the shutter, the camera saves the 70 previous frames before the moment he actually takes the picture。so...that 表结果；if 条件从句。译：蝴蝶起飞快到来不及反应，但若先半按快门，相机会在实际按下快门那一刻之前保存此前的 70 帧。",
+   "option": "答案 G 段填入位置 42：首句 impossible to react quickly enough 呼应 D 段「蝴蝶瞬间飞出景深」的困难，half-presses the shutter 存前 70 帧正与高速相机（120 帧/秒）的技术设定呼应，是对 D 段挑战的具体解法，紧接 41 的 D；段末 layers 10 to 15 frames together in Photoshop 的合成做法又与 D 开头 artificial（人造感）形成暗线呼应。与 A 段区分：A 只交代设备参数（20 帧对 120 帧），G 才是操作流程，且 A 已固定在 44 之后，两者不冲突。",
+   "keyword": "half-press the shutter 半按快门；frame 帧；previous frames 此前（已拍下）的帧；layer...together 叠加合成。",
+   "note": "位置 42 在已固定的 C 段之前，需与 41 的 D 连读：D 提出拍不清的难题，G 用预拍技术作答，「问题—方案」结构是排序题最硬的衔接证据，胜过任何单词复现。"
+  },
+  {
+   "question_id": 1365,
+   "long_sentence": "答案 B 段末句 Butterflies may not pollinate as many plants as wild bees and hoverflies, but because British butterflies are the best-studied group of insects in the world, they are an extremely useful indicator of the wider declines in flying insects。may not...but... 让步转折。译：蝴蝶授粉的植物种类虽不及野蜂食蚜蝇，但英国蝴蝶是世界上研究最透彻的昆虫类群，是飞虫减少的有用指标。",
+   "option": "答案 B 段填入位置 43（在已固定的 C 与 H 之间）：C 段讲五年前病中与蝴蝶结缘的个人起源，B 段把镜头拉远到英国蝴蝶 80% 在减少、集约化化学农业把物种逼入零碎栖息地的生态危机，话题由个人转向公共；B 末「蝴蝶是飞虫减少的有用指标」赋予拍摄行为以保护意义，顺势引出 H 段他在风景中拍蝴蝶、拒绝用冰箱「作弊」的实践。与 E 段区分：E 是个人感受的收束（44 位置），B 是客观背景铺垫，信息类型完全不同。",
+   "keyword": "in decline 在减少；intensive chemical farming 集约化化学农业；habitat 栖息地；indicator 指标。",
+   "note": "话题转换段常被安放在两个固定段之间承上启下：向前接「与蝴蝶结缘」的个人故事收尾，向后开「拍摄实践」的正文，B 的物种危机背景恰好完成个人叙事到生态意义的过渡，best-studied、indicator 等评价词是信号。"
+  },
+  {
+   "question_id": 1366,
+   "long_sentence": "答案 E 段首句 So what's the appeal of a long, sweaty day in pursuit of an elusive, fast-moving wild animal? 疑问句作段首，So 表承接与总结；in pursuit of 介词短语作后置定语修饰 day。译：那么，为追寻一种难以捉摸、移动迅捷的野生动物而辛苦流汗一整天，乐趣究竟何在？",
+   "option": "答案 E 段填入位置 44（在已固定的 H 与 A 之间）：H 段写他必须贴近到 2 厘米内拍摄易惊的蝴蝶，且拒绝用冰箱降低昆虫活性这类「作弊」手段——正是 a long, sweaty day in pursuit of an elusive, fast-moving wild animal 的写照，So 引出的自问自答承接这份辛苦；段末 that becomes a vault in my spiritual bank 用「精神银行的金库」回应 appeal，情绪收束之后 A 段转回招牌作品的技术细节。与 F 段区分：F 是叙事线（康复到痴迷到出书），E 是感悟线，问乐趣答感受，位置在 A 之前。",
+   "keyword": "appeal 吸引力、乐趣；elusive 难以捉摸的；in pursuit of 追寻；a vault in my spiritual bank 精神银行里的金库（比喻）。",
+   "note": "So 开头的反问段是「承上总结」信号：所承接内容须同时含辛苦与野生动物两要素，只有 H 段（2 厘米贴拍、skittish 的昆虫）同时满足，由此锁定 44 位置。"
+  },
+  {
+   "question_id": 1367,
+   "long_sentence": "答案 F 段首句 A children's author and poet who had become a keen amateur photographer, Peters watched the butterflies and idly wondered if he could capture them in flight。主语前为双重身份同位语加 who 定语从句；idly wondered if... 中 if 引导宾语从句。译：身为儿童作家、诗人，又成了热心业余摄影师的 Peters，望着蝴蝶，随口想到自己能否拍下它们的飞行。",
+   "option": "答案 F 段填入位置 45（已固定的 A 段之后，全文末位）：F 段沿时间线推进——从 wonder if he could capture them in flight 的念头，到康复后 became an obsession，再到走遍英国拍全 58 个本土物种，末句 Now the fruits of those summers have been published in a beautiful new book 以「成果出书」收束全文，Now 加完成时是典型的结尾信号；A 段讲完招牌作品后接「这些夏天结出的果实已出版」，成果链顺理成章。与 E 段区分：E 谈感受，F 谈事件与成果，全文收尾功能属 F。",
+   "keyword": "obsession 痴迷；the length and breadth of Britain 英国全境、四面八方；native species 本土物种；fruits （比喻）成果、果实。",
+   "note": "排序收尾段看「叙事闭环」：起点（C 段病中结缘）、发展（F 段康复后痴迷、拍遍全国）、成果（出书）；Now the fruits...have been published 的完成时加出版动词几乎必居末段，勿被 E 段的情绪升华带偏。"
+  },
+  {
+   "question_id": 1368,
+   "long_sentence": "空所在句群：The world of AI is buzzing with an exciting potential to improve and enrich our lives. 1 __ AI also has the potential hazard of 2 __ our experiences in ways we might find difficult to control。buzz with 满是（热议）；1 空填转折词，2 空填支配义动名词。译：AI 世界洋溢着改善与丰富生活的潜力；然而，AI 也有以难以控制的方式支配我们体验的潜在危险。",
+   "option": "正确项 A Still（然而、尽管如此）：前句全是正面潜力（exciting potential to improve and enrich），空后 also has the potential hazard 语义反转，Still 表让步转折「尽管如此」，与 also 配合完成先扬后抑；B Therefore 表因果，两句间并无因果关系，排除；C Afterward 表时间先后，此处没有事件序列；D Instead 表替代，空后是补充另一面而非替代前句，排除。",
+   "keyword": "still adv. 然而、尽管如此（句首转折）；potential hazard 潜在危险；buzz with 充满（热议）；improve and enrich 改善并丰富。",
+   "note": "逻辑连接词题先看空两侧的褒贬：前褒（exciting）后贬（hazard），锁定转折关系；Still 与 Instead 的区别在于 Instead 强调「不是 A 而是 B」，本句是「A 之外还有 B」，故选 Still。"
+  },
+  {
+   "question_id": 1369,
+   "long_sentence": "定位句 AI also has the potential hazard of 2 __ our experiences in ways we might find difficult to control。hazard of 后接动名词；in ways... 为方式状语，ways 后接省略 that 的定语从句，从句为 find＋宾语＋宾补结构。译：AI 也有以我们可能难以控制的方式支配我们体验的潜在危险。",
+   "option": "正确项 D dominating（支配、主导）：hazard 定下负面基调，且 ways we might find difficult to control 暗示 AI 对体验的深度渗透，dominating our experiences 与「难以控制」构成因果呼应；A reviewing（回顾）与语境无关，AI 影响体验并非回顾体验；B narrating（叙述）程度太轻，谈不上 hazard；C ignoring（忽视）逻辑颠倒——被支配的是体验本身，不是 AI 忽视体验。",
+   "keyword": "dominate 支配、主导；hazard 危险、隐患；have the hazard of doing 有做某事的隐患；find...difficult to control 觉得…难以控制。",
+   "note": "空格前名词决定动名词的感情色彩：hazard 之后必须接负面且程度足够的动作；下文 One such area is how we understand and experience beauty 也提示 AI 正在重塑（而非回顾或叙述）人的体验。"
+  },
+  {
+   "question_id": 1370,
+   "long_sentence": "定位句 One such 3 __ is how we understand and experience beauty。主干为 One such __ is how...；how we understand and experience beauty 为表语从句；such 回指上文的 potential hazard of dominating our experiences。译：这样一个方面（领域）就是：我们如何理解和体验美。",
+   "option": "正确项 B area（领域、方面）：上句说 AI 会以难以控制的方式影响我们的体验，本句举出具体领域——对美的理解与体验，one such area 由泛指落到具体，与 how 从句构成定义句；A reason（原因）不妥，how we experience beauty 是内容而非原因，one such reason is how... 语义断裂；C clue（线索）无中生有，上下文没有寻找线索的语境；D belief（信念）无中生有，作者并未表达某种信念。",
+   "keyword": "one such＋名词 这样一个…；area 领域、方面＝domain；understand and experience beauty 理解并体验美；表语从句 how...",
+   "note": "such 的复现是线索：空格名词必须能涵盖「AI 支配体验」这件事，并让「美的体验」成为其中一例，area 的抽象层级刚好；reason、clue、belief 都无法与 how 从句构成定义关系。"
+  },
+  {
+   "question_id": 1371,
+   "long_sentence": "定位句 4 __ human creativity and AI algorithms can lead to unique artistic 5 __ that are beautiful to the human eye。动名词短语作主语；lead to 产生；that are beautiful... 为定语从句修饰 outcomes。译：将人类创造力与 AI 算法相结合，可以产生人眼看来很美的独特艺术成果。",
+   "option": "正确项 C Combining（结合）：combine A and B 为标准搭配，且直接呼应上句 AI can be a collaborative tool（协作工具）与下句 These collaborations——collaborative、collaborations 的词汇复现指向「结合」；A Balancing（平衡）不妥，balance 强调两者对峙制衡，此处是融合共创；B Distinguishing（区分）逻辑相反，区分恰是协作的反面；D Introducing（引入）搭配不当，introduce 不能接 and 并列的双宾语。",
+   "keyword": "combine A with/and B 把 A 与 B 结合；collaborative tool 协作工具；lead to 导致、产生；human creativity 人类创造力。",
+   "note": "复现词破完形：上下句 collaborative、collaborations 反复出现「协作」语义，空格动词必属 combine 家族；and 连接两个并列名词是 combine 类动词的标记，再用褒贬色彩（lead to unique...beautiful）排除 distinguish。"
+  },
+  {
+   "question_id": 1372,
+   "long_sentence": "定位句 Combining human creativity and AI algorithms can lead to unique artistic 5 __ that are beautiful to the human eye。lead to 的宾语为空格名词；that are beautiful to the human eye 为定语从句，从句谓语 are 要求先行词为复数可数名词。译：人类创造力与 AI 算法的结合，可以产生对人眼而言很美的独特艺术成果。",
+   "option": "正确项 B outcomes（成果、产出）：artistic outcomes 指创作出的作品，可被 that are beautiful to the human eye 修饰，复数形式与 are 一致，且「结合产生成果」符合创作逻辑链；A prospect（前景）多为单数或不可数，artistic prospects 与从句谓语 are 冲突，「前景很美」的搭配也生硬；C ambitions（抱负）无中生有，ambitions 无法被「人眼看来美」修饰；D sentiments（情感）搭配不当，与 beautiful to the human eye 不构成修饰关系。",
+   "keyword": "outcome 成果、结果＝result；the human eye 人眼（喻审美眼光）；lead to unique outcomes 产生独特成果；artistic 艺术的。",
+   "note": "定语从句是名词题的裁判：that are beautiful to the human eye 决定空格必须是「可被观看与评价的产出物」，outcomes 同时满足语义与单复数；遇到名词选项先验从句谓语的单复数再验语义。"
+  },
+  {
+   "question_id": 1373,
+   "long_sentence": "空所在句：6 __, as convenient and provocative, AI enables virtual try-on experiences where you can virtually test makeup, hairstyles, clothing, and even cosmetic procedures。as convenient and provocative 为插入的评价性状语；where 引导定语从句修饰 experiences。译：例如，AI 既便利又引人遐想，它能提供虚拟试妆体验——你可以在其中虚拟试用化妆品、发型、服装乃至医美项目。",
+   "option": "正确项 C For instance（例如）：上段末 These collaborations are likely to become increasingly common 总括「AI 参与创造将更普遍」，本段展开第一个具体应用（虚拟试妆），For instance 引出实例，总分衔接自然；A At first（起初）暗示与后来的对比，本段并无时间演变叙事；B By comparison（相比之下）需要两个对照对象，此处无从比较；D In general（总体而言）用于概括，与本段举例展开的方向相反。",
+   "keyword": "for instance 例如＝for example；virtual try-on 虚拟试穿试妆；cosmetic procedures 医美项目；enable 使成为可能。",
+   "note": "段首连接词看「上段概括、本段展开」的关系：上段末 increasingly common 是总述，本段 test makeup... 是分述，典型总分结构选 For instance；只有空后出现两事物差异对比时才考虑 By comparison。"
+  },
+  {
+   "question_id": 1374,
+   "long_sentence": "定位句 AI enables virtual try-on experiences where you can virtually 7 __ makeup, hairstyles, clothing, and even cosmetic procedures。where 定语从句修饰 experiences；virtually 副词「虚拟地」修饰空格动词；四个宾语 makeup、hairstyles、clothing、cosmetic procedures 并列。译：AI 能提供虚拟试穿试妆体验，你可以在虚拟世界中试用化妆品、发型、服装乃至医美项目。",
+   "option": "正确项 A test（试用）：virtual try-on（虚拟试穿试用）已锁定语义场，test makeup、hairstyles、clothing 即「试妆、试发型、试穿」，先试用再决定是否真正改变，与下文 experiment with different looks 呼应；B copy（复制）不妥，虚拟试妆不是复制妆发；C link（连接）与四个宾语均无搭配关系；D save（保存）无中生有，语境并非存档。",
+   "keyword": "try on 试穿、试用；virtually 虚拟地（注意与「几乎」义的辨析）；experiment with 尝试、试验；test 试用、检验。",
+   "note": "复现词 try-on 是本题钥匙：try 与 test 同属「试用」语义场；另注意 virtually 此处为「虚拟地」而非「几乎」，四个并列宾语同属「可试用的外观项目」，这也是排除 copy、save 的依据。"
+  },
+  {
+   "question_id": 1375,
+   "long_sentence": "定位句 AI enables virtual try-on experiences where you can virtually test makeup, hairstyles, clothing, and even cosmetic procedures 8 __ making any physical changes。before making... 为介词 before 加动名词作时间状语；physical changes 与 virtual（虚拟）形成对照。译：你可以在尚未做出任何实际改变之前，先虚拟试用化妆品、发型、服装乃至医美项目。",
+   "option": "正确项 D before（在…之前）：虚拟试用的价值恰在「先看效果、后做决定」，before making any physical changes 与上文 experiment with different looks 语义连贯——一切实际改变之前先虚拟体验；A upon（一…就…）表动作紧接发生，「一试妆就立刻改变」与虚拟试用先试后改的本意相悖；B beyond（超出）无 beyond doing 的合理搭配；C through（通过）逻辑颠倒，「通过实际改变来试用」因果倒置。",
+   "keyword": "before doing 在做某事之前；physical changes 实际的、身体上的改变；virtual 与 physical 虚拟与实际的对立；experiment with different looks 尝试不同造型。",
+   "note": "virtual 与 physical 的对立决定介词方向：虚拟体验是预演，必发生在实际改变之前，选 before；upon doing 的「紧接」逻辑会把先后顺序颠倒，是本题最强干扰。"
+  }
+ ]
+}

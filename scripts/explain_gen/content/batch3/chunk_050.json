@@ -1,0 +1,180 @@
+{
+ "chunk": 50,
+ "items": [
+  {
+   "question_id": 1226,
+   "long_sentence": "定位句 employment protection laws make it costlier to fire an employee... And firms pay staff less because firms carry the burden of the employment arrangement going wrong。make it costlier 中 it 为形式宾语；carry the burden of...going wrong 承担…出错的负担。译：解雇代价更高使雇主招聘更谨慎；而企业要承担雇佣安排出错的风险，所以付给员工的工资更低。",
+   "option": "正确项 B Employees suffer from salary cuts：firms pay staff less（企业付得更少）→员工被降薪，正是程序带来的副作用；A 高薪经理丢工作 正反混淆，法律使解雇更难（costlier to fire），边缘经理反而更难获得雇佣（harder...to gain employment）；C 社会整体福祉上升 正反混淆，第七段明说 hamper both prosperity and overall well-being；D 雇主需要招聘新员工 正反混淆，雇主对招聘 more cautious。",
+   "keyword": "pay staff less 付更少工资＝salary cut 降薪；costlier to fire 解雇代价更高；be cautious about 对…谨慎；marginal 边缘的、勉强壮大的。",
+   "note": "后果题扫 Each 段的结果句：本题考第六段连环后果（解雇贵→招聘慎→工资低）；D 与 A 都与原文动词方向相反，正反混淆是该篇干扰项主旋律，逐项核对原文动词的肯定或否定即可。"
+  },
+  {
+   "question_id": 1227,
+   "long_sentence": "定位句 Australia deals with the unjustified dismissal paradox by excluding employees earning above a specified 'high-income threshold' from the protection of its unfair dismissal laws。deal with...by doing 通过…解决；earning above... 后置定语；exclude...from 把…排除在外。译：澳大利亚把收入超过『高收入门槛』的员工排除在不公平解雇法保护之外，以此应对无正当理由解雇悖论。",
+   "option": "正确项 C is beneficial to business owners：高收入员工被排除出解雇法保护，企业解雇高薪差经理不再受限，正是第三、四段所抱怨问题的解法，受益者是企业主；A has secured managers' earnings 正反混淆，被排除保护意味着收入随解雇风险失去保障；B has produced undesired results 无中生有，deals with 表明悖论得到应对；D is difficult to put into practice 张冠李戴，unwieldy（难操作）说的是新西兰 2016 年法案的机制，澳大利亚的门槛在正常运作。",
+   "keyword": "exclude...from 把…排除在外；high-income threshold 高收入门槛；unfair dismissal law 不公平解雇法；deal with 应对、解决。",
+   "note": "推断题沿制度目的推理：门槛把高收入者划出保护圈→企业可自由解雇高薪经理→利好企业主；A 的 secured 是对 exclude 的反向改写；D 把新西兰法案的失败安到澳大利亚头上，属跨段张冠李戴。"
+  },
+  {
+   "question_id": 1228,
+   "long_sentence": "定位句 They are profitable institutions whose bottom line is much more important than the condition of the animals... It's past time to eliminate zoos from our culture。whose 引导定语从句修饰 institutions；bottom line 盈亏底线；It's past time to do 早就该做某事。译：它们是营利性机构，盈亏底线远比动物的状况重要——早该把动物园从我们的文化中淘汰了。",
+   "option": "答案对应 Teri Byrd 段：F 的 prioritize money making over animals' wellbeing＝bottom line is much more important than the condition of the animals（营利压倒动物状况），should have been closed down＝It's past time to eliminate zoos（早该淘汰动物园），两层改写一一对应；最强干扰 E 讲『无法回归栖息地的动物的最佳去处』，Byrd 全篇否定动物园价值，绝无此论；A 与 B 均为替动物园辩护的观点，与该段立场相反。",
+   "keyword": "bottom line 盈亏底线；prioritize A over B 把A置于B之上＝A is more important than B；eliminate 淘汰＝closed down；captive 囚禁、圈养。",
+   "note": "观点匹配题先抓立场强句：It's past time to eliminate zoos 是全段最重的话，直接锁定『关闭论』F；再验前句营利压倒动物福利，双重证据链闭合；五个作者身份（前员工/教授/前动物园辩护者/环保者/研究者）可先标注立场方向再匹配。"
+  },
+  {
+   "question_id": 1229,
+   "long_sentence": "定位句 The zoology program at my university attracts students for whom zoo visits were the crucial formative experience that led them to major in biological sciences。for whom 介词前置的定语从句；that 引导定语从句修饰 formative experience；lead to 导致、引向。译：我大学的动物学项目吸引来的学生，正是把动物园参观当作关键成长体验、由此走上生物科学专业道路的人。",
+   "option": "答案对应 Karen R. Sime 段：C 的 While animals in captivity deserve sympathy＝she agrees zoo displays can be sad and cruel，starting young people down the path of related sciences＝led them to major in biological sciences，与原文 agree...But 让步转折同构；D 强干扰，save trips to wilderness 是 Gallea 段内容，Sime 提到 wild areas 只为说孩子当年没机会去。",
+   "keyword": "formative experience 成长关键体验；major in 主修＝go down the path of related sciences；captivity 圈养、囚禁＝cruel displays；immersive 沉浸式的。",
+   "note": "让步标志词是匹配钥匙：C 项的 While 同构原文的 agree...But，先让步后转折直接对上；Sime 提到 wilderness 只为对比『孩子没机会去』，勿被 D 的同词 wilderness 带走——同词异段是观点匹配题的标配陷阱。"
+  },
+  {
+   "question_id": 1230,
+   "long_sentence": "定位句 Emma Marris's article is an insult and a disservice to the thousands of passionate people who work tirelessly to improve the lives of animals... Zoos are at the forefront of conservation and constantly evolving。who 引导定语从句；at the forefront of 处于…前沿。译：默里的文章是对成千上万不知疲倦地改善动物生活、保护地球的热情人士的侮辱与伤害——动物园正处在保护事业前沿并不断改进。",
+   "option": "答案对应 Greg Newberry 段：A 的 spare no effort to take care of animals＝work tirelessly to improve the lives of animals（不遗余力改善动物生活），should not be subjected to unfair criticism＝an insult and a disservice（不应承受不公批评）；强干扰 B 的 pressure zoos to spend less 无本之木，Newberry 只辩护不谈经费；F 的 should have been closed down 与该段辩护立场完全相反。",
+   "keyword": "insult 侮辱；disservice 伤害、损害；tirelessly 不知疲倦地＝spare no effort；at the forefront of 处于最前沿。",
+   "note": "批评与被批评的角色要分清：Newberry 是唯一指责 Marris 文章粗鲁的作者，A 的 unfair criticism 对应 insult/disservice；spare no effort 与 work tirelessly 的同义改写是确认答案的第二把锁；含 should 的 F/A 两项靠立场正负一秒分流。"
+  },
+  {
+   "question_id": 1231,
+   "long_sentence": "定位句 Were it not for opportunities to observe these beautiful, wild creatures close to home, many more people would be driven by their fascination to travel to wild areas to seek out, disturb and even hunt them down。Were it not for... 为虚拟语气倒装（＝If it were not for...）。译：若不是能在离家近处观察这些野生生灵，更多人会被好奇心驱使跑去野外搜寻、打扰甚至猎杀它们。",
+   "option": "答案对应 Dean Gallea 段：D 的 save people trips to wilderness areas＝Were it not for opportunities to observe close to home（虚拟反推：有动物园就不必远行），contribute to conservation＝leaving the vast majority undisturbed（大多数动物免受打扰即保护）；强干扰 E 的 best alternative 讲动物安置，Gallea 讲满足人的接触需求以减少野外侵扰，视角是『人』不是『动物』；C 的教育价值属 Sime 段。",
+   "keyword": "were it not for 若非…（虚拟倒装）；seek out 找出；hunt down 猎杀；undisturbed 不受打扰的；satisfy the need for 满足对…的需求。",
+   "note": "虚拟语气是本题题眼：Were it not for 的反事实含义正对 save trips（免跑一趟）；Gallea 的博物馆类比（similar to natural history museums）进一步坐实『替人省行、替动物免扰』的逻辑，与 D 的 thus contribute to conservation 因果一致。"
+  },
+  {
+   "question_id": 1232,
+   "long_sentence": "定位句 Emma Marris selectively describes and misrepresents the findings of our research... Our research provides strong support for the value of zoos in connecting people with animals and with nature。misrepresent 歪曲；provide support for 为…提供支持。译：默里对研究成果作了选择性描述与歪曲；我们的研究有力支持动物园在连接人与动物、人与自然方面的价值。",
+   "option": "答案对应 John Fraser 段：G 的 Marris distorts our findings＝selectively describes and misrepresents our research，an indispensable link between man and nature＝connecting people with animals and with nature，且 G 是全组唯一含第一人称 our 的选项；强干扰 C 的教育路径论属 Sime 段，Fraser 强调的是研究被歪曲而非教育价值。",
+   "keyword": "misrepresent 歪曲＝distort；findings 研究成果；selectively 有选择地；link 联系、纽带＝connection。",
+   "note": "人称代词秒杀：45 段作者 Fraser 是研究者，通篇 our research/our studies，选项 G 是唯一带 our 的句子，先扫人称再验语义可两步锁定；distort 与 misrepresent 的同义对应是最后确认。"
+  },
+  {
+   "question_id": 1233,
+   "long_sentence": "定位句 Caravanserais were roadside inns that were built along the Silk Road in areas including China, North Africa and the Middle East. They were typically located outside the walls of a city or village。that 引导定语从句修饰 inns；including 举例；be located 坐落于。译：商队驿站是沿丝绸之路修建的路边客栈，分布于中国、北非和中东等地，通常坐落在城郭或村落的围墙之外。",
+   "option": "正确项 C located：be located outside the walls（坐落于城墙之外）表位置，与首句 built along the Silk Road 的空间语境连贯；A displayed（展示）驿站是功能建筑不是展品；B occupied（被占据）不与 outside the walls 构成位置表达，且无占据者；D equipped（装备）需接 with 短语引出装备内容，此处空后无 with 且语义不合。",
+   "keyword": "be located 坐落于＝be situated；roadside inn 路边客栈；caravanserai 商队驿站；city walls 城墙。",
+   "note": "首段首空看全文话题衔接：上文 built along the Silk Road 讲位置，下文 outside the walls 还是位置，位置义动词是唯一选择；equipped 是被动态搭配陷阱，见到它先找 with。"
+  },
+  {
+   "question_id": 1234,
+   "long_sentence": "定位句 They were typically located outside the walls of a city or village and were usually funded by local governments or privately。and 并列两个被动谓语；funded by 由…出资；or privately 与 by local governments 并列（or [funded] privately）。译：它们通常坐落于城郭或村落围墙之外，一般由地方政府或私人出资修建。",
+   "option": "正确项 A privately：or privately 承接 funded，与 by local governments 并列构成『官方或私人』两种出资来源，语义对仗完整；B regularly（定期地）修饰频率不修饰出资来源；C respectively（分别地）需要前文有两个对应主体各对各位，此处没有；D permanently（永久地）与出资动作搭配无意义。",
+   "keyword": "fund 资助、出资；privately 私人地＝by private investors；respectively 分别地；regularly 定期地。",
+   "note": "or 并列看前后语义对称：by local governments（官方来源）配 privately（私人来源）正是常见的『或A或B』结构；三个干扰副词都是高频词，但只有 privately 能接在 funded 的逻辑后面。"
+  },
+  {
+   "question_id": 1235,
+   "long_sentence": "定位句 The word 'caravanserai' is a combination of the Persian words 'karvan', which means a group of travellers or a caravan, and 'sardy', a palace or enclosed building。which 引导非限定性定语从句解释 karvan；a palace or enclosed building 为 sardy 的同位语。译：『caravanserai』一词是两个波斯语的合成词：karvan 意为旅行队或商队，sardy 意为宫殿或封闭建筑。",
+   "option": "正确项 D combination：一个词由 karvan 与 sardy 两部分拼合而成，a combination of the Persian words（波斯词的组合）是词源说明的标配表达；A definition（定义）后应接释义内容而非两个词根；B transition（过渡）词源构成无过渡可言；C substitution（替代）与两词合璧的事实相反。",
+   "keyword": "combination 组合、合成＝blend；Persian 波斯的；word origin 词源；enclosed building 封闭建筑。",
+   "note": "词源题认准『一词含两词』结构：karvan and sardy 并列出现，只有 combination 能概括；definition 是见到 word 的条件反射式陷阱，本句给的是两个词根而非释义。"
+  },
+  {
+   "question_id": 1236,
+   "long_sentence": "定位句 The term caravan was used to describe groups of people who travelled together across the ancient network for safety reasons。be used to do 被用来做；who 引导定语从句修饰 groups of people；for safety reasons 出于安全考虑。译：caravan 一词被用来描述为了安全而结伴穿行于古代路网的人群。",
+   "option": "正确项 C describe：term（术语）的用途是『描述、指称』某类对象，used to describe groups of people 是给术语下解释的常规句式；A classify（分类）术语此处只是给出称谓，未做类别划分；B record（记录）记录的主语通常是史官或文献，不是术语本身；D connect（连接）术语连接人群搭配不通。",
+   "keyword": "term 术语；describe 描述、指称＝refer to；caravan 商队、旅行队；for safety reasons 出于安全考虑。",
+   "note": "主语 term/word 决定动词：术语只能被用来 describe/refer to，classify 与 record 的动作发出者应是人或文件；本空顺着词源段读完即得，属搭配直觉题。"
+  },
+  {
+   "question_id": 1237,
+   "long_sentence": "定位句 The term caravan was used to describe groups of people who travelled together across the ancient network for safety reasons, such as merchants, travellers or pilgrims。such as 引出同位举例；merchants/travellers/pilgrims 为 groups of people 的下位例子。译：caravan 一词指为安全结伴出行的人群，例如商人、旅人或朝圣者。",
+   "option": "正确项 C such as：空后 merchants, travellers or pilgrims 是前文 groups of people 的三个具体例子，举例必用 such as；A apart from（除…之外）表排除或追加，与举例语境不合；B instead of（而不是）构成对立选择，但三者正是要包括的对象；D along with（连同）表附带追加，也不表举例。",
+   "keyword": "such as 例如＝like（引出同位举例）；merchant 商人；pilgrim 朝圣者；traveller 旅行者。",
+   "note": "举例关系三件套：总称（groups of people）+ such as + 三个并列名词；看到『抽象名词+逗号+具体名词串』直接填 such as；apart from 与 instead of 都会改变句子逻辑方向。"
+  },
+  {
+   "question_id": 1238,
+   "long_sentence": "定位句 From the 10th century onwards, as merchant and travel routes became more developed, the construction of caravanserais increased and they served as a safe place for people to rest at night。as 引导伴随/原因状语从句；from...onwards 自…起；serve as 充当。译：自 10 世纪起，随着商路与旅行路线日益发达，商队驿站的兴建不断增多，成为人们夜间休息的安全场所。",
+   "option": "正确项 A construction：increased 的主体应是驿站的建造量——路线越发达、需求越大、建得越多，construction（建造）与首段 were built 原词呼应；B restoration（修复）修复量增多不合逻辑，此时驿站尚在大量新建期；C impression（印象）无来源无指向；D evaluation（评估）评估增加与 serve as a safe place 无因果。",
+   "keyword": "construction 建造＝building；onwards 自…起；serve as 充当＝function as；rest at night 夜间歇脚。",
+   "note": "increase 的宾语核心要能『增多』：可增多的只有建造量；restoration 是利用后文遗存话题的干扰，时间线上 10 世纪是扩张期而非修缮期；as 从句的『路线发达』给出的是需求侧原因。"
+  },
+  {
+   "question_id": 1239,
+   "long_sentence": "定位句 Travellers on the Silk Road faced the possibility of being attacked by thieves or being subjected to extreme weather conditions。face the possibility of 面临…的可能性；两个 being 过去分词并列作 of 的宾语。译：丝绸之路上的旅人面临被窃贼袭击或暴露于极端天气的可能性。",
+   "option": "正确项 B faced：face the possibility of（面临…的可能性）是固定搭配，劫掠与极端天气是旅人必须直面的风险，也为驿站『一日行程可及』的设计提供动因；A doubted（怀疑）风险客观存在，无从怀疑；C accepted（接受）接受风险与后文设驿站避险的逻辑相抵；D reduced（减少）主语是旅人，旅人不能减少这种可能性本身。",
+   "keyword": "face the possibility of 面临…的可能＝be exposed to the risk of；be attacked by 遭…袭击；thief 窃贼；extreme weather 极端天气。",
+   "note": "因果链验证：本句列出两类风险，下句 For this reason 引出驿站的应对，所以空处必须是『面临风险』；accepted 方向反了——接受风险就不需要驿站，reduced 的动作发出者应是设施而非旅人。"
+  },
+  {
+   "question_id": 1240,
+   "long_sentence": "定位句 Travellers on the Silk Road faced the possibility of being attacked by thieves or being subjected to extreme weather conditions。or 并列两个 being done 结构；be subjected to 遭受、暴露于。译：丝绸之路上的旅人面临被窃贼袭击或遭受极端天气的可能性。",
+   "option": "正确项 B subjected：be subjected to extreme weather conditions（遭受极端天气）是固定被动搭配，与 being attacked by thieves 的『受害』语义并列；A assigned to（被分配到）主语应是被分派任务的人；C accustomed to（习惯于）习惯于极端天气与避险语境矛盾；D opposed to（反对）被动式 be opposed to 意为『反对』，与天气无法构成反对关系。",
+   "keyword": "be subjected to 遭受＝be exposed to；accustomed to 习惯于；be assigned to 被分配给；extreme weather conditions 极端天气。",
+   "note": "平行结构锁词：or 前是 being attacked（受害），or 后必选同向受害义被动搭配，只有 be subjected to；accustomed 与 opposed 都是 to 的熟面孔，方向核对是唯一解法。"
+  },
+  {
+   "question_id": 1241,
+   "long_sentence": "定位句 For this reason, caravanserais were strategically placed so that they could be reached in a day's travel time。For this reason 承接上句风险；so that 引导目的状语从句；strategically 从战略上、经精心选址。译：出于这个原因，商队驿站经过精心选址，以便旅人一天的路程就能到达。",
+   "option": "正确项 A so that：精心选址的目的就是让驿站处于一日脚程之内，so that 引导目的状语从句，从句用 could 表能力目的；B even if（即使）让步关系使选址失去意义；C now that（既然）原因逻辑颠倒；D in case（以防）后应接防范的坏事，与『能被到达』的正面目的不符。",
+   "keyword": "so that 以便（表目的）；strategically 经战略考虑地；in a day's travel time 一日路程内；place 选址。",
+   "note": "目的链补全：上句风险（For this reason）→本句对策（strategically placed）→目的（一日可达），so that 是标准闭环；in case 与 even if 都表示反向预设，会瓦解『为了让人走到』的逻辑。"
+  },
+  {
+   "question_id": 1242,
+   "long_sentence": "定位句 Caravanserais served as an informal meeting point for the various people who travelled the Silk Road。serve as 充当；who 引导定语从句修饰 people；various 各色各样的。译：商队驿站是往来丝路的各色人等的非正式会合点。",
+   "option": "正确项 D meeting：meeting point（会合点）承接 serve as——驿站供各方旅人聚集歇脚，为下句『成为文化交流中心』铺垫；A talking point（话题、论点）指讨论的话题，不能指场所；B starting point（起点）驿站是中途歇脚处而非旅程起点；C breaking point（崩溃点、极限）语义与场景完全不符。",
+   "keyword": "meeting point 会合点＝gathering place；serve as 充当；various people 各色人等；informal 非正式的。",
+   "note": "下句是本空的答案库：紧接着的 As a result 说驿站 became important centres for cultural exchange——能交流的前提是先『会合』；talking/starting/breaking 是 point 的三大常见搭配，逐一代入场景即可排除。"
+  },
+  {
+   "question_id": 1243,
+   "long_sentence": "定位句 Caravanserais served as an informal meeting point for the various people who travelled the Silk Road. As a result, these structures became important centres for cultural exchange and interaction。As a result 承上启下表结果；become 变为。译：商队驿站是丝路各色旅人的非正式会合点；因此，这些建筑成为文化交流与互动的重要中心。",
+   "option": "正确项 D As a result：各方人马在驿站会合（因）→驿站演变为文化交流中心（果），前后是典型的因果关系，As a result 承接顺理成章；A By the way（顺便说）插入无关信息，破坏因果；B On occasion（偶尔）把『成为中心』弱化为偶发事件，与 important 矛盾；C In comparison（相比之下）需两个比较对象，前句不是参照物。",
+   "keyword": "as a result 因此＝consequently；interaction 互动；centre 中心；structure 建筑物。",
+   "note": "逻辑词题找前后句的因果实质：会合（人聚）→交流（文化碰），一因一果必填结果词；By the way 与 In comparison 都是凑数连接词，On occasion 的『偶尔』与 important centres 的分量冲突。"
+  },
+  {
+   "question_id": 1244,
+   "long_sentence": "定位句 As a result, these structures became important centres for cultural exchange and interaction, with travellers sharing their cultures, ideas and beliefs。for cultural exchange and interaction 介词短语修饰 centres；with 复合结构表伴随（with travellers sharing...）。译：因此，这些建筑成为文化交流与互动的重要中心，旅人们在此分享各自的文化、思想与信仰。",
+   "option": "正确项 C exchange：cultural exchange（文化交流）与 interaction（互动）并列，且与后文 sharing their cultures, ideas and beliefs（分享文化、思想、信仰）逐一呼应——有来有往才叫交流；A heritage（遗产）cultural heritage 虽是固定搭配，但遗产是静态传承，与 sharing 的双向互动不合，且 heritage and interaction 不构成并列；B revival（复兴）无复兴语境；D status（地位）与互动并列不通。",
+   "keyword": "cultural exchange 文化交流；interaction 互动＝mutual activity；share 分享；belief 信仰。",
+   "note": "复现词是硬线索：空后 sharing their cultures 就是 exchange 的动作化表述；heritage 是 cultural 的最强惯性搭配陷阱，判断依据是与 and 后 interaction 的并列关系——只有 exchange 能与 interaction 同类。"
+  },
+  {
+   "question_id": 1245,
+   "long_sentence": "定位句 with travellers sharing their cultures, ideas and beliefs, as well as taking knowledge with them。with 复合结构内 sharing... 与 taking... 并列；as well as 连接两个动名词短语，表『既…又…』。译：旅人们在此分享各自的文化、思想与信仰，同时也把知识带走传向远方。",
+   "option": "正确项 C as well as：sharing 与 taking 是旅人在驿站的两个并列动作（既分享又带走），as well as 是连接并列动名词的标准短语；A with regard to（关于）介词短语不能连接两个并列动作；B in spite of（尽管）前后两动作无让步关系，分享与带走并不对立；D in line with（与…一致）语义不合，两动作是并列而非一致关系。",
+   "keyword": "as well as 以及、和（连接并列成分）；take knowledge with them 把知识带走；share 分享；动名词并列。",
+   "note": "并列结构看动作关系：sharing 与 taking 都是 travellers 的输出动作，方向一致无冲突，排除表对立的 in spite of；as well as 后接动名词是语法硬约束，四个选项中只有它能自然衔接 taking。"
+  },
+  {
+   "question_id": 1246,
+   "long_sentence": "定位句 with travellers sharing their cultures, ideas and beliefs, as well as taking knowledge with them, greatly influencing the development of several civilisations。influencing 现在分词作结果状语，逻辑主语是前面的分享与传播行为；greatly 大大地。译：旅人们分享文化、思想与信仰并带走知识，极大地影响了若干文明的发展。",
+   "option": "正确项 B influencing：交流传播的累积结果是影响多个文明的发展进程，influence the development of civilisations 是丝路叙事的收束句式；A completing（完成）文明的发展无法被旅人的行为『完成』；C resuming（恢复）文中没有文明中断再续的语境；D pioneering（开创）greatly pioneering the development 搭配别扭，开创新领域才用 pioneer，发展进程是被影响而非被开创。",
+   "keyword": "influence the development 影响…的发展；civilisation 文明；greatly 极大地；分词作结果状语。",
+   "note": "分词结果状语看因果收束：文化知识双向流动→文明发展受影响，influence 是最稳的因果动词；pioneer 是本组最强干扰，但它需要宾语是『新领域/新方法』，development 只能被 influence。"
+  },
+  {
+   "question_id": 1247,
+   "long_sentence": "定位句 Caravanserais were also an important marketplace for commodities and aided in the trade of goods along the Silk Road。also 承接上段文化交流功能；aid in 在…中提供帮助；marketplace 市场。译：商队驿站也是重要的商品市场，并在丝路货物贸易中发挥了助推作用。",
+   "option": "正确项 A aided：aided in the trade（在贸易中出力）与 an important marketplace 的经济功能一致——驿站为贸易提供场地与便利；B invested（投资）主语是驿站，建筑不能投资于贸易；C failed（失败）与 important marketplace 的正面定性直接矛盾；D competed（竞争）驿站是贸易的载体与受益者，不是与其他主体竞争的参与者。",
+   "keyword": "aid in 在…方面帮助＝facilitate；marketplace 市场；commodity 商品；trade 贸易。",
+   "note": "also 是功能并列信号：上段讲文化功能（正面），本段讲经济功能（正面），动词必须同向正面；failed 方向即反，competed/invested 的主语都应是商人与机构而非驿站建筑。"
+  },
+  {
+   "question_id": 1248,
+   "long_sentence": "定位句 Indeed, it was frequently the first stop for merchants looking to sell their wares and stock up on supplies for their own journeys。Indeed 承接上句表强调递进；looking to do 现在分词作后置定语；first stop 第一站。译：事实上，对想出售货物并为自己的旅程补给物资的商人来说，驿站常常是他们抵达后的第一站。",
+   "option": "正确项 B Indeed：上句说驿站助益贸易，本句用『商人的第一站』这一事实强化前述论断，Indeed 表强调确认，语势递进；A Rather（相反）前后无对立；C Otherwise（否则）表条件假设，与陈述事实不符；D However（然而）转折无根据，两句都肯定驿站的经济作用。",
+   "keyword": "indeed 事实上、确实；wares 货物＝goods；first stop 第一站；stock up on 囤积、备足。",
+   "note": "强调词Indeed 常跟在总起判断后：aided in trade（总）→first stop for merchants（分，具体证据）；判断顺逆只需看两句是否同向，本组四句都无转折触发词。"
+  },
+  {
+   "question_id": 1249,
+   "long_sentence": "定位句 it was frequently the first stop for merchants looking to sell their wares and stock up on supplies for their own journeys。looking to sell... and (to) stock up on... 两个不定式并列；stock up on 囤积、备足；supplies 补给品。译：对想出售货物并为自己接下来的旅程备足补给的商人来说，驿站常常是第一站。",
+   "option": "正确项 D stock up on：sell their wares（卖掉货物）与 stock up on supplies（备足补给）是商人在驿站的一卖一买，正好构成交易闭环，与 first stop 的补给站定位吻合；A go in for（从事、爱好）从事物资搭配不通；B stand up for（捍卫）捍卫 supplies 语义荒谬；C close in on（逼近、包围）与采购场景无关。",
+   "keyword": "stock up on 囤积＝lay in supplies；wares 商品、货物；supplies 补给品；first stop 第一站。",
+   "note": "动词短语题靠买卖逻辑：卖 wares 与买 supplies 一卖一购对仗，stock up on supplies 是地道搭配；三个干扰短语都是高频习语，逐一代入『商人在驿站做什么』即可排空。"
+  },
+  {
+   "question_id": 1250,
+   "long_sentence": "定位句 It is believed that around 12,000 to 15,000 caravanserais were built along the Silk Road, only about 3,000 are known to remain today, many of which are in ruins。It is believed that 据信、人们认为；around 大约；only about 3,000 are known to remain 与 believed 并列为惯用被动表达。译：据信丝绸之路沿线约修建了 12000 到 15000 座商队驿站，如今已知仅存约 3000 座，其中许多已成废墟。",
+   "option": "正确项 A believed：It is believed that（据信）用于陈述无法精确统计但被普遍接受的历史数字，12,000 到 15,000 的约数正是此类表述；B predicted（预测）数量是对既成历史的统计而非对未来的推测；C recalled（回忆）主语是 it（无人称），回忆需要具体的回忆者；D implied（暗示）被暗示的应是未明说的含义，此处数字是明说的事实。",
+   "keyword": "It is believed that 据信＝It is estimated that；remain 存留；ruins 废墟；around 大约。",
+   "note": "It is + 过去分词的无人称句型：历史约数配 believed/estimated，未来数字配 predicted；本句数字带 around 且描述已建成的事实，predicted 的时态方向即错。"
+  }
+ ]
+}

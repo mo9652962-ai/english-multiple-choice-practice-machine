@@ -14,29 +14,13 @@ import sys
 
 DB = r"D:\english-multiple-choice-practice-machine\backend\data\question_bank.db"
 CONTENT_DIR = r"D:\english-multiple-choice-practice-machine\scripts\explain_gen\content"
-PATCHES_DB = r"D:\english-multiple-choice-practice-machine\scripts\explain_gen\data\patches.db"
 FRAG_KEYS = ("long_sentence", "option", "keyword", "note")
 NAME_RE = re.compile(r"chunk_[0-9]{3}\.json")
-
-
-def load_patches() -> dict:
-    """读取补丁表 {question_id: {field: value}}，对内容做字段级覆盖（数据层纠偏）。"""
-    if not os.path.exists(PATCHES_DB):
-        return {}
-    conn = sqlite3.connect(PATCHES_DB)
-    out = {}
-    for qid, field, value in conn.execute("SELECT question_id, field, value FROM patches"):
-        out.setdefault(int(qid), {})[field] = value
-    conn.close()
-    return out
 
 
 def main() -> None:
     batches = [int(a) for a in sys.argv[1:]] or [1, 2, 3, 4, 5]
     conn = sqlite3.connect(DB)
-    patches = load_patches()
-    if patches:
-        print("patches loaded: %d questions" % len(patches))
     existing = {
         (qid, ft)
         for qid, ft in conn.execute("SELECT question_id, fragment_type FROM explain_collections")
@@ -68,8 +52,6 @@ def main() -> None:
                 except (KeyError, TypeError, ValueError):
                     problems.append("%s: 非法 question_id %r" % (fn, it.get("question_id")))
                     continue
-                if qid in patches:
-                    it.update(patches[qid])
                 for ft in FRAG_KEYS:
                     c = str(it.get(ft) or "").strip()
                     if not c:

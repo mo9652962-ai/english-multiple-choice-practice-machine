@@ -1,0 +1,180 @@
+{
+ "chunk": 43,
+ "items": [
+  {
+   "question_id": 1051,
+   "long_sentence": "主干 The State, War, and Navy Building housed the three Executive Branch Departments；as it was originally known 为插入语「以其原名为人所知」；most intimately associated with... 为形容词短语作后置定语修饰 Departments。译：这座大楼原名「国务院、战争部与海军部大楼」，容纳着与制定和执行国家外交政策关系最密切的三个行政部门。",
+   "option": "答案 B 段：位置 44 夹在已给 F 段（建造与内部细节）与已给 C 段（名人事件）之间；B 段以原名与 housed 三大部门承接「建成后功能」，其末句 has housed...diplomats and politicians...scene of many historic events 与 C 段首句 Many of the most celebrated national figures...historical events 构成 housed、events 的词汇复现；与 A 段区分——A 的分翼启用细节已用于 43 位。",
+   "keyword": "house（动词）容纳、安放；executive branch 行政部门；be the scene of 是…的发生地；intimately associated with 与…密切关联。",
+   "note": "双向衔接定位置：B 段一头接 F（建造完毕→转为功能介绍），一头用末句 housed diplomats...historic events 勾连 C 段名人事件——排序题选中段时先看段尾复现词；house 在 B 段两次以动词出现，识别其「容纳」义可快速把握段落功能。"
+  },
+  {
+   "question_id": 1052,
+   "long_sentence": "becoming president. It has housed 16 Secretaries of the Navy, 21 Secretaries of War, and 24 Secretaries of State：becoming president 为动名词短语，与前段末尾悬空的介词 before 拼合；三个数字短语并列作 has housed 的宾语。译：（他们都曾在此楼办公）之后才成为总统。此楼先后容纳过 16 位海军部长、21 位战争部长与 24 位国务卿。",
+   "option": "答案 D 段：位置 45，C 段末句 all had offices in this building before 的 before 是悬空介词，D 段开头 becoming president 在语法上直接补全 before becoming president（在当上总统之前），是最强的跨段句法衔接；段内 It has housed 16 Secretaries... 继续并列列举要人，与 C 段的名人话题同流；与 E 段区分——E 是总起段已用于 41 位。",
+   "keyword": "before doing 在做某事之前；secretary 部长（熟词僻义，非秘书）；emissary 使者；dangling preposition 悬空介词。",
+   "note": "跨段句法缝合是排序题杀招：以小写动名词（becoming president）开头的段落，优先找上段末尾的悬空介词或连词——before becoming president 一气呵成；注意 secretary 在此指「部长」而非「秘书」，两义同源勿混淆。"
+  },
+  {
+   "question_id": 1053,
+   "long_sentence": "Today we live in a world where GPS systems, digital maps, and other navigation apps are available on our smartphones：where 定语从句修饰 world；are available on 表「在…上可随时取用」。译：今天我们生活在 GPS、数字地图等导航应用随时可用的世界里，我们中几乎没有人会不带手机径直走进树林。",
+   "option": "正确项 C Few：前句「导航工具唾手可得」推出现实是「几乎无人」不带手机进林，Few of us（否定义量词）成立，并使下句 But phones run on batteries 的转折顺理成章——正因人人依赖手机，没电的风险才值得警示；A Some 与 B Most 程度上与「工具普及」的现实不符，且削弱 But 转折；D All 说「所有人都不带手机进林」，与前句直接矛盾。",
+   "keyword": "few of us 我们中几乎没有人（含否定）；available 可获得的；walk straight into 径直走进；battery 电池。",
+   "note": "few 是四选项中唯一带否定色彩的量词，对应「工具可得→无人裸行」的推论；转折词 But 后讲「手机会没电」，说明前句必须肯定「人人在用手机」——Few of us...without a phone 是双重否定的正面表述，语义方向别读反。"
+  },
+  {
+   "question_id": 1054,
+   "long_sentence": "But phones run on batteries, and batteries can die faster than we realize：run on 表「靠…驱动运行」；die 此处指「（电池）耗尽电量」；faster than we realize 为比较级从句。译：但手机靠电池运转，而电池耗电之快超乎我们的预料。",
+   "option": "正确项 C run：run on batteries 是固定搭配（以电池为动力运行）；A put on 意为「穿上、上映」，无动力义；B take on 表「承担、呈现」，不接能源；D come on 表「开始、上演」，均与「靠电池供电」无关。",
+   "keyword": "run on 靠…运行/供电；die（电池）耗尽＝run out；faster than we realize 比想象中快；power source 动力来源。",
+   "note": "动词短语题用「介词搭配＋语义」双验证：四个动词都能接 on，但只有 run on 表「以…为能源」；die 的熟词僻义「电池没电」是下句 batteries can die 的直接铺垫，积累此类拟物用法有助快速理解。"
+  },
+  {
+   "question_id": 1055,
+   "long_sentence": "If you get lost without a phone or a compass, and you literally can't find north, we have a few tricks to help you navigate back to civilization：if 引导条件状语从句，从句内 and 连接两个并列分句；主句 we have a few tricks to help you...。译：如果你在没有手机和指南针的情况下迷了路，而且确实完全找不到北，我们有一些技巧帮你导航回到文明世界。",
+   "option": "正确项 B If：从句「迷路且无法辨向」与主句「这里有几个技巧」是条件与应对的关系；A Since 表「既然」，用于既成事实的因果，而「你迷路」是假设情境；C Though 表让步，两句无对立；D Until 表时间持续，主句无相应结构。",
+   "keyword": "get lost 迷路＝lose one's way；compass 指南针；trick 技巧、窍门；conditional 条件关系。",
+   "note": "分清「既成事实」与「假设条件」：手机没电是事实（可用 since），但「你此刻迷路」是文章设定的假想场景——攻略型文章的 if 从句都引虚拟情境，主句给出应对方案，这是户外指南的典型句式。"
+  },
+  {
+   "question_id": 1056,
+   "long_sentence": "you literally can't find north：literally 为强调副词，表「确实、真真切切地」；find north 指辨认北方。译：而且你真的完全找不到北。",
+   "option": "正确项 D literally：与 can't 的绝对否定搭配，强化「彻底失去方向」的极端情境，呼应 without a phone or a compass 的双无设定；A formally 表「正式地」，与迷路场景无关；B relatively 表「相对地」，与 can't 的绝对性矛盾；C gradually 表「逐渐地」，渐变副词不能修饰峰值否定 can't。",
+   "keyword": "literally 字面上→确实（强调副词）；find north 辨认北方；absolute negation 绝对否定；emphasis 强调。",
+   "note": "副词与否定词的兼容性是解题点：can't 是峰值否定，只能配 literally 这类纯强调词；gradually/relatively 的渐变义与绝对否定相斥——「渐变词不搭峰值否定」是副词题的通用排除逻辑。"
+  },
+  {
+   "question_id": 1057,
+   "long_sentence": "we have a few tricks to help you navigate back to civilization, one of which is to follow the land：to help you navigate... 不定式作目的；one of which 引导非限制性定语从句指代 tricks。译：我们有一些技巧帮你导航回到文明世界，其中之一是顺着地势走。",
+   "option": "正确项 A back：迷路者要从荒野返回人类聚居地，navigate back to civilization 表「回到」，与 get lost 的原点回溯方向一致；B next 只能构成 next to（紧邻），navigate next to 不成搭配；C around 表「四处」，缺少「抵达目的地」义；D away 表「远离」，与自救目标相反。",
+   "keyword": "navigate back 返回；civilization 文明世界（喻人类聚居区）；follow the land 顺着地势走；direction 方向副词。",
+   "note": "方向副词由任务目标决定：全文主题是「找回人类世界」，back 正向呼应 get lost 的回程；away 是反向陷阱——away from civilization 会变成越走越荒，与尾段 lead you to civilization 的方向校验一致。"
+  },
+  {
+   "question_id": 1058,
+   "long_sentence": "When you find yourself well off a trail, but not in a completely unfamiliar area, you have to answer two questions：well off 表「远远离开」；but not 引出让步转折；you have to answer two questions 领起下文两个疑问句。译：当你发现自己已远离小径、但还不至于身处完全陌生的地方时，你必须回答两个问题。",
+   "option": "正确项 B off：off a trail 表「离开步道」——迷路的第一步是偏离道路，well 作程度副词加强「远」；A onto 表「登上」，方向相反（是要偏离而非踏上）；C across 表「横穿」，与 well 连用构不成「远离」义；D alone 是形容词或副词，不能直接接名词短语作方位补语。",
+   "keyword": "off the trail 离开步道；well（副词）远远地、大大地；trail 小径＝path；on/off 方向反义对。",
+   "note": "well off a trail 的 well 是程度强调（同款有 well above、well beyond）；迷路语境锁定 off——on the trail 是「在道上」，off 才是「脱道」；D alone 的干扰在拼写联想，但 alone 无介词功能，语法上先被排除。"
+  },
+  {
+   "question_id": 1059,
+   "long_sentence": "When you find yourself well off a trail, but not in a completely unfamiliar area：but not 表让步转折；completely 修饰 unfamiliar，表「完全陌生」。译：当你发现自己远离步道、但并非身处完全陌生的区域时……",
+   "option": "正确项 D unfamiliar：but not 前后对照——「离开小径」但「并非完全陌生」，与下文 If you've explored the area before（你若曾探过此地）、识别 distinctive rock or tree 的情节呼应；A unattractive 「不吸引人」与寻路主题无关；B uncrowded 「不拥挤」——野外本就不拥挤，不构成「但」的转折落点；C unchanged 「无变化」无语境支撑。",
+   "keyword": "unfamiliar 陌生的（un- 否定前缀）；completely 完全地；explore 探索；familiar 熟悉的（反义复现）。",
+   "note": "but not in a completely X area 的 X 须兼容「仍认得出些东西」的中间态——unfamiliar 正因后文「认出岩石即恢复方向感」而成立；否定前缀词的判断线索在文内：explored before 就是 familiar 的事实依据。"
+  },
+  {
+   "question_id": 1060,
+   "long_sentence": "Which way is downhill, in this particular area?：which way 表「哪个方向」；in this particular area 限定提问范围；downhill 为方位副词兼名词。译：在这片特定区域里，哪个方向是下坡？",
+   "option": "正确项 C way：which way 是问方向的固定表达，与 downhill（下坡方向）和下文 head downhill（朝下坡走）直接衔接；A site 与 B place 指「地点」，下坡是方向不是某个地点，语义错位；D point 多指抽象论点或具体点位，此处不如 way 贴切。",
+   "keyword": "which way 哪个方向；downhill 下坡；head downhill 朝下坡走；particular 特定的。",
+   "note": "问方向用 which way、问地点才用 which place/site——way 能被 head 执行（head downhill），是可行动的方向词；下坡策略与「人类聚谷地、近水而居」的常识直接挂钩，方向词选错会断掉策略链。"
+  },
+  {
+   "question_id": 1061,
+   "long_sentence": "Humans overwhelmingly live in valleys, and on supplies of fresh water. So, if you head downhill, and follow any H2O you find, you should eventually see signs of people：So 承接前句事实推出策略；if 从句内 head downhill 与 follow any H2O 并列。译：人类绝大多数住在山谷、依靠淡水生活。因此，只要朝下坡走、并沿着找到的任何水源，你最终会看到人的踪迹。",
+   "option": "正确项 A So：前句「人类聚居于谷地与水源」是常识前提，本句「向下坡走就能遇人」是据此推出的策略，so 表因果承接；B Yet 表转折，两句无对立；C Instead 表替代，无替代关系；D Besides 表递进补充，此处是推论而非叠加论据。",
+   "keyword": "so 因此；overwhelmingly 绝大多数地＝the vast majority；head for 朝…去；fresh water 淡水。",
+   "note": "「常识→策略」的因果链用 So：地理事实（人住谷地近水）推出行动建议（下坡找水）；看到前句陈述常识、后句接条件句与建议，八成选 So/Thus 类推论词——Yet 的干扰来自「迷路之荒」与「人烟之盛」的情绪反差。"
+  },
+  {
+   "question_id": 1062,
+   "long_sentence": "if you head downhill, and follow any H2O you find, you should eventually see signs of people：should 表推断「应该会」；eventually 表「最终、终于」；signs of people 指人类活动的迹象。译：只要朝下坡走、沿着找到的水源，你最终应该会看到人的踪迹。",
+   "option": "正确项 D eventually：荒野寻路是渐进过程，「最终」见到人烟符合逻辑，与 So 引出的策略结论匹配；A immediately 「立即」绝对化，走下坡不可能立刻见人；B intentionally 「故意地」修饰 see 逻辑不通；C unexpectedly 「意外地」与策略的可靠性相反——策略的意义正在于可预期。",
+   "keyword": "eventually 最终＝in the end；signs of people 人的踪迹；should（推断）应该会；H2O 水（戏称）。",
+   "note": "过程性策略配过程性副词：head downhill→follow H2O→eventually see 构成时间递进链；immediately 与 eventually 是「速达／终达」的经典对立，寻路、学习等渐进主题的完形几乎总选后者。"
+  },
+  {
+   "question_id": 1063,
+   "long_sentence": "you may be surprised how quickly identifying a distinctive rock or tree can restore your bearings：how 引导宾语从句（be surprised 后接 how 感叹式从句）；identifying... 动名词短语作从句主语；distinctive 意为「独特的、易辨认的」。译：你可能会惊讶：认出一块特别的岩石或一棵特别的树，竟能如此迅速地帮你恢复方向感。",
+   "option": "正确项 A surprised：认出熟悉地标、迅速找回方向感是「效果好得出乎意料」的正向心理反应；B annoyed 「恼火」与正向结果相反；C frightened 「害怕」——恢复方向感应缓解恐惧而非加剧；D confused 「困惑」与 restore your bearings（恢复方向感）方向相反。",
+   "keyword": "be surprised (how...) 对…感到惊讶；distinctive 独特的、易辨认的；restore one's bearings 恢复方向感；bearings（复数）方位感。",
+   "note": "情感形容词由事件性质决定：认出地标→找回方向是好消息，选 surprised 表「惊喜」；bearings 须记复数用法——know/get one's bearings 是「辨明方位」的固定搭配，单数 bearing 则指「轴承、方位角」。"
+  },
+  {
+   "question_id": 1064,
+   "long_sentence": "Another option: Climb high and look for signs of human habitation：冒号后以两个并列祈使句给出该选项的具体做法；human habitation 指人类居住的迹象。译：另一个办法：登高眺望，寻找人类居住的迹象。",
+   "option": "正确项 B option：前文已给「顺地势找水」一策，此处 Another option 呼应首段 we have a few tricks 的「多技巧」清单结构；A problem 「问题」——登高是应对手段不是问题本身；C view 「观点」与祈使句的做法内容不合；D result 「结果」——冒号后是行动指令而非结果。",
+   "keyword": "option 选项、办法＝trick；habitation 居住；climb high 登高；another（提示策略并列）。",
+   "note": "Another＋单数名词是「策略清单」的标志：首段 a few tricks 预告多方案，follow the land 一策、climb high 一策、末段 marks 一策——Another option 与 tricks 构成上下义复现，是衔接题的骨架信号。"
+  },
+  {
+   "question_id": 1065,
+   "long_sentence": "even in dense forest, you should be able to spot gaps in the tree line due to roads, train tracks, and other paths people carve through the woods：even 表让步强调；due to 表原因；people carve through the woods 为省略 that 的定语从句。译：例如，即使在密林中，你也应该能发现林线上因道路、铁轨以及人们穿林开辟的小径而形成的缺口。",
+   "option": "正确项 D For example：上句指令是「登高寻找人类居住迹象」，本句给出具体可寻的对象（林线缺口、道路、铁轨）——以实例说明；A Above all 表「首要」，此处无排序列举；B In contrast 表对比，两句无对立；C On average 表平均，无数据语境。",
+   "keyword": "for example 例如；dense forest 密林；tree line 林线；carve 开辟、开凿（熟词僻义）。",
+   "note": "抽象指令后接具体实例是 For example 的典型位置：look for signs of habitation（抽象）→roads, train tracks, gaps（具体）；due to＋名词列表也是「实例清单」的识别信号——列举逻辑词题先判断前后是「总-分」还是「转-折」。"
+  },
+  {
+   "question_id": 1066,
+   "long_sentence": "you should be able to spot gaps in the tree line due to roads, train tracks, and other paths：be able to 表能力；spot 此处为动词「发现、看出」。译：你应该能够发现林线上那些由道路、铁轨等造成的缺口。",
+   "option": "正确项 C spot：spot＝notice/make out「（从远处或众多事物中）识别出」，与登高远眺找林线缺口的观察行为吻合；A bridge 作动词「弥合、架桥」——bridge gaps 在经贸语境指弥合分歧，此处是物理豁口要「发现」而非「填补」；B avoid 「避开」——任务是朝缺口走以出林，不是躲开；D separate 「分开」与语境无关。",
+   "keyword": "spot 发现、认出＝make out；gap 缺口、豁口＝opening；bridge（熟词僻义）弥合；observe 观察。",
+   "note": "spot 作动词「看出」是考研高频考点；A bridge 的陷阱来自搭配惯性——bridge gaps 在抽象语境常见，但本文 gaps 是林中物理豁口，动作方向（发现而非弥合）与宾语性质共同决定选 spot。"
+  },
+  {
+   "question_id": 1067,
+   "long_sentence": "other paths people carve through the woods：people carve... 为省略 that 的定语从句修饰 paths；carve through 表「开辟、穿过」。译：还有人们开辟出的穿越树林的小径。",
+   "option": "正确项 B through：carve through the woods 表「在林中开辟通道」，through 表从物体内部穿过（三维纵深）；A carve from 表「从…（原料）刻出」，与 woods 不搭；C beyond 表「越过界外」，不能作 carve 的路径补语；D under 表「在…下方」，小径不在树林之下。",
+   "keyword": "carve through 开辟穿过；carve 开凿、雕刻；through（内部穿过）与 across（表面越过）辨析；path 小径＝trail。",
+   "note": "carve 的形象义是「刻」——路径「刻」在树林内部，故用 through；through 与 across 的区分：through 强调纵穿立体空间（forest/tunnel/crowd），across 表横越表面（field/river/street），此辨析为考研高频。"
+  },
+  {
+   "question_id": 1068,
+   "long_sentence": "Head toward these breaks to find a way out：head toward 表「朝…行进」；these breaks 复指上句的 gaps in the tree line；to find a way out 为目的状语。译：朝这些林线缺口走去，就能找到出路。",
+   "option": "正确项 D breaks：these breaks 直接回收上句的 gaps in the tree line——break 与 gap 同义（豁口），属指代复现；A posts 「柱、标杆」在前文无指代对象；B links 「联系、链接」与林线缺口的具象不符；C shades 「荫、色度」与找路无关。",
+   "keyword": "break 豁口＝gap；head toward 朝…走；way out 出路；anaphoric reference 指代复现。",
+   "note": "these＋名词是完形高频指代题：先回上文找同义复现——gaps 与 breaks 的同义替换是唯一线索；posts/links/shades 都是孤立名词，无法被 these 精准回收，指代完整性是选词第一判据。"
+  },
+  {
+   "question_id": 1069,
+   "long_sentence": "At night, scan the horizon for artificial light sources, such as fires and streetlights, then walk toward the glow of light pollution：scan the horizon 表「扫视地平线」；such as fires and streetlights 举例说明；light pollution 光污染。译：夜间，扫视地平线寻找人造光源——例如篝火和路灯——然后朝着光污染的光晕走去。",
+   "option": "正确项 A artificial：fires（篝火）与 streetlights（路灯）都是「人造光源」，artificial（人工的）一词统摄两例；B mysterious 「神秘的」与举例中平常的光源不符；C hidden 「隐藏的」——光源是要远眺发现的显性目标；D limited 「有限的」与语境无关。",
+   "keyword": "artificial 人造的（反义 natural）；scan the horizon 扫视地平线；streetlight 路灯；glow 光晕、微光。",
+   "note": "such as 后的例子反推空格属性词：fires/streetlights 的共同点是 man-made，artificial 收拢两例；自然光（月光星光）无法指向人类聚居地——「光源属性与人烟挂钩」是本题的设计核心，属性词题先看例子找共性。"
+  },
+  {
+   "question_id": 1070,
+   "long_sentence": "Finally, assuming you're lost in an area humans tend to frequent, look for the marks we leave on the landscape：assuming（that）表「假若」；humans tend to frequent 中 frequent 为动词「常去」；we leave on the landscape 为省略 that 的定语从句。译：最后，假若你迷路之处是人类常到之地，就寻找我们在大地上留下的痕迹。",
+   "option": "正确项 A Finally：全文技巧清单的收尾——follow the land（第一策）、climb high（第二策）、找 marks（末策），Finally 呼应首段 a few tricks 的列举终点；B Consequently 表因果总结，此处是新技巧而非推论；C Incidentally 「顺便一提」的插叙语气不合；D Generally 表概括，与列举收尾的功能相反。",
+   "keyword": "finally 最后；assuming 假若＝supposing；frequent（动词）常去（熟词僻义）；landscape 地貌、大地。",
+   "note": "策略列举的三段式信号：one of which is（首策）→Another option（次策）→Finally（末策）——衔接词的「清单骨架」是完形语篇题的通用解法；frequent 在此是动词「常去」，与形容词「频繁的」同形异用。"
+  },
+  {
+   "question_id": 1071,
+   "long_sentence": "look for the marks we leave on the landscape：we leave on the landscape 为省略 that 的定语从句修饰 marks；on the landscape 表「在大地上」。译：寻找我们在大地上留下的痕迹。",
+   "option": "正确项 B marks：下句 Trail blazes（路标刻痕）、tire tracks（车辙）、and other features 都是人类留下的「痕迹」，marks 统领这些例证；A memories 「记忆」——记忆无法留在 landscape 上；C notes 「笔记、便条」是纸面具体物，与地表痕迹不合；D belongings 「随身物品」——物品可遗落，但下文列举全是地表痕迹而非物品。",
+   "keyword": "marks 痕迹＝traces；trail blaze 路标刻痕；tire track 车辙；landscape 大地、地貌。",
+   "note": "下文列举定义空格词：blazes、tracks 都是「地表痕迹」而非「物品」——marks 与 other features 构成上下义复现；belongings 的干扰在「迷路者可能捡到物品」的常识联想，但原文限定 we leave on the landscape，宾语的属性由例证决定。"
+  },
+  {
+   "question_id": 1072,
+   "long_sentence": "Trail blazes, tire tracks, and other features can lead you to civilization：lead sb to 表「把某人引到」；主语为三个并列名词短语。译：路标刻痕、车辙以及其他特征都能把你引向文明世界。",
+   "option": "正确项 C lead：lead you to civilization「引向人类世界」，与首段 navigate back to civilization 首尾呼应；A restrict 「限制」与自救目的相反；B adopt 「采用」的宾语应是方法、态度而非 you；D expose 常构成 expose sb to（使某人暴露于），多接 danger/risk 类宾语，且语义不合。",
+   "keyword": "lead sb to 把某人引向；civilization 文明世界（与首段复现）；trail blaze 路标刻痕；expose sb to 使某人暴露于。",
+   "note": "完形尾空常回收首段主题词组：navigate back to civilization 与 lead you to civilization 首尾呼应；lead 与 expose 都能构成「动词＋人＋to＋名词」，辨析点是方向与感情色彩——引向好去处用 lead，置于险境才用 expose。"
+  },
+  {
+   "question_id": 1073,
+   "long_sentence": "The main purpose of this clawback rule is to hold bankers accountable for harmful risk-taking and to restore public trust in financial institutions：主干 purpose is to A and to B（两个不定式并列）；hold sb accountable for 使某人对…负责。译：这项「追回」规则的主要目的，是让银行家为有害的高风险行为承担责任，并恢复公众对金融机构的信任。",
+   "option": "正确项 A：hold bankers accountable for（让银行家担责）＝enhance bankers' sense of responsibility（增强责任感），同义改写；B「帮助企业获得更大利润」偷换概念——more long-term decisionmaking 是决策方式而非利润；C「建立新的金融监管体系」以偏概全，一条 rule 不成体系；D「保障高管奖金」正反混淆——规则恰是延迟并追回奖金。",
+   "keyword": "clawback 追回（条款）；hold sb accountable for 使某人对…负责；wrongdoing 不当行为；restore trust 恢复信任。",
+   "note": "题干 motive 对应原文 purpose：to hold sb accountable 的改写即「增强责任感」；D 是强干扰——clawback 的操作对象正是 bonus，但方向是「延迟追回」而非「保证」，动词方向相反即正反混淆。"
+  },
+  {
+   "question_id": 1074,
+   "long_sentence": "主干 He quotes a giant of classical economics, Alfred Marshall；in describing...as acting like children... 为方式状语，describe A as B 把 A 描述为 B；who 定语从句修饰 children；rather than 对举两种做法。译：他引用古典经济学巨擘马歇尔的话，把这种金融上的急不可耐比作孩子把布丁里的李子挑出来立刻吃掉，而不是留到最后享用。",
+   "option": "正确项 D：引语服务于其前主题句 short-termism or the desire for quick profits has worsened——「挑李子马上吃」正是经济活动中短期主义的形象化；A「快利润的生成条件」无中生有，比喻谈的是急于兑现而非获利条件；B「政府决策的不耐心」张冠李戴，主语是上市公司；C「上市公司的坚实结构」正反混淆，has worsened 表明正被侵蚀。",
+   "keyword": "quote 引用；short-termism 短期主义；financial impatience 金融急躁；at once 立刻＝immediately。",
+   "note": "引用目的题看引语前的主题句：观点（short-termism...has worsened）在前、比喻在后——问引语作用答观点而非比喻细节；plums 的「先挑先吃」与投资的「先赚先兑现」构成类比映射，读懂映射即可秒选。"
+  },
+  {
+   "question_id": 1075,
+   "long_sentence": "Transient investors, who demand high quarterly profits from companies, can hinder a firm's efforts to invest in long-term research or to build up customer loyalty：who 引导非限制性定语从句修饰 investors；hinder 为及物动词「阻碍」；or 并列两个 efforts 短语。译：向公司索要高额季度利润的短线投资者，会阻碍公司投资长期研发或积累客户忠诚度的努力。",
+   "option": "正确项 B：hinder（阻碍）表明短线投资的影响是不利的，adverse（不利的）＝hinder efforts 的同义概括；A「间接的」无中生有——hinder 是直接影响；C「极小的」与 can hinder 的肯定语气相反；D「暂时的」张冠李戴——transient 修饰的是 investors（短线投资者），不是影响本身。",
+   "keyword": "transient 短暂的＝short-lived；hinder 阻碍＝impede；quarterly profits 季度利润；customer loyalty 客户忠诚度。",
+   "note": "形容词归属要盯定语：transient 修饰 investors 而非 influence，D 的张冠李戴源于定语错位；hinder 的贬义方向直接决定 adverse——「影响类」题目先判原文褒贬再选词，与 hinder 同向的只有 adverse。"
+  }
+ ]
+}

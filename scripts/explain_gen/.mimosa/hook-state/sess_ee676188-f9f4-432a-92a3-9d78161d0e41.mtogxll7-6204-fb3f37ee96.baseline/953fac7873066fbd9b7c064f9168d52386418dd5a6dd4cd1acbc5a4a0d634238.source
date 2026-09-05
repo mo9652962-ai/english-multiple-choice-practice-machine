@@ -23,7 +23,7 @@ def load_expected() -> dict:
     return out
 
 
-def check_file(path: str, chunk_no: int, expect_ids: list, problems: list, patches: dict) -> None:
+def check_file(path: str, chunk_no: int, expect_ids: list, problems: list) -> None:
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
@@ -46,8 +46,6 @@ def check_file(path: str, chunk_no: int, expect_ids: list, problems: list, patch
         problems.append("chunk %03d: 有重复 question_id" % chunk_no)
     for it in items:
         qid = it["question_id"]
-        if qid in patches:
-            it = {**it, **patches[qid]}
         for k in FRAG_KEYS:
             v = it.get(k)
             if not isinstance(v, str) or not v.strip():
@@ -60,22 +58,9 @@ def check_file(path: str, chunk_no: int, expect_ids: list, problems: list, patch
                 problems.append("chunk %03d q%d: %s 太长(%d字) %r" % (chunk_no, qid, k, n, v.strip()[:40]))
 
 
-def load_patches() -> dict:
-    pdb = os.path.join(BASE, "data", "patches.db")
-    if not os.path.exists(pdb):
-        return {}
-    conn = sqlite3.connect(pdb)
-    out = {}
-    for qid, field, value in conn.execute("SELECT question_id, field, value FROM patches"):
-        out.setdefault(int(qid), {})[field] = value
-    conn.close()
-    return out
-
-
 def main() -> None:
     batches = [int(a) for a in sys.argv[1:]] or [1, 2, 3, 4, 5]
     expected = load_expected()
-    patches = load_patches()
     problems = []
     done = 0
     for b in batches:
@@ -95,7 +80,7 @@ def main() -> None:
                 problems.append("chunk %03d: 放在 batch%d 目录但应属 batch%d" % (chunk_no, b, (chunk_no - 1) // 20 + 1))
             done += 1
             before = len(problems)
-            check_file(os.path.join(bdir, fn), chunk_no, expected[chunk_no], problems, patches)
+            check_file(os.path.join(bdir, fn), chunk_no, expected[chunk_no], problems)
             print("batch%d chunk %03d: %s" % (b, chunk_no, "OK" if len(problems) == before else "FAIL"))
     print("\nscanned content files = %d" % done)
     if problems:

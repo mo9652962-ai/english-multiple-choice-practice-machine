@@ -1,0 +1,180 @@
+{
+ "chunk": 41,
+ "items": [
+  {
+   "question_id": 1001,
+   "long_sentence": "定位句 This type of integrity requires well-enforced laws in government transparency：主干 This type of integrity requires laws；well-enforced 复合形容词作定语；such as 后接 records、rules、information 三个并列名词举例。译：这种正直需要政府透明方面执行有力的法律，例如官方会议记录、游说规则以及每位民选领袖财富来源的信息。",
+   "option": "正确项 B：guarantee fair play in official access 来自前句 Officials must not be allowed to play favorites in providing information or in arranging meetings——禁止偏袒反推出法律目的是保证官方接洽的公平；A「唤醒官员良知」无中生有；C「允许某些游说」偷换概念，rules on lobbying 是规范而非允许；D「激发普通人希望」无中生有。",
+   "keyword": "well-enforced 执行有力的；transparency 透明；play favorites 偏袒、徇私；fair play 公平处置、公平竞争。",
+   "note": "本题的「目的」藏在「禁止句」的反面：play favorites（偏袒）的否定即 fair play；integrity 在此指制度性操守而非个人品德，看到 conscience、hopes 这类道德感、情感词可直接排除。"
+  },
+  {
+   "question_id": 1002,
+   "long_sentence": "末段主干 The court's ruling is a step forward in the struggle against both corruption and official favoritism：a step forward 比喻「向前一步」，both...and 并列两个斗争对象；is 与表语构成主系表判断句。译：法院的这项裁决在与腐败和官方偏袒的双重斗争中都是向前迈进的一步。",
+   "option": "正确项 D：作者两次正面评价——ruling is legally sound（法律上站得住）与 a step forward（进步之举），属于支持；But the ruling reinforces the need... 只是补充法院之外的责任主体，不是否定裁决；A「讽刺」与 B「容忍」全文无语气对应；C「怀疑」错把 But 后的补充建议当成对裁决本身的质疑。",
+   "keyword": "supportive 支持的；legally sound 法律上站得住脚的；a step forward 一步进展；skeptical 怀疑的、将信将疑的。",
+   "note": "态度题抓形容词与末段落点：sound、step forward 是正评价铁证；区分「批评裁决」与「指出裁决未覆盖之处」——后者不构成 skeptical，这是 But 转折句在态度题里的经典陷阱。"
+  },
+  {
+   "question_id": 1003,
+   "long_sentence": "F 段首句 Dickens was born in Portsmouth, on England's southern coast：主干 Dickens was born in Portsmouth；on England's southern coast 为地点状语。另有 The family's increasing poverty forced Dickens out of school at age 12 to work in Warren's Blacking Warehouse。译：狄更斯出生于英格兰南部海岸的朴次茅斯。家庭日益贫困迫使狄更斯 12 岁辍学，到沃伦斯鞋油作坊做工。",
+   "option": "答案 F 段：位置 41 紧随总起段 D，D 段以 greatest English novelist 定调后，F 段 Dickens was born in Portsmouth 是标准传记开头，按「总起→出身」的时间线展开；与 G 段区分——G 以 After Pickwick 开头，前提是前文已出现 Pickwick，放在第 41 位会造成指代悬空。",
+   "keyword": "be born in 出生于；force sb out of school 迫使某人辍学；humiliation 羞辱；biography 传记体叙事。",
+   "note": "考研排序题先利用已给段落：D 是开篇总起、B 已固定，41 空承接 D 应回到人物起点；born in 是传记首段标志词；F 段末句父亲入狱又为下一段的 release from prison 埋下复现点，一段管两头。"
+  },
+  {
+   "question_id": 1004,
+   "long_sentence": "E 段 He taught himself shorthand to get an even better job later as a court stenographer and as a reporter in Parliament：主干 He taught himself shorthand；to get... 不定式作目的状语；as...and as... 并列表身份的同位语。译：他自学速记，以便日后谋得更佳职位——先当法庭速记员，再做议会记者。",
+   "option": "答案 E 段：首句 Soon after his father's release from prison 与 F 段结尾 His father was then imprisoned for debt 构成「入狱→出狱」的词汇复现链，位置 42 必须接在 F 后；与 A 段区分——A 讲第一篇作品发表，前提是已投稿 sketches，而投稿行为正出自 E 段末句 submitted short sketches to obscure magazines。",
+   "keyword": "release from prison 出狱（与 imprisoned 入狱复现）；teach oneself shorthand 自学速记；errand boy 跑腿信差；submit sketches 投稿短文。",
+   "note": "排序题靠链式复现逐段咬合：imprisoned→release 锁定 F→E，submitted sketches→published sketch 锁定 E→A；每选一段都要检查「承接上段首句」与「开启下段末句」两个接口。"
+  },
+  {
+   "question_id": 1005,
+   "long_sentence": "A 段 The first published sketch, A Dinner at Poplar Walk, brought tears to Dickens's eyes when he discovered it in the pages of The Monthly Magazine：主干 sketch brought tears；A Dinner at Poplar Walk 为作品名同位语；when 引导时间状语从句。译：第一篇发表的素描《波普拉漫步》见刊时，狄更斯在《月刊》的版面上发现了它，激动得热泪盈眶。",
+   "option": "答案 A 段：E 段末 submitted short sketches to obscure magazines（投给无名杂志）与 A 段 first published sketch、in the pages of The Monthly Magazine 形成「投稿→首次发表」的递进，位置 43 接 E；与 B 段区分——B 讲 Pickwick 大获成功 secured his fame，是成名后的事，A 段仅 modest reputation（小有名气），时间在前。",
+   "keyword": "bring tears to sb's eyes 使某人落泪；sketch 随笔式短文、素描；modest reputation 不大的名气（modest 熟词僻义＝not large）；pen name 笔名。",
+   "note": "modest 在此不指谦虚而指「规模不大的」，考研熟词僻义高频点；从 obscure magazines 到 The Monthly Magazine 的平台升级是时间线证据，别把 A 与 B 都当成成名段——modest 与 runaway success 有先后。"
+  },
+  {
+   "question_id": 1006,
+   "long_sentence": "C 段首句 Soon after Sketches by Boz appeared, a publishing firm approached Dickens to write a story in monthly installments：主干 a publishing firm approached Dickens to write；in monthly installments 方式状语「按月连载」；句末 who had originated the idea 定语从句修饰画家西摩。译：《博兹札记》问世后不久，一家出版社接洽狄更斯按月连载写故事，为画家西摩的木刻画配文——创意本是西摩提出的。",
+   "option": "答案 C 段：首句 Soon after Sketches by Boz appeared 承接 A 段 sketches 积累成书；段末 The Posthumous Papers of the Pickwick Club appeared serially in 1836 and 1837 与已固定的 B 段首句 The runaway success of The Pickwick Papers 对接——同一本书的正式书名与俗称，位置 44 居 A 与 B 之间。",
+   "keyword": "approach sb 接洽某人；in installments 分期连载；press on 坚持推进；commit suicide 自杀。",
+   "note": "C 段信息密度大（西摩自杀、换画家），但排序只需抓两头：appeared（博兹札记）接上段、Pickwick Club 引 B 段；B 段 as it is generally known today 提示用俗称，书名不同不算矛盾，这是书名同指的识别题。"
+  },
+  {
+   "question_id": 1007,
+   "long_sentence": "G 段 Nicholas Nickleby, his next novel, combines the darkness of Oliver Twist with the sunlight of Pickwick：主干 Nicholas Nickleby combines A with B；his next novel 为同位语；the darkness...with the sunlight... 对举结构。译：他的下一部小说《尼古拉斯·尼克贝》把《雾都孤儿》的阴郁与《匹克威克》的明快结合在一起。",
+   "option": "答案 G 段：首句 After Pickwick 直接回指 B 段的 The Pickwick Papers，After 是最强衔接信号；段末 consolidated Dickens as a nationally and internationally celebrated man of letters（奠定其文豪地位）收束全文，与开篇 D 段 greatest English novelist 首尾呼应；与 C 段区分——C 是 Pickwick 的创作过程，位于 B 之前。",
+   "keyword": "plunge into 沉入、投身于；bleak 凄冷的（bleaker 为比较级）；consolidate 巩固；man of letters 文人、作家。",
+   "note": "末空优先选能总结收束的段落：G 的 celebrated man of letters 与 D 的 greatest novelist 呼应成环形结构；After Pickwick 的 After 一词双锁——既定 B 之后的位置，又排除讲创作期的 C。"
+  },
+  {
+   "question_id": 1008,
+   "long_sentence": "首段 On the one hand, it's a necessary condition for many worthwhile things: child care, friendships, etc.：主干 it's a necessary condition；冒号后 child care, friendships 为举例；On the one hand 与下句 On the other hand 对举。译：一方面，信任是许多值得为之付出的事——育儿、友谊等等——的必要条件。",
+   "option": "正确项 C for：a necessary condition for sth 是固定搭配（某事物的必要条件）；A on 不能引出 condition 的对象；B like 语义「像…一样的条件」且冒号后已举例，语义重复；D from 表来源，与「对许多事的条件」逻辑不符。",
+   "keyword": "a necessary condition for ……的必要条件；worthwhile 值得做的；on the one hand...on the other hand 一方面…另一方面；etc 等等。",
+   "note": "名词与介词的固定搭配是完形首题常客：condition 后接 for；冒号已是明确的举例信号，不需要 like 再引例，B 的干扰恰恰是利用了举例语境。"
+  },
+  {
+   "question_id": 1009,
+   "long_sentence": "On the other hand, putting your faith in the wrong place often carries a high price：动名词短语 putting your faith in the wrong place 作主语；carries 此处意为「带来、使承担」；On the other hand 表转折对举。译：另一方面，把你的信任放错了地方，往往要付出高昂的代价。",
+   "option": "正确项 A faith：put faith in＝trust，与全文主题词 trust 及第二段 place their trust in 构成复现；B concern 「把担忧放在错误的地方」不合 put...in 结构的信任语义；C attention 是 pay attention to 的错误嫁接；D interest 虽可接 in 但「兴趣放错地方」与下文信任实验无关。",
+   "keyword": "put faith in 信任＝place trust in；carry a high price 付出高昂代价；in the wrong place 放错地方；theme 主题词复现。",
+   "note": "完形首段定主题：blank 2 与 3 同句连考，先用全文 trust 主题锁 faith，再顺藤验证 price；put one's faith in 与 place their trust in 是同源替换，主题词复现是完形第一解题线索。"
+  },
+  {
+   "question_id": 1010,
+   "long_sentence": "同句 putting your faith in the wrong place often carries a high price：动名词短语作主语，carries 与 a high price 构成动宾搭配；often 频度副词修饰谓语。译：把信任放错地方，往往要付出高昂的代价。",
+   "option": "正确项 D price：carry a high price＝付出高昂代价，为惯用表达，呼应第四段实验中错信测试者的风险；A benefit 与 high 搭配后语义矛盾（carries a high benefit 不成话）；B debt 指真实欠债，与信任错位无逻辑关联；C hope 不能被 carry 且与 high 不成搭配。",
+   "keyword": "pay a high price 付出高昂代价；carry 携带、招致；risk 风险；abstract usage 抽象用法。",
+   "note": "price 在此是抽象用法（代价）而非商品价格；首段两句一正（必要条件）一反（高昂代价）布局，先反后问（第四空 why do we trust）——把握段落功能可反向验证选词。"
+  },
+  {
+   "question_id": 1011,
+   "long_sentence": "Then, why do we trust at all?：why 引导特殊疑问句；at all 在疑问句中加强语气，意为「究竟、到底」；句首 Then 承接上段的利弊铺陈。译：那么，我们究竟为什么要信任呢？",
+   "option": "正确项 B Then：上段摆出信任的必要性与风险两面后顺势发问「那为什么还信任」，Then 表话题推进；A Therefore 表因果——此处不是由上段推出的结论而是设问转折；C Instead 表替代，无替代关系；D Again 表「再次」，此问是首次提出。",
+   "keyword": "then 那么、接下来；at all 究竟（加强语气）；therefore 因此（强因果）；instead 反而、取而代之。",
+   "note": "逻辑衔接词题先判断句间关系：利弊并存→顺势设问是「推进」而非「因果」，therefore 是最大陷阱；设问句 why do we trust at all 后紧跟 Well, because it feels good 的自答，设问-回答结构帮助确认衔接词功能。"
+  },
+  {
+   "question_id": 1012,
+   "long_sentence": "When people place their trust in an individual or an institution, their brains release oxytocin, a hormone that produces pleasurable feelings and triggers the herding instinct：when 引导时间状语从句；a hormone that... 为同位语加定语从句，从句内 produces 与 triggers 两谓语并列。译：当人们信任某个人或机构时，大脑会释放催产素——一种产生愉悦感、触发从众本能的激素。",
+   "option": "正确项 D When：从句的「信任行为」与主句的「释放激素」是即时触发关系，when 最贴切；A Until 表「直到」，主句缺乏延续或界限义；B Unless 表否定条件，语义颠倒；C Although 表让步，两句间无对立关系。",
+   "keyword": "place trust in 信任；release oxytocin 释放催产素；trigger 触发；herding instinct 从众本能。",
+   "note": "状语连词题看主从句事件的时间逻辑：「一信任就分泌激素」是典型的触发关系；unless 会把原意反改为「不信任则不分泌」，方向完全颠倒——连词题务必把选项代回读一遍验证方向。"
+  },
+  {
+   "question_id": 1013,
+   "long_sentence": "a hormone that produces pleasurable feelings and triggers the herding instinct that prompts humans to connect with one another：外层 that 定语从句修饰 hormone，内含 produces...and triggers... 并列谓语；内层 that 从句修饰 instinct。译：一种产生愉悦感、并触发促使人类彼此联结的从众本能的激素。",
+   "option": "正确项 B produces：激素「产生」愉悦感，与并列谓语 triggers 同属「引发生理反应」的使役类动词；A selects 「挑选愉悦感」动宾不搭；C applies 须接 to 且「应用愉悦感」不通；D maintains 「维持」——语境是信任带来新的愉悦，而非维持已有状态。",
+   "keyword": "produce feelings 产生情感；pleasurable 愉悦的；trigger＝prompt 触发、促使；maintain 维持。",
+   "note": "定语从句动词题先锁定逻辑主语 hormone：激素的功能是引发反应，选词须与并列的 triggers 呼应；maintains 的「持续」义在本语境无据——并列结构中的动词应保持语义家族一致。"
+  },
+  {
+   "question_id": 1014,
+   "long_sentence": "the herding instinct that prompts humans to connect with one another：prompt sb to do sth 促使某人做某事；to connect with one another 为不定式宾语；that 从句修饰 instinct。译：（这种激素会触发）促使人类彼此联结的从众本能。",
+   "option": "正确项 C connect：connect with one another 彼此联结，与 herding instinct（群居/从众本能）语义契合；A consult 咨询，须有明确咨询对象且不合本能语境；B compete 与信任、愉悦的正向氛围相反；D compare with 是「与…比较」，脱离信任话题。",
+   "keyword": "connect with 与…联结；herding instinct 从众本能；prompt sb to do 促使某人做；compete with 与…竞争（易混 connect）。",
+   "note": "connect 与 compete、compare 同接 with，是形近介词陷阱——辨析靠语境：群居本能指向「联结」；compete/compare 的 with 是比较对抗义，与 oxytocin 带来的愉悦归属感相悖。"
+  },
+  {
+   "question_id": 1015,
+   "long_sentence": "Scientists have found that exposure to this hormone puts us in a trusting mood：that 引导宾语从句；exposure to this hormone 为名词化主语；put sb in... 表「使某人进入某种状态」。译：科学家发现，接触这种激素会使我们进入一种信任的心境。",
+   "option": "正确项 D to：exposure to 是固定名词搭配，来自动词 expose...to...（使暴露于）；A at、B by 均无此搭配；C of 会被误读为所属关系「激素的暴露」，但 exposure 的对象要用 to 引出。",
+   "keyword": "exposure to 接触、暴露于；put sb in a...mood 使某人处于…心境；derive 派生（expose→exposure）；hormone 激素。",
+   "note": "名词化搭配题抓派生链：expose A to B→exposure to B，介词不随词性改变；本段后文第 14 空还考 introduced to 等同款 to 搭配，掌握 to 锚点可前后互验。"
+  },
+  {
+   "question_id": 1016,
+   "long_sentence": "exposure to this hormone puts us in a trusting mood：put...in a...mood 为固定结构；trusting 是现在分词作形容词，表「信任他人的」主动义。译：接触这种激素会使我们进入一种信任他人的心境。",
+   "option": "正确项 B mood：in a trusting mood 处于信任的心境，mood 指心理状态；A context 是外部语境、背景，激素作用于人的内心而非环境；C period 时间段与 trusting 无法搭配出义；D circle 指社交圈子，「信任的圈子」语义偏移到人际范围。",
+   "keyword": "in a...mood 处于…心情；trusting 信任他人的（区别于 trusted 被信任的）；state of mind 心理状态；context 语境、背景。",
+   "note": "mood 与 context 都能套进 in a...框架，辨析点是作用对象：激素改变的是「人的心理」不是「外部环境」；trusting（主动信人）与 trusted（被人信）的形容词分身也是潜在考点。"
+  },
+  {
+   "question_id": 1017,
+   "long_sentence": "those subjects were ready to lend significantly higher amounts of money to strangers than were their counterparts who inhaled something else：than 后用倒装（than were their counterparts）；who 定语从句修饰 counterparts；significantly 修饰比较级 higher。译：与吸入其他物质的对照组相比，这些受试者愿意借给陌生人的钱明显更多。",
+   "option": "正确项 A counterparts：指实验里「另一半吸入别的物质」的对应受试者，是对照实验的标准表达；B substitutes 替代品，对照组不是「替代关系」；C colleagues 同事身份无据；D supporters 支持者更无从谈起，语义全空。",
+   "keyword": "counterpart 对应者、相当的一方；control group 对照组；significantly 显著地；inhale 吸入。",
+   "note": "实验类完形高频词 counterpart＝对照组中的对应个体；比较句 than were their... 的倒装提示空格填「被比较的另一方」，抓住实验设计（半数喷催产素、半数喷其他）即可直选。"
+  },
+  {
+   "question_id": 1018,
+   "long_sentence": "Lucky for us, we also have a sixth sense for dishonesty that may protect us：Lucky for us 为形容词短语作评注性状语，表明说话人对全句的评价；a sixth sense for dishonesty 中 for 表「针对…的」；that 定语从句修饰 sense。译：幸运的是，我们还拥有一种察觉欺骗的第六感，它或许能保护我们。",
+   "option": "正确项 B Lucky：上段讲信任有风险，本段转出「我们有第六感防骗」的积极转折，Lucky for us（幸好）承接自然；A Funny for us 不构成该评注搭配；C Odd for us 消极且与「保护」逻辑相悖；D Ironic 表反讽——事与愿违才叫反讽，与第六感护佑之义相反。",
+   "keyword": "lucky for us 幸运的是；sixth sense 第六感；dishonesty 不诚实；ironic 反讽的、讽刺的。",
+   "note": "形容词评注性状语承担段间态度衔接：上段之「险」与本段之「护」之间需要正向评价词；ironic 的干扰性在于语义强烈，但反讽意味着结果与期待相反，与 protect 直接矛盾。"
+  },
+  {
+   "question_id": 1019,
+   "long_sentence": "we also have a sixth sense for dishonesty that may protect us：主干 we have a sixth sense；for dishonesty 介词短语作后置定语；that may protect us 定语从句，may 表可能性。译：我们还拥有一种针对欺骗行为的第六感，它或许能保护我们。",
+   "option": "正确项 B protect：第六感的功能是「保护」我们免受欺骗之害，与下文幼儿辨别可信者的实验呼应；A monitor 监测——宾语是 us，变成「监视我们」，功能反常；C surprise、D delight 与防骗功能无关，且无上下文支撑。",
+   "keyword": "protect sb 保护某人；detect 识别（第六感的功能）；credible 可信的；function 功能动词。",
+   "note": "功能动词题从先行词推用途：sixth sense for dishonesty 的用途必然是保护，本篇采用「观点句+实验例证」结构，用下文 14 个月幼儿辨别 credible person 的实验可正向验证 protect。"
+  },
+  {
+   "question_id": 1020,
+   "long_sentence": "A Canadian study found that children as young as 14 months can differentiate between a credible person and a dishonest one：that 宾语从句；as young as 14 months 强调「年仅 14 个月」；between...and... 连接两个对比对象。译：一项加拿大研究发现，年仅 14 个月大的幼儿就能区分可信之人与不诚实之人。",
+   "option": "正确项 A between：differentiate between A and B 是固定结构，空后 credible person 与 dishonest one 由 and 并列，必须用 between；B within 表范围内部，无法与 and 并列结构兼容；C toward 表方向；D over 无此搭配。",
+   "keyword": "differentiate between A and B 区分A与B；credible 可信的；as young as 年仅；dishonest 不诚实的。",
+   "note": "介词题看并列结构：空后 and 牵着两个名词，between...and... 一眼锁定；另记 differentiate A from B 的变体——若选项出现 from 也成立，本题选项未给，between 是唯一解。"
+  },
+  {
+   "question_id": 1021,
+   "long_sentence": "Sixty toddlers were each introduced to an adult tester holding a plastic container：were introduced to 为被动语态；each 表逐一；holding a plastic container 现在分词短语作后置定语修饰 tester。译：六十名幼儿被逐一带到一位手持塑料容器的成人测试者面前见面。",
+   "option": "正确项 C introduced：be introduced to sb 与某人相识，是实验流程第一步；A transferred 调动、转移，须接 from...to... 表场所变更；B added to 把孩子「加进」测试者，逻辑不通；D entrusted to 被托付给——托付的应是物品或任务，且方向反了（是介绍双方认识）。",
+   "keyword": "be introduced to 与…相识、被引见；toddler 学步幼儿；tester 测试者；entrust sth to sb 把某物托付给某人。",
+   "note": "实验流程动词按步骤排：先 introduce（见面）→ tester 发问 What's in here? → 邀请孩子 look inside；entrust 的干扰在于「托付给孩子」的画面感，但被动句主语是 toddlers，托付方向与实验设计均不符。"
+  },
+  {
+   "question_id": 1022,
+   "long_sentence": "Each subject was then invited to look inside：was invited to do 被动邀请结构；then 承接实验流程；inside 为副词，表「向里面」。译：随后，每个受试幼儿都被邀请朝容器里面看。",
+   "option": "正确项 D inside：上句 tester 问 What's in here? before looking into the container 已给出方向「容器内部」，look inside 是 looking into 的自然延续，也与后文 found a toy / container was empty 的查看结果匹配；A look out 向外看，方向相反；B look back 回头看，无回望语境；C look around 环顾四周，焦点偏离容器。",
+   "keyword": "look inside 往里看；look into 朝里看、调查；invite sb to do 邀请某人做；empty 空的。",
+   "note": "副词小品词题靠方向复现：上句 looking into the container 已锁定「向里」方向，inside 直选；look around 的迷惑性来自幼儿实验场景的「张望」联想，但焦点词 container 把方向限死在内部。"
+  },
+  {
+   "question_id": 1023,
+   "long_sentence": "Half of them found a toy; the other half discovered the container was empty：分号连接对比的两个分句；discovered 后接省略 that 的宾语从句；half...the other half 构成整体二分。译：一半孩子发现里面有个玩具；另一半则发现容器是空的。",
+   "option": "正确项 A discovered：与分号前 found a toy 平行呼应，find 与 discover 构成同义复现；B proved 「证明」——孩子的行为是发现事实而非论证命题；C insisted 「坚持认为」带主观色彩，与客观认知不符；D remembered 「记得」——孩子并无先前记忆可依。",
+   "keyword": "discover 发现＝find；the other half 另一半；empty 空的；parallel structure 平行结构。",
+   "note": "分号前后严格对仗：found a toy 对 discovered...empty，这是完形「同义复现」的经典套路；proved/insisted 属认知类近义干扰，辨析点是「发现客观事实」与「论证、主张」的语体差异。"
+  },
+  {
+   "question_id": 1024,
+   "long_sentence": "the other half discovered the container was empty – and realized the tester had fooled them：had fooled 为过去完成时，表动作发生在 realized 之前；破折号引出认知结果。译：另一半孩子发现容器是空的——由此意识到测试者骗了他们。",
+   "option": "正确项 C fooled：测试者装模作样惊叹 Wow! 而容器实空，这是典型的「耍、骗」行为，fooled 精准对应；A betrayed 背叛，指背弃信任的严重过错，程度过重；B wronged 冤枉、不公对待，无据；D mocked 嘲笑——文中没有取笑行为。",
+   "keyword": "fool sb 愚弄某人＝trick sb；realize 意识到；betray 背叛；mock 嘲笑、讥讽；wronged 冤枉（近义干扰）。",
+   "note": "下段 Among the children who had not been tricked 用 tricked 复现本题——空 17 应填 trick 的同义词 fooled；过去完成时 had fooled 提示「骗在先、意识到在后」，时态层次也是选词外的隐含验证。"
+  },
+  {
+   "question_id": 1025,
+   "long_sentence": "Among the children who had not been tricked, the majority were willing to cooperate with the tester in learning a new skill, demonstrating that they trusted his leadership：who 定语从句修饰 children；were willing to cooperate 为谓语部分；demonstrating... 现在分词短语作结果状语。译：在未被欺骗的孩子中，大多数愿意配合测试者学习新技能，这表明他们信任他的引导。",
+   "option": "正确项 B willing：be willing to cooperate 愿意合作，与 demonstrating that they trusted his leadership 的「信任→自愿」因果一致；A forced 被迫合作，与自愿信任矛盾；C hesitant 犹豫不合作，与正向结果相反；D entitled 常接 to sth 表「有权获得」，搭配与语义双不合。",
+   "keyword": "be willing to do 愿意做；cooperate with 与…合作；demonstrate 表明＝show；entitle 使有权（易混 willing）。",
+   "note": "willing 组与下段被骗组 only five...participated 形成对照数据，验证「信任决定配合」的实验逻辑；D entitled 的陷阱是形近搭配 be entitled to do「有权做」，但「有权合作」语义荒谬，抓住 trust 的因果即可排除。"
+  }
+ ]
+}

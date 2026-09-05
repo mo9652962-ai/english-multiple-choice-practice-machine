@@ -1,0 +1,180 @@
+{
+ "chunk": 56,
+ "items": [
+  {
+   "question_id": 1376,
+   "long_sentence": "空所在句：Individuals can now experiment with different looks and 9 __ their preferences, potentially expanding the range of beauty ideals。and 并列 experiment with 与空格动词，共用主语 individuals；potentially expanding 现在分词作结果状语。译：人们如今可以尝试不同造型并 __ 自己的偏好，从而有望拓展审美的可能性。",
+   "option": "正确项 A explore：experiment with different looks（试造型）之后自然接「探索偏好」，explore preferences 与 expanding the range 呼应；B recall 回忆偏好与尝试造型的探索语境无关；C simplify 简化偏好语义不通；D cherish 珍视是态度不是探索动作。",
+   "keyword": "explore preferences 探索偏好；experiment with 尝试、试验；expand the range 拓展范围；beauty ideals 审美理想。",
+   "note": "and 并列锁动作方向：前项 experiment with 是主动尝试，空格动词须同为探索类；expanding the range 的结果状语提示「发现新可能」，回忆或珍视都推不出拓展结果。"
+  },
+  {
+   "question_id": 1377,
+   "long_sentence": "空所在句：AI algorithms can 10 __ facial features and skin conditions to provide personalized beauty recommendations。to provide 为目的状语；facial features and skin conditions 作并列宾语。译：AI 算法可 __ 面部特征与肤质，从而提供个性化的美丽建议。",
+   "option": "正确项 D analyze：分析特征与肤质才能给出个性化推荐，analyze...to provide... 因果顺承；A recover 恢复特征搭配荒谬；B arrange 安排面部特征不合常理；C reserve 保留肤质与提供建议无逻辑关联。",
+   "keyword": "analyze 分析＝examine；facial features 面部特征；skin conditions 肤质；personalized 个性化的＝customized。",
+   "note": "目的状语定动词：要 provide personalized recommendations，前提是对特征数据做「分析」；recover/arrange/reserve 都导不出「个性化建议」这一结果，因果链验证即可。"
+  },
+  {
+   "question_id": 1378,
+   "long_sentence": "空所在句：This 11 __ approach aims to cater to individual preferences and enhance the concept of beauty tailored to each person's unique characteristics。tailored to each person's unique characteristics 是空格的复现线索。译：这种 __ 的方法旨在迎合个人偏好，强化为每人独特特征量身打造的美的概念。",
+   "option": "正确项 D customized：上句 personalized beauty recommendations 与本句 tailored to each person 共同指向「定制化」，customized approach 即量身定制之法；A localized 本地化偏离「个人」维度；B normalized 常态化与 cater to individual preferences 相反；C randomized 随机化与个性化背道而驰。",
+   "keyword": "customized 定制的＝tailored/personalized；cater to 迎合、满足；unique characteristics 独特特征；approach 方法。",
+   "note": "前后复现是金线索：personalized 与 tailored to each person 两处提示，空格必须与它们同义；-ized 四选项是词形陷阱，辨「个人/本地/常态/随机」四个维度即可。"
+  },
+  {
+   "question_id": 1379,
+   "long_sentence": "空所在句：...enhance the concept of beauty tailored to each person's unique characteristics. 12 __, AI can be a fun vehicle for self-discovery。前文讲个性化推荐等方法，本句得出「AI 是自我发现载体」的结论。译：如此一来，AI 可以成为有趣的自我发现工具。",
+   "option": "正确项 D In this way：承上启下——上述定制化途径带来「自我发现」的结果，in this way 表方式顺承；A At best 充其量，把肯定评价降格，与 fun 相抵；B To the contrary 表反向转折，本句与上文同向；C By definition 按定义，文中无定义语境。",
+   "keyword": "in this way 如此一来＝thus；vehicle 载体、工具；self-discovery 自我发现；cater to 迎合。",
+   "note": "连接词题看前后句关系：上句方法（个性化美容）与下句结果（自我发现）是手段与收益的同向递进，选方式承接；At best 的让步贬义与 fun 的褒义直接冲突。"
+  },
+  {
+   "question_id": 1380,
+   "long_sentence": "空所在句：While AI offers exciting possibilities, it also raises ethical 13 __。while 表让步转折，it also 承接转折转入负面；raises 与空格名词构成动宾搭配。译：尽管 AI 提供令人兴奋的可能，它也引发了伦理方面的 __。",
+   "option": "正确项 C concerns：ethical concerns（伦理担忧）是固定搭配，且与后文 risk of deepening... 的风险语义一致；A divisions 分歧强调各方对立，此处无对立方；B expectations 期待是褒义，与 also 的转折方向相反；D values 价值观不能被「引发」，raise ethical values 不成话。",
+   "keyword": "ethical concerns 伦理担忧；raise concerns 引发担忧；possibility 可能性；risk 风险。",
+   "note": "also 是转折信号：前半 exciting（褒），后半必须转贬；下文 risk、harm 串成担忧链条，concerns 是总起词；values 是 ethical 的惯性搭配陷阱。"
+  },
+  {
+   "question_id": 1381,
+   "long_sentence": "空所在句：There is a risk of deepening societal beauty 14 __ and perpetuating unattainable beauty standards。of 后两个并列动名词 deepening...and perpetuating...，and 连接两种危害。译：存在加深社会容貌 __ 并延续无法企及的审美标准的风险。",
+   "option": "正确项 A pressures：deepen pressures（加深压力）搭配成立，beauty pressures 与 unattainable standards 并列同为危害；B mysteries 神秘无法被 deepen，且与危害语境无关；C understandings 加深理解是好事，方向相反；D suspicions 怀疑与容貌话题无涉。",
+   "keyword": "deepen pressures 加深压力；perpetuate 延续、使永久化；unattainable 无法达到的＝impossible to achieve；beauty standards 审美标准。",
+   "note": "评价方向定词：and 后 perpetuating unattainable standards 是负面，空格必须同为负面名词；deepen 可接 understandings 但那是褒义，抓住 and 并列同向即可排除。"
+  },
+  {
+   "question_id": 1382,
+   "long_sentence": "空所在句：15 __, AI-powered beauty filters and editing tools can lead to distorted self-perception and 16 __ body dissatisfaction。前句讲「加深容貌压力」的抽象风险，本句给出另一具体危害。译：此外，AI 美颜滤镜与修图工具会导致扭曲的自我认知和 __ 身体不满。",
+   "option": "正确项 B Additionally：列举递进——继抽象风险后再补一个具体危害，additionally 表「此外」；A Approximately 大约是数量副词，不连接句子；C Alternatively 表二选一替代，此处是并列叠加不是替换；D Accidentally 意外地与论证逻辑无关。",
+   "keyword": "additionally 此外＝in addition/furthermore；filter 滤镜；distorted 扭曲的；self-perception 自我认知。",
+   "note": "危害列举看递进结构：risk 总述、filter 具体化，两句是「再加一条」不是「要么要么」；Alternatively 的替代义是把并列读成选择，见到数量概念才考虑 Approximately。"
+  },
+  {
+   "question_id": 1383,
+   "long_sentence": "空所在句：AI-powered beauty filters and editing tools can lead to distorted self-perception and 16 __ body dissatisfaction。lead to A and __ B 为并列谓语，因果方向须一致。译：AI 美颜滤镜与修图工具会导致扭曲的自我认知并 __ 身体不满。",
+   "option": "正确项 C contribute to：contribute to（促成、导致）与 lead to 同向，滤镜导致不满的因果成立；A deal with 处理，滤镜不处理不满；B result from 表「源于」，方向倒置成「不满导致滤镜」；D focus on 聚焦，工具聚焦不满语义不通。",
+   "keyword": "contribute to 促成、导致＝lead to；result from 源于（方向相反）；body dissatisfaction 身体不满；distorted 扭曲的。",
+   "note": "并列谓语看因果方向：and 前是 lead to（工具造成恶果），空格必须同向；result from 是本组最强陷阱，把施动者与结果对调即错，方向核对一票定夺。"
+  },
+  {
+   "question_id": 1384,
+   "long_sentence": "空所在句：As summarized in a recent post..., 17 __ on this technology for social presentation can cause harm。动名词短语作主语；as summarized 为评注性插入语。译：正如近日一篇帖子总结的，为社交展示而 __ 这项技术会造成伤害。",
+   "option": "正确项 C relying：rely on（依赖）this technology for social presentation 依赖美颜技术做社交展示，与 cause harm 的后果呼应；A starting on 开始，start on technology 搭配生硬；B checking on 核查，核查技术不会致害；D working on 从事，主语应是人做研究而非日常使用。",
+   "keyword": "rely on 依赖＝depend on；social presentation 社交展示；cause harm 造成伤害＝do harm；post 帖子。",
+   "note": "危害因果锁动词：依赖（relying）过度才会 harm，start/check/work 都构不成「使用依赖」义；As summarized in a post 提示此处是转述专家结论，动词取最常用搭配 rely on。"
+  },
+  {
+   "question_id": 1385,
+   "long_sentence": "空所在句：...can cause harm—18 __ body image issues, lower self-esteem, and social anxiety。破折号后接三个并列名词短语，是 harm 的具体内容。译：会造成伤害——__ 身体意象问题、自尊心降低与社交焦虑。",
+   "option": "正确项 B such as：破折号后三个名词短语是 harm 的下位实例，such as 引出列举；A apart from 除…之外还，表追加排除，逻辑变味；C regardless of 不管，让步义与列举不符；D prior to 在…之前，时间义不通。",
+   "keyword": "such as 例如＝like；body image issues 身体意象问题；self-esteem 自尊；social anxiety 社交焦虑。",
+   "note": "总称加实例结构秒判：harm（总）对三个具体问题（分），举例必填 such as；apart from 是「除…外还」的强干扰，见到并列实例清单直接锁定举例词。"
+  },
+  {
+   "question_id": 1386,
+   "long_sentence": "空所在句：It's important to note that while AI can enhance our 19 __ of beauty, it should not 20 __ the genuine human experience...。while 引导让步；enhance our __ of beauty 为动宾搭配。译：值得注意的是，尽管 AI 能增强我们对美的 __，它不应 __ 真实的人类体验。",
+   "option": "正确项 B appreciation：appreciation of beauty（审美、对美的欣赏）是固定搭配，enhance appreciation 顺理成章；A imitation 模仿美，AI 增强模仿语义错位；C preservation 保护美与 enhance 搭配生硬，且全文谈审美体验；D consumption 消费美贬义色彩浓，与主旨相悖。",
+   "keyword": "appreciation of beauty 审美＝sense of beauty；enhance 增强＝improve；genuine 真实的＝authentic；derive from 获得、源自。",
+   "note": "of 前名词看搭配库：appreciation of beauty 是高频学术搭配，全文谈「理解与体验美」正落在 appreciation；consumption 是 AI 时代热词陷阱，褒贬与搭配双重不符。"
+  },
+  {
+   "question_id": 1387,
+   "long_sentence": "空所在句：...while AI can enhance our appreciation of beauty, it should not 20 __ the genuine human experience and the emotional connections we derive from seeing the beauty in each other。should not 后接动词原形；we derive from... 为省略 that 的定语从句。译：AI 不应 __ 真实的人类体验以及从彼此身上看见美而获得的情感联结。",
+   "option": "正确项 A replace：should not replace（不应取代）——AI 是增强审美的辅助，不能替代真实体验与情感联结，与让步逻辑闭合；B seize 夺取语义过重且无冲突语境；C share 分享，not share experience 与主旨矛盾，AI 恰在参与；D reflect 反映，AI 反映体验不成话。",
+   "keyword": "replace 取代＝take the place of；genuine 真实的；emotional connection 情感联结；derive from 获得、源自。",
+   "note": "末句是全文结论：while 让步（AI 有益）加 should not（底线），「辅助而非取代」是主线；share 是最强干扰，把「替代关系」偷成「参与关系」，抓住 genuine human experience 的独占性即可。"
+  },
+  {
+   "question_id": 1388,
+   "long_sentence": "定位句 researchers have used genomes of over 200 donkeys to trace their domestication back to a single event around 7000 years ago in East Africa—about 3000 years before humans tamed horses。trace back to 追溯至；破折号后为时间比较。译：研究人员用 200 多头驴的基因组，把驴的驯化追溯到约 7000 年前东非的单一事件——比人类驯马早约 3000 年。",
+   "option": "正确项 C They were tamed at an earlier time than horses：earlier than horses＝about 3000 years before humans tamed horses，时间比较一一对应；A mysterious 说的是「起源时间地点成谜」不是驴令祖先觉得神秘，偷换概念；B multiple domestication events 与 single event 正反混淆；D 古代旅行者的生动刻画 无中生有。",
+   "keyword": "domestication 驯化＝taming；trace back to 追溯到；genome 基因组；a single event 单一事件。",
+   "note": "首段细节题抓破折号比较：before humans tamed horses 直接给出时间先后；B 项利用首句 mystery 设迷阵，mystery 指驯化起源未解，不是驴本身神秘。"
+  },
+  {
+   "question_id": 1389,
+   "long_sentence": "定位句 Through their DNA, the animals are telling their history themselves... we get a biological testimony to the environment these animals lived in。through 为方式状语。译：通过 DNA，动物自己在讲述历史；文字记载未必准确，DNA 序列提供了它们生存环境的生物学证词。",
+   "option": "正确项 D Genetic analysis offers insight into the history of donkeys：animals telling their history through DNA＝基因分析揭示驴的历史；A 最早栖息地难以追溯 无中生有；B 读 DNA 越来越容易 无中生有；C 文字记载含关键线索 正反混淆，原文强调文字记载并不总是准确。",
+   "keyword": "DNA sequence DNA 序列；testimony 证词＝evidence；biological testimony 生物学证词；record exactly 准确记录。",
+   "note": "人名观点题抓引语核心：Brooks 两句话都在对比「文字史」与「DNA 史」的可信度，落点在 DNA 更可靠；C 是把被否定的对象反着用，引语题先分清褒贬。"
+  },
+  {
+   "question_id": 1390,
+   "long_sentence": "定位句 They then traced how the animals spread across the rest of the continent into Europe and Asia about 2500 years later。traced how...spread 是研究的考察内容；about 2500 years later 为时间状语。译：随后他们追踪了驴在约 2500 年后如何传遍非洲大陆其余地区并进入欧洲与亚洲。",
+   "option": "正确项 A dispersed widely in the world：spread across the continent into Europe and Asia＝广泛散布到欧亚各地，dispersed≈spread；B 在牧人帮助下生存 张冠李戴，herders tamed wild asses 是驯化事件非生存研究；C 发展出某些行为特征 无中生有；D 适应环境变化 张冠李戴，撒哈拉扩张是对驯化动因的推测不是研究内容。",
+   "keyword": "spread 扩散＝disperse；continent 大陆；pinpoint 精确确定；evolutionary tree 演化树。",
+   "note": "研究内容题按动词清单走：examined genomes、reconstructed tree、pinpoint event、traced spread，A 对应最后一步；C/D 都是常识性脑补，回文找动词对应即可排除。"
+  },
+  {
+   "question_id": 1391,
+   "long_sentence": "定位句 Though it's still unclear why the original domestication happened, the event coincided with the Sahara growing larger and drier... Prehistoric humans may have enlisted donkey's help in navigating the expanding Sahara。though 引导让步；may have done 表对过去的可能性推测。译：尽管最初驯化的原因仍不清楚，该事件与撒哈拉变得更大更干同期；史前人类可能借助驴穿越不断扩张的撒哈拉。",
+   "option": "正确项 B provides a possible explanation：may have enlisted（可能借助）是典型的可能性解释，回应 why unclear 之问；A 挑战传统观点 无中生有；C 呼吁来自撒哈拉的证据 无中生有；D 与 Kreier 观点相左 正反混淆，Orlando 的话正是经 Kreier 报道呈现的。",
+   "keyword": "coincide with 与…同期；enlist help 借助…的帮助；navigate 穿越＝travel across；may have done 对过去的可能推测。",
+   "note": "推测语气词是答案路标：may have... 表「可能的解释」而非定论，B 的 possible 与 may 严格对应；though 让步说明原因未定，凡把推测读成定论或对立的选项都过不了这关。"
+  },
+  {
+   "question_id": 1392,
+   "long_sentence": "定位句 Not only does understanding the equines' genetic makeup help reveal their contribution to human history, but it also might improve their management in the future, as climate change alters the planet's environment。not only 置句首引起部分倒装。译：了解驴的基因构成不仅有助于揭示其对人类历史的贡献，还可能在气候变化改变地球环境之际改善对它们的管理。",
+   "option": "正确项 B better management of donkeys：improve their management＝better management，与作者观点原词对应；A 更好保护野生动物 张冠李戴，donkeys 是家畜非 wildlife；C 恢复早期驴种 偷换概念，定位驯化起源是帮考古学家缩小搜索范围，非恢复物种；D 提升气候意识 偷换概念，气候变化是背景条件不是研究目标。",
+   "keyword": "genetic makeup 基因构成；management 管理；contribution to 对…的贡献；alter 改变＝change。",
+   "note": "作者观点题看 not only...but also 的后半：前半是历史贡献（既得成果），后半才是「研究还能帮上什么」；C 项把「寻找最初驯化地」拔高成「恢复物种」，注意前一句 narrower region to search 的限定。"
+  },
+  {
+   "question_id": 1393,
+   "long_sentence": "定位句 The guild's pessimism is a reaction to Hollywood's decline, which is reaching a critical point for the industry and Southern California。pessimism 悲观；which 引导非限制性定语从句，补充 decline 的程度。译：该工会的悲观情绪是对好莱坞衰退的反应，衰退对行业与南加州而言正到达临界点。",
+   "option": "正确项 D the gloomy situation of Hollywood：工会停办培训并劝人勿入行，pessimism 是对 decline 的反应，gloomy≈pessimistic、situation≈decline；A 观众对电影兴趣下降 无中生有；B 从业者怀旧情绪 无中生有；C 南加州的吸引力 正反混淆，南加州正在失去制作。",
+   "keyword": "pessimism 悲观＝gloom；decline 衰退＝downturn；critical point 临界点；in good conscience 凭良心。",
+   "note": "例证功能题看例子后的定性句：statement 是例子，pessimism 对 decline 才是作者解读；D 的 gloomy 与 pessimism 同义对应，A/B 都是围绕工会行为的无关联想。"
+  },
+  {
+   "question_id": 1394,
+   "long_sentence": "定位句 Other regions in the United States, Canada and Europe have steadily increased incentives to attract TV shows and movies... Georgia offers up to 30% in transferable tax credits on film and TV production costs。increased incentives to attract 为总述，Georgia 是例证。译：美国其他地区、加拿大与欧洲稳步增加激励以吸引影视剧制作——佐治亚州提供高达 30% 的可转让税收抵免。",
+   "option": "正确项 A lure production with tax incentives：lure≈attract、tax incentives≈transferable tax credits，例证「用税收优惠吸引制作」的努力；B 改善影视设施 无中生有；C 刺激州际竞争 过度推断，增加激励的目的是吸引制作不是竞争本身；D 筹集资金 张冠李戴，税收抵免是让利不是筹款。",
+   "keyword": "incentive 激励措施＝encouragement；lure 吸引＝attract/tempt；tax credit 税收抵免；transferable 可转让的。",
+   "note": "例子功能题答案在例子前一句：increased incentives to attract 是总述，Georgia 的 30% 是分述证据；C 项把手段间的相似性误读成目的，盯住 attract 的宾语即可。"
+  },
+  {
+   "question_id": 1395,
+   "long_sentence": "定位句 As the streamers' emphasis changed from subscriber growth to profitability, prices for the services went up and the number of new shows went down to 481 released in 2023。as 引导时间/原因从句；emphasis changed 是关键。译：随着流媒体平台的重点从订户增长转向盈利，服务价格上涨，新剧数量在 2023 年降至 481 部。",
+   "option": "正确项 B streamers changed their strategic priorities：emphasis changed from...to...＝战略优先级改变，与题干 as 后内容直接对应；A 平台丧失技术优势 无中生有；C 订户警惕大平台 无中生有；D 订户不满新剧 偷换概念，新剧减少是平台盈利策略的结果，不是订户态度所致。",
+   "keyword": "emphasis 重点＝priority/focus；subscriber growth 订户增长；profitability 盈利能力；hemorrhage 大量流失。",
+   "note": "as 从句是因果钥匙：peak TV 的终结被明确归于 emphasis 的转变；D 把「结果」倒置成「原因」，注意力放在 streamers（平台）而非 subscribers（订户）身上即可。"
+  },
+  {
+   "question_id": 1396,
+   "long_sentence": "定位句 If productions in Southern California dip below a critical level for too long, the industry's essential talent will drift away along with enormous sums of revenue。if 引导条件从句；drift away 表逐渐流失。译：如果南加州的制作长期跌破临界水平，行业的核心人才将连同巨额收入一起流失。",
+   "option": "正确项 C a brain drain to other places：essential talent will drift away＝人才外流（brain drain），might face 对应 if 条件句隐含的风险；A 产品质量下降 无中生有；B 对外国人才的需求 偷换概念，是人才流失不是引进；D 劳动力成本飙升 无中生有。",
+   "keyword": "drift away 逐渐流失＝drain；essential talent 核心人才＝brain；revenue 收入；dip below 跌破。",
+   "note": "条件句推出潜在后果：题干 might face 提示选「风险」而非既成事实；brain drain 是 talent drift away 的习语化改写，A/D 在本段无信息源，属凭空捏造。"
+  },
+  {
+   "question_id": 1397,
+   "long_sentence": "定位句 Those agencies and other government bodies should dramatically improve incentives to keep our current shows and attract new productions to Los Angeles. Let's go on with the show...and make sure the show doesn't go on without us。keep...and attract... 目的并列。译：这些机构应大幅改善激励，以留住现有节目并吸引新制作来洛杉矶——让演出继续，并确保演出不会没有我们。",
+   "option": "正确项 A maintain its position in the industry：keep current shows and attract new productions 加 the show doesn't go on without us＝保住行业地位；B 吸引超过以往的投资 无中生有，原文无比较级；C 追求更高制作标准 无中生有；D 与其他州协调 正反混淆，加州是在与它们竞争。",
+   "keyword": "incentive 激励；keep 留住＝retain；production 制作、片子；go on with the show 让演出继续（双关）。",
+   "note": "结论题抓末段 should 建议与双关收束句：留住加吸引＝维持地位，A 是两项措施的合并概括；D 利用前文 other states 设反向陷阱，作者的呼吁恰是对抗流失。"
+  },
+  {
+   "question_id": 1398,
+   "long_sentence": "定位句 Sir John Reith said that it would end 'isolation of the spirit' and rejoiced: '...there is always enough for others...the genius and the fool, the wealthy and the poor listen simultaneously.'。genius/fool、wealthy/poor 对举。译：里斯说无线电将终结「精神的孤立」，并欣喜道：总能为更多人容下……天才与愚人、富人与穷人同时收听。",
+   "option": "正确项 A It was accessible to everyone：the wealthy and the poor listen simultaneously＝无论贫富皆可收听，accessible to everyone 是对举结构的概括；B 改善人际关系 无中生有；C 人类智慧的奇迹 无中生有；D 开启孤立文化时代 正反混淆，Reith 说的是终结 isolation。",
+   "keyword": "isolation of the spirit 精神的孤立；simultaneously 同时＝at the same time；accessible 可及的、可获得的；the wealthy and the poor 富人与穷人。",
+   "note": "the A and the B 对举表全称：富与穷「同时收听」即人人可及；D 是用末段 smartphone-staring 的孤立文化反贴先驱之口，人物观点题先锁定说话人立场。"
+  },
+  {
+   "question_id": 1399,
+   "long_sentence": "定位句 a book and exhibition curated by Beaty Rubens at the Bodleian in Oxford records how radio changed everyday life from 1922 to 1939。records how 为展览内容。译：鲁本斯在牛津博德利图书馆策展的书与展览，记录了 1922 至 1939 年广播如何改变日常生活；素材含书信、日记、小说与逐字听众研究笔记。",
+   "option": "正确项 A The impact of radio on its early audience：changed everyday life（1922-1939）加 audience research＝广播对早期听众的影响；B 公共音乐教育 张冠李戴，broadcast music 只是第三段例证；C 无线电技术创新过程 无中生有；D 杰出广播先驱 无中生有，Reith 是开篇引子非展览主题。",
+   "keyword": "curate 策展；draw on 利用、借鉴；verbatim 逐字的；audience research 听众研究。",
+   "note": "主题题抓 records how 的宾语从句：影响对象是早期听众的日常生活；C/D 都偏离「听众」这一核心，B 用第三段的音乐例子冒充主题，注意例子与主题的层级差。"
+  },
+  {
+   "question_id": 1400,
+   "long_sentence": "定位句 linear speech broadcasting brought the gift of serendipity, random enlivening of a car journey or dull manual task。serendipity 意外之喜；作者以亲历作例证。译：线性广播带来意外之喜——随机点亮车程或枯燥活计；作者亲历：行车中听新闻、学 17 世纪历史，被听诊器史节目深深启蒙。",
+   "option": "正确项 C radio listeners could make unexpected gains：serendipity（意外收获）加作者行车所得例证＝听众可能有意外的收获；A 过去的广播研究不足 无中生有；B 广播魅力在数字时代仍在 正反混淆，第五段明说 serendipity is ebbing；D 广播节目多年未变 无中生有。",
+   "keyword": "serendipity 意外之喜＝unexpected gain；enliven 使有生气；unpretentious 朴实无华的；linear broadcasting 线性广播。",
+   "note": "第四段主旨看例证前的抽象句：gift of serendipity 是论点，作者亲历是证据；C 的 unexpected 与 serendipity 的「偶然」义对齐；B 是第五段的反向内容，跨段拼贴是干扰来源。"
+  }
+ ]
+}
