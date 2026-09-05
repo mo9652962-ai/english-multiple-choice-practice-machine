@@ -32,9 +32,13 @@
 |:---|:---|:---|:---|
 | 1 | 1-20 (q1-500) | ✅ 完成：500题/2000条，验证全绿，抽查6题质量过关 | feat(data): 精讲批次1 500题 |
 | 2 | 21-40 (q501-1000) | ✅ 完成：500题/2000条，验证全绿，抽查5题质量过关（含排序/七选五/选词填空） | feat(data): 精讲批次2 500题 |
-| 3 | 41-60 (q1001-1500) | 未开始 | - |
-| 4 | 61-80 (q1501-2000) | 未开始 | - |
+| 3 | 41-60 (q1001-1500) | ✅ 完成：500题/2000条 + patches.db 纠偏（q1443-1450 选项错位、q1487/1492 答案键疑点，note 已标注待上游修数据） | feat(data): 精讲批次3 500题 |
+| 4 | 61-80 (q1501-2000) | 进行中 | - |
 | 5 | 81-86 (q2001-2132) | 未开始 | - |
+
+## 补丁层（批次3 起）
+- data/patches.db：{question_id, field, value}；save_patches.py 硬编码补丁内容并幂等同步已入库 explain_collections 行
+- apply_content.py / validate_content.py 均会叠加补丁；新增数据层问题 → 补丁内容写进 save_patches.py 重跑即可
 
 ## 每批流程（勿跳步）
 1. 派发代理（并行，单条消息多个 Agent 调用）；2. validate_content.py <批次>（FAIL 则补生成）；3. apply_content.py <批次>；4. validate_db.py（覆盖数=批次末题号）；5. spot_check.py 5 <seed> 人工看质量（模板腔→重生成）；6. git add **只加** scripts/explain_gen 与 backend/data/question_bank.db（工作区有大量他人未提交改动，禁 git add -A）；commit msg `feat(data): 精讲批次N <题数>题`

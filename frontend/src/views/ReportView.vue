@@ -83,7 +83,7 @@ const memoryCurvePoints = computed(() => {
       <div><span class="eyebrow">研习学情报告</span><h1>学习报告</h1><p class="lead">数据可视化复盘：正确率趋势、薄弱题型、词汇进度与智能建议。</p></div>
     </div>
 
-    <div v-if="loading" class="card empty">报告生成中…</div>
+    <div v-if="loading" class="card skeleton-card"><span class="skeleton-line"></span><span class="skeleton-line" style="width:64%"></span><span class="skeleton-line" style="width:82%"></span></div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="report">
       <!-- 顶部统计卡 -->

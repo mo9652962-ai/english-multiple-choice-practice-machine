@@ -24,6 +24,10 @@ frontend/android/
 backend/data/
 work/
 outputs/
+
+# Mimosa hook 运行期状态与临时目录（不入库）
+.mimosa/
+scripts/explain_gen/tmp/
 design-system/
 *.db
 *.sqlite

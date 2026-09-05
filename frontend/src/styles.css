@@ -9,7 +9,7 @@
   --surface: #fdfaf3;         /* 实色象牙白 (v3.0-fix: 取消透明防花纹透出) */
   --surface-solid: #fdfaf3;   /* 与 --surface 一致 */
   --ink: #2e2a23;                   /* 暖墨色 */
-  --muted: #787369;                 /* 墨灰 */
+  --muted: #6b665c;                 /* 墨灰 (v34: 提深至 WCAG AA 5.17:1) */
   --line: #e4ded1;                  /* 纸边线 */
   --line-strong: #cfc7b6;           /* 深纸边 */
   --primary: #403c35;               /* 墨色主按钮 (明显水墨) */
@@ -57,7 +57,7 @@
   --bg-card: rgba(255, 252, 247, 0.88);
   --bg-card-hover: rgba(255, 255, 255, 0.96);
   --text-pine: #2B2825;
-  --text-faint: #7D766D;
+  --text-faint: #6b665c;
   --text-muted-2: #A8A095;
   --border-paper: rgba(60, 50, 40, 0.08);
   --border-paper-focus: rgba(184, 74, 57, 0.35);
@@ -1526,7 +1526,7 @@ body.ink-landscape::after {
     radial-gradient(ellipse 45% 35% at 62% 30%, rgba(64,60,53,.04) 0%, transparent 70%),
     radial-gradient(ellipse 70% 30% at 18% 88%, rgba(64,60,53,.04) 0%, transparent 70%),
     linear-gradient(180deg, rgba(247,243,238,.0) 55%, rgba(247,243,238,.75) 100%),
-    url('/assets/backgrounds/login-ink.png');
+    url('/assets/backgrounds/login-ink.webp');
   background-size: auto, auto, auto, auto, cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1682,7 +1682,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 .page-focus::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .16; }
 .page-calendar::before { background-image: url('/assets/backgrounds/ink-5-shu.jpg'); opacity: .16; }
 .page-goal::before { background-image: url('/assets/backgrounds/ink-1-tiandu.jpg'); opacity: .16; }
-.page-reading::before { background-image: url('/assets/backgrounds/login-ink.png'); opacity: .16; }
+.page-reading::before { background-image: url('/assets/backgrounds/login-ink.webp'); opacity: .16; }
 .page-listening::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .16; }
 .page-focus::before, .page-calendar::before, .page-goal::before, .page-reading::before, .page-listening::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
@@ -2028,7 +2028,7 @@ nav a.router-link-active { box-shadow: inset 3px 0 var(--accent), var(--shadow-s
 
 /* ── v2.39: 新板块水墨背景 (博物馆 PD 图) ── */
 .page-leaderboard::before { background-image: url('/assets/backgrounds/ink-4-chushan.jpg'); opacity: .16; }
-.page-report::before { background-image: url('/assets/backgrounds/login-ink.png'); opacity: .16; }
+.page-report::before { background-image: url('/assets/backgrounds/login-ink.webp'); opacity: .16; }
 .page-achievements::before { background-image: url('/assets/backgrounds/ink-3-peach.jpg'); opacity: .16; }
 .page-leaderboard::before, .page-report::before, .page-achievements::before {
   content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
@@ -3043,7 +3043,7 @@ a, button, input, select, textarea, .card, .stat-card { transition-duration: .22
 .button:not(:disabled):active { transform: translateY(1px) scale(.985); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
 .card { transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base); }
 .card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -12px rgba(60,50,30,.22); }
-.nav-link, .stat-card, .heat-cell, .wrong-level-row, .cal-cell, .vocab-card, .lesson-item { transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-base), box-shadow var(--transition-base); }
+.nav-link, .stat-card, .heat-cell, .wrong-level-row, .cal-cell { transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-base), box-shadow var(--transition-base); }
 @keyframes pulse-soft { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
 .loading-spinner, .kawaii-thinking { animation: pulse-soft 1.2s ease-in-out infinite; }
 @keyframes pop-in { 0% { transform: scale(.92); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
@@ -3128,7 +3128,7 @@ h3 { letter-spacing: .02em; }
 
 /* ═══ v2.104: 移动端触控优化 (44px 目标 + 拇指区 + 卡片呼吸感) ═══ */
 @media (max-width: 640px) {
-  .button, .nav-link, .modal-close, .feedback-cats button, .option-btn, .lesson-item, .vocab-card { min-height: 44px; }
+  .button, .nav-link, .modal-close, .feedback-cats button { min-height: 44px; }
   .card { border-radius: 14px; }
   .page { padding: 14px 12px 96px; }
   .section { margin-bottom: 18px; }
@@ -3154,7 +3154,7 @@ h3 { letter-spacing: .02em; }
 .button.primary:hover, .button:not(.secondary):not(.ghost):not(.compact):hover { box-shadow: 0 6px 20px -4px rgba(192,82,47,.5); filter: brightness(1.04); }
 .button.secondary { background: color-mix(in srgb, var(--accent-100) 45%, transparent); border: 1px solid color-mix(in srgb, var(--accent-400) 35%, transparent); }
 .button:disabled { opacity: .45; cursor: not-allowed; }
-.option-btn, .choice-btn { transition: transform var(--transition-fast), border-color var(--transition-base), background var(--transition-base), box-shadow var(--transition-base); }
+.choice-btn { transition: transform var(--transition-fast), border-color var(--transition-base), background var(--transition-base), box-shadow var(--transition-base); }
 .option-btn:hover:not(:disabled), .choice-btn:hover:not(:disabled) { transform: translateX(3px); border-color: var(--accent-400); }
 .option-btn.correct, .choice-btn.correct { border-color: var(--moss-600); background: color-mix(in srgb, var(--moss-100) 55%, transparent); }
 .option-btn.wrong, .choice-btn.wrong { border-color: var(--danger, #d94848); background: color-mix(in srgb, #f6e3da 55%, transparent); }
@@ -3163,7 +3163,7 @@ h3 { letter-spacing: .02em; }
 :root { --radius-btn: 10px; --radius-input: 8px; --radius-card: 14px; --radius-modal: 18px; }
 .button { border-radius: var(--radius-btn); }
 input, textarea, select, .input, .search-input { border-radius: var(--radius-input); }
-.card, .stat-card, .vocab-card, .lesson-item { border-radius: var(--radius-card); }
+.card, .stat-card { border-radius: var(--radius-card); }
 .modal-card { border-radius: var(--radius-modal); }
 .section, .card, .stat-card, .page > * { margin-bottom: 16px; }
 .card-header, .card-body, .section-body { padding-left: 20px; padding-right: 20px; }
@@ -3827,7 +3827,7 @@ input, textarea, select, .input, .search-input { border-radius: var(--radius-inp
 body { min-height: 100dvh; }
 /* 触控目标强化（移动端按钮最小 44px） */
 @media (max-width: 980px) {
-  .button, .option-btn, .action-card, .sidebar nav a { min-height: 44px; }
+  .button, .action-card, .sidebar nav a { min-height: 44px; }
   .option-btn { padding: 14px 12px; }
   input[type="checkbox"], .opt-key { min-width: 20px; min-height: 20px; }
 }
@@ -5077,3 +5077,35 @@ body.ink-landscape::before {
 /* R31 专注/目标细节 */
 .focus-today-item { display: inline-flex; align-items: center; gap: 5px; }
 .goal-day-bar { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+
+/* ════════════════════════════════════════════════════════════════
+   v34-v43 工程深度层 (2026-09): 品牌字 webfont / 焦点环 / 骨架行
+   ════════════════════════════════════════════════════════════════ */
+/* R36 品牌字: 霞鹜文楷子集 9.4KB (仅品牌印字, 三端一致; OFL 开源无授权风险) */
+@font-face {
+  font-family: 'LXGW WenKai Brand';
+  src: url('/assets/fonts/lxgw-wenkai-brand.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root { --font-brand: 'LXGW WenKai Brand', 'STKaiti', 'KaiTi', 'Noto Serif SC', serif; }
+.brand-mark, .hero-seal, .card.empty::before { font-family: var(--font-brand); }
+
+/* R40 焦点环: 裸 outline:none 的输入控件补 :focus-visible 指示 */
+.dictation-input:focus-visible,
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible,
+.ai-model-control select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* R38 骨架行: 替代 "加载中…" 文本 (NN/g: 镜像布局的 shimmer) */
+.skeleton-card { display: grid; gap: 12px; padding: 26px 22px; }
+.skeleton-line {
+  display: block; height: 14px; border-radius: 6px;
+  background: linear-gradient(90deg, var(--line) 25%, color-mix(in srgb, var(--line) 40%, var(--surface-solid)) 50%, var(--line) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s linear infinite;
+}
+@keyframes skeleton-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .skeleton-line { animation: none; } }

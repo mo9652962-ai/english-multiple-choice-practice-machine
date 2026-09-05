@@ -94,7 +94,7 @@ onMounted(load)
       <div style="width:64px"></div>
     </div>
 
-    <div v-if="loading" class="card empty">加载中…</div>
+    <div v-if="loading" class="card skeleton-card"><span class="skeleton-line"></span><span class="skeleton-line" style="width:72%"></span><span class="skeleton-line" style="width:46%"></span></div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="!word" class="card empty">未找到该单词</div>
 

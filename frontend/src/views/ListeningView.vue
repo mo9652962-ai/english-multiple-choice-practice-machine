@@ -94,7 +94,7 @@ function seek(e: Event) {
 
     <audio ref="audioEl" @ended="onAudioEnded" @timeupdate="onTimeUpdate" @loadedmetadata="onTimeUpdate" style="display:none"></audio>
 
-    <div v-if="loading" class="card empty">加载中…</div>
+    <div v-if="loading" class="card skeleton-card"><span class="skeleton-line"></span><span class="skeleton-line" style="width:72%"></span><span class="skeleton-line" style="width:46%"></span></div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="!units.length" class="card empty illustrated-empty">
       <div><Headphones :size="25" /><strong>还没有听力材料</strong></div>

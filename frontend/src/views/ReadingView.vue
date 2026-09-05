@@ -50,7 +50,7 @@ async function startPractice(p: any) {
       </div>
     </div>
 
-    <div v-if="loading" class="card empty">加载中…</div>
+    <div v-if="loading" class="card skeleton-card"><span class="skeleton-line"></span><span class="skeleton-line" style="width:72%"></span><span class="skeleton-line" style="width:46%"></span></div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="!passages.length" class="card empty illustrated-empty">
       <div><BookOpenText :size="25" /><strong>暂无阅读内容</strong></div>

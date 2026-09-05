@@ -42,7 +42,7 @@ function maxCount(): number {
       </div>
     </div>
 
-    <div v-if="loading" class="card empty">加载中…</div>
+    <div v-if="loading" class="card skeleton-card"><span class="skeleton-line"></span><span class="skeleton-line" style="width:72%"></span><span class="skeleton-line" style="width:46%"></span></div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="data">
       <!-- 本周核心指标 -->
