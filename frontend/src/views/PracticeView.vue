@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import {
   AlertCircle,
+  BookOpen,
+  BookPlus,
+  Highlighter,
   ArrowLeft,
   Award,
   CheckCircle2,
@@ -11,6 +14,8 @@ import {
   Play,
   Save,
   Send,
+  Sparkles,
+  StickyNote,
   X,
 } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
@@ -942,7 +947,7 @@ function maybeCelebrate() {
   if (rate >= 80) {
     celebrate.value = {
       show: true, kind: 'confetti',
-      title: rate >= 95 ? '🎉 近乎满分！' : '🎉 做得漂亮！',
+      title: rate >= 95 ? '近乎满分！' : '做得漂亮！',
       subtitle: `正确率 ${rate}% · 本次共 ${s.units?.length || 0} 个板块`,
     }
   }
@@ -1094,7 +1099,7 @@ async function addSelectedVocabulary() {
       rememberVocabulary(result.entry_id, activeUnit.value.id)
     }
     vocabularyToast.value = result.is_frequent
-      ? `已记录第 ${result.encounter_count} 次，已标记为 🌟 高频词`
+      ? `已记录第 ${result.encounter_count} 次，已标记为高频词`
       : '已加入单词本，退出答题界面后统一翻译'
     window.setTimeout(() => { vocabularyToast.value = '' }, 2600)
     window.getSelection()?.removeAllRanges()
@@ -1202,7 +1207,7 @@ function openDeepExplain(questionId: number) {
         <h1>{{ activeUnit.unit_type === 'cloze' ? 'Use of English' : activeUnit.title }}</h1>
         <!-- v9.28: Gemini batch5 任务2——本篇词汇掌握度 -->
         <div v-if="coveragePct !== null" class="coverage-pill" :class="{ high: coveragePct >= 80, low: coveragePct < 60 }">
-          📖 本篇词汇掌握度 <strong>{{ coveragePct }}%</strong>
+          <BookOpen :size="15" aria-hidden="true" />本篇词汇掌握度 <strong>{{ coveragePct }}%</strong>
           <small>（共 {{ coverageTotal }} 词 · 已识 {{ coverageKnown }}）</small>
         </div>
         <p v-if="activeUnit.shared_data?.directions" class="lead" style="margin-bottom:24px">{{ activeUnit.shared_data.directions }}</p>
@@ -1253,15 +1258,15 @@ function openDeepExplain(questionId: number) {
           :style="{ left: annotationBubble.x + 'px', top: (annotationBubble.y - 12) + 'px' }"
           @mousedown.prevent
         >
-          <button type="button" class="ann-bubble-btn" @click="addAnnotation(false)">🖍 高亮</button>
-          <button type="button" class="ann-bubble-btn" @click="annotationNote.noteText=''; addAnnotation(true)">📝 高亮+笔记</button>
-          <button type="button" class="ann-bubble-btn" @click="addSelectedToVocab">📌 加生词本</button>
+          <button type="button" class="ann-bubble-btn" @click="addAnnotation(false)"><Highlighter :size="13" aria-hidden="true" />高亮</button>
+          <button type="button" class="ann-bubble-btn" @click="annotationNote.noteText=''; addAnnotation(true)"><StickyNote :size="13" aria-hidden="true" />高亮+笔记</button>
+          <button type="button" class="ann-bubble-btn" @click="addSelectedToVocab"><BookPlus :size="13" aria-hidden="true" />加生词本</button>
         </div>
         <!-- v3.0: 标注笔记弹窗 -->
         <div v-if="annotationNote.visible" class="ann-note-overlay" @click.self="annotationNote.visible = false">
           <div class="ann-note-card">
             <div class="ann-note-head">
-              <span class="ann-note-title">📌 标注笔记</span>
+              <span class="ann-note-title"><StickyNote :size="13" aria-hidden="true" />标注笔记</span>
               <button type="button" class="ann-note-close" @click="annotationNote.visible = false">✕</button>
             </div>
             <blockquote class="ann-note-quote">“{{ annotationNote.ann?.text }}”</blockquote>
@@ -1365,7 +1370,7 @@ function openDeepExplain(questionId: number) {
         </div>
         <div v-else v-for="question in splitQuestions" :key="question.id" class="question-card" :class="{'unanswered-focus':highlightedQuestionId===question.id}" data-vocab-text :data-question-id="question.id" @contextmenu="openVocabularyMenu">
           <div class="question-title"><strong>{{ question.number }}.</strong> <ContentBlocks v-if="question.stem_blocks?.length" :blocks="question.stem_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ question.stem }}</template>
-             <button class="ai-tutor-btn" title="AI 助教精讲" @click.stop="openDeepExplain(Number(question.id))">✨ AI 精讲</button>
+             <button class="ai-tutor-btn" title="AI 助教精讲" @click.stop="openDeepExplain(Number(question.id))"><Sparkles :size="13" aria-hidden="true" />AI 精讲</button>
           </div>
           <button
             v-for="option in question.options"

@@ -1,7 +1,7 @@
 <template>
   <div class="page essay-page">
     <div class="page-head">
-      <h2>✍️ AI 作文精批</h2>
+      <h2><PenLine :size="18" aria-hidden="true" />AI 作文精批</h2>
       <p class="muted">考研大小作文 · 阅卷组标准多维批改 · 逐句批注 + 满分范文</p>
     </div>
 
@@ -21,11 +21,11 @@
         <div class="essay-footer">
           <span class="word-count" :class="{ ok: wordCount >= 80 && wordCount <= 220, warn: wordCount > 0 && wordCount < 80 }">
             {{ wordCount }} 词
-            <template v-if="wordCount >= 80 && wordCount <= 220">✅ 达标区间</template>
-            <template v-else-if="wordCount > 0 && wordCount < 80">⚠ 不足 80 词</template>
+            <template v-if="wordCount >= 80 && wordCount <= 220"><CircleCheck :size="13" aria-hidden="true" />达标区间</template>
+            <template v-else-if="wordCount > 0 && wordCount < 80"><TriangleAlert :size="13" aria-hidden="true" />不足 80 词</template>
           </span>
           <button class="button essay-submit" :disabled="loading || content.trim().length < 10" @click="evaluate">
-            {{ loading ? '阅卷中…' : '📜 AI 精批' }}
+            {{ loading ? '阅卷中…' : '<FileText :size="15" aria-hidden="true" />AI 精批' }}
           </button>
         </div>
       </div>
@@ -51,7 +51,7 @@
 
         <!-- 行内批注 -->
         <div v-if="result.markups?.length" class="card essay-section-card">
-          <h3>📝 行内纠错</h3>
+          <h3><PenLine :size="15" aria-hidden="true" />行内纠错</h3>
           <div v-for="(m, i) in result.markups" :key="i" class="markup-item" :class="'markup-' + (m.type || 'grammar')">
             <span class="markup-type">{{ markupTypeLabel(m.type) }}</span>
             <p class="markup-original"><s>{{ m.original_text }}</s> → <b>{{ m.replacement }}</b></p>
@@ -61,7 +61,7 @@
 
         <!-- 词汇升格 -->
         <div v-if="result.lexical_upgrades?.length" class="card essay-section-card">
-          <h3>✨ 词汇升格 <small class="section-hint">点击「收录」加入词库，进入复习流</small></h3>
+          <h3><Sparkles :size="15" aria-hidden="true" />词汇升格 <small class="section-hint">点击「收录」加入词库，进入复习流</small></h3>
           <div v-for="(u, i) in result.lexical_upgrades" :key="i" class="upgrade-item">
             <span class="upgrade-orig">{{ u.original_word }}</span>
             <span class="upgrade-arrow">→</span>
@@ -69,14 +69,14 @@
             <span v-if="u.position" class="upgrade-pos">{{ u.position }}</span>
             <!-- v9.28: Gemini batch5 任务4——作文语料收录 -->
             <button class="upgrade-collect" type="button" @click="collectUpgrade(u)" :disabled="collectedUpgrades.has(u.advanced_alternative)">
-              {{ collectedUpgrades.has(u.advanced_alternative) ? '✓ 已收录' : '+ 收录' }}
+              {{ collectedUpgrades.has(u.advanced_alternative) ? '已收录' : '+ 收录' }}
             </button>
           </div>
         </div>
 
         <!-- 满分范文 -->
         <div v-if="result.model_essay" class="card essay-section-card model-essay">
-          <h3>🏆 满分范文</h3>
+          <h3><Award :size="15" aria-hidden="true" />满分范文</h3>
           <p class="model-essay-text">{{ result.model_essay }}</p>
           <div v-if="result.essay_highlights?.length" class="highlight-list">
             <span v-for="(h, i) in result.essay_highlights" :key="i" class="highlight-item">🈴 {{ h }}</span>
@@ -87,7 +87,7 @@
 
     <!-- 历史批改 -->
     <div v-if="history.length" class="card essay-history">
-      <h3>📚 历史批改</h3>
+      <h3><Library :size="15" aria-hidden="true" />历史批改</h3>
       <div class="history-list">
         <button v-for="h in history" :key="h.id" class="history-item" @click="loadHistory(h.id)">
           <span class="history-score">{{ h.score }} 分</span>
@@ -100,6 +100,7 @@
 </template>
 
 <script setup lang="ts">
+import { Award, BookOpen, FileText, Lightbulb, Library, PenLine, Sparkles, CircleCheck, TriangleAlert } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { get, post } from '../api'
 import { showToast } from '../services/toast'

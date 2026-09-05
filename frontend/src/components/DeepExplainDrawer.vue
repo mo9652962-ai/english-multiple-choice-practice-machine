@@ -27,13 +27,13 @@
 
             <!-- 定位句（v9.27 划词可点） -->
             <div v-if="data.locator_sentence" class="explain-section">
-              <h4>📌 原文定位</h4>
+              <h4><Crosshair :size="14" aria-hidden="true" />原文定位</h4>
               <blockquote class="locator-quote" v-html="tokenizeText(data.locator_sentence)"></blockquote>
             </div>
 
             <!-- 解题步骤 -->
             <div v-if="data.solution_steps?.length" class="explain-section">
-              <h4>🗺 解题路径</h4>
+              <h4><Route :size="14" aria-hidden="true" />解题路径</h4>
               <ol class="solution-steps">
                 <li v-for="(s, i) in data.solution_steps" :key="i">
                   <span class="step-num">{{ i + 1 }}</span>{{ s }}
@@ -43,7 +43,7 @@
 
             <!-- 选项逐项解构 -->
             <div v-if="Object.keys(data.options_analysis || {}).length" class="explain-section">
-              <h4>🔍 选项解构</h4>
+              <h4><Search :size="14" aria-hidden="true" />选项解构</h4>
               <div v-for="(opt, key) in data.options_analysis" :key="key" class="option-trap"
                    :class="opt.status === 'correct' ? 'trap-correct' : 'trap-wrong'">
                 <span class="opt-key">{{ key }}</span>
@@ -57,7 +57,7 @@
 
             <!-- 长难句语法（v9.27 划词可点 / v9.28 可收藏） -->
             <div v-if="data.sentence_grammar?.core_skeleton" class="explain-section">
-              <h4>📐 长难句骨架
+              <h4><AlignLeft :size="14" aria-hidden="true" />长难句骨架
                 <button class="collect-btn" type="button" @click.stop="collectFragment('long_sentence', data.sentence_grammar.core_skeleton)" title="收藏到典藏本">
                   <Bookmark :size="13" /> 典藏
                 </button>
@@ -68,18 +68,18 @@
 
             <!-- 知识点 + 建议 -->
             <div v-if="data.knowledge_points?.length" class="explain-section">
-              <h4>🎯 考点</h4>
+              <h4><Target :size="14" aria-hidden="true" />考点</h4>
               <div class="knowledge-tags">
                 <span v-for="k in data.knowledge_points" :key="k" class="knowledge-tag">{{ k }}</span>
               </div>
             </div>
             <div v-if="data.study_advice" class="explain-section advice">
-              <p>💡 {{ data.study_advice }}</p>
+              <p><Lightbulb :size="13" aria-hidden="true" /> {{ data.study_advice }}</p>
             </div>
 
             <!-- 同类推荐 -->
             <div v-if="data.similar_recommendations?.length" class="explain-section">
-              <h4>📚 同类巩固</h4>
+              <h4><Library :size="14" aria-hidden="true" />同类巩固</h4>
               <div class="similar-list">
                 <button v-for="sid in data.similar_recommendations" :key="sid" class="similar-btn"
                         @click="jumpToQuestion(sid)">第 {{ sid }} 题 →</button>
@@ -114,7 +114,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Bookmark, Star } from 'lucide-vue-next'
+import { AlignLeft, Bookmark, Crosshair, Lightbulb, Library, Route, Search, Star, Target } from 'lucide-vue-next'
 import { get, post } from '../api'
 
 const props = defineProps<{ questionId: number | null }>()

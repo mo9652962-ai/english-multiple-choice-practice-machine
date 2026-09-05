@@ -301,9 +301,9 @@ onBeforeUnmount(() => {
         <div>
           <h1>学习聊天室</h1>
           <p class="chat-sub">
-            <template v-if="connected">🟢 {{ online }} 人在线</template>
-            <template v-else-if="offlineMode">📵 离线模式 · 连接电脑后端后可用</template>
-            <template v-else>⚪ 连接中…</template>
+            <template v-if="connected"><span class="status-dot on" aria-hidden="true"></span>{{ online }} 人在线</template>
+            <template v-else-if="offlineMode"><span class="status-dot off" aria-hidden="true"></span>离线模式 · 连接电脑后端后可用</template>
+            <template v-else><span class="status-dot off" aria-hidden="true"></span>连接中…</template>
           </p>
         </div>
       </div>
@@ -336,7 +336,7 @@ onBeforeUnmount(() => {
           </span>
           <div class="chat-bubble" :class="{ streaming: msg.streaming, error: msg.error }">
             <span v-if="msg.streaming && !msg.content" class="typing">
-              <LoaderCircle :size="14" class="spin" aria-hidden="true" /> 阿墨正在输入…
+              <span class="typing-dots" aria-hidden="true"><i></i><i></i><i></i></span>阿墨正在输入…
             </span>
             <span class="bubble-text">{{ msg.content }}</span><span v-if="msg.streaming && msg.content" class="cursor">▍</span>
           </div>

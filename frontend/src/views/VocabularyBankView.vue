@@ -6,6 +6,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { del, get, post, put } from '../api'
 import { sanitizeHtml } from '../services/sanitize'  // v9.24: XSS 防护
 import { ArrowUp, Check, RefreshCw, Search, Star, Trash2 } from 'lucide-vue-next'
+
 import TtsButton from '../components/TtsButton.vue'
 
 const route = useRoute()
@@ -123,7 +124,7 @@ async function exportAnki() {
 
 // v2.36: 词文串学风格标签
 const STYLE_LABELS: Record<string, string> = {
-  interview: '🗣 访谈', argument: '📊 论述', news: '📰 新闻', story: '📖 故事', article: '📄 文章',
+  interview: '访谈', argument: '论述', news: '新闻', story: '故事', article: '文章',
 }
 function styleLabel(style: string) { return STYLE_LABELS[style] || style }
 
@@ -174,22 +175,22 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
     <!-- 分类筛选 -->
     <div class="vocab-categories">
       <button class="vocab-cat-chip" :class="{ active: category === '' }" @click="category=''">全部</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '高中' }" @click="category='高中'">🏫 高中</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">📘 四级</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">📙 六级</button>
-      <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">🎓 考研</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '高中' }" @click="category='高中'">高中</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '四级' }" @click="category='四级'">四级</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '六级' }" @click="category='六级'">六级</button>
+      <button class="vocab-cat-chip" :class="{ active: category === '考研' }" @click="category='考研'">考研</button>
     </div>
     <div class="vocab-categories vocab-cat-types">
       <button class="vocab-cat-chip" :class="{ active: catType === '' }" @click="catType=''">全部类型</button>
-      <button class="vocab-cat-chip" :class="{ active: catType === '·高频' }" @click="catType='·高频'">⭐ 高频词</button>
-      <button class="vocab-cat-chip" :class="{ active: catType === '·热点' }" @click="catType='·热点'">🔥 热点词</button>
-      <button class="vocab-cat-chip" :class="{ active: catType === '·' }" @click="catType='·'">📚 基础词</button>
+      <button class="vocab-cat-chip" :class="{ active: catType === '·高频' }" @click="catType='·高频'">高频词</button>
+      <button class="vocab-cat-chip" :class="{ active: catType === '·热点' }" @click="catType='·热点'">热点词</button>
+      <button class="vocab-cat-chip" :class="{ active: catType === '·' }" @click="catType='·'">基础词</button>
     </div>
 
     <!-- 统计 -->
     <div class="vocab-stats">
       <button class="card" @click="filter='all'"><span>全部单词</span><strong>{{ counts.total || 0 }}</strong></button>
-      <button class="card amber" @click="filter='frequent'"><span>🌟 高频生词</span><strong>{{ counts.frequent || 0 }}</strong></button>
+      <button class="card amber" @click="filter='frequent'"><span><Star :size="14" aria-hidden="true" />高频生词</span><strong>{{ counts.frequent || 0 }}</strong></button>
       <button class="card" @click="filter='review'"><span>今日待复习</span><strong>{{ counts.review || 0 }}</strong></button>
       <button class="card" @click="filter='mastered'"><span>已掌握</span><strong>{{ counts.mastered || 0 }}</strong></button>
       <button class="card" @click="filter='pending'"><span>等待翻译</span><strong>{{ counts.pending || 0 }}</strong></button>
@@ -199,14 +200,14 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
       <aside class="vocab-filters card">
         <div class="search-field"><Search :size="16" /><input v-model="search" placeholder="搜索单词或释义"></div>
         <button v-for="item in [
-          ['all','全部单词'],['review','今日复习'],['frequent','🌟 高频词'],
+          ['all','全部单词'],['review','今日复习'],['frequent','高频词'],
           ['familiar','认识'],['learning','模糊'],['mastered','已掌握'],['pending','等待翻译']
         ]" :key="item[0]" :class="{active:filter===item[0]}" @click="filter=item[0]">{{ item[1] }}</button>
       </aside>
 
       <section class="vocab-list card">
         <button v-for="word in items" :key="word.id" class="vocab-list-item" :class="{active:selected?.id===word.id}" @click="router.push(`/vocab-word/${word.id}`)">
-          <div class="vocab-list-head"><strong><span v-if="word.is_frequent">🌟 </span>{{ word.lemma || word.term }}</strong><small>遇到 {{ word.encounter_count }} 次</small></div>
+          <div class="vocab-list-head"><strong><Star v-if="word.is_frequent" class="freq-star" :size="13" fill="currentColor" aria-hidden="true" /> {{ word.lemma || word.term }}</strong><small>遇到 {{ word.encounter_count }} 次</small></div>
           <p v-if="word.translation_status==='ready'">{{ word.common_meaning || word.contextual_meaning }}</p>
           <p v-else class="pending-text">{{ translationStatusText(word.translation_status) }}</p>
           <div class="vocab-list-meta"><span>{{ word.part_of_speech }}</span><span class="vocab-status-tag" :class="getStatusClass(word.study_status)">{{ vocabStatusText(word.study_status) }}</span></div>
@@ -216,7 +217,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
       <section class="vocab-detail card" v-if="selected">
         <div class="vocab-detail-head">
-          <div><span class="eyebrow">{{ selected.is_frequent ? '🌟 HIGH FREQUENCY' : 'VOCABULARY' }}</span><h2>{{ selected.lemma || selected.term }}<TtsButton :text="selected.term" :speed="0.8" /></h2><p>{{ selected.phonetic }} <span v-if="selected.part_of_speech">· {{ selected.part_of_speech }}</span></p></div>
+          <div><span class="eyebrow">{{ selected.is_frequent ? 'HIGH FREQUENCY' : 'VOCABULARY' }}</span><h2>{{ selected.lemma || selected.term }}<TtsButton :text="selected.term" :speed="0.8" /></h2><p>{{ selected.phonetic }} <span v-if="selected.part_of_speech">· {{ selected.part_of_speech }}</span></p></div>
           <div class="vocab-tools"><button class="button ghost" @click="expandedAll=!expandedAll">{{ expandedAll ? '收起全部' : '展开全部' }}</button><button class="button ghost" @click="exportAnki">导出 Anki</button><button class="button ghost" @click="editing=!editing">编辑</button><button class="button ghost danger-text" @click="removeEntry"><Trash2 :size="17" /></button></div>
         </div>
         <div v-if="selected.translation_status!=='ready'" class="vocab-pending-panel">

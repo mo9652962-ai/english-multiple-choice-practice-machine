@@ -274,10 +274,10 @@ const fbContact = ref('')
 const fbSending = ref(false)
 const fbMsg = ref('')
 const fbCats = [
-  { value: 'bug', label: '🐞 报错' },
-  { value: 'bad', label: '😕 不好用' },
-  { value: 'idea', label: '💡 想要新功能' },
-  { value: 'other', label: '📝 其他' },
+  { value: 'bug', label: '报错' },
+  { value: 'bad', label: '不好用' },
+  { value: 'idea', label: '想要新功能' },
+  { value: 'other', label: '其他' },
 ]
 
 async function submitFeedback() {
@@ -291,12 +291,12 @@ async function submitFeedback() {
       contact: fbContact.value.trim(),
       page: window.location.pathname,
     })
-    fbMsg.value = '✅ 反馈已收到，谢谢！'
+    fbMsg.value = '反馈已收到，谢谢！'
     fbContent.value = ''
     fbContact.value = ''
     setTimeout(() => { fbOpen.value = false; fbMsg.value = '' }, 1200)
   } catch (cause) {
-    fbMsg.value = '❌ 提交失败：' + String(cause)
+    fbMsg.value = '提交失败：' + String(cause)
   } finally {
     fbSending.value = false
   }
@@ -510,7 +510,7 @@ async function submitFeedback() {
       <!-- v2.95: 内置反馈入口 (内测方案 P0) -->
       <article class="card feedback-card">
         <div class="card-header"><h2>反馈建议</h2><p>遇到问题？有想法？3 秒告诉我们——帮助我们把墨题做得更好。</p></div>
-        <button class="button" type="button" @click="fbOpen = true">📮 提交反馈</button>
+        <button class="button" type="button" @click="fbOpen = true"><Mail :size="15" aria-hidden="true" />提交反馈</button>
               </article>
 
               <!-- v3.3: 我的墨题——版本信息 + 检查更新入口 -->

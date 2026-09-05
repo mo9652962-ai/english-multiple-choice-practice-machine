@@ -23,6 +23,8 @@ import {
   Radar,
   Share2,
   Sparkles,
+  Puzzle,
+  Zap,
 } from 'lucide-vue-next'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { get, post } from '../api'
@@ -477,7 +479,7 @@ function buildShareText(): string {
   const aggregate = result.value?.aggregate
   if (!aggregate) return ''
   const lines = [
-    '🧩 错题归因分析摘要',
+    '错题归因分析摘要',
     `范围：${result.value?.scope_title || '错题本整体'}`,
     `参与归因：${aggregate.question_count} 道错题`,
     '',
@@ -576,7 +578,7 @@ onBeforeUnmount(() => {
           <div class="wa-panel-head">
             <div>
               <span class="eyebrow">错因归因</span>
-              <h3>🧩 知识点归因分析</h3>
+              <h3><Puzzle :size="15" aria-hidden="true" />知识点归因分析</h3>
               <p class="wa-panel-sub">
                 12 分类错误原因 → 细粒度知识点 → 分层学习建议 → 跨报告趋势追踪
               </p>
@@ -717,7 +719,7 @@ onBeforeUnmount(() => {
                     <span class="wa-kp-hits">{{ item.hits }} 次</span>
                   </div>
                   <div class="wa-kp-bar"><span :style="{ width: `${item.width}%`, background: causeColor(item.cause_code) }" /></div>
-                  <p v-if="item.guidance" class="wa-kp-guidance">💡 {{ item.guidance }}</p>
+                  <p v-if="item.guidance" class="wa-kp-guidance"><Lightbulb :size="12" aria-hidden="true" /> {{ item.guidance }}</p>
                 </div>
               </template>
               <div v-else class="wa-empty">
@@ -758,7 +760,7 @@ onBeforeUnmount(() => {
                   </header>
                   <div class="wa-suggestion-body">
                     <div v-for="(action, i) in suggestion.immediate_actions" :key="'a' + i" class="wa-action-line">
-                      ⚡ {{ action }}
+                      <Zap :size="12" aria-hidden="true" /> {{ action }}
                     </div>
                     <div v-if="suggestion.knowledge_points.length" class="wa-suggestion-kps">
                       <span v-for="kp in suggestion.knowledge_points" :key="kp.code" class="wa-kp-chip" :title="kp.guidance">

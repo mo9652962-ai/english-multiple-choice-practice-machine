@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { BarChart3, Timer } from 'lucide-vue-next'
 // v2.49: 专注计时 (番茄钟, 借鉴专注清单/Forest)
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
@@ -87,7 +88,7 @@ onBeforeUnmount(() => { if (timer !== null) window.clearInterval(timer) })
         <p class="lead">番茄工作法 · 25 分钟专注，5 分钟休息，让学习进入心流。</p>
       </div>
       <div class="focus-today">
-        <span class="focus-today-item">🍅 今日 {{ todayPomodoros }} 个番茄</span>
+        <span class="focus-today-item"><Timer :size="13" aria-hidden="true" />今日 {{ todayPomodoros }} 个番茄</span>
         <span class="focus-today-item">⏱ {{ Math.round(todayFocusMin) }} 分钟</span>
       </div>
     </div>
@@ -120,11 +121,11 @@ onBeforeUnmount(() => { if (timer !== null) window.clearInterval(timer) })
         </button>
         <button class="button ghost" @click="reset">重置</button>
       </div>
-      <p class="focus-tip">专注时保持安静，完成后自动进入休息 🍃</p>
+      <p class="focus-tip">专注时保持安静，完成后自动进入休息</p>
     </div>
 
     <div class="card report-panel">
-      <h3>📊 今日专注</h3>
+      <h3 class="icon-h3"><BarChart3 :size="15" aria-hidden="true" />今日专注</h3>
       <div class="grid grid-2">
         <div class="stat-card ink-dot"><span class="stat-label">完成番茄</span><div class="stat-value"><b class="rank-num">{{ todayPomodoros }}</b></div><small class="stat-sub">个 25 分钟专注块</small></div>
         <div class="stat-card ink-dot"><span class="stat-label">专注时长</span><div class="stat-value"><b class="rank-num">{{ Math.round(todayFocusMin) }}</b><span class="stat-unit">分</span></div><small class="stat-sub">今日累计专注</small></div>
