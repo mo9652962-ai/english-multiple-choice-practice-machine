@@ -717,7 +717,7 @@ function planIcon(key: string) { return PLAN_ICONS[key] || BookMarked }
           </div>
         </div>
       </div>
-      <div v-else class="card empty">今天没有待复习的单词。</div>
+      <div v-else class="card empty">今天没有待复习的单词。<br><RouterLink class="button compact" style="margin-top:10px" to="/vocab-bank">去词书背新词</RouterLink></div>
     </section>
 
     <!-- v3.4: AI 文章练词弹层（按弱词生成专属短文——锐满分 6.0 借鉴） -->

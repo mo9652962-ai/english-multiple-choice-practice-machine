@@ -55,7 +55,7 @@ function textParts(text: string) {
         </template>
       </p>
       <figure v-else-if="block.type === 'image' && assetUrl(block.assetId)" class="content-block-media">
-        <img :src="assetUrl(block.assetId)" :alt="block.alt || '题库图片'" />
+        <img :src="assetUrl(block.assetId)" :alt="block.alt || '题库图片'" loading="lazy" decoding="async" />
         <figcaption v-if="block.caption">{{ block.caption }}</figcaption>
       </figure>
       <div v-else-if="block.type === 'table'" class="content-block-table">

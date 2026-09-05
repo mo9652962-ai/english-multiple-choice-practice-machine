@@ -181,7 +181,7 @@ async function refreshStats() {
       </button>
     </div>
 
-    <div v-if="loading" class="card empty">加载中…</div>
+    <div v-if="loading" class="card skeleton-card"><span class="skeleton-line"></span><span class="skeleton-line" style="width:72%"></span><span class="skeleton-line" style="width:46%"></span></div>
     <div v-else-if="error" class="warning">{{ error }}</div>
     <div v-else-if="!filtered.length" class="card empty illustrated-empty">
       <div><BookMarked :size="25" /><strong>{{ keyword || activeTag ? '没有匹配的笔记' : '还没有笔记' }}</strong></div>

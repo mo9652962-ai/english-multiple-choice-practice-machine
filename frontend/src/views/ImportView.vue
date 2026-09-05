@@ -896,7 +896,7 @@ async function exportEsq(includeLabels = false) {
         </div>
       </section>
       <div v-else class="card empty illustrated-empty">
-        <img src="/assets/quiet-study-empty.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/assets/quiet-study-empty.webp" alt="" />
         <strong>等待一份新试卷</strong>
         <p>上传或选择一条导入记录后，在这里校对题库。</p>
       </div>

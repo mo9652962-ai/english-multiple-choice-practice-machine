@@ -1,0 +1,181 @@
+{
+ "chunk": 68,
+ "items": [
+  {
+   "question_id": 1676,
+   "long_sentence": "定位句 With Obamacare there is no longer a link between employment and insurance，主干为 there be 存在句，no longer 表示「不再」；between employment and insurance 介词短语修饰 link；With Obamacare 作状语。译：有了奥巴马医改，就业与保险之间不再有联系。",
+   "option": "正确项 D：no longer a precondition to get insurance 是原文 no longer a link between employment and insurance 的推断改写，precondition（前提）对应 link；A「兼职工更难获得保险」正反混淆，原文说更容易；B「全职仍是获得保险的必要条件」与原文方向相反；C「家人获得保险仍有挑战」无中生有。",
+   "keyword": "link 联系＝precondition 前提；insurance 保险；no longer 不再；get insurance through a job 通过工作获得保险。",
+   "note": "定位末段：前句 These are people who may previously have felt the need to get a full-time job that provided insurance 反证就业曾是获得保险的前提；推断题选幅度最小的一项，紧扣「就业与保险脱钩」这层即可。"
+  },
+  {
+   "question_id": 1677,
+   "long_sentence": "主旨题可拆首段主题句 For now it appears the economy is creating jobs at a decent pace，appear 后接省略 that 的从句；at a decent pace 以可观的速度；末段 With Obamacare there is no longer a link between employment and insurance 收束全文。译：目前经济正以可观的速度创造就业岗位。",
+   "option": "正确项 A「美国就业」：全文从 288,000 new jobs、失业率讲到自愿与非自愿兼职，再到 Obamacare 让保险与就业脱钩，始终围绕就业图景；B「兼职分类」只是第三至五段的局部内容，以偏概全；C「通过 Medicaid 获得保险」只是末段细节；D「奥巴马医改的麻烦」无中生有，文中医改起的是正面作用。",
+   "keyword": "the jobs picture 就业图景；voluntary/involuntary part-time 自愿/非自愿兼职；full employment 充分就业；unemployment rate 失业率。",
+   "note": "主旨题三看：首段 good news、中段 However there is another important part of the jobs picture、末段结论；B、C 都是文中真实细节但只覆盖局部，主旨题正确项常是最恰当的概括，注意与以偏概全项区分。"
+  },
+  {
+   "question_id": 1678,
+   "long_sentence": "定位段首句 Fear is both useful and harmful，both...and 并列结构；随后 Will Smith 引语 Fear is not real. It is a product of thoughts you create 指出恐惧是思想的产物；作者总结 fears are just the product of our luxuriant imagination 中 luxuriant 意为「丰富的」。译：恐惧既有用又有害。",
+   "option": "答案 D：Most of your fears are unreal 与引语 Fear is not real 及末句 product of our luxuriant imagination 直接对应，unreal＝not real；A 项 You are not alone 是第 44 段的原词复现句，本题段落通篇谈 fear，与「孤单」无关，属段落错位干扰。",
+   "keyword": "fear 恐惧；unreal＝not real 不真实的；product of thoughts 思想的产物；luxuriant imagination 丰富的想象。",
+   "note": "小标题题先数复现实词：本段 fear 一词出现 5 次，且 not real 与 imagination 两处点出其非真实性；标题须覆盖全段而非一句话，F 项 Don't fear responsibility 与本段内容无关。"
+  },
+  {
+   "question_id": 1679,
+   "long_sentence": "定位句 If you are surrounded by problems and cannot stop thinking about the past, try to focus on the present moment，if 引导条件状语从句；be surrounded by 被…包围；段末 Happiness is...a mindset that can be designed into the present 含 that 定语从句。译：如果你被问题包围、无法停止回想过去，试着专注当下这一刻。",
+   "option": "答案 E：Think about the present moment 与 try to focus on the present moment 原词复现，段末 designed into the present 再次点题；D 项 Most of your fears are unreal 属第 41 段的信息，本段谈的是过去、未来与当下三者的取舍，与 fear 无关，注意相邻段落小标题的干扰。",
+   "keyword": "focus on 专注于；present moment 当下；be weighed down by 被…压垮；mindset 心态。",
+   "note": "本段过去、现在、未来三个时间词并存，但主旨落在当下：try to focus on the present moment、Value the present moment、designed into the present 三次复现，复现三次的词就是标题词。"
+  },
+  {
+   "question_id": 1680,
+   "long_sentence": "定位句 You can be easily caught up by life problems that you forget to pause and appreciate the things you have，that 从句修饰 problems，为结果含义；be caught up by 被…缠住；appreciate 意为「珍视、感激」。译：你很容易被生活问题缠住，以至于忘记停下来珍视自己拥有的东西。",
+   "option": "答案 G：There are many things to be grateful for 是 appreciate the things you have 与 value their life 的同义改写，grateful for≈appreciate；本段以 crying and complaining 反衬强者的微笑与珍视。易混的 E 项属第 42 段（present moment 反复出现），本段的核心是「对已拥有的心怀感激」，对象是 things you have。",
+   "keyword": "appreciate 感激、珍视＝be grateful for；be caught up by 被…缠住；complain about 抱怨；pause 停顿。",
+   "note": "本段仅三句，标题藏在第二句 appreciate the things you have；grateful 与 appreciate 是「感激」家族替换，切勿凭「困境中要乐观」的泛化印象选到其他标题，落到具体复现词最稳。"
+  },
+  {
+   "question_id": 1681,
+   "long_sentence": "定位句 No matter how isolated you might feel and how serious the situation is, you should always remember that you are not alone，no matter how 引导让步状语从句，两个 how 从句并列；that 从句作 remember 的宾语。译：无论你感到多么孤独、处境多么严峻，都要记住你并不孤单。",
+   "option": "答案 A：You are not alone 与段内 you should always remember that you are not alone 逐词复现，是标题题中最直白的对应；后文 friends、companionship、online communities 全在证明「有人陪伴」。C 项 Pave your own unique path 是第 45 段的标题，强调自己做决定，与「寻求他人帮助」方向相反。",
+   "keyword": "isolated 孤立的、孤独的；companionship 陪伴；not alone 不孤单；be willing to 愿意做。",
+   "note": "标题与段中句子逐词复现时可直接锁定，但要确认该句是否为主题句——本句是段首建议句，其后全是支撑细节，故成立；若复现句只是顺带一提，则要另找覆盖全段的标题。"
+  },
+  {
+   "question_id": 1682,
+   "long_sentence": "定位句 Today many people find it difficult to trust their own opinion and seek balance by gaining objectivity from external sources，find it + adj + to do 结构中 it 作形式宾语；by gaining... 为方式状语。译：如今许多人觉得难以相信自己的判断，而靠外部来源的客观性来寻求平衡。",
+   "option": "答案 C：Pave your own unique path 是 believe in yourself、be sure that your decision is the best、make your own choices 的概括，pave one's own path（走自己的路）＝自己做主；易混的 F 项 Don't fear responsibility for your life 偏「不逃避责任」，本段批判的是 devalue your opinion（贬低自己的意见），落脚点在相信自己而非责任。",
+   "keyword": "trust one's own opinion 相信自己的判断；devalue 贬低；external sources 外部来源；pave one's own path 走自己的路。",
+   "note": "两个多余标题 B（Experience helps you grow）与 F 都未用到；本题靠复现归纳：own opinion、own thoughts、own values、own choices 四连 own 指向「走自己的路」，代词密集复现是小标题题的强信号。"
+  },
+  {
+   "question_id": 1683,
+   "long_sentence": "定位句 And new research suggests that happiness might influence 1 ______ firms work, too，that 从句作 suggests 的宾语；空格处引导从句且从句内 firms work 主谓完整，缺的是方式状语。译：新研究表明，快乐或许也会影响公司的运作方式。",
+   "option": "正确项 B：influence 后接 how firms work（公司如何运作），how 表方式，呼应全文「快乐影响投资、研发等经营行为」；A why 表原因（为何运作）、C where 表地点、D when 表时间，语义均与「运作方式」不符。",
+   "keyword": "influence 影响；how firms work 公司的运作方式；suggest（研究）表明；take greater risks 承担更大风险。",
+   "note": "首段是全文总起：前文已说快乐者更有生产力、敢冒险，此处顺势延伸到公司层面；how firms work 与下文 the way companies invested 复现，是本空的上下文线索。"
+  },
+  {
+   "question_id": 1684,
+   "long_sentence": "定位句 Companies located in places with happier people invest more, according to a recent research paper. 2 ______, firms in happy places spend more on R&D，located in 为过去分词短语作后置定语；according to 引出信息来源。译：近期一篇研究论文称，位于人们更快乐地区的公司投资更多；尤其值得一提的是，快乐地区的公司在研发上花钱更多。",
+   "option": "正确项 B In particular（尤其）：前句泛说 invest more，后句具体到 spend more on R&D，是「总说→具体」的递进关系；A In return（作为回报）需前后互惠因果，无此逻辑；C In contrast（相反）用于对立比较，两句同向；D In conclusion（总之）只用于结尾。",
+   "keyword": "in particular 尤其；R&D＝research and development 研发；invest more 投资更多；spend...on 在…上花费。",
+   "note": "逻辑衔接词题先判断两句关系：同向且后者更具体，选「尤其」；in contrast 是完形高频干扰项，务必先确认两句是否真正对立，再看冒号、逗号等标点提示的例证关系。"
+  },
+  {
+   "question_id": 1685,
+   "long_sentence": "定位句 That's because happiness is linked to the kind of longer-term thinking 3 ______ for making investments for the future，because 表语从句解释原因；空格分词短语作后置定语修饰 thinking；be linked to 与…相关。译：这是因为快乐与那种对为未来进行投资必不可少的长远思维相关联。",
+   "option": "正确项 A necessary：necessary for sth（对…必要）与 making investments for the future 搭配，说明长远思维是未来投资所必需，呼应 longer-term；B famous for 以…闻名（对象多为人/地）、C perfect for 完美适配（语义过强）、D sufficient 足够的（表示充足而非必需）。"
+   ,
+   "keyword": "longer-term thinking 长远思维；necessary for 对…必不可少；make investments 进行投资；be linked to 与…相关联。",
+   "note": "分词后置定语空格：所选词须同时满足与 for 的搭配及与 longer-term 的语义呼应；末段 take a longer-term view 是本题的远端复现，完形首尾常有词汇回环。"
+  },
+  {
+   "question_id": 1686,
+   "long_sentence": "定位句 The researchers wanted to know if the 4 ______ and inclination for risk-taking that come with happiness would 5 ______ the way companies invested，if 引导宾语从句；that come with happiness 为定语从句，同时修饰空格名词与 inclination。译：研究人员想弄清，伴随快乐而来的乐观与冒险倾向是否会改变公司的投资方式。",
+   "option": "正确项 C optimism：乐观与 happiness（快乐）同族，且与 inclination for risk-taking（冒险倾向）并列，呼应首段 willing to take greater risks；A individualism 个人主义、B realism 现实主义、D modernism 现代主义都不是「伴随快乐而来」的心理特质，语义脱节。",
+   "keyword": "optimism 乐观（形容词 optimistic）；inclination for 倾向；risk-taking 冒险；come with 伴随…而来。",
+   "note": "并列名词题看两点：与 and 后的 risk-taking 同类、与 come with happiness 搭配；首段 take greater risks 是本题伏笔，完形首段信息常在后文复现，读完全文再回头校验。"
+  },
+  {
+   "question_id": 1687,
+   "long_sentence": "定位句同上：the optimism and inclination for risk-taking that come with happiness would change the way companies invested，would 后接动词原形；the way companies invested 为省略关系词的定语从句。译：伴随快乐而来的乐观与冒险倾向会改变公司投资的方式。",
+   "option": "正确项 D change：change the way companies invested（改变投资方式）与下文 compared...with the investment activity 呼应，比较的正是投资方式有无变化；A miss 错过、B echo 附和、C spoil 破坏，均无法与 the way companies invested 构成合理动宾语义。",
+   "keyword": "change the way 改变…的方式；invest 投资；compare...with 把…与…比较；investment activity 投资活动。",
+   "note": "空 4、5 同句连解：先定名词 optimism 再定动词 change；下一句 So they compared... 的 so 表因果承接，研究行为本身暗示研究者想看到的正是「变化」。"
+  },
+  {
+   "question_id": 1688,
+   "long_sentence": "定位句 So they compared U.S. cities' average happiness 6 ______ by Gallup polling with the investment activity of publicly traded firms in those areas，主干为 they compared A with B；空格分词短语作后置定语修饰 happiness；publicly traded firms 指上市公司。译：于是他们将盖洛普民调测出的美国城市平均快乐度，与这些地区上市公司的投资活动进行比较。",
+   "option": "正确项 B measured：Gallup polling（盖洛普民调）是测量工具，happiness measured by polling（由民调测得的快乐度）搭配自然；A imagined 想象的（民调产不出想象）、C assumed 假定的（民调是实测数据）、D invented 发明的（与数据无关）。",
+   "keyword": "Gallup polling 盖洛普民调；measure 测量；average happiness 平均快乐度；publicly traded firms 上市公司。",
+   "note": "工具与动作的搭配：看到 polling/survey 优先想 measured/collected；分词后置定语中 happiness 与 measure 是被动关系，必须用过去分词，主动 measured 形式考查点正在于此。"
+  },
+  {
+   "question_id": 1689,
+   "long_sentence": "定位句 7 ______ enough, firms' investment and R&D intensity were correlated with the happiness of the area in which they were 8 ______，主干为 investment and R&D intensity were correlated with happiness；in which 定语从句修饰 area。译：果然不出所料，公司的投资与研发强度同其所在地区的快乐度相关。",
+   "option": "正确项 A：Sure enough（果然、不出所料）为固定短语，表「前文预期被验证」，上段刚推测快乐影响投资，此处数据证实；B 项 Odd 不符合 Oddly enough 的地道形式，且「奇怪」与验证预期的语境矛盾；C Unfortunate、D Often 同样不构成「预料之中」义。",
+   "keyword": "sure enough 果然不出所料；be correlated with 与…相关；intensity 强度；R&D intensity 研发强度。",
+   "note": "句首副词性短语题看上下文逻辑而非词义罗列：「假设→验证」结构中选 sure enough，这是考研完形的高频考点；遇到 enough 结尾的短语先背固定搭配再解题。"
+  },
+  {
+   "question_id": 1690,
+   "long_sentence": "定位句 the happiness of the area in which they were 8 ______，in which 引导定语从句修饰 area，they 指代 firms；headquarter 作动词意为「将总部设于」。译：公司总部所在地区的快乐度。",
+   "option": "正确项 D headquartered：they（firms）were headquartered in the area＝公司总部设在该地区，与首段 Companies located in places 的 located 形成同义复现；A divided 被划分、B advertised 被宣传、C overtaxed 被课重税，均不能说明公司与地区的对应关系。",
+   "keyword": "headquarter 将总部设于；be headquartered in 总部位于＝be located in；area 地区；firm 公司。",
+   "note": "熟词僻形：headquarter 的被动式 be headquartered in 是地道表达；前文 located in places with happier people 已为本空埋好复现线索，完形遇到「地区＋公司」场景优先想 located/headquartered。"
+  },
+  {
+   "question_id": 1691,
+   "long_sentence": "定位句 But is it really happiness that's linked to investment, or could something else about happier cities 9 ______ why firms there spend more on R&D?，前半是强调句的一般疑问形式；or 连接并列疑问；why 从句作空格动词的宾语。译：但真的是快乐与投资相关，还是快乐城市里其他某种因素能解释那里的公司为何在研发上花更多钱？",
+   "option": "正确项 C explain：explain why（解释为何）与后文 controlled for various factors（控制变量）的研究逻辑一致，问的正是「是否存在别的解释」；A summarize 总结、B overstate 夸大、D emphasize 强调，都无法带 why 宾语完成这一因果追问。",
+   "keyword": "explain why 解释原因；control for 控制（变量）；something else 其他因素；spend more on 在…上花更多。",
+   "note": "But 与 really 表明本句在质疑因果，To find out... 全是为回答此问服务；完形中一问领起下文时，动词优先选 explain/account for 这类「解释」义动词。"
+  },
+  {
+   "question_id": 1692,
+   "long_sentence": "定位句 the researchers controlled for various 10 ______ that might make firms more likely to invest – like size, industry, and sales，that 引导定语从句；破折号后 like 引出三个例子；control for 意为「控制（变量）」。译：研究人员控制了各种可能使公司更倾向于投资的因素——比如规模、行业和销售额。",
+   "option": "正确项 A factors：size（规模）、industry（行业）、sales（销售额）正是影响投资的「因素」，various factors 与 control for 是统计研究惯用搭配；B stages 阶段、C levels 水平、D methods 方法，均无法被 size/industry/sales 三个例子覆盖。",
+   "keyword": "factor 因素；control for 控制变量；various 各种各样的；size, industry and sales 规模、行业与销售额。",
+   "note": "举例式空格：破折号与 like 后的具体名词是选类别词的最好提示；先读例证再选上义词，是完形名词题的基本功，本题 size/industry/sales 直接锁 factor。"
+  },
+  {
+   "question_id": 1693,
+   "long_sentence": "定位句 and for indicators that a place was 11 ______ to live in, like growth in wages or population，indicators 后接 that 同位语从句说明指标内容；like 后的 wage/population growth 是例证。译：以及显示一个地区宜居程度的指标——比如工资或人口的增长。",
+   "option": "正确项 A desirable：a place was desirable to live in（宜居、令人向往的居住地），工资与人口增长正说明此地值得居住；B sociable 好交际的（修饰人）、C reliable 可靠的（修饰数据/人）、D reputable 有声望的（修饰机构），三者都不能与 to live in 构成地道搭配。",
+   "keyword": "desirable 令人向往的、可取的；indicator 指标；live in 居住；growth in wages or population 工资或人口增长。",
+   "note": "形容词提升结构：live in a desirable place 改写为 a place is desirable to live in，是形容词+不定式固定框架；四个 -able 类词的辨析点在修饰对象，desirable 恰好修饰地方。"
+  },
+  {
+   "question_id": 1694,
+   "long_sentence": "定位句 The link between happiness and investment generally 12 ______ even after accounting for these things，主干为 The link held；even after 引导时间状语；account for 意为「把…考虑在内」。译：即便把这些因素考虑在内，快乐与投资之间的关联总体上依然成立。",
+   "option": "正确项 C held：hold 在此意为「保持有效、依然成立」，与 even after accounting for（即使控制了变量）搭配，说明关联经受住了检验；A resumed 恢复（暗示曾中断）、B emerged 出现（暗示原先不存在）、D broke 断裂（与文意相反，正反混淆）。",
+   "keyword": "hold 维持、成立；link 关联＝correlation；account for 考虑到、把…计算在内；even after 即使在…之后。",
+   "note": "科学语篇高频动词：关联「经受控制后仍存在」用 hold (up) 或 remain；resumed 与 emerged 都暗含「先前不存在或中断」，与 generally 的延续义冲突，even 是本空的逻辑信号词。"
+  },
+  {
+   "question_id": 1695,
+   "long_sentence": "定位句 The correlation between happiness and investment was particularly strong for younger firms, which the authors 13 ______ to 'less codified decision making process'，which 指代主句的整个现象；attribute A to B 意为「把 A 归因于 B」。译：快乐与投资的关联在年轻公司中尤其显著，作者将其归因于「不够规范的决策流程」。",
+   "option": "正确项 B attribute：attribute...to（归因于）后接原因 less codified decision making process，符合解释现象的语境；A assign...to 分配给、C transfer...to 转移到、D compare...to 把…比作，三个动作的宾语都应是具体事物而非一种现象的原因。",
+   "keyword": "attribute...to 把…归因于；correlation 关联；codified 成文的、规范化的；decision making process 决策流程。",
+   "note": "to 的属性靠动词定：attribute/compare to 中的 to 是介词；看到解释性宾语（决策流程不规范）优先锁归因动词，assign/transfer 的宾语须是可移动、可分配的对象。"
+  },
+  {
+   "question_id": 1696,
+   "long_sentence": "定位句 the possible presence of 'younger and less 14 ______ managers who are more likely to be influenced by sentiment'，younger 与 less 空格并列修饰 managers；who 定语从句说明这类经理的特点。译：可能还存在「更年轻、经验更少的经理人，他们更容易受情绪影响」。",
+   "option": "正确项 D experienced：younger（更年轻）与 less experienced（经验更少）并列递进，并与 more likely to be influenced by sentiment（易受情绪左右）构成因果，经验不足才易被情绪带偏；A serious 严肃、B civilized 文明、C ambitious 有雄心，均无法与 younger 形成「年轻→资历浅」的并列逻辑。",
+   "keyword": "experienced 有经验的；less experienced 经验不足；be influenced by 受…影响；sentiment 情绪。",
+   "note": "and 前后一致性原则：younger 指向资历浅，空格应选同方向贬义倾向词；本句的 less experienced managers 与上句 less codified decision making process 同为「年轻公司关联更强」的两个解释。"
+  },
+  {
+   "question_id": 1697,
+   "long_sentence": "定位句 The relationship was 15 ______ stronger in places where happiness was spread more 16 ______，where 引导定语从句修饰 places；主语 The relationship 承接上段的关联话题。译：在快乐分布更均匀的地区，这种关联还要更强。",
+   "option": "正确项 C also：上段已说关联在年轻公司中 stronger，本句补充另一种更强情形（快乐分布均匀的地区），also 表并列递进；A instead 表替代（前后须对立）、B thus 表因果（前后无因果关系）、D never 与 stronger 直接矛盾。",
+   "keyword": "also 也、还（表并列递进）；stronger 更强；relationship＝correlation 关联；spread 分布；in places where 在…的地区。",
+   "note": "篇章衔接题：particularly strong for younger firms 到 was also stronger in places... 是「两种情形都更强」的并列结构；遇到跨句衔接词，先画出前一句的结论再判断逻辑方向。"
+  },
+  {
+   "question_id": 1698,
+   "long_sentence": "定位句 The relationship was also stronger in places where happiness was spread more 16 ______. Firms seem to invest more in places where most people are relatively happy, rather than in places with happiness inequality，rather than 表对比；inequality 意为「不平等」。译：快乐分布越均匀的地方关联越强；公司似乎更愿意在多数人相对快乐的地区投资，而非快乐不均的地区。",
+   "option": "正确项 D equally：spread more equally（分布更均匀）与后文 happiness inequality（快乐不均）构成反义呼应，most people are relatively happy 佐证「均匀」；A rapidly 快速地、B directly 直接地、C regularly 定期地，均无法与 inequality 形成对照。",
+   "keyword": "equally 均匀地、平等地；spread equally 分布均匀；inequality 不平等；rather than 而非。",
+   "note": "线索在后的典型题：下一句 inequality 是 equally 的直接反义复现；完形解题半径常跨两三句，遇到空格暂无把握时先读后一句再回填，效率最高。"
+  },
+  {
+   "question_id": 1699,
+   "long_sentence": "定位句 17 ______ this doesn't prove that happiness causes firms to invest more or to take a longer-term view, the authors believe it at least hints at that possibility，主从句为「让步—转折」结构；prove 后接 that 宾语从句。译：尽管这并不能证明快乐会促使公司投资更多或采取更长远的眼光，但作者认为它至少暗示了这种可能。",
+   "option": "正确项 A While：While（尽管）引导让步状语从句，与主句 at least（至少）呼应，构成「虽不能证明、至少提示」的标准让步框架；B Until、C After 表时间，此句无时间先后义；D Since 表原因或自从，但主从句之间是让步而非因果。",
+   "keyword": "while 尽管（让步用法）；prove 证明；cause sb to do 促使…做；at least 至少；take a longer-term view 采取更长远的眼光。",
+   "note": "两空联动：空 17 的 While 与空 18 的 hint at 同句配套；doesn't prove 与 at least 的弱化表达是学术写作的严谨风格，while 引导让步是考研完形的高频考点，勿条件反射选表原因的 since。"
+  },
+  {
+   "question_id": 1700,
+   "long_sentence": "定位句 the authors believe it at least 18 ______ at that possibility，it 指代本研究；hint at 意为「暗示」。译：作者认为这项研究至少暗示了那种可能性。",
+   "option": "正确项 C hints：hint at（暗示）与 doesn't prove（不能证明）呼应，研究结论只能「暗示」不能「证明」，语气精准；A arrive at 到达（可能性不能被到达）、B jump at 急于接受（主语应是人）、D strike at 袭击，三者的搭配逻辑均不成立。",
+   "keyword": "hint at 暗示＝suggest；possibility 可能性；prove 证明；at that possibility 暗示那种可能。",
+   "note": "动介搭配题：介词 at 的宾语是 possibility，能搭配的只有 hint at；动词短语题先看介词宾语再看主语，it 指研究而非人，可同时排除 jump at 这类需要人作主语的短语。"
+  }
+ ]
+}

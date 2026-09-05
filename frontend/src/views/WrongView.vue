@@ -709,7 +709,7 @@ function analysisLabel(unitIds: number[]): string {
     </div>
 
     <div v-else class="card empty illustrated-empty">
-      <img src="/assets/quiet-study-empty.webp" alt="">
+      <img loading="lazy" decoding="async" src="/assets/quiet-study-empty.webp" alt="">
       <div><Brain :size="25" /><strong>这里还没有错题</strong></div>
       <p>{{ frequentOnly ? '当前没有高频错题，可以切换为查看全部错题。' : '保持这个状态很不错，继续按自己的节奏练习。' }}</p>
     </div>

@@ -137,7 +137,7 @@ async function confirmDelete() {
       </article>
     </div>
     <div v-else class="card empty illustrated-empty">
-      <img src="/assets/quiet-study-empty.webp" alt="" />
+      <img loading="lazy" decoding="async" src="/assets/quiet-study-empty.webp" alt="" />
       <strong>题库还是空的</strong>
       <p>请先到“导入题库”上传 Word 真题。</p>
     </div>

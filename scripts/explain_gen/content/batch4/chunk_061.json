@@ -1,0 +1,180 @@
+{
+ "chunk": 61,
+ "items": [
+  {
+   "question_id": 1501,
+   "long_sentence": "定位句 He also urged councils to impose fast-food-free zones around schools and hospitals，urged 后接省略 that 的宾语从句；破折号后 areas within which takeaways cannot open 为同位语，within which 定语从句修饰 areas。译：他还敦促地方议会在学校和医院周边设立无快餐区，即外卖店不得开业的区域。",
+   "option": "答案 B：ban fast-food outlets in the neighborhood of schools 对应 impose fast-food-free zones around schools、takeaways cannot open，outlet 与 takeaway 都指快餐外卖店；选项 E（crisps 和 candies 生产商参与 Change4Life）是卫生大臣 Lansley 的说法，张冠李戴；A 和 D 是开篇 leading doctors 的集体诉求，并非 Bhugra 个人提议。",
+   "keyword": "urge sb to do 敦促某人做某事；impose 实施、强制实行；fast-food-free zone 无快餐区；takeaway 外卖店＝outlet 快餐门店；in the neighborhood of 在…附近≈around。",
+   "note": "人名定位法：Dinesh Bhugra 的话集中在他出场后的两段，引语谈食物对成长的影响，紧随其后的 He also urged 才是本题答案句；匹配题中人名后接的代词 He 必须回指前文人名，读完两段再选。"
+  },
+  {
+   "question_id": 1502,
+   "long_sentence": "定位句 This includes creating a new responsibility deal with business, built on social responsibility, not state regulation，includes 后接动名词短语作宾语；built on... 过去分词短语作后置定语，not 引出对比否定。译：这包括与企业建立一种新的责任协议，其基础是社会责任而非国家监管。",
+   "option": "答案 G：strengthen the sense of responsibility among businesses 对应 creating a new responsibility deal with business, built on social responsibility，把责任协议抽象为「增强企业责任感」；选项 F（父母在家以身作则保持健康饮食）原文从未提及，无中生有；B 是 Bhugra 的主张；注意发言人立场是靠社会责任而非监管，与医生们的强制诉求方向相反。",
+   "keyword": "responsibility deal 责任协议；spokesperson 发言人；state regulation 国家监管；social responsibility 社会责任；propose 提出、提议。",
+   "note": "发言人观点在 Department of Health spokesperson 的引语内：第一句 create a new vision 是总述，第二句 This includes 才是具体主张；G 项的「增强责任感」是引申改写，需读懂 responsibility deal 的实质再对应。"
+  },
+  {
+   "question_id": 1503,
+   "long_sentence": "定位句 To the men and women who __ in World War Ⅱ and the people they liberated, the G.I. was the common man grown into hero；who 引导定语从句修饰 men and women；they liberated 为省略 whom 的定语从句；grown into hero 过去分词作后置定语。译：对那些在二战中服役的男男女女以及被他们解放的人们来说，G.I. 是成长为英雄的普通人。",
+   "option": "正确答案 served：serve in World War Ⅱ 表「在二战中服役」，serve 的服役义是熟词僻义；performed 表执行、表演，不能表达参军作战；rebelled 表反叛，与下文 the people they liberated（解放者）身份矛盾；betrayed 表背叛，与全文褒扬基调正反混淆。",
+   "keyword": "serve in the military 服役；serve 服务；liberate 解放；soldier 士兵；World War Ⅱ 第二次世界大战。",
+   "note": "线索链：既在二战中作战、又解放了他人的人只能是士兵；下文 battle、soldier 等词复现可反向验证；serve 既有「服务」义又有「服役」义，完形选词时先看语境定词义再定词形。"
+  },
+  {
+   "question_id": 1504,
+   "long_sentence": "定位句 the G.I. was the __ man grown into hero，主干为 the G.I. was the man；grown into hero 过去分词短语作后置定语，表「成长为英雄的」。译：G.I. 是成长为英雄的普通人。",
+   "option": "正确答案 common：common man 是固定表达「平民、普通人」，与下文 an average guy、a common name for a guy、a working class name 形成词汇复现；actual 表「实际的」，强调真实而非虚构；special 表「特别的」，与普通人成英雄的主旨相反；normal 表「正常的、常规的」，侧重标准状态，不与 man 构成「平民」习语。",
+   "keyword": "common man 平民、普通人；average guy 普通人；grow into 成长为；hero 英雄；working class 工人阶级。",
+   "note": "此空考上下文复现：全文主题是平凡人成英雄，average、common、working class 层层呼应；special 与文义相反可直接排除；common 与 normal 都可译「普通」，但 common man 是习语，指身份阶层而非常态。"
+  },
+  {
+   "question_id": 1505,
+   "long_sentence": "定位句 the guy who __ all the burdens of battle, who slept in cold foxholes...；who 引导并列定语从句刻画士兵形象；bear the burdens 为动宾搭配。译：这个小伙子承受着战争的全部重担，睡在寒冷的散兵坑里……",
+   "option": "正确答案 bore：bear（过去式 bore）the burdens 承受重担，是固定搭配；loaded 表装载，宾语应是货物弹药而非 burdens；eased 表减轻、removed 表消除，都与下文睡散兵坑、缺衣少食的艰苦语境正反混淆，方向相反。",
+   "keyword": "bear/bore/borne 承受、忍受；burden 重担、负担；ease 减轻；foxhole 散兵坑；endure 忍受（近义）。",
+   "note": "burdens 与 bear 是黄金搭配，先看宾语 burdens 即可锁定 bear 类动词；再核对语境方向：slept in cold foxholes、went without necessities 全是苦境，说明是「承受」而非「减轻」，eased 与 removed 属正反混淆陷阱。"
+  },
+  {
+   "question_id": 1506,
+   "long_sentence": "定位句 who went without the __ of food and shelter，go without 表「缺乏、没有…将就」；of food and shelter 为介词短语作后置定语，举例说明空格词的范畴。译：他没有食物和住所这些生活必需品。",
+   "option": "正确答案 necessities：食物与住所是生活必需品，necessities of food and shelter 语义贴合；facilities 表设备设施（如体育、办公设施）；commodities 表贸易商品；properties 表房产、财产，三者都不能被 food and shelter 举例概括。",
+   "keyword": "necessity 必需品；go without 没有…也行、缺乏；shelter 住所、庇护；commodity 商品；facility 设施。",
+   "note": "举例即线索：of 后的 food and shelter 是对空格词的具体化，反向归纳其上位概念「必需品」即可；go without necessities 是常见搭配；commodity 常出现在贸易语境、property 常指不动产，均与战场语境脱节。"
+  },
+  {
+   "question_id": 1507,
+   "long_sentence": "定位句 This was not a volunteer soldier, not someone well paid, __ an average guy, up against the best trained... enemies；not...not...but 构成双重否定加肯定的并列结构；well paid 过去分词作后置定语。译：这不是志愿兵，也不是报酬丰厚的人，而是一个普通小伙子，面对着几百年来训练最有素、装备最精良、最凶狠残暴的敌人。",
+   "option": "正确答案 but：not A, not B, but C 结构要求第三项引出肯定对象 an average guy，but 表「而是」；and 无法承接前面的否定语气；nor 需与 neither 呼应或引起倒装，此处语法不通；hence 表因此，是因果连词，与句式不符。",
+   "keyword": "not...but... 不是…而是…；volunteer soldier 志愿兵；well paid 报酬优厚的；average guy 普通人；hence 因此。",
+   "note": "并列结构题看否定词分布：前两项都是 not，第三空必须转肯定；nor 出现时句子要倒装（nor does he...），此处不存在倒装，直接排除；记住 not...but 优先级高于其他连词的直觉培养。"
+  },
+  {
+   "question_id": 1508,
+   "long_sentence": "定位句 an average guy, up __ the best trained, best equipped, fiercest, most brutal enemies seen in centuries；up against 为固定短语；seen in centuries 过去分词作后置定语修饰 enemies。译：一个普通小伙子，面对着几百年来训练最有素、装备最精良、最凶狠残暴的敌人。",
+   "option": "正确答案 against：be up against sb/sth 是固定搭配，表「面对、与…对抗」；up for 表被提名、up to 表由…决定，都不与 enemies 构成对抗语义；from 表来源，与「对抗强敌」的语境无关；前文 drove back the Nazi reign of murder（击退纳粹暴政）也印证对抗关系。",
+   "keyword": "be up against 面对、与…对抗；equipped 装备精良的；brutal 残忍的、野蛮的；fierce 凶猛的；drive back 击退。",
+   "note": "up 是信号词：up against 为完整短语，单独背下来即可秒杀；完形中遇到 enemies、difficulties 等对手类宾语，优先考虑对抗类介词；四个选项只有 against 能使 up 与 enemies 同时成立。"
+  },
+  {
+   "question_id": 1509,
+   "long_sentence": "定位句 G.I. is just a military abbreviation __ Government Issue, and it was on all of the articles handed out to soldiers；现在分词短语作后置定语，说明缩写的含义；handed out 过去分词作后置定语修饰 articles。译：G.I. 只是一个军事缩写，意思是 Government Issue（政府配给），它印在发放给士兵的所有物品上。",
+   "option": "正确答案 meaning：abbreviation 与 Government Issue 之间是「缩写＝全称释义」的直接关系，meaning 表「意思是」；implying 表间接暗示，不用于直接释义；symbolizing 表象征，缩写不象征全称；claiming 表声称，主语应是人而非缩写词。",
+   "keyword": "abbreviation 缩写；Government Issue 政府配给；mean 意为；imply 暗示；symbolize 象征；stand for 代表（近义）。",
+   "note": "缩写释义是固定题型线索：A is an abbreviation meaning/standing for B；imply、symbolize 都隔了一层抽象关系，claiming 的主语限制最严格；看到 abbreviation 直接种下 meaning。"
+  },
+  {
+   "question_id": 1510,
+   "long_sentence": "定位句 it was on all of the articles __ to soldiers，过去分词短语作后置定语修饰 articles，逻辑主语是 articles，即物品「被发放给士兵」。译：它印在发放给士兵的所有物品上。",
+   "option": "正确答案 handed out：hand out 表分发、发放，政府配给品发给士兵，语义与方向都吻合；turned over 表移交、翻转，强调所有权转移；brought back 表带回、归还；passed down 表世代相传、由前辈传给后辈，方向和场景都不符。",
+   "keyword": "hand out 分发、发放；article 物品、物件（此处义）；turn over 移交；bring back 带回；pass down 世代相传。",
+   "note": "Government Issue 政府配给是背景线索：配给即国家向士兵发放物资，hand out 是唯一匹配方向（从官方到士兵）的短语；pass down 的「代际传承」是最高频干扰，记住它需要祖先与后代两个时间端点。"
+  },
+  {
+   "question_id": 1511,
+   "long_sentence": "定位句 And Joe? A common name for a guy who never __ it to the top，who 引导定语从句；make it 为固定习语，it 是习语的形式宾语。译：至于 Joe？那是个从未出人头地的小人物的普通名字。",
+   "option": "正确答案 made：make it to the top 是固定习语，表「成功登顶、出人头地」，make it 中 it 为习语固有成分；got it to the top 中 get 与 it 搭配成 get it（明白）则语义断裂；managed 需接 to do 不定式而非 it；pushed it 表勉强，无登顶义。",
+   "keyword": "make it 成功、办到；make it to the top 出人头地；a common name 普通名字；work one's way up 步步高升（近义）。",
+   "note": "先抓 it：空格后有宾语 it，能自然吸收这个 it 的只有习语 make it；manage 表示成功须用 manage to do 结构；下文 Joe Blow、working class name 一连串平民名字也印证「从未登顶」的语义。"
+  },
+  {
+   "question_id": 1512,
+   "long_sentence": "定位句 The United States has __ had a president or vice-president or secretary of state Joe，现在完成时 has had 结构，副词置于助动词与实义动词之间。译：美国从未有过叫 Joe 的总统、副总统或国务卿。",
+   "option": "正确答案 never：上文说 Joe 是 a working class name、never made it to the top，顺理成章推出「从未有过总统叫 Joe」，never 与完成时连用表全盘否定；ever 表曾经，与语义正反混淆；either 用于否定句句尾或二者选一；neither 表两者都不，此处并列对象超过两个且句式不符。",
+   "keyword": "never 从未；president 总统；vice-president 副总统；secretary of state 国务卿；working class 工人阶级。",
+   "note": "逻辑链题：Joe 是平民名字→从未出人头地→美国从未有叫 Joe 的高官，空前 has 与空后 had 锁定完成时，频率副词插中间；ever 需要疑问或否定语境，此处肯定句式直接排除。"
+  },
+  {
+   "question_id": 1513,
+   "long_sentence": "定位句 G.I. Joe had a __ career fighting German, Japanese, and Korean troops，现在分词短语 fighting... 作后置定语修饰 career，说明其生涯内容。译：G.I. Joe 曾有一段与德、日、朝军队作战的辉煌生涯。",
+   "option": "正确答案 distinguished：distinguished career 表卓越的生涯，与 G.I. Joe 战功卓著、后被拍成电影的地位相符；disguised 表伪装的，与 career 搭配无意义；disturbed 表被扰乱的；disputed 表有争议的，与全文褒扬基调正反混淆。",
+   "keyword": "distinguished 杰出的、卓越的；career 生涯、职业生涯；troops 军队；distinguish 使著名、使区别于。",
+   "note": "褒贬判断先行：G.I. Joe 在全文是平民英雄形象，career 前的修饰词应为褒义，四个选项中只有 distinguished 是正面词；distinguish 的形容词化是考研高频词义考点。"
+  },
+  {
+   "question_id": 1514,
+   "long_sentence": "定位句 He appears as a character, or a __ of American personalities, in the 1945 movie The Story of G.I. Joe；or 引导同位补充，a collection of 表「…的集合体」。译：他在 1945 年的电影《G.I. Joe 的故事》中以一个角色、或者说美国性格的集合体形象出现。",
+   "option": "正确答案 collection：a collection of American personalities 表「美国人性格的集合」，与 character（集多种美国人之性格于一身的角色）互为解释；company 表公司或陪伴，community 表社区、群体，colony 表殖民地，均不能表达「多种性格的聚合」义。",
+   "keyword": "collection 集合、合集；a collection of …的集合；personality 性格、个性；appear as 以…形象出现。",
+   "note": "or 是同义信号：前后成分互为解释，空格词必须能概括「美国人的群体性格」；collection 表聚合成体，与下文普通士兵形象呼应；colony、community 是形近词陷阱，靠词义场排除。"
+  },
+  {
+   "question_id": 1515,
+   "long_sentence": "定位句 Some of the soldiers Pyle __ portrayed themselves in the film，the soldiers Pyle interviewed 为省略关系词的定语从句，完整形式是 the soldiers whom Pyle had interviewed；portrayed 表扮演、描绘。译：一些普利采访过的士兵在影片中出演了他们自己。",
+   "option": "正确答案 interviewed：Pyle 是战地记者（war correspondent），对士兵的日常工作动作是「采访」；employed 表雇佣，记者无权雇士兵；appointed 表任命，更不合场景；questioned 偏审问、质询，记者问询用 interview 而非 question。",
+   "keyword": "interview 采访；war correspondent 战地记者；portray 扮演、刻画；cover 报道；base on 根据…改编。",
+   "note": "职业决定动作：看到 war correspondent 就要联想 interview、report、cover 这组动词；question 与 interview 都含提问，但 question 带审查拷问色彩；本句还原为 whom Pyle interviewed 后语法更清楚。"
+  },
+  {
+   "question_id": 1516,
+   "long_sentence": "定位句 Pyle was famous for covering the __ side of the war, writing about the dirt-snow-and-mud soldiers，covering 表报道，动名词短语作介词宾语；writing about... 现在分词作伴随状语。译：普利以报道战争中人性的一面而闻名，他写的是满身泥雪的士兵。",
+   "option": "正确答案 human：the human side of the war 战争中人性的一面，与下文写普通士兵的日常疾苦一致；military（军事的）、political（政治的）与下文 not how many miles were gained（不写战果推进）矛盾，属正反混淆；ethical 表伦理的，与士兵生活细节无关。",
+   "keyword": "human side 人性的一面；cover 报道、采访；dirt-snow-and-mud 满身泥雪的；gain ground 推进、取得进展。",
+   "note": "下文解释即答案：writing about the dirt-snow-and-mud soldiers 与 not how many miles... 构成取舍对照，被写的是「人」，被略的是「战况」，故为 human side；military 是最强干扰，恰好是原文否定的那一面。"
+  },
+  {
+   "question_id": 1517,
+   "long_sentence": "定位句 not how many miles were __ or what towns were captured or liberated，两个并列宾语从句；were gained 为被动语态，miles 与 gain 构成搭配。译：而不是推进了多少英里、占领或解放了哪些城镇。",
+   "option": "正确答案 gained：how many miles were gained 表推进了多少英里，与战报用语 captured、liberated 并列；ruined 表毁坏，宾语通常是城市房屋而非 miles；commuted 表通勤，是不及物动词，不能用于被动；patrolled 表巡逻，巡逻不产生 miles 的推进战果义。",
+   "keyword": "gain 推进、获得；gain ground 取得进展；capture 占领；liberate 解放；mile 英里；or 连接并列战报信息。",
+   "note": "并列结构互证：or 后的 captured or liberated 都是战报动词，空格词也应属同一语义场；gained 与 miles 搭配表推进距离是军事报道惯用语；commute 是形近词陷阱，注意它与被动语态不兼容。"
+  },
+  {
+   "question_id": 1518,
+   "long_sentence": "定位句 His reports __ the Willie cartoons of famed Stars and Stripes artist Bill Maulden，主语是 His reports，谓语需表达「报道与漫画的关系」。译：他的报道与著名军报《星条旗报》画家比尔·莫尔登创作的威利漫画如出一辙。",
+   "option": "正确答案 paralleled：parallel 表与…相似、堪比，两人题材相同但载体不同（文字报道与漫画），用「相似」最准确；duplicated 表复制，报道与漫画形式不同谈不上照搬；counteracted 表对抗抵消、contradicted 表矛盾，与两人共同描绘战争艰辛的事实正反混淆。",
+   "keyword": "parallel 与…相似、媲美；cartoon 漫画；duplicate 完全复制；counteract 抵制、抵消；contradict 与…矛盾。",
+   "note": "下文 Both men 17 the dirt and exhaustion of war 是关键：两人做同一件事，关系是相似而非复制或对立；parallel 作动词的「堪比」义是考研熟词僻义；duplicated 需要完全相同的形式，此处不满足。"
+  },
+  {
+   "question_id": 1519,
+   "long_sentence": "定位句 Both men __ the dirt and exhaustion of war, the fragments of civilization that the soldiers shared...，Both men 作主语，that 引导定语从句修饰 fragments。译：两人都着力表现了战争的肮脏与疲惫，表现了士兵之间以及士兵与平民分享的那些文明碎片。",
+   "option": "正确答案 emphasized：emphasize 表强调、着力表现，与上文 Pyle 专写士兵疾苦、漫画同题材的事实吻合；neglected 表忽视、avoided 表回避，与他们以战争艰辛为主题正反混淆；admired 表钦佩，对象通常是人或品质，不能是 dirt and exhaustion 这类苦况。",
+   "keyword": "emphasize 强调、突出；exhaustion 筋疲力尽；both 两者都；depict 表现、描绘（近义）；dirt 肮脏、泥污。",
+   "note": "Both men 承接上句 paralleled：既然题材相同且已写出来，动作必是「表现、强调」这类肯定动词；neglected 与 avoided 是先写后否定的正反混淆；admire 的宾语搭配限制（人、品质）可作第二重排除。"
+  },
+  {
+   "question_id": 1520,
+   "long_sentence": "定位句 the __ of civilization that the soldiers shared with each other and the civilians: coffee, tobacco, whiskey, shelter, sleep，that 引导定语从句，冒号后列举具体内容。译：士兵之间以及士兵与平民分享的那些文明碎片：咖啡、烟草、威士忌、住所与睡眠。",
+   "option": "正确答案 fragments：冒号后列举的咖啡、烟草、威士忌都是战场上难得一尝的文明生活零星之物，fragments of civilization 表「文明的碎片」最贴切；advances 表进步，战场谈不上文明进步；stages 表阶段，与列举物不搭；illusions 表幻觉，列举的是真实享受而非虚象。",
+   "keyword": "fragment 碎片、零星之物；civilization 文明；share with 与…分享；whiskey 威士忌；shelter 住所。",
+   "note": "冒号列举是解题核心：具体物反推抽象概念， battlefield 上偶尔喝到的咖啡与睡上一觉只是文明的残片；advances（文明进步）与战争摧毁文明的现实正反混淆，是最具迷惑性的干扰词。"
+  },
+  {
+   "question_id": 1521,
+   "long_sentence": "定位句 __ Egypt, France, and a dozen more countries, G.I. Joe was any American soldier, at that point the most important person in their lives，介词短语作状语；a dozen more countries 表十几个国家。译：对埃及、法国以及其他十几个国家来说，G.I. Joe 就是任何一个美国士兵，是当时他们生活中最重要的人。",
+   "option": "正确答案 To：To + 国家名 表「对…国人民而言」，与句末 in their lives 中 their（指这些国家的人民）呼应，观点主体是各国人；Among 表在…之中，不能引出评价主体；With 表伴随；Beyond 表超出，均无法与 their lives 建立指代呼应。",
+   "keyword": "to 对…而言；a dozen 一打、十二个；any American soldier 任何一个美国士兵；in their lives 在他们生活中。",
+   "note": "代词回指定介词：句尾 their 指代这些国家的人民，能表达「在某人看来」的介词只有 to；Among Egypt and France 表空间包含，不合「对…来说」的评价句式；完成时间线：at that point 表当时。"
+  },
+  {
+   "question_id": 1522,
+   "long_sentence": "定位句 G.I. Joe was any American soldier, __ the most important person in their lives，破折号或逗号引导的同位补充结构，对 any American soldier 作补充说明。译：G.I. Joe 就是任何一个美国士兵，在那个时候是当地百姓生活中最重要的人。",
+   "option": "正确答案 at that point：at that point 表「在那时、在那个阶段」，限定二战期间的时间范围，与全文过去时叙述一致；on the contrary 表相反，前后无转折关系；by this means 表通过这种方式，逻辑关系不对；from the outset 表从一开始，与「二战期间当地人对士兵的依赖」的时间限定不符。",
+   "keyword": "at that point 在那时、在那一节点；on the contrary 相反；by this means 通过这种方式；from the outset 从一开始。",
+   "note": "逻辑关系词先看前后句关系：本句是补充说明而非转折或方式，排除 on the contrary 与 by this means；再核对时间：全文讲二战往事，at that point 的「当时」义精准匹配，from the outset 则把时间提前到起点。"
+  },
+  {
+   "question_id": 1523,
+   "long_sentence": "定位句 Homework has never been terribly popular with students and even many parents, but in recent years it has been particularly scorned；but 连接前后转折；in recent years 时间状语与题干 nowadays 呼应；scorn 表轻蔑、讥讽。译：家庭作业从来不受学生甚至许多家长的欢迎，但近年来它尤其受到讥讽。",
+   "option": "正确项 is receiving more criticism：particularly scorned 对应 receiving more criticism，scorn 与 criticism 同义替换；is gaining more preferences 与 never been terribly popular 矛盾，正反混淆；is no longer an educational ritual 无中生有，原文仍称其为 educational ritual；is not required for advanced courses 偷换概念，原文说的是新政策豁免高级课程，并非作业不被要求。",
+   "keyword": "scorn 蔑视、讥讽＝harsh criticism；terribly 非常（口语化强调）；educational ritual 教育惯例；popularity 受欢迎程度。",
+   "note": "imply 题看首段隐含义：nowadays 对应 in recent years，锁定 but 之后 scorned，作业「一直不受欢迎、近年更糟」，批评在变多；正确项把 scorn 名词化为 criticism，属于词性转换式同义改写。"
+  },
+  {
+   "question_id": 1524,
+   "long_sentence": "定位句 This rule is meant to address the difficulty that students from impoverished or chaotic homes might have in completing their homework；主干是 This rule is meant to address the difficulty；that 引导同位语从句解释 difficulty，从句内含 have difficulty in doing 结构；impoverished or chaotic 作定语。译：这项规则旨在解决来自贫困或混乱家庭的学生在完成作业时可能遇到的困难。",
+   "option": "正确项 C may have problems finishing their homework：might have in completing their homework≈may have problems finishing，have difficulty in doing 与 have problems doing 互为同义；A「对教育期望不高」无中生有；B「要求不同的教育标准」偷换概念，原文只说政策有降低穷人标准的风险，并非学生主动要求；D「抱怨作业」无中生有，首段说的是家长和学生的普遍态度而非贫苦学生的诉求。",
+   "keyword": "be meant to 旨在、意在；address 解决、处理＝tackle；impoverished 贫困的＝poor；chaotic 混乱的；have difficulty (in) doing 做某事有困难。",
+   "note": "because 问政策原因，定位 This rule is meant to address；impoverished 是 poor 的书面替换；注意原文 might 与正确项 may 的情态呼应，语气一致是细节题正确项的重要特征。"
+  },
+  {
+   "question_id": 1525,
+   "long_sentence": "定位句 with homework counting for no more than 10% of their grades, students can easily skip half their homework and see very little difference on their report cards；with 复合结构（独立主格）作状语，counting for 表占（成绩比例）；skip 与 see 为并列谓语。译：由于作业只占成绩的 10%，学生很容易逃掉一半作业，而在成绩单上看不出什么差别。",
+   "option": "正确项 D discourage students from doing homework：can easily skip half their homework 即「做不做作业差别不大」，这会打击学生做作业的积极性；A「对成绩单漠不关心」偷换概念，原文说的是成绩单上看不出差别，不是学生不在乎；B「削弱州测试权威」张冠李戴，原文只说有的学生不做作业也能考好，并未批评州测试本身；C「限制教师教育权力」答非所问，教师未被赋权是段末另一层批评，且与 may 的疑问指向不符。",
+   "keyword": "count for 占（比例）、有分量；skip 跳过、不做；discourage sb from doing 打消某人做某事的念头；report card 成绩单。",
+   "note": "第三段论证链：占比 10%→轻易逃作业→成绩单无差别→作业其实可能有用；「做与不做一个样」正是劝退机制，D 是对 skip easily 的概括；同段信息密集，务必核对题干问的是「政策的问题」。"
+  }
+ ]
+}
