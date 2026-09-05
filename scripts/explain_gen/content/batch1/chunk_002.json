@@ -1,0 +1,180 @@
+{
+ "chunk": 2,
+ "items": [
+  {
+   "question_id": 26,
+   "long_sentence": "定位句主干是 Chase Carey was named to replace Ecclestone；两个破折号之间为同位语 a former executive with Fox Broadcasting Company and DirecTV，内含 who 引导的定语从句 who by his own admission is not a fierce racing fan；by his own admission 意为「据他自己承认」。译：蔡斯·凯里——福克斯广播公司与 DirecTV 前高管、他自己承认并非狂热赛车迷——被提名接替埃克莱斯顿。",
+   "option": "答案 C 段：who by his own admission is not a fierce racing fan——admitted≈by his own admission、not super interested in car racing≈not a fierce racing fan，new leader 对应 was named to replace Ecclestone；B 段 dictator 说的是老领导 Ecclestone 的风格，张冠李戴；J 段只列 Carey 履历，未提对赛车的兴趣，答非所问。",
+   "keyword": "by one's own admission 据自己承认＝admit；fierce 狂热的、激烈的；be named to do 被任命做某事；replace 取代、接替。",
+   "note": "题干 admitted 是「自认」信号词，定位优先找 by his own admission 这类表达；not super interested 的口语化降格对应原文 not a fierce racing fan，程度词 super→fierce 的替换要敏感；先确认主角是新领导 Carey，别把 B 段 Ecclestone 的信息安到他头上。"
+  },
+  {
+   "question_id": 27,
+   "long_sentence": "定位句主干是 The larger question, though, is a familiar one；冒号后为问句形式的同位语，解释 question 的内容：Is there room for Formula One in the ever-crowded sports landscape of the United States?；ever-crowded 为复合形容词「日益拥挤的」，修饰 sports landscape。译：然而更大的问题是一个人们熟悉的问题：在美国本已拥挤的体育版图中，还有 F1 的容身之地吗？",
+   "option": "答案 H 段：Opinions vary 正是 opinions differ 的同义替换；whether Formula One can be promoted in the U.S.≈Is there room for Formula One in...the United States；段内 Professor Bloom 关于 narrative 的论述进一步支撑「观点不一」。D 段也谈美国市场但只讲 Carey 的扩张目标，没有意见分歧，无中生有；I 段讲 F1 与 Nascar 车迷差异，答非所问。",
+   "keyword": "opinions vary 意见不一＝opinions differ；room 空间、余地；sports landscape 体育版图、格局；promote 推广、提升。",
+   "note": "vary 与 differ 是「分歧」题的高频信号词，扫段时优先搜；题干 whether 从句对应原文的设问句——问句常承载争议信息；H 段还有 John Bloom 的长篇引语，本题只取前两句的 Opinions vary，别被引语细节带偏。"
+  },
+  {
+   "question_id": 28,
+   "long_sentence": "定位句为 K 段引语 It's about speed, danger and risk. And Formula One has that more than any other racing series；that 指代前句的 speed, danger and risk；more than any other 用比较级表达最高级含义「比任何其他…都更」；It's about... 句式表「关键在于」。译：它关乎速度、危险与风险，而 F1 比任何其他赛车系列赛都更具备这些特质。",
+   "option": "答案 K 段：Formula One has that more than any other racing series——compared with other racing series≈more than any other racing series、focuses more on speed≈speed、involves more danger≈danger and risk；E 段也拿 Nascar 对比 F1，但比的是知名度与观众认知，未提速度与危险，张冠李戴；G 段讲数字化与虚拟现实，无中生有。",
+   "keyword": "racing series 赛车系列赛；push the limits 挑战极限；more than any other 比任何其他…都（比较级表最高级）；risk 风险＝danger。",
+   "note": "题干含比较结构 Compared with，定位优先找 more than any other 句式；本题主张出自引语人物 Patrick Crakes——他先讲 Nascar 车迷不再修车，再落到 speed, danger and risk；E 段同谈两赛对比，区分点是「比较的维度」：知名度还是危险性。"
+  },
+  {
+   "question_id": 29,
+   "long_sentence": "定位句 Supermarkets have long been suffering as one of the thinnest-margined businesses and one of the least-looked-forward-to places to work or visit；主干是 Supermarkets have long been suffering；as 引出承受痛苦的方面；thinnest-margined 为复合形容词「利润率最薄的」。译：超市长期以来是利润最薄的行业之一，也是最不被人期待去工作或光顾的场所之一。",
+   "option": "正确项 B「一直在失去顾客和利润」＝thinnest-margined（利润薄）+ least-looked-forward-to（少人想来）+ under attack from e-commerce giants 的合并概括；A「正在走向破产」无中生有，原文只说 suffering；C「被迫采用电商策略」偷换概念，电商是攻击方；D「难以适应气候变化」偷换概念，原文是被指责 contributing to climate change，方向相反。",
+   "keyword": "thinnest-margined 利润最薄的；margin 利润、差额；under attack 受到攻击；e-commerce giants 电商巨头。",
+   "note": "首段首句即主题句，problem 对应 suffering；B 项把利润与客源两个细节升格为 losing customers and profits，这种「细节上概括」正是正确项写法；D 项复现原词 climate change 是典型的原词陷阱，核对动词 contributing 与 adapting 的差异即可排除。"
+  },
+  {
+   "question_id": 30,
+   "long_sentence": "定位句 The revolutionary idea of a self-service grocery...first came about in America；主干是 The idea first came about in America；where 引导非限制性定语从句，说明自助购物的方式（自取而非让店员拿取）；rather than 表对比。译：自助食品店这一革命性理念——人们在货架间自取食物而非让店员拿取——最早出现在美国。",
+   "option": "正确项 B「起源于美国」＝first came about in America 的同义改写，originate≈first came about；A「由 King Kullen 提出」张冠李戴，原文只说哪家最早存在争议、共识围绕 King Kullen 这家店；C「一直饱受争议」偷换概念，debate 的对象是哪一家最早而非理念本身；D「至今仍显革命性」正反混淆，原文说 Supermarkets may not feel cutting-edge now。",
+   "keyword": "come about 产生、出现＝originate；self-service 自助式；aisle 货架通道；consensus 共识。",
+   "note": "本题唯一落点是 came about in America 这个地点信息，B 项 originate 是其标准同义词；A、C 都搬运原文词（King Kullen、debate）设陷阱，判断争论与归属的具体对象即可排除；D 项 revolutionary 原词复现但时间指向被篡改。"
+  },
+  {
+   "question_id": 31,
+   "long_sentence": "定位句 The supermarket imitated the Fordist factory, with its emphasis on efficiency and standardization, and reimagined it as a place to buy food；主干是 The supermarket imitated...and reimagined it as...；it 指代 the Fordist factory；reimagine...as... 意为「把…重塑为…」。译：超市模仿强调效率与标准化的福特制工厂，并把它重塑为购买食品的场所。",
+   "option": "正确项 D「革命性地改变了商品分销」＝紧随其后的 they were a revolution in distribution at the time，revolutionized≈revolution；A「多方面实现传统杂货店现代化」无中生有；B「引入尖端的店面布局」偷换概念，原文 cutting-edge 说的是如今不再尖端；C「提高了所售食品的质量」无中生有，原文强调效率与标准化，未提质量。",
+   "keyword": "imitate 模仿；Fordist factory 福特制工厂；efficiency and standardization 效率与标准化；a revolution in distribution 分销领域的革命。",
+   "note": "题干 by adopting the Fordist factory approach 问「带来的结果」，答案落在定位句的下一句 a revolution in distribution——细节题的答案句常在定位句前后一句；B 项借原文词 cutting-edge 造陷阱，原词复现不等于正确，必须核对修饰对象。"
+  },
+  {
+   "question_id": 32,
+   "long_sentence": "定位句 they keep the milk, eggs, and other daily basics all the way back so you'll travel through as much of the store as possible, and be tempted along the way；主干是 they keep...back；so 引导目的状语从句；along the way 意为「沿途」。译：商家把牛奶、鸡蛋等日常必需品放在店铺最深处，好让你尽可能走遍店内更多区域，并在途中不断被商品吸引。",
+   "option": "正确项 C「诱导顾客进行更多计划外购买」＝把日用品放远 + be tempted along the way 的目的概括，induce≈tempt、unplanned purchases≈途中被勾起的临时购买；A「激起顾客购买鲜花果蔬的欲望」以偏概全，arouse appetite 只是入口区设计且非整体布局目的；B「方便顾客拿到想买的商品」正反混淆，原文故意让人多走；D「带来更愉快的购物体验」无中生有。",
+   "keyword": "layout 布局；tempt 诱惑＝induce；daily basics 日用必需品；all the way back 在最里端。",
+   "note": "目的题盯住 so (that) 从句——布局的目标是让顾客 be tempted along the way；C 项 unplanned 是对「本来只想买牛奶却一路被吸引」的合理概括；A 项只复述前半句入口区功能，覆盖面不足，属「局部正确」陷阱。"
+  },
+  {
+   "question_id": 33,
+   "long_sentence": "定位句 We have long feared that this 'revolution in distribution' uses corporate black magic on our appetite；主干是 We have long feared；that 引导宾语从句；corporate black magic（企业黑魔法）为隐喻，指暗中操纵消费欲望的营销手段。译：我们长期担心这场「分销革命」在人们的食欲上施展企业黑魔法。",
+   "option": "正确项 A「用狡猾的手段促销」＝uses corporate black magic on our appetite 的去隐喻改写，tricky strategies≈corporate black magic；C「对陈列商品施黑魔法」偷换概念，黑魔法作用于 appetite 而非 goods；D「利用女顾客的弱点」以偏概全，书中女性被催眠只是例证，整体担忧是操纵购买欲；B「将彻底取代本地杂货店」无中生有。",
+   "keyword": "suspicion 怀疑；corporate black magic 企业黑魔法（喻操纵手段）；appetite 食欲、购买欲；hypnoidal trance 催眠恍惚状态。",
+   "note": "feared 与原文 have long feared 原词对应，定位极快；解题关键是拆隐喻——black magic 并非真魔法而是「暗中操纵」的修辞，A 项 tricky strategies 是其白话翻译；C 项照抄 black magic 原词最易误选，照抄原词的选项常是陷阱。"
+  },
+  {
+   "question_id": 34,
+   "long_sentence": "定位句 The traditional school year...was first implemented when America was an agricultural society and the summer months were needed for farm work；主干是 The traditional school year was first implemented；when 引导时间状语从句，内含 and 并列的两个分句。译：传统学年最早实施于美国还是农业社会、夏季月份需要用于农活的时期。",
+   "option": "正确项 A「学生需要帮忙干农活」＝the summer months were needed for farm work 加下文 Students no longer spend summers farming 的反向印证；B「需要时间学习必要农技」偷换概念，原文是干农活而非学技能；C「当时社会不重视学业」无中生有；D「在科学制定校历上落后于他国」张冠李戴，lagging behind other countries 说的是如今学术现状，与放假起源无关。",
+   "keyword": "implement 实施、推行；agricultural society 农业社会；farm work 农活；lag behind 落后于。",
+   "note": "因果题：题干 why 对应原文 when 从句里的 were needed for farm work，隐含「放假是为腾出时间务农」，下文 no longer spend summers farming 佐证；D 项的 lag behind 是第二段原词，借词造陷阱，务必核对时间指向是现在还是过去。"
+  },
+  {
+   "question_id": 35,
+   "long_sentence": "定位句 Teachers and students experience a closer relationship in year-round schools than they do in traditional schools；主干是 Teachers and students experience a closer relationship；than 引导比较状语从句，do 替代 experience。译：全年制学校中的师生关系比传统学校中的更紧密。",
+   "option": "正确项 D「增进他们与老师的关系」＝Teachers and students experience a closer relationship 的名词化改写，strengthen the relationship≈closer relationship；A「帮他们回到课程起点」偷换概念，原文 get back to where they were before the summer holiday 指恢复到假期前水平；B「吸收所学内容」属于学业收益本身，与题干 in addition to 矛盾，答非所问；C「熟悉学校环境」程度不符，原文只说 do not feel detached（不疏离）。",
+   "keyword": "year-round schooling 全年制上学；closer relationship 更紧密的关系；detached 疏离的、脱节的；pay off 见成效、有回报。",
+   "note": "in addition to improving their learning 是排除学业信息的信号——跳过第二段 summer slide，答案在 But year-round schooling isn't just about academics 之后的第三段；But 转折句常标记「另一类好处」的开始，这种段落切换意识能提速。"
+  },
+  {
+   "question_id": 36,
+   "long_sentence": "定位句 Some childhood development experts believe that time off from school is vital to healthy development as kids are not designed to spend so much of their time inside classrooms；主干是 experts believe + that 宾语从句；as 引导原因状语从句；be vital to 意为「对…至关重要」。译：儿童发展专家认为，离开学校的时间对健康成长至关重要，因为孩子的天性不适合久坐教室。",
+   "option": "正确项 D「有助于学生的健康成长」＝time off from school is vital to healthy development 的同义改写，contribute to≈be vital to、healthy growth≈healthy development；B「了解外部世界」偷换概念，get outside 指到户外活动而非了解外界；A「满足自主学习需要」无中生有；C「满足居家的愿望」无中生有，原文说多数孩子在家看电视玩游戏 hardly benefits them。",
+   "keyword": "be vital to 对…至关重要＝contribute to；healthy development 健康发展；childhood development expert 儿童发展专家；get outside 到户外去。",
+   "note": "人物观点题先锁定 childhood development experts，believe 后 that 从句即观点本体；D 项 healthy growth 与原文 healthy development 只换一词，属「同义微调」型正确项；勿被下一句 The problem with this argument 干扰——那是作者的反驳，不是专家观点。"
+  },
+  {
+   "question_id": 37,
+   "long_sentence": "定位句 most stay at home, watching TV or playing games on electronic devices, which hardly benefits them；主干是 most stay at home；watching TV or playing games 为现在分词短语作伴随状语；which 引导非限制性定语从句，指代前面整个主句的行为。译：大多数孩子待在家里看电视或玩电子设备上的游戏，这几乎没有益处。",
+   "option": "正确项 A「对多数学生没什么好处」＝most children aren't playing outside...which hardly benefits them 的合并改写，does little good≈hardly benefits；D「使学生沉迷电脑游戏」过度推断，playing games on electronic devices 不等于 addiction；B「只利于少数在户外玩的学生」偷换概念，原文批评的是现实与专家设想不符；C「导致学生荒废学业」无中生有，本段未提学习。",
+   "keyword": "hardly benefits 几乎无益＝does little good；argument 论点、主张；summer camp 夏令营；electronic devices 电子设备。",
+   "note": "The problem with this argument 是反驳信号句，其后才是本题答案区——注意本题问的是「反驳专家的观点」，方向与上题相反；A 项 little good 对应 hardly 的半否定语气，程度词的改写要逐一对上。"
+  },
+  {
+   "question_id": 38,
+   "long_sentence": "定位句 The U.S. has changed from a farming economy to a knowledge-and-innovation-based economy, so it makes sense for the school year to change as well；主干是 The U.S. has changed from...to...；so 引导结果分句；it makes sense for sth to do 为形式主语结构。译：美国已从农业经济转变为知识与创新发展型经济，因此学年也相应改变才合情理。",
+   "option": "正确项 C「过时的」＝首段「学年是农业社会产物」与末段「经济已转型、学年该变」的合并概括，outdated 恰好表达「不适应当下」；A「有理有据的」与作者 it's time to consider year-round schooling 的改革主张相反，正反混淆；B「受文化束缚的」无中生有，原文谈的是经济形态；D「受欢迎的」无中生有。",
+   "keyword": "outdated 过时的、陈旧的；knowledge-and-innovation-based economy 知识创新型经济；it makes sense to do 做…是合理的；as well 也。",
+   "note": "态度题看结尾——作者以 so it makes sense for the school year to change 收束，「该改」即「现行制度过时」；首段「为农忙而设的假期沿用至今」与末段「经济已转型」构成论证闭环，抓住这个首尾呼应即可锁定 C，不必纠结中间各段。"
+  },
+  {
+   "question_id": 39,
+   "long_sentence": "定位句 Today, the dancers travel across Chinatown going from business to business to bring good luck for the coming year；主干是 the dancers travel across Chinatown；going from business to business 为现在分词短语作方式状语；to bring good luck 为目的状语。译：如今，舞狮者们穿行唐人街，一家家商铺走访过去，为来年祈求好运。",
+   "option": "答案 F 段：going from business to business≈perform from door to door、bring good luck for the coming year≈bring New Year wishes，商户对象与祝福目的双重对应；E 段同样讲舞狮传统但内容是起源传说（怪兽 Nian、爆竹吓兽），与挨家表演无关，答非所问。",
+   "keyword": "go from business to business 挨家商铺走访；bring good luck 带来好运；Chinatown 唐人街；for the coming year 为来年。",
+   "note": "door to door 与 business to business 是「逐户」意象的同义替换；F 段信息密集（鸡年象征、Rooster 寓意、Teng 引语），本题只取首句——长篇阅读定位后先核对段首句可减少误配。"
+  },
+  {
+   "question_id": 40,
+   "long_sentence": "定位句 But the club also acts as a recreation center and safe haven for teenagers, with video games readily available；主干是 the club acts as a recreation center and safe haven；also 承接上文的舞狮教学职能；with 复合结构作伴随说明；readily available 意为「随时可玩、随手可得」。译：但该俱乐部还充当青少年的娱乐中心与安全庇护所，视频游戏随手可玩。",
+   "option": "答案 C 段：acts as a recreation center≈serves as a place for entertainment、safe haven for teenagers≈youngsters can enjoy themselves safely，video games readily available 佐证娱乐属性；B 段讲排练与春节游行筹备，无娱乐与安全信息，张冠李戴。",
+   "keyword": "act as 充当＝serve as；recreation center 娱乐中心；safe haven 安全庇护所；teenager 青少年＝youngster。",
+   "note": "also 是本题锚点——题干 also serves as 与原文 also acts as 双 also 互证；haven 为熟词僻义（港口→庇护所），与题干 safely 构成跨词性替换；C 段前半讲 Fong 教学、后半讲俱乐部功能，本题取 But 之后的转折信息。"
+  },
+  {
+   "question_id": 41,
+   "long_sentence": "定位句 what makes you a competent lion dancer is that there's a sense of imagination involved；what 引导主语从句，is 后接 that 表语从句；competent 意为「称职的、有能力的」；involved 作后置定语「所包含的」。译：让你成为一名称职舞狮者的，是其中所包含的想象力。",
+   "option": "答案 J 段：what makes you a competent lion dancer is that there's a sense of imagination involved——perform well≈competent、have a little imagination≈a sense of imagination；G 段讲双人配合与操纵机关（拉线控制狮眼开合、狮口张合），是技术动作而非想象力，易混段属答非所问。",
+   "keyword": "competent 称职的、能干的；a sense of imagination 想象力；involve 包含、涉及；creative outlet 创作宣泄渠道。",
+   "note": "perform well 的抽象表述要落到原文 competent 与 imagination 的搭配上；J 段观点出自 17 岁成员 Sara Pore 的引语——长篇阅读的论点常藏在人物引语里，扫段时不要跳过引号内容。"
+  },
+  {
+   "question_id": 42,
+   "long_sentence": "定位句 Stories vary about how lion dancing came to be, but most of them include a monster named Nian who would terrorize a village；主干是 Stories vary；how 引导的从句作介词 about 的宾语；named Nian 为过去分词作后置定语；who 引导定语从句修饰 a monster。译：关于舞狮如何起源，说法各异，但大多数故事都包含一只名为「年」、惯于恐吓村庄的怪兽。",
+   "option": "答案 E 段：Stories vary≈a number of different versions、how lion dancing came to be≈the origin of the lion dance；段内 firecrackers and drums 与 villagers creating a monster of their own 两个版本并存，佐证「多版本」；J 段也有 Lion dancing started 2,000 years ago 的年代信息，但只给一个说法、未谈版本差异，易混段勿过度推断。",
+   "keyword": "version 版本、说法＝story；come to be 形成、产生＝origin；terrorize 恐吓；band together 联合起来。",
+   "note": "起源题优先搜 It is believed / Stories vary 这类模糊引源句式；本篇按内容分工切段：E 段起源、F 段现状、B 段排练筹备；E 段 third century 与 J 段 2,000 years ago 是两处年代，各属其题，不可交叉。"
+  },
+  {
+   "question_id": 43,
+   "long_sentence": "定位句 Teenagers comprise about half of the group, many of whom began lion dancing at the age of 14；主干是 Teenagers comprise about half of the group；comprise 意为「构成、占」；many of whom 引导非限制性定语从句，whom 指代 teenagers。译：青少年约占这个团体的半数，其中许多人 14 岁起就开始舞狮。",
+   "option": "答案 B 段：about half of the group≈Some 50% of the members，comprise 表占比与题干数字改写直接对应；C 段的 As many as 20 students show up after school 是放学后到场人数而非全体成员比例，以偏概全易混。",
+   "keyword": "comprise 占、构成＝make up；about half 大约一半＝some 50%；at the age of 在…岁时；parade 游行。",
+   "note": "数字题抓比例改写链：50%→half→about half of the group；B 段数字密集（60 members、100 current and past members、220 groups、18th Parade），务必核对每个数字修饰的对象，50% 只与 Teenagers comprise about half 对应。"
+  },
+  {
+   "question_id": 44,
+   "long_sentence": "定位句 I value my culture and tradition, being Chinese or Asian-American；主干是 I value my culture and tradition；being Chinese or Asian-American 为现在分词短语补充身份；value 在此为动词「珍视」。译：我珍视自己的文化与传统——无论是作为华人还是亚裔美国人。",
+   "option": "答案 L 段：I have a lot of pride in that≈feels proud、my culture and tradition≈cultural tradition，pride 与 proud 同词族直接对应，说话人是 Mr. Le；I 段 Chan 也谈文化传承（pass on the traditions and the culture），但通篇是传承主张、未表达个人自豪感，易混段需区分「倡议」与「情感」。",
+   "keyword": "value 珍视；pride 自豪＝feel proud；Asian-American 亚裔美国人；give back to the community 回馈社区。",
+   "note": "题干 says he feels proud 指向引语，直接搜 pride 词族即可秒定 L 段；I 段 Chan 谈传承的必要性（vital），L 段 Le 谈个人自豪与回馈——同话题不同落点，用「谁说了什么情感词」切分。"
+  },
+  {
+   "question_id": 45,
+   "long_sentence": "定位句 As one person controls the head, a second follows under a train of fabric representing the body；as 引导时间状语从句「当…时」；主干是 a second follows under a train of fabric；representing the body 为现在分词短语作后置定语修饰 fabric。译：当一人操控狮头时，另一人便钻在一串象征狮身的布料下跟随移动。",
+   "option": "答案 G 段：The lion head and tail are operated by two people 加 one person controls the head, a second follows...——two dancers≈two people、coordinate their movements≈move in harmony、manipulating≈controls；K 段也写双人配合（用红绸带练习跳上搭档肩头），但那是排练动作而非狮头狮身分工，张冠李戴。",
+   "keyword": "coordinate 协调＝in harmony；manipulate 操控＝control；operate 操作；a train of fabric 一长串布料。",
+   "note": "题干 one...the other... 的双分句结构对应原文 one person...a second...，一一对应是本题改写骨架；G 与 K 两段都涉及双人动作，区分标志是 G 段讲正式表演分工、K 段讲排练细节，题干问协调配合选 G。"
+  },
+  {
+   "question_id": 46,
+   "long_sentence": "定位句 We're a big family...You know everyone；主干是 We're a big family，系表结构作比喻；shaking hands with other members 为现在分词短语作伴随状语；as 引导时间状语从句 as they walked through the door。译：我们是一个大家庭……每个人彼此都认识。",
+   "option": "答案 D 段：We're a big family 直接把俱乐部比作大家庭，compare...to a family≈be a big family 的比喻式改写，说话人是 Alvin Chau；B 段的 dance group made up of 60 members 只讲规模，C 段讲俱乐部功能，均无家庭比喻，无中生有。",
+   "keyword": "compare...to 把…比作；a big family 大家庭；shake hands 握手；consultant 顾问。",
+   "note": "比喻题直接搜 family 原词最快；题干含 says，答案必在引语内；D 段人物身份 environmental consultant by day and a lion dancer on weekends 可帮确认「one lion dancer」的指向，全文把俱乐部比作家庭的仅此一处。"
+  },
+  {
+   "question_id": 47,
+   "long_sentence": "定位句 Mr. Chan...said that passing the dance from one generation to the next was vital；主干是 Mr. Chan said + that 宾语从句；从句主语为动名词短语 passing the dance from one generation to the next；vital 意为「至关重要的」。译：陈先生说，把这门舞一代一代传下去至关重要。",
+   "option": "答案 I 段：passing the dance from one generation to the next was vital 加引语 You need to pass on the traditions and the culture——handed down≈pass on、future generations≈from one generation to the next、as part of Chinese culture≈a part of our culture；L 段 Le 落脚在个人 pride 与回馈社区，未提传给后代的必要性，易混段。",
+   "keyword": "hand down 把…传下去＝pass on；generation 一代人；vital 至关重要的；cultural understanding and exchange 文化理解与交流。",
+   "note": "hand down 与 pass on 是本题同义链核心；I 段 Chan 先谈买狮头验货，倡议句在段落后半——定位后务必读到段尾；题干 should be handed down 的情态指向（应该）对应原文 You need to pass on。"
+  },
+  {
+   "question_id": 48,
+   "long_sentence": "定位句 Growing up, I would always watch my family and see the lion dance, and I slowly grew interested in it；Growing up 为时间状语「在成长过程中」；would always watch 表过去的习惯动作；grow interested in 意为「逐渐对…产生兴趣」。译：成长过程中，我总是看着家人们舞狮，慢慢便产生了兴趣。",
+   "option": "答案 L 段：his uncle and father were club members 加 I would always watch my family——elders≈uncle and father/family、learned how to perform≈watch...and slowly grew interested，另有 Mr. Le comes by the dance as a legacy 点明家传；B 段讲 14 岁入组、C 段讲 Fong 的教学班，均非「跟长辈学」，张冠李戴。",
+   "keyword": "legacy 传承；be born into 生来便身处；grow interested in 逐渐对…感兴趣；elder 长辈。",
+   "note": "elders 是抽象词，原文落到 uncle and father 具体亲属——「抽象题干+具体原文」的改写方向要适应；L 段被 q44 与 q48 两题共用，分别对应 pride 与 family/legacy 两个信息点，同段多题靠信息点切分。"
+  },
+  {
+   "question_id": 49,
+   "long_sentence": "定位句 many employees resent compulsory bonding and often regard these exercises as a nuisance；主干是 employees resent...and regard...as...，两个并列谓语；resent 意为「反感、憎恶」；compulsory bonding 意为「强制性的联谊」；nuisance 意为「讨厌的人或事物」。译：许多员工反感强制性的联络感情活动，并常把这些练习视为惹人厌的东西。",
+   "option": "正确项 A「认为这类活动烦人」＝regard these exercises as a nuisance 的同义改写，annoying≈nuisance；B「适得其反」无中生有，原文未评估活动效果；C「有害团队和谐」无中生有，harmony 是活动目的而非员工的指控；D「要求太高」无中生有，员工不满的是 compulsory（强制）而非难度。",
+   "keyword": "resent 反感、憎恶；compulsory 强制的；nuisance 讨厌的事物＝annoying；bonding 联络感情。",
+   "note": "首段第二句即答案句，nuisance 是四级高频态度词；C 项借原文 harmony 设陷阱——原文说活动意在增和谐、员工反感的是强制本身，目的与态度不能混；题干 opposed to 对应 resent/against 的态度链。"
+  },
+  {
+   "question_id": 50,
+   "long_sentence": "定位句 Staff are relocated and office spaces redesigned；两个并列谓语均为被动语态，redesigned 前省略 are；relocate 意为「重新安置、调动」；上句 Teams are formed, combined, and restructured 三个被动动词并列，列举团队干预手段。译：员工被调动，办公空间被重新设计。",
+   "option": "正确项 B「重新安排员工与办公空间」＝Staff are relocated and office spaces redesigned 的主动化改写，rearrange≈relocate 与 redesign 的合并；A「调动团队领导」张冠李戴，被调动的是 staff；C「重新设计工作日程」偷换概念，redesigned 的是 office spaces；D「重新引入凝聚性活动」无中生有。",
+   "keyword": "relocate 重新安置、调动；restructure 重组；redesign 重新设计；rearrange 重新安排。",
+   "note": "研究做法题锁定 Dr Matous 的引语：Teams are formed, combined, and restructured 与 Staff are relocated and office spaces redesigned 两组被动句就是「干预清单」；B 项把被动原文转成主动语态，语态转换是本题唯一障碍；题干 to find out whether...would improve productivity 对应引语结尾 But does any of this work?"
+  }
+ ]
+}

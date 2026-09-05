@@ -1,0 +1,180 @@
+{
+ "chunk": 15,
+ "items": [
+  {
+   "question_id": 351,
+   "long_sentence": "拆解填空句：water usage in cotton production can be cut down by {8} ______ 40 percent——by 引导削减幅度；空格词修饰数字 40 percent。译：通过更好的水资源管理与耕作方式，棉花生产用水可削减近 40%。",
+   "option": "正确项 I：nearly——by nearly 40 percent＝削减近 40%，nearly 表约数，与「改良措施预期可达的幅度」语气相称；E「exact」表精确，但 exact 已在第 3 空（to be exact）用掉，且 by exact 40 percent 的搭配不存在；此处 to be cut down 的预估幅度天然是约数。",
+   "keyword": "nearly 几乎、将近（修饰数字表约数）；cut down by... 削减…幅度；water usage 用水量；each choice 限用一次。",
+   "note": "选词填空三步：先定词性（by 后、数字前需副词）→再排已用词（E 已耗）→最后核语义（措施成效表约数）；nearly 与 exact 的约／精对比是本篇的伏笔呼应，答案互斥。"
+  },
+  {
+   "question_id": 352,
+   "long_sentence": "拆解填空句：this environmentally conscious product will save millions of liters of water a year simply from {9} ______ the demands of cotton production——from + 动名词表途径；the demands 后接 of 短语。译：这款名为「更好棉花」的环保产品，仅靠降低棉花生产的需求，每年就能节省数百万升水。",
+   "option": "正确项 K：reducing——from reducing the demands＝通过减少（对水的）需求，reduce demands 与 save water 构成「节水」的因果链，reducing 与其名词形式 demands 搭配顺畅；M「shrink」是不及物动词，不能直接接 the demands 作宾语。",
+   "keyword": "reduce the demands 降低需求；from doing 通过…方式；save water 节水；environmentally conscious 环保意识强的。",
+   "note": "语法定位优先：from 后必须接动名词，备选动名词仅 K（reducing）；再验语义——减少需求→省水，逻辑闭环；shrink 的干扰在「缩减」义相近，但其不及物属性一票否决。"
+  },
+  {
+   "question_id": 353,
+   "long_sentence": "拆解填空句：However, as water supplies {10} ______, farmers and consumers need to be more conscious of the effect——as 引导时间／原因状语从句；主句为 need to be more conscious。译：然而，随着供水日益缩减，农民和消费者需要更清醒地认识这些产品对整体环境的影响。",
+   "option": "正确项 M：shrink——water supplies shrink＝供水缩减，shrink 作不及物动词表「变少、萎缩」，主语 supplies 复数谓语用原形 shrink，与文章「水资源紧缺」的主线一致；H「mend」修补，supplies 不与 mend 搭配；J「reckoning」是名词，语法不符。",
+   "keyword": "shrink 缩减、变少（不及物）；water supplies 供水；as 随着；be conscious of 意识到。",
+   "note": "从句谓语题先查词性：as 从句缺谓语动词且主语复数、一般现在时→需动词原形；shrink 与前文 water 紧缺语境（sought-after resources）呼应，语义语法双达标。"
+  },
+  {
+   "question_id": 354,
+   "long_sentence": "拆解填空句：dogs are among the more intelligent carnivores...but that their intelligence does not {1} ______ other intelligent animals in any of those categories——but 表转折；does not + 动词原形。译：狗属于较聪明的食肉动物、社会性猎手和家养动物，但它们的智力在任何一类中都不超越其他聪明的动物。",
+   "option": "正确项 N：surpass——does not surpass＝不超越，surpass 为及物动词原形，与 does not 构成否定谓语，接宾语 other intelligent animals；H「outperformed」是过去式／过去分词，不能与 does not 连用，语法直接排除。",
+   "keyword": "surpass 超越（及物动词原形）；outperform 胜过（此处形式不符）；carnivore 食肉动物；in any of those categories 在任何一类中。",
+   "note": "先语法后词义：does not 后必须接动词原形，备选原形动词有 surpass／differentiate／prove 等——surpass 表「超越」与 but 转折（虽聪明但并非最聪明）严丝合缝。"
+  },
+  {
+   "question_id": 355,
+   "long_sentence": "拆解填空句：Though a significant body of research has examined dog cognition {2} ______——though 引导让步从句；has examined 为现在完成时，空格为句末副词。译：尽管此前已有大量研究考察过犬类认知。",
+   "option": "正确项 K：previously——has examined dog cognition previously＝此前已考察过犬类认知，previously 与现在完成时及「已有大量研究」的量词呼应，为下文 little to warrant（投入过多）作铺垫；C「completely」完全地，examined completely 表考察彻底，与 though 让步的重点错位。",
+   "keyword": "previously 此前；a significant body of 大量的（研究）；cognition 认知；warrant 证明…正当。",
+   "note": "时间副词定位：完成时＋既有研究规模指向「过去已做过」，previously 最贴切；本句与后文 the volume of work 呼应——正因为此前研究已多，才有「是否过度」的质疑。"
+  },
+  {
+   "question_id": 356,
+   "long_sentence": "拆解填空句：the authors of this new study found little to warrant the {3} ______ of work that has been devoted to the topic——warrant 意为「证明…合理」；the + 名词 + of work。译：这项新研究的作者发现，几乎没有什么理由能证明投入该课题的巨大工作量是值得的。",
+   "option": "正确项 O：volume——the volume of work＝工作量之巨，warrant the volume of work＝配得上如此投入，与 little（很少有理由）构成对「研究过多」的委婉质疑；F「domain」领域，the domain of work 表工作领域，与 devoted to the topic 语义重复；J「pledge」承诺，不与 work 搭配。",
+   "keyword": "volume 熟词僻义：量、规模（the volume of work 工作量）；warrant 证明…正当；be devoted to 致力于。",
+   "note": "名词短语题：the ___ of work 中 volume 是高频学术搭配；本空是全文论点的核心——「投入量过大」，下文 Lea 的批评（designed studies to prove cleverness）正是对这一判断的展开。"
+  },
+  {
+   "question_id": 357,
+   "long_sentence": "拆解填空句：many researchers seem to have designed their studies to {4} ______ how clever dogs are, rather than simply to study dogs' brains——to + 动词原形；rather than 表对比。译：许多研究者设计研究似乎就是为了证明狗有多聪明，而不是单纯研究狗的大脑。",
+   "option": "正确项 M：prove——to prove how clever dogs are＝为了证明狗有多聪明，prove 后接宾语从句，与 rather than simply to study（而非中立研究）形成「预设立场」的批评；D「differentiate」区分，differentiate how clever 语义不通；N「surpass」已在第 1 空用掉。",
+   "keyword": "prove 证明；design studies to do 设计研究以…；rather than 而非；presuppose 预设（prove 的批评内涵）。",
+   "note": "批评语境定动词：作者指责研究「预设结论」，prove（证明既定观点）恰含此贬义色彩；differentiate 需接 between...and...或复数宾语，语法与语义双重不符。"
+  },
+  {
+   "question_id": 358,
+   "long_sentence": "拆解填空句：These comparisons {5} ______ that dogs are intelligent, but their intelligence is not as {6} ______ as some researchers might have believed——主语 These comparisons 复数；that 宾语从句。译：这些比较证实了狗确实聪明，但其智能并不如一些研究者想象的那般令人惊叹。",
+   "option": "正确项 A：affirmed——These comparisons affirmed that＝这些比较证实了……，affirm that + 从句表「证实既有说法」，过去式与全篇叙述时态一致；M「prove」虽语义可通但已在第 4 空用掉，选词填空一词一用。",
+   "keyword": "affirm 证实、肯定；make specific comparisons 做具体比较；might have believed 或许曾以为（虚拟过去）。",
+   "note": "时态＋用词耗尽双锁定：叙述已完成的研究用过去式 affirmed；prove 的语义重复风险被「每词限用一次」规则化解——选词填空要先做语法排除、再做语义精选。"
+  },
+  {
+   "question_id": 359,
+   "long_sentence": "拆解填空句：but their intelligence is not as {6} ______ as some researchers might have believed——as...as 同级比较的否定式；空格为形容词原级。译：但其智能并不如一些研究者想象的那般令人惊叹。",
+   "option": "正确项 G：formidable——not as formidable as＝不如…那般令人敬畏，formidable 形容智能「强大得令人生畏」，与上文 the more intelligent 的让步式赞美及研究者的过高期待对应；E「distinct」不同的，not as distinct as 表「不如…有区分度」，语义错位。",
+   "keyword": "formidable 令人敬畏的、强大的；not as...as 不如…那样；distinct 明显不同的、有区别的。",
+   "note": "同级比较填形容词：备选形容词有 distinct／formidable／exact 等——赞美的对象是智能强度，formidable（厉害）贴合「期待与现实的落差」；distinct 与比较对象（intelligence）不搭。"
+  },
+  {
+   "question_id": 360,
+   "long_sentence": "拆解填空句：both dogs and cats are known to be able to recognize and {7} ______ human voices——recognize 与空格动词由 and 并列，共用宾语 human voices。译：狗和猫都能识别并区分人声，这一点是公认的。",
+   "option": "正确项 D：differentiate——recognize and differentiate human voices＝识别并区别人声，differentiate 为及物动词原形，与 recognize 并列构成「听见→分辨」的递进；surpass 已用；prove 已用。",
+   "keyword": "differentiate 区分、辨别（differentiate A from B／及物用法）；recognize 识别；human voices 人声。",
+   "note": "并列动词题：and 连接的两个动词须同为原形且能共接 voices——differentiate（分辨出不同个体声音）与下文 a greater number of distinct human voices 的 distinct 遥相呼应。"
+  },
+  {
+   "question_id": 361,
+   "long_sentence": "拆解填空句：the investigators could not find any data to indicate which species can remember a greater number of {8} ______ human voices——a greater number of + 复数名词；空格为形容词。译：研究者找不到任何数据表明哪个物种能记住更多不同的（个体）人声。",
+   "option": "正确项 E：distinct——a greater number of distinct human voices＝更多互不相同的人声，distinct 修饰 voices 表「可彼此区分的个体声音」，与前句 differentiate human voices 的辨音话题直接复现；G「formidable」已用于第 6 空；L「prospective」未来的，与记忆人声无关。",
+   "keyword": "distinct 不同的、可区分的；a greater number of 更多（修饰复数）；species 物种；front 方面。",
+   "note": "词汇复现定答案：differentiate→distinct 是同根复现（区别→有区分度的），记住人声的「个体差异」正是「区分能力」的延伸；prospective 与 L 的干扰全靠词义场排除。"
+  },
+  {
+   "question_id": 362,
+   "long_sentence": "拆解填空句：However, not all researchers agree {9} ______ with the findings of this study——not all 表部分否定；agree + 副词 + with。译：然而，并非所有研究者都完全认同这项研究的发现。",
+   "option": "正确项 C：completely——agree completely with＝完全同意，not all...completely 构成部分否定（有人只部分认同），与下文 Silver 的异议者身份衔接；B「approximately」大约，表数量估计，不能修饰同意的程度。",
+   "keyword": "agree with 同意；not all 部分否定；completely 完全地；findings 研究发现。",
+   "note": "部分否定结构敏感度：not all＋completely＝并非人人全盘认同，为反对意见出场铺路；approximately 是副词但属「数量约略」义域，程度副词才配 agree。"
+  },
+  {
+   "question_id": 363,
+   "long_sentence": "拆解填空句：Silver believes the authors of the new study {10} ______ the idea that an excessive amount of research has been devoted to dogs——believes 后接省略 that 的宾语从句；the idea 后接同位语从句。译：西尔弗认为，新研究的作者夸大了「犬类研究投入已过量」这一说法。",
+   "option": "正确项 I：overstated——overstated the idea＝夸大了这一说法，overstate（夸大）与他认为 field is young（领域尚新、仍有很多要学）的反对立场一致：研究投入并未过量；M「prove」已用；A「affirmed」已用。",
+   "keyword": "overstate 夸大、言过其实；an excessive amount of 过量的；devote to 投入于；the field of dog cognition 犬类认知领域。",
+   "note": "立场推断定动词：Silver 的 as 从句（领域年轻、所知有限）表明他反对「过量」论，故作者的说法被「夸大」；overstated 与 excessive 的反讽呼应是本题的语义钥匙。"
+  },
+  {
+   "question_id": 364,
+   "long_sentence": "定位句 The main purpose of this clawback rule is to hold bankers accountable for harmful risk-taking and to restore public trust in financial institutions——to hold sb accountable for 让某人对…负责。译：这项「追回」规则的主要目的，是让银行家为有害的高风险行为担责，并恢复公众对金融机构的信任。",
+   "option": "正确项 A：enhance bankers' sense of responsibility≈hold bankers accountable for harmful risk-taking，让人担责即增强责任感；B「帮助企业获得更大利润」张冠李戴，more long-term decision-making 是官员的更大期望且未提利润；C「建立新的金融监管体系」无中生有，unusual rule 是单一规则；D「保证高管奖金」正反混淆，规则内容恰是 delayed 10 years（延迟奖金）。",
+   "keyword": "clawback rule 追回条款；hold sb accountable for 让某人为…负责；guaranteed bonus 保证性奖金；restore trust 恢复信任。",
+   "note": "首段细节题：题干 motive 对应 main purpose；accountable（担责的）与 responsibility（责任感）是同义转换；D 与规则内容方向相反——delayed 是关键词，反向选项秒排。"
+  },
+  {
+   "question_id": 365,
+   "long_sentence": "定位句 He quotes Alfred Marshall, in describing this financial impatience as acting like children who pick the plums out of their pudding to eat them at once——describe...as 把…描述为；定语从句修饰 children。译：他引用古典经济学大师阿尔弗雷德·马歇尔的话，把这种金融上的急不可耐比作「从布丁里把李子挑出来立刻吃掉的孩子」。",
+   "option": "正确项 D：short-termism in economic activities——布丁挑李子马上吃的比喻正是对 financial impatience（即 short-termism）的形象化说明；A「快速获利的产生条件」偷换概念，比喻说的是行为模式不是获利条件；B「政府决策的不耐烦」张冠李戴，impatience 的主体是上市公司；C「上市公司的稳固结构」无中生有。",
+   "keyword": "quote 引用；financial impatience 金融上的急躁；short-termism 短期主义；plum 李子；at once 立刻。",
+   "note": "引言目的题看引言所支撑的论点：比喻句前有 Short-termism 的直接定义（the desire for quick profits），引用是给抽象概念配画面——先找被解释的概念再选答案。"
+  },
+  {
+   "question_id": 366,
+   "long_sentence": "定位句 Transient investors, who demand high quarterly profits from companies, can hinder a firm's efforts to invest in long-term research or to build up customer loyalty——who 定语从句限定投资者；hinder 意为「阻碍」。译：要求公司每季度交出高额利润的短线投资者，会阻碍企业投入长期研发或建立客户忠诚度的努力。",
+   "option": "正确项 B：adverse——hinder（阻碍）直接表明短线投资对公司的危害，adverse（不利的）是 hinder 的形容词化；A「间接的」偷换概念，hinder 是直接阻碍；C「极小的」正反混淆，与阻碍研发、忠诚度的分量矛盾；D「暂时的」张冠李戴，transient 形容投资者本身，非影响的持续时间。",
+   "keyword": "transient investors 短线投资者；quarterly profits 季度利润；hinder 阻碍＝have an adverse effect；customer loyalty 客户忠诚度。",
+   "note": "词性转换考点：动词 hinder→形容词 adverse influence 的转换是考研细节题标准出法；D 借原文 transient 一词设「原词陷阱」——词是原文的，搭配对象被偷换。"
+  },
+  {
+   "question_id": 367,
+   "long_sentence": "定位句 Much more could be done to encourage long-termism...In the US, the Sarbanes-Oxley Act...defer performance bonuses...In France, shareholders who hold onto a company investment for at least two years can sometimes earn more voting rights——两例皆为鼓励长期主义的做法。译：要鼓励「长期主义」还有很多可为之处：美国《萨班斯法案》推动推迟高管绩效奖金；法国持股至少两年的股东有时可得更多投票权。",
+   "option": "正确项 C：the approaches to promoting long-termism——美国延迟奖金、法国长期持股换投票权，都是激励长期持有的具体途径，服务于前句 to encourage long-termism；A「防止短期主义的障碍」偷换概念，两例是成功做法不是障碍；B「长期思维的重要性」以偏概全，例子讲做法非意义；D「短期思维的流行」张冠李戴，那是 Haldane 引语部分的内容。",
+   "keyword": "approach 途径、方法；encourage long-termism 鼓励长期主义；defer bonuses 推迟奖金；voting rights 投票权；hold onto 持有不卖。",
+   "note": "例证题找例子服务的观点句：such as 后的清单与美法两例是总分关系——例子证明「办法存在且可行」；C 的 approaches 正是 such as 的名词化改写。"
+  },
+  {
+   "question_id": 368,
+   "long_sentence": "定位句：从英国 clawback rule 引出短期主义之弊，历数持股时间从七年缩至七个月、quarterly capitalism、科技加速交易等现象，再举美法鼓励长期主义之策，末句 society has an interest in their performance, not just for the short term but for the long term 点题——社会关注的不仅是短期业绩，更是长期表现。",
+   "option": "正确项 B：Patience as a Corporate Virtue——耐心作为企业美德，与全文「批判急躁、呼吁长期」的主旨吻合，patience 概括 short-termism 的反面；A「季度资本主义的失败」以偏概全，quarterly capitalism 只是文中一个概念；C「高管所需的果断」偷换概念，decisiveness 与长期耐心无关；D「冒险银行家的挫败」张冠李戴，clawback 只是开篇引子。",
+   "keyword": "patience 耐心（short-termism 的反义概括）；corporate virtue 企业美德；long-termism 长期主义；title 命题主旨覆盖全文。",
+   "note": "标题题三步：抓高频概念（short-termism／long-termism）、找作者态度（反对急躁）、选覆盖正反两面且含褒扬的选项——B 的 Patience 一词同时罩住「批判短期」与「鼓励长期」。"
+  },
+  {
+   "question_id": 369,
+   "long_sentence": "拆解填空句：In addition, {1} ______——位于 Better hiring practices 小节，前句为引语内部（引号未闭合），In addition 表并列追加。译：此外，AI 能以人力无法企及的数量浏览简历，并挑选出更有前途的候选人。",
+   "option": "正确项 G：AI looks at resumes in greater numbers than humans would be able to, and selects the more promising candidates——与前句「面试结果比 AI 更有偏见」同属招聘场景，In addition 并列支撑小节主旨（AI 减少招聘偏见）；A「我取代你工作中无聊的部分」转向研究检索，脱离 hiring 话题。",
+   "keyword": "resume 简历；in greater numbers 以更大数量；promising candidates 有前途的候选人；unconscious bias 无意识偏见。",
+   "note": "新题型首空认小节：Better hiring practices 标题下的空格必须谈招聘；G 的 resumes／candidates 与 hiring 构成词汇复现；注意 In addition 的并列逻辑——同场域的追加例证。"
+  },
+  {
+   "question_id": 370,
+   "long_sentence": "拆解填空句：This can mean millions more in revenue. {2} ______ These are tools that help people use data, not a replacement for people——These 复数回指前文提到的多家公司／多类软件。译：还有像 Acquisio 这样的公司，它分析 Adwords、必应与社交媒体等多渠道的广告表现，并就广告资金投向何处收益最佳给出调整或建议。",
+   "option": "正确项 B：There are also companies like Acquisio, which analyzes advertising performance across multiple channels——延续 More effective marketing 小节：Phrasee 优化邮件标题之后，Acquisio 分析多渠道广告投放，两者共同被 These are tools 概括；C 的审计合同属于 Improved accuracy 话题。",
+   "keyword": "advertising performance 广告表现；multiple channels 多渠道；yield best results 产生最佳收益；revenue 营收。",
+   "note": "复数指代定答案：后句 These are tools（复数）要求空格再举一家营销类公司，B 的 also companies 恰好递进；marketing 小节的链条是 Phrasee→Acquisio→Winston 总结。"
+  },
+  {
+   "question_id": 371,
+   "long_sentence": "拆解填空句：Insurance companies, meanwhile, can base their premiums on AI models that more accurately access risk. Domingos says, {3} ______——引语在保险语境中；meanwhile 表并列行业。译：多明戈斯说：以前，他们可能不给感觉高风险的人承保，或者收费过高；也可能收费过低，结果让公司蒙受损失。",
+   "option": "正确项 F：Before, they might not insure the ones who felt like a high risk or charge them too much...——Before 引出 AI 定价之前的乱象（拒保／多收／少收亏损），与 now 用 AI 模型准确定价 premium 形成「过去 vs 现在」对照；they 回指保险公司；E 的 better channels 是客服渠道话题。",
+   "keyword": "premium 保险费；insure 承保；high risk 高风险；charge 收费；Before vs now 时间对比。",
+   "note": "引语题看说话场景：Saving customers money 小节末句正在谈保险定价，F 的 insure／charge 词汇复现锁定；Before 一词与现在完成态的 AI 模型构成今昔对比是本题的时间锚点。"
+  },
+  {
+   "question_id": 372,
+   "long_sentence": "拆解填空句：Machine learning often provides a more reliable form of statistics...It helps people make smarter decisions. {4} ______ Protecting and Maintaining infrastructure——空格为 Improved accuracy 小节的收束例证，其后是新小节标题。译：（例如）安永会计师事务所使用一套 AI 系统在审计中辅助审阅合同；这一流程与员工复核相结合，比过去更快也更准确。",
+   "option": "正确项 C：One accounting firm, EY, uses an AI system that helps review contracts during an audit. This process...is faster and more accurate——以审计合同审阅为例支撑 improved accuracy（更快更准），faster and more accurate 与小节标题 accuracy 原词呼应；D 的预测故障属于下一段基础设施话题。",
+   "keyword": "audit 审计；review contracts 审阅合同；faster and more accurate 更快更准；accounting firm 会计师事务所。",
+   "note": "标题—例证配对：Improved accuracy 标题需要「准确性提升」的实例，C 的 more accurate 原词复现最直接；填完后核对空格是否紧贴下一标题——C 收尾、D 属于 infrastructure 段的引语。"
+  },
+  {
+   "question_id": 373,
+   "long_sentence": "拆解填空句：If they fail first and then you fix them, it's very expensive, says Domingos. {5} ______——引语未闭合，讲述基础设施维护的成本逻辑。译：（多明戈斯说：）你要预测某处是否需要即刻关注，并指出员工前往何处处理最有用。",
+   "option": "正确项 D：You want to predict if something needs attention now and point to where it's useful for employees to go to——predict（提前预判）与上句 fail first and then you fix（事后补救代价高）形成「预防优于补救」的递进，point to where 呼应 AI 图像处理定位故障点；F 的保险话题已在他处用掉。",
+   "keyword": "predict 预测；needs attention 需要关注；prevent...before they happen 防患于未然；equipment failure 设备故障。",
+   "note": "引语逻辑链：贵在事后修→所以要提前预测→AI 指明位置，D 的 predict／point to 与 Preventing...before they happen 的小节主旨咬合；剩余 A、E 分别谈研究与客服，均为多余项。"
+  },
+  {
+   "question_id": 374,
+   "long_sentence": "拆解填空句：However, studies have {1} ______ a concerning trend——have + 过去分词现在完成时；宾语为 a concerning trend（令人担忧的趋势）。译：然而，多项研究已经揭示了一个令人担忧的趋势：过度使用社交媒体可能实际上加重孤独感。",
+   "option": "正确项 A：revealed——reveal a trend＝揭示趋势，研究「揭示」发现是学术语篇的标准动宾搭配；B「reversed」逆转，reverse a trend 表扭转趋势，与 however 的转折方向矛盾（研究是发现趋势而非扭转）；C「revised」修订，与 trend 不搭；D「revolved」旋转，不及物动词，语法不符。",
+   "keyword": "reveal 揭示（reveal a trend／a fact）；concerning 令人担忧的；reverse 逆转；revolve 旋转（不及物）。",
+   "note": "完成时定分词形式：四个选项均为 re- 开头形近词，先按语法筛（revolve 不及物排除），再按动宾搭配（reveal a trend）锁定；however 提示研究与常识（社交媒体拉近人）相反。"
+  },
+  {
+   "question_id": 375,
+   "long_sentence": "拆解填空句：Researchers at the University of Pennsylvania {2} ______ a study involving 143 undergraduates——主语为研究者；宾语 a study + involving 后置定语。译：宾夕法尼亚大学的研究人员开展了一项涉及 143 名本科生的研究。",
+   "option": "正确项 A：conducted——conduct a study＝开展研究，是学术写作的固定搭配，与后文限定用法（to 10 minutes per platform）的实验设计描述衔接；B「confined」限制，confine a study to 表把研究限定在…，但句中无 to 范围；C「confessed」承认，研究者不会「承认一项研究」；D「concluded」得出结论，conclude a study 指结束研究，而本句是研究启动。",
+   "keyword": "conduct a study 开展研究（固定搭配）；involve 涉及、包含；undergraduate 本科生；participants 参与者。",
+   "note": "动宾搭配优先：研究类名词（study／research／experiment）的标准动词是 conduct／carry out／perform；confine 的干扰在形近与「限定」联想，但 confine 需要 to 短语配合，本句结构不符。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 19,
+ "items": [
+  {
+   "question_id": 451,
+   "long_sentence": "定位句 Once there, Lenoue was assessed and later taken to a hospital；Once there 一到那里；was assessed 被动语态；and later... 与 and 后的 taken to a hospital 构成先后动作链。译：一到那里，勒努埃就接受了伤情评估，随后被送往医院。",
+   "option": "B assessed 正确：assess「评估」是医疗流程动词——先评估伤情再送医院，与下文 learned that she had serious injuries 的确诊衔接；A interrupted「被打断」无中断对象；C identified「被认出」与陌生人身份矛盾（两人此前不相识）；D appreciated「被感激」是贝利接受感激，不是勒努埃此刻的事。",
+   "keyword": "assess 评估＝evaluate；medical assessment 伤情评估；later 随后（时间链）；injuries 伤情（下文复现）。",
+   "note": "动作链定序：救人→送到救助点→评估→送医→确诊重伤，B 是链条中「到达救助点后」的标准环节；C identified 的迷惑在「认人」，但两人是陌生人，无从认起。"
+  },
+  {
+   "question_id": 452,
+   "long_sentence": "定位句 She would have struggled with extreme pain to make it to that aid checkpoint without Bailey's help；would have done 虚拟语气表与过去事实相反；struggle with 与……抗争；make it to 成功到达；without 表假设条件。译：若没有贝利的帮助，她本要在剧痛中苦苦挣扎才能撑到那个急救点。",
+   "option": "B pain 正确：与前文 crying in pain 原词复现，与 serious injuries in one of her knees 的膝伤呼应——剧痛正是伤情的直接后果；A hunger 饥饿、C cold 寒冷、D tiredness 疲劳都与「哭泣、重伤」的证据链脱节，属无中生有。",
+   "keyword": "pain 疼痛（与 crying in pain 复现）；struggle with 与……抗争；would have done 虚拟语气；extreme 剧烈的。",
+   "note": "复现原则：crying in pain 已出现 pain，重伤膝盖支撑 pain 的因果；虚拟语气 would have struggled 表明这是反事实——「如果没有帮助」，情感与身体证据都指向 pain。"
+  },
+  {
+   "question_id": 453,
+   "long_sentence": "定位句 As for Bailey, she is more confused about why her act is considered a big deal；as for 至于；be confused about 对……感到困惑；why 引导宾语从句作困惑的内容。译：至于贝利，她更困惑的是，为什么自己的举动会被认为是一件了不起的大事。",
+   "option": "C confused 正确：why her act is considered a big deal 的疑问句式本身就是困惑的表达——她不理解「帮忙」何以被大书特书，与下文 I was just doing the right thing 的朴素认知一致；A worried「担心」的对象应是负面事态；B ashamed「羞愧」与她的自豪感矛盾；D discouraged「气馁」无挫折语境。",
+   "keyword": "be confused about 对……困惑；as for 至于；big deal 大事、了不起的事；modest 谦逊的（人物底色）。",
+   "note": "why 疑问从句是困惑的句法信号：对「被夸」表示不解只能是 confused；下句 just doing the right thing 的语气印证她觉得稀松平常——人物态度要与引语一致。"
+  },
+  {
+   "question_id": 454,
+   "long_sentence": "定位句 she is more confused about why her act is considered a big deal；consider 被认为；a big deal 习语「大事、了不起的事」；her act 她的举动。译：她更困惑的是，为什么自己的举动会被认为是一件了不起的大事。",
+   "option": "D deal 正确：a big deal 是固定习语「了不起的大事」，媒体盛赞其救人行为，而她自觉平凡，big deal 精准对应这种反差；A game「比赛」与「她的举动」不构成评价关系；B problem「大问题」感情色彩错位——人们认为的是壮举不是麻烦；C lesson「教训、课程」与语境无关。",
+   "keyword": "a big deal 大事、了不起的事（习语）；consider...（to be）认为；act 举动；make a big deal of 小题大做。",
+   "note": "习语搭配题：big deal 是整块记忆的表达，空格前 a big 已给出框架；B problem 的迷惑在「负面评价」方向，但语境是媒体正向盛赞——先辨褒贬再配习语。"
+  },
+  {
+   "question_id": 455,
+   "long_sentence": "定位句 She was just crying. I couldn't leave her；just 仅仅；couldn't 此处表「不忍、不能」；her 指代受伤的 Lenoue。译：她当时只是在哭。我不能丢下她不管。",
+   "option": "A leave 正确：leave her 表「丢下她」，与救助动机完美衔接——看到有人哭所以不能弃之不顾，与 I was just doing the right thing 呼应；B cure「治愈」越界——贝利不是医生，治不了膝伤；C bother「打扰」语义相反，帮忙不是打扰；D understand「理解」无法解释施救的紧迫感。",
+   "keyword": "leave sb 丢下某人＝leave sb behind；can't 忍不了、不能；rescue motive 救助动机；just doing the right thing（呼应）。",
+   "note": "couldn't + 动词表达「道德上做不到」：丢下哭泣的伤者是良心过不去的事；B cure 的迷惑在「帮助受伤者」的语义场，但施救者的能力边界要认清——背人≠治病。"
+  },
+  {
+   "question_id": 456,
+   "long_sentence": "定位句 Although the two young women were strangers before the meet, they've since become friends；although 引导让步状语从句；strangers 陌生人；since 此后；become friends 成为朋友。译：虽然这两位年轻女子在这次相逢之前互不相识，但从那以后她们成了朋友。",
+   "option": "C meet 正确：meet 作名词表「相遇、相逢」，the meet 即这次比赛中相遇互助之事，与 strangers（此前陌生）和 become friends（此后为友）的前后对比严丝合缝；A ride「搭载」只是事件片段且与跑者身份不符；B test「考验」无中生有；D show「展示」无法统摄「相遇→相助→友谊」的完整事件。",
+   "keyword": "meet 作名词 相逢、运动会（如 track meet）；stranger 陌生人；since 从那以后；before 与 become friends 的时间对照。",
+   "note": "before the __ 与 since become friends 构成时间两端的锚：空格名词须能承载「两人相识的起点」；meet 的名词义是熟词僻义考点——多数考生只知道动词「遇见」。"
+  },
+  {
+   "question_id": 457,
+   "long_sentence": "定位句 Neither won the race, but the display of human kindness won the day；neither 两者都不；but 表转折让步；win the day 获胜、占上风。译：两人都没有赢得比赛，但人性善良的展现赢得了这一天。",
+   "option": "B display 正确：the display of human kindness「人性善良的展现」，与 but 转折构成「输掉比赛、赢回人心」的点睛对照，win the day 的主语正是这份善举的外显；A secret「秘密」与公开帮助行为矛盾；C benefit「益处」无法解释「赢得人心」的原因；D exchange「交换」曲解了单向的施助关系。",
+   "keyword": "display 展示、展现＝showing；human kindness 人性之善；win the day 获胜；neither...but 转折结构。",
+   "note": "but 后是全文升华句：主语要能「赢得人心」——display of kindness 把具体行为抽象成精神力量；此句是主题句，also 复盘全文「助人」主线可加速锁定。"
+  },
+  {
+   "question_id": 458,
+   "long_sentence": "定位句 They had to move to Virginia but they were on a very tight budget；have to 不得不；be on a...budget 处于……的预算状况；tight 紧张的。译：他们不得不搬到弗吉尼亚，但预算非常紧张。",
+   "option": "B budget 正确：be on a tight budget「预算紧张」，与下句 could not afford to pay（付不起）构成直接因果——钱不够才是核心困境；C schedule「时间紧」虽与 tight 搭配真实，但 afford to pay 明确指向金钱；A turn、D connection 与 tight 无此搭配，语义不通。",
+   "keyword": "be on a tight budget 预算紧张；can't afford to do 付不起；tight 紧的（可与 budget、schedule 搭配）；move to 搬往。",
+   "note": "下句 could not afford 是预算线索的明牌：afford 指向钱；C 的 tight schedule 是「搭配对、语义错」——先读后一句再定 tight 修饰什么。"
+  },
+  {
+   "question_id": 459,
+   "long_sentence": "定位句 They could not afford to pay for transportation for their dog, Tiffy；afford to do 付得起；pay for 为……付费；transportation 运输；Tiffy 为狗名作同位语。译：他们付不起把狗蒂菲运走的费用。",
+   "option": "D transportation 正确：搬去弗吉尼亚却付不起狗的「运费」，这正是 PNP（飞行员与爪子）志愿飞行组织存在的意义，与全文托运宠物的主线一致；A food「食物」金额小不构成付不起的困境；B shelter「收容所」与带上狗的愿望矛盾；C medicine「医药」无生病语境。",
+   "keyword": "transportation 运输＝transport；pay for 为……付费；PNP＝Pilots N Paws 飞行员与爪子；afford 付得起。",
+   "note": "标题信息 PNP（Pilots N Paws）是全文题眼：飞行员运狗组织对应「宠物运输」；A、B、C 都是养狗开支但都不是「搬家带狗」的核心难题——读标题再解题。"
+  },
+  {
+   "question_id": 460,
+   "long_sentence": "定位句 and desperately wanted to take her with them；desperately 迫切地、不顾一切地；want to do 想做；take her with them 把她带上。译：并且非常迫切地想带上她（蒂菲）一起走。",
+   "option": "A desperately 正确：desperately「迫切地」传达对狗的深情——付不起运费仍想带狗走，程度强烈且与「求助网站发帖」的行为呼应；B temporarily「暂时地」与永久搬家矛盾；C secretly「秘密地」在公开网站发帖求助，正相反；D originally「最初地」无对照语境。",
+   "keyword": "desperately 迫切地＝very much；take...with 随身带上；post a post 发帖求助；副词的感情程度。",
+   "note": "发帖求助的行为反推心理强度：不到万不得已不会网上求运狗——desperately 的强烈程度唯一匹配；C secretly 与「公开发帖」直接冲突。"
+  },
+  {
+   "question_id": 461,
+   "long_sentence": "定位句 It just happened that I was planning another PNP flight with another pilot, Karen；it (just) happened that 碰巧；was planning 过去进行时表当时正计划；another 另一次。译：碰巧，我当时正和另一位飞行员卡伦计划另一次 PNP 飞行。",
+   "option": "C happened 正确：It (just) happened that 是固定句式「碰巧」，家庭求助与作者的飞行计划偶然交汇，正是志愿服务的缘起；A appeared「出现」不接 that 从句表巧合；B proved「证明」逻辑错误——巧合无需证明；D showed「表明」同理无巧合义。",
+   "keyword": "it happened that 碰巧＝by chance；it turned out that 结果是（辨析）；plan 计划；another PNP flight 另一次飞行。",
+   "note": "it just __ that 的框架直指 happen：just 强化「恰好赶上」的巧合感；B proved 的迷惑在 it...that 形式相近，但「证明」是论证用词与巧合叙事无关。"
+  },
+  {
+   "question_id": 462,
+   "long_sentence": "定位句 I was planning another PNP flight with another pilot, Karen, who offered to take Tiffy from Kansas City to Virginia；who 引导非限制性定语从句；offer to do 主动提出做。译：我正与另一位飞行员卡伦计划另一次 PNP 飞行，她主动提出把蒂菲从堪萨斯城带到弗吉尼亚。",
+   "option": "B offered 正确：offer to do「主动提出」，Karen 顺路捎狗是志愿者的自发行为，与 PNP 的公益属性一致；A waited to do「等待做」语义被动，无人安排她做；C hurried「匆忙」无急迫语境；D failed「未能」与后文狗成功送达结局矛盾。",
+   "keyword": "offer to do 主动提出＝volunteer to do；non-restrictive clause 非限制性定语从句；volunteer 志愿；fail to do 未能做。",
+   "note": "定语从句补充 Karen 的善举：志愿组织里 members offer help 是常态；D failed 的迷惑在 to do 搭配，但「未能带狗」直接推翻全文圆满结局——结局反推动词。"
+  },
+  {
+   "question_id": 463,
+   "long_sentence": "定位句 What I was to do was fly to Topeka to pick up Tiffy；What 引导主语从句；be to do 表安排；fly to 飞往。译：我要做的是飞到托皮卡去接上蒂菲。",
+   "option": "D pick up 正确：pick up「接（人、物）」，作者飞到狗主人家接狗再转运，与航班中转链（Topeka→Kansas City→Virginia）衔接；A see off「送行」方向相反——是接不是送；B look for「寻找」狗的位置已知无需找；C hand over「移交」是后段 Karen 的任务。",
+   "keyword": "pick up 接（人）、取（物）；see off 送行；hand over 移交；中转链条 Topeka→Kansas City→Virginia。",
+   "note": "货运链定动词：作者第一棒（Topeka 接狗）、Karen 第二棒（送弗吉尼亚）；A see off 是「送」的反向陷阱——作者的角色是接手不是送别。"
+  },
+  {
+   "question_id": 464,
+   "long_sentence": "定位句 When I met Tiffy's owners, they seemed very nervous；when 引导时间状语从句；seem + adj. 看起来；nervous 紧张的。译：当我见到蒂菲的主人时，他们显得非常紧张不安。",
+   "option": "B nervous 正确：nervous「紧张不安」，与下句 George was trying to be calm（努力保持平静）呼应——越是要装平静越说明内心紧张；A confused「困惑」无疑惑语境；C annoyed「恼怒」对施助者不应生气；D curious「好奇」与离别焦虑无关。",
+   "keyword": "nervous 紧张的；try to be calm 努力保持镇定（反证紧张）；seem + adj. 看起来……；交出爱犬的焦虑。",
+   "note": "trying to be calm 是 nervous 的镜像证据：刻意平静=内心波澜；情绪词要由人物处境（托付爱犬给陌生人）与后文行为双重验证。"
+  },
+  {
+   "question_id": 465,
+   "long_sentence": "定位句 George, the husband, was trying to be calm, but I could tell this was hard for him, having to leave his dog to a stranger；同位语 the husband；tell 此处意为「看出、察觉」；having to... 现在分词短语解释 this 的内容。译：丈夫乔治努力保持镇定，但我能看出这对他来说很难受——不得不把狗交给一个陌生人。",
+   "option": "A hard 正确：this was hard for him「这对他很难受」，与努力装镇定的挣扎、托付爱犬的不舍一致；B fine「没问题」与 but 转折矛盾；C common「普遍」答非所问；D lucky「幸运」与离别伤感相反。",
+   "keyword": "hard 困难的、难受的；can tell 能看出＝can sense；leave...to... 把……交给；but 表转折。",
+   "note": "but 转折定方向：装镇定与真实感受相反，空格须是负面感受词；tell 的熟词僻义「看出」也提示作者在读解情绪——转折后填 hard 才有转折内容。"
+  },
+  {
+   "question_id": 466,
+   "long_sentence": "定位句 having to leave his dog to a stranger and trust that everything would work out；leave...to... 把……托付给；trust that 相信；stranger 陌生人。译：不得不把狗托付给一个陌生人，并相信一切都会顺利。",
+   "option": "C stranger 正确：作者与 George 只是网上联系、初次见面，对 George 而言作者是「陌生人」，这正解释了 hard 的不安与 trust 的不易；A coworker「同事」无工作关系；B passenger「乘客」是 Tiffy 的身份，张冠李戴；D neighbor「邻居」两人相隔千里。",
+   "keyword": "stranger 陌生人；leave sth to sb 把……托付给某人；trust 相信；initial meeting 初次见面。",
+   "note": "关系定位：网友求助、当面交接——作者对 George 是陌生人；B 的迷惑在全文语境满是「乘客」，但此空说的是托付对象是作者本人——人称关系别错位。"
+  },
+  {
+   "question_id": 467,
+   "long_sentence": "定位句 trust that everything would work out；trust that 相信；would work out 一切会顺利解决；everything 作主语。译：并相信一切都会顺利解决。",
+   "option": "B work out 正确：work out 表「（问题、局面）顺利解决、有好的结果」，everything will work out 是常用安慰语，与 trust 的托付心理契合；A speed up「加速」与一切顺利无关；C come back「回来」主语应是狗或人不是 everything；D take off「起飞」主语是飞机——D 的迷惑在全文航空语境，但搭配对象错了。",
+   "keyword": "work out 顺利解决＝turn out well；trust that 相信；take off 起飞（主语为飞机）；speed up 加速。",
+   "note": "everything would __ 的主语是抽象的「一切」：能与之搭配的只有 work out；D take off 借航空语境诱导，但「一切起飞」不成立——动词短语先看主语适配。"
+  },
+  {
+   "question_id": 468,
+   "long_sentence": "定位句 I asked George and his wife to help me load Tiffy into the plane；ask sb to do 请某人做；load...into... 把……装进；the plane 机舱。译：我请乔治夫妇帮我把蒂菲装上飞机。",
+   "option": "D load 正确：load...into「装进（舱内）」，把狗安置进机舱是飞行前的准备动作，与 owner 协助的场景吻合；A feed「喂食」与装机无关；B follow「跟随」狗进舱主人不能同行；C change「更换」无对象。",
+   "keyword": "load...into 把……装入；cargo 货舱；ask sb to do 请某人做；boarding 装载上机。",
+   "note": "load 既装货也可装「活物」上运输工具，是本空唯一能与 into the plane 构成安置动作的词；B follow 的迷惑是「跟着上机」，但狗是自己上不去的。"
+  },
+  {
+   "question_id": 469,
+   "long_sentence": "定位句 I promised to take care of Tiffy and call them as soon as we got to Kansas City；promise to do 承诺做；take care of 照顾；as soon as 一……就……。译：我承诺照顾好蒂菲，一到堪萨斯城就给他们打电话。",
+   "option": "A call 正确：call them「给他们打电话」，与 as soon as we got to Kansas City 的时间点配合——落地即报平安，兑现承诺；B join「加入」无对象；C leave「离开」与报平安相反；D serve「服务」语义空泛。",
+   "keyword": "call sb 给某人打电话＝phone/ring sb；promise to do 承诺做；as soon as 一……就……；报平安的表达。",
+   "note": "as soon as we got there 的落地节点决定动作：让主人安心的是「电话报平安」；C leave 的迷惑在旅途动词，但 promise 的内容是安抚不是告别。"
+  },
+  {
+   "question_id": 470,
+   "long_sentence": "定位句 The flight was uneventful, and Tiffy was a great passenger；uneventful 平淡无事的；and 并列两个正面评价；a great passenger 好乘客。译：这次飞行平淡无事，蒂菲是位很棒的乘客。",
+   "option": "D uneventful 正确：uneventful「平安无事、无波无澜」，描述顺利的飞行，与 and 后 Tiffy was a great passenger 的正面评价并列，也为下文圆满结局铺垫；A unnecessary「不必要」与已完成的飞行矛盾；B unexpected「意外」是负面词，与顺利相反；C unavoidable「不可避免」无从谈起。",
+   "keyword": "uneventful 平淡无事的＝without incident；passenger 乘客；un- 前缀否定；并列结构的感情色彩一致。",
+   "note": "and 并列要求两侧同向：great passenger 是正面，空格也须正面且「顺利」义——uneventful 是旅程平安的标准用词；B unexpected 的 un- 词形最迷惑，注意词义方向。"
+  },
+  {
+   "question_id": 471,
+   "long_sentence": "定位句 The next day, she flew with Karen and made it back to George in Virginia within a few days；the next day 第二天；flew with 与……同飞；make it back to 成功回到；within a few days 几天之内。译：第二天，她随卡伦飞往弗吉尼亚，几天之内就回到了乔治身边。",
+   "option": "C flew 正确：flew with Karen「随卡伦飞行」，与第一段 PNP 飞行计划的航线（Kansas City→Virginia）衔接，狗由另一位飞行员接力完成第二程；A returned「返回」主语是狗，return 表主动回家不合逻辑——她是被运送的；B fought、D agreed 与运输任务无关。",
+   "keyword": "fly with sb 与某人同飞；make it back to 成功回到＝make it home；接力运输 relay；within a few days 几天内。",
+   "note": "主语 she（狗）决定动词：狗不能自己 return，只能被 fly 运送——主语能动性是判断动词的关键；made it back to 中的 back 指向主人身边，不指狗自己行动。"
+  },
+  {
+   "question_id": 472,
+   "long_sentence": "定位句 He was so thankful and sent me a nice e-mail with pictures；so + adj. 如此……；send sb sth 双宾语；with pictures 附上照片。译：他感激不已，给我发来一封附有照片的暖心邮件。",
+   "option": "A thankful 正确：thankful「感激的」，爱犬平安到家、家庭团聚，向志愿者致谢是必然反应，与下文 helped bring this family together again 呼应；B generous「慷慨的」无金钱馈赠语境；C proud「骄傲的」主体错位——作者才有资格感到欣慰；D sympathetic「同情的」与喜事情绪不符。",
+   "keyword": "thankful 感激的＝grateful；send sb an e-mail 给某人发邮件；family reunion 家庭团聚；情绪与事件匹配。",
+   "note": "结局定情绪：狗狗到家是喜事，主人的情绪是「感激」而非其他；C proud 的迷惑在「为主人感到自豪」，但句子的情绪主体是 George 本人。"
+  },
+  {
+   "question_id": 473,
+   "long_sentence": "定位句 While the adults were busy with their serious talk outside, I was left alone in the kitchen to help my grandmother wash dishes；while 引导时间对比；be left alone 被独自留下；wash dishes 洗碗。译：大人们在外面忙着严肃交谈时，我被独自留在厨房里帮奶奶洗碗。",
+   "option": "B kitchen 正确：wash dishes（洗碗）的固定场所是厨房，地点与家务动作直接绑定；A sitting room「客厅」是休息处不洗碗；C yard「院子」大人们在的地方，与 be left alone in 矛盾；D dining hall「食堂、大餐厅」指公共用餐场所，家庭晚餐的碗不在其洗。",
+   "keyword": "kitchen 厨房；wash dishes 洗碗＝do the dishes；sitting room 客厅＝living room；地点与动作的绑定。",
+   "note": "动作定场所：看到 wash dishes 就找厨房；C yard 是 adults 所在处的反向陷阱——「被留下」说明自己不在大人那边；D dining hall 与家庭 dinner 的 dining 词面相近，注意它指公共食堂。"
+  },
+  {
+   "question_id": 474,
+   "long_sentence": "定位句 As always, my grandmother would tell me stories about her childhood；as always 一如既往；would 表过去的习惯性动作；tell sb stories about 给某人讲关于……的故事。译：和往常一样，奶奶会给我讲她童年的故事。",
+   "option": "A As always 正确：as always「和往常一样」，与 would（过去常常）的习惯性呼应——洗碗听故事是祖孙间的固定节目；B By the way「顺便说」是口语插入语，不引导习惯叙述；C For example「例如」前文没有总述可举；D Here and now「此时此地」与过去的习惯时态矛盾。",
+   "keyword": "as always 一如既往＝as usual；would do 过去常常（习惯）；tell stories 讲故事；插入语的功能辨析。",
+   "note": "would 表过去习惯是语法信号：与「每次都如此」的 as always 最契合；C For example 需要前文有总起句，本段是场景引入——逻辑词看上下文有无总述。"
+  },
+  {
+   "question_id": 475,
+   "long_sentence": "定位句 Born just before WWII, my grandmother experienced an entirely different childhood lifestyle from mine；born just before WWII 过去分词短语作状语；experience 经历；entirely different from 与……完全不同。译：出生在二战前夕，我的奶奶经历了一种与我的童年完全不同的童年生活方式。",
+   "option": "D experienced 正确：experience「经历」，主语是亲历者奶奶，宾语是 childhood lifestyle，讲述历史中的真实童年，与下文辍学、做家务的列举一致；A adjusted「调整」需搭配 to 且主语是主动适应者；B promoted「提升」与 lifestyle 不搭；C achieved「实现」的宾语应是目标成果。",
+   "keyword": "experience 经历＝go through；entirely different from 完全不同；born before WWII 二战前出生（时代背景）；adjusted to 适应（搭配）。",
+   "note": "主谓宾的语义关系定动词：奶奶「经历」童年生活方式；A adjusted 的硬伤是 adjust to sth 需介词且语义是适应——后文没有机会上学的苦难只有 experienced 能统摄。"
+  }
+ ]
+}

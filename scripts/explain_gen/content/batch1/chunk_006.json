@@ -1,0 +1,180 @@
+{
+ "chunk": 6,
+ "items": [
+  {
+   "question_id": 126,
+   "long_sentence": "定位句 While the term AI conjures up anxieties about killer robots or catastrophic levels of unemployment, there are other, deeper implications；While 引导让步状语从句；conjure up 意为「使人想起」；随后设问 As AI increasingly shapes the human experience 揭示深层含义。译：尽管 AI 一词令人联想到杀人机器人或大规模失业的焦虑，但它还有更深的含义：AI 塑造人类体验，会如何改变「作为人类」的意义？",
+   "option": "正确项 D「它正在重塑人类」＝首段 Technological innovations reshape people 加 Artificial intelligence is altering humanity 加 shapes the human experience 的合并改写，reshaping≈reshape/alter/shape；A「正造成灾难性失业」张冠李戴，catastrophic unemployment 是人们联想到的焦虑而非深层含义；B「对人造成身体伤害」无中生有；C「正在改变道德判断」以偏概全，道德判断只是深含义的一个侧面。",
+   "keyword": "conjure up 使浮现于脑海；implication 含义、影响；reshape 重塑＝alter；catastrophic 灾难性的。",
+   "note": "deeper implications 的答案不在让步从句里而在转折后的设问——While 之后是「浅层焦虑」，设问引出「深层改变」；D 项 reshape 与原文三处同根词呼应，属「多词呼应型」正确项；A 项的 catastrophic 原词复现是典型陷阱。"
+  },
+  {
+   "question_id": 127,
+   "long_sentence": "定位句 These are areas where algorithmic prescription is replacing human judgment, and so people...no longer will；where 引导定语从句；and so 表结果；no longer will 承前省略 develop practical judgment。译：在这些领域，算法处方正取代人的判断，因此本可锻炼实践判断力的人将不再有这样的机会。",
+   "option": "正确项 A「人们失去了培养实践判断能力的机会」＝people who might have had the chance to develop practical judgment...no longer will 的同义改写，cultivate≈develop、lose the chance≈no longer will；B「无法参与职场重大决策」偷换概念，原文谈判断力的养成非决策参与权；C「经理再无机会决定贷款」偷换概念，被取代的是判断练习机会而非经理职权；D「经理不必费力决定雇谁」无中生有。",
+   "keyword": "algorithmic prescription 算法处方；practical judgment 实践判断力；cultivate 培养＝develop；hire or fire 雇用或解雇。",
+   "note": "consequence 题抓 and so 之后的结果分句；no longer will 的省略结构要还原为 no longer will develop practical judgment，还原后与 A 项一一对上；C、D 都借 hire/fire/loan 原词造干扰，先定位「机会的失去」再筛对象。"
+  },
+  {
+   "question_id": 128,
+   "long_sentence": "定位句 Recommendation engines, which are increasingly prevalent intermediaries in people's consumption of culture, may serve to constrain choice and minimize luck；which 引导非限制性定语从句；主干是 Recommendation engines may serve to constrain choice and minimize luck；constrain 意为「限制」。译：推荐引擎——文化消费中日益普遍的中介——可能限制选择、减少偶然性。",
+   "option": "正确项 A「消费者的选择将大大受限」＝constrain choice 加 We think there is some risk that people's options will be constrained by their past 的合并改写，much limited choice≈constrain choice/options constrained；B「消费者运气更好」正反混淆，原文是 minimize luck；C「更容易决定看什么」张冠李戴，In one sense, this is helpful 是让步信息；D「人类会形成近似机器的品味」偷换概念，原文是机器品味取代人类品味。",
+   "keyword": "recommendation engine 推荐引擎；constrain 限制＝limit；minimize 使减到最小；intermediary 中介。",
+   "note": "result from 问「后果」，落点在段尾 We think there is some risk that...的预警句；A 项两次呼应 constrain——动词与形容词化各一次；B 项 minimize luck 与 enjoy better luck 方向相反，这种「偶然性减少」与「运气变好」的错位要辨析。"
+  },
+  {
+   "question_id": 129,
+   "long_sentence": "定位句 As machine learning algorithms improve and as they train on more extensive data sets, larger parts of everyday life are likely to become utterly predictable；as 引导两个并列状语从句；utterly 意为「完全地」；predictable 意为「可预测的」。译：随着算法改进与数据集扩大，日常生活中越来越大的部分将变得完全可以预测。",
+   "option": "正确项 C「它们可以被完全预料」＝become utterly predictable 的同义改写，completely anticipated≈utterly predictable；A「将变得更令人愉快」张冠李戴，efficient and pleasant 描述的是 common experiences 且属预测带来的效果；B「将重复过去经历」偷换概念，past preferences 只是算法预测的依据；D「将变得越来越好」张冠李戴，get better and better 的是 predictions。",
+   "keyword": "utterly 完全地＝completely；predictable 可预测的＝anticipated；data set 数据集；algorithm 算法。",
+   "note": "本题考谓语归属：predictable 修饰 everyday life，pleasant 与 better 修饰别的主语——「形容词与主语的搭配」是三选项设错的同一手法；anticipated 与 predictable 是本题唯一实义替换，识别「完全可预测」即锁定 C。"
+  },
+  {
+   "question_id": 130,
+   "long_sentence": "定位句 But to the extent that unpredictability is part of how people understand themselves and part of what people like about themselves, humanity is in the process of losing something significant；to the extent that 意为「就…程度而言」；unpredictability 意为「不可预测性」。译：就「不可预测性是人们自我理解与自我喜爱的一部分」而言，人类正在失去某种重要的东西。",
+   "option": "正确项 B「他们将不再拥有人类不可预测的特性」＝As they become more and more predictable 加 unpredictability is part of what people like about themselves 的合并反推——越来越可预测即失去不可预测性；A「失去智能这一人类要素」无中生有；C「无法像今天这样理解自我」偷换概念，原文说不可预测性是自我理解的一部分，非理解能力的丧失；D「被剥夺前人引以为豪之物」表述接近但偷换为前人与自豪，原文是人们喜欢自己之处。",
+   "keyword": "unpredictability 不可预测性；mediated 中介化的；significant 重要的；creature 生物、生灵。",
+   "note": "本题考逻辑反推：先立论「不可预测是人的特质」，再推「越来越可预测→越来越不像人」；B 项把 unpredictability 定性为 human characteristic，方向与原文吻合；C、D 是「似对实偏」的近义干扰，核对「失去的到底是什么」——是特性而非能力或自豪感。"
+  },
+  {
+   "question_id": 131,
+   "long_sentence": "定位句 But in many classrooms, this can be a dirty word. So much so that some teachers have had to sneak phonics teaching materials into the classroom；this 指代上句的 phonics；so much so that 意为「以致于」；sneak...into... 意为「把…偷偷带进」；dirty word 此处喻指「忌讳词、犯忌的说法」。译：但在许多教室里，这可能是个犯忌的词——以致一些教师不得不把自然拼读教材偷偷带进课堂。",
+   "option": "正确项 A「它名声不佳」＝a dirty word 的比喻义改写，ill reputed≈dirty word；B「大多被误用」偷换概念，原文说的是被忌讳排挤而非用错；C「被武断排除」程度不符，sneak in 恰说明未明文禁绝、是氛围性排斥；D「被歪曲表述」无中生有。",
+   "keyword": "dirty word 忌讳词（喻不受欢迎的说法）；sneak 偷偷带入；phonics 自然拼读法；so much so that 以致于。",
+   "note": "dirty word 是理解本题的钥匙——熟词僻义的比喻用法，指「圈内人人避谈」；sneak...into 的「偷偷」动作反证其处境不佳；B 项 misapply 与 C 项 exclude 都与 dirty word 有距离，比喻义题优先选「态度/名声」类的对应词。"
+  },
+  {
+   "question_id": 132,
+   "long_sentence": "定位句 America is stuck in a debate about teaching children to read that has been going on for decades；主干是 America is stuck in a debate；that 引导定语从句修饰 debate；be stuck in 意为「陷入、卡在」。译：美国深陷一场关于如何教儿童阅读的争论，这场争论已持续数十年。",
+   "option": "正确项 B「一场关于儿童阅读教学方法的持久争论」＝a debate about teaching children to read that has been going on for decades 的同义改写，enduring≈going on for decades、approach≈about teaching children to read；A「对创新阅读教学法的痴迷」无中生有；C「对儿童读写不足日益关注」张冠李戴，第二段 consequences 是后果展示非争论本身；D「对组合教学法日益有力的倡导」偷换概念，balanced literacy 是现状描述。",
+   "keyword": "be stuck in 陷入；debate 争论；go on for decades 持续数十年＝enduring；advocate 提倡者、提倡。",
+   "note": "题干 for decades 的时长信号对应 going on for decades，witness 的宾语是 debate 而非后果；第三段的 phonics 与 whole language 两派对峙是争论的展开，可作验证；C 项用第二段的 reading scores 设陷阱，注意「争论什么」与「后果是什么」的分界。"
+  },
+  {
+   "question_id": 133,
+   "long_sentence": "定位句 'You can't sprinkle in a little phonics,' says Tenette Smith... 'It has to be systematic and explicitly taught.'；sprinkle in 意为「掺入、撒入」；systematic 意为「系统的」；explicitly 意为「明确地、显性地」。译：密西西比州基础教育与阅读部门执行主任特内特·史密斯说：「你不能往里掺一点自然拼读了事。它必须系统地、明确直白地教授。」",
+   "option": "正确项 B「自然拼读必须系统施教、清晰讲授才能奏效」＝It has to be systematic and explicitly taught 的同义改写，systematically applied≈systematic、clearly taught≈explicitly taught；A「孩子面对多法合教会受挫」无中生有；C「掺一点拼读会拖累积极性高的孩子」无中生有，sprinkle 只是比喻掺量不足；D「balanced literacy 无法维持兴趣」无中生有。",
+   "keyword": "sprinkle in 掺入、点缀；systematic 系统的；explicitly 明确地＝clearly；balanced literacy 平衡读写法。",
+   "note": "人物引语句是原因题的直接答案区——Smith 先否定掺一点（can't sprinkle），再给正面条件（has to be systematic and explicitly taught）；B 项把两个形容词还原为方式状语；A、C、D 全部无中生有，本题干扰项靠「编造因果」，用引语原文逐词核对即可。"
+  },
+  {
+   "question_id": 134,
+   "long_sentence": "定位句 Mississippi's success is attributed to implementing reading methods supported by a body of research known as the science of reading；主干是 Mississippi's success is attributed to implementing...；be attributed to 意为「归因于」；supported by... 为过去分词短语作后置定语。译：密西西比州的成功归因于推行了由一套被称为「阅读科学」的研究所支持的阅读教学法。",
+   "option": "正确项 C「采用有科学依据的阅读教学方法」＝implementing reading methods supported by a body of research known as the science of reading 的同义改写，adopting≈implementing、scientifically grounded≈supported by a body of research；A「召开国家阅读小组」张冠李戴，那是 1997 年国会的行为；B「重视流利与理解」以偏概全，那是 panel 发现的组成部分；D「获得国会支持升级教法」张冠李戴。",
+   "keyword": "be attributed to 归因于；implement 实施＝adopt；science of reading 阅读科学；grounded in 有依据的。",
+   "note": "题干 is attributed to 与原文原词复现，答案即 to 之后的动名词短语；supported by research 与 scientifically grounded 的转换是本题唯一改写点；A、D 都拿 Congress/panel 的背景信息张冠李戴，先分清「研究结论的产出者」与「成功的原因」。"
+  },
+  {
+   "question_id": 135,
+   "long_sentence": "定位句 But advances in statistics and brain imaging have disproved the whole-language method；主干是 advances have disproved the whole-language method；disprove 意为「证明…不成立、反驳」；whole-language method 与第三段 an immersive approach...known as 'whole language' 相互定义。译：但统计学与脑成像技术的进步已经证明「整体语言法」站不住脚。",
+   "option": "正确项 D「沉浸式教学法」＝the whole-language method 的同义指称——第三段已定义 an immersive approach...known as 'whole language'，两者同物异名；A「符号-声音关系教学」正反混淆，那是 phonics 且被证明有效；B「音位意识的显性教学」正反混淆，同为有效成分；C「终结阅读战的努力」张冠李戴，panel 的任务是止战。",
+   "keyword": "disprove 证伪、反驳；whole language 整体语言法＝immersive approach；brain imaging 脑成像；explicit instruction 显性教学。",
+   "note": "本题考跨段同义指称：immersive approach 与 whole language 在第三段绑定定义，D 项考察读者是否记住了这层等价关系；A、B 都是 panel 认可的有效成分，与 disproved 方向相反；遇到「方法名」题先回文章找它的定义句。"
+  },
+  {
+   "question_id": 136,
+   "long_sentence": "定位句 Curran describes socially prescribed perfectionism as 'My self-esteem is contingent on what other people think.'；describe...as... 意为「把…描述为」；contingent on 意为「取决于、视…而定」。译：柯兰把「社会规订型完美主义」描述为「我的自尊取决于别人怎么想」。",
+   "option": "答案 E 段：Curran describes socially prescribed perfectionism as 'My self-esteem is contingent on what other people think.'——is described as≈Curran describes...as、depending on other people's opinion≈contingent on what other people think；C 段也出现 socially prescribed 一词但只给 33% 的增幅数据，本题要的是定义句，定义句在 E 段。",
+   "keyword": "self-esteem 自尊；be contingent on 取决于＝depend on；socially prescribed 社会规订的；perfectionism 完美主义。",
+   "note": "术语定义题直接搜 describe...as 句式；C 段与 E 段都含 socially prescribed perfect完美主义，区分点是 C 段讲增幅数据、E 段给通俗定义；contingent on 是 depend on 的高级替换，认识这组同义链即可秒配。"
+  },
+  {
+   "question_id": 137,
+   "long_sentence": "定位句 She has heard of graduate students spending 12 to 18 hours at a time in the lab；主干是 She has heard of graduate students spending...；hear of 意为「听说」；spend 12 to 18 hours at a time 意为「一次连续待 12 到 18 小时」。译：她听说有研究生一次在实验室里一待就是 12 到 18 个小时。",
+   "option": "答案 A 段：graduate students spending 12 to 18 hours at a time in the lab 加 won't allow themselves to watch Netflix 加 Relationships become estranged——work such long hours≈spending 12 to 18 hours、little entertainment≈won't watch Netflix、socializing≈estranged/social gatherings，三要素齐备；E 段 tech employees 是来访者，与研究生无关。",
+   "keyword": "at a time 一次；estranged 疏远的；social gatherings 社交聚会；scientist-in-training 科研后备人才。",
+   "note": "题干三要素（工时长、少娱乐、少社交）在 A 段分三句呈现——hear of 对应 has learned 的转述感；entertainment 落到具体的 Netflix，socializing 落到 estranged 与聚会邀约的消失，抽象题干对具体原文是本题改写模式。"
+  },
+  {
+   "question_id": 138,
+   "long_sentence": "定位句 Perfectionism can, of course, be a positive force；主干是 Perfectionism can be a positive force；of course 为插入语表让步承认；positive force 意为「积极力量」；下句 Think of professional athletes 为祈使句引例。译：当然，完美主义也可以是一种积极的力量。",
+   "option": "答案 F 段：Perfectionism can, of course, be a positive force——may sometimes be constructive≈can be a positive force，sometimes 的或然语气与 can of course 对应；段内 professional athletes 与 well-adjusted perfectionism（健康调适的完美主义）是佐证；B 段讲极端完美主义导致抑郁自杀，方向相反，是本题最强的正反对照段。",
+   "keyword": "positive force 积极力量＝constructive；well-adjusted 适应良好的；maladaptive 适应不良的；setback 挫折。",
+   "note": "F 段以 can, of course 让步开头，先立「积极面」再转入 maladaptive 的恶性循环——本题取段首；believe may sometimes 的委婉语气与 can be 完全对齐；与 B 段的 extreme perfectionism 对照着记：同词根正反两段，靠 of course 与 extreme 切分。"
+  },
+  {
+   "question_id": 139,
+   "long_sentence": "定位句 What's more, perfectionism seems to be on the rise；主干是 perfectionism seems to be on the rise；what's more 表递进「此外」；on the rise 意为「呈上升趋势」；下句 found that today's college students report higher levels of perfectionism than college students did during the 1990s or early 2000s 用比较级给出证据。译：而且，完美主义似乎正在抬头。",
+   "option": "答案 C 段：perfectionism seems to be on the rise 加 today's college students report higher levels of perfectionism than...during the 1990s or early 2000s——getting more and more prevalent≈on the rise 加 higher levels than 的比较证据、It is found≈a study...found；段内三类完美主义的百分比增幅是量化支撑。",
+   "keyword": "on the rise 呈上升趋势＝getting more prevalent；prevalent 普遍的、盛行的；self-oriented 自我指向的；live up to 达到、不辜负。",
+   "note": "prevalent 与 on the rise 的同义对应是本题第一层；第二层是证据关系——C 段先给趋势判断再给研究数据，题干 It is found 要求「有研究发现」，定位时优先选含研究动词（found/measured）的段落；What's more 提示 C 段承接 B 段警告再进一层。"
+  },
+  {
+   "question_id": 140,
+   "long_sentence": "定位句 While educators and parents have successfully convinced students of the need to be high performing and diligent..., they haven't adequately prepared them for the inevitability of failure；While 引导让步状语从句；convince sb of sth 意为「使某人相信」；inevitability 意为「不可避免性」。译：教育者和家长成功让学生相信要高表现够勤奋，却没有让学生对失败的必然性做好准备。",
+   "option": "答案 H 段：they haven't adequately prepared them for the inevitability of failure——Some experts suggest≈the experts told me 的观点转述、prepare students for failures≈prepared them for the inevitability of failure；原文以否定句暗含「应该准备」，题干 should 把建议明说出来；段内 Pryor 建议改夸「You really stuck with it」是具体做法。",
+   "keyword": "inevitability 必然性；convince sb of 使某人相信；diligent 勤奋的；perseverance 毅力、坚持。",
+   "note": "原文用「没做到」暗示「应该做」——否定句转建议句是长篇阅读常见改写，考生须完成这步逻辑翻转；题干 Some experts 的模糊指代对应 the experts told me；H 段后半讲夸奖方式与怕变废的顾虑，本题只取首句的 prepared for failure。"
+  },
+  {
+   "question_id": 141,
+   "long_sentence": "定位句 Pryor...is trying to sound the alarm about a tendency among young adults and college students to strive for perfection in their work — sometimes at any cost；who 引导非限制性定语从句；sound the alarm 意为「敲响警钟」；at any cost 意为「不惜代价」。译：普赖尔正就年轻人和大学生在工作中追求完美——有时不惜代价——的倾向敲响警钟。",
+   "option": "答案 B 段：Along with other therapists, Pryor is trying to sound the alarm about a tendency among young adults...to strive for perfection in their work——Some therapists warn≈sound the alarm、tend to pursue perfection≈a tendency to strive for perfection；段尾 depression, anxiety, and even suicide 是警告的理由。",
+   "keyword": "sound the alarm 敲响警钟＝warn；strive for 追求、力争；tendency 倾向＝tend to；trait 特质。",
+   "note": "warn 与 sound the alarm 是「警告类」同义链，B 段为全篇总起警告段； therapists 复数对应 Along with other therapists——复数细节是排除单人物段落（如 D 段 Bach）的依据；tendency 与 tend to 的名词动词互换是本题语法层面的改写。"
+  },
+  {
+   "question_id": 142,
+   "long_sentence": "定位句 She tells them, 'Aim high, but get comfortable with good enough.'；aim high 意为「志存高远」；get comfortable with 意为「接受并安于」；good enough 意为「足够好」。译：她告诉他们：「目标要高，但要学会对足够好感到安心。」",
+   "option": "答案 I 段：Bach...tells them, 'Aim high, but get comfortable with good enough.'——aim high 原词复现、be content with something less than perfect≈get comfortable with good enough（安于足够好即不苛求完美）；encourages≈tells them 加 she encourages them to remember 的呼应；D 段的 dishwasher 争吵是 other-oriented 完美主义的例子，与劝导无关。",
+   "keyword": "aim high 志存高远；good enough 足够好＝less than perfect；get comfortable with 安于、坦然接受；award 奖项。",
+   "note": "人物加引语是本题定位双锚：Psychologist Amy Bach 直接给出人名，引语给出主张；less than perfect 与 good enough 的「不完美但够用」等价转换是理解关键；I 段末句「单次结果不能定义个人」是同一劝导的延伸，可作佐证。"
+  },
+  {
+   "question_id": 143,
+   "long_sentence": "定位句 Michael Brustein, a clinical psychologist in Manhattan, says when he first began practicing in 2007, he was surprised by how prevalent perfectionism was among his clients；when 引导时间状语从句；prevalent 意为「普遍的」。译：曼哈顿临床心理学家布鲁斯坦说，2007 年刚开始执业时，来访客户中完美主义的普遍程度令他惊讶。",
+   "option": "答案 E 段：Michael Brustein, a clinical psychologist in Manhattan, says...he was surprised by how prevalent perfectionism was among his clients——A clinical psychologist finds≈says...he was surprised by、widespread≈prevalent、clients 原词对应；E 段还列出创业者、艺术家、科技员工等群体佐证普遍性；B 段的 Pryor 是 therapists 但非 clinical psychologist 且未谈来访者比例。",
+   "keyword": "clinical psychologist 临床心理学家；prevalent 普遍的＝widespread；client 来访者、客户；practice 执业。",
+   "note": "职业头衔是本题最强锚点：clinical psychologist 在全篇只出现一次（E 段）；widespread 与 prevalent 是「普遍」同义链；题干 finds 与原文 was surprised by 的「执业观察」性质一致——发现类表述可对应惊讶、注意到等心理动词。"
+  },
+  {
+   "question_id": 144,
+   "long_sentence": "定位句 They try to be perfect, in other words, at no longer being perfect；主干是 They try to be perfect at no longer being perfect；in other words 为插入语「换句话说」；该句为悖论式表达——「努力不完美」本身成了新的完美目标。译：换句话说，他们试图在「不再完美」这件事上做到完美。",
+   "option": "答案 K 段：some people go into therapy expecting too much 加 They try to be perfect, in other words, at no longer being perfect——In trying to overcome perfectionism≈go into therapy、still pursuing perfection≈try to be perfect at no longer being perfect 的悖论改写；J 段的矫治方法（记自豪日志、歪挂毛巾）是另一信息点。",
+   "keyword": "pathological 病态的；transformation 转变；instant 立即的；therapy 治疗、心理治疗。",
+   "note": "本题考悖论句的理解：治疗目的是摆脱完美主义，但患者「要求自己立刻不完美」仍是完美主义心态——题干 still pursuing perfection 恰是对这句悖论的概括；K 段前半讲价值观转移疗法，本题取段尾 But he warns 之后的警告内容。"
+  },
+  {
+   "question_id": 145,
+   "long_sentence": "定位句 But others actually fall behind on work, unable to complete assignments unless they are, well, perfect；主干是 others fall behind on work；unable to complete... 为形容词短语作伴随状语；unless 引导条件状语从句。译：但另一些人实际上工作拖延落后，除非做到十全十美，否则无法完成手头的任务。",
+   "option": "答案 G 段：others actually fall behind on work, unable to complete assignments unless they are, well, perfect——fail to complete their tasks on time≈fall behind on work 加 unable to complete assignments、In pursuing perfection≈unless they are perfect；下文 partying until 2 a.m. 制造借口是拖延的例证；F 段讲完美主义的正反两型，G 段专讲「表现受阻」的变体。",
+   "keyword": "fall behind 落后、拖后＝fail to complete on time；assignment 任务、作业；handicap 使不利、妨碍；excuse 借口。",
+   "note": "题干两要素（追求完美、任务延误）与 G 段的 unless 条件结构对应——「除非完美否则完不成」即「因求完美而误期」；G 段罗列三种表现（贬低成就、拖延、自设障碍），本题取拖延一项；与 F 段区分：F 谈心态循环，G 谈行为表现。"
+  },
+  {
+   "question_id": 146,
+   "long_sentence": "定位句 Yet despite all this, one group, which in no way has their best interests at heart, has almost unconstrained access；主干是 one group has almost unconstrained access；which 引导非限制性定语从句；in no way 表「绝不」；have one's best interests at heart 意为「真心为某人着想」。译：然而尽管有这一切保护，仍有一个群体——它绝不真心为孩子们着想——几乎不受限制地接近孩子。",
+   "option": "正确项 A「广告商」＝下段 We seem to take it for granted that advertisers and marketers are allowed to condition even the youngest children 的指代对象，unconstrained access≈almost unconstrained access 原词呼应；B「照护者」、C「教师」、D「医生」张冠李戴，首句明确说这三类人被逐一审查（scrutinize every carer, teacher or doctor），是被防范的对象。",
+   "keyword": "unconstrained 不受约束的；have one's best interests at heart 真心为某人着想；scrutinize 仔细审查；take it for granted 视为理所当然。",
+   "note": "one group 是悬念式写法——首段不点名，答案由下一句 advertisers and marketers 揭晓，阅读时要跨句解谜；which 从句「不怀好意」是排除 B/C/D 的依据：被审查的三类人恰恰是被信任防范对象；almost unrestricted 与 almost unconstrained 仅词性之差。"
+  },
+  {
+   "question_id": 147,
+   "long_sentence": "定位句 We're turning out little consumers rather than young citizens who will value themselves for what they contribute to the society in which they live；who 引导定语从句修饰 citizens；in which 引导定语从句修饰 society。译：我们正在制造小消费者，而不是会因自己对社会的贡献而自我肯定的年轻公民。",
+   "option": "正确项 B「因自己对社会的贡献而自我肯定的人」＝young citizens who will value themselves for what they contribute to the society 的同义改写，value themselves 原词、because of their contribution≈for what they contribute；A「追求名望财富等外部认可」正反混淆，那是作者批评的现状；C「把自我价值与理财能力挂钩」偷换概念，原文是 learned to handle money 的缺失；D「已形成恰当自我认同」张冠李戴，那是广告趁虚而入前的缺失状态。",
+   "keyword": "turn out 生产、造就；contribute to 贡献于；validate/validation 认可、肯定；citizen 公民。",
+   "note": "rather than 结构划出「要什么、不要什么」——题干 should enable 对应 rather than 之后的理想形象；A、C、D 全部来自 rather than 前的「小消费者」塑造过程，选项与原文的「肯定与否定方向」必须对齐；value 原词复现是本题最强锚点。"
+  },
+  {
+   "question_id": 148,
+   "long_sentence": "定位句 Many psychologists...point to research suggesting that this emerging cradle-to-grave consumerism is contributing to growing rates of low self-esteem, depression and other forms of mental illness；suggesting that... 作 research 的后置定语；cradle-to-grave 意为「终身的」。译：专家们援引研究指出，新兴的终身式消费主义正推高低自尊、抑郁等心理疾病的比率。",
+   "option": "正确项 A「终身性消费主义正导致越来越多心理问题」＝this emerging cradle-to-grave consumerism is contributing to growing rates of...mental illness 的同义改写，life-long≈cradle-to-grave、psychological problems≈mental illness、more and more cases≈growing rates；B「教育商业化」无中生有；C「对财富的渴望加剧抑郁」偷换概念，主体是消费主义；D「购物欲伴随一生」只复述 cradle-to-grave 的字面而丢掉「致病」这一研究结论。",
+   "keyword": "cradle-to-grave 从摇篮到坟墓的、终身的；consumerism 消费主义；contribute to 促成、导致；self-esteem 自尊。",
+   "note": "call attention to 对应 point to research——「援引研究」即「提请注意」；cradle-to-grave 的隐喻要译成 life-long；A 项把三项心理病症概括为 psychological problems，属「列举上概括」；D 项是只译隐喻不取结论的半截答案，核对 suggest 从句的谓语部分。"
+  },
+  {
+   "question_id": 149,
+   "long_sentence": "定位句 because of advertisements' viral effect they only need to infect a few to reach the many；because of 引导原因状语；主干是 they only need to infect a few to reach the many；viral effect 意为「病毒式效应」；infect 意为「感染」。译：由于广告的病毒式传播效应，它们只需感染少数人便能触及多数人。",
+   "option": "正确项 C「其影响堪比病毒」＝viral effect 加 infect...to reach 的隐喻体系，comparable to that of virus≈viral（病毒的）effect；A「实际感染的是多数而非少数」偷换概念，原文是感染少数、触达多数的两段式；B「根植于对物质占有的渴望」无中生有；D「实际上仅限于儿童」正反混淆，前文说该行业已把操纵成人情感欲望变成艺术。",
+   "keyword": "viral 病毒式的；infect 感染；reach 触及、到达；manipulation 操纵；viral effect 病毒式效应。",
+   "note": "viral 与 infect 是同一隐喻场的两个词——作者把广告扩散比作病毒传播，C 项是对整个隐喻的转述；imply 类题要求读出修辞背后的本义；A 项拆散了 infect a few 与 reach the many 的对应关系，属细节截取型错误。"
+  },
+  {
+   "question_id": 150,
+   "long_sentence": "定位句 There'll be those who argue that would be a breach of freedom of speech and infringe the rights of corporations to brainwash little children into demanding their products；a breach of 意为「对…的违反」；infringe 意为「侵犯」；brainwash sb into doing 意为「洗脑使某人做某事」。译：会有人反驳说，那将破坏言论自由，并侵犯企业给幼童洗脑、令其索要产品的权利。",
+   "option": "正确项 D「将侵犯赋予广告商的权利」＝infringe the rights of corporations to brainwash little children 的同义改写，violate≈infringe、the rights endowed upon advertisers≈the rights of corporations；A「剥夺儿童了解产品的机会」张冠李戴，那是广告有益论的说法；B「无法塑造独特身份」张冠李戴，同属支持广告的论据；C「侵犯儿童作为未来消费者的自由」偷换概念，被侵犯的是言论自由与公司权利。",
+   "keyword": "infringe 侵犯＝violate；breach 违反、破坏；brainwash 洗脑；corporation 企业。",
+   "note": "opponents 的论据锁定 There'll be those who argue 句式；本题主考「论据归属」：A、B 是广告支持方的用途论述，C 把言论自由的主语从公司偷换成儿童；rights of corporations 与 rights endowed upon advertisers 的指称转换是本题唯一实义改写点。"
+  }
+ ]
+}

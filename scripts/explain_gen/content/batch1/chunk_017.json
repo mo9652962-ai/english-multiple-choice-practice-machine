@@ -1,0 +1,180 @@
+{
+ "chunk": 17,
+ "items": [
+  {
+   "question_id": 401,
+   "long_sentence": "定位段：Second, set specific goals and deadlines. Vague intentions like 'I will work on it later' are less effective. __ This creates a sense of urgency and helps you stay on track；vague intentions 模糊的意向；a sense of urgency 紧迫感；stay on track 不偏离轨道。译：关键在于让目标明确且有截止时间。这会制造紧迫感，帮你保持在正轨上。",
+   "option": "正确项 D：make your goals clear and time-bound 与段首 set specific goals and deadlines 词汇复现（goals、time-bound≈deadlines），且 This creates a sense of urgency 中的 This 正指 time-bound 的截止期限；A 的 This simple technique 前文无技巧可指；B 的 25 分钟计时器是另一种技巧，与 goals 无关；E、G 分别是第 4、5 空的答案句，跨段错位。",
+   "keyword": "time-bound 有时限的≈deadline；specific 明确的；a sense of urgency 紧迫感；vague 模糊的（反义线索）。",
+   "note": "本题锚点在空后 This creates a sense of urgency：能制造紧迫感的只有「时限」，D 的 time-bound 呼应 deadlines；B 的计时器虽涉时间但不制造 deadline 意义上的紧迫感，属偷换概念。"
+  },
+  {
+   "question_id": 402,
+   "long_sentence": "定位段：Third, eliminate distractions. In today's digital age, notifications from phones and social media are major culprits. __ When you dedicate time to a task, turn off your phone or use apps that block distracting websites；eliminate 消除；culprit 罪魁祸首。译：打造一个整洁无杂物的物理工作区也有帮助。专心做事时，关掉手机或用应用屏蔽干扰网站。",
+   "option": "正确项 E：free from clutter（无杂物）与 eliminate distractions 同义呼应，also help 表补充建议，空后 turn off your phone、block websites 都是「移除干扰物」的具体化；B 的 25 分钟计时器是时间管理而非移除干扰，与 culprits 语义链断裂；A 已用于第 2 空；D、F 与干扰主题无关。",
+   "keyword": "clutter 杂乱之物；free from 无……的；distraction 干扰＝distracting things；culprit 罪魁祸首。",
+   "note": "段首 eliminate distractions 是主题句：正确项必须属于「移除分心物」语义场，E 的 clutter 与之同类；B 的诱惑在于它也提专注，但计时器是「结构化时间」不是「清除干扰」，答非所问。"
+  },
+  {
+   "question_id": 403,
+   "long_sentence": "定位段：Finally, reward yourself for progress. Positive reinforcement can boost motivation. __ For instance, after finishing a chapter, you can watch a short video or take a coffee break；positive reinforcement 正向强化；boost motivation 提升动力；For instance 举例。译：小奖励可以成为推动你继续前进的强大动力。例如，读完一章后，你可以看个短视频或喝杯咖啡休息一下。",
+   "option": "正确项 G：Small rewards 复现段首 reward yourself，incentives 与 boost motivation 呼应，keep moving forward 与空后 Celebrating small wins keeps you engaged 承接；For instance 后的 short video、coffee break 正是 small rewards 的实例；A 已用，B、E 分属其他策略段，F 的区分懒惰与本题无关。",
+   "keyword": "reward 奖励；incentive 激励＝motivation booster；positive reinforcement 正向强化；small wins 小胜利。",
+   "note": "For instance 是最强线索：例子（看视频、咖啡休息）必须能被空格句的上义词统摄——「小奖励」完美覆盖；G 的 keep moving forward 与段末 keeps you engaged in the long run 构成复现链。"
+  },
+  {
+   "question_id": 404,
+   "long_sentence": "定位句 we heard the chug chug-chug of a motorbike making its way down the hill toward us；hear...of... 听见……的声音；make one's way 固定搭配「行进、前往」；down the hill 下坡；toward us 朝我们。译：我们听到一辆摩托车突突突地沿山坡向下朝我们驶来。",
+   "option": "A making 正确：make one's way 是固定搭配「行进」，motorbike making its way down the hill 表车辆行进；B searching「搜寻」与 way 不构成搭配；C squeezing 需挤过人群缝隙的语境（squeeze one's way through），此处坡道开阔，属搭配近义陷阱；D feeling「感觉」与车辆行进无关。",
+   "keyword": "make one's way 前往、行进；chug（发动机）突突声；down the hill 下坡；toward 朝向。",
+   "note": "拟声词 chug chug-chug 提示摩托车的行驶状态，「声音＋方向」的画面锁定行进义；C 的 squeeze one's way 确实存在但对象是缝隙人群——熟搭配放到错语境同样是错。"
+  },
+  {
+   "question_id": 405,
+   "long_sentence": "定位句 It was a neighbor called Mario, coming to bring us a box containing some tomatoes and a bottle of wine；It was...called... 强调句型；called Mario 过去分词作后置定语；containing... 现在分词修饰 box。译：是邻居马里奥，来给我们送一盒西红柿和一瓶酒。",
+   "option": "B neighbor 正确：首段 bought a house...where we still go every summer 交代我们在 Garfagnana 有住所且年年回访，Mario 骑车送来自家产的西红柿与酒，正是乡邻举动；A customer「顾客」把送礼偷换成买卖关系；C relative「亲戚」无原文支撑，无中生有；D passenger「乘客」与骑摩托的送件人身份矛盾。",
+   "keyword": "neighbor 邻居；called 名叫……的；come to do 来做某事；kindness 好意（后文复现）。",
+   "note": "人物身份题靠关系推断：有房＋每年夏天来住＝Mario 是当地熟人；A 是反向身份陷阱——收礼的我们是受赠方不是顾客；完形开头交代的人地背景常在两三空后兑现答案。"
+  },
+  {
+   "question_id": 406,
+   "long_sentence": "定位句 coming to bring us a box containing some tomatoes and a bottle of wine；come to do 表目的；bring sb sth 双宾语结构；containing... 现在分词短语作后置定语。译：他来给我们送一盒西红柿和一瓶酒。",
+   "option": "C bring 正确：bring 表「带来」，方向朝向说话人 us，与 motorbike toward us 的驶近方向一致，且后文 we tried them 说明实物已到手；A lend「借出」与西红柿、酒等食物逻辑不符；B send 是远距离寄送，与当面骑车送达矛盾；D show 只表「展示给人看」，与后文品尝它们矛盾。",
+   "keyword": "bring 带来（方向朝说话人）；bring sb sth 给某人带来某物＝bring sth to sb；send 寄送、派遣；lend 借出（反义 borrow）。",
+   "note": "bring 与 send 的方向辨析是高考完形经典考点：bring 朝说话人、send 不强调当面；后文 we tried them 是「实物已获得」的证据，可反推 bring 而非 show。"
+  },
+  {
+   "question_id": 407,
+   "long_sentence": "定位句 It was a very nice gesture for him to make；for him to make 为不定式复合结构；gesture 意为「姿态、善意举动」；very nice 修饰空格名词。译：这是一个非常友好的举动。",
+   "option": "D gesture 正确：make a gesture 搭配成立且语义为「作善意表示」，概括 Mario 专程送来自家西红柿和酒的行为；A choice 的 make a choice 搭配虽真实，但语境并非在多选项中挑选，属「搭配对、语义错」；B comment 评论、C promise 承诺均与送礼行为无关，答非所问。",
+   "keyword": "gesture 姿态、表示；make a gesture 作出表示；kindness 好意（下文复现）；for sb to do 某人做某事。",
+   "note": "空前的 very nice 是感情色彩线索：能被 nice 修饰且概括「送礼」行为的抽象名词是 gesture；下文 his kindness 复现好意主题——抽象名词概括具体行为是完形高频模式。"
+  },
+  {
+   "question_id": 408,
+   "long_sentence": "定位句 But when we looked at the tomatoes, we were worried because they were so misshapen: not at all like the nice, round, shiny things you get in a supermarket；when 引导时间状语从句；because 表原因；冒号后具体解释 misshapen；not at all 完全不。译：但当我们看那些西红柿时，我们很担心，因为它们畸形得厉害：完全不像超市里那种漂亮、圆润、光鲜的西红柿。",
+   "option": "A worried 正确：But 转折后接 misshapen（畸形）的负面外观，担忧它们能不能吃，冒号后的具体描写支持担忧情绪；B moved「感动」、C thrilled「兴奋」均为正面情绪，与 But 的转折方向矛盾，属正反混淆；D bored「无聊」与语境无关。",
+   "keyword": "worried 担心的；misshapen 畸形的（mis- 前缀表坏、错）；not at all 一点也不；转折词 But 定情绪方向。",
+   "note": "情绪题先看逻辑词：But 之后接负面事实，只能选负面情绪；冒号后的细节是情绪的具体证据——完形情绪词跟着转折词和事实走，不跟主观愿望走。"
+  },
+  {
+   "question_id": 409,
+   "long_sentence": "定位句 not at all like the nice, round, shiny things you get in a supermarket；not at all like... 完全不像……；nice、round 与空格词三个形容词并列修饰 things；you get in a supermarket 为省略关系词的定语从句。译：完全不像你在超市里买到的那些漂亮、圆润、光鲜的西红柿。",
+   "option": "C shiny 正确：与 nice（漂亮）、round（圆润）并列共同描绘超市西红柿的「卖相」，外观类语义场一致；A simple「简单的」不描述外观；B real「真实的」与文章「超市西红柿好看却味同嚼水」的批判方向相反，属正反混淆；D fun「有趣」与外形无关。",
+   "keyword": "shiny 有光泽的；round 圆的；misshapen 畸形的（反义对照）；外观形容词串 nice、round、shiny。",
+   "note": "并列形容词要取同一语义场：与 nice、round 并列的只能是外观词；shiny 与前文 misshapen 形成丑与美的对照——并列结构中空格词必须与并列项「物以类聚」。"
+  },
+  {
+   "question_id": 410,
+   "long_sentence": "定位句 These can't be any good, we thought；can't be any good 为习语「不会有任何好处、好不了」；we thought 为插入的评述分句；these 指代畸形西红柿和浑浊的酒。译：我们心想：这些东西好不了。",
+   "option": "B good 正确：can't be any good 是固定习语，承接外观畸形与酒浑浊的负面观察；A more 需要比较级语境支撑（can't be any more 后须接名词或省略比较结构）；C new 与 any 不构成习语；D easy 只有在 can't be any easier 的比较级中成立——A、D 属语法结构陷阱。",
+   "keyword": "can't be any good 好不了、不会有任何用；not any + 名词结构；thought 插入语；any + 比较级的常规用法。",
+   "note": "习语题靠整块记忆：not any good 是固定说法；A 与 D 的诱惑在于 any 后常接比较级（any easier、any more），但本句无比较对象——缺名词又无比较结构即不成立。"
+  },
+  {
+   "question_id": 411,
+   "long_sentence": "定位句 But we were thankful for his kindness, so we tried them；But 承接上句 These can't be any good 形成转折——嫌弃品质但心存感激；so 表结果；be thankful for 对……感激。译：但我们感激他的好意，所以还是尝了尝。",
+   "option": "B thankful for 正确：be thankful for his kindness「感激他的好意」，与 so we tried them 构成「因感激而给面子」的因果链；A sympathetic to 后接遭遇不幸的人，Mario 送礼非不幸事件，搭配对象错位；C cautious about「对……警惕」与收下并品尝的行为矛盾；D interested in 程度不足，引不出「尝」的动作。",
+   "keyword": "be thankful for 对……心怀感激；kindness 好意；sympathetic to 同情；so 表结果。",
+   "note": "But 的转折逻辑：嫌弃品质与感激心意并存；so we tried them 是验证答案的后文证据——空格常由下一句的因果链反推，完形要前后连读。"
+  },
+  {
+   "question_id": 412,
+   "long_sentence": "定位句 But we were thankful for his kindness, so we tried them；so 引导结果分句；them 指代 the tomatoes and wine；try 此处意为「尝试、品尝」。译：但我们感激他的好意，所以还是尝了尝它们。",
+   "option": "A tried 正确：try 表「品尝」，承接感恩逻辑——收下并试吃，且为下文 discovered the taste 埋下伏笔；B sold「卖掉」与收礼方身份矛盾，张冠李戴；C returned「退回」与 thankful for his kindness 的感激立场冲突；D mixed「混合」既无对象也无语境。",
+   "keyword": "try 尝试、品尝＝have a taste；kindness 好意＝generosity；so 表因果；try 为下文 discovered the taste 埋伏笔。",
+   "note": "动词选择看「行为链」：感激→尝→发现好吃，A 是链条起点；B、C 使行为链断裂（卖、退与感谢矛盾）；try 的「品尝」义需结合宾语 them（食物）确认。"
+  },
+  {
+   "question_id": 413,
+   "long_sentence": "定位句 What we discovered is that it's unwise to judge what you eat only by its appearance；What we discovered 主语从句；that 引导表语从句；it 为形式主语，真正主语是 to judge...；what you eat 宾语从句；only by 仅仅凭。译：我们发现，只凭外表来判断吃的东西是不明智的。",
+   "option": "C unwise 正确：全文主旨——外表（畸形、浑浊）与品质（美味）的反差证明「只看外表下判断」是错误的思维方式，unwise「不明智」精准；A unnecessary「不必要」错在判断行为并非多余，错的是判断依据；B uncertain「不确定」与 it's to judge 结构搭配生硬；D unusual「不寻常」偏离主旨方向。",
+   "keyword": "unwise 不明智的＝not wise；judge...by 凭……判断；only by its appearance 仅仅凭外表；主旨句信号 What we discovered is that。",
+   "note": "What we discovered is that 是全文点题句，本空与第 12 空 appearance 连读构成教训；辨析 unnecessary（没必要做）与 unwise（做了但方式错）——文章批评的是判断依据不是判断行为。"
+  },
+  {
+   "question_id": 414,
+   "long_sentence": "定位句 it's unwise to judge what you eat only by its appearance；it 形式主语；only by 介词短语表方式；its 指代 what you eat；judge...by 凭……判断。译：只凭外表来判断吃的东西是不明智的。",
+   "option": "A appearance 正确：前文 misshapen、round、shiny、cloudy、no label 全是外观描写，文章核心反差是「外观差但味道好」；B quality 恰是文章要区分的另一概念——凭品质判断并不不明智，属概念混淆陷阱；C origin 产地、D price 价格原文均未作为判断依据出现。",
+   "keyword": "appearance 外表＝looks；judge...by 凭……判断；misshapen 与 shiny 均为外观词；quality 品质（与 appearance 相对）。",
+   "note": "上义词归纳：前文所有负面描写集中在视觉维度，appearance 是概括词；B 的迷惑在于它是「正确的判断依据」，代入后主旨反而荒谬——主旨句两空（11、12）必须连读。"
+  },
+  {
+   "question_id": 415,
+   "long_sentence": "定位句 Those tomatoes had taste that reminded me of the ones my uncle used to grow when I was a child；that 引导定语从句修饰 taste；remind sb of 使某人想起；used to 过去常常；when I was a child 时间状语从句。译：那些西红柿的味道让我想起我小时候叔叔种的西红柿。",
+   "option": "D taste 正确：与第 12 空 appearance 形成对照——外表虽差却有「味道」，下文 taste of water 原词复现，reminded me of the ones my uncle used to grow 的怀旧指向风味；A size 大小、B shape 形状、C color 颜色都是外观维度，与「叔叔种的西红柿」的味觉记忆不匹配。",
+   "keyword": "taste 味道；remind sb of 使某人想起；used to do 过去常常；taste of water 味同嚼水（后文复现）。",
+   "note": "主旨句后的展开句必须服务「外观 vs 味道」对照：D 与 appearance 构成反义双联；B 的迷惑在于畸形西红柿形状确实差，但「美好回忆」只能指向味道维度。"
+  },
+  {
+   "question_id": 416,
+   "long_sentence": "定位句 Nowadays supermarket tomatoes look perfect but taste of water；look + 形容词为系动词用法「看起来」；but 表转折；taste of 尝起来有……的味道。译：如今超市的西红柿看起来完美，尝起来却像水。",
+   "option": "B look 正确：look perfect 与 taste of water 构成「看起来 vs 尝起来」的感官对照，是全文 appearance 与 taste 反差的缩影；A smell perfect 虽可搭配，但破坏与前文 nice、round、shiny 外观描写的视觉呼应；C become 表「变得」，西红柿并无变化过程；D work 不及物且语义不通。",
+   "keyword": "look + adj. 看起来；taste of 有……的味道；but 转折对照；感官系动词 look、taste、smell。",
+   "note": "but 前后是「外观 vs 味道」的镜像结构：空格在 but 前必然是视觉系动词；C become 的陷阱是「变得完美」看似通顺，但不与 taste 构成感官对照——转折句两侧的语义场要对仗。"
+  },
+  {
+   "question_id": 417,
+   "long_sentence": "定位句 Nobody's going to have a happy memory of those；those 指代超市西红柿；Nobody 全否定主语；have a...memory of 对……有……的记忆。译：没有人会对那些（超市西红柿）留下美好的回忆。",
+   "option": "A happy 正确：taste of water 的难吃决定了回忆的情感色彩，happy memory「美好回忆」与 uncle's tomatoes 的怀旧美味形成对比；B vivid「生动的」搭配虽真实，但 vivid 无褒贬，无法承载批评语气；C short、D vague 描述记忆的时间或清晰度，偏离「难吃→无好感」的逻辑。",
+   "keyword": "happy memory 美好回忆；vivid memory 生动的记忆（易混搭配）；nobody 全否定；情感色彩辨析。",
+   "note": "空格词需承载感情色彩：批评语境中用正面词 happy 反衬「连正面回忆都没有」；B vivid 是「搭配正确、色彩中性」的典型干扰——高考完形爱考这种第二层辨析。"
+  },
+  {
+   "question_id": 418,
+   "long_sentence": "定位句 It's a surprise they haven't managed to grow square ones so that they can pack them easily；It's a surprise 令人惊讶的是；manage to do 成功做成；square ones 方形的西红柿；so that 引导目的状语从句。译：令人惊讶的是，他们还没能种出方形的西红柿，好方便打包。",
+   "option": "D pack 正确：so that 目的从句中，方形的实际价值是「便于装箱运输」，pack them easily 与超市商业化逻辑一脉相承；A clean「清洗」的难易与方形无因果；B check「检查」、C count「清点」均与形状没有直接功利关联，无中生有。",
+   "keyword": "pack 打包、装箱；square 方形的；so that 以便于（目的）；manage to do 成功做到。",
+   "note": "目的从句考「形状→好处」的常识链：方的东西好码放装箱；surprise 的讽刺语气也在批评商业化育种只顾运输不顾味道——读懂反讽可加速排除 B、C。"
+  },
+  {
+   "question_id": 419,
+   "long_sentence": "定位句 Mario's wine may have been cloudy and come out of an old bottle, but it was perfect；may have been 表让步性推测「或许是」；but 转折；cloudy 浑浊的。译：马里奥的酒虽然浑浊、装在旧瓶里，但它是完美的。",
+   "option": "A perfect 正确：may have been...but... 让步转折后才是真实评价，与全文「外表朴素、品质极佳」的主旨一致，perfect 呼应西红柿的美味发现；B useful「有用的」是对工具的评价，不适用于酒的品质；C convenient「方便的」与酒无关；D familiar「熟悉的」不构成品质褒奖，转折力度不足。",
+   "keyword": "perfect 完美的；may have done 或许曾（让步推测）；cloudy 浑浊的；but 后是评价重心。",
+   "note": "but 之后的分句才是作者真实评价：先让步承认外观缺点（cloudy、old bottle），再给品质满分；D 的迷惑在于 Mario 是熟人，但「熟悉」不是对酒的评价维度——评价对象别偏移。"
+  },
+  {
+   "question_id": 420,
+   "long_sentence": "定位句 It's good to eat things at the correct time, when they're in season, and as close as possible to where they were grown；It's good to do 做……是好的；when they're in season 为非限制性定语从句，解释 the correct time；as close as possible to 尽可能靠近。译：在正确的时节吃食物是好的——即当它们正当季时，并尽可能贴近它们生长的地方。",
+   "option": "C in season 正确：at the correct time 与 when they're in season 构成同位解释，当季＝正确时间，与后文 grown（产地近）共同构成「应季＋本地」的饮食主张；A on view「展出」、B on sale「在售、特价」属购物语境，D in need「需要帮助」与物不搭；B 的迷惑在于超市背景，但 correct time 锁定时间概念。",
+   "keyword": "in season 当季的（反义 out of season）；on sale 在售、特价；at the correct time 在正确的时间；同位解释关系。",
+   "note": "when they're... 是 at the correct time 的同位改写：空格必须含「时间正当」义；in season 与 out of season 是饮食话题高频搭配；B 的 sale 有诱惑，但「特价」与「正确时间」无关。"
+  },
+  {
+   "question_id": 421,
+   "long_sentence": "定位句 and as close as possible to where they were grown；as...as possible 尽可能……；where 引导介词 to 的宾语从句；were grown 被动语态。译：并且尽可能靠近它们被种植的地方。",
+   "option": "D grown 正确：与 in season 并列构成「应季＋本地」的饮食主张，grow 呼应前文 my uncle used to grow 与 Mario 自家出产的种植语境；A finished「被完成」不指明来源；B stored「储存地」与新鲜、风味的因果链弱，原文强调产地而非仓储；C found「被发现的地方」语义空泛。",
+   "keyword": "grow 种植；were grown 被种植（被动）；as close as possible to 尽可能接近；in season 与 grown 并列建议。",
+   "note": "本空与 when they're in season 同属一条建议，grow 在 uncle used to grow 已复现；B 的陷阱是储存确实影响品质，但「产地近」才是原文本意——并列结构两侧语义要同源。"
+  },
+  {
+   "question_id": 422,
+   "long_sentence": "定位句 What Mario had given us was the taste of the Garfagnana；What 引导主语从句；had given 过去完成时；the taste of the Garfagnana 加尔法尼亚纳的风味。译：马里奥给予我们的，是加尔法尼亚纳的风味。",
+   "option": "B given 正确：全文以 Mario 送礼开篇（a nice gesture、his kindness），had given us 呼应 bring us a box，the taste of the Garfagnana 是馈赠的升华；A cooked「烹饪」与生西红柿、原瓶酒不符；C bought「买」张冠李戴，Mario 始终是赠送者；D told「告诉」与 taste 搭配不当。",
+   "keyword": "give 给予；What sb had done was... 主语从句强调；the taste of... ……的风味；过去完成时。",
+   "note": "结尾句回扣开头：bring us a box→had given us the taste，give 收束全文「馈赠」主题；C 的迷惑在于价值判断，但 Mario 的角色始终是 giver——首尾人物行为一致是结尾题的定盘星。"
+  },
+  {
+   "question_id": 423,
+   "long_sentence": "定位句 To become the Olympic champion in the individual all-around event, Gabby Douglas had to leave everything she knew best；To become... 目的状语置于句首；had to 不得不；she knew best 为省略 that 的定语从句修饰 everything。译：为了夺得奥运会个人全能冠军，加比·道格拉斯不得不离开她最熟悉的一切。",
+   "option": "D knew 正确：know best「最熟悉、最了解」，everything she knew best 指家乡的亲人、宠物、海滩等一切熟悉事物，与下文 pack up her bedroom、say goodbye to her dogs 的列举呼应；A tried 需搭配 try one's best，此处语法不通；B thought best「认为最妥当」多用于决策语境，与「离开的事物」搭配牵强；C judged best 同属决策用词，答非所问。",
+   "keyword": "know best 最熟悉、最了解；leave 离开；all-around event 全能项目；had to 不得不。",
+   "note": "know、think、judge 都能与 best 搭配，分辨靠宾语性质：everything 是「熟悉的事物」而非「决策方案」；下文 bedroom、dogs、beach 的列举是验证线索——定语从句动词看先行词。"
+  },
+  {
+   "question_id": 424,
+   "long_sentence": "定位句 She had to pack up her bedroom in Virginia；had to do 不得不；pack up 收拾行装；in Virginia 地点状语。译：她不得不收拾好她在弗吉尼亚卧室的行装。",
+   "option": "B pack up 正确：pack up「把东西收拾进行李」，与下文 1,200 miles away from home 的远行直接衔接；A take up 表「占据、开始从事」，与 bedroom 不搭；C clean up「打扫」搭配自然，但离乡训练无需打扫，与 move away 的语义链断裂；D do up 表「修缮、整新」，同样偏离「带走行李离家」的语境。",
+   "keyword": "pack up 收拾行李＝pack one's bags；take up 占据、开始从事；clean up 打扫干净；do up 修缮、整理。",
+   "note": "动词短语辨析看「目的链」：收拾行装→远行训练是一条线，打扫、装修与离家无关；C 迷惑性最高（搭配最自然），但完形要选「语境最顺」而非「搭配最熟」。"
+  },
+  {
+   "question_id": 425,
+   "long_sentence": "定位句 She had to say goodbye to her two dogs and to the beach, where she loved to ride waves on her board；say goodbye to 向……告别；where 引导非限制性定语从句修饰 the beach；love to do 喜爱做。译：她不得不向她的两只狗和海滩告别——她曾喜欢在那片海滩上踩板冲浪。",
+   "option": "A goodbye 正确：say goodbye to 告别，承接首句 leave everything she knew best 的「离开」主题，与 pack up her bedroom 同属离别动作链；B hello 是见面问候，与 leave 方向相反，正反混淆；C thanks「感谢」、D no「拒绝」与 her two dogs and the beach 的对象搭配均不通。",
+   "keyword": "say goodbye to 向……告别；say hello to 向……问好；leave 离开；where 引导定语从句。",
+   "note": "say 与不同宾语的固定搭配是本题核心：goodbye、hello、thanks、no 四选一看「离别语境」；首句 leave 与上一空 pack up 已铺满离别氛围，A 是唯一方向一致的选项。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 16,
+ "items": [
+  {
+   "question_id": 376,
+   "long_sentence": "定位句 Participants were __ to limit their social media usage to 10 minutes per platform per day；被动语态 be asked to do 表研究指令；limit...to... 把…限制在…；per platform per day 双重「每」限定范围。译：参与者被要求把每个平台的社交媒体使用量限制在每天 10 分钟。",
+   "option": "A asked 正确：实验设计中研究者对参与者发出的是「要求」，be asked to do 是研究语篇高频句式；B allowed 把「要求」偷换成「允许」，方向相反，属偷换概念；C assigned 多接具体任务或岗位而非行为指令；D assumed 无 assume sb to do 的搭配。",
+   "keyword": "be asked to do 被要求做；limit...to... 把…限制在…；per platform 每个平台；usage 使用量。",
+   "note": "实验类完形看到 Participants were __ to do，先判断研究者与参与者是「指令」关系而非「许可」关系；limit 10 minutes 是强约束动作，只有 asked 符合研究设计的客观陈述语气。"
+  },
+  {
+   "question_id": 377,
+   "long_sentence": "定位句 The results showed that those who __ their usage significantly reduced their loneliness levels；that 引导宾语从句；who 引导定语从句修饰 those；从句与主句的 reduced 形成「减量→减孤独」平行结构。译：结果显示，那些减少了使用量的人孤独感水平显著下降。",
+   "option": "A reduced 正确：与前句 limit their social media usage 限制使用同义呼应，且从句与主句动词复现；B removed「去除」与每天 10 分钟的「限量而非戒断」矛盾，程度失当属偷换概念；C released 释放、D replaced 替换均与 usage 搭配不当，语义不通。",
+   "keyword": "reduce 减少＝cut down；usage 使用量；loneliness levels 孤独感水平；呼应词 limit↔reduce。",
+   "note": "复现原则：前文 limit 已暗示「减量」语义，A 与之同义；陷阱 B 用「戒断」替换「限量」，程度升级必错——完形中 removed/replaced 这类更彻底的词常是过度推断。"
+  },
+  {
+   "question_id": 378,
+   "long_sentence": "定位句 __, those who continued to use social media excessively reported higher levels of social isolation；who continued... 定语从句修饰 those；excessively 过度地；reported 为研究语篇动词「显示」。译：相反，那些继续过度使用社交媒体的人报告了更高的社会孤立水平。",
+   "option": "A Conversely 正确：前句「减量者孤独感下降」与本句「过量者孤立感上升」一降一升，是对照实验的两组反向结果，Conversely 表对比；B Consequently 表因果，但两组结果间是对照不是因果链；C Consistently、D Constantly 是副词，不能承担句间逻辑连接。",
+   "keyword": "conversely 相反地；excessively 过度地；social isolation 社会孤立；对照组逻辑：一降一升→对比。",
+   "note": "句间逻辑题先比对两句主语方向：those who reduced 与 those who continued excessively 方向相反，锁定对比关系；四个 Con- 开头形近词考词义不考词形，Consequently 最具迷惑性。"
+  },
+  {
+   "question_id": 379,
+   "long_sentence": "定位句 Why does this happen? One __ is that social media provides a false sense of connection；设问自答结构；that 引导表语从句；a false sense of 虚假的…感。译：为什么会这样？一种解释是，社交媒体提供了一种虚假的连接感。",
+   "option": "A explanation 正确：前句 Why does this happen? 抛出疑问，One __ is that... 是标准自答句式，只有 explanation 能回答原因；B expectation 期待、C exception 例外、D expansion 扩张均不能充当 why 的答语，答非所问；C 的固定搭配本是 an exception to，此处也不符。",
+   "keyword": "explanation 解释；false sense of connection 虚假连接感；设问自答 Why→One explanation；provide 提供。",
+   "note": "问句即路标：完形中 Why does this happen? 后面必然跟原因解释，答案要能当「答语」；这种设问自答结构是考研完形高频命题点，看到疑问句先读下句再选。"
+  },
+  {
+   "question_id": 380,
+   "long_sentence": "定位句 People may have hundreds of online friends, but lack deep, meaningful __；but 表转折；lack 为及物动词直接接宾语；deep, meaningful 两个并列形容词修饰空格名词。译：人们可能有数百个线上好友，却缺乏深入而有意义的互动。",
+   "option": "A interactions 正确：上句 false sense of connection 点出「连接是虚假的」，本句具体化——朋友多但缺深度互动，interactions 与 connection 同属社交语义场；B instructions 指导说明、C inspections 检查、D intentions 意图均偏离社交语境，meaningful intentions 搭配生硬，答非所问。",
+   "keyword": "interaction 互动≈connection 联结；lack sth 缺乏；meaningful 有意义的；deep 深入的。",
+   "note": "名词辨析先划语义场：四个 in- 开头名词中只有 interactions 属社交语义场；上文 connection 是复现线索，「朋友多但互动浅」的转折语义直接锁定 A。"
+  },
+  {
+   "question_id": 381,
+   "long_sentence": "定位句 They spend time scrolling through feeds, __ others' highlight reels, which can trigger social comparison；spend time doing 花时间做某事；现在分词作伴随状语与 scrolling 并列；which 非限制性定语从句指代前面整个行为。译：他们花时间刷动态，浏览别人的精彩集锦，而这会引发社会比较。",
+   "option": "A viewing 正确：刷 feeds 时「看」别人的高光时刻，与 scrolling 并列作伴随动作，「看到→比较」的因果链通向 trigger social comparison；B valuing「重视」带正面评价，与后文负面结果感情色彩错配；C vanishing 不及物不能接宾语；D varying「变化」语义不通。",
+   "keyword": "scroll through 刷（信息流）；highlight reels 高光集锦；trigger 引发＝set off；social comparison 社会比较。",
+   "note": "语法上 A/B/D 都是及物 v-ing，需靠语义排除：viewing 客观陈述「看」这一动作，valuing 的正面色彩与 social comparison 的负面影响冲突——伴随动作要选中性且必要的动词。"
+  },
+  {
+   "question_id": 382,
+   "long_sentence": "定位句 __, they feel that their own lives are less fulfilling；that 引导宾语从句；less fulfilling 比较级表「不如…充实」；feel 为系动词接形容词作表语。译：结果，他们觉得自己的生活不那么充实。",
+   "option": "A As a result 正确：前句 which can trigger social comparison 已埋下因果，本句「觉得自己生活不够充实」是比较后的心理结果，As a result 顺理承接；B In addition 只表并列递进，丢失了「比较→失落」的因果链；C For instance 无例可举；D After all 表让步性总结，不合语境。",
+   "keyword": "as a result 因此；fulfilling 充实的、有成就感的；less fulfilling 不如…充实；trigger→feel 的因果链。",
+   "note": "逻辑连接题先还原前句结果：social comparison 被触发后自然产生「自己不如人」的感受，前因后果明确；In addition 的迷惑在于两句确实有联系，但联系的性质是因果不是递进。"
+  },
+  {
+   "question_id": 383,
+   "long_sentence": "定位句 This leads to a cycle of using social media to __ negative emotions, which only exacerbates the problem；lead to 导致；a cycle of... 的循环；which 非限制性定语从句指代整个主句；exacerbate 使恶化。译：这导致一种用社交媒体逃避负面情绪的循环，而这只会使问题恶化。",
+   "option": "A escape 正确：恶性循环的逻辑是孤独者用社交媒体「逃避」负面情绪，结果加剧问题，escape 与 cycle、exacerbates 的消极语义链一致；B embrace「拥抱」负面情绪逻辑荒谬，正反混淆；C encounter「遭遇」是被动承受，构不成主动应对循环；D evaluate「评估」与恶化无因果。",
+   "keyword": "escape from 逃避；a vicious cycle 恶性循环；exacerbate 使加剧≈worsen；negative emotions 负面情绪。",
+   "note": "抓「循环逻辑」：逃避→更孤独→更想逃避；exacerbate 提示空格是消极应对方式，embrace 的积极感情色彩与语境正相反——完形常考动词感情色彩与语境方向的一致性。"
+  },
+  {
+   "question_id": 384,
+   "long_sentence": "定位句 Experts suggest that we should be __ of our social media habits；suggest 后接 should 型建议句式；be __ of 为形容词与介词的固定框架。译：专家建议我们应当留意自己的社交媒体使用习惯。",
+   "option": "A mindful 正确：be mindful of 是固定搭配「留意、留心」，且与文末 we must be mindful of its potential drawbacks 首尾复现；B masterful「技艺娴熟的」与 of 搭配不当；C mistrustful「不信任的」程度过重，专家语气是提醒而非怀疑；D merciful「仁慈的」对象应为人而非习惯。",
+   "keyword": "be mindful of 留意≈be aware of；habit 习惯；mindful≈conscious；suggest + should do 虚拟语气。",
+   "note": "四个 m- 开头形近词先筛搭配：只有 mindful 与 mistrustful 能接 of，再比语义——「留意习惯」而非「怀疑习惯」；文末 mindful 的复现是命题人埋的暗线，回读即得。"
+  },
+  {
+   "question_id": 385,
+   "long_sentence": "定位句 Instead of __ on virtual interactions, we should prioritize face-to-face communication；instead of 后接动名词表「而不是」；prioritize 优先考虑；主句 we should 给出建议。译：与其依赖虚拟互动，我们应当优先面对面交流。",
+   "option": "A relying 正确：rely on 依赖，与 prioritize face-to-face 形成「少依赖线上、多线下」的对照，正是 instead of 要求的反义对策；B reflect on「反思」搭配虽真实，但「反思虚拟互动」与「优先面对面」构不成对策；C resist 是及物动词不接 on；D resolve on 表「下决心」，语义不通。",
+   "keyword": "rely on 依赖＝depend on；instead of 而不是；prioritize 优先；face-to-face 面对面的。",
+   "note": "instead of 是最强线索：of 后的动作必须与主句动作构成「被否定的对照」；遇到「搭配正确但语义不成对照」的选项（reflect on）要果断排除——完形辨析的第二层永远是语义。"
+  },
+  {
+   "question_id": 386,
+   "long_sentence": "定位句 Even simple __ like a phone call or a walk with a friend can make a big difference；like 引出两个具体例子；even 表让步强调「连…都」；make a big difference 产生大影响。译：哪怕是打电话或和朋友散步这样简单的活动，也能带来很大改变。",
+   "option": "A activities 正确：like 后的 a phone call 与 a walk 是两个具体例子，能统摄它们的上义名词只有「活动」；B adaptations 适应调整、C additions 新增事物、D admissions 承认或录取均无法覆盖这两个例子，答非所问；上义概括是本题唯一考点。",
+   "keyword": "activity 活动（上义词）；make a big difference 产生大影响；phone call 与 walk 为下义举例；even 表让步。",
+   "note": "举例外推法：看到 like、such as、for example 就回头找空格处的「类」词，用例子反推上义词；B/C/D 都是复数名词但语义场完全无关，属典型的「词性对、语义错」干扰。"
+  },
+  {
+   "question_id": 387,
+   "long_sentence": "定位句 Moreover, setting __ on screen time can help maintain a healthy balance；动名词短语 setting... 作主语；set...on 为搭配框架；maintain a healthy balance 保持健康平衡。译：此外，给屏幕时间设定限制有助于保持健康的平衡。",
+   "option": "A limits 正确：set limits on「对…设限」是固定搭配，且与第 3 空所在句 limit their social media usage 复现呼应；B links 联系、C labels 标签、D levels 水平与 set...on 均不构成有效搭配，也无语义支撑；复现与搭配双线锁定 A。",
+   "keyword": "set limits on 对…设限；screen time 屏幕时间；maintain a balance 保持平衡；limit＝cap。",
+   "note": "首尾复现原则：limit 在第 3 空句已出现，第 14 空的 set __ on 是同一语义场的二次命题——完形遇到设限语境直接回原词族找答案；moreover 提示这是并列建议链中的一环。"
+  },
+  {
+   "question_id": 388,
+   "long_sentence": "定位句 Some apps now offer features to __ users of their usage time；offer sth to do 提供某物以做某事；空格动词须满足 __ sb of sth 的介词框架。译：一些应用现在提供提醒用户使用时长的功能。",
+   "option": "A remind 正确：remind sb of sth「提醒某人某事」，应用提醒用户使用时长，与上句 set limits on screen time 的自律主题衔接；B relieve sb of「解除、免去」后接 burden、duty 类名词，此处宾语错位；C release 用于 release sb from；D receive 直接接宾语，无 of 结构。",
+   "keyword": "remind sb of sth 提醒某人某事；usage time 使用时长；feature 功能；relieve sb of 解除（负担）。",
+   "note": "介词搭配定答案：空后 of 一出现就锁定 remind 的框架；B 项 relieve sb of 确实存在但接的是负担类名词，这种「搭配真实但宾语错位」的干扰要读完宾语后再排除。"
+  },
+  {
+   "question_id": 389,
+   "long_sentence": "定位句 The key is to use social media as a __ rather than a replacement for real-world relationships；use...as... 把…用作…；rather than 而非；replacement for... 的替代品。译：关键在于把社交媒体当作工具，而不是现实人际关系的替代品。",
+   "option": "A tool 正确：rather than 要求前后同类对照，tool（辅助工具）与 replacement（完全替代）形成「辅助 vs 取代」的对仗，研究者引语 Social media is merely a tool 再次复现；B trap「陷阱」贬义过重，与全文善用社交媒体的立场不符，感情色彩错配；C trend、D trace 与 replacement 无对照关系。",
+   "keyword": "tool 工具；replacement 替代品；rather than 而不是；real-world relationships 现实人际关系。",
+   "note": "rather than 对比结构先找「能对仗的概念」：tool 与 replacement 同属功能定位名词；a tool 在第 16 空与引语中两次复现——完形答案往往已在文中现身两三次。"
+  },
+  {
+   "question_id": 390,
+   "long_sentence": "定位句 It is __ to stay connected online, but not at the cost of our mental health；It 为形式主语，真正主语是 to stay connected online；but not at the cost of 表「不以…为代价」的让步转折。译：在线保持联系是有益的，但不能以心理健康为代价。",
+   "option": "A beneficial 正确：It is beneficial to do 表「做某事有益」，先承认在线连接的好处，but not at the cost of 再警示代价，一扬一抑符合全文平衡立场；B benign 多形容肿瘤「良性」，语义场不合；C beneath 与 D beside 是介词，is 后需形容词作表语，词性即排除。",
+   "keyword": "It is beneficial to do 做…是有益的；stay connected 保持联系；at the cost of 以…为代价；beneficial≈helpful。",
+   "note": "but not 的先扬后抑结构要求空格必为正面词；解题顺序：先删 C/D 两个介词（词性排除），再在 B/A 间按语义场选 beneficial——词性辨析是完形的低成本得分点。"
+  },
+  {
+   "question_id": 391,
+   "long_sentence": "定位句 Social media is __ a tool; it's up to us to use it wisely；分号连接两个并列分句；it's up to sb to do 由某人来决定做；use it wisely 明智地使用。译：社交媒体仅仅是一个工具；如何明智地使用它取决于我们自己。",
+   "option": "A merely 正确：merely a tool「仅仅是工具」，与分号后 it's up to us to use it wisely 构成「工具中性、效果在人」的逻辑，呼应第 16 空 as a tool；B merrily「快乐地」、C mildly「温和地」、D manly「男子气地」三个副词的词义均无法说明工具属性，语义荒谬。",
+   "keyword": "merely＝only、just 仅仅；it's up to sb to do 由某人决定；wisely 明智地；分号表并列解释。",
+   "note": "分号后的 it's up to us 是语义支点：正因工具「仅仅是」工具，才需要人来善用；merely 的「限定+中性」色彩不可替换——副词辨析要盯住前后分句的逻辑关系而非孤立词义。"
+  },
+  {
+   "question_id": 392,
+   "long_sentence": "定位句 In conclusion, while social media offers many __, we must be mindful of its potential drawbacks；while 引导让步状语从句；in conclusion 总结全文；offers 与 many 要求复数名词。译：总之，虽然社交媒体带来许多好处，我们必须留意它潜在的弊端。",
+   "option": "A benefits 正确：while 让步从句承认好处、主句警示 drawbacks，一褒一贬构成结尾平衡句，offer many benefits 是高频搭配；B barriers「障碍」是负面词，放进让步从句与 while 逻辑矛盾，正反混淆；C bases 基础、D badges 徽章语义无关。",
+   "keyword": "in conclusion 总之；while 表让步＝although；offer benefits 提供益处；让步结构一褒一贬。",
+   "note": "while 让步句的固定格局：从句正面、主句负面，第 19 与 20 空联动——先定正面 benefits 再反推负面 drawbacks；总结句通常复现主旨，可回读首段 concerning trend 验证方向。"
+  },
+  {
+   "question_id": 393,
+   "long_sentence": "定位句 we must be mindful of its potential __；its 指代 social media；be mindful of 留意（呼应第 11 空）；potential 潜在的。译：我们必须留意社交媒体潜在的弊端。",
+   "option": "A drawbacks 正确：与从句 benefits 构成反义对照（好处 vs 弊端），potential drawbacks 是高频搭配，be mindful of 复现第 11 空；B drainage 排水、C dramas 戏剧纠葛、D drifts 漂移均为形近干扰，与社交媒体的影响无关，属形近词陷阱。",
+   "keyword": "drawback 缺点、弊端≈downside；potential 潜在的；benefit 与 drawback 为反义词组；be mindful of 留意。",
+   "note": "双空联动的反义对照法则：第 19 空 benefits 已定，第 20 空必须取反义 drawbacks；三个 -age、-ma、-fts 形近名词考词汇量，遇到生词先找句内反义线索（while 让步结构）再作答。"
+  },
+  {
+   "question_id": 394,
+   "long_sentence": "定位句 the researchers attribute this gap to what they term 'visibility bias'—the tendency for managers to reward employees who are physically present more frequently, regardless of actual output；attribute...to... 把…归因于；破折号后是 visibility bias 的同位解释；regardless of 不顾。译：研究者将这一差距归因于他们所说的「可见性偏差」——管理者更倾向于奖励经常在场的员工，而不顾实际产出。",
+   "option": "正确项 B「管理者更偏爱常见到的人」＝reward employees who are physically present more frequently 的改写，see more often≈physically present；A「绩效更差」正反混淆，原文 even after controlling for performance metrics 已排除绩效因素；C「正式培训少」偷换概念，原文是 informal mentoring 非正式指导且非主因；D「生产力下降」无中生有，产出变量已被控制。",
+   "keyword": "attribute...to 把…归因于；visibility bias 可见性偏差；physically present 实际在场；regardless of 不顾。",
+   "note": "因果题锁定 attribute...to 之后的解释；even after controlling for 是排除干扰项的金句——凡把「绩效、产出」牵扯进原因的选项都违背此句；C 用 informal 改 formal 属细节偷换。"
+  },
+  {
+   "question_id": 395,
+   "long_sentence": "主旨句 The key, experts argue, lies in intentional management—acknowledging the 'out of sight, out of mind' phenomenon and actively compensating for it；lie in 在于；插入语 experts argue 表观点来源；破折号后是有意管理的两个动作。译：专家认为，关键在于有意识的管理——承认「眼不见心不念」现象并主动补偿它。",
+   "option": "正确项 C「晋升取决于公司如何管理可见性偏差」是全文「问题+解法」的概括；A「弊大于利」以偏概全，原文 the findings are not uniformly negative 明确否定；B「疫情永久改变工作方式」答非所问，首句只是背景铺垫；D「所有远程工作者都面临不公」绝对化，有 structured policies 的公司 no significant differences。",
+   "keyword": "intentional management 有意识的管理；lie in 在于；out of sight, out of mind 眼不见心不念；compensate for 补偿。",
+   "note": "主旨题看「问题+解法」双结构：前半段 visibility bias 问题加后半段 intentional management 解法，正确项须两者兼含；D 项的 All 一出现先标红旗，绝对化选项几乎必错。"
+  },
+  {
+   "question_id": 396,
+   "long_sentence": "定位句 Companies that have implemented structured remote-work policies, including regular virtual check-ins and clear promotion criteria, report no significant differences in advancement rates；that 引导定语从句；including 举例说明政策内容；no significant differences 无显著差异。译：实施了结构化远程办公政策（包括定期虚拟例会和明确晋升标准）的公司，其晋升率没有显著差异。",
+   "option": "正确项 C「更可能抵消可见性偏差的负面影响」＝actively compensating for it 的推断，offset≈compensate；A「消除了所有差距」绝对化，no significant differences 不等于 eliminated all；B「完全取代非正式指导」偷换概念，check-ins 与 mentoring 是并列关系无替代义；D「要求部分时间回办公室」无中生有，政策内容只提 virtual check-ins。",
+   "keyword": "structured policies 结构化政策；virtual check-ins 虚拟例会；offset 抵消＝compensate for；advancement rates 晋升率。",
+   "note": "推断题拿捏程度：原文 no significant differences 支持的是「差异不显著」，A 升级为「消除所有」即错；offset 是 compensate 的同义升级——推断题正确项常用近义词回扣原文，绝不越界。"
+  },
+  {
+   "question_id": 397,
+   "long_sentence": "定位句 propelling remote work from a niche arrangement to a mainstream practice；propel...from...to... 推动…从…变为…；现在分词短语作结果状语；niche 小众的，mainstream 主流的。译：（疫情）推动远程办公从小众安排变为主流做法。",
+   "option": "正确项 B driving：propel 本义「推进、驱动」，driving 同样表达「施加推动力促成转变」；A preventing「阻止」与从小众到主流的方向相反，正反混淆；C limiting「限制」同样逆方向；D changing「改变」语义太泛，丢失了「驱动力」这层含义——propel 强调施力而非仅陈述变化。",
+   "keyword": "propel 推动、驱使＝drive；niche 小众的；mainstream 主流的；from...to... 转变方向。",
+   "note": "词义题看搭配与方向：propel 带有「力」的含义，A 与 C 是反向力，D 无力感；from a niche to a mainstream 的单向升级结构也能帮锁「推动」而非中性的「改变」。"
+  },
+  {
+   "question_id": 398,
+   "long_sentence": "定位句 both employees and employers must navigate this new terrain with heightened awareness, ensuring that the flexibility of remote work does not come at the cost of career progression；must 情态动词表要求；ensuring 现在分词表伴随目的；not come at the cost of 不以…为代价。译：员工与雇主都必须以更高的觉知航行于这片新领域，确保远程办公的灵活性不以职业发展为代价。",
+   "option": "正确项 D「谨慎乐观，强调需要有意管理」：must navigate with heightened awareness 对应谨慎，structured policies 有效对应乐观；A「会自然改善」过度推断，原文强调主动管理而非自然演化；B「差距不可避免」正反混淆，structured 公司已无显著差异；C「中立无判断」不符，experts argue、must 等词表明立场明确。",
+   "keyword": "navigate this new terrain 航行于新领域（比喻）；heightened awareness 高度警觉；at the cost of 以…为代价；cautiously optimistic 谨慎乐观。",
+   "note": "态度题抓情态动词与转折：must、ensuring 表主动要求（排除「自然改善」），However 后的正面发现（排除「不可避免」）；「谨慎乐观」类选项常是问题加解法并存文章的标准答案。"
+  },
+  {
+   "question_id": 399,
+   "long_sentence": "定位在首段：It often leads to stress and reduced productivity. __ To combat this habit, several effective strategies have been proven to work；lead to 导致；combat this habit 对抗这一习惯；have been proven to work 被证明有效。译：它常常导致压力和效率下降。然而，理解深层原因是改变的第一步。为对抗这一习惯，若干有效策略已被证明可行。",
+   "option": "正确项 C：However 承接上句负面影响作转折，understanding the underlying causes is the first step（先懂成因）与下句 To combat this habit, several strategies（再上策略）形成「先因后果」顺承链；A 的 This simple technique 前文无技巧可指代；B 的 25 分钟计时法是策略细节，放段首突兀；D、E、G 分别是第 2、3、5 空对应的策略内容句。",
+   "keyword": "combat 对抗＝fight against；underlying causes 深层原因；first step toward change 改变的第一步；However 转折衔接。",
+   "note": "七选五首空看「承上启下」双接口：上接 stress 与 productivity 的负面陈述（However 转折），下接 strategies 总起（first step 铺垫）；F 项「区分生产性拖延与懒惰」与下文缺 C 的递进逻辑，且 However 是更强的逻辑信号。"
+  },
+  {
+   "question_id": 400,
+   "long_sentence": "定位段：First, break tasks into smaller steps. Large projects can seem overwhelming, causing us to delay. __ For example, instead of writing an entire report, focus on writing just one paragraph at a time；break...into... 把…拆成…；overwhelming 令人望而生畏的；causing... 现在分词作结果状语。译：首先，把任务拆成更小的步骤。大项目可能显得令人却步，导致我们拖延。这一简单技巧能让棘手任务变得可控。",
+   "option": "正确项 A：This simple technique 指代 break tasks into smaller steps，daunting tasks≈Large projects seem overwhelming（词汇复现），feel manageable 与下文 For example 的 reduces the initial resistance 顺承——拆解让庞杂变可控；B 的 25 分钟计时法与拆解无关；D 的 goals time-bound 是下一段 goals、deadlines 策略的内容，跨段错位；G 奖励策略属末段。",
+   "keyword": "daunting＝overwhelming 令人却步的；manageable 可驾驭的；technique 方法＝approach；This technique 指代拆解法。",
+   "note": "代词指代题：This simple technique 必须有前文具体技巧可指，只有拆解法符合；A 的 daunting 与 manageable 同上下句的 overwhelming 与 resistance 构成复现链，是七选五最稳的锚点。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 5,
+ "items": [
+  {
+   "question_id": 101,
+   "long_sentence": "定位句 But even when these accounts touch on real concerns, they do not really reflect the great mass of everyday teenage social behaviour；even when 引导让步状语从句；冒号后列举日常行为（线上聊天、发短信、浏览）。译：即便这些报道触及真实的担忧，它们也并未真正反映青少年日常社交行为的主体，以及以数字方式展开的青少年新社交圈。",
+   "option": "答案 A 段：they do not really reflect the great mass of everyday teenage social behaviour——give a false picture≈do not really reflect、their behaviour≈everyday teenage social behaviour；同段的 frightening accounts of drug addiction 是报纸报道的内容，与「失真」结论互为表里；F 段也谈 kids make mistakes，但讲的是判断力非媒体报道，答非所问。",
+   "keyword": "account 报道、描述；reflect 反映＝give a picture of；supposedly 据称、据说；everyday 日常的。",
+   "note": "媒体失真题的落点在 But 转折句——先呈现报纸的吓人叙事（drug addiction、aggressive behaviour），再指出以偏概全；A 段是全文立论段，首段 But 句通常承载作者真正观点，题干 false picture 与 not really reflect 是正话反说的改写。"
+  },
+  {
+   "question_id": 102,
+   "long_sentence": "定位句 In fact, they spend hours changing Facebook settings or using quick-delete sharing tools, such as Snapchat, to minimise their traces；主干是 they spend hours changing...or using...；spend time doing 花时间做某事；to minimise their traces 为目的状语。译：事实上，他们会花好几个小时更改 Facebook 设置，或使用 Snapchat 这类即拍即删的分享工具，来尽量减少自己留下的痕迹。",
+   "option": "答案 E 段：Parents are wrong to worry that kids don't care about privacy——Contrary to parents' belief≈Parents are wrong to worry、leave as few traces as possible≈minimise their traces 加 no traces remain；段内列举改设置、用 Snapchat、发照即删三个例证；K 段谈网络痕迹的法律后果，但无「孩子主动清除痕迹」的行为描述，答非所问。",
+   "keyword": "privacy 隐私；minimise 使减到最少＝leave as few traces as possible；quick-delete 即删的；traces 痕迹。",
+   "note": "Contrary to parents' belief 的让步标志对应原文 Parents are wrong to worry——「家长担心错了」即「与家长认知相反」；minimise 与 as few...as possible 的等价改写是本题核心；E 段首句为论点、其余为证据，先对论点再扫证据。"
+  },
+  {
+   "question_id": 103,
+   "long_sentence": "定位句 Clearly, teaching teens formal writing is still crucial, but texting probably isn't destroying their ability to learn it；but 连接让步与结论；主干是 texting probably isn't destroying their ability；to learn it 为不定式作后置定语。译：显然，教青少年正式写作依然至关重要，但发短信很可能并没有在破坏他们学习正式写作的能力。",
+   "option": "答案 I 段：texting probably isn't destroying their ability to learn it——unlikely to be affected≈probably isn't destroying、formal writing 原词对应；段内证据是语言学家 Baron 发现短信中缩写形式出奇地少、年纪越大句子越合语法；G 段谈 teachers worry 短语体影响写作，是本段反驳的对象，正反方向要分清。",
+   "keyword": "formal writing 正式写作；texting 发短信；destroy 破坏、毁掉＝affect；crucial 至关重要的。",
+   "note": "unlikely 与 probably isn't 同属「委婉否定」，语气强度一致是改写成立的隐含条件；I 段结论句在段尾，前文 instant messaging 研究是铺垫——结论句常在 But 之后，先抓 but texting probably isn't destroying 再回头核对证据。"
+  },
+  {
+   "question_id": 104,
+   "long_sentence": "定位句 New technologies always provoke generational panic, which usually has more to do with adult fears than with the lives of teenagers；主干是 New technologies always provoke generational panic；which 引导非限制性定语从句修饰 panic。译：新技术总会引发代际恐慌，而这种恐慌通常更多关乎成人的恐惧，而非青少年的真实生活。",
+   "option": "答案 B 段：New technologies always provoke generational panic——caused great fears≈provoke generational panic、among parents≈adult fears、Historically≈段内 In the 1930s（radio）与 In the 80s（Walkman）两个历史例证；A 段讲当下报纸渲染，无历史维度；B 段的 always 原词复现且两例支撑「一贯如此」。",
+   "keyword": "provoke 引发＝cause；generational panic 代际恐慌；irresistible hold 不可抗拒的控制；generational 代际的。",
+   "note": "Historically 是时间跨度标志，对应原文的编年举例（1930s 广播、80s 随身听）；always 与 provoke panic 原词双复现，本题属「高重合度」配对，快速锁定 B 后用两个年代例子验证即可；注意 B 段末句 facts are much more positive 是转折，本题只取恐慌部分。"
+  },
+  {
+   "question_id": 105,
+   "long_sentence": "定位句 ...it was cable TV, not the internet, that struck a blow at that culture in the 1980s；it was...that... 为强调句，强调主语 cable TV；strike a blow at 意为「重创」。译：当年重创那种阅读文化的是有线电视而非互联网，彼时终身重度读者本就只有约 20% 的少数人。",
+   "option": "答案 J 段：it was cable TV, not the internet, that struck a blow at that culture in the 1980s——was seriously affected≈struck a blow at、the reading culture≈that culture（指 heavy readers 文化）、some four decades ago≈in the 1980s 的年代换算；同段 15% or more deeply bookish 是另一信息点，本题取强调句。",
+   "keyword": "cable TV 有线电视；strike a blow at 重创、打击；heavy reader 重度读者；paperback 平装书。",
+   "note": "强调句 it was...that... 突出「真凶是有线电视、不是互联网」，题干问「受创原因」正好取强调部分；four decades 前是 1980s（以 2020s 计），年代换算要熟练；J 段前半讲读者变少、后半讲网络机会，本题落点在中部 that culture 的指代。"
+  },
+  {
+   "question_id": 106,
+   "long_sentence": "定位句 Certainly, teachers worry. They say that kids use overly casual language and text-speak in writing, and don't have as much patience for long reading and complex arguments；主干是 They say + that 宾语从句；text-speak 意为「短信体语言」。译：的确，老师们很担忧。他们说孩子在写作中使用过于随便的语言和短信体，对长篇阅读和复杂论证也没有那么多耐心。",
+   "option": "答案 G 段：kids use overly casual language and text-speak in writing——too casual≈overly casual、language characteristic of text messages≈text-speak、Teachers say 原词对应；段内 Yet 之后 Lunsford 的研究表明这种担忧可能基于错误怀旧，是转折信息；I 段也谈短信语言，但讲的是缩写罕见、非教师抱怨，答非所问。",
+   "keyword": "text-speak 短信体语言；overly casual 过于随意的；literacy 读写能力；nostalgia 怀旧。",
+   "note": "题干三个要素（教师说、太随意、短信体语言）与 G 段三个短语逐一对应，text-speak 是本题独一无二的原词锚；注意 G 段 But surely 的设问与 Yet 的转折——本题取 teachers worry 部分，转折后的反证属另一题（错误率）的素材。"
+  },
+  {
+   "question_id": 107,
+   "long_sentence": "定位句 In the history of horse racing, few horses have captured the affection of the British public like Red Rum；few...like... 为否定比较表「几乎没有…能像…一样」；capture the affection of 意为「赢得…的喜爱」；后句 he is still one of the best-known and most beloved racehorses 并列表语。译：赛马史上几乎没有哪匹马像 Red Rum 那样赢得英国公众的喜爱；退役三十年后它仍是最著名、最受爱戴的赛马之一。",
+   "option": "正确项 B「赢得了英国人的巨大声名与热爱」＝captured the affection of the British public 加 best-known and most beloved 的合并改写，fame≈best-known、love≈affection/beloved；A「夺冠前早已捕获民心」无中生有，原文未比较时间先后；C「退役三十年后成为传奇」偷换概念，三十年是「至今仍闻名」的时间状语；D「成功归功于多位名教练」张冠李戴，被数位主人转手的是它，成就它的教练是 Ginger McCain。",
+   "keyword": "capture the affection 赢得喜爱；beloved 深受爱戴的＝loved；best-known 最著名的＝fame；retirement 退役。",
+   "note": "整体印象题看首段两句：affection 与 best-known/beloved 分别对应 love 与 fame；D 项借 several owners 原词设陷阱，把「多次转手」偷成「多位教练」，核对身份名词即可排除；few...like... 句式表最高级含义，是作者态度句。"
+  },
+  {
+   "question_id": 108,
+   "long_sentence": "定位句 For Ginger and Red Rum, though, it was just an obstacle to greatness that had to be overcome；主干是 it was just an obstacle；to greatness 为后置定语；that had to be overcome 为定语从句修饰 obstacle；though 表转折。译：然而，对金杰和 Red Rum 来说，这只不过是通往伟大之路上一道必须跨越的障碍。",
+   "option": "正确项 A「这只是一个他们必须跨过才能出类拔萃的阻碍」＝just an obstacle to greatness that had to be overcome 的同义改写，hindrance≈obstacle、get over≈overcome、excel≈greatness；B「肯定是不致命的劣势」无中生有，原文未作严重性分级；C「实际是刚起步就终结的赛马生涯」正反混淆，那是 many horses 的命运，For Ginger and Red Rum 只是障碍；D「难以独自克服的大障碍」程度不符，just 与 had to be overcome 都表明可克复。",
+   "keyword": "obstacle 障碍＝hindrance；overcome 克服＝get over；greatness 伟大、卓越＝excel；bone disease 骨病。",
+   "note": "对比结构是本题命门：前句说对多数马这意味着生涯终结，For Ginger and Red Rum, though 转折为「只是障碍」——C 项恰拿转折前的内容设「正反混淆」陷阱；just 与 simply 的低程度副词对应是正确项标志。"
+  },
+  {
+   "question_id": 109,
+   "long_sentence": "定位句 His power, speed, and jumping ability carried him to his first Grand National title in 1973. The very next year, Red Rum returned to take his second title；carried him to 意为「把他送上…之位」；the very next year 强调紧接的下一年。译：它的力量、速度与跳跃能力助它在 1973 年首夺国家大赛冠军。紧接着的第二年，Red Rum 重返赛场再夺一冠。",
+   "option": "正确项 D「它在 20 世纪 70 年代三夺国家大赛冠军」＝1973 首冠加次年第二冠加 1977 年第三冠的时间合并，three Grand National wins 为三次夺冠的合计表述；A「12 岁首夺冠军」张冠李戴，12 岁是 1977 年第三冠时的年龄；B「1935-1936 连夺两冠」张冠李戴，那是 Reynoldstown；C「1973 年惊艳全球观众」偷换概念，surprise 发生在 1977 年以 25 个马身优势夺冠时。",
+   "keyword": "Grand National 国家大赛（英国著名障碍赛马）；title 冠军头衔；successive 连续的；steeplechase 障碍赛马。",
+   "note": "本题考「跨句信息合并」：三次冠军分散在三段（1973、1974、1977），须自行汇总成 in the 1970s；数字题先圈年份再对人物——A、B、C 各拿一个真实数字但配错对象，属「张冠李戴三连」；successive firsts 的主语区分是关键。"
+  },
+  {
+   "question_id": 110,
+   "long_sentence": "定位句 When he returned in 1977 to try again, he was largely regarded as past his prime；when 引导时间状语从句；主干是 he was largely regarded as past his prime；past one's prime 意为「已过巅峰期」。译：当它 1977 年重返赛场再战时，人们普遍认为它已过巅峰期。",
+   "option": "正确项 A「它已过了赛马生涯的巅峰」＝was largely regarded as past his prime 的同义改写，passed the peak≈past his prime；B「将无敌于国家大赛」正反混淆，它当时不被看好；C「已失去观众的喜爱」无中生有，charm 在 1973-74 已建立且未提消失；D「有望重现巅峰荣耀」正反混淆，紧接句 not expected to place highly 明说不被期待。",
+   "keyword": "past one's prime 已过巅峰＝passed the peak；regard as 把…视为；place 取得名次；largely 普遍地。",
+   "note": "past his prime 是「巅峰已过」的地道表达，与 A 项 peak 构成同义链；本题考点是大众预期——紧随其后的 He was 12 years old and not expected to place highly 是双重佐证；B、D 与「不被看好」方向相反，先定方向再筛选项。"
+  },
+  {
+   "question_id": 111,
+   "long_sentence": "定位句 He was retired soon after, but his public life and fame by no means decreased with the end of his career；but 表转折；主干是 his public life and fame by no means decreased；by no means 为双重否定表「绝不、丝毫没有」。译：它不久便退役了，但它的公众生活与名声丝毫没有随着生涯结束而减退。",
+   "option": "正确项 D「它依然声名显赫、广受欢迎」＝fame by no means decreased 加 was a popular guest 的合并改写，remained famous and popular≈fame...decreased（否定）加 popular；A「脚跟剧痛」张冠李戴，受伤是退役的原因且在生涯结束前；B「几乎所有时间都在旅行」过度推断，travel all over the country 是为各类活动奔走；C「靠慈善募捐过活」偷换概念，它是慈善活动的嘉宾而非受助者。",
+   "keyword": "by no means 绝不、一点也不；retire 退役；charity benefit 慈善募捐活动；engagement 活动、约定。",
+   "note": "退役后生活题落点在 but 转折句——by no means decreased 是「依然红火」的强调写法；B、C 都用原词 travel/charity 设陷阱，核对「它与活动的关系」（嘉宾不是受助者、有活动不是全在旅途）即可排除；D 项的 popular 与 popular guest 原词呼应。"
+  },
+  {
+   "question_id": 112,
+   "long_sentence": "定位句 People in business often make decisions based on their own personal feelings or instincts；主干是 People make decisions；based on... 为过去分词短语作方式状语；instinct 意为「本能、直觉」。译：商界人士常常基于自己的个人感受或直觉来做决策。",
+   "option": "正确项 D「依靠直觉做决策」＝make decisions based on their own personal feelings or instincts 的同义改写，rely on≈based on；A「努力理解某种未知力量」偷换概念，unknown force 是作者对直觉的比喻说法；B「避免被自身感受驱动」正反混淆，原文恰恰是被感受驱动；C「依靠丰富的过往经验」张冠李戴，vast experience 是直觉可靠的前提条件，非常态做法。",
+   "keyword": "instinct 本能、直觉；be based on 基于＝rely on；horrifying 令人震惊的；subjective 主观的。",
+   "note": "首段首句即答案句，often 对应原文 often 原词复现；A 项把作者的情绪化比喻（unknown force）当实体信息是理解陷阱；C 项来自第二段 relying on instincts only makes sense when you have a vast experience——条件句内容≠事实描述。"
+  },
+  {
+   "question_id": 113,
+   "long_sentence": "定位句 On the other hand, there is a more rational approach to making decisions. Data and analysis have long been associated with informed decisions；be associated with 意为「与…相关联」；informed 意为「明智的、有依据的」。译：另一方面，有一种更理性的决策方式。数据与分析长期以来一直与明智决策联系在一起。",
+   "option": "正确项 B「系统性的数据与分析」＝Data and analysis have long been associated with informed decisions 加 Big, systematic data is mostly the foundation 的合并，take into account≈associated with the foundation of；A「错误的可能性」张冠李戴，These reduce the likelihood of errors 是数据的好处而非考虑要素；C「环境的复杂性」无中生有；D「个人感受与商业策略」张冠李戴。",
+   "keyword": "informed decisions 明智的决策；be associated with 与…相关；systematic 系统性的；rational 理性的。",
+   "note": "informed decisions 是题干原词，定位后前一句 Data and analysis 即答案本体；B 项把 Big, systematic data 的形容词 systematic 拆出与 Data and analysis 并列，属「跨句拼装」；本题要分清「决策依据」与「决策效果」——错误率是效果。"
+  },
+  {
+   "question_id": 114,
+   "long_sentence": "定位句 Without making things complicated, the solution to this dilemma is using data and instincts in conjunction to arrive at the best possible decisions；主干是 the solution is using...in conjunction；in conjunction 意为「结合起来」；dilemma 意为「两难困境」。译：简单来说，解决这一两难的办法就是把数据和直觉结合起来，做出最佳决策。",
+   "option": "正确项 C「把两者结合起来」＝using data and instincts in conjunction 的同义改写，combine≈in conjunction；A「用以往经验化解困境」张冠李戴，previous experience 支撑的是本能决策本身；B「弄清两者哪个更可靠」无中生有，原文不比较可靠性；D「直觉优先于数据」正反混淆，与结合使用的方案相反。",
+   "keyword": "in conjunction 共同地、结合＝combine；dilemma 困境；arrive at 得出；rational analysis 理性分析。",
+   "note": "题干 if instincts disagree with data 对应原文 what do you do if you strongly feel something should not be done, even if the data insists 的设问——答案句以 the solution to this dilemma 引出；in conjunction 是四级高频短语，见到「结合类」选项可直接回原文核对。"
+  },
+  {
+   "question_id": 115,
+   "long_sentence": "定位句 The only feasible option is to rely on what your instincts tell you. In these situations, instincts can help you make effective and quick decisions；主干是 The only feasible option is to rely on...；what 引导宾语从句；前句列举标准缺失、时空受限、情境全新三种限制。译：唯一可行的选择就是依靠直觉的指引，它能在这些情形下帮你做出有效而迅速的决策。",
+   "option": "正确项 C「求助于我们的内在智慧」＝rely on what your instincts tell you 的同义改写，inner wisdom 呼应下段 combining your inner wisdom、resort to≈rely on；A「做理性系统分析」正反混淆，此时数据不可行；B「探索最可行的选项」偷换概念，The only feasible option 的内容就是靠直觉；D「套用明确标准」正反混淆，definitive criteria 的缺失正是限制数据的情形之一。",
+   "keyword": "feasible 可行的；definitive criteria 明确的标准；constraint 限制、约束；inner wisdom 内在智慧。",
+   "note": "限制数据的三种情形（无明确标准、时间资源受限、全新情境）列举后，答案句 The only feasible option 紧随其后；C 项 inner wisdom 与 instincts 的同义换称要靠后段 combining your inner wisdom with... 印证；B 项借 feasible 原词设陷阱，核对表语内容即可。"
+  },
+  {
+   "question_id": 116,
+   "long_sentence": "定位句 They are about combining your inner wisdom with the knowledge of systematic data to make the best decisions；主干是 They are about combining...with...；combine...with... 意为「把…与…结合」；they 指代前文的 Decisions。译：决策的关键在于把你的内在智慧与系统性数据的知识结合起来，从而做出最佳决策。",
+   "option": "正确项 A「将直觉与数据结合使用」＝combining your inner wisdom with the knowledge of systematic data 的同义改写，inner wisdom≈instincts、in conjunction 呼应前段 using data and instincts in conjunction；B「权衡所有因素」无中生有；C「回顾过去真正有效的做法」张冠李戴，过往经验只是本能决策的支撑描述；D「避免武断信任直觉」无中生有。",
+   "keyword": "combine...with 把…与…结合；inner wisdom 内在智慧＝instincts；best decisions 最佳决策；well-rounded 全面周全的。",
+   "note": "What does it take for...best 的最佳条件题对应 the best decisions 出现的两处——in conjunction 与 combining...with 前后呼应，A 项是两处合并；末段 well-rounded decisions 是「结合」效果的总结词，与 A 互证；C 项偷换「经验」与「结合」的概念层级。"
+  },
+  {
+   "question_id": 117,
+   "long_sentence": "定位句 Simply put...it is far more helpful to focus on the things in life for which we can express gratitude than those that incline us toward resentment and lamentation；it is...to do 为形式主语结构；far more helpful than 为比较结构。译：简而言之，聚焦生活中值得感恩的事，远比聚焦令人怨怼悲叹的事更有益。",
+   "option": "答案 C 段：it is far more helpful to focus on the things...for which we can express gratitude than those that incline us toward resentment and lamentation——far more good≈far more helpful、what makes us sad and resentful≈those that incline us toward resentment and lamentation；B 段 Crusoe 列感恩清单是该原则的文学例证，易混但那是「实例」非「论断」。",
+   "keyword": "express gratitude 表达感恩；incline toward 使倾向于；resentment 怨恨＝resentful；lamentation 悲叹、哀伤＝sad。",
+   "note": "题干 does us far more good 的比较结构与原文 far more helpful than 完全同构，simply put 是论断信号词；resentment 原词双现是快锁 C 段的锚点；C 段前半夸《鲁滨逊漂流记》，本题只取段尾 Simply put 总结论。"
+  },
+  {
+   "question_id": 118,
+   "long_sentence": "定位句 a community in which people feel grateful to one another is likely to be a more pleasant place to live than one characterized by mutual suspicion and resentment；in which 引导定语从句修饰 community；be characterized by 意为「以…为特征」。译：一个人们彼此心怀感激的社区，相比一个充满相互猜忌与怨恨的社区，更可能是宜居之地。",
+   "option": "答案 G 段：a community in which people feel grateful...is likely to be a more pleasant place 加 The beneficial effects of gratitude may extend even further...into the world around them——个人→社区→世界的三层递进；F 段讲个人层面的身心与道德益处，未扩展到社区与世界，层次不同。",
+   "keyword": "community 社区；virtuous cycle 良性循环；mutual suspicion 相互猜忌；extend 扩展、延伸。",
+   "note": "题干三层扩展（个人→社区→社会）对应 G 段的递进结构：关系循环→社区宜居→the world around them；The beneficial effects of gratitude may extend even further 中的 extend 是题干动词原词，句子是本题总纲句；按「范围扩大」的顺序读 G 段即可。"
+  },
+  {
+   "question_id": 119,
+   "long_sentence": "定位句 One recent study asked participants to write a note of thanks...and then estimate how surprised and happy the recipient would feel — an impact that they consistently underestimated；an impact 为同位语，that they consistently underestimated 为定语从句；consistently 意为「一贯地」。译：最近一项研究让参与者写感谢便条并估计对方的惊喜程度——而他们一贯低估了这种影响。",
+   "option": "答案 A 段：an impact that they consistently underestimated——repeatedly≈consistently、underestimated the positive effect≈an impact that they consistently underestimated、those who received thank-you notes≈the recipient；段内第二项研究讲写感谢信的身心益处，与本题的「低估」无关，两项研究勿混。",
+   "keyword": "recipient 接收者；underestimate 低估；consistently 一贯地＝repeatedly；estimate 估计。",
+   "note": "estimate 与 underestimate 的词形对照是本题趣味点：先让参与者「估计」对方多惊喜，再用同位语点出他们「低估」了；under- 前缀表「不足」，是本题主考词；A 段两项研究并列，本题只取第一项，靠 recipient 与 underestimated 锁定。"
+  },
+  {
+   "question_id": 120,
+   "long_sentence": "定位句 Of course, acts of kindness can also foster discomfort；主干是 acts of kindness can foster discomfort；of course 表让步承认；foster 意为「助长、培养」；discomfort 意为「不适、不安」。译：当然，善行有时也会造成不适。",
+   "option": "答案 I 段：acts of kindness can also foster discomfort——Good deeds≈acts of kindness、make people feel uncomfortable≈foster discomfort；段内三例：自觉不配、怀疑别有用心、产生亏欠感（a sense of indebtedness）佐证不适感；G 段讲感恩的诸多益处，方向相反，正反易混段。",
+   "keyword": "foster 助长、培养；discomfort 不适＝feel uncomfortable；indebtedness 亏欠感；ulterior motive 别有用心的动机。",
+   "note": "题干 sometimes 对应原文 can also 的或然语气，两处都属「留有余地」的表述；I 段是全文唯一讲感恩负面条件的段落，Of course 承认例外是转折信号；G 段与 I 段一正一反，方向判断先于细节比对。"
+  },
+  {
+   "question_id": 121,
+   "long_sentence": "定位句 And the benefits are not only psychological and physical. They may also be moral — those who practice gratitude also view their lives less materialistically and suffer from less envy；not only...also 递进结构；破折号后列举道德层面的两个表现。译：这些益处不仅在心理与身体层面，还在道德层面——常怀感恩者看待生活更少物质化，也更少嫉妒。",
+   "option": "答案 F 段：They may also be moral — those who practice gratitude also view their lives less materialistically and suffer from less envy——benefit in moral terms≈benefits...be moral、regularly express gratitude≈regularly engage in gratitude exercises；段首讲身心益处，本题取 moral 递进之后。",
+   "keyword": "moral 道德的；materialistically 物质主义地；envy 嫉妒；gratitude exercises 感恩练习。",
+   "note": "not only...also 的递进结构是本题骨架：身心益处之后 moral 是第三层；题干 in moral terms 与原文 be moral 的介词短语转换要敏感；F 段信息分两半（身心加道德），靠 moral/envy 关键词切分信息点。"
+  },
+  {
+   "question_id": 122,
+   "long_sentence": "定位句 It is impossible to have a perfect day unless you have done something for someone who will never be able to repay you；unless 引导条件状语从句「除非」；who 引导定语从句修饰 someone；repay 意为「回报、报答」。译：除非你为某个永远无法回报你的人做过些什么，否则你不可能拥有完美的一天。",
+   "option": "答案 K 段：Wooden sought to promote purely generous acts, as opposed to those performed with an expectation of reward——advocated≈sought to promote、without expecting anything in return≈as opposed to...with an expectation of reward 加 someone who will never be able to repay you；A basketball coach≈John Wooden 人物对应。",
+   "keyword": "repay 回报；generous 慷慨的；expectation of reward 对回报的期待＝expecting anything in return；counsel 忠告、建议。",
+   "note": "人物观点题三步：圈职业（basketball coach）→找人名（John Wooden）→读引语；without expecting anything in return 与 never be able to repay you 是「不求回报」的正反两面表述；as opposed to 引导的对比短语划清「纯粹慷慨」与「图回报」的界线。"
+  },
+  {
+   "question_id": 123,
+   "long_sentence": "定位句 there is mounting evidence that counting our blessings is one of the best habits we can develop to promote mental and physical health；that 引导 evidence 的同位语从句；counting our blessings 为动名词短语作从句主语；mounting 意为「越来越多的」。译：越来越多的证据表明，数算我们所拥有的福分是我们能养成的、促进身心健康的最好习惯之一。",
+   "option": "答案 D 段：mounting evidence that counting our blessings is one of the best habits to promote mental and physical health——More and more evidence≈mounting evidence、routinely count our blessings≈counting our blessings...habit、mentally and physically healthier≈promote mental and physical health；取 Conversely 之后的正面论证。",
+   "keyword": "mounting 越来越多的＝more and more；count one's blessings 数算福分、知足感恩；promote 促进；mental and physical health 身心健康。",
+   "note": "mounting 与 more and more 的同义替换是本题钥匙，同义词积累可直接迁移；Conversely 是 D 段正反分界词——先讲聚焦遗憾更遗憾，再讲聚焦感恩更幸福，方向别拧反；habits 对应 routinely 的习惯性含义。"
+  },
+  {
+   "question_id": 124,
+   "long_sentence": "定位句 While this research into gratitude is relatively new, the principles involved are anything but；While 引导让步状语从句「尽管」；主干是 the principles involved are anything but；anything but 意为「绝非、根本不是」，承前省略 new。译：尽管对感恩的这项研究相对较新，但其中涉及的原理绝非新事物。",
+   "option": "答案 B 段：While this research into gratitude is relatively new, the principles involved are anything but (new)——nothing new at all≈anything but new、underlying the research≈involved（修饰 principles 的后置定语）；段内以 Robinson Crusoe 列感恩清单为证，说明原理古已有之；E 段讲文化传统中的感恩地位，是原理古老的另一佐证但无「研究与原理」的对比句。",
+   "keyword": "anything but 绝非、根本不是；principle 原理；relatively new 相对较新；involved 所涉及的。",
+   "note": "anything but 是「决不是」的高频习语，与 nothing new 构成双重否定的等价改写，本题考点即在此；While 让步从句里 research is new 是「让」，主句 principles not new 是「取」——正确答案永远在主句；involved 的后置定语对应题干 underlying。"
+  },
+  {
+   "question_id": 125,
+   "long_sentence": "定位句 Gratitude also tends to strengthen a sense of connection with others；主干是 Gratitude tends to strengthen a sense of connection；tend to do 意为「往往会」；strengthen 意为「加强、增进」。译：感恩也往往会增进与他人的联结感。",
+   "option": "答案 H 段：Gratitude also tends to strengthen a sense of connection with others——enhance≈strengthen、one's sense of being connected with other people≈a sense of connection with others 的同根词转换；段内 dedication in relationships tends to grow 与 relationships seem to last longer 是两条佐证；G 段讲社区与社会的扩展，H 段专讲人际联结，主题词 connection 是分界。",
+   "keyword": "strengthen 加强＝enhance；connection 联结＝connected；dedication 投入、专注；affection 爱意、深情。",
+   "note": "connected（形容词）与 connection（名词）的同根改写是本题核心，识别同根词家族可秒配；H 段为总分解构：首句论断，其后 connection...grow 与 last longer 两条展开——长篇阅读首句即答案的典型布局；also 提示 H 段是益处清单的又一项。"
+  }
+ ]
+}

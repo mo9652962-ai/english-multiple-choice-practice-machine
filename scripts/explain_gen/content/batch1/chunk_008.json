@@ -1,0 +1,180 @@
+{
+ "chunk": 8,
+ "items": [
+  {
+   "question_id": 176,
+   "long_sentence": "定位句 One way of spreading knowledge is to link farms to big buyers of their harvests；主干是 One way is to link farms to big buyers；of spreading knowledge 为后置定语修饰 way；link...to... 意为「把…与…连接起来」。译：传播知识的一种途径是把农场与其收成的大买家连接起来。",
+   "option": "答案 H 段：One way of spreading knowledge is to link farms to big buyers of their harvests——building connections between farms and major purchasers≈link farms to big buyers、promote advanced techniques≈spreading knowledge 加 improved supply chains to get seeds and fertiliser；Diageo 组织农户、供种供肥并承诺收购是完整案例。",
+   "keyword": "link...to... 把…与…相连＝build connections；big buyer 大买家＝major purchaser；supply chain 供应链；brewery 啤酒厂。",
+   "note": "题干「连接农场与大买家」是 H 段首句的展开——段首句提出途径、其后 Diageo 案例佐证；G 段同样讲农户增收但靠的是修剪技术指南，无「大买家」要素；本题抓 major purchasers 这一独有要素即可锁定 H。"
+  },
+  {
+   "question_id": 177,
+   "long_sentence": "定位句 Parts of the continent are already warming much more quickly than the average: temperatures in southern Africa have increased by about twice the global rate over the past 50 years；主干是 Parts of the continent are warming...than the average；冒号后为数据例证。译：非洲部分地区比平均水平暖化快得多：过去 50 年南部非洲气温升幅约为全球速度的两倍。",
+   "option": "答案 B 段：Parts of the continent are already warming much more quickly than the average 加 temperatures in southern Africa have increased by about twice the global rate over the past 50 years——roughly twice the global warming rate≈about twice the global rate、over the last half century≈over the past 50 years，几乎逐词对应。",
+   "keyword": "global rate 全球速度；warming 暖化；average 平均水平；temperature increase 气温升幅。",
+   "note": "本题为「高重合度」配对：四个要素（部分地区、快于平均、约两倍、五十年）全部一一落位，靠 twice the global rate 这一数字组合秒锁；冒号后的例证句与题干后半句同构，长篇阅读数字题遇到「完整复现」仍需核对主语是否一致。"
+  },
+  {
+   "question_id": 178,
+   "long_sentence": "定位句 Small coffee farmers in Kenya are able to increase their incomes by 40% by following a few simple guidelines on caring for their bushes, such as trimming all but three of their stems；by following... 为方式状语；trim 意为「修剪」。译：肯尼亚小咖啡农只需遵循几条简单养护准则（如把枝条修剪到只剩三根），收入就能提高 40%。",
+   "option": "答案 G 段：Better techniques help, too. Small coffee farmers in Kenya are able to increase their incomes by 40% by following a few simple guidelines——Improved farming practices≈better techniques 加 following guidelines、increase farm production remarkably≈bigger harvests 加 incomes by 40%；counter-intuitive 的修剪法与邻居效仿是完整逻辑链。",
+   "keyword": "guideline 准则、指南＝practice；trim 修剪；counter-intuitive 违反直觉的；harvest 收成。",
+   "note": "题干 remarkably 落在 40% 的增收与 bigger harvests 的对比上——生产实践的改进对应 better techniques 加 guidelines；F 段也讲改良种子增产，但无 Kenyan farmers 与「简单准则」要素，按国名加技术两锚点锁定 G 段。"
+  },
+  {
+   "question_id": 179,
+   "long_sentence": "定位句 Africa is particularly vulnerable, in part because it is already struggling to feed itself...even without climate change；in part because 引导部分原因；vulnerable 意为「脆弱的、易受伤害的」。译：非洲尤其脆弱，部分原因在于即使没有气候变化，它也已难以养活自己，还需大幅提高产量才能养活快速增长的人口。",
+   "option": "答案 C 段：Africa is particularly vulnerable, in part because it is already struggling to feed itself...——especially susceptible≈particularly vulnerable、partly because≈in part because、difficulty feeding its increasing population≈struggling to feed itself...a fast-growing population、even without climate change 原词对应。",
+   "keyword": "vulnerable 脆弱的＝susceptible；in part 部分地＝partly；struggle to feed 难以养活；fast-growing 增长迅速的。",
+   "note": "本题主替换是 vulnerable 与 susceptible 这对同义形容词，in part 与 partly 互证；even without climate change 的让步信息是「更脆弱」的加强理由，题干 even without climate change 原样保留；C 段后半讲粮食进口 500 亿美元等数据，本题只取首句。"
+  },
+  {
+   "question_id": 180,
+   "long_sentence": "定位句 Much of the focus has been on getting small farmers to use fertiliser and, more important, better seeds. The results can be impressive；第一句主干是 Much of the focus has been on...；get sb to do 意为「让某人做」；第二句 The results can be impressive 系表结构表评价。译：大量工作一直聚焦于让小农户使用化肥，更重要的是使用改良种子。成效可以十分可观。",
+   "option": "答案 F 段：Much of the focus has been on getting small farmers to use fertiliser and, more important, better seeds. The results can be impressive——fertiliser and improved seeds 原词对应、impressively increase crop yields≈The results can be impressive 加 40% larger crop 的例证；段内埃塞俄比亚灌溉项目使土豆单产从 8 吨升至 35 吨是基建维度的另一例证。",
+   "keyword": "fertiliser 化肥；improved seeds 改良种子＝better seeds；impressive 可观的、令人赞叹的；variety 品种。",
+   "note": "impressively 与 The results can be impressive 的副词形容词互证；F 段信息分两半：前半是政府忽视与压价的历史，后半是近年重振农业的举措——本题取后半 getting small farmers to use fertiliser and better seeds；sorghum 40% 与 potato 35 吨两个例证都支撑「增产可观」。"
+  },
+  {
+   "question_id": 181,
+   "long_sentence": "定位句 An even more important change is the move from traditional farming to building businesses that can profitably bring technology and investment to small farmers；主干是 An even more important change is the move；from...to... 表转变方向；that 引导定语从句修饰 businesses。译：一个甚至更重要的变化，是从传统农业转向创办能把技术与投资有利可图地带给小农户的企业。",
+   "option": "答案 I 段：An even more important change is the move from traditional farming to building businesses...——shift from traditional farming≈the move、setting up businesses≈building businesses、bring technology and investment to small farmers 原词对应；Ngetich 的温室创业故事是实例。",
+   "keyword": "the move from...to... 从…的转变＝shift；profitably 有利可图地；on the side 兼职、赚外快；persevere 坚持。",
+   "note": "even more important 的比较级结构是本题唯一锚——全篇只此一处用「更重要的变化」抬高某条路径；I 段 Ngetich 从种番茄失败到自研平价温室再到供应农资传感器，是「办企业带技术投资」的叙事化例证；与 H 段（连大买家）区分：I 段讲创业企业。"
+  },
+  {
+   "question_id": 182,
+   "long_sentence": "定位句 Climate change is an issue that will affect everyone on the planet. For Africans its consequences will be particularly bitter；第一句主干是 Climate change is an issue；that 引导定语从句；第二句 For Africans 为受事范围状语；bitter 意为「苦涩的、严峻的」。译：气候变化是一个将影响地球上每个人的问题。对非洲人而言，其后果将尤为苦涩。",
+   "option": "答案 A 段：Climate change is an issue that will affect everyone on the planet. For Africans its consequences will be particularly bitter——Everyone in the world≈everyone on the planet、bear the consequences≈its consequences will be particularly bitter、especially Africans≈For Africans...particularly；段内 2% 排放对比强化非洲受害最重。",
+   "keyword": "on the planet 在地球上＝in the world；consequence 后果＝bear the consequences；bitter 苦涩的、沉重的；emission 排放。",
+   "note": "everyone 与 Africans 的两层递进对应 A 段两句——先「全球人人有份」再「非洲尤重」；bear the consequences 是对 consequences will be particularly bitter 的改写（承受后果）；A 段以肯尼亚茶农开篇，气候议题句在段中，定位后要看全段而非段首。"
+  },
+  {
+   "question_id": 183,
+   "long_sentence": "定位句 And although output per worker has improved by more than half over the past 30 years in Africa, that is still far behind the 2.5 times improvement in Asia；although 引导让步状语从句；output per worker 意为「人均产出」。译：尽管过去 30 年非洲人均产出提高了一半以上，但仍远远落后于亚洲 2.5 倍的改善幅度。",
+   "option": "答案 D 段：although output per worker has improved by more than half in Africa, that is still far behind the 2.5 times improvement in Asia——falls far short of≈still far behind、in Asia 原词对应；段内 Rwanda 地块极小、玉米单产为美国五分之一等对比数据佐证差距。",
+   "keyword": "output per worker 人均产出；far behind 远远落后＝fall far short of；hectare 公顷；plot 地块。",
+   "note": "让步加转折是本题结构：非洲有进步（half）但远逊亚洲（2.5 times）——falls far short of 精准对应 still far behind；D 段罗列多个对比（地块、人均产出、玉米单产），本题取人均产出一条；辨析「有改善但差距大」的转折逻辑，别误选「无改善」的 E 段。"
+  },
+  {
+   "question_id": 184,
+   "long_sentence": "定位句 But over the longer run small-scale farming can go only so far, especially in the face of climate change and population pressure；But 表转折；over the longer run 意为「从长远看」；can go only so far 意为「只能走到这一步、潜力有限」；in the face of 意为「面对」。译：但从长远看，小农经营所能达到的高度有限，尤其是在气候变化与人口压力面前。",
+   "option": "答案 J 段：But over the longer run small-scale farming can go only so far, especially in the face of climate change and population pressure——In the long term≈over the longer run、potential quite limited≈can go only so far、owing to warming climate and growing population≈in the face of...；段首 Illuminum 成功故事是转折前铺垫。",
+   "keyword": "over the longer run 从长远看＝in the long term；go only so far 潜力有限＝quite limited；in the face of 面对＝owing to；population pressure 人口压力。",
+   "note": "can go only so far 是「潜力到顶」的习语，与 quite limited 构成本题核心替换；J 段结构为「科技助小农（前）加长期有限（后）」，But 之后的让步转折句才是本题落点；题干 especially owing to 与原文 especially in the face of 双 especially 呼应。"
+  },
+  {
+   "question_id": 185,
+   "long_sentence": "定位句 The formula doesn't work, but that has not affected its popularity. And while the cult of tax cuts has attracted many critics, it lacks for obvious rivals；while 引导让步状语从句；cult 意为「狂热崇拜」；rival 意为「对手」。译：这个方案并不奏效，却依然流行；尽管招致许多批评者，它却不缺显而易见的对手——反语说明其实没有对手。",
+   "option": "正确项 B「似乎没有其他选项可以取代它」＝it lacks for obvious rivals 的同义改写，lacks for rivals（缺少对手）即「无替代方案」；A「批评声音未被听到」偷换概念，原文承认 many critics；C「被所有决策者疯狂宣扬」绝对化，relentless propagation 的主体是共和党；D「公众存在误解」无中生有。",
+   "keyword": "formula 公式、方案；cult 狂热崇拜；lack for 缺少；rival 对手、竞争者＝alternative。",
+   "note": "lacks for obvious rivals 是故意反着说的俏皮表达——「不缺对手」实际是说「没有像样的对手」；本题考对这句修辞的正确理解，B 项 no other options 即其白话翻译；A 项把「有批评但不妨碍流行」偷成「批评没被听见」，注意 while 让步从句承认批评存在。"
+  },
+  {
+   "question_id": 186,
+   "long_sentence": "定位句 Raising the wages of American workers ought to be the priority of economic policymakers；动名词短语 Raising the wages 作主语；ought to 意为「应当」；priority 意为「优先事项」。译：提高美国工人的工资应当成为经济政策制定者的优先事项。",
+   "option": "正确项 C「提高劳动报酬」＝Raising the wages of American workers 的同义改写，compensation for labor≈wages of workers；A「帮扶被增长落下的人」张冠李戴，那是民主党竞选的惯常主张；B「优先关注 GDP 增长」正反混淆，原文说 better off paying less attention to quarterly GDP updates；D「推出更大规模减税」正反混淆，作者主张以工资叙事取代减税叙事。",
+   "keyword": "raise wages 提高工资＝increase compensation；priority 优先事项；paycheck 工资、薪水；quarterly 每季度的。",
+   "note": "more effective measure 对应 ought to be the priority——「应优先」即「更有效的主张」；C 项 wage→compensation 的替换是本题唯一实义改写；B 项拿 paying less attention to GDP 反向设题，注意 less attention 与 prioritize 的方向相反。"
+  },
+  {
+   "question_id": 187,
+   "long_sentence": "定位句 The same logic still holds: Consumption drives the American economy, and workers who are paid more can spend more；主干是 The same logic still holds；冒号后为逻辑内容，两个分句构成因果链；who are paid more 为定语从句。译：同样的逻辑至今依然成立：消费驱动美国经济，而薪酬更高的工人能花更多的钱。",
+   "option": "正确项 A「工人工资的增长最终会推动国家经济」＝Consumption drives the American economy 加 workers who are paid more can spend more 的因果链合并——工资增→消费增→经济增；B「支付溢价维持稳定队伍吸引更多顾客」张冠李戴，那是福特案例的细节；C「消费激发加薪欲望」因果倒置；D「加薪的常见论据已过时」偷换概念，set aside 只是暂置公平论。",
+   "keyword": "logic 逻辑；consumption 消费；drive 驱动、拉动；paycheck 工资＝wages；premium 溢价、补贴。",
+   "note": "viewpoint 的底层逻辑要看冒号后的完整因果链——「消费驱动经济」加「多赚多花」两环缺一不可；A 项把两环串成一句话（paycheck 增长 boost 经济），这种「链条压缩」是正确项写法；福特例子是 illustration，选它做答案属以例代点。"
+  },
+  {
+   "question_id": 188,
+   "long_sentence": "定位句 The conventional wisdom held that productivity growth was the only route to higher wages；主干是 The conventional wisdom held that...；productivity growth 意为「生产率增长」；route 意为「途径」；conventional wisdom 意为「传统观念、主流看法」。译：传统观念认为，生产率增长是通向更高工资的唯一途径。",
+   "option": "正确项 B「生产率的提高」＝productivity growth was the only route to higher wages 的同义改写，increase in productivity≈productivity growth；A「分配公平」张冠李戴，那是 higher wages 的 fairness 论据；C「政策制定者的优先事项」张冠李戴；D「市场力量的精准判断」张冠李戴，那是主流经济学家的另一句观点（compensation levels reflect the unerring judgment of market forces）。",
+   "keyword": "conventional wisdom 传统观念；productivity growth 生产率增长；route 途径；unerring 不出错的、精准的。",
+   "note": "basis for higher wages 的问法对应 the only route to higher wages——「唯一途径」即「依据」；本段是「旧观念」陈列段：市场精准论、生产率唯一论、最低工资致失业论打包出现，按题干问哪个就取哪个，D 项与 B 项同段但归属不同观点。"
+  },
+  {
+   "question_id": 189,
+   "long_sentence": "定位句 One clear piece of evidence is the widening gap between productivity growth and wage growth since roughly 1970. Productivity has more than doubled; wages have lagged far behind；主干是 evidence is the widening gap；lag behind 意为「落后」。译：明确证据是：约自 1970 年来生产率增长与工资增长的差距不断扩大——生产率翻倍还多，工资却远远落后。",
+   "option": "正确项 A「人们未能看到工资与生产率的相应增长」＝Productivity has more than doubled; wages have lagged far behind 的合并概括，corresponding increase≈两者同步增长的反面即差距扩大；B「贫富差距令人沮丧」无中生有，原文谈的是生产率与工资之差；C「两党减税之争」偷换概念，tug of war 是雇主与工人之间；D「生产率与福祉的联系消失」过度推断，是差距拉大而非联系消失。",
+   "keyword": "widening gap 不断扩大的差距；productivity growth 生产率增长；wage growth 工资增长；lag behind 落后。",
+   "note": "past 50 years or so 对应 since roughly 1970 的时间换算；real world 段与上段 conventional wisdom 对照：现实是 tug of war 加差距扩大；A 项 corresponding（相应的）一词精准概括「不同步」；C 项借 tug of war 原词把对手换成两党，核对「谁与谁的拉锯」。"
+  },
+  {
+   "question_id": 190,
+   "long_sentence": "定位句 You'd hope, then, that journals would do everything they can to establish a diverse editorial board, reflecting a variety of voices, experiences, and identities；主干是 You'd hope that...；diverse 意为「多元的」；reflecting... 为现在分词短语作伴随状语；editorial board 意为「编委会」。译：那么你自然希望，期刊会尽一切努力组建一个多元的编委会，容纳多样的声音、经历与身份。",
+   "option": "正确项 D「多元性」＝establish a diverse editorial board, reflecting a variety of voices, experiences, and identities 的概括，Diversity≈diverse 加 a variety of；A「洞察力」、B「专业素养」、C「正直品格」均无中生有，原文对编委会的期待只在「多元反映」一点。",
+   "keyword": "editorial board 编委会；diverse 多元的＝diversity；a variety of 多种多样的；identity 身份。",
+   "note": "in view of its important responsibilities 回指首句「决定发表与影响学科方向」的重要职责——正因为责任重，才「希望」编委会多元；you'd hope 的期待语气对应 expect；D 项从 diverse 抽出名词 Diversity，形容词转名词是本题唯一考点。"
+  },
+  {
+   "question_id": 191,
+   "long_sentence": "定位句 The team finds that the majority of editors in top psychology and neuroscience journals are male and based in the United States；主干是 The team finds + that 宾语从句；从句主语为 the majority of editors；be based in 意为「常驻于、位于」。译：研究团队发现，顶级心理学与神经科学期刊的大多数编辑是男性，且常驻美国。",
+   "option": "正确项 C「最重要心理学与神经科学期刊的编委会由男性主导」＝the majority of editors in top psychology and neuroscience journals are male 的同义改写，the most important journals≈top journals、male-dominated≈the majority are male；A「反映多样声音」正反混淆，与 study 发现相反；B「影响学科方向」张冠李戴，那是首段一般性论述；D「具备相关背景」偷换概念，based in the United States 是地域信息。",
+   "keyword": "majority 大多数＝male-dominated；top journal 顶级期刊＝the most important journal；seniority 资历；starker 更鲜明的。",
+   "note": "findings 题锁定 The team finds that 句；C 项把「多数为男性」升格为「男性主导」，概括幅度合理；段内的 60%、88% 等数据都是「男性主导」的细化证据；A 项恰是首段「希望」的状态，与 study 发现构成正反对照，勿混。"
+  },
+  {
+   "question_id": 192,
+   "long_sentence": "定位句 Crucially, the proportion of female editors was significantly lower than the overall proportion of women psychology researchers；主干是 the proportion of female editors was significantly lower than...；Crucially 意为「关键的是」；proportion 意为「比例」。译：关键在于，女性编辑的比例显著低于女性心理学研究者的总体比例。",
+   "option": "正确项 B「女性编辑的人数与从事心理学研究的女性人数根本不成比例」＝the proportion of female editors was significantly lower than the overall proportion of women psychology researchers 的同义改写，disproportionate to≈significantly lower than；A「不少女编辑同时是杰出研究者」无中生有；C「高层比例越来越低」偷换概念，原文是 each level of seniority 都男多于女，非递减趋势；D「很少女编辑能升高层」无中生有。",
+   "keyword": "proportion 比例；significantly 显著地；disproportionate 不成比例的；seniority 资历层级。",
+   "note": "highlight 对应 Crucially——「关键的是」引出的比较句即作者强调的事实；B 项把「编辑比例低于研究者比例」说成两者不成比例，比较关系的改写要保住比较双方；C 项把「各级都偏少」曲解为「层级越高越少」，趋势性偷换要警惕。"
+  },
+  {
+   "question_id": 193,
+   "long_sentence": "定位句 the team concludes that 'the ideas, values, and decision-making biases of men are overrepresented in the editorial positions of the most recognized academic journals...'；overrepresented 意为「被过度代表、占比过高」。译：研究团队得出结论：在最负盛名的心理学与神经科学期刊编辑职位中，男性的观念、价值与决策偏向被过度代表。",
+   "option": "正确项 A「女性的观点在顶级心理学与神经科学期刊编委会中代表性不足」＝men are overrepresented 的反面改写——男性过多即女性观点缺位，underrepresented 与 overrepresented 互为镜像；B「男编辑对女同事有偏见」过度推断，decision-making biases 指决策倾向非针对性歧视；C「男性代表足够保障发表」无中生有；D「女编辑挣扎发文章」无中生有。",
+   "keyword": "overrepresented 被过度代表的；underrepresented 代表性不足的；bias 偏向；recognized 公认的、有声望的。",
+   "note": "infer 类题要在结论句上做镜像反推：overrepresented 的镜像就是 underrepresented——A 项是唯一「不增信息量」的推断；B 项把「结构性过度代表」读成「人际偏见」，混淆了制度与个人；结论引语的 over/before 前缀对称是本题解题钥匙。"
+  },
+  {
+   "question_id": 194,
+   "long_sentence": "定位句 Rather than simply blaming the inequality of editorial boards on tradition, we should be actively breaking down these existing barriers；rather than 意为「而不是」；主干是 we should be actively breaking down these existing barriers；blame...on... 意为「把…归咎于」。译：与其只是把编委会的不平等归咎于传统，我们更应主动拆解这些现存的壁垒。",
+   "option": "正确项 D「实施全面的结构性改革」＝there are structural reasons 加 breaking down these existing barriers 的合并改写，structural reforms≈structural reasons 加 break down barriers；A「在男女编辑间搞平衡」无中生有，原文未提名额对半；B「增加女性高层任职」偷换概念，junior 职位同样被男性不成比例占据；C「扩大女性学者群体」正反混淆，初级教员中女性其实更多。",
+   "keyword": "structural reasons 结构性原因；break down barriers 拆除壁垒＝reform；blame on 归咎于；disadvantage 使处于劣势。",
+   "note": "instead of/Rather than 的取舍结构点明作者建议：不归咎传统（表面原因），要拆壁垒（结构原因）——D 项的 structural 是原文 structural reasons 的直接呼应；C 项与原文 even more female than male junior faculty 矛盾，属「正反混淆」；B 项只修高层不够，因为问题在结构全链条。"
+  },
+  {
+   "question_id": 195,
+   "long_sentence": "定位句 Some — like an ancient Roman ship found off Antikythera Greece...carrying astonishingly sophisticated gears and dials for navigating by the sun — are critical to a new understanding of our past；主干是 Some are critical to...；like 引出例证；critical to 意为「对…至关重要」。译：一些沉船——如希腊安提基西拉岛附近的古罗马沉船，载有借助太阳导航的精巧齿轮与刻度盘——对我们重新理解过去至关重要。",
+   "option": "答案 F 段：...are critical to a new understanding of our past——crucial in updating our understanding of humanity's past≈critical to a new understanding of our past；段内 nearly three million vessels 加 less than one percent explored 交代总量与探明比例，No wonder there is an eternal stirring...to find them 呼应探索迫切性。",
+   "keyword": "be critical to 对…至关重要＝crucial；artifact 人工制品；sophisticated 精巧的；navigate 导航。",
+   "note": "crucial 与 critical 是本题核心同义链；updating understanding≈new understanding 的改写幅度小且贴切；F 段两句职责分明：数字句讲「多而少探」，例证句讲「为何重要」——题干问重要性与探索价值，取例证句加 No wonder 句佐证。"
+  },
+  {
+   "question_id": 196,
+   "long_sentence": "定位句 Over the centuries, dozens of majestic Old World sailing ships smashed and sank on this irregular stretch of windy Florida coast；主干是 dozens of ships smashed and sank；Old World 意为「旧大陆（欧洲）」；majestic 意为「雄伟的、壮丽的」。译：几个世纪以来，数十艘旧大陆的雄伟帆船在这段多风的佛罗里达崎岖海岸上撞毁沉没。",
+   "option": "答案 B 段：Over the centuries, dozens of majestic Old World sailing ships smashed and sank on this...Florida coast——Quite a number≈dozens of、majestic ships 原词、sailing from Europe to America≈Old World sailing ships（旧大陆即欧洲，驶抵美洲沿岸）、off the Florida coast≈on this...Florida coast、over the centuries 原词对应；A 段的旅游名片信息与沉船无关。",
+   "keyword": "majestic 雄伟的；Old World 旧大陆（欧洲）；smash and sink 撞毁沉没＝be wrecked；dozens of 数十＝quite a number。",
+   "note": "Europe to America 落在 Old World 一词——旧大陆帆船出现在佛罗里达海岸即「欧美航线」；wreck 与 smash and sink 的动词替换；B 段首句 Yet some attractions lie unseen 承接 A 段游客视角再转入海底沉船，段内 reputation as a deadly ship trap 是背景原因。"
+  },
+  {
+   "question_id": 197,
+   "long_sentence": "定位句 In 2018...the federal district court ruled in favor of France. For Pritchett, the decision was devastating. Millions of dollars of investor funding and years of labor were lost；rule in favor of 意为「判…胜诉」；devastating 意为「毁灭性的」。译：2018 年联邦地区法院判法国胜诉。对普里切特而言，这一裁决是毁灭性的：数百万美元投资与多年心血付诸东流。",
+   "option": "答案 I 段：the federal district court ruled in favor of France. For Pritchett, the decision was devastating. Millions of dollars...were lost——ruled against him≈ruled in favor of France（对方胜诉即己方败诉）、suffered a heavy loss≈the decision was devastating 加 funding and labor were lost；And then the legal storm began 点明诉讼开端。",
+   "keyword": "rule in favor of 判…胜诉；devastating 毁灭性的＝a heavy loss；federal district court 联邦地区法院；funding 资金。",
+   "note": "ruled against him 与 ruled in favor of France 是同一结果的正反表述——败诉判断要找「对方胜诉」句；devastating 与 heavy loss 的对应再由 Millions of dollars lost 具体化；I 段先讲法案（Sunken Military Craft Act）再讲判决，损失句在段尾，定位后读到段末。"
+  },
+  {
+   "question_id": 198,
+   "long_sentence": "定位句 But of late, when salvors have found vessels, their rights have been challenged in court. The big question: who should have control of these treasures?；of late 意为「近来」；主干是 their rights have been challenged in court；salvor 意为「打捞人员」。译：但近来，打捞人员一旦发现沉船，其权利便会在法庭上受到挑战。核心问题在于：这些珍宝该归谁掌控？",
+   "option": "答案 D 段：But of late, when salvors have found vessels, their rights have been challenged in court——Recently≈of late、people who found treasures≈salvors...have found vessels、have been sued over their rights to own them≈rights have been challenged in court 加 who should have control of these treasures；首句技术让海床更易达是诱因铺垫。",
+   "keyword": "of late 近来＝recently；challenge 质疑、挑战＝sue；salvor 打捞人员；possession 所有权＝control。",
+   "note": "sued 的被动义对应 rights have been challenged——「权利受挑战」即「被起诉争夺」；who should have control 的归属问句是 The big question 的内容，与题干 over their rights to own them 呼应；As technology renders...accessible（技术让海床更易达）解释了为什么「近来」诉讼增多。"
+  },
+  {
+   "question_id": 199,
+   "long_sentence": "定位句 they worked 250 days a year, backed by investor funds of, he claims, US $4 million；主干是 they worked 250 days a year；backed by... 为过去分词短语作状语「在…支持下」；he claims 为插入语「据他称」。译：他们每年工作 250 天，据他自称，背后有 400 万美元的投资者资金支持。",
+   "option": "答案 G 段：they worked 250 days a year, backed by investor funds of, he claims, US $4 million——Pritchett claims 原词对应（he claims）、millions of dollars≈US $4 million、got support from investors≈backed by investor funds；G 段还含 14 份州许可、260 平方公里勘测区、日复一日拖曳传感器等细节佐证投入之大。",
+   "keyword": "backed by 由…支持＝got support from；investor funds 投资者资金；claim 声称＝it is claimed；survey 勘测。",
+   "note": "claims 的「自称」属性与原文 he claims 插入语一一对应——题目特意保留 claims 以防把自称当事实；millions 概括 400 万美元；G 段信息密集（许可、面积、天数、资金、地图），本题只取资金插入语，找 he claims 即可快速命中。"
+  },
+  {
+   "question_id": 200,
+   "long_sentence": "定位句 'Archaeology has a terrible reputation for not publishing enough on its excavations and finds,' he says；for not publishing enough 为原因；excavation 意为「发掘」。译：「考古学在发掘成果发表不足方面名声很差。」前句 He believes archaeologists need to do a better job themselves 是其对同行自省的呼吁。",
+   "option": "答案 L 段：George Bass is one of the pioneers of under-water archaeology...He believes archaeologists need to do a better job themselves 加 not publishing enough——One pioneer marine scientist≈one of the pioneers、make greater efforts to publish≈do a better job 加 not publishing enough；L 段还列出发表耗时数十年的流程。",
+   "keyword": "pioneer 先驱＝pioneer marine scientist；excavation 发掘；reputation 名声；publish 发表＝publishing findings。",
+   "note": "pioneer 的身份锚（George Bass，水下考古先驱）加 publish 关键词双锁定 L 段；make greater efforts to publish≈do a better job 加 not publishing enough 的反说正做；L 段末尾 Bass 的灵魂拷问（谁更该担责）表明其为考古学界辩护的立场，与 K 段考古学家的批评视角相对照。"
+  }
+ ]
+}

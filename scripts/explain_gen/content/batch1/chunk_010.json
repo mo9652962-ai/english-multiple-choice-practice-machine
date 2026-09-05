@@ -1,0 +1,180 @@
+{
+ "chunk": 10,
+ "items": [
+  {
+   "question_id": 226,
+   "long_sentence": "定位句 In 1916, two girls of wealthy families...traveled to a settlement in the Rocky Mountains to teach in a one-room schoolhouse——主语带双破折号插入语补充身份；to teach 为目的状语。译：1916 年，两位富家闺蜜多萝西与罗莎蒙德前往落基山一处定居点，在一间教室的学校任教。",
+   "option": "正确项 A：To teach in a school≈to teach in a one-room schoolhouse 原词复现，schoolhouse 即学校；B「研究美国历史」张冠李戴，expand on the history of the West 是 Wickenden 书里的内容；C「写一本书」张冠李戴，书是孙女 Wickenden 所著；D「观光」无中生有。",
+   "keyword": "settlement 定居点；schoolhouse 校舍、乡村学校；instruct 教＝teach；sightseeing 观光。",
+   "note": "高考细节题：目的状语 to teach 前置定位即可秒杀；C 项利用书名与作者身份设「书是谁写的」陷阱——两个女孩是书中人物不是作者，认准 by Dorothy Wickenden 的主语归属。"
+  },
+  {
+   "question_id": 227,
+   "long_sentence": "拆题干：定位句 A hair-raising section concerns the building of the railroads, which entailed drilling through the Rockies, often in blinding snowstorms——which 非限制性定语从句说明铁路修建需在暴风雪中凿穿落基山。译：书中令人毛骨悚然的一节写的是修建铁路：要凿通落基山脉，常常在漫天暴风雪中进行。",
+   "option": "正确项 C：The railroad building in the Rockies≈the building of the railroads, which entailed drilling through the Rockies，railroad building 原词对位；A「奥本的极端气候」张冠李戴，Auburn 是两女的家乡；B「Elkhead 的生活条件」张冠李戴，讲住宿艰苦的是 moved in with a local family 段；D「西部的自然之美」张冠李戴，对应 move her to some beautiful writing 的风景描写。",
+   "keyword": "hair-raising 令人毛骨悚然的；entail 牵涉、必然伴随；drill 钻凿；blinding snowstorm 使人睁不开眼的暴风雪。",
+   "note": "词汇定位：hair-raising 是原文原词，锁定后答案紧随其后；本题四个选项各来自文章不同段落，是「全篇信息串」式干扰，务必认准 hair-raising 的归属句而非凭印象。"
+  },
+  {
+   "question_id": 228,
+   "long_sentence": "定位句 Drones are already being used to examine high-tension electrical lines. They could do precisely the same thing to inspect railway lines——现在进行时被动语态表既有事实；precisely the same thing 指技术迁移的可行性。译：无人机已被用于检查高压电线；它们完全可以把同样的事用在铁轨巡检上。",
+   "option": "正确项 A：The use of drones in checking on power lines≈already being used to examine high-tension electrical lines，power lines≈electrical lines、check on≈examine；B「高空作业能力」无中生有；C「设计成本降低」偷换概念，原文讲的是运营维护成本 cut；D「在偏远地区表现可靠」无中生有。",
+   "keyword": "high-tension electrical lines 高压电线≈power lines；inspect 检查、巡查；railway lines 铁路线；precisely 正好、恰恰。",
+   "note": "类比推理题：无人机巡铁轨的可行性论证=「电线巡检已有先例＋同样原理可迁移」；第二段首句即答案句，先例（already being used）是可能性的证据来源。"
+  },
+  {
+   "question_id": 229,
+   "long_sentence": "拆题干：定位句 European railways alone spend approximately 20 billion euros a year on maintenance, including sending maintenance staff, often at night, to inspect and repair the rail infrastructure——including 引出对 maintenance 的举例解释。译：仅欧洲铁路每年就花费约 200 亿欧元用于维护，包括常在夜间派维护人员去检查和修理铁路基础设施。",
+   "option": "正确项 C：Inspection and repair≈to inspect and repair the rail infrastructure，including 后的实例即词义注释；A「人员安全」偷换概念，better protection of railway personnel safety 是并列好处，不是 maintenance 本身；B「无人机的协助」张冠李戴，那是避免危险工作的手段；D「基础设施建设」无中生有，是检修而非新建。",
+   "keyword": "maintenance 维护、维修；inspect and repair 检查与修理；infrastructure 基础设施；approximately 大约。",
+   "note": "词义猜测题：including 是「举例释义」信号——同位举例即词义；C 把动词 inspect and repair 名词化为 Inspection and repair，词性转换后含义不变，这是猜测题的标准出法。"
+  },
+  {
+   "question_id": 230,
+   "long_sentence": "定位句 the tax which applies to soft drinks containing more than 5g of sugar per 100ml, was introduced to help reduce childhood obesity（肥胖）——which 定语从句限定征税对象；was introduced to 为目的状语。译：该税适用于每 100 毫升含糖超过 5 克的软饮，开征旨在帮助减少儿童肥胖。",
+   "option": "正确项 C：To protect children's health≈to help reduce childhood obesity，肥胖是健康问题，减少肥胖即保护健康；A「为学校筹钱」张冠李戴，钱用于 school sports 是税收去向，非开征目的；B「提高饮品质量」偷换概念，厂商降糖是为 avoid paying the tax；D「鼓励教育研究」无中生有。",
+   "keyword": "obesity 肥胖；be introduced to do 被引入以做某事；childhood obesity 儿童肥胖；Treasury 财政部。",
+   "note": "目的题抓 was introduced to 信号短语；区分「目的」与「用途」：给学校体育拨款是钱的流向（generate 240m...which will go to school sports），开征目的是 reduce obesity，A 是典型去向反设目的。"
+  },
+  {
+   "question_id": 231,
+   "long_sentence": "拆题干：定位句 The New Theatre has been the home of quality drama...for more than 100 years...the New Theatre is Cardiff's oldest surviving traditional theatre——现在完成时强调延续百年。译：新剧院百余年一直是高品质戏剧、音乐剧、舞蹈与儿童剧之家，是加的夫现存最古老的传统剧院。",
+   "option": "正确项 A：www.newtheatrecardiff.co.uk 是 New Theatre 栏目下的网址，oldest surviving theatre 原文原词对应；B「shermancymru」张冠李戴，Sherman Cymru 是 2012 年重新开放的创新剧场；C「glee」张冠李戴，Glee Club 是喜剧俱乐部；D「stdavidshall」张冠李戴，St David's Hall 是威尔士国家音乐厅。",
+   "keyword": "oldest surviving 现存最古老的；traditional theatre 传统剧院；concert hall 音乐厅；comedy club 喜剧俱乐部。",
+   "note": "广告类应用文：先在题干圈定关键词 oldest surviving theatre，再回文找到所属场馆 New Theatre，最后抄同栏网址；四个网址各属一家场馆，题干限定词与场馆名的对应是唯一解题链。"
+  },
+  {
+   "question_id": 232,
+   "long_sentence": "定位句 babies can put a round shape in a round hole from around one year of age, but it will be another year before they are able to do the same with less symmetrical shapes——but 转折分对比：一岁会圆形配圆孔，两岁才会不对称形状。译：婴儿约一岁起就能把圆形放进圆孔，但要再过一年才能对不那么对称的形状做到同样的事。",
+   "option": "正确项 C：Putting a ball into a round hole≈put a round shape in a round hole，ball（球）正是 round shape 的具体实例；A「用钥匙开门」偷换概念，实验中 key 与 keyhole 是箱子上的比喻说法，非真门锁；B「把鹦鹉与其他鸟区分」无中生有；D「给不同形状玩具分类」张冠李戴，非对称形状的匹配要等到两岁。",
+   "keyword": "symmetrical 对称的；shape recognition 形状识别；hole 孔；from around one year of age 大约一岁起。",
+   "note": "年龄对应是解题钥匙：题干 one-year-olds 对应 from around one year of age；C 把抽象 round shape 换成具象 ball，属「抽象→具体」式正确改写；D 的不同形状恰是另一岁才会的情形。"
+  },
+  {
+   "question_id": 233,
+   "long_sentence": "定位句 When she retired from dancing and her sons eventually flew the nest, she decided it was time to take the plunge——when 时间状语从句给出人生节点；fly the nest 指「子女离家独立」；take the plunge 为习语。译：当她告别舞坛、儿子们也各自离家后，她决定是时候放手一搏了。",
+   "option": "正确项 A：Try challenging things——下文她赴日本、智利教英语，最终只身远赴南极，均是跳出舒适区的挑战，正是 take the plunge（大胆一试）的语境义；B「攻读学位」张冠李戴，take a degree 发生在赴南极前的另一阶段；C「唤回失去的记忆」无中生有；D「信守承诺」无中生有。",
+   "keyword": "take the plunge 采取大胆行动、放手一试；fly the nest 子女离家；retire from 从…退休；plunge 本义「跳入、猛冲」。",
+   "note": "习语猜义靠上下文：退休＋空巢→独自闯南极的语境链指向「冒险尝试」；plunge 本义跳水可辅助记忆；B 拿相邻句 take a degree 做形近干扰，区分 plunge 与 degree 的搭配对象即可。"
+  },
+  {
+   "question_id": 234,
+   "long_sentence": "定位句 it was in Chile she discovered she could get last-minute cheap deals on ships going to Antarctica from the islands off Tierra del Fuego——it was...she... 强调句强调地点。译：正是在智利，她发现可以从南美大陆最南端火地群岛附近，买到临期特价船票前往南极。",
+   "option": "正确项 C：A discount fare≈last-minute cheap deals on ships，临期折扣即优惠票价；A「可爱的企鹅」张冠李戴，企鹅是她抵达后受到的迎接；B「美丽景色」张冠李戴，风景是旅途体验而非决定因素；D「朋友的邀请」无中生有，原文 I just decided I wanted to go 表明是自己起意。",
+   "keyword": "last-minute 临期的、最后一刻的；cheap deals 便宜交易≈discount fare 优惠票价；the southernmost tip 最南端；fare 交通费。",
+   "note": "因果定位：decide on the trip 的契机按时间线出现在智利教英语之后——cheap deals 是引子；A、B 都是「去过之后」的体验，时间先后的错位是本篇干扰项的统一套路。"
+  },
+  {
+   "question_id": 235,
+   "long_sentence": "定位句 The realization that this is a precious land, to be respected by humans, was one of the biggest things that hit home to Ginni——that 同位语从句解释 realization 的内容；to be respected 不定式被动表「应被尊重」。译：意识到这是一片珍贵、应当被人类敬重的土地，是给金妮触动最深的事之一。",
+   "option": "正确项 C：It should be well preserved≈a precious land, to be respected by humans，珍贵之地应被尊重即应被好好保护；A「可以成为她的家」无中生有；B「应易于到达」无中生有；D「需要被充分介绍」无中生有。",
+   "keyword": "precious 珍贵的；hit home 深刻触动；realization 领悟；be respected 被尊重≈well preserved 被妥善保护。",
+   "note": "结尾感悟句是观点题高发区：precious＋to be respected 的落脚点是「保护」，C 是尊重的落实化改写；absent 具体信息的 A/B/D 全靠臆造，逐一回原文找不到对应即可排除。"
+  },
+  {
+   "question_id": 236,
+   "long_sentence": "定位句 Shirley Fitzgerald...told me that in its rush to modernity in the 1970s, Sydney swept aside much of its past, including many of its finest buildings——that 宾语从句；rush to modernity 表「急奔现代化」。译：该市官方历史学家菲茨杰拉德说，二十世纪七十年代在急切迈向现代化时，悉尼把大量过去一扫而光，包括许多最精美的建筑。",
+   "option": "正确项 A：It is losing its traditions≈swept aside much of its past，扫除过去即失去传统；B「应加快进步」正反混淆，Fitzgerald 恰在批评 rush to modernity；C「应扩大人口」无中生有；D「变得更国际化」张冠李戴，culturally diverse population 是悉尼「发现」的事物，非其观点。",
+   "keyword": "sweep aside 一扫而光、清除；modernity 现代性；confused about itself 对自身定位困惑；traditions 传统≈the past。",
+   "note": "观点题认人名：Shirley Fitzgerald 出现处即答案区；「Sydney is confused about itself」进一步印证传统流失的忧虑；B 与引语态度完全相反，态度题先定褒贬再对选项。"
+  },
+  {
+   "question_id": 237,
+   "long_sentence": "定位句 On the other hand, being young and old at the same time has its attractions——动名词短语作主语；on the other hand 承接上段「新旧冲突」的反面。译：另一方面，一座城市同时年轻又古老，也有其魅力所在。",
+   "option": "正确项 A：A city can be young and old at the same time 原句同义复现，且作者借 Anthony 之言后表态 He is right；B「建于古文化的城市更有活力」以偏概全，Anthony 说的是 ancient cultures 之根基与 young country 之活力的组合难以被超越，非古文化单独致活力；C「现代化常以优雅为代价」张冠李戴，not so elegant 是渡轮司机对双体船的抱怨；D「本土与外来间应妥协」无中生有。",
+   "keyword": "attractions 魅力、吸引之处；foundation built on ancient cultures 建立在古代文化上的根基；drive and dynamism 冲劲与活力；combination 组合。",
+   "note": "推断题找作者表态句：He is right, but I can't help wishing... 说明作者认同 Anthony——认同的核心即「新旧并存」；B 把组合拆成单因，C 借他人之口，作者态度题必须分清「引语」与「作者立场」。"
+  },
+  {
+   "question_id": 238,
+   "long_sentence": "拆题干：Jacqueline 定位句 she moved to Paris where she worked as a physician and performed surgery；James 定位句 She qualified as a surgeon in 1813, then joined the British Army。译：雅克琳在巴黎行医并做外科手术；詹姆斯·巴里 1813 年取得外科医师资格后加入英国陆军。",
+   "option": "正确项 C：Performing surgery——Jacqueline 的 performed surgery 与 James 的 qualified as a surgeon 同指做外科，surgeon／surgery 同根对应；A「从事教学」无中生有；B「被聘为医师」偷换概念，Jacqueline 遭禁无受聘，Barry 是军中任职；D「被禁行医」张冠李戴，被禁的只有 Jacqueline（banned from medicine），James 未被禁。",
+   "keyword": "physician 内科医生；surgeon 外科医生；perform surgery 做外科手术；be banned from 被禁止。",
+   "note": "人物比较题先分栏笔记：Jacqueline——行医＋手术＋被禁；James——男装求学＋外科军医；共同点只在手术；D 是把个人遭遇扩为共同点的典型张冠李戴。"
+  },
+  {
+   "question_id": 239,
+   "long_sentence": "定位句 In 1511, Tan wrote a book, Sayings of a Female Doctor, describing her life as a physician——书名作同位语；describing 现在分词短语补充书的内容。译：1511 年，谈允贤撰写了《女医杂言》一书，记述她行医生涯的点点滴滴。",
+   "option": "正确项 A：She wrote a book 原文原词 wrote a book，四位 practitioners 中仅 Tan 有著书记载；B「经历过审判」张冠李戴，被审判的是 Jacqueline；C「当过牙医」无中生有；D「接受过正规教育」张冠李戴，受大学教育的是 James（Edinburgh University），Tan 是从祖辈处学得（Chinese women at the time could not serve apprenticeships）。",
+   "keyword": "physician 医生；serve apprenticeships 做学徒；walks of life 各行各业、各阶层；qualify as 取得…资格。",
+   "note": "差异比较题用排除矩阵：四行事迹各列一笔（审判/手术/著书/学位），Tan 的独有项即刻浮现；D 的 formal education 对 Tan 是反向信息——她恰恰因不能学徒而家传学医。"
+  },
+  {
+   "question_id": 240,
+   "long_sentence": "定位句 Being at the right place at the right time is decisive in any style of photography——动名词短语作主语；decisive 意为「起决定作用的」。译：在恰当的时间出现在恰当的地点，对任何门类的摄影都起决定作用。",
+   "option": "正确项 A：Proper time management——right time、leave early to set up early、managed my time wisely 三处呼应，结尾 they could have been so much better if I...managed my time wisely 点明主旨；B「高超拍摄技术」无中生有；C「冒险精神」以偏概全，go on adventures 只是拍摄途中的活动；D「独特风格」张冠李戴，distinctive character 形容的是丘陵湖泊的风景。",
+   "keyword": "decisive 决定性的；set up 架设（器材）；manage my time wisely 妥善管理时间；on the spot 在现场。",
+   "note": "主旨落在首因句＋尾教训句的双重呼应：right time 与 managed my time wisely 首尾同指「时机/时间管理」；A 的 Proper time management 是两处信息的合并改写，单看任一处都嫌碎片。"
+  },
+  {
+   "question_id": 241,
+   "long_sentence": "定位句 we did not mark the route so we ended up almost missing the sunset entirely. Once we found the place, it was stressful getting lights and cameras set up in the limited time——so 因果句；in the limited time 为状语。译：我们没有标记路线，结果险些完全错过日落；找到地点后，只能在有限时间内紧张地架设灯光和相机。",
+   "option": "正确项 C：They reached the shooting spot later than expected——almost missing the sunset entirely＋limited time 内才架设备，推出到达晚于计划；A「为紫色石英岩疯狂」偷换概念，crazy-looking 形容 road；B「等日落时倍感压力」偷换概念，压力在架设器材时而非等待时；D「设备出了故障」无中生有，问题在时间不在器材。",
+   "keyword": "mark the route 标记路线；end up doing 到头来；stressful 紧张的；limited time 有限的时间。",
+   "note": "推断题从结果倒推原因：险些错过＋限时架设备→到达迟于预期；B 挪用了 stressful 但错配了时间点——推断题讲究「一步之内的推理」，越过一步即过度推断。"
+  },
+  {
+   "question_id": 242,
+   "long_sentence": "定位句 What comes into your mind when you think of British food? Probably fish and chips, or a Sunday dinner of meat and two vegetables. But is British food really so uninteresting——设问引出刻板印象；but 转折暗示作者将反驳。译：提到英国饮食你会想到什么？大概是炸鱼薯条，或是一份肉配两样蔬菜的周日大餐。但英国菜真的如此乏味吗？",
+   "option": "正确项 A：It is simple and plain——fish and chips、meat and two vegetables 的举例＋uninteresting 的质疑共同指向「简单朴素」的大众印象；B「营养丰富」无中生有；C「缺乏正宗口味」偷换概念，reputation for less-than-impressive cuisine 指不出色，非不正宗；D「享有盛誉」正反混淆，原文正是 reputation 不佳的背景。",
+   "keyword": "come into your mind 浮现在脑海；uninteresting 乏味的；cuisine 菜肴、烹饪；reputation 声誉。",
+   "note": "首段设问＋but 转折：问句答案是「大众刻板印象」，A 概括例证与 uninteresting；注意 usually think of 问的是印象而非事实，作者的 but 只是提示后文反转，不影响本题答案。"
+  },
+  {
+   "question_id": 243,
+   "long_sentence": "定位句 you cannot do it through texts alone, because only some of the world has ever had texts, while most of the world, for most of the time, has not——cannot...because 因果；while 对比有文字与无文字社会。译：要讲述一部不偏袒任何人群的世界史，仅靠文本是不行的，因为世上只有部分地区拥有文字，而大部分地区在大部分时间并无文字。",
+   "option": "正确项 A：How past events should be presented——首段核心是「书写历史不能只靠文本，还应依靠实物」，正是「历史应如何呈现」的讨论；B「人类关心什么」偷换概念，recorded their concerns 指用物记录其关切之事，主语是社会；C「事实是否胜于言辞」无中生有；D「书面语言为何可靠」正反混淆，首段恰在论证文本不足。",
+   "keyword": "privilege 偏袒、给予特权；texts 文本；literate 有文字的；record their concerns 记录其关切之事。",
+   "note": "段落主旨题抓首句观点＋尾句重申：cannot do it through texts alone 与 recorded...not only in writing but in things 两头锁定「呈现方式」；D 与段落立场相反，反向选项优先排除。"
+  },
+  {
+   "question_id": 244,
+   "long_sentence": "定位句 a history told through things gives them back a voice. When we consider contact between literate and non-literate societies...we have to read not just the texts, but the objects——not just...but... 强调实物与文本并重。译：一部由实物讲述的历史让失利者重新拥有声音；要找到对话的另一半，我们不仅要读文本，更要读器物。",
+   "option": "正确项 C：A History of the World in 100 Objects——全书主旨即以实物（objects）讲世界史，与 some chapters of this book、objects they made 全文呼应；A「地图讲述世界故事」偷换概念，核心材料是 objects 非 maps；B「澳大利亚简史」以偏概全，Botany Bay 只是例证之一；D「艺术作品讲故事」偷换概念，things／objects 指历史实物而非艺术品。",
+   "keyword": "objects 器物、实物；first-hand accounts 第一手记述；twist 熟词僻义：歪曲；give them back a voice 让他们重获话语权。",
+   "note": "出处推断题抓全文关键词复现：text vs object 的对举贯穿首尾；标题必须同时覆盖「世界史＋实物」两个要素——C 的 100 Objects 兼具数量感与实物主题，其余选项各错换一个核心词。"
+  },
+  {
+   "question_id": 245,
+   "long_sentence": "定位句 John started to wonder if this process could be used to clean up the messes people were making...John went back to observing nature and asking questions——wonder if 表疑问；asking questions 列举 Why can...? Which kinds...? 两个问句。译：约翰开始琢磨：这一自然过程能否用来清理人类制造的污浊？后来他重拾对自然的观察并不断发问。",
+   "option": "正确项 C：He had an inquiring mind——wonder、asking questions、Why can certain plants trap harmful bacteria? 等连串疑问词体现爱问问题的头脑；A「热爱旅行」张冠李戴，explore the woods 是探索屋旁树林；B「喜欢独处」无中生有；D「渴望当医生」偷换概念，studying medicine 只是大学所学之一。",
+   "keyword": "inquiring mind 好问的头脑、求知欲；wonder 想知道；trap harmful bacteria 捕集有害细菌；observe 观察。",
+   "note": "人物品质题靠动作归纳：wonder／ask questions／figure（推想）构成「好奇善问」证据链；C 的 inquiring 是 ask 的形容词化改写——「人物性格＝动作群概括」是高考人物题固定套路。"
+  },
+  {
+   "question_id": 246,
+   "long_sentence": "定位句 With the right combination of animals and plants, he figured, maybe he could clean up waste the way nature did——with 复合结构表条件；the way nature did 为方式状语。译：他推想，只要动植物搭配得当，也许就能像大自然那样清理废物。",
+   "option": "正确项 A：Nature can repair itself——clean up waste the way nature did（污水经植物岩石自净）加末段 let these new systems develop their own ways to self-repair，自我修复是整套工作的立足点；B「生物离不开水」无中生有；C「地球生命多样」以偏概全，多样性是手段不是原理；D「微小生物群居」无中生有。",
+   "keyword": "combination 组合、搭配；self-repair 自我修复；ecosystem 生态系统；the way nature did 像大自然那样。",
+   "note": "basis（根基）对应首段的自然自净观察与末段 self-repair 的点题——首尾同指一个原理；引用语 box of spare parts 是比喻，抓 self-repair 这个实义动词即可落定 A。"
+  },
+  {
+   "question_id": 247,
+   "long_sentence": "定位句 In the final chapter of part one, I'll guide you through carrying out your own digital declutter. In doing so, I'll draw on an experiment I ran in 2018 in which over 1,600 people agreed to perform a digital declutter——draw on 意为「借助」；in which 定语从句限定 experiment。译：在第一部最后一章，我将引导你完成自己的数字大扫除，并借助 2018 年 1600 多人参与的实验展开。",
+   "option": "正确项 C：Practical examples——experiment＋participants' stories＋worked strategies 与 traps 都是实操层面的案例；A「理论模型」张冠李戴，philosophical foundations 在第一部开篇；B「统计方法」无中生有，1600 是实验规模不是统计法；D「历史分析」无中生有。",
+   "keyword": "draw on 借助、依托；digital declutter 数字大扫除；participants 参与者；strategy 策略。",
+   "note": "章节结构题按 part one 的脉络定位：开篇 foundations（理论）→concludes with method（方法）→final chapter 用实验案例落地——理论与案例的空间分布是答案依据，C 的 examples 对应 stories。"
+  },
+  {
+   "question_id": 248,
+   "long_sentence": "定位句 You can view these practices as a toolbox meant to aid your efforts to build a minimalist lifestyle that works for your particular circumstances——view...as 把…视为；meant to 表用途；that works for 修饰 lifestyle。译：你可以把这些练习视作一个工具箱，助你打造契合自身具体境况的极简生活方式。",
+   "option": "正确项 A：Use them as needed——toolbox（工具箱）的比喻即按需取用，works for your particular circumstances（契合个人境况）进一步印证灵活使用；B「推荐给朋友」无中生有；C「评估其效果」无中生有；D「识别其背后的理念」张冠李戴，practices 的作用是帮你 act on the big ideas（践行理念），理念在章内正文。",
+   "keyword": "toolbox 工具箱；circumstances 境况；sustainable 可持续的；aid your efforts 助你一臂之力。",
+   "note": "比喻题：toolbox 一词即答案——工具箱按需取用，A 的 as needed 是 meant to aid...for your particular circumstances 的浓缩；D 混淆「践行理念」与「识别理念」，方向恰好相反。"
+  },
+  {
+   "question_id": 249,
+   "long_sentence": "定位句 In a follow-up study with 100 university students, the researchers tried to get a better sense of what the group members actually did in their discussion——what 引导宾语从句，聚焦讨论中成员的实际做法。译：在以 100 名大学生为对象的后续研究中，研究者试图弄清小组成员在讨论中究竟做了什么。",
+   "option": "正确项 C：The discussion process——actually did in their discussion 即讨论过程，后文 Did they tend to go with...?／shared arguments and reasoned together 全是过程细节；A「小组规模」张冠李戴，四人小组与二十人的对比属首个研究；B「强势成员」张冠李戴，最自信者是最固执者是被检验的猜想且 it wasn't the dominant response；D「个人估计」张冠李戴，那是经典群体智慧效应的设定。",
+   "keyword": "follow-up study 后续研究；get a better sense of 更清楚地了解；reason together 一起推理；dominant response 主导反应。",
+   "note": "研究主题看研究目的句：tried to get a better sense of what...did 即聚焦过程；B 借疑问句设陷——猜想的验证对象不等于研究重心，Most frequently 引出的 shared arguments 才是发现。"
+  },
+  {
+   "question_id": 250,
+   "long_sentence": "定位句 They come to us thinking vegetables are awful, dirt is awful, insects are awful. Though some are initially scared of the insects and turned off by the dirt——thinking 现在分词表伴随观念；turned off 意为「使反感」。译：孩子们来上课时觉得蔬菜糟透了、泥土糟透了、虫子也糟透了；有些起初怕虫子、对泥土心生抵触。",
+   "option": "正确项 C：Some kids disliked garden work——嫌蔬菜、泥土、虫子即对园艺劳动反感，turned off by the dirt 是 dislike 的原文依据；A「家长不信任她」无中生有；B「学生没时间上课」无中生有；D「没有场地」张冠李戴，缺绿地与生鲜店少说的是学生居住的社区，不是学校没有园地。",
+   "keyword": "turned off 反感、倒胃口；initially 起初；awful 糟糕的；outnumber 比…多。",
+   "note": "题干 at the start 对应 initially／come to us thinking——开课时的状态；三个 awful 的排比是情绪证据链；D 把社区环境偷换为学校场地，注意地点归属的核对。"
+  }
+ ]
+}

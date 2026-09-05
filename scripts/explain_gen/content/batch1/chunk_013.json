@@ -1,0 +1,180 @@
+{
+ "chunk": 13,
+ "items": [
+  {
+   "question_id": 301,
+   "long_sentence": "拆解填空句：But she recovered, though {8}, and was ready for discharge after four weeks——though 引导省略式让步（补全为 though she recovered slowly）；after four weeks 为时间状语。译：但她还是康复了，只是过程缓慢，四周后才达到出院标准。",
+   "option": "正确项 C：slowly——though slowly＝虽慢但终于康复，四周的住院时长正是「慢」的数字证据；A「slightly」轻微地，与 recovered 搭配语义不明；B「accidentally」意外地，康复不是意外；D「happily」开心地，与让步逻辑不搭。",
+   "keyword": "though 虽然（可作副词性让步引导）；slowly 缓慢地；discharge 出院；recover 康复。",
+   "note": "数字线索定答案：four weeks 是 blank 8 的语境注脚——用四周康复说明「慢」；though 后省略结构是高考完形高频考点，找时间／程度类副词与让步语义的呼应。"
+  },
+  {
+   "question_id": 302,
+   "long_sentence": "拆解填空句：She was {9} for everything that the medical and nursing team had done for her——be + 形容词 + for + that 定语从句，表达对医护所做一切的态度。译：她对医疗和护理团队为她所做的一切满怀感激。",
+   "option": "正确项 A：grateful——be grateful for＝对…感激，是固定搭配；下文 she was eager to say goodbye、塞五英镑钞票的行为都是感激的外化；B「thoughtful」体贴的，主语应是关心他人者，方向颠倒；C「sorrowful」悲伤的，康复出院语境无悲；D「fearful」害怕的，无恐惧对象。",
+   "keyword": "be grateful for 对…心存感激；thoughtful 体贴的（勿与 grateful 混淆）；everything that... 所做的一切。",
+   "note": "搭配先行：be grateful for 是完形高频固定搭配；再向后找行为佐证——道别与塞钱都是感激的表现，情感词必须与后文动作自洽。"
+  },
+  {
+   "question_id": 303,
+   "long_sentence": "拆解填空句：On her day of discharge, we shared in her {10} at her recovery——share in sth 分享、共同感受；her + 名词 + at her recovery 为搭配核心。译：出院那天，我们共享她康复的喜悦。",
+   "option": "正确项 B：delight——delight at her recovery＝对康复的喜悦，医护与病人 shared in（共享）这份高兴；A「surprise」惊讶，康复是四周治疗的水到渠成，无意外；C「curiosity」好奇，无未知事物；D「disappointment」失望，与康复方向相反。",
+   "keyword": "delight 喜悦、高兴；share in 分享；recovery 康复；at her recovery 对她的康复（情绪介词搭配）。",
+   "note": "情感名词题抓介词与方向：delight at（对…的喜悦）是标准搭配；情绪词要与前文 grateful、后文 eager to say goodbye 的情感链一致，四个选项中只有 delight 是积极情绪。"
+  },
+  {
+   "question_id": 304,
+   "long_sentence": "拆解填空句：As she was {11} she was eager to say goodbye to each of us in the nursing team——as 引导时间状语从句，进行时态表临门状态。译：正当她即将离开时，她急切地向护理团队的每一个人道别。",
+   "option": "正确项 D：leaving——as she was leaving＝正当她离开之际，与出院日（day of discharge）严丝合缝；A「operating」做手术，她是病人不是医生；B「thinking」思考，无思维对象；C「hesitating」犹豫，与 eager（急切）的情绪相反。",
+   "keyword": "as she was leaving 正当她离开时；discharge 出院；be eager to do 急于做；say goodbye 道别。",
+   "note": "场景链定位：出院日＋道别＋塞钱构成「临别」情节，leaving 是把三件事串起来的时间锚点；eager 的急切感也说明是临行前的告别仪式。"
+  },
+  {
+   "question_id": 305,
+   "long_sentence": "拆解填空句：she was eager to say {12} to each of us in the nursing team——say + 名词 + to sb 为告别／问候句型；出院情境限定词义。译：她急切地向护理团队的每个人道别。",
+   "option": "正确项 C：goodbye——say goodbye to＝向…道别，出院离开时对每个人的告别；A「sorry」道歉，say sorry to 是致歉，她无过错可歉；B「hello」问候，初次见面才用，与临别情境相反；D「yes」同意，say yes to 表答应请求，不合语境。",
+   "keyword": "say goodbye to 向…道别；say hello to 问候（见面用）；say sorry to 致歉；eager 急切的。",
+   "note": "告别场景三件套：leaving→goodbye→press a note into her hand，词义由场景锁定；hello 的干扰在于同属 say...to 句型，区分「见面问候」与「临别道别」的场合即可。"
+  },
+  {
+   "question_id": 306,
+   "long_sentence": "拆解填空句：When she {13} one nurse, she tried to press a five-pound note into her hand——when 时间从句＋press...into her hand 塞钱动作。译：当她走到一位护士跟前时，她试图把一张五英镑的钞票塞进对方手里。",
+   "option": "正确项 A：reached——reach 意为「走到、抵达（某人跟前）」，reached one nurse＝走近一位护士，为塞钱动作提供空间前提；B「consulted」咨询，咨询对象通常是问题而非塞钱开场；C「introduced」介绍，introduce sb 须有第三方；D「persuaded」说服，与后文护士拒收的方向矛盾。",
+   "keyword": "reach 及物动词：抵达、走近；press...into one's hand 把…塞进手里；five-pound note 五英镑纸币。",
+   "note": "及物动词题看动作衔接：塞钱之前必然先「走到跟前」，reach 一步到位；consulted 的干扰在于护士与「问询」的职业联想，但下文动作是给钱不是提问。"
+  },
+  {
+   "question_id": 307,
+   "long_sentence": "拆解填空句：My colleague {14} to accept it, saying that we were all just doing our job——不定式 to accept 受空格动词支配；saying 分词短语给出理由。译：我的同事拒绝收下，说我们都只是在做本职工作而已。",
+   "option": "正确项 D：refused——refuse to accept＝拒绝接受，理由 we were all just doing our job（分内之事不收钱）是典型的婉拒逻辑；A「wished」希望收下，与拒收理由矛盾；B「pretended」假装，无假装动机；C「failed」未能，failed to accept 表「没能收下」，但下文是有意不收。",
+   "keyword": "refuse to do 拒绝做；accept 接受；do one's job 做本职工作；colleague 同事。",
+   "note": "理由句反推动词：saying that...job 是主动拒收的职业伦理，refuse 表主观意愿、fail 表客观未成——「没接成」与「不肯收」一字之差，靠理由句辨析。"
+  },
+  {
+   "question_id": 308,
+   "long_sentence": "拆解填空句：we were all just {15} our job——were + 现在分词构成进行时；just 限定「仅仅」。译：我们都只是在做自己的本职工作而已。",
+   "option": "正确项 B：doing——just doing our job＝只是尽本职，是医护拒收酬谢的惯用表达，与首段 saying thank you doesn't seem enough 的「谢意难表」主旨呼应；A「enjoying」享受工作，与拒钱的理由错位；C「securing」获得、保住，secure our job 指保住职位，语境无失业之忧；D「starting」刚开始工作，与资深团队口吻不符。",
+   "keyword": "do one's job 做本职工作；just 仅仅、只不过；secure 熟词僻义：获得／保住。",
+   "note": "拒收话术是解题钥匙：只做分内事＝不收额外酬谢，doing 表「执行」最中性得体；enjoying 的干扰在「敬业」联想，但享受与否与收不收钱无关。"
+  },
+  {
+   "question_id": 309,
+   "long_sentence": "拆解填空句：The patient looked puzzled, and then {16}: Oh this isn't for the care I had——and then 连接两个连续动作；冒号后为所说内容。译：病人一脸困惑，随即回应道：这钱不是为我受到的护理给的。",
+   "option": "正确项 C：replied——reply＝（对对方的话）回应，护士刚说完拒收理由，病人的解释正是对其的回应；A「repeated」重复，内容非复述；B「recited」背诵，正式场合的背诵腔不合；D「reported」报告，向上级汇报的语域不符。",
+   "keyword": "reply 回应、答复；puzzled 困惑的；and then 接着；report 汇报、报道。",
+   "note": "对话动词题看话语关系：前后双方交替说话，用 reply 承接对方的拒收；repeated／recited 均无回应对象，reported 的「汇报」语域与病床对话不符。"
+  },
+  {
+   "question_id": 310,
+   "long_sentence": "拆解填空句：Oh this isn't for the {17} I had——the + 名词 + (that) I had 定语从句；this 指那张五英镑钞票。译：哦，这钱不是（酬谢）我所受到的护理照顾的。",
+   "option": "正确项 D：care——the care I had＝我所受到的（医疗）照顾，与全文医护背景及 I take that as a given（护理是应得的）呼应；A「courage」勇气，病人不需要感谢自己的勇气；B「patience」耐心，无耐心付出情节；C「duty」职责，the duty I had 表「我值班的职责」，主语错位——职责是护士的。",
+   "keyword": "care 照护、护理；take that as a given 视为理所当然；nursing team 护理团队。",
+   "note": "指代链解题：this＝五英镑钞票，钱所酬谢的对象是病人受到的 care；C 的 duty 陷阱在原词 job／duty 的语义邻近，但 the duty I had 的 I 指病人，搭配立刻露馅。"
+  },
+  {
+   "question_id": 311,
+   "long_sentence": "拆解填空句：I take that as a {18}——take...as a... 把…当作…；a given 为名词化用法。译：我把（护理）看作是理所当然的事。",
+   "option": "正确项 B：given——a given＝理所当然的事、既定事实，take that as a given＝护理本是分内应得，不必酬谢；A「goal」目标，把护理当目标语义不通；C「push」推动，take that as a push 无此搭配；D「greeting」问候，与酬谢话题无关。",
+   "keyword": "a given 熟词僻义：理所当然的事（given 本义「给定的」）；take...as 把…视为；reward 奖赏。",
+   "note": "小词大考：given 由形容词转名词表「公认的事实」，是高考完形高频熟词僻义；本句是病人拒绝把钞票与护理挂钩的关键转折，为下文「为梳头给钱」做铺垫。"
+  },
+  {
+   "question_id": 312,
+   "long_sentence": "拆解填空句：To many people, {19} lives is part of the job but styling hair is an extra——动名词短语作主语，谓语用单数 is；but 对比分内与分外。译：在许多人看来，救命是本职工作的一部分，而替人做发型则是分外之举。",
+   "option": "正确项 C：saving——saving lives＝救命，是医护职业的本职，与 but 后的 styling hair（分外之举）形成对照；A「risking」冒险，risking lives 意为「拿生命冒险」，语义偏移；B「changing」改变，changing lives 非职业本职的惯用语；D「building」建设，与医护场景无关。",
+   "keyword": "save lives 救死扶伤（固定搭配）；part of the job 本职工作的一部分；styling hair 做发型；but 对比。",
+   "note": "对比结构定位：part of the job（分内）vs an extra（分外）是本句骨架，分内的事在医护语境只有 save lives；risking lives 的干扰在形近，但「冒险」非医护的常规职责描述。"
+  },
+  {
+   "question_id": 313,
+   "long_sentence": "拆解填空句：styling hair is an {20} and should be rewarded——an 后接元音开头的名词；should be rewarded 为情态被动。译：（而）替病人做头发是分外之举，理应得到回报。",
+   "option": "正确项 D：extra——an extra＝额外之事（extra 由形容词转名词），与前半句 part of the job 精准对仗：救命是分内、做头发是分外；A「honour」荣誉，an honour 虽语法成立但与 should be rewarded 的因果脱节；B「ability」能力，做头发不是能力问题；C「opening」机会，an opening 指空缺职位，语义错位。",
+   "keyword": "extra 名词化：额外的事物；reward 回报、酬谢；part of the job 分内事；分内／分外对仗。",
+   "note": "词性活用考点：extra 作名词＝分外之事，与 part of the job 的对仗是本空唯一逻辑；冠词 an 提示元音开头，但更关键的是「分外应得回报」的语义闭环——病人塞钱正是为分外之举付酬。"
+  },
+  {
+   "question_id": 314,
+   "long_sentence": "拆解填空句：Burchill was {1} at the hotel on business and planning to visit some friends in the area——was + 现在分词进行时；on business 出差；与 planning to visit 并列。译：伯奇尔正在酒店里收拾行李，他此行是出差，并计划拜访当地的朋友。",
+   "option": "正确项 D：packing——packing（收拾行李）与下文 filled a suitcase full of pepperoni（把箱子塞满辣香肠）、laid it out on the table（摊在桌上）形成动作链：正 packing 的对象就是那只行李箱；A「studying」学习，无学习情境；B「staying」住店，只表状态，无法解释满箱香肠的来由；C「looking」看，look at 才需宾语。",
+   "keyword": "pack 收拾行李、打包；on business 出差；suitcase 行李箱；fill...full of 装满。",
+   "note": "上下文动作链定答案：pack→fill a suitcase→lay it out 三步连贯，行李箱是线索物证；staying 的干扰在于 on business 的住店联想，但后文焦点是「装箱」这一动作而非居住状态。"
+  },
+  {
+   "question_id": 315,
+   "long_sentence": "拆解填空句：planning to {2} some friends in the area——plan to do 表打算；in the area 限定朋友位置。译：（并）计划拜访当地的一些朋友。",
+   "option": "正确项 A：visit——visit some friends＝拜访朋友，为固定搭配，与下文朋友托带香肠的人物关系一致；B「help」帮助，朋友托带东西是人情往来，非求助；C「follow」跟随，follow friends 语义不通；D「make」make friends 指结交新朋友，而文中是看望已有的朋友。",
+   "keyword": "visit friends 拜访朋友；plan to do 打算做；make friends 交朋友（易混）；in the area 在当地。",
+   "note": "搭配辨析题：visit friends（探望旧友）与 make friends（结识新友）一字之差；下文 They had asked him to bring pepperoni 证明是「旧识相托」，排除 make。"
+  },
+  {
+   "question_id": 316,
+   "long_sentence": "拆解填空句：They had asked him to {3} some pepperoni from back east——ask sb to do 托付句型；from back east 表物品来源地。译：朋友们托他从东部老家带些辣香肠过来。",
+   "option": "正确项 C：bring——bring sth from...＝从某地带东西来，方向由 source（back east）到说话人所在地，与托带语义吻合；A「sell」卖，朋友间托带非买卖；B「have」拥有，ask sb to have 不构成托付；D「taste」品尝，与「从远方带」的目的相悖。",
+   "keyword": "bring 带来（方向：来）；take 带走（方向：去）；back east 东部老家；pepperoni 辣香肠。",
+   "note": "方向动词题：from back east 决定「带来」用 bring；bring／take 的方向对立是高频考点——以说话人所在地为参照，朝向说话人用 bring，离开用 take。"
+  },
+  {
+   "question_id": 317,
+   "long_sentence": "拆解填空句：So he {4} a suitcase full of pepperoni——so 承接托带之请；a suitcase full of... 为名词短语。译：于是他装了满满一箱辣香肠。",
+   "option": "正确项 A：filled——fill a suitcase full of pepperoni＝把箱子装满香肠，fill...full of 是固定搭配，与 packing 的动作链相连；B「locked」锁上，还没装满谈不上锁；C「abandoned」丢弃，与照管香肠的后续矛盾；D「lost」丢失，与后文满桌香肠矛盾。",
+   "keyword": "fill...full of 把…装满；suitcase 行李箱；so 承接因果；be full of 充满。",
+   "note": "固定搭配题：fill...full of／be filled with 是「装满」的两种表达；filled 与首空 packing、第五空 worried、第六空 laid 构成「装香肠」完整叙事，前后动作互为验证。"
+  },
+  {
+   "question_id": 318,
+   "long_sentence": "拆解填空句：As he was {5} that it would be too warm, he laid it out on the table near an open window——as 引导原因状语从句；that 从句表担忧内容。译：由于担心天气太热（香肠会坏），他把（箱子）摊放在敞开的窗边的桌子上。",
+   "option": "正确项 D：worried——be worried that...＝担心…，正是这份担忧催生了摊开降温的补救动作；A「surprised」吃惊，be surprised that 表对意外吃惊，无意外事件；B「pleased」高兴，高兴不会引发补救；C「excited」兴奋，无兴奋源。",
+   "keyword": "be worried that 担心；too warm 太热（香肠易坏）；lay out 摊开；chill 冷却。",
+   "note": "因果链解题：担心太热→摊开放窗边冷却→以为安全离开，worried 是整条补救链的起点；情绪词必须能解释下一个动作，surprised／pleased 都给不出「摊开散热」的动机。"
+  },
+  {
+   "question_id": 319,
+   "long_sentence": "拆解填空句：he {6} it out on the table near an open window——动词 + out 副词 + on the table 地点状语；it 指装香肠的行李箱。译：他把（箱子）摊开在敞开的窗边的桌上。",
+   "option": "正确项 D：laid——lay out＝摊开、铺开，把箱子敞开放桌上利于散热，与 worried that it would be too warm 的担忧直接呼应；A「dug」挖，dig out 挖出，无挖的对象；B「cleared」清空，clear out 清走腾空，与「摊开散热」目的相反；C「cut」切，cut out 剪裁、切除，语义无关。",
+   "keyword": "lay out 摊开、铺开（lay-laid-laid）；clear out 清空；dig out 挖出；散热＝cool down。",
+   "note": "短语动词题看目的：摊开是为了散热防坏，lay out 最合；clear out 的干扰在 out 的字面复现，但「清空」与桌上摆满香肠的画面冲突。"
+  },
+  {
+   "question_id": 320,
+   "long_sentence": "拆解填空句：He thought his pepperoni was {7} and well chilled——thought 后接宾语从句；and 并列两个并列表语，well chilled 为其一。译：他以为香肠是安全的、冷却得很好。",
+   "option": "正确项 B：safe——safe and well chilled＝安全且冷却良好，safe（不会变质）是 worry that it would be too warm 的心理反面，冷却的目的是保安全；A「delicious」美味，他关注的是变质与否，非口味自评；C「soft」软，口感与防坏无关；D「ready」备好，与冷却措施不构成并列。",
+   "keyword": "safe 安全的（未变质）；well chilled 冷却充分；go bad 变质（safe 的反面）；think + 宾语从句。",
+   "note": "并列结构定词义：与 well chilled（冷却）并列的属性指向「保鲜」，safe 最贴切；本空与下句 he left 连读——以为安全所以放心离开，「误以为安全」正是闯祸的心理前提。"
+  },
+  {
+   "question_id": 321,
+   "long_sentence": "拆解填空句：He thought his pepperoni was safe and well chilled and he {8}——and 连接并列谓语，he 后填谓语动词，承接「以为安全」的心理。译：（于是）他就离开了。",
+   "option": "正确项 A：left——he left＝他离开了（去办事／会友），正因为人走屋空，海鸥才有机会进屋撕开香肠，为下文惨案埋下伏笔；B「nodded」点头，无对话对象；C「waited」等待，守着箱子就不会出事，与下文冲突；D「regretted」后悔，此时尚未出事，后悔无从谈起。",
+   "keyword": "leave-left-left 离开；set up 伏笔（叙事学）；unattended 无人看管的（离开的后果）。",
+   "note": "叙事逻辑题：「以为安全→离开→出事」是闯祸故事的标准三段式；waited 的干扰在于看似稳妥，但 That's when things went wrong 的转折要求他必须离开，叙事才能推进。"
+  },
+  {
+   "question_id": 322,
+   "long_sentence": "拆解填空句：That's when things went {9}——go + 形容词表「变得…」系表结构；That's when 强调句点出转折时刻。译：就在那一刻，事情出了岔子。",
+   "option": "正确项 C：wrong——go wrong＝出毛病、出岔子，是承上启下的固定表达，引出海鸥进屋的混乱；A「far」go far 表大有前途或走远，与「出事」无关；B「funny」go funny 非惯用搭配；D「blind」go blind 表失明，主语须是人或眼睛。",
+   "keyword": "go wrong 出岔子（go + adj. 系表结构）；go wild 变疯、失控；go blind 失明；That's when... 就在那刻。",
+   "note": "系动词 go 的形容词搭配群：go wrong／go wild／go blind／go bad 是高频考点；本空是全文转捩点，下文整个混乱场景都是 went wrong 的展开。"
+  },
+  {
+   "question_id": 323,
+   "long_sentence": "拆解填空句：I remember walking down the long {10} and opening the door to my room——walking down + 长形通道名词；and 并列 walking 与 opening。译：我记得走过长长的走廊，打开房门，只见一整群海鸥。",
+   "option": "正确项 C：hall——the long hall＝长长的走廊，酒店内部的通道，与 opening the door to my room 的动线衔接；A「beach」海滩，海鸥虽来自海边但人在酒店楼内；B「driveway」私家车道，室外车行道与开房门不衔接；D「table」桌子，walk down the table 搭配不通。",
+   "keyword": "hall 走廊、大厅；driveway 车道；walk down 沿…走过去；动线连贯。",
+   "note": "空间动线题：酒店场景中「长走廊→房门→房间」是标准动线，hall 衔接最顺；beach 的干扰来自标题 seaside birds 的字面联想，注意人在楼内不在海边。"
+  },
+  {
+   "question_id": 324,
+   "long_sentence": "拆解填空句：Burchill said in a recent letter of {11} to the 4-star hotel——letter of + 抽象名词表信件性质；to the hotel 表对象。译：伯奇尔在最近写给这家四星级酒店的一封道歉信中说道。",
+   "option": "正确项 B：apology——letter of apology＝道歉信，与下文 to apologize for the damage I had caused 原词呼应（apology／apologize 同根）；A「application」申请信，与道歉主题不符；C「request」请求信，文中诉求是解禁但信的主旨是道歉；D「invitation」邀请信，方向完全相反。",
+   "keyword": "letter of apology 道歉信；apologize for 为…道歉（同根词复现）；4-star hotel 四星级酒店；blacklist 拉黑、列入黑名单。",
+   "note": "同根词复现定答案：apology 与后文 apologize 是本题的明线；判断信件性质看内容段落——I come to you to apologize for the damage 已点明，request 只是信中的附带诉求。"
+  },
+  {
+   "question_id": 325,
+   "long_sentence": "拆解填空句：The seagulls immediately went {12}——go + 形容词系表结构；immediately 强调瞬间反应。译：海鸥们立刻疯了起来。",
+   "option": "正确项 D：wild——go wild＝变得狂野失控，与后文 rushed to the window、30 or 40 birds all trying to get out 的疯狂场面互证；A「hungry」饿，抢食是动机但 went hungry 意为「挨饿」，搭配义错位；B「dead」go dead 表（声音）消失、死寂，与混乱相反；C「missing」失踪，鸟群就在屋里，与失踪矛盾。",
+   "keyword": "go wild 变得疯狂；rush to 蜂拥冲向；flock 一群（鸟）；immediately 立刻。",
+   "note": "场面描写定形容词：rushed、30-40 只挤着逃生的画面只能用 wild 概括；hungry 的干扰在「海鸥为香肠而来」的动机联想，但 go hungry 的固定义是「挨饿」，一字之差义千里。"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "chunk": 3,
+ "items": [
+  {
+   "question_id": 51,
+   "long_sentence": "定位句 The study found that team-building exercises which focused on...personal attitudes and relationships were considered too heavy-handed and intrusive；主干是 exercises were considered too heavy-handed and intrusive；which 引导定语从句；intrusive 意为「侵扰的」。译：研究发现，介入团队成员个人态度与关系的团建活动被认为是过于生硬和侵扰的。",
+   "option": "正确项 D「被认为是对员工私生活的侵扰」＝intervening into personal attitudes and relationships 加 considered too intrusive 的合并改写，intrusion≈intrusive；A「活动目的在于分享态度与关系」偷换概念，focused on 描述的是介入对象而非目的，且漏掉研究发现；B「增加了成员的脆弱性」张冠李戴，vulnerability 是研究者认为建立深度联系所需之物；C「必然增强同事联系」绝对化，invariably 与 considered intrusive 矛盾。",
+   "keyword": "intrusive 侵扰的＝intrusion；heavy-handed 手段生硬的；intervene into 介入；vulnerability 脆弱性、敞开心扉。",
+   "note": "find 类题目答案就是 study found 之后的内容；D 项把形容词 intrusive 名词化为 an intrusion，是本题唯一词性转换；C 项 invariably 属「绝对化」标志词，四级正确项极少用 always/invariably/never 这类全称词。"
+  },
+  {
+   "question_id": 52,
+   "long_sentence": "定位句 The method is well-tested and has been shown to increase interpersonal closeness. However, to be successful, it must be voluntary；主干是 it must be voluntary；to be successful 为目的状语「要想成功」；However 表转折，提示成功条件在本句；voluntary 意为「自愿的」。译：这一方法经过充分验证，已被证明能增进人际亲密感。然而，要想奏效，它必须是自愿的。",
+   "option": "正确项 B「应用于自愿参加的员工」＝it must be voluntary 的展开改写，volunteer≈voluntary；A「允许参与者自由表达」偷换概念，voluntary 指自愿参与而非表达自由；C「按合理顺序排列问题」无中生有，原文只说 a series of questions 未提顺序；D「通过一系列团建步骤引导员工」偷换概念，原文是 a series of questions 且 guiding 是方法本身而非成功条件。",
+   "keyword": "self-disclosure 自我表露；voluntary 自愿的＝volunteer；interpersonal closeness 人际亲密；well-tested 经过充分验证的。",
+   "note": "However 是「成功条件」的信号词——方法描述在前、生效前提在后，题干 How can...succeed 直接对应 to be successful；B 项把形容词 voluntary 转为动词短语 volunteer to participate，词性转换型正确项。"
+  },
+  {
+   "question_id": 53,
+   "long_sentence": "定位句 With caution, many relational methods to improve teams and organisations can be borrowed from other fields；with 复合介词短语作方式状语，表前提条件；主干是 many relational methods can be borrowed from other fields；borrow from 意为「从…借鉴」。译：在谨慎使用的前提下，许多改善团队与组织的人际关系方法可以从其他领域借鉴过来。",
+   "option": "正确项 D「必须谨慎应用才能有效」＝With caution 加下句 The question is how to apply them effectively 的合并改写，cautiously≈with caution；A「必须组合使用」无中生有；B「优先考虑某些心理面向」无中生有；C「过分强调个体关系」过度推断，原文说集体大于个体关系之和，但未指责方法本身过分强调个体。",
+   "keyword": "with caution 谨慎地＝cautiously；relational methods 人际关系方法；borrow from 借鉴；effectively 有效地。",
+   "note": "人物观点题定位 Dr Matous 的末段引语，With caution 置于句首作状语，是「使用前提」最醒目的信号；D 项的 cautiously 与原文 with caution 仅词性互换，四级细节题爱考这种介词短语与副词的转换。"
+  },
+  {
+   "question_id": 54,
+   "long_sentence": "定位句 The citizens...voted...to raise their own taxes. The purpose of such action is to fund a...program of housing and social services for the homeless；第二句主干是 The purpose is to fund...；fund 意为「为…提供资金」。译：该县公民两度投票给自己加税，目的是为面向无家可归者的住房与社会服务十年计划提供资金。",
+   "option": "正确项 A「为解决该县无家可归问题」＝to fund...program of housing and social services for the homeless 的目的概括，combat homelessness≈fund services for the homeless；B「改革县服务体系」偷换概念，是新增服务计划而非改革；C「资助本地基础设施建设」无中生有；D「缩小贫富差距」无中生有，原文只对比了富豪与流浪者人数，未提再分配。",
+   "keyword": "vote to do 投票决定做某事；raise taxes 加税；fund 资助＝finance；homeless 无家可归者。",
+   "note": "why 目的题答案常在动作句的下一句——voted to raise their own taxes 之后紧跟 The purpose of such action is to fund...；A 项 combat 是对「出钱建房供服务」的目的性概括，正确项常见这种升一层表述。"
+  },
+  {
+   "question_id": 55,
+   "long_sentence": "定位句 there is a tendency to blame the victims themselves for their condition—to see their failure to thrive as an issue of character, of moral weakness, of laziness；主干是 there is a tendency to blame the victims themselves；to see...as... 解释 blame 的内涵。译：人们倾向于责怪无家可归者本人——把他们的失意看作性格、道德弱点或懒惰问题。",
+   "option": "正确项 C「他们要为自己的处境负责」＝blame the victims themselves for their condition 的同义改写，be responsible for≈blame...for；A「很少符合那些描述」正反混淆，原文说 a sizable minority meet some of those descriptions；B「是经济快速发展的受害者」张冠李戴，economy forgot them 是作者陈述的事实而非大众偏见；D「占吸毒者的大多数」无中生有，原文说 not mostly mentally ill or drug addicted。",
+   "keyword": "blame sb for sth 因某事责怪某人；tendency 倾向；failure to thrive 失意、难以振作；moral weakness 道德弱点。",
+   "note": "tend to believe 对应原文 there is a tendency to——「大众倾向」即偏见句；blame the victims themselves 是关键短语，C 项 responsible for 是其标准同义链；本题考的是人们的看法而非事实，作者随后用 But contrary to popular belief 纠偏，勿把事实当答案。"
+  },
+  {
+   "question_id": 56,
+   "long_sentence": "定位句 they lost a job or were evicted or fled an abusive marriage just as the housing market was growing increasingly unforgiving；主干是三个并列谓语 they lost...or were evicted or fled...；just as 引导时间状语从句「正当…之时」；unforgiving 意为「不留情的、严峻的」。译：他们失去工作、被逐出住所或逃离受虐婚姻，而恰在此时，住房市场正变得越来越不容人喘息。",
+   "option": "正确项 A「越来越难以负担住处」＝the housing market was growing increasingly unforgiving 加 evicted 的合并改写，difficult to afford a place to live≈housing market unforgiving；B「离婚率稳步上升」偷换概念，fled an abusive marriage 是逃离受虐婚姻而非离婚率数据；C「被迫从事低薪工作」无中生有，原文是失业 lost a job；D「社会不原谅他们的错误」偷换概念，a series of mistakes 是个人遭遇，不涉及社会原谅。",
+   "keyword": "evict 逐出、驱逐；unforgiving 不留情的、严峻的；housing market 住房市场；abusive marriage 受虐的婚姻。",
+   "note": "越来越多流浪的原因集中在 because of 与 because 引导的三个并列原因里；A 项把住房市场 unforgiving 具体化为 afford a place to live，属「具体化改写」；B 项借 marriage 原词设陷阱，需核对「婚姻状况」与「离婚率」的区别。"
+  },
+  {
+   "question_id": 57,
+   "long_sentence": "定位句 a new Los Angeles Homeless Services Authority report showing that the county's homeless population is growing faster than the supply of new housing；showing that... 为现在分词短语作后置定语修饰 report，内含宾语从句；从句用比较级 growing faster than 连接两个名词短语。译：一份新的洛杉矶无家可归者服务局报告显示，该县无家可归人口的增长速度快于新住房的供应速度。",
+   "option": "正确项 C「新住房的增长赶不上无家可归人口增长的需求」＝homeless population is growing faster than the supply of new housing 的反向同义改写，fall short of≈growing slower than；A「就业机会」无中生有，报告只谈住房；B「所有人朝同一方向努力」张冠李戴，even if everyone is pulling in the same direction 是让步从句且非报告内容；D「恶化快于预期」无中生有，原文没有预期对比。",
+   "keyword": "supply of new housing 新住房供应；grow faster than 增长快于；fall short of 赶不上、不足；homeless population 无家可归人口。",
+   "note": "report showing that 结构后即报告内容，题干 What do we learn from the report 直接指向它；A 是比较级命题，growing faster than 换成 fall short of 后主宾对调，这种「正话反说」的改写要逐词核对主语是谁在增长。"
+  },
+  {
+   "question_id": 58,
+   "long_sentence": "定位句 But most Los Angeles residents are no longer either shocked or shamed；主干是 residents are no longer either shocked or shamed；no longer 表状态终结；either...or... 连接两个表语；下句 Increasingly, we are uncomfortable, annoyed, disgusted, scared or unaware 列举当下感受。译：但大多数洛杉矶居民对这种现象不再感到震惊或羞愧。",
+   "option": "正确项 D「不再觉得震惊」＝no longer either shocked or shamed 的原级改写，no longer find it shocking≈no longer shocked；A「越来越羞愧」正反混淆，原文是 no longer shamed；B「没有看上去那么可怕」偷换概念，scared 恰是现在的感受之一；C「越来越不冷漠」正反混淆，compassion is being replaced by resignation 表明同情心在消退、麻木在加深。",
+   "keyword": "no longer 不再；either...or... 或者…或者；shocked 震惊的；shamed 羞愧的；resignation 听之任之、无奈接受。",
+   "note": "情感态度题抓 But 转折后的 no longer either...or...；选项与原文的情感词一一比对方向——A/C 都把原文的「不再」篡改成「越来越」，属典型正反混淆；D 与原文只差词性（shocked→shocking），是安全项。"
+  },
+  {
+   "question_id": 59,
+   "long_sentence": "定位句 some people may struggle to get the same access to certain foods，承接上句 We will probably have to change where we grow certain crops, as some regions get too hot；struggle to do 意为「艰难地设法做」。译：由于一些地区变得过热，我们可能不得不改变某些作物的种植地，一些人或难再像现在这样获得某些食物。",
+   "option": "答案 D 段：some people may struggle to get the same access to certain foods——not have adequate access≈struggle to get the same access、consequence≈food security can still be impacted（Walsh 引语）；H 段也谈获取难，但归因是价格暴涨使穷人吃不起，D 段归因是产区迁移，按因果来源区分两段。",
+   "keyword": "access to 获得某物的机会、途径；struggle to do 艰难地做；food security 粮食安全；adequate 充足的。",
+   "note": "题干 consequence 是「结果」信号，D 段结构是原因（产区过热须迁移）加结果（获取难、粮食安全受影响）；D 与 H 是本篇最易混的一对，区分锚点是 H 段的 price jumps 与 poor people，D 段讲的是地区性 access 问题。"
+  },
+  {
+   "question_id": 60,
+   "long_sentence": "定位句 the world has seen an increasing standardisation of diets; the foods we eat globally today are 36% more similar than they were in 1961；前句为论断，分号后为数据支撑；we eat globally 为省略 that 的定语从句；more...than... 为比较结构。译：全球饮食日益标准化，如今比 1961 年相似度高 36%。",
+   "option": "答案 I 段：the foods we eat globally today are 36% more similar than they were in 1961——more similar 原级对应、what they used to eat≈in 1961（过去的时间锚点）、around the world≈globally；E 段也谈食物产量与种类，但讲的是气候对 yield 的影响，与饮食趋同无关，答非所问。",
+   "keyword": "standardisation 标准化；be similar to 与…相似；globally 全球地；diet 饮食。",
+   "note": "含数据的题目先扫段落里的数字——36% 与 1961 是本题独有锚点；题干用形容词比较级 more similar 复现原文，识别「数据句即答案句」可秒配；I 段前半讲 commodity crops 热量占比，后半才讲饮食趋同，本题取后半。"
+  },
+  {
+   "question_id": 61,
+   "long_sentence": "定位句 Last week, BBC Future explored one scientist's efforts to help crops cope with the increased probability of droughts；主干是 BBC Future explored one scientist's efforts；to help crops cope with... 为不定式作 efforts 的内容。译：上周，BBC Future 探讨了一位科学家帮助作物应对干旱的努力。",
+   "option": "答案 B 段：Last week, BBC Future explored≈A recent news report talked about、help crops survive droughts≈help crops cope with droughts、genetic engineering≈using the genes from resurrection plants（借用复苏植物基因设计作物）；J 段也出现 genetic engineering 且提到 Farrant，但那里是众多应对路径之一、无新闻报道语境，易混段靠「谁在报道」区分。",
+   "keyword": "genetic engineering 基因工程；resurrection plant 复苏植物；cope with 应对＝survive；drought 干旱。",
+   "note": "news report 对应 BBC Future explored——媒体名是最佳定位锚；本篇 B 与 J 都含 Farrant 与抗旱，区分点：B 段是「新闻报道某科学家的探索」，J 段是「多家机构尝试转基因育种且成败未定」，题干强调 report 选 B。"
+  },
+  {
+   "question_id": 62,
+   "long_sentence": "定位句 High quality chocolate will be less available in the future, and if you want it, you'll have to pay a lot more for it；and 连接两个并列分句；if 引导条件状语从句；available 意为「可获得的」。译：未来高品质巧克力将更难获得，而且如果想要，你就得花多得多的钱。",
+   "option": "答案 G 段：climate change will likely have 'great impacts' on cocoa production 加 Jarvis 引语——affect the availability≈less available、price≈pay a lot more、quality chocolate≈High quality chocolate 原词对应；题干 predicted 对应 found that...could become unsuitable by 2050 的预测语境。",
+   "keyword": "cocoa 可可；available 可获得的＝availability；quality chocolate 高品质巧克力；have impacts on 对…产生影响。",
+   "note": "巧克力与可可的替换链是本题钥匙：chocolate≈cocoa production；G 段同时讲了咖啡产区与可可，本题只取 Jarvis 引语两句——人物名加引语是长篇阅读定位的高频组合，先找人名再核对引语内容。"
+  },
+  {
+   "question_id": 63,
+   "long_sentence": "定位句 Could the same thing happen to our crops and other foodstuffs too?；该句承接前句 scientists warned that one in six animal species could go extinct due to climate change；the same thing 指代上文的物种灭绝；foodstuff 意为「食材、食品」。译：科学家曾警告六分之一的动物物种可能因气候变化而灭绝。同样的事会不会也发生在我们的作物和其他食材上呢？",
+   "option": "答案 A 段：one in six animal species could go extinct≈some animal species could disappear、Could the same thing happen to our crops and other foodstuffs too?≈People wonder if certain crops could disappear——设问句即 wonder 的改写；C 段接续此问并给出 no evidence 的回答，属答句非问句。",
+   "keyword": "go extinct 灭绝＝disappear；species 物种；foodstuff 食材；warn 警告；due to 由于、因为。",
+   "note": "wonder 对应原文的疑问句式——A 段以设问收尾，是全文议题的引子；首段设问卷常配一道题，扫读时看到段尾问句要警觉；C 段是回答（不会灭绝），题干问「人们担忧会不会」，答案落在提出问题的 A 段。"
+  },
+  {
+   "question_id": 64,
+   "long_sentence": "定位句 farms can move north to some degree, Schlenker says. But eventually, yields will likely suffer because the soil north of Iowa declines in quality；But 转折连接让步与结果；because 引导原因状语从句；yields 意为「产量」。译：美国农场可在一定程度上北移，但最终产量仍可能受损，因为爱荷华州以北的土壤质量在下降。",
+   "option": "答案 F 段：farms can move north to some degree≈farms can move a bit northward、yields will likely suffer≈crop yields may decrease、Although≈But 的让步转折对应；题干 Although 引导的让步加主句转折，与原文 can move north...But eventually yields suffer 完全同构。",
+   "keyword": "to some degree 在一定程度上＝a bit；yields 产量；decline in quality 质量下降；eventually 最终。",
+   "note": "让步转折结构是本题命点：题干 Although A, B 对应原文 A...But B，识别这种同构可快速锁定；F 段后半还有 threshold 极端高温的结论，本题只取前半北移内容，勿把 end of the century 的预言混入。"
+  },
+  {
+   "question_id": 65,
+   "long_sentence": "定位句 Finally, diversifying our diet away from heat-sensitive wheat, corn, rice and other crops could also help；动名词短语 diversifying our diet 作主语；away from 表「摆脱」；heat-sensitive 为复合形容词「对热敏感的」。译：最后，让我们的饮食摆脱对热敏感的小麦、玉米、水稻等作物，也可能有所帮助。",
+   "option": "答案 L 段：diversifying our diet away from heat-sensitive crops≈diversification of diet、could also help≈One possible solution；段末 Depending on a greater number of plant species creates a more vigorous and less risky food system 进一步支撑「多样化」方案；J 段同样讲解决办法，但那是转基因抗热品种，与饮食多样化不同，答非所问。",
+   "keyword": "diversify 使多样化＝diversification；diet 饮食；heat-sensitive 对热敏感的；a range of 一系列。",
+   "note": "solution 类题先扫 J/K/L 三段——本篇 J（基因工程）、K（现有技术）、L（饮食多样化）是并列的三个对策，靠 diversify 关键词锁定 L；Finally 是段落序列词，表明 L 是最后一条对策，与题干 one possible solution 的列举感呼应。"
+  },
+  {
+   "question_id": 66,
+   "long_sentence": "定位句 For now, the jury is still out as to how successful those endeavours will be；主干是 the jury is still out，习语意为「尚无定论、悬而未决」；those endeavours 指代上句 create drought- and temperature-resistant crops through genetic engineering and conventional breeding。译：就目前而言，这些努力能取得多大成功还没有定论。",
+   "option": "答案 J 段：a number of companies...are aiming to create drought- and temperature-resistant crops through genetic engineering 加 the jury is still out——remains unsettled≈the jury is still out、heat-tolerant crops≈temperature-resistant crops（Monsanto 引语中为 heat-tolerant）；引语中 Monsanto 乐观与 USDA 谨慎的分歧佐证「未定」。",
+   "keyword": "the jury is still out 尚无定论；genetic engineering 基因工程；heat-tolerant 耐热的＝temperature-resistant；endeavour 努力、尝试。",
+   "note": "the jury is still out 是「未定论」的高分习语，与题干 remains unsettled 直接对应；J 段 optimism（Monsanto）与 caution（USDA）并置正是「争议未决」的证据链；B 段的 Farrant 基因尝试已有报道，但本题问的是「能否解决问题尚无定论」，落点在 J。"
+  },
+  {
+   "question_id": 67,
+   "long_sentence": "定位句 But for poorer people, those same price jumps will likely cause certain foods to go extinct from their diets；主干是 price jumps will likely cause certain foods to go extinct from their diets；cause sth to do 意为「导致某物…」；go extinct from their diets 是修辞，意为「从他们的餐桌上消失」。译：但对更穷的人来说，同样的价格暴涨很可能使某些食物从他们的饮食中消失。",
+   "option": "答案 H 段：for poorer people, those same price jumps will likely cause certain foods to go extinct from their diets——Poor people≈poorer people、give up eating certain foods≈go extinct from their diets、because of high prices≈price jumps；H 段首句 for those who can afford it, some foods will simply cost them more 与本题形成富穷对照。",
+   "keyword": "price jump 价格暴涨；go extinct 灭绝、消失（喻吃不起）；afford 负担得起；diet 饮食；for those who can afford it 买得起的人。",
+   "note": "go extinct 在 G 段指物种灭绝、在 H 段喻指「吃不起而不再吃」，一词两境要区分；题干 Poor people 与原文 poorer people 仅一个比较级之差，属近形改写；H 段只有三句且富穷对举，定位后两句都要读完。"
+  },
+  {
+   "question_id": 68,
+   "long_sentence": "定位句 Many places could benefit a great deal just by using technologies that already exist；主干是 Many places could benefit a great deal；by using... 为方式状语；that already exist 为定语从句修饰 technologies。译：许多地方仅靠使用现有的技术就能获益良多。",
+   "option": "答案 K 段：other strategies might also help, including applying more fertiliser, better irrigation, machinery...or storage facilities——existing farming technologies≈technologies that already exist、reduce the negative effect≈easing changes（Walsh 引语）；J 段讲尚待验证的基因工程，与「现有技术」相反。",
+   "keyword": "irrigation 灌溉；fertiliser 肥料；storage facilities 储存设施；spoilage 腐坏、变质。",
+   "note": "existing 是题干题眼，对应原文 technologies that already exist；K 段用 including 列举四种具体技术（施肥、灌溉、机械、仓储），列举句是长篇阅读「多选项堆叠」段，配题时锁定列举行即可；K 与 J 都讲对策，区分点是「已存在」与「待验证」。"
+  },
+  {
+   "question_id": 69,
+   "long_sentence": "定位句 but other times it's because that's what I think I'm supposed to say. That's what important people say. That's what people who get promoted say；三个 that's what... 句式排比；who get promoted 为定语从句。译：另一些时候是因为那是我觉得该说的话——大人物这么说，获得晋升的人也这么说。",
+   "option": "正确项 A「他只是在效仿成功人士」＝That's what important people say. That's what people who get promoted say 的概括，follow the example≈what important people say；B「真为自己忙碌而骄傲」正反混淆，末段作者要改口且称其 self-righteous；C「认为人人都该投入工作」无中生有；D「相信忙碌保证成就」张冠李戴，working long hours doesn't drive better results 是作者的反驳。",
+   "keyword": "get promoted 获得晋升；be supposed to 应该；drive results 产生成果；self-righteous 自以为是的。",
+   "note": "原因题定位首段：but other times 之后才是本题答案（另一半原因）；important people 与 people who get promoted 都指向「成功者示范」，A 项 follow suit 是其概括词；首段末 So why are we so proud... 是全文设问，勿当成作者自认骄傲。"
+  },
+  {
+   "question_id": 70,
+   "long_sentence": "定位句 the more we believe that one has the opportunity for success based on hard work, the more we tend to think that people who skip leisure and work all the time are of higher standing；the more..., the more... 为「越…越…」结构；standing 意为「地位」。译：越是相信成功基于努力，就越认为一直工作的人地位更高。",
+   "option": "正确项 B「我们抱有努力导向成功的信念」＝we believe that one has the opportunity for success based on hard work 的名词化改写，hold the belief≈believe、hard work leads to success≈opportunity for success based on hard work；A「地位归因于社会流动性」偷换概念，beliefs about social mobility 是影响因素本身；C、D 均无中生有。",
+   "keyword": "social mobility 社会流动性；status attribution 地位归因；skip leisure 放弃休闲；standing 地位＝status。",
+   "note": "In other words 提示后句是对前句 beliefs about social mobility 的白话解释——「越信努力越敬忙人」；B 项把 believe 从句压缩为 hard work leads to success，抓住 In other words 的解释关系即可免读其余选项细节。"
+  },
+  {
+   "question_id": 71,
+   "long_sentence": "定位句 This culture of busyness is making it hard for employees to find work-life balance. According to a recent study, one in five highly engaged employees are at risk of burnout；第一句为 make it hard for sb to do 结构；According to a recent study 为依据状语。译：忙碌文化使员工难以找到工作与生活的平衡；一项最新研究显示，五分之一的敬业员工面临过劳风险。",
+   "option": "正确项 D「给许多忙碌员工的身心健康带来损害」＝hard to find work-life balance 加 at risk of burnout 的合并概括，harm to well-being≈burnout 风险；A「让员工陷入无尽会议」张冠李戴，knee-deep in meetings 是 perception 的举例非研究结论；B「迫使两成员工装忙」偷换概念，one in five 说的是过劳风险；C「扭曲对满意生活的认知」无中生有。",
+   "keyword": "burnout 精疲力竭、职业倦怠；work-life balance 工作生活平衡；highly engaged 敬业投入的；at risk of 面临…的风险。",
+   "note": "题干 from a recent study 锁定 According to a recent study 之后的句子；one in five 是数字陷阱高发区——B 项把「五分之一有过劳风险」偷成「两成被迫装忙」，数字相同但谓语被换，核对动词即可排除。"
+  },
+  {
+   "question_id": 72,
+   "long_sentence": "定位句 Phrases like 'I have limited access to email'...sound like you're being held against your will from working as opposed to making the most of your time off；sound like 后接表语从句；be held against your will 意为「身不由己」；as opposed to 意为「而非」。译：诸如「我不太方便查邮件」这类话，听起来像你被迫不能工作，而不是在享受假期。",
+   "option": "正确项 C「一个人是迫于情况而停止工作」＝you're being held against your will from working 的同义改写，forced by circumstances≈held against your will；A「忙到没空及时查邮件」无中生有；B「反对流行职场文化」无中生有；D「只是在享受假期」正反混淆，原文 as opposed to 明确否定了「享受假期」的解读。",
+   "keyword": "hold sb against one's will 违背某人意愿地强行留住；as opposed to 而非；make the most of 充分利用；time off 假期、休假时间。",
+   "note": "sound like 之后是作者的真实解读，as opposed to 划清两个解读的界限——选「被迫」不选「享受」；D 项恰把 as opposed to 后的内容当答案，正反混淆；注意本题主语是 utterances（话语）传达的听感，不是说话人的真实意图。"
+  },
+  {
+   "question_id": 73,
+   "long_sentence": "定位句 That's why we recently launched the Out of Office Email Generator, a free tool you can use before your next long weekend or trip；a free tool 作同位语；(that) you can use... 为省略关系词的定语从句；That's why 承接上文说明动机。译：这就是我们最近推出「休假邮件生成器」的原因——一款可在下一个长假或旅行前使用的免费工具。",
+   "option": "正确项 B「确保雇主和员工都真正获得休息」＝Managers need to think twice about emailing their teams on the weekend 加 Leaders should take time off themselves and encourage employees to do the same 的概括，employers as well as employees≈managers/leaders and employees；A「减少查邮件时间」偷换概念，工具是代为声明不查邮件；C、D 与原文建议方向不符。",
+   "keyword": "launch 推出、发起；Out of Office 不在办公室、休假中；take time off 休假；think twice 三思、慎重考虑。",
+   "note": "目的题看工具发布后的三句：share loud and proud 不查邮件、managers think twice、leaders 带头休假——层层递进指向「让劳资双方都敢真休假」；B 项把 managers 与 leaders 概括成 employers，人物合并是正确项常见写法。"
+  },
+  {
+   "question_id": 74,
+   "long_sentence": "定位句 Further investigation allowed us to conclude that this gap is largely explained by the fact that women tended to book earlier than men, 1.8 days on average；主干是 Further investigation allowed us to conclude that...；largely explained by 意为「主要由…解释」。译：进一步调查得出结论：这一差距主要由女性平均早 1.8 天订票来解释。",
+   "option": "正确项 A「主要归因于女性比男性订票更早」＝this gap is largely explained by the fact that women tended to book earlier 的同义改写，attributed to≈explained by；B「选择更便宜的航班」无中生有，原文比较的是同职位同舱位；C「男性乐意付更多钱」无中生有；D「女性更在乎公司的钱」张冠李戴，那是 negative reciprocity 部分的内容且表述方向不同。",
+   "keyword": "attribute to 归因于＝be explained by；book earlier 更早订票；gap 差距；on average 平均。",
+   "note": "further investigation 对应题干 further investigation，答案句几乎原样给出 conclude that 之后内容；explained by 与 attributed to 是本题主替换链；首句 women tend to book earlier 已埋伏笔，第二句用数据 1.8 days 证实，前后呼应。"
+  },
+  {
+   "question_id": 75,
+   "long_sentence": "定位句 We wanted to determine what was causing these gender differences in booking business trips so we tested a variety of possible explanations；what 引导宾语从句作 determine 的宾语；so 表结果；a variety of 意为「各种各样的」。译：我们想弄清是什么导致了商务出行订票上的性别差异，于是检验了多种可能的解释。",
+   "option": "正确项 D「是什么造成了票价上的性别差距」＝what was causing these gender differences in booking business trips 的同义改写，account for≈cause、the gender gap≈these gender differences；A「常出差的男性为何订票晚」与 B「女性为何提前规划」都是被检验后否定的具体解释（such as 之后），张冠李戴；C「女性为何订到更便宜的票」无中生有。",
+   "keyword": "determine 查明、确定＝find out；account for 解释、导致；gender difference 性别差异；explanation 解释。",
+   "note": "such as 之后列举的是「待检验的候选解释」而非研究目标——A、B 恰拿候选解释设陷阱；研究目标在 determine 之后的宾语从句里，区分「目标」与「候选假设」是实验类文章的常考点；下一段 None of these explained away 印证候选解释被逐一排除。"
+  }
+ ]
+}
