@@ -1,0 +1,180 @@
+{
+ "chunk": 72,
+ "items": [
+  {
+   "question_id": 1776,
+   "long_sentence": "填空句 behavioral scientists...tested students' willingness to __4__ themselves to unpleasant stimuli in an effort to satisfy curiosity；expose oneself to 表「使自身暴露于」，in an effort to 表目的。译：行为科学家测试了学生是否愿意让自身暴露于不悦刺激以满足好奇心。",
+   "option": "正确项 D expose：expose oneself to unpleasant stimuli「让自己暴露于不快刺激」是心理实验的标准表述，与后文 electric shock 呼应；A alert 常接 to 表「使警觉」但不接 oneself 表承受，B tie...to「系于」，C treat...to「款待」感情色彩相反。",
+   "keyword": "expose oneself to 使自己暴露于；stimuli 刺激（stimulus 的复数）；in an effort to 力图；curiosity 好奇心。",
+   "note": "实验类完形的动词搭配：受试者「承受」刺激用 expose oneself to；treat oneself to 是「款待自己」，方向相反，可正反排除。"
+  },
+  {
+   "question_id": 1777,
+   "long_sentence": "填空句 For one __5__, each participant was shown a pile of pens that the researcher claimed were from a previous experiment；for one trial 表「在某一轮实验中」，that 定语从句修饰 pens。译：在一轮实验中，每位受试者看到一堆笔——研究者称它们来自此前的一项实验。",
+   "option": "正确项 C trial：trial 表「（实验的）一轮」，与 experiments、participant 的实验语境吻合；A message「口信」，B review「评论、复查」，D concept「概念」，都不能被 for one 修饰而指一轮实验。",
+   "keyword": "trial 一轮（实验）；participant 受试者；previous experiment 先前的实验；a pile of 一堆。",
+   "note": "实验流程名词辨析：trial/experiment/session 是实验文章三兄弟；for one ___ 后接具体操作描述，选「一轮实验」。"
+  },
+  {
+   "question_id": 1778,
+   "long_sentence": "填空句 Half of the pens would __6__ an electric shock when clicked；when clicked 为省略状语（when they were clicked），主语 pens 与 shock 之间是「释放」关系。译：其中一半的笔在被按下时会释放电击。",
+   "option": "正确项 D deliver：deliver an electric shock 表「发出/释放电击」，与 deliver a speech、deliver a blow 同族；A remove「移除」，B weaken「削弱」，C interrupt「打断」，均与「笔释放电流」的语义不符。",
+   "keyword": "deliver 发出、释放；electric shock 电击；click 按压（笔）；twist 出人意料的转折。",
+   "note": "搭配题：deliver 的宾语家族（speech/blow/shock）都表「发出」；「笔被按下→放电」的因果链里只有 deliver 通顺。"
+  },
+  {
+   "question_id": 1779,
+   "long_sentence": "填空句 __7__ left alone in the room, the students who did not know which ones would shock them clicked more pens；过去分词短语作状语，逻辑主语是 students，描述已发生的实验情节。译：当被单独留在房间里时，不知道哪些笔会电人的学生按了更多的笔、承受了更多电击。",
+   "option": "正确项 A When：When (they were) left alone 表时间，与主句 clicked more pens 的实际行为对应；B If 表条件、D Unless 表否定条件都会把事实变成假设，C Though 表让步但主从句间无转折。",
+   "keyword": "leave alone 独自留下；incur 承受、招致；subsequent 随后的；reproduce 复现。",
+   "note": "分词状语选连词：left alone 是实验中实际发生的情景，用时间连词 When；If/Unless 引入假设与「实验记录」的性质相悖。"
+  },
+  {
+   "question_id": 1780,
+   "long_sentence": "填空句 the students who did not know which ones would shock them clicked more pens and incurred more shocks than the students who knew what would __8__；what 引导宾语从句，would 后接动词原形。译：不知情的学生比「知道将会发生什么」的学生按了更多笔、遭了更多电击。",
+   "option": "正确项 B happen：knew what would happen「知道会发生什么」指知道哪些笔带电，与 did not know 形成知情对照；A continue「继续」，C disappear「消失」，D change「改变」，均与「预知结果」的对照义无关。",
+   "keyword": "happen 发生；incur shocks 遭受电击；be told 被告知；click more pens 按更多的笔。",
+   "note": "对比结构解题：did not know 与 knew what would ___ 前后呼应——「不知情 vs 知道结果」，happen 是唯一补全「结果」义的词。"
+  },
+  {
+   "question_id": 1781,
+   "long_sentence": "填空句 Subsequent experiments reproduced this effect with other stimuli, __9__ the sound of fingernails on a chalkboard and photographs of disgusting insects；空格后是两个并列名词短语，为「其他刺激」的具体实例。译：后续实验用其他刺激复现了该效应——比如指甲刮黑板的声音与令人作呕的昆虫照片。",
+   "option": "正确项 C such as：chalkboard 声音与昆虫照片正是 other stimuli 的两个实例，表列举；A rather than 表「而非」的取舍，B regardless of 表「不顾」，D owing to 表原因，均与举例逻辑不符。",
+   "keyword": "such as 例如；stimuli 刺激；fingernails on a chalkboard 指甲刮黑板；disgusting 令人作呕的。",
+   "note": "逻辑题看空格后成分：两个并列名词短语是 stimuli 的下位实例——举例用 such as；rather than 需要两个对等选项的取舍关系。"
+  },
+  {
+   "question_id": 1782,
+   "long_sentence": "填空句 The drive to __10__ is deeply rooted in humans, much the same as the basic drives for food or shelter；不定式作 drive 的定语，much the same as 引出类比。译：求知（发现未知）的动力深植于人类，与对食物或住所的基本需求如出一辙。",
+   "option": "正确项 A discover：全文主线是 need to know 与 satisfy curiosity，discover「发现未知」正是这种动力的内容；B forgive「原谅」、C forget「忘记」、D disagree「不同意」，与求知无关，类比也不成立。",
+   "keyword": "be deeply rooted in 深植于；drive 驱动力、本能；satisfy curiosity 满足好奇心；instinct 本能。",
+   "note": "主题词回扣：全文关键词 curiosity/need to know，空格处是它的动词化同义改写——discover；后文 good instinct 也在同一条语义链上。"
+  },
+  {
+   "question_id": 1783,
+   "long_sentence": "填空句 The drive to discover is deeply rooted in humans, much the same as the basic drives for __11__ or shelter；for 后接与 shelter（住所）并列的生存需求名词。译：求知动力深植于人类，与对食物或住所的基本需求一样。",
+   "option": "正确项 D food：food or shelter「食物与住所」是最经典的生理需求并列组合，与 deeply rooted 的先天论呼应；A pay「薪水」，B marriage「婚姻」，C schooling「教育」属社会性需求，与 shelter 的并列强度不如 food。",
+   "keyword": "shelter 住所、庇护；basic drives 基本驱力；survival needs 生存需求；much the same as 与…几乎一样。",
+   "note": "并列名词选「同类最佳」：shelter 的惯用并列是 food（生理需求层级）；pay/marriage/schooling 是社会层级的并列，与类比逻辑不匹配。"
+  },
+  {
+   "question_id": 1784,
+   "long_sentence": "填空句 Curiosity is often considered a good instinct – it can __12__ new scientific advances, for instance；破折号内为「好本能」的例证，can 后接动词原形，宾语 new scientific advances。译：好奇心常被视为好的本能——例如它能催生新的科学进展。",
+   "option": "正确项 A lead to：lead to 表「促成、带来」，好奇心→科学进展是因果正例，for instance 标记例证关系；B rest on「依赖于」，C learn from「向…学习」，D begin with「以…开始」，主语 it（好奇心）都无法与宾语构成这些关系。",
+   "keyword": "lead to 导致、促成；scientific advances 科学进展；instinct 本能；backfire 适得其反。",
+   "note": "but 前是正面例证（lead to advances），but 后 backfire 转折——先确认破折号内服务「好本能」的立论，再选正向因果动词。"
+  },
+  {
+   "question_id": 1785,
+   "long_sentence": "填空句 Curiosity is often considered a good instinct...but sometimes such __13__ can backfire；such 指代前文的 curiosity（求知行为），backfire 表「适得其反」。译：好奇心常被视为好本能……但有时这种探究也会适得其反。",
+   "option": "正确项 C inquiry：inquiry「探究、打探」是 curiosity 的名词化同义替换，承接 need to know 的主线；A withdrawal「退缩」，B persistence「坚持」，D diligence「勤奋」，均非 curiosity 的同义词。",
+   "keyword": "inquiry 探究＝curiosity；backfire 适得其反；insight 洞见；unpleasant 令人不快的。",
+   "note": "指代题：such ___ 回指全文主题 curiosity——四个候选里只有 inquiry 同义；后文 The insight that curiosity can... 再次复现主题词可复核。"
+  },
+  {
+   "question_id": 1786,
+   "long_sentence": "填空句 The insight that curiosity can drive you to do __14__ things is a profound one；that 引导同位语从句，说明 insight 的内容，呼应电击实验中「明知会痛仍要看」的行为。译：「好奇心会驱使你做自我伤害之事」这一洞见意义深刻。",
+   "option": "正确项 B self-destructive：读负面评论、按带电的笔都是「自找苦吃」的自毁行为，与 painful、unpleasant stimuli 呼应；A self-reliant「自力更生」，C self-evident「不言自明」，D self-deceptive「自欺」，均与「招致痛苦」无关。",
+   "keyword": "self-destructive 自我毁灭的；insight 洞见；profound 深刻的；backfire 适得其反。",
+   "note": "复合形容词靠第二词根区分：文章主线是「为好奇心承受痛苦」＝对自我的伤害，选 destructive；reliant/evident/deceptive 与痛苦无关。"
+  },
+  {
+   "question_id": 1787,
+   "long_sentence": "填空句 Unhealthy curiosity is possible to __15__, however；however 表转折，possible to 后接动词原形，本句开启「对策」段落。译：然而，不健康的好奇心是可以抵制的。",
+   "option": "正确项 B resist：however 转折后引出对策——resist「抵制」，与下文「被鼓励预想感受的受试者更少选择观看」呼应；A define「定义」，C replace「替代」，D trace「追溯」，都不是针对好奇心的应对动作。",
+   "keyword": "resist 抵制；however 然而（转折信号）；unhealthy 不健康的；endeavor 努力、尝试。",
+   "note": "however 是段落功能信号：前文说好奇心会 backfire，转折句必引出「怎么办」——resist；后文实验正是「抵制」手段的验证。"
+  },
+  {
+   "question_id": 1788,
+   "long_sentence": "填空句 participants who were encouraged to __16__ how they would feel after viewing an unpleasant picture were less likely to choose to see such an image；how 引导宾语从句，would feel 是对未来的预想。译：被鼓励预想「看完不悦图片后会有何感受」的受试者，更少选择观看此类图片。",
+   "option": "正确项 B predict：predict how they would feel「预测将来的感受」，与 would feel 的将来指向及下文 ahead of time 呼应；A overlook「忽视」，C design「设计」，D conceal「隐藏」，都不能接「未来感受」的宾语从句。",
+   "keyword": "predict 预测；be encouraged to 被鼓励做；would feel 将会感到；ahead of time 提前。",
+   "note": "时间线索定动词：how they would feel 是未来感受、下文又出现 ahead of time——predict；overlook/conceal 是当下动作，时间逻辑不符。"
+  },
+  {
+   "question_id": 1789,
+   "long_sentence": "填空句 participants...were less likely to __17__ to see such an image；less likely to 后接动词原形，choose to do 表「选择做某事」。译：（这些）受试者更少选择去观看此类图片。",
+   "option": "正确项 C choose：choose to see「选择观看」，与实验设计中「看与不看是自主决定」吻合；A remember「记得」，B promise「承诺」，D pretend「假装」，都不能表达观看与否的自主选择性。",
+   "keyword": "be likely to 有可能；choose to do 选择做；view 观看；unpleasant picture 令人不适的图片。",
+   "note": "实验的因变量是「看/不看」的行为选择：less likely to ___ to see——choose to do 是标准搭配；promise to see 语义怪异，可直接排除。"
+  },
+  {
+   "question_id": 1790,
+   "long_sentence": "填空句 imagining the __18__ of following through on one's curiosity ahead of time can help determine whether it is worth the endeavor；of 后接动名词短语，imagine 的对象是该行为的结果。译：提前设想践行好奇心会有什么后果，有助于判断是否值得为之努力。",
+   "option": "正确项 D outcome：following through on one's curiosity 的 outcome「后果」，与前文 how they would feel after viewing（看后的感受）呼应；A relief「解脱」与 unpleasant 相悖，B plan「计划」是设想的前提不是对象，C duty「职责」无中生有。",
+   "keyword": "outcome 结果、后果；follow through on 贯彻、践行；worth the endeavor 值得努力；determine 判定。",
+   "note": "上文 how they would feel 是「情绪后果」——the ___ of following through 填 outcome 形成同义衔接；relief 是强干扰，不悦图片看后并无解脱感。"
+  },
+  {
+   "question_id": 1791,
+   "long_sentence": "填空句 can help determine __19__ it is worth the endeavor；determine 后接宾语从句，从句 it is worth the endeavor 是对「值不值得」的判断。译：有助于判断这样做是否值得。",
+   "option": "正确项 B whether：whether「是否」与 worth the endeavor 的权衡语义吻合，呼应「预想后果后更少选择看」的实验结论；A why 问原因，C where 问地点，D how 问方式，从句内容不含这些疑问点。",
+   "keyword": "whether 是否；worth 值得；determine 判定、决定；endeavor 努力。",
+   "note": "宾语从句连接词看从句缺什么：it is worth the endeavor 主表完整、语义是「值不值」的权衡——whether；why/how 要求从句含相应疑问要素。"
+  },
+  {
+   "question_id": 1792,
+   "long_sentence": "填空句 Thinking about long-term __20__ is key to reducing the possible negative effects of curiosity；这是 Hsee 的结论句，long-term 作定语修饰空格名词，key to 中 to 为介词。译：想想长远后果，是减少好奇心可能带来的负面影响的关键。",
+   "option": "正确项 A consequences：long-term consequences「长远后果」与上文 predict how you would feel、imagine the outcome 一线贯穿；B investments「投资」，C strategies「策略」，D limitations「局限」，与「后果预想」的实验主题无关。",
+   "keyword": "consequences 后果；long-term 长期的；be key to 是…的关键；negative effects 负面影响。",
+   "note": "结论句收束全文证据链：predict how you would feel→imagine the outcome→think about long-term ___，三个环节同讲「后果预想」——consequences。"
+  },
+  {
+   "question_id": 1793,
+   "long_sentence": "定位句 When did it become accepted wisdom that students should be able to name the 13th president of the United States but be utterly overwhelmed by a broken bike chain?；not...but 的隐性对比：能背总统 vs 被车链难住。译：学生能说出美国第 13 任总统的名字，却被一根断掉的车链弄得束手无策——这何时成了共识？",
+   "option": "正确项 A practical ability：被车链难住＝缺乏动手能力，与上句 learning is not something of books and tests...but practical 呼应；B academic training 正反混淆，能背总统说明学术训练不缺；C pioneering spirit 张冠李戴，pioneering 形容的是 Koziatek 的项目；D mechanical memorization 是作者批评的现有模式。",
+   "keyword": "accepted wisdom 公认的看法；be overwhelmed by 被…难倒；practical 实用的；assemble a bicycle 组装自行车。",
+   "note": "例证题答案在例子前后的观点句：broken bike chain 服务「书本 vs 实用」的对比——缺的是 practical ability；四个干扰项全是原文词的错位嫁接，逐一核对对象。"
+  },
+  {
+   "question_id": 1794,
+   "long_sentence": "定位句 Schools in the family of vocational education have that stereotype...that it's for kids who can't make it academically；stereotype 即题干 prejudice 的同义替换，can't make it academically 表「学业上混不下去」。译：职业教育一系的学校背负着那种刻板印象——它是给「学业上不行」的孩子准备的。",
+   "option": "正确项 C are not academically successful：can't make it academically＝学业不成功；A stereotyped mind 偷换概念，stereotype 说的是「别人对职教的成见」而非学生的思维；B career motivation、D financially disadvantaged 无中生有。",
+   "keyword": "stereotype 刻板印象＝prejudice；vocational education 职业教育；can't make it 学业不济；insidious 阴险的、暗中为害的。",
+   "note": "词汇题考 stereotype 与 prejudice 的同义衔接；can't make it academically 是口语化表达「学不出来」——干扰项 A 拿 stereotype 的字面造「思维刻板」，属偷换概念。"
+  },
+  {
+   "question_id": 1795,
+   "long_sentence": "定位句 The job security that the US economy once offered to high school graduates has largely evaporated. More education is the new principle；once offered 与 has evaporated 构成今昔对比。译：美国经济曾经提供给高中毕业生的就业保障如今大多已蒸发，「更多教育」成了新的信条。",
+   "option": "正确项 B used to have more job opportunities：once offered job security＋has evaporated＝过去的机会更多；A financial concerns 偷换概念，原文谈的是就业保障而非财务焦虑；C reluctant to work 无中生有；D entitled to more educational privileges 正反混淆，如今被要求的是接受更多教育。",
+   "keyword": "evaporate 蒸发、消失；job security 工作保障；high school graduates 高中毕业生；rightfully so 理所应当。",
+   "note": "推断题从「曾经有＋现在没了」反推「过去更多」：once offered 对应 used to have；C/D 都是无据推断，第五段只讲就业保障的消失。"
+  },
+  {
+   "question_id": 1796,
+   "long_sentence": "定位句 But the headlong push into bachelor's degrees for all – and the subtle devaluing of anything less – misses an important point；headlong push「一窝蜂猛冲」，破折号插入语补充说明，misses an important point 表批评。译：但一头扎进「人人读本科」的浪潮——并暗中贬低本科学历以外的一切——错过了一个要点。",
+   "option": "正确项 D indicates the overvaluing of higher education：subtle devaluing of anything less＝本科以外被贬值，反推即高教被高估；A 张冠李戴，middle-skill jobs 是经济已有需求而非本科学位创造；B 与后文「靠职教填补蓝领缺口」矛盾；C 与 only 44 percent of workers are adequately trained 相悖。",
+   "keyword": "headlong push 一窝蜂的推进；devalue 贬低；bachelor's degree 本科学位；middle-skill jobs 中等技能岗位。",
+   "note": "破折号插入语是命题点：devaluing of anything less 反推 overvaluing of 高教；54% 中技能岗位与 44% 受训工人的数字对比佐证「唯学历论」的失焦。"
+  },
+  {
+   "question_id": 1797,
+   "long_sentence": "定位句 Koziatek's school is a wake-up call. When education becomes one-size-fits-all, it risks overlooking a nation's diversity of gifts；wake-up call「警钟」，作者借该校批评一刀切的教育。译：Koziatek 的学校是一记警钟——当教育变成一刀切，就有忽视国家天赋多样性的风险。",
+   "option": "正确项 A supportive：作者称其 pioneering、是 wake-up call、正在 fill that gap，支持立场贯穿全文；B tolerant「容忍」程度不足，C disappointed、D cautious 与褒扬语境相反。",
+   "keyword": "wake-up call 警钟、警示；one-size-fits-all 一刀切；diversity of gifts 天赋的多样性；fill the gap 填补缺口。",
+   "note": "态度题抓作者的定性名词：pioneering（开拓性）与 wake-up call（警钟）都是正面定性——有明确褒扬词即 supportive，tolerant 的中性度不够。"
+  },
+  {
+   "question_id": 1798,
+   "long_sentence": "定位句 But increasingly the story is about the plummeting prices of renewables...The cost of solar panels has dropped by 80 percent and the cost of wind turbines by close to one-third；下句给出发电成本数据。译：但这个故事的焦点日益变成可再生能源的骤降价格——八年间太阳能板成本降了 80%，风机成本降了近三分之一。",
+   "option": "正确项 C falling：dropped by 80 percent 与 by close to one-third 直接定义 plummeting「骤降」；A stabilizing「趋稳」、D rising「上升」与数据方向相反；B changing「变化」过泛，丢失了方向与幅度信息。",
+   "keyword": "plummet 骤降＝plunge；drop 下降；turbine 涡轮机；solar panel 太阳能板。",
+   "note": "词义题的释义证据几乎总在下一句：drop by 80% 就是 plummeting 的展开——方向（降）加幅度（大）；changing 因无方向性被排除。"
+  },
+  {
+   "question_id": 1799,
+   "long_sentence": "定位句 the United States is also seeing a remarkable shift. In March, for the first time, wind and solar power accounted for more than 10 percent of the power generated in the US；remarkable shift 与 for the first time 表进展显著。译：美国也在经历显著转变——三月，风能与太阳能首次占到全美发电量的 10% 以上。",
+   "option": "正确项 A is progressing notably：remarkable shift＝progressing notably 的同义改写；B as extensive as in Europe 的比较无据，原文只说 rest of the world takes the lead；C faces many challenges 无中生有；D impractical 正反混淆，实际占比已超 10%。",
+   "keyword": "remarkable shift 显著转变；account for 占（比例）；power generated 发电量；take the lead 领先。",
+   "note": "段落细节题锁定第三段美国部分：for the first time 加 10% 的数据就是「显著进展」的证据；干扰项惯用的「比较」「困难」话术在本段均无出处。"
+  },
+  {
+   "question_id": 1800,
+   "long_sentence": "定位句 ...in Iowa, where wind turbines dot the fields and provide 36 percent of the state's electricity generation；dot the fields「遍布田野」，36 percent 是发电占比。译：在艾奥瓦州，风电机组遍布田野，供应该州 36% 的发电量。",
+   "option": "正确项 A wind is a widely used energy source：dot the fields 加 36 percent 共同支撑「广泛使用」；B replaced fossil fuels 过度推断，原文只说 Trump 强调化石燃料，并未说被取代；C 张冠李戴，科技巨头是被清洁能源吸引来建数据中心，不是投资清洁能源；D shortage 与充足的 36% 相反。",
+   "keyword": "dot the field 遍布于田野；electricity generation 发电；data center 数据中心；unreliable 不可靠的。",
+   "note": "where 定语从句是本题全部证据：dot（点缀遍布）与 36% 支撑「广泛使用」；C 的陷阱在于 attracted by clean energy 不等于 invest in clean energy。"
+  }
+ ]
+}

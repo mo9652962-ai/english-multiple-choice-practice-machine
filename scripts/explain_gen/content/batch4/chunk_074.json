@@ -1,0 +1,180 @@
+{
+ "chunk": 74,
+ "items": [
+  {
+   "question_id": 1826,
+   "long_sentence": "填空句 For these __9__, I stopped weighing myself every day and switched to a bimonthly weighing schedule；for these reasons 承接前文列举的多条理由。译：出于这些原因，我不再每天称重，改成了两周一称的计划。",
+   "option": "正确项 C reasons：前两段列举了每日称重的弊端（有损目标、与训练冲突、不能准确反映进步），for these reasons 总括上文；A claims「主张」，B judgments「判断」，D methods「方法」，都不能总括前文论据。",
+   "keyword": "for these reasons 出于这些原因；switch to 改为；bimonthly 每两周一次的；schedule 计划。",
+   "note": "承接结构题：For these ___ 向前指代——前文正好三层理由，reasons 是论述文的标志性总结词；claims/judgments 与「列举弊端」的行文不符。"
+  },
+  {
+   "question_id": 1827,
+   "long_sentence": "填空句 I stopped weighing myself every day and switched to a bimonthly weighing schedule __10__；stop...and switch to... 表「停止旧法、改用新法」。译：我不再每天称重，转而采用了两周一称的计划。",
+   "option": "正确项 A instead：instead 表「取而代之」，与 stop...switch to 的替换逻辑吻合；B though 表让步，C again 表重复（与 stopped 矛盾），D indeed 表强调，均不合「替换」语义。",
+   "keyword": "instead 代替、反而；switch to 切换到；bimonthly 每两周一次的；weighing schedule 称重计划。",
+   "note": "句内逻辑题：stop A and switch to B 本身就是替换结构，句尾 instead 强化；again 与 stopped 直接矛盾，可秒排。"
+  },
+  {
+   "question_id": 1828,
+   "long_sentence": "填空句 Since weight loss is not my goal, it is less important for me to __11__ my weight each week；since 表原因，主句用 less important 表程度降低。译：既然减重不是我的目标，每周追踪体重就不那么重要了。",
+   "option": "正确项 A track：track my weight「追踪体重变化」，是称重的抽象功能表达；B overlook「忽视」与 less important 的「仍有必要」程度不符，C conceal「隐瞒」无中生有，D report「报告」不合个人健身语境。",
+   "keyword": "track 追踪；weight loss 减重；it is less important to do 做…不那么重要；weigh-in 称重。",
+   "note": "原因定动作：因为「不减重」，每周追踪才降级为 less important——track 是称重的动词化；B 把「不重要」误当成「忽视」。"
+  },
+  {
+   "question_id": 1829,
+   "long_sentence": "填空句 Weighing every other week allows me to observe and __12__ any significant weight changes；observe 与空格词并列共用宾语 changes。译：隔周称重让我能观察并解释体重的显著变化。",
+   "option": "正确项 D account for：account for「解释（变化的原因）」，观察加解释构成递进，与下文 That tells me whether...的决策呼应；A depend on「依赖」，B approve of「认可」，C hold onto「抓住」，都不能与 changes 搭出「理解变化」义。",
+   "keyword": "account for 解释；every other week 每隔一周；significant changes 显著变化；nutrition 营养。",
+   "note": "并列动词共宾语：observe and ___ changes——「看」之后自然是「解释」；下文据此决定是否调整计划，逻辑闭环。"
+  },
+  {
+   "question_id": 1830,
+   "long_sentence": "填空句 That tells me whether I need to __13__ my training program；whether 引导宾语从句，依据体重变化决定是否采取动作。译：这告诉我是否需要调整训练计划。",
+   "option": "正确项 B adjust：根据观察到的变化决定「是否调整」训练计划，与第四段 altered my training program 呼应；A share「分享」，C confirm「确认」（计划无需确认），D prepare「准备」不合语境。",
+   "keyword": "adjust 调整；training program 训练计划；alter 改变；whether 是否。",
+   "note": "前文伏笔：作者曾因盯数字而 altered program（改错了）——如今是理性地「按需调整」；adjust 与 alter 同义但感情色彩中性。"
+  },
+  {
+   "question_id": 1831,
+   "long_sentence": "填空句 I use my bimonthly weigh-in __14__ to get information about my nutrition as well；use A to do B 结构，空格词被 bimonthly weigh-in 修饰。译：我也利用双周称重的结果来获取营养方面的信息。",
+   "option": "正确项 A results：weigh-in 的「结果」（体重数据）可用于推断营养状况；B features「特征」，C rules「规则」，D tests「测试」——weigh-in 本身就是一次测试，不能再被称为 test。",
+   "keyword": "results 结果；nutrition 营养；caloric intake 卡路里摄入；intensity 强度。",
+   "note": "「数据→推断」关系：体重数字是一种 results；下文「训练强度不变却掉重→该多吃」正是用结果反推营养。"
+  },
+  {
+   "question_id": 1832,
+   "long_sentence": "填空句 If my training intensity remains the same, but I'm constantly __15__ and dropping weight, this is a sign that I need to increase my daily caloric intake；训练强度不变却持续掉重，构成反常信号。译：如果训练强度不变，但我总感到饿且体重下降，这就说明我需要增加每日卡路里摄入。",
+   "option": "正确项 C hungry：掉重且需增加卡路里摄入→身体能量不足→「总感到饿」；A bored「无聊」，B anxious「焦虑」，D sick「生病」，与 caloric intake 的直接因果都远弱于饥饿感。",
+   "keyword": "constantly 持续地；drop weight 掉体重；caloric intake 卡路里摄入；hungry 饥饿的。",
+   "note": "生理常识链：热量缺口→饿加掉秤→该多吃；hungry 与 increase caloric intake 构成最直接的因果呼应。"
+  },
+  {
+   "question_id": 1833,
+   "long_sentence": "填空句 this is a __16__ that I need to increase my daily caloric intake；that 引导同位语从句，说明该信号的内容。译：这就是我需要增加每日卡路里摄入的信号。",
+   "option": "正确项 D sign：a sign that...「…的信号」，「持续饥饿加掉重」这一现象正是身体的提示；A principle「原则」，B secret「秘密」，C belief「信念」，都是抽象名词，不能由生理现象充当。",
+   "keyword": "sign 信号、迹象；indicate 表明；increase 增加；intake 摄入量。",
+   "note": "「现象→提示」类搭配：a sign that 从句；身体的征兆属 sign 的语义场，principle/secret/belief 与「现象」属性不符。"
+  },
+  {
+   "question_id": 1834,
+   "long_sentence": "填空句 The __17__ to stop weighing myself every day has done wonders for my overall health, fitness and well-being；to 不定式作后置定语，动作主体是作者本人。译：不再每天称重这个决定，对我的整体健康、体能与幸福感产生了奇效。",
+   "option": "正确项 C decision：stop weighing 是作者「做出的决定」，the decision to do sth 搭配自然；A request「请求」（无人可请求），B necessity「必要性」（那是被动需要而非主动决定），D wish「愿望」（已实现的事不再是愿望）。",
+   "keyword": "decision 决定；do wonders 产生奇效；well-being 幸福感；overall 整体的。",
+   "note": "名词化结构还原：作者「决定」不再每天称重——the decision to do；request/wish 需要外部对象，necessity 混淆了「必要」与「选择」。"
+  },
+  {
+   "question_id": 1835,
+   "long_sentence": "填空句 I'm experiencing increased zeal for working out since I no longer carry the burden of a __18__ morning weigh-in；burden 表「负担」，解释热情为何增加。译：锻炼的热情更足了，因为我不再背负令人沮丧的晨间称重负担。",
+   "option": "正确项 A disappointing：被称为 burden 的称重必然带来「沮丧」——数字不动或反升让人泄气；B surprising「惊人的」感情色彩中性且构不成负担，C restricting「限制性的」与称重无关，D consuming「耗时的」非痛点（称重并不耗时）。",
+   "keyword": "burden 负担；zeal 热情；disappointing 令人沮丧的；work out 锻炼。",
+   "note": "burden 是定语的情感坐标：能成为「负担」的称重令人沮丧；surprising 是强干扰，但「数字意外」未必构成心理负担。"
+  },
+  {
+   "question_id": 1836,
+   "long_sentence": "填空句 I've also experienced greater success in achieving my specific fitness goals, __19__ I'm training according to those goals, not the numbers on a scale；主句「更有成效」与从句「按目标训练」为因果。译：我在实现具体健身目标上也更成功——因为我依照目标而非秤上数字来训练。",
+   "option": "正确项 D because：从句解释主句成功的「原因」，因果顺畅；A if 表条件（会把因果颠倒成假设），B unless 表否定条件，C until 表时间，均不符。",
+   "keyword": "because 因为；according to 依照；specific fitness goals 具体健身目标；not...but 对照。",
+   "note": "因果方向判断：先有「按目标训练」的行为，后有「更成功」的结果——because 引原因；if 会把结果说成条件，因果倒置。"
+  },
+  {
+   "question_id": 1837,
+   "long_sentence": "填空句 Rather than __20__ over the scale, turn your focus to how you look, feel, how your clothes fit and your overall energy level；rather than 后接动名词，与 turn your focus to 的建议形成对照。译：与其对体重秤念念不忘，不如把注意力转向你的外观、感受、衣服的合身度与整体精力。",
+   "option": "正确项 A obsessing：obsess over「对…过度纠结」，与全文「别被数字绑架」的主线吻合；B dominating 主被动混乱且需宾语，C puzzling「使困惑」用法不通，D triumphing over「战胜」语义正好相反。",
+   "keyword": "obsess over 对…痴迷、纠结；rather than 与其…不如…；turn your focus to 把注意力转向；clothes fit 衣服合身。",
+   "note": "建议句的对照面：turn your focus to「关注整体」的反面是「纠结数字」——obsess over 恰是全文主题的收束词。"
+  },
+  {
+   "question_id": 1838,
+   "long_sentence": "定位句 guilt, by prompting us to think more deeply about our goodness, can encourage humans to make up for errors and fix relationships...It is a kind of social glue；by prompting 表方式，social glue 是比喻总结。译：内疚促使我们更深入地反思自身的善，从而鼓励人类弥补过错、修复关系——它是某种社会黏合剂。",
+   "option": "正确项 C foster a child's moral development：反思 goodness、弥补错误、修复关系正是道德成长的路径，且首段 moral guilt...a good thing 直接呼应；A basic emotions 张冠李戴，guilt 恰恰不属于基本情绪；B intellectual ability 无中生有；D intensify positive feelings 偷换概念，内疚是负面情绪起积极作用。",
+   "keyword": "prompt 促使；make up for 弥补；social glue 社会黏合剂；moral guilt 道德内疚。",
+   "note": "观点题找 researchers regard...good thing 的根据句：think about our goodness→道德成长；A 的陷阱在首段 so-called basic emotions 的排除关系。"
+  },
+  {
+   "question_id": 1839,
+   "long_sentence": "定位句 In the popular imagination, of course, guilt still gets a bad rap. It is deeply uncomfortable – it's the emotional equivalent of wearing a jacket weighted with stones；bad rap 表「恶名」，比喻是「穿着缀满石头的夹克」。译：当然，在大众想象中，内疚依然名声不佳——它令人极度不适，情绪上如同穿着一件缀满石头的夹克。",
+   "option": "正确项 B burdensome：jacket weighted with stones＝沉重的负担感，burdensome 是该比喻的抽象化；A deceptive「有欺骗性」无中生有；C addictive「令人上瘾」无中生有；D inexcusable 偷换概念，原文说的是内疚感受沉重，不是行为不可原谅。",
+   "keyword": "get a bad rap 背负恶名；emotional equivalent 情绪上的对应物；burdensome 沉重的；outdated 过时的。",
+   "note": "观点题问「大众」看法：popular imagination 引出负面比喻——石头外套即沉重负担；Yet this understanding is outdated 提示这只是将被纠正的旧观念。"
+  },
+  {
+   "question_id": 1840,
+   "long_sentence": "定位句 this revival is part of a larger recognition that emotions aren't binary – feelings that may be advantageous in one context may be harmful in another；aren't binary 表「并非二元对立」，破折号后展开。译：这场复兴是更大认知的一部分：情绪不是非此即彼的——在一种情境中有利的感受，在另一种情境中可能有害。",
+   "option": "正确项 D an emotion can play opposing roles：advantageous in one context 与 harmful in another＝同一情绪扮演相反角色；A 正反混淆，emotions aren't binary 恰说明情绪随情境而变；B socially constructive 过度概括；C emotional stability 无中生有。",
+   "keyword": "binary 二元的；revival 复兴；advantageous 有利的；context 情境。",
+   "note": "同位语从句 recognition that... 是答案句：aren't binary 的展开就是「同情绪、不同角色」——后面 Jealousy/anger/happiness 的例子是论据。"
+  },
+  {
+   "question_id": 1841,
+   "long_sentence": "定位句 guilt and sympathy may represent different pathways to cooperation and sharing...High sympathy can substitute for low guilt；pathways 表「多条路径」，substitute for 表「替代」。译：内疚与同情可能代表通往合作与分享的不同路径——低同情的孩子可用更多内疚弥补，反之高同情可替代低内疚。",
+   "option": "正确项 B can result from either sympathy or guilt：different pathways＝either...or 的两条来路；A 张冠李戴，guilt 补偿的是 emotional deficiency，不是合作去纠正缺陷；C emotional satisfaction 无中生有；D impulsive acts 与 rein in their nastier impulses（遏制冲动）相反。",
+   "keyword": "pathway 路径；shortfall 不足；substitute for 替代；rein in 约束、遏制。",
+   "note": "双路径结构即 either...or：guilt→合作、sympathy→合作；D 的陷阱在 impulses 一词——原文是「遏制冲动」而非「冲动之果」。"
+  },
+  {
+   "question_id": 1842,
+   "long_sentence": "定位句 she rated each child's tendency to feel negative emotions after moral transgressions；moral transgressions 与末段 we caused harm and we feel regret 呼应。译：她评估了每个孩子在做出道德过错后感受负面情绪的倾向。",
+   "option": "正确项 D wrongdoings：moral transgressions＝道德上的过错行为，与末段 caused harm、feel regret 对应；A teachings「教导」，B discussions「讨论」，C restrictions「限制」，均与「过错后内疚」的语境无关。",
+   "keyword": "transgression 过错、越轨＝wrongdoing；negative emotions 负面情绪；regret 悔恨；cause harm 造成伤害。",
+   "note": "词义题用词根加语境双证据：transgress（越界）对应「越轨」；末句 caused harm and feel regret 把词义锁死在「过错」上。"
+  },
+  {
+   "question_id": 1843,
+   "long_sentence": "定位句 Even as we humans count on forests to soak up a good share of the carbon dioxide we produce, we are threatening their ability to do so. The climate change we are hastening could one day leave us with forests that emit more carbon than they absorb。译：当人类指望森林吸收我们产生的相当一部分二氧化碳时，我们却在威胁它的这一能力——我们加速的气候变化有朝一日可能让森林「排碳多于吸碳」。",
+   "option": "正确项 D forests may become a potential threat：emit more carbon than they absorb＝森林从碳汇变碳源，即潜在威胁；A 过度推断，「气候失控」未被提及；B misunderstand 无中生有；C extreme weather 未提及。",
+   "keyword": "soak up 吸收；count on 指望；hasten 加速；emit 排放。",
+   "note": "隐含推断题：one of the harder challenges 具体指「森林可能反向排碳」——首段末句的后果句是答案；别把 challenge 泛化成「气候失控」。"
+  },
+  {
+   "question_id": 1844,
+   "long_sentence": "定位句 Helping forests flourish as valuable carbon sinks long into the future may require reducing their capacity to absorb carbon now；may require doing 表「可能需要先做某事」，长期目标与当下手段构成悖论。译：要让森林作为宝贵的「碳汇」长期繁茂，可能需要先降低它们当下的吸碳能力。",
+   "option": "正确项 D lower their present carbon-absorbing capacity：reducing their capacity to absorb carbon now 的同义改写；A species diversity 无中生有；B accelerate growth 反向干扰，计划是疏伐幼树；C strike a balance among plants 偷换概念，原文的 balance 是「短期降碳换长期繁茂」的权衡。",
+   "keyword": "carbon sink 碳汇；flourish 繁茂；thin out 疏伐、间伐；temporarily 暂时地。",
+   "note": "悖论句是本题核心：长期繁茂←短期降低吸碳力——D 原词改写；C 的 balance 是「微妙权衡」不是「植物间的平衡」，一词之差。"
+  },
+  {
+   "question_id": 1845,
+   "long_sentence": "定位句 The state's proposed Forest Carbon Plan aims to double efforts to thin out young trees and clear brush in parts of the forest；aims to 后接计划动作，thin out 表「疏伐」。译：该州拟议的森林碳计划旨在加倍努力，对部分林区的幼树进行疏伐并清理灌木。",
+   "option": "正确项 B reduce the density of some of its forests：thin out＝降低密度（间伐）；A cultivate drought-resistant trees 无中生有；C kill insects 张冠李戴，是健康树木「自身抗虫」，计划目标不是杀虫；D restore after wildfires 无中生有，计划是防火（less burnable）而非火后恢复。",
+   "keyword": "thin out 疏伐、间伐；clear brush 清理灌木；density 密度；fend off 抵御。",
+   "note": "aims to 后的动词短语就是答案：thin out young trees＝降低密度；C 的陷阱在 Healthy trees are better able to fend off insects——那是结果不是目标。"
+  },
+  {
+   "question_id": 1846,
+   "long_sentence": "定位句 That's only a small share of the total acreage that could benefit, about half a million acres in all, so it will be vital to prioritize areas at greatest risk of fire or drought；so 引出关键策略。译：与可能受益的总面积约 50 万英亩相比，这只是小部分——因此关键是优先处理火灾或干旱风险最高的区域。",
+   "option": "正确项 A To handle the areas in serious danger first：prioritize areas at greatest risk＝优先处理高危区域；B 时间干扰，2020 与 2030 是目标数字而非关键所在；C 完善拍卖机制无中生有，拍卖款只是资金来源；D obtain financial support 张冠李戴，资金已有出处，缺的是优先级策略。",
+   "keyword": "prioritize 优先处理；acreage 英亩数；at greatest risk 处于最高风险；proceeds 收益。",
+   "note": "so it will be vital to... 是显性「关键」句：prioritize 即 first；B/D 拿数字与资金设障，题干问的是 essential（策略要点）。"
+  },
+  {
+   "question_id": 1847,
+   "long_sentence": "定位句 California's plan, which is expected to be finalized by the governor next year, should serve as a model；与首段 Thankfully, there is a way out of this trap 合看。译：加州计划预计将于明年由州长最终敲定，它应当成为一个范本。",
+   "option": "正确项 D cautious：作者肯定大方向（way out、a model）但处处留有分寸——may require、temporarily lowers、only a small share、vital to prioritize，措辞谨慎；C supportive 程度过高，作者未直接盛赞计划本身；A ambiguous 无矛盾态度可言；B tolerant 程度不足。",
+   "keyword": "cautious 谨慎的；a model 范本；finalize 最终敲定；thankfully 所幸。",
+   "note": "高级态度题：全文「支持方向加保留细节」——选有保留的正面态度 cautious 而非 supportive；may、temporarily、only 这些限定词是谨慎的证据。"
+  },
+  {
+   "question_id": 1848,
+   "long_sentence": "定位句 The complaints are unlikely to stop without an overhaul of immigration rules for farm workers；overhaul 表「彻底改革」。译：若不彻底改革针对农场工人的移民规则，美国农民的抱怨就不会停止。",
+   "option": "正确项 C Flaws in U.S. immigration rules for farm workers：需要 overhaul 即规则有「缺陷」；A discrimination against foreign workers 偷换概念，问题在签证制度而非歧视；B biased laws in favor of some businesses 无中生有；D decline of job opportunities 正反混淆，缺的是劳动力不是岗位。",
+   "keyword": "overhaul 彻底改革；complaint 抱怨；labor shortage 劳动力短缺；obstruct 阻挠。",
+   "note": "前两段的问题句就是 need an overhaul 的宾语——immigration rules for farm workers；D 与「用工荒」恰好说反。"
+  },
+  {
+   "question_id": 1849,
+   "long_sentence": "定位句 They're also aging. At the start of this century, about one-third of crop workers were over the age of 35. Now more than half are. And picking crops is hard on older bodies；数字对比呈现老龄化趋势。译：他们也在变老——本世纪初约三分之一的农作物工人超过 35 岁，如今已超过半数；而采摘庄稼对上了年纪的身体是种折磨。",
+   "option": "正确项 D the aging of immigrant farm workers：They're also aging 加上 35 岁以上占比从三分之一升到过半＝劳动力老龄化；A rising number of illegal immigrants 偷换概念，无证移民在减少（fewer enter）；B high mobility 反向干扰，如今更 settled 而非 migrating；C lack of experienced laborers 无中生有，老工人恰恰经验丰富。",
+   "keyword": "aging 老龄化；undocumented immigrants 无证移民；settled 定居的；predominantly 主要地。",
+   "note": "数字论证题：one-third 到 more than half 是 aging 的铁证；B 的陷阱在「今昔对比」方向——过去流动，现在定居。"
+  },
+  {
+   "question_id": 1850,
+   "long_sentence": "定位句 One oft-debated cure for this labor shortage remains as implausible as it's been all along: Native U.S. workers won't be returning to the farm；oft-debated cure 即题干 much-argued solution，冒号后是药方内容。译：一个长期被争论的劳动力短缺药方一如既往地不靠谱：美国本土工人不会回到农场。",
+   "option": "正确项 B To get native U.S. workers back to farming：oft-debated cure 的内容＝让本土工人回流农场；A attract younger laborers 无中生有；C robots 张冠李戴，机械化被作者否认（isn't the answer, either），且草莓等高价值作物恰恰难机械化；D financial support 无中生有。",
+   "keyword": "oft-debated 长期争论的；cure 药方＝solution；implausible 不合情理的；labor-intensive 劳动密集型的。",
+   "note": "同义转述题：much-argued solution＝oft-debated cure，冒号后的内容就是解法本体——native workers 回归；C 注意 not yet, at least 的否定限定。"
+  }
+ ]
+}

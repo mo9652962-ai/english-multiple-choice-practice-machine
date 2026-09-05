@@ -1,0 +1,180 @@
+{
+ "chunk": 80,
+ "items": [
+  {
+   "question_id": 1976,
+   "long_sentence": "定位句 Surveys show that younger generations are more concerned about climate change, and some of the success of plant-based meat can be chalked up to shoppers wanting to signal their desire to protect the environment：surveys show 引出研究结论；be chalked up to 意为「归因于」。译：调查显示，年轻一代更关注气候变化，植物基肉的部分成功可归因于购物者想表明自己保护环境的意愿。",
+   "option": "正确项 B：are likely to buy climate-friendly eggs——年轻一代 more concerned about climate change 加行业押注愿为 premium attributes 付费的消费者 will embrace sustainability，两条线索合成「年轻人可能购买气候友好蛋」；A「不愿改变饮食」正反混淆，Brunnquell 说他们 absolutely altering the food chain；C「对新食物好奇」无中生有，动力是环保而非猎奇；D「惊叹农业进步」无中生有。",
+   "keyword": "be concerned about 关心；chalk up to 归因于；signal 表明、彰显；embrace 接受、拥抱。",
+   "note": "推断题把两处线索相乘：年轻人关注气候（动机）＋愿为高端属性付费（行为先例）＝可能购买；A 项与 absolutely altering the food chain 直接相逆，正反一票否决。"
+  },
+  {
+   "question_id": 1977,
+   "long_sentence": "定位句 Regenerative products could be a hard sell, because the concept is tough to define quickly：主干 products could be a hard sell；because 原因从句；hard sell 意为「难以推销的东西」。译：再生产品可能不好卖，因为这个概念很难被快速界定——宾州州立大学布兰迪万分校农业经济副教授 Julie Stanton 如是说。",
+   "option": "正确项 A：market prospects——Stanton 断言 hard sell（难卖），Brunnquell 则说年轻消费者 will embrace sustainability、absolutely altering the food chain（前景看好），二人分歧在销路；B「标准定义」张冠李戴，tough to define 只是 Stanton 的理由且 Brunnquell 未回应；C「营养价值」张冠李戴，more protein 是 some producers 的说法；D「道德含义」无中生有。",
+   "keyword": "hard sell 难推销的东西；embrace 接受；market prospects 市场前景；attribute 属性。",
+   "note": "观点对比题配对两人立场：Stanton 的 hard sell 与 Brunnquell 的 embrace sustainability 在「好不好卖」上正面冲突；B/C/D 都是文中出现过的词（define、protein），但只属一方或第三方，配对题要找两人观点的直接交点。"
+  },
+  {
+   "question_id": 1978,
+   "long_sentence": "定位句 Even more surprising is that more than half of unretirees said they would be employed in their later years even if they had enough money to settle down：表语前置的倒装＋that 从句；unretirees 指计划退休后工作或退休后重返岗位者；even if 让步从句。译：更令人惊讶的是，超过半数的「退休再就业者」表示即便钱足以安顿生活，晚年也仍要工作。",
+   "option": "正确项 D：more Americans are willing to work in retirement——三分之一 40 岁以上者 have or plan to have a job in retirement 加半数 unretirees 即便钱够也工作，合成「更多人愿意退休后工作」；A「过半退休者身体适合工作」偷换概念，over half 说的是工作意愿非体能；B「老年劳动力与年轻人一样活跃」无中生有；C「三分之一美国人享受提前退休」正反混淆，是退休后继续工作。",
+   "keyword": "unretiree 退休再就业者（un- 逆转前缀）；settle down 安顿；even if 即便；prepare for a longer life 为更长的寿命做准备。",
+   "note": "调查题归纳两个数字：三分之一（计划退休后工作）＋过半（钱够也工作），共同指向「意愿」；C 项把 a job in retirement 偷换成 earlier retirement，方向词是细节题命门。"
+  },
+  {
+   "question_id": 1979,
+   "long_sentence": "定位句 Financial needs aren't the only culprit for the unretirement trend. Other reasons, according to the study, include personal fulfillment such as staying mentally fit, preventing boredom or avoiding depression：culprit 原义「罪魁祸首」，此处喻指动因；such as 举例列举。译：经济需求并非「退休再就业」趋势的唯一动因。研究显示，其他原因还包括个人充实感，如保持头脑敏锐、防止无聊或避免抑郁。",
+   "option": "正确项 A：retirement may cause problems for them——要 prevent boredom、avoid depression 的表述反向透露：退休可能带来无聊与抑郁等问题，故需以工作预防；B「退休后无聊可缓解」正反混淆，缓解之道恰是继续工作；C「退休者心理健康被忽视」无中生有；D「退休再就业利好经济」无中生有。",
+   "keyword": "culprit 罪魁祸首（喻指动因）；mentally fit 头脑敏锐；prevent/avoid 防止、避免（反向暗示）；make ends meet 收支相抵。",
+   "note": "推断题读「预防措施」反推「潜在问题」：要防无聊、避抑郁，说明退休暗藏此二险；72% 与 59% 的数字对比还显示精神动因超过经济动因，呼应 aren't the only culprit。"
+  },
+  {
+   "question_id": 1980,
+   "long_sentence": "定位句 One reason for the change in retirement patterns: Americans are living longer. The share of the population 65 and older was 16% in 2018, up 32% from the prior year：冒号后直接给出原因；the share of... 作主语；up...from... 表增幅。译：退休模式变化的一个原因：美国人活得更久了。2018 年 65 岁以上人口占比为 16%，较前一年上升 32%。",
+   "option": "正确项 C：longer life expectancy＝Americans are living longer，寿命延长即预期寿命提高；A「劳动力短缺」无中生有；B「人口增长」偷换概念，原文是老年人口占比变化、根因在寿命；D「生活成本上升」无中生有，后文 making ends meet 是个人理财层面。",
+   "keyword": "life expectancy 预期寿命＝living longer；the share of 占比；prior year 前一年；segment 群体、部分。",
+   "note": "原因题抓冒号提示：One reason for the change: Americans are living longer，冒号后即答案；B 项易混——老年人口占比上升是 living longer 的结果而非并列原因，因果链别倒置。"
+  },
+  {
+   "question_id": 1981,
+   "long_sentence": "定位句 Among the most popular ways they are doing this, the company said, is by reducing their overall expenses, securing life insurance or maximizing their contributions to retirement accounts：Among...is... 倒装结构；by 后接三个并列动名词表方式。译：该公司称，他们增加储蓄的最流行方式包括：削减总体开支、购买人寿保险或最大化向退休账户缴存。",
+   "option": "正确项 D：spending less＝reducing their overall expenses，少花钱即削减开支；A「加大股票投资」无中生有，retirement accounts 是退休账户缴存非炒股；B「打零工」、C「找高薪工作」无中生有，本段讲的是省钱三途径。",
+   "keyword": "reduce expenses 削减开支＝spend less；secure life insurance 购买人寿保险（secure 熟词僻义：获得）；maximize contributions 最大化缴存。",
+   "note": "by 三连动名词列举储蓄方式，D 与 reducing expenses 直接对应；A 项利用 retirement accounts 设计「投资」陷阱——向账户缴存是储蓄行为而非证券投资，区分 savings 与 investment。"
+  },
+  {
+   "question_id": 1982,
+   "long_sentence": "定位句 Unfortunately, many people who are opting to work in retirement are preparing to do so because they are worried about making ends meet in their later years：who 定语从句；because 原因从句；make ends meet 意为「收支相抵」。译：遗憾的是，许多选择退休后工作的人之所以这样准备，是因为担心晚年收支难以为继。",
+   "option": "正确项 A：unprepared——担心 making ends meet、建议 speak with a financial adviser to set long-term financial goals、Many people believe they can't retire，处处显出准备不足；B unafraid 正反混淆，worried 表担忧；C disappointed「失望」无中生有；D enthusiastic「热情」无中生有，Unfortunately 的遗憾语气与热情相反。",
+   "keyword": "make ends meet 收支相抵；financial adviser 理财顾问；preretiree 临近退休者；emotional decision 情感层面的决定。",
+   "note": "人物观点题抓 Unfortunately 的定性：担忧收支＋建议咨询顾问＝没准备好；段尾 Many people believe they can't retire 是「无准备感」的直接陈述，三处证据合指 unprepared。"
+  },
+  {
+   "question_id": 1983,
+   "long_sentence": "定位句 First coined in 2010 by user experience expert Harry Brignull, dark patterns is a catch-all term for practices that manipulate user interfaces to influence the decision-making ability of users：过去分词短语 coined... 作定语；catch-all term 涵盖性术语。译：「暗黑模式」由用户体验专家 Brignull 于 2010 年首创，是一个涵盖性术语，指通过操纵用户界面来影响用户决策能力的种种做法。",
+   "option": "正确项 C：undermine users' decision-making＝impair consumer choice 加 influence the decision-making ability of users，undermine≈impair；A「改善用户体验」正反混淆，seamless sign-up 只是陷阱入口；B「为利泄露用户信息」无中生有；D「提醒用户隐藏费用」偷换概念，hidden costs 是暗黑模式类型之一（坑人而非提醒）。",
+   "keyword": "dark patterns 暗黑模式；impair 损害＝undermine；manipulate 操纵；catch-all term 涵盖性术语。",
+   "note": "定义题两处互证：首段 impair consumer choice 与第二段 influence the decision-making ability 同指「削弱决策」；A 项的 seamless（注册顺畅）是 roach motel 陷阱的前半程，表里不一勿被迷惑。"
+  },
+  {
+   "question_id": 1984,
+   "long_sentence": "定位句 In a 2019 study of 53,000 product pages and 11,000 websites... about one in 10 employs these design practices. Though widely prevalent, the concept of dark patterns is still not well understood：one in 10 表比例；employ 意为「采用」。译：一项针对 5.3 万个产品页与 1.1 万个网站的 2019 年研究发现，约十分之一的页面采用了这类设计手法；暗黑模式虽广泛流行，概念仍未被充分理解。",
+   "option": "正确项 D：their strong presence＝about one in 10 employs these design practices 加 widely prevalent，十分之一的比例与「广泛流行」说明其存在感强；A「重大缺陷」、B「设计复杂」、C「严重危害」均无中生有，该研究只测量普及面。",
+   "keyword": "one in 10 十分之一；employ 采用（熟词僻义）；prevalent 流行的、普遍的；product page 产品页。",
+   "note": "例证题看数字的论证方向：53000 页、11000 站、十分之一采用——数字服务于「普遍存在」，紧随其后的 Though widely prevalent 是作者点题；研究引言题选「证明什么」不选「危害几何」。"
+  },
+  {
+   "question_id": 1985,
+   "long_sentence": "定位句 Businesses should engage in conversations with IT, compliance, risk, and legal teams to review their privacy policy：engage in conversations with 与…交谈；to review 表目的。译：企业应与 IT、合规、风险及法务团队展开对话以审查隐私政策，并把负责用户界面的设计者与程序员也纳入讨论。",
+   "option": "正确项 B：talk with relevant teams＝engage in conversations with IT, compliance, risk, and legal teams 加 include in the discussion...，多团队对话即「与相关部门沟通」；A「听取客户反馈」无中生有；C「求助于独立机构」无中生有，lawmakers/regulators 属下一段政府侧；D「依靠专业培训」无中生有。",
+   "keyword": "engage in conversation with 与…交谈；compliance 合规；review privacy policy 审查隐私政策；digital deception 数字欺骗。",
+   "note": "建议议题定位 Businesses should：谓语 engage in conversations with 后列举四类团队，include 补充更多角色，全是「内部沟通」；C 项的独立机构属政府监管段，主体错位。"
+  },
+  {
+   "question_id": 1986,
+   "long_sentence": "定位句 the California Attorney General announced the approval of additional regulations that ensure that consumers will not be confused or misled when seeking to exercise their data privacy rights：that 定语从句修饰 regulations；ensure that 宾语从句。译：加州总检察长宣布批准《加州消费者隐私法》（CCPA）下的补充条例，确保消费者在行使数据隐私权利时不会被混淆或误导。",
+   "option": "正确项 B：protect consumers from being tricked＝ensure that consumers will not be confused or misled 加 aim to ban dark patterns，confused/misled≈tricked；A「引导用户完成退出流程」无中生有，条例是禁止强迫多屏点击而非提供引导；C「授予公司数据隐私权」张冠李戴，权利主体是消费者；D「限制访问问题内容」无中生有。",
+   "keyword": "CCPA 加州消费者隐私法；misled 误导＝tricked；opt out 选择退出；exercise one's rights 行使权利。",
+   "note": "目的题抓 ensure that 与 aim to 双重提示：不被混淆误导＋禁止暗黑模式＝防上当；A 项把「禁止 forcing them to click through multiple screens」反写成「引导退出」，方向翻转。"
+  },
+  {
+   "question_id": 1987,
+   "long_sentence": "定位句 Dark patterns also can be addressed on a self-regulatory basis, but only if organizations hold themselves accountable, not just to legal requirements but also to industry best practices and standards：addressed 为被动「被应对」；only if 条件从句强调；not just...but also 并列。译：暗黑模式也可以在自律的基础上加以解决，但前提是组织不只对法律要求负责，还要对行业最佳实践与标准负责。",
+   "option": "正确项 B：businesses' self-discipline＝self-regulatory basis 加 hold themselves accountable 加 accountability from within the business community，三处同指企业自律；A「新法律要求」正反混淆，only if 强调的不只是 legal requirements；C「严格监管标准」张冠李戴，industry best practices and standards 是行业自律基准非外部监管；D「消费者安全意识」无中生有。",
+   "keyword": "self-regulatory 自律的；accountability 问责、担责；hold oneself accountable 让自己担责；best practice 最佳实践。",
+   "note": "尾段关键词链：accountability→self-regulatory→hold themselves accountable 全指向「自律」；A 项是转折埋伏——作者说「不仅是法律要求」，重心在 beyond legal 的自律，抓 but also 后的重点。"
+  },
+  {
+   "question_id": 1988,
+   "long_sentence": "定位句 Although ethics classes are common around the world, scientists are unsure if their lessons can actually change behavior; evidence either way is weak：although 让步；unsure if 宾语从句；分号后并列解释。译：尽管伦理课在世界各地都很普遍，科学家并不确定其内容能否真正改变行为；两方面的证据都薄弱，要么依赖人造的实验室测试，要么依赖有时不可靠的自我报告。",
+   "option": "正确项 A：hard to determine＝scientists are unsure if... 加 evidence either way is weak，不确定＋证据薄弱＝难以判定；B「解读狭隘」、C「难以忽视」、D「总结糟糕」均无中生有；首段 But 后的新研究正是要打破这种不确定。",
+   "keyword": "be unsure if 不确定是否；evidence either way 两方面的证据；contrived 人为的、造作的；self-report 自我报告。",
+   "note": "首段让步转折定调：classes common（普遍）对 effects unsure（存疑），But a new study...found 正是对 uncertain 的回应；A 的 determine 与 evidence/unsure 构成「判定」语义场。"
+  },
+  {
+   "question_id": 1989,
+   "long_sentence": "定位句 They chose this particular behavior for three reasons: students' attitudes on the topic are variable and unstable, behavior is easily measurable, and ethics literature largely agrees that eating less meat is good：for three reasons 总起。译：他们选择这一特定行为有三个理由：学生对该话题的态度多变且不稳定、该行为易于测量、伦理学文献基本一致认为少吃肉是好事。",
+   "option": "正确项 B：It is a behavior easy to measure＝behavior is easily measurable，原词复现；A「学生中普遍」偷换概念，第一理由是 attitudes variable 而非普遍性；C「对学生健康重要」无中生有，文献理由是环境与动物；D「伦理课热点话题」偷换概念，是文献共识非课堂热度。",
+   "keyword": "measurable 可测量的；variable and unstable 多变且不稳定；ethics literature 伦理学文献；meal-card purchase 餐卡消费记录。",
+   "note": "三理由逐项对位：态度多变、行为易测、文献共识；B 与第二理由逐字对应；近 14000 张餐卡消费小票正是 measurable 的操作化证据，数字即「易测」的注脚。"
+  },
+  {
+   "question_id": 1990,
+   "long_sentence": "定位句 he had previously found that ethics professors do not differ from other professors on a range of behaviors, including voting rates, blood donation and returning library books：found that 宾语从句；do not differ from 与…无差别；including 举例。译：他此前发现，伦理学教授在一系列行为上与其他教授并无差异，包括投票率、献血和归还图书馆图书。",
+   "option": "正确项 D：are not necessarily ethically better＝do not differ from other professors，道德行为无差异即「未必更有道德」；A「少批评学生」、B「不善社交」、C「对政治不敏感」均无中生有，例子（投票、献血、还书）皆属道德行为范畴。",
+   "keyword": "do not differ from 与…无差异；a range of 一系列；voting rate 投票率；blood donation 献血。",
+   "note": "发现题抓比较结果：ethics professors 与 other professors 无差别，推出「教伦理不等于行伦理」；D 的 not necessarily（未必）是稳妥的否定限定，与无差异结论完全匹配，也是预测其干预无效的伏笔。"
+  },
+  {
+   "question_id": 1991,
+   "long_sentence": "定位句 she wants the effect to be real but cannot rule out some unknown confounding variable. And if real, she notes, it might be reversible by another nudge: Easy come, easy go：rule out 排除；confounding variable 混淆变量；reversible 可逆的。译：她说希望这一效应是真的，但无法排除某个未知的混淆变量。而且即便为真，它也可能被另一种助推逆转——来得容易去得快。",
+   "option": "正确项 C：uncertain——wants it to be real but cannot rule out unknown confounding variable 加 might be reversible，双重保留语气表不确定；A permanent 正反混淆，reversible 恰说可逆转；B predictable 无中生有；D unrepeatable 无中生有，她质疑的是真实性而非可重复性。",
+   "keyword": "rule out 排除；confounding variable 混淆变量；reversible 可逆的；nudge 助推、轻推。",
+   "note": "人物态度题抓让步结构：wants...but cannot rule out——愿望与保留并存，uncertainty 是核心；Easy come, easy go 谚语呼应 reversible，A 项与谚语方向相反。"
+  },
+  {
+   "question_id": 1992,
+   "long_sentence": "定位句 Schwitzgebel suspects the greatest impact came from social influence—classmates or teaching assistants leading the discussions may have shared their own vegetarianism：suspects 后接宾语从句；may have shared 表对过去的推测。译：Schwitzgebel 猜测最大的影响来自社交影响——主持讨论的同学或助教可能分享了自己的素食实践。",
+   "option": "正确项 C：is a result of multiple factors——greatest impact: social influence 加 Second, the video may have had an emotional impact 加 Least rousing...rational argument，至少三个候选因素按序排列；A「带来心理益处」无中生有；B「可被统计分析」无中生有；D「自我发展的标志」无中生有。",
+   "keyword": "social influence 社交影响；vegetarianism 素食主义；emotional impact 情感冲击；rousing 激励人心的。",
+   "note": "归因题看序列词：greatest→Second→Least rousing，三个因素分层排列＝多因合成；结尾 Now the researchers are probing the specific effects 印证归因尚未定论，C 的 multiple factors 最稳。"
+  },
+  {
+   "question_id": 1993,
+   "long_sentence": "定位句 If you were walking 3 miles a day... reduce activity to half a mile every other day... Increase time, distance, and intensity gradually. This isn't something you can do overnight：祈使句给方案；三个并列宾语；overnight 表「一夜之间」。译：把运动量减到隔天半英里……逐渐增加时间、距离与强度。这不是一蹴而就的事。",
+   "option": "答案 C：Start Low, Go Slow——reduce activity to half a mile（低起点）加 Increase gradually（慢进）与标题两半一一对应；D「咨询医生」本段无医生；G「丰富日常项目」是 43 段主题；标题的低/慢对仗与段落减半＋渐进的数字证据高度契合。",
+   "keyword": "gradually 逐渐地＝go slow；intensity 强度；overnight 一夜之间；reap benefits 收获益处。",
+   "note": "小标题配数字证据：3 miles→half a mile、10-pound→5-pound 的减半即 Start Low，gradually 即 Go Slow；见段落同时含「减量」与「渐进」两动作时，对仗式标题优先。"
+  },
+  {
+   "question_id": 1994,
+   "long_sentence": "定位句 And stay alert to serious symptoms, such as chest pain or pressure, severe shortness of breath or dizziness, or faintness, and seek medical attention immediately：stay alert to 警惕；such as 举例症状；seek medical attention 就医。译：并警惕严重症状——如胸痛或胸闷、严重气短、头晕或晕厥——并立即就医。",
+   "option": "答案 E：Listen to Your Body——breathing too hard to talk、If you feel good、Feeling wiped out、chest pain or pressure 全是身体感受信号，按感受调整运动＝听身体的话；A「养成习惯」是 43 段 consistency 主题；E 的 listen 与段落感受类词汇（feel、breathing）直接对应。",
+   "keyword": "symptom 症状；shortness of breath 气短；dizziness 头晕；wiped out 精疲力竭的。",
+   "note": "本段所有分句都由身体感受驱动调整：喘到说不了整句→减速、感觉好→加量、疲惫→下次轻松些；E 的 listen 对应感受词群，D「与医生交谈」只在就医一句出现、非全段主题。"
+  },
+  {
+   "question_id": 1995,
+   "long_sentence": "定位句 Consistency is the key to getting stronger and building endurance and stamina. Ten minutes of activity per day is a good start：consistency 意为「坚持如一」；the key to 中 to 为介词、后接动名词；三个动名词并列。译：坚持如一是变得更强壮、打造耐力与持久力的关键。",
+   "option": "答案 A：Make It a Habit——Consistency is the key 加 Ten minutes of activity per day（每天十分钟）即「养成习惯」，habit≈consistency/daily；C「低起点慢进度」是 41 段；G「丰富日常项目」只对应末句 walking is also a great first step 的过渡义，本段核心是每天坚持。",
+   "keyword": "consistency 坚持不懈＝habit；endurance and stamina 耐力与持久力；accessible 易上手的、可及的；workout 锻炼。",
+   "note": "consistency 与 per day 是习惯的两个标志：频率＋每日性；A 与 G 的区分看段落重心——本段反复强调每天十分钟、推荐最易坚持的走路，指向习惯而非项目多样化。"
+  },
+  {
+   "question_id": 1996,
+   "long_sentence": "定位句 With or without a club or racket, swing like you're hitting the ball. Paddle like you're in a kayak or canoe. Mimic your favorite swimming strokes：祈使句排比；like 引导方式比较；mimic 模仿。译：无论有没有球杆球拍，都挥拍如击球；像在皮划艇上那样划桨；模仿你最爱的泳姿。",
+   "option": "答案 F：Go Through the Motions——practice the moves 加 swing、paddle、mimic your favorite swimming strokes 一连串动作演示，motions≈moves；效果句 The action will...prime your muscles（激活肌肉）佐证演练价值；G「丰富日常项目」无本段证据。",
+   "keyword": "go through the motions 演练动作（习语字面化）；mimic 模仿＝imitate；prime 使……预备好；stroke 泳姿。",
+   "note": "习语标题要防歧义：go through the motions 惯用义是「敷衍了事」，此处取字面义「把动作过一遍」——swing/paddle/mimic 三个祈使排比是字面义的铁证；F 与段落动作词汇一一映射。"
+  },
+  {
+   "question_id": 1997,
+   "long_sentence": "定位句 Exercising with others can keep you accountable and make it more fun, so you're more likely to do it again：with others 伴随状语；keep + 宾语 + 形容词结构；so 引出结果从句。译：与他人一起锻炼能让你更有坚持的动力、也更有趣，因此你更可能再次动起来。",
+   "option": "答案 B：Don't Go It Alone——Exercising with others、take a walk with others、Chat on the phone with a friend、FaceTime with a relative、join a livestream，线上线下一律「结伴」，正是 go it alone（独自行动）的反面；G「丰富日常项目」与 D「咨询医生」均无对应；标题 Don't 与段落 can keep you accountable 的因果呼应。",
+   "keyword": "go it alone 单打独斗；keep sb accountable 让某人保持责任感；socially distant 保持社交距离；livestream 直播。",
+   "note": "本段空间从线下（golf/tennis/walk）延展到线上（phone/FaceTime/livestream），共同点全是「有人陪」；go it alone 是习语「独自行动」，标题否定式与段落结伴清单互为表里。"
+  },
+  {
+   "question_id": 1998,
+   "long_sentence": "定位句 you're the CEO of a small business, and though you're making a nice profit, you need to find a way to take it to the next level：though 让步从句；make a nice profit 获得可观利润；take...to the next level 使……更上层楼。译：你是小企业的 CEO，尽管利润可观，仍需找到方法让它更上一层楼。",
+   "option": "正确项 B：profit「利润」——企业经营的成果指标，make a profit 为标准搭配，与后文 revenue increased by 92 percent 的业绩主题呼应；A make a purchase「购物」、C make a connection「建立联系」、D make a bet「打赌」均与 CEO 追求增长的语境不符。",
+   "keyword": "make a profit 获利＝be profitable；take...to the next level 使…更上层楼；revenue 营收。",
+   "note": "business 语境定搭配：CEO＋小企业＋寻求增长，财务词 profit 最贴；四个 make a + 名词搭配都成立，靠语义场景（经营业绩）筛选，尾段 revenue 92% 是呼应证据。"
+  },
+  {
+   "question_id": 1999,
+   "long_sentence": "定位句 What you need to do is prioritize growth by establishing a growth team：what 从句作主语；is 后接省略 to 的不定式；by establishing 为方式状语。译：你需要做的是通过组建增长团队来优先推动增长。",
+   "option": "正确项 C：prioritize「优先处理」——小企业要 next level，办法是把 growth 置于优先并组建专门团队，与全文 growth team 主旨一致；A define「定义增长」、B predict「预测增长」、D appreciate「欣赏增长」均无语境支撑，后文 harnesses the power of collaboration 是行动导向。",
+   "keyword": "prioritize 优先处理＝give priority to；establish a team 组建团队；harness 利用、驾驭。",
+   "note": "what you need to do is (to) do 结构中空格填原形动词；企业从 making profit 到 next level 的跨越靠「把增长放首位」，prioritize 与首段 profit 形成问题—方案衔接。"
+  },
+  {
+   "question_id": 2000,
+   "long_sentence": "定位句 A growth team is made up of members from different departments within your company, and it harnesses the power of collaboration to focus exclusively on finding ways to grow：be made up of 由…组成；harness 利用；focus exclusively on 专注于。译：增长团队由公司各部门成员组成，它利用协作的力量，专注于寻找增长之道。",
+   "option": "正确项 A：exclusively「专门地、 exclusively」——focus exclusively on 为常见搭配「专一聚焦」，与跨部门协作集众力做一件事的逻辑吻合；B temporarily「暂时地」与团队的持续性职能矛盾；C potentially「潜在地」修饰 focus 语义不通；D initially「起初」无时间线索。",
+   "keyword": "exclusively 专门地＝solely；focus on 聚焦于；harness the power of 利用…的力量；collaboration 协作。",
+   "note": "副词题看团队职能定位：跨部门组建正是为了「一门心思」找增长，exclusively 强化专注；temporarily/initially 是时间词但无时间线索，potentially 与 focus 的确定性相斥。"
+  }
+ ]
+}

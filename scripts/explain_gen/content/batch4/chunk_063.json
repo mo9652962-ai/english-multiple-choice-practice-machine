@@ -1,0 +1,180 @@
+{
+ "chunk": 63,
+ "items": [
+  {
+   "question_id": 1551,
+   "long_sentence": "定位句 Business Week predicted in 1975 that electronic means of payment would soon revolutionize the very concept of money itself, only to ____ itself several years later；that 引导宾语从句，only to do 表「结果却…」的意外转折，反身代词 itself 指向刊物自身。译：《商业周刊》1975 年曾预言电子支付手段将很快彻底变革货币本身的概念，结果几年后却又推翻了自己的说法。",
+   "option": "正确答案 reverse：reverse itself 表「自我逆转、推翻自己此前的立场」，与预言落空的语境吻合；resist 表抵制，主语通常是人，不能说刊物抵制自己；resume 表中断后恢复继续，预言并未中断；reward oneself 表犒劳自己，与预言语境无关。",
+   "keyword": "reverse 逆转、推翻＝retract；only to do 结果却、不料；resume 恢复、重新开始；reward 奖励；prediction 预言。",
+   "note": "only to itself 的反身代词提示动作作用于自身——能被「自我逆转」的只有立场与说法；第 2 空已交代预言 have not come to fruition，此处顺势写刊物自我否定；resume 与 reverse 形近，靠宾语 itself 的语义方向区分。"
+  },
+  {
+   "question_id": 1552,
+   "long_sentence": "定位句 Why has the movement to a cashless society been so ____ in coming?；主语是 the movement，in coming 表「在到来这件事上」，so 修饰形容词表程度。译：为什么向无现金社会的迈进迟迟不来？",
+   "option": "正确答案 slow：上文 not around the corner（不会马上到来）、二十年预言未兑现，汇聚成「到来缓慢」；silent 表无声，与到来快慢无关；sudden 表突然，与全部证据正反混淆；steady 表平稳，in coming 需要速度义而非平稳义。",
+   "keyword": "movement 运动、进程；so slow in coming 迟迟不来；around the corner 近在眼前；fruition 实现、成果。",
+   "note": "本句是首段总结疑问句，答案须能贯穿前文证据：不会马上到来、二十年未实现、预言落空，只有「慢」能同时覆盖；sudden 与证据完全相反可先排除；steady 看似合理，但原文强调的是「迟迟未至」而非「稳步推进」。"
+  },
+  {
+   "question_id": 1553,
+   "long_sentence": "定位句 Although electronic means of payment may be more efficient than a payments system based on paper, several factors work ____ the disappearance of the paper system；Although 引导让步状语从句，based on paper 过去分词作后置定语。译：尽管电子支付手段可能比纸质支付体系更高效，但若干因素阻碍着纸质体系的消失。",
+   "option": "正确答案 against：work against 表「阻碍、不利于」，引出下文 First/Second/Third/Fourth 一连串障碍因素；work for 表有利于，与 Although 让步后的转折方向相反；work with 表与…协作、work on 表从事，均不能表达「阻碍消失」的方向义。",
+   "keyword": "work against 阻碍、不利于；work for 有利于；disappearance 消失；factor 因素；efficient 高效的。",
+   "note": "方向词题先看段落骨架：Although 承认电子支付更高效，随后 First 到 Fourth 全是障碍清单，factors 的作用方向必是「阻止纸媒消失」；work against 与 work for 是一对反义短语，让步转折句中的语义反转信号是 Although。"
+  },
+  {
+   "question_id": 1554,
+   "long_sentence": "定位句 it is very ____ to set up the computer, card reader, and telecommunications networks necessary to make electronic money the dominant form of payment；it 为形式主语，真正主语是不定式 to set up...；necessary to... 形容词短语作后置定语。译：要搭建使电子货币成为主导支付形式所需的计算机、读卡器和电信网络，成本非常高昂。",
+   "option": "正确答案 expensive：搭建整套计算机、读卡器与电信网络的首要障碍就是造价高昂，与 First 因素的语境吻合；imaginative 表富于想象力的、sensitive 表敏感的、productive 表多产的，都不能描述建立网络这件事的代价属性。",
+   "keyword": "set up 建立、搭建；card reader 读卡器；telecommunications networks 电信网络；expensive 昂贵的＝costly。",
+   "note": "First 提示本句是第一个障碍；set up 的宾语是一整套硬件网络，常识属性即「费钱」；四个选项中只有 expensive 能与搭建网络构成成本语义场，其余三项同为 -sive 后缀的形近词干扰，完形常以词形相近设障。"
+  },
+  {
+   "question_id": 1555,
+   "long_sentence": "定位句同第 7 空：to make electronic money the ____ form of payment；make + 宾语 + 名词结构表「使…成为…」；定冠词 the 特指某一种形态。译：使电子货币成为占主导地位的支付形式。",
+   "option": "正确答案 dominant：只有让电子货币成为主导支付形式，才值得搭建整套昂贵网络，dominant form 是经济学高频搭配；similar 表相似的，the similar form 指代对象不明；original 表最初的，电子货币并非原始形态；temporary 表临时的，与花巨资建基础设施的目的正反混淆。",
+   "keyword": "dominant 占主导地位的；form of payment 支付形式；dominate 主导、支配；mainstream 主流的（近义）。",
+   "note": "the ____ form of payment 的定冠词要求填入可承担「主要形态」义的形容词；dominant 与 payment、market 等经济语境高频共现；temporary 与「投入巨资建网络」目的相悖，属于方向性错误，最先排除。"
+  },
+  {
+   "question_id": 1556,
+   "long_sentence": "定位句 paper checks have the advantage that they ____ receipts；that 引导同位语从句解释 advantage 的内容；they 指代 paper checks。译：纸质支票有一项优势：它们能提供收据。",
+   "option": "正确答案 provide：支票对消费者的好处在于提供交易凭证，provide receipts 是常规动宾搭配；collect 表收集，收集收据的主语应是消费者而非支票，逻辑主语错位；copy 表复制，复制收据语义倒置；print 表打印，印出来的是支票本身而非收据。",
+   "keyword": "receipt 收据、凭证；advantage 优势；provide 提供＝offer；proof 凭证、证明（近义）。",
+   "note": "advantage 是信号词——本句在说支票的好处，即「留凭证」；下一空 many consumers are unwilling to give up 的正是这份收据，9、10 两空构成因果链；注意 they 指代支票，动作发出者不能错位到消费者身上。"
+  },
+  {
+   "question_id": 1557,
+   "long_sentence": "定位句 something that many consumers are unwilling to ____；that 引导定语从句修饰 something，先行词在从句中作宾语；be unwilling to do 表「不愿意做某事」。译：许多消费者不愿意放弃的东西。",
+   "option": "正确答案 give up：消费者不愿「放弃」的正是上句支票提供的收据凭证，give up 表舍弃，与 unwilling 搭配自然；take over 表接管、bring back 表带回、pass down 表世代相传，都无法与「收据凭证」构成合理动宾关系。",
+   "keyword": "be unwilling to do 不愿意做；give up 放弃＝forgo；take over 接管；pass down 世代相传。",
+   "note": "unwilling to 的宾语 something 回指 receipts，消费心理常识是「不愿放弃凭证」；本空与第 9 空联动理解：支票提供收据→消费者不愿放弃→纸质体系难消失；bring back 是上套题 hand out 辨析中出现过的近形短语，注意区分。"
+  },
+  {
+   "question_id": 1558,
+   "long_sentence": "定位句 it takes several days ____ a check is cashed and funds are withdrawn from the issuer's account；it takes + 时间 + 从句表「耗时多久才…」；a check is cashed 与 funds are withdrawn 为并列被动结构。译：要过好几天，支票才被兑付，资金才从出票人账户中划出。",
+   "option": "正确答案 before：it takes several days before... 是固定句式，表「过了几天才…」，与 float（资金在途时间差）的定义吻合；after 把先后颠倒，耗时不可能发生在兑付之后；since 表自从，需与完成时搭配；when 表当…时，失去了「延迟数日」的时间差义。",
+   "keyword": "it takes...before 过了…才；cash a check 兑现支票；float 浮存期、资金在途时间；issuer 出票人。",
+   "note": "破折号后的内容是对 float 的解释，浮存的本质是时间差；it takes + 时间 + before 为固定句式；after 是最强干扰，只要抓住「耗时发生在兑付之前」的时序方向即可排除；此句理解到位，13 空的因果词自然水到渠成。"
+  },
+  {
+   "question_id": 1559,
+   "long_sentence": "定位句 funds are ____ from the issuer's account；被动语态，funds 为主语，from 引出处所。译：资金被从出票人的账户中划出。",
+   "option": "正确答案 withdrawn：资金被「提取、划出」出票人账户，withdraw 是银行场景标配动词；kept 表保留，与介词 from 矛盾（留在账户应是 kept in）；borrowed 表借入，出票人账户资金并非被借出；released 表释放，多用于囚犯或发布消息，不用于账户划款。",
+   "keyword": "withdraw 提取、取款；withdrawal 取款（名词）；issuer's account 出票人账户；funds 资金；deposit 存入（反义）。",
+   "note": "from the issuer's account 的方向性决定动词：资金「离开」账户；withdraw 对应取款机的取款功能，是银行语境高频词；kept 的方向（留在）与 from 冲突，属介词搭配陷阱，先看介词再选动词可提速。"
+  },
+  {
+   "question_id": 1560,
+   "long_sentence": "定位句 ____ electronic payments are immediate, they eliminate the float for the consumer；主从句完整，需填逻辑连接词；immediate 与 eliminate the float 构成因果。译：由于电子支付是即时的，它们消除了消费者的浮存期。",
+   "option": "正确答案 Because：前句刚解释 float 来自数日延迟，本句「即时→消除浮存」是直接因果；Unless 表条件（除非），原文陈述的是事实而非条件；Until 表时间；Though 表让步，但即时与消除浮存之间并无对立关系。",
+   "keyword": "immediate 即时的；eliminate 消除＝remove；float 浮存期；because 因为；consequence 因果关系。",
+   "note": "逻辑词题先概括前后句关系：immediate（无延迟）与 eliminate the float（去掉延迟）互为因果；Though 的干扰在于句子前后并非转折对立；上一句 it takes several days before... 铺垫了延迟概念，本句用 Because 收束对比。"
+  },
+  {
+   "question_id": 1561,
+   "long_sentence": "定位句 electronic means of payment may ____ security and privacy concerns；may 后接动词原形，security and privacy 并列修饰 concerns。译：电子支付手段可能引发安全与隐私方面的担忧。",
+   "option": "正确答案 raise：raise concerns 表「引发担忧」，是固定搭配；下文黑客报道与欺诈案例正是这些担忧的展开；hide 表隐藏担忧，与段落大谈担忧的方向相反；express 表表达，主语应是人而非支付手段；ease 表缓和，与后文担忧不断加深的走向正反混淆。",
+   "keyword": "raise concerns 引发担忧（固定搭配）；security 安全；privacy 隐私；ease 缓和＝alleviate。",
+   "note": "concerns 与 raise 是黄金搭配，先记搭配再验证语境；本段（Fourth）的展开方向是担忧层层加深：黑客、篡改、欺诈、数据泄漏，raise 的「引发并放大」义吻合；ease 若成立，后文的新学科与防范措施就失去存在理由。"
+  },
+  {
+   "question_id": 1562,
+   "long_sentence": "定位句 an unauthorized hacker has been able to access a computer database and to alter information ____ there；并列不定式 to access 与 to alter；there 回指 a computer database。译：未经授权的黑客得以进入计算机数据库，篡改存储在其中的信息。",
+   "option": "正确答案 stored：数据库中信息的自然状态是被「存储」，alter the information stored there 语义通顺；analyzed 表被分析，分析不是库内信息的常态属性；shared 表被共享，共享是网络传输行为而非库内状态；displayed 表被展示，展示是前台行为，黑客篡改的是后台数据。",
+   "keyword": "store 存储；unauthorized 未经授权的；hacker 黑客；database 数据库；alter 篡改、改动。",
+   "note": "there 回指 computer database，库中信息的默认状态即 stored；access（进入）→alter（篡改）→stored information（存着的数据）构成完整攻击链；analyzed 与 displayed 是状态错位干扰，抓住「数据库＝存储」这一常识即可。"
+  },
+  {
+   "question_id": 1563,
+   "long_sentence": "定位句 The fact that this is not an ____ occurrence means that dishonest persons might be able to access bank accounts...；that 引导同位语从句说明 fact 的内容；not an ____ occurrence 为双重否定框架。译：这类事件并非罕见，这意味着不诚之徒可能得以进入电子支付系统中的银行账户。",
+   "option": "正确答案 uncommon：not an uncommon occurrence 即「屡见不鲜的事」，双重否定表肯定频率；unsafe 表不安全，事件本身无安全属性可言；unnatural 表不自然的、unclear 表不清楚的，都与频率无关；只有频率形容词能进入 not an ____ occurrence 框架。",
+   "keyword": "occurrence 事件、发生的事；not uncommon 屡见不鲜（双重否定）；dishonest 不诚实的；frequent 频繁的（近义）。",
+   "note": "not an ____ occurrence 的双重否定是考点：not 加否定形容词得肯定义，not uncommon 即「常发生」；后文 might be able to（可能得手）承接「常见」的后果；先判词性方向（频率），再在四个形容词中找唯一频率词。"
+  },
+  {
+   "question_id": 1564,
+   "long_sentence": "定位句 dishonest persons might be able to access bank accounts in electronic payments systems and ____ from someone else's accounts；and 连接两个并列动词短语，from someone else's accounts 为来源状语。译：不诚之徒可能得以进入电子支付系统中的银行账户，并从他人的账户中窃取资金。",
+   "option": "正确答案 steal：steal from 表「从…行窃」，与 dishonest persons、bank accounts 的违法语境严丝合缝；benefit from 表获益，语法可通但语义中性，缺少违法义；choose 表选择，from 表挑选来源，与账户语境不符；return 表归还，与窃取行为正反混淆。",
+   "keyword": "steal from 从…偷窃；dishonest 不诚实的；access 非法进入；fraud 欺诈；account 账户。",
+   "note": "主语 dishonest persons 与前文 hacker、fraud 同属违法语义场，动作必是非法获取；steal from 为固定搭配，不及物用法后接来源；benefit from 虽语法正确但「获益」无违法色彩，强度不足，是本组最强的语义干扰。"
+  },
+  {
+   "question_id": 1565,
+   "long_sentence": "定位句 The ____ of this type of fraud is no easy task, and a new field of computer science is developing to ____ security issues；The ____ of fraud 为名词化结构作主语；no easy task 表「绝非易事」。译：防止这类欺诈绝非易事，一门新的计算机科学分支正在发展以应对安全问题。",
+   "option": "正确答案 prevention：与后文「新学科应对安全问题」呼应，空格词应是治理行为——防止欺诈；consideration 表考虑，与 no easy task 的难度语义不搭；manipulation 表操纵，它是欺诈行为本身而非防控行动；justification 表辩护，为欺诈辩护与对抗欺诈的方向相反。",
+   "keyword": "prevention 预防、防止；no easy task 绝非易事；fraud 欺诈；crime prevention 预防犯罪（常见搭配）。",
+   "note": "and 后的新学科应对提示空格词是「对抗欺诈」的动作；no easy task 常与 prevention、detection 等治理词搭配；manipulation 是前文 fraud 的复现陷阱——它是被防止的对象，不是防控行为本身，复现词未必是答案。"
+  },
+  {
+   "question_id": 1566,
+   "long_sentence": "定位句 a new field of computer science is developing to ____ security issues；to 不定式表目的，主语是 a new field of computer science。译：一门新的计算机科学分支正在发展，以应对安全问题。",
+   "option": "正确答案 cope with：cope with 表「应对、处理」，与 security issues（待解决课题）搭配最当；call for 表呼吁，主语应是人或报告，学科不能呼吁问题；fight against 表与…斗争，issues 不是敌人而是课题，语义过猛；adapt to 表适应，适应问题不等于解决问题。",
+   "keyword": "cope with 应对、处理＝deal with；field 领域、学科；security issues 安全问题；tackle 处理（近义）。",
+   "note": "to 不定式表学科发展的目的——处理课题用 cope with 或 deal with；call for 的主语限制最严格，可率先排除；fight against 需要对抗性宾语（crime、enemy），issue 只是待办事项；本空与 18 空 prevention 连成治理链条。"
+  },
+  {
+   "question_id": 1567,
+   "long_sentence": "定位句 the use of electronic means of payment leaves an electronic ____ that contains a large amount of personal data；that 引导定语从句修饰空格词；leaves 表「留下」。译：使用电子支付手段会留下电子踪迹，其中包含大量个人数据。",
+   "option": "正确答案 trail：leave a trail 表「留下踪迹」，是固定搭配，electronic trail 即数字足迹；chunk 表大块，与「留下」不搭；chip 表芯片，支付不会留下芯片；path 表路径，不与 leave 构成此义搭配，且路径不承载 personal data 的可追查义。",
+   "keyword": "leave a trail 留下踪迹（固定搭配）；electronic trail 电子足迹＝digital footprint；personal data 个人数据；violate privacy 侵犯隐私。",
+   "note": "leaves 与 trail 是黄金搭配，对应数字足迹概念；that contains personal data 的定语从句验证踪迹「可被查看追踪」的属性；末句 concerns...violating our privacy 正是 trail 带来的隐私风险，与第 14 空 raise concerns 首尾呼应。"
+  },
+  {
+   "question_id": 1568,
+   "long_sentence": "定位句 The average mill has only two employees today, a man and a dog. The man is there to feed the dog, and the dog is there to keep the man away from the machines；only two employees 表仅剩两人，引语以夸张解释自动化程度。译：如今普通纺织厂只有两名雇员——一个人和一条狗；人在那儿喂狗，狗在那儿不让人靠近机器。",
+   "option": "正确项 the impact of technological advances：笑话夸张呈现纺织厂的自动化程度，机器取代人力正是技术进步的影响，与第二段 the information technology revolution...replacing labor with machines 呼应；the alleviation of job pressure 方向相反，人被机器取代意味着就业压力加剧而非缓解；the shrinkage of textile mills 偷换概念，笑话讲用工之少而非工厂规模萎缩；the decline of middle-class incomes 张冠李戴，那是第二段的另一论点。",
+   "keyword": "textile mill 纺织厂；automate 使自动化；illustrate 说明、例证＝make the point；keep...away from 使…远离。",
+   "note": "例证题找例子的指向：笑话夸张的是「几乎不需要工人」，指向自动化与技术进步；only two employees 是理解钥匙；the decline of middle-class incomes 出自第二段，属跨段拼接，例子与论点的对应关系要看例子本体。"
+  },
+  {
+   "question_id": 1569,
+   "long_sentence": "定位句 Therefore, everyone needs to find their extra – their unique value contribution that makes them stand out in whatever is their field of employment；their unique value contribution 为同位语，解释 extra；that 引导定语从句。译：因此，每个人都需要找到自己的额外价值——能让自己在所在工作领域脱颖而出的独特价值贡献。",
+   "option": "正确项 contribute something unique：find their extra、their unique value contribution、make themselves stand out 三处与「贡献独特价值」直接对应；work on cheap software 张冠李戴，cheap software 是雇主可廉价获取的外部资源，不是雇员的功课；ask for a moderate salary 无中生有；adopt an average lifestyle 正反混淆，原文宣告 average is officially over，平均主义已行不通。",
+   "keyword": "stand out 脱颖而出；unique 独特的；contribution 贡献；average is over 平庸时代终结；extra 额外的价值。",
+   "note": "第三段论证链：average is officially over→雇主能廉价获得大量资源→Therefore 每人须找 extra；正确项落在 Therefore 总结句上；average 在本文是统一的否定信号词，含 average 的选项方向必错，可先排除再细验。"
+  },
+  {
+   "question_id": 1570,
+   "long_sentence": "定位句 In the 10 years ending in 2009, [U.S.] factories shed workers so fast that they erased almost all the gains of the previous 70 years; roughly one out of every three manufacturing jobs disappeared；so fast that 表程度结果，erased 的宾语是就业增长的成果。译：截至 2009 年的十年间，美国工厂裁员极快，几乎抹去此前 70 年的就业增长；约每三个制造业岗位就有一个消失了。",
+   "option": "正确项 job opportunities are disappearing at a high speed：shed workers so fast 与 one out of every three manufacturing jobs disappeared 都指向岗位快速消失；gains of technology have been erased 字面拼接，erased 的宾语是就业成果而非技术成果；factories are making much less money 无中生有，引语只谈就业不谈利润；new jobs and services offered 答非所问，那是第五段内容。",
+   "keyword": "shed workers 裁员；erase 抹去；gains 成果、增长；manufacturing jobs 制造业岗位；disappear 消失。",
+   "note": "引语题把动词与数字分开看：so fast、erased、disappeared 是速度与消失信号，one out of every three 佐证幅度；含原词 gains 的干扰项偷换了 gains 的归属（就业成果换成技术成果），属于字面复现式陷阱，必须核对动词宾语。"
+  },
+  {
+   "question_id": 1571,
+   "long_sentence": "定位句 ...but nothing would be more important than passing some kind of G.I. Bill for the 21st century that ensures that every American has access to post-high school education；nothing would be more important than 用否定比较表最高级，that ensures... 为定语从句。译：最重要的是通过某种 21 世纪的退伍军人权利法案式立法，确保每个美国人都有机会接受高中后教育。",
+   "option": "正确项 B to ensure more education for people：ensures that every American has access to post-high school education 与「确保民众接受更多教育」直接对应；A to accelerate the I.T. revolution 张冠李戴，信息技术革命是失业原因之一而非对策；C to advance economic globalization 同为失业原因，方向相反；D to pass more bills in the 21st century 偷换概念，关键是该法案的教育内容，而非多通过法案。",
+   "keyword": "G.I. Bill 退伍军人权利法案；post-high school education 高中后教育；have access to 有机会获得；nothing more important than 最重要莫过于。",
+   "note": "nothing would be more important than 是最高级信号词，其后内容即答案；G.I. Bill 是类比二战后安置退伍军人的教育立法，实质在 ensures 从句里；D 复现 bill 与 21st century 原词，但把「立这一部法」偷换成「多立法」，属偷换概念。"
+  },
+  {
+   "question_id": 1572,
+   "long_sentence": "主旨句两次出现：第三段 But, today, average is officially over 与末段 In a world where average is officially over；average 作名词表「平庸、平均水平」，officially over 表「正式终结」，首尾呼应构成全文主线。译：但今天，「平庸」正式终结了；在一个平庸正式终结的世界里……",
+   "option": "正确项 C Average Is Over：原句两次复现并统摄全文——平庸不再换来体面生活，人人须寻找独特价值，标题即论点；A New Law Takes Effect 无中生有，法案只是末段建议且尚未通过；B Technology Goes Cheap 以偏概全，廉价技术是背景原因而非主题；D Recession Is Bad 偷换重点，大衰退只是诱因之一。",
+   "keyword": "average 平庸、平均水准；officially over 正式终结；appropriate title 恰当标题；theme 主旨；echo 呼应。",
+   "note": "标题题抓复现率最高的论断：average is over 在第三、六段两次出现且充当立论基点；好标题需覆盖原因（技术与全球化）与对策（教育）；C 直接采用原句是标题题的典型答案形态，A 的 Law 与 D 的 Recession 均为局部信息。"
+  },
+  {
+   "question_id": 1573,
+   "long_sentence": "定位句 Along with the many folks looking to make a permanent home in the United States came those who had no intention to stay, and who would make some money and then go home；Along with...came... 为完全倒装，两个 who 引导并列定语从句。译：与许多想在美国永久安家的人一道而来的，还有那些无意久留、打算赚些钱就回国的人。",
+   "option": "正确项 stay in a foreign country temporarily：no intention to stay、make some money and then go home 前后呼应，候鸟式移民即短暂逗留者；leave their home countries for good 正反混淆，for good 表永久，与候鸟回乡相反；immigrate across the Atlantic 以偏概全，那只是百年前例子的路径；find permanent jobs overseas 偷换概念，permanent 恰是定居一类的特征。",
+   "keyword": "bird of passage 候鸟、漂泊不定的人；sojourner 暂居者；for good 永久地；have no intention to do 无意做某事。",
+   "note": "习语喻义题靠首段例子定义：候鸟者赚了钱就回乡；for good（永久地）是理解钥匙，它出现在 returned to Italy for good 中，含义与暂居相反；定义句藏在首段倒装结构里，先抓 no intention to stay 再对照选项方向。"
+  },
+  {
+   "question_id": 1574,
+   "long_sentence": "定位句 That framework has contributed mightily to our broken immigration system and the long political paralysis over how to fix it；contribute to 在贬义语境表「酿成、促成」，paralysis 表瘫痪、僵局。译：那种（合法与非法二分的）框架在很大程度上酿成了我们破碎的移民体系，以及围绕如何修复它的长期政治瘫痪。",
+   "option": "正确项 C should be adapted to meet challenges：broken system 加 change the way we think about categories、look beyond strict definitions，隐含义是体系必须应变；A needs new immigrant categories 正反混淆，原文说 don't need more categories；B has loosened control over immigrants 无中生有；D has been fixed via political means 正反混淆，paralysis 表明修复停滞。",
+   "keyword": "imply 暗示；broken 破碎的、失灵的；paralysis 瘫痪、僵局；framework 框架；category 类别、分类。",
+   "note": "imply 题从问题陈述推需求：体系失灵加政治瘫痪，隐含义即「必须变」；We don't need more categories 是明确否定，含 categories 的干扰项直接反着说；注意 contribute to 在贬义语境译「酿成」而非「贡献」，一词多义取决于感情色彩。"
+  },
+  {
+   "question_id": 1575,
+   "long_sentence": "定位句 They prefer to come and go as opportunity calls them. They can manage to have a job in one place and a family in another；prefer to do 表偏好，as opportunity calls them 为方式状语从句，in one place 与 in another 对举。译：他们愿意随机会的召唤来来去去；他们能做到工作在一地、家庭在另一地。",
+   "option": "正确项 C the freedom to stay and leave：come and go as opportunity calls them 即「来去自由」，与第三段 energetic participants in a global economy 的流动特征一致；A financial incentives 偷换概念，赚些钱是百年前移民的动机，如今他们要的是流动自由；B a global recognition 无中生有；D opportunities to get regular jobs 正反混淆，regular（固定的）恰是这类人规避的生活方式。",
+   "keyword": "come and go 来来去去；prefer to do 更愿意做；regular 固定的、常规的；mobility 流动性；incentive 激励、诱惑。",
+   "note": "want 后接的心理需求需向动词短语提炼：prefer to come and go 即来去自由；第四段 home can be both here and there 进一步佐证两栖生活；A 的 financial incentives 源自首段 make some money，属跨段拼接的旧信息，注意题干问的是今天的候鸟者。"
+  }
+ ]
+}

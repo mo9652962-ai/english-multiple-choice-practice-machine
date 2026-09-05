@@ -1,0 +1,180 @@
+{
+ "chunk": 65,
+ "items": [
+  {
+   "question_id": 1601,
+   "long_sentence": "定位句 While such numerical standards seem ____, they are not；While 表让步（尽管看似…），they are not 否定表语，构成「看似…实则不然」结构。译：尽管这类数字标准看似简单明了，其实不然。",
+   "option": "正确答案 straightforward：看似直观可行，实则不然——下文解释原因：肥胖与其说取决于体重不如说取决于体脂，数字标准过于简单化；complicated 表复杂的，若说标准看似复杂则与下文的批评方向相反；conservative 表保守的，无从体现；variable 表多变的，数字标准恰恰固定不变。",
+   "keyword": "straightforward 简单明了的＝clear-cut；numerical standards 数字标准；seem...but 实则不然；less A than B 与其说 A 不如说 B。",
+   "note": "While 的让步框架锁定「看似 X 实则非 X」；下文 less a matter of weight than body fat 说明标准的毛病是「简单化」，故看似 straightforward；complicated 与 conservative 是形容词形近干扰，靠下文批评方向定夺。"
+  },
+  {
+   "question_id": 1602,
+   "long_sentence": "定位句 Some people with a high BMI are in fact extremely fit, ____ others with a low BMI may be in poor ____；两个并列分句，主语分别是 some people 与 others，形成对照。译：有些高 BMI 的人其实极其健壮，而另一些低 BMI 的人身体状况可能很差。",
+   "option": "正确答案 while：some...while others... 表同一范畴内两类人的对比，while 表「然而」，是对照句式的标志；so 表因果，前后是对照而非因果；since 表原因，不合；unless 表条件，句法与语义均不通。",
+   "keyword": "while 然而（对比连词）；in fact 其实；extremely fit 极其健壮；some...others 一些…另一些。",
+   "note": "some 与 others 对举是对比句标志，连接词首选 while 或 whereas；本句直接挑战 BMI 标准的可信度：高指数未必胖、低指数未必瘦；fit 与下文 in poor shape 的褒贬对照是 11 空的解题铺垫。"
+  },
+  {
+   "question_id": 1603,
+   "long_sentence": "定位句 others with a low BMI may be in poor ____；in poor ____ 为介词短语作表语，与上句 extremely fit 形成反义呼应。译：而另一些低 BMI 的人身体状况可能很差。",
+   "option": "正确答案 shape：in poor shape 是固定搭配，表「身材状态差、体能不佳」，与 fit 构成反义；in poor spirits 表情绪低落，且 spirit 需用复数形式，与身体健壮的对照义不合；balance 表平衡，in poor balance 搭配不成立；taste 表口味，无关联。",
+   "keyword": "in poor shape 身体状况不佳；in shape 身材好、体能佳（固定搭配）；fit 健壮的；out of shape 走形、体能差。",
+   "note": "fit 的反义搭配是 in poor shape，上下句的褒贬对照直接给出答案；shape 此处指体能状态而非外形轮廓；spirit 的干扰在近形，但 in poor spirits 表情绪且需复数，语义场完全不同。"
+  },
+  {
+   "question_id": 1604,
+   "long_sentence": "定位句 many collegiate and professional football players ____ as obese, though their percentage body fat is low；though 引导让步状语从句，as obese 为补语。译：许多大学和职业橄榄球运动员按 BMI 会被归为肥胖，尽管其体脂率很低。",
+   "option": "正确答案 qualify：qualify as 表「达到…标准而被归为、可算作」，球员按 BMI 指标会被划入肥胖，与 though 体脂低的让步正好构成反差；start as 表以…身份起步，与指标归类无关；retire as 表退役时是，时态与语义不合；stay as 表保持为，运动员的体格并非保持肥胖之义。",
+   "keyword": "qualify as 达到…标准、可算作；collegiate 大学的、学院的；percentage body fat 体脂率；obese 肥胖的。",
+   "note": "qualify as 的「达标归类」义是本题钥匙：按 BMI 公式这些肌肉发达者会被算作肥胖；本句是「BMI 标准失真」的最强例证，与下文 small frame 者形成双向反例；as 介词短语前动词的选择取决于「归类」语义而非动作。"
+  },
+  {
+   "question_id": 1605,
+   "long_sentence": "定位句 Conversely, someone with a small frame may have high body fat but a ____ BMI；Conversely 表「相反地」，与上句球员例子形成反向对照；but 连接转折。译：相反，骨架小的人可能体脂很高，但 BMI 却正常。",
+   "option": "正确答案 normal：小骨架者体脂高但 BMI 落在正常区间，说明 BMI 查不出体脂问题，normal 与 but 的转折义吻合；strange 表奇怪的，无反差逻辑；changeable 表多变的，与单一数值描述不符；constant 表恒定的，不是 BMI 问题的焦点。",
+   "keyword": "conversely 相反地；frame 骨架、体格；body fat 体脂；BMI 身体质量指数；normal 正常的。",
+   "note": "Conversely 提示与球员例子互为镜像：球员 BMI 高体脂低，小骨架者体脂高 BMI 正常——两个反例共同证明 BMI 不可靠；but 转折后接 normal 才有「指标正常掩盖脂肪超标」的批评义；本空靠对照结构锁定答案。"
+  },
+  {
+   "question_id": 1606,
+   "long_sentence": "定位句 Today we have a(n) ____ to label obesity as a disgrace；have a(n) ____ to do 为「有…去做某事」结构，label...as 表「把…贴上…标签」。译：如今我们有一种把肥胖视为耻辱的倾向。",
+   "option": "正确答案 tendency：have a tendency to do 表「有做某事的倾向」，统摄下文媒体打码、刻板印象、各行业歧视、儿童嘲讽等一连串现象；option 表选择，习惯搭配是 have the option of doing；reason 表理由，「有理由污名化」与全文批判歧视的立场相反；opportunity 表机会，语义不当。",
+   "keyword": "tendency 倾向；label...as 把…标注为；disgrace 耻辱、丢脸；stereotype 刻板印象；bias 偏见。",
+   "note": "下文整段都是「污名化肥胖」的例证，空格词需能统领这些现象——tendency（普遍倾向）最合；reason 的干扰最大，但原文立场是批判歧视而非为歧视找理由；label as disgrace 的贬义色彩与 tendency 的中性名词搭配自然。"
+  },
+  {
+   "question_id": 1607,
+   "long_sentence": "定位句 The overweight are sometimes ____ in the media with their faces covered；被动语态，with their faces covered 为独立主格结构作方式状语。译：超重者有时出现在媒体上时面部会被遮挡。",
+   "option": "正确答案 pictured：媒体「刊登画面」时把脸遮住，pictured 表被拍摄呈现，与 with faces covered 的打码处理配套；employed 表被雇佣，与面部遮挡无关；imitated 表被模仿，无语境；monitored 表被监控，监控画面不属媒体报道场景。",
+   "keyword": "picture 动词，拍摄、登载图像；with...covered 面部被遮挡；media 媒体；the overweight 超重者（the + 形容词）。",
+   "note": "with their faces covered 是关键细节：打码是图像处理的动作，被处理的自然是照片画面，pictured 应声而出；本句是「污名化肥胖」的证据之一——出镜都要遮脸；employ、monitor 均无图像义，语义场不符。"
+  },
+  {
+   "question_id": 1608,
+   "long_sentence": "定位句 Stereotypes ____ with obesity include laziness, lack of will power, and lower prospects for success；过去分词短语作后置定语修饰 stereotypes，include 后列举具体内容。译：与肥胖相关的刻板印象包括懒惰、缺乏意志力以及成功前景更低。",
+   "option": "正确答案 associated：associated with 表「与…相关联的」，「关于肥胖的刻板印象」是固定表述；compared with 表与…相比，刻板印象不是用来比较的；combined with 表与…结合，刻板印象并非与肥胖结合的东西；settled 表解决的，与 with 搭配不成此义。",
+   "keyword": "stereotype 刻板印象；be associated with 与…相关；laziness 懒惰；will power 意志力；propects 前景。",
+   "note": "Stereotypes ____ with obesity 的框架里，associated with 表「有关肥胖的刻板印象」，是高频学术搭配；本句列举懒惰、意志力差等内容本身就是偏见证据；compare 与 combine 的主宾关系不对，刻板印象的属性是「关联于」肥胖。"
+  },
+  {
+   "question_id": 1609,
+   "long_sentence": "定位句 ____ very young children tend to look down on the overweight, and teasing about body build has long been a problem in schools；tend to do 表「往往会」，look down on 表「轻视」。译：甚至连很小的孩子都会看不起超重者，而且对体型的嘲弄长久以来一直是学校里的问题。",
+   "option": "正确答案 Even：连最不该有偏见的孩子都歧视超重者，Even 表让步递进，凸显偏见之深；Still 表仍然，与递进义不合；Yet 表转折，此处上下文是程度递进而非转折；Only 表仅仅，反而弱化语气，与下文 schools 问题的严重性矛盾。",
+   "keyword": "even 甚至（递进强调）；look down on 看不起、轻视；tease 嘲弄；body build 体格；problem 问题、难题。",
+   "note": "本句是歧视链条的最后一环：从老师雇主到专业人士再到 very young children，Even 的递进把偏见程度推到顶点；判断递进还是转折看句间方向——前文偏见者越来越无辜，属同一方向的强化，用 Even 不用 Yet。"
+  },
+  {
+   "question_id": 1610,
+   "long_sentence": "定位句 Negative attitudes toward obesity, ____ in health concerns, have stimulated a number of anti-obesity ____；插入的过去分词短语作定语修饰 attitudes，stimulate 表「催生、激发」。译：对肥胖的负面态度虽然根植于健康关切，却催生了许多抗肥胖举措。",
+   "option": "正确答案 grounded：grounded in 表「根植于、以…为基础」，负面态度的源头是健康关切，语义与结构双合；despised 表被蔑视，attitudes 不能被蔑视；corrected 表被纠正，若已被纠正就不会催生后续行动；ignored 表被忽视，与下文一系列行动相矛盾。",
+   "keyword": "grounded in 根植于；stimulate 催生、激发；health concerns 健康关切；anti-obesity 抗肥胖的。",
+   "note": "attitudes 的来源用 grounded in 表达最贴切——源于健康担忧；despise 的施动对象是人而非态度，动宾错位；下文禁售含糖饮料、减肥计划、米歇尔运动等全是 attitudes 刺激出的行动，corrected 与 ignored 与之直接冲突。"
+  },
+  {
+   "question_id": 1611,
+   "long_sentence": "定位句 Negative attitudes...have stimulated a number of anti-obesity ____；空格词被 a number of 修饰，且受 anti-obesity 限定。译：……催生了许多抗肥胖的政策举措。",
+   "option": "正确答案 policies：下文三个例子——医院禁售含糖饮料、雇主推行减肥健身计划、米歇尔·奥巴马发起高曝光度运动——全是政策措施；discussions 表讨论，例子是行动而非空谈；businesses 表企业，医院与雇主的行为不是创办企业；studies 表研究，无研究例证。",
+   "keyword": "policy 政策；initiative 倡议、举措；ban 禁止；campaign 运动；launch 发起；facility 场所、设施。",
+   "note": "复数名词加下文 For example 式列举是完形推断题的典型结构：三个例子（医院、雇主、第一夫人）的共同属性即 policies；businesses 的干扰在 employers 一词，但 instituted weight loss initiatives 是公司内部举措不是做生意；本空例证归纳法最可靠。"
+  },
+  {
+   "question_id": 1612,
+   "long_sentence": "定位句 Michelle Obama has launched a high-visibility campaign ____ childhood obesity, even claiming that it represents our greatest national security threat；launch a campaign 后接介词短语表运动指向，even claiming 表递进引语。译：米歇尔·奥巴马发起了一场针对儿童肥胖的高关注度运动，甚至宣称儿童肥胖是我们最大的国家安全威胁。",
+   "option": "正确答案 against：campaign against 表「反对…的运动」，与全文 anti-obesity 的立场一致；for 表支持，支持肥胖显然荒谬；with 表与…一起，不构成斗争关系；without 表没有，逻辑不通；campaign against childhood obesity 对应 anti-obesity 的前缀 anti-。",
+   "keyword": "campaign against 反对…的运动；high-visibility 高曝光度的；national security threat 国家安全威胁；anti- 反对（前缀）。",
+   "note": "anti-obesity policies 的 anti- 已在本空前文复现，campaign against 是同义呼应；运动的对象是要打击的东西，against 的对抗义与 launch a campaign 的动宾搭配最常见；此空可凭 anti- 线索秒杀。"
+  },
+  {
+   "question_id": 1613,
+   "long_sentence": "定位句 It is far better to spend money on experiences, say Ms Dunn and Mr Norton, like interesting trips, unique meals or even going to the cinema. These purchases often become more valuable with time；it 为形式主语，say sb 为插入语，with time 表「随时间推移」。译：邓恩女士与诺顿先生说，把钱花在体验上要好得多，比如有趣的旅行、独特的餐饮甚至看电影；这些消费作为故事或记忆往往随时间升值。",
+   "option": "正确项 B A special tour：interesting trips 即体验类消费的首选例子，且 These purchases often become more valuable with time 说明其回报持久；A a big house 与 C a stylish car 属原文批评的 material purchases，satisfaction wears off fairly quickly；D a rich meal 易与 unique meals 混淆，但 rich 强调物质丰盛而非体验独特，作者强调的是 experiences。",
+   "keyword": "rewarding 有回报的、值得的；purchase 购买、所购之物；wear off 逐渐消退；old-hat 过时的；experience 体验（与物质消费对举）。",
+   "note": "题干问 most rewarding purchase，定位 say Ms Dunn and Mr Norton 引语后的 experiences 清单；物质消费（房、车）的快感会 wear off，体验类随时间增值；D 的迷惑在 unique meals 原词，但 rich 是物质属性词，抓住 experiences 与 material 的对立即可。"
+  },
+  {
+   "question_id": 1614,
+   "long_sentence": "定位句 ...spend more time with friends and family and less of it watching television (something the average American spends a whopping two months a year doing, and is hardly jollier for it)；less of it 表时间分配，whopping 表「巨大的」，for it 表「因此」。译：多陪亲友、少看电视，人们的生活会更好——普通美国人每年看电视的时间高达两个月，却并未因此更快乐。",
+   "option": "正确项 A critical：whopping（惊人的）与 hardly jollier for it（并未更快乐）一贬再贬，作者对美国人看电视的习惯持批评态度；B supportive 与 hardly jollier 矛盾；C sympathetic 表同情，作者在指出问题而非怜悯；D ambiguous 表模棱两可，括号内评价态度清晰。",
+   "keyword": "whopping 巨大的、惊人的；jolly 快乐的；hardly 几乎不；critical 批评的；commute 通勤。",
+   "note": "态度题抓括号内的双重信号：数量夸张（两个月）加效果否定（并不更快乐），构成典型的批评笔法；作者建议少看电视本身就是立场表达；ambiguous 需要正反信息并存，此处只有负面评价，无模糊空间。"
+  },
+  {
+   "question_id": 1615,
+   "long_sentence": "定位句 luxuries are most enjoyable when they are consumed sparingly. This is apparently the reason McDonald's restricts the availability of its popular McRib；when 引导条件状语，a marketing trick 为同位语。译：奢侈品在节制享用时最令人愉悦；这显然就是麦当劳限制烤汁猪排堡供应量的原因——这一营销把戏使其成了令人痴迷的对象。",
+   "option": "正确项 D rarity generally increases pleasure：consumed sparingly（节制享用最愉悦）加 restricts the availability（限制供应引发痴迷），正说明稀缺提升快感；A consumers are sometimes irrational 无中生有，原文未评判理性；B popularity usually comes after quality 无中生有，流行源于稀缺营销与质量无关；C marketing tricks are often effective 复现原词但只是手段描述，例子服务的论点是稀缺效应。",
+   "keyword": "sparingly 节制地、少量地；restrict the availability 限制供应；scarcity 稀缺；obsession 痴迷、执念。",
+   "note": "例证题先找例子服务的观点句：luxuries are most enjoyable when consumed sparingly；麦当劳限量→痴迷，是「稀缺增强快感」的商业实例，末段 scarcity enhances the pleasure 再次呼应；C 含原词 marketing trick，是字面复现型干扰，须核对论点归属。"
+  },
+  {
+   "question_id": 1616,
+   "long_sentence": "定位句 Not everyone will agree with the authors' policy ideas...But most people will come away from this book believing it was money well spent；Not everyone 为部分否定，But 后引出主流评价，believing... 现在分词作伴随状语。译：并非人人都会赞同两位作者的政策主张……但大多数人读完此书都会觉得这钱花得值。",
+   "option": "正确项 B may prove to be a worthwhile purchase：money well spent（钱花得值）与 worthwhile purchase 是同义改写；A has left much room for readers' criticism 夸大让步句，Not everyone agree 只是部分保留，书评结论仍正面；C has predicted a wider income gap 无中生有；D may give its readers a sense of achievement 偷换概念，书教人买来幸福感，不是成就感。",
+   "keyword": "money well spent 花得值的钱；come away from 从…获得（印象）；worthwhile 值得做的、有价值的；policy idea 政策主张。",
+   "note": "末段让步转折结构：Not everyone...But most people...——But 后才是书评总结论；money well spent 对应 worthwhile purchase 是本题唯一考点；A 抓住让步部分放大成批评空间，凡让步后紧跟 But 的句子，重心永远在 But 之后。"
+  },
+  {
+   "question_id": 1617,
+   "long_sentence": "定位句 If she hopes her new-found fortune will yield lasting feelings of fulfilment, she could do worse than read Happy Money by Elizabeth Dunn and Michael Norton；if 条件句，yield 表「产生、带来」，could do worse than do 表「不妨做某事」。译：如果这位老太太希望新到手的财富能带来持久的满足感，那么她不妨读读邓恩与诺顿合著的《快乐金钱》。",
+   "option": "正确项 C obtain lasting satisfaction from money spent：全文讨论如何花钱获得持久满足——lasting feelings of fulfilment、more valuable with time 一以贯之；A balance feeling good and spending money 偷换关系，是用钱买好感受而非平衡二者；B spend large sums won in lotteries 以偏概全，彩票只是引子；D become more reasonable in spending on luxuries 以偏概全，奢侈品只是一条建议。",
+   "keyword": "fulfilment 满足感、成就感；yield 产生、带来；lasting 持久的；bang for your buck 花得值、性价比。",
+   "note": "主旨题抓首段设问与全文关键词：lastings feelings of fulfilment 在开头出现，happiness bang for your buck 在中段呼应；C 的 lasting satisfaction 是其同义压缩；B 与 D 均取自局部信息，主旨必须能罩住所有段落，凡只覆盖一例的选项都不足为主旨。"
+  },
+  {
+   "question_id": 1618,
+   "long_sentence": "定位句 Social psychologists have amassed oceans of research into what they call the above average effect, or illusory superiority, and shown that...all obviously statistical impossibilities；amass 表「积累」，or 表「也就是」，破折号后为总结评价。译：社会心理学家积累了海量的「高于平均效应」（即虚幻优越感）研究，并表明例如 70% 的人自评领导力高于平均、93% 自评驾驶技术高于平均——这些显然都是统计上不可能的事。",
+   "option": "正确项 A our self-ratings are unrealistically high：rate ourselves as above average 的比例全被断为 statistical impossibilities，即自评不切实际地高；B illusory superiority is a baseless effect 正反混淆，该效应有海量研究支撑，失真的是自评；C our need for leadership is unnatural 偷换概念，例子说的是自评领导力高；D self-enhancing strategies are ineffective 正反混淆，策略有效只是结果失真。",
+   "keyword": "above average effect 高于平均效应；illusory superiority 虚幻优越感；rate...as 把…评为；statistical impossibility 统计上不可能。",
+   "note": "破折号后的 all obviously statistical impossibilities 是结论锚点：人人都高于平均在数学上不可能，自评必然虚高；B 含原词 illusory superiority 但 baseless 反了，术语复现不等于正确；抓 impossible 一词的反常识提示即可锁定虚高义。"
+  },
+  {
+   "question_id": 1619,
+   "long_sentence": "定位句 Visual recognition, reads the study, is an automatic psychological process, occurring rapidly and intuitively with little or no apparent conscious deliberation；reads the study 为插入语，occurring... 现在分词短语作非限定修饰。译：研究写道，视觉识别是一种自动的心理过程，快速而直觉地发生，几乎没有明显的有意识斟酌。",
+   "option": "正确项 C intuitive response：occurring rapidly and intuitively 直接给出「直觉性反应」的定性；A rapid matching 偷换概念，rapid 只是修饰语，matching 无文本依据；B conscious choice 正反混淆，原文是 with little or no conscious deliberation；D automatic self-defence 张冠李戴，automatic 属实但 self-defence 是第二段受批评时的防御行为，与视觉识别无关。",
+   "keyword": "visual recognition 视觉识别；automatic 自动的；intuitively 直觉地；deliberation 斟酌、深思。",
+   "note": "引语定性题把三个特征合并：automatic、rapidly、intuitively，合成的最佳对应是 intuitive response；B 与原文 with little or no conscious deliberation 正面冲突；D 用原词 automatic 拼接他段概念，属跨段嫁接式干扰。"
+  },
+  {
+   "question_id": 1620,
+   "long_sentence": "定位句 those who thought that the images higher up the attractiveness scale were real directly corresponded with those who showed other markers for having higher self-esteem；两个 who 引导定语从句，correspond with 表「与…对应」，markers 表「标志」。译：那些认为吸引力刻度上更靠上的照片才是真实面貌的人，恰好与显示出其他高自尊标志的人直接对应。",
+   "option": "正确项 B believe in their attractiveness：把更美的照片当真＝相信自己确实那么美，与高自尊人群直接对应；A underestimate their insecurities 无中生有，原文只说自我美化并非为弥补深深的不安全感；C cover up their depressions 无中生有，且原文说抑郁者不会自我美化；D oversimplify their illusions 无中生有。",
+   "keyword": "attractiveness 吸引力、魅力；correspond with 与…对应；self-esteem 自尊；marker 标志、标记。",
+   "note": "题干问高自尊者的倾向，定位 corresponded with 对应句：把美化照当真的人就是高自尊者，反推即「相信自己的吸引力」；A 的 insecurities 是原文否认的动机，属于用原词设错；题干含 tend to，对应句的直陈关系稍作抽象即得答案。"
+  },
+  {
+   "question_id": 1621,
+   "long_sentence": "定位句 Knowing the results of Epley's study, it makes sense that many people hate photographs of themselves viscerally – on one level, they don't even recognise the person in the picture as themselves；Knowing... 现在分词作原因状语，it 为形式主语，破折号后解释 viscerally。译：了解埃普利的研究后就能明白，许多人发自本能地讨厌自己的照片——从某个层面说，他们甚至认不出照片里的人是自己。",
+   "option": "正确项 A instinctively：visceral 本义「内脏的」，引申为「发自内心的、本能的」；破折号后的解释——下意识认不出照片中的自己——正是未经思考的本能反应；B occasionally 表偶尔，无频率信息；C particularly 表尤其，无程度强调；D aggressively 表攻击性地，讨厌照片不等于攻击行为。",
+   "keyword": "viscerally 本能地、发自内心地＝instinctively；make sense 说得通；recognise...as 认出…是；on one level 在某个层面上。",
+   "note": "猜词题看破折号后的同位解释：连自己都认不出，是直觉层面的排斥；visceral 与上段 automatic、intuitively 呼应，形成全文的本能语义链；D 的攻击性是词形联想陷阱，visceral 与 aggressive 无关。"
+  },
+  {
+   "question_id": 1622,
+   "long_sentence": "定位句 Facebook, therefore, is a self-enhancer's paradise, where people can share only the most flattering photos...It's not that people's profiles are dishonest...but they portray an idealised version of themselves；where 引导定语从句，not that...but... 表「不是…而是…」。译：Facebook 是自我美化者的天堂，人们可只分享最上相的照片；这不是说资料不诚实，而是呈现了理想化的自己。",
+   "option": "正确项 D withhold their unflattering sides：share only the most flattering photos 的言外之意是扣下不上相的一面；A present their dishonest profiles 正反混淆，原文说 It's not that people's profiles are dishonest，是理想化而非不诚实；B define their traditional lifestyles 无中生有；C share their intellectual pursuits 字面拼接 wit、intellect，隐藏差的一面才是天堂之因。",
+   "keyword": "self-enhancer 自我美化者；paradise 天堂；flattering 讨好的、显得美的；idealised 理想化的；withhold 扣留、隐藏。",
+   "note": "infer 题从 only 一词推断：只能分享最好的，意味着可以不展示差的，即 withhold unflattering sides；A 与原文 not that...dishonest 正面冲突，是本段明确否定的表述；正确项是 only the most flattering 的反向推理，推断题的答案常在言外。"
+  },
+  {
+   "question_id": 1623,
+   "long_sentence": "定位句 The concept of man versus machine is at least as old as the industrial revolution, but this phenomenon tends to be most acutely felt during economic downturns and fragile recoveries；versus 表对抗，most acutely felt 表「感受最为尖锐」。译：人机对抗的观念至少与工业革命一样古老，但这一现象在经济下行与脆弱复苏期感受最为强烈。",
+   "option": "正确项 B highlight machines' threat to human jobs：经济下行期人机矛盾感受最尖锐，即下行会放大机器对人类工作的威胁；A ease the competition 正反混淆，acutely felt 是加剧不是缓解；C provoke a painful technological revolution 偷换概念，painful side 指经济周期的痛苦面，不是技术革命；D outmode our current economic structure 张冠李戴，被 outmode 的是 certain jobs（某些岗位），不是经济结构。",
+   "keyword": "versus 对抗、对阵；downturn 下行、衰退；acutely 尖锐地、强烈地；outmode 使过时；fragile recovery 脆弱复苏。",
+   "note": "题干问 downturns 的作用，定位 most acutely felt during economic downturns——下行期人机矛盾最痛；A 的 ease 与 acutely 方向相反；C、D 均用原词拼接（painful、outmode）但对象错位，核对动词宾语即可排除。"
+  },
+  {
+   "question_id": 1624,
+   "long_sentence": "定位句 When there is rapid improvement in the price and performance of technology, jobs that were once thought to be immune from automation suddenly become threatened；when 引导时间状语从句，that 定语从句修饰 jobs，immune from 表「免于」。译：当技术的价格与性能快速提升时，那些曾被认为不会遭自动化取代的工作会突然受到威胁。",
+   "option": "正确项 A technology is diminishing man's job opportunities：jobs suddenly become threatened 加 insatiable appetite for eating up human jobs；B automation is accelerating technological development 因果倒置；C certain jobs will remain intact 正反混淆，threatened 与 gone away for good 皆示不保；D man will finally win the race 无中生有，书名未预言胜负。",
+   "keyword": "immune from 免于、不受…影响；insatiable appetite 贪得无厌的胃口；eat up 吞噬；diminish 削减、使减少。",
+   "note": "书名 Race Against the Machine 即立场：机器抢工作；首段 insatiable appetite for eating up human jobs 与本句 become threatened 前后印证；B 的因果方向必须倒过来核对；C 的 intact 与原文 threatened、gone away for good 两处证据相抵。"
+  },
+  {
+   "question_id": 1625,
+   "long_sentence": "定位句 Hagel says we have designed jobs in the U.S. that tend to be tightly scripted and highly standardized ones that leave no room for individual initiative or creativity；两个 that 从句分别修饰 jobs 与 ones，leave no room for 表「不给…留余地」。译：哈格尔说，我们设计的美国工作岗位往往是严格照本宣科、高度标准化的类型，不给个人主动性与创造力留任何空间。",
+   "option": "正确项 D designed against human creativity：leave no room for individual initiative or creativity 即设计上不给创造留空间；A performed by innovative minds 正反混淆，问题恰在不许创新；B scripted with an individual style 偷换概念，tightly scripted 表照本宣科，恰无个人风格；C standardized without a clear target 拼接干扰，target 出自下文贴靶标的比喻，非工作描述。",
+   "keyword": "tightly scripted 严格照本宣科的；highly standardized 高度标准化的；individual initiative 个人主动性；leave no room for 不给…留余地。",
+   "note": "Hagel 的观点句三连关键词：tightly scripted、highly standardized、no room for creativity，合并即「设计反创造力」；C 的 target 是下文 giant target sign 比喻的错位移植，跨句拼接是本题最大陷阱；题干 argue 与原文 says 对应，直接取观点句概括。"
+  }
+ ]
+}

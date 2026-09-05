@@ -1,0 +1,180 @@
+{
+ "chunk": 73,
+ "items": [
+  {
+   "question_id": 1801,
+   "long_sentence": "定位句 But a boost in the storage capacity of batteries is making their ability to keep power flowing around the clock more likely；keep power flowing around the clock 表「全天候持续供电」，more likely 表可能性上升。译：电池储能能力的提升，使「风不吹、日不照也能持续供电」变得更有可能。",
+   "option": "正确项 C Its continuous supply is becoming a reality：keep power flowing around the clock＝continuous supply，more likely＝becoming a reality；A 因果倒置，是电池储能的进步在推动清洁能源的可用性；B 张冠李戴，汽车制造商押注的是电动车而非用清洁能源造车；D 与储能进展的积极语调相反。",
+   "keyword": "storage capacity 储能容量；around the clock 全天候；put-down 贬损的话；skeptic 怀疑者。",
+   "note": "五六段合考：先抛怀疑者的质疑（wind doesn't blow?），再用电池储能给出答案——「持续供电正成为现实」；A 的因果方向要倒过来看。"
+  },
+  {
+   "question_id": 1802,
+   "long_sentence": "定位句 What Washington does – or doesn't do – to promote alternative energy may mean less and less at a time of a global shift in thought；破折号插入 or doesn't do 暗示政府行动的缺位。译：在全球观念转变之际，华盛顿为推广替代能源所做的——或不做的——可能越来越不重要。",
+   "option": "正确项 C is not really encouraged by the US government：does...or doesn't do 的弦外之音是政府对推广替代能源并不热心；A 无中生有；B 正反混淆，原文说变化或许正赶上减缓气候变化；D 张冠李戴，成本骤降恰是清洁能源的竞争卖点。",
+   "keyword": "alternative energy 替代能源；global shift in thought 全球观念转变；promote 推广；mean less and less 越来越不重要。",
+   "note": "推断题眼在插入语：or doesn't do——「做或不做都无所谓」反向证明政府不鼓励；推断题要读出破折号里的弦外之音。"
+  },
+  {
+   "question_id": 1803,
+   "long_sentence": "定位句 What WhatsApp offered Facebook was an intricate and finely detailed web of its users' friendships and social lives；What 引导主语从句，强调收购所看中的价值。译：WhatsApp 提供给脸书的，是一张精密而细致的用户友谊与社交生活之网。",
+   "option": "正确项 B user information：web of its users' friendships and social lives＝用户社交数据即用户信息；A digital products 与 doesn't have any physical product 的表述错位，原文强调它没有实体产品；C physical assets 正反混淆；D quality service 无中生有，作者强调的是数据价值。",
+   "keyword": "intricate 错综复杂的；acquire 收购；messaging service 即时通讯服务；reveal 泄露、揭示。",
+   "note": "What 引导的强调句直接回答「买的是它什么」——用户关系网即 user information；A 的陷阱要靠细读「没有实体产品」一句排除。"
+  },
+  {
+   "question_id": 1804,
+   "long_sentence": "定位句 Even without knowing what was in the messages, the knowledge of who sent them and to whom was enormously revealing and still could be；enormously revealing 表「极具泄露性」，who...to whom 是通讯关系图谱。译：即便不知道消息内容，知道谁发给谁也极具泄露性——现在依然如此。",
+   "option": "正确项 C pose a risk to Facebook users：谁发给谁的关系被曝光＝用户隐私风险；A 夸大偏题，政治记者的例子只是说明信息之敏感；B mess up customer records 无中生有；D 张冠李戴，脸书是对欧盟委员会「失信」，不是号码关联「误导」了它。",
+   "keyword": "reveal 泄露、揭示；identity 身份；go through（交易）完成、通过；plot 密谋。",
+   "note": "风险推断抓 revealing 一词：通讯关系图谱曝光即用户风险；D 的陷阱在 broke the promise to the commission 与误导 commission 是两回事。"
+  },
+  {
+   "question_id": 1805,
+   "long_sentence": "定位句 For one thing, it is very slow compared to the pace of change within the digital economy. By the time a problem has been addressed and remedied it may have vanished in the marketplace；slow 与 pace of change 对比。译：首先，与数字经济的变革速度相比，竞争法太慢——等问题被处理修补完，它可能已从市场上消失了。",
+   "option": "正确项 D cannot keep pace with the changing market：very slow compared to the pace of change＝跟不上变化中的市场；A 正反混淆，竞争法是要制约而非服务巨头；B 无中生有；C 偷换概念，原文说它 clumsy 有两层问题，不是「不该只有一种方案」。",
+   "keyword": "keep pace with 跟上…的步伐；remedy 补救；abuse of power 权力滥用；clumsy 笨拙的、低效的。",
+   "note": "细节题定位 For one thing：slow 对比 pace of change 即「跟不上」；D 的 changing market 是数字经济的 pace of change 的同义压缩。"
+  },
+  {
+   "question_id": 1806,
+   "long_sentence": "定位句 Competition law as presently interpreted deals with financial disadvantage to consumers and this is not obvious when the users of these services don't pay for them. The users of their services are not their customers.译：现行解释下的竞争法处理消费者的经济损失，而用户不付费时这种损害并不明显——用户不是它的客户。",
+   "option": "正确项 A they are not defined as customers：The users are not their customers＝用户未被界定为客户，竞争法因此保护不到他们；B financially reliable 偷换概念，原文说的是「不付费」；C services are digital 是背景而非原因；D 反向干扰，付费的是广告主——恰因用户不付费才缺保护。",
+   "keyword": "financial disadvantage 经济损失；consumer 消费者；customer 客户；dominate digital advertising 主导数字广告。",
+   "note": "因果题锁定原文逻辑链：不付费→不算消费者→竞争法管不着；D 最迷惑——广告主付费恰是用户「不是客户」的原因，别选反方向。"
+  },
+  {
+   "question_id": 1807,
+   "long_sentence": "定位句 Just as some ants farm the bugs called aphids for the honeydew they produce, so Google farms us for the data that our digital lives yield；just as...so... 类比结构，蚂蚁：蚜虫：蜜露＝谷歌：用户：数据。译：正如蚂蚁「放牧」蚜虫以获取蜜露，谷歌也「放牧」我们，收获数字生活产出的数据。",
+   "option": "正确项 D the relationship between digital giants and their users：类比的映射关系正是「谷歌—用户」；A 张冠李戴，类比双方是巨头与用户而非巨头之间；B competition pattern 答非所问，原文讲竞争法不是类比；C 与末句 It doesn't feel like a human or democratic relationship 的批判语气相悖。",
+   "keyword": "analogy 类比；farm 放牧、圈养（喻）；honeydew 蜜露；yield 产出。",
+   "note": "类比题先画映射：蚂蚁：蚜虫：蜜露＝谷歌：用户：数据——「说明什么」答「巨头与用户的关系」；even if both sides benefit 提示这并非双赢叙事。"
+  },
+  {
+   "question_id": 1808,
+   "long_sentence": "定位句 Whichever approach, the key is to determine your length of focus time and stick to it；whichever 让步表明具体方法是次要的，stick to it 才是关键。译：无论哪种方法，关键都是确定你的专注时长并坚持执行。",
+   "option": "正确项 A keep to your focus time：stick to it＝keep to your focus time 的同义替换；B list your immediate tasks 是后文 to-do list 的细节，以偏概全；C make specific daily plans 正反混淆，实验表明详细日计划适得其反；D seize every minute 过度推断。",
+   "keyword": "stick to 坚持＝keep to；length of focus time 专注时长；daily ritual 每日惯例；retreat 静修。",
+   "note": "显性答案信号句：Whichever approach, the key is...——方法可变、坚持专注时长不变；C 与第四五段的实验结论方向相反。"
+  },
+  {
+   "question_id": 1809,
+   "long_sentence": "定位句 While the researchers assumed that the well-structured daily plans would be most effective...they were wrong: the detailed daily plans demotivated students；while 让步加 they were wrong 转折。译：尽管研究者原以为结构良好的每日计划执行效果最好，但他们错了——详细的日计划反而打消了学生的积极性。",
+   "option": "正确项 D detailed plans may not be as fruitful as expected：they were wrong＝效果不如预期（fruitful）；A 偷换概念，原文说干扰使日计划失效，不是干扰提效；B 正反混淆，日计划被证明 demotivating；C 无中生有，monthly goals 组只是对照组。",
+   "keyword": "demotivate 打消积极性；assume 假设；render 使成为；improvisation 即兴调整。",
+   "note": "实验结论题抓转折句：assumed...would be most effective, they were wrong——「预期落空」即 not as fruitful as expected；A 把「干扰使计划失效」偷换成「干扰提效」。"
+  },
+  {
+   "question_id": 1810,
+   "long_sentence": "定位句 Idleness is not just a vacation, an indulgence or a vice; it is as indispensable to the brain as vitamin D is to the body...necessary to getting any work done；not just...it is... 的句型重心在后半，indispensable 与 necessary 同义强化。译：闲散不只是度假、放纵或恶习——它对大脑如维生素 D 对身体般不可或缺；吊诡的是，它正是完成任何工作的必要条件。",
+   "option": "正确项 D an essential factor in accomplishing any work：necessary to getting any work done＝完成任何工作的必要因素；A desirable mental state 无中生有；B 张冠李戴，维生素 D 类比的对象是大脑机能而非身体健康；C 偷换概念，get more done in less time 是深工作的好处而非闲散的定义。",
+   "keyword": "idleness 闲散；indispensable 不可或缺的＝essential；paradoxically 自相矛盾地；vice 恶习。",
+   "note": "not just A; it is B 句型重心在 B：indispensable 加 necessary 双词锁定「不可或缺」——D 的 essential factor 是同义改写；别把 vitamin D 的比喻当成健康话题。"
+  },
+  {
+   "question_id": 1811,
+   "long_sentence": "定位句 When our brains switch between being focused and unfocused on a task, they tend to be more efficient；switch between A and B 即题干的 shift between，more efficient 是结论。译：当大脑在任务的专注与不专注状态之间切换时，效率往往更高。",
+   "option": "正确项 B can bring about greater efficiency：tend to be more efficient＝带来更高效率；A psychological well-being 偷换概念，原文讲效率而非心理健康；C aimed at balance 无中生有；D task urgency 无中生有，切换是大脑的运作方式，与任务紧迫性无关。",
+   "keyword": "switch/shift 切换；focused/unfocused 专注/不专注；efficient 高效的；circuit（大脑神经）回路。",
+   "note": "人名观点题定位 Pillay 段：switch...tend to be more efficiency 直译成 B；末句 need to use both the focus and unfocus circuits 是切换机制的补充。"
+  },
+  {
+   "question_id": 1812,
+   "long_sentence": "全文脉络：以「别拿忙当身价」引出 deep work→掌握专注的方法→deep scheduling 对抗打断→重排 to-do list 的实验→拥抱 downtime 的必要；主线是「更少时间做更多事」。译：本文主要讨论在更少时间内完成更多事务的方法。",
+   "option": "正确项 B approaches to getting more done in less time：原文 get more done in less time 原词出现两次，直接概括全文；A relieve tension 偏离主线，downtime 是手段不是主题；C eliminating distractions 只是 deep work 的一部分，以偏概全；D the cause of lack of focus time 无中生有。",
+   "keyword": "deep work 深度工作；downtime 休息时间；to-do list 待办清单；prioritise 排定优先级。",
+   "note": "主旨题找全文复现短语：get more done in less time 在第二、四段原词出现，B 几乎照搬——「方法总集」型文章的主旨就是那句方法论概括。"
+  },
+  {
+   "question_id": 1813,
+   "long_sentence": "定位句 you wanted to say something – the first word – but it just won't come out...here is my advice: just get it out；get it out 与 say it 同义，So keep it simple: Hi / Hey / Hello 给出具体做法。译：你想说点什么——第一个词——却卡在喉咙里说不出口；我的建议是：把它说出来。",
+   "option": "正确项 A Just say it：just get it out 与 say Hi 呼应「先开口」；F Skip the small talk 是第 42 段主旨；C unique compliment 无中生有；G Ask for an opinion 与本段无关。",
+   "keyword": "get it out 说出来；won't come out 说不出口；keep it simple 保持简单；enthusiasm 热情。",
+   "note": "段落里两个设问（what is the worst that could happen?）都在为「开口」壮胆——A 的祈使句式与小标题的动词开头特征一致。"
+  },
+  {
+   "question_id": 1814,
+   "long_sentence": "定位句 if we got stuck in the rut of hi, hello, how are you...you will fail to give the initial jolt to the conversation...So don't be afraid to ask more personal questions；rut of 寒暄窠臼，jolt 表「激活」。译：如果困在「你好、最近怎样」的寒暄窠臼里，就无法给对话带来难忘的最初一击——所以大胆问更个人的问题。",
+   "option": "正确项 F Skip the small talk：small talk 正是 hi、how are you 式寒暄的概括，skip 呼应 stuck in the rut 的否定；A 是 41 段主旨；E 是 43 段主旨；D 是 45 段主旨。",
+   "keyword": "small talk 寒暄、客套话；rut 窠臼、老一套；initial jolt 最初一击；personal questions 个人化问题。",
+   "note": "引语列举是小标题的改写素材：hi、hello、how are you 的共同名字就是 small talk；F 的 skip 与「问更个人问题」的建议同向。"
+  },
+  {
+   "question_id": 1815,
+   "long_sentence": "定位句 make an effort to find the things which you and that person have in common so that you can build the conversation from that point；have in common 表「有共同点」，from that point 表以此为起点。译：初次见面时，努力找出你与对方的共同点，从那里展开对话——你会发现对话突然变得容易许多。",
+   "option": "正确项 E Find the 「me too」s：「me too」（我也是）正是 have in common 的口语化改写；G Ask for an opinion 无中生有，本段不谈征求意见；B Be present 是第 44 段主旨；F 是第 42 段主旨。",
+   "keyword": "have...in common 有共同点；build the conversation 展开对话；move outwards 向外延伸；make an effort 努力。",
+   "note": "「me too」s 的引号改写是命题人搭的口语桥：共同点就是对方会说「我也是」的话题；从 in common 一词即可锁定 E。"
+  },
+  {
+   "question_id": 1816,
+   "long_sentence": "定位句 when someone tries to communicate with you, just be in that communication wholeheartedly. Make eye contact；wholeheartedly 表「全身心投入」，与上文 busy on their phone 的敷衍对照。译：当别人想与你交流时，全身心投入其中——进行眼神接触，眼之所注即是魔力所在。",
+   "option": "正确项 B Be present：be in that communication wholeheartedly＝「专注在场」；A 是 41 段主旨；E 是 43 段主旨；D 是 45 段主旨；C unique compliment 无中生有。",
+   "keyword": "wholeheartedly 全心全意地；eye contact 眼神交流；multitask 同时处理多任务；pour one's heart out 倾诉衷肠。",
+   "note": "反面例子（忙手机还称 I can multitask）后接正面建议 be...wholeheartedly——「在场」的反面正是分心玩手机；eye contact 是佐证细节。"
+  },
+  {
+   "question_id": 1817,
+   "long_sentence": "定位句 remember the little details of the people you met...perhaps the places they have been to, the places they want to go, the things they like, the things they hate；四类细节与前文 forgotten their name 呼应。译：记住你见过聊过的人的小细节——去过的、想去的地方，喜欢与讨厌的事物；记住这些，你会自动成为对方幸福的投资者，对方也会感到维系这段关系的责任。",
+   "option": "正确项 D Name, places, things：places 与 things 原词复现，forgotten their name 呼应 Name；B Be present 是第 44 段主旨；F 是第 42 段主旨；E 是第 43 段主旨。",
+   "keyword": "little details 小细节；awkward 尴尬的；investor in their wellbeing 他人幸福的投资者；keep the relationship going 维系关系。",
+   "note": "列举型段落直接对名词：name、places、things 在段内全部原词出现——小标题题里「名词并列」选项几乎逐词对应列举句。"
+  },
+  {
+   "question_id": 1818,
+   "long_sentence": "填空句 Weighing yourself regularly is a wonderful way to stay aware of any significant weight fluctuations. __1__, when done too often, this habit can sometimes hurt more than it __2__；前句褒后句贬。译：定期称重是掌握体重显著波动的好方法。然而，做得太频繁时，这个习惯有时弊大于利。",
+   "option": "正确项 D However：前句「好方法」与后句「弊大于利」语义反转，选转折；A Besides 表递进，B Therefore 表因果，C Otherwise 表「否则」，均无法衔接褒贬逆转。",
+   "keyword": "however 然而；fluctuation 波动；hurt more than it helps 弊大于利；be aware of 意识到。",
+   "note": "首段两句定全文基调：褒→贬的转折开启「称重过频之弊」的主题；完形首空优先看前后句语义方向是否反转。"
+  },
+  {
+   "question_id": 1819,
+   "long_sentence": "填空句 this habit can sometimes hurt more than it __2__；hurt 与空格词构成「弊与利」的对照比较。译：这个习惯有时弊大于利。",
+   "option": "正确项 A helps：hurt more than it helps「弊大于利」是固定对照表达，且与首句 wonderful way 的褒义呼应——过度才有害；B cares「在意」，C warns「警告」，D reduces「减少」，都不能与 hurt 构成利害对照。",
+   "keyword": "hurt more than it helps 弊大于利；habit 习惯；significant 显著的；regularly 定期地。",
+   "note": "more than 比较结构两端需语义对立：hurt（害）对照 helps（利）；cares/warns/reduces 不在「利害」轴上，直接排除。"
+  },
+  {
+   "question_id": 1820,
+   "long_sentence": "填空句 weighing myself every day caused me to shift my focus from being generally healthy and physically active, to focusing __3__ on the scale；from A to B 对比「全面健康」与「只盯数字」。译：每天称重让我的焦点从整体健康与积极锻炼，转移到了只盯着体重秤。",
+   "option": "正确项 B solely：solely on the scale「只盯秤」，与 from being generally healthy 的「全面」形成对照；A initially「起初」无对照义，C occasionally「偶尔」与 every day 矛盾，D formally「正式地」不合语境。",
+   "keyword": "solely 仅仅、只；shift...from...to... 把…从…转移到…；scale 体重秤；physically active 积极锻炼的。",
+   "note": "from...to... 两端是「广与窄」：generally healthy 对照 solely on the scale；C 的 occasionally 与每日称重的事实冲突，可秒排。"
+  },
+  {
+   "question_id": 1821,
+   "long_sentence": "填空句 I had gained weight in the form of muscle mass, but thinking only of __4__ the number on the scale, I altered my training program；分词短语作原因状语，the number on the scale 指体重数字。译：我的体重以肌肉的形式增加了，但满脑子只想把秤上的数字降下去，于是改变了训练计划。",
+   "option": "正确项 B lowering：称重语境里对「数字」的执念是降体重，lowering the number 搭配自然；A recording「记录」与后文改计划的焦虑动机不符，C explaining「解释」无关，D accepting「接受」与 altered 相悖——正因不接受数字才改了计划。",
+   "keyword": "muscle mass 肌肉量；alter 改变；training program 训练计划；the number on the scale 秤上的数字。",
+   "note": "前句 gained weight in the form of muscle mass 是关键铺垫：增肌使数字变大→只想「降数字」→改错计划；accepting 恰是作者没做到的事。"
+  },
+  {
+   "question_id": 1822,
+   "long_sentence": "填空句 That conflicted with how I needed to train to __5__ my goals；to 不定式表目的，宾语是 my goals（健身目标）。译：这与我为达成目标所需的训练方式相冲突。",
+   "option": "正确项 D reach：reach my goals「达成目标」是惯用搭配；A modify「修改」把宾语换成目标本身，与语境无关，B set「设定」是训练开始前的动作，C review「回顾」不合目的逻辑。",
+   "keyword": "reach one's goals 达成目标；conflict with 与…冲突；in the form of 以…的形式。",
+   "note": "目的搭配题：___ my goals 四选一，reach 唯一惯用；set 虽可搭配但「设定目标」发生在训练之前，与「训练方式」的冲突语境时序不符。"
+  },
+  {
+   "question_id": 1823,
+   "long_sentence": "填空句 weighing myself daily did not provide an accurate __6__ of the hard work and progress I was making in the gym；provide an accurate ___ of 是名词框架，of 后接「努力与进步」。译：每天称重并不能准确反映我在健身房付出的努力与取得的进步。",
+   "option": "正确项 B depiction：accurate depiction of「对…的准确描绘、反映」，与下文「三周至一个月才见体重变化」呼应；A definition「定义」，C distribution「分布」，D prediction「预测」，均不能表达「如实反映」。",
+   "keyword": "depiction 描绘、反映；accurate 准确的；progress 进步；it takes...to do 需要…（时间）才能…。",
+   "note": "provide an accurate ___ of 的名词槽：要「如实呈现努力」选 depiction；prediction 是强干扰——称重记录当下，不做预测。"
+  },
+  {
+   "question_id": 1824,
+   "long_sentence": "填空句 It takes about three weeks to a month to notice significant changes in your weight __7__ altering your training program；due to altering 表原因。译：由于调整了训练计划，体重的显著变化大约需要三周到一个月才能注意到。",
+   "option": "正确项 A due to：改变训练计划是体重变化出现滞后效应的原因，due to altering...作原因状语；B regardless of「不顾」逻辑不通，C aside from「除…之外」，D along with「连同」都无法解释「变化为何滞后」。",
+   "keyword": "due to 由于；it takes...to notice 需要…才注意到；significant changes 显著变化；alter 调整。",
+   "note": "因果逻辑题：计划变了→身体需要时间响应→三周后见变化，空格连接「原因」——due to；regardless of 会把因果说反。"
+  },
+  {
+   "question_id": 1825,
+   "long_sentence": "填空句 The most __8__ changes will be observed in skill level, strength and inches lost；与上句体重变化需三周至一个月形成时间对照。译：最立竿见影的变化体现在技能水平、力量与围度（英寸）的减少上。",
+   "option": "正确项 D immediate：与体重的滞后（three weeks to a month）对照，技能、力量、围度的变化「即时可见」；A orderly「有序的」，B rigid「僵硬的」，C precise「精确的」，均与「时间快慢」的对照维度无关。",
+   "keyword": "immediate 立即的、即时的；skill level 技能水平；inches lost 围度（英寸）减少；observe 观察到。",
+   "note": "上下句对照定形容词：体重慢、技能力量快——immediate 与 three weeks to a month 形成时间对比；precise 是强干扰，但对照的是快慢而非精度。"
+  }
+ ]
+}

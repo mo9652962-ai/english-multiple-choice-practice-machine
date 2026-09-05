@@ -1,0 +1,180 @@
+{
+ "chunk": 81,
+ "items": [
+  {
+   "question_id": 2001,
+   "long_sentence": "定位句 Let's look at a real-world ______ 为主干完整的祈使句；look at 查看、审视；real-world 为复合形容词修饰空格名词；上文刚讲完增长团队的抽象定义，本句是承上启下的过渡句，由理论转入实例。译：让我们来看一个真实世界中的实例。",
+   "option": "正确项 D example：real-world example（现实案例）为固定搭配，下文 BitTorrent 公司的故事正是该实例的展开；A experiment（实验）偷换概念，文章是商业案例而非科学实验；B proposal（提案）无中生有，文中没有提议对象；C debate（辩论）答非所问，此处没有观点交锋。",
+   "keyword": "real-world 真实世界的；example 实例＝case；prior to 在…之前＝before；plateau 停滞、进入瓶颈期。",
+   "note": "完形名词题用下文验证：下一段 Prior to forming a growth team, the software company BitTorrent... 就是空格词的具体内容，先读实例再回头选词最稳；Let's look at... 常引出案例，是完形篇章衔接的高频信号句。"
+  },
+  {
+   "question_id": 2002,
+   "long_sentence": "定位句 Prior to forming a growth team, the software company BitTorrent had 50 employees working in the ______ departments of engineering, marketing and product development；Prior to forming... 介词短语作时间状语，prior to＝before；working in... 现在分词短语作后置定语修饰 employees；三个部门名词并列。译：在组建增长团队之前，软件公司 BitTorrent 有 50 名员工，分属工程、市场营销和产品开发等传统部门。",
+   "option": "正确项 D traditional：traditional departments（传统部门）指按职能划分的常规架构，与下文跨部门 growth team 的新模式形成新旧对比；A identical（完全相同的）与三种并列部门自相矛盾；B marginal（边缘的）无中生有；C provisional（临时的）与公司长期固定架构不符。",
+   "keyword": "prior to 在…之前＝before；traditional 传统的＝conventional；department 部门；identical 完全相同的（与并列列举冲突）。",
+   "note": "形容词题靠上下文反差：growth team 的卖点是跨部门协作，反衬旧架构的 traditional 属性；干扰项 identical 看似适配并列结构，但 engineering、marketing、product development 三者恰恰不同，抓住列举逻辑即可排除。"
+  },
+  {
+   "question_id": 2003,
+   "long_sentence": "定位句 The ______ was that too many customers were using the basic, free version of their product；主干为 The...was + that 引导的表语从句；上句 This brought them good results until 2012, when their growth plateaued 中 when 引导定语从句修饰 2012，plateau 本义高原，引申为停滞。译：问题在于，太多客户都在使用产品的基础免费版。",
+   "option": "正确项 D problem：前句 growth plateaued（增长停滞）抛出症结，The problem was that... 是典型释因句型；A rumor（谣言）与 B secret（秘密）均与后文公开分析原因的行文矛盾，属无中生有；C myth（迷思）指流传的错误观念，此处讲的是客观事实，语气不符。",
+   "keyword": "plateau 停滞、达到瓶颈；problem 问题＝issue；basic, free version 基础免费版；premium, paid version 高级付费版。",
+   "note": "空格后接 was that 表语从句，答案须能引出解释内容；problem 与 secret 都可搭配，裁决靠逻辑：增长停滞是要被解决的问题，公司随后动手分析并整改，secret 的保密语气与全文公开复盘的叙事相悖。"
+  },
+  {
+   "question_id": 2004,
+   "long_sentence": "定位句 And ______ improvements to the premium, paid version, few people were making the upgrade；空格词接名词 improvements 构成状语；few 表否定倾向，意为「几乎没有」；主句 few people were making the upgrade 用过去进行时呈现持续的低升级状态。译：尽管对高级付费版做了改进，却几乎没有用户升级。",
+   "option": "正确项 A despite：前半「付费版有改进」与后半「升级者寥寥」语义相逆，需让步词；B unlike（不像）表对比，improvements 本身无对比对象，逻辑不通；C through（通过）表方式手段，与「升级少」的结果矛盾；D besides（此外）表递进，容纳不了 few 的转折语气。",
+   "keyword": "despite 尽管＝in spite of（只接名词短语）；make the upgrade 进行升级；premium 高级的、优质的；few 几乎没有（否定含义）。",
+   "note": "介词题先判逻辑关系：「有改进」vs「少人升级」是让步；再核语法限制——空格后 improvements 是名词，despite 接名词、although 接从句，本题只能填 despite，这正是 despite 与 although 的经典辨析考点。"
+  },
+  {
+   "question_id": 2005,
+   "long_sentence": "定位句 Things changed, ______, when an innovative project-marketing manager came aboard；主干为 Things changed，when 引导时间状语从句；空格词为插入语，被前后双逗号隔开；come aboard 本义上船，引申为入职、加入。译：然而，当一位有创新精神的项目营销经理入职后，情况发生了变化。",
+   "option": "正确项 B however：上文讲停滞与少人升级的困境，下文讲转机与营收增 92%，前后为转折；A moreover（而且）表递进，方向相反；C therefore（因此）表因果，经理入职不是停滞的结果；D again（再次）暗示此前已变化过一次，文中并无此事，无中生有。",
+   "keyword": "however 然而（插入语常双逗号隔开）；come aboard 入职、加入＝join；innovative 创新的；things changed 情况发生转变。",
+   "note": "句首逻辑题看语义场极性：前文 plateaued、few people 均为负面，后文 skyrocketed、92 percent 均为正面，中间必是 however；做完形逻辑词先给前后句标注褒贬，四个选项按因果、递进、转折对号入座。"
+  },
+  {
+   "question_id": 2006,
+   "long_sentence": "定位句 when an innovative project-marketing manager came aboard, ______ a growth team and sparked the kind of ______ perspective they needed；came aboard、空格动词与 sparked 为三个并列谓语；sparked 本义点燃火花，引申为激发；they needed 为省略 that 的定语从句修饰 perspective。译：当一位创新的项目营销经理入职后，组建了增长团队，并激发了他们所需的全新视角。",
+   "option": "正确项 B created：create a growth team（组建团队）与第二段 What you need to do is establish a growth team 的 establish 呼应，从无到有；A inspected（检查）无中生有，经理不是来验收的；C expanded（扩张）预设团队已存在，与原文矛盾；D reformed（改革）搭配错位，改革对象通常是机制而非新建团队。",
+   "keyword": "create 创立、组建＝establish/found；spark 激发、点燃；perspective 视角＝point of view；come aboard 入职。",
+   "note": "动词题找全文复现：首段 establish a growth team 已定调「从零新建」，created 同义呼应；expand 是最强干扰，注意时间线——manager 刚入职、此前并无团队，无从扩张；并列谓语 created...and sparked 也提示动作是发起新事物。"
+  },
+  {
+   "question_id": 2007,
+   "long_sentence": "定位句 sparked the kind of ______ perspective they needed；sparked 与前文 created 并列作谓语；the kind of...they needed 中省略 that 的定语从句修饰 perspective；下句 By looking at engineering issues from a marketing point of view 为方式状语，说明新视角的具体内涵。译：激发了他们所需要的那种全新视角。",
+   "option": "正确项 C fresh：fresh perspective（全新视角）与下文用营销眼光审视工程问题的事例严丝合缝——跨部门眼光正是从无到有的新角度；A cultural（文化的）无中生有；B objective（客观的）偷换概念，营销视角强调的是「新」而非「客观」；D personal（个人的）与团队协作主旨相悖。",
+   "keyword": "fresh 新颖的＝new/novel；perspective 视角＝point of view；from a...point of view 从…角度；interdisciplinary 跨领域的。",
+   "note": "下句 By looking at engineering issues from a marketing point of view 是本题题眼：用营销眼光看工程＝新视角；objective 的迷惑性在于「换角度看问题显得客观」，但原文强调角度之新而非结论之客观，靠下文例证锁定 fresh。"
+  },
+  {
+   "question_id": 2008,
+   "long_sentence": "定位句 it became clear that the ______ of upgrades wasn't due to a quality issue；it 为形式主语，真正主语是 that 从句；By looking at engineering issues from a marketing point of view 介词短语作方式状语；be due to 意为「由…造成、归因于」。译：从营销视角审视工程问题后，情况变得清晰：升级数量之少并非质量问题所致。",
+   "option": "正确项 C lack：the lack of upgrades（升级量的匮乏）与前文 growth plateaued、few people were making the upgrade 的低量状态一致；D decrease（下降）偷换概念——原文是停滞在低位而非下滑，plateau 不等于 decrease；A end（终止）程度过重，升级并未归零；B burden（负担）与语境无关。",
+   "keyword": "lack of 缺乏、不足；be due to 由…引起、归因于；upgrade 升级；quality issue 质量问题；shortage 短缺（近 lack，注意与 decrease 辨析）。",
+   "note": "名词题与首段数据复现：few people were making the upgrade 说的是「量少」，lack 恰表不足；decrease 是最强干扰，区分点在 plateau（停滞）与下降的差异——完形考精确语义，程度与方向的细微差别即考点。"
+  },
+  {
+   "question_id": 2009,
+   "long_sentence": "定位句 Armed with this ______, the marketing and engineering teams joined forces to raise awareness by prominently promoting the premium version to users of the free version；Armed with... 过去分词短语作状语，arm...with 使…装备有；join forces 联手；by + 动名词作方式状语。译：凭借这一洞见，营销与工程团队联手，通过醒目地向免费版用户推介高级版来提升认知度。",
+   "option": "正确项 D insight：this insight 指代上句「升级少非质量问题，而是用户不知道高级版」这一发现，insight（洞见）正合看透问题本质的语境；A policy（政策）张冠李戴，公司内部并无政策出台；B suggestion（建议）偷换概念，那是诊断结论不是建议；C purpose（目的）无中生有。",
+   "keyword": "armed with 凭借、以…为武装；insight 洞见、深刻理解；join forces 联手＝team up；raise awareness 提升认知度。",
+   "note": "this 指代题：答案须概括前句的核心发现（不是质量问题，是用户不知情），insight 属认知层面的收获；遇到 this/that + 空格名词，先回读前句提炼信息再匹配语义，勿凭语感选 suggestion 这类近义泛词。"
+  },
+  {
+   "question_id": 2010,
+   "long_sentence": "定位句 joined forces to raise awareness by prominently ______ the premium version to users of the free version；to raise awareness 不定式作目的状语；by + 动名词构成方式状语；prominently 意为醒目地；promote...to... 把…推介给…。译：通过向免费版用户醒目地推介高级版来提升认知度。",
+   "option": "正确项 C promoting：promote A to B（向 B 推介 A）与目的 raise awareness（提升认知）构成手段与目的的闭环，正是营销动作；A contributing（贡献）搭配 contribute...to 但语义不符；B allocating（分配）分配对象是资源资金而非产品推介；D transferring（转移）偷换概念，文中不存在所有权转让。",
+   "keyword": "promote 推广、推介；prominently 醒目地、显著地；contribute...to 为…做贡献；allocate 分配（资源、预算）。",
+   "note": "手段与目的互证：目的词 raise awareness 决定动作是宣传推介，promote 与 awareness 是营销语境的高频搭配；四个干扰项都能接 to，单看搭配必错，须把宾语 premium version（产品）与目的 raise awareness 纳入判断。"
+  },
+  {
+   "question_id": 2011,
+   "long_sentence": "定位句 ______, upgrades skyrocketed, and revenue increased by 92 percent；两个并列分句共享句首逻辑词；skyrocket 由 sky（天空）+rocket（火箭）合成，意为暴涨；increase by 92 percent 中 by 引出增长幅度。译：结果，升级量暴涨，营收增长了 92%。",
+   "option": "正确项 A As a result：前句「醒目推介高级版」是因，本句「升级暴涨、营收增 92%」是果，因果链完整；B At any rate（无论如何）表让步总结，与数据佐证的功能不符；C By the way（顺便说）转移话题；D In a sense（在某种意义上）表限定保留，均无法承接前文举措。",
+   "keyword": "as a result 结果＝consequently；skyrocket 暴涨＝soar；revenue 营收；increase by 增长了（接幅度）。",
+   "note": "句首逻辑词看两句关系：promoting 举措在前、漂亮数据在后，典型因果；92 percent 这类具体数字是「结果」的标志；顺带记 increase by（增长了 92%）与 increase to（增至）的区别，图表写作常用。"
+  },
+  {
+   "question_id": 2012,
+   "long_sentence": "定位句 It needs someone who can ______ the interdisciplinary team and keep them on course for improvement；who 引导定语从句修饰 someone；interdisciplinary 由 inter（之间）+disciplinary（学科的、部门的）构成，意为跨领域的；keep them on course 使他们保持在正确轨道上。译：它需要一个能凝聚跨领域团队、并让团队朝着改进方向前进的人。",
+   "option": "正确项 A unite：unite the team（凝聚团队）与下文 keep them on course、keep the team focused 的管理职能一脉相承；C follow（跟随）主客颠倒，领导者是带领者不是跟随者；B finance（资助）无中生有，文中未谈经费；D choose（挑选）偷换概念，成员已组成团队，领导者职责是统合而非挑选。",
+   "keyword": "unite 团结、凝聚＝bring together；interdisciplinary 跨领域的；keep...on course 使…保持方向；strong leader 强有力的领导者。",
+   "note": "定语从句内看先行词属性：someone（领导者）对 team 的动作，管理语境下是凝聚与引领，follow 的主客颠倒可直接排除；同段 keep them on course、steer them clear of distractions 反复出现「统合纠偏」语义，是 unite 的旁证。"
+  },
+  {
+   "question_id": 2013,
+   "long_sentence": "定位句 This leader will ______ the target area, set clear goals and establish a time frame for the ______ of these goals；will 后接三个并列谓语动词，构成「定域—定标—定期」的顺序链；the target area 目标领域。译：这位领导者将确定目标领域、设定清晰目标，并为这些目标的达成建立时间框架。",
+   "option": "正确项 B identify：identify the target area（确定目标领域）是管理三步曲之首，先圈定范围再设目标、定时限，与 set、establish 构成递进；A share（分享）与目标管理的明确指向矛盾；C divide（划分）张冠李戴，此处不是分派任务；D broaden（拓宽）与 target 的聚焦义相反。",
+   "keyword": "identify 确定、识别＝pinpoint；target area 目标领域；set goals 设定目标；time frame 时间框架。",
+   "note": "并列结构互证：identify → set → establish 是先定方向、再定目标、后定期限的顺序链，首步必是「确定」；target 本身含聚焦义，broaden 的扩大与之构成反义陷阱，识破方向即可快速排除。"
+  },
+  {
+   "question_id": 2014,
+   "long_sentence": "定位句 establish a time frame for the ______ of these goals；the...of these goals 为名词化结构，these goals 回指前文 set clear goals；-ment 为名词后缀，四个选项同由动词加后缀派生；for 表目的。译：并为这些目标的达成建立时间框架。",
+   "option": "正确项 D accomplishment：time frame for the accomplishment of these goals（目标达成的时间表）——目标是用来达成的，达成才需要时间表，accomplishment＝achievement；A announcement（宣布）偷换概念，目标要达成不是宣布；B assessment（评估）无中生有；C adjustment（调整）与 set clear goals 的明确性矛盾。",
+   "keyword": "accomplishment 完成、达成＝achievement；time frame 时间框架；-ment 名词后缀；goal 目标。",
+   "note": "these goals 强制回指前文 set clear goals——考「动词变名词」的语义对应：goal 是被 accomplish 的对象；四个选项同缀，词形毫无提示，纯考回指链条，回读上一行 find set clear goals 即破题。"
+  },
+  {
+   "question_id": 2015,
+   "long_sentence": "定位句 The growth leader is also ______ for keeping the team focused on moving forward and steering them clear of distractions；主干为 be ______ for + 动名词短语；keep...focused on 使…专注于；steer them clear of distractions 中 steer（驾驭、引导）与 clear of（避开）搭配，意为使其远离干扰。译：增长团队的领导者还要负责让团队保持专注向前，并引导他们避开干扰。",
+   "option": "正确项 B responsible：be responsible for（对…负责）是固定搭配，且 keeping/steering 两个动作正是领导者的职责，与上段 it needs to have a strong leader 的职责清单连贯；A famous（有名的）无中生有；C available（可用的）惯用搭配为 available for sth 但语义不通；D respectable（可敬的）是评价性形容词，无法接职责内容。",
+   "keyword": "be responsible for 对…负责；steer...clear of 使…避开；distraction 干扰、分心；keep focused 保持专注。",
+   "note": "固定搭配优先：is also ______ for 中 responsible for 是最强信号，先扫四个选项谁能接 for；also 承接上段职责描述，本空与领导职能同类，famous、respectable 这类评价词与职责内容不兼容，直接出局。"
+  },
+  {
+   "question_id": 2016,
+   "long_sentence": "定位句 ______ attractive, new ideas can be distracting；空格词引导状语，attractive 与主句形容词 distracting 形成褒贬对照；此处为省略结构，完整形式是 While they are attractive。译：尽管新点子很有吸引力，但它们可能让人分心。",
+   "option": "正确项 C While：先承认新点子有吸引力、再指出其干扰性，是让步逻辑，While（尽管）可接省略 be 的形容词短语；A Before 表时间先后，「在吸引之前」逻辑不通；B Once（一旦）表条件，变成「一旦有吸引力就分心」的因果，与承认优点的语气不符；D Unless（除非）表否定条件，方向相反。",
+   "keyword": "while 尽管（让步义，可接省略结构）；attractive 有吸引力的；distracting 令人分心的；put on the back burner 搁置、暂缓。",
+   "note": "识别省略结构：While attractive＝While they are attractive，考 while 的让步义而非「当…时」；attractive 与 distracting 同含词根 tract（拉），一个拉人靠近、一个让人走神，一褒一贬的张力决定了让步关系而非时间关系。"
+  },
+  {
+   "question_id": 2017,
+   "long_sentence": "定位句 the team leader must recognize when these ideas don't ______ the current goal and need to be put on the back burner；when 引导宾语从句作 recognize 的宾语；put on the back burner 本义放到炉子后小火眼上，习语意为搁置、暂缓处理。译：团队领导者必须识别这些点子何时不符合当前目标、需要暂时搁置。",
+   "option": "正确项 A serve：serve the goal（服务于目标）为商业语境高频搭配，与上文 keep them on course for improvement 的方向管理一致；B limit（限制）主客颠倒，是点子不符合目标而非点子限制目标；C summarize（总结）与目标搭配不当；D alter（改变）偷换概念，原文把点子搁置而非改变目标。",
+   "keyword": "serve the goal/needs 服务于目标；current 当前的；put...on the back burner 把…搁置；recognize 识别、判断。",
+   "note": "主宾关系定动词：主语 these ideas、宾语 the current goal，语义方向应是「点子服务目标」；don't serve 的否定判断与后半句 need to be put on the back burner 形成因果闭环——不符合当前目标才需要搁置，逻辑自洽者唯一。"
+  },
+  {
+   "question_id": 2018,
+   "long_sentence": "定位句 The RHS...says it has introduced the ban because of the damage plastic grass does to the environment and biodiversity；主干为 The RHS says + 宾语从句；because of 引导原因状语；the damage plastic grass does 中省略关系词的定语从句修饰 damage。译：英国皇家园艺学会表示，之所以出台禁令，是因为塑料草坪对环境与生物多样性造成的损害。",
+   "option": "正确项 A：is harmful to the environment≈the damage plastic grass does to the environment，harm 与 damage 同义替换，且 biodiversity 佐证；B「园艺圈热门话题」偷换概念，原文 opposition has spread to the highest gardening circles 说的是反对声音扩散，且非 RHS 观点；C「在年度花展上被过度称赞」正反混淆，Chelsea Flower Show 已 ban 假草坪；D「毁坏西伦敦景观」无中生有，west London 只是花展地点。",
+   "keyword": "damage 损害＝harm；be harmful to 对…有害；biodiversity 生物多样性；ethos 精神信条、特质。",
+   "note": "机构观点题双线索：RHS 机构表态（introduced the ban because of）加负责人 Ed Home 引语（not in line with our ethos）；真草的 environmental benefits（涵养野生生物、缓解积水、降温）反推假草之害，正反两面互证选 A。"
+  },
+  {
+   "question_id": 2019,
+   "long_sentence": "定位句 It is trying to encourage people to sign two petitions, one calling for a ban..., another calling for an 'ecological damage' tax；主干为 It is trying to encourage...；one...another... 并列，calling for 现在分词短语作后置定语。译：该账号正鼓励人们签署两份请愿书：一份呼吁禁售塑料草坪，另一份呼吁对此类草坪征收「生态损害税」。",
+   "option": "正确项 B：两份请愿的内容 ban on the sale（禁售）与 'ecological damage' tax（生态损害税）都指向对假草坪的抵制，resistance≈call for a ban，与段首 raise awareness of the problems 呼应；A「对 RHS 失望」无中生有，请愿方与 RHS 是同盟军；C「对拟征税收愤怒」正反混淆，税是请愿者自己呼吁征的；D「担忧真草供应」答非所问，第三段不涉及真草。",
+   "keyword": "petition 请愿书；call for 呼吁、要求；ban 禁止＝prohibit；resistance 抵制＝opposition。",
+   "note": "透过行为看态度：请愿的具体内容（禁售、征税）是推断态度的证据链；第三段段首 The RHS's decision comes as campaigners try to raise awareness of the problems fake grass causes 已定调反对，先读段首再验证明细可提速。"
+  },
+  {
+   "question_id": 2020,
+   "long_sentence": "定位句 supporters of fake grass point out that there is also an environmental impact with natural lawns, which need mowing and therefore usually consume electricity or petrol；point out 后接 that 宾语从句；which 引导非限制性定语从句修饰 natural lawns；therefore 承接「需修剪」与「耗电耗油」的因果。译：假草坪的支持者指出，天然草坪同样存在环境影响——它们需要修剪，因而通常要耗电或耗油。",
+   "option": "正确项 B：need mowing、consume electricity or petrol、requires considerable amounts of water, weed killer or other treatments 全部是真草的劣势，disadvantages of growing real grass 是对整段列举的概括；A「降低假草坪成本的必要性」无中生有；C「人造草坪的养护方法」答非所问，段落讲的是真草的养护负担；D「昆虫栖息地保护的挑战」偷换概念，原文 trees or shrubs...provides habitat for insects 是支持者的正面论据。",
+   "keyword": "mow 修剪（草坪）；consume 消耗＝use up；weed killer 除草剂；considerable amounts of 大量的。",
+   "note": "支持者的论证策略是转移阵地攻击真草：本题考整段概括而非单句，只有 B 抓住「真草也有环境代价」的方向；point out that 后长从句要抓 need mowing、require water、weed killer 等实义动词短语归纳，勿被 also claims 的多信息点带偏。"
+  },
+  {
+   "question_id": 2021,
+   "long_sentence": "定位句 the government responded that it has 'no plans to ban the use of artificial grass'，以及补充句 the use of artificial grass must comply with the legal and policy safeguards in place；responded 后接宾语从句；in place 为后置定语，意为「已到位的、现行的」。译：政府回应称暂无禁止人造草坪的计划，并补充说人造草坪的使用必须遵守现行的法律与政策保障。",
+   "option": "正确项 C：must comply with the legal and policy safeguards in place≈obey existing rules，comply with 对 obey、in place 对 existing 双重同义替换；A「敦促立法限制」正反混淆，原文明确 no plans to ban，且 prefer...rather than legislating 表示不立法；B「保证其质量」无中生有；D「用可持续替代品取代它」张冠李戴，alternatives 只是鼓励公共机构考虑的选项，不是取代用户的草坪。",
+   "keyword": "comply with 遵守＝obey/abide by；in place 现行的、已到位的；legislate 立法；safeguard 保障措施。",
+   "note": "政府态度两步走：先以 no plans to ban 排除 A（正反混淆的典型样本），再从 must comply with the legal and policy safeguards in place 提炼「遵守现行规则」；rather than legislating 提示引导而非强制的姿态，与 C 的 remind 语气吻合。"
+  },
+  {
+   "question_id": 2022,
+   "long_sentence": "全文结构句：首段 opposition has now spread to the highest gardening circles（反对已蔓延至最高园艺圈层），与第四段 However, supporters of fake grass point out that...——However 引出反方阵营，opposition 与 supporters 构成对垒双方；第四段还叠加 industry 的三条辩护。译：反对声现已蔓延至最高园艺圈层；然而，假草坪的支持者指出……",
+   "option": "正确项 D：反方（花展禁令、两份请愿、Twitter 账号）与正方（真草同样耗电耗水、假草坪用户花园更多）论战贯穿全文，controversial（有争议的）是对「双方观点并存」的概括；A「被持续改进」无中生有；B「市场份额下滑」无中生有，原文年销约八百万平方米是正数；C「越来越买得起」无中生有，全文未提价格。",
+   "keyword": "controversial 有争议的＝disputed；opposition 反对派；supporter 支持者；petition 请愿书。",
+   "note": "推理题看全文而非一段：反方禁令请愿与正方数据辩护旗帜鲜明，态度对立即 controversy；三个干扰项共享「合理想象」外壳——改进、份额、价格都貌似顺理成章，但推理题必须找到双方对垒的原文证据，找不到即无中生有。"
+  },
+  {
+   "question_id": 2023,
+   "long_sentence": "定位句 Collectively, they have a maintenance backlog of more than $12 billion. Roads, trails, restrooms, visitor centers and other infrastructure are crumbling.；Collectively 作状语，意为「总体而言」；maintenance backlog 意为维护欠账、积压的维护需求；第二句主语为基础设施名词并列，crumbling 意为崩坏、破败。译：总体而言，国家公园的维护欠账超过 120 亿美元，道路、步道、洗手间、游客中心等基础设施正在破败。",
+   "option": "正确项 D：Poorly maintained infrastructure≈maintenance backlog 加 infrastructure are crumbling，backlog（积压欠账）与 crumbling（破败）共同对应 poorly maintained；A「商业利润下滑」无中生有；B「商业化不足」答非所问，作者恰恰批评过度商业化主张；C「交通服务缺乏」偷换概念，原文是道路破败失修，不是缺少交通服务。",
+   "keyword": "maintenance backlog 维护积压欠账；crumble 破败、崩塌＝fall apart；infrastructure 基础设施；in crisis 处于危机。",
+   "note": "题干 problem 对应第二段 But the government is right about one thing: U.S. national parks are in crisis——but 转折后才是真症结；B 最具迷惑性：作者反对商业化方案，绝不会把「商业化不足」当问题，注意区分政府方案与作者认可的危机描述。"
+  },
+  {
+   "question_id": 2024,
+   "long_sentence": "定位句 Moreover, increased privatization would certainly undercut one of the major reasons why 300 million visitors come to the parks each year: to enjoy nature and get a break from the commercial drumbeat；undercut 意为削弱；why 引导定语从句修饰 reasons，冒号后为 reasons 的同位解释。译：此外，加剧私有化必将削弱每年 3 亿游客来园的主要理由之一：享受自然、逃离淹没日常生活的商业喧嚣。",
+   "option": "正确项 A：undercut 游客来园理由（享受自然、逃离商业喧嚣）即毁掉游客体验，spoil visitor experience 是 undercut reasons 的语义改写；B「帮助保护自然」正反混淆，与作者立场相反；C「带来运营压力」无中生有，原文未谈运营；D「增加游园人数」过度推断，削弱来园理由只会降低吸引力。",
+   "keyword": "undercut 削弱＝undermine/weaken；spoil 破坏、糟蹋；a break from 从…中抽离；commercial drumbeat 商业鼓噪。",
+   "note": "词汇色彩定方向：undercut 是贬义动词，推出的结果必为负面，四选项中仅 A、C 贬义，再按语义匹配（体验受损 vs 运营压力）锁定 A；Moreover 提示本句与上段 privatizing would not be a cure-all 并列，两条反对理由互相印证。"
+  },
+  {
+   "question_id": 2025,
+   "long_sentence": "定位句 Some 81% of respondents said they would be willing to pay additional taxes for the next 10 years to avoid any cuts to the national parks.；Some 81% 意为「约 81%」；be willing to 愿意做某事；to avoid... 不定式作目的状语。译：约 81% 的受访者表示，未来十年他们愿意缴纳额外税款，以避免国家公园遭受任何削减。",
+   "option": "正确项 C：pay additional taxes≈pay extra for the national parks，81% 对应 most respondents，数字支撑最直接；A「定期游园」无中生有，调查只问付费意愿；B「主张更大预算」偷换概念，受访者表态的是自己多缴税，不是要求政府加预算；D「支持近期改革」无中生有，全文未提改革。",
+   "keyword": "respondent 受访者；be willing to 愿意做；additional taxes 额外税款＝pay extra；keep...intact 使…保持完好。",
+   "note": "数字定位法：题干 most respondents 对应 Some 81%，调查类题目答案必落在数据句，most 与 81% 是「模糊词换具体数字」的标准改写；B 的陷阱在把「个人缴费意愿」偷换成「公共预算主张」，注意谁出钱这一主语细节。"
+  }
+ ]
+}

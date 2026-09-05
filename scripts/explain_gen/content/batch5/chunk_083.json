@@ -1,0 +1,180 @@
+{
+ "chunk": 83,
+ "items": [
+  {
+   "question_id": 2051,
+   "long_sentence": "定位句 There are ways to ______ a social life, but it can feel overwhelming ______.——There be 句型引出存在的方法；ways to do 做某事的方法；but 表转折；上句 It's important to recognise these feelings of loneliness 先讲「承认孤独感受」这一步。译：有一些方法可以重拾社交生活，但起初可能让人感到应接不暇。",
+   "option": "正确项 D regain：re-（再、重新）+gain（获得），即「重新获得」社交生活——前文孤独状态正意味着社交的失去，regain 与「走出孤独」的行文方向吻合；A assess（评估）无中生有；B interpret（解读）搭配不当，方法不是用来解读社交的；C provide（提供）主客颠倒，本文给读者的建议是主动重建而非提供他人社交。",
+   "keyword": "regain 重新获得＝get back；re- 前缀「再、重新」；overwhelming 令人不知所措的；recognise 承认、意识到。",
+   "note": "前缀定词义：上段讲独处致孤独，本段讲走出孤独的方法，regain 的 re- 恰表「失而复得」；recognise these feelings（先承认孤独）与 regain（再重拾社交）构成「先承认、后行动」的行文顺序，动词题把前缀与上下文行动线连起来看即可。"
+  },
+  {
+   "question_id": 2052,
+   "long_sentence": "定位句 There are ways to regain a social life, but it can feel overwhelming ______.——but 表转折；feel 为系动词；overwhelming 意为令人不知所措的；下文 It's a great idea to start by thinking about hobbies 的 start 呼应「起步阶段」。译：有一些方法可以重拾社交生活，但起初可能让人感到应接不暇。",
+   "option": "正确项 A at first：与下文 start by thinking about hobbies 的起步建议呼应——先难后易的时间线，at first（起初）标示阶段；B in turn（依次、转而）表顺序或相互关系，无时间起点义；C on time（准时）与感受无关；D by chance（偶然）否认方法的主动性，与 ways to regain 相矛盾。",
+   "keyword": "at first 起初＝initially；overwhelming 令人不知所措的＝daunting；in turn 依次、转而；by chance 偶然地。",
+   "note": "时间线定位：but 转折后接「难」，下文 start by 给出破局建议，空格词须标示「开始时的难」；下句 start by thinking 是本题最硬的跨句线索，at first 与 start 构成呼应——完形复习把前后句连读，呼应词一抓一个准。"
+  },
+  {
+   "question_id": 2053,
+   "long_sentence": "定位句 You can then find groups and activities related to those where you will be able to meet ______ people.——related to those 过去分词短语作后置定语，those 指爱好；where 引导定语从句修饰 groups and activities；meet sb 与人结识。译：接下来，你可以寻找与爱好相关的团体和活动，在那里结识志趣相投的人。",
+   "option": "正确项 D like-minded：like（相似）+minded（有想法的）＝志趣相投的，与前文 hobbies you enjoy 呼应——因共同爱好入群，遇见的自然是同好；A far-sighted（有远见的）无中生有；B strong-willed（意志坚强的）无中生有；C kind-hearted（心地善良的）无中生有，三者都与「因爱好相聚」无关。",
+   "keyword": "like-minded 志趣相投的（like 相像+minded 有想法的）；hobby 爱好；be related to 与…相关；group 团体、社群。",
+   "note": "合成形容词拆解法：like（相像）+minded（心智倾向）＝想法相似；后文 groups aimed at new parents、same profession 的举例都在强调「同类相聚」，D 的共同兴趣义是唯一贯通全段的选项，拆词根比死记词义更快。"
+  },
+  {
+   "question_id": 2054,
+   "long_sentence": "定位句 There are groups aimed at new parents, at those who want to ______ a new sport for the first time...——aimed at 过去分词短语作后置定语；those who want to... 定语从句限定人群；for the first time 初次。译：有面向新父母的团体，也有面向想第一次尝试某项新运动的人的团体。",
+   "option": "正确项 A try：try a new sport（尝试新运动）与 for the first time（第一次）天然搭配，初次尝试正需要新手团体；B promote（推广）主客颠倒，参与者是尝试者不是推广者；C watch（观看）偷换概念，看比赛不是加入社交团体；D describe（描述）无中生有。",
+   "keyword": "try a new sport 尝试新运动；for the first time 第一次；be aimed at 面向、针对；take up a sport 开始从事某运动。",
+   "note": "for the first time 是本题题眼：与「第一次」匹配的动作必然是 try；B promote 的迷惑在 sport 常与 promote 搭配出现，但定语从句的主语是 those who want to...（想加入的个人），身份决定动词——动词题先核主语再核搭配。"
+  },
+  {
+   "question_id": 2055,
+   "long_sentence": "定位句 networking events for those in the same profession to meet up and ______ ideas.——networking events 社交联谊活动；for those in the same profession 介词短语限定人群；meet up and ______ 两个动作并列。译：还有面向同行业者的社交联谊活动，供他们会面并交流想法。",
+   "option": "正确项 B share：share ideas（交流想法）是 networking（人脉社交）语境的标准搭配，同行聚会的目的正是互通信息；A test（测试）与 ideas 搭配生硬；C accept（接受）方向单向，联谊交流是双向的；D revise（修改）无中生有，ideas 无需修订。",
+   "keyword": "share ideas 交流想法＝exchange ideas；networking 拓展人脉、社交联谊；profession 行业＝field；meet up 会面、碰头。",
+   "note": "语境定搭配：networking events（行业联谊）的功能设定决定动词是「交流」；并列结构 meet up and ______ 中第二个动词须与「会面」顺承成链，share ideas 是四级写作口语通用短语，可与 exchange ideas 互换，识记一组即可。"
+  },
+  {
+   "question_id": 2056,
+   "long_sentence": "定位句 On the other hand, it's ______ possible to have too much of a social life.——On the other hand 表反面转折；it 为形式主语，真正主语是不定式 to have too much of a social life；too much of 表示「过度」。译：另一方面，社交生活太多同样是有可能的。",
+   "option": "正确项 C also：前文讲「社交太少会孤独」，本段讲「社交太多会倦怠」，also 勾勒对称结构——另一面同样成立；A already（已经）表完成时间，无并列对照义；B thus（因此）表因果，社交太多并非前文推出的结果；D only（仅仅）语义相反，反而削弱「可能」。",
+   "keyword": "on the other hand 另一方面；too much of 过度；it's possible to do 有可能做某事；social burnout 社交倦怠。",
+   "note": "篇章对称题：On the other hand 已锁定「另一面对称」的框架，空格词是框架内的填充——too little 与 too much 的对称由 also 打通；On the other hand 加 also 是英语说明文「两面论」的标准组合，识别结构即可秒选，无需逐词纠结。"
+  },
+  {
+   "question_id": 2057,
+   "long_sentence": "定位句 If you feel like you're always doing something and there is never any ______ in your calendar for downtime...——if 引导条件状语从句；feel like 后接表语从句；in your calendar 介词短语作地点状语；downtime 意为休息时间。译：如果你觉得总是在忙，日程表里从没有留给放松的时间空档，你可能陷入社交倦怠。",
+   "option": "正确项 C space：space in your calendar（日程表中的空档）为具象搭配，always doing something 与 never any space 互为正反注解；A list（清单）配 never any 指「没有清单」，与 downtime 所需的「空闲」错位；B order（顺序）无中生有；D boundary（边界）抽象且与 calendar 不搭。",
+   "keyword": "space 空档、空位＝room；calendar 日程表；downtime 休息时间＝free time；social burnout 社交倦怠。",
+   "note": "always...never... 的对比句式提示空格与「忙」反义：日程被填满即没有空档；space 的「空闲时段」义属熟词生义（空间→空档），A list 是最强干扰——分清「清单」是记录工具、「空档」才是休息所依，看 for downtime 的目的状语即可破题。"
+  },
+  {
+   "question_id": 2058,
+   "long_sentence": "定位句 you could suffer social burnout or social ______.——suffer sth 遭受；burnout 由 burn（燃烧）+out（尽）构成，意为倦怠、燃尽；or 连接近义并列成分。译：你可能陷入社交倦怠或社交疲乏。",
+   "option": "正确项 A fatigue：social burnout or social fatigue 为同义并列，fatigue（疲乏）与 burnout（倦怠）同属过度社交的后果，or 提示同类近义；B criticism（批评）无中生有；C injustice（不公）无中生有；D dilemma（困境）偷换概念，疲乏是身心状态不是两难处境。",
+   "keyword": "fatigue 疲乏＝exhaustion；burnout 倦怠、燃尽；suffer 遭受、承受（痛苦等）；or 表同义并列。",
+   "note": "or 的并列逻辑：连接词两侧通常近义或同类，burnout 已定「过度消耗」的语义场，fatigue 是唯一同场词；顺带区分 burnout（长期耗竭）与 fatigue（即时疲乏）——本文并列使用不作细分，记「or 两侧同向」这条铁律即可。"
+  },
+  {
+   "question_id": 2059,
+   "long_sentence": "定位句 Low mood, low energy, irritability and trouble sleeping could all be ______ of poor social health.——四个并列名词短语作主语，均为身心症状；could all be 系表结构；poor social health 意为社交健康不佳。译：情绪低落、精力不足、易怒和睡眠困难都可能是社交健康不佳的信号。",
+   "option": "正确项 C signs：情绪低落、精力差、易怒、失眠都是可观察的「表现」，signs of poor social health（社交健康不佳的征兆）是症状与病况的标准逻辑；A sources（来源）因果颠倒，症状不是来源；B standards（标准）偷换概念，症状是表现不是衡量尺度；D scores（分数）无中生有。",
+   "keyword": "sign 迹象、征兆＝indicator；irritability 易怒；low mood 情绪低落；social health 社交健康。",
+   "note": "先判主语性质再选名词：四个并列症状是「果」，poor social health 是「因」，signs 表征兆方向正确；A sources 的迷惑在因果颠倒——来源指向病因（如孤独本身），而四个词都是外在表现，判断并列主语的性质即破题。"
+  },
+  {
+   "question_id": 2060,
+   "long_sentence": "定位句 Make sure you ______ some time in your diary when you're ______ for socialising and use this time to relax...——make sure 后接省略 that 的宾语从句；in your diary 在日程本里；when 引导定语从句修饰 time；use this time to... 不定式表目的。译：务必在日程本上划出一些时间，作为不用于社交的时段，并用这段时间来放松、休整和恢复。",
+   "option": "正确项 D mark out：mark out some time in your diary（在日程里划出时间）是具体可操作的动作，与 diary 的书写场景吻合；A take over（接管）接 time 意为「占用时间」，与预留休息的意图相反；B wipe off（擦除）与 some time 搭配语义混乱；C add up（累加）与 in your diary 不搭。",
+   "keyword": "mark out 划出、标出；diary 日程本＝planner；unavailable 没空的、不可用的；set aside 留出（近义搭配）。",
+   "note": "动作与场景互证：diary（日程本）提示「笔划」类动作，mark out 与下文 use this time 呼应——先划出、后使用；A take over 的「占用」方向相反，留给休息的时间是被划出保护而非被占用，方向判断加场景判断双管齐下。"
+  },
+  {
+   "question_id": 2061,
+   "long_sentence": "定位句 Make sure you mark out some time in your diary when you're ______ for socialising...——when 引导定语从句修饰 some time；be ______ for socialising 表状态；上文 always doing something 与 never any space for downtime 已铺垫「留白」主题。译：务必在日程本上划出一些你不去社交的时间段。",
+   "option": "正确项 B unavailable：un-（否定）+available（可用的），unavailable for socialising 即「这段时间不用于社交」，与 mark out 划出专属休息时间的意图一致；A ungrateful（忘恩负义的）无中生有；C responsible（负责的）语义不通，人对社交时段谈不上负责；D regretful（后悔的）无中生有。",
+   "keyword": "unavailable 没空的、不可用的；available 有空的（反义）；socialising 社交；un- 否定前缀。",
+   "note": "un- 前缀反推：能与 for socialising 自然搭配的仅 unavailable/responsible，再按「划出休息时段」的意图筛选——划出的时间要「没空社交」，unavailable 的否定义正合文意；本空与 18 空 mark out 是一个动作链，两句连读再选最稳。"
+  },
+  {
+   "question_id": 2062,
+   "long_sentence": "定位句 use this time to relax, ______ and recover.——use sth to do 用…来做某事；三个动词并列共用 to，构成「放松—休整—恢复」的递进链；this time 回指上文划出的时段。译：用这段时间来放松、休整和恢复。",
+   "option": "正确项 D rest：relax, rest and recover 构成三个 r- 开头的头韵并列，rest（休整）语义介于放松与恢复之间，链条顺滑；A react（反应）与恢复主题无关；B repeat（重复）无中生有，并非重复社交；C return（返回）语义不通。",
+   "keyword": "rest 休整、休息；recover 恢复＝recuperate；relax 放松；alliteration 头韵（r- 开头的修辞并列）。",
+   "note": "三连并列看语义递进与音韵：relax（当下放松）→rest（整体休整）→recover（恢复元气），rest 承上启下；r- 头韵是英语行文的修辞偏好，选项中唯一 r- 开头的 rest 并非巧合，语感与语义在此重合，可放心选。"
+  },
+  {
+   "question_id": 2063,
+   "long_sentence": "定位句 Whatever we mean by the economy growing, by things getting better, the gains will have to be more evenly shared than in the recent past.——Whatever 引导让步状语从句；主干为 the gains will have to be more evenly shared；evenly shared 意为被更均匀地分享。译：无论我们所说的经济增长、情况变好是什么意思，其收益都必须比近年来更均匀地分配。",
+   "option": "正确项 C：the gains must be more evenly shared≈benefit people equally，evenly（均匀地）与 equally（平等地）同义替换；A「催生创新」无中生有；B「让职业选择多样化」偷换概念，gig workers 与 middle-income jobs undercut 是不平等现状的描述不是主张；D「被强力推动」无中生有。",
+   "keyword": "gains 收益＝benefits；evenly 均匀地＝equally；politically sustainable 政治上可持续的；gig worker 零工经济从业者。",
+   "note": "书中观点题定位首段引语：will have to be 的强义务语气是 Coyle 主张的标志；B 的迷惑在 gig workers、automation 等词看似与职业相关，但原文用它们「描述现状」、用 evenly shared「提出主张」，现状与主张的立场区分是本题关键。"
+  },
+  {
+   "question_id": 2064,
+   "long_sentence": "定位句 Improving living standards and increasing prosperity for more people will require greater use of digital technologies to boost productivity in various sectors.——动名词短语 Improving... and increasing... 并列作主语；to boost productivity 不定式作目的状语。译：要让更多人改善生活水平、增加繁荣，就需要在医疗、建筑等各行业更多地使用数字技术来提升生产率。",
+   "option": "正确项 C：boost productivity in various sectors≈raise overall work efficiency，boost productivity（提升生产率）与 efficiency 同义，various sectors（各行业）对 overall（整体的）；A「带来即时繁荣」无中生有，原文无「即时」义；B「减少工作量」偷换概念，提效不等于减负；D「促进跨部门合作」偷换概念，various sectors 是应用范围不是合作关系。",
+   "keyword": "productivity 生产率＝efficiency；boost 提升＝raise/improve；sector 行业、部门；prosperity 繁荣。",
+   "note": "目的状语定答案：greater use of digital technologies 的目的就是 to boost productivity，同义链 boost productivity→raise efficiency 一眼贯通；D 是最强干扰，various sectors 修饰的是 productivity 的覆盖面（对应 overall），不是「合作」，张冠李戴式偷换要警惕。"
+  },
+  {
+   "question_id": 2065,
+   "long_sentence": "定位句 she fears that tech's inequality problem could be a roadblock to deploying AI 与 To make such 'tremendous changes,' she adds, you need social buy-in.——fears that 后接宾语从句；roadblock 意为路障、障碍；social buy-in 意为社会认同、公众买账。译：她担心技术的不平等问题可能成为部署 AI 的路障；她补充说，要实现如此巨大的变革，需要社会的认同。",
+   "option": "正确项 D：部署 AI 有 roadblock、变革需要 social buy-in，说明公众不认同技术就推不动，unwelcome to the public 是对 resentment simmering（怨愤暗涌）与 buy-in 缺失的概括；A「影响工作生活平衡」无中生有；B「部署不切实际」偷换概念，是公众阻力而非技术不可行；C「产生巨额开支」无中生有。",
+   "keyword": "roadblock 障碍＝obstacle；deploy 部署＝roll out；social buy-in 社会认同；resentment 怨愤＝bitterness。",
+   "note": "fear 的宾语是「障碍源于人」：inequality→resentment→缺 buy-in 的因果链指向公众态度；B 的迷惑在 deploy 一词复现，但原文说部署受阻是「因人不认同」而非「技术难落地」，把 roadblock 归因于人是解本题的枢纽。"
+  },
+  {
+   "question_id": 2066,
+   "long_sentence": "定位句 a short list of eight American cities...had roughly 38% of all tech jobs by 2019 与 New AI technologies are particularly concentrated: just 15 cities account for two-thirds of the AI assets...——concentrated 意为集中的；account for 占据（比例）。译：仅八座城市就占 2019 年全美科技岗位的约 38%；新技术尤其集中：仅 15 座城市就占了全美 AI 资产与能力的三分之二。",
+   "option": "正确项 A：8 城占 38% 科技岗位、15 城占三分之二 AI 资产，两组数字共同描绘 AI 技术在美国的分布不均，uneven distribution≈particularly concentrated；B「科技岗位前景令人失望」无中生有，数据谈集中度不谈前景；C「区域经济快速发展」正反混淆，集中加剧的是 disparities（差距）；D「AI 资产重要性上升」偷换概念，数据说明集中而非重要。",
+   "keyword": "concentrated 集中的；account for 占（比例）；disparity 差距＝inequality；assets and capabilities 资产与能力。",
+   "note": "例证题看数据功能：城市列举加占比数字服务于「集中、不均」这一个论点，concentrated 一词是数据与选项 A 之间的桥梁；下文 geographical disparities in wealth will continue to soar 是论点的延续，例证目的题的答案=对例子的抽象化。"
+  },
+  {
+   "question_id": 2067,
+   "long_sentence": "定位句 A more immediate response is to broaden our digital imaginations to conceive of AI technologies that don't simply replace jobs but expand opportunities.——主干为 A more immediate response is to broaden...；that 引导定语从句，not...but 结构。译：更直接的应对是拓宽数字想象力，构想出不单纯取代岗位、而是在全国各地最关心的领域拓展机会的 AI 技术。",
+   "option": "正确项 D：don't simply replace jobs but expand opportunities 即重新定义 AI 的角色——从「取代岗位」变为「拓展机会」，redefine the role 是对 not...but 结构的概括；A「筹资启动新项目」张冠李戴，federal funding 服务于「独立于巨头的研究」这一方案细节，且非 more immediate response；B「鼓励 AI 研究合作」无中生有；C「防范 AI 副作用」过度推断，文中未谈副作用。",
+   "keyword": "conceive of 构想＝come up with；expand opportunities 拓展机会；replace jobs 取代岗位；stranglehold 束缚、扼制。",
+   "note": "建议题定位末两句：loosening the stranglehold（松绑巨头）与 broaden imaginations（拓宽想象）是作者的两条建议；not...but 结构中 but 后才是重心（expand opportunities），AI 的角色从「替代者」改写为「赋能者」，理解 not...but 的重心即得解。"
+  },
+  {
+   "question_id": 2068,
+   "long_sentence": "定位句 Currently only 20 per cent of the UK's wood requirement is home-grown while it remains the second-largest net importer of timber in the world.——主干为 only 20 per cent...is home-grown；while 表对比；home-grown 意为本国种植的。译：目前英国木材需求只有 20% 来自本国种植，而它仍是世界第二大木材净进口国。",
+   "option": "正确项 A：仅 20% 自给、世界第二大净进口国、reduce reliance on timber imports，三条信息指向「需要增加本国木材供应」，domestic wood supply≈home-grown；B「减少木材需求」偷换概念，原文要减的是进口依赖不是需求；C「降低木材生产成本」无中生有；D「放宽进口管制」正反混淆，方向恰是减少进口。",
+   "keyword": "home-grown 本国种植的＝domestic；reliance on 对…的依赖；net importer 净进口国；timber 木材＝wood。",
+   "note": "数据题：20 per cent 自给率与 second-largest net importer 的反差是段核，要做的是「补供给」而非「压需求」；B 的 reduce 虽来自原文（reduce reliance on imports），但宾语被换成 demand，动宾搭配的偷换是细节题设错惯技，看到原词复现更要核宾语。"
+  },
+  {
+   "question_id": 2069,
+   "long_sentence": "定位句 the trade body says these don't go far enough and fail to promote the benefits of planting them to boost timber supplies.——these 回指 fresh incentives；don't go far enough 意为力度不够；fail to do 未能做到。译：该行业机构表示，这些激励措施力度不够，也未能宣传植树以增加木材供应的好处。",
+   "option": "正确项 A：don't go far enough 加 fail to promote...boost timber supplies，说明激励不足以缓解木材短缺，即难以应对未来建设危机；B「时机不对」偷换概念，Coming at a time of... 只是陈述背景不是批评时机；C「误导土地所有者」无中生有；D「成本太高」无中生有。",
+   "keyword": "go far enough 力度足够；incentive 激励措施；boost timber supplies 增加木材供应；fresh 新出台的。",
+   "note": "don't go far enough 的程度评价是钥匙：「不够」不等于「时机错」或「误导」，A 的 can hardly（难以）与 don't go far enough 的程度差语气一致；Coming at a time of 是背景描述，误读成对时机的批评就掉进 B 的坑。"
+  },
+  {
+   "question_id": 2070,
+   "long_sentence": "定位句 For decades we have not taken responsibility for investing in our domestic wood supply, leaving us exposed to fluctuating prices...——For decades 时间状语；leaving us exposed to... 现在分词短语作结果状语；be exposed to 意为暴露于、易受。译：数十年来，我们未曾承担起投资本国木材供应的责任，致使我们暴露在波动的价格之下，并在全球需求上升、本国供应下降之际争夺未来的木材供应。",
+   "option": "正确项 B：not taken responsibility for investing in our domestic wood supply 对应 inadequate investment in growing wood（种植投资不足），exposed to fluctuating prices 是其结果；A「政府对进口不作为」偷换概念，原文批评的是投资国内供应不力；C「国内木材商竞争」无中生有；D「生产商逐利动机」无中生有。",
+   "keyword": "take responsibility for 承担…的责任；be exposed to 暴露于、易受；fluctuating 波动的＝unstable；invest in 投资。",
+   "note": "因果链定位：leaving us exposed to... 的分词结构把「原因」（不投资）与「结果」（暴露于价格波动）写进同一句，回读 not taken responsibility for investing 即得 B；题干 exposure 与原文 exposed 的词形呼应是定位信号。"
+  },
+  {
+   "question_id": 2071,
+   "long_sentence": "定位句 It also encompasses significant hesitation on behalf of farmers and other landowners to invest in longer-term planting projects.——encompass 意为包含、涵盖；hesitation to do 做某事的犹豫；on behalf of 此处意为「来自」。译：这也包括农场主及其他土地所有者对投资更长期种植项目的严重犹豫。",
+   "option": "正确项 D：farmers and other landowners 的 hesitation to invest in longer-term planting projects 即「不愿种树」，D 是其同义改写；A「建筑业过度消耗木材」无中生有，原文谈供应端不谈消耗；B「不利于种树的条件」正反混淆，原文说 The UK has ideal conditions；C「木材工业技术过时」偷换概念，过时的是 perceptions（观念）不是技术。",
+   "keyword": "hesitation 犹豫＝reluctance；encompass 涵盖＝include；outdated perceptions 过时的观念；landowner 土地所有者。",
+   "note": "多因列举逐项核对：原因是 outdated perceptions、grey squirrels 啃食、farmers 的 hesitation 三类，B 与 C 分别用「条件」「技术」偷换原文「观念」，一个正反混淆一个偷换概念；只有 D 与 hesitation to invest in planting 精确对应。"
+  },
+  {
+   "question_id": 2072,
+   "long_sentence": "定位句 While food production and biodiversity health are clearly of critical importance, we need our land to also provide secure supplies of wood for construction, manufacturing and contribute to net zero.——While 表让步「尽管」；also 承接「除了粮食与生物多样性，还要…」。译：尽管粮食生产与生物多样性健康显然至关重要，我们还需要土地同时为建筑与制造提供稳定的木材供应，并为净零排放作贡献。",
+   "option": "正确项 C：政府支持的 focus 仍在粮食生产与 rewilding，Goodall 主张 land to also provide wood supplies，即「为生产性植树提供更多支持」，more support≈greater impetus behind those aspirations；A「补贴低碳住宅」张冠李戴，low-carbon homes 是种树好处的描述；B「更重视农村经济」以偏概全，financial benefits to rural economies 只是植树益处之一；D「优先净零战略」无中生有，Goodall 立场是并列兼顾而非排序。",
+   "keyword": "productive forestry 生产性林业；impetus 推动、动力＝driving force；on the ground 落实到行动层面；net zero 净零排放。",
+   "note": "建议题看「现状 vs 期望」之差：政府支持 focus 停在 food production 与 biodiversity，Goodall 的 also 即诉求所在，C 的 productive tree planting 与段首 productive tree planting can deliver real financial benefits 呼应；末句 little action on the ground 加 calling for much greater impetus 双重佐证。"
+  },
+  {
+   "question_id": 2073,
+   "long_sentence": "定位句 One of the biggest challenges in keeping unsafe aging drivers off the road is convincing them that it's time to turn over the keys.——主干为 One of the biggest challenges is convincing...；动名词短语 convincing them that... 作表语；turn over the keys 交出车钥匙，喻指放弃驾驶。译：让不安全的年迈司机离开道路的最大挑战之一，是让他们相信该交出钥匙了。",
+   "option": "正确项 C：one of the biggest challenges 加 convincing them（要说服本人）说明此事艰难，tough task 是 biggest challenge 的同义改写；A「是新的安全措施」无中生有；B「已成为争议话题」无中生有，首段无争议双方；D「有益他们的健康」过度推断，Menke 只说停止驾驶是 complete life-changer，未及健康。",
+   "keyword": "challenge 挑战＝tough task；turn over the keys 交出钥匙（喻放弃驾驶）；convince 说服＝persuade；life-changer 彻底改变生活的事。",
+   "note": "段首判断句直接给态度：biggest challenges 即「难」，C 的 tough 是其口语化对应；turn over the keys 的比喻义（放弃驾驶权）要读出来；D 用「生活巨变」反推「健康受益」属过度推断，原文没有 health 字眼，过度推断选项常披合理外衣。"
+  },
+  {
+   "question_id": 2074,
+   "long_sentence": "定位句 Some states require physicians to report, others allow but do not mandate reports, while a few consider a report a breach of confidentiality.——some...others...a few 三级并列；while 表对比；mandate 意为强制规定；breach of confidentiality 违反保密义务。译：一些州要求医生上报，另一些州允许但不强制，还有少数州视上报为违反保密义务。",
+   "option": "正确项 D：require、allow but do not mandate、consider a breach 三种州级态度并存，different responses 即各州对上报的不同反应；A「赢得司机支持」无中生有；B「被认为不现实」无中生有；C「被普遍视为不必要」正反混淆，多数州至少允许上报，仅 a few 视为泄密。",
+   "keyword": "mandate 强制规定＝require；breach of confidentiality 违反保密义务；liability 法律责任；in accordance with 依照。",
+   "note": "some...others...while a few 的三级并列是「差异」的信号结构，答案必是「不同反应」类表述；B、C 的「普遍」类词与并列结构天然冲突——有分歧就不存在「普遍认为」，扫到三级并列先想 different、vary、differ。"
+  },
+  {
+   "question_id": 2075,
+   "long_sentence": "定位句 the difficulties are addressed piecemeal by different professions with different focuses, including gerontologists, highway administration officials, automotive engineers and others.——address 意为处理、应对；piecemeal 意为零敲碎打、缺乏统筹；with different focuses 修饰 professions。译：老年驾驶安全难题的一个症结在于，不同职业的群体各自为战、焦点分散——老年学家、公路管理部门、汽车工程师等等。",
+   "option": "正确项 B：difficulties are addressed piecemeal（零散应对）加缺少一个 National Institute of Older Driver Studies 统筹、需要 better evidence，指向「需要协调统一」，well coordinated≈not piecemeal；A「已带来大变化」无中生有；C「已获公众认可」无中生有；D「需要法律支持」张冠李戴，法律上报是 Menke 与 AMA 部分，Dugan 谈的是研究统筹。",
+   "keyword": "piecemeal 零敲碎打的、缺乏统筹的；address 应对、处理；coordinate 协调＝organize；gerontologist 老年学家。",
+   "note": "负面描述反推建议：piecemeal（零散）的批评暗示正面诉求是「统筹」，加 There's not a National Institute 的「缺机构」证据链可确认；D 的迷惑在第二段的法律语境，注意 Dugan 的观点只到「研究与统筹」为止，人名观点边界不可越。"
+  }
+ ]
+}

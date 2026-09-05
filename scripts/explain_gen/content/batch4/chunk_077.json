@@ -1,0 +1,180 @@
+{
+ "chunk": 77,
+ "items": [
+  {
+   "question_id": 1901,
+   "long_sentence": "定位句 One survey from Accenture found that 88 percent of graduating seniors this year chose their major with a job in mind：主干 survey found that...；with a job in mind 介词短语作伴随状语，意为「心中已有工作打算」。译：埃森哲的一项调查发现，今年 88% 的应届毕业生在选专业时心中已想着未来的工作。",
+   "option": "正确项 B：have a clear idea about their future job＝chose their major with a job in mind，另有最看重的雇主特质是 offer secure employment，佐证其规划清晰；A「最优先职业培训」无中生有，professional development and training 只是雇主特质中的第三位；C「不在乎工作表现」无中生有；D「觉得工作生活平衡难实现」张冠李戴，原文 work-life balance was number one 说它最重要，非难实现。",
+   "keyword": "with a job in mind 心中想着工作；secure employment 稳定工作；career goal 职业目标；desirable trait 理想特质。",
+   "note": "段落推断题抓两处调查数据：88% 选专业时已想好工作＋最看重 secure employment，合并推出「对将来工作有清晰规划」；D 项利用括号内 work-life balance was number one 设张冠李戴——最看重不等于最难实现。"
+  },
+  {
+   "question_id": 1902,
+   "long_sentence": "引语 Millennials wanted more flexibility in their lives... Generation Zs are looking for more certainty and stability, because of the rise of the gig economy... they are quite risk averse：notes 引出观点；risk averse 为复合形容词「规避风险的」。译：千禧一代想要生活中更多弹性；Z 世代寻求更多确定与稳定（因为零工经济兴起），而且相当规避风险。",
+   "option": "正确项 B：less adventurous＝quite risk averse（risk 厌恶型＝不愿冒险），与 millennials wanted more flexibility（要弹性、爱变通）形成代际对比；A「更不现实」正反混淆，Z 世代恰是 practical、clear-eyed economic pragmatists；C「更勤奋」、D「更慷慨」无中生有。",
+   "keyword": "risk averse 规避风险的＝less adventurous；flexibility 弹性；certainty and stability 确定与稳定；gig economy 零工经济。",
+   "note": "比较题抓引语对举：Millennials wanted flexibility 与 Gen Zs looking for certainty/stability；risk averse 拆开是 risk（风险）＋averse（厌恶的），对应 less adventurous，两代人的关键词弹性和稳定即是答案坐标。"
+  },
+  {
+   "question_id": 1903,
+   "long_sentence": "定位句 The lesson is not that you should make your personal life an open book, but rather, when given the option to offer up details about yourself or studiously stash them away, you should just be honest：not...but rather 对比结构；when given 状语省略结构；stash away 意为「藏起」。译：这并不意味着你该把私生活全盘托出，而是说，当可以选择坦露自己的细节还是刻意藏起来时，你只需诚实。",
+   "option": "答案 E：Reveal, don't hide, information——段落核心是 stay tight-lipped won't help，哈佛商学院研究显示 upfront 的人更受信任、hid 的人 lost trustworthiness，结尾 just be honest；Reveal≈be upfront、hide 原词复现；B「永远装好脸色」与本段袒露主张相反，G「换位思考」属 42 段主题，均无本段证据。",
+   "keyword": "tight-lipped 守口如瓶的；upfront 坦率的、直陈的；stash away 藏匿；trustworthiness 可信度。",
+   "note": "小标题题抓段落首尾：首句 may try to stay tight-lipped 提出误区，末句 you should just be honest 给出主张；E 的 Reveal 与 hide 对仗恰合 not...but rather 结构，标题正反两半对应段落误区与建议。"
+  },
+  {
+   "question_id": 1904,
+   "long_sentence": "定位句 In fact, rushing to get your own ideas out there can cause colleagues to feel you don't value their opinions：动名词短语 rushing to... 作主语；cause sb to do 使某人…；value 意为「重视」。译：事实上，急于表达自己的观点会让同事觉得你不重视他们的意见。",
+   "option": "答案 F：Slow down and listen——take time to hear out your coworkers 对应 listen，rushing...can cause colleagues to feel you don't value their opinions 反向对应 slow down，结尾 engage...in a genuine, back-and-forth conversation 印证双向倾听；G「换位思考」是最强干扰，但本段讲「听完对方再说」而非「替他人着想」，G 缺本段词汇支撑。",
+   "keyword": "receptive 乐于接受的；hear out 听完（某人的话）；back-and-forth conversation 双向交流；prioritize 优先考虑。",
+   "note": "本段信号词成对出现：receptive、take time、hear out 与反例 rushing；F 的两个祈使动词分别对应「别急」与「听」，比 G 的换位思考更贴合词汇证据，标题判断以原词复现优先。"
+  },
+  {
+   "question_id": 1905,
+   "long_sentence": "定位句 But in addition to those trusted coworkers, you should expand your horizons and find out about all the people around you：in addition to 意为「除…之外还」；expand your horizons 拓宽视野；主句为两个并列动词短语。译：除了那些信任的同事之外，你还应拓宽视野，去了解身边所有的人。",
+   "option": "答案 D：Spend time with everyone——find out about all the people around you 加 Use your lunch and coffee breaks to meet up with colleagues you don't always see，即用休息时间去接触不常见面的人，Spend time≈use your breaks to meet up、everyone≈all the people；效果句 grow your internal network 呼应扩大社交圈；C「定制互动」是 45 段按性格调整风格的主题，勿混。",
+   "keyword": "expand your horizons 拓宽视野；meet up with 会面；internal network 内部人脉；go a long way 大有裨益。",
+   "note": "本段反复出现 all the people、colleagues you don't always see 等全称表达——「跳出固定圈子见所有人」是标题核心；D 与 C 的区分：C 讲调整互动方式（45 段），D 讲扩大接触面（43 段）。"
+  },
+  {
+   "question_id": 1906,
+   "long_sentence": "定位句 But don't overdo it or be fake about it. One study found that people responded best to comments that shifted from negative to positive, possibly because it suggested they had won somebody over：祈使句否定；that 定语从句修饰 comments；win over 意为「赢得认可」。译：但别做过头，也别弄虚作假。一项研究发现，人们对由负面转向正面的评价反应最好，可能因为这表明他们赢得了他人的认可。",
+   "option": "答案 A：Give compliments, just not too many——Positive feedback is important 加 tell them they did an exceptional job 对应 give compliments，But don't overdo it 对应 just not too many，标题的让步限定与段落转折一一对应；B「永远保持好脸色」与 don't be fake 相悖，正反混淆；C「定制互动」属 45 段，D「与每个人相处」属 43 段。",
+   "keyword": "compliment 赞美＝positive feedback；overdo 做过头；engender good will 培养好感；exceptional 出色的。",
+   "note": "小标题里的让步限定（just not too many）是信息增量：先肯定赞美、再用 But 限定频率；B 项的 always 与段内 don't be fake 直接冲突——标题含 always 之类绝对词时要回段落验方向。"
+  },
+  {
+   "question_id": 1907,
+   "long_sentence": "定位句 Jokes that work on one person won't necessarily land with another. So, adapt your style accordingly to type：that work on... 定语从句；land with sb 意为「对某人奏效、被接受」；adapt...to... 使适应。译：对一个人生效的玩笑未必能被另一个人接受。所以，要按类型相应调整你的风格。",
+   "option": "答案 C：Tailor your interactions——tailor（量身定制）＝adapt your style accordingly to type，段落证据链：Remember...what they appreciate from an interaction、Some people like small talk...while others are more straightforward、Jokes that work on one person won't necessarily land with another，全是「因人而异调整互动」；G「换位思考」缺「按类型调整自身行为」的证据。",
+   "keyword": "tailor 量身定制＝adapt；land with sb 被某人接受、奏效；small talk 闲聊；straightforward 直截了当的。",
+   "note": "尾段 So, adapt your style accordingly to type 是标题原句级信号；C 的 tailor 是 adapt 的书面同义替换；G 虽涉及他人视角但无「定制调整」义，tailor 的定制义要靠 accordingly to type 唤起。"
+  },
+  {
+   "question_id": 1908,
+   "long_sentence": "定位句 It's not difficult to set targets for staff. It is much harder, however, to understand their negative consequences：两句对比，插入语 however 承接转折；difficult 与 much harder 形成程度对照。译：为员工设定目标并不难。然而，要理解这些目标的负面后果就难得多。",
+   "option": "正确项 B：however「然而」——前句 not difficult（不难）与后句 much harder（难得多）构成反向对比；A therefore「因此」表因果，两句无因果链；D moreover「此外」表同向递进，与反向对比不符；C again「再次」无重复语境。",
+   "keyword": "however 然而（插入语前后加逗号）；consequence 后果；set targets 设定目标；much harder 难得多。",
+   "note": "首空定全文基调：easy 与 harder 的反差是转折信号；however 表对比、moreover 表递进，区分法是看前后两句语义是否同向——「设目标易、懂后果难」显然反向。"
+  },
+  {
+   "question_id": 1909,
+   "long_sentence": "定位句 Most work-related behaviors have multiple components. Emphasize one and the others become distorted：Emphasize... and... 为「祈使句＋and」结构，相当于 if 条件句；distort 意为「扭曲、变形」。译：大多数工作行为都有多个组成部分。偏重其中一个，其余的就会变形。",
+   "option": "正确项 A：Emphasize「侧重、强调」——祈使＋and 表条件：偏重一个指标导致其余被扭曲，与全文「单一目标产生负面后果」主旨一致；B Identify「识别」、C Assess「评估」、D Explain「解释」均为认知动作，不会引发 others become distorted 的行为后果。",
+   "keyword": "component 组成部分；emphasize 侧重、强调；distort 扭曲、变形；祈使句＋and 结构＝if 条件从句。",
+   "note": "空格动词须能引发 distortion 这一结果：唯有「侧重」才有厚此薄彼效应；「祈使句＋and」是隐性条件句，主句 become distorted 已给出结果提示，选动作类动词 Emphasize。"
+  },
+  {
+   "question_id": 1910,
+   "long_sentence": "定位句 Travel on a London bus and you'll quickly see how this works with drivers：祈使句＋and 表条件；how 从句作 see 的宾语；this 指代上段「单一目标致其他变形」的机制。译：坐一坐伦敦的公交车，你很快就能看到这套机制在司机身上如何运作。",
+   "option": "正确项 D：quickly「很快」——坐上公交即见例证，quickly 强调验证之快，与上文 Emphasize one and the others become distorted 的立见分晓衔接；A nearly「几乎」修饰 see 不成立（不可能「几乎看见」）；B curiously「好奇地」、C eagerly「热切地」描述心理状态，与「规律显现」无关。",
+   "keyword": "travel on a bus 乘车（祈使用法）；see how... 看到如何…；quickly 很快；work with 对…起作用。",
+   "note": "本句用生活化祈使引出实例，quickly 强调例证的即时可验性；副词题先看被修饰动词——see 表「看到」，修饰「看到发生得多快」的 quickly 最自然，心理类副词先排除。"
+  },
+  {
+   "question_id": 1911,
+   "long_sentence": "定位句 Are there inspectors to check that people have paid? Possibly, but very few：不定式 to check 作 inspectors 的后置定语；check 后接 that 宾语从句；Possibly, but very few 为让步式简短回答。译：有稽查员核查人们是否买票吗？可能有，但非常少。",
+   "option": "正确项 C：check「核查」——inspectors（稽查员）的职能就是查票，check that people have paid 搭配自然；A claim「声称」、D recall「回忆」与稽查职能无关；B prove「证明」语气过强，稽查是核实而非举证。",
+   "keyword": "inspector 稽查员、检查员；check 核查＝inspect/verify；have paid 已经付费（完成时态）。",
+   "note": "职业名词定动词：见 inspectors 即联想 check/inspect；本段连发问句（Are they carefully inspected? Never.）列举失范现象，check 与前文 inspected 构成同源词复现，复现是完形第一线索。"
+  },
+  {
+   "question_id": 1912,
+   "long_sentence": "定位句 And people who run for the bus? They are ignored：who run for the bus 定语从句；被动语态 are ignored；问句＋短答结构延续上文的列举节奏。译：那跑着赶公交车的人呢？他们被无视了。",
+   "option": "正确项 B：ignored「被无视」——司机按时间目标开车、不候赶车者，与上文 Never inspected、Of course（逃票成风）、very few inspectors 一致，都是「目标单一导致规范失灵」的例证；A threatened「被威胁」、C mocked「被嘲笑」、D blamed「被责备」均与上下文无关。",
+   "keyword": "run for the bus 跑着赶车；ignore 无视、不理会；被动语态 be ignored；例证链（不查票、逃票、少稽查、无视赶车人）。",
+   "note": "本段是例证链：每一问都展示「司机只管准点」的一个侧面；被动态主语 people 的遭遇应是「没被服务」而非「被负面对待」，ignored 最合逻辑，threatened/mocked/blamed 无语境依据。"
+  },
+  {
+   "question_id": 1913,
+   "long_sentence": "定位句 Why? Because the target is punctuality：自问自答结构；表语为 the target is punctuality，直接给出原因。译：为什么？因为目标就是准点。",
+   "option": "正确项 A：punctuality「准点」——上句 People complained that buses were late and infrequent，对策目标自然是准时，后文 drivers were rewarded or punished according to the time they took 佐证；B hospitality「好客」、C competition「竞争」、D innovation「创新」与公交晚点的抱怨无关。",
+   "keyword": "punctuality 准时＝being on time；target 目标；late and infrequent 又晚又少；complain 抱怨。",
+   "note": "本空是全文题眼：抱怨 late → 目标 punctuality → 后果（闯灯、撞骑车人）；名词题看上文抱怨的具体问题，late 一词直接指向 punctuality，因果链上下游词互为证据。"
+  },
+  {
+   "question_id": 1914,
+   "long_sentence": "定位句 People complained that buses were late and infrequent. So, the number of buses and bus lanes were increased, and drivers were rewarded or punished according to the time they took：So 表因果承接；and 并列两个被动谓语；according to 依据。译：人们抱怨公交车晚点且班次少。于是，公交数量与公交道增加了，司机按行车用时受到奖励或惩罚。",
+   "option": "正确项 B：So「于是」——抱怨（原因）→增车增道＋按时奖惩（对策），因果顺承；A Yet「然而」表转折，但两句是「问题→措施」的自然推进；C Besides「此外」表追加；D Still「仍然」表让步延续，均不合语境。",
+   "keyword": "so 于是、因此；reward or punish 奖励或惩罚；according to the time 按时间；bus lane 公交专用道。",
+   "note": "逻辑词题先判两句关系：complained 是因、措施是果，选 So；Yet/Still 属反向词，Besides 属追加词，「问题引出措施」是单向推进关系，逐词代入验证即可。"
+  },
+  {
+   "question_id": 1915,
+   "long_sentence": "定位句 So, the number of buses and bus lanes were increased, and drivers were rewarded or punished according to the time they took：rewarded or punished 反义并列；according to the time they took 为方式状语，内含定语从句。译：司机按其行车用时获得奖励或惩罚。",
+   "option": "正确项 C：rewarded「奖励」——与 punished 构成 or 连接的反义对举（奖惩对照），according to the time（按时间）印证准点目标下的考核机制；A hired「雇佣」、B trained「培训」、D grouped「分组」均不能与 punished 形成对照，且与时间考核无关。",
+   "keyword": "reward and punish 奖与惩（反义并列）；according to 依据；hit the target 达标。",
+   "note": "or 连接的并列词常为同向或反义对举：punished 已定负面，空格需其反义 rewarded；下文 drivers hit these targets 呼应「达标有奖」，前后形成闭环证据。"
+  },
+  {
+   "question_id": 1916,
+   "long_sentence": "定位句 And drivers hit these targets. But they also hit cyclists：hit 双关——hit the target（达标）与 hit cyclists（撞到骑车人）；But 转折；also 表并列递进。译：司机达成了这些目标。但他们也撞到了骑车人。",
+   "option": "正确项 D：also「也」——hit 一词双关使「达成目标」与「撞人」共用动词，But 转折后 also 引出另一重 hit；A only「只」与 But 组合后逻辑不通，若「只撞人」则推翻前句达标事实；B rather、C once 与句法语义均不合。",
+   "keyword": "hit the target 达成目标＝achieve；hit 撞上（双关）；cyclist 骑车人；But＋also 转折递进。",
+   "note": "本句是全文修辞亮点：hit 的双关让「达标」与「撞人」同词，「既…又…」必须用 also 连接；only 会把两件事变成互斥，先体会双关再选连接词。"
+  },
+  {
+   "question_id": 1917,
+   "long_sentence": "定位句 If the target was changed to revenue, you would have more inspectors and more sensitive pricing：if 虚拟条件句（was changed→would have）；more sensitive pricing 意为「更精细的定价」。译：如果目标改为收入，你就会有更多稽查员和更精细的定价。",
+   "option": "正确项 B：revenue「收入」——more inspectors（多查票保进账）与 more sensitive pricing（票价精算增收）都直接服务于收入目标；C efficiency「效率」正是现行目标，若仍以效率为目标则措施不会变，逻辑矛盾；D security「安全」是下一句 If the criterion changed to safety 的内容，张冠李戴；A comfort「舒适」无证据。",
+   "keyword": "revenue 收入、营收；sensitive pricing 精细定价；criterion 标准；at the expense of 以…为代价。",
+   "note": "目标词与措施要一一对应：查票与定价都直接产生收入；D 是强干扰——下一空 safety 对应 cautious drivers，两个假设句各领一词，B 与 D 勿串位。"
+  },
+  {
+   "question_id": 1918,
+   "long_sentence": "定位句 If the criterion changed to safety, you would get more cautious drivers who obeyed traffic laws. But both these criteria would be at the expense of time：if 虚拟条件句；who obeyed traffic laws 定语从句；at the expense of 意为「以…为代价」。译：如果标准改为安全，你就会有更多遵守交规的谨慎司机。但这两种标准都会以时间为代价。",
+   "option": "正确项 C：cautious「谨慎的」——目标 safety（安全）对应的司机品质是谨慎驾驶、obeyed traffic laws；A friendly「友好的」、B quiet「安静的」、D diligent「勤奋的」均与安全目标无对应关系。",
+   "keyword": "cautious 谨慎的＝careful；criterion 标准；obey traffic laws 遵守交规；at the expense of 以…为代价。",
+   "note": "目标与行为的一致性：safety 目标推出 cautious 行为，与上空 revenue→inspectors/pricing 平行；结尾 But both these criteria would be at the expense of time 总收两例，说明单一标准必有牺牲。"
+  },
+  {
+   "question_id": 1919,
+   "long_sentence": "定位句 There is another problem: people became immensely inventive in hitting targets：there be 句型；冒号后作解释；immensely inventive 字面「极富创造力」，此处指善于钻空子。译：还有另一个问题：人们在达成目标上变得极富「创造力」。",
+   "option": "正确项 B：problem「问题」——冒号后「航班晚点一小时仍准点到达」是目标机制被钻空子的新问题，与上段 London bus 例并列（another 呼应首段 negative consequences）；A purpose「目的」、C prejudice「偏见」、D policy「政策」与 inventive in hitting targets 的语义不合。",
+   "keyword": "inventive 善于创新的（此处反讽：会钻空子）；hit targets 达成目标；another 另一个（并列标志）。",
+   "note": "another 是关键信号：前文公交例子已展示一个问题，本段是第二个问题；冒号后内容定性为「钻空子」故填 problem；immensely inventive 表面褒义实为反讽，注意语篇情感色彩。"
+  },
+  {
+   "question_id": 1920,
+   "long_sentence": "定位句 Have you noticed that you can leave on a flight an hour late but still arrive on time?：现在完成时疑问句；that 宾语从句；leave...late 与 arrive on time 形成对照。译：你有没有注意到，航班晚点一小时起飞，却仍能准点到达？",
+   "option": "正确项 D：noticed「注意到」——Have you noticed that...? 是向读者征询日常观察的惯用句式，与下文 Tailwinds? Of course not! 的自问自答衔接；A reported「报道」的施动者应是媒体；B revealed「揭示」语域不合；C admitted「承认」语义不合——问句是征询观察而非坦白。",
+   "keyword": "notice 注意到；arrive on time 准点到达；leave late 晚点起飞；rhetorical question 设问引出话题。",
+   "note": "Have you noticed... 是作者与读者对话的修辞，用于引出大众可验证的现象；问句动词须匹配「读者日常观察」这一语用，reported/revealed/admitted 的施动者或语用均不符。"
+  },
+  {
+   "question_id": 1921,
+   "long_sentence": "定位句 Airlines have simply changed the time a trip is meant to take. A one-hour flight is now billed as a two-hour flight：定语从句 (that) a trip is meant to take 修饰 the time；be meant to 意为「本应」；billed as 意为「标称为」。译：航空公司只是把行程本应花费的时间改了。一小时的航班现在被标称为两小时。",
+   "option": "正确项 B：trip「行程」——the time a trip is meant to take 指「一段行程的预定时长」，与下文 A one-hour flight...billed as a two-hour flight 完全对应；C departure「出发」是时间点动作而非持续过程，谈不上 take time；A break「休息」、D transfer「转乘」与航班时刻改动无关。",
+   "keyword": "be meant to 本应、旨在；billed as 标称为；trip 行程＝journey；scheduled time 计划时刻。",
+   "note": "空格名词须能搭配 take time（花时间）：trip 是过程名词，departure 是瞬间动作，直接排除；本段机制是「重新标称时刻表」而非改真实飞行时间，trip 是贯穿两句的唯一名词。"
+  },
+  {
+   "question_id": 1922,
+   "long_sentence": "定位句 The moral of the story is simple. Most jobs are multidimensional, with multiple criteria. Choose one criterion and you may well sacrifice others：The moral of the story 为固定搭配；multidimensional 多维的；祈使＋and 条件结构再现。译：这个故事的寓意很简单。大多数工作都是多维的，有多重标准。只选一个标准，你很可能牺牲其他标准。",
+   "option": "正确项 A：moral「寓意、教训」——The moral of the story 为固定搭配，其后 Most jobs are multidimensional... 正是从公交与航班两个故事中提炼的教训；B background「背景」、C style「风格」、D form「形式」与 of the story 搭配后均无此义。",
+   "keyword": "the moral of the story 这个故事的寓意（固定搭配）；moral 寓意（名词熟词僻义）；multidimensional 多维的。",
+   "note": "moral 作名词表「寓意」是熟词僻义考点；前文两个故事（公交、航班）讲毕，此处正是总结教训的位置，The ___ of the story 结构直接锁定 moral。"
+  },
+  {
+   "question_id": 1923,
+   "long_sentence": "定位句 Choose one criterion and you may well sacrifice others：祈使＋and 条件结构；may well 意为「很可能」。译：只选一个标准，你很可能牺牲其他标准。",
+   "option": "正确项 C：sacrifice「牺牲」——呼应首段 Emphasize one and the others become distorted 与中段 both these criteria would be at the expense of time，单一标准挤占其余维度；D tolerate「容忍」方向相反，不是容忍而是放弃；A interpret「解读」、B criticize「批评」与维度取舍无关。",
+   "keyword": "sacrifice 牺牲＝give up；may well 很可能；criterion 标准（复数 criteria）；at the expense of 以…为代价（同义前置）。",
+   "note": "本空是全文主旨词：distorted（首段）→at the expense of（中段）→sacrifice（尾段）构成同义链；tolerate 是最强干扰——「容忍他人」与「牺牲他人」方向与程度都不同。"
+  },
+  {
+   "question_id": 1924,
+   "long_sentence": "定位句 Everything can be done faster and made cheaper, but there is a cost. Setting targets can and does have unforeseen negative consequences：but 转折；can and does 强调「确实会」；unforeseen 意为「无法预见的」。译：一切都可以做得更快更便宜，但这是有代价的。设定目标确实会带来无法预见的负面后果。",
+   "option": "正确项 D：cost「代价」——but 转折后的 cost 与下一句 unforeseen negative consequences 同义呼应，上段 at the expense of time 已用「代价」语义铺垫；A task「任务」、B secret「秘密」、C product「产品」与转折逻辑及后句后果均不接。",
+   "keyword": "cost 代价＝price；unforeseen 无法预见的；negative consequences 负面后果；can and does 确实会（强调结构）。",
+   "note": "but 后接「代价」，与后句 negative consequences 同指；cost 此处取抽象「代价」义而非「成本」；判断依据是下句的展开——负面后果正是代价的具体内容。"
+  },
+  {
+   "question_id": 1925,
+   "long_sentence": "定位句 All good targets should have multiple criteria relating to critical factors such as time, money, quality and customer feedback：relating to... 现在分词短语作 criteria 的后置定语；such as 举例列举。译：所有好目标都应有多个与关键因素相关的标准，例如时间、金钱、质量和客户反馈。",
+   "option": "正确项 C：relating to「与……相关」——criteria relating to critical factors 意为「涉及关键因素的多个标准」，such as 后的 time、money、quality、customer feedback 即这些因素；A leading to「导致」因果方向错误（标准不会导致因素）；B calling for「需要」搭配后语义不通；D accounting for「解释、占比」不合语义。",
+   "keyword": "relate to 与…相关；criterion/criteria 标准（单/复数）；critical factor 关键因素；multiple criteria 多重标准。",
+   "note": "后置定语选择题看名词与短语的语义关系：criteria 是针对关键因素设立的，relating to 表关联最贴切；leading to 表「引起」主宾颠倒，accounting for 的「解释、占比」义是熟词僻义干扰。"
+  }
+ ]
+}

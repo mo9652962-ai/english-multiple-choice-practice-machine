@@ -1,0 +1,180 @@
+{
+ "chunk": 78,
+ "items": [
+  {
+   "question_id": 1926,
+   "long_sentence": "定位句 The trick is not only to specify just one or even two dimensions of the objective, but also to understand how to help people better achieve the objective：not only...but also 并列不定式；trick 意为「窍门、关键」。译：关键不仅在于明确目标的一两个维度，还在于懂得如何帮助人们更好地实现目标。",
+   "option": "正确项 A：specify「明确规定」——与上句 multiple criteria relating to critical factors 呼应：好目标须明确列出涉及时间、金钱、质量的多重标准，specify dimensions 搭配自然；B predict「预测」、C restore「恢复」、D create「创造」与 dimensions of the objective 语义不合——维度是被明确规定的，不是被预测或创造的。",
+   "keyword": "specify 明确规定、具体说明；dimension 维度、方面；objective 目标＝aim；trick 窍门、关键。",
+   "note": "not only...but also 前后动作要协调：后文 understand how to achieve（执行），前文对应「定义清楚」；specify 与 criteria 呼应，D create 是强干扰——目标是既有的，是明确而非创造其维度。"
+  },
+  {
+   "question_id": 1927,
+   "long_sentence": "定位句 The trick is not only to specify just one or even two dimensions of the objective, but also to understand how to help people better achieve the objective：不定式 to help people better achieve 作 understand 的宾语；better 为副词修饰 achieve。译：关键不仅在于明确目标的一两个维度，还在于懂得如何帮助人们更好地实现目标。",
+   "option": "正确项 D：achieve「实现」——achieve the objective 为标准搭配，呼应前文 drivers hit these targets（达成目标）的全篇主题；A modify「修改」与 help people better 语义不合——文章教的是达成目标而非频繁改动；B review「审查」、C present「呈现」与 objective 搭配后偏离主旨。",
+   "keyword": "achieve the objective 实现目标＝hit the target；help sb do 帮助某人做；trick 关键、窍门。",
+   "note": "尾空收束全文：前文公交司机 hit these targets 的双关教训，正是要帮人更好地 achieve the objective；achieve 与 hit 构成「达成」语义场，与 modify/review 的「改动」方向不同。"
+  },
+  {
+   "question_id": 1928,
+   "long_sentence": "定位句 Research by the World Economic Forum finds that on average 42 per cent of the core skills within job roles will change by 2022. That is a very short timeline：finds that 宾语从句；on average 平均而言；That is a very short timeline 为评注句。译：世界经济论坛的研究发现，平均而言，各岗位 42% 的「核心技能」将在 2022 年前发生改变。这是非常短的时间线。",
+   "option": "正确项 B：an urgent demand for new job skills——42% 核心技能将改变（技能需求更新）加 That is a very short timeline（时间紧迫），urgent≈very short timeline；A「全职就业增加」、C「就业机会稳定增长」无中生有，原文讲技能要求变化而非岗位数量；D「关于核心技能的争议」无中生有，core skills 是研究对象而非争议话题。",
+   "keyword": "core skills 核心技能；in demand 有需求的；timeline 时间线；urgent 紧迫的＝pressing。",
+   "note": "数字研究题看两处：42% 的变化幅度＋very short timeline 的紧迫评价，合成「新技能需求紧迫」；评注句 That is a very short timeline 是对研究含义的解读，常是选项改写的落点。"
+  },
+  {
+   "question_id": 1929,
+   "long_sentence": "定位句 AT&T is often given as the gold standard of a company who decided to do a massive reskilling program rather than go with a fire-and-hire strategy：主干 AT&T is given as the gold standard；who 定语从句内 rather than 连接两种策略。译：AT&T 常被誉为黄金标准——一家决定开展大规模再培训计划、而非走「裁员再招」路线的公司。",
+   "option": "正确项 A：an alternative to the fire-and-hire strategy——原文 decided to do a massive reskilling program rather than go with a fire-and-hire strategy，reskilling program 即裁员再招的替代方案，alternative≈rather than 的名词化；B「急需政府支持」张冠李戴，政府话题在后半段；C「绩效考核标准」无中生有；D「再培训计划的特征」过泛，例证目的是对比策略而非介绍特征。",
+   "keyword": "alternative 替代方案；fire-and-hire 裁员再招聘；gold standard 黄金标准；reskilling program 再培训计划。",
+   "note": "例证题看例子的论证功能：AT&T 与前句 temptation to let go（裁人了事）对照，rather than 是题眼——引用它是展示「另一种选择」；D 项把「例子讲了什么」当「引用证明什么」，例证题须答观点层面。"
+  },
+  {
+   "question_id": 1930,
+   "long_sentence": "定位句 Efforts in Canada and elsewhere have been arguably languid at best, and have given us a situation where we frequently hear of employers begging for workers：主干 Efforts have been languid；at best 意为「往最好处说」；where 定语从句修饰 situation。译：加拿大等地的努力往最好里说也是拖沓乏力的，导致我们经常听到雇主乞求工人——即便在失业率高的时期和地区也是如此。",
+   "option": "正确项 D：have appeared to be insufficient＝languid at best（languid 意为「倦怠的、无精打采的」→不作为、不给力），雇主求工不得的现状是其佐证；A「推高劳动成本」无中生有；B「前后不一」偷换概念，languid 是「乏力」非「反复无常」；C「遭遇激烈反对」无中生有。",
+   "keyword": "languid 倦怠的、乏力的；at best 往最好里说；skills mismatch 技能错配；beg for 乞求。",
+   "note": "词汇题核心是 languid 的贬义解读：「最好的时候也乏力」＝不足；用其后的现状（高失业区雇主仍求工）验证「不给力」判断，B 的 inconsistency 是近义陷阱——乏力和反复是两种缺点。"
+  },
+  {
+   "question_id": 1931,
+   "long_sentence": "定位句 In the medical field, to take an obvious example, the pandemic meant that there were still clear shortages of doctors, nurses and other medical personnel：to take an obvious example 插入语「举个明显的例子」；meant that 宾语从句；still clear shortages 呼应 not all had done so。译：以明显的医疗领域为例，疫情意味着医生、护士及其他医务人员仍有明显短缺。",
+   "option": "正确项 C：a lack of medical workers＝still clear shortages of doctors, nurses and other medical personnel，lack≈shortage；段落逻辑：失业率飙升（13.3%/13.7%）→ many worker shortages had disappeared, not all had done so → 医疗是残余短缺的例证；A「政策调整呼声」、B「招聘惯例变化」、D「经济复苏迹象」均无中生有。",
+   "keyword": "shortage 短缺＝lack；medical personnel 医务人员；spike 飙升；generational lows 代际低点。",
+   "note": "段落推断题抓让步链：失业率虽飙升、多数短缺消失但 not all，to take an obvious example 引出的医疗例证即答案；A/D 借失业数字做无据引申，勿把「失业率飙升」读成「复苏信号」。"
+  },
+  {
+   "question_id": 1932,
+   "long_sentence": "定位句 When forced to furlough 90 per cent of their cabin staff, Scandinavian Airlines decided to start up a short retraining program that reskilled the laid-off workers to support hospital staff：when (they were) forced 状语省略结构；that 定语从句修饰 program；furlough 意为「停职、强制休假」。译：当被迫让九成机组人员停职时，北欧航空决定启动一个短期再培训计划，把被裁撤的员工重新培训去支援医院员工。",
+   "option": "正确项 B：prepare their laid-off workers for other jobs＝reskilled the laid-off workers to support hospital staff，为被裁员工准备新岗位（医院）；A「为失业者创造岗位」偷换概念，是给自己员工找出路而非对外创设岗位；C「为更好服务再培训机组」偷换概念，培训去向是医院不是航空服务；D「资助大学教育」无中生有，瑞典大学只是合作参与方。",
+   "keyword": "furlough 停职、强制休假；lay off 裁员→laid-off workers 被裁员工；reskill 再培训；support hospital staff 支援医院员工。",
+   "note": "细节题抓 retraining program 的定语从句：reskilled...to support hospital staff 点明「转岗去医院」；C 把去向偷换成目的，A 把对象偷换成外部失业者，细节题须核对动作的宾语与去向。"
+  },
+  {
+   "question_id": 1933,
+   "long_sentence": "定位句 A move back to self-sufficiency, the argument goes, would boost the farming industry, political sovereignty and even the nation's health：the argument goes 为插入语「有人如此主张」；would boost 后接三个并列宾语。译：回归自给自足——有人这样主张——将提振农业、政治主权乃至国民健康。",
+   "option": "正确项 B：contribute to the nation's well-being＝boost the farming industry, political sovereignty and even the nation's health，well-being 概括农业、主权、健康三方面；A「受人口增长阻碍」无中生有，人口是首段全球背景；C「成为政府优先事项」无中生有，主张者是 some people；D「给农业带来挑战」正反混淆，原文是 boost the farming industry。",
+   "keyword": "self-sufficiency 自给自足；boost 提振＝contribute to；sovereignty 主权；the argument goes 有人主张。",
+   "note": "观点题认准 the argument goes 与 Sounds great 的归属——这是 some people 的观点而非作者立场；D 与 boost 方向相反；作者态度在下一句 but how feasible 才登场，先分清谁在说话。"
+  },
+  {
+   "question_id": 1934,
+   "long_sentence": "定位句 According to a report on UK food production from the University of Leeds, 85 per cent of the country's total land area is associated with meat and dairy production：according to 引出报告来源；be associated with 意为「与…相关联」。译：利兹大学一份关于英国食品生产的报告显示，全国 85% 的土地面积与肉奶生产相关联。",
+   "option": "正确项 C：most land is used for meat and dairy production＝85 per cent of the country's total land area is associated with meat and dairy production，most≈85%、be used for≈be associated with；A「农田低效利用」无中生有；B「工厂式生产须改革」无中生有，factory-style production 是自给自足推演的代价；D「更多绿地将被改作农田」正反混淆——推演结果是 fewer green fields 且属假设。",
+   "keyword": "be associated with 与…相关；meat and dairy production 肉奶生产；livestock farm 畜牧场；caveat 附带条件、保留意见。",
+   "note": "数字题直接对位：85%＋meat and dairy＝C；B/D 出自下段假设推演（would need to farm more intensively），是把「假设的后果」伪装成「报告的发现」，报告内容止于 85% 与 80% 两个数字。"
+  },
+  {
+   "question_id": 1935,
+   "long_sentence": "定位句 most of its terrain doesn't have the right soil or climate to grow crops on a commercial basis：主干 terrain doesn't have the right soil or climate；to grow crops 不定式作后置定语；on a commercial basis 以商业化规模。译：英国大部分地区的土壤和气候不适宜以商业规模种植庄稼。",
+   "option": "正确项 C：its natural conditions＝doesn't have the right soil or climate，soil 与 climate 即自然条件；A「农业技术」无中生有；B「饮食传统」无中生有，文中谈的是种植条件而非消费习惯；D「商业利益」偷换概念，on a commercial basis 是种植的规模限定，非限制原因。",
+   "keyword": "soil 土壤；climate 气候；terrain 地形；be suitable for 适合＝right for；on a commercial basis 以商业化规模。",
+   "note": "因果题抓 reason why...：冒号后即原因——土壤与气候，同属 natural conditions；D 是最强干扰，on a commercial basis 容易被误读成商业因素，实际它只是「规模化种植」的前提描述。"
+  },
+  {
+   "question_id": 1936,
+   "long_sentence": "定位句 Just 23 per cent of the fruit and vegetables consumed in the UK are currently home-grown, so even with the most extreme measures we could meet only 30 per cent of our fresh produce needs：主干 23 per cent...are home-grown；so 引出结果；even with 让步；meet needs 满足需求。译：英国消费的果蔬中目前仅 23% 为本国种植，因此即便采取最极端的措施也只能满足 30% 的生鲜需求。",
+   "option": "正确项 A：rely largely on imports for fresh produce——自产仅 23%（果蔬）、极端措施也只够 30%（生鲜），反推约七成依赖进口；B「水果消费稳步上升」无中生有；C「寻求减少热量摄入的方法」无中生有，calorie 对应的是 grains/sugars 的种植空间问题；D「尝试种植新粮食品种」无中生有。",
+   "keyword": "home-grown 本国种植的；fresh produce 生鲜农产品；meet...needs 满足需求；the vast bulk of 绝大部分。",
+   "note": "数字推断题做减法：23% 自产 → 77% 依赖进口；推断题别选「文中没人做的事」（B/C/D 全是想象的行为），唯有 A 能从 home-grown 23% 直接反推。"
+  },
+  {
+   "question_id": 1937,
+   "long_sentence": "定位句 Sounds great — but how feasible is this vision?：Sounds great 为省略句承接他人观点；but 转折；how feasible 疑问式质疑。译：听起来很美好——但这一愿景有多大可行性呢？",
+   "option": "正确项 B：doubtful「怀疑的」——Sounds great—But how feasible? 先让步后质疑，随后全文用 85%、25%、23%、30% 一连串数据证明自给自足难以实现；D optimistic「乐观的」与作者反证方向相反；A defensive「辩护的」、C tolerant「容忍的」与全文质疑语气无关。",
+   "keyword": "feasible 可行的＝practicable；vision 愿景；attitude 态度题；caveat 保留意见、附带条件。",
+   "note": "态度题抓转折词：Sounds great 是引述他人，but how feasible 才是作者态度；四个百分比的密集反证是怀疑立场的证据强度，态度题先分正负再定具体情感。"
+  },
+  {
+   "question_id": 1938,
+   "long_sentence": "定位句 Both apps, however, were later scrapped, after Microsoft said it had used their best features in its own products. Their teams of engineers stayed on：were scrapped 被动「被砍掉」；stayed on 留任；making... 现在分词作结果状语；acqui-hire 为「收购聘用」。译：然而这两款应用后来都被砍掉——微软称已把它们最好的功能用进自家产品。其工程师团队留了下来，成为巨头的「收购聘用」。",
+   "option": "正确项 A：Their engineers were retained＝Their teams of engineers stayed on，retain≈stay on；B「市值下滑」无中生有；C「技术功能改进」偷换概念，原文是微软把功能吸收进自家产品（used in its own products），不是两款应用的功能变好；D「产品重新定价」无中生有，产品直接被砍掉。",
+   "keyword": "scrap 砍掉、废弃；acqui-hire 收购聘用（为人才而收购）；retain 留用＝stay on；feed one's hunger for 满足对…的渴求。",
+   "note": "题干 after their acquisitions 限定「被收购后」：应用被砍＋工程师留任是一体两面；C 是最强干扰——best features 进了微软产品，动作承受者换了主语，细节题要盯谁承受动作。"
+  },
+  {
+   "question_id": 1939,
+   "long_sentence": "定位句 To Microsoft's critics, the fates of Wunderlist and Sunrise are examples of a remorseless drive by Big Tech to chew up any innovative companies that lie in their path：to sb 表「在…看来」；chew up 意为「吞噬、碾碎」；that lie in their path 定语从句。译：在微软的批评者看来，Wunderlist 与 Sunrise 的命运是巨头无情碾碎任何挡路创新公司的例证。",
+   "option": "正确项 B：eliminate their potential competitors＝chew up any innovative companies that lie in their path，另有 putting an end to businesses that might one day turn into competitors 与 buy and kill tactic 佐证，potential competitors≈might turn into competitors；A「夸大产品质量」、C「不公平对待新人才」、D「无视公众意见」均无中生有。",
+   "keyword": "chew up 吞噬、碾碎；remorseless 无情的；potential competitor 潜在对手；buy and kill 买下即杀。",
+   "note": "观点题锁定 To Microsoft's critics 的辖域：批评者主张「扼杀未来对手」；C 项利用 acqui-hire 反向设计——工程师被留用而非亏待，勿把「买人才」误读成「苛待人才」。"
+  },
+  {
+   "question_id": 1940,
+   "long_sentence": "引语 I think these things are good for me, if I put my selfish hat on. But are they good for the American economy? I don't know：if I put my selfish hat on 意为「从私利角度说」；But 转折引出疑虑；I don't know 表迟疑。译：如果戴上自私的帽子（从自身利益看），我觉得这些交易对我有好处。但它们对美国经济有好处吗？我不知道。",
+   "option": "正确项 C：harm the national economy——Arnold 的疑虑是对 Are they good for the American economy? 的否定倾向，harm≈not good for、national economy≈American economy；A「削弱大公司」无中生有且与「对我有利」矛盾；B「恶化市场竞争」无中生有；D「打击创业投资者」正反混淆，他自己就是 start-up investor 且自认受益。",
+   "keyword": "put one's selfish hat on 从私利角度看；be good for 对…有益；concern 忧虑；venture 创业投资。",
+   "note": "关注点在 But 之后的反问：好处归自己（good for me），忧虑归国家（good for the American economy?）；concern 体现在 I don't know 的迟疑，两面人物观点须取转折后半作答。"
+  },
+  {
+   "question_id": 1941,
+   "long_sentence": "定位句 This week, it asked the five most valuable US tech companies for information about their many small acquisitions over the past decade：ask sb for sth 向…索取；over the past decade 时间状语限定信息范围。译：本周，它要求五家市值最高的美国科技公司提供其过去十年众多小型收购的信息。",
+   "option": "正确项 C：examine small acquisitions＝asked...for information about their many small acquisitions，examine 即调查核实；A「限制巨头扩张」过度推断，原文 Although only a research project at this stage 明示尚未监管行动；B「鼓励研究合作」偷换概念，research project 指调查性研究而非合作科研；D「监督初创运营」张冠李戴，信息索取对象是五家大公司。",
+   "keyword": "acquisition 收购；the Federal Trade Commission 联邦贸易委员会；wade into 插手、介入；regulator 监管机构。",
+   "note": "动作题抓 ask...for information：FTC 当前动作是「索取小型收购信息」＝调查；A 项利用 raised the prospect of regulators wading into 把「监管前景」抬升为「正在限制」，程度过度。"
+  },
+  {
+   "question_id": 1942,
+   "long_sentence": "定位句 the five biggest tech companies have spent an average of only $3.4 billion a year on sub-$1 billion acquisitions—a drop in the ocean compared with their massive financial reserves：主干 companies have spent...on...；a drop in the ocean 为习语「沧海一粟」。译：五家最大的科技公司过去五年在十亿美元以下的小额收购上年均仅花费 34 亿美元——与其庞大的资金储备相比不过是沧海一粟。",
+   "option": "正确项 A：brought little financial pressure＝a drop in the ocean compared with their massive financial reserves，小额支出相对巨额储备几乎无资金压力；B「管理挑战少」无中生有；C「为未来交易树立榜样」无中生有；D「带来可观利润」无中生有，原文只谈支出规模、未谈收益。",
+   "keyword": "a drop in the ocean 沧海一粟（习语）；financial reserves 资金储备；sub-$1 billion 十亿美元以下；venture capital 风险投资。",
+   "note": "习语 a drop in the ocean 是本题题眼——支出相对储备微不足道＝资金压力小；D 把「花得少」偷换成「赚得多」，spent 与 profit 的方向相反，金钱语义场里先辨方向。"
+  },
+  {
+   "question_id": 1943,
+   "long_sentence": "定位句 In one study of the ability she called thin slicing, Nalini Ambady asked participants to watch silent 10-second video clips of professors and to rate the instructor's overall effectiveness：of the ability she called... 介词短语作定语；ask sb to do...and to do 并列。译：在她称之为「薄片判断」的能力的研究中，心理学家 Ambady 让受试者看教授的无声 10 秒视频片段并打分。",
+   "option": "正确项 B：the reliability of first impressions——薄片判断即瞬间印象，10 秒评分与 end-of-semester ratings strongly correlated，证明第一印象可靠；A「记忆的力量」无中生有；C「师生互动」偷换概念，视频是无声片段、无互动可言；D「影响他人的能力」无中生有。",
+   "keyword": "thin slicing 薄片判断（以极短片段下判断）；correlate with 与…相关；rate 评分；effectiveness 有效性。",
+   "note": "研究主题题看「刺激材料＋因变量」：10 秒片段＋期末评分的高度相关＝第一印象的可靠性；C 项被 video clips of professors 诱导，silent（无声）一词已排除互动可能。"
+  },
+  {
+   "question_id": 1944,
+   "long_sentence": "定位句 another group was asked to spend a minute writing down reasons for their judgment, before giving the rating. Accuracy dropped dramatically：was asked to do 被请求做；before giving the rating 时间状语；dramatically 剧烈地。译：另一组被要求在打分前花一分钟写下自己的判断理由。准确率急剧下降。",
+   "option": "正确项 A：focused on specific details＝deliberation focused them on vivid but misleading cues, such as certain gestures or utterances，深思让人紧盯生动却误导的细节（手势、话语）；B「限时打分」无中生有，倒数计数组的准确率并未下降；C「看更短视频」无中生有，15 秒片段是另一项实验；D「相互讨论」无中生有。",
+   "keyword": "deliberation 深思、斟酌；cue 线索、提示；misleading 误导的；vivid 生动的；utterance 言语。",
+   "note": "因果链：写理由（深思）→聚焦 vivid but misleading cues→准确率下降；注意 B——数倒数（占用工作记忆）那组照样准确，说明问题不在时间限制而在刻意找理由。"
+  },
+  {
+   "question_id": 1945,
+   "long_sentence": "引语 It's as if you're driving a stick shift, and if you start thinking about it too much, you can't remember what you're doing. But if you go on automatic pilot, you're fine：as if 引出比喻；stick shift 手动挡；automatic pilot 自动巡航。译：这就像开手动挡——如果开始想太多，你反而记不清自己在做什么；但若进入自动巡航状态，你就没问题。",
+   "option": "正确项 A：reflection can be distracting——开手动挡想太多就手忙脚乱，比喻深思（reflection）反而碍事，呼应上句 rely on intuition instead of reflection 时更善识破欺骗；B「记忆有选择性」无中生有，can't remember 是比喻分神；C「社交技能须培养」无中生有；D「欺骗难识破」正反混淆，原意是直觉下更易识破。",
+   "keyword": "stick shift 手动挡；automatic pilot 自动驾驶；intuition 直觉；reflection 深思、反省。",
+   "note": "比喻题先找本体：driving 比喻社交生活，想太多对应 reflection；引语前的 Other research shows... instead of reflection 是比喻服务的观点，A 的 distracting≈想太多反而做不好。"
+  },
+  {
+   "question_id": 1946,
+   "long_sentence": "定位句 people made car-buying decisions that were both objectively better and more personally satisfying when asked to focus on their feelings rather than on details, but only if the decision was complex：that 定语从句修饰 decisions；rather than 对比；but only if 限定条件。译：当被要求专注于感受而非细节时，人们做出的购车决定客观上更好、主观上也更满意——但前提是决定复杂、信息量大。",
+   "option": "正确项 D：follow your feelings＝focus on their feelings rather than on details，限定条件 the decision was complex 对应题干 complex decisions；A「收集足够数据」正反混淆，信息多时恰恰不该逐项分析细节；B「列出偏好」无中生有；C「征求专家意见」张冠李戴，experts 是果酱实验的评分参照。",
+   "keyword": "complex decision 复杂决定；focus on feelings 专注于感受；objectively better 客观更优；process information 处理信息。",
+   "note": "建议题定位 car-buying 实验的 but only if：复杂决定才适用「跟感觉」；C 项的 expert 出自上一句果酱研究，两项实验主题不同（偏好评分 vs 重大购买），勿张冠李戴。"
+  },
+  {
+   "question_id": 1947,
+   "long_sentence": "定位句 Use of their gut hurt their performance on the first four tasks, as expected, and helped them on the rest. Sometimes the heart is smarter than the head：Use of their gut 动名词作主语；hurt...and helped... 并列谓语；as expected 插入语「正如预期」。译：依赖直觉损害了他们在前四项任务上的表现（正如预期），而对其余任务有所助益。有时候心比头脑更聪明。",
+   "option": "正确项 B：Intuition may affect reflective tasks＝Use of their gut hurt their performance on the first four tasks（前四项为 reflective thinking：辨别规则、理解词汇），直觉损害反思型任务表现，即产生影响；A「生成新产品费时」无中生有；C「词汇理解需要创造力」无中生有，词汇任务属反思型；D「客观思维促进直觉」无中生有。",
+   "keyword": "gut feelings 直觉＝the heart；reflective thinking 反思型思维；tap 调用、涉及；hurt one's performance 损害表现。",
+   "note": "尾段结论题抓 hurt...on the first four tasks（反思型）and helped...on the rest（直觉型）的分区对照：B 的 may affect 是对「损害反思任务」的中性概括；结尾金句限定直觉的适用域而非宣称万能。"
+  },
+  {
+   "question_id": 1948,
+   "long_sentence": "定位句 You may decide it's best to hold off on voicing your opinion. Maybe you haven't finished thinking the problem through, or you want to get a clearer sense of what the group thinks：hold off on doing 意为「暂缓、推迟」；or 并列两个原因。译：你也许会决定最好暂缓表达意见。也许你还没把问题想透，或者想更清楚地了解团队的想法。",
+   "option": "答案 C：Decide whether to wait——hold off on voicing your opinion、gather your army first、delay the conversation 都是「是否等待再表态」的考量，wait≈hold off/delay；标题的 whether 恰合段落「要不要等＋等到何时何地谈」的双重内容；A「保持冷静」是 44 段主题（remain neutral、deep breaths），本段无情绪词。",
+   "keyword": "hold off on doing 暂缓做某事；voice one's opinion 发表意见；gather your army 先争取盟友；in private 私下。",
+   "note": "首段小标题看首句的决定词：decide it's best to hold off 直接对应 wait；C 与 A 的区分靠词汇证据——44 段才有 heart racing、deep breaths 等冷静词，本段全是时机词。"
+  },
+  {
+   "question_id": 1949,
+   "long_sentence": "定位句 You're more likely to be heard if you can connect your disagreement to a higher purpose：if 条件从句；connect...to... 把…与…关联；a higher purpose 更高的目标。译：如果你能把异议与更高的目标关联起来，你的意见就更可能被听到。",
+   "option": "答案 F：Identify a shared goal——think about what the powerful person cares about 加 connect your disagreement to a higher purpose 加 advance a common objective，共同目标即 shared goal；F 的 identify 对应 think about；G「请求允许表达异议」是 43 段 Would that be OK? 的内容，勿混。",
+   "keyword": "a higher purpose 更高目标；common objective 共同目标；contextualize 结合语境说明；subordinate 下属。",
+   "note": "本段关键词链 cares about→higher purpose→common objective 三步指向「找出共同目标」；F 与 G 的分界：43 段的 Would that be OK? 才是「征得同意」，本段靠 connect 与 objective 定 F。"
+  },
+  {
+   "question_id": 1950,
+   "long_sentence": "例话 I know we seem to be moving toward a first-quarter commitment here. I have reasons to think that won't work. I'd like to lay out my reasoning. Would that be OK?：say something like 引出示例话术；lay out 意为「陈述、铺陈」。译：你可以这样说：我知道我们似乎正在敲定第一季度的承诺。我有理由认为那行不通。我想陈述一下我的理由。可以吗？",
+   "option": "答案 G：Ask permission to disagree——例话结尾 Would that be OK? 是请求许可的直接体现，This gives the person a choice, allowing him to verbally opt in 印证「征得同意再反对」；G 的 permission≈Would that be OK；B「保持谦逊」最易混——段首 overly deferential 只是作者预判读者感受的让步表述，本段核心动作是请求许可。",
+   "keyword": "deferential 恭顺的；lay out one's reasoning 陈述理由；opt in 同意参与、选择加入；give sb a choice 给予选择权。",
+   "note": "话术例句是标题的证据：Would that be OK? 即 ask permission；B 的干扰点在 overly deferential——那是让步描述而非动作主张，抓段落末尾的问句而非形容词定标题。"
+  }
+ ]
+}

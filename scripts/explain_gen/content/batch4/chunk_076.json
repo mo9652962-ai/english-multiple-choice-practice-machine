@@ -1,0 +1,180 @@
+{
+ "chunk": 76,
+ "items": [
+  {
+   "question_id": 1876,
+   "long_sentence": "定位句 This may not only do damage to your relationship with your child but also affect your child's self-esteem：not only...but also 连接两个并列谓语；This 指代上句「疲惫瞬间说错话」一事。译：这不仅可能损害你与孩子的关系，还可能影响孩子的自尊心。",
+   "option": "正确项 B：affect「影响」——not only 前半 do damage 已是负面，but also 递进仍是负面结果，affect 在此取负面影响义；A raise「提升」与伤害语境矛盾，正反混淆；C justify「证明正当」、D reflect「反映」与 self-esteem 搭配后语义不通。",
+   "keyword": "not only...but also 不但…而且（前后同向递进）；affect 影响（语境取负义）；self-esteem 自尊心；do damage to 损害。",
+   "note": "not only...but also 要求前后语义同向：前半负面则空格也须负面；affect 是中性词、在负面语境取负义，raise 是最强干扰——方向相反直接排除。"
+  },
+  {
+   "question_id": 1877,
+   "long_sentence": "定位句 If you consistently lose your cool with your kids, then you are inadvertently modeling a lack of emotional control for your kids：if 条件句；consistently 频度状语；model 作动词意为「示范、树立榜样」。译：如果你总是对孩子失去冷静，那你就是在无意中向孩子示范缺乏情绪控制。",
+   "option": "正确项 D：lose one's cool 为固定搭配「失去冷静」，与前文 lose your patience 近义复现，且后文 emotional control 直接呼应 cool（冷静）；A lose time「浪费时间」、C lose race「输掉比赛」搭配不合语境；B lose bond「失去纽带」与情绪管理主题无关。",
+   "keyword": "lose one's cool 失去冷静＝lose patience；consistently 一贯地；inadvertently 无意中；model 示范（动词僻义）。",
+   "note": "三重线索锁答案：上段 lose your patience 复现、后文 emotional control 呼应、固定搭配 lose one's cool；完形中「全文反复出现的概念」优先入词，勿选语义孤立的 bond。"
+  },
+  {
+   "question_id": 1878,
+   "long_sentence": "定位句 We are all becoming increasingly aware of the importance of modeling tolerance and patience for the younger generation：主干 sb become aware of...；动名词 modeling tolerance and patience 作介词 of 的宾语。译：我们都日益意识到为年轻一代示范宽容与耐心的重要性。",
+   "option": "正确项 C：importance「重要性」——后句 This is a skill that will help them all throughout life 与下文 one of the most important of all life's skills 两处印证「重要」评级；A nature「本质」、B secret「秘密」、D context「背景」均无法被「受益终身」的例证支撑。",
+   "keyword": "be aware of 意识到；importance 重要性；model tolerance 示范宽容；throughout life 终身。",
+   "note": "空格义由下文反推：This is a skill that will help them all throughout life 是对空格词的同义展开；完形中紧随其后的 This is... 句常是答案线索，先读后句再选词。"
+  },
+  {
+   "question_id": 1879,
+   "long_sentence": "定位句 the ability to emotionally regulate or maintain emotional control when confronted by stress is one of the most important of all life's skills：主语核心 the ability；when (one is) confronted by stress 为状语从句省略结构；表语为 one of the most important。译：事实上，在压力面前调节情绪、保持情绪控制的能力，是人生所有技能中最重要的之一。",
+   "option": "正确项 D：be confronted by stress「面对压力」，与全文 stress 语境（exhausted、frustrated）呼应；B defeated「被打败」与「保持控制」矛盾——若已被压力打败便谈不上维持控制；A cheated「被欺骗」、C confused「被迷惑」与 stress 搭配不当，均无中生有。",
+   "keyword": "be confronted by/with 面对＝be faced with；emotionally regulate 调节情绪；when + 过去分词（状语省略结构）；stress 压力。",
+   "note": "when + 过去分词省略结构是高频语法点；空格词须与 maintain emotional control 并存——「面对」压力时才谈得上控制，B「被打败」则控制已失，逻辑方向相反。"
+  },
+  {
+   "question_id": 1880,
+   "long_sentence": "定位句 Certainly, it's incredibly hard to maintain patience at all times with your children. A more practical goal is to try, to the best of your ability, to be as tolerant and composed as you can：it 形式主语，真正主语为不定式 to maintain patience；at all times 表「始终」。译：当然，对孩子始终保持耐心是极其困难的。更实际的目标是尽你所能做到宽容沉着。",
+   "option": "正确项 B：hard「困难的」——下一句 A more practical goal（更实际的目标）说明「时刻保持耐心」因难而需退而求其次，hard 与 practical 构成因果链；A terrible「糟糕的」、C strange「奇怪的」、D wrong「错误的」都把保持耐心评价为坏事，与全文倡导耐心的立场相悖。",
+   "keyword": "it's hard to do 做某事很难；practical 实际的、务实的；at all times 任何时候；maintain patience 保持耐心。",
+   "note": "上下文因果是钥匙：incredibly ___ → a more practical goal，唯有「难」才引出「更务实」的降级目标；terrible/wrong 指向「不该做」，作者只是说「难做到」，性质完全不同。"
+  },
+  {
+   "question_id": 1881,
+   "long_sentence": "定位句 to be as tolerant and composed as you can when faced with trying situations involving your children：when (you are) faced with 状语省略结构；trying situations 中 trying 为分词转化形容词；involving... 现在分词短语作后置定语。译：在涉及孩子的棘手处境面前，尽你所能保持宽容与沉着。",
+   "option": "正确项 A：trying「令人难受的、难熬的」——句末 stressful moments（压力时刻）近义复现，trying≈stressful；B changing「多变的」、C exciting「令人兴奋的」、D surprising「令人惊讶的」均与保持冷静的语境无关，exciting 甚至与 composed 相斥。",
+   "keyword": "trying 令人烦恼的（try 的分词形容词，熟词僻义）；be faced with 面对；stressful 压力大的；composed 沉着的。",
+   "note": "trying 表「难熬的」是熟词僻义高频考点，由末句 stressful moments 同义复现锁定；C 是最强迷惑——兴奋场合也考验沉着，但全文主题是压力与疲惫，非快乐情境。"
+  },
+  {
+   "question_id": 1882,
+   "long_sentence": "定位句 As a result of working toward this goal, you and your children will benefit and emerge from stressful moments feeling better physically and emotionally：as a result of 原因状语；benefit and emerge 两个并列谓语；feeling better 现在分词作伴随状语。译：作为朝这一目标努力的结果，你和孩子都能从中受益，走出压力时刻时身心感觉更好。",
+   "option": "正确项 B：emerge from「从……中走出」——与 benefit 并列构成「受益并走出压力」的正向结局，feeling better 作伴随印证；A hide from「躲避」、C withdraw from「退出」、D escape from「逃离」均为回避义，与全文「直面压力、修炼耐心」的积极导向矛盾。",
+   "keyword": "emerge from 从…中走出；benefit from 受益；as a result of 由于；physically and emotionally 身心两方面。",
+   "note": "尾空看情感基调：作者许诺 I can promise you this，结局必为正面；四个 from 搭配中只有 emerge（走出）是积极动词，hide/escape/withdraw 都在逃离压力，方向与 benefit 相反。"
+  },
+  {
+   "question_id": 1883,
+   "long_sentence": "定位句 To find out if this extends to non-living beings, Laleh Quinn and her colleagues tested whether rats can detect social signals from robotic rats：不定式 To find out 作目的状语；this 指代上句「对社交信号高度敏感」；whether 从句作 tested 的宾语。译：为探究这种能力是否延伸到非生命体，加州大学圣迭戈分校的 Quinn 及其同事测试了老鼠能否识别机器鼠发出的社交信号。",
+   "option": "正确项 A：pick up social signals from non-living rats≈detect social signals from robotic rats，pick up≈detect（接收、捕捉）、non-living≈robotic；B「区分友善与敌意」无中生有，原文未做此对比；C「经特殊训练获得社交特质」无中生有；D「发出警告信号」偷换概念，是接收（detect）而非发送（send out）。",
+   "keyword": "detect 检测、察觉＝pick up；social signals 社交信号；non-living 非生命的；be attuned to 对…敏感、能适应。",
+   "note": "研究目的题定位 To find out if...：this 的指代是理解钥匙；D 项把 receive 方向偷换成 send out，方向词一换即成陷阱，细节题务必核对动作的发出与接收方。"
+  },
+  {
+   "question_id": 1884,
+   "long_sentence": "定位句 Meanwhile, the asocial robot simply moved forwards and backwards and side to side：主干 the robot moved；forwards and backwards 与 side to side 两组方位副词并列；simply 强调「只是、仅仅」。译：与此同时，非社交型机器人只是前后左右地来回移动。",
+   "option": "正确项 D：moved around alone＝simply moved forwards and backwards and side to side，simply 与 asocial 呼应「无社交互动」；A「跟随社交机器人」、B「玩玩具」、C「放出被困老鼠」全是 social robot 的行为——对比句中 followed the living rats、played with the same toys、opened cage doors 都属于社交型，三连张冠李戴。",
+   "keyword": "asocial 非社交的（a- 否定前缀）；meanwhile 与此同时（对比信号词）；forwards and backwards 前后移动；side to side 左右移动。",
+   "note": "事实细节题抓 Meanwhile 对比结构：社交型一句三个动作、非社交型一句一个动作；三个错误选项全来自隔壁句，读对比句务必分清主语归属再对选项。"
+  },
+  {
+   "question_id": 1885,
+   "long_sentence": "定位句 This could lead to the rats better remembering having freed it earlier, and wanting the robot to return the favour when they get trapped：lead to 后接两个并列动名词短语；This 指代前句「把社交机器人视为真正的社交对象」；return the favour 意为「回报恩情」。译：这可能导致老鼠更清楚地记得自己早前放它出来，并希望被困时机器人能回报这份恩情。",
+   "option": "正确项 B：expected it to do the same in return≈wanting the robot to return the favour when they get trapped，依据是 Quinn 引语 direct reciprocity（直接互惠）——帮助曾帮过自己的对象；A「练习逃生手段」、C「展示智力」、D「当作有趣游戏」均无中生有，原文未提。",
+   "keyword": "return the favour 回报恩情；reciprocal help 互助；direct reciprocity 直接互惠；free/set...free 释放。",
+   "note": "观点题认准 says Quinn 与 she says 的引语归属；「记得曾放它出来＋盼它回报」正是互惠逻辑，B 的 in return 是 return the favour 的浓缩改写，同义替换要抓 favour 与 return。"
+  },
+  {
+   "question_id": 1886,
+   "long_sentence": "定位句 The readiness of the rats to befriend the social robot was surprising given its minimal design：主干 The readiness...was surprising；to befriend... 不定式作 readiness 的后置定语；given its minimal design 介词短语作条件状语。译：考虑到机器人的极简设计，老鼠愿意与之交友令人惊讶。",
+   "option": "正确项 C：respond more to actions than to looks 概括 Wiles 的论证——原以为需要 moving head and tail、facial features、scent（外形气味）才行，but that wasn't necessary，说明老鼠看重行为信号（social cues）而非外观；A「记得面部特征」正反混淆，面部特征恰恰不需要；B「辨味优于辨大小」无中生有；D「被塑料盒吓到」与 befriended 相反。",
+   "keyword": "befriend 与…交好；minimal design 极简设计；facial features 面部特征；social cues 社交线索。",
+   "note": "C 的 more...than... 对比是对 but that wasn't necessary 的归纳——外形不需要＝行动信号已足够；研究者观点题先圈 says Wiles 前后引语，再归纳出「重行为、轻外貌」。"
+  },
+  {
+   "question_id": 1887,
+   "long_sentence": "定位句 The finding shows how sensitive rats are to social cues, even when they come from basic robots：shows 后接 how 引导的感叹式宾语从句；even when 让步从句强调「即便信号来自简陋机器人」。译：这一发现表明，老鼠对社交线索多么敏感——哪怕这些线索来自简陋的机器人。",
+   "option": "正确项 D：more sensitive to social cues than expected＝The readiness...was surprising given its minimal design 加 how sensitive rats are to social cues，surprising 即「超出预期」；A「适应新环境」无中生有；B「比其他动物更社交」无中生有，首段只说老鼠须对社交信号敏感；C「与孩子社交方式不同」正反混淆，末段 Similarly 表明孩子与老鼠行为相似。",
+   "keyword": "social cues 社交线索＝social signals；surprising 令人惊讶的（超出预期）；readiness 意愿、乐意；similarly 相似地（类比信号）。",
+   "note": "推论题把两处信号合成：surprising（意外）＋how sensitive（敏感）＝than expected；C 项 Similarly 是类同信号而非对比信号，看到 similarly 应立即联想「行为一致」。"
+  },
+  {
+   "question_id": 1888,
+   "long_sentence": "定位句 The best model for understanding the growth of CEO pay is that of limited CEO talent in a world where business opportunities for the top firms are growing rapidly：主干 The best model is that of...；where 定语从句修饰 world；limited talent 与 opportunities growing 并列为模型两要素。译：理解 CEO 薪酬增长的最佳模型是：在顶级公司商业机会迅速增长的世界里，CEO 人才有限。",
+   "option": "正确项 C：Increased business opportunities for top firms＝business opportunities for the top firms are growing rapidly，原词复现度最高；A「公司数量增长」偷换概念，增长的是机会而非公司数量；B「经济向好带动整体涨薪」无中生有；D「主要经济体间合作」无中生有，供应链全球化不等于国家合作。",
+   "keyword": "model 模型、模式；limited talent 人才有限；business opportunities 商业机会；grow rapidly 迅速增长。",
+   "note": "因果细节题对应第二段模型句：机会增长＋人才有限＝供需失衡推高薪酬；A 把 opportunities 偷换成 the number of corporations，名词中心词一换即成陷阱。"
+  },
+  {
+   "question_id": 1889,
+   "long_sentence": "定位句 Then there's the fact that large American companies are much more globalized than ever before, with supply chains spread across a larger number of countries：that 同位语从句说明 fact 内容；with + 宾语 + 过去分词复合结构作伴随状语。译：另一个事实是，美国大公司的全球化程度前所未有，供应链分布于更多国家。",
+   "option": "正确项 D：operate more globalized companies＝large American companies are much more globalized than ever before，globalized 原词复现，than ever before 对应题干 Compared with predecessors；A「培养团队精神」无中生有；B「资助研发」无中生有；C「与科技公司建立更紧密联系」偷换概念——原文 virtually all major American companies are becoming tech companies，是公司自身转型而非外部合作。",
+   "keyword": "globalized 全球化的；supply chain 供应链；predecessor 前任；mind-boggling 令人难以想象的。",
+   "note": "比较题定位 than their predecessors 与 than ever before 两处比较结构；C 项利用 becoming tech companies 设计偷换——「成为科技公司」不等于「与科技公司建交」，读清动作主语是公司自身。"
+  },
+  {
+   "question_id": 1890,
+   "long_sentence": "定位句 By most measures, corporate governance has become a lot tighter and more rigorous since the 1970s. Yet it is principally during this period of stronger governance that CEO pay has been high and rising：第二句为 it is...that 强调句；Yet 表转折。译：以多数标准衡量，自 1970 年代以来公司治理收紧得多、严格得多。然而恰恰是在治理更强化的这段时期，CEO 薪酬一直高企且不断上涨。",
+   "option": "正确项 B：strict corporate governance＝corporate governance has become a lot tighter and more rigorous，tighter/more rigorous≈strict；题干 despite 表让步，对应原文 Yet「恰在此强治理时期薪酬高涨」的转折；A「内部持续反对」、C「保守经营策略」、D「政府反复警告」均无中生有。",
+   "keyword": "corporate governance 公司治理；tighter and more rigorous 更严更紧＝strict；it is...that 强调句；despite 尽管（介词，后接名词短语）。",
+   "note": "despite 是介词，答案须为名词短语——governance 一词直接对应；Yet 转折句常被命题人改写成让步题干，强调句 it is principally during this period 是题眼。"
+  },
+  {
+   "question_id": 1891,
+   "long_sentence": "定位句 And the stock market reacts positively when companies tie CEO pay to, say, stock prices, a sign that those practices build up corporate value not just for the CEO：when 时间从句；a sign that... 同位语从句；say 为插入语「比如说」。译：当公司把 CEO 薪酬与股价等挂钩时，股市反应积极——这表明此类做法积累的是公司价值，而不只是 CEO 的个人价值。",
+   "option": "正确项 D：increase corporate value＝build up corporate value，原词复现；A「确认 CEO 地位」无中生有；B「激励内部候选人」正反混淆——原文 the highest CEO salaries are paid to outside candidates, not to the cozy insider picks，最高薪给的是外部人选；C「提升 CEO 效率」无中生有。",
+   "keyword": "build up 积累、提升＝increase；corporate value 公司价值；tie...to... 把…与…挂钩；react positively 反应积极。",
+   "note": "尾段两处论证（外部候选人拿最高薪、股市积极反应）都指向「高薪利公司」；B 项 inside 与原文 outside 方向相反，正反混淆一票否决。"
+  },
+  {
+   "question_id": 1892,
+   "long_sentence": "定位句 Today's CEO, at least for major American firms, must have many more skills than simply being able to run the company：主干 CEO must have many more skills than...；插入语 at least for major American firms 限定范围；than simply being able to 比较后接动名词。译：如今的 CEO——至少对美国大公司而言——所需技能远不止「会经营公司」这一项。",
+   "option": "正确项 D：CEO Traits: Not Easy to Define——全文围绕 CEO 所需特质展开：第三段连用 financial markets、public relations skills、globalized companies、tech companies 数类技能，特质多元难以一言界定，呼应 limited talent 的稀缺；A「CEO 没有被多付钱」绝对化，只合文章半程；B「薪酬：过去与现在」以偏概全，时间线仅是开头数据；C「CEO 今日挑战」以偏概全，仅第三段局部。",
+   "keyword": "trait 特质、品质＝skill/ability；run the company 经营公司；recruit top candidates 招募顶尖人选；tough jobs 艰巨岗位。",
+   "note": "标题题忌选「局部正确」项：A/B/C 各对应一段，D 概括「需要什么特质＋特质为何稀缺」的主线；more than simply being able to run the company 一句是特质主题的明示信号。"
+  },
+  {
+   "question_id": 1893,
+   "long_sentence": "定位句 But with legal battles ahead, the zone's future looks uncertain at best：with 复合结构（with + 名词 + 副词）作状语；at best 意为「往最好处说、充其量」。译：但由于法律战在前方，该清洁空气区的未来往最好里说也是不确定的。",
+   "option": "正确项 D：Its fate is yet to be decided＝the zone's future looks uncertain at best 加 a first step toward its possible demise，fate≈future uncertain；A「效果存疑」正反混淆，原文 despite its success in improving air quality；B「遭法官反对」正反混淆——法官 overruled 停止罚款的决定、命令罚款恢复，实为支持该区；C「需要更强执法」无中生有，问题是执法被暂停而非不够严。",
+   "keyword": "suspend enforcement 暂停执行；demise 消亡、终止；at best 往最好处说；overrule 推翻（裁决）。",
+   "note": "是非判断题逐项回原文验真伪：judge 是最强干扰——overrule 的宾语是「停止罚款的决定」，方向别读反；future uncertain、possible demise、legal battles ahead 三处合指「命运未定」。"
+  },
+  {
+   "question_id": 1894,
+   "long_sentence": "定位句 they inevitably put the costs of cleaning the air on to individual drivers...rather than on to the car manufacturers whose cheating is the real cause：主干 they put the costs on to drivers rather than on to manufacturers；破折号插入 who 从句解释 drivers。译：这些措施把清洁空气的成本转嫁到个体司机头上——他们必须缴费或换更好的车——而不是转嫁到真正的污染元凶汽车制造商身上。",
+   "option": "正确项 D：put too much burden on individual motorists＝put the costs of cleaning the air on to individual drivers who must pay fees or buy better vehicles，motorists≈drivers、burden≈costs；A「对制造商不公」正反混淆，原文恰恰说厂商是 real cause 却未担责；B「对市议会不切实际」无中生有；C「对政客太温和」偷换概念，politically contentious 指「有政治争议」而非「温和」。",
+   "keyword": "put the costs on to 把成本转嫁给；individual drivers 个体司机＝motorists；contentious 有争议的；vulnerable 脆弱的、易受攻击的。",
+   "note": "weakness 定位第三段 weaknesses 一词：rather than 前后对举是答案——成本落在司机而非厂商；C 项 contentious 常被误读成 mild，「有争议」与「温和」是两回事。"
+  },
+  {
+   "question_id": 1895,
+   "long_sentence": "定位句 And if Sadiq Khan wins and extends it to the North and South Circular roads in 2021 as he intends, it is sure to spark intense opposition from the far larger number of motorists who will then be affected：if 条件从句；it is sure to do 表「必然」。译：如果萨迪克·汗如愿胜选并在 2021 年把超低排放区扩展到南北环线，必将激起数量更庞大、届时受影响的驾车者的强烈反对。",
+   "option": "正确项 A：arouse strong resistance＝spark intense opposition，spark≈arouse、intense opposition≈strong resistance，几乎逐词对应；B「确保汗连任」无中生有，if he wins 只是条件假设而非结果；C「改善交通」、D「打击汽车制造」均无中生有。",
+   "keyword": "spark 引发、激起＝arouse；intense opposition 强烈反对＝strong resistance；extend 扩展；motorist 驾车者。",
+   "note": "作者观点藏于 it is sure to（确定语气）之后；条件句 if he wins 的前提勿当结论，B 项正是把条件偷换成结果；far larger number of motorists 预示反对规模，是 A 的佐证。"
+  },
+  {
+   "question_id": 1896,
+   "long_sentence": "定位句 But mayors and councilors can only do so much about a problem that is far bigger than any one city or town. They are acting because national governments—Britain's and others across Europe—have failed to do so：can only do so much 意为「能力有限」；because 原因从句。译：但市长和议员对这一个比任何单个城镇都大得多的问题能做的有限。他们之所以行动，是因为英国及欧洲各国的中央政府未能作为。",
+   "option": "正确项 D：National governments——national governments have failed to do so 直接点明本应作为的主体，末段 the absence of a larger effort to properly enforce existing regulations 呼应国家层面缺位；B mayors 与 C councilors 正反混淆，can only do so much 明说他们能力有限、只是代为行动；A「当地居民」无中生有。",
+   "keyword": "can only do so much 能做的有限；fail to do 未能做；enforce regulations 执行法规；compliance 合规。",
+   "note": "责任题抓 because 因果句：市府行动的原因是 national governments have failed——failed to do 的主语即「本应作为者」；B/C 是行动者而非责任方，行动与责任的错位是本题陷阱设计。"
+  },
+  {
+   "question_id": 1897,
+   "long_sentence": "定位句 We're doing everything but insist that manufacturers clean up their cars：do everything but do 表示「除了…什么都做了」；insist 后接 that 从句；clean up 意为「清理、改良」。译：我们什么都做了，唯独没有坚持要求制造商把汽车造得更清洁。",
+   "option": "正确项 C：will upgrade the design of their vehicles＝clean up their cars 加 bring their vehicles into compliance 的落地改写——「清洁汽车」落到厂商动作上就是改造升级车辆设计；A「提高低排放车产量」无中生有，原文谈车辆改良而非产量；B「应被强制遵守法规」张冠李戴，缺位的是政府要求合规的行动，且把具体车辆改造偷换成抽象守法；D「应受公众监督」无中生有。",
+   "keyword": "clean up 清洁、改良；bring...into compliance 使…合规；everything but 唯独没有；insist 坚持要求。",
+   "note": "everything but 句式是推断题眼——「唯一没做的」正是作者诉求；推断题别选政府明说的缺位动作（B），要选从 clean up their cars 落到厂商自身的具体动作（改造车辆设计）。"
+  },
+  {
+   "question_id": 1898,
+   "long_sentence": "定位句 Now that members of Generation Z are graduating college this spring..., the attention has been rising steadily in recent weeks：now that 引导原因状语从句；主句用现在完成进行时 has been rising；破折号插入世代定义。译：随着 Z 世代成员今年春天大学毕业——最广为接受的定义称这一代生于 1995 年之后——近几周对他们的关注持续升温。",
+   "option": "正确项 D：drawing growing public attention＝the attention has been rising steadily in recent weeks，growing≈rising steadily；A「因能力获认可」偷换概念，原文只说受关注，未提因为能力被认可；B「对劳动力市场乐观」无中生有，市场 tighter than decades 且他们 cautious；C「青睐办公室工作」无中生有。",
+   "keyword": "now that 既然、由于；rising steadily 稳步上升＝growing；labor market 劳动力市场；tight 紧俏的（市场）。",
+   "note": "now that 因果句的主句常是首题答案：毕业生登场→关注度上升；A 把「关注」偷换成「认可其能力」，关注不等于认可，属偷换概念。"
+  },
+  {
+   "question_id": 1899,
+   "long_sentence": "定位句 Gen Zs know what an economic train wreck looks like. They were impressionable kids during the crash of 2008, when many of their parents lost their jobs or their life savings or both：what 从句作 know 的宾语；when 定语从句修饰 the crash of 2008；impressionable 意为「易受影响的」。译：Z 世代知道经济灾难长什么样。2008 年金融危机时他们还是易受影响的孩子，许多父母失去了工作、毕生积蓄，或两者皆失。",
+   "option": "正确项 C：what a tough economic situation is like＝know what an economic train wreck looks like，tough economic situation≈economic train wreck、is like≈looks like，经历支撑为 2008 crash 中父母失业失储；A「父母期待」张冠李戴，父母是失去工作而非提出期待；B「顾问建议宝贵」无中生有，counselors 只是研究者；D「清楚与上代差异」无中生有，文中说的是他们知道自己经历过什么。",
+   "keyword": "train wreck 火车残骸→比喻经济灾难；impressionable 易受影响的；crash 崩盘；keenly aware 敏锐地意识到＝know。",
+   "note": "keenly aware 是 know 的同义升级；train wreck 是比喻，先译成「经济灾难」再对照选项；C 的 is like 与原文 looks like 的对应是本题改写核心。"
+  },
+  {
+   "question_id": 1900,
+   "long_sentence": "定位句 The booming economy seems to have done little to assuage this underlying generational sense of anxious urgency, especially for those who have college debt：主干 The economy seems to have done little to assuage...；underlying 与 generational 修饰 sense；who 定语从句补充贷款人群。译：蓬勃的经济似乎几乎未能缓解这一代人潜藏的焦虑紧迫感，尤其是那些身负大学贷款的人。",
+   "option": "正确项 D：relieve「缓解」——上文 Despite graduating into the best economy 加 They aren't interested in taking any chances 构成让步：经济最好仍不敢冒险，说明繁荣没能缓解焦虑；A deepen「加深」正反混淆，若繁荣在加深焦虑则与 best economy 的让步逻辑拧反；C maintain「维持」暗示焦虑本该消退只剩维持，与焦虑持续存在不符；B define「定义」不合搭配。",
+   "keyword": "assuage 缓解、减轻＝relieve/ease；booming 繁荣的；underlying 潜藏的；anxious urgency 焦虑紧迫感。",
+   "note": "词义题靠让步逻辑：Despite best economy ＋ 不敢冒险 → 繁荣未「缓解」焦虑；done little to 是否定修饰，被修饰动词的方向由「焦虑仍在」决定，选 relieve 排除 deepen。"
+  }
+ ]
+}
