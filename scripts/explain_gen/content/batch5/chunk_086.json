@@ -1,0 +1,54 @@
+{
+ "chunk": 86,
+ "items": [
+  {
+   "question_id": 2126,
+   "long_sentence": "定位句 This trail, when Dutch colonists arrived, was widened and made into one of the main trade roads across the island, known at the time as de Heere Straat.——when... arrived 插入时间状语从句；was widened and made 并列被动谓语；known at the time as... 过去分词作后置定语。译：这条小径在荷兰殖民者到来后被拓宽，并成为横贯曼哈顿岛的主要商路之一，当时被称为「绅士街」。",
+   "option": "正确项 D：民间踩出的愿望小径先被拓宽为商路、后更名 Broadway 并沿用至今——自发路径被官方采纳并制度化，recognition≈widened and made into main trade roads 加 renamed Broadway；A「纽约的成长」以偏概全，城市变迁只是背景；B「荷兰起源」张冠李戴，路径的创造者是 Native Americans，荷兰人只是拓宽者；C「城市规划的重要性」正反混淆，Broadway 恰恰 defies the grid-based system（不服从网格规划）。",
+   "keyword": "widen 拓宽；trade road 商路；rename 重新命名＝give a new name；defy 不服从、违抗＝go against。",
+   "note": "例证题看「身份变化」：小径→商路→Broadway 的升级链说明自发踩出的路获得了官方承认；B 的迷惑在 Dutch colonists 一词复现，但 desire path 的原作者印第安人，荷兰人只是后续采纳者——「谁认可了它」才是本段例证的落点。"
+  },
+  {
+   "question_id": 2127,
+   "long_sentence": "定位句 Animal desire paths, such as ducks forging trails through frozen ponds or dogs carving direct routes in gardens, highlight the adaptability of these trails in both human and animal experiences.——such as 引出动物例子；in both...and... 并列范围。译：动物的愿望小径——如鸭子在冰封池塘上踩出的踪迹、狗在花园里踏出的直达路线——凸显了这类小径在人类与动物经验中的共通适应力。",
+   "option": "正确项 D：adaptability in both human and animal experiences 即人与动物共有「走最短有效路径」的特性，shared trait≈in both human and animal experiences；A「人类对自然的深深尊重」无中生有；B「对人类心理健康至关重要」无中生有；C「人类对动物行为的模仿」偷换概念，是同源天性不是模仿，首段 people (and animals) 的并列早已说明是共性。",
+   "keyword": "forge 踩出（踪迹）、锻造；carve 踩出、刻出（路线）；adaptability 适应性＝flexibility；criss-cross 纵横交错。",
+   "note": "末段收束题抓 both...and：animal experiences 与 human experiences 并列，落点是「同一特性跨物种存在」；C 的迷惑在 ducks、dogs 的例子排在人类讨论之后，看似「人学动物」，但首段 people (and animals) 的括号并列早已埋下伏笔，前后呼应定答案。"
+  },
+  {
+   "question_id": 2128,
+   "long_sentence": "定位句 Great ideas don't stand alone. In other words, you can't mention your suggestion once and expect it to be adopted. To see a change, you'll need to champion your plan and sell its merits.——In other words 承接复述；to champion 与 to sell 并列不定式。译：好主意不会自己站住脚。换言之，你不能提一次建议就指望它被采纳。要促成改变，你得为自己的方案站台，并推销它的优点。",
+   "option": "正确项 F：champion your plan（为方案站台）加 sell its merits（推销优点）加 explain your innovation in different ways for various audiences（对各种受众换着讲法）——正是「当推销员」的完整画像，salesman 对应 sell、champion 的动词群；E「欢迎阻力」偷换概念，本段说 stand up to scrutiny（顶住审视）而非邀请反对；D「给它时间」无中生有，本段谈主动推销不是等待。",
+   "keyword": "champion 为…奔走、拥护＝advocate；sell its merits 推销其优点；stand up to 经得起、顶住；scrutiny 审查、推敲。",
+   "note": "小标题题抓段内动词群：champion、sell、explain... for various audiences 全是营销动作，F 的 salesman 是对动词群的名词化概括；In other words 提示首句 don't stand alone 与后句同义，抓复述链两端的实词（adopt/sell）即可锁定标题。"
+  },
+  {
+   "question_id": 2129,
+   "long_sentence": "定位句 Sometimes it makes sense to go to your boss first. But other times, it's useful to build a coalition among your co-workers or other stakeholders.——Sometimes...But other times... 对比结构；it makes sense to do 做某事是明智的；build a coalition 组建联盟。译：有时先找老板汇报是对的；但另一些时候，在同事或其他利益相关方中先结成联盟更有用。",
+   "option": "正确项 C：boss、co-workers、stakeholders 是三条不同的沟通路径，Use channels 是对「走哪条线」的上位概括——先走哪条、何时结盟都是渠道选择；A「保持积极」无中生有；F「当推销员」是 41 段标签，本段谈的是找谁不是怎么讲；E「欢迎阻力」偷换概念，pushback 是要应对的不是邀请的。",
+   "keyword": "coalition 联盟＝alliance；stakeholder 利益相关方；go to sb first 先找某人；pushback 抵制、反对。",
+   "note": "标题要概括「动作类别」而非复现单词：本段三个对象（boss、co-workers、stakeholders）共同构成渠道网，C 的 channels 是上位词；与 F 区分看动词——本段 make sense、build a coalition 是「选路径」，上段 champion、sell 是「做推销」，标签跟着动词群走。"
+  },
+  {
+   "question_id": 2130,
+   "long_sentence": "定位句 One of the biggest barriers to gaining buy-in occurs when the owner of an idea is viewed as argumentative, defensive, or close-minded. So, if people disagree with you, don't be indignant.——occurs when 引导表语从句；be viewed as 被视为；don't 之后接 Instead 纠偏。译：争取认同的最大障碍之一，是提议者被视为好争辩、戒备心强或思想封闭。所以当别人不同意你时，不要愤愤不平，相反要完整听取他们的顾虑。",
+   "option": "正确项 G：don't be indignant、listen fully、understand their perspective、No one likes a know-it-all——姿态放低、吸纳异议即「谦逊」，humble 是 argumentative、close-minded 的反义画像；E「邀请阻力」偷换概念，是应对反对不是制造反对；A「保持积极」答非所问，本段谈的是听劝不是乐观。",
+   "keyword": "humble 谦逊的；know-it-all 自以为无所不知的人；indignant 愤愤不平的；perspective 视角＝point of view。",
+   "note": "负面清单反推标题：argumentative、defensive、close-minded、indignant 四个贬义词的公共反义就是 humble；don't be.../Instead 的「纠偏」结构常配品德类标题；Martha 例句（先肯定对方 slogan 的历史再提议头脑风暴）是 humble 的落地演示，例证与标题互证。"
+  },
+  {
+   "question_id": 2131,
+   "long_sentence": "定位句 New ideas are the grandchildren of old ones. In other words, don't throw old solutions under the bus to make your improvement stand out.——grandchildren 隐喻「新点子源自旧点子」；don't throw...under the bus 习语「把…抛弃、牺牲」；to make...stand out 目的状语。译：新点子是旧点子的孙辈。换言之，不要为了让你自己的改进显得出众，就把旧方案一脚踢开。",
+   "option": "正确项 B：don't throw old solutions under the bus、it was a great idea at the time、Appreciating the older contributions——三个表达都指向「尊重前人方案」，Respect the past 是比喻句的本义翻译；E「邀请阻力」无中生有；G「谦逊」偷换概念，本段尊的是旧方案不是他人意见，对象不同。",
+   "keyword": "throw...under the bus 抛弃、牺牲（某物/某人）；bolster 增强、支撑＝strengthen；credibility 可信度；contribution 贡献。",
+   "note": "比喻句破题：grandchildren of old ones 的隐喻点明新旧血缘，尊重过去即认可新想法的正当性来源；与 G 区分看对象——43 段谦逊对「人」（面对 disagreement），44 段尊重对「物」（old solutions），标题题的宾语指向决定选项，credibility 的因果是旁证。"
+  },
+  {
+   "question_id": 2132,
+   "long_sentence": "定位句 it's important to use the language of abundance instead of the language of deficit. Instead of saying what is wrong, broken, or suboptimal, talk about what is right, fixable, or ideal.——abundance（富足）与 deficit（匮乏）对举；Instead of 否定前者选择后者。译：提出新想法时，要使用「富足的语言」而非「匮乏的语言」。不要说哪里错了、坏了、不理想，而要说哪里是对的、可修复的、理想的。",
+   "option": "正确项 A：talk about what is right、Be optimistic——正面向上的表达策略即「保持积极」，Stay positive≈language of abundance 加 optimistic；B「尊重过去」是 44 段标签；F「当推销员」是 41 段标签——两个旧标签是本题最强干扰，区分点在 45 段只谈措辞的情绪取向，不谈推销动作或历史方案。",
+   "keyword": "abundance 充足、丰富，反义 deficit 匮乏；suboptimal 次优的、不理想的；optimistic 乐观的；fixable 可修复的。",
+   "note": "对举结构定标题：wrong/broken/suboptimal 与 right/fixable/ideal 的三组反义对举，正面那一列就是 A；小标题题警惕「标签复用」——F、B 已在各自段落用过，45 段末句 Be optimistic but realistic 是点题句，positive 与 optimistic 的同向对应最直接。"
+  }
+ ]
+}

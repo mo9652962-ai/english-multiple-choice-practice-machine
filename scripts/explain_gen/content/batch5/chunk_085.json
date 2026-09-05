@@ -1,0 +1,180 @@
+{
+ "chunk": 85,
+ "items": [
+  {
+   "question_id": 2101,
+   "long_sentence": "定位句 And while you might ______ coming across as incompetent, there's actually research that shows that advice-seekers are...as more competent, not less.——while 表让步「尽管」；coming across as 动名词短语作空格动词的宾语；there's actually research 表转折后的实证。译：尽管你可能担心显得无能，但实际有研究表明，求助者被认为更有能力，而不是更没能力。",
+   "option": "正确项 D fear：fear coming across as incompetent（怕显得无能）与第三段 You might worry about coming across as incompetent 的 worry 复现——全文反复出现求助者对「显无能」的恐惧；A deny（否认）无中生有；B forget（忘记）无中生有；C miss（错过）与 coming across as 搭配不当。",
+   "keyword": "fear 害怕＝be afraid of；come across as 给人…的印象；competent 有能力的、胜任的；while 尽管（让步）。",
+   "note": "复现词定位：worry about coming across as incompetent 前文已出现，本空换 fear 复述同一心理，宾语 coming across as incompetent 是强约束；while 的让步结构（尽管怕→但实际上）提示空格须填消极心理动词，deny/forget 与担忧心理无关，直接排除。"
+  },
+  {
+   "question_id": 2102,
+   "long_sentence": "定位句 there's actually research that shows that advice-seekers are ______ as more competent, not less.——that shows 后接宾语从句；be ______ as 被动语态；not less 补强 more。译：实际上有研究表明，求助者会被认为更有能力，而不是更没能力。",
+   "option": "正确项 B perceived：be perceived as（被认为是）为固定搭配，与 come across as（给人的印象）呼应——一个给印象、一个被感知，印象链完整；A disguised（伪装成）无中生有；C followed（跟随）搭配不当；D introduced（被介绍为）无中生有。",
+   "keyword": "be perceived as 被认为是＝be seen as；come across as 给人…印象；competent 有能力的；advice-seeker 寻求建议者。",
+   "note": "印象的双向词：主动方 come across as（显得），被动方 be perceived as（被认为），两空构成一送一收的搭配链；be ______ as 空格中 perceived 与 seen 最自然，disguised、introduced 的「伪装、介绍」义与研究结论的客观性相悖，固定搭配是本空硬约束。"
+  },
+  {
+   "question_id": 2103,
+   "long_sentence": "定位句 a paper from 2022 by researchers at Stanford University...that involved a mix of contrived help-seeking interactions and asking people to ______ times they'd sought help in the past.——involved a mix of... and... 两种研究方式并列；contrived 意为人为设计的。译：2022 年斯坦福大学研究者的一篇论文，混合了人为设计的求助互动情境，并请人们回忆自己过去求助的经历。",
+   "option": "正确项 A recall：recall times they'd sought help（回忆过去求助的经历）是心理学实验的常规操作，times 与 in the past 的时间状语绑定；B classify（分类）无中生有；C analyse（分析）偷换概念，被试做的是回忆不是分析；D compare（比较）无中生有，句中没有比较对象。",
+   "keyword": "recall 回忆＝remember；contrived 人为设计的；a mix of... and... 兼有…与…；seek help 求助。",
+   "note": "研究方法题看实验设计：两部分——设计情境 + 回忆过去，recall times 与 in the past 的时间呼应是硬线索；C analyse 的迷惑在 research 语境，但宾语 times they'd sought help 是「经历」，回忆经历而非分析数据，主宾搭配决定动词。"
+  },
+  {
+   "question_id": 2104,
+   "long_sentence": "定位句 The findings showed that help-seekers generally underestimate how ______ other people will be to help and how good it'll make the help-giver feel.——show 后接宾语从句；underestimate 意为低估；how + adj. 嵌入感叹结构。译：研究结果表明，求助者通常会低估他人愿意帮忙的程度，也低估帮忙会给帮者带来的愉悦感。",
+   "option": "正确项 C willing：how willing to help（多愿意帮忙）与 underestimate（低估）搭配——求助者把别人的帮忙意愿想低了，现实更乐于助人；A brave（勇敢）无中生有；B disapproving（不赞成）正反混淆，低估「不赞成」会推出高估阻力；D hesitant（犹豫）与 underestimate 组合后逻辑矛盾，低估犹豫等于说别人更爽快。",
+   "keyword": "be willing to do 愿意做某事；underestimate 低估，反义 overestimate；help-giver 帮助者；findings 研究结果。",
+   "note": "underestimate 的宾语必须是「被低估的正向量」：意愿被低估，说明现实比想象更热心，与全文鼓励求助的主旨一致；D 的陷阱在同为心理状态词，但「低估犹豫」会推出别人更爽快，与 underestimate 的悲观预设相反，逻辑方向要算清再选。"
+  },
+  {
+   "question_id": 2105,
+   "long_sentence": "定位句 (for most people, having the chance to help someone is highly ______).——having the chance 动名词短语作主语；highly 副词强化程度；括号内容为补充说明。译：（对多数人来说，有机会帮助别人是极有回报感的）。",
+   "option": "正确项 C rewarding：rewarding（有回报的、值得的）与 how good it'll make the help-giver feel 呼应——帮忙让帮者感觉良好即是「回报」；A relaxing（放松的）偷换概念；B surprising（令人惊讶的）无中生有；D demanding（要求高的、费力的）情感色彩相反，与愉悦收益矛盾。",
+   "keyword": "rewarding 值得做的、有回报的＝fulfilling；have the chance to do 有机会做；reward 回报（词根复现）；feel good 感觉良好。",
+   "note": "词根复现贯通因果：前句 how good it'll make the help-giver feel 的「好感觉」就是帮者的「回报」，rewarding 一词承接；D demanding 的迷惑在「助人要付出」的字面联想，但括号内语境讲的是助人的愉悦收益，情感极性决定取舍。"
+  },
+  {
+   "question_id": 2106,
+   "long_sentence": "定位句 So, bear all this in mind the next time you need to ask for help. ______, take care over who you ask and when you ask them.——So 承接前文研究结论；bear...in mind 记在心上；take care over 对…留意。译：所以，下次需要求助时，把这一切记在心里。另外，要留意向谁求助、何时开口。",
+   "option": "正确项 B Also：前句「记住研究结论」与后句「还要挑对象挑时机」是并列递进的建议，Also 表补充；A Thus（因此）表因果，挑时机并非研究结论的推论；C Finally（最后）表收束，但后文还有 if someone can't help 的建议，未到终点；D Instead（相反）表替代，两条建议并不对立。",
+   "keyword": "also 另外、此外＝in addition；bear in mind 记住；take care over 对…上心、留意；take care over who/when 挑对象与时机。",
+   "note": "建议类行文的句首逻辑词：So 收束研究、Also 增补建议，本段中间位置用 Also 最合篇章节奏；Instead 的迷惑在「求助有讲究」，但两句是叠加关系不是取舍关系——判断增补还是替代，看前后建议是否互斥。"
+  },
+  {
+   "question_id": 2107,
+   "long_sentence": "定位句 And if someone can't help right now, avoid taking it personally. They might just be too ______, or they might not feel confident about their ability to help.——if 引导条件从句；taking it personally 意为「往心里去、认为针对自己」；or 连接两种可能的客观原因。译：如果有人眼下帮不了你，别往心里去。他们可能只是太忙，或对帮这个忙没有信心。",
+   "option": "正确项 C busy：too busy（太忙）是「此刻帮不了」最常见的中性客观原因，与 avoid taking it personally 的宽慰语气一致，并与后半句「没信心」同属无恶意的解释；A polite（礼貌）无中生有；B proud（骄傲）情感负面且无证据；D lazy（懒惰）贬义过重，与安抚口吻相悖。",
+   "keyword": "take it personally 往心里去、认为针对自己；right now 此刻、眼下；feel confident about 对…有信心；or 表并列原因。",
+   "note": "宽慰语境定词义色彩：本句功能是让求助者「不玻璃心」，原因必须是中性客观的——太忙或没信心，而非懒或傲慢；D lazy 的贬义会加重被拒的刺痛感，与 avoid taking it personally 的目的相反，语气一致性是完形选词的隐性标准。"
+  },
+  {
+   "question_id": 2108,
+   "long_sentence": "定位句 U.S. customers historically tipped people they assumed were earning most of their income via tips, such as restaurant servers earning less than the minimum wage.——they assumed 为插入性定语从句；earning most of their income via tips 现在分词短语作后置定语。译：美国顾客历来会给那些他们认为主要靠小费挣钱的人付小费，比如收入低于最低工资的餐厅服务员。",
+   "option": "正确项 B：earning most of their income via tips（大部分收入来自小费）说明小费对服务员是「必需收入」，essential≈earning most of their income via tips；A「被视为慷慨的标志」无中生有；C「奖励勤勉的方式」张冠李戴，那是第二段 timing could reward high-quality service；D「在多数商家可选」正反混淆，历史上是只给特定人群小费。",
+   "keyword": "tip 小费；minimum wage 最低工资；assume 认为、假定（插入语）；server 服务员＝waiter。",
+   "note": "历史对比题：第一段讲「过去小费给谁」，assume 的插入语表明这是顾客的普遍认知——「靠小费谋生」的人群必给小费，故 essential；C 的 reward 是第二段内容（按服务质量给小费），跨段挪证据是本题干扰项的主要来源，守住段落边界。"
+  },
+  {
+   "question_id": 2109,
+   "long_sentence": "定位句 Today's tip requests are often not connected to the salary and service norms that used to determine when and how people tip.——主干为 tip requests are not connected to...；that used to determine 定语从句修饰 norms。译：如今的小费请求常常与过去决定何时、如何给小费的薪酬与服务规范脱节。",
+   "option": "正确项 C：not connected to the...service norms 加末段 completely disassociated from service quality，两处呼应「如今小费与服务质量脱钩」，less to do with≈not connected/disassociated；A「支付频率更低」正反混淆，tip requests 是 creeping into（不断蔓延）；B「更少被提前请求」正反混淆，第三段 tips to be requested beforehand 越来越常见；D「对收入贡献更少」正反混淆，第五段 supplementing the income。",
+   "keyword": "be connected to 与…相关＝be tied to；disassociate from 使脱离；service norms 服务规范；coercive 强制性的。",
+   "note": "今昔对比抓「脱钩」：过去服务后给小费、奖励优质服务，如今 beforehand 加自动加小费，奖励机制失效；四个干扰项全走反方向——频率升、提前请求更多、收入贡献更大，把原文正向表述反着改是本题设错套路，逐一对照限定词即可排除。"
+  },
+  {
+   "question_id": 2110,
+   "long_sentence": "定位句 The prevalence of digital payment devices has made it easier to ask customers for a tip. That helps explain why tip requests are creeping into new kinds of services.——make it + adj. + to do 形式宾语结构；That 回指前句整句；creep into 意为渗透、悄悄蔓延。译：数字支付设备的普及使向顾客索要小费变得更容易。这有助于解释为什么小费请求正渗透进各类新服务。",
+   "option": "正确项 A：digital payment devices（数字支付设备）的普及属技术进步，That helps explain 的因果链直指 A，the advancement of technology 是其上位概括；B「增收欲望」无中生有，因果句没提商家动机；C「业务多元化」偷换概念，new kinds of services 是现象不是原因；D「小费通胀的出现」时序颠倒，tipflation 是蔓延的结果。",
+   "keyword": "prevalence 普及＝widespread use；digital payment devices 数字支付设备；creep into 渗透、蔓延＝spread into；tipflation 小费通胀。",
+   "note": "因果指示词 That helps explain：回指对象就是原因，回读上句 digital payment devices 即得；D 的时序陷阱最典型——tipflation 在本段后半才被定义，是蔓延的结果而非原因；因果题把信号词之前的句子当原因，勿被后文定义词迷惑。"
+  },
+  {
+   "question_id": 2111,
+   "long_sentence": "定位句 To ensure that all employees were paid fair wages, some restaurants banned tipping and increased prices, but this movement toward no-tipping services has largely fizzled out.——To ensure 不定式作目的状语；banned tipping 与 increased prices 并列谓语；fizzle out 意为不了了之。译：为确保所有员工都获得公平工资，一些餐厅禁收小费并上调价格，但这股「无小费服务」的运动已基本偃旗息鼓。",
+   "option": "正确项 D：ensure that all employees were paid fair wages（确保所有员工拿公平工资）即保障收入公平，其背景是小费只惠及 waiters 而不惠及 cooks and dishwashers 的落差；A「促进消费」无中生有；B「丰富收入来源」无中生有；C「维持合理价格」正反混淆，禁小费后价格是 increased（上调）不是维持。",
+   "keyword": "ensure 确保＝guarantee；fair wages 公平工资；ban 禁止＝prohibit；fizzle out 不了了之＝die out。",
+   "note": "目的状语定答案：To ensure that... 就是运动意图，fair wages≈income fairness 一眼对应；C 用 increased prices 的字面设饵——原文价格是上调不是维持，动词方向相反；先找 To do 目的状语，再核背景落差（小费分配不均），双线索锁定 D。"
+  },
+  {
+   "question_id": 2112,
+   "long_sentence": "定位句 many customers are frustrated because they feel they are being asked for too high of a tip, too often.——frustrated 表主观受挫；because 引导原因从句；too high...too often 双重 too 叠加抱怨。译：许多顾客感到沮丧，因为他们觉得自己被索要的小费金额太高、频率太勤。",
+   "option": "正确项 A：too high of a tip, too often 的双重负担（金额+频率）加 frustrated 与 more coercive（更具强制性），即小费正成为顾客的负担；B「有助鼓励优质服务」正反混淆，末句 disassociated from service quality；C「对业务发展至关重要」无中生有；D「反映降价需求」无中生有。",
+   "keyword": "frustrated 沮丧的、恼火的；coercive 强制性的＝compelling；disassociated from 与…脱钩；generous 慷慨的。",
+   "note": "末段态度题抓情绪词：frustrated、coercive 都是顾客视角的负面词，负担感＝金额高+频率勤+被强制；B 是最强干扰——reward high-quality service 是第二段「过去」的机制，如今已 disassociated，今昔对比的时间线别混，态度题以末段为准。"
+  },
+  {
+   "question_id": 2113,
+   "long_sentence": "定位句 With more than 6.8 million on waitlists, healthcare is becoming increasingly inaccessible for those who cannot opt to pay for private treatment.——With + 名词短语构成独立主格式状语；who cannot opt to pay... 定语从句修饰 those。译：由于超过 680 万人排在候诊名单上，对那些无力选择自费私立治疗的人来说，医疗正变得越来越难以获得。",
+   "option": "正确项 B：model is out of date、lagging behind、6.8 million waitlists、increasingly inaccessible，多层证据共同指向「满足不了需求」；A「受资金短缺困扰」偷换概念，squeeze out investment 是挤占其他投入不是资金缺口表述；C「留不住现有员工」偷换概念，workforce near breaking point 是承压不是流失；D「被私立医疗 rival」无中生有。",
+   "keyword": "out of date 过时的；waitlist 候诊名单；inaccessible 难以获得的；opt to do 选择做某事。",
+   "note": "多证据汇总题：过时、落后、680 万排队三条证据的公约数是「供不应求」；A、C 都从第二段句子半路截取（squeeze out、breaking point），把「系统承压」偷换成「缺钱」「员工流失」——推断题要找证据的公约数，而非任选单一细节。"
+  },
+  {
+   "question_id": 2114,
+   "long_sentence": "定位句 Much more needs to be invested in communities and primary care to reduce our reliance on hospitals.——needs to be invested 被动语态；to reduce... 不定式作目的状语；reliance on 对…的依赖。译：需要在社区与初级医疗上投入多得多的资源，以减少我们对医院的依赖。",
+   "option": "正确项 C：Much more needs to be invested in...primary care≈increase resources for primary care，invest 的资源化改写；A「提升医院效率」正反混淆，思路是减少对医院的依赖；B「减轻社会照护负担」正反混淆，原文是社会照护的 capacity needs to be greater（要扩容）；D「减轻社区压力」张冠李戴，是对社区投资而非为社区减负。",
+   "keyword": "invest in 投资＝put resources into；primary care 初级医疗、基层医疗；reliance on 依赖＝dependence on；capacity 承载力。",
+   "note": "建议句抓 Much more needs to be 的强投入信号：投资对象是 communities and primary care，reduce reliance on hospitals 是目的——手段与目的别混；A 的迷惑正来自目的句中的 hospitals，投的是基层，答的是手段（C）不是目的。"
+  },
+  {
+   "question_id": 2115,
+   "long_sentence": "定位句 Together, we are calling for a much more open and honest conversation about the future of health in the UK, and an 'urgent rethink' of the hospital-centric model we retain.——call for 呼吁；an urgent rethink of 对…的紧急反思；hospital-centric 复合形容词「以医院为中心的」。译：我们共同呼吁，就英国健康的未来展开更开放坦诚的对话，并对沿用至今的以医院为中心的模式进行「紧急反思」。",
+   "option": "正确项 C：urgent rethink of the hospital-centric model 加下段 how power and resources should be distributed（权力与资源如何分配），即重构医疗体系，restructure≈rethink the model 加 redistribute；A「强化医院管理」正反混淆，矛头恰是 hospital-centric；B「调整医疗法规」无中生有；D「恢复搁置的改革」无中生有，原文是二十年改革未奏效后另起炉灶。",
+   "keyword": "rethink 反思＝reconsider；hospital-centric 以医院为中心的；distribute 分配＝allocate；think tank 智库。",
+   "note": "项目宗旨题抓两个动作：呼吁对话 + rethink 医院中心模式，C 的 restructure 涵盖「反思模式+重分权资」两层；A 是反向陷阱——Reimagining 的对象就是 hospital-centric model 本身；re- 前缀家族（rethink/reimagine/restructure）是同向信号词，可快速聚类。"
+  },
+  {
+   "question_id": 2116,
+   "long_sentence": "定位句 It is estimated that healthcare accounts for only about 20% of health outcomes. Much more important are the places we live, work and socialise.——It is estimated 估算句式；accounts for 占比；Much more important 表语前置（倒装）。译：据估算，医疗照护只占健康结果的约 20%。更重要的是我们居住、工作与社交的场所——然而并没有改善这些「健康社会决定因素」的明确跨政府战略。",
+   "option": "正确项 B：the places we live, work and socialise 与 social determinants of health（健康的社会决定因素）即「社会因素」，no clear cross-government strategy 暗示其被忽视、应予重视，paying due attention 是「补短板」式建议；A「引入税收政策」无中生有；C「重估健康结果」偷换概念，20% 是医疗的占比不是要重估的对象；D「提升医疗质量」正反混淆，论点恰是医疗只占两成。",
+   "keyword": "account for 占（比例）；social determinants of health 健康的社会决定因素；cross-government 跨部门的；scrap 废除、抛弃。",
+   "note": "数据论证的读法：20% 的医疗占比 + Much more important 的强调，指向「重视医疗之外的因素」；B 的 due attention 与 yet there is no clear strategy 的「缺位」呼应；D 是最强干扰——提升国民健康的路径不是把医疗做好，而是补齐社会决定因素这块短板。"
+  },
+  {
+   "question_id": 2117,
+   "long_sentence": "定位句 What health functions should remain at the centre, and what should be given to local leaders...?——并列疑问句；should be given 被动语态；often responsible for... 与 with a much better understanding... 两个后置修饰语。译：哪些健康职能应留在中央，哪些应下放给地方领导人——他们往往负责创造健康的服务，并且对当地民众的需求理解深得多？",
+   "option": "正确项 C：what should be given to local leaders（哪些应下放地方）即地方应在体系中扮演更大角色，play a bigger role≈be given more functions；A「更合理用权」无中生有；B「更强的责任感」无中生有；D「更好地理解需求」正反混淆，原文已说他们 with a much better understanding——理解更好正是下放的理由，不是待改进项。",
+   "keyword": "delegate 下放＝give...to；remain at the centre 留在中央；responsible for 负责；a much better understanding 理解深得多。",
+   "note": "推断题从「理由」倒推：给地方更多职能的两大理由是「其服务创造健康」与「更懂本地需求」，推论即「地方应担纲更多」；D 的陷阱最隐蔽——much better understanding 是已成立的现状优势，问 should 的推断题要区分「现状优势」与「行动建议」。"
+  },
+  {
+   "question_id": 2118,
+   "long_sentence": "定位句 Nagpur's plan, for instance, calls for hospitals to set aside 'cold wards' in the summer for treating heatstroke patients, and advises builders to give construction laborers a break from work on very hot days.——calls for sb to do 要求某人做；set aside 划出、预留。译：例如，那格浦尔的计划要求医院在夏季预留「冷病房」救治中暑病人，并建议建筑商在酷热日子里让建筑工人停工休息。",
+   "option": "正确项 A：cold wards 治中暑、酷热天停工，措施全部针对极端高温，tackle extreme weather≈respond to very hot days；B「确保建筑质量」偷换概念，builders 出现但管的是工人防暑不是工程质量；C「监控应急预警」张冠李戴，issue heat warnings 是 HAPs 的一般内容，非 Nagpur 的具体措施；D「解决超负荷工作」偷换概念，a break 是高温防护不是工作负荷改革。",
+   "keyword": "set aside 预留、划出；heatstroke 中暑；a break from work 停工休息；call for 要求、呼吁。",
+   "note": "例证题回归例子本身：cold wards 与 break on very hot days 的共同指向是「防暑」，即应对极端天气；B 的迷惑在 builders 一词——句子的落点是 laborers 的防暑休息，动作的受益者决定措施性质，主宾关系要看清再选。"
+  },
+  {
+   "question_id": 2119,
+   "long_sentence": "定位句 their triggering thresholds often are not customized to the local climate.——triggering thresholds 触发阈值；be customized to 为…定制；not 否定定制性。译：现有高温行动计划的触发阈值往往没有因地制宜、贴合当地气候。",
+   "option": "正确项 B：thresholds not customized to the local climate（阈值未按本地气候定制）即「缺乏本地化的预警启动标准」，localized≈customized to the local climate，alert-issuing criteria≈triggering thresholds；A「成本太高难实施」偷换概念，原文是 Many lack adequate funding（缺资金）不是成本高到无法实施；C「对热浪响应迟滞」无中生有；D「医院压力大」无中生有。",
+   "keyword": "threshold 阈值、临界点；customize 定制＝tailor；gauge 衡量标准＝measure；humidity 湿度。",
+   "note": "问题列举逐条核：缺资金、阈值未定制两条并列，B 对应第二条的同义改写；A 的迷惑在 funding 一词——「缺资金」与「太贵实施不起」是两回事，语义被偷换；Mumbai 案例（湿度被忽视致预警失灵）是 B 的后续例证，可作旁证连读。"
+  },
+  {
+   "question_id": 2120,
+   "long_sentence": "定位句 That day's high temperature of roughly 36℃ was 1℃ shy of the heat wave alert threshold for coastal cities set by national meteorological authorities.——shy of 意为「差…未达到」；set by... 过去分词短语作后置定语。译：当天约 36℃ 的最高气温，比国家气象部门为沿海城市设定的热浪警报阈值还差 1℃。",
+   "option": "正确项 A：温度未达阈值却出人命，因为湿度放大了热效应（amplified by humidity—an often neglected factor）——说明警报体系除温度外还应纳入其他因素，besides temperature 精准对应；B「考虑细微天气变化」偷换概念，问题不在变化细微而在湿度这一被忽视的维度；C「优先潜在灾难性热浪」无中生有；D「获得地方当局更多支持」无中生有。",
+   "keyword": "be shy of 差…未达到；amplify 放大、加剧；neglected 被忽视的＝overlooked；shade 阴凉处。",
+   "note": "案例题抓「反常点」：36℃ 未达预警线却致人死亡——反常的原因（湿度+无遮荫）就是制度漏洞；A 的 besides temperature 与 humidity 的被忽视地位精确互证；B 的 subtle 是字面陷阱——1℃ 之差引你选 B，但漏洞本质是「只看温度不看湿度」的维度缺失。"
+  },
+  {
+   "question_id": 2121,
+   "long_sentence": "定位句 all cities should create a vulnerability map to help focus responses on the populations most at risk.——to help focus... 目的状语；the populations most at risk 最高风险人群；vulnerability 脆弱性。译：所有城市都应绘制脆弱性地图，以帮助把应对力量集中到风险最高的人群上。",
+   "option": "正确项 B：focus responses on the populations most at risk 加后文 tell officials which neighborhoods to focus on，即「锁定需要特别关注的区域」，target areas needing special attention 是其同义改写；A「防止高湿度的危害」张冠李戴，湿度是 Mumbai 段的教训；C「扩大那格浦尔项目的覆盖」无中生有；D「为受灾者制定救援计划」偷换概念，地图用于事前锁定不是事后救援。",
+   "keyword": "vulnerability 脆弱性；focus...on 把…集中于；at risk 处于风险中的；in the event of 一旦发生、倘若。",
+   "note": "目的状语定功能：to help focus responses on the populations most at risk 就是地图的用途——锁定高危区域；D 的迷惑在「救援」联想，但地图的时态是事前布防（in the event of 假设句），不是事后救灾，时间维度定性质。"
+  },
+  {
+   "question_id": 2122,
+   "long_sentence": "定位句 HAPs shouldn't just include short-term emergency responses, but also recommend medium-to long-term measures that could make communities cooler.——not just...but also 并列结构；that could make... 定语从句。译：高温行动计划不应只包含短期应急响应，还应推荐能让社区更凉爽的中长期措施。",
+   "option": "正确项 D：not just short-term emergency responses but also long-term measures——从应急扩展到种树遮荫、改造房屋、修订建筑法规，用途面拓宽，serve a broader range of purposes 是 not just...but also 的概括；A「更专注中暑治疗」正反混淆，emergency 只是 lowest target；B「邀请公众参与」无中生有；C「申请更多政府拨款」无中生有。",
+   "keyword": "not just...but also 不止…而且；short-term/medium-to long-term 短期/中长期；retrofit 改造、翻新；target 目标。",
+   "note": "范围扩展题：not just...but also 是「加码」信号，加上 but it's the lowest target 的递进，答案必是「更广用途」类；A 的迷惑在 emergency 的复现，但 Singh 明说应急只是最低目标——复现词不一定对，方向与程度才是判据。"
+  },
+  {
+   "question_id": 2123,
+   "long_sentence": "定位句 these routes of collective disobedience cut corners, bisect lawns and cross hills, representing the natural capability of people to go from point A to point B most effectively.——representing... 现在分词作结果状语；to go from... 不定式修饰 capability。译：这些「集体不服从」的路径抄近路、切草坪、翻山丘，体现了人以最有效方式从 A 点到 B 点的自然能力。",
+   "option": "正确项 C：go from point A to point B most effectively 加 shared shortcuts、cut corners（抄近路），即「图省事、求便捷」的天性，pursue convenience 是最有效抵达的同义概括；A「探索山丘的好奇心」偷换概念，cross hills 是穿行不是探索；B「保护绿地的必要」正反混淆，踩出的是绿地上的土径；D「独处的舒适」无中生有。",
+   "keyword": "desire path 愿望小径、踩出来的小路；cut corners 抄近路；shortcut 捷径；most effectively 最有效地。",
+   "note": "首段下定义题：desire paths 的成因藏在 collective disobedience 与 most effectively 的张力里——人不走规划路，走的是最短路径；C 的 convenience 概括了 shortcut、cut corners、effectively 三个证据；A 用 cross hills 的字面设饵，hill 是被穿过的地形不是探索对象。"
+  },
+  {
+   "question_id": 2124,
+   "long_sentence": "定位句 Ohio State University allowed its students to navigate the Oval, a lawn in the centre of campus, freely, then proceeded to pave the desire paths.——allowed sb to do 允许；a lawn... 同位语；proceeded to do 接着做。译：俄亥俄州立大学允许学生在校园中心的草坪「椭圆广场」自由穿行，然后把人们踩出的小径铺成正式道路，形成一张学生自行建立的路径网。",
+   "option": "正确项 D：先允许自由穿行、再把踩出的小径铺装成路——认可并采纳了路径，即对 desire paths 持肯定态度，positive view≈allowed + pave；A「打算改进愿望小径」偷换概念，pave 是采纳不是改进；B「在该领域研究领先」过度推断，只是个例无领先义；C「引导小径的创建」正反混淆，路径是学生自发踩出，学校只是放行并采纳。",
+   "keyword": "pave 铺设；navigate 穿行、通行；a web of 一张…网（复现于 creating a web）；proceed to do 接着做。",
+   "note": "行为推断态度：allowed...freely（放行）加 proceeded to pave（铺装）两个动作的顺承，推出「正面认可」；C 的迷惑在 creating a web——其逻辑主语是 students had established 的路径，学校是采纳者不是创造者，把动作链的主客理清即可。"
+  },
+  {
+   "question_id": 2125,
+   "long_sentence": "定位句 ...showcases images of local desire paths adorned with signs instructing pedestrians to adhere to designated walkways.——adorned with 过去分词短语作后置定语；instructing sb to do 现在分词引导补语；adhere to 遵守。译：一个专注于这一现象的 Reddit 页面，展示了本地的愿望小径——小径上竖着指示行人走指定步道的牌子。译：这种冲突凸显了公共空间自发的用户驱动演化与追求精致受控城市环境之间的持续拉锯。",
+   "option": "正确项 A：踩出来的小径 vs 上面立的「请走指定步道」牌子——使用者与规划者在同一空间对立，conflicting opinions≈This clash / an ongoing struggle，矛盾双方在图片中同框；B「升级公共空间设计的呼声」无中生有；C「合理规划愿望小径的要求」无中生有，立牌者要的是禁走不是规划；D「公共空间流失的担忧」无中生有。",
+   "keyword": "adhere to 遵守＝comply with；designated walkway 指定步道；clash 冲突＝conflict；curated 精心打理的、受控的。",
+   "note": "图片细节题：图的内容是「小径上立禁行牌」——同一空间两种意志对撞，正是 This clash 的具象；A 的 conflicting opinions 概括图片矛盾并与下文呼应；B、C、D 都把冲突单方面读成某方的诉求，图片题要看双方元素（路+牌）的对立关系。"
+  }
+ ]
+}
