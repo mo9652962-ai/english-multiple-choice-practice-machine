@@ -5117,3 +5117,8 @@ body.ink-landscape::before {
 .option { font-size: var(--text-md); }
 .stat-note { font-size: var(--text-sm); }
 .recommend-paper small { font-size: var(--text-sm); }
+
+/* R14 修复: 手机端模式标签与大数字重叠 (bottom:62px 按桌面大环设计) */
+@media (max-width: 720px) {
+  .focus-mode-label { top: 15%; bottom: auto; }
+}
