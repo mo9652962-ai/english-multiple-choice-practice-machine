@@ -59,7 +59,9 @@ jobs:
         run: npm ci
         working-directory: electron
       - name: Build Windows installers
-        run: npm run dist
+        # 禁用 electron-builder 自动 publish（publish 指向 epm-releases，github.token 无跨仓库权限）
+        # 产物统一由下方 Publish 步骤发布
+        run: npm run dist -- --publish never
         working-directory: electron
 
       - name: Verify release artifacts
@@ -81,4 +83,14 @@ jobs:
         shell: pwsh
         run: |
           $version = $env:GITHUB_REF_NAME.TrimStart('v')
-          gh release create $env:GITHUB_REF_NAME "electron/dist/epm-setup-$version.exe" "electron/dist/epm-setup-$version.exe.blockmap" "electron/dist/epm-portable-$version.exe" "electron/dist/latest.yml" --repo $env:GITHUB_REPOSITORY --generate-notes --title "墨题 $version"
+          $assets = @(
+            "electron/dist/epm-setup-$version.exe",
+            "electron/dist/epm-setup-$version.exe.blockmap",
+            "electron/dist/epm-portable-$version.exe",
+            "electron/dist/latest.yml"
+          )
+          gh release create $env:GITHUB_REF_NAME $assets --repo $env:GITHUB_REPOSITORY --generate-notes --title "墨题 $version"
+          if ($LASTEXITCODE -ne 0) {
+            # Release 已存在时改为补充资产（幂等重跑）
+            gh release upload $env:GITHUB_REF_NAME $assets --repo $env:GITHUB_REPOSITORY --clobber
+          }
