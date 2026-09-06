@@ -41,6 +41,14 @@
 - 数据层问题警示 note 共 24 题（答案键疑点 7 题：q1487/1492/1527/1532/1577/1582/1667/2083/2084 中的全部键疑点；错位/残干 17 题）——详见最终报告
 - 题库数据本身未做任何修改（备份可回滚）
 
+## 数据修复轮（2026-09-06，k 批准后执行）
+- fix_bank_data.py / 2 / 3：修复 9 题答案键 + 26 题结构错位（stem/选项按真题原序重排、q2085/2086 人名恢复、unit289 选项 G 粘连清理 5 行）
+  - 备份链：.bak_keyfix_20260906 / .bak_keyfix2_20260906 / .bak_keyfix3_20260906（逐轮可回滚）
+  - 锚点断言预检 + 逐题复验：全部 35 题题干/选项/答案与官方一致（q1447 答案键保留库标 A——官方口径有争议不做无把握改动）
+- content_fixes.py：35 题解析重写层（字母对齐新布局、清除全部警示语），经 patches.db 幂等同步
+- sync_three_dbs.py：explain_collections 三库同步——种子库 2588 行（647 题交集全覆盖）、在线库 1352 行（338 题交集全覆盖）；结构与键修复仅适用后端库（两库无 q1443+ 试卷）
+- 注意：*.db 全库 gitignore（.gitignore:32），库文件变更不进 git，以磁盘文件+备份呈现
+
 ## 补丁层（批次3 起）
 - data/patches.db：{question_id, field, value}；save_patches.py 硬编码补丁内容并幂等同步已入库 explain_collections 行
 - apply_content.py / validate_content.py 均会叠加补丁；新增数据层问题 → 补丁内容写进 save_patches.py 重跑即可
