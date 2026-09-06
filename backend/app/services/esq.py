@@ -75,7 +75,8 @@ def _text(value: Any, path: str, details: list[dict[str, str]], *, required: boo
 
 
 def _safe_member(name: str) -> str:
-    path = PurePosixPath(name)
+    # Windows 打包工具常写入反斜杠条目名；先归一化再校验（..\ 仍会被拒绝）
+    path = PurePosixPath(name.replace("\\", "/"))
     if path.is_absolute() or any(part in {"", ".", ".."} for part in path.parts):
         raise ValueError(f"非法压缩包路径：{name}")
     normalized = str(path)
