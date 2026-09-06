@@ -186,6 +186,20 @@ async function removeConversation(id: number) {
   }
 }
 
+// v45: 打字机逐字呈现（客户端分片; reduced-motion 直出; 总时长约 2.5s 封顶）
+async function typeOut(target: { role: string; content: string }, full: string) {
+  const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (reduced || !full) { target.content = full; await scrollToBottom(); return }
+  const step = Math.max(2, Math.ceil(full.length / 90))
+  for (let i = step; i < full.length; i += step) {
+    target.content = full.slice(0, i)
+    await scrollToBottom()
+    await new Promise(r => setTimeout(r, 22))
+  }
+  target.content = full
+  await scrollToBottom()
+}
+
 async function sendMessage() {
   const text = input.value.trim()
   const selection = activeModel.value
@@ -212,7 +226,9 @@ async function sendMessage() {
       signal: controller.signal,
     })
     conversationId.value = result.conversation_id
-    messages.value.push(result.message)
+    const typed: ChatMessage = { role: 'assistant', content: '' }
+    messages.value.push(typed)
+    await typeOut(typed, result.message.content)
     await refreshConversations()
   } catch (cause: any) {
     if (cause?.name === 'AbortError') {

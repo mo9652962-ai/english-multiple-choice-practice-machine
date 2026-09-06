@@ -1213,7 +1213,10 @@ h2, h3 { margin: 0; }
    v10.4: 放宽 min-width 到全部窄屏（含 <400px 手机——此前分隔条被隐藏但网格仍是
    3 行，题目区掉进 0 高行且 overflow 可见，正文与选项重叠）；限定 portrait 避免与横屏双栏冲突
    v10.5: 移出 980px 块改为顶层媒体查询——原生 CSS 嵌套 @media 在旧版 Android WebView 不生效 */
-@media (max-width: 767px) and (orientation: portrait) {
+/* v44: 分屏行布局断点 767→980 —— 与移动导航断点对齐; 平板竖屏(768-980)也获得
+   文章上/题目下 分屏（此前 768-980 portrait 落在单列堆叠夹缝: 文章占满一屏、题目藏折叠线下）。
+   仍为顶层查询 + 限 portrait（Android WebView 嵌套 @media 不生效 / 避开横屏双栏） */
+@media (max-width: 980px) and (orientation: portrait) {
   .practice-layout {
     grid-template-columns: 1fr;
     grid-template-rows: minmax(240px, var(--passage-ratio, 58%)) 10px minmax(0, 1fr);
@@ -5108,3 +5111,9 @@ body.ink-landscape::before {
 }
 @keyframes skeleton-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 @media (prefers-reduced-motion: reduce) { .skeleton-line { animation: none; } }
+
+/* v46 字号令牌应用第一批: 全局基础元素对齐六级阶梯 (组件内联值待截图回归后分批收敛) */
+.lead { font-size: var(--text-base); }
+.option { font-size: var(--text-md); }
+.stat-note { font-size: var(--text-sm); }
+.recommend-paper small { font-size: var(--text-sm); }
