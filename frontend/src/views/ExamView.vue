@@ -2,6 +2,7 @@
 // 模拟考试模式 — 全屏限时作答 + 即时评分
 import { AlarmClock, CheckCircle2, ChevronLeft, ChevronRight, Clock, Flag, XCircle } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { haptic } from '../services/haptics'
 import { useRoute, useRouter } from 'vue-router'
 import { get, post, put } from '../api'
 
@@ -59,6 +60,7 @@ async function loadExam() {
 async function answer(key: string) {
   if (!exam.value || exam.value.status !== 'active') return
   const q = currentQuestion.value
+  haptic(10)
   q.answered = key
   try {
     await put(`/exam/sessions/${examId.value}/answers/${q.id}`, { answer: key })
@@ -90,7 +92,24 @@ async function submit() {
   }
 }
 
+// v49: 键盘优先 (Anki 习惯) — A-D/1-4 作答, ←/→ 翻题; 输入焦点/组合键让路
+function handleExamKeydown(e: KeyboardEvent) {
+  const t = e.target as HTMLElement | null
+  if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return
+  if (e.metaKey || e.ctrlKey || e.altKey) return
+  if (!exam.value || exam.value.status !== 'active') return
+  if (e.key === 'ArrowRight') { go(current.value + 1); e.preventDefault(); return }
+  if (e.key === 'ArrowLeft') { go(current.value - 1); e.preventDefault(); return }
+  const q = currentQuestion.value
+  if (!q || q.answered) return
+  // v49b: 按"可见键位章"匹配 (选项即便乱序也与显示一致)
+  const pressed = e.key.toLowerCase()
+  const opt = q.options?.find((o: any) => String(o.key || o.label || '').toLowerCase() === pressed)
+  if (opt) { e.preventDefault(); void answer(opt.key) }
+}
+
 onMounted(async () => {
+  window.addEventListener('keydown', handleExamKeydown)
   const rid = Number(route.query.id)
   if (rid) {
     examId.value = rid
@@ -110,7 +129,10 @@ onMounted(async () => {
   }
 })
 
-onBeforeUnmount(() => { if (ticker.value) clearInterval(ticker.value) })
+onBeforeUnmount(() => {
+  if (ticker.value) clearInterval(ticker.value)
+  window.removeEventListener('keydown', handleExamKeydown)
+})
 </script>
 
 <template>
@@ -153,6 +175,9 @@ onBeforeUnmount(() => { if (ticker.value) clearInterval(ticker.value) })
         </div>
         <button class="button ghost compact" @click="confirmSubmit = true"><Flag :size="15" />交卷</button>
       </header>
+      <!-- v51: 答题进度发丝线 -->
+      <div class="progress-hairline" role="progressbar" :aria-valuenow="answeredCount" :aria-valuemax="exam.total_questions"><i :style="{ width: (exam.total_questions ? (answeredCount / exam.total_questions) * 100 : 0) + '%' }"></i></div>
+      <span class="kbd-hint" aria-hidden="true">A–D 作答 · ← → 翻题</span>
 
       <div v-if="error" class="warning">{{ error }}</div>
 

@@ -23,6 +23,7 @@ import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
 import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
 import { showToast } from '../services/toast'
+import { haptic } from '../services/haptics'
 import ListeningPlayer from '../components/ListeningPlayer.vue'
 import QuestionExplain from '../components/QuestionExplain.vue'
 import DeepExplainDrawer from '../components/DeepExplainDrawer.vue'  // v9.26: AI 助教精讲
@@ -696,15 +697,26 @@ function handleWindowKeydown(event: KeyboardEvent) {
   const unit = activeUnit.value
   if (!unit || activeUnitSubmitted.value || session.value?.status === 'submitted') return
   // 1-4 / A-D：选择当前题选项
+  // v49: 未高亮时回落到当前分屏题——键盘开箱即用, 无需先点击
   const cur = unit.questions?.find((q: any) => q.id === highlightedQuestionId.value)
+    || unit.questions?.[currentQuestionIndex.value]
   if (cur && !cur.user_answer) {
-    const keyMap: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, '1': 0, '2': 1, '3': 2, '4': 3 }
-    const idx = keyMap[event.key.toLowerCase()]
+    // v49b: 选项乱序后按"可见字母章"匹配 (按 A 选徽章 A 的那个, 与显示一致)
+    const pressed = event.key.toLowerCase()
     const safeOptions = safeDisplayOptions(cur)
-    if (idx !== undefined && safeOptions[idx]) {
-      select(cur, safeOptions[idx].stable_key || safeOptions[idx].key)
+    const byLabel = safeOptions.find((o: any) => String(o.label || o.key || '').toLowerCase() === pressed)
+    if (byLabel) {
+      select(cur, byLabel.stable_key || byLabel.key)
       event.preventDefault()
       return
+    }
+    if (/^[1-4]$/.test(pressed)) {
+      const idx = Number(pressed) - 1
+      if (safeOptions[idx]) {
+        select(cur, safeOptions[idx].stable_key || safeOptions[idx].key)
+        event.preventDefault()
+        return
+      }
     }
   }
   // ←/→：上一题/下一题
@@ -739,6 +751,7 @@ function prevHighlighted() {
 
 async function select(question: any, key: string) {
   if (session.value.status === 'submitted' || activeUnitSubmitted.value) return
+  haptic(10)
   // Layout slot may provide a safe question view; persist into the original session object.
   const targetQuestion = activeUnit.value?.questions.find((item: any) => item.id === question.id) || question
   const previous = targetQuestion.user_answer
@@ -1136,7 +1149,7 @@ function openDeepExplain(questionId: number) {
         </div>
       </div>
       <div v-if="session" class="practice-status">
-        <span v-if="saving"><Save :size="15" />正在保存</span><span v-else>已完成 {{ progress.answered }}/{{ progress.total }}</span>
+        <span class="kbd-hint" aria-hidden="true">A–D 作答 · ← → 翻题 · S 答题卡</span><span v-if="saving"><Save :size="15" />正在保存</span><span v-else>已完成 {{ progress.answered }}/{{ progress.total }}</span>
         <button
           v-if="session.status === 'active' && !timerEnabled"
           class="button ghost compact"
@@ -1167,6 +1180,8 @@ function openDeepExplain(questionId: number) {
         </button>
       </div>
     </header>
+      <!-- v51: 答题进度发丝线 -->
+      <div v-if="session" class="progress-hairline" role="progressbar" :aria-valuenow="progress.answered" :aria-valuemax="progress.total"><i :style="{ width: (progress.total ? (progress.answered / progress.total) * 100 : 0) + '%' }"></i></div>
     <div v-if="error" class="warning" style="margin:15px">{{ error }}</div>
     <div v-if="unansweredNotice" class="unanswered-banner" role="alert">
       <AlertCircle :size="18" />{{ unansweredNotice }}

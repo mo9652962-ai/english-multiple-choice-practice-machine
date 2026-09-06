@@ -5122,3 +5122,9 @@ body.ink-landscape::before {
 @media (max-width: 720px) {
   .focus-mode-label { top: 15%; bottom: auto; }
 }
+
+/* v51 答题进度发丝线 + v49 键位提示 (仅指针精细设备显示, 触屏不占空间) */
+.progress-hairline { height: 3px; background: color-mix(in srgb, var(--line) 55%, transparent); overflow: hidden; }
+.progress-hairline i { display: block; height: 100%; border-radius: 0 99px 99px 0; background: linear-gradient(90deg, var(--accent-vermilion), var(--gold)); transition: width .5s var(--motion-standard); }
+.kbd-hint { display: none; font-size: var(--text-xs); color: var(--text-faint); letter-spacing: .04em; white-space: nowrap; }
+@media (hover: hover) and (pointer: fine) { .kbd-hint { display: inline-flex; align-items: center; } }
