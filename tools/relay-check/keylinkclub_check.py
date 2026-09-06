@@ -12,7 +12,7 @@ import urllib.error
 import urllib.request
 
 BASE = "https://www.keylinkclub.com/v1"
-API_KEY = "sk-KZMxRmVrCHhuwfYVPdUXIV0pF0tO6yhNTMx4X7DKmDE6L9wi"  # ← 在这里填 key
+API_KEY = os.environ.get("KEYLINK_API_KEY", "")  # 通过环境变量传入，勿硬编码提交
 
 # keylinkclub 真实模型清单（/v1/models 探测 2026-08-11：34 模型，new-api 直接调用）
 # 按可疑度排序：低价渠道（tj_* 分组）重点测
