@@ -1,0 +1,175 @@
+====================================================================================================
+UNIT 213 | 2012年英语二真题 | 阅读 Text 1 | type=reading
+PASSAGE TAIL: 'uld be put on hold while the school board, which is responsible for setting educational policy, looks into the matter and conducts public hearings. It is not too late for L.A. Unified to do homework right.\n\nIt is implied in Paragraph 1 that nowadays homework .'
+------------------------------------------------------------------------------------------
+q1523 | number=21 | answer=A
+  STEM: 'is receiving more criticism'
+  A: 'is gaining more preferences'
+  B: 'is no longer an educational ritual'
+  C: 'is not required for advanced courses'
+  D: 'L.A. Unified has made the rule about homework mainly because poor students'
+------------------------------------------------------------------------------------------
+q1524 | number=22 | answer=C
+  STEM: '.'
+  A: 'tend to have moderate expectations for their education'
+  B: 'have asked for a different educational standard'
+  C: 'may have problems finishing their homework'
+  D: 'have voiced their complaints about homework'
+====================================================================================================
+UNIT 214 | 2012年英语二真题 | 阅读 Text 2 | type=reading
+PASSAGE TAIL: 's has proved a sure-fire way to boost profits. And one of the easiest ways to segment a market is to magnify gender differences – or invent them where they did not previously exist.\n\nBy saying “it is…the rainbow” (Line 3, Para. 1), the author means pink _____.'
+------------------------------------------------------------------------------------------
+q1528 | number=26 | answer=C
+  STEM: 'cannot explain girls’ lack of imagination'
+  A: 'should not be associated with girls’ innocence'
+  B: 'should not be the sole representation of girlhood'
+  C: 'cannot influence girls’ lives and interests'
+  D: 'According to Paragraph 2, which of the following is true of colours?'
+------------------------------------------------------------------------------------------
+q1529 | number=27 | answer=B
+  STEM: 'Colours are encoded in girls’ DNA.'
+  A: 'Blue used to be regarded as the colour for girls.'
+  B: 'White is preferred by babies.'
+  C: 'Pink used to be a neutral colour in symbolising genders.'
+  D: 'The author suggests that our perception of children’s psychological development was much influenced by _____.'
+------------------------------------------------------------------------------------------
+q1530 | number=28 | answer=B
+  STEM: 'the observation of children’s nature'
+  A: 'the marketing of products for children'
+  B: 'researches into children’s behaviour'
+  C: 'studies of childhood consumption'
+  D: 'We may learn from Paragraph 4 that department stores were advised to'
+------------------------------------------------------------------------------------------
+q1531 | number=29 | answer=A
+  STEM: '_ .'
+  A: 'classify consumers into smaller groups'
+  B: 'attach equal importance to different genders'
+  C: 'focus on infant wear and older kids’ clothes'
+  D: 'create some common shoppers’ terms'
+====================================================================================================
+UNIT 215 | 2012年英语二真题 | 阅读 Text 3 | type=reading
+PASSAGE TAIL: 'he Supreme Court will hear in its next term. The BIO recently held a convention which included sessions to coach lawyers on the shifting landscape for patents. Each meeting was packed.\n\nIt can be learned from Paragraph 1 that the biotech companies would like .'
+------------------------------------------------------------------------------------------
+q1533 | number=31 | answer=A
+  STEM: 'genes to be patentable'
+  A: 'the BIO to issue a warning'
+  B: 'their executives to be active'
+  C: 'judges to rule out gene patenting'
+  D: 'Those who are against gene patents believe that .'
+------------------------------------------------------------------------------------------
+q1534 | number=32 | answer=B
+  STEM: 'genetic tests are not reliable'
+  A: 'only man-made products are patentable'
+  B: 'patents on genes depend much on innovation'
+  C: 'courts should restrict access to genetic tests'
+  D: 'According to Hans Sauer, companies are eager to win patents for .'
+------------------------------------------------------------------------------------------
+q1535 | number=33 | answer=A
+  STEM: 'discovering gene interactions'
+  A: 'establishing disease correlations'
+  B: 'drawing pictures of genes'
+  C: 'identifying human DNA'
+  D: 'By saying “Each meeting was packed” (Line 4, Para. 6), the author means that'
+====================================================================================================
+UNIT 219 | 2013年英语二真题 | 阅读 Text 1 | type=reading
+PASSAGE TAIL: 'hings we need to do to support employment, but nothing would be more important than passing some kind of G. I. Bill for the 21st century that ensures that every American has access to post-high school education.\n\nThe joke in Paragraph 1 is used to illustrate .'
+------------------------------------------------------------------------------------------
+q1568 | number=21 | answer=A
+  STEM: 'the impact of technological advances'
+  A: 'the alleviation of job pressure'
+  B: 'the shrinkage of textile mills'
+  C: 'the decline of middle-class incomes'
+  D: 'According to Paragraph 3, to be a successful employee, one has to .'
+------------------------------------------------------------------------------------------
+q1569 | number=22 | answer=D
+  STEM: 'work on cheap software'
+  A: 'ask for a moderate salary'
+  B: 'adopt an average lifestyle'
+  C: 'contribute something unique'
+  D: 'The quotation in Paragraph 4 explains that .'
+------------------------------------------------------------------------------------------
+q1570 | number=23 | answer=B
+  STEM: 'gains of technology have been erased'
+  A: 'job opportunities are disappearing at a high speed'
+  B: 'factories are making much less money than before'
+  C: 'new jobs and services have been offered'
+  D: 'According to the author, to reduce unemployment, the most important is'
+------------------------------------------------------------------------------------------
+q1571 | number=24 | answer=B
+  STEM: '.'
+  A: 'to accelerate the I. T. revolution'
+  B: 'to ensure more education for people'
+  C: 'to advance economic globalization'
+  D: 'to pass more bills in the 21st century'
+====================================================================================================
+UNIT 220 | 2013年英语二真题 | 阅读 Text 2 | type=reading
+PASSAGE TAIL: 'r wrong means opening up the middle ground and understanding that managing immigration today requires multiple paths and multiple outcomes, including some that are not easy to accomplish legally in the existing system.\n\n“Birds of passage” refers to those who .'
+------------------------------------------------------------------------------------------
+q1573 | number=26 | answer=A
+  STEM: 'stay in a foreign country temporarily'
+  A: 'leave their home countries for good'
+  B: 'immigrate across the Atlantic'
+  C: 'find permanent jobs overseas'
+  D: 'It is implied in Paragraph 2 that the current immigration system in the US'
+------------------------------------------------------------------------------------------
+q1574 | number=27 | answer=C
+  STEM: '.'
+  A: 'needs new immigrant categories'
+  B: 'has loosened control over immigrants'
+  C: 'should be adapted to meet challenges'
+  D: 'has been fixed via political means'
+====================================================================================================
+UNIT 285 | 2024年英语二真题 | 阅读 Text 1 | type=reading
+PASSAGE TAIL: "e immediate response is to broaden our digital imaginations to conceive of AI technologies that don't simply replace jobs but expand opportunities in the sectors that different parts of the country care most about,like health care, education,and manufacturing."
+------------------------------------------------------------------------------------------
+q2066 | number=24 | answer=A
+  STEM: 'Several'
+  A: 'the uneven distribution of AI technologies in the US'
+  B: 'the disappointing prospect of tech jobs in the US'
+  C: 'the fast progress of US regional economies'
+  D: 'the increasing significance of US AI assets'
+====================================================================================================
+UNIT 289 | 2024年英语二真题 | 阅读 Part B | type=part_b
+PASSAGE TAIL: 'urricular activity may impress a college and win a scholarship,says Erica Gwyn,a former math and science magnet program assistant at a public high school who is now executive director of the Kaleidoscope Careers Academy in Atlanta,a nonprofit organization.\n\n续表'
+------------------------------------------------------------------------------------------
+q2083 | number=41 | answer=C
+  STEM: 'Sue Rexford'
+  E: 'Smith Jewish Day School,says it is not necessary for a student filling out the Common Application to list 10 activities in the application.'
+  A: 'Students who stand out in a specific extracurricularactivity will be favored by top-tier institutions.'
+  B: 'Students whose extracurricular activity has benefitedtheir community are likely to win a scholarship.'
+  C: 'Undertaking too many extracurricular activities will hardly be seen as a plus by colleges.'
+  D: 'A student who exhibits abilities in doing business can impress colleges.'
+  F: "Engaging in uncommon activities can demonstratestudents'determination and dedication."
+  G: 'It is advisable for students to choose an extracurricularactivity that is related to their future study at college.43.Katie Kelley44.Mayghin Levine'
+------------------------------------------------------------------------------------------
+q2084 | number=42 | answer=E
+  STEM: 'Sara Harberson'
+  E: 'Smith Jewish Day School,says it is not necessary for a student filling out the Common Application to list 10 activities in the application.'
+  A: 'Students who stand out in a specific extracurricularactivity will be favored by top-tier institutions.'
+  B: 'Students whose extracurricular activity has benefitedtheir community are likely to win a scholarship.'
+  C: 'Undertaking too many extracurricular activities will hardly be seen as a plus by colleges.'
+  D: 'A student who exhibits abilities in doing business can impress colleges.'
+  F: "Engaging in uncommon activities can demonstratestudents'determination and dedication."
+  G: 'It is advisable for students to choose an extracurricularactivity that is related to their future study at college.43.Katie Kelley44.Mayghin Levine'
+------------------------------------------------------------------------------------------
+q2085 | number=43 | answer=A
+  STEM: '位置 43'
+  E: 'Smith Jewish Day School,says it is not necessary for a student filling out the Common Application to list 10 activities in the application.'
+  A: 'Students who stand out in a specific extracurricularactivity will be favored by top-tier institutions.'
+  B: 'Students whose extracurricular activity has benefitedtheir community are likely to win a scholarship.'
+  C: 'Undertaking too many extracurricular activities will hardly be seen as a plus by colleges.'
+  D: 'A student who exhibits abilities in doing business can impress colleges.'
+  F: "Engaging in uncommon activities can demonstratestudents'determination and dedication."
+  G: 'It is advisable for students to choose an extracurricularactivity that is related to their future study at college.43.Katie Kelley44.Mayghin Levine'
+------------------------------------------------------------------------------------------
+q2086 | number=44 | answer=G
+  STEM: '位置 44'
+  E: 'Smith Jewish Day School,says it is not necessary for a student filling out the Common Application to list 10 activities in the application.'
+  A: 'Students who stand out in a specific extracurricularactivity will be favored by top-tier institutions.'
+  B: 'Students whose extracurricular activity has benefitedtheir community are likely to win a scholarship.'
+  C: 'Undertaking too many extracurricular activities will hardly be seen as a plus by colleges.'
+  D: 'A student who exhibits abilities in doing business can impress colleges.'
+  F: "Engaging in uncommon activities can demonstratestudents'determination and dedication."
+  G: 'It is advisable for students to choose an extracurricularactivity that is related to their future study at college.43.Katie Kelley44.Mayghin Levine'
+
+DUMP DONE
