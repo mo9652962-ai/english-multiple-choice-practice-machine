@@ -697,9 +697,9 @@ function handleWindowKeydown(event: KeyboardEvent) {
   const unit = activeUnit.value
   if (!unit || activeUnitSubmitted.value || session.value?.status === 'submitted') return
   // 1-4 / A-D：选择当前题选项
-  // v49: 未高亮时回落到当前分屏题——键盘开箱即用, 无需先点击
-  const cur = unit.questions?.find((q: any) => q.id === highlightedQuestionId.value)
-    || unit.questions?.[currentQuestionIndex.value]
+  // v49: 键盘作用于"当前题"(分屏当前/首个未答)——开箱即用; 高亮仅作回落
+  const cur = unit.questions?.[currentQuestionIndex.value]
+    || unit.questions?.find((q: any) => q.id === highlightedQuestionId.value)
   if (cur && !cur.user_answer) {
     // v49b: 选项乱序后按"可见字母章"匹配 (按 A 选徽章 A 的那个, 与显示一致)
     const pressed = event.key.toLowerCase()
