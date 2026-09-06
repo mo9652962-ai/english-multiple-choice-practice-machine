@@ -72,7 +72,7 @@ const props = withDefaults(defineProps<Props>(), {
   minRatio: 30,
   maxRatio: 78,
   draggable: true,
-  breakpoint: 768,
+  breakpoint: 981,
   sanitizeOptions: true,
   showQuestionPane: true,
   toolbar: () => ({}),
@@ -97,6 +97,7 @@ defineSlots<{
 
 const rootRef = ref<HTMLElement | null>(null)
 const viewportWidth = ref(typeof window === 'undefined' ? 1024 : window.innerWidth)
+const viewportHeight = ref(typeof window === 'undefined' ? 768 : window.innerHeight)
 const internalRatio = ref(props.ratio ?? props.initialRatio)
 const answerSheetOpen = ref(false)
 const warnedQuestions = new Set<string>()
@@ -104,7 +105,13 @@ let dragCleanup: (() => void) | null = null
 
 const clampRatio = (value: number) => Math.min(props.maxRatio, Math.max(props.minRatio, value))
 const currentRatio = computed(() => clampRatio(props.ratio ?? internalRatio.value))
-const isSplit = computed(() => props.enabled && viewportWidth.value < props.breakpoint)
+// v44: 平板竖屏(768-980)也启用分屏; 横屏小窗(≤1100)保持双栏, 不与横屏双栏规则冲突
+const isLandscapeSmall = computed(() =>
+  viewportHeight.value < viewportWidth.value && viewportWidth.value <= 1100
+)
+const isSplit = computed(() =>
+  props.enabled && viewportWidth.value < props.breakpoint && !isLandscapeSmall.value
+)
 const showQuestionPane = computed(() => props.showQuestionPane)
 const questionsForSlot = computed(() => {
   if (!props.sanitizeOptions) return props.questions
@@ -167,6 +174,7 @@ function setRatio(value: number) {
 
 function onResize() {
   viewportWidth.value = window.innerWidth
+  viewportHeight.value = window.innerHeight
 }
 
 function startDragDivider(event: PointerEvent) {
@@ -317,7 +325,8 @@ onBeforeUnmount(() => {
   white-space: pre-wrap;
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+/* v44: 分屏样式断点与组件 breakpoint(981) 对齐; 平板竖屏同享分屏 */
+@media (max-width: 980px) and (orientation: portrait) {
   .mobile-split-practice-layout.is-split {
     grid-template-rows: minmax(200px, var(--passage-ratio)) 10px minmax(0, 1fr);
     min-height: 0;
