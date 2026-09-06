@@ -460,7 +460,8 @@ function analysisLabel(unitIds: number[]): string {
         </button>
         <!-- v2.37: 打印错题卷 (粉笔式出卷) -->
         <button class="button" type="button" :disabled="paperExporting" @click="exportWrongPaper">
-          {{ paperExporting ? '生成中…' : '<FileText :size="15" aria-hidden="true" />错题卷' }}
+          <template v-if="paperExporting">生成中…</template>
+          <template v-else><FileText :size="15" aria-hidden="true" />错题卷</template>
         </button>
         <!-- v9.28: Gemini batch5 任务4——精讲典藏入口 -->
         <button class="button ghost" type="button" @click="router.push('/collections')">

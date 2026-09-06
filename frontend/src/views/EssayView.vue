@@ -25,7 +25,8 @@
             <template v-else-if="wordCount > 0 && wordCount < 80"><TriangleAlert :size="13" aria-hidden="true" />不足 80 词</template>
           </span>
           <button class="button essay-submit" :disabled="loading || content.trim().length < 10" @click="evaluate">
-            {{ loading ? '阅卷中…' : '<FileText :size="15" aria-hidden="true" />AI 精批' }}
+            <template v-if="loading">阅卷中…</template>
+            <template v-else><FileText :size="15" aria-hidden="true" />AI 精批</template>
           </button>
         </div>
       </div>
