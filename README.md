@@ -6,7 +6,7 @@
 
   **题库自由 · 模型自由 · 数据本地 · 学习闭环**
 
-  **墨题（英语刷题机，English Practice Machine）是开源的本地优先英语学习工作台。它把题库导入、整卷/随机练习、错题迭代、词汇复习和学习诊断连成一条闭环，面向考研英语、四六级和高考英语等客观题训练场景，并提供可选的 AI 助手、作文精批、口语陪练、知识库问答与学习智能体。**
+  **墨题（英语刷题机，English Practice Machine）是开源的本地优先英语学习工作台，为考研、四六级、高考考生提供真题刷题、FSRS 间隔重复词汇复习、错题迭代与 AI 学习辅助。核心刷题与判分完全离线可用，不依赖大模型；题库可导入 Word/PDF/ESQ，个人数据保存在本机。**
 
   <p>
     <a href="README.en.md">English</a>
@@ -26,9 +26,42 @@
   </p>
 </div>
 
-![墨题当前主界面](docs/images/homepage-public.png?v=20260901)
+![墨题 · 英语刷题机](docs/images/banner-home-1200x630.png)
 
-*README 主界面图来自墨题当前本地运行界面，展示当前导航、今日计划、AI 推题、作文精批、口语陪练和学习概览等模块；截图不展示 API 密钥等敏感配置。*
+*墨题当前主界面展示：学习主页、真题练习、考研词汇 FSRS、推荐卷；截图不展示 API 密钥等敏感配置。*
+
+<div align="center">
+
+### ⭐ 如果墨题对你有帮助，点个 Star 就是最大的支持
+
+[![GitHub stars](https://img.shields.io/github/stars/mo9652962-ai/english-multiple-choice-practice-machine?style=social)](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/stargazers)
+[![GitHub License](https://img.shields.io/github/license/mo9652962-ai/english-multiple-choice-practice-machine?style=flat-square)](LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/mo9652962-ai/english-multiple-choice-practice-machine/ci.yml?style=flat-square)](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/actions)
+[![GitHub Release](https://img.shields.io/github/v/release/mo9652962-ai/english-multiple-choice-practice-machine?style=flat-square)](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases)
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mo9652962-ai/english-multiple-choice-practice-machine&type=Date)](https://star-history.com/#mo9652962-ai/english-multiple-choice-practice-machine&Date)
+
+</div>
+
+## 🚀 3 步快速开始
+
+```powershell
+# 1. 克隆仓库
+git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machine.git
+cd english-multiple-choice-practice-machine
+
+# 2. 安装依赖（内置考研英语一/二真题 + 7,958 词库，首次启动自动装好）
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
+
+# 3. 启动，开始刷题
+.\.venv\Scripts\python.exe run_app.py
+```
+
+⚡ Done! 打开 `http://127.0.0.1:8765` 即可开始——内置 647 道真题 + 7,958 词汇，无需任何 API Key 就能刷题、判分、复习。
+
+> Windows 10/11 · Python 3.12 · Node 24 · pnpm 11。完整说明见下文「快速开始」章节。
 
 ## 墨题当前状态
 
@@ -90,6 +123,21 @@ v2.0.0 之后，主分支已新增**组织工作区（Organization Workspace + �
 | 激励 | **14 枚成就徽章**（连续打卡/词汇量里程碑/刷题成就）、连续学习天数统计、**学习热力图（GitHub 贡献图风格——90 天统计）**、**打卡海报（百词斩式水墨分享图——WebShare 分享）**、**报告页词汇记忆曲线（墨墨式遗忘曲线 SVG）** |
 | 更新 | **前端自动更新检测（60s 轮询）**、GitHub Release + HTTPS 镜像双源、SHA-256 校验 |
 | 组织/企业 | **组织工作区（Organization Workspace + 健康检查）**、**动态组卷（按题型×数量随机抽题）**、**防作弊事件记录（切屏/复制/失焦）**、**考试达标自动发证 + 证书编号校验** |
+
+## 与同类工具对比
+
+| 能力 | **墨题** | Anki | 墨墨背单词 | 百词斩 | Quizlet |
+|---|:---:|:---:|:---:|:---:|:---:|
+| 真题整卷刷题（考研/四六级/高考） | ✅ 内置 647 真题 | ❌ | ❌ | ❌ | ❌ |
+| 本地优先 / 离线可用 | ✅ 100% 本地 | ✅ | ❌ | ❌ | ❌ |
+| FSRS 间隔重复 | ✅ FSRS | ✅ | 自研 | 自研 | 基础 |
+| 错题本 + 迭代递减 | ✅ | 插件 | 部分 | ❌ | ❌ |
+| AI 作文批改 / 口语陪练 | ✅ 可选 | ❌ | ❌ | ❌ | ✅ 付费 |
+| 题库导入 / 分享（ESQ） | ✅ Word/PDF/ESQ | ✅ .apkg | ❌ | ❌ | ✅ 付费 |
+| 开源 | ✅ GPL-3.0 | ✅ | ❌ | ❌ | ❌ |
+| Windows / Web / Android 三端 | ✅ | ✅ | 移动端 | 移动端 | Web |
+
+> **墨题的定位：唯一把「真题刷题 + FSRS 词汇 + AI 辅助」闭环做成本地优先开源三端工具的选择。** 适合需要真实考试训练而非纯背单词的考生。
 
 ## 界面展示
 
@@ -243,7 +291,7 @@ AI 可用于：
 - 删除试卷、非空题库配置和未完成导入草稿后会进入统一回收站，保留 7 天；期间可以恢复或立即彻底删除。
 - 错题本跟随当前题库配置筛选；单词本跨题库共享，并优先展示最近加入的词。
 
-### 7. Word / PDF 题库导入
+### 7. 如何导入 Word / PDF 题库？
 
 “导入题库”页面支持 `.docx`、`.doc` 和文本型 `.pdf` 试卷：
 
@@ -266,7 +314,7 @@ AI 可用于：
 
 批量工具支持文件发现、答案/音频匹配、模型全量校对、失败重试、断点续跑和内容哈希去重。请先在少量样本上确认解析质量。
 
-### 8. ESQ 1.1 题库分享格式
+### 8. 如何用 ESQ 格式分享题库？
 
 `.esq` 是“ZIP + UTF-8 JSON”的可分享题库包，目标是让题库可以脱离本机 SQLite ID，在不同用户之间稳定交换。
 
@@ -375,7 +423,7 @@ corepack pnpm run dev
 7. 阅读复习建议，回到同一篇文章再次训练。
 8. 遇到生词时右键加入单词本，稍后在单词本查看普通释义和语境释义。
 
-## 数据、隐私与备份
+## 数据存在哪里？隐私与备份
 
 默认数据目录：
 
