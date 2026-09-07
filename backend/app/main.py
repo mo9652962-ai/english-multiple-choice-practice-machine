@@ -202,7 +202,7 @@ def health() -> dict[str, str | int]:
 
 # v3.3: 我的墨题——版本号 + 开发时间 + 检查更新（GitHub releases 代理）
 APP_RELEASE_DATE = "2026-09-02"
-_UPDATE_REPO = "mo9652962-ai/epm-releases"
+_UPDATE_REPO = "mo9652962-ai/english-multiple-choice-practice-machine"
 
 
 @app.get("/api/version")
