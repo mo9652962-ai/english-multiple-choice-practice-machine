@@ -1,0 +1,44 @@
+# 墨题 · English Practice Machine
+
+> 墨题（English Practice Machine）是一个开源的本地优先英语刷题机，为考研英语（一/二）、大学英语四六级、高考英语等客观题训练场景提供：真题整卷练习、FSRS 间隔重复词汇复习、错题本与迭代、AI 学习辅助（作文精批/口语陪练/知识库问答）。核心刷题与判分完全离线可用，不依赖大模型；题库可导入 Word/PDF/ESQ 格式，个人数据保存在本机。技术栈：Python FastAPI 后端 + Vue 3 前端 + SQLite，支持 Windows/Web/Android 三端。
+
+## 项目背景
+
+墨题把「题库导入 → 整卷/随机练习 → 错题迭代 → 词汇复习 → 学习诊断」连成一条闭环，内置 647 道考研真题 + 7,958 词库（首次启动自动装好），无需任何 API Key 即可刷题、判分、复习。AI 功能（作文批改、口语陪练）是可选项，需要用户自配模型提供商。
+
+## 核心文档
+
+- [README 中文](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/blob/main/README.md): 项目完整说明、功能概览、快速开始、与同类工具对比
+- [README English](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/blob/main/README.en.md): English documentation, feature overview, quick start
+- [题库格式说明](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/blob/main/docs/question-bank-format.md): ESQ 1.1 题库分享格式、Word/PDF 导入规范
+- [变更日志](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/blob/main/CHANGELOG.md): 版本历史与功能演进
+- [贡献指南](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/blob/main/CONTRIBUTING.md): 如何参与开发、提交 PR
+- [安全策略](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/blob/main/SECURITY.md): 安全漏洞报告流程
+
+## 快速开始
+
+```powershell
+git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machine.git
+cd english-multiple-choice-practice-machine
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
+.\.venv\Scripts\python.exe run_app.py
+```
+
+打开 `http://127.0.0.1:8765` 即可开始刷题。环境要求：Windows 10/11、Python 3.12、Node 24、pnpm 11。
+
+## 核心特性
+
+- 真题整卷刷题：考研英语一/二（2010-2026）内置，支持按年份、随机、Part B 题型
+- FSRS 间隔重复：词汇复习采用 FSRS 算法，科学安排复习间隔
+- 错题本与迭代：自动收录错题，支持错题重练、覆盖率统计
+- 本地优先：核心功能 100% 离线，个人数据保存在本机 SQLite
+- 题库自由：支持 Word/PDF 导入，ESQ 格式跨用户分享
+- 三端支持：Windows 桌面、Web 浏览器、Android（Capacitor 打包）
+
+## Optional
+
+- [Release v2.0.0](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases): Windows NSIS 安装包与便携版
+- [GitHub Discussions](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/discussions): 社区讨论、功能建议
+- [问题追踪](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/issues): Bug 报告与功能请求
