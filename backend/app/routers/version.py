@@ -63,7 +63,7 @@ def app_version() -> dict:
 
     返回最新版本号 + 下载地址（由环境变量配置，未配置返回当前为最新）
     """
-    latest = os.environ.get("EPM_APP_VERSION", "1.0.0")
+    latest = os.environ.get("EPM_APP_VERSION", "2.0.0")
     download = os.environ.get("EPM_APP_DOWNLOAD_URL", "")
     return {
         "latest_version": latest,
