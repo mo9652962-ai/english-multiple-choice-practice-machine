@@ -121,7 +121,7 @@ def list_entries(
         params,
     ).fetchall()
     counts = connection.execute(
-        """
+        f"""
         SELECT COUNT(*) AS total,
                COALESCE(SUM(CASE WHEN encounter_count >= 2 OR manually_frequent = 1 THEN 1 ELSE 0 END), 0) AS frequent,
                COALESCE(SUM(CASE WHEN study_status = 'mastered' THEN 1 ELSE 0 END), 0) AS mastered,
