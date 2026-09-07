@@ -28,6 +28,8 @@
 
 ![墨题 · 英语刷题机](docs/images/banner-home-1200x630.png)
 
+![墨题演示 · 主页 → 真题刷题 → FSRS 词汇 → 错题本](docs/images/demo.gif)
+
 *墨题当前主界面展示：学习主页、真题练习、考研词汇 FSRS、推荐卷；截图不展示 API 密钥等敏感配置。*
 
 <div align="center">

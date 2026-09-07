@@ -26,6 +26,8 @@
 
 ![English Practice Machine](docs/images/banner-home-1200x630.png)
 
+![Demo: Home → Exam → FSRS Vocabulary → Wrong Answers](docs/images/demo.gif)
+
 *Current UI: home, exam practice, 考研 vocabulary with FSRS, recommended papers. No sensitive configuration shown.*
 
 <div align="center">
