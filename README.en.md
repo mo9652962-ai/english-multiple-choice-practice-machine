@@ -6,7 +6,7 @@
 
   **Open question banks · Your models · Local data · Practice freely**
 
-  A local Windows practice and review tool for English objective questions
+  **English Practice Machine (墨题) is an open-source, local-first English exam practice app for CET-4/CET-6, postgraduate (考研) and Gaokao learners: real past-paper practice, FSRS spaced-repetition vocabulary, mistake iteration and optional AI study assistance. Core practice and grading work fully offline with no API key required.**
 
   <p>
     <a href="README.md">简体中文</a>
@@ -17,16 +17,48 @@
   </p>
 
   <p>
-    <img src="https://img.shields.io/badge/platform-Windows-2563EB?style=flat-square" alt="Windows">
+    <img src="https://img.shields.io/badge/platform-Windows--Web--Android-2563EB?style=flat-square" alt="Windows/Web/Android">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
     <img src="https://img.shields.io/badge/status-v2.0.0-2563EB?style=flat-square" alt="v2.0.0">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
 
-![English Practice Machine home screen](docs/images/homepage-public.png)
+![English Practice Machine](docs/images/banner-home-1200x630.png)
 
-*The README screenshot uses the project's self-built demo bank and contains no personal API, practice-history, or vocabulary database.*
+*Current UI: home, exam practice, 考研 vocabulary with FSRS, recommended papers. No sensitive configuration shown.*
+
+<div align="center">
+
+### ⭐ Star this project if it helps you
+
+[![GitHub stars](https://img.shields.io/github/stars/mo9652962-ai/english-multiple-choice-practice-machine?style=social)](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/stargazers)
+[![GitHub License](https://img.shields.io/github/license/mo9652962-ai/english-multiple-choice-practice-machine?style=flat-square)](LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/mo9652962-ai/english-multiple-choice-practice-machine/ci.yml?style=flat-square)](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/actions)
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mo9652962-ai/english-multiple-choice-practice-machine&type=Date)](https://star-history.com/#mo9652962-ai/english-multiple-choice-practice-machine&Date)
+
+</div>
+
+## 🚀 Quick Start (3 steps)
+
+```powershell
+# 1. Clone
+git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machine.git
+cd english-multiple-choice-practice-machine
+
+# 2. Install (bundled 考研 past papers + 7,958-word vocabulary auto-install on first run)
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
+
+# 3. Run
+.\.venv\Scripts\python.exe run_app.py
+```
+
+⚡ Done! Open `http://127.0.0.1:8765` — 647 real past-paper questions + 7,958 vocabulary words included, no API key needed for practice, grading, or review.
+
+> Windows 10/11 · Python 3.12 · Node 24 · pnpm 11.
 
 ## Make a limited question set feel fresh again
 
