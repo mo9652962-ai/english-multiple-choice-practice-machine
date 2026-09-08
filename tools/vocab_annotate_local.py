@@ -14,7 +14,7 @@ import urllib.request
 DB = r"D:\english-multiple-choice-practice-machine\backend\data\question_bank.db"
 # 云端基元律动（tokenrhythm.studio, deepseek-v4-flash —— 实测真实便宜）
 import yaml as _yaml
-_CFG = _yaml.safe_load(open(r"C:\Users\31954\AppData\Local\hermes\config.yaml", encoding="utf-8"))
+_CFG = _yaml.safe_load(open(r"%USERPROFILE%\AppData\Local\hermes\config.yaml", encoding="utf-8"))
 _JYL = next(p for p in _CFG["custom_providers"] if p.get("name") == "jiyuanlvdong")
 API = _JYL["base_url"].rstrip("/") + "/chat/completions"
 API_KEY = _JYL.get("api_key", "")

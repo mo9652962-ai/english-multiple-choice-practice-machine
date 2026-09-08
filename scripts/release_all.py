@@ -90,12 +90,12 @@ def main():
     # 6. APK 同步（前后端同步: 前端 dist 进 APK）
     if os.path.isdir(os.path.join(frontend, "android")):
         env = os.environ.copy()
-        env["JAVA_HOME"] = r"C:\Users\31954\jdk21"
-        env["ANDROID_HOME"] = r"C:\Users\31954\android-sdk"
+        env["JAVA_HOME"] = os.path.join(os.path.expanduser("~"), "jdk21")
+        env["ANDROID_HOME"] = os.path.join(os.path.expanduser("~"), "android-sdk")
         subprocess.run("npx cap sync android", shell=True, cwd=frontend, env=env)
         ps = (
             "Set-Location 'D:\\english-multiple-choice-practice-machine\\frontend\\android'; "
-            "$env:JAVA_HOME='C:\\Users\\31954\\jdk21'; "
+            "$env:JAVA_HOME=\"$env:USERPROFILE\\jdk21\"; "
             "& '.\\gradlew.bat' assembleDebug --no-daemon | Select-Object -Last 3"
         )
         run(f'powershell -NoProfile -Command "{ps}"')

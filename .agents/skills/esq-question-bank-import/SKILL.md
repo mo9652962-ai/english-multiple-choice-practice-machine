@@ -40,8 +40,8 @@ description: 构建/校验/导入 ESQ 题库包。触发：'补题型''导入题
   **必须用 `json.JSONDecoder().raw_decode(content, content.find("{"))` 取第一个对象** —— AI 常在 JSON 前后加解释文本,
   find/rfind 截取会报 Extra data (实测踩过); profile_id=3 是基元律动(TokenRhythm); 注意后端必须先启动
 - **AI 批量/限流**: 批量翻译单词 30 词/批 (60 词触发 400); 模型服务 503 抖动时重试 3 次间隔 10s (瞬时恢复, 不是配置问题)
-- **MSYS 路径坑**: git-bash `/tmp` = C:/Users/31954/AppData/Local/Temp; 但 write_file 到 `C:\tmp` 是真实 C 盘根!
-  clone 下来的 repo 在 AppData/Temp, 脚本路径要用 C:/Users/31954/AppData/Local/Temp/...
+- **MSYS 路径坑**: git-bash `/tmp` = %USERPROFILE%/AppData/Local/Temp; 但 write_file 到 `C:\tmp` 是真实 C 盘根!
+  clone 下来的 repo 在 AppData/Temp, 脚本路径要用 %USERPROFILE%/AppData/Local/Temp/...
 - **wamich md 多个 Section A**: CET md 文件有听力 Section A + 阅读 Section A! regex 必须从
   `## Part III / Reading Comprehension` 之后找 `### Section A`, 否则解析出 0 空
 - **PDF 文字抽取质量**: 解析前先打印 extract_text 前 200 字, 乱码(`$%&'()*`)立即换源或 AI 模拟, 别投资解析

@@ -70,7 +70,7 @@ def main() -> None:
     backend_rows = load_backend_rows()
     print("backend rows=%d" % len(backend_rows))
     print(sync_one("seed", r"D:\english-multiple-choice-practice-machine\frontend\public\question_bank.db", backend_rows))
-    print(sync_one("online", r"C:\Users\31954\AppData\Roaming\ai-english-practice-desktop\data\question_bank.db", backend_rows))
+    print(sync_one("online", r"%USERPROFILE%\AppData\Roaming\ai-english-practice-desktop\data\question_bank.db", backend_rows))
     print("SYNC THREE DBS DONE")
 
 

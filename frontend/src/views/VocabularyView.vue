@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { haptic } from '../services/haptics'
+import { sound } from '../services/sound'
 import { BookMarked, BookOpen, Check, FileText, Flame, Gauge, GraduationCap, PenLine, RefreshCw, School, Search, Settings, Star, Timer, Trash2, Headphones, Medal, Target, Trophy, Zap } from 'lucide-vue-next'
 import { computed, onMounted, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -270,10 +271,13 @@ const clozeCurrent = computed(() => clozeItems.value[clozeIndex.value])
 function pickCloze(opt: string) {
   if (clozePicked.value) return
   clozePicked.value = opt
-  haptic(opt === clozeCurrent.value?.answer ? 20 : [10, 40, 20])
-  if (opt === clozeCurrent.value?.answer) {
+  const isCorrect = opt === clozeCurrent.value?.answer
+  haptic(isCorrect ? 20 : [10, 40, 20])
+  if (isCorrect) {
+    sound.correct()
     clozeScore.value++
   } else {
+    sound.wrong()
     clozeWrong.value.push(clozeCurrent.value?.word || opt)
   }
 }
@@ -432,6 +436,8 @@ function quickAnswer(option: string) {
   const cur = quickItems.value[quickIndex.value]
   const correct = option === cur.meaning
   haptic(correct ? 20 : [10, 40, 20])
+  if (correct) sound.correct()
+  else sound.wrong()
   quickPicked.value = option
   if (correct) quickScore.value += 1
   window.setTimeout(() => {
