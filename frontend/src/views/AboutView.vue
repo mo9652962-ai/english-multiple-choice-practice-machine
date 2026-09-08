@@ -197,7 +197,7 @@ async function checkUpdate() {
 </template>
 
 <style scoped>
-.page-about { max-width: 720px; margin: 0 auto; padding: 28px 20px 96px; }
+.page-about { max-width: min(100%, 1360px); margin: 0 auto; padding: 28px 24px 96px; width: 100%; box-sizing: border-box; }
 .page-head h2 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; }
 .about-card { padding: 32px 24px; text-align: center; }
 .about-logo {
@@ -208,14 +208,14 @@ async function checkUpdate() {
 }
 .about-card h3 { margin: 0 0 4px; font-size: 18px; }
 .about-slogan { margin: 0 0 22px; font-size: 13px; }
-.about-info { display: grid; gap: 10px; max-width: 420px; margin: 0 auto 22px; }
+.about-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; max-width: 900px; margin: 0 auto 24px; }
 .about-row {
   display: flex; justify-content: space-between; align-items: center;
   padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px;
   font-size: 13.5px;
 }
 .about-row span { color: var(--muted); }
-.about-check { width: 100%; max-width: 420px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 7px; }
+.about-check { width: 100%; max-width: 480px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 7px; }
 .about-result {
   display: flex; align-items: center; justify-content: center; gap: 7px;
   margin-top: 14px; padding: 10px 14px; border-radius: 10px; font-size: 13.5px;
