@@ -5166,3 +5166,183 @@ body.ink-landscape::before {
   font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
 }
 
+/* ════════════════════════════════════════════════════════════════
+   v53 精致化 Phase 2 (2026-09: 首页「文房案头」三段式架构)
+   ════════════════════════════════════════════════════════════════ */
+/* 今日案头双柱布局 */
+.focus-horizon-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 18px;
+  margin: 18px 0 24px;
+}
+@media (max-width: 980px) {
+  .focus-horizon-grid { grid-template-columns: 1fr; }
+}
+
+.focus-orb-card, .focus-plan-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.focus-orb-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.focus-streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--accent-vermilion) 12%, var(--surface-solid));
+  color: var(--accent-vermilion);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 1px solid color-mix(in srgb, var(--accent-vermilion) 25%, transparent);
+}
+
+.focus-quote-mini {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 340px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color .18s ease;
+}
+.focus-quote-mini:hover { color: var(--ink); }
+
+.focus-goal-gauge { margin: 12px 0 16px; }
+.focus-goal-info { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.focus-goal-info strong { font-size: var(--text-lg); font-family: var(--font-en-serif); }
+
+.focus-continue-action {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: color-mix(in srgb, var(--primary-soft) 60%, var(--surface-solid));
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--line));
+  border-radius: var(--r-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s var(--motion-standard);
+  text-decoration: none;
+  color: var(--ink);
+}
+.focus-continue-action:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+.focus-continue-action small { color: var(--muted); font-size: 11.5px; display: block; margin-bottom: 2px; }
+.focus-continue-action strong { font-size: var(--text-base); }
+
+/* 研习工坊分段控制器 */
+.studio-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 5px;
+  background: color-mix(in srgb, var(--line) 45%, var(--surface-solid));
+  border-radius: var(--r-pill);
+  margin-bottom: 20px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+}
+.studio-tab-btn {
+  border: 0;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  transition: all .2s var(--motion-standard);
+}
+.studio-tab-btn:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--surface-solid) 60%, transparent);
+}
+.studio-tab-btn.active {
+  background: var(--primary);
+  color: var(--bg);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 28%, transparent);
+}
+.tab-badge {
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 25%, transparent);
+}
+.studio-tab-panel {
+  animation: v11-rise .28s var(--motion-standard);
+}
+
+/* 案头辅卡微排版 */
+.focus-quote-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: color-mix(in srgb, var(--surface) 60%, var(--surface-solid));
+  border-radius: var(--r-md);
+  border-left: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  cursor: pointer;
+  transition: border-color .2s ease;
+}
+.focus-quote-box:hover {
+  border-left-color: var(--accent);
+}
+.focus-quote-box .quote-en {
+  font-family: var(--font-en-serif);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.focus-quote-box .quote-cn {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.focus-word-card {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: color-mix(in srgb, var(--primary-soft) 40%, var(--surface-solid));
+  border: 1px dashed color-mix(in srgb, var(--line-strong) 40%, transparent);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.focus-word-card:hover {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary-soft) 70%, var(--surface-solid));
+}
+
+.studio-section {
+  margin: 28px 0 32px;
+}
+
+.archive-section {
+  margin: 32px 0 20px;
+}
