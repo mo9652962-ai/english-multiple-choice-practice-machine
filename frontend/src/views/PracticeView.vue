@@ -666,6 +666,38 @@ async function load() {
   }
   catch (e) { error.value = String(e) }
 }
+// v54: Phase 3 沉浸心流状态（阅读进度、水墨连击与盲打按键反馈）
+const readingProgress = ref(0)
+function onPassageScroll(event: Event) {
+  const el = event.target as HTMLElement
+  if (!el || !el.classList?.contains('passage-pane')) return
+  const max = el.scrollHeight - el.clientHeight
+  readingProgress.value = max > 0 ? Math.min(100, Math.max(0, Math.round((el.scrollTop / max) * 100))) : 100
+}
+
+const comboBanner = ref<{ count: number; text: string } | null>(null)
+let comboTimer: number | null = null
+function triggerCombo(count: number, text: string) {
+  if (comboTimer) window.clearTimeout(comboTimer)
+  comboBanner.value = { count, text }
+  comboTimer = window.setTimeout(() => {
+    comboBanner.value = null
+  }, 4200)
+}
+
+const lastKeyHit = ref<{ questionId: any; label: string } | null>(null)
+let keyHitTimer: number | null = null
+function triggerKeyFeedback(questionId: any, label: string) {
+  lastKeyHit.value = { questionId, label: String(label).toUpperCase() }
+  if (keyHitTimer) window.clearTimeout(keyHitTimer)
+  keyHitTimer = window.setTimeout(() => {
+    lastKeyHit.value = null
+  }, 220)
+}
+function isKeyPressed(questionId: any, label: string) {
+  return lastKeyHit.value?.questionId === questionId && lastKeyHit.value?.label === String(label).toUpperCase()
+}
+
 onMounted(() => {
   timerTicker = window.setInterval(() => {
     timerNow.value = Date.now()
@@ -673,12 +705,14 @@ onMounted(() => {
   window.addEventListener('keydown', handleWindowKeydown)
   window.addEventListener('pagehide', flushVocabularyOnPageHide)
   window.addEventListener('selectionchange', onPassageSelection)
+  window.addEventListener('scroll', onPassageScroll, true)
   load()
 })
 onBeforeUnmount(() => {
   if (timerTicker !== null) window.clearInterval(timerTicker)
   window.removeEventListener('keydown', handleWindowKeydown)
   window.removeEventListener('pagehide', flushVocabularyOnPageHide)
+  window.removeEventListener('scroll', onPassageScroll, true)
 })
 onBeforeRouteLeave(async () => {
   if (isListening.value && session.value?.status === 'active' && !activeUnitSubmitted.value) {
@@ -697,6 +731,24 @@ function handleWindowKeydown(event: KeyboardEvent) {
   if (target && /INPUT|TEXTAREA|SELECT/.test(target.tagName)) return
   const unit = activeUnit.value
   if (!unit || activeUnitSubmitted.value || session.value?.status === 'submitted') return
+
+  // v54: Space 推进下一题 / Enter 提交
+  if (event.code === 'Space' || event.key === ' ') {
+    nextHighlighted()
+    event.preventDefault()
+    return
+  }
+  if (event.key === 'Enter') {
+    const missing = firstUnanswered([activeUnitIndex.value])
+    if (missing) {
+      focusUnanswered(missing.unitIndex, missing.question)
+    } else if (!activeUnitSubmitted.value) {
+      submitCurrentUnit()
+    }
+    event.preventDefault()
+    return
+  }
+
   // 1-4 / A-D：选择当前题选项
   // v49: 键盘作用于"当前题"(分屏当前/首个未答)——开箱即用; 高亮仅作回落
   const cur = unit.questions?.[currentQuestionIndex.value]
@@ -707,6 +759,7 @@ function handleWindowKeydown(event: KeyboardEvent) {
     const safeOptions = safeDisplayOptions(cur)
     const byLabel = safeOptions.find((o: any) => String(o.label || o.key || '').toLowerCase() === pressed)
     if (byLabel) {
+      triggerKeyFeedback(cur.id, byLabel.label || byLabel.key)
       select(cur, byLabel.stable_key || byLabel.key)
       event.preventDefault()
       return
@@ -714,6 +767,7 @@ function handleWindowKeydown(event: KeyboardEvent) {
     if (/^[1-4]$/.test(pressed)) {
       const idx = Number(pressed) - 1
       if (safeOptions[idx]) {
+        triggerKeyFeedback(cur.id, safeOptions[idx].label || safeOptions[idx].key)
         select(cur, safeOptions[idx].stable_key || safeOptions[idx].key)
         event.preventDefault()
         return
@@ -926,8 +980,33 @@ async function submitCurrentUnit() {
     showUnitResult(submittedUnitId)
     const unit = session.value?.units?.find((u: any) => u.id === submittedUnitId)
     const unitRate = unit?.submission?.max_score ? Math.round((unit.submission.score / unit.submission.max_score) * 100) : 0
-    if (unitRate >= 60) sound.correct()
-    else sound.wrong()
+
+    // v54: Phase 3 连续答对 Combo 计算与水墨涟漪
+    const questions = unit?.questions || []
+    let currentStreak = 0
+    let maxUnitStreak = 0
+    for (const q of questions) {
+      if (q.is_correct) {
+        currentStreak++
+        if (currentStreak > maxUnitStreak) maxUnitStreak = currentStreak
+      } else {
+        currentStreak = 0
+      }
+    }
+    if (maxUnitStreak >= 10) {
+      triggerCombo(maxUnitStreak, '十连全对 · 独占鳌头！')
+      sound.fanfare()
+    } else if (maxUnitStreak >= 5) {
+      triggerCombo(maxUnitStreak, '五连全对 · 势如破竹！')
+      sound.correct()
+    } else if (maxUnitStreak >= 3) {
+      triggerCombo(maxUnitStreak, '三连全对 · 渐入佳境！')
+      sound.correct()
+    } else if (unitRate >= 60) {
+      sound.correct()
+    } else {
+      sound.wrong()
+    }
   } catch (e) {
     if (await handleIncompleteSubmission(e)) return
     error.value = String(e)
@@ -1150,6 +1229,17 @@ function openDeepExplain(questionId: number) {
 
 <template>
   <div class="practice-page page-practice" @click="vocabMenu.visible=false">
+    <!-- v54: Phase 3 水墨连击浮动徽章 -->
+    <Transition name="fade">
+      <div v-if="comboBanner" class="combo-badge-float" role="status" aria-live="polite">
+        <div class="combo-seal">连</div>
+        <div class="combo-copy">
+          <strong>{{ comboBanner.count }} 连全对</strong>
+          <small>{{ comboBanner.text }}</small>
+        </div>
+      </div>
+    </Transition>
+
     <header class="practice-top">
       <div style="display:flex;align-items:center;gap:18px">
         <button class="button ghost" @click="router.push('/library')"><ArrowLeft :size="18" />退出</button>
@@ -1214,6 +1304,10 @@ function openDeepExplain(questionId: number) {
       @jump-question="jumpToQuestion"
     >
       <template #passage>
+        <!-- v54: Phase 3 语篇顶部阅读进度微指示 -->
+        <div v-if="!isListening" class="reading-progress-track" aria-hidden="true">
+          <div class="reading-progress-bar" :style="{ width: `${readingProgress}%` }"></div>
+        </div>
         <div v-if="!isListening" class="passage-toolbar">
           <span class="eyebrow">{{ activeUnit.year }} · {{ activeUnit.title }}</span>
           <div class="font-size-control" title="调整字号">
@@ -1402,13 +1496,14 @@ function openDeepExplain(questionId: number) {
             v-for="option in question.options"
             :key="option.stable_key"
             class="option"
-            :class="resultClass(question, option)"
+            :class="[resultClass(question, option), { 'key-pressed': isKeyPressed(question.id, option.label) }]"
             :disabled="activeUnitSubmitted"
             @click="select(question, option.stable_key)"
             @contextmenu.stop="openVocabularyMenu"
           >
             <span class="option-letter">{{ option.label }}</span>
             <span class="option-content" data-vocab-text><ContentBlocks v-if="option.content_blocks?.length" :blocks="option.content_blocks" :package-id="activeContentPackage.packageId" :content-version="activeContentPackage.contentVersion" /><template v-else>{{ option.content }}</template></span>
+            <span v-if="!activeUnitSubmitted" class="option-key-hint" aria-hidden="true">{{ option.label }}</span>
           </button>
           <div v-if="question.option_data_dirty" class="option-data-warning" role="status">
             <AlertCircle :size="14" /> 历史选项数据已自动拆分显示
@@ -1422,6 +1517,10 @@ function openDeepExplain(questionId: number) {
       <footer class="practice-footer" :class="{'listening-footer':isListening}">
         <div class="practice-footer-summary">
           <span>{{ activeUnitIndex + 1 }} / {{ session.units.length }} 篇</span>
+          <div class="zen-key-guide" title="全键盘盲打技巧">
+            <span class="zen-key-pill"><kbd>A</kbd>–<kbd>D</kbd> 选答案</span>
+            <span class="zen-key-pill"><kbd>Space</kbd> 下一题</span>
+          </div>
           <button
             v-if="activeUnit.submission?.submitted"
             class="unit-result-link"
