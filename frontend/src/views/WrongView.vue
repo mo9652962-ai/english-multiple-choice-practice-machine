@@ -12,11 +12,14 @@ import {
   Play,
   Sparkles,
   Zap,
+  RefreshCw,
+  Layers,
 } from 'lucide-vue-next'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post, put } from '../api'
 import { showToast } from '../services/toast'
+import { sound } from '../services/sound'
 
 type WrongRow = {
   question_id: number
@@ -77,6 +80,26 @@ type AnalysisStatus = {
 const router = useRouter()
 const rows = ref<WrongRow[]>([])
 const frequentOnly = ref(false)
+const activeWrongTab = ref<'all' | 'frequent' | 'srs'>('all')
+
+function switchTab(tab: 'all' | 'frequent' | 'srs') {
+  activeWrongTab.value = tab
+  if (tab === 'frequent') {
+    frequentOnly.value = true
+  } else {
+    frequentOnly.value = false
+  }
+  sound.tap()
+}
+
+watch(frequentOnly, (val) => {
+  if (val && activeWrongTab.value !== 'frequent') {
+    activeWrongTab.value = 'frequent'
+  } else if (!val && activeWrongTab.value === 'frequent') {
+    activeWrongTab.value = 'all'
+  }
+})
+
 const error = ref('')
 const analysis = ref('')
 const analysisTitle = ref('')
@@ -90,6 +113,7 @@ const analysisStatuses = ref<Record<number, AnalysisStatus>>({})
 const exporting = ref(false)
 
 async function exportWrong() {
+  sound.tap()
   if (exporting.value) return
   exporting.value = true
   try {
@@ -123,6 +147,7 @@ async function exportWrong() {
 // v2.37: 导出可打印错题卷 (粉笔式出卷, HTML 打印版)
 const paperExporting = ref(false)
 async function exportWrongPaper() {
+  sound.tap()
   if (paperExporting.value) return
   paperExporting.value = true
   try {
@@ -149,7 +174,9 @@ async function exportWrongPaper() {
 }
 
 const visible = computed(() =>
-  frequentOnly.value ? rows.value.filter(row => row.is_frequent) : rows.value,
+  activeWrongTab.value === 'frequent' || frequentOnly.value
+    ? rows.value.filter(row => row.is_frequent)
+    : rows.value,
 )
 
 const grouped = computed<YearGroup[]>(() => {
@@ -235,11 +262,13 @@ async function loadWrongStats() {
 const noteEditing = ref<number | null>(null)
 const noteDraft = ref('')
 function toggleNote(item: any) {
+  sound.tap()
   if (noteEditing.value === item.id) { noteEditing.value = null; return }
   noteEditing.value = item.id
   noteDraft.value = item.note || ''
 }
 async function saveNote(item: any) {
+  sound.tap()
   try {
     const r: any = await put(`/wrong/${item.id}/note`, { note: noteDraft.value })
     item.note = r.note
@@ -248,6 +277,7 @@ async function saveNote(item: any) {
   } catch (e) { showToast(`保存失败：${e}`, 'error') }
 }
 async function redoQuestion(questionId: number) {
+  sound.tap()
   try {
     const session: any = await post('/practice/sessions', {
       mode: 'random', question_ids: [questionId], count: 1, shuffle_options: true,
@@ -269,6 +299,7 @@ async function loadReview() {
 onMounted(() => { loadWrongStats(); loadReview() })
 
 function toggleYear(year: number) {
+  sound.tap()
   const next = new Set(openYears.value)
   next.has(year) ? next.delete(year) : next.add(year)
   openYears.value = next
@@ -280,6 +311,7 @@ async function retryScope(
   questionIds: number[],
   title: string,
 ) {
+  sound.tap()
   startingKey.value = key
   error.value = ''
   try {
@@ -311,6 +343,7 @@ function typeLabel(t: string | null | undefined): string {
 
 // v2.34: 同类题强化 (粉笔/错题plus式) — 按该范围错题最薄弱题型, 生成同类专项练习
 async function strengthenScope(key: string, questionIds: number[], title: string) {
+  sound.tap()
   startingKey.value = key
   error.value = ''
   try {
@@ -344,6 +377,7 @@ const aiVariantError = ref('')
 const aiVariantsList = ref<any[]>([])
 
 async function aiVariants(key: string, questionIds: number[]) {
+  sound.tap()
   aiVariantKey.value = key
   aiVariantError.value = ''
   aiVariantLoading.value = true
@@ -368,6 +402,7 @@ async function analyzeScope(
   title: string,
   unitIds: number[] = [],
 ) {
+  sound.tap()
   const scopeStatuses = unitIds
     .map(unitId => analysisStatuses.value[unitId])
     .filter(Boolean)
@@ -447,12 +482,12 @@ function analysisLabel(unitIds: number[]): string {
   <div class="page page-wrong wrong-page">
     <div class="page-head">
       <div>
-        <span class="eyebrow">错题集</span>
+        <span class="eyebrow">错题集 · 批改手札</span>
         <h1>错题本</h1>
-        <p class="lead">按年份与篇目整理，可直接对指定范围进行分析或重做。</p>
+        <p class="lead">按年份与篇目整理，可直接对指定范围进行分析、同类强化或重做。</p>
       </div>
-      <div style="display:flex;gap:8px">
-        <button class="button primary" type="button" @click="router.push('/diagnostic')">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="button primary" type="button" @click="sound.tap(); router.push('/diagnostic')">
           <Brain :size="15" aria-hidden="true" />学习诊断
         </button>
         <button class="button ghost" type="button" :disabled="exporting" @click="exportWrong">
@@ -464,25 +499,91 @@ function analysisLabel(unitIds: number[]): string {
           <template v-else><FileText :size="15" aria-hidden="true" />错题卷</template>
         </button>
         <!-- v9.28: Gemini batch5 任务4——精讲典藏入口 -->
-        <button class="button ghost" type="button" @click="router.push('/collections')">
+        <button class="button ghost" type="button" @click="sound.tap(); router.push('/collections')">
           <BookMarked :size="15" aria-hidden="true" />典藏
         </button>
       </div>
     </div>
 
+    <!-- 朱砂案头统计条 -->
+    <div class="wrong-stats-strip">
+      <div class="wrong-stat-cell primary-cell">
+        <span class="stat-num">{{ rows.length }}</span>
+        <span class="stat-meta"><FileText :size="13" /> 累计错题记录</span>
+      </div>
+      <div class="wrong-stat-cell frequent-cell">
+        <span class="stat-num">{{ totalFrequent }}</span>
+        <span class="stat-meta"><Repeat :size="13" /> 高频顽固题</span>
+      </div>
+      <div class="wrong-stat-cell srs-cell">
+        <span class="stat-num">{{ reviewDue }}</span>
+        <span class="stat-meta"><CalendarDays :size="13" /> 今日到期复习</span>
+      </div>
+      <div class="wrong-stat-cell scope-cell">
+        <span class="stat-num">{{ grouped.length }}</span>
+        <span class="stat-meta"><BookOpenText :size="13" /> 涉及真题年份</span>
+      </div>
+    </div>
+
+    <!-- 错题维度分段控制器 -->
+    <div class="wrong-scope-tabs" role="tablist" aria-label="错题过滤维度">
+      <button
+        class="wrong-scope-btn"
+        :class="{ active: activeWrongTab === 'all' }"
+        type="button"
+        role="tab"
+        :aria-selected="activeWrongTab === 'all'"
+        @click="switchTab('all')"
+      >
+        <Layers :size="14" />
+        <span>全部错题</span>
+        <span class="tab-badge">{{ rows.length }}</span>
+      </button>
+      <button
+        class="wrong-scope-btn"
+        :class="{ active: activeWrongTab === 'frequent', vermilion: activeWrongTab === 'frequent' }"
+        type="button"
+        role="tab"
+        :aria-selected="activeWrongTab === 'frequent'"
+        @click="switchTab('frequent')"
+      >
+        <Repeat :size="14" />
+        <span>高频顽固题</span>
+        <span class="tab-badge">{{ totalFrequent }}</span>
+      </button>
+      <button
+        class="wrong-scope-btn"
+        :class="{ active: activeWrongTab === 'srs' }"
+        type="button"
+        role="tab"
+        :aria-selected="activeWrongTab === 'srs'"
+        @click="switchTab('srs')"
+      >
+        <CalendarDays :size="14" />
+        <span>今日到期复习</span>
+        <span v-if="reviewDue > 0" class="tab-badge">{{ reviewDue }}</span>
+      </button>
+    </div>
+
     <!-- v9.28: Gemini batch5 任务3——错题 SRS 今日复习 -->
-    <div v-if="reviewDue > 0" class="card report-panel freq-card">
-      <h3><CalendarDays :size="17" aria-hidden="true" class="icon-h3" />今日复习 <small class="freq-sub">{{ reviewDue }} 题到期 · 按遗忘曲线排序 · 考前每天巩固</small></h3>
+    <div v-if="(activeWrongTab === 'srs' || activeWrongTab === 'all') && reviewDue > 0" class="card report-panel freq-card">
+      <h3>
+        <CalendarDays :size="17" aria-hidden="true" class="icon-h3" />
+        今日复习
+        <small class="freq-sub">{{ reviewDue }} 题到期 · 按遗忘曲线排序 · 考前每天巩固</small>
+      </h3>
       <div class="freq-grid">
         <button
           v-for="(item, i) in reviewItems.slice(0, 10)" :key="item.question_id"
-          class="freq-item" type="button" @click="redoQuestion(item.question_id)"
+          class="freq-item scholar-edition" type="button" @click="redoQuestion(item.question_id)"
         >
           <span class="freq-rank">{{ i + 1 }}</span>
           <span class="freq-body">
             <span class="freq-stem">{{ item.stem }}</span>
             <span class="freq-meta">
-              <i class="freq-badge" style="background:var(--zhuqing-light,rgba(74,95,78,.12));color:var(--zhuqing,#4A5F4E)"><RefreshCw :size="11" aria-hidden="true" />{{ item.interval }} 天间隔</i>
+              <i class="freq-badge" style="background:var(--zhuqing-light,rgba(74,95,78,.12));color:var(--zhuqing,#4A5F4E)">
+                <RefreshCw :size="11" aria-hidden="true" />{{ item.interval }} 天间隔
+              </i>
               <i>ease {{ item.ease }}</i>
               <i v-if="item.wrong_count">错 {{ item.wrong_count }} 次</i>
             </span>
@@ -490,20 +591,33 @@ function analysisLabel(unitIds: number[]): string {
         </button>
       </div>
     </div>
+    <div v-else-if="activeWrongTab === 'srs' && reviewDue === 0" class="card empty illustrated-empty" style="margin-bottom:20px;padding:32px 20px;">
+      <div><CalendarDays :size="24" /><strong>今日已无到期待复习错题</strong></div>
+      <p>遗忘曲线掌握度良好，可切换到“全部错题”或“高频顽固题”继续巩固。</p>
+    </div>
 
     <!-- v2.42: 高频错题 TOP + 错因分布 (猿题库考点归因) -->
-    <div v-if="wrongStats?.top?.length" class="card report-panel freq-card">
-      <h3><Repeat :size="17" aria-hidden="true" class="icon-h3" />高频错题 TOP{{ wrongStats.top.length }} <small class="freq-sub">按重复出错次数排序 · 考前优先攻克</small></h3>
+    <div v-if="(activeWrongTab === 'frequent' || activeWrongTab === 'all') && wrongStats?.top?.length" class="card report-panel freq-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h3 style="margin:0">
+          <Repeat :size="17" aria-hidden="true" class="icon-h3" />
+          高频错题 TOP{{ wrongStats.top.length }}
+          <small class="freq-sub">按重复出错次数排序 · 考前优先攻克</small>
+        </h3>
+        <span class="cinnabar-seal-badge">朱砂批阅</span>
+      </div>
       <div class="freq-grid">
         <button
           v-for="(item, i) in wrongStats.top.slice(0, 5)" :key="item.id"
-          class="freq-item" type="button" @click="redoQuestion(item.id)"
+          class="freq-item scholar-edition" type="button" @click="redoQuestion(item.id)"
         >
           <span class="freq-rank">{{ i + 1 }}</span>
           <span class="freq-body">
             <span class="freq-stem">{{ item.stem }}</span>
             <span class="freq-meta">
-              <i class="freq-badge" :class="'reason-' + (item.reason === '反复出错' ? 'repeat' : item.reason === '易错点' ? 'weak' : 'ok')">{{ item.reason_icon }} {{ item.reason }}</i>
+              <i class="freq-badge" :class="'reason-' + (item.reason === '反复出错' ? 'repeat' : item.reason === '易错点' ? 'weak' : 'ok')">
+                {{ item.reason_icon }} {{ item.reason }}
+              </i>
               <i>错 {{ item.wrong_count }} 次</i>
               <i v-if="item.year">{{ item.year }}</i>
             </span>
@@ -574,23 +688,23 @@ function analysisLabel(unitIds: number[]): string {
       <p v-if="analysisNote" class="wrong-analysis-cache-note">{{ analysisNote }}</p>
     </div>
 
-    <section v-if="visible.length" class="wrong-overview" aria-label="错题概览">
+    <section v-if="activeWrongTab !== 'srs' && visible.length" class="wrong-overview" aria-label="错题概览">
       <div class="wrong-overview-copy">
         <span class="eyebrow">复习导图</span>
         <strong>{{ visible.length }} 道错题，分布在 {{ grouped.length }} 个年份</strong>
         <span>累计答错 {{ totalWrongAttempts }} 次，其中 {{ totalFrequent }} 道为高频错题。</span>
       </div>
       <label class="wrong-filter">
-        <input v-model="frequentOnly" type="checkbox">
+        <input v-model="frequentOnly" type="checkbox" @change="sound.tap()">
         <span>只看高频错题</span>
       </label>
     </section>
 
-    <div v-if="grouped.length" class="wrong-tree">
+    <div v-if="activeWrongTab !== 'srs' && grouped.length" class="wrong-tree">
       <section
         v-for="yearGroup in grouped"
         :key="yearGroup.year"
-        class="wrong-year card"
+        class="wrong-year card scholar-edition"
       >
         <div class="wrong-level-row wrong-year-row">
           <button
@@ -602,13 +716,13 @@ function analysisLabel(unitIds: number[]): string {
           >
             <span class="wrong-level-icon"><BookOpenText :size="21" /></span>
             <span class="wrong-level-copy">
-              <span class="wrong-level-kicker">年份</span>
+              <span class="wrong-level-kicker">年份卷宗</span>
               <strong>{{ yearGroup.year }} 年</strong>
             </span>
             <span class="wrong-level-stats">
               <span><b>{{ yearGroup.questionCount }}</b> 道错题</span>
               <span>{{ yearGroup.units.length }} 篇</span>
-              <span v-if="yearGroup.frequentCount">{{ yearGroup.frequentCount }} 道高频</span>
+              <span v-if="yearGroup.frequentCount" class="cinnabar-seal-badge">🔥 {{ yearGroup.frequentCount }} 道高频</span>
             </span>
             <ChevronDown
               :size="20"
@@ -655,11 +769,11 @@ function analysisLabel(unitIds: number[]): string {
           <article
             v-for="unit in yearGroup.units"
             :key="unit.unitId"
-            class="wrong-unit-row"
+            class="wrong-unit-row scholar-edition"
           >
             <span class="wrong-level-icon unit"><FileText :size="18" /></span>
             <span class="wrong-level-copy">
-              <span class="wrong-level-kicker">篇目</span>
+              <span class="wrong-level-kicker">篇目手札</span>
               <strong>{{ unit.title }}</strong>
             </span>
             <span class="wrong-level-stats">
@@ -709,10 +823,10 @@ function analysisLabel(unitIds: number[]): string {
       </section>
     </div>
 
-    <div v-else class="card empty illustrated-empty">
+    <div v-else-if="activeWrongTab !== 'srs'" class="card empty illustrated-empty">
       <img loading="lazy" decoding="async" src="/assets/quiet-study-empty.webp" alt="">
       <div><Brain :size="25" /><strong>这里还没有错题</strong></div>
-      <p>{{ frequentOnly ? '当前没有高频错题，可以切换为查看全部错题。' : '保持这个状态很不错，继续按自己的节奏练习。' }}</p>
+      <p>{{ activeWrongTab === 'frequent' ? '当前没有高频错题，可以切换为查看全部错题。' : '保持这个状态很不错，继续按自己的节奏练习。' }}</p>
     </div>
   </div>
 
