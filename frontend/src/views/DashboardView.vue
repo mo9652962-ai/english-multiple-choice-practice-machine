@@ -4,12 +4,20 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
 import { showToast } from '../services/toast'
+import { sound } from '../services/sound'
 import QuestionBankSwitcher from '../components/QuestionBankSwitcher.vue'
 import StudyHeatmap from '../components/StudyHeatmap.vue'
 import CountUp from '../components/CountUp.vue'
 // v9.33: 新手引导（首次访问显示，4 步激活）
 import OnboardingGuide from '../components/OnboardingGuide.vue'
 const showOnboarding = ref(!localStorage.getItem('epm_onboarded'))
+
+// v53: Phase 2 研习工坊分段控制器状态
+const activeStudioTab = ref<'recommend' | 'papers' | 'drills' | 'weak'>('recommend')
+function switchStudioTab(tab: 'recommend' | 'papers' | 'drills' | 'weak') {
+  activeStudioTab.value = tab
+  sound.tap()
+}
 
 const router = useRouter()
 const data = ref<any>(null)
@@ -427,275 +435,369 @@ async function sharePoster() {
       </div>
     </div>
     <QuestionBankSwitcher @changed="() => loadHome(true)" />
-    <!-- v10.1: 学习陪伴聊天室入口（独立于推荐数据加载，始终可见） -->
-    <div class="ai-trinity-row">
-      <div class="ai-trinity-card" @click="router.push('/chat')">
-        <span class="ai-trinity-badge badge-speaking">陪伴</span>
-        <span class="trinity-title"><MessageCircle :size="16" aria-hidden="true" />学习聊天室</span>
-        <p class="trinity-desc">研友同在 · @阿墨 随问随答</p>
-      </div>
-    </div>
-    <!-- v2.18: 备考倒计时条 (研究: 练题狗/好题库 备考节点) -->
-    <div v-if="data?.exam_countdown?.length" class="exam-countdown-bar">
-      <span class="countdown-label"><Hourglass :size="15" aria-hidden="true" />备考倒计时</span>
-      <span v-for="ex in data.exam_countdown" :key="ex.name" class="countdown-item">
-        <strong>{{ ex.name }}</strong>
-        <b>{{ ex.days_left }}</b> 天
-      </span>
-    </div>
-    <!-- v2.79: 今日金句 (每日名言轮换, 点击换一句) -->
-    <div class="card quote-card" @click="nextQuote" title="点击换一句">
-      <div class="quote-mark" aria-hidden="true">❝</div>
-      <div class="quote-body">
-        <p class="quote-en">{{ todayQuote.en }}</p>
-        <p class="quote-cn">{{ todayQuote.cn }} <span class="quote-author">—— {{ todayQuote.author }}</span></p>
-      </div>
-      <span class="quote-hint">每日一句 · 点击换一句</span>
-    </div>
 
-    <!-- v2.18/19: 今日学习计划 (研究: AI智能推题/艾宾浩斯新学+复习) -->
-    <div v-if="data?.today_plan?.plan?.length" class="card today-plan-card">
-      <div class="today-plan-head">
-        <h3 class="today-plan-title"><ClipboardList :size="17" aria-hidden="true" />今日学习计划</h3>
-        <span class="today-plan-total">预计 {{ data.today_plan.total_minutes || 0 }} 分钟</span>
-      </div>
-      <div class="today-plan-list">
-        <button
-          v-for="(task, i) in data.today_plan.plan" :key="i"
-          class="today-plan-item" type="button"
-          :class="{ done: task.done }"
-          @click="!task.done && runPlanTask(task)"
-        >
-          <span class="plan-icon"><component :is="planIcon(task.action)" :size="15" aria-hidden="true" /></span>
-          <span class="plan-label">{{ task.label }}</span>
-          <span class="plan-min">{{ task.minutes }}分</span>
-          <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
-        </button>
-      </div>
-    </div>
-    <!-- v2.39: 今日目标 + 每日一词 -->
-    <div class="grid grid-2 home-goal-row">
-      <div class="card today-plan-card">
-        <div class="today-plan-head">
-          <h3 class="today-plan-title"><Target :size="17" aria-hidden="true" />今日目标</h3>
-          <span class="today-plan-total">{{ todayAnswered }} / {{ dailyGoal }} 题</span>
-        </div>
-        <div class="goal-bar"><i :style="{ width: goalPct + '%' }"></i></div>
-        <div class="goal-actions">
-          <button class="button ghost compact" @click="quickGoal(20)">20题</button>
-          <button class="button ghost compact" @click="quickGoal(50)">50题</button>
-          <button class="button ghost compact" @click="quickGoal(100)">100题</button>
-          <button class="button compact" @click="dailyGoal = 0; saveGoal()">重置</button>
-        </div>
-      </div>
-      <div class="card today-plan-card word-of-day" @click="router.push('/vocabulary')">
-        <div class="today-plan-head"><h3 class="today-plan-title"><BookMarked :size="17" aria-hidden="true" />每日一词</h3></div>
-        <template v-if="wordOfDay">
-          <p class="wod-word">{{ wordOfDay.term }}</p>
-          <p class="wod-mean">{{ wordOfDay.common_meaning || wordOfDay.contextual_meaning || '' }}</p>
-          <span class="wod-hint">去单词本复习 →</span>
-        </template>
-        <p v-else class="muted">暂无词汇数据</p>
-      </div>
-    </div>
-    <!-- v2.9: 按当前级别针对性推荐 -->
-    <section v-if="data?.recommendations" class="recommend-section">
-      <div class="section-title"><h2><span class="hero-seal recommend-seal" aria-hidden="true">荐</span>{{ data.active_profile?.name || '本级别' }} · 为你推荐</h2></div>
-      <!-- v2.29: AI 智能推题 -->
-      <div v-if="aiPicks" class="card ai-picks-card">
-        <div class="ai-picks-head">
-          <span class="ai-picks-badge">AI 推题</span>
-          <span class="ai-picks-sub">基于薄弱分析 · 规则引擎</span>
-        </div>
-        <div class="ai-picks-body">
-          <div v-if="aiPicks.strategy?.length" class="ai-strategy">
-            <p v-for="(s, i) in aiPicks.strategy" :key="i">{{ s }}</p>
+    <!-- ════════════════ 第一层：今日案头焦点玉盘 ════════════════ -->
+    <div class="focus-horizon-grid">
+      <!-- 左栏：今日修行状态 & 焦点入口 -->
+      <div class="card focus-orb-card">
+        <div class="focus-orb-top">
+          <div class="focus-streak-badge">
+            <Flame :size="20" fill="currentColor" />
+            <span>已连续研习 {{ streak?.streak?.current || 0 }} 天</span>
           </div>
-          <div class="ai-picks-row">
-            <button v-if="aiPicks.weak_type" class="ai-pick-chip" type="button" @click="randomPractice(aiPicks.weak_type)">
-              <Target :size="14" aria-hidden="true" />强化{{ aiPicks.weak_label }}（薄弱）
-            </button>
-            <button v-if="aiPicks.redo?.length" class="ai-pick-chip" type="button" @click="router.push('/wrong')">
-              <Repeat :size="14" aria-hidden="true" />重做 {{ aiPicks.redo.length }} 道高频错题
-            </button>
-            <button v-if="aiPicks.vocab?.length" class="ai-pick-chip" type="button" @click="router.push('/vocabulary')">
-              <BookOpen :size="14" aria-hidden="true" />背 {{ aiPicks.vocab.length }} 个生词
-            </button>
-            <button class="ai-pick-chip" type="button" @click="router.push('/exam')">
-              <PenLine :size="14" aria-hidden="true" />模拟考试
-            </button>
-          </div>
+          <span class="focus-quote-mini" @click="nextQuote" title="点击换一句">
+            <span class="quote-mark" style="font-size:14px">❝</span>
+            {{ todayQuote.cn }} —— {{ todayQuote.author }}
+          </span>
         </div>
-      </div>
-      <!-- v9.27: AI 研习阁三件套（Gemini UI4——新功能透出） -->
-      <div class="ai-trinity-row">
-        <div class="ai-trinity-card" @click="router.push('/essay')">
-          <span class="ai-trinity-badge badge-review">精批</span>
-          <span class="trinity-title"><PenLine :size="16" aria-hidden="true" />作文精批</span>
-          <p class="trinity-desc">考研阅卷组标准 · 逐句批注 + 满分范文</p>
-        </div>
-        <div class="ai-trinity-card" @click="router.push('/speaking')">
-          <span class="ai-trinity-badge badge-speaking">陪练</span>
-          <span class="trinity-title"><Headphones :size="16" aria-hidden="true" />口语陪练</span>
-          <p class="trinity-desc">复试仿真 · 考官问答 · 语音识别</p>
-        </div>
-        <div class="ai-trinity-card" @click="router.push('/library')">
-          <span class="ai-trinity-badge badge-explain">精讲</span>
-          <span class="trinity-title"><BookOpen :size="16" aria-hidden="true" />真题精讲</span>
-          <p class="trinity-desc">刷题时点 AI 精讲 · 选项陷阱拆解</p>
-        </div>
-      </div>
-      <!-- 继续练习 -->
-      <RouterLink v-if="data.recommendations.continue_paper" :to="'/library'" class="card recommend-continue">
-        <span class="feature-icon sage" style="width:48px;height:48px;font-size:22px;margin-bottom:0">继</span>
-        <span class="action-copy">
-          <small>上次未完</small>
-          <h3>继续练习 {{ data.recommendations.continue_paper.year }} 年{{ data.recommendations.continue_paper.subject ? ' · ' + data.recommendations.continue_paper.subject : '' }}</h3>
-          <p>{{ data.recommendations.continue_paper.title }}</p>
-        </span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </RouterLink>
-      <!-- 本级别真题卷 -->
-      <div v-if="recommendPapers.length" class="grid grid-4 recommend-papers">
-        <RouterLink v-for="p in recommendPapers" :key="p.id" :to="'/library'" class="card recommend-paper">
-          <span class="seal-badge" aria-hidden="true">卷</span>
-          <strong>{{ p.year }} 年{{ p.subject ? ' · ' + p.subject : '' }}</strong>
-          <small><span class="paper-set-tag" :class="setClass(p.title)">{{ paperSet(p.title) }}</span>{{ paperKind(p.title) }}</small>
-          <span class="stat-link">去练习 <ArrowRight :size="14" /></span>
-        </RouterLink>
-      </div>
-      <!-- 高频错题 + 薄弱单元 -->
-      <div v-if="data.recommendations.top_wrong?.length" class="grid grid-2 recommend-wrong-grid">
-        <div class="card recommend-wrong">
-          <h3>本级别高频错题</h3>
-          <RouterLink v-for="w in data.recommendations.top_wrong" :key="w.id" :to="'/wrong'" class="recommend-wrong-item">
-            <span class="wrong-badge">{{ w.wrong_count }} 次错</span>
-            <span>{{ w.prompt }}</span>
-          </RouterLink>
-        </div>
-        <div v-if="data.recommendations.weak_units?.length" class="card recommend-wrong">
-          <h3>薄弱单元</h3>
-          <RouterLink v-for="u in data.recommendations.weak_units" :key="u.id" :to="'/wrong'" class="recommend-wrong-item">
-            <span class="wrong-badge">{{ u.wrong_n }} 题错</span>
-            <span>{{ u.title }}</span>
-          </RouterLink>
-        </div>
-      </div>
-      <!-- 能力雷达: 各题型正确率 + 薄弱一键专项 -->
-      <div v-if="data.recommendations.ability_radar?.length" class="card recommend-radar">
-        <h3>能力雷达 · 本级别各题型正确率</h3>
-        <div class="radar-bars">
-          <div v-for="a in data.recommendations.ability_radar" :key="a.type" class="radar-item" :class="{ weak: a.rate !== null && a.rate < 60 }">
-            <span class="radar-label">{{ typeName(a.type) }}</span>
-            <span class="radar-bar"><span class="radar-fill" :style="{ width: (a.rate ?? 0) + '%' }"></span></span>
-            <span class="radar-rate">{{ a.rate ?? '—' }}%</span>
-            <span v-if="a.rate !== null && a.rate < 60" class="radar-weak-tag">薄弱</span>
-            <button v-if="a.rate !== null" class="button ghost radar-go" type="button" @click="randomPractice(typeParam(a.type))">练一练</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div v-if="error" class="warning">{{ error }}</div>
-    <section v-if="vocabulary.length" class="vocabulary-ticker card" @mouseenter="tickerPaused=true" @mouseleave="tickerPaused=false">
-      <div class="ticker-heading"><div><span class="eyebrow">词汇温故</span><h3>词汇回顾</h3></div><RouterLink to="/vocabulary">查看单词本 →</RouterLink></div>
-      <div class="ticker-window">
-        <Transition name="vocabulary-flip" mode="out-in">
-          <div :key="vocabularyPage" class="ticker-group">
-          <RouterLink v-for="word in visibleWords" :key="word.id" :to="`/vocabulary?word=${word.id}`" class="ticker-word">
-            <Star v-if="word.is_frequent" class="vocab-star" :size="15" fill="currentColor" aria-label="高频词" />
-            <span class="ticker-word-copy">
-              <strong>{{ word.lemma || word.term }}</strong>
-              <small :title="wordMeaning(word)">{{ wordMeaning(word) }}</small>
+
+        <div class="focus-goal-gauge">
+          <div class="focus-goal-info">
+            <div>
+              <span class="eyebrow" style="font-size:12px;margin-bottom:2px">今日修行目标</span>
+              <strong>{{ todayAnswered }} <span style="font-size:14px;color:var(--muted);font-weight:normal">/ {{ dailyGoal || '未设' }} 题</span></strong>
+            </div>
+            <span class="tab-badge" style="font-size:12px;background:color-mix(in srgb, var(--primary) 14%, var(--surface-solid));color:var(--primary);font-weight:700">
+              {{ goalPct }}%
             </span>
-          </RouterLink>
           </div>
-        </Transition>
+          <div class="goal-bar"><i :style="{ width: goalPct + '%' }"></i></div>
+          <div class="goal-actions" style="margin-top:10px">
+            <button class="button ghost compact" type="button" @click="quickGoal(20)">20题</button>
+            <button class="button ghost compact" type="button" @click="quickGoal(50)">50题</button>
+            <button class="button ghost compact" type="button" @click="quickGoal(100)">100题</button>
+            <button class="button compact" type="button" @click="dailyGoal = 0; saveGoal()">重置</button>
+            <button class="button ghost compact poster-btn" type="button" style="margin-left:auto" @click="generatePoster"><Share2 :size="13" />打卡海报</button>
+          </div>
+        </div>
+
+        <!-- 继续上次练习入口 (如有) -->
+        <RouterLink v-if="data?.recommendations?.continue_paper" :to="'/library'" class="focus-continue-action">
+          <div>
+            <small>上次未完 · 提笔即续</small>
+            <strong>{{ data.recommendations.continue_paper.year }} 年{{ data.recommendations.continue_paper.subject ? ' · ' + data.recommendations.continue_paper.subject : '' }} {{ data.recommendations.continue_paper.title }}</strong>
+          </div>
+          <ArrowRight :size="18" />
+        </RouterLink>
+        <div v-else class="focus-quote-box" @click="nextQuote" title="点击换一句">
+          <p class="quote-en">{{ todayQuote.en }}</p>
+          <div class="quote-cn">
+            <span>{{ todayQuote.cn }} <small>—— {{ todayQuote.author }}</small></span>
+            <span class="quote-hint" style="font-size:11px;color:var(--muted)">换一句 ↻</span>
+          </div>
+        </div>
       </div>
-    </section>
-    <div v-if="hasAnyPractice" class="grid practice-actions" :class="practiceGridClass">
-      <button v-if="hasPracticeType('cloze')" class="card action-card" type="button" @click="randomPractice('cloze')">
-        <span class="feature-icon orange"><img src="/assets/icons/cloze.png" alt="" /></span>
-        <span class="action-copy"><small>20 个空 · 整篇提交</small><h3>完形填空</h3><p>随机抽取一整篇，在完整语境中完成练习。</p></span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </button>
-      <button v-if="hasPracticeType('reading')" class="card action-card" type="button" @click="randomPractice('reading')">
-        <span class="feature-icon sage"><img src="/assets/icons/reading.png" alt="" /></span>
-        <span class="action-copy"><small>1 篇文章 · 5 道题</small><h3>阅读理解</h3><p>按文章完整练习，专注理解论证与细节。</p></span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </button>
-      <button v-if="hasPracticeType('part_b')" class="card action-card" type="button" @click="randomPractice('part_b')">
-        <span class="feature-icon blue"><img src="/assets/icons/part-b.png" alt="" /></span>
-        <span class="action-copy"><small>排序 · 填入 · 匹配</small><h3>阅读 Part B</h3><p>在段落关系中辨认结构、衔接与观点。</p></span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </button>
-      <button v-if="hasListening" class="card action-card" type="button" @click="randomPractice('listening')">
-        <span class="feature-icon purple"><Headphones :size="42" aria-hidden="true" /></span>
-        <span class="action-copy"><small>随机一套 · 完整听力</small><h3>听力单刷</h3><p>抽取一套试卷的完整听力部分，音频跨 Section 自动续播。</p></span>
-        <ArrowRight class="action-arrow" :size="19" />
-      </button>
-    </div>
-    <div v-else-if="data" class="card empty">
-      当前题库配置中还没有可练习的已发布题目，请先切换题库配置或导入题库。
-      <RouterLink class="button ghost compact" to="/library">前往题库</RouterLink>
-    </div>
-    <div class="section-title"><h2>学习概览</h2></div>
-    <div v-if="data" class="grid grid-4 bento-stats">
-      <div class="card stat-card bento-wide ink-dot"><span class="seal-badge" aria-hidden="true">卷</span><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div><span class="stat-note">覆盖 {{ data.active_profile?.name || '本级别' }} 真题与模拟</span></div>
-      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">篇</span><span class="stat-label">练习篇目</span><div class="stat-value"><CountUp :value="data.unit_count" /></div></div>
-      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">题</span><span class="stat-label">客观题</span><div class="stat-value"><CountUp :value="data.question_count" /></div></div>
-      <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">错</span><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div></div>
-      <RouterLink to="/report" class="card stat-card linked ink-dot bento-wide"><span class="seal-badge" aria-hidden="true">报</span><span class="stat-label">学习报告</span><div class="stat-value"><CountUp :value="data.answered_count || 0" /></div><span class="stat-link">查看趋势与建议 <ArrowRight :size="14" /></span></RouterLink>
-    </div>
-    <div v-else class="loading-grid">
-      <div class="skeleton skeleton-lg"></div>
-      <div class="skeleton-grid">
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
+
+      <!-- 右栏：今日计划待办 & 备考节点 -->
+      <div class="card focus-plan-card">
+        <!-- 备考倒计时 (如有) -->
+        <div v-if="data?.exam_countdown?.length" class="exam-countdown-bar" style="margin-bottom:12px;padding:8px 12px">
+          <span class="countdown-label"><Hourglass :size="14" aria-hidden="true" />备考</span>
+          <span v-for="ex in data.exam_countdown" :key="ex.name" class="countdown-item">
+            <strong>{{ ex.name }}</strong>
+            <b>{{ ex.days_left }}</b>天
+          </span>
+        </div>
+
+        <!-- 今日学习计划 (如有) -->
+        <div v-if="data?.today_plan?.plan?.length" class="today-plan-block">
+          <div class="today-plan-head" style="margin-bottom:8px">
+            <h3 class="today-plan-title" style="font-size:14px"><ClipboardList :size="16" aria-hidden="true" />今日学习计划</h3>
+            <span class="today-plan-total">预计 {{ data.today_plan.total_minutes || 0 }} 分钟</span>
+          </div>
+          <div class="today-plan-list">
+            <button
+              v-for="(task, i) in data.today_plan.plan" :key="i"
+              class="today-plan-item" type="button"
+              :class="{ done: task.done }"
+              @click="!task.done && runPlanTask(task)"
+            >
+              <span class="plan-icon"><component :is="planIcon(task.action)" :size="14" aria-hidden="true" /></span>
+              <span class="plan-label">{{ task.label }}</span>
+              <span class="plan-min">{{ task.minutes }}分</span>
+              <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 每日一词卡片 -->
+        <div class="focus-word-card" @click="router.push('/vocabulary')">
+          <div class="today-plan-head" style="margin-bottom:4px">
+            <h3 class="today-plan-title" style="font-size:13px"><BookMarked :size="15" aria-hidden="true" />每日一词</h3>
+            <span class="wod-hint" style="font-size:11.5px;color:var(--primary)">去单词本复习 →</span>
+          </div>
+          <template v-if="wordOfDay">
+            <p class="wod-word" style="font-size:17px;margin:2px 0;font-weight:700;color:var(--ink)">{{ wordOfDay.term }}</p>
+            <p class="wod-mean" style="margin-bottom:0;font-size:12.5px;color:var(--muted)">{{ wordOfDay.common_meaning || wordOfDay.contextual_meaning || '' }}</p>
+          </template>
+          <p v-else class="muted" style="margin:0;font-size:12.5px">暂无词汇数据</p>
+        </div>
       </div>
     </div>
 
-    <!-- v9.19: streak 打卡卡片 -->
-    <div v-if="streak" class="streak-card card">
-      <div class="streak-head">
-        <div class="streak-flame" :class="{ lit: streak.streak?.today_active }">
-          <Flame :size="28" fill="currentColor" />
+    <!-- ════════════════ 第二层：研习工坊分段控制器 ════════════════ -->
+    <section class="studio-section">
+      <div class="section-title">
+        <h2><span class="hero-seal recommend-seal" aria-hidden="true">坊</span>{{ data?.active_profile?.name || '本级别' }} · 研习工坊</h2>
+      </div>
+
+      <!-- 水墨胶囊分段控制器 -->
+      <nav class="studio-tabs" aria-label="研习工坊功能分类">
+        <button
+          class="studio-tab-btn"
+          :class="{ active: activeStudioTab === 'recommend' }"
+          type="button"
+          @click="switchStudioTab('recommend')"
+        >
+          <Sparkles :size="15" />智能研习
+          <span v-if="aiPicks" class="tab-badge">AI</span>
+        </button>
+        <button
+          class="studio-tab-btn"
+          :class="{ active: activeStudioTab === 'papers' }"
+          type="button"
+          @click="switchStudioTab('papers')"
+        >
+          <BookOpen :size="15" />历年真题
+          <span v-if="recommendPapers.length" class="tab-badge">{{ recommendPapers.length }}</span>
+        </button>
+        <button
+          class="studio-tab-btn"
+          :class="{ active: activeStudioTab === 'drills' }"
+          type="button"
+          @click="switchStudioTab('drills')"
+        >
+          <Highlighter :size="15" />专项突破
+          <span v-if="hasAnyPractice" class="tab-badge">专</span>
+        </button>
+        <button
+          class="studio-tab-btn"
+          :class="{ active: activeStudioTab === 'weak' }"
+          type="button"
+          @click="switchStudioTab('weak')"
+        >
+          <Repeat :size="15" />薄弱攻坚
+          <span v-if="data?.recommendations?.top_wrong?.length" class="tab-badge">{{ data.recommendations.top_wrong.length }}</span>
+        </button>
+      </nav>
+
+      <!-- Panel 1: 智能研习 -->
+      <div v-show="activeStudioTab === 'recommend'" class="studio-tab-panel">
+        <!-- AI 智能推题 -->
+        <div v-if="aiPicks" class="card ai-picks-card" style="margin-bottom:16px">
+          <div class="ai-picks-head">
+            <span class="ai-picks-badge">AI 推题</span>
+            <span class="ai-picks-sub">基于薄弱分析 · 规则引擎</span>
+          </div>
+          <div class="ai-picks-body">
+            <div v-if="aiPicks.strategy?.length" class="ai-strategy">
+              <p v-for="(s, i) in aiPicks.strategy" :key="i">{{ s }}</p>
+            </div>
+            <div class="ai-picks-row">
+              <button v-if="aiPicks.weak_type" class="ai-pick-chip" type="button" @click="randomPractice(aiPicks.weak_type)">
+                <Target :size="14" aria-hidden="true" />强化{{ aiPicks.weak_label }}（薄弱）
+              </button>
+              <button v-if="aiPicks.redo?.length" class="ai-pick-chip" type="button" @click="router.push('/wrong')">
+                <Repeat :size="14" aria-hidden="true" />重做 {{ aiPicks.redo.length }} 道高频错题
+              </button>
+              <button v-if="aiPicks.vocab?.length" class="ai-pick-chip" type="button" @click="router.push('/vocabulary')">
+                <BookOpen :size="14" aria-hidden="true" />背 {{ aiPicks.vocab.length }} 个生词
+              </button>
+              <button class="ai-pick-chip" type="button" @click="router.push('/exam')">
+                <PenLine :size="14" aria-hidden="true" />模拟考试
+              </button>
+            </div>
+          </div>
         </div>
-        <div>
-          <span class="eyebrow">连续研习</span>
-          <h3>已连续学习 <strong>{{ streak.streak?.current || 0 }}</strong> 天</h3>
-          <p class="lead">历史最佳 {{ streak.streak?.best || 0 }} 天 · 本月 {{ streak.monthly?.active_days || 0 }} 天活跃</p>
+
+        <!-- AI 研习阁三件套 + 聊天室 -->
+        <div class="ai-trinity-row">
+          <div class="ai-trinity-card" @click="router.push('/essay')">
+            <span class="ai-trinity-badge badge-review">精批</span>
+            <span class="trinity-title"><PenLine :size="16" aria-hidden="true" />作文精批</span>
+            <p class="trinity-desc">考研阅卷组标准 · 逐句批注 + 满分范文</p>
+          </div>
+          <div class="ai-trinity-card" @click="router.push('/speaking')">
+            <span class="ai-trinity-badge badge-speaking">陪练</span>
+            <span class="trinity-title"><Headphones :size="16" aria-hidden="true" />口语陪练</span>
+            <p class="trinity-desc">复试仿真 · 考官问答 · 语音识别</p>
+          </div>
+          <div class="ai-trinity-card" @click="router.push('/library')">
+            <span class="ai-trinity-badge badge-explain">精讲</span>
+            <span class="trinity-title"><BookOpen :size="16" aria-hidden="true" />真题精讲</span>
+            <p class="trinity-desc">刷题时点 AI 精讲 · 选项陷阱拆解</p>
+          </div>
+          <div class="ai-trinity-card" @click="router.push('/chat')">
+            <span class="ai-trinity-badge badge-speaking">陪伴</span>
+            <span class="trinity-title"><MessageCircle :size="16" aria-hidden="true" />学习聊天室</span>
+            <p class="trinity-desc">研友同在 · @阿墨 随问随答</p>
+          </div>
         </div>
-        <RouterLink v-if="dueToday.length" to="/vocabulary" class="due-link">
-          {{ dueToday.length }} 个单词待复习 <ArrowRight :size="14" />
-        </RouterLink>
-        <button class="button ghost compact poster-btn" @click="generatePoster"><Share2 :size="14" />打卡分享</button>
       </div>
-      <!-- v3.3: 今日学习进度（竞品借鉴百词斩/扇贝打卡进度） -->
-      <div class="today-progress">
-        <div class="today-progress-head">
-          <span>今日学习</span>
-          <strong>{{ streak.today_count || 0 }} / 20 题</strong>
+
+      <!-- Panel 2: 历年真题 -->
+      <div v-show="activeStudioTab === 'papers'" class="studio-tab-panel">
+        <div v-if="recommendPapers.length" class="grid grid-4 recommend-papers">
+          <RouterLink v-for="p in recommendPapers" :key="p.id" :to="'/library'" class="card recommend-paper">
+            <span class="seal-badge" aria-hidden="true">卷</span>
+            <strong>{{ p.year }} 年{{ p.subject ? ' · ' + p.subject : '' }}</strong>
+            <small><span class="paper-set-tag" :class="setClass(p.title)">{{ paperSet(p.title) }}</span>{{ paperKind(p.title) }}</small>
+            <span class="stat-link">去练习 <ArrowRight :size="14" /></span>
+          </RouterLink>
         </div>
-        <div class="progress-bar"><div class="progress-fill" :style="{ width: Math.min(100, ((streak.today_count || 0) / 20 * 100)) + '%' }"></div></div>
+        <div v-else class="card empty">暂无该级别推荐真题，请前往题库查阅全部试卷。</div>
+        <div style="margin-top:16px;text-align:center">
+          <RouterLink class="button ghost" to="/library"><BookOpen :size="16" />进入完整真题文库<ArrowRight :size="15" /></RouterLink>
+        </div>
       </div>
-      <StudyHeatmap :values="streak.heatmap || []" tooltip-unit="次学习" />
-      <div v-if="streak.weekly" class="weekly-strip">
-        <span v-for="d in streak.weekly.daily" :key="d.date" class="week-dot" :class="{ active: d.active, today: d.date === streak.weekly.daily[6].date }" :title="`${d.date} · ${d.count} 次学习`" />
-        <span class="weekly-text">本周 {{ streak.weekly.active_days }}/7 天活跃 · {{ streak.weekly.total_activities }} 次学习</span>
+
+      <!-- Panel 3: 专项突破 -->
+      <div v-show="activeStudioTab === 'drills'" class="studio-tab-panel">
+        <div v-if="hasAnyPractice" class="grid practice-actions" :class="practiceGridClass">
+          <button v-if="hasPracticeType('cloze')" class="card action-card" type="button" @click="randomPractice('cloze')">
+            <span class="feature-icon orange"><img src="/assets/icons/cloze.png" alt="" /></span>
+            <span class="action-copy"><small>20 个空 · 整篇提交</small><h3>完形填空</h3><p>随机抽取一整篇，在完整语境中完成练习。</p></span>
+            <ArrowRight class="action-arrow" :size="19" />
+          </button>
+          <button v-if="hasPracticeType('reading')" class="card action-card" type="button" @click="randomPractice('reading')">
+            <span class="feature-icon sage"><img src="/assets/icons/reading.png" alt="" /></span>
+            <span class="action-copy"><small>1 篇文章 · 5 道题</small><h3>阅读理解</h3><p>按文章完整练习，专注理解论证与细节。</p></span>
+            <ArrowRight class="action-arrow" :size="19" />
+          </button>
+          <button v-if="hasPracticeType('part_b')" class="card action-card" type="button" @click="randomPractice('part_b')">
+            <span class="feature-icon blue"><img src="/assets/icons/part-b.png" alt="" /></span>
+            <span class="action-copy"><small>排序 · 填入 · 匹配</small><h3>阅读 Part B</h3><p>在段落关系中辨认结构、衔接与观点。</p></span>
+            <ArrowRight class="action-arrow" :size="19" />
+          </button>
+          <button v-if="hasListening" class="card action-card" type="button" @click="randomPractice('listening')">
+            <span class="feature-icon purple"><Headphones :size="42" aria-hidden="true" /></span>
+            <span class="action-copy"><small>随机一套 · 完整听力</small><h3>听力单刷</h3><p>抽取一套试卷的完整听力部分，音频跨 Section 自动续播。</p></span>
+            <ArrowRight class="action-arrow" :size="19" />
+          </button>
+        </div>
+        <div v-else class="card empty">当前题库配置中还没有可练习的专项题目。</div>
       </div>
-      <div v-if="dueToday.length" class="due-words">
-        <span class="due-label">今日待复习：</span>
-        <RouterLink v-for="w in dueToday.slice(0, 6)" :key="w.id" :to="`/vocabulary?word=${w.id}`" class="due-chip">{{ w.term }}</RouterLink>
-        <RouterLink v-if="dueToday.length > 6" to="/vocabulary" class="due-more">+{{ dueToday.length - 6 }}</RouterLink>
+
+      <!-- Panel 4: 薄弱攻坚 -->
+      <div v-show="activeStudioTab === 'weak'" class="studio-tab-panel">
+        <div v-if="data?.recommendations?.top_wrong?.length || data?.recommendations?.weak_units?.length" class="grid grid-2 recommend-wrong-grid" style="margin-bottom:16px">
+          <div v-if="data?.recommendations?.top_wrong?.length" class="card recommend-wrong">
+            <h3>本级别高频错题</h3>
+            <RouterLink v-for="w in data.recommendations.top_wrong" :key="w.id" :to="'/wrong'" class="recommend-wrong-item">
+              <span class="wrong-badge">{{ w.wrong_count }} 次错</span>
+              <span>{{ w.prompt }}</span>
+            </RouterLink>
+          </div>
+          <div v-if="data?.recommendations?.weak_units?.length" class="card recommend-wrong">
+            <h3>薄弱单元</h3>
+            <RouterLink v-for="u in data.recommendations.weak_units" :key="u.id" :to="'/wrong'" class="recommend-wrong-item">
+              <span class="wrong-badge">{{ u.wrong_n }} 题错</span>
+              <span>{{ u.title }}</span>
+            </RouterLink>
+          </div>
+        </div>
+
+        <!-- 能力雷达 -->
+        <div v-if="data?.recommendations?.ability_radar?.length" class="card recommend-radar">
+          <h3>能力雷达 · 本级别各题型正确率</h3>
+          <div class="radar-bars">
+            <div v-for="a in data.recommendations.ability_radar" :key="a.type" class="radar-item" :class="{ weak: a.rate !== null && a.rate < 60 }">
+              <span class="radar-label">{{ typeName(a.type) }}</span>
+              <span class="radar-bar"><span class="radar-fill" :style="{ width: (a.rate ?? 0) + '%' }"></span></span>
+              <span class="radar-rate">{{ a.rate ?? '—' }}%</span>
+              <span v-if="a.rate !== null && a.rate < 60" class="radar-weak-tag">薄弱</span>
+              <button v-if="a.rate !== null" class="button ghost radar-go" type="button" @click="randomPractice(typeParam(a.type))">练一练</button>
+            </div>
+          </div>
+        </div>
+        <div v-if="!data?.recommendations?.top_wrong?.length && !data?.recommendations?.weak_units?.length && !data?.recommendations?.ability_radar?.length" class="card empty">
+          太棒了！当前还没有积累错题或薄弱项，保持练习！
+        </div>
       </div>
-    </div>
-    <div class="section-title"><h2>温柔提醒</h2></div>
-    <div class="card gentle-reminder">
-      <span class="icon blue" style="margin:0"><Sparkles /></span>
-      <div><h3>理解文章，比记住答案更重要。</h3><p class="lead">选项可以每次打乱，但文章中的逻辑不会改变。</p></div>
-    </div>
+    </section>
+
+    <!-- ════════════════ 第三层：研习画卷沉淀 ════════════════ -->
+    <div v-if="error" class="warning">{{ error }}</div>
+
+    <section class="archive-section">
+      <!-- 词汇温故回顾跑马窗 -->
+      <section v-if="vocabulary.length" class="vocabulary-ticker card" @mouseenter="tickerPaused=true" @mouseleave="tickerPaused=false" style="margin-bottom:24px">
+        <div class="ticker-heading"><div><span class="eyebrow">词汇温故</span><h3>词汇回顾</h3></div><RouterLink to="/vocabulary">查看单词本 →</RouterLink></div>
+        <div class="ticker-window">
+          <Transition name="vocabulary-flip" mode="out-in">
+            <div :key="vocabularyPage" class="ticker-group">
+            <RouterLink v-for="word in visibleWords" :key="word.id" :to="`/vocabulary?word=${word.id}`" class="ticker-word">
+              <Star v-if="word.is_frequent" class="vocab-star" :size="15" fill="currentColor" aria-label="高频词" />
+              <span class="ticker-word-copy">
+                <strong>{{ word.lemma || word.term }}</strong>
+                <small :title="wordMeaning(word)">{{ wordMeaning(word) }}</small>
+              </span>
+            </RouterLink>
+            </div>
+          </Transition>
+        </div>
+      </section>
+
+      <!-- 学习概览 Bento 统计卡 -->
+      <div class="section-title"><h2>学习概览</h2></div>
+      <div v-if="data" class="grid grid-4 bento-stats">
+        <div class="card stat-card bento-wide ink-dot"><span class="seal-badge" aria-hidden="true">卷</span><span class="stat-label">已收录年份</span><div class="stat-value"><CountUp :value="data.paper_count" /></div><span class="stat-note">覆盖 {{ data.active_profile?.name || '本级别' }} 真题与模拟</span></div>
+        <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">篇</span><span class="stat-label">练习篇目</span><div class="stat-value"><CountUp :value="data.unit_count" /></div></div>
+        <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">题</span><span class="stat-label">客观题</span><div class="stat-value"><CountUp :value="data.question_count" /></div></div>
+        <div class="card stat-card ink-dot"><span class="seal-badge" aria-hidden="true">错</span><span class="stat-label">高频错题</span><div class="stat-value"><CountUp :value="data.frequent_count" /></div></div>
+        <RouterLink to="/report" class="card stat-card linked ink-dot bento-wide"><span class="seal-badge" aria-hidden="true">报</span><span class="stat-label">学习报告</span><div class="stat-value"><CountUp :value="data.answered_count || 0" /></div><span class="stat-link">查看趋势与建议 <ArrowRight :size="14" /></span></RouterLink>
+      </div>
+      <div v-else class="loading-grid">
+        <div class="skeleton skeleton-lg"></div>
+        <div class="skeleton-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+
+      <!-- streak 打卡卡片 -->
+      <div v-if="streak" class="streak-card card" style="margin-top:20px">
+        <div class="streak-head">
+          <div class="streak-flame" :class="{ lit: streak.streak?.today_active }">
+            <Flame :size="28" fill="currentColor" />
+          </div>
+          <div>
+            <span class="eyebrow">连续研习</span>
+            <h3>已连续学习 <strong>{{ streak.streak?.current || 0 }}</strong> 天</h3>
+            <p class="lead">历史最佳 {{ streak.streak?.best || 0 }} 天 · 本月 {{ streak.monthly?.active_days || 0 }} 天活跃</p>
+          </div>
+          <RouterLink v-if="dueToday.length" to="/vocabulary" class="due-link">
+            {{ dueToday.length }} 个单词待复习 <ArrowRight :size="14" />
+          </RouterLink>
+          <button class="button ghost compact poster-btn" @click="generatePoster"><Share2 :size="14" />打卡分享</button>
+        </div>
+        <div class="today-progress">
+          <div class="today-progress-head">
+            <span>今日学习</span>
+            <strong>{{ streak.today_count || 0 }} / 20 题</strong>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" :style="{ width: Math.min(100, ((streak.today_count || 0) / 20 * 100)) + '%' }"></div></div>
+        </div>
+        <StudyHeatmap :values="streak.heatmap || []" tooltip-unit="次学习" />
+        <div v-if="streak.weekly" class="weekly-strip">
+          <span v-for="d in streak.weekly.daily" :key="d.date" class="week-dot" :class="{ active: d.active, today: d.date === streak.weekly.daily[6].date }" :title="`${d.date} · ${d.count} 次学习`" />
+          <span class="weekly-text">本周 {{ streak.weekly.active_days }}/7 天活跃 · {{ streak.weekly.total_activities }} 次学习</span>
+        </div>
+        <div v-if="dueToday.length" class="due-words">
+          <span class="due-label">今日待复习：</span>
+          <RouterLink v-for="w in dueToday.slice(0, 6)" :key="w.id" :to="`/vocabulary?word=${w.id}`" class="due-chip">{{ w.term }}</RouterLink>
+          <RouterLink v-if="dueToday.length > 6" to="/vocabulary" class="due-more">+{{ dueToday.length - 6 }}</RouterLink>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:24px"><h2>温柔提醒</h2></div>
+      <div class="card gentle-reminder">
+        <span class="icon blue" style="margin:0"><Sparkles /></span>
+        <div><h3>理解文章，比记住答案更重要。</h3><p class="lead">选项可以每次打乱，但文章中的逻辑不会改变。</p></div>
+      </div>
+    </section>
   </div>
 
   <!-- v2.78: 水墨飘叶装饰 -->
