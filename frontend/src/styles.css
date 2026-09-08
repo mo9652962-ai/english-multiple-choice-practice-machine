@@ -5486,3 +5486,188 @@ body.ink-landscape::before {
   font-size: 10.5px;
   box-shadow: 0 1px 0 var(--line);
 }
+
+/* ════════════════════════════════════════════════════════════════
+   v55 精致化 Phase 4 (2026-09: 题库藏书阁化与竹简书脊排版)
+   ════════════════════════════════════════════════════════════════ */
+
+/* 藏书阁案头统计条 */
+.library-stats-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: color-mix(in srgb, var(--surface) 60%, var(--surface-solid));
+  border: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
+  border-radius: var(--r-md);
+  margin: 16px 0 20px;
+  font-size: var(--text-sm);
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.library-stats-items {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+.library-stats-items strong {
+  color: var(--ink);
+  font-family: var(--font-en-serif);
+  font-size: 15px;
+}
+
+/* 年份时光轴与搜索栏 */
+.library-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.year-pills-wrap {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.year-pill {
+  border: 1px solid var(--line);
+  background: var(--surface-solid);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  padding: 5px 13px;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .18s ease;
+}
+.year-pill:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.year-pill.active {
+  background: var(--sec-primary, #5c7a52);
+  color: #fff;
+  border-color: var(--sec-primary, #5c7a52);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--sec-primary, #5c7a52) 30%, transparent);
+}
+.library-search-box {
+  position: relative;
+  min-width: 220px;
+}
+.library-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.library-search-input {
+  width: 100%;
+  padding: 6px 12px 6px 34px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--surface-solid);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.library-search-input:focus {
+  border-color: var(--sec-primary, #5c7a52);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sec-primary, #5c7a52) 15%, transparent);
+}
+
+/* 竹简书脊藏书试卷卡 (Scholar Edition) */
+.paper-card.scholar-edition {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 4px solid var(--sec-primary, #5c7a52);
+  background: var(--surface-solid);
+  border-radius: var(--r-md);
+  padding: 22px 24px;
+  overflow: hidden;
+  transition: all .24s var(--motion-standard);
+}
+.paper-card.scholar-edition:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .09);
+  border-left-color: var(--sec-accent, #5c7a52);
+}
+.paper-card.scholar-edition.selected {
+  border-left-color: var(--primary);
+  background: color-mix(in srgb, var(--primary-soft) 25%, var(--surface-solid));
+}
+
+/* 大字古典年份水印 */
+.paper-watermark-year {
+  position: absolute;
+  right: -8px;
+  bottom: -16px;
+  font-family: var(--font-en-serif);
+  font-size: 88px;
+  font-weight: 700;
+  line-height: 1;
+  color: color-mix(in srgb, var(--sec-primary, #5c7a52) 7%, transparent);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transition: color .24s ease;
+}
+.paper-card.scholar-edition:hover .paper-watermark-year {
+  color: color-mix(in srgb, var(--sec-primary, #5c7a52) 13%, transparent);
+}
+
+.paper-card-body {
+  position: relative;
+  z-index: 1;
+}
+.paper-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.scholar-seal-tag {
+  font-family: var(--font-seal, "Kaiti SC", "楷体", serif);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent-vermilion, #c73e3a) 12%, transparent);
+  color: var(--accent-vermilion, #c73e3a);
+  border: 1px solid color-mix(in srgb, var(--accent-vermilion, #c73e3a) 30%, transparent);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.paper-headline {
+  margin-bottom: 8px;
+}
+.paper-headline h3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  color: var(--ink);
+}
+.paper-meta-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.paper-meta-pill {
+  font-size: 11.5px;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--line) 50%, var(--surface-solid));
+  padding: 2px 8px;
+  border-radius: 6px;
+}
