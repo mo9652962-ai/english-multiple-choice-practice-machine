@@ -5860,3 +5860,334 @@ body.ink-landscape::before {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(199, 62, 58, .08);
 }
+
+/* ==========================================================================
+   Phase 6: 学情智能诊断「文房朱砂诊断榜」与历史对比手札
+   ========================================================================== */
+
+/* 历史诊断卷宗切换栏 */
+.diagnostic-history-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 4px 14px;
+  margin-bottom: 18px;
+  scrollbar-width: thin;
+}
+.diagnostic-history-bar::-webkit-scrollbar {
+  height: 4px;
+}
+.diagnostic-history-bar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--line) 80%, transparent);
+  border-radius: 4px;
+}
+.diagnostic-history-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-solid);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .18s var(--ease);
+}
+.diagnostic-history-chip:hover {
+  border-color: var(--primary);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+.diagnostic-history-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 32%, transparent);
+}
+
+/* 5级水平评估玉盘仪表卡 */
+.level-gauge-card {
+  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.level-gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.level-gauge-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .level-gauge-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+.level-seal-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 85%, var(--surface-solid)), var(--surface-solid));
+  border: 1.5px solid color-mix(in srgb, var(--primary) 28%, var(--line));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6), 0 4px 16px rgba(45, 90, 63, .07);
+  text-align: center;
+}
+.level-score-huge {
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary);
+  letter-spacing: -.02em;
+}
+.level-score-max {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+.level-seal-title {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+/* 多维能力水墨进度条 */
+.dim-grid-scholar {
+  display: grid;
+  gap: 12px;
+}
+.dim-row-scholar {
+  display: grid;
+  grid-template-columns: 100px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+}
+.dim-label-scholar {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.dim-track-scholar {
+  height: 9px;
+  background: color-mix(in srgb, var(--line) 45%, var(--surface-solid));
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .06);
+}
+.dim-fill-scholar {
+  height: 100%;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 65%, #544E46) 0%, var(--primary, #2d5a3f) 100%);
+  border-radius: 999px;
+  transition: width .6s var(--ease);
+}
+.dim-val-scholar {
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: right;
+}
+
+/* 错误归因网格 */
+.cause-grid-scholar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.cause-card-scholar {
+  padding: 12px 15px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-solid) 75%, transparent);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.cause-card-scholar:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--line));
+}
+.cause-head-scholar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cause-title-scholar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.cause-dot-scholar {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cause-conf-badge {
+  font-size: 11px;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--line) 60%, transparent);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+.cause-bar-track {
+  height: 6px;
+  background: color-mix(in srgb, var(--line) 40%, transparent);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.cause-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width .5s ease;
+}
+.cause-meta-scholar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* 动态趋势对比手札 */
+.trend-ledger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .trend-ledger-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.trend-column-card {
+  padding: 14px 16px;
+  border-radius: 13px;
+  background: var(--surface-solid);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.trend-column-card.improved {
+  border-left: 3.5px solid var(--primary, #2d5a3f);
+}
+.trend-column-card.worsened {
+  border-left: 3.5px solid var(--accent-vermilion, #c73e3a);
+}
+.trend-column-card.new-added {
+  border-left: 3.5px solid var(--accent-gold, #c29339);
+}
+.trend-col-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.trend-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.trend-pill {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.trend-pill.improved {
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+}
+.trend-pill.worsened {
+  background: color-mix(in srgb, var(--accent-vermilion, #c73e3a) 12%, transparent);
+  color: var(--accent-vermilion, #c73e3a);
+  border: 1px solid color-mix(in srgb, var(--accent-vermilion, #c73e3a) 28%, transparent);
+}
+.trend-pill.new-added {
+  background: color-mix(in srgb, var(--accent-gold, #c29339) 12%, transparent);
+  color: var(--accent-gold, #c29339);
+  border: 1px solid color-mix(in srgb, var(--accent-gold, #c29339) 28%, transparent);
+}
+
+/* 推荐专项练习卡片 */
+.rec-list-scholar {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+.rec-card-scholar {
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface-solid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: all .2s var(--ease);
+}
+.rec-card-scholar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(60, 50, 40, .07);
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--line));
+}
+.rec-info-scholar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.rec-title-scholar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.rec-suggestion-scholar {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.rec-chips-scholar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.rec-chip-scholar {
+  font-size: 11.5px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--primary-soft) 60%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+}
