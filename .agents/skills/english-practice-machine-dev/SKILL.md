@@ -59,7 +59,7 @@ cd android && ./gradlew.bat assembleDebug --no-daemon   # JDK21+SDK34 → APK
 # 产物: frontend/android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-- 环境：`JAVA_HOME=C:\Users\31954\jdk21`、`ANDROID_HOME=C:\Users\31954\android-sdk`
+- 环境：`JAVA_HOME=%USERPROFILE%\jdk21`、`ANDROID_HOME=%USERPROFILE%\android-sdk`
 - 内置离线库 = `frontend/public/question_bank.db`（构建进 dist → APK）；改词库须同步 + 重打包
 - **验证 APK 含最新前端**：`unzip -l app-debug.apk | grep index-` 对比 `dist/index.html` 里的 hash（如 index-CwRFwW7a.js）
 - 微信发不了 APK（全拦截）→ 本地 HTTP + 二维码或网盘
@@ -132,7 +132,7 @@ cd android && ./gradlew.bat assembleDebug --no-daemon   # JDK21+SDK34 → APK
 
 ### 4. 验证模式（每轮改动必做）
 
-每轮改完写 ad-hoc 验证脚本（如 `C:\Users\31954\AppData\Local\Temp\hermes-verify-*.py`）：
+每轮改完写 ad-hoc 验证脚本（如 `%USERPROFILE%\AppData\Local\Temp\hermes-verify-*.py`）：
 - 断言源码探针 + 真实启动后端 + API 端到端（各级别 startup/today_plan）+ dist 产物检查
 - 输出 `✅ 项` 列表 + `AD-HOC XXX V2.x (fresh) — N verified`
 - 跑完 `rm` 脚本 + kill 后端 + 同步 mobile-app + git 提交推送（代理 `HTTPS_PROXY=http://127.0.0.1:7890`）
@@ -702,7 +702,7 @@ css = css.replace("opacity: .14;", "opacity: .09;")   # 再降……
 
 **2025 高考真题官方图片 → OCR → 导入全管道**（33 题入库：一卷阅读 15 + 二卷听力 18），完整复现配方见 `references/gaokao2025-ocr-import.md`。要点：
 
-- **下载**：`https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png`（一卷 8 页）+ `.../qg2/yy00.png`（二卷 9 页）；**git-bash 的 /tmp 写文件会 exit 23/0B**（curl 报写失败）→ 用 Windows 路径 `C:/Users/31954/AppData/Local/Temp/...`
+- **下载**：`https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png`（一卷 8 页）+ `.../qg2/yy00.png`（二卷 9 页）；**git-bash 的 /tmp 写文件会 exit 23/0B**（curl 报写失败）→ 用 Windows 路径 `%USERPROFILE%/AppData/Local/Temp/...`
 - **OCR**：tesseract `-l chi_sim+eng --psm 3` + **2x 放大灰度**（PIL LANCZOS）效果极好（阅读 A-D/七选五/完形/语法/听力全识别）
 - **解析**：题号+题干正则 + **同行多选项** `re.split(r'\s(?=[A-D]\.\s)', line)`（OCR 里 `A. x B. y C. z D. w` 常在一行）；**题号去重**（OCR 噪声如 6 出现两次 → `seen` set 只留第一个）；答案页也是图（未 OCR 时用 AI 生成）
 - **⚠️ questions 表没有 profile_id**（只有 unit_id → units → papers → profile 链）；**papers.profile_id 必须等于当前激活 profile 才被 API 看到**（`get_active_profile_id` 读 `app_settings` key LIKE '%profile%'）——v2.94 导入到 profile 2（高中英语）但激活是 5（考研二）→ API 返回\"试卷不存在\"。语义正确不用改，**用户切到对应类别即可刷**；验证时可临时改 app_settings 再改回
@@ -796,7 +796,7 @@ APK 端 key 明文 → Android Keystore AES/GCM 原生插件（DPAPI 是 Windows
 
 **⚠️ 手动启动安装版后端必须传 EPM_DATA_DIR**：Electron main.js spawn 后端时传 `env: { ...process.env, EPM_DATA_DIR: path.join(app.getPath('userData'), 'data'), ... }`——**手动裸启动 `resources/backend_app/backend_app.exe` 不传 env → 连 `resources/backend_app/backend/data/question_bank.db`（空库，只有默认 5 profiles，papers=0）** → 网页版 `GET /api/papers` 返回空列表假象。症状：`/api/profiles` 正常（5 个默认）但 `papers: 0`——不是数据丢，是连错库。
 
-- 正确手动启动：`export EPM_DATA_DIR="C:\Users\31954\AppData\Roaming\ai-english-practice-desktop\data"` 再跑 exe（**注意：bash `VAR="C:\..."` 反斜杠路径可能不生效，用 `/c/...` 或 PowerShell `$env:` 也不一定——最可靠是让 Electron 应用自己 spawn**）
+- 正确手动启动：`export EPM_DATA_DIR="%USERPROFILE%\AppData\Roaming\ai-english-practice-desktop\data"` 再跑 exe（**注意：bash `VAR="C:\..."` 反斜杠路径可能不生效，用 `/c/...` 或 PowerShell `$env:` 也不一定——最可靠是让 Electron 应用自己 spawn**）
 - **⚠️ 端口占用导致"后端一直 502"**：手动启动的 backend_app 进程**杀不干净**（`taskkill //F //PID` 可能静默失败——用 `powershell Stop-Process -Id <pid> -Force` 确认进程数归 0）→ Electron 应用 spawn 后端因端口被占失败 → 502。症状链：502 → 进程列表有旧 backend_app → Stop-Process 清掉 → 重启应用
 - **应用启动即退（code 0）→ 重装修复**：beta.12 安装后 `Start-Process` 启动应用 10 秒内退出（crash.log 无新条目）→ 重跑 `epm-setup-2.0.0-beta.12.exe /S` 后正常。安装损坏时重装是第一条路
 - **⚠️ seed 覆盖隐患（v3.0 曾误报，已确认不存在）**：Electron main.js 的 seed 复制**有 `if (!fs.existsSync(userDb))` 外层检查**（L148，仅首次复制）——安装版 app.asar 与源码一致，学习记录不会被覆盖。**教训：排查"覆盖/丢失"类问题时 sed 片段会漏看外层条件（当时只看到内层 `if (fs.existsSync(seedDb))` 就下结论）——先 `grep -n` 确认完整嵌套，再下判断**。真正的隐患是 §52 的 EPM_DATA_DIR 连错库（papers=0 假象）
@@ -805,7 +805,7 @@ APK 端 key 明文 → Android Keystore AES/GCM 原生插件（DPAPI 是 Windows
 
 **en-sky.com 的"试题含答案解析"文章页有完整真题全文**（不是只有网盘链接！）——`https://www.en-sky.com/post/1238.html`（2026 全国 I 卷）全文 35K 字符：阅读 A-D 文章+题目+选项、七选五、完形、语法填空、**完整答案区**（`21-23 BAC` / `41-45 CABCA` 格式）+ 听力材料文本。web_extract 抓取 → 解析导入 45 题（2026 高考 I 卷，高中 profile）。完整流程：
 
-1. `web_extract` 抓 post 页 → 全文存 `C:\Users\31954\AppData\Local\hermes\cache\web\<domain>-<hash>.md` → **read_file 分页读全**（head+tail+中段）
+1. `web_extract` 抓 post 页 → 全文存 `%USERPROFILE%\AppData\Local\hermes\cache\web\<domain>-<hash>.md` → **read_file 分页读全**（head+tail+中段）
 2. 答案硬编码（页面"英语答案"区清晰：`21-23 BAC` 等）
 3. 解析脚本（import 到 `frontend/public/question_bank.db`，profile=2 高中）：
    - **⚠️ 缓存 md 题目行是 `21\. `（反斜杠转义点）**——正则必须 `r"^\d+[\\\.]+\.\s"`（数字+任意反斜杠/点序列+点+空格）——普通 `^\d+\.\s` 不匹配，A-D 篇全解析为空
@@ -859,7 +859,7 @@ APK 端 key 明文 → Android Keystore AES/GCM 原生插件（DPAPI 是 Windows
 - **安装版后端手动启动必须传 EPM_DATA_DIR**（v3.0 真踩）：裸启动 `resources/backend_app/backend_app.exe` 连 `resources/backend_app/backend/data` 空库（5 默认 profiles + 0 papers）→ `GET /api/papers` 空列表假象。最可靠是让 Electron 应用自己 spawn；调试端口占用时 `powershell Stop-Process` 清干净（taskkill 可能静默失败）——详见 §52
 - **electron main.js seed 无条件覆盖用户库**（v3.0 发现未修）：`fs.copyFileSync(seedDb, userDb)` 每次启动执行（注释说"首次"但代码没有 exists 判断）→ 学习记录会被旧 seed 覆盖。修复方向 `if (!fs.existsSync(userDb))`
 - **DeepSeek v4-flash 直连 API 是推理模型**（v2.94 真踩）：token 全进 `reasoning_content`，`content` 空；max_tokens 小（<1000）时连思考都写不完。答案生成要么 max_tokens≥2000 + system 强制输出，要么解析 reasoning_content；**从思考里正则抓字母不可靠**（模型会写\"如 A/B/C/D\"举例），用\"按题号顺序输出字母序列\"再 zip
-- **git-bash 里 /tmp 写文件会失败**（v2.94 真踩）：curl `-o /tmp/x.png` 报 exit 23 / 0 B——用 Windows 路径 `C:/Users/31954/AppData/Local/Temp/...`
+- **git-bash 里 /tmp 写文件会失败**（v2.94 真踩）：curl `-o /tmp/x.png` 报 exit 23 / 0 B——用 Windows 路径 `%USERPROFILE%/AppData/Local/Temp/...`
 - **papers.profile_id 必须匹配当前激活 profile 才被 API 看到**（v2.94 真踩）：导入到语义正确 profile（高中英语=2）但激活是 5 → `GET /api/papers` 不返回、`POST /practice/sessions {mode:'paper'}` 报\"试卷不存在或不属于当前题库配置\"。不是 bug，**用户切到对应类别即可刷**；验证时临时改 `app_settings`（key LIKE '%profile%'）再改回
 - **dashboard 推荐卡显示 `p.year · p.subject`——subject 字段必须与标题语义一致**（v3.0-beta.12 真踩）：导入 2026 高考卷时 subject 错成 '英语一'（应 '高中英语'）→ 首页推荐卡显示\"2026 年 · 英语一\"。修复：`UPDATE papers SET subject = '高中英语' WHERE title LIKE '%2026%全国I卷%'`（源库 + %APPDATA% 在线库 + dist 三库同步，改完 curl /api/startup 复验）。**导入新卷时显式设置 subject**（不依赖默认值）
 - **Hermes 模型切换后 cron 会 fail closed（v3.0 真踩）**：把 Hermes 默认模型从 deepseek 直连切到基元律动后，**所有未 pin 的 cron（provider_snapshot 旧值）下次运行报 `RuntimeError: Skipped to prevent unintended spend: global inference config drifted`**——不是任务坏了，是保护性跳过。修复：`hermes cron edit <job_id> --model deepseek-v4-flash-0731 --provider custom:jiyuanlvdong`（CLI 的 edit 支持 pin；cronjob 工具无 provider/model 参数）。**批量迁移**：`hermes cron list` 找 provider=deepseek 的任务 → for 循环逐个 edit。迁移后 `cronjob action=run` 验证 last_status: ok
@@ -904,7 +904,7 @@ function setClass(title: string): string {
 ```
 模板：`<small><span class="paper-set-tag" :class="setClass(p.title)">{{ paperSet(p.title) }}</span>{{ paperKind(p.title) }}</small>`
 
-**⚠️ build 后必须把 dist 同步到安装版**（v3.1 真踩）：8765 伺服的是 `resources/frontend/dist`（EPM_FRONTEND_DIST），`npm run build` 只更新 frontend/dist——**前端改动要 `cp -r dist/* "C:\Users\31954\Desktop\ai-english-practice-desktop\resources\frontend\dist\"` 才生效**（网页版立即看到，桌面版下次发布带上）。
+**⚠️ build 后必须把 dist 同步到安装版**（v3.1 真踩）：8765 伺服的是 `resources/frontend/dist`（EPM_FRONTEND_DIST），`npm run build` 只更新 frontend/dist——**前端改动要 `cp -r dist/* "%USERPROFILE%\Desktop\ai-english-practice-desktop\resources\frontend\dist\"` 才生效**（网页版立即看到，桌面版下次发布带上）。
 
 - 验证：源码断言（paperSet/paperKind/setClass/recommendPapers + `seen.has(p.year)`）+ 纯逻辑测试（6 张 → [2026,2024,2023,2022]）+ dist 含 `paper-set-tag` + **DOM dump 断言 4 卡年份去重**（`len(set(card_years)) == 4`）+ 卷别识别正确（全国I卷/甲卷/乙卷/新高考）
 - **排查习惯：用户报"UI 还是有点问题/看着重复"→ 先 DOM/API 级确认（不信 vision），数据无重复 = 视觉区分度问题（去重+标签），有重复 = 数据/缓存问题（embedded 旧数据/导入重复）**
@@ -1273,7 +1273,7 @@ requestAnimationFrame(() => {
 ## Related
 
 - 功能设计来源：竞品对标（扇贝=词文串学/听力真题、墨墨=分级词书、刷刷题=五练习模式/模拟考试、练题狗=AI推题/学习报告）——扩展功能时先搜竞品再落地
-- **AI 基础设施现状 + P0/P1 设计稿（2026-08-15 盘点，做 AI 功能前先读）**：`backend/app/services/ai_client.py` 已是 OpenAI-compatible 通用客户端（chat_completion 支持 base_url+key+model+response_format；ai_profiles 表多 Provider；模型发现支持 openai /v1/models + ollama /api/tags 双格式；429/500 重试 3 次；key DPAPI 加密）——**DeepSeek/百炼/本地 Qwen（llama.cpp OpenAI 端点）天然兼容**，不用重写客户端。`wrong_analysis.py` 已有 12 分类错题归因（vocabulary/collocation/grammar/context/discourse/detail/inference/main_idea/attitude/trap/carelessness/uncertain）+ 专业 prompt（recency 加权/证据不足用 uncertain/防泄漏不输出题目文字）+ previous_snapshot 对比雏形。**缺口**：P0=归因聚合→学习诊断报告（薄弱点排行/水平评估/行动闭环，AI 只做归因+轻量水平判断，聚合/推荐全本地）；P1=任务路由表（wrong_diagnosis→云端主/本地备/缓存兜底）+ 降级链 + ai_usage 用量表（本地 Qwen3-8B 8K 上下文只适合批量短任务，不适合长文归因）。完整设计稿：`C:\Users\31954\.openclaw\workspace\knowledge\Dev\墨题-P0错题AI诊断设计稿-2026-08-15.md` + `墨题-P1-AI服务层架构设计-2026-08-15.md`
+- **AI 基础设施现状 + P0/P1 设计稿（2026-08-15 盘点，做 AI 功能前先读）**：`backend/app/services/ai_client.py` 已是 OpenAI-compatible 通用客户端（chat_completion 支持 base_url+key+model+response_format；ai_profiles 表多 Provider；模型发现支持 openai /v1/models + ollama /api/tags 双格式；429/500 重试 3 次；key DPAPI 加密）——**DeepSeek/百炼/本地 Qwen（llama.cpp OpenAI 端点）天然兼容**，不用重写客户端。`wrong_analysis.py` 已有 12 分类错题归因（vocabulary/collocation/grammar/context/discourse/detail/inference/main_idea/attitude/trap/carelessness/uncertain）+ 专业 prompt（recency 加权/证据不足用 uncertain/防泄漏不输出题目文字）+ previous_snapshot 对比雏形。**缺口**：P0=归因聚合→学习诊断报告（薄弱点排行/水平评估/行动闭环，AI 只做归因+轻量水平判断，聚合/推荐全本地）；P1=任务路由表（wrong_diagnosis→云端主/本地备/缓存兜底）+ 降级链 + ai_usage 用量表（本地 Qwen3-8B 8K 上下文只适合批量短任务，不适合长文归因）。完整设计稿：`%USERPROFILE%\.openclaw\workspace\knowledge\Dev\墨题-P0错题AI诊断设计稿-2026-08-15.md` + `墨题-P1-AI服务层架构设计-2026-08-15.md`
 - 刷题机运行状态/环境事实存于 memory（基元律动配置、DB 字段、打包坑）
 - 记忆算法/学习研究结论见 `references/learning-research.md`
 - ESQ 包完整格式/导入步骤/表结构速查见 `references/esq-import-pipeline.md`

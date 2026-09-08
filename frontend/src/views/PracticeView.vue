@@ -24,6 +24,7 @@ import { get, post, put, del } from '../api'
 import ContentBlocks from '../components/ContentBlocks.vue'
 import { showToast } from '../services/toast'
 import { haptic } from '../services/haptics'
+import { sound } from '../services/sound'
 import ListeningPlayer from '../components/ListeningPlayer.vue'
 import QuestionExplain from '../components/QuestionExplain.vue'
 import DeepExplainDrawer from '../components/DeepExplainDrawer.vue'  // v9.26: AI 助教精讲
@@ -752,6 +753,7 @@ function prevHighlighted() {
 async function select(question: any, key: string) {
   if (session.value.status === 'submitted' || activeUnitSubmitted.value) return
   haptic(10)
+  sound.tap()
   // Layout slot may provide a safe question view; persist into the original session object.
   const targetQuestion = activeUnit.value?.questions.find((item: any) => item.id === question.id) || question
   const previous = targetQuestion.user_answer
@@ -922,6 +924,10 @@ async function submitCurrentUnit() {
     )
     unansweredNotice.value = ''
     showUnitResult(submittedUnitId)
+    const unit = session.value?.units?.find((u: any) => u.id === submittedUnitId)
+    const unitRate = unit?.submission?.max_score ? Math.round((unit.submission.score / unit.submission.max_score) * 100) : 0
+    if (unitRate >= 60) sound.correct()
+    else sound.wrong()
   } catch (e) {
     if (await handleIncompleteSubmission(e)) return
     error.value = String(e)
@@ -941,6 +947,11 @@ async function submitSession() {
     finishTimer()
     showSessionResult()
     maybeCelebrate() // v2.40: 高正确率撒花
+    const s = session.value
+    const rate = s?.max_score ? Math.round((s.score / s.max_score) * 100) : 0
+    if (rate >= 80) sound.fanfare()
+    else if (rate >= 60) sound.correct()
+    else sound.wrong()
   }
   catch (e) {
     if (await handleIncompleteSubmission(e)) return

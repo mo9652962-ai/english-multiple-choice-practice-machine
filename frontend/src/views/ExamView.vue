@@ -3,6 +3,7 @@
 import { AlarmClock, CheckCircle2, ChevronLeft, ChevronRight, Clock, Flag, XCircle } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { haptic } from '../services/haptics'
+import { sound } from '../services/sound'
 import { useRoute, useRouter } from 'vue-router'
 import { get, post, put } from '../api'
 
@@ -61,6 +62,7 @@ async function answer(key: string) {
   if (!exam.value || exam.value.status !== 'active') return
   const q = currentQuestion.value
   haptic(10)
+  sound.tap()
   q.answered = key
   try {
     await put(`/exam/sessions/${examId.value}/answers/${q.id}`, { answer: key })
@@ -85,6 +87,12 @@ async function submit() {
     exam.value = await post(`/exam/sessions/${examId.value}/submit`, {})
     confirmSubmit.value = false
     if (ticker.value) clearInterval(ticker.value)
+    const score = exam.value?.score ?? 0
+    const maxScore = exam.value?.max_score ?? 1
+    const rate = Math.round((score / maxScore) * 100)
+    if (rate >= 80) sound.fanfare()
+    else if (rate >= 60) sound.correct()
+    else sound.wrong()
   } catch (e: any) {
     error.value = String(e)
   } finally {

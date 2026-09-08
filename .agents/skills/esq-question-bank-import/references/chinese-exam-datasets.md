@@ -49,7 +49,7 @@
   (完形 20空/阅读 Text1 5题/新题型七选五 5空), license 明确注明 "AI 生成模拟题, 非真题"
 
 ## 导入后清理
-- 临时脚本/ESQ 包用完删 (C:/Users/31954/AppData/Local/Temp/gaokao-esq 等)
+- 临时脚本/ESQ 包用完删 (%USERPROFILE%/AppData/Local/Temp/gaokao-esq 等)
 - `cp backend/data/question_bank.db mobile-app/question_bank.db` (手机版离线库)
 - git: backend/data/ 与 *.db 被 gitignore → 数据不进 git, 无需 push
 
