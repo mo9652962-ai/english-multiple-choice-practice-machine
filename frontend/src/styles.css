@@ -6418,3 +6418,216 @@ body.ink-landscape::before {
   align-items: center;
   gap: 4px;
 }
+
+/* ============================================================
+   Phase 8: 文房品牌标识、全局导航与 Zen 快捷指法手札
+   ============================================================ */
+
+/* 1. 文房品牌标与子标题 */
+.scholar-brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.25s var(--ease);
+}
+.scholar-brand:hover {
+  background: var(--primary-faint, rgba(45, 90, 63, 0.06));
+}
+.scholar-brand .brand-mark {
+  background: linear-gradient(135deg, #b84a39 0%, #943224 100%);
+  color: #faf7f2;
+  box-shadow: 0 4px 14px rgba(184, 74, 57, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.scholar-brand:hover .brand-mark {
+  transform: scale(1.08) rotate(-3.5deg);
+}
+.scholar-brand .brand-copy strong {
+  font-family: var(--font-brand, "STKaiti", "KaiTi", "Noto Serif SC", serif);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.brand-sub {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+}
+
+/* 2. 侧边栏导航激活态精致化 */
+.sidebar nav a.router-link-active {
+  background: color-mix(in srgb, var(--primary, #2d5a3f) 8%, var(--surface-solid, #ffffff));
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04), inset 3px 0 0 var(--primary, #2d5a3f);
+  color: var(--primary, #2d5a3f);
+  font-weight: 600;
+}
+
+/* 3. 侧边栏快捷指法入口按钮 */
+.scholar-zen-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--line);
+  background: color-mix(in srgb, var(--bg-card, #ffffff) 60%, transparent);
+  color: var(--text-muted, var(--muted));
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all 0.22s var(--ease);
+}
+.scholar-zen-button:hover {
+  background: var(--surface-solid, #ffffff);
+  border-color: var(--primary, #2d5a3f);
+  color: var(--primary, #2d5a3f);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.zen-kbd-tag {
+  margin-left: auto;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  background: color-mix(in srgb, var(--line) 50%, transparent);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+/* 4. Zen 快捷键手札弹窗 */
+.zen-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(20, 24, 21, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.zen-keybindings-panel {
+  max-width: 520px;
+  width: 100%;
+  background: var(--surface-solid, #faf8f5);
+  border-radius: 20px;
+  padding: 24px 26px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--line);
+}
+.zen-shortcuts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+.zen-shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-card, #ffffff) 65%, transparent);
+  border: 1px solid var(--line);
+  gap: 14px;
+}
+.zen-keys {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.zen-keys kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  border-radius: 6px;
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-weight: 700;
+  font-size: 13px;
+  background: var(--surface-solid, #ffffff);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 0 var(--line), 0 2px 4px rgba(0, 0, 0, 0.05);
+  color: var(--ink);
+}
+.zen-or {
+  font-size: 11px;
+  color: var(--muted);
+}
+.zen-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 2px;
+}
+.zen-desc strong {
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.zen-desc span {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* 5. 沉浸模式控制条 */
+.zen-switches-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+}
+.zen-switch-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-solid) 50%, transparent);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.zen-switch-item:hover {
+  border-color: var(--primary, #2d5a3f);
+}
+.zen-switch-item.active {
+  border-color: var(--primary, #2d5a3f);
+  background: color-mix(in srgb, var(--primary, #2d5a3f) 8%, var(--surface-solid));
+  color: var(--primary, #2d5a3f);
+}
+.zen-switch-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.zen-switch-text span {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.zen-switch-text small {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+/* 6. 底部心流题词 */
+.zen-modal-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  gap: 12px;
+}
