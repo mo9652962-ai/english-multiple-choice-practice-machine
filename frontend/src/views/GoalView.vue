@@ -64,6 +64,7 @@ onMounted(async () => {
       </div>
     </div>
 
+    <div class="goal-cards-wrapper">
     <!-- 目标进度环 -->
     <div class="card goal-hero">
       <div class="goal-ring" :style="{ '--pct': goalPct }">
@@ -101,6 +102,7 @@ onMounted(async () => {
           <span class="goal-day-label">{{ h.day.slice(5).replace('-', '/') }}</span>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>

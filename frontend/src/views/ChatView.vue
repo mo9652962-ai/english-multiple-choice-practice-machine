@@ -374,7 +374,8 @@ onBeforeUnmount(() => {
   flex-direction: column;
   /* 撑满可视高度（扣除页面自身 padding），消息区内部滚动 */
   height: calc(100vh - 114px);
-  max-width: 860px;
+  max-width: min(100%, 1440px);
+  width: 100%;
 }
 
 .chat-header {
@@ -456,7 +457,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  max-width: min(78%, 560px);
+  max-width: min(85%, 880px);
 }
 
 .row-user .chat-bubble-wrap { align-items: flex-end; }

@@ -74,7 +74,7 @@ onMounted(load)
 </template>
 
 <style scoped>
-.collections-list { display: flex; flex-direction: column; gap: 12px; max-width: 860px; }
+.collections-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; width: 100%; max-width: min(100%, 1520px); }
 .collection-card { padding: 14px 18px; }
 .collection-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
 .collection-type { font-family: Georgia, 'Times New Roman', serif; font-size: 13px; color: #B84A39; border: 1px solid #E8E0D2; border-radius: 999px; padding: 2px 10px; }
