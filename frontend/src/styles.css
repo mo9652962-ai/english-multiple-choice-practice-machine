@@ -5671,3 +5671,192 @@ body.ink-landscape::before {
   padding: 2px 8px;
   border-radius: 6px;
 }
+
+/* ==========================================================================
+   Phase 5: 错题本「朱砂批改手札」与案头统计
+   ========================================================================== */
+
+.wrong-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+@media (max-width: 860px) {
+  .wrong-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .wrong-stats-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wrong-stat-cell {
+  padding: 16px 20px;
+  background: var(--surface-solid, #ffffff);
+  border: 1px solid var(--line, rgba(60, 50, 40, .14));
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(60, 50, 40, .04);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.wrong-stat-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(60, 50, 40, .08);
+}
+.wrong-stat-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--line);
+}
+.wrong-stat-cell.primary-cell::before {
+  background: var(--primary, #2d5a3f);
+}
+.wrong-stat-cell.frequent-cell::before {
+  background: var(--accent-vermilion, #c73e3a);
+}
+.wrong-stat-cell.srs-cell::before {
+  background: var(--accent-gold, #c29339);
+}
+.wrong-stat-cell.scope-cell::before {
+  background: var(--ink-secondary, #5c6b73);
+}
+
+.wrong-stat-cell .stat-num {
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.wrong-stat-cell.frequent-cell .stat-num {
+  color: var(--accent-vermilion, #c73e3a);
+}
+.wrong-stat-cell.srs-cell .stat-num {
+  color: var(--accent-gold, #c29339);
+}
+.wrong-stat-cell .stat-meta {
+  font-size: 12.5px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 错题范围分段控制器 */
+.wrong-scope-tabs {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-trans, rgba(255, 255, 255, .7));
+  border: 1px solid var(--line, rgba(60, 50, 40, .14));
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+.wrong-scope-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .18s var(--ease);
+}
+.wrong-scope-btn:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--primary-soft) 40%, transparent);
+}
+.wrong-scope-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 35%, transparent);
+}
+.wrong-scope-btn.active.vermilion {
+  background: var(--accent-vermilion, #c73e3a);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent-vermilion, #c73e3a) 35%, transparent);
+}
+.wrong-scope-btn .tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, .25);
+  color: inherit;
+}
+.wrong-scope-btn:not(.active) .tab-badge {
+  background: color-mix(in srgb, var(--line) 60%, transparent);
+  color: var(--muted);
+}
+
+/* 朱砂圈阅印章 */
+.cinnabar-seal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-seal, "Kaiti SC", "楷体", serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--accent-vermilion, #c73e3a);
+  background: color-mix(in srgb, var(--accent-vermilion, #c73e3a) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-vermilion, #c73e3a) 32%, transparent);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--accent-vermilion, #c73e3a) 12%, transparent);
+  letter-spacing: .02em;
+}
+
+/* 错题手札卡片 (Scholar Edition) */
+.wrong-year.scholar-edition {
+  border-left: 3px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.wrong-year.scholar-edition:hover {
+  border-left-color: var(--primary);
+}
+
+.wrong-unit-row.scholar-edition {
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 8px 0;
+  background: color-mix(in srgb, var(--surface-solid) 65%, transparent);
+  border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  transition: all .2s var(--ease);
+}
+.wrong-unit-row.scholar-edition:hover {
+  background: var(--surface-solid);
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--line));
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(60, 50, 40, .05);
+}
+
+.freq-item.scholar-edition {
+  border-left: 3px solid color-mix(in srgb, var(--accent-vermilion, #c73e3a) 40%, transparent);
+  transition: all .2s var(--ease);
+}
+.freq-item.scholar-edition:hover {
+  border-left-color: var(--accent-vermilion, #c73e3a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(199, 62, 58, .08);
+}
