@@ -6191,3 +6191,230 @@ body.ink-landscape::before {
   color: var(--primary);
   border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
 }
+
+/* ==========================================================================
+   Phase 7: 全真模拟考「贡院金榜殿」与考场沉浸心流
+   ========================================================================== */
+
+/* 贡院开考设置卡片 */
+.exam-start-scholar {
+  max-width: 540px;
+  margin: 36px auto;
+  padding: 32px 36px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--surface-solid);
+  box-shadow: 0 10px 30px rgba(60, 50, 40, .06);
+}
+.exam-start-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.exam-picker-section {
+  margin: 20px 0;
+}
+.exam-picker-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.exam-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+}
+.exam-picker-pill {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all .18s var(--ease);
+}
+.exam-picker-pill:hover {
+  border-color: var(--primary);
+  color: var(--ink);
+}
+.exam-picker-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 32%, transparent);
+}
+
+/* 考场微浮雕倒计时钟 */
+.exam-timer-scholar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary-soft) 80%, var(--surface-solid));
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--line));
+  font-family: var(--font-en-serif, Charter, Georgia, monospace);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5);
+}
+.exam-timer-scholar.urgent {
+  color: var(--accent-vermilion, #c73e3a);
+  background: color-mix(in srgb, var(--accent-vermilion, #c73e3a) 12%, var(--surface-solid));
+  border-color: color-mix(in srgb, var(--accent-vermilion, #c73e3a) 40%, transparent);
+  animation: pulse 1s infinite;
+}
+
+/* 考场题号水墨微印章 */
+.exam-dot.scholar-edition {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.exam-dot.scholar-edition:hover {
+  border-color: var(--primary);
+  color: var(--ink);
+}
+.exam-dot.scholar-edition.answered {
+  background: color-mix(in srgb, var(--primary-soft) 85%, var(--surface-solid));
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+}
+.exam-dot.scholar-edition.current {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2.5px color-mix(in srgb, var(--primary) 35%, transparent);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+/* 选项物理徽标与下凹交互 */
+.exam-option.scholar-edition {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-solid);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all .16s var(--ease);
+}
+.exam-option.scholar-edition:hover {
+  border-color: var(--primary);
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(60, 50, 40, .05);
+}
+.exam-option.scholar-edition.selected {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: inset 3px 0 var(--primary), 0 2px 10px rgba(45, 90, 63, .08);
+}
+.exam-option.scholar-edition .opt-key {
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--line) 40%, var(--surface-solid));
+  color: var(--ink);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  transition: all .16s ease;
+}
+.exam-option.scholar-edition.selected .opt-key {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* 金榜题名殿 (成绩卡片) */
+.exam-result-hall {
+  max-width: 580px;
+  margin: 36px auto;
+  padding: 40px 36px;
+  border-radius: 24px;
+  border: 1.5px solid color-mix(in srgb, var(--primary) 28%, var(--line));
+  background: var(--surface-solid);
+  box-shadow: 0 16px 40px rgba(60, 50, 40, .08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.exam-result-hall::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-vermilion, #c73e3a), var(--primary, #2d5a3f), var(--accent-gold, #c29339));
+}
+.exam-seal-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.exam-score-big {
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.exam-score-big.good {
+  color: var(--primary, #2d5a3f);
+}
+.exam-score-big.warn {
+  color: var(--accent-vermilion, #c73e3a);
+}
+.exam-result-grid-scholar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+@media (max-width: 520px) {
+  .exam-result-grid-scholar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.exam-cell-scholar {
+  padding: 14px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-solid) 80%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.exam-cell-val {
+  font-family: var(--font-en-serif, Charter, Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.exam-cell-label {
+  font-size: 12px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
