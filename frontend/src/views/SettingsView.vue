@@ -17,6 +17,7 @@ import {
 } from 'lucide-vue-next'
 import { onMounted, reactive, ref } from 'vue'
 import { del, get, post, put } from '../api'
+import { sound } from '../services/sound'
 
 type AiModel = {
   model_id: string
@@ -45,6 +46,16 @@ type AiProfile = {
 const profiles = ref<AiProfile[]>([])
 const expanded = ref<number[]>([])
 const shuffleEnabled = ref(localStorage.getItem('epm_shuffle_options') !== 'false')
+const soundEnabled = ref(sound.isEnabled())
+
+function toggleSound() {
+  soundEnabled.value = !soundEnabled.value
+  sound.setEnabled(soundEnabled.value)
+  if (soundEnabled.value) {
+    sound.tap()
+  }
+}
+
 const busy = reactive<Record<string, boolean>>({})
 const notices = reactive<Record<number, string>>({})
 const message = ref('')
@@ -101,6 +112,7 @@ function toggleExpanded(id: number) {
 function toggleShuffle() {
   shuffleEnabled.value = !shuffleEnabled.value
   localStorage.setItem('epm_shuffle_options', shuffleEnabled.value ? 'true' : 'false')
+  sound.tap()
 }
 
 async function load() {
@@ -333,6 +345,18 @@ async function submitFeedback() {
           <button class="pref-switch" type="button" role="switch" :aria-checked="shuffleEnabled" @click="toggleShuffle">
             <span :class="{ on: shuffleEnabled }"></span>
           </button>
+        </div>
+        <div class="practice-pref-row" style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line)">
+          <div>
+            <strong>文房微音效</strong>
+            <p>基于原生 Web Audio API 合成落子、玉石与古琴微音效，0 额外资源开销，全离线可用。</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <button v-if="soundEnabled" class="button ghost compact" type="button" style="min-height:30px;padding:4px 10px;font-size:12px" @click="sound.correct()" title="试听玉石和弦">试听</button>
+            <button class="pref-switch" type="button" role="switch" :aria-checked="soundEnabled" @click="toggleSound">
+              <span :class="{ on: soundEnabled }"></span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
