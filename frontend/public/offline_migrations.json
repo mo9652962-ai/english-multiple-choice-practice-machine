@@ -1,7 +1,7 @@
 {
- "version": "2026-09-02 19:35:47",
- "fingerprint": "3a5ab1358854",
- "object_count": 97,
+ "version": "2026-09-10 14:23:34",
+ "fingerprint": "ad304e639a92",
+ "object_count": 116,
  "objects": [
   {
    "type": "index",
@@ -45,8 +45,28 @@
   },
   {
    "type": "index",
+   "name": "idx_anti_cheat_exam",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_anti_cheat_exam ON anti_cheat_logs(exam_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_audit_logs_org_time",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_audit_logs_org_time\n    ON audit_logs(organization_id, created_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_certificates_user",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_certificates_user ON certificates(user_id)"
+  },
+  {
+   "type": "index",
    "name": "idx_essay_user",
    "sql": "CREATE INDEX IF NOT EXISTS idx_essay_user ON essay_submissions(user_id, created_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_gen_papers_profile",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_gen_papers_profile ON generated_papers(profile_id)"
   },
   {
    "type": "index",
@@ -60,6 +80,26 @@
   },
   {
    "type": "index",
+   "name": "idx_orders_buyer_created",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_orders_buyer_created\n    ON orders(buyer_user_id, created_at DESC, id DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_orders_org_created",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_orders_org_created\n    ON orders(organization_id, created_at DESC, id DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_orders_status_updated",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_orders_status_updated\n    ON orders(status, updated_at DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_org_members_user",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_org_members_user\n    ON organization_members(user_id, status, organization_id)"
+  },
+  {
+   "type": "index",
    "name": "idx_papers_external_key",
    "sql": "CREATE INDEX IF NOT EXISTS idx_papers_external_key\n            ON papers(external_key)"
   },
@@ -67,6 +107,11 @@
    "type": "index",
    "name": "idx_papers_profile",
    "sql": "CREATE INDEX IF NOT EXISTS idx_papers_profile\n            ON papers(profile_id, deleted_at, year DESC)"
+  },
+  {
+   "type": "index",
+   "name": "idx_payment_events_order_created",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_payment_events_order_created\n    ON payment_events(order_id, created_at DESC, id DESC)"
   },
   {
    "type": "index",
@@ -255,8 +300,23 @@
   },
   {
    "type": "table",
+   "name": "anti_cheat_logs",
+   "sql": "CREATE TABLE IF NOT EXISTS anti_cheat_logs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    exam_id INTEGER NOT NULL,\n    event_type TEXT NOT NULL,  -- screen_switch / suspend / copy / paste / window_blur\n    detail TEXT NOT NULL DEFAULT '',\n    occurred_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    user_id INTEGER DEFAULT NULL,\n    FOREIGN KEY (exam_id) REFERENCES exam_sessions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
    "name": "app_settings",
    "sql": "CREATE TABLE IF NOT EXISTS app_settings (\n    key TEXT PRIMARY KEY,\n    value TEXT NOT NULL DEFAULT ''\n)"
+  },
+  {
+   "type": "table",
+   "name": "audit_logs",
+   "sql": "CREATE TABLE IF NOT EXISTS audit_logs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    organization_id INTEGER,\n    actor_user_id INTEGER,\n    action TEXT NOT NULL,\n    resource_type TEXT NOT NULL,\n    resource_id TEXT,\n    metadata TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE SET NULL,\n    FOREIGN KEY (actor_user_id) REFERENCES users(id) ON DELETE SET NULL\n)"
+  },
+  {
+   "type": "table",
+   "name": "certificates",
+   "sql": "CREATE TABLE IF NOT EXISTS certificates (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    cert_no TEXT NOT NULL UNIQUE,\n    user_id INTEGER NOT NULL,\n    profile_id INTEGER NOT NULL,\n    exam_id INTEGER NOT NULL,\n    title TEXT NOT NULL,\n    accuracy REAL NOT NULL,\n    score REAL NOT NULL,\n    pass_score REAL NOT NULL DEFAULT 60,\n    level TEXT NOT NULL DEFAULT '合格',\n    issued_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (exam_id) REFERENCES exam_sessions(id)\n)"
   },
   {
    "type": "table",
@@ -295,6 +355,11 @@
   },
   {
    "type": "table",
+   "name": "generated_papers",
+   "sql": "CREATE TABLE IF NOT EXISTS generated_papers (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    title TEXT NOT NULL,\n    description TEXT NOT NULL DEFAULT '',\n    profile_id INTEGER NOT NULL,\n    configuration TEXT NOT NULL DEFAULT '{}',   -- { types: {single_choice:5,...}, randomize:true, pass_score:60 }\n    question_ids TEXT NOT NULL DEFAULT '[]',\n    total_questions INTEGER NOT NULL DEFAULT 0,\n    max_score REAL NOT NULL DEFAULT 0,\n    pass_score REAL NOT NULL DEFAULT 60,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    created_by INTEGER DEFAULT NULL,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
+  },
+  {
+   "type": "table",
    "name": "import_jobs",
    "sql": "CREATE TABLE IF NOT EXISTS import_jobs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    profile_id INTEGER NOT NULL DEFAULT 1,\n    filename TEXT NOT NULL,\n    stored_path TEXT NOT NULL,\n    answer_stored_path TEXT NOT NULL DEFAULT '',\n    detected_year INTEGER,\n    detected_format TEXT,\n    status TEXT NOT NULL DEFAULT 'analyzing',\n    draft_data TEXT NOT NULL DEFAULT '{}',\n    warnings TEXT NOT NULL DEFAULT '[]',\n    parse_context TEXT NOT NULL DEFAULT '{}',\n    deleted_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
   },
@@ -320,8 +385,33 @@
   },
   {
    "type": "table",
+   "name": "orders",
+   "sql": "CREATE TABLE IF NOT EXISTS orders (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    order_no TEXT NOT NULL UNIQUE,\n    organization_id INTEGER NOT NULL,\n    buyer_user_id INTEGER,\n    plan_id INTEGER NOT NULL,\n    amount_cents INTEGER NOT NULL CHECK (typeof(amount_cents) = 'integer' AND amount_cents >= 0),\n    status TEXT NOT NULL DEFAULT 'pending'\n        CHECK (status IN ('pending', 'paid', 'cancelled', 'refunding', 'refunded', 'failed')),\n    expires_at TEXT,\n    paid_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE RESTRICT,\n    FOREIGN KEY (buyer_user_id) REFERENCES users(id) ON DELETE SET NULL,\n    FOREIGN KEY (plan_id) REFERENCES plans(id) ON DELETE RESTRICT\n)"
+  },
+  {
+   "type": "table",
+   "name": "organization_members",
+   "sql": "CREATE TABLE IF NOT EXISTS organization_members (\n    organization_id INTEGER NOT NULL,\n    user_id INTEGER NOT NULL,\n    role TEXT NOT NULL DEFAULT 'student',\n    status TEXT NOT NULL DEFAULT 'active',\n    joined_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    PRIMARY KEY (organization_id, user_id),\n    FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,\n    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "organizations",
+   "sql": "CREATE TABLE IF NOT EXISTS organizations (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    name TEXT NOT NULL,\n    slug TEXT NOT NULL UNIQUE COLLATE NOCASE,\n    status TEXT NOT NULL DEFAULT 'active',\n    owner_user_id INTEGER,\n    settings TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
+  },
+  {
+   "type": "table",
    "name": "papers",
    "sql": "CREATE TABLE IF NOT EXISTS papers (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    profile_id INTEGER NOT NULL DEFAULT 1,\n    year INTEGER NOT NULL,\n    subject TEXT NOT NULL DEFAULT '英语一',\n    title TEXT NOT NULL,\n    source_file TEXT,\n    status TEXT NOT NULL DEFAULT 'draft',\n    deleted_at TEXT,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, external_key TEXT, package_id TEXT, content_version TEXT, source_metadata TEXT NOT NULL DEFAULT '{}', exam_type TEXT NOT NULL DEFAULT '', exam_month INTEGER NOT NULL DEFAULT 0, set_number INTEGER NOT NULL DEFAULT 1, session_group_key TEXT NOT NULL DEFAULT '',\n    FOREIGN KEY (profile_id) REFERENCES question_bank_profiles(id)\n)"
+  },
+  {
+   "type": "table",
+   "name": "payment_events",
+   "sql": "CREATE TABLE IF NOT EXISTS payment_events (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    order_id INTEGER NOT NULL,\n    event_type TEXT NOT NULL,\n    amount_cents INTEGER NOT NULL CHECK (typeof(amount_cents) = 'integer' AND amount_cents >= 0),\n    meta_json TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "plans",
+   "sql": "CREATE TABLE IF NOT EXISTS plans (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    name TEXT NOT NULL,\n    price_cents INTEGER NOT NULL CHECK (typeof(price_cents) = 'integer' AND price_cents >= 0),\n    duration_days INTEGER NOT NULL CHECK (typeof(duration_days) = 'integer' AND duration_days > 0),\n    features_json TEXT NOT NULL DEFAULT '[]',\n    active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0, 1))\n)"
   },
   {
    "type": "table",
@@ -387,6 +477,11 @@
    "type": "table",
    "name": "revision_log",
    "sql": "CREATE TABLE IF NOT EXISTS revision_log (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    import_job_id INTEGER,\n    entity_type TEXT NOT NULL,\n    entity_ref TEXT NOT NULL,\n    field_name TEXT NOT NULL,\n    old_value TEXT,\n    new_value TEXT,\n    source TEXT NOT NULL,\n    model_name TEXT,\n    approved INTEGER NOT NULL DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (import_job_id) REFERENCES import_jobs(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "table",
+   "name": "schema_migrations",
+   "sql": "CREATE TABLE IF NOT EXISTS schema_migrations (\n    version INTEGER PRIMARY KEY,\n    applied_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
   },
   {
    "type": "table",

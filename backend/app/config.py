@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import os
+import sys
 from pathlib import Path
 
 
-ROOT_DIR = Path(__file__).resolve().parents[2]
+if getattr(sys, "frozen", False):
+    # PyInstaller 打包：资源(含 examples/bundled-banks)解压到 sys._MEIPASS
+    ROOT_DIR = Path(sys._MEIPASS)
+else:
+    ROOT_DIR = Path(__file__).resolve().parents[2]
 # v9.20.1: EPM_DATA_DIR 允许打包版指定可写数据目录（Electron 传 resources/backend/data）
 DATA_DIR = Path(os.environ.get("EPM_DATA_DIR") or (ROOT_DIR / "backend" / "data"))
 UPLOAD_DIR = DATA_DIR / "uploads"
