@@ -1201,9 +1201,12 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
 
 def initialize_database() -> None:
     with closing(connect()) as connection:
+        # v2.1.1 修复：先补 user_id 列再执行 SCHEMA。
+        # SCHEMA 含 idx_vocab_user_term 等引用 user_id 的索引，旧库（升级用户残留）
+        # 缺该列会 no such column: user_id 启动崩。
+        _migrate_add_user_id(connection)
         connection.executescript(SCHEMA)
         _run_migrations(connection)
-        _migrate_add_user_id(connection)
         _migrate_multi_user_schema(connection)  # v9.24: 多用户约束重建
 
 
@@ -1223,6 +1226,8 @@ def _migrate_add_user_id(connection: sqlite3.Connection) -> None:
     for table, ddl in _USER_ID_TABLES.items():
         try:
             cols = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+            if not cols:
+                continue  # 表不存在（全新库），SCHEMA 会完整创建
             if "user_id" not in cols:
                 connection.execute(ddl)
                 connection.execute(
