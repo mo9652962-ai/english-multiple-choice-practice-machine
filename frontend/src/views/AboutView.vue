@@ -4,7 +4,7 @@ import { get } from '../api'
 import { CheckCircle2, ExternalLink, LoaderCircle, RotateCw, Sparkles } from 'lucide-vue-next'
 
 // v3.3: 我的墨题——版本号 + 开发时间 + 检查更新
-const APP_VERSION = '2.0.0'
+const APP_VERSION = '2.1.2'
 const RELEASE_DATE = '2026-09-02'
 const UPDATE_REPO = 'mo9652962-ai/english-multiple-choice-practice-machine'
 const UPDATE_URL = `https://github.com/${UPDATE_REPO}/releases/latest`
