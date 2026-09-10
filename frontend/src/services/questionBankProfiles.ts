@@ -11,9 +11,11 @@ export async function loadQuestionBankProfiles() {
   questionBankProfilesState.loading = true
   try {
     questionBankProfilesState.items = await get<any[]>('/question-bank-profiles')
-    questionBankProfilesState.activeId = Number(
-        questionBankProfilesState.items.find((item: any) => item.is_default)?.id || 0,
-      )
+    // 在线模式：后端返回 is_active（app_settings 记录当前激活）；离线模式无 is_active 字段 → fallback is_default
+    // 修复：此前只用 is_default，在线激活后 activeId 被重置回默认配置，彩色圆点/下拉切换无效（沐春 09-10 反馈）
+    const activeItem = questionBankProfilesState.items.find((item: any) => item.is_active)
+      || questionBankProfilesState.items.find((item: any) => item.is_default)
+    questionBankProfilesState.activeId = Number(activeItem?.id || 0)
     return questionBankProfilesState.items
   } finally {
     questionBankProfilesState.loading = false
