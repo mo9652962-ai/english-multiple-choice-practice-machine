@@ -21,7 +21,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows--web--Android-2563EB?style=flat-square" alt="Windows/Web/Android">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.0.0-2563EB?style=flat-square" alt="v2.0.0">
+    <img src="https://img.shields.io/badge/status-v2.1.2-2563EB?style=flat-square" alt="v2.1.2">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -97,9 +97,9 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 
 > 我们希望即使题目数量有限，每一次重新练习仍然需要理解文章、判断逻辑和重新作答，而不是把反复刷题变成机械地背答案。
 
-项目当前为 `v2.0.0`。核心刷题与复习链路、公开 GitHub Actions CI、Windows NSIS 安装包和 portable 便携版均已纳入发布流程；题库导入支持 CET-4/CET-6、高考英语、英语专业四级和英语专业八级模板。题库正文仍按来源和授权独立管理，不把个人数据库提交到 GitHub。
+项目当前为 `v2.1.2`。核心刷题与复习链路、公开 GitHub Actions CI、Windows NSIS 安装包和 portable 便携版均已纳入发布流程；题库导入支持 CET-4/CET-6、高考英语、英语专业四级和英语专业八级模板。题库正文仍按来源和授权独立管理，不把个人数据库提交到 GitHub。
 
-v2.0.0 之后，主分支已新增**组织工作区（Organization Workspace + 健康检查）**、**动态组卷**、**防作弊事件记录**与**考试证书系统**等能力，面向多用户/机构场景，纳入后续版本路线。
+自 v2.0.0 发布以来，项目已推进至 **2.1.x**，主分支新增**组织工作区（Organization Workspace + 健康检查）**、**动态组卷**、**防作弊事件记录**与**考试证书系统**等能力，面向多用户/机构场景。
 
 **当前内置数据**：647 道客观真题 + **7,958 个全类别核心词汇**（高中 666 / 四级 825 / 六级 1,304 / 考研 5,163——含音标与真题/双语例句）。
 
