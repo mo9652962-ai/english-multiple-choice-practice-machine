@@ -573,7 +573,7 @@ function offlineGet(path: string): any {
     } catch { return { total: 0, explained: 0, remaining: 0, percentage: 0 } }
   }
   // Version（桌面 About 用后端；移动端直连 GitHub——兜底）
-  if (path === '/version') return { version: '2.0.0', release_date: '2026-09-02', latest_version: null }
+  if (path === '/version') return { version: '2.1.2', release_date: '2026-09-02', latest_version: null }
   // v9.24: 高频聚合页空安全结构（修复返回 {} 导致前端 .map 白屏）
   if (path === '/exam/history') return { items: [], count: 0, average_accuracy: 0 }
   if (path.startsWith('/diagnostic/reports')) return { reports: [], total: 0 }

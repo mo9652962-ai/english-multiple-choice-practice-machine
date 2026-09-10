@@ -119,7 +119,7 @@ def _backup_database_on_startup() -> None:
 
 app = FastAPI(
     title="英语刷题机",
-    version="2.0.0",
+    version="2.1.2",
     contact={"name": "sora（mo9652962-ai）"},
     lifespan=lifespan,
 )
@@ -174,7 +174,7 @@ app.include_router(chat.router, prefix="/api")
 app.include_router(orders.router, prefix="/api")  # P1: 商业订单与人工收款
 
 
-APP_VERSION = "2.0.0"
+APP_VERSION = "2.1.2"
 
 
 @app.get("/api/health")
