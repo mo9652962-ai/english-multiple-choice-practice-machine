@@ -592,7 +592,7 @@ class ImportAnswerFlowTests(unittest.TestCase):
 
         with patch.object(
             import_assist,
-            "chat_completion",
+            "chat_with_routing",
             return_value='{"answer_map": {}, "number_map": {}, "issues": []}',
         ) as mocked:
             result, _ = import_assist.run_model_assist(

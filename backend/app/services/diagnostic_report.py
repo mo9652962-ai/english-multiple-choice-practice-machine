@@ -168,18 +168,37 @@ def build_recommendations(
                 JOIN units u ON u.id = q.unit_id
                 JOIN papers p ON p.id = u.paper_id
                 WHERE u.unit_type = ? AND p.deleted_at IS NULL
+                  AND (? = 0 OR p.profile_id = ?)
                 ORDER BY RANDOM()
                 LIMIT 5
                 """,
-                (unit_type,),
+                (unit_type, profile_id or 0, profile_id or 0),
             ).fetchall()
         if rows:
+            question_ids = [row["id"] for row in rows]
             recommendations.append(
                 {
                     "cause": cause,
                     "label": CAUSE_LABELS.get(cause, cause),
                     "suggestion": CAUSE_GUIDANCE.get(cause, ""),
-                    "question_ids": [row["id"] for row in rows],
+                    "evidence": {
+                        "wrong_count": int(category.get("count", 0) or 0),
+                        "percentage": float(category.get("percentage", 0) or 0),
+                        "source": "本次错题归因统计",
+                    },
+                    "expected_effect": f"完成同类练习后，重点观察“{CAUSE_LABELS.get(cause, cause)}”错误占比是否下降。",
+                    "review_plan": {
+                        "practice_first": True,
+                        "follow_up": "完成练习后进入 FSRS 到期复习队列",
+                        "evidence_limit": "推荐来自当前错题统计，不代表对尚未作答内容的结论",
+                    },
+                    "question_ids": question_ids,
+                    "practice_path": {
+                        "mode": "random",
+                        "question_ids": question_ids,
+                        "after_submit": "/review/queue",
+                        "evidence_limit": "练习结果用于后续复习记录，不单独证明能力提升",
+                    },
                     "sample_questions": [
                         {
                             "id": row["id"],

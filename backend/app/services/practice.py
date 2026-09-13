@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import random
 import sqlite3
 from datetime import datetime
@@ -10,6 +11,9 @@ from ..database import get_active_profile_id
 from ..schemas import PracticeCreate
 from .questions import parse_json, serialize_unit
 from .listening import listening_unit_has_audio_sql
+
+
+logger = logging.getLogger(__name__)
 
 
 class IncompleteSubmissionError(ValueError):
@@ -29,7 +33,9 @@ class IncompleteSubmissionError(ValueError):
 
 
 def _select_unit_ids(
-    connection: sqlite3.Connection, request: PracticeCreate
+    connection: sqlite3.Connection,
+    request: PracticeCreate,
+    user_id: int | None = None,
 ) -> tuple[list[int], int | None]:
     active_profile_id = get_active_profile_id(connection)
     if request.mode == "paper":
@@ -74,6 +80,25 @@ def _select_unit_ids(
         return request.unit_ids, request.paper_id
 
     if request.mode == "random":
+        if request.question_ids:
+            placeholders = ",".join("?" for _ in request.question_ids)
+            targeted_rows = connection.execute(
+                f"""
+                SELECT DISTINCT units.id, units.paper_id
+                FROM questions
+                JOIN units ON units.id = questions.unit_id
+                JOIN papers ON papers.id = units.paper_id
+                WHERE questions.id IN ({placeholders})
+                  AND papers.status = 'published'
+                  AND papers.deleted_at IS NULL
+                  AND papers.profile_id = ?
+                ORDER BY units.sequence, units.id
+                """,
+                [*request.question_ids, active_profile_id],
+            ).fetchall()
+            if not targeted_rows:
+                raise LookupError("当前题库配置中没有符合条件的推荐题")
+            return [int(row["id"]) for row in targeted_rows], request.paper_id
         if request.selection_scope == "paper_unit_type":
             if not request.unit_type:
                 raise ValueError("整套题型练习需要指定题型")
@@ -139,10 +164,11 @@ def _select_unit_ids(
             JOIN units ON units.id = questions.unit_id
             JOIN papers ON papers.id = units.paper_id
             WHERE wrong_stats.wrong_count > 0
+              AND wrong_stats.user_id IS ?
               AND papers.profile_id = ?
               AND papers.deleted_at IS NULL
         """
-        params = [active_profile_id]
+        params = [user_id, active_profile_id]
         if request.unit_ids:
             placeholders = ",".join("?" for _ in request.unit_ids)
             query += f" AND questions.unit_id IN ({placeholders})"
@@ -182,7 +208,7 @@ def _normalize_listening_audio(units: list[dict[str, Any]]) -> None:
 def create_session(
     connection: sqlite3.Connection, request: PracticeCreate, user_id: int | None = None
 ) -> dict[str, Any]:
-    unit_ids, paper_id = _select_unit_ids(connection, request)
+    unit_ids, paper_id = _select_unit_ids(connection, request, user_id=user_id)
     if not unit_ids:
         raise LookupError("当前题库配置中没有已发布且包含题目的练习篇目")
 
@@ -202,6 +228,23 @@ def create_session(
     session_id = cursor.lastrowid
 
     only_by_unit: dict[int, set[int]] = {}
+    if request.question_ids and request.mode != "wrong":
+        placeholders = ",".join("?" for _ in request.question_ids)
+        rows = connection.execute(
+            f"""
+            SELECT questions.id, questions.unit_id
+            FROM questions
+            JOIN units ON units.id = questions.unit_id
+            JOIN papers ON papers.id = units.paper_id
+            WHERE questions.id IN ({placeholders})
+              AND units.id IN ({','.join('?' for _ in unit_ids)})
+              AND papers.profile_id = ?
+              AND papers.deleted_at IS NULL
+            """,
+            [*request.question_ids, *unit_ids, get_active_profile_id(connection)],
+        ).fetchall()
+        for row in rows:
+            only_by_unit.setdefault(row["unit_id"], set()).add(row["id"])
     if request.mode == "wrong":
         placeholders = ",".join("?" for _ in unit_ids)
         rows = connection.execute(
@@ -210,6 +253,7 @@ def create_session(
             FROM wrong_stats
             JOIN questions ON questions.id = wrong_stats.question_id
             WHERE wrong_stats.wrong_count > 0
+              AND wrong_stats.user_id IS ?
               AND questions.unit_id IN ({placeholders})
               {
                   f"AND questions.id IN ({','.join('?' for _ in request.question_ids)})"
@@ -217,7 +261,7 @@ def create_session(
                   else ""
               }
             """,
-            [*unit_ids, *request.question_ids],
+            [user_id, *unit_ids, *request.question_ids],
         ).fetchall()
         for row in rows:
             only_by_unit.setdefault(row["unit_id"], set()).add(row["id"])
@@ -228,7 +272,7 @@ def create_session(
             connection,
             unit_id,
             shuffle_options=request.shuffle_options,
-            only_question_ids=only_by_unit.get(unit_id) if request.mode == "wrong" else None,
+            only_question_ids=only_by_unit.get(unit_id),
         )
         units.append(unit)
         for question in unit["questions"]:
@@ -492,22 +536,31 @@ def save_answer(
 def _update_wrong_stat(
     connection: sqlite3.Connection, question_id: int, is_correct: bool,
     reduce_on_correct: bool = False,
+    user_id: int | None = None,
 ) -> None:
-    # v9.28: Gemini batch5 任务3——SRS 间隔重复挂钩
+    # 练习提交挂钩题目 FSRS 复习曲线
     # 仅「答错」或「已有 SRS 记录」进入复习曲线（答对的新题不进队列）
     if not is_correct or connection.execute(
-        "SELECT 1 FROM spaced_repetition_records WHERE user_id IS NULL AND question_id = ?",
-        (question_id,),
+        "SELECT 1 FROM spaced_repetition_records WHERE user_id IS ? AND question_id = ?",
+        (user_id, question_id),
     ).fetchone() is not None:
         try:
             from .review import update_srs_record
             update_srs_record(
-                connection, question_id, quality_score=4 if is_correct else 1
+                connection, question_id, quality_score=4 if is_correct else 1,
+                user_id=user_id,
             )
         except Exception:
-            pass  # SRS 失败不影响主判分流程
+            # FSRS must not block answer submission, but a failure must remain
+            # observable so it can be diagnosed instead of silently degrading.
+            logger.exception(
+                "FSRS update failed after practice answer: question_id=%s user_id=%s",
+                question_id,
+                user_id,
+            )
     row = connection.execute(
-        "SELECT * FROM wrong_stats WHERE question_id = ?", (question_id,)
+        "SELECT * FROM wrong_stats WHERE user_id IS ? AND question_id = ?",
+        (user_id, question_id),
     ).fetchone()
     now = datetime.now().isoformat(timespec="seconds")
     # 错题迭代：wrong 模式重做作对 → wrong_count 减 1（越做越少）
@@ -519,11 +572,12 @@ def _update_wrong_stat(
         connection.execute(
             """
             INSERT INTO wrong_stats
-                (question_id, attempt_count, wrong_count, recent_results,
+                (user_id, question_id, attempt_count, wrong_count, recent_results,
                  consecutive_correct, last_wrong_at, last_attempt_at)
-            VALUES (?, 1, ?, ?, ?, ?, ?)
+            VALUES (?, ?, 1, ?, ?, ?, ?, ?)
             """,
             (
+                user_id,
                 question_id,
                 max(0, delta),
                 json.dumps(recent),
@@ -546,7 +600,7 @@ def _update_wrong_stat(
             consecutive_correct = ?,
             last_wrong_at = ?,
             last_attempt_at = ?
-        WHERE question_id = ?
+        WHERE user_id IS ? AND question_id = ?
         """,
         (
             new_wrong_count,
@@ -554,6 +608,7 @@ def _update_wrong_stat(
             row["consecutive_correct"] + 1 if is_correct else 0,
             row["last_wrong_at"] if is_correct else now,
             now,
+            user_id,
             question_id,
         ),
     )
@@ -563,6 +618,7 @@ def _grade_answer_rows(
     connection: sqlite3.Connection,
     rows: list[sqlite3.Row],
     reduce_on_correct: bool = False,
+    user_id: int | None = None,
 ) -> tuple[float, float]:
     score = 0.0
     max_score = 0.0
@@ -579,7 +635,13 @@ def _grade_answer_rows(
             (int(is_correct), row["id"]),
         )
         if not already_graded:
-            _update_wrong_stat(connection, row["question_id"], is_correct, reduce_on_correct)
+            _update_wrong_stat(
+                connection,
+                row["question_id"],
+                is_correct,
+                reduce_on_correct,
+                user_id=user_id,
+            )
     return score, max_score
 
 
@@ -640,6 +702,7 @@ def submit_unit(
                 "SELECT mode FROM practice_sessions WHERE id = ?", (session_id,)
             ).fetchone()["mode"] == "wrong"
         ),
+        user_id=user_id,
     )
     connection.execute(
         """
@@ -696,7 +759,10 @@ def submit_session(
     max_score = 0.0
     for unit_id, unit_rows in rows_by_unit.items():
         unit_score, unit_max_score = _grade_answer_rows(
-            connection, unit_rows, reduce_on_correct=session["mode"] == "wrong"
+            connection,
+            unit_rows,
+            reduce_on_correct=session["mode"] == "wrong",
+            user_id=user_id,
         )
         score += unit_score
         max_score += unit_max_score

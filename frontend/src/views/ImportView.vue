@@ -21,6 +21,7 @@ import { computed, nextTick, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { api, del, get, patch, post, put } from '../api'
 import QuestionBankSwitcher from '../components/QuestionBankSwitcher.vue'
+import { trackMetric } from '../services/metrics'
 import { loadQuestionBankProfiles, questionBankProfilesState } from '../services/questionBankProfiles'
 import {
   type LabelScope,
@@ -540,6 +541,7 @@ async function uploadEsq() {
   form.append('profile_id', String(targetProfileId.value))
   try {
     const result: any = await api('/question-banks/imports', { method: 'POST', body: form })
+    void trackMetric('import_succeeded', { source: 'esq' })
     esqCurrent.value = await get(`/question-banks/imports/${result.id}`)
     esqResolutions.value = {}
     await loadEsqJobs()
@@ -774,6 +776,16 @@ async function exportEsq(includeLabels = false) {
             <div class="stat-card card"><span class="stat-label">篇目</span><strong>{{ esqCurrent.preview.totals.units }}</strong></div>
             <div class="stat-card card"><span class="stat-label">题目</span><strong>{{ esqCurrent.preview.totals.questions }}</strong></div>
             <div class="stat-card card"><span class="stat-label">资源</span><strong>{{ esqCurrent.preview.totals.assets }}</strong></div>
+          </div>
+          <div v-if="esqCurrent.preview.provenance" class="import-provenance-panel" :class="`status-${esqCurrent.preview.provenance.status}`">
+            <div class="import-provenance-head">
+              <strong>来源与公开发布状态</strong>
+              <span class="pill">{{ esqCurrent.preview.provenance.status_label }}</span>
+            </div>
+            <p>导入到本机不等于允许公开分发；缺少核验记录时，题包仍可用于本地学习，但发布清单会保留 pending。</p>
+            <small v-if="esqCurrent.preview.provenance.missing?.length">
+              待补证据：{{ esqCurrent.preview.provenance.missing.join('、') }}
+            </small>
           </div>
         </div>
         <div class="card">

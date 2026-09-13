@@ -30,6 +30,8 @@ import QuestionExplain from '../components/QuestionExplain.vue'
 import DeepExplainDrawer from '../components/DeepExplainDrawer.vue'  // v9.26: AI 助教精讲
 import MobileSplitPracticeLayout from '../components/practice/MobileSplitPracticeLayout.vue'
 import { sanitizeQuestionOptions } from '../utils/optionSanitizer'
+import { localMetricsEnabled, trackMetric } from '../services/metrics'
+import { isOffline } from '../api'
 
 const route = useRoute()
 const router = useRouter()
@@ -66,6 +68,7 @@ function adjustFontSize(delta: number) {
 const passageStyle = computed(() => ({ fontSize: `${passageFontSize.value}px` }))
 let timerTicker: number | null = null
 const activeUnit = computed(() => session.value?.units?.[activeUnitIndex.value])
+let practiceStartedTracked = false
 
 // v9.28: Gemini batch5 任务2——本篇词汇掌握度
 const coveragePct = ref<number | null>(null)
@@ -656,6 +659,17 @@ function shuffleOptions(questions: any[]) {
 async function load() {
   try {
     session.value = await get(`/practice/sessions/${route.params.id}`)
+    if (!practiceStartedTracked && session.value?.status !== 'submitted') {
+      practiceStartedTracked = true
+      const questionCount = (session.value.units || []).reduce(
+        (total: number, unit: any) => total + (unit.questions || []).length,
+        0,
+      )
+      void trackMetric('practice_started', {
+        mode: session.value.mode || 'practice',
+        question_count: questionCount,
+      })
+    }
     // 选项打乱：每次进入练习随机排序（v3.0-feat: 防记答案）
     for (const unit of session.value.units || []) {
       shuffleOptions(unit.questions || [])
@@ -1023,6 +1037,24 @@ async function submitSession() {
   if (!confirm(`确定提交${label}吗？提交后才会显示对错，且不能继续修改。`)) return
   try {
     session.value = await post(`/practice/sessions/${session.value.id}/submit`)
+    const questionCount = (session.value.units || []).reduce(
+      (total: number, unit: any) => total + (unit.questions || []).length,
+      0,
+    )
+    if (isOffline()) {
+      const detail = {
+        mode: session.value.mode || 'practice',
+        question_count: questionCount,
+      }
+      void trackMetric('practice_completed', detail)
+      if (localMetricsEnabled() && !localStorage.getItem('epm_first_practice_completed_recorded')) {
+        localStorage.setItem('epm_first_practice_completed_recorded', '1')
+        void trackMetric('first_practice_completed', detail)
+      }
+      if (session.value.mode === 'wrong') {
+        void trackMetric('wrong_review_completed', { mode: 'wrong', question_count: questionCount })
+      }
+    }
     finishTimer()
     showSessionResult()
     maybeCelebrate() // v2.40: 高正确率撒花

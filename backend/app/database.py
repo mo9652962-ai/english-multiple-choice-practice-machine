@@ -90,6 +90,33 @@ CREATE TABLE IF NOT EXISTS app_settings (
     value TEXT NOT NULL DEFAULT ''
 );
 
+CREATE TABLE IF NOT EXISTS local_metrics_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    event_name TEXT NOT NULL,
+    detail TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_local_metrics_events_time
+    ON local_metrics_events(user_id, created_at DESC);
+
+-- AI 结构化结果的本地缓存：只保存本机已有输入的哈希和结果，不上传外部服务。
+CREATE TABLE IF NOT EXISTS ai_response_cache (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cache_key TEXT NOT NULL UNIQUE,
+    task TEXT NOT NULL,
+    user_id INTEGER DEFAULT NULL,
+    profile_id INTEGER DEFAULT NULL,
+    model TEXT NOT NULL DEFAULT '',
+    response TEXT NOT NULL,
+    hit_count INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    expires_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_ai_response_cache_expiry
+    ON ai_response_cache(task, user_id, expires_at);
+
 CREATE TABLE IF NOT EXISTS papers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     profile_id INTEGER NOT NULL DEFAULT 1,
@@ -149,6 +176,7 @@ CREATE TABLE IF NOT EXISTS options (
 
 CREATE TABLE IF NOT EXISTS practice_sessions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER DEFAULT NULL,
     mode TEXT NOT NULL,
     paper_id INTEGER,
     unit_ids TEXT NOT NULL,
@@ -229,6 +257,13 @@ CREATE TABLE IF NOT EXISTS spaced_repetition_records (
     ease_factor REAL NOT NULL DEFAULT 2.5,
     review_date TEXT,
     due_date TEXT NOT NULL,
+    -- FSRS 状态；保留 interval/ease/due_date 作为旧版本兼容字段。
+    fsrs_due TEXT,
+    fsrs_stability REAL,
+    fsrs_difficulty REAL,
+    fsrs_state INTEGER DEFAULT 0,
+    fsrs_step INTEGER DEFAULT 0,
+    fsrs_last_review TEXT,
     UNIQUE (user_id, question_id),
     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
@@ -1039,6 +1074,7 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
             task TEXT NOT NULL,
             provider TEXT NOT NULL,
             model TEXT NOT NULL,
+            user_id INTEGER,
             prompt_tokens INTEGER NOT NULL DEFAULT 0,
             completion_tokens INTEGER NOT NULL DEFAULT 0,
             latency_ms INTEGER NOT NULL DEFAULT 0,
@@ -1051,10 +1087,35 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
     connection.execute(
         "CREATE INDEX IF NOT EXISTS idx_ai_usage_task_time ON ai_usage(task, created_at)"
     )
+    _ensure_column(connection, "ai_usage", "user_id", "INTEGER")
+    connection.execute(
+        "CREATE INDEX IF NOT EXISTS idx_ai_usage_user_time ON ai_usage(user_id, created_at)"
+    )
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS ai_response_cache (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            cache_key TEXT NOT NULL UNIQUE,
+            task TEXT NOT NULL,
+            user_id INTEGER DEFAULT NULL,
+            profile_id INTEGER DEFAULT NULL,
+            model TEXT NOT NULL DEFAULT '',
+            response TEXT NOT NULL,
+            hit_count INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            expires_at TEXT NOT NULL
+        )
+        """
+    )
+    connection.execute(
+        "CREATE INDEX IF NOT EXISTS idx_ai_response_cache_expiry "
+        "ON ai_response_cache(task, user_id, expires_at)"
+    )
     connection.execute(
         """
         CREATE TABLE IF NOT EXISTS diagnostic_reports (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER DEFAULT NULL,
             scope_key TEXT NOT NULL DEFAULT '',
             question_ids TEXT NOT NULL DEFAULT '[]',
             input_snapshot TEXT NOT NULL DEFAULT '{}',
@@ -1067,6 +1128,20 @@ def _run_migrations(connection: sqlite3.Connection) -> None:
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
         )
         """
+    )
+    _ensure_column(connection, "diagnostic_reports", "user_id", "INTEGER")
+    for column, declaration in {
+        "fsrs_due": "TEXT",
+        "fsrs_stability": "REAL",
+        "fsrs_difficulty": "REAL",
+        "fsrs_state": "INTEGER DEFAULT 0",
+        "fsrs_step": "INTEGER DEFAULT 0",
+        "fsrs_last_review": "TEXT",
+    }.items():
+        _ensure_column(connection, "spaced_repetition_records", column, declaration)
+    connection.execute(
+        "CREATE INDEX IF NOT EXISTS idx_spaced_repetition_due "
+        "ON spaced_repetition_records(user_id, due_date)"
     )
     connection.execute(
         """
@@ -1206,6 +1281,10 @@ def initialize_database() -> None:
         # 缺该列会 no such column: user_id 启动崩。
         _migrate_add_user_id(connection)
         connection.executescript(SCHEMA)
+        # Fresh databases are created by SCHEMA, so the pre-SCHEMA pass above
+        # cannot see their tables. Run the same idempotent pass afterwards to
+        # cover both fresh and legacy databases consistently.
+        _migrate_add_user_id(connection)
         _run_migrations(connection)
         _migrate_multi_user_schema(connection)  # v9.24: 多用户约束重建
 

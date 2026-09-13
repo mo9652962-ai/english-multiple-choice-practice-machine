@@ -70,7 +70,7 @@ class VocabularyTests(unittest.TestCase):
         self.connection.execute(
             """
             UPDATE ai_profiles
-            SET enabled = 1, default_model = 'test-model'
+            SET enabled = 1, base_url = 'https://test.invalid', default_model = 'test-model'
             WHERE id = (SELECT id FROM ai_profiles ORDER BY id LIMIT 1)
             """
         )
@@ -109,7 +109,7 @@ class VocabularyTests(unittest.TestCase):
                 return_value=self.connection,
             ),
             patch(
-                "backend.app.services.vocabulary.chat_completion",
+                "backend.app.services.vocabulary.chat_with_routing",
                 return_value=__import__("json").dumps(response, ensure_ascii=False),
             ) as completion,
         ):
@@ -200,7 +200,7 @@ class VocabularyTests(unittest.TestCase):
         self.connection.execute(
             """
             UPDATE ai_profiles
-            SET enabled = 1, default_model = 'test-model'
+            SET enabled = 1, base_url = 'https://test.invalid', default_model = 'test-model'
             WHERE id = (SELECT id FROM ai_profiles ORDER BY id LIMIT 1)
             """
         )
@@ -246,7 +246,7 @@ class VocabularyTests(unittest.TestCase):
                 return_value=self.connection,
             ),
             patch(
-                "backend.app.services.vocabulary.chat_completion",
+                "backend.app.services.vocabulary.chat_with_routing",
                 return_value=json.dumps(response, ensure_ascii=False),
             ),
         ):

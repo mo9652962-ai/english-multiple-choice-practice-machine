@@ -145,8 +145,13 @@ export async function initOfflineMode(skipHealthCheck = false): Promise<boolean>
       try {
         const resp = await fetch('/api/health', { signal: AbortSignal.timeout(2000) })
         if (resp.ok) {
-          _offlineReady = false
-          return false
+          // 静态托管/PWA 的 SPA fallback 可能对 /api/health 返回 index.html + 200。
+          // 只有明确的 JSON 健康响应才算在线后端，避免把 HTML 当成 API。
+          const data = await resp.json().catch(() => null)
+          if (data?.status === 'ok') {
+            _offlineReady = false
+            return false
+          }
         }
       } catch {
         // 后端不可用 → 初始化 sql.js
@@ -161,7 +166,8 @@ export async function initOfflineMode(skipHealthCheck = false): Promise<boolean>
       ])
       _offlineReady = true
       return true
-    } catch {
+    } catch (error) {
+      ;(window as any).__EPM_OFFLINE_INIT_ERROR__ = String(error)
       _offlineReady = false
       return false
     }
