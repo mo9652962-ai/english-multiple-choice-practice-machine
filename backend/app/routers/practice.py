@@ -92,7 +92,15 @@ def create(
     try:
         user_id = _current_user_id(user)
         scoped_request = _scope_wrong_practice(connection, request, user_id)
-        return create_session(connection, scoped_request, user_id=user_id)
+        result = create_session(connection, scoped_request, user_id=user_id)
+        from ..services.metrics import record_event
+        record_event(
+            connection,
+            "practice_started",
+            user_id=user_id,
+            detail={"mode": request.mode, "question_count": len(result.get("question_ids", []))},
+        )
+        return result
     except (ValueError, LookupError) as error:
         raise translate_error(error) from error
 
@@ -138,7 +146,55 @@ def submit(
     user: dict | None = Depends(maybe_require_user),
 ) -> dict:
     try:
+        previous = connection.execute(
+            "SELECT status FROM practice_sessions WHERE id = ? AND user_id IS ?",
+            (session_id, _current_user_id(user)),
+        ).fetchone()
         result = submit_session(connection, session_id, user_id=_current_user_id(user))
+        from ..services.metrics import record_event
+        if previous is None or previous["status"] != "submitted":
+            result_summary = result.get("result_summary") or {}
+            question_count = result_summary.get("question_count")
+            if question_count is None:
+                question_count = sum(
+                    len(unit.get("questions") or [])
+                    for unit in (result.get("units") or [])
+                )
+            detail = {
+                "mode": result.get("mode", ""),
+                "question_count": max(0, int(question_count or 0)),
+            }
+            first_practice = not connection.execute(
+                """
+                SELECT 1 FROM local_metrics_events
+                WHERE user_id IS ? AND event_name = 'practice_completed'
+                LIMIT 1
+                """,
+                (_current_user_id(user),),
+            ).fetchone()
+            record_event(
+                connection,
+                "practice_completed",
+                user_id=_current_user_id(user),
+                detail=detail,
+            )
+            if first_practice:
+                record_event(
+                    connection,
+                    "first_practice_completed",
+                    user_id=_current_user_id(user),
+                    detail=detail,
+                )
+            if result.get("mode") == "wrong":
+                record_event(
+                    connection,
+                    "wrong_review_completed",
+                    user_id=_current_user_id(user),
+                    detail={
+                        "mode": "wrong",
+                        "question_count": max(0, int(question_count or 0)),
+                    },
+                )
         _record_streak_activity(
             connection, "practice_submit", f"session {session_id}",
             user_id=_current_user_id(user),

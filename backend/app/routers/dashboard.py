@@ -256,6 +256,19 @@ def _build_today_plan(
     practice_type = counts["unit_type"] if counts else None
     practice_label = {"cloze": "完形/选词填空", "reading": "阅读理解",
                       "paragraph_matching": "长篇匹配/七选五", "part_b": "七选五/匹配"}.get(practice_type or "", "专项练习")
+    practice_evidence_count = 0
+    if practice_type:
+        practice_evidence_count = int(connection.execute(
+            """SELECT COUNT(*) n
+               FROM practice_answers pa
+               JOIN questions q ON q.id = pa.question_id
+               JOIN units u ON u.id = q.unit_id
+               JOIN papers p ON p.id = u.paper_id
+               JOIN practice_sessions ps ON ps.id = pa.session_id
+               WHERE ps.user_id IS ? AND p.profile_id = ? AND p.deleted_at IS NULL
+                 AND u.unit_type = ?""",
+            (user_id, profile_id, practice_type),
+        ).fetchone()["n"])
     # 时间预估 (研究: 刷题计划 任务量可调)
     words_min = max(5, due_count * 0.4)
     new_min = new_target * 0.5
@@ -271,14 +284,27 @@ def _build_today_plan(
         "practice_type": practice_type,
         "practice_label": practice_label,
         "total_minutes": total_min,
+        "evidence_policy": "推荐只使用本地练习数据或题库可用性解释；个人数据不足时降级为规则推荐。",
         "plan": [
             {"icon": "📖", "label": f"背 {new_target} 个新词 + 复习 {due_count} 个",
              "minutes": round(words_min + new_min), "done": due_count == 0 and learned_today >= new_target,
-             "action": "words"},
+             "action": "words", "reason": "根据 FSRS 到期复习列表与今日新词目标安排。",
+             "expected_effect": "完成后可清空今日到期复习，并保持新词输入节奏。",
+             "evidence_status": "有到期复习数据" if due_count else "暂无到期复习数据",
+             "evidence_count": due_count + new_words},
             {"icon": "✏️", "label": f"{profile_name} · {practice_label}专项",
-             "minutes": practice_min, "done": practiced_today > 0, "action": practice_type or "random"},
+             "minutes": practice_min, "done": practiced_today > 0, "action": practice_type or "random",
+             "reason": (f"最近练习中，{weak_type}是最低正确率题型，优先巩固。" if weak_type == practice_type
+                        else "按当前题库可用单元数量选择主练题型。"),
+             "expected_effect": "完成一次专项后可把结果回写到能力雷达，供下一轮计划调整。",
+             "evidence_status": "有个人练习证据" if practice_evidence_count else "规则推荐，个人数据不足",
+             "evidence_count": practice_evidence_count},
             {"icon": "📝", "label": f"重做 {wrong} 道高频错题",
-             "minutes": wrong_min, "done": wrong == 0, "action": "wrong"},
+             "minutes": wrong_min, "done": wrong == 0, "action": "wrong",
+             "reason": "仅纳入个人错题本中累计错误不少于 2 次的题目。",
+             "expected_effect": "通过再练和订正降低重复失分，更新错题复习状态。",
+             "evidence_status": "有个人错题证据" if wrong else "暂无符合条件的错题",
+             "evidence_count": wrong},
         ],
     }
 

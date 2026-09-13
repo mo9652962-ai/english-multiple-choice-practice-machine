@@ -174,6 +174,14 @@ function useHistory(id: number) {
   loadReport(id)
 }
 
+function recommendationQuestionIds(recommendation: any): number[] {
+  const pathIds = recommendation?.practice_path?.question_ids
+  if (Array.isArray(pathIds) && pathIds.length) return pathIds
+  return Array.isArray(recommendation?.sample_questions)
+    ? recommendation.sample_questions.map((question: any) => question.id)
+    : []
+}
+
 // 推荐专项练习直接启动做题闭环
 async function startRecommendedPractice(qIds: number[], title: string) {
   sound.tap()
@@ -430,6 +438,15 @@ async function startRecommendedPractice(qIds: number[], title: string) {
                 <span>{{ r.label }}</span>
               </div>
               <p class="rec-suggestion-scholar">{{ r.suggestion }}</p>
+              <p v-if="r.expected_effect" class="rec-suggestion-scholar" style="font-size:12px;color:var(--primary);margin-top:4px">
+                预期改善：{{ r.expected_effect }}
+              </p>
+              <p v-if="r.review_plan?.follow_up" class="rec-suggestion-scholar" style="font-size:11px;color:var(--muted);margin-top:4px">
+                下一步：{{ r.review_plan.follow_up }}
+              </p>
+              <p v-if="r.evidence" class="rec-suggestion-scholar" style="font-size:11px;color:var(--muted);margin-top:4px">
+                依据：{{ r.evidence.wrong_count }} 题，占比 {{ Math.round(r.evidence.percentage || 0) }}%
+              </p>
               <div class="rec-chips-scholar" v-if="r.sample_questions?.length">
                 <span v-for="q in r.sample_questions" :key="q.id" class="rec-chip-scholar">
                   {{ q.year }} · {{ q.unit }}
@@ -437,10 +454,10 @@ async function startRecommendedPractice(qIds: number[], title: string) {
               </div>
             </div>
             <button
-              v-if="r.sample_questions?.length"
+              v-if="recommendationQuestionIds(r).length"
               class="button compact primary"
               type="button"
-              @click="startRecommendedPractice(r.sample_questions.map((q: any) => q.id), r.label)"
+              @click="startRecommendedPractice(recommendationQuestionIds(r), r.label)"
             >
               <Play :size="13" />提笔攻坚
             </button>

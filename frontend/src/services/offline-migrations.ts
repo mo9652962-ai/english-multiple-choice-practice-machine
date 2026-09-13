@@ -13,7 +13,7 @@
 import type { Database } from 'sql.js'
 
 export interface MigrationObject {
-  type: 'table' | 'index'
+  type: 'table' | 'column' | 'index'
   name: string
   sql: string
 }
@@ -43,11 +43,28 @@ export function planMissingObjects(
       existing.add(`${row[typeIndex]}:${row[nameIndex]}`)
     }
   }
+  // Columns do not appear as sqlite_master objects.  Read only the columns
+  // referenced by the manifest so existing IndexedDB copies can receive
+  // additive ALTER TABLE migrations without replacing user data.
+  for (const object of manifest.objects || []) {
+    if (object?.type !== 'column' || !object.name) continue
+    const separator = object.name.indexOf('.')
+    if (separator <= 0) continue
+    const table = object.name.slice(0, separator)
+    const tableResult = db.exec(`PRAGMA table_info("${table.replaceAll('"', '""')}")`)
+    for (const resultSet of tableResult) {
+      const nameIndex = resultSet.columns.indexOf('name')
+      for (const row of resultSet.values) {
+        existing.add(`column:${table}.${row[nameIndex]}`)
+      }
+    }
+  }
   const missing = (manifest.objects || []).filter(
     object => object && object.sql && !existing.has(`${object.type}:${object.name}`),
   )
   missing.sort((left, right) =>
-    (left.type === 'table' ? 0 : 1) - (right.type === 'table' ? 0 : 1),
+    ({ table: 0, column: 1, index: 2 }[left.type] ?? 3)
+      - ({ table: 0, column: 1, index: 2 }[right.type] ?? 3),
   )
   return missing
 }
@@ -60,14 +77,25 @@ export async function applyOfflineMigrations(db: Database): Promise<boolean> {
   const resp = await fetch(MIGRATIONS_URL, { signal: AbortSignal.timeout(5000) })
   if (!resp.ok) return false
   const manifest: MigrationManifest = await resp.json()
-  const missing = planMissingObjects(db, manifest)
-  if (!missing.length) return false
-  for (const object of missing) {
+  let changed = false
+  let applied = 0
+  // Re-plan after every object.  A fresh database creates FSRS columns as
+  // part of the table DDL, while a legacy database needs the separate ALTER
+  // TABLE entries; a one-shot plan would try to add those columns twice.
+  while (true) {
+    const missing = planMissingObjects(db, manifest)
+    if (!missing.length) break
+    const object = missing[0]
     db.run(object.sql)
+    changed = true
+    applied += 1
+    if (applied > manifest.objects.length) {
+      throw new Error('offline schema migration exceeded manifest object count')
+    }
   }
+  if (!changed) return false
   console.info(
-    `[offline] schema 迁移：补建 ${missing.length} 个对象`
-    + `（${missing.map(object => object.name).join(', ')}）`
+    `[offline] schema 迁移：补建 ${applied} 个对象`
     + `，清单版本 ${manifest.version}`,
   )
   return true

@@ -1,7 +1,7 @@
 {
- "version": "2026-09-10 14:23:34",
- "fingerprint": "ad304e639a92",
- "object_count": 116,
+ "version": "2026-09-13 15:47:58",
+ "fingerprint": "86135601ad6b",
+ "object_count": 127,
  "objects": [
   {
    "type": "index",
@@ -22,6 +22,11 @@
    "type": "index",
    "name": "idx_ai_profiles_single_default",
    "sql": "CREATE UNIQUE INDEX idx_ai_profiles_single_default\n    ON ai_profiles(is_default) WHERE is_default = 1"
+  },
+  {
+   "type": "index",
+   "name": "idx_ai_response_cache_expiry",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_ai_response_cache_expiry\n    ON ai_response_cache(task, user_id, expires_at)"
   },
   {
    "type": "index",
@@ -77,6 +82,11 @@
    "type": "index",
    "name": "idx_learning_days_day",
    "sql": "CREATE INDEX IF NOT EXISTS idx_learning_days_day\n    ON learning_days(day)"
+  },
+  {
+   "type": "index",
+   "name": "idx_local_metrics_events_time",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_local_metrics_events_time\n    ON local_metrics_events(user_id, created_at DESC)"
   },
   {
    "type": "index",
@@ -157,6 +167,11 @@
    "type": "index",
    "name": "idx_questions_unit",
    "sql": "CREATE INDEX IF NOT EXISTS idx_questions_unit ON questions(unit_id)"
+  },
+  {
+   "type": "index",
+   "name": "idx_spaced_repetition_due",
+   "sql": "CREATE INDEX IF NOT EXISTS idx_spaced_repetition_due ON spaced_repetition_records(user_id, due_date)"
   },
   {
    "type": "index",
@@ -285,6 +300,11 @@
   },
   {
    "type": "table",
+   "name": "ai_response_cache",
+   "sql": "CREATE TABLE IF NOT EXISTS ai_response_cache (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    cache_key TEXT NOT NULL UNIQUE,\n    task TEXT NOT NULL,\n    user_id INTEGER DEFAULT NULL,\n    profile_id INTEGER DEFAULT NULL,\n    model TEXT NOT NULL DEFAULT '',\n    response TEXT NOT NULL,\n    hit_count INTEGER NOT NULL DEFAULT 0,\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    expires_at TEXT NOT NULL\n)"
+  },
+  {
+   "type": "table",
    "name": "ai_settings",
    "sql": "CREATE TABLE IF NOT EXISTS ai_settings (\n    id INTEGER PRIMARY KEY CHECK (id = 1),\n    name TEXT NOT NULL DEFAULT 'DeepSeek V4-Flash',\n    base_url TEXT NOT NULL DEFAULT 'https://api.deepseek.com/v1',\n    api_key_encrypted TEXT,\n    model TEXT NOT NULL DEFAULT 'deepseek-v4-flash',\n    temperature REAL NOT NULL DEFAULT 0.2,\n    max_tokens INTEGER NOT NULL DEFAULT 1200,\n    system_prompt TEXT NOT NULL DEFAULT '',\n    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
   },
@@ -377,6 +397,11 @@
    "type": "table",
    "name": "learning_days",
    "sql": "CREATE TABLE IF NOT EXISTS learning_days (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    day TEXT NOT NULL,\n    activity_type TEXT NOT NULL,\n    detail TEXT NOT NULL DEFAULT '',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    UNIQUE (day, activity_type)\n)"
+  },
+  {
+   "type": "table",
+   "name": "local_metrics_events",
+   "sql": "CREATE TABLE IF NOT EXISTS local_metrics_events (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER,\n    event_name TEXT NOT NULL,\n    detail TEXT NOT NULL DEFAULT '{}',\n    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP\n)"
   },
   {
    "type": "table",
@@ -486,7 +511,7 @@
   {
    "type": "table",
    "name": "spaced_repetition_records",
-   "sql": "CREATE TABLE IF NOT EXISTS spaced_repetition_records (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER DEFAULT NULL,\n    question_id INTEGER NOT NULL,\n    interval_days INTEGER NOT NULL DEFAULT 1,\n    ease_factor REAL NOT NULL DEFAULT 2.5,\n    review_date TEXT,\n    due_date TEXT NOT NULL,\n    UNIQUE (user_id, question_id),\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+   "sql": "CREATE TABLE IF NOT EXISTS spaced_repetition_records (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    user_id INTEGER DEFAULT NULL,\n    question_id INTEGER NOT NULL,\n    interval_days INTEGER NOT NULL DEFAULT 1,\n    ease_factor REAL NOT NULL DEFAULT 2.5,\n    review_date TEXT,\n    due_date TEXT NOT NULL, fsrs_due TEXT, fsrs_stability REAL, fsrs_difficulty REAL, fsrs_state INTEGER DEFAULT 0, fsrs_step INTEGER DEFAULT 0, fsrs_last_review TEXT,\n    UNIQUE (user_id, question_id),\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
   },
   {
    "type": "table",
@@ -582,6 +607,36 @@
    "type": "table",
    "name": "wrong_stats",
    "sql": "CREATE TABLE IF NOT EXISTS wrong_stats (\n    question_id INTEGER PRIMARY KEY,\n    attempt_count INTEGER NOT NULL DEFAULT 0,\n    wrong_count INTEGER NOT NULL DEFAULT 0,\n    recent_results TEXT NOT NULL DEFAULT '[]',\n    consecutive_correct INTEGER NOT NULL DEFAULT 0,\n    manually_frequent INTEGER NOT NULL DEFAULT 0,\n    last_wrong_at TEXT,\n    last_attempt_at TEXT, note TEXT DEFAULT '',\n    FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE\n)"
+  },
+  {
+   "type": "column",
+   "name": "spaced_repetition_records.fsrs_due",
+   "sql": "ALTER TABLE spaced_repetition_records ADD COLUMN fsrs_due TEXT"
+  },
+  {
+   "type": "column",
+   "name": "spaced_repetition_records.fsrs_stability",
+   "sql": "ALTER TABLE spaced_repetition_records ADD COLUMN fsrs_stability REAL"
+  },
+  {
+   "type": "column",
+   "name": "spaced_repetition_records.fsrs_difficulty",
+   "sql": "ALTER TABLE spaced_repetition_records ADD COLUMN fsrs_difficulty REAL"
+  },
+  {
+   "type": "column",
+   "name": "spaced_repetition_records.fsrs_state",
+   "sql": "ALTER TABLE spaced_repetition_records ADD COLUMN fsrs_state INTEGER DEFAULT 0"
+  },
+  {
+   "type": "column",
+   "name": "spaced_repetition_records.fsrs_step",
+   "sql": "ALTER TABLE spaced_repetition_records ADD COLUMN fsrs_step INTEGER DEFAULT 0"
+  },
+  {
+   "type": "column",
+   "name": "spaced_repetition_records.fsrs_last_review",
+   "sql": "ALTER TABLE spaced_repetition_records ADD COLUMN fsrs_last_review TEXT"
   }
  ]
 }

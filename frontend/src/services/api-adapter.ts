@@ -12,6 +12,35 @@ import {
 let backendAvailable: boolean | null = null
 let offlineMode = false
 const listeners: (() => void)[] = []
+const OFFLINE_METRICS_CONSENT = 'epm_local_metrics_consent'
+const OFFLINE_METRICS_EVENTS = 'epm_local_metrics_events'
+const OFFLINE_METRIC_EVENT_NAMES = new Set([
+  'first_launch',
+  'app_launch',
+  'practice_started',
+  'practice_completed',
+  'first_practice_completed',
+  'vocabulary_review_started',
+  'wrong_review_completed',
+  'vocabulary_review_completed',
+  'import_succeeded',
+  'vocabulary_added',
+  'ai_call_succeeded',
+  'ai_call_failed',
+  'feedback_submitted',
+  'app_error',
+  'install_succeeded',
+  'install_failed',
+])
+
+function offlineMetricsEvents(): Array<{ event_name: string; detail?: Record<string, unknown>; created_at: string }> {
+  try {
+    const value = JSON.parse(localStorage.getItem(OFFLINE_METRICS_EVENTS) || '[]')
+    return Array.isArray(value) ? value : []
+  } catch {
+    return []
+  }
+}
 
 export function getOfflineMode() { return offlineMode }
 export function onModeChange(fn: () => void) { listeners.push(fn) }
@@ -31,7 +60,10 @@ export async function checkBackend(): Promise<boolean> {
   }
   try {
     const resp = await fetch('/api/health', { signal: AbortSignal.timeout(2000) })
-    backendAvailable = resp.ok
+    // SPA fallback may return index.html with HTTP 200 for an unknown /api path.
+    // Treat only the explicit JSON health payload as an available backend.
+    const data = resp.ok ? await resp.json().catch(() => null) : null
+    backendAvailable = resp.ok && data?.status === 'ok'
   } catch {
     backendAvailable = false
   }
@@ -124,7 +156,8 @@ function offlineDelete(path: string): any {
   }
   const wm = path.match(/^\/wrong\/(\d+)$/)
   if (wm) {
-    execute('DELETE FROM wrong_stats WHERE id = ?', [parseInt(wm[1])])
+    // wrong_stats 使用 question_id 作为主键，没有独立的 id 列。
+    execute('DELETE FROM wrong_stats WHERE question_id = ?', [parseInt(wm[1])])
     return { ok: true, deleted: true }
   }
   const am = path.match(/^\/annotations\/(\d+)$/)
@@ -573,7 +606,78 @@ function offlineGet(path: string): any {
     } catch { return { total: 0, explained: 0, remaining: 0, percentage: 0 } }
   }
   // Version（桌面 About 用后端；移动端直连 GitHub——兜底）
-  if (path === '/version') return { version: '2.1.2', release_date: '2026-09-02', latest_version: null }
+  if (path === '/version') return {
+    version: __APP_VERSION__,
+    release_date: __APP_RELEASE_DATE__,
+    content_version: __CONTENT_VERSION__,
+    offline_seed_version: __OFFLINE_CONTENT_VERSION__,
+    latest_version: null,
+  }
+  if (path === '/content/version') return {
+    version: __APP_VERSION__,
+    release_date: __APP_RELEASE_DATE__,
+    content_version: __CONTENT_VERSION__,
+    offline_seed_version: __OFFLINE_CONTENT_VERSION__,
+    schema_version: 2,
+    database_sha256: '',
+    counts: {
+      papers: Number(queryOne('SELECT COUNT(*) AS count FROM papers')?.count || 0),
+      units: Number(queryOne('SELECT COUNT(*) AS count FROM units')?.count || 0),
+      questions: Number(queryOne('SELECT COUNT(*) AS count FROM questions')?.count || 0),
+      options: Number(queryOne('SELECT COUNT(*) AS count FROM options')?.count || 0),
+      vocabulary_entries: Number(queryOne('SELECT COUNT(*) AS count FROM vocabulary_entries')?.count || 0),
+    },
+  }
+  if (path === '/metrics/consent') {
+    return { enabled: localStorage.getItem(OFFLINE_METRICS_CONSENT) === 'enabled' }
+  }
+  if (path.startsWith('/metrics/summary')) {
+    const events = offlineMetricsEvents()
+    const byEvent: Record<string, number> = {}
+    for (const event of events) byEvent[event.event_name] = (byEvent[event.event_name] || 0) + 1
+    const now = Date.now()
+    const activeDays7 = new Set(
+      events
+        .filter(event => now - Date.parse(event.created_at) <= 7 * 24 * 60 * 60 * 1000)
+        .map(event => event.created_at.slice(0, 10)),
+    )
+    const totalQuestions = events.reduce((sum, event) => {
+      if (event.event_name !== 'practice_completed') return sum
+      const count = Number(event.detail?.question_count || 0)
+      return sum + (Number.isFinite(count) ? Math.max(0, count) : 0)
+    }, 0)
+    const reviewCount = (eventName: string) => events.reduce((sum, event) => {
+      if (event.event_name !== eventName) return sum
+      const count = Number(event.detail?.question_count || 0)
+      return sum + (Number.isFinite(count) ? Math.max(0, count) || 1 : 1)
+    }, 0)
+    const wrongReviewStarted = events.reduce((sum, event) => {
+      if (event.event_name !== 'practice_started' || event.detail?.mode !== 'wrong') return sum
+      const count = Number(event.detail?.question_count || 0)
+      return sum + (Number.isFinite(count) ? Math.max(0, count) || 1 : 1)
+    }, 0)
+    const wrongReviewCompleted = reviewCount('wrong_review_completed')
+    const vocabularyReviewStarted = reviewCount('vocabulary_review_started')
+    const vocabularyReviewCompleted = reviewCount('vocabulary_review_completed')
+    return {
+      days: 30,
+      enabled: localStorage.getItem(OFFLINE_METRICS_CONSENT) === 'enabled',
+      total_events: events.length,
+      active_days: new Set(events.map(event => event.created_at.slice(0, 10))).size,
+      active_days_7d: activeDays7.size,
+      returned_after_first_activity_7d: activeDays7.size >= 2,
+      total_questions: totalQuestions,
+      wrong_review_started: wrongReviewStarted,
+      wrong_review_completed: wrongReviewCompleted,
+      wrong_review_rate: wrongReviewStarted ? Math.min(1, wrongReviewCompleted / wrongReviewStarted) : null,
+      vocabulary_review_started: vocabularyReviewStarted,
+      vocabulary_review_completed: vocabularyReviewCompleted,
+      vocabulary_review_rate: vocabularyReviewStarted
+        ? Math.min(1, vocabularyReviewCompleted / vocabularyReviewStarted)
+        : null,
+      by_event: Object.entries(byEvent).map(([event_name, count]) => ({ event_name, count })),
+    }
+  }
   // v9.24: 高频聚合页空安全结构（修复返回 {} 导致前端 .map 白屏）
   if (path === '/exam/history') return { items: [], count: 0, average_accuracy: 0 }
   if (path.startsWith('/diagnostic/reports')) return { reports: [], total: 0 }
@@ -605,6 +709,21 @@ function offlineGet(path: string): any {
 }
 
 function offlinePost(path: string, body?: any): any {
+  if (path === '/metrics/events') {
+    if (localStorage.getItem(OFFLINE_METRICS_CONSENT) !== 'enabled') return { recorded: false }
+    const eventName = String(body?.event_name || '')
+    if (!OFFLINE_METRIC_EVENT_NAMES.has(eventName)) return { recorded: false }
+    const events = offlineMetricsEvents()
+    const allowedDetails = ['mode', 'question_count', 'source', 'version', 'rating', 'task', 'status', 'provider', 'category', 'route']
+    const detail = Object.fromEntries(
+      allowedDetails
+        .filter(key => body?.detail?.[key] !== undefined)
+        .map(key => [key, String(body.detail[key]).slice(0, 120)]),
+    )
+    events.push({ event_name: eventName, detail, created_at: new Date().toISOString() })
+    localStorage.setItem(OFFLINE_METRICS_EVENTS, JSON.stringify(events.slice(-5000)))
+    return { recorded: true }
+  }
   // Practice session create（v3.3: unit_ids NOT NULL——补齐防报错）
   if (path === '/practice/sessions') {
     const id = Date.now()
@@ -659,12 +778,6 @@ function offlinePost(path: string, body?: any): any {
       [body?.is_visible ? 1 : 0, pid, body?.model_id || '']
     )
     return { ok: true }
-  }
-  // Vocabulary review
-  if (path.match(/\/vocabulary\/\d+\/review/)) {
-    const id = parseInt(path.match(/\/vocabulary\/(\d+)\/review/)![1])
-    execute("INSERT INTO vocabulary_reviews (entry_id, rating) VALUES (?, ?)", [id, body?.rating])
-    return queryOne("SELECT * FROM vocabulary_entries WHERE id = ?", [id])
   }
   // Vocab quiz estimate（v3.3: 估词量——按认识比例估算；v3.3 修复：results 是数组）
   if (path === '/vocab/quiz/estimate') {
@@ -922,6 +1035,15 @@ function offlinePost(path: string, body?: any): any {
 }
 
 function offlinePut(path: string, body?: any): any {
+  if (path === '/metrics/consent') {
+    const enabled = Boolean(body?.enabled)
+    if (enabled) localStorage.setItem(OFFLINE_METRICS_CONSENT, 'enabled')
+    else {
+      localStorage.removeItem(OFFLINE_METRICS_CONSENT)
+      localStorage.removeItem(OFFLINE_METRICS_EVENTS)
+    }
+    return { enabled }
+  }
   // AI profile update（离线 APK：key 变化时重新加密）
   const m = path.match(/^\/ai\/profiles\/(\d+)$/)
   if (m) {
@@ -989,14 +1111,14 @@ function offlinePut(path: string, body?: any): any {
 
 async function encryptKey(value: string | null | undefined): Promise<string | null> {
   if (!value) return null
-  try {
-    const cap = (window as any)?.Capacitor
-    if (cap?.isNativePlatform?.()) {
+  const cap = (window as any)?.Capacitor
+  if (cap?.isNativePlatform?.()) {
+    try {
       const { SecureStorage } = await import('./secure-storage')
       return await SecureStorage.encrypt(value)
+    } catch {
+      throw new Error('Android Keystore 不可用，未保存 API Key')
     }
-  } catch {
-    // 加密失败回退（仍可用，仅提示风险）
   }
   return value
 }

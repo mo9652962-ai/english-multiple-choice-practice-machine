@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, BookMarked, BookOpen, ClipboardList, Flame, Headphones, Highlighter, Hourglass, ListOrdered, MessageCircle, NotebookPen, PenLine, Repeat, Share2, Sparkles, Star, Target } from 'lucide-vue-next'
+import { ArrowRight, BookMarked, BookOpen, Brain, ClipboardList, Flame, Headphones, Highlighter, Hourglass, ListOrdered, MessageCircle, NotebookPen, PenLine, Repeat, Share2, Sparkles, Star, Target } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { get, post } from '../api'
@@ -32,6 +32,18 @@ let vocabularyTimer: number | null = null
 // v9.19: streak 数据
 const streak = ref<any>(null)
 const dueToday = ref<any[]>([])
+const latestDiagnostic = ref<any>(null)
+const diagnosticFocus = computed(() => latestDiagnostic.value?.recommendations?.[0] || null)
+
+async function loadLatestDiagnostic() {
+  try {
+    const reports: any[] = await get('/diagnostic/reports?limit=1')
+    const latest = reports?.[0]
+    if (latest?.id) latestDiagnostic.value = await get(`/diagnostic/report/${latest.id}`)
+  } catch {
+    // Offline mode may not have diagnostic history; the rest of the dashboard remains usable.
+  }
+}
 
 // v3.1: 卷别识别与区分（解决同一年多张卷标题相似"看着重复"）
 function paperSet(title: string): string {
@@ -145,6 +157,7 @@ async function loadHome(force = false) {
   if (dashboardResult?.status === 'fulfilled') {
     data.value = dashboardResult.value
   } else {
+    ;(window as any).__EPM_DASHBOARD_ERROR__ = String(dashboardResult?.reason || 'unknown')
     error.value = '主页数据暂时没有加载成功，请刷新页面重试。'
   }
   if (wordsResult?.status === 'fulfilled') {
@@ -165,6 +178,7 @@ onMounted(async () => {
   await loadHome()
   startVocabularyRotation()
   try { aiPicks.value = await get('/recommendations/ai') } catch { /* 推题失败不阻塞 */ }
+  void loadLatestDiagnostic()
   loadGoalAndWord()
 })
 onBeforeUnmount(() => {
@@ -271,6 +285,26 @@ async function randomPractice(type: string) {
   } catch (e) { 
     error.value = String(e)
     activePracticeLoading.value = null
+  }
+}
+
+async function startDiagnosticPractice() {
+  const ids = diagnosticFocus.value?.question_ids || []
+  if (!ids.length) {
+    router.push('/diagnostic')
+    return
+  }
+  try {
+    const session: any = await post('/practice/sessions', {
+      mode: 'random',
+      question_ids: ids,
+      count: ids.length,
+      shuffle_options: true,
+    })
+    showToast(`已开始「${diagnosticFocus.value.label}」专项练习`, 'success')
+    router.push(`/practice/${session.id}`)
+  } catch (cause) {
+    showToast(`专项练习生成失败：${cause}`, 'error')
   }
 }
 
@@ -513,9 +547,54 @@ async function sharePoster() {
               @click="!task.done && runPlanTask(task)"
             >
               <span class="plan-icon"><component :is="planIcon(task.action)" :size="14" aria-hidden="true" /></span>
-              <span class="plan-label">{{ task.label }}</span>
+              <span class="plan-copy">
+                <span class="plan-label">{{ task.label }}</span>
+                <span v-if="task.reason" class="plan-reason">{{ task.reason }}</span>
+                <span v-if="task.expected_effect" class="plan-effect">预期：{{ task.expected_effect }}</span>
+                <span v-if="task.evidence_status" class="plan-evidence">
+                  {{ task.evidence_status }}<template v-if="typeof task.evidence_count === 'number'"> · {{ task.evidence_count }} 条</template>
+                </span>
+              </span>
               <span class="plan-min">{{ task.minutes }}分</span>
               <span class="plan-status">{{ task.done ? '✓ 已完成' : '开始 →' }}</span>
+            </button>
+          </div>
+          <p v-if="data.today_plan.evidence_policy" class="plan-policy">
+            {{ data.today_plan.evidence_policy }}
+          </p>
+        </div>
+
+        <!-- 最近诊断焦点：把诊断结果承接到今日行动，不重复调用 AI -->
+        <div
+          v-if="diagnosticFocus"
+          class="focus-diagnostic-card"
+          style="margin:12px 0;padding:12px;border:1px solid color-mix(in srgb, var(--primary) 22%, var(--line));border-radius:12px;background:color-mix(in srgb, var(--primary) 6%, var(--surface-solid))"
+        >
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:6px">
+            <Brain :size="15" style="color:var(--primary)" aria-hidden="true" />
+            <strong style="font-size:13px">最近诊断焦点 · {{ diagnosticFocus.label }}</strong>
+          </div>
+          <p style="margin:0 0 5px;font-size:12px;line-height:1.55;color:var(--ink)">
+            {{ diagnosticFocus.suggestion || '继续完成同类型练习，观察正确率是否改善。' }}
+          </p>
+          <p v-if="diagnosticFocus.expected_effect" style="margin:0 0 5px;font-size:11px;line-height:1.45;color:var(--primary)">
+            预期改善：{{ diagnosticFocus.expected_effect }}
+          </p>
+          <p v-if="diagnosticFocus.review_plan?.follow_up" style="margin:0 0 8px;font-size:11px;line-height:1.45;color:var(--muted)">
+            下一步：{{ diagnosticFocus.review_plan.follow_up }}
+          </p>
+          <p
+            v-if="latestDiagnostic?.aggregate?.uncertain_count"
+            style="margin:0 0 8px;font-size:11px;line-height:1.45;color:var(--muted)"
+          >
+            本次有 {{ latestDiagnostic.aggregate.uncertain_count }} 题证据不足，先把它视为练习线索，不作确定性结论。
+          </p>
+          <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <button class="button compact primary" type="button" @click="startDiagnosticPractice">
+              <Target :size="13" />开始针对性练习
+            </button>
+            <button class="button compact ghost" type="button" @click="router.push('/diagnostic')">
+              查看诊断
             </button>
           </div>
         </div>

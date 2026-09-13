@@ -11,7 +11,13 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from app.config import DATA_DIR, UPLOAD_DIR
 
-from .config import FRONTEND_DIST
+from .config import (
+    APP_RELEASE_DATE,
+    APP_VERSION,
+    CONTENT_VERSION,
+    OFFLINE_CONTENT_VERSION,
+    FRONTEND_DIST,
+)
 from .database import connect, initialize_database
 from .routers import (
     ai,
@@ -51,6 +57,7 @@ from .routers import (
     chat,  # Phase 3: 学习陪伴聊天室
     exam_templates,
     orders,
+    metrics,
 )
 from .services.ai_client import ensure_ai_model_catalog
 from .services.bundled_banks import install_bundled_question_banks
@@ -119,7 +126,7 @@ def _backup_database_on_startup() -> None:
 
 app = FastAPI(
     title="英语刷题机",
-    version="2.1.3",
+    version=APP_VERSION,
     contact={"name": "sora（mo9652962-ai）"},
     lifespan=lifespan,
 )
@@ -172,9 +179,7 @@ app.include_router(version.router, prefix="/api")
 app.include_router(agent.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
 app.include_router(orders.router, prefix="/api")  # P1: 商业订单与人工收款
-
-
-APP_VERSION = "2.1.3"
+app.include_router(metrics.router, prefix="/api")  # P2: 用户授权后的本地学习指标
 
 
 @app.get("/api/health")
@@ -201,7 +206,6 @@ def health() -> dict[str, str | int]:
 
 
 # v3.3: 我的墨题——版本号 + 开发时间 + 检查更新（GitHub releases 代理）
-APP_RELEASE_DATE = "2026-09-02"
 _UPDATE_REPO = "mo9652962-ai/english-multiple-choice-practice-machine"
 
 
@@ -231,9 +235,19 @@ def get_version() -> dict:
             ]
     except Exception:
         latest = None
+    content_metadata: dict = {}
+    try:
+        with connect() as connection:
+            content_metadata = version.content_version(connection)
+    except sqlite3.Error:
+        # Update checks must remain usable even when a local database is being
+        # repaired; the dedicated content endpoint will report the DB error.
+        content_metadata = {}
     return {
         "version": APP_VERSION,
         "release_date": APP_RELEASE_DATE,
+        "content_version": CONTENT_VERSION,
+        "offline_seed_version": OFFLINE_CONTENT_VERSION,
         "latest_version": latest,
         "update_url": f"https://github.com/{_UPDATE_REPO}/releases/latest",
         # v3.3: 镜像回退（ghproxy——国内可访问）
@@ -242,6 +256,10 @@ def get_version() -> dict:
             f"https://gh-proxy.com/https://github.com/{_UPDATE_REPO}/releases/latest",
         ],
         "assets": assets,
+        "schema_version": content_metadata.get("schema_version", 0),
+        "database_sha256": content_metadata.get("database_sha256", ""),
+        "counts": content_metadata.get("counts", {}),
+        "content_policy": content_metadata.get("content_policy", {}),
     }
 
 

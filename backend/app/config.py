@@ -18,6 +18,24 @@ DATABASE_PATH = DATA_DIR / "question_bank.db"
 FRONTEND_DIST = Path(os.environ.get("EPM_FRONTEND_DIST") or (ROOT_DIR / "frontend" / "dist"))
 
 
+def _read_project_metadata(name: str, fallback: str) -> str:
+    """Read release metadata bundled with source and PyInstaller builds."""
+    path = ROOT_DIR / name
+    try:
+        value = path.read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeError):
+        value = fallback
+    return value or fallback
+
+
+APP_VERSION = _read_project_metadata("VERSION", "2.1.3")
+APP_RELEASE_DATE = _read_project_metadata("RELEASE_DATE", "2026-09-13")
+CONTENT_VERSION = _read_project_metadata("CONTENT_VERSION", "content-2026-09-13-r1")
+OFFLINE_CONTENT_VERSION = _read_project_metadata(
+    "OFFLINE_CONTENT_VERSION", "offline-2026-09-13-r1"
+)
+
+
 def ensure_directories() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     UPLOAD_DIR.mkdir(parents=True, exist_ok=True)

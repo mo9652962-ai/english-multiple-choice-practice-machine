@@ -565,12 +565,12 @@ function analysisLabel(unitIds: number[]): string {
       </button>
     </div>
 
-    <!-- v9.28: Gemini batch5 任务3——错题 SRS 今日复习 -->
+    <!-- FSRS：错题与词汇共用遗忘曲线复习队列 -->
     <div v-if="(activeWrongTab === 'srs' || activeWrongTab === 'all') && reviewDue > 0" class="card report-panel freq-card">
       <h3>
         <CalendarDays :size="17" aria-hidden="true" class="icon-h3" />
         今日复习
-        <small class="freq-sub">{{ reviewDue }} 题到期 · 按遗忘曲线排序 · 考前每天巩固</small>
+        <small class="freq-sub">{{ reviewDue }} 题到期 · FSRS 按遗忘曲线排序 · 考前每天巩固</small>
       </h3>
       <div class="freq-grid">
         <button
@@ -584,7 +584,8 @@ function analysisLabel(unitIds: number[]): string {
               <i class="freq-badge" style="background:var(--zhuqing-light,rgba(74,95,78,.12));color:var(--zhuqing,#4A5F4E)">
                 <RefreshCw :size="11" aria-hidden="true" />{{ item.interval }} 天间隔
               </i>
-              <i>ease {{ item.ease }}</i>
+                <i v-if="item.algorithm === 'fsrs'">FSRS</i>
+                <i v-else>旧版调度</i>
               <i v-if="item.wrong_count">错 {{ item.wrong_count }} 次</i>
             </span>
           </span>

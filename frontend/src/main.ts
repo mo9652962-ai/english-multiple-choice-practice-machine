@@ -27,13 +27,6 @@ async function bootstrap() {
   const isNative = !!(window as any).Capacitor?.isNativePlatform
   const offline = await initOfflineMode(isNative)
   if (!offline) setupAutoReload()
-  if (offline) {
-    (window as any).__LINJIAN_STARTUP__ = {
-      active_profile: { id: 1, name: '考研英语一' },
-      paper_count: 0, unit_count: 0, question_count: 0,
-      wrong_count: 0, frequent_count: 0, recent_sessions: [],
-    }
-  }
   createApp(App).use(router).mount('#app')
   // v3.4: 启动动画与 app 挂载联动——加载完才淡出（模仿移动端 splash 过渡）
   // 修复: 本地加载极快时动画一闪而过——最小展示时长 1.8s（快加载也至少看动画）

@@ -156,6 +156,10 @@ class EsqRoundTripTests(unittest.TestCase):
                 "backend.app.main.install_bundled_question_banks",
                 return_value=[],
             ),
+            patch(
+                "backend.app.main.translate_queued_vocabulary",
+                return_value={"translated": 0, "remaining": 0},
+            ),
         ]
         for active_patch in cls.patches:
             active_patch.start()

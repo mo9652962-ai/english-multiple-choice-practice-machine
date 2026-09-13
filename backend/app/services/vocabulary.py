@@ -10,7 +10,8 @@ from typing import Any
 import httpx
 
 from ..database import connect
-from .ai_client import chat_completion, parse_json_response
+from .ai_client import parse_json_response
+from .ai_router import chat_with_routing
 
 
 TERM_RE = re.compile(r"^[A-Za-z][A-Za-z'’-]*(?:\s+[A-Za-z][A-Za-z'’-]*){0,4}$")
@@ -613,8 +614,9 @@ def _translate_vocabulary_batch(
     ]
     expected_ids = {row["id"] for row in rows}
     try:
-        content = chat_completion(
+        content = chat_with_routing(
             connection,
+            "vocab_labeling",
             [
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": json.dumps({"items": items}, ensure_ascii=False)},
@@ -795,8 +797,9 @@ def translate_vocabulary_entry(entry_id: int) -> None:
             },
         }
         try:
-            content = chat_completion(
+            content = chat_with_routing(
                 connection,
+                "vocab_labeling",
                 [
                     {"role": "system", "content": prompt},
                     {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},

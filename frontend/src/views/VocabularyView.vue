@@ -9,6 +9,7 @@ import { sanitizeHtml } from '../services/sanitize'  // v9.24: XSS 防护
 import TtsButton from '../components/TtsButton.vue'
 import DictationMode from '../components/DictationMode.vue'
 import { showToast } from '../services/toast'
+import { trackMetric } from '../services/metrics'
 
 const route = useRoute()
 const router = useRouter()
@@ -206,17 +207,22 @@ async function exportAnki() {
 async function rate(rating: string) {
   if (!reviewWord.value) return
   await post(`/vocabulary/${reviewWord.value.id}/review`, { rating })
+  void trackMetric('vocabulary_review_completed', { rating, question_count: 1 })
   reveal.value = false
   await load()
   if (reviewIndex.value >= reviewItems.value.length) reviewIndex.value = 0
 }
 
-function startReview() {
+async function startReview() {
   filter.value = 'review'
   reviewMode.value = true
   reveal.value = false
   reviewIndex.value = 0
-  load()
+  await load()
+  void trackMetric('vocabulary_review_started', {
+    mode: 'vocabulary',
+    question_count: reviewItems.value.length,
+  })
 }
 
 function startDictation() {
