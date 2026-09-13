@@ -86,13 +86,13 @@ class LearningFlowTests(unittest.TestCase):
         self.assertEqual(release.status_code, 200)
         release_payload = release.json()
         self.assertEqual(release_payload["version"], "2.1.3")
-        self.assertEqual(release_payload["content_version"], "content-2026-09-13-r1")
+        self.assertEqual(release_payload["content_version"], "content-2026-09-14-r1")
         self.assertEqual(release_payload["schema_version"], 2)
         self.assertEqual(release_payload["counts"]["questions"], 1)
         self.assertTrue(release_payload["database_sha256"].startswith("structural:") or len(release_payload["database_sha256"]) == 64)
         version_payload = self.client.get("/api/version").json()
         self.assertEqual(version_payload["version"], "2.1.3")
-        self.assertEqual(version_payload["content_version"], "content-2026-09-13-r1")
+        self.assertEqual(version_payload["content_version"], "content-2026-09-14-r1")
         self.assertEqual(version_payload["schema_version"], 2)
 
         # The dashboard must explain why each task is recommended and how

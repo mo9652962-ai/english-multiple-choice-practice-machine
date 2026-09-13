@@ -30,7 +30,7 @@ class AiRouterQuotaTests(unittest.TestCase):
                 """
             )
             connection.execute(
-                "INSERT INTO ai_usage (task, provider, model, user_id) VALUES (?, ?, ?, ?)",
+                "INSERT INTO ai_usage (task, provider, model, user_id, created_at) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))",
                 ("speaking_practice", "test", "test-model", 7),
             )
             connection.commit()
