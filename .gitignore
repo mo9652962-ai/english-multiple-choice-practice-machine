@@ -30,6 +30,7 @@ outputs/
 scripts/explain_gen/tmp/
 design-system/
 *.db
+examples/internal-banks/
 *.sqlite
 *.sqlite3
 *.bak

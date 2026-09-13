@@ -37,14 +37,16 @@
 
 ## 当前题包状态
 
-当前 release 数据库登记了两个题包：
+当前公开 starter 源目录已替换为两个明确标注的原创 AI 模拟题包。数据库和离线种子属于被 Git 忽略的本地产物，必须在重新导入/重建后才会反映这次替换；在重建前不得使用旧数据库执行发布。
 
 | package_id | 当前状态 | 阻断原因 |
 |---|---|---|
-| `wssfk.postgraduate-english-one.2010-2026` | `pending` | `license.verified`、`source.verified`、人工复核、AI diff、发布抽样证据缺失 |
-| `local.english-practice.postgraduate-english-two.2010-2025` | `pending` | `license.verified`、`source.verified`、人工复核、AI diff、发布抽样证据缺失 |
+| `motei.ai.postgraduate-english-one.sim-2026` | `generated; awaiting database rebuild` | 需重新导入 release/offline 数据库并重新跑严格门禁 |
+| `motei.ai.postgraduate-english-two.sim-2026` | `generated; awaiting database rebuild` | 需重新导入 release/offline 数据库并重新跑严格门禁 |
 
-这些状态来自当前数据库中的 manifest，而不是对来源或许可证的推断。补证据时应更新 ESQ 包的 `manifest.json`，重新导入/构建 release 数据库，然后重新运行发布清单校验；不要直接修改 release 报告绕过门禁。
+原考研英语（一/二）题包已移出公开 starter 目录，保留在本机被忽略的 `examples/internal-banks/` 目录，仅用于内部留档，不进入 PyInstaller、Web 或 APK 资源。它们仍然不能公开分发，也不能作为新模拟题的来源文本。
+
+新模拟题的生成记录与 manifest 证据见：[generated-simulation-provenance-2026-09-14.md](content/generated-simulation-provenance-2026-09-14.md)。这里的项目方授权声明是自建内容的发布决策记录，不是第三方官方授权证明。
 
 本轮已固定两个原始 ESQ 文件的 SHA-256，并建立逐包证据采集台账：[package-provenance-intake-2026-09-13.md](package-provenance-intake-2026-09-13.md)。台账只记录可复核事实和待补材料，不把 `NOASSERTION` 或“本地导出”推断为公开授权。
 
