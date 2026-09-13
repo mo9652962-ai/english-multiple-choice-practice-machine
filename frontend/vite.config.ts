@@ -39,6 +39,27 @@ export default defineConfig({
   build: {
     // Keep a machine-readable graph for CI bundle-budget checks.
     manifest: true,
+    // Keep Vite's warning aligned with the repository's 512/1024 KiB gates.
+    // Heavy speech/Whisper assets are lazy by design; manual chunks keep the
+    // runtime libraries out of the VAD and page chunks where possible.
+    chunkSizeWarningLimit: 1024,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          const normalized = id.replaceAll('\\\\', '/')
+          if (normalized.includes('/node_modules/@huggingface/transformers/')) {
+            return 'speech-transformers'
+          }
+          if (normalized.includes('/node_modules/onnxruntime-web/')) {
+            return 'speech-onnx-runtime'
+          }
+          if (normalized.includes('/node_modules/xsai-transformers/')) {
+            return 'speech-whisper-runtime'
+          }
+          return undefined
+        },
+      },
+    },
   },
   server: {
     port: 5173,
