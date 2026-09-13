@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { get } from '../api'
 import { CheckCircle2, ExternalLink, LoaderCircle, RotateCw, Sparkles } from 'lucide-vue-next'
+import { trackMetric } from '../services/metrics'
 
 // v3.3: 我的墨题——版本号 + 开发时间 + 检查更新
-const APP_VERSION = '2.1.2'
-const RELEASE_DATE = '2026-09-02'
+const APP_VERSION = __APP_VERSION__
+const RELEASE_DATE = __APP_RELEASE_DATE__
+const CONTENT_VERSION = __CONTENT_VERSION__
+const OFFLINE_CONTENT_VERSION = __OFFLINE_CONTENT_VERSION__
 const UPDATE_REPO = 'mo9652962-ai/english-multiple-choice-practice-machine'
 const UPDATE_URL = `https://github.com/${UPDATE_REPO}/releases/latest`
 
@@ -18,6 +21,33 @@ const mirrors = ref<string[]>([])
 const installing = ref(false)
 const apkUrlRef = ref('')
 const apkShaRef = ref('')
+const releaseInfo = ref<any>(null)
+
+async function loadReleaseInfo() {
+  try {
+    releaseInfo.value = await get('/content/version')
+  } catch {
+    // Offline mode still shows compile-time metadata below and can read the
+    // same policy file shipped to Web/Android.
+  }
+  if (!releaseInfo.value?.content_policy?.offline_seed) {
+    try {
+      const response = await fetch('./release-metadata.json', { cache: 'no-store' })
+      if (response.ok) {
+        const payload = await response.json()
+        releaseInfo.value = {
+          ...(releaseInfo.value || {}),
+          ...(payload.metadata || {}),
+          content_policy: payload.content || {},
+        }
+      }
+    } catch {
+      // A broken metadata sidecar must not block the About page.
+    }
+  }
+}
+
+onMounted(() => { void loadReleaseInfo() })
 
 // v3.3: 移动端下载 + SHA-256 校验 + 系统安装器（原生 OpenApkPlugin）
 async function downloadAndInstall() {
@@ -63,8 +93,10 @@ async function downloadAndInstall() {
     const OpenApk = (Capacitor as any).Plugins?.OpenApk
     if (!OpenApk) throw new Error('安装插件不可用')
     await OpenApk.openApk({ filePath: path })
+    void trackMetric('install_succeeded', { source: 'about' })
     result.value = '已下载校验，请按系统提示安装'
   } catch (e) {
+    void trackMetric('install_failed', { source: 'about' })
     result.value = '下载/安装失败：' + String(e).slice(0, 80)
   } finally {
     installing.value = false
@@ -161,6 +193,36 @@ async function checkUpdate() {
           <strong>{{ RELEASE_DATE }}</strong>
         </div>
         <div class="about-row">
+          <span>内容版本</span>
+          <strong>{{ CONTENT_VERSION }}</strong>
+        </div>
+        <div class="about-row">
+          <span>离线种子</span>
+          <strong>{{ OFFLINE_CONTENT_VERSION }}</strong>
+        </div>
+        <div v-if="releaseInfo?.schema_version" class="about-row">
+          <span>数据库 Schema</span>
+          <strong>v{{ releaseInfo.schema_version }}</strong>
+        </div>
+        <div v-if="releaseInfo?.counts?.questions" class="about-row">
+          <span>当前库题目</span>
+          <strong>{{ releaseInfo.counts.questions }}</strong>
+        </div>
+        <div v-if="releaseInfo?.database_sha256" class="about-row">
+          <span>数据库指纹</span>
+          <strong :title="releaseInfo.database_sha256">{{ releaseInfo.database_sha256.slice(0, 12) }}…</strong>
+        </div>
+        <div v-if="releaseInfo?.content_policy?.offline_seed" class="about-policy">
+          <div>
+            <span>离线内容范围</span>
+            <strong>{{ releaseInfo.content_policy.offline_seed.is_complete ? '完整库' : '入门种子库' }}</strong>
+          </div>
+          <div>
+            <span>导出 / 分享</span>
+            <strong>{{ releaseInfo.content_policy.offline_seed.allow_export ? '允许' : '不允许' }} / {{ releaseInfo.content_policy.offline_seed.allow_share ? '允许' : '不允许' }}</strong>
+          </div>
+        </div>
+        <div class="about-row">
           <span>更新通道</span>
           <strong>GitHub Releases</strong>
         </div>
@@ -215,6 +277,9 @@ async function checkUpdate() {
   font-size: 13.5px;
 }
 .about-row span { color: var(--muted); }
+.about-policy { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; max-width: 900px; margin: -4px auto 24px; }
+.about-policy > div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: 10px; background: color-mix(in srgb, var(--primary) 6%, transparent); font-size: 12.5px; text-align: left; }
+.about-policy span { color: var(--muted); }
 .about-check { width: 100%; max-width: 480px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 7px; }
 .about-result {
   display: flex; align-items: center; justify-content: center; gap: 7px;

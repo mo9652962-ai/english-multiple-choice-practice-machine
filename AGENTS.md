@@ -1,6 +1,6 @@
 # 墨题（英语刷题机）· Agent 交接文档
 
-> 供 AI Coding Agent（Hermes/Codex 等）接手时直达根因。最后更新：2026-08-15（P0/P1 AI 诊断落地）。
+> 供 AI Coding Agent（Hermes/Codex 等）接手时直达根因。最后更新：2026-09-13（版本/内容发布门禁、学习闭环与本地指标落地）。
 
 ## 知识库优先规则（2026-09-04 补充，来自「AI不翻知识库」研究）
 
@@ -20,7 +20,7 @@
 | 前端 | Vue 3 + Vite + vue-router（hash）| `frontend/src/`（views/ 每页一个，api.ts 封装 fetch）|
 | 后端 | FastAPI + sqlite3（原生，无 ORM）| `backend/app/`（routers/ + services/）|
 | 数据库 | SQLite，多库 | `backend/data/*.db`（app.db 主库）|
-| 移动端 | Capacitor 8.5 | `frontend/android/`（APK 构建：cap sync → gradlew assembleDebug，JDK21）|
+| 移动端 | Capacitor 8.5 | `frontend/android/`（生成目录，不入库；CI 先 `cap add android` 再 `cap sync` → `gradlew assembleDebug`，JDK21）|
 
 **路由注册**：`backend/app/main.py` 顶部 import + `app.include_router(...)`（prefix 有 `/api` 和 `""` 两种）。
 **数据库迁移**：`backend/app/database.py` 的 `_run_migrations()`——新列用 `_ensure_column(conn, table, column, declaration)`（幂等），新表直接 `CREATE TABLE IF NOT EXISTS`。
@@ -50,8 +50,8 @@
 ### AI 服务层（P1）
 
 - `services/ai_client.py`：OpenAI-compatible 通用客户端（`chat_completion(connection, messages, profile_id=...)`），多 profile（ai_profiles 表：base_url/api_key_encrypted/enabled/is_default/default_model/temperature/max_tokens/**task_tags**/**priority**），内置 429/5xx 重试 + response_format 降级。
-- `services/ai_router.py`（新增）：`chat_with_routing(connection, task, messages)`——按 **task_tags 匹配任务 + priority 升序**轮询候选 profile，失败降级下一个，全失败抛「AI 服务暂不可用」。每次调用记录 `ai_usage` 表（task/provider/tokens/latency/status）。
-- **存量迁移**：wrong_analysis 已改走 `chat_with_routing`；vocabulary/import_assist/question_labeling 仍直连 `chat_completion`（可继续迁）。
+- `services/ai_router.py`（新增）：`chat_with_routing(connection, task, messages)`——按 **task_tags 匹配任务 + priority 升序**轮询候选 profile，失败降级下一个，全失败抛「AI 服务暂不可用」。每次调用记录 `ai_usage` 表（task/provider/tokens/latency/status）。当前任务名包括 `wrong_diagnosis`、`vocab_labeling`、`import_assist`、`question_labeling`、`essay_grading`、`article_generate`、`deep_explain`、`speaking_practice`、`rag_qa`、`similar_questions`、`chat_explain`、`connection_test`、`ocr_fallback`、`agent_analyze` 和 `agent_plan`。
+- **存量迁移**：wrong_analysis、vocabulary、import_assist、question_labeling、essay、deep-explain、speaking、RAG、文章、相似题、聊天和连接测试均走 `chat_with_routing`；新增 AI 任务不得绕过任务路由。
 
 ### 诊断服务（P0）
 
@@ -72,6 +72,21 @@
 5. **前端 get/post**：`frontend/src/api.ts` 导出 `get(path)`/`post(path, body)`；路由在 `frontend/src/router.ts`；图标从 `lucide-vue-next` import 到 App.vue 才能用
 6. **python 直接跑**：`cd backend && python -c "from app.database import connect; conn = connect()"`（get_db 是 generator，迭代后自动关；connect() 手动关）
 7. **vite build 被 Hermes 误判为 server**：用 background 跑；vue-tsc 在 frontend/ 下跑 `npx vue-tsc --noEmit`
+8. **多用户迁移要覆盖新旧库**：`initialize_database()` 必须在 `SCHEMA` 前后都运行 `_migrate_add_user_id()`；旧库需要补列，fresh schema 也必须直接包含 `practice_sessions.user_id`，否则练习和 Dashboard 查询会在测试/首次启动时崩溃。
+9. **发布版本双轨**：程序版本来自 `VERSION`；题库发布版本来自 `CONTENT_VERSION`；Web/Android 离线种子来自 `OFFLINE_CONTENT_VERSION`。不要因为后端扩展库与离线种子 hash 不同就直接覆盖，发布报告必须同时记录两者 hash、schema 和计数。
+10. **Android 生成目录**：`frontend/android/` 是 Capacitor 生成且被忽略的目录；原生插件模板在 `frontend/native/android/`，干净 checkout 后必须执行 `npx cap add android`、`npx cap sync android`、`node scripts/sync_android_plugins.mjs` 和 `node scripts/sync_android_version.mjs`。Capacitor 8 的生成/同步环境固定 Node.js 22+，CI 显式安装 Android SDK 36、Build Tools 36.0.0 和 Emulator，再进行 Gradle 构建、APK 资源校验，以及 `node tools/android_runtime_smoke.mjs` 的 Android Keystore round-trip、安装启动和重启检查。
+11. **AI 任务路由**：错题分析、词汇翻译、导入辅助、题目标注、作文、精讲、口语、RAG、文章、相似题和学习智能体均使用 `services.ai_router.chat_with_routing()`；新增 AI 功能先登记 `KNOWN_TASKS`，再提供结构化输出和无模型回退。`model_pool`/`ai_router` 内部直接调用 `chat_completion` 属于底层实现，不作为业务入口。
+12. **核心流程门禁**：`tests/test_learning_flow.py` 是无私有题库、无 AI 依赖的本地学习闭环冒烟测试；修改练习、错题或词汇接口后必须保留并扩展此类测试。
+13. **指标隐私**：`/api/metrics` 默认关闭；只有用户在设置页明确同意后才记录 allow-list 事件，且只保留次数/短元数据，不记录题目正文、答案或 API Key。关闭同意时清空本地指标。
+14. **前端 bundle/离线门禁**：Vite 构建必须保留 manifest；CI、Windows Release 和 Android CI 统一用 `node tools/check_frontend_bundle.mjs --max-entry-kb 512 --max-lazy-kb 1024` 检查入口 JS 与按需 chunk，并用 `node tools/check_offline_seed.mjs --db frontend/dist/question_bank.db --migrations frontend/dist/offline_migrations.json` 检查离线核心表和迁移清单；VAD/Whisper/ONNX 等按需资源不得回流首屏，继续拆分时必须保持在 1 MB 移动端门禁内。
+15. **题库发布质量门禁**：Release 使用 `tools/release_check.py --strict-quality`（PowerShell 包装器对应 `-StrictQuality`）检查空结构、缺答案、答案不在选项、重复选项标签和重复内容哈希；完形题可不填单题 stem，但必须有整篇 passage。
+16. **错题复习调度**：`spaced_repetition_records.fsrs_*` 是题目复习的事实来源，`interval_days/ease_factor/due_date` 仅为旧客户端兼容字段；诊断推荐完成后应进入 `/review/queue`，不要重新实现一套固定间隔算法。
+17. **AI 本地缓存**：`services.ai_router.chat_with_routing()` 只缓存确定性任务（精讲、标注、导入辅助等），缓存 key 必须包含任务、输入、模型/格式和 user_id；聊天、口语、作文默认不缓存，缓存命中不应消耗每日 provider 配额。
+18. **离线迁移清单**：`frontend/public/offline_migrations.json` 同时包含表、索引和可幂等补列的 `column` 对象；修改离线 schema 后必须运行 `node tools/check_offline_seed.mjs ...` 和 `node tools/check_offline_runtime.mjs ...`，后者覆盖旧库与新库，不能只验证 sqlite_master。
+19. **公开发布证据**：正式 Windows release 强制 `--require-publishable-provenance`；`NOASSERTION`、`pending` 或仅有字段没有核验记录的题包不得公开发布。证据填写边界见 `docs/content-release-evidence.md`，不要为了过门禁虚构许可证、来源或人工审核。
+20. **诊断练习交接**：`diagnostic_report.build_recommendations()` 返回的 `practice_path.question_ids` 是完整可执行题集，前端优先使用它启动针对性练习；`PracticeCreate(mode="random", question_ids=[...])` 必须只序列化这些题，不得退化成整篇；练习提交后应回到 `/review/queue`，旧报告没有该字段时才回退到 `sample_questions`。
+21. **Windows 发布包启动门禁**：后端 exe smoke 不能替代桌面包 smoke；Release 构建 portable 包后必须运行 `scripts/windows_portable_smoke.ps1 -Port 18765`，确认 Electron 实际拉起后端并核对 `/api/health`、程序版本、内容版本和 Schema。Electron 默认端口仍是 8765，smoke 通过 `EPM_PORT` 隔离开发服务；NSIS 安装器在无人值守 CI 中只做产物存在性检查。
+22. **AI 配额统一入口**：`chat` 和 `speaking` 路由不要再手动执行 `check_daily_quota` 或 `record_user_usage`；统一交给 `chat_with_routing()`，否则一次用户请求会被重复计数。缓存命中仍不消耗 provider 配额，新增 AI 入口必须保留 `QuotaExceeded` 到 HTTP 429 的映射。
 
 ## 参考脚本
 
@@ -111,11 +126,11 @@ conn.close()
 
 ## 后续路线
 
-- [ ] 存量调用迁移：vocabulary/import_assist/question_labeling 改走 `chat_with_routing`
+- [x] 存量调用迁移：vocabulary/import_assist/question_labeling 改走 `chat_with_routing`
 - [ ] 本地 Qwen 接入：加 profile（base_url=http://127.0.0.1:8080/v1, task_tags 按任务, priority 调小做本地优先）——注意 8K 上下文不适合长文归因
-- [ ] ai_usage 用量统计 UI（设置页展示每月 token/成本/降级率）
+- [x] ai_usage 用量统计 UI（设置页展示每月 token/失败率/任务分布；配额由统一路由执行）
 - [ ] 诊断报告导出/分享（现在是页面内展示）
-- [ ] 推荐练习闭环：DiagnosticView 推荐题一键进入 PracticeView
+- [x] 推荐练习闭环：DiagnosticView 推荐题一键进入 PracticeView；Dashboard 同步承接最近诊断焦点
 
 ## 验证命令
 
