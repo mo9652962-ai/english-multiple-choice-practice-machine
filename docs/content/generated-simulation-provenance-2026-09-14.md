@@ -11,6 +11,11 @@
 
 生成入口：`tools/generate_ai_simulation_banks.py`。
 
+生成包 SHA-256：
+
+- `postgraduate-english-one.esq`: `D2703F9B0CA9BBDA251843933D3A0CBF456D29FACE5883C837E26B79241C2A93`
+- `postgraduate-english-two.esq`: `9EFF6A673FE02A8552E630954CDBBC3F90E697F49E32838F0FB61C4609F17D00`
+
 生成内容使用项目自有主题种子和模板，不读取原两个 ESQ 包的题干、选项、答案、解析或标签；生成器不引用官方真题、考生回忆文本或本地导出内容。
 
 ## 授权与来源声明
@@ -23,6 +28,9 @@
 ## 质量记录
 
 - ESQ 校验：两个包均 `valid=true`，各 6 套、18 个单元、90 道题，错误数为 0。
+- 重建后的 release 数据库：48 套试卷、133 个单元、827 道题，SHA-256 为 `5BF7A80FE70B1902A2536D83A76D6BBEBCDFA5F89DED90D3621E35E625C77397`。
+- 重建后的 offline 数据库：48 套试卷、133 个单元、827 道题，SHA-256 为 `D385CA1A72527C2FE398CCEA20C1F62A9C3085345379EE528F7498B874331F95`。
+- 严格 `release_check`：退出码 `0`，`packages_not_publishable=0`，报告见 `work/release-manifest-simulated-full.json`。
 - 答案映射：每道题均有答案，答案选项均存在于对应选项集合。
 - 题型覆盖：每包包含 `cloze`、`reading`、`part_b` 三类单元。
 - 抽样复核：每包抽查 12 道题，检查题干、选项、答案映射和“AI 模拟·非真题”标识。
