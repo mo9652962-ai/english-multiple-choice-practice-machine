@@ -26,7 +26,7 @@ if (Test-Path -LiteralPath $venvPython) {
 } elseif (Get-Command uv -ErrorAction SilentlyContinue) {
   $uv = "uv"
 } else {
-  throw "未找到 Python 或 uv。请先按 README 创建 .venv，或安装 Python 3.11+。"
+  throw "Python or uv was not found. Create .venv from README or install Python 3.11+."
 }
 
 $scriptArgs = @((Join-Path $projectRoot "tools\release_check.py"))
