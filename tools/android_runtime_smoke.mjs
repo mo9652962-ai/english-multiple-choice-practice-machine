@@ -52,7 +52,7 @@ function adb(args, { allowFailure = false } = {}) {
     return execFileSync(options.adb, args, {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'pipe'],
-      timeout: 120_000,
+      timeout: args[0] === 'devices' ? 10_000 : 120_000,
     }).replaceAll('\r\n', '\n')
   } catch (error) {
     const stdout = String(error.stdout || '')
@@ -144,8 +144,21 @@ async function exerciseOfflineLaunch() {
 }
 
 let failure = null
+let deviceConnected = false
 try {
   const expectedVersion = readFileSync(options.versionFile, 'utf8').trim()
+  const devices = adb(['devices', '-l'], { allowFailure: true })
+  writeEvidence('devices.txt', devices)
+  const hasUsableDevice = devices
+    .split('\n')
+    .some((line) => /\tdevice\b/.test(line))
+  if (!hasUsableDevice) {
+    throw new Error(
+      'No Android device or emulator is connected. Connect a device, boot an emulator, and rerun this smoke test.\n'
+      + devices.trim(),
+    )
+  }
+  deviceConnected = true
   adb(['wait-for-device'])
   adb(['install', '-r', options.apk])
   const packageInfo = adb(['shell', 'dumpsys', 'package', options.packageName])
@@ -181,9 +194,11 @@ try {
 } catch (error) {
   failure = error
 } finally {
-  writeEvidence('package.txt', adb(['shell', 'dumpsys', 'package', options.packageName], { allowFailure: true }))
-  writeEvidence('activities.txt', adb(['shell', 'dumpsys', 'activity', 'activities'], { allowFailure: true }))
-  writeEvidence('logcat.txt', adb(['logcat', '-d'], { allowFailure: true }))
+  if (deviceConnected) {
+    writeEvidence('package.txt', adb(['shell', 'dumpsys', 'package', options.packageName], { allowFailure: true }))
+    writeEvidence('activities.txt', adb(['shell', 'dumpsys', 'activity', 'activities'], { allowFailure: true }))
+    writeEvidence('logcat.txt', adb(['logcat', '-d'], { allowFailure: true }))
+  }
 }
 
 if (failure) {
