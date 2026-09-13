@@ -26,6 +26,32 @@ class BundledQuestionBankTests(unittest.TestCase):
             active_patch.stop()
         self.temp.cleanup()
 
+    def test_public_bundled_packages_are_explicit_ai_simulations(self) -> None:
+        from backend.app.services.esq import load_esq_package
+
+        expected = {
+            "postgraduate-english-one.esq": "motei.ai.postgraduate-english-one.sim-2026",
+            "postgraduate-english-two.esq": "motei.ai.postgraduate-english-two.sim-2026",
+        }
+        for filename, package_id in expected.items():
+            package = load_esq_package(BUNDLED_BANK_DIR / filename)
+            manifest = package["manifest"]
+            self.assertEqual(manifest["packageId"], package_id)
+            self.assertIn("AI 模拟", manifest["title"])
+            self.assertIn("非真题", manifest["title"])
+            self.assertEqual(manifest["source"]["type"], "ai_generated")
+            self.assertTrue(manifest["license"]["verified"])
+            self.assertTrue(manifest["source"]["verified"])
+            self.assertEqual(manifest["review"]["status"], "reviewed")
+            self.assertIn(
+                manifest["ai_assist"]["diff_status"],
+                {"recorded", "not_applicable"},
+            )
+            self.assertIn(
+                manifest["quality"]["release_sample"]["status"],
+                {"passed", "reviewed"},
+            )
+
     def test_first_launch_installs_both_banks_and_is_idempotent(self) -> None:
         from backend.app.database import (
             connect,
@@ -39,8 +65,8 @@ class BundledQuestionBankTests(unittest.TestCase):
         initialize_database()
         first = install_bundled_question_banks()
         self.assertEqual([item["status"] for item in first], ["installed", "installed"])
-        self.assertEqual([item["questionCount"] for item in first], [765, 720])
-        self.assertEqual([item["labelsImported"] for item in first], [765, 720])
+        self.assertEqual([item["questionCount"] for item in first], [90, 90])
+        self.assertEqual([item["labelsImported"] for item in first], [0, 0])
 
         with connect() as connection:
             profiles = {
@@ -49,7 +75,7 @@ class BundledQuestionBankTests(unittest.TestCase):
                     "SELECT id, name FROM question_bank_profiles WHERE deleted_at IS NULL"
                 )
             }
-            expected = {"考研英语一": (17, 765), "考研英语二": (16, 720)}
+            expected = {"考研英语一": (6, 90), "考研英语二": (6, 90)}
             for profile_name, (paper_count, question_count) in expected.items():
                 profile_id = profiles[profile_name]
                 actual_papers = connection.execute(
@@ -91,7 +117,7 @@ class BundledQuestionBankTests(unittest.TestCase):
                     row["name"]: (int(row["total"]), int(row["locked"]))
                     for row in label_counts
                 },
-                {"考研英语一": (765, 90), "考研英语二": (720, 720)},
+                {"考研英语一": (0, 0), "考研英语二": (0, 0)},
             )
 
         second = install_bundled_question_banks()
@@ -100,8 +126,8 @@ class BundledQuestionBankTests(unittest.TestCase):
             ["already_installed", "already_installed"],
         )
         with connect() as connection:
-            self.assertEqual(connection.execute("SELECT COUNT(*) AS count FROM papers").fetchone()["count"], 33)
-            self.assertEqual(connection.execute("SELECT COUNT(*) AS count FROM questions").fetchone()["count"], 1485)
+            self.assertEqual(connection.execute("SELECT COUNT(*) AS count FROM papers").fetchone()["count"], 12)
+            self.assertEqual(connection.execute("SELECT COUNT(*) AS count FROM questions").fetchone()["count"], 180)
 
     def test_existing_user_paper_is_not_replaced(self) -> None:
         from backend.app.database import connect, initialize_database
@@ -142,7 +168,7 @@ class BundledQuestionBankTests(unittest.TestCase):
                     "SELECT COUNT(*) AS count FROM papers WHERE profile_id = ?",
                     (profile_id,),
                 ).fetchone()["count"],
-                17,
+                7,
             )
 
 

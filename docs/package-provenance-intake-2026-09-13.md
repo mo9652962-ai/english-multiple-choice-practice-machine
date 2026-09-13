@@ -6,8 +6,8 @@
 
 | package_id | ESQ 文件 | contentVersion | SHA-256 | 当前声明 |
 |---|---|---:|---|---|
-| `wssfk.postgraduate-english-one.2010-2026` | `examples/bundled-banks/postgraduate-english-one.esq` | `1.0.0` | `EDE30FAE65F2FBAB53C830BA39EF618E5E82F0FA7EBC789D363093C5C1B47075` | `license.spdx=NOASSERTION`；`source.type=candidate_recollection`；考生回忆整理、非官方发布 |
-| `local.english-practice.postgraduate-english-two.2010-2025` | `examples/bundled-banks/postgraduate-english-two.esq` | `1.1.1` | `D25AC946FA0543A61BEB88EB02664D1E3A55EB819632667603268A6346FE2E83` | `license.spdx=NOASSERTION`；`source.type=local_export`；从本地题库导出 |
+| `wssfk.postgraduate-english-one.2010-2026` | `examples/internal-banks/postgraduate-english-one-candidate-recollection-2026-09-13.esq` | `1.0.0` | `EDE30FAE65F2FBAB53C830BA39EF618E5E82F0FA7EBC789D363093C5C1B47075` | `license.spdx=NOASSERTION`；`source.type=candidate_recollection`；考生回忆整理、非官方发布；仅本机留档 |
+| `local.english-practice.postgraduate-english-two.2010-2025` | `examples/internal-banks/postgraduate-english-two-local-export-2026-09-13.esq` | `1.1.1` | `D25AC946FA0543A61BEB88EB02664D1E3A55EB819632667603268A6346FE2E83` | `license.spdx=NOASSERTION`；`source.type=local_export`；从本地题库导出；仅本机留档 |
 
 ## 两个题包都必须补齐的证据
 
