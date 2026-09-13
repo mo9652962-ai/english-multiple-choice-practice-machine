@@ -41,10 +41,12 @@
 
 | package_id | 当前状态 | 阻断原因 |
 |---|---|---|
-| `motei.ai.postgraduate-english-one.sim-2026` | `generated; awaiting database rebuild` | 需重新导入 release/offline 数据库并重新跑严格门禁 |
-| `motei.ai.postgraduate-english-two.sim-2026` | `generated; awaiting database rebuild` | 需重新导入 release/offline 数据库并重新跑严格门禁 |
+| `motei.ai.postgraduate-english-one.sim-2026` | `verified in current local release seed` | 后续内容变更仍需重新跑严格门禁 |
+| `motei.ai.postgraduate-english-two.sim-2026` | `verified in current local release seed` | 后续内容变更仍需重新跑严格门禁 |
 
 原考研英语（一/二）题包已移出公开 starter 目录，保留在本机被忽略的 `examples/internal-banks/` 目录，仅用于内部留档，不进入 PyInstaller、Web 或 APK 资源。它们仍然不能公开分发，也不能作为新模拟题的来源文本。
+
+2026-09-14 已完成 release/offline 数据库重建：严格 `release_check` 退出码为 `0`，`packages_not_publishable=0`，前后端题库均不再登记两个旧 package ID。
 
 新模拟题的生成记录与 manifest 证据见：[generated-simulation-provenance-2026-09-14.md](content/generated-simulation-provenance-2026-09-14.md)。这里的项目方授权声明是自建内容的发布决策记录，不是第三方官方授权证明。
 
