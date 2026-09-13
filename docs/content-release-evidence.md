@@ -46,6 +46,8 @@
 
 这些状态来自当前数据库中的 manifest，而不是对来源或许可证的推断。补证据时应更新 ESQ 包的 `manifest.json`，重新导入/构建 release 数据库，然后重新运行发布清单校验；不要直接修改 release 报告绕过门禁。
 
+本轮已固定两个原始 ESQ 文件的 SHA-256，并建立逐包证据采集台账：[package-provenance-intake-2026-09-13.md](package-provenance-intake-2026-09-13.md)。台账只记录可复核事实和待补材料，不把 `NOASSERTION` 或“本地导出”推断为公开授权。
+
 发布清单中的离线库 `schema_version` 使用 `content-manifest.json` 声明的应用 Schema；同时保留 `physical_schema_version`，用于表示该离线 SQLite 文件是否包含后端迁移表。离线种子由前端迁移清单管理，因此不能把物理迁移表缺失误判为应用 Schema 未声明。
 
 ## 建议的证据记录格式
