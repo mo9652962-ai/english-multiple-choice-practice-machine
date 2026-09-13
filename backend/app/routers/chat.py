@@ -152,7 +152,12 @@ async def _run_ai_reply(
     connection = connect()
     chunks: list[str] = []
     try:
-        async for chunk in stream_ai_reply(connection, recent_messages, user_message):
+        async for chunk in stream_ai_reply(
+            connection,
+            recent_messages,
+            user_message,
+            user_id=user_id,
+        ):
             chunks.append(chunk)
             await _broadcast(
                 {

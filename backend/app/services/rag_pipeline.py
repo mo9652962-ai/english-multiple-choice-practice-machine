@@ -7,7 +7,7 @@ import re
 import sqlite3
 from typing import Any
 
-from .ai_client import chat_completion, embed_texts
+from .ai_client import embed_texts
 
 
 def split_text(text: str, chunk_size: int = 500, overlap: int = 50) -> list[str]:
@@ -224,7 +224,9 @@ def answer_from_knowledge(
         },
         {"role": "user", "content": question.strip()},
     ]
-    answer = chat_completion(connection, messages)
+    from .ai_router import chat_with_routing
+
+    answer = chat_with_routing(connection, "rag_qa", messages, user_id=user_id)
     sources = [
         {
             "source_name": result["source_name"],

@@ -94,13 +94,6 @@
 import { FileText, Hand, Headphones, Mic, Sparkles, Volume2 } from 'lucide-vue-next'
 import { onBeforeUnmount, ref } from 'vue'
 import { get, post } from '../api'
-import { VADAudioManager } from '../libs/vad/manager'
-import { createVAD } from '../libs/vad/vad'
-import { toWav } from '../libs/vad/wav'
-import workletUrl from '../libs/vad/process.worklet?worker&url'
-import { createTranscriptionProvider } from 'xsai-transformers'
-import transcriptionWorkerURL from 'xsai-transformers/transcription/worker?worker&url'
-import { generateTranscription } from '@xsai/generate-transcription'
 
 const scenarios = [
   { id: 'graduate_interview', label: '考研复试仿真', desc: '个人陈述 / 专业问答 / 时事抽题', stamp: '复试' },
@@ -151,16 +144,26 @@ function toggleListen() {
 const autoMode = ref(false)
 const offlineMode = ref(false)
 const offlineBusy = ref(false)
-let vadManager: VADAudioManager | null = null
+let vadManager: {
+  initialize: (workletUrl: string) => Promise<void>
+  startMicrophone: () => Promise<void>
+  stop: () => void
+} | null = null
 let vadStarted = false
 
 // 离线 Whisper provider（懒初始化——首次使用时加载模型）
-let offlineTranscriber: ReturnType<typeof createTranscriptionProvider> | null = null
+let offlineTranscriber: any = null
 
 async function transcribeOffline(buffer: Float32Array): Promise<string> {
+  const [{ createTranscriptionProvider }, { generateTranscription }, { toWav }, worker] = await Promise.all([
+    import('xsai-transformers'),
+    import('@xsai/generate-transcription'),
+    import('../libs/vad/wav'),
+    import('xsai-transformers/transcription/worker?worker&url'),
+  ])
   if (!offlineTranscriber) {
     offlineTranscriber = createTranscriptionProvider({
-      baseURL: `xsai-transformers:///?worker-url=${transcriptionWorkerURL}`,
+      baseURL: `xsai-transformers:///?worker-url=${worker.default}`,
     })
   }
   // Float32Array → WAV Blob（16kHz 单声道）
@@ -177,6 +180,11 @@ async function startAutoMode() {
   if (!recognition && !offlineMode.value) { alert('当前环境不支持语音识别，请使用手动模式'); return }
   autoMode.value = true
   try {
+    const [{ VADAudioManager }, { createVAD }, worklet] = await Promise.all([
+      import('../libs/vad/manager'),
+      import('../libs/vad/vad'),
+      import('../libs/vad/process.worklet?worker&url'),
+    ])
     const vad = await createVAD({
       sampleRate: 16000,
       speechThreshold: 0.3,
@@ -217,7 +225,7 @@ async function startAutoMode() {
       })
     }
     vadManager = new VADAudioManager(vad)
-    await vadManager.initialize(workletUrl)
+    await vadManager.initialize(worklet.default)
     await vadManager.startMicrophone()
   } catch (e) {
     console.warn('[VAD] 初始化失败，降级为手动模式:', e)

@@ -6,7 +6,8 @@ import uuid
 from typing import Any
 
 from ..database import get_active_profile_id
-from .ai_client import chat_completion, get_ai_profile, parse_json_response
+from .ai_client import get_ai_profile, parse_json_response
+from .ai_router import chat_with_routing
 
 
 LABEL_PROMPT = """
@@ -223,8 +224,9 @@ def _request_labels(
             ),
         },
     ]
-    raw = chat_completion(
+    raw = chat_with_routing(
         connection,
+        "question_labeling",
         messages,
         response_format={"type": "json_object"},
         profile_id=profile_id,
