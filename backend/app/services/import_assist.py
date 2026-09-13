@@ -9,7 +9,8 @@ from typing import Any
 
 from pypdf import PdfReader
 
-from .ai_client import chat_completion, parse_json_response
+from .ai_client import parse_json_response
+from .ai_router import chat_with_routing
 from .docx_parser import (
     apply_answers_to_draft,
     extract_blocks,
@@ -169,8 +170,9 @@ def detect_document_papers(
 {"paper_count":3,"papers":[{"title":"...","year":2019,"month":6,"set_number":1,
 "start_block":0,"end_block":220,"objective_start_block":27,
 "objective_end_block":228,"has_objective_questions":true}],"notes":""}"""
-    raw = chat_completion(
+    raw = chat_with_routing(
         connection,
+        "import_assist",
         [
             {"role": "system", "content": prompt},
             {
@@ -310,8 +312,9 @@ answer_map 的值只能是单个字母 A-O，或判断题使用 T/F；没有把�
         "answer_text": answer_text,
         "draft_summary": _draft_summary(draft),
     }
-    raw = chat_completion(
+    raw = chat_with_routing(
         connection,
+        "import_assist",
         [
             {"role": "system", "content": prompt},
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
@@ -377,8 +380,9 @@ CET 听力原文和题干通常不在试卷中：passage 与 stem 留空，准�
 段落匹配：passage 保留完整文章，shared_data.paragraphs 保存 A-K 段落，36-45 的 stem 是十条陈述，options 为 A-K。
 阅读理解：passage 只放本篇文章，完整抄录五道题干与 A-D 选项。
 答案只能从材料的标准答案区获取；没有可靠答案时 answer 留空。"""
-    raw = chat_completion(
+    raw = chat_with_routing(
         connection,
+        "import_assist",
         [
             {"role": "system", "content": prompt},
             {

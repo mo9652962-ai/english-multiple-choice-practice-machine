@@ -137,7 +137,8 @@ def deep_explain_question(
         (question_id,),
     ).fetchall()
     from prompts.explain_prompt import DEEP_EXPLAIN_SYSTEM_PROMPT
-    from ..services.ai_client import chat_completion, parse_json_response
+    from ..services.ai_client import parse_json_response
+    from ..services.ai_router import chat_with_routing
 
     user_prompt = (
         "题目：{}\n\n"
@@ -154,13 +155,15 @@ def deep_explain_question(
         question["answer"],
         (question["passage"] or "")[:4000],
     )
-    raw = chat_completion(
+    raw = chat_with_routing(
         connection,
+        "deep_explain",
         [
             {"role": "system", "content": DEEP_EXPLAIN_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
         response_format={"type": "json_object"},
+        user_id=user["id"] if user else None,
     )
     try:
         parsed = parse_json_response(raw)

@@ -7,8 +7,8 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from typing import Any
 
-from .ai_client import chat_completion, get_ai_profile, parse_json_response
-from .ai_router import check_daily_quota, record_user_usage
+from .ai_client import parse_json_response
+from .ai_router import chat_with_routing
 from .diagnostic_report import build_recommendations, generate_diagnostic_report
 from .review import count_due
 
@@ -223,36 +223,17 @@ def _call_agent_llm(
     messages: list[dict[str, str]],
     *,
     user_id: int | None,
-    tier: str,
 ) -> Any:
-    check_daily_quota(connection, user_id, task)
-    profile = get_ai_profile(connection)
-    # 未配置远程密钥时直接走规则兜底；本机 Ollama 等兼容服务允许无 Key。
-    if not profile.get("has_api_key") and not str(profile.get("base_url", "")).lower().startswith(("http://127.0.0.1", "http://localhost", "http://[::1]")):
-        raise ValueError("尚未配置可用的 AI API Key")
-    usage: dict[str, int] = {}
     try:
-        def call(model: str) -> str:
-            return chat_completion(
-                connection,
-                messages,
-                response_format={"type": "json_object"},
-                profile_id=int(profile["id"]),
-                model=model,
-                usage_out=usage,
-            )
-
-        # 使用 model_pool 的回调接口，确保每个模型都调用现有 chat_completion。
-        from .model_pool import completions_with_fallback
-        result = completions_with_fallback(tier, call, connection)  # type: ignore[arg-type]
-        record_user_usage(
-            connection, user_id, task, profile.get("name", "model-pool"), result["model"],
-            prompt_tokens=usage.get("prompt_tokens", 0),
-            completion_tokens=usage.get("completion_tokens", 0),
+        response = chat_with_routing(
+            connection,
+            task,
+            messages,
+            response_format={"type": "json_object"},
+            user_id=user_id,
         )
-        return parse_json_response(str(result["data"]))
+        return parse_json_response(response)
     except Exception as error:
-        record_user_usage(connection, user_id, task, profile.get("name", "model-pool"), "", status="fallback", error=str(error))
         raise
 
 
@@ -272,7 +253,7 @@ def analyze(
             {"role": "user", "content": _json(context)},
         ]
         try:
-            result = _call_agent_llm(connection, "agent_analyze", messages, user_id=user_id, tier="high")
+            result = _call_agent_llm(connection, "agent_analyze", messages, user_id=user_id)
             if not isinstance(result, dict):
                 raise ValueError("模型分析结果不是 JSON 对象")
             findings = result.get("findings") if isinstance(result.get("findings"), list) else []
@@ -285,7 +266,44 @@ def analyze(
 
 
 def _fallback_plan(analysis: dict[str, Any]) -> list[dict[str, Any]]:
-    return []
+    """Create safe, deterministic actions when the planner model is unavailable.
+
+    These actions are deliberately limited to existing read/report flows. They
+    are recorded for user review and never mutate the question bank silently.
+    """
+    findings = analysis.get("findings") if isinstance(analysis, dict) else []
+    findings = findings if isinstance(findings, list) else []
+    actions: list[dict[str, Any]] = []
+    has_weak_type = any(
+        isinstance(item, dict) and item.get("type") == "weak_type"
+        for item in findings
+    )
+    has_wrong_questions = any(
+        isinstance(item, dict) and item.get("type") == "wrong_questions"
+        for item in findings
+    )
+    if has_wrong_questions:
+        actions.append({
+            "type": "GENERATE_REPORT",
+            "priority": "high",
+            "reason": "存在待巩固错题，先生成可追踪的错题诊断报告",
+            "detail": "复盘高频错题并查看错误原因；报告生成前不会修改题库内容。",
+        })
+    if has_weak_type:
+        actions.append({
+            "type": "RECOMMEND_QUESTIONS",
+            "priority": "normal",
+            "reason": "存在正确率偏低的题型，推荐同题型练习",
+            "detail": "从当前题库中筛选未完成的同题型练习，完成后回到错题复盘。",
+        })
+    if not actions:
+        actions.append({
+            "type": "ENCOURAGE",
+            "priority": "low",
+            "reason": "当前没有足够的异常信号生成专项行动",
+            "detail": "保持学习节奏，积累更多作答记录后再次运行智能体。",
+        })
+    return actions[:5]
 
 
 def plan(
@@ -293,7 +311,7 @@ def plan(
     connection: sqlite3.Connection | None = None,
     user_id: int | None = None,
 ) -> list[dict[str, Any]]:
-    """让 LLM 生成受白名单约束的行动列表；失败返回空列表。"""
+    """让 LLM 生成受白名单约束的行动列表；失败时使用规则型安全回退。"""
     owns_connection = connection is None
     if connection is None:
         from ..database import connect
@@ -304,7 +322,7 @@ def plan(
             {"role": "user", "content": _json(analysis)},
         ]
         try:
-            result = _call_agent_llm(connection, "agent_plan", messages, user_id=user_id, tier="low")
+            result = _call_agent_llm(connection, "agent_plan", messages, user_id=user_id)
             actions = result.get("actions") if isinstance(result, dict) else result
             if not isinstance(actions, list):
                 raise ValueError("模型计划结果不是数组")

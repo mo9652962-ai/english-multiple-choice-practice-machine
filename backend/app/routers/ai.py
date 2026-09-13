@@ -10,7 +10,8 @@ from fastapi import APIRouter, Depends, HTTPException
 logger = logging.getLogger(__name__)
 
 from ..database import get_db
-from ..services.ai_router import QuotaExceeded, check_daily_quota, record_user_usage
+from ..services.ai_router import QuotaExceeded
+from ..services.ai_router import chat_with_routing
 from .auth import get_current_user, maybe_require_user
 
 
@@ -44,7 +45,6 @@ from ..schemas import (
 )
 from ..security import protect_text
 from ..services.ai_client import (
-    chat_completion,
     ensure_ai_model_catalog,
     get_ai_profile,
     get_ai_settings,
@@ -210,8 +210,9 @@ def test_connection(
 ) -> dict:
     # v9.31: 挂 maybe_require_user（EPM_AUTH=1 时防匿名触发真实 AI 调用烧 key）
     try:
-        content = chat_completion(
+        content = chat_with_routing(
             connection,
+            "connection_test",
             [
                 {
                     "role": "user",
@@ -494,8 +495,9 @@ def test_profile(
     connection: sqlite3.Connection = Depends(get_db),
 ) -> dict:
     try:
-        content = chat_completion(
+        content = chat_with_routing(
             connection,
+            "connection_test",
             [{"role": "user", "content": "只回复“连接成功”，不要补充其他内容。"}],
             profile_id=profile_id,
             model=request.model,
@@ -637,23 +639,17 @@ def chat(
     )
     if profile["system_prompt"].strip():
         system_prompt += "\n" + profile["system_prompt"].strip()
-    # v9.32: 每日配额检查（多人模式 EPM_AUTH=1 + EPM_AI_DAILY_QUOTA>0 时生效）
-    # 通过即记录（调用前计数——失败也计，防无限重试绕过）
     try:
-        check_daily_quota(connection, user_id, "chat")
-        record_user_usage(
-            connection, user_id, "chat",
-            provider=profile["name"], model=request.model,
-        )
-    except QuotaExceeded as exc:
-        raise HTTPException(429, str(exc)) from exc
-    try:
-        content = chat_completion(
+        content = chat_with_routing(
             connection,
+            "chat_explain",
             [{"role": "system", "content": system_prompt}, *messages],
             profile_id=request.profile_id,
             model=request.model,
+            user_id=user_id,
         )
+    except QuotaExceeded as error:
+        raise HTTPException(429, str(error)) from error
     except (ValueError, LookupError, httpx.HTTPError) as error:
         raise HTTPException(400, f"对话失败：{error}") from error
 
@@ -1158,8 +1154,9 @@ def suggest_correction(
 }
 """
     try:
-        content = chat_completion(
+        content = chat_with_routing(
             connection,
+            "import_assist",
             [
                 {"role": "system", "content": system_prompt},
                 {

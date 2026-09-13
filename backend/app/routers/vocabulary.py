@@ -39,6 +39,12 @@ def create_entry(
         result = add_vocabulary(connection, request.model_dump(), user["id"] if user else None)
     except ValueError as error:
         raise HTTPException(400, str(error)) from error
+    from ..services.metrics import record_event
+    record_event(
+        connection,
+        "vocabulary_added",
+        user_id=user["id"] if user else None,
+    )
     return result
 
 
@@ -385,10 +391,18 @@ def submit_review(
         if row is None:
             raise HTTPException(404, "单词不存在或无权访问")
     try:
-        return review_entry(
+        result = review_entry(
             connection, entry_id, request.rating,
             user_id=user["id"] if user else None,
         )
+        from ..services.metrics import record_event
+        record_event(
+            connection,
+            "vocabulary_review_completed",
+            user_id=user["id"] if user else None,
+            detail={"rating": request.rating},
+        )
+        return result
     except LookupError as error:
         raise HTTPException(404, str(error)) from error
 

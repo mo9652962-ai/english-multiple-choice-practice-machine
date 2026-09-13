@@ -16,7 +16,7 @@ from __future__ import annotations
 import json, sqlite3
 from typing import Any
 
-from .ai_client import chat_completion
+from .ai_router import chat_with_routing
 
 
 ARTICLE_PROMPTS = {
@@ -95,9 +95,11 @@ def generate_article(
     prompt = ARTICLE_PROMPTS[topic].format(words=word_list)
     
     try:
-        article = chat_completion(
+        article = chat_with_routing(
             connection,
+            "article_generate",
             messages=[{"role": "user", "content": prompt}],
+            user_id=user_id,
             max_tokens=800,
         )
     except Exception as e:
