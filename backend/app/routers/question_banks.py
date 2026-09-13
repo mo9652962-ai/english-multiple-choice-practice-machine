@@ -244,6 +244,12 @@ def publish_question_bank(
         question_count = sum(
             int(item.get("questionCount", 0) or 0) for item in published_papers
         )
+        from ..services.metrics import record_event
+        record_event(
+            connection,
+            "import_succeeded",
+            detail={"source": "esq", "question_count": question_count},
+        )
         return {
             "published": True,
             **result,

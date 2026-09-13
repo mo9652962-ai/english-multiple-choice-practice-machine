@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "version": "2.1.3",
+    "release_date": "2026-09-13",
+    "mirrors": {
+      "frontend/package.json": "2.1.3",
+      "frontend/package-lock.json": "2.1.3",
+      "electron/package.json": "2.1.3",
+      "electron/package-lock.json": "2.1.3"
+    },
+    "mismatches": {},
+    "shared_metadata": {
+      "path": "frontend\\public\\release-metadata.json",
+      "status": "verified",
+      "metadata": {
+        "version": "2.1.3",
+        "release_date": "2026-09-13",
+        "content_version": "content-2026-09-13-r1",
+        "offline_seed_version": "offline-2026-09-13-r1",
+        "schema_version": 2
+      }
+    },
+    "android_metadata": {
+      "path": "frontend\\android\\app\\build.gradle",
+      "status": "verified"
+    },
+    "content_version": "content-2026-09-13-r1",
+    "offline_seed_version": "offline-2026-09-13-r1",
+    "schema_version": 2,
+    "policy": {
+      "schema_version": 2,
+      "release": {
+        "scope": "backend/data/question_bank.db 的开发/授权范围内扩展库",
+        "source_policy": "题库正文按来源和授权独立管理；未标记为已核验的内容不得自动宣称为正式真题",
+        "license_status": "per_package_manifest_required",
+        "is_complete": false,
+        "upgrade_policy": "versioned_replace_only",
+        "allow_export": true,
+        "allow_share": true
+      },
+      "offline_seed": {
+        "scope": "frontend/public/question_bank.db 的 Web/Android 离线入门种子库；不保证与发布库内容完全相同",
+        "source_policy": "仅包含可随应用分发的离线内容；完整性以离线库 hash 和计数为准",
+        "license_status": "per_package_manifest_required",
+        "is_complete": false,
+        "upgrade_policy": "explicit_seed_version_only",
+        "allow_export": false,
+        "allow_share": false
+      },
+      "share_policy": {
+        "package_format": "ESQ",
+        "include": [
+          "题库内容",
+          "来源与授权元数据"
+        ],
+        "exclude": [
+          "个人练习记录",
+          "错题",
+          "词汇本",
+          "API 配置"
+        ]
+      },
+      "quality_policy": {
+        "manual_review_required": true,
+        "ai_diff_required": true,
+        "release_sample_required": true,
+        "publishable_provenance_requires_verified_license": true
+      }
+    },
+    "source_revision": ""
+  },
+  "databases": {
+    "release": {
+      "path": "backend\\data\\question_bank.db",
+      "sha256": "9a8cbae94e21261ac90d130bd35d7e34c8539802333e30c2eca2cdd9f1e3514e",
+      "schema_version": 2,
+      "physical_schema_version": 2,
+      "schema_version_source": "schema_migrations",
+      "counts": {
+        "papers": 69,
+        "units": 295,
+        "questions": 2132,
+        "options": 11015,
+        "vocabulary_entries": 7958,
+        "vocabulary_examples": 0
+      },
+      "quality": {
+        "papers_without_units": 0,
+        "units_without_questions": 0,
+        "questions_without_options": 0,
+        "questions_without_stem": 0,
+        "questions_without_answer": 0,
+        "questions_with_invalid_answer": 0,
+        "questions_with_duplicate_option_labels": 0,
+        "duplicate_content_hash_groups": 0,
+        "questions_without_content_hash": 0,
+        "units_with_unknown_type": 0,
+        "questions_with_unknown_type": 0,
+        "questions_with_insufficient_options": 0,
+        "explanations_invalid_json": 0,
+        "explanations_without_correct_analysis": 0,
+        "explanations_answer_mismatch": 0,
+        "papers_with_source_metadata": 38,
+        "package_provenance": {
+          "packages_total": 2,
+          "packages_with_complete_provenance": 2,
+          "packages_without_provenance": 0,
+          "missing": [],
+          "packages_publishable": 0,
+          "packages_not_publishable": 2,
+          "not_publishable": [
+            {
+              "package_id": "wssfk.postgraduate-english-one.2010-2026",
+              "missing": "license.verified,source.verified,review.status,ai_assist.diff_status,quality.release_sample"
+            },
+            {
+              "package_id": "local.english-practice.postgraduate-english-two.2010-2025",
+              "missing": "license.verified,source.verified,review.status,ai_assist.diff_status,quality.release_sample"
+            }
+          ]
+        }
+      }
+    },
+    "offline": {
+      "path": "frontend\\public\\question_bank.db",
+      "sha256": "c4dee705777e7dd67d5845e64f3ad0574d01c77947f42817a2205f6b413b8f97",
+      "schema_version": 2,
+      "physical_schema_version": 0,
+      "schema_version_source": "content-manifest",
+      "counts": {
+        "papers": 36,
+        "units": 97,
+        "questions": 647,
+        "options": 4590,
+        "vocabulary_entries": 7958,
+        "vocabulary_examples": 0
+      },
+      "quality": {
+        "papers_without_units": 0,
+        "units_without_questions": 0,
+        "questions_without_options": 0,
+        "questions_without_stem": 0,
+        "questions_without_answer": 0,
+        "questions_with_invalid_answer": 0,
+        "questions_with_duplicate_option_labels": 0,
+        "duplicate_content_hash_groups": 0,
+        "questions_without_content_hash": 0,
+        "units_with_unknown_type": 0,
+        "questions_with_unknown_type": 0,
+        "questions_with_insufficient_options": 0,
+        "explanations_invalid_json": 0,
+        "explanations_without_correct_analysis": 0,
+        "explanations_answer_mismatch": 0,
+        "papers_with_source_metadata": 5,
+        "package_provenance": {
+          "packages_total": 0,
+          "packages_with_complete_provenance": 0,
+          "packages_without_provenance": 0,
+          "missing": [],
+          "packages_publishable": 0,
+          "packages_not_publishable": 0,
+          "not_publishable": []
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "electron\\dist\\epm-setup-2.1.3.exe": {
+      "path": "electron\\dist\\epm-setup-2.1.3.exe",
+      "sha256": "199da86fd0ddc034e48b43c7aaaaf25aefc556538ff7cb7bdaf308280636aa58",
+      "size_bytes": 134998167
+    },
+    "electron\\dist\\epm-portable-2.1.3.exe": {
+      "path": "electron\\dist\\epm-portable-2.1.3.exe",
+      "sha256": "562e9b284367b5c34a15b51e788f839f45d9d46671d0404d4451a766ee92b303",
+      "size_bytes": 134665901
+    },
+    "frontend\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk": {
+      "path": "frontend\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+      "sha256": "bc1a18a69aac8a82e04549faece1f2c92229f2fd36a39eaa006d925816ff35ad",
+      "size_bytes": 32738417
+    }
+  }
+}

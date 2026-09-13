@@ -44,11 +44,25 @@ BACKEND_ROOT = PROJECT_ROOT / "backend"
 if str(BACKEND_ROOT) not in sys.path:
     sys.path.insert(0, str(BACKEND_ROOT))
 
-from app.database import SCHEMA, _run_migrations  # noqa: E402
+from app.database import SCHEMA, _ensure_column, _run_migrations  # noqa: E402
 
 FRONTEND_DB = PROJECT_ROOT / "frontend" / "public" / "question_bank.db"
 BACKEND_DB = PROJECT_ROOT / "backend" / "data" / "question_bank.db"
 DEFAULT_MANIFEST = PROJECT_ROOT / "frontend" / "public" / "offline_migrations.json"
+
+# Columns introduced by runtime migrations are not represented in
+# sqlite_master as separate objects.  Publish them explicitly so an existing
+# IndexedDB/SQLite seed can upgrade without replacing user data.
+OFFLINE_COLUMN_MIGRATIONS: dict[str, tuple[tuple[str, str], ...]] = {
+    "spaced_repetition_records": (
+        ("fsrs_due", "TEXT"),
+        ("fsrs_stability", "REAL"),
+        ("fsrs_difficulty", "REAL"),
+        ("fsrs_state", "INTEGER DEFAULT 0"),
+        ("fsrs_step", "INTEGER DEFAULT 0"),
+        ("fsrs_last_review", "TEXT"),
+    ),
+}
 
 
 def _open_db(path: Path) -> sqlite3.Connection:
@@ -102,6 +116,18 @@ def _apply_frontend_schema(connection: sqlite3.Connection) -> None:
             # Legacy reduced seeds may lack a backend-only column. The
             # runtime migration will still create any table/index it can use.
             continue
+    for table, columns in OFFLINE_COLUMN_MIGRATIONS.items():
+        existing_tables = _schema_objects(connection)
+        if ("table", table) not in existing_tables:
+            continue
+        for column, declaration in columns:
+            _ensure_column(connection, table, column, declaration)
+    # Keep the due queue efficient on offline devices as well.  This is
+    # intentionally idempotent and only uses columns guaranteed above.
+    connection.execute(
+        "CREATE INDEX IF NOT EXISTS idx_spaced_repetition_due "
+        "ON spaced_repetition_records(user_id, due_date)"
+    )
 
 
 def migrate_database(
@@ -156,8 +182,6 @@ def export_manifest(source_db: Path, output: Path) -> dict:
         ORDER BY type, name
         """
     ).fetchall()
-    connection.close()
-
     objects: list[dict[str, str]] = []
     for row in rows:
         sql = row["sql"].strip()
@@ -166,6 +190,35 @@ def export_manifest(source_db: Path, output: Path) -> dict:
         else:
             idempotent = sql.replace("CREATE INDEX ", "CREATE INDEX IF NOT EXISTS ", 1)
         objects.append({"type": row["type"], "name": row["name"], "sql": idempotent})
+
+    # A column is not a sqlite_master object, so export selected runtime
+    # migrations separately.  The frontend checks PRAGMA table_info before
+    # applying these ALTER TABLE statements.
+    for table, columns in OFFLINE_COLUMN_MIGRATIONS.items():
+        table_names = {
+            item[0]
+            for item in connection.execute(
+                "SELECT name FROM sqlite_master WHERE type = 'table' AND name = ?",
+                (table,),
+            ).fetchall()
+        }
+        if not table_names:
+            continue
+        existing_columns = {
+            row[1]
+            for row in connection.execute(f"PRAGMA table_info({table})").fetchall()
+        }
+        for column, declaration in columns:
+            if column in existing_columns:
+                objects.append(
+                    {
+                        "type": "column",
+                        "name": f"{table}.{column}",
+                        "sql": f"ALTER TABLE {table} ADD COLUMN {column} {declaration}",
+                    }
+                )
+
+    connection.close()
 
     fingerprint = hashlib.sha1(
         "\n".join(f"{o['type']}:{o['name']}" for o in objects).encode("utf-8")

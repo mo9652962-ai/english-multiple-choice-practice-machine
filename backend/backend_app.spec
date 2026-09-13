@@ -2,7 +2,14 @@
 from PyInstaller.utils.hooks import collect_submodules
 from PyInstaller.utils.hooks import collect_all
 
-datas = [('../examples/bundled-banks', 'examples/bundled-banks')]
+datas = [
+    ('../examples/bundled-banks', 'examples/bundled-banks'),
+    ('../VERSION', '.'),
+    ('../RELEASE_DATE', '.'),
+    ('../CONTENT_VERSION', '.'),
+    ('../OFFLINE_CONTENT_VERSION', '.'),
+    ('../content-manifest.json', '.'),
+]
 binaries = []
 hiddenimports = ['app.main']
 hiddenimports += collect_submodules('fastapi')

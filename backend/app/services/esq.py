@@ -576,6 +576,7 @@ def build_preview(
     *,
     profile_id: int = 1,
 ) -> dict[str, Any]:
+    manifest = package["manifest"]
     conflicts: list[dict[str, Any]] = []
     totals = {"papers": 0, "units": 0, "questions": 0, "assets": len(package.get("assets", {}))}
     for paper in package["papers"]:
@@ -601,14 +602,48 @@ def build_preview(
             }
         )
     return {
-        "packageId": package["manifest"]["packageId"],
-        "contentVersion": package["manifest"]["contentVersion"],
-        "title": package["manifest"]["title"],
-        "publisher": package["manifest"]["publisher"],
+        "packageId": manifest["packageId"],
+        "contentVersion": manifest["contentVersion"],
+        "title": manifest["title"],
+        "publisher": manifest["publisher"],
         "hasAnswers": True,
         "hasAiLabels": any(bool(paper.get("labels")) for paper in package["papers"]),
         "totals": totals,
         "conflicts": conflicts,
+        "provenance": _provenance_preview(manifest),
+    }
+
+
+def _provenance_preview(manifest: dict[str, Any]) -> dict[str, Any]:
+    """Expose public-release evidence without blocking local import.
+
+    An ESQ package may be useful locally before it is suitable for public
+    redistribution. The preview must make that distinction visible instead
+    of treating a declared source/license field as verified evidence.
+    """
+    missing: list[str] = []
+    license_data = manifest.get("license") if isinstance(manifest.get("license"), dict) else {}
+    source_data = manifest.get("source") if isinstance(manifest.get("source"), dict) else {}
+    if license_data.get("verified") is not True:
+        missing.append("license.verified")
+    if source_data.get("verified") is not True:
+        missing.append("source.verified")
+    review_data = manifest.get("review") if isinstance(manifest.get("review"), dict) else {}
+    if str(review_data.get("status") or "").lower() not in {"reviewed", "locked"}:
+        missing.append("review.status")
+    ai_data = manifest.get("ai_assist") if isinstance(manifest.get("ai_assist"), dict) else {}
+    if str(ai_data.get("diff_status") or "").lower() not in {"recorded", "reviewed", "not_applicable"}:
+        missing.append("ai_assist.diff_status")
+    quality_data = manifest.get("quality") if isinstance(manifest.get("quality"), dict) else {}
+    sample = quality_data.get("release_sample") if isinstance(quality_data.get("release_sample"), dict) else {}
+    if str(sample.get("status") or "").lower() not in {"passed", "reviewed"}:
+        missing.append("quality.release_sample")
+    return {
+        "status": "publishable" if not missing else "pending",
+        "status_label": "具备公开发布证据" if not missing else "可本地使用，尚不能公开分发",
+        "missing": missing,
+        "license_declared": bool(license_data.get("spdx") or license_data.get("notice")),
+        "source_declared": bool(source_data.get("description") or source_data.get("url")),
     }
 
 

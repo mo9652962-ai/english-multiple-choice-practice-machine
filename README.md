@@ -55,7 +55,7 @@ cd english-multiple-choice-practice-machine
 # 2. 安装依赖（内置考研英语一/二真题 + 7,958 词库，首次启动自动装好）
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
+cd frontend && npm ci && npm run build && cd ..
 
 # 3. 启动，开始刷题
 .\.venv\Scripts\python.exe run_app.py
@@ -63,7 +63,7 @@ cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run buil
 
 ⚡ Done! 打开 `http://127.0.0.1:8765` 即可开始——内置 647 道真题 + 7,958 词汇，无需任何 API Key 就能刷题、判分、复习。
 
-> Windows 10/11 · Python 3.12 · Node 24 · pnpm 11。完整说明见下文「快速开始」章节。
+> Windows 10/11 · Python 3.11+ · Node.js 22+ · npm 10+。完整说明见下文「快速开始」章节。
 
 ## 墨题当前状态
 
@@ -71,7 +71,7 @@ cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run buil
 
 使用者可以导入 Word/PDF/ESQ 题库、答案和听力附件，按题库配置、年份、卷别与题型进行整卷或整篇练习；选项打乱、错题重做、未答题定位和提交反馈帮助保持训练质量。题库也可以通过 ESQ 格式导入、导出和分享，个人练习数据不会写入分享包。
 
-一次作答会沉淀为后续复习：错题本支持重做、分析和迭代递减，词汇本支持语境收藏、翻译、听写、短文填词与 FSRS 分级复习，主页、学习诊断、热力图、成就和打卡海报用于跟踪学习进度。
+一次作答会沉淀为后续复习：错题本支持重做、分析和迭代递减，错题与词汇共用 FSRS 遗忘曲线复习队列；词汇本还支持语境收藏、翻译、听写和短文填词，主页、学习诊断、热力图、成就和打卡海报用于跟踪学习进度。
 
 AI 是可选的增强层，而不是刷题前提。墨题支持多个 OpenAI-compatible API 与本地模型配置，可用于聊天、错题分析、题目标注、导入草稿校正、文章练词、作文批改、口语陪练、RAG 知识库问答和学习智能体；即使没有可用模型，核心题库、刷题、判分、错题和词汇复习仍可继续使用。
 
@@ -97,7 +97,7 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 
 > 我们希望即使题目数量有限，每一次重新练习仍然需要理解文章、判断逻辑和重新作答，而不是把反复刷题变成机械地背答案。
 
-项目当前为 `v2.1.3`。核心刷题与复习链路、公开 GitHub Actions CI、Windows NSIS 安装包和 portable 便携版均已纳入发布流程；题库导入支持 CET-4/CET-6、高考英语、英语专业四级和英语专业八级模板。题库正文仍按来源和授权独立管理，不把个人数据库提交到 GitHub。
+项目当前为 `v2.1.3`。核心刷题与复习链路、公开 GitHub Actions CI、Windows NSIS 安装包、portable 便携版和 Android debug 构建门禁均已纳入验证流程；题库导入支持 CET-4/CET-6、高考英语、英语专业四级和英语专业八级模板。题库正文仍按来源和授权独立管理，不把个人数据库提交到 GitHub。
 
 自 v2.0.0 发布以来，项目已推进至 **2.1.x**，主分支新增**组织工作区（Organization Workspace + 健康检查）**、**动态组卷**、**防作弊事件记录**与**考试证书系统**等能力，面向多用户/机构场景。
 
@@ -110,9 +110,9 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 | 主页 | 学习概览、暗色模式、每 5 秒翻页的词汇回顾、高频词优先、快速开始随机练习、**推荐卷按年去重 + 卷别标签**、**动态题型入口（无听力不显示听力卡）** |
 | 练习 | 按年份整卷、随机抽整篇、**选项打乱（防记答案）**、**桌面快捷键（Anki 习惯——1/2/3/4 选答案）**、考研英语一/二、四六级听力/选词填空（**点空选题 v3.6**）/段落匹配/阅读 |
 | 提交 | 整篇提交、整卷提交、未答题定位、得分/正确数/错题数反馈 |
-| 错题本 | 按年份 → 篇目组织、重做/分析、**迭代递减（重做只显示本次错的，越做越少）**、高频错题统计 |
+| 错题本 | 按年份 → 篇目组织、重做/分析、**迭代递减（重做只显示本次错的，越做越少）**、高频错题统计、**FSRS 到期复习队列** |
 | 单词本 | 文章/题干/选项右键收藏、退出练习后批量翻译、同义/反义/形近词辨析、高频 🌟、**内置词库音标 + 可追溯双语例句**、**听写模式（TTS 发音→拼写 / 听音 4 选 1）**、**短文填词（真题句挖空）**、**分级背诵计划（FSRS 间隔重复）**、**学习三态（认识/模糊/忘记）**、**词书计划本地生成（百词斩式 4 词书）**、**AI 文章练词 + 划词生词本** |
-| AI 助手 | 多 API 配置、多会话、模型同步、聊天、错题分析、题库标注和导入草稿校正 |
+| AI 助手 | 多 API 配置、多会话、模型同步、任务级路由、**结构化结果本地缓存/配额/回退**、聊天、错题分析、题库标注和导入草稿校正 |
 | 陪伴聊天室 | **学习陪伴聊天室（WebSocket + @AI 流式回复）**——像同伴一样实时陪练，流式回复无阻塞等待（Phase 3） |
 | 知识库 RAG | **RAG 知识库（文档上传/分片/embedding/检索/问答）**——上传学习资料，基于内容智能问答（Phase 2） |
 | 学习智能体 | **AI 学习智能体（Agent Runtime + Model Pool）**——模型池统一调度、Agent 化学习辅助（Phase 1） |
@@ -368,9 +368,9 @@ AI 可用于：
 ### 已验证环境
 
 - Windows 10/11
-- Python 3.12.13
-- Node.js 24.x
-- pnpm 11.x
+- Python 3.11+
+- Node.js 22+
+- npm 10.x 或更高版本
 
 其他版本可能可用，但目前没有作为公开兼容矩阵验证。
 
@@ -383,8 +383,8 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
 cd frontend
-corepack pnpm install --frozen-lockfile
-corepack pnpm run build
+npm ci
+npm run build
 cd ..
 
 .\.venv\Scripts\python.exe run_app.py
@@ -409,7 +409,7 @@ cd ..
 ```powershell
 # 终端二：前端
 cd frontend
-corepack pnpm run dev
+npm run dev
 ```
 
 开发页面为 `http://127.0.0.1:5173`，`/api` 请求会代理到本地后端。后端 OpenAPI 文档位于 `http://127.0.0.1:8765/docs`。
@@ -443,6 +443,44 @@ backend/data/
 - 备份前关闭程序，然后复制整个 `backend/data` 目录。
 - 不要把数据库、上传题库、API Key 或个人练习记录提交到 GitHub；这些路径已加入 `.gitignore`。
 
+### 发布数据与版本校验
+
+项目根目录的 `VERSION` 和 `RELEASE_DATE` 是发布元数据唯一来源。前端、后端、Electron、Android 和离线版本接口均从该来源读取或由发布检查校验。前端构建的 `prebuild` 会同步 `frontend/public/release-metadata.json`，Windows、Android 和 Web 使用同一份程序/内容版本、Schema 和内容分发策略；“关于”页面还会显示在线数据库的 Schema、题目计数和数据库指纹（离线模式仍显示编译时版本）。
+
+`backend/data/question_bank.db` 可以包含本地开发或授权范围内的扩展题库，`frontend/public/question_bank.db` 是 Web/移动端离线种子库；两者不要求在开发环境中完全相同。程序版本、内容版本和离线种子版本分别由 `VERSION`、`CONTENT_VERSION`、`OFFLINE_CONTENT_VERSION` 管理；每次发布都必须明确记录文件 SHA-256、schema 版本和题目/词汇计数。发布前运行：
+
+```powershell
+.\scripts\release_check.ps1 -RequirePackageProvenance -StrictQuality -RequireAndroidMetadata -CheckTemplates -MinVocabulary 7958 -MinSchemaVersion 2 -WriteReport work\release-manifest.json
+```
+
+题库要公开分发前，还应额外使用 `-RequirePublishableProvenance`。正式 Windows release workflow 已强制启用该门禁：每个题库包必须同时具备已核验的许可证/来源、人工复核状态、AI 修改 diff 和发布前抽样记录；只有“字段存在”但尚未核验的包会被报告为不可公开发布。证据字段和填写边界见 [`docs/content-release-evidence.md`](docs/content-release-evidence.md)。
+
+离线迁移除了 seed 结构检查，还必须覆盖旧库和新库两条路径：
+
+```powershell
+node tools/check_offline_seed.mjs --db frontend/dist/question_bank.db --migrations frontend/dist/offline_migrations.json
+node tools/check_offline_runtime.mjs frontend/dist/offline_migrations.json
+```
+
+后一个检查会验证旧版 `spaced_repetition_records` 能补齐 FSRS 字段，并验证新库不会重复执行 `ADD COLUMN`。
+
+已有安装包时可重复传入 `-Artifact electron\dist\epm-setup-2.1.3.exe -Artifact electron\dist\epm-portable-2.1.3.exe`，将文件大小和 SHA-256 一并写入发布清单。
+
+Android 本地构建前可运行 `.\scripts\android_preflight.ps1` 检查 Node.js 22+、JDK 21、Android SDK 36 和 Capacitor/Gradle 生成目录；CI 会显式安装 Android SDK 36、Build Tools 36.0.0 和 Emulator。干净 CI checkout 会先执行 `npx cap add android`，同步 Web 资源和 `VERSION`，构建 debug APK，并在 Android Emulator 中安装、启动和检查应用进程。Android 发布清单使用 `--offline-only`，记录 APK 对应离线库的 SHA-256、声明 Schema、物理迁移版本和题目/词汇计数。
+
+Windows 后端可执行包构建后，可运行 `.\scripts\windows_package_smoke.ps1 -Executable backend\dist\backend_app\backend_app.exe`，在隔离临时数据目录中检查 `/api/health` 和数据库初始化，不会触碰用户数据库。
+
+Windows 便携发布包构建后，Release workflow 还会在隔离的 18765 端口启动 `epm-portable-<version>.exe`，检查桌面包实际拉起的后端健康状态、程序版本、内容版本和 Schema，然后结束整棵进程树；Electron 默认仍使用 8765，冒烟脚本通过 `EPM_PORT` 注入临时端口，避免误复用开发服务。NSIS 安装器保留文件存在性检查，避免无人值守 CI 进入交互式安装。
+
+前端构建会生成 Vite manifest，并由 `node tools/check_frontend_bundle.mjs --dist frontend/dist --max-entry-kb 512 --max-lazy-kb 1024` 统一检查首屏入口 JS 与按需 chunk；CI、Windows Release 和 Android CI 均执行该门禁，报告同时列出最大的口语/VAD/ONNX 资源。
+构建后的离线种子和迁移清单由 `node tools/check_offline_seed.mjs --db frontend/dist/question_bank.db --migrations frontend/dist/offline_migrations.json` 做二次 smoke，确认核心表存在、迁移对象数量一致且试卷/单元/题目结构完整。
+
+发布质量门禁还会检查题库是否存在空结构、缺失答案、答案不在选项、重复选项标签或重复内容哈希；完形题允许题干为空，但必须有整篇语境。质量报告只输出计数，不输出题目正文。
+
+本地学习指标默认关闭；在设置页明确开启后，只在本地记录启动、练习完成、ESQ 导入成功和词汇收藏等 allow-list 事件，不记录题目正文、答案或 API Key。
+
+如果某次发布明确要求后端库与离线库逐字节一致，再额外使用 `-RequireMatchingContent`；不要直接用开发库覆盖离线种子库。
+
 ## 多人模式（可选）
 
 默认是**本地单用户**模式（服务只监听 `127.0.0.1`）。若要在局域网/公网部署供多人使用，开启账户系统：
@@ -452,7 +490,7 @@ backend/data/
 | `EPM_AUTH` | 设为 `1` 开启多用户登录（业务路由要求带 token；未开启时全部匿名兼容单用户） | 关闭 |
 | `EPM_ADMIN_USERNAME` | **指定管理员用户名**（该用户名注册即自动成为管理员）；未设置时所有新用户均为普通用户 | 未设置 |
 | `EPM_API_KEY` | 可选：API 层密钥（中间件校验，未配置时不生效） | 无 |
-| `EPM_AI_DAILY_QUOTA` | 多人模式下每用户每日 AI 调用上限（chat+口语合并计数，防刷 key 成本）；`0` = 不限制 | `0` |
+| `EPM_AI_DAILY_QUOTA` | 多人模式下每用户每日全部 AI 调用上限（跨聊天、口语、诊断、解析等任务合并计数，防刷 key 成本）；`0` = 不限制 | `0` |
 
 ### 启用步骤
 
@@ -516,12 +554,14 @@ tests/             # 后端与格式测试
 
 ```powershell
 cd frontend
-corepack pnpm run build
+npm run build
 ```
 
 公开 CI 会执行后端测试和导入检查、前端类型检查/构建，以及跟踪文件的密钥/隐私扫描；tag 发布会自动构建并校验 Windows NSIS 安装包和 portable 便携版。完整真题库集成测试通过 `ENGLISH_PRACTICE_CORPUS` 显式启用，在没有私人题库的公开环境中会自动跳过。
 
 ## 当前状态与路线图
+
+截至 `2.1.3`，程序、内容和离线种子已经使用统一版本元数据与发布清单；下一阶段的执行优先级、发布门槛和未完成事项见 [下一阶段执行路线图](docs/next-phase-roadmap-2026-09-13.md)。当前题包仍需完成来源、授权、人工复核、AI diff 与发布抽样证据后，才能公开分发。
 
 已完成的核心链路：
 
@@ -597,3 +637,4 @@ v2.0.0 发布收口已完成：
 - [词汇双语例句数据规范](docs/vocabulary-examples.md)
 - [墨题当前学习报告截图](docs/images/feature-overview-public.webp)
 - 反馈问题 / 建议 → [Issues](https://github.com/mo9652962-ai/epm-releases/issues)
+Android 原生插件模板位于 `frontend/native/android/`；干净构建完成 `npx cap sync android` 后，还必须执行 `node scripts/sync_android_plugins.mjs`，再运行 Gradle。工作区便携工具链可通过 `scripts/android_preflight.ps1 -ToolchainRoot <工具链目录>` 验证。

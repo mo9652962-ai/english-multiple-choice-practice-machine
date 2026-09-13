@@ -17,8 +17,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
-from ..services.ai_client import chat_completion, parse_json_response
-from ..services.ai_router import QuotaExceeded, check_daily_quota, record_user_usage
+from ..services.ai_client import parse_json_response
+from ..services.ai_router import (
+    QuotaExceeded,
+    chat_with_routing,
+)
 from prompts.speaking_prompt import (
     SCENARIOS,
     SPEAKING_SYSTEM_PROMPT,
@@ -107,17 +110,10 @@ def submit_turn(
             history.append({"role": "user", "content": r["user_text"]})
         history.append({"role": "assistant", "content": r["ai_reply"]})
 
-    # v9.32: 每日配额检查（多人模式 EPM_AUTH=1 + EPM_AI_DAILY_QUOTA>0 时生效）
-    # 通过即记录（调用前计数——失败也计，防无限重试绕过）
     try:
-        check_daily_quota(connection, _current_user_id(user), "speaking")
-        record_user_usage(connection, _current_user_id(user), "speaking", provider="speaking", model="")
-    except QuotaExceeded as exc:
-        raise HTTPException(status_code=429, detail=str(exc)) from exc
-
-    try:
-        raw = chat_completion(
+        raw = chat_with_routing(
             connection,
+            "speaking_practice",
             [
                 {"role": "system", "content": SPEAKING_SYSTEM_PROMPT},
                 {"role": "user", "content": build_speaking_user_prompt(
@@ -125,8 +121,11 @@ def submit_turn(
                 )},
             ],
             response_format={"type": "json_object"},
+            user_id=_current_user_id(user),
             max_tokens=800,
         )
+    except QuotaExceeded as error:
+        raise HTTPException(status_code=429, detail=str(error)) from error
     except (ValueError, LookupError, httpx.HTTPError) as error:
         # v9.32: 补 AI 异常捕获（原来直接 500）
         raise HTTPException(status_code=502, detail=f"AI 服务调用失败：{error}") from error

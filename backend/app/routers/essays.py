@@ -14,7 +14,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
-from ..services.ai_client import chat_completion, parse_json_response
+from ..services.ai_client import parse_json_response
+from ..services.ai_router import chat_with_routing
 from prompts.essay_prompt import ESSAY_SYSTEM_PROMPT, build_essay_user_prompt
 from .auth import maybe_require_user
 
@@ -41,8 +42,9 @@ def evaluate_essay(
     """AI 批改作文（考研阅卷组标准——评分/维度/行内批注/词汇升格/范文）。"""
     content = request.user_content.strip()
     word_count = len(content.split())
-    raw = chat_completion(
+    raw = chat_with_routing(
         connection,
+        "essay_grading",
         [
             {"role": "system", "content": ESSAY_SYSTEM_PROMPT},
             {"role": "user", "content": build_essay_user_prompt(
@@ -50,6 +52,7 @@ def evaluate_essay(
             )},
         ],
         response_format={"type": "json_object"},
+        user_id=_current_user_id(user),
         max_tokens=2500,
     )
     try:

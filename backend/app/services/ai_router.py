@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os  # v9.32: EPM_AI_DAILY_QUOTA 配额配置
 import sqlite3
 import time
@@ -30,12 +31,58 @@ KNOWN_TASKS = (
     "article_generate",
     "ocr_fallback",
     "chat_explain",
+    "question_labeling",
+    "deep_explain",
+    "speaking_practice",
+    "rag_qa",
+    "similar_questions",
+    "connection_test",
+    "agent_analyze",
+    "agent_plan",
 )
 
-_health_cache: dict[int, tuple[float, bool]] = {}
+_health_cache: dict[int, tuple[float, bool, str]] = {}
 _HEALTH_TTL = 60.0
 
 _TRANSIENT = {"timeout", "unavailable", "empty", "http_429", "http_500", "http_502", "http_503", "http_504"}
+
+# 仅缓存输入确定、结果可复用的任务；聊天、口语和作文涉及时效性或个人内容，
+# 默认不缓存。缓存留在本地 SQLite，且多用户模式把 user_id 纳入 key。
+CACHEABLE_TASKS = frozenset({
+    "wrong_diagnosis",
+    "vocab_labeling",
+    "import_assist",
+    "question_labeling",
+    "deep_explain",
+    "article_generate",
+    "rag_qa",
+    "similar_questions",
+})
+CACHE_TTL_SECONDS = max(
+    0, int((os.environ.get("EPM_AI_CACHE_TTL_SECONDS") or "86400").strip() or 0)
+)
+
+
+def _ensure_structured_response(
+    response: str,
+    response_format: dict[str, Any] | None,
+) -> str:
+    """Reject malformed JSON before it reaches a business service or cache.
+
+    The provider remains responsible for the schema details of each task. The
+    router only enforces the contract requested by ``response_format`` so a
+    malformed provider response can use the normal fallback chain.
+    """
+    if not isinstance(response, str) or not response.strip():
+        raise ValueError("模型返回为空")
+    if response_format and response_format.get("type") == "json_object":
+        try:
+            parsed = json.loads(response)
+        except (TypeError, json.JSONDecodeError) as error:
+            raise ValueError("模型返回不是合法 JSON") from error
+        if not isinstance(parsed, dict):
+            raise ValueError("模型返回不是 JSON 对象")
+    return response
 
 
 def _parse_task_tags(value: str) -> list[str]:
@@ -49,6 +96,7 @@ def _parse_task_tags(value: str) -> list[str]:
 def _task_profiles(
     connection: sqlite3.Connection,
     task: str,
+    profile_id: int | None = None,
 ) -> list[dict[str, Any]]:
     """按 task_tags 匹配 + priority 排序，返回候选 profile 列表。"""
     rows = connection.execute(
@@ -57,8 +105,10 @@ def _task_profiles(
                temperature, max_tokens, task_tags, priority
         FROM ai_profiles
         WHERE enabled = 1
+          AND (? IS NULL OR id = ?)
         ORDER BY priority ASC, is_default DESC, id ASC
-        """
+        """,
+        (profile_id, profile_id),
     ).fetchall()
     candidates: list[dict[str, Any]] = []
     for row in rows:
@@ -73,14 +123,17 @@ def _task_profiles(
 def _health(connection: sqlite3.Connection, profile_id: int) -> bool:
     """轻量健康检查：base_url 是否可达（60s 缓存）。"""
     now = time.time()
-    cached = _health_cache.get(profile_id)
-    if cached and now - cached[0] < _HEALTH_TTL:
-        return cached[1]
     row = connection.execute(
         "SELECT base_url FROM ai_profiles WHERE id = ?", (profile_id,)
     ).fetchone()
-    ok = bool(row and row["base_url"].strip())
-    _health_cache[profile_id] = (now, ok)
+    base_url = row["base_url"].strip() if row else ""
+    cached = _health_cache.get(profile_id)
+    if cached and now - cached[0] < _HEALTH_TTL and cached[2] == base_url:
+        return cached[1]
+    ok = bool(base_url)
+    # Include the URL in the cache value so saving a previously empty or
+    # changed profile takes effect immediately instead of waiting for TTL.
+    _health_cache[profile_id] = (now, ok, base_url)
     return ok
 
 
@@ -121,6 +174,120 @@ def _record_usage(
     except sqlite3.Error:
         # 用量记录失败不应阻断主流程
         pass
+    try:
+        from .metrics import record_event
+        record_event(
+            connection,
+            "ai_call_succeeded" if status in {"ok", "cached"} else "ai_call_failed",
+            user_id=user_id,
+            detail={"task": task, "provider": provider, "status": status},
+        )
+    except Exception:
+        # Local metrics are strictly best-effort and never affect AI behavior.
+        pass
+
+
+def _cache_key(
+    task: str,
+    messages: list[dict[str, str]],
+    *,
+    response_format: dict[str, Any] | None,
+    profile_id: int | None,
+    model: str | None,
+    max_tokens: int | None,
+    user_id: int | None,
+) -> str | None:
+    if CACHE_TTL_SECONDS <= 0 or task not in CACHEABLE_TASKS:
+        return None
+    payload = {
+        "task": task,
+        "messages": messages,
+        "response_format": response_format,
+        "profile_id": profile_id,
+        "model": model,
+        "max_tokens": max_tokens,
+        "user_id": user_id,
+        "cache_version": 1,
+    }
+    encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def _read_cached_response(
+    connection: sqlite3.Connection,
+    cache_key: str | None,
+) -> tuple[str, str] | None:
+    if not cache_key:
+        return None
+    try:
+        row = connection.execute(
+            """
+            SELECT response, model
+            FROM ai_response_cache
+            WHERE cache_key = ? AND expires_at > CURRENT_TIMESTAMP
+            """,
+            (cache_key,),
+        ).fetchone()
+        if not row:
+            # 清理同 key 的过期记录，失败不影响主流程。
+            connection.execute("DELETE FROM ai_response_cache WHERE cache_key = ?", (cache_key,))
+            return None
+        was_in_transaction = connection.in_transaction
+        connection.execute(
+            "UPDATE ai_response_cache SET hit_count = hit_count + 1 WHERE cache_key = ?",
+            (cache_key,),
+        )
+        if not was_in_transaction:
+            connection.commit()
+        return str(row["response"]), str(row["model"] or "")
+    except sqlite3.Error:
+        return None
+
+
+def _write_cached_response(
+    connection: sqlite3.Connection,
+    cache_key: str | None,
+    *,
+    task: str,
+    user_id: int | None,
+    profile_id: int | None,
+    model: str,
+    response: str,
+) -> None:
+    if not cache_key:
+        return
+    try:
+        was_in_transaction = connection.in_transaction
+        connection.execute(
+            """
+            INSERT INTO ai_response_cache
+                (cache_key, task, user_id, profile_id, model, response, expires_at)
+            VALUES (?, ?, ?, ?, ?, ?, datetime('now', ?))
+            ON CONFLICT(cache_key) DO UPDATE SET
+                task = excluded.task,
+                user_id = excluded.user_id,
+                profile_id = excluded.profile_id,
+                model = excluded.model,
+                response = excluded.response,
+                hit_count = 0,
+                created_at = CURRENT_TIMESTAMP,
+                expires_at = excluded.expires_at
+            """,
+            (
+                cache_key,
+                task,
+                user_id,
+                profile_id,
+                model,
+                response,
+                f"+{CACHE_TTL_SECONDS} seconds",
+            ),
+        )
+        if not was_in_transaction:
+            connection.commit()
+    except sqlite3.Error:
+        # 缓存失败绝不能阻断真实 AI 结果。
+        pass
 
 
 def chat_with_routing(
@@ -129,6 +296,7 @@ def chat_with_routing(
     messages: list[dict[str, str]],
     *,
     response_format: dict[str, Any] | None = None,
+    profile_id: int | None = None,
     model: str | None = None,
     max_tokens: int | None = None,
     user_id: int | None = None,  # v9.32: 配额——透传记录
@@ -138,16 +306,67 @@ def chat_with_routing(
     chat_completion 内部已带 429/5xx 重试；这里负责跨 profile 降级。
     候选顺序 = ai_profiles.priority 升序（本地优先可把本地 profile 的 priority 调小）。
     """
-    candidates = _task_profiles(connection, task)
+    cache_key = _cache_key(
+        task,
+        messages,
+        response_format=response_format,
+        profile_id=profile_id,
+        model=model,
+        max_tokens=max_tokens,
+        user_id=user_id,
+    )
+    cached = _read_cached_response(connection, cache_key)
+    if cached is not None:
+        cached_response, cached_model = cached
+        try:
+            cached_response = _ensure_structured_response(cached_response, response_format)
+        except ValueError:
+            # Do not keep poisoning a deterministic task with an old malformed
+            # response written before the structured-output gate existed.
+            if cache_key:
+                connection.execute("DELETE FROM ai_response_cache WHERE cache_key = ?", (cache_key,))
+                if not connection.in_transaction:
+                    connection.commit()
+        else:
+            _record_usage(
+                connection,
+                task=task,
+                provider="local-cache",
+                model=cached_model or model or "",
+                user_id=user_id,
+                status="cached",
+            )
+            return cached_response
+
+    # 统一入口配额：业务路由不再各自预检/记录，新增 AI 任务经过这里即可获得
+    # 同一套配额控制。只有多人模式且部署者配置了配额时才生效。
+    quota_transaction_started = not connection.in_transaction
+    check_daily_quota(connection, user_id, task)
+    candidates = _task_profiles(connection, task, profile_id=profile_id)
     if not candidates:
+        # 直连兼容路径不会经过 _record_usage；释放本次检查打开的事务，避免
+        # 把 SQLite 写锁带入下游调用。
+        if quota_transaction_started and connection.in_transaction:
+            connection.commit()
         # 无匹配 profile：交给默认行为（等价于原 chat_completion）
-        return chat_completion(
+        result = _ensure_structured_response(chat_completion(
             connection,
             messages,
             response_format=response_format,
+            profile_id=profile_id,
             model=model,
             max_tokens=max_tokens,
+        ), response_format)
+        _write_cached_response(
+            connection,
+            cache_key,
+            task=task,
+            user_id=user_id,
+            profile_id=profile_id,
+            model=model or "",
+            response=result,
         )
+        return result
     last_error: Exception | None = None
     for candidate in candidates:
         tags = _parse_task_tags(candidate["task_tags"])
@@ -158,7 +377,7 @@ def chat_with_routing(
         started = time.monotonic()
         usage_out: dict[str, int] = {}
         try:
-            result = chat_completion(
+            result = _ensure_structured_response(chat_completion(
                 connection,
                 messages,
                 response_format=response_format,
@@ -166,7 +385,7 @@ def chat_with_routing(
                 model=model or candidate["default_model"] or None,
                 max_tokens=max_tokens or candidate["max_tokens"] or None,
                 usage_out=usage_out,  # v9.27: 记录真实 tokens
-            )
+            ), response_format)
             _record_usage(
                 connection,
                 task=task,
@@ -176,6 +395,15 @@ def chat_with_routing(
                 prompt_tokens=usage_out.get("prompt_tokens", 0),
                 completion_tokens=usage_out.get("completion_tokens", 0),
                 latency_ms=int((time.monotonic() - started) * 1000),
+            )
+            _write_cached_response(
+                connection,
+                cache_key,
+                task=task,
+                user_id=user_id,
+                profile_id=candidate["id"],
+                model=model or candidate["default_model"] or "",
+                response=result,
             )
             return result
         except ValueError as error:
@@ -194,6 +422,8 @@ def chat_with_routing(
             if any(token in str(error) for token in ("请先填写", "未启用", "API 配置不存在")):
                 raise
             continue
+    if quota_transaction_started and connection.in_transaction:
+        connection.rollback()
     raise ValueError(f"AI 服务暂不可用（{task}）：{last_error or '无可用配置'}")
 
 
@@ -204,7 +434,8 @@ def usage_stats(connection: sqlite3.Connection, days: int = 30) -> dict[str, Any
         SELECT task, provider, COUNT(*) AS calls,
                SUM(prompt_tokens) AS prompt_tokens,
                SUM(completion_tokens) AS completion_tokens,
-               SUM(CASE WHEN status = 'ok' THEN 1 ELSE 0 END) AS ok_calls,
+               SUM(CASE WHEN status IN ('ok', 'cached') THEN 1 ELSE 0 END) AS ok_calls,
+               SUM(CASE WHEN status = 'cached' THEN 1 ELSE 0 END) AS cached_calls,
                ROUND(AVG(latency_ms)) AS avg_latency_ms
         FROM ai_usage
         WHERE created_at >= datetime('now', ?)
@@ -232,7 +463,7 @@ def check_daily_quota(
     task: str,
     quota: int = DAILY_QUOTA,
 ) -> None:
-    """多人模式按用户+任务检查当日调用次数；超限抛 QuotaExceeded。
+    """多人模式按用户检查当日全部 AI 调用次数；超限抛 QuotaExceeded。
 
     单用户（user_id=None）或 quota<=0（未配置）→ 不限制。
 
@@ -252,11 +483,11 @@ def check_daily_quota(
         row = connection.execute(
             """
             SELECT COUNT(*) AS n FROM ai_usage
-            WHERE user_id = ? AND task = ?
+            WHERE user_id = ?
               AND created_at >= date('now', 'localtime')
               AND created_at < date('now', 'localtime', '+1 day')
             """,
-            (user_id, task),
+            (user_id,),
         ).fetchone()
         if row and row["n"] >= quota:
             if not was_in_transaction:
@@ -264,9 +495,8 @@ def check_daily_quota(
             raise QuotaExceeded(
                 f"今日 AI 调用次数已达上限（{quota} 次/日），请明天再试"
             )
-        # 未超限：保持事务打开，调用方随后的 record_user_usage INSERT
-        # 在同一写事务中提交——判定与写入原子绑定。
-        # （ai.py/speaking.py 的 check→record 序列在同一 connection 上执行）
+    # 未超限：保持事务打开，统一路由随后的 _record_usage INSERT
+    # 在同一写事务中提交——判定与写入原子绑定。
     except QuotaExceeded:
         raise
     except sqlite3.Error:
@@ -283,7 +513,7 @@ def record_user_usage(
     model: str,
     **kwargs,
 ) -> None:
-    """路由层手动记录用户 AI 调用（chat/speaking 不经过 ai_router 时用）。"""
+    """兼容需要在统一路由之外记录一次 AI 尝试的调用方。"""
     try:
         _record_usage(
             connection,

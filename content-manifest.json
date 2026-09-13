@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "content_version": "content-2026-09-13-r1",
+  "offline_seed_version": "offline-2026-09-13-r1",
+  "release": {
+    "scope": "backend/data/question_bank.db 的开发/授权范围内扩展库",
+    "source_policy": "题库正文按来源和授权独立管理；未标记为已核验的内容不得自动宣称为正式真题",
+    "license_status": "per_package_manifest_required",
+    "is_complete": false,
+    "upgrade_policy": "versioned_replace_only",
+    "allow_export": true,
+    "allow_share": true
+  },
+  "offline_seed": {
+    "scope": "frontend/public/question_bank.db 的 Web/Android 离线入门种子库；不保证与发布库内容完全相同",
+    "source_policy": "仅包含可随应用分发的离线内容；完整性以离线库 hash 和计数为准",
+    "license_status": "per_package_manifest_required",
+    "is_complete": false,
+    "upgrade_policy": "explicit_seed_version_only",
+    "allow_export": false,
+    "allow_share": false
+  },
+  "share_policy": {
+    "package_format": "ESQ",
+    "include": ["题库内容", "来源与授权元数据"],
+    "exclude": ["个人练习记录", "错题", "词汇本", "API 配置"]
+  },
+  "quality_policy": {
+    "manual_review_required": true,
+    "ai_diff_required": true,
+    "release_sample_required": true,
+    "publishable_provenance_requires_verified_license": true
+  }
+}

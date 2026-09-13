@@ -16,16 +16,17 @@ async function getApiKey(): Promise<string> {
       const stored = profile.api_key_encrypted
       // v3.0-sec: 加密格式为 base64(iv):base64(ciphertext)（SecureStorage AES/GCM）
       // 若为加密格式（含冒号且两段都像 base64）→ 用原生插件解密；否则兼容旧明文
-      if (stored.includes(':') && /^[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$/.test(stored)) {
+      const looksEncrypted = stored.includes(':') && /^[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$/.test(stored)
+      if (looksEncrypted) {
+        const cap = (window as any)?.Capacitor
+        if (!cap?.isNativePlatform?.()) return ''
         try {
-          const cap = (window as any)?.Capacitor
-          if (cap?.isNativePlatform?.()) {
-            const { SecureStorage } = await import('./secure-storage')
-            cachedKey = await SecureStorage.decrypt(stored)
-            return cachedKey
-          }
+          const { SecureStorage } = await import('./secure-storage')
+          cachedKey = await SecureStorage.decrypt(stored)
+          return cachedKey
         } catch {
-          // 解密失败回退明文
+          // Native decrypt failure must not send ciphertext as an API key.
+          return ''
         }
       }
       cachedKey = stored

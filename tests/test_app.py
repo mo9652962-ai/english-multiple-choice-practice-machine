@@ -619,7 +619,7 @@ class AppFlowTests(unittest.TestCase):
             },
         ).json()
         with patch(
-            "backend.app.routers.ai.chat_completion",
+            "backend.app.routers.ai.chat_with_routing",
             return_value="这是一条测试回答。",
         ):
             response = self.client.post(

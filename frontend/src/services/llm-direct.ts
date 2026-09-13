@@ -3,7 +3,7 @@
 // 作用：手机端无后端时，从前端直连用户配置的 AI provider（OpenAI 兼容），
 //       让 真题精讲/作文批改/口语陪练 在离线 APK 也可用；结果存 IndexedDB 可断网回看。
 import { queryOne } from './db'
-import { SecureStorage } from './secure-storage'
+import { trackMetric } from './metrics'
 
 // ── IndexedDB KV（离线 AI 结果缓存：key=路径+参数哈希）──
 const IDB_NAME = 'epm_ai_cache'
@@ -112,20 +112,23 @@ export async function getActiveAiProfile(): Promise<AiProfile | null> {
 
 export async function resolveApiKey(profile: AiProfile): Promise<string | null> {
   if (!profile.api_key_encrypted) return null
-  try {
-    // 手机原生环境：SecureStorage 解密；桌面 dev：明文直用
-    const cap = (window as any)?.Capacitor
-    if (cap?.isNativePlatform?.()) {
+  // 手机原生环境：SecureStorage 解密；桌面 dev：明文直用。
+  const cap = (window as any)?.Capacitor
+  if (cap?.isNativePlatform?.()) {
+    try {
+      const { SecureStorage } = await import('./secure-storage')
       return await SecureStorage.decrypt(profile.api_key_encrypted)
+    } catch {
+      // Do not fall back to ciphertext/plaintext after a native decrypt error.
+      throw new Error('Android Keystore 解密失败，请重新保存 AI 配置')
     }
-    return profile.api_key_encrypted
-  } catch {
-    return profile.api_key_encrypted // 解密失败回退明文（仍是本地值）
   }
+  return profile.api_key_encrypted
 }
 
 // ── OpenAI 兼容调用（直连）──
 interface LlmOpts {
+  task?: string
   responseFormat?: 'json_object' | 'text'
   maxTokens?: number
   temperature?: number
@@ -135,42 +138,49 @@ export async function callLLM(
   messages: { role: string; content: string }[],
   opts: LlmOpts = {}
 ): Promise<string> {
-  const profile = await getActiveAiProfile()
-  if (!profile) throw new Error('未配置 AI 服务，请在设置中添加')
-  const apiKey = await resolveApiKey(profile)
-  if (!apiKey) throw new Error('AI 服务未配置 API Key，请在设置中添加')
-
-  const base = (profile.base_url || '').replace(/\/+$/, '')
-  const url = base.includes('/chat/completions') ? base : `${base}/chat/completions`
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), 120000)
-
+  const task = opts.task || 'direct_llm'
   try {
-    const resp = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: profile.default_model || 'deepseek-chat',
-        messages,
-        temperature: opts.temperature ?? profile.temperature ?? 0.7,
-        max_tokens: opts.maxTokens ?? profile.max_tokens ?? 2048,
-        response_format: opts.responseFormat === 'json_object' ? { type: 'json_object' } : undefined,
-        stream: false,
-      }),
-    })
-    if (!resp.ok) {
-      const text = await resp.text().catch(() => '')
-      throw new Error(`AI 服务错误 ${resp.status}: ${text.slice(0, 120)}`)
+    const profile = await getActiveAiProfile()
+    if (!profile) throw new Error('未配置 AI 服务，请在设置中添加')
+    const apiKey = await resolveApiKey(profile)
+    if (!apiKey) throw new Error('AI 服务未配置 API Key，请在设置中添加')
+
+    const base = (profile.base_url || '').replace(/\/+$/, '')
+    const url = base.includes('/chat/completions') ? base : `${base}/chat/completions`
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), 120000)
+
+    try {
+      const resp = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: profile.default_model || 'deepseek-chat',
+          messages,
+          temperature: opts.temperature ?? profile.temperature ?? 0.7,
+          max_tokens: opts.maxTokens ?? profile.max_tokens ?? 2048,
+          response_format: opts.responseFormat === 'json_object' ? { type: 'json_object' } : undefined,
+          stream: false,
+        }),
+      })
+      if (!resp.ok) {
+        const text = await resp.text().catch(() => '')
+        throw new Error(`AI 服务错误 ${resp.status}: ${text.slice(0, 120)}`)
+      }
+      const data = await resp.json()
+      const content: string = data?.choices?.[0]?.message?.content ?? ''
+      if (!content) throw new Error('AI 返回为空')
+      void trackMetric('ai_call_succeeded', { task, status: 'ok', provider: 'direct' })
+      return content
+    } finally {
+      clearTimeout(timer)
     }
-    const data = await resp.json()
-    const content: string = data?.choices?.[0]?.message?.content ?? ''
-    if (!content) throw new Error('AI 返回为空')
-    return content
-  } finally {
-    clearTimeout(timer)
+  } catch (error) {
+    void trackMetric('ai_call_failed', { task, status: 'failed', provider: 'direct' })
+    throw error
   }
 }
 
@@ -241,7 +251,7 @@ ${(question.passage || '').slice(0, 4000)}
       { role: 'system', content: DEEP_EXPLAIN_SYSTEM_PROMPT },
       { role: 'user', content: userPrompt },
     ],
-    { responseFormat: 'json_object', maxTokens: 2500 }
+    { task: 'deep_explain', responseFormat: 'json_object', maxTokens: 2500 }
   )
   const parsed = tryParseJson(raw)
   const result: DeepExplainResult = {
@@ -310,7 +320,7 @@ ${req.user_content}
       { role: 'system', content: ESSAY_SYSTEM_PROMPT },
       { role: 'user', content: userPrompt },
     ],
-    { responseFormat: 'json_object', maxTokens: 2500 }
+    { task: 'essay_evaluate', responseFormat: 'json_object', maxTokens: 2500 }
   )
   const parsed = tryParseJson(raw)
   const maxScore = req.essay_type !== 'essay_small' ? 20 : 10
@@ -375,7 +385,7 @@ ${historyText || '（无）'}
       { role: 'system', content: SPEAKING_SYSTEM_PROMPT },
       { role: 'user', content: userPrompt },
     ],
-    { responseFormat: 'json_object', maxTokens: 800 }
+    { task: 'speaking_turn', responseFormat: 'json_object', maxTokens: 800 }
   )
   const parsed = tryParseJson(raw)
   return {

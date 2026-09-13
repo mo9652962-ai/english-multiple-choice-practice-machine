@@ -199,6 +199,24 @@ function createSchema() {
       FOREIGN KEY (question_id) REFERENCES questions(id)
     );
 
+    CREATE TABLE IF NOT EXISTS spaced_repetition_records (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER DEFAULT NULL,
+      question_id INTEGER NOT NULL,
+      interval_days INTEGER NOT NULL DEFAULT 1,
+      ease_factor REAL NOT NULL DEFAULT 2.5,
+      review_date TEXT,
+      due_date TEXT NOT NULL,
+      fsrs_due TEXT,
+      fsrs_stability REAL,
+      fsrs_difficulty REAL,
+      fsrs_state INTEGER DEFAULT 0,
+      fsrs_step INTEGER DEFAULT 0,
+      fsrs_last_review TEXT,
+      UNIQUE (user_id, question_id),
+      FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
+    );
+
     CREATE TABLE IF NOT EXISTS practice_sessions (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       mode TEXT NOT NULL DEFAULT 'random',

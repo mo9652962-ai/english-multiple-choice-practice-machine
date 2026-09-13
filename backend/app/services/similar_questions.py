@@ -17,7 +17,8 @@ import json
 import sqlite3
 from typing import Any
 
-from .ai_client import chat_completion, parse_json_response
+from .ai_client import parse_json_response
+from .ai_router import chat_with_routing
 
 SIMILAR_QUESTION_PROMPT = """你是一名考研英语命题专家。请根据下面这道真题的考点，生成 3 道风格一致的变体题（新文章、新题干、新选项），用于巩固同一考点。
 
@@ -89,8 +90,9 @@ def generate_similar_questions(
     )
     
     try:
-        response = chat_completion(
+        response = chat_with_routing(
             connection,
+            "similar_questions",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=1200,
         )

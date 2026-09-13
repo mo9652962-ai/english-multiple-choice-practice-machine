@@ -6,7 +6,7 @@ import sqlite3
 from collections.abc import AsyncIterator, Mapping, Sequence
 from typing import Any
 
-from .ai_client import chat_completion
+from .ai_router import chat_with_routing
 
 
 CHAT_SYSTEM_PROMPT = """你是「阿墨」，墨题刷题机的学习陪伴 AI，一个亲切靠谱的研友。
@@ -144,18 +144,21 @@ async def stream_ai_reply(
     connection: sqlite3.Connection,
     recent_messages: Sequence[Mapping[str, Any] | sqlite3.Row],
     user_message: str,
+    user_id: int | None = None,
 ) -> AsyncIterator[str]:
     """调用现有 AI 客户端，并将完整结果切成 WS 可发送的增量片段。
 
-    当前项目的 chat_completion 是同步非流式客户端，因此这里只在工作线程中
-    完成一次现有调用，再将返回文本分段发出，避免阻塞 FastAPI 事件循环；未来
+    当前项目的任务路由客户端是同步非流式客户端，因此这里只在工作线程中
+    完成一次路由调用，再将返回文本分段发出，避免阻塞 FastAPI 事件循环；未来
     客户端支持上游流式响应时，可在此处替换为真正的 token 迭代而不改变 WS 协议。
     """
     messages = build_ai_prompt(connection, recent_messages, user_message)
     content = await asyncio.to_thread(
-        chat_completion,
+        chat_with_routing,
         connection,
+        "chat_explain",
         messages,
+        user_id=user_id,
         max_tokens=500,
     )
     full_content = str(content or "").strip()
@@ -165,4 +168,3 @@ async def stream_ai_reply(
     for start in range(0, len(full_content), chunk_size):
         yield full_content[start : start + chunk_size]
         await asyncio.sleep(0)
-
