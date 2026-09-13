@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  BarChart3,
   Check,
   ChevronDown,
   ChevronUp,
@@ -18,6 +19,7 @@ import {
 import { onMounted, reactive, ref } from 'vue'
 import { del, get, post, put } from '../api'
 import { sound } from '../services/sound'
+import { localMetricsEnabled, setLocalMetricsEnabled, trackMetric } from '../services/metrics'
 
 type AiModel = {
   model_id: string
@@ -47,6 +49,14 @@ const profiles = ref<AiProfile[]>([])
 const expanded = ref<number[]>([])
 const shuffleEnabled = ref(localStorage.getItem('epm_shuffle_options') !== 'false')
 const soundEnabled = ref(sound.isEnabled())
+const metricsEnabled = ref(localMetricsEnabled())
+const metricsBusy = ref(false)
+const metricsSummary = ref<any>(null)
+
+function metricRate(value: unknown): string {
+  const numeric = Number(value)
+  return Number.isFinite(numeric) ? `${Math.round(Math.max(0, Math.min(1, numeric)) * 100)}%` : '暂无基线'
+}
 
 function toggleSound() {
   soundEnabled.value = !soundEnabled.value
@@ -247,7 +257,36 @@ async function removeProfile(profile: AiProfile) {
 onMounted(() => {
   load()
   loadUsage()
+  void loadMetrics()
 })
+
+async function loadMetrics() {
+  try {
+    const consent = await get<{ enabled: boolean }>('/metrics/consent')
+    metricsEnabled.value = Boolean(consent.enabled)
+    setLocalMetricsEnabled(metricsEnabled.value)
+    if (metricsEnabled.value) {
+      metricsSummary.value = await get('/metrics/summary?days=30')
+    }
+  } catch {
+    // Offline mode uses the local opt-in value and has no server summary.
+  }
+}
+
+async function toggleMetrics() {
+  if (metricsBusy.value) return
+  metricsBusy.value = true
+  const next = !metricsEnabled.value
+  try {
+    const result = await put<{ enabled: boolean }>('/metrics/consent', { enabled: next })
+    metricsEnabled.value = Boolean(result.enabled)
+  } catch {
+    metricsEnabled.value = next
+  }
+  setLocalMetricsEnabled(metricsEnabled.value)
+  if (!metricsEnabled.value) metricsSummary.value = null
+  metricsBusy.value = false
+}
 
 // ── v9.27: Gemini UI4——文枢阁用量（AI Usage） ──
 const usageLoading = ref(false)
@@ -303,6 +342,7 @@ async function submitFeedback() {
       contact: fbContact.value.trim(),
       page: window.location.pathname,
     })
+    void trackMetric('feedback_submitted', { category: fbCat.value })
     fbMsg.value = '反馈已收到，谢谢！'
     fbContent.value = ''
     fbContact.value = ''
@@ -357,6 +397,28 @@ async function submitFeedback() {
               <span :class="{ on: soundEnabled }"></span>
             </button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="api-profile-card new-profile">
+      <div class="api-profile-heading">
+        <span class="api-profile-icon"><BarChart3 :size="20" /></span>
+        <div><span class="eyebrow">隐私优先</span><h2>本地学习指标</h2></div>
+      </div>
+      <div class="api-profile-body">
+        <div class="practice-pref-row">
+          <div>
+            <strong>允许记录匿名学习事件</strong>
+            <p>默认关闭。开启后只在本地数据库记录启动、练习完成、题库导入、错误和安装结果，不记录题目正文、答案或 API Key。</p>
+            <small v-if="metricsSummary" class="muted">
+              近 30 天 {{ metricsSummary.total_events }} 次事件 · {{ metricsSummary.active_days }} 个学习日 · 完成 {{ metricsSummary.total_questions || 0 }} 题 · 近 7 天活跃 {{ metricsSummary.active_days_7d || 0 }} 天
+              <br />错题复习完成率 {{ metricRate(metricsSummary.wrong_review_rate) }} · 词汇复习完成率 {{ metricRate(metricsSummary.vocabulary_review_rate) }}
+            </small>
+          </div>
+          <button class="pref-switch" type="button" role="switch" :aria-checked="metricsEnabled" :disabled="metricsBusy" @click="toggleMetrics">
+            <span :class="{ on: metricsEnabled }"></span>
+          </button>
         </div>
       </div>
     </section>

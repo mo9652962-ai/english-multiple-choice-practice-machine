@@ -10,6 +10,7 @@ import { activateQuestionBankProfile, loadQuestionBankProfiles, questionBankProf
 import { loadOrganizations } from './services/organizations'
 import { sound } from './services/sound'
 import { haptic, isHapticEnabled, setHapticEnabled } from './services/haptics'
+import { trackMetric } from './services/metrics'
 
 const route = useRoute()
 const dark = ref(false)
@@ -113,6 +114,30 @@ function applyTheme() {
   localStorage.setItem('linjian-theme', dark.value ? 'dark' : 'light')
 }
 
+async function runNativeSecuritySmoke() {
+  const capacitor = (window as any)?.Capacitor
+  if (!capacitor?.isNativePlatform?.()) return
+  const secureStorage = capacitor?.Plugins?.SecureStorage
+  if (!secureStorage?.selfTest) return
+  try {
+    // This only verifies the Android Keystore round trip and never logs or
+    // returns a user API key. It makes native storage regressions observable.
+    await secureStorage.selfTest()
+  } catch (error) {
+    console.error('[EPM_ANDROID_SMOKE] keystore self-test failed', error)
+  }
+}
+
+function trackUnhandledError() {
+  const report = () => { void trackMetric('app_error', { route: window.location.pathname }) }
+  window.addEventListener('error', report)
+  window.addEventListener('unhandledrejection', report)
+  return () => {
+    window.removeEventListener('error', report)
+    window.removeEventListener('unhandledrejection', report)
+  }
+}
+
 function toggleTheme() {
   // v9.19 UI: View Transition API 圆形遮罩过渡 (fallback: 直接切换)
   const apply = () => {
@@ -127,6 +152,8 @@ function toggleTheme() {
   }
 }
 
+let removeUnhandledErrorTracking: (() => void) | null = null
+
 onMounted(() => {
   dark.value = localStorage.getItem('linjian-theme') === 'dark'
     || (!localStorage.getItem('linjian-theme') && matchMedia('(prefers-color-scheme: dark)').matches)
@@ -134,11 +161,19 @@ onMounted(() => {
   document.body.classList.add('ink-landscape')
   void loadCategories()
   void loadOrganizations().catch(() => undefined)
+  void trackMetric('app_launch', { version: __APP_VERSION__ })
+  if (!localStorage.getItem('epm_first_launch_recorded')) {
+    localStorage.setItem('epm_first_launch_recorded', '1')
+    void trackMetric('first_launch', { version: __APP_VERSION__ })
+  }
+  removeUnhandledErrorTracking = trackUnhandledError()
+  void runNativeSecuritySmoke()
   window.addEventListener('keydown', handleGlobalKeydown)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleGlobalKeydown)
+  removeUnhandledErrorTracking?.()
 })
 </script>
 
