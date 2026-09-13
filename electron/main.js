@@ -7,11 +7,39 @@ const path = require('path')
 const http = require('http')
 const fs = require('fs')
 
+const diagnosticLogPath = process.env.EPM_DIAGNOSTIC_LOG || ''
+function writeDiagnostic(event, details = {}) {
+  if (!diagnosticLogPath) return
+  try {
+    fs.mkdirSync(path.dirname(diagnosticLogPath), { recursive: true })
+    fs.appendFileSync(
+      diagnosticLogPath,
+      `${JSON.stringify({
+        timestamp: new Date().toISOString(),
+        event,
+        pid: process.pid,
+        ...details,
+      })}\n`,
+      'utf8',
+    )
+  } catch (_error) { /* diagnostic logging must never affect startup */ }
+}
+
+writeDiagnostic('process_start', {
+  argv: process.argv,
+  cwd: process.cwd(),
+  resourcesPath: process.resourcesPath,
+  packaged: Boolean(process.defaultApp === false),
+  port: process.env.EPM_PORT || '8765',
+})
+
 // ---------- 单实例锁（防多开导致后端端口冲突） ----------
 const gotLock = app.requestSingleInstanceLock()
 if (!gotLock) {
+  writeDiagnostic('single_instance_lock_denied')
   app.quit()
 } else {
+  writeDiagnostic('single_instance_lock_acquired')
   app.on('second-instance', () => {
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
@@ -34,6 +62,7 @@ try {
 // ---------- 未捕获异常处理（不弹窗，写日志） ----------
 // v9.23 (beta.5): 修复 EPIPE 弹窗——console 写入失败等异常不再打断用户
 process.on('uncaughtException', (err) => {
+  writeDiagnostic('uncaught_exception', { error: String(err && err.stack || err) })
   try {
     const logDir = path.join(app.getPath('userData'), 'logs')
     fs.mkdirSync(logDir, { recursive: true })
@@ -43,7 +72,10 @@ process.on('uncaughtException', (err) => {
   // 不弹窗、不退出——更新等后台任务失败可静默重试
 })
 
-const PORT = 8765
+const configuredPort = Number.parseInt(process.env.EPM_PORT || '', 10)
+const PORT = Number.isInteger(configuredPort) && configuredPort >= 1024 && configuredPort <= 65535
+  ? configuredPort
+  : 8765
 const URL = `http://127.0.0.1:${PORT}`
 
 let backendProc = null
@@ -151,6 +183,7 @@ function findPython() {
 }
 
 function startBackend() {
+  writeDiagnostic('start_backend_begin', { resourcesPath: process.resourcesPath })
   // v9.21 (beta.2): 首次启动复制种子题库到用户数据目录（内置正式真题）
   try {
     const userDataDir = path.join(app.getPath('userData'), 'data')
@@ -168,6 +201,7 @@ function startBackend() {
   const resources = process.resourcesPath
   const backendExe = path.join(resources, 'backend_app', 'backend_app.exe')
   const hasBackendExe = app.isPackaged && require('fs').existsSync(backendExe)
+  writeDiagnostic('backend_candidate', { backendExe, hasBackendExe, packaged: app.isPackaged })
   if (hasBackendExe) {
     backendProc = spawn(backendExe, [], {
       windowsHide: true,
@@ -181,6 +215,7 @@ function startBackend() {
         EPM_PORT: String(PORT),
       },
     })
+    writeDiagnostic('backend_spawned', { backendExe, backendPid: backendProc.pid, port: String(PORT) })
     return true
   }
   const py = findPython()
@@ -201,19 +236,26 @@ function startBackend() {
 }
 
 function waitForBackend(timeoutMs = 20000) {
+  writeDiagnostic('wait_for_backend_begin', { url: `${URL}/api/health`, timeoutMs })
   return new Promise((resolve, reject) => {
     const deadline = Date.now() + timeoutMs
     const tick = () => {
       const req = http.get(`${URL}/api/health`, { timeout: 2000 }, (res) => {
         res.resume()
-        if (res.statusCode === 200) resolve(true)
+        if (res.statusCode === 200) {
+          writeDiagnostic('wait_for_backend_ok', { statusCode: res.statusCode })
+          resolve(true)
+        }
         else retry()
       })
       req.on('error', retry)
       req.on('timeout', () => { req.destroy(); retry() })
     }
     const retry = () => {
-      if (Date.now() > deadline) reject(new Error('后端启动超时'))
+      if (Date.now() > deadline) {
+        writeDiagnostic('wait_for_backend_timeout')
+        reject(new Error('后端启动超时'))
+      }
       else setTimeout(tick, 300)
     }
     tick()
@@ -229,6 +271,7 @@ function stopBackend() {
 
 // ---------- 窗口 ----------
 function createWindow() {
+  writeDiagnostic('create_window_begin', { url: URL })
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 860,
@@ -247,6 +290,7 @@ function createWindow() {
 
 // ---------- 生命周期 ----------
 app.whenReady().then(async () => {
+  writeDiagnostic('app_ready')
   setupAutoUpdater()  // v9.20: 自动更新（打包版）
   // 检查后端是否已在运行（用户之前手动启动过）
   const alreadyRunning = await new Promise((resolve) => {
@@ -257,14 +301,17 @@ app.whenReady().then(async () => {
   })
 
   if (!alreadyRunning) {
+    writeDiagnostic('backend_not_already_running')
     if (!startBackend()) return
     try {
       await waitForBackend()
     } catch (e) {
+      writeDiagnostic('backend_start_failed', { error: String(e && e.stack || e) })
       dialog.showErrorBox('启动失败', `后端启动超时：\n${e.message}\n\n请检查 Python 环境和依赖 (pip install -r requirements.txt)`)
       return
     }
   }
+  writeDiagnostic('backend_ready_or_reused', { alreadyRunning })
   createWindow()
 })
 

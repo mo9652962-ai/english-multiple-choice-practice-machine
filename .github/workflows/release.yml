@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: |
             frontend/package-lock.json
@@ -39,9 +39,33 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
         working-directory: frontend
+      - name: Sync shared release metadata
+        run: node scripts/sync_release_metadata.mjs
       - name: Build frontend
         run: npm run build
         working-directory: frontend
+      - name: Check frontend entry bundle budget
+        run: node tools/check_frontend_bundle.mjs --dist frontend/dist --max-entry-kb 512 --max-lazy-kb 1024
+      - name: Check offline seed and migration contract
+        run: node tools/check_offline_seed.mjs --db frontend/dist/question_bank.db --migrations frontend/dist/offline_migrations.json
+      - name: Check offline runtime migration (legacy and fresh)
+        run: node tools/check_offline_runtime.mjs frontend/dist/offline_migrations.json
+      - name: Smoke test served Web dist
+        shell: pwsh
+        run: .\scripts\web_static_smoke.ps1 -Dist frontend\dist
+
+      - name: Generate Capacitor Android project for metadata validation
+        shell: pwsh
+        working-directory: frontend
+        run: |
+          if (-not (Test-Path -LiteralPath "android")) {
+            npx cap add android
+          }
+          npx cap sync android
+      - name: Sync Android version metadata
+        run: node scripts/sync_android_version.mjs
+      - name: Sync tracked native plugins
+        run: node scripts/sync_android_plugins.mjs
 
       - name: Create clean seed database
         shell: pwsh
@@ -50,10 +74,15 @@ jobs:
         run: |
           python -c "from backend.app.database import initialize_database; initialize_database()"
           python tools/verify_release_data.py --check-templates
+          python tools/release_check.py --release-db backend/data/question_bank.db --min-vocabulary 7958 --min-schema-version 2 --require-package-provenance --require-publishable-provenance --strict-quality --require-android-metadata --check-templates --write-report release-manifest.json
 
       - name: Build backend executable
         run: python -m PyInstaller backend_app.spec --noconfirm
         working-directory: backend
+
+      - name: Smoke test backend executable
+        shell: pwsh
+        run: .\scripts\windows_package_smoke.ps1 -Executable backend\dist\backend_app\backend_app.exe
 
       - name: Install Electron dependencies
         run: npm ci
@@ -64,10 +93,22 @@ jobs:
         run: npm run dist -- --publish never
         working-directory: electron
 
+      - name: Smoke test portable Windows package
+        shell: pwsh
+        run: |
+          $version = (Get-Content -LiteralPath VERSION -Raw).Trim()
+          if ($env:GITHUB_REF_NAME -like 'v*') {
+            $version = $env:GITHUB_REF_NAME.TrimStart('v')
+          }
+          .\scripts\windows_portable_smoke.ps1 -Executable "electron\dist\epm-portable-$version.exe" -Port 18765
+
       - name: Verify release artifacts
         shell: pwsh
         run: |
-          $version = $env:GITHUB_REF_NAME.TrimStart('v')
+          $version = (Get-Content -LiteralPath VERSION -Raw).Trim()
+          if ($env:GITHUB_REF_NAME -like 'v*') {
+            $version = $env:GITHUB_REF_NAME.TrimStart('v')
+          }
           $required = @(
             "electron/dist/epm-setup-$version.exe",
             "electron/dist/epm-portable-$version.exe"
@@ -75,6 +116,19 @@ jobs:
           foreach ($path in $required) {
             if (-not (Test-Path $path)) { throw "Missing release artifact: $path" }
           }
+          python tools/release_check.py `
+            --release-db backend/data/question_bank.db `
+            --offline-db frontend/dist/question_bank.db `
+            --min-vocabulary 7958 `
+            --min-schema-version 2 `
+            --require-package-provenance `
+            --require-publishable-provenance `
+            --strict-quality `
+            --require-android-metadata `
+            --check-templates `
+            --artifact electron/dist/epm-setup-$version.exe `
+            --artifact electron/dist/epm-portable-$version.exe `
+            --write-report release-manifest.json
 
       - name: Publish GitHub release
         if: startsWith(github.ref, 'refs/tags/')
@@ -82,14 +136,35 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
-          $version = $env:GITHUB_REF_NAME.TrimStart('v')
+          $version = (Get-Content -LiteralPath VERSION -Raw).Trim()
+          if ($env:GITHUB_REF_NAME -like 'v*') {
+            $version = $env:GITHUB_REF_NAME.TrimStart('v')
+          }
+          $manifest = Get-Content -LiteralPath release-manifest.json -Raw | ConvertFrom-Json
+          $releaseDb = $manifest.databases.release
+          $offlineDb = $manifest.databases.offline
+          @"
+          # 墨题 $version
+
+          - 程序版本：$($manifest.metadata.version)
+          - 发布日期：$($manifest.metadata.release_date)
+          - 内容版本：$($manifest.metadata.content_version)
+          - 离线种子版本：$($manifest.metadata.offline_seed_version)
+          - 发布库 SHA-256：$($releaseDb.sha256)
+          - 离线库 SHA-256：$($offlineDb.sha256)
+          - 发布库题目/词汇：$($releaseDb.counts.questions) / $($releaseDb.counts.vocabulary_entries)
+          - 离线库题目/词汇：$($offlineDb.counts.questions) / $($offlineDb.counts.vocabulary_entries)
+
+          详细校验结果见随发布附带的 `release-manifest.json`。
+          "@ | Set-Content -LiteralPath release-notes.md -Encoding utf8
           $assets = @(
             "electron/dist/epm-setup-$version.exe",
             "electron/dist/epm-setup-$version.exe.blockmap",
             "electron/dist/epm-portable-$version.exe",
-            "electron/dist/latest.yml"
+            "electron/dist/latest.yml",
+            "release-manifest.json"
           )
-          gh release create $env:GITHUB_REF_NAME $assets --repo $env:GITHUB_REPOSITORY --generate-notes --title "墨题 $version"
+          gh release create $env:GITHUB_REF_NAME $assets --repo $env:GITHUB_REPOSITORY --notes-file release-notes.md --title "墨题 $version · $($manifest.metadata.content_version)"
           if ($LASTEXITCODE -ne 0) {
             # Release 已存在时改为补充资产（幂等重跑）
             gh release upload $env:GITHUB_REF_NAME $assets --repo $env:GITHUB_REPOSITORY --clobber
