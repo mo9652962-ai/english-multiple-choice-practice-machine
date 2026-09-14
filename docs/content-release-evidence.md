@@ -25,6 +25,8 @@
 | `ai_assist.diff_status` | `recorded`、`reviewed` 或 `not_applicable` | AI 修改前后 diff 或明确“不使用 AI 修改”的记录 |
 | `quality.release_sample.status` | `passed` 或 `reviewed` | 发布前抽样范围、样本数、失败数和处理结果 |
 
+`-RequirePaperProvenance` 是更严格的逐卷门禁：发布库中每一条未删除且状态为 `published` 的 `papers` 记录，都必须绑定 `package_id + content_version`，并解析到一个通过上述发布证据检查的题包。只验证“登记了哪些包”不等于验证“公开库里的每一卷都来自可发布包”。
+
 `-StrictQuality` 还会把以下确定性题型门禁写入 release manifest，并在任一计数大于 0 时阻断发布：
 
 | 检查项 | 含义 |
@@ -36,6 +38,14 @@
 这些检查只验证稳定的结构契约，不会把某一套考试的固定题号或固定选项数量硬编码到所有题库中；考试模板完整性由 `-CheckTemplates` 单独检查。
 
 ## 当前题包状态
+
+### `content-2026-09-14-r2` 重建结果
+
+2026-09-14 对公开库做了逐卷 provenance 收口：除两个旧考研回忆版/本地导出包外，同时隔离了 5 个没有可验证包登记的旧 package identity。共移除 10 条公开题卷、38 个单元和 159 道题；历史删除记录仍保留在 release 数据库中，但不再计入公开内容。最终活跃公开内容为 12 套试卷、95 个单元、668 道题和 7,958 个词汇条目，全部来自两个项目自建 AI 模拟题包。
+
+严格门禁结果：`release_check` 退出码为 `0`，`packages_not_publishable=0`，`paper_provenance.papers_not_publishable=0`。release/offline 数据库的 r2 指纹分别为 `FFDCB436A9CC93E7E21EAE2C5407FA0880C491D660366C1A870CA1EADE8A934B` 和 `F513F26D09ED8C0339A481720C1AC3610F6D2C3DC4073BCDCFAACAFF81EFAA67`。
+
+由于题库内容已变化，旧 `content-2026-09-14-r1` / `offline-2026-09-14-r1` 的 Windows、APK 和前端产物均视为过期，必须使用 r2 重新构建并重新计算 artifact hash；本轮不把旧产物宣称为可发布版本。
 
 当前公开 starter 源目录已替换为两个明确标注的原创 AI 模拟题包。数据库和离线种子属于被 Git 忽略的本地产物，必须在重新导入/重建后才会反映这次替换；在重建前不得使用旧数据库执行发布。
 
@@ -106,6 +116,7 @@
 .\scripts\release_check.ps1 `
   -RequirePackageProvenance `
   -RequirePublishableProvenance `
+  -RequirePaperProvenance `
   -StrictQuality `
   -RequireAndroidMetadata `
   -CheckTemplates `

@@ -2,6 +2,20 @@
 
 本记录对应内容版本 `content-2026-09-14-r1`、离线种子版本 `offline-2026-09-14-r1`、应用版本 `2.1.3`。所有 hash 均为本轮重新构建后的最终文件，不应与此前构建产物混用。
 
+> ⚠️ 本记录是 r1 的历史构建证据。2026-09-14 题库已完成 r2 provenance 收口并升版为 `content-2026-09-14-r2` / `offline-2026-09-14-r2`；因此本文列出的安装包、APK、数据库和 bundle hash 全部需要重新构建后才能恢复为当前发布证据。本轮不把这些旧产物当作 r2 发布物。
+
+## r2 重建后的内容指纹
+
+| 项目 | 当前值 |
+|---|---|
+| 活跃公开题卷 | 12 套（release/offline 一致） |
+| 单元 / 题目 / 词汇 | 95 / 668 / 7,958 |
+| release 数据库 SHA-256 | `FFDCB436A9CC93E7E21EAE2C5407FA0880C491D660366C1A870CA1EADE8A934B` |
+| offline 数据库 SHA-256 | `F513F26D09ED8C0339A481720C1AC3610F6D2C3DC4073BCDCFAACAFF81EFAA67` |
+| 严格逐卷 provenance 门禁 | 通过；`packages_not_publishable=0`、`papers_not_publishable=0` |
+
+Windows、APK 和 Web 静态产物尚未针对 r2 重新构建；在完成重建、签名和相应运行验证前，发布状态保持阻断。
+
 ## 构建结果
 
 | 目标 | 结果 | 说明 |

@@ -2,6 +2,8 @@
 
 本记录对应公开 starter 目录中的两个替代 ESQ 包。它们用于替代未取得公开分发授权的考研英语考生回忆版/本地导出包，不是官方真题，也不声称获得教育考试机构授权。
 
+> 注意：下方最初的 48 套/827 题记录属于 r1 历史构建。2026-09-14 的 r2 逐卷 provenance 收口已将未登记或不可发布的历史题卷隔离；当前公开库以本文末尾的 r2 记录为准。旧 r1 安装包、APK 和数据库 hash 不得继续作为当前发布证据。
+
 ## 包与生成物
 
 | package_id | 文件 | 内容 | 题量 |
@@ -28,9 +30,7 @@
 ## 质量记录
 
 - ESQ 校验：两个包均 `valid=true`，各 6 套、18 个单元、90 道题，错误数为 0。
-- 重建后的 release 数据库：48 套试卷、133 个单元、827 道题，SHA-256 为 `5BF7A80FE70B1902A2536D83A76D6BBEBCDFA5F89DED90D3621E35E625C77397`。
-- 重建后的 offline 数据库：48 套试卷、133 个单元、827 道题，SHA-256 为 `D385CA1A72527C2FE398CCEA20C1F62A9C3085345379EE528F7498B874331F95`。
-- 严格 `release_check`：退出码 `0`，`packages_not_publishable=0`，报告见 `work/release-manifest-simulated-full.json`。
+- 历史 r1 重建的 release/offline 数量与 hash 见本文顶部说明；该记录不再代表当前可发布内容。
 - 答案映射：每道题均有答案，答案选项均存在于对应选项集合。
 - 题型覆盖：每包包含 `cloze`、`reading`、`part_b` 三类单元。
 - 抽样复核：每包抽查 12 道题，检查题干、选项、答案映射和“AI 模拟·非真题”标识。
@@ -39,3 +39,13 @@
 ## 发布边界
 
 这两个新包只有在重新导入 release 数据库、同步离线种子并通过严格 `release_check` 后，才可进入公开 Windows/APK/Web 发布流程。原两个未授权包必须保持 local-only，不得被重新复制到公开 starter 目录或离线数据库。
+
+## r2 逐卷 provenance 收口证据
+
+- 内容版本：`content-2026-09-14-r2`；离线种子版本：`offline-2026-09-14-r2`。
+- 活跃公开内容：12 套试卷、95 个单元、668 道题、7,958 个词汇条目；release 数据库物理上另保留 26 条历史删除题卷记录。
+- 本轮隔离：7 个不可公开 package identity，共移除 10 条公开题卷、38 个单元和 159 道题。
+- release 数据库 SHA-256：`FFDCB436A9CC93E7E21EAE2C5407FA0880C491D660366C1A870CA1EADE8A934B`。
+- offline 数据库 SHA-256：`F513F26D09ED8C0339A481720C1AC3610F6D2C3DC4073BCDCFAACAFF81EFAA67`。
+- 严格 `release_check`：退出码 `0`；`packages_not_publishable=0`；逐卷 `papers_not_publishable=0`。
+- 离线公共种子中的练习、考试、错题、FSRS 和本地指标运行数据均为 0，避免把本机状态带入分发包。
