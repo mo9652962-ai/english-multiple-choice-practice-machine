@@ -14,6 +14,7 @@ let offlineMode = false
 const listeners: (() => void)[] = []
 const OFFLINE_METRICS_CONSENT = 'epm_local_metrics_consent'
 const OFFLINE_METRICS_EVENTS = 'epm_local_metrics_events'
+const OFFLINE_FEEDBACK = 'epm_feedback_entries'
 const OFFLINE_METRIC_EVENT_NAMES = new Set([
   'first_launch',
   'app_launch',
@@ -881,7 +882,20 @@ function offlinePost(path: string, body?: any): any {
   }
   // Feedback（离线：本地记录——不报错）
   if (path === '/feedback') {
-    return { ok: true }
+    let entries: any[] = []
+    try {
+      const parsed = JSON.parse(localStorage.getItem(OFFLINE_FEEDBACK) || '[]')
+      entries = Array.isArray(parsed) ? parsed : []
+    } catch {
+      entries = []
+    }
+    entries.push({
+      ...body,
+      id: Date.now(),
+      created_at: new Date().toISOString(),
+    })
+    localStorage.setItem(OFFLINE_FEEDBACK, JSON.stringify(entries.slice(-200)))
+    return { ok: true, id: entries[entries.length - 1].id }
   }
   // Papers batch move（离线：空操作——不报错）
   if (path === '/papers/batch-move') {
