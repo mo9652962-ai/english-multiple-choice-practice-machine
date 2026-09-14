@@ -67,6 +67,52 @@ class SensitiveReadAccessTests(unittest.TestCase):
         self.assertNotIn("profile_id", detail.json())
         self.assertEqual(detail.json()["cert_no"], "CERT-PRIVACY-1")
 
+    def test_anti_cheat_events_are_scoped_to_exam_owner(self) -> None:
+        from backend.app.routers import auth
+
+        with patch.object(auth, "AUTH_ENABLED", True), patch.object(
+            auth, "ADMIN_USERNAME", "examadmin"
+        ):
+            owner = self.client.post(
+                "/api/auth/register",
+                json={"username": "examowner", "password": "Passw0rd123"},
+            ).json()
+            other = self.client.post(
+                "/api/auth/register",
+                json={"username": "examother", "password": "Passw0rd123"},
+            ).json()
+            connection = sqlite3.connect(self.database_path)
+            try:
+                exam_id = int(
+                    connection.execute(
+                        """
+                        INSERT INTO exam_sessions
+                            (profile_id, title, question_ids, total_questions, duration_minutes, user_id)
+                        VALUES (1, 'owner exam', '[]', 0, 30, ?)
+                        """,
+                        (owner["user"]["id"],),
+                    ).lastrowid
+                )
+                connection.commit()
+            finally:
+                connection.close()
+
+            other_headers = {"Authorization": f"Bearer {other['token']}"}
+            denied = self.client.post(
+                f"/api/exams/{exam_id}/anti-cheat",
+                headers=other_headers,
+                json={"event_type": "screen_switch"},
+            )
+            self.assertEqual(denied.status_code, 404)
+
+            owner_headers = {"Authorization": f"Bearer {owner['token']}"}
+            allowed = self.client.post(
+                f"/api/exams/{exam_id}/anti-cheat",
+                headers=owner_headers,
+                json={"event_type": "screen_switch"},
+            )
+            self.assertEqual(allowed.status_code, 200, allowed.text)
+
 
 if __name__ == "__main__":
     unittest.main()
