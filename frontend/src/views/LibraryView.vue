@@ -159,9 +159,9 @@ async function confirmDelete() {
   <div class="page page-library">
     <div class="page-head">
       <div>
-        <span class="eyebrow">真题文库 · 藏书阁</span>
+        <span class="eyebrow">题库文库 · 藏书阁</span>
         <h1>卷宗文库</h1>
-        <p class="lead">于墨香中抚卷，历年真题整卷全景研习，中途自动保存作答记录。</p>
+        <p class="lead">于墨香中抚卷，模拟题与合法导入题库均可整卷研习，中途自动保存作答记录。</p>
       </div>
     </div>
     <QuestionBankSwitcher @changed="loadPapers" />
@@ -174,7 +174,7 @@ async function confirmDelete() {
         <span>客观题 <strong>{{ totalQuestions }}</strong> 道</span>
       </div>
       <div class="lead" style="font-size:12px;margin:0">
-        真题全真还原 · 自动打乱选项防死记 · 随时提笔开卷
+        题库整卷训练 · 自动打乱选项防死记 · 随时提笔开卷
       </div>
     </div>
 
@@ -243,7 +243,7 @@ async function confirmDelete() {
 
         <div class="paper-card-body">
           <div class="paper-card-top">
-            <span class="scholar-seal-tag">真题卷</span>
+            <span class="scholar-seal-tag">题卷</span>
             <span class="pill" :class="{ 'pill-published': paper.status === 'published' }">
               {{ paper.status === 'published' ? '已收录' : '未刊布' }}
             </span>
@@ -280,7 +280,7 @@ async function confirmDelete() {
     <div v-else class="card empty illustrated-empty">
       <img loading="lazy" decoding="async" src="/assets/quiet-study-empty.webp" alt="" />
       <strong>题库还是空的</strong>
-      <p>请先到“导入题库”上传 Word 真题。</p>
+      <p>请先到“导入题库”上传你拥有合法使用权的 Word/PDF/ESQ 题库。</p>
     </div>
   </div>
 
@@ -298,4 +298,3 @@ async function confirmDelete() {
     </div>
   </Teleport>
 </template>
-
