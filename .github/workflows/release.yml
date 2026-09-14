@@ -87,9 +87,26 @@ jobs:
       - name: Install Electron dependencies
         run: npm ci
         working-directory: electron
+      - name: Require Windows signing inputs for tagged release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        env:
+          CSC_LINK: ${{ secrets.WINDOWS_CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.WINDOWS_CSC_KEY_PASSWORD }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:CSC_LINK)) {
+            throw "Tagged Windows releases require the WINDOWS_CSC_LINK secret."
+          }
+          if ([string]::IsNullOrWhiteSpace($env:CSC_KEY_PASSWORD)) {
+            throw "Tagged Windows releases require the WINDOWS_CSC_KEY_PASSWORD secret."
+          }
+
       - name: Build Windows installers
         # 禁用 electron-builder 自动 publish（publish 指向 epm-releases，github.token 无跨仓库权限）
         # 产物统一由下方 Publish 步骤发布
+        env:
+          CSC_LINK: ${{ secrets.WINDOWS_CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.WINDOWS_CSC_KEY_PASSWORD }}
         run: npm run dist -- --publish never
         working-directory: electron
 
@@ -101,6 +118,23 @@ jobs:
             $version = $env:GITHUB_REF_NAME.TrimStart('v')
           }
           .\scripts\windows_portable_smoke.ps1 -Executable "electron\dist\epm-portable-$version.exe" -Port 18765
+
+      - name: Verify signed Windows artifacts
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        run: |
+          $version = (Get-Content -LiteralPath VERSION -Raw).Trim()
+          $artifacts = @(
+            "electron/dist/epm-setup-$version.exe",
+            "electron/dist/epm-portable-$version.exe"
+          )
+          foreach ($path in $artifacts) {
+            $signature = Get-AuthenticodeSignature -LiteralPath $path
+            if ($signature.Status -ne 'Valid') {
+              throw "Unsigned or invalid Windows artifact: $path (status=$($signature.Status))"
+            }
+            Write-Host "$path signature status: $($signature.Status); signer=$($signature.SignerCertificate.Subject)"
+          }
 
       - name: Verify release artifacts
         shell: pwsh
