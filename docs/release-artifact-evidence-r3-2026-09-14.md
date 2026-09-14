@@ -26,6 +26,7 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 | Windows portable 冒烟 | 通过 | 版本 `2.1.3`、内容 `r3`、Schema `2`、内置 seed hash 与 release DB 一致 |
 | Android 前端资源同步 | 通过 | `npx cap sync android` 已将当前前端 dist 同步到生成工程 |
 | Android debug APK | 通过 | 使用 Temurin JDK `21.0.12.1` 重建；Gradle 成功，APK v2 签名校验通过，APK 内离线数据库、迁移清单和版本元数据与当前 Web dist 一致 |
+| Android release 构建链 | 通过（测试密钥） | 使用一次性本地测试 keystore 完成 `assembleRelease`、v2 签名校验和资源一致性检查；测试 keystore 与测试 APK 已清理，不构成正式发布签名证据 |
 | Android 真机/模拟器运行 | 未完成 | `adb` 无设备、无可用 emulator/AVD；不能宣称运行验收通过 |
 | 严格发布门禁 | 通过 | 退出码 0；`packages_not_publishable=0`、`papers_not_publishable=0` |
 
