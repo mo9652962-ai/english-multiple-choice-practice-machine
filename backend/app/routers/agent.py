@@ -16,6 +16,9 @@ router = APIRouter(prefix="/agent", tags=["agent"])
 
 
 class AgentRunRequest(BaseModel):
+    # Kept for payload compatibility with an early internal prototype.  The
+    # route never trusts this client-controlled value; identity comes only
+    # from the authentication dependency below.
     user_id: int | None = Field(default=None, ge=1)
     goal: str = Field(default="", max_length=500)
 
@@ -27,8 +30,8 @@ class MemoryRequest(BaseModel):
     confidence: float = Field(default=0.5, ge=0, le=1)
 
 
-def _current_user_id(user: dict | None, requested: int | None = None) -> int | None:
-    return int(user["id"]) if user else requested
+def _current_user_id(user: dict | None) -> int | None:
+    return int(user["id"]) if user else None
 
 
 def _decode(value: str) -> Any:
@@ -44,7 +47,7 @@ def create_run(
     connection: sqlite3.Connection = Depends(get_db),
     user: dict | None = Depends(maybe_require_user),
 ) -> dict[str, Any]:
-    user_id = _current_user_id(user, request.user_id)
+    user_id = _current_user_id(user)
     return run_learning_agent(user_id, connection=connection, goal=request.goal)
 
 
