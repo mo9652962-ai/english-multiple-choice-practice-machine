@@ -19,37 +19,38 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 
 | 目标 | 结果 | 证据边界 |
 |---|---|---|
-| 全量 Python 测试 | `142 passed, 13 skipped` | 通过，不替代人工内容复核；包含 Android release artifact contract 回归测试 |
-| 前端生产构建 | 通过 | Vite 默认 500 KB chunk 提示仍存在；项目自身 512/1024 KB 门禁通过 |
-| 后端 PyInstaller | 通过 | 在 Electron 实际引用的 `backend/dist/backend_app` 路径重建 |
-| Windows 安装包 / portable | 通过 | 完整 builder 退出码 0；portable 新临时目录启动冒烟通过 |
+| 全量 Python 测试 | `164 passed, 13 skipped` | 通过，不替代人工内容复核；包含 Android release artifact contract 回归测试 |
+| 前端生产构建 | 通过 | 入口最大 465 KB、最大懒加载块 922 KB；项目自身 512/1024 KB 门禁通过 |
+| 后端 PyInstaller | 通过 | 在 Electron 实际引用的 `backend/dist/backend_app` 路径重建；hash 已更新 |
+| Windows 安装包 / portable | 通过 | 本轮重新打包，builder 退出码 0；portable 新临时目录启动冒烟通过 |
 | Windows portable 冒烟 | 通过 | 版本 `2.1.3`、内容 `r3`、Schema `2`、内置 seed hash 与 release DB 一致 |
-| Android debug APK | 构建通过 | `assembleDebug` 成功；不是正式 release 签名；标签构建会改用 release APK 做清单与上传 |
+| Android 前端资源同步 | 通过 | `npx cap sync android` 已将当前前端 dist 同步到生成工程 |
+| Android debug APK | 未重建 | 当前环境缺少 Java/JDK，`assembleDebug` 无法执行；旧 APK hash 不代表本轮前端源码 |
 | Android 真机/模拟器运行 | 未完成 | `adb` 无设备、无可用 emulator/AVD；不能宣称运行验收通过 |
 | 严格发布门禁 | 通过 | 退出码 0；`packages_not_publishable=0`、`papers_not_publishable=0` |
 
-最终严格门禁报告：`work/release-manifest-artifacts-r3-final.json`。本轮复核报告为 `work/release-manifest-current-2026-09-14.json`；它们记录了 r3 数据库、元数据、两个 Windows 候选和 Android APK 的 hash。
+最终严格门禁报告：`work/release-manifest-artifacts-r3-final.json`。本轮复核报告为 `work/release-manifest-current-2026-09-14.json`；当前报告记录 r3 数据库和元数据，Windows hash 以本节本轮重建值为准；Android APK hash 仍是历史候选，不能作为本轮前端源码的最终产物证据。
 
 ## r3 artifact SHA-256
 
 | 文件 | 大小（bytes） | SHA-256 | 状态 |
 |---|---:|---|---|
-| `electron/dist/epm-setup-2.1.3.exe` | 147,682,392 | `6D4C71FB676E4C28291F9891430D08E0C4F701A4BC1021225FF9FFB825044934` | 本机自签名，内部候选 |
-| `electron/dist/epm-setup-2.1.3.exe.blockmap` | 149,497 | `89574C06D8A5D3FC74A04F6E25490BA25568CDBEA551B13BEA3E9D6926852445` | 对应 r3 安装包 |
-| `electron/dist/epm-portable-2.1.3.exe` | 147,343,248 | `6212535E07ECB771378FFAF635A56AC0955DB7D69F76EC9035931E8ECCCB4B36` | 本机自签名，内部候选 |
-| `frontend/android/app/build/outputs/apk/debug/app-debug.apk` | 32,928,594 | `1B4F8610BCE1BD6CE27C7357784EA6079E7689252542E34F16FAD9398CA853AF` | debug 候选，未做真机验证 |
-| `backend/dist/backend_app/backend_app.exe` | 18,153,091 | `C2131C2A8B684BA542BBA19B11F33865BFBC862A6FA402AB712FF002F21C2452` | r3 后端重建；资源版本另由 `_internal/CONTENT_VERSION` 核对 |
+| `electron/dist/epm-setup-2.1.3.exe` | 147,691,456 | `CD56D173C2D77C561620B3CD802274280F943938521DAF5AB07ADD80BD722F0C` | 本轮重建；本机自签名，内部候选 |
+| `electron/dist/epm-setup-2.1.3.exe.blockmap` | 149,609 | `80D519E5F5F386B3B249AEDD6A1410FBD454C126DF49C72613BCD34CD9D03CD0` | 对应本轮安装包 |
+| `electron/dist/epm-portable-2.1.3.exe` | 147,352,328 | `294A510D27996B3EC0C588ABC1DB3C356DD528B336206875040FA6A7A98D2014` | 本轮重建；本机自签名，内部候选 |
+| `frontend/android/app/build/outputs/apk/debug/app-debug.apk` | 32,928,594 | `1B4F8610BCE1BD6CE27C7357784EA6079E7689252542E34F16FAD9398CA853AF` | 历史 debug 候选；前端源码更新后未重建，不得作为当前候选 |
+| `backend/dist/backend_app/backend_app.exe` | 18,156,423 | `AD33692F7850F0158517D092AF1161FA45A450852570BCCBBBB1BF140E30538A` | 本轮后端重建；资源版本由 `_internal/CONTENT_VERSION` 核对 |
 
 ## 当前仍不能公开发布的原因
 
 1. Windows 使用本机自签名证书 `227BFE4360866350CCDE133BA2A6E141F7A50E0E`；本机当前 `Get-AuthenticodeSignature` 状态为 `UnknownError`（证书链终止于不受信任根），正式 tag workflow 会拒绝 self-signed 或非 `Valid` 证书；需要公共 CA 代码签名证书或明确的内部信任分发边界。
 2. Android 只有 debug APK，没有真实 release keystore Secrets；需要配置 `ANDROID_KEYSTORE_BASE64`、`ANDROID_KEYSTORE_PASSWORD`、`ANDROID_KEY_ALIAS`、`ANDROID_KEY_PASSWORD`。
-3. 本机没有 Android 真机、模拟器或 AVD，尚未完成安装、离线启动、练习、返回键、后台恢复、重启和迁移验证。
+3. 本机没有 Android 真机、模拟器或 AVD，且当前没有可用 JDK 执行 `assembleDebug`；尚未完成安装、离线启动、练习、返回键、后台恢复、重启和迁移验证。
 4. GitHub Release、外部 artifact 存储和正式发布目标仍未获得明确授权，因此没有执行上传或 push。
 
 ## 可复现输入与下一步
 
-`tools/create_release_content_bundle.py` 现在会从本地 release/offline 数据库生成只含公共内容的确定性 bundle，清除运行时数据、用户词汇和删除题卷残留；`tools/rebuild_public_content.py` 也会在常规重建中执行同样的非活跃题卷清理。CI 目前只检查受控内容输入存在并记录 hash，尚未把该 bundle 接入远程内容存储。下一步应先补齐受保护的 CI 内容输入，再完成正式签名和真实 Android 设备验收。
+`tools/create_release_content_bundle.py` 现在会从本地 release/offline 数据库生成只含公共内容的确定性 bundle，清除运行时数据、用户词汇和删除题卷残留；`tools/rebuild_public_content.py` 也会在常规重建中执行同样的非活跃题卷清理。CI 目前只检查受控内容输入存在并记录 hash，尚未把该 bundle 接入远程内容存储。Windows 本轮内部候选已与当前前端/后端同步；下一步仍需补齐受保护的 CI 内容输入、JDK/Android debug 重建、正式签名和真实 Android 设备验收。
 
 ## CI 工作流复核
 
