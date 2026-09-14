@@ -5,6 +5,7 @@ param(
   [switch]$StrictQuality,
   [switch]$RequirePackageProvenance,
   [switch]$RequirePublishableProvenance,
+  [switch]$RequirePaperProvenance,
   [int]$MinVocabulary = 0,
   [int]$MinSchemaVersion = 0,
   [switch]$CheckTemplates,
@@ -36,6 +37,7 @@ if ($RequireMatchingContent) { $scriptArgs += "--require-matching-content" }
 if ($StrictQuality) { $scriptArgs += "--strict-quality" }
 if ($RequirePackageProvenance) { $scriptArgs += "--require-package-provenance" }
 if ($RequirePublishableProvenance) { $scriptArgs += "--require-publishable-provenance" }
+if ($RequirePaperProvenance) { $scriptArgs += "--require-paper-provenance" }
 if ($MinVocabulary -gt 0) { $scriptArgs += @("--min-vocabulary", $MinVocabulary.ToString()) }
 if ($MinSchemaVersion -gt 0) { $scriptArgs += @("--min-schema-version", $MinSchemaVersion.ToString()) }
 if ($CheckTemplates) { $scriptArgs += "--check-templates" }

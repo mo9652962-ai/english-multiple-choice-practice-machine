@@ -218,6 +218,7 @@ def _package_provenance(connection: sqlite3.Connection, tables: set[str]) -> dic
             "packages_without_provenance": 0,
             "packages_publishable": 0,
             "packages_not_publishable": 0,
+            "publishable_packages": [],
         }
     rows = connection.execute(
         "SELECT package_id, content_version, manifest_data FROM question_bank_packages"
@@ -225,6 +226,7 @@ def _package_provenance(connection: sqlite3.Connection, tables: set[str]) -> dic
     complete = 0
     missing: list[dict[str, str]] = []
     not_publishable: list[dict[str, str]] = []
+    publishable_packages: list[dict[str, str]] = []
     for row in rows:
         package_id = str(row["package_id"] or "")
         content_version = str(row["content_version"] or "")
@@ -287,6 +289,10 @@ def _package_provenance(connection: sqlite3.Connection, tables: set[str]) -> dic
             (has_license, has_source, bool(content_version), license_verified,
              source_verified, human_reviewed, ai_diff_recorded, sample_reviewed)
         )
+        if publishable:
+            publishable_packages.append(
+                {"package_id": package_id, "content_version": content_version}
+            )
         if not publishable:
             not_publishable.append(
                 {
@@ -312,7 +318,90 @@ def _package_provenance(connection: sqlite3.Connection, tables: set[str]) -> dic
         "packages_publishable": len(rows) - len(not_publishable),
         "packages_not_publishable": len(not_publishable),
         "not_publishable": not_publishable,
+        "publishable_packages": publishable_packages,
     }
+
+
+def _paper_provenance(
+    connection: sqlite3.Connection,
+    tables: set[str],
+    package_provenance: dict[str, Any],
+) -> dict[str, Any]:
+    """Require every active public paper to resolve to a publishable package.
+
+    Package-level provenance alone is insufficient: a database can contain a
+    few verified packages alongside older papers that have no source trail.
+    This report intentionally contains paper identity and missing fields, but
+    never question text or answers.
+    """
+    empty = {
+        "papers_total": 0,
+        "papers_with_publishable_package": 0,
+        "papers_without_package": 0,
+        "papers_with_unregistered_package": 0,
+        "papers_not_publishable": 0,
+        "missing": [],
+    }
+    if "papers" not in tables:
+        return empty
+
+    columns = {
+        str(row[1])
+        for row in connection.execute('PRAGMA table_info("papers")').fetchall()
+    }
+    select_columns = ["id", "year", "title"]
+    select_columns.append("status" if "status" in columns else "'' AS status")
+    select_columns.append("deleted_at" if "deleted_at" in columns else "NULL AS deleted_at")
+    select_columns.append("package_id" if "package_id" in columns else "NULL AS package_id")
+    select_columns.append(
+        "content_version" if "content_version" in columns else "NULL AS content_version"
+    )
+    where = []
+    if "deleted_at" in columns:
+        where.append("deleted_at IS NULL")
+    if "status" in columns:
+        where.append("status = 'published'")
+    rows = connection.execute(
+        f"SELECT {', '.join(select_columns)} FROM papers"
+        + (f" WHERE {' AND '.join(where)}" if where else "")
+    ).fetchall()
+    package_keys = {
+        (str(item.get("package_id") or ""), str(item.get("content_version") or ""))
+        for item in package_provenance.get("publishable_packages", [])
+        if isinstance(item, dict)
+    }
+    result = dict(empty)
+    result["papers_total"] = len(rows)
+    missing: list[dict[str, Any]] = []
+    for row in rows:
+        package_id = str(row["package_id"] or "")
+        content_version = str(row["content_version"] or "")
+        missing_fields: list[str] = []
+        if "package_id" not in columns or not package_id:
+            missing_fields.append("package_id")
+        if "content_version" not in columns or not content_version:
+            missing_fields.append("content_version")
+        if not missing_fields and (package_id, content_version) not in package_keys:
+            missing_fields.append("package.not_registered_or_not_publishable")
+        if missing_fields:
+            if "package_id" in missing_fields or "content_version" in missing_fields:
+                result["papers_without_package"] += 1
+            else:
+                result["papers_with_unregistered_package"] += 1
+            missing.append(
+                {
+                    "paper_id": int(row["id"]),
+                    "year": int(row["year"]),
+                    "title": str(row["title"] or ""),
+                    "package_id": package_id,
+                    "content_version": content_version,
+                    "missing": ",".join(missing_fields),
+                }
+            )
+    result["missing"] = missing
+    result["papers_not_publishable"] = len(missing)
+    result["papers_with_publishable_package"] = len(rows) - len(missing)
+    return result
 
 
 def _content_quality(connection: sqlite3.Connection) -> dict[str, Any]:
@@ -538,6 +627,9 @@ def inspect_database(
             """
         ).fetchone()[0])
         quality["package_provenance"] = _package_provenance(connection, tables)
+        quality["paper_provenance"] = _paper_provenance(
+            connection, tables, quality["package_provenance"]
+        )
         return {
             "path": _display_path(path),
             "sha256": digest,
@@ -595,6 +687,11 @@ def main() -> int:
         "--require-publishable-provenance",
         action="store_true",
         help="除元数据完整外，还要求许可证/来源已核验、人工复核、AI diff 和发布抽样均有记录",
+    )
+    parser.add_argument(
+        "--require-paper-provenance",
+        action="store_true",
+        help="要求 release 数据库中每条未删除公开试卷都绑定可发布的题包",
     )
     parser.add_argument("--min-vocabulary", type=int, default=0)
     parser.add_argument("--min-schema-version", type=int, default=0)
@@ -695,6 +792,17 @@ def main() -> int:
                     )
                 ):
                     errors.append("release: quality gate failed: publishable provenance")
+                if (
+                    args.require_paper_provenance
+                    and name == "release"
+                    and data.get("quality", {}).get("paper_provenance", {}).get(
+                        "papers_not_publishable", 0
+                    )
+                ):
+                    count = data["quality"]["paper_provenance"]["papers_not_publishable"]
+                    errors.append(
+                        f"release: quality gate failed: paper provenance ({count} papers)"
+                    )
 
         schema_name = "offline" if args.offline_only else "release"
         schema_database = report["databases"].get(schema_name, {})
