@@ -43,16 +43,16 @@
 
 2026-09-14 对公开库做了逐卷 provenance 收口，并进一步清除了已删除题卷残留的子表数据。r2 数据库虽然只有 12 套活跃题卷，但仍保留 26 套已删除题卷的 59 个单元、488 道题和 3,654 个选项；这些行不再进入 r3 release/offline seed。最终可公开内容为 12 套试卷、36 个单元、180 道题、720 个选项和 7,958 个词汇条目，全部来自两个项目自建 AI 模拟题包。
 
-严格门禁结果：`release_check` 退出码为 `0`，`packages_not_publishable=0`，`paper_provenance.papers_not_publishable=0`。release/offline 数据库的 r3 指纹分别为 `2A8F6E4C3EB4AE2F48102A86E7C893AF170AE0CD2E21C610ABCD0B473994BAD6` 和 `E444341B9DDFB775B48199F0CA9613076EBC3E24808EF166D51EF27B43B79E9A`。可审计内容 bundle 见 `work/release-content-bundle-r3.zip`，其中 release/offline 清洗后内容计数一致。
+严格门禁结果：`release_check` 退出码为 `0`，`packages_not_publishable=0`，`paper_provenance.papers_not_publishable=0`。release/offline 数据库的 r3 指纹分别为 `21A2C9DC26D780CD55FA685587674065A809D0AC720BFCE80CFA2FE9D3125A6F` 和 `E444341B9DDFB775B48199F0CA9613076EBC3E24808EF166D51EF27B43B79E9A`。可审计内容 bundle 见 `work/release-content-bundle-r3.zip`，其中 release/offline 清洗后内容计数一致。
 
-由于题库内容已变化，旧 r1/r2 的 Windows、APK 和前端产物均视为过期；本轮已按 r3 重新构建并重新计算 artifact hash。Windows 仍是内部候选，Android 仍是 debug 构建，不因此解除正式发布阻断。
+由于题库内容已变化，旧 r1/r2 的 Windows、APK 和前端产物均视为过期；本轮已按 r3 重新构建 Windows/Web 并重新计算对应 artifact hash，Android 仅完成前端资源同步，debug APK 尚未重建。Windows 仍是内部候选，Android 仍未形成当前源码对应的 APK，不因此解除正式发布阻断。
 
 当前公开 starter 源目录已替换为两个明确标注的原创 AI 模拟题包。数据库和离线种子属于被 Git 忽略的本地产物，必须在重新导入/重建后才会反映这次替换；在重建前不得使用旧数据库执行发布。
 
 | package_id | 当前状态 | 阻断原因 |
 |---|---|---|
-| `motei.ai.postgraduate-english-one.sim-2026` | `verified in current local release seed` | 后续内容变更仍需重新跑严格门禁 |
-| `motei.ai.postgraduate-english-two.sim-2026` | `verified in current local release seed` | 后续内容变更仍需重新跑严格门禁 |
+| `motei.ai.postgraduate-english-one.sim-2026` | `verified in current local release seed` | 后续任何内容变更仍需重新跑严格门禁 |
+| `motei.ai.postgraduate-english-two.sim-2026` | `verified in current local release seed` | 后续任何内容变更仍需重新跑严格门禁 |
 
 原考研英语（一/二）题包已移出公开 starter 目录，保留在本机被忽略的 `examples/internal-banks/` 目录，仅用于内部留档，不进入 PyInstaller、Web 或 APK 资源。它们仍然不能公开分发，也不能作为新模拟题的来源文本。
 
