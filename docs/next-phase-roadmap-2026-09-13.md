@@ -12,7 +12,7 @@
 | 自动化测试 | 129 passed、13 skipped | 已覆盖后端流程、离线迁移、发布门禁和若干端到端链路 |
 | 题包公开状态 | 2 个项目生成模拟包可发布 | 旧考研回忆版/本地导出包已保持 local-only，不进入公开资源 |
 | Android 运行验证 | CI 模拟器流程已配置；本机无可用设备/模拟器 | 本轮 APK 构建与静态检查通过，真机/模拟器运行仍未完成 |
-| 发布产物 | Windows 安装包、portable、APK 已重新构建 | Windows 未签名，APK 为 debug；不能直接视为正式发行包 |
+| 发布产物 | Windows 安装包、portable、APK 已重新构建 | Windows 为本机自签名内部验证产物，APK 为 debug；不能直接视为正式发行包 |
 
 ## 已落地的核心闭环
 
@@ -69,6 +69,12 @@
 - `origin/main` 仍保留远程独有的巨型提交 `f912c76`，直接合并会删除本地新增的题包生成器、provenance 文档和发布产物证据。
 - 当前处理原则：先以本地拆分后的历史作为候选发布基线，完成差异审查后再决定是否通过 PR 整合远程；不做 reset、强制覆盖或直接 push。
 - 最终构建指纹与门禁结果见 `docs/release-artifact-evidence-2026-09-14.md`。
+
+## 本轮继续落地的事项
+
+- 错题本已增加“今日复习全部”入口：将已到期 FSRS 队列一次性转成既有练习会话，保留原有判分、错题回收和 FSRS 更新链路。
+- 已增加 `scripts/check_android_release_signing.ps1` 作为本地 release keystore 预检工具；它只检查路径、alias、密码变量和 `keytool` 可验证性，不保存或打印密钥。
+- 已用契约测试和前端生产构建验证上述改动；真实 release keystore、真实 Android 设备和外部发布授权仍是 P0 未完成项。
 
 ## 发布前硬门槛
 
