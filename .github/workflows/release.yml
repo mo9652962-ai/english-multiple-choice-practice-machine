@@ -74,7 +74,7 @@ jobs:
         run: |
           python -c "from backend.app.database import initialize_database; initialize_database()"
           python tools/verify_release_data.py --check-templates
-          python tools/release_check.py --release-db backend/data/question_bank.db --min-vocabulary 7958 --min-schema-version 2 --require-package-provenance --require-publishable-provenance --strict-quality --require-android-metadata --check-templates --write-report release-manifest.json
+          python tools/release_check.py --release-db backend/data/question_bank.db --min-vocabulary 7958 --min-schema-version 2 --require-package-provenance --require-publishable-provenance --require-paper-provenance --strict-quality --require-android-metadata --check-templates --write-report release-manifest.json
 
       - name: Build backend executable
         run: python -m PyInstaller backend_app.spec --noconfirm
@@ -157,6 +157,7 @@ jobs:
             --min-schema-version 2 `
             --require-package-provenance `
             --require-publishable-provenance `
+            --require-paper-provenance `
             --strict-quality `
             --require-android-metadata `
             --check-templates `
