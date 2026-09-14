@@ -882,6 +882,7 @@ def analyze_wrong(
             connection,
             question_ids,
             previous_snapshot=previous_snapshot or None,
+            user_id=user_id,
         )
         aggregate = aggregate_diagnoses(diagnoses)
         content = write_anonymous_report(connection, aggregate)

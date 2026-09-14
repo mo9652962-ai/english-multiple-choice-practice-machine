@@ -124,6 +124,7 @@ def _json_list(value: str | None) -> list[Any]:
 def _question_history(
     connection: sqlite3.Connection,
     question_id: int,
+    user_id: int | None = None,
 ) -> list[dict[str, Any]]:
     rows = connection.execute(
         """
@@ -132,11 +133,12 @@ def _question_history(
         FROM practice_answers AS pa
         JOIN practice_sessions AS ps ON ps.id = pa.session_id
         WHERE pa.question_id = ? AND pa.is_correct IS NOT NULL
+              AND ps.user_id IS ?
               AND TRIM(pa.user_answer) <> ''
         ORDER BY COALESCE(ps.submitted_at, pa.answered_at) DESC, pa.id DESC
         LIMIT 12
         """,
-        (question_id,),
+        (question_id, user_id),
     ).fetchall()
     history = [
         {
@@ -152,13 +154,14 @@ def _question_history(
     ]
     event_rows = connection.execute(
         """
-        SELECT user_answer, changed_at
-        FROM practice_answer_events
-        WHERE question_id = ?
-        ORDER BY changed_at DESC, id DESC
+        SELECT pae.user_answer, pae.changed_at
+        FROM practice_answer_events AS pae
+        JOIN practice_sessions AS ps ON ps.id = pae.session_id
+        WHERE pae.question_id = ? AND ps.user_id IS ?
+        ORDER BY pae.changed_at DESC, pae.id DESC
         LIMIT 20
         """,
-        (question_id,),
+        (question_id, user_id),
     ).fetchall()
     if event_rows:
         history_changes = [
@@ -175,6 +178,7 @@ def build_diagnostic_payload(
     connection: sqlite3.Connection,
     question_ids: list[int],
     previous_snapshot: dict[str, Any] | None = None,
+    user_id: int | None = None,
 ) -> list[dict[str, Any]]:
     if not question_ids:
         return []
@@ -193,10 +197,12 @@ def build_diagnostic_payload(
         JOIN papers AS p ON p.id = u.paper_id
         JOIN wrong_stats AS ws ON ws.question_id = q.id
         LEFT JOIN question_ai_labels AS l ON l.question_id = q.id
-        WHERE q.id IN ({placeholders}) AND ws.wrong_count > 0
+        WHERE q.id IN ({placeholders})
+          AND ws.user_id IS ?
+          AND ws.wrong_count > 0
         ORDER BY p.year, u.sequence, q.sequence
         """,
-        question_ids,
+        (*question_ids, user_id),
     ).fetchall()
     units: dict[int, dict[str, Any]] = {}
     for row in rows:
@@ -241,7 +247,9 @@ def build_diagnostic_payload(
                 "correct_answer": row["answer"],
                 "attempt_count": row["attempt_count"],
                 "wrong_count": row["wrong_count"],
-                "history_newest_first": _question_history(connection, row["id"]),
+                "history_newest_first": _question_history(
+                    connection, row["id"], user_id=user_id
+                ),
                 "pre_label": label,
             }
         )
@@ -252,9 +260,13 @@ def diagnose_wrong_answers(
     connection: sqlite3.Connection,
     question_ids: list[int],
     previous_snapshot: dict[str, Any] | None = None,
+    user_id: int | None = None,
 ) -> tuple[list[dict[str, Any]], str]:
     payload = build_diagnostic_payload(
-        connection, question_ids, previous_snapshot=previous_snapshot
+        connection,
+        question_ids,
+        previous_snapshot=previous_snapshot,
+        user_id=user_id,
     )
     if not payload:
         raise ValueError("没有可分析的错题记录")
