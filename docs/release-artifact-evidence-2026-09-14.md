@@ -69,6 +69,13 @@ python tools/release_check.py `
 - 本地使用一次性测试 keystore 验证过 `assembleRelease` 与 `apksigner verify`；测试 keystore 和测试 release APK 已清理，未作为正式产物保留。
 - 当前仓库仍不保存签名私钥；Android 尚未配置真实 release keystore，因此本记录中的 APK hash 仍属于 debug APK。Windows hash 为本机自签名后的内部验证产物，正式公开发布仍需确认公共信任证书或明确接受内部信任分发。
 
+## 本轮配置与学习强化
+
+- 新增 `scripts/check_android_release_signing.ps1`：可在本地用 keystore 路径和环境变量做签名预检，验证 alias、keystore 密码和 CI Secret 是否齐全；脚本不会输出任何密码，也不会写入仓库。
+- 错题本的 FSRS“今日复习”区域新增“今日复习全部”入口：一次性把当前已加载的到期题目交给既有练习会话，继续沿用提交时的 FSRS 更新、错题回收和重启恢复逻辑，不引入第二套调度算法。
+- 当前学习强化只覆盖已加载的队列上限（后端默认 30 题）；队列为空时仍需先完成练习或错题产生复习卡片。
+- 已增加契约测试，锁定批量复习入口和 Android 预检的密钥不泄露约束。
+
 ## 内容生成说明
 
 本轮两个公开模拟题包由仓库内 `tools/generate_ai_simulation_banks.py` 的确定性模板和项目自有主题种子生成，可复现、无外部模型实时调用，也未读取旧未授权题包作为生成输入。它们不是官方真题，也不是本轮实时批量模型生成结果；如要升级为真实模型生成，仍需单独增加模型版本记录、提示词/输入证据、内容质量抽检和人工复核。
