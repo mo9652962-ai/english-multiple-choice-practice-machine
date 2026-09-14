@@ -11,6 +11,11 @@ $resolvedExecutable = (Resolve-Path -LiteralPath $Executable -ErrorAction Stop).
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $expectedVersion = (Get-Content -LiteralPath (Join-Path $projectRoot 'VERSION') -Raw).Trim()
 $expectedContentVersion = (Get-Content -LiteralPath (Join-Path $projectRoot 'CONTENT_VERSION') -Raw).Trim()
+$releaseDatabase = Join-Path $projectRoot 'backend\data\question_bank.db'
+if (-not (Test-Path -LiteralPath $releaseDatabase)) {
+  throw "发布数据库不存在，无法验证 portable 包 seed：$releaseDatabase"
+}
+$expectedDatabaseHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $releaseDatabase).Hash.ToLowerInvariant()
 $smokeRoot = Join-Path $env:TEMP ("epm-portable-smoke-" + [guid]::NewGuid().ToString('N'))
 $userDataDir = Join-Path $smokeRoot 'user-data'
 $diagnosticLog = Join-Path $smokeRoot 'electron-diagnostic.jsonl'
@@ -61,11 +66,36 @@ try {
   if ($content.content_version -ne $expectedContentVersion -or $content.schema_version -lt 1 -or $content.counts.questions -lt 0) {
     throw "便携版内容元数据无效：Schema=$($content.schema_version)"
   }
+  $resourcePath = $null
+  if (Test-Path -LiteralPath $diagnosticLog) {
+    foreach ($line in (Get-Content -LiteralPath $diagnosticLog)) {
+      try {
+        $event = $line | ConvertFrom-Json
+        if ($event.resourcesPath) {
+          $resourcePath = [string]$event.resourcesPath
+          break
+        }
+      } catch {
+        # Ignore a partially flushed diagnostic line and keep polling evidence.
+      }
+    }
+  }
+  if ([string]::IsNullOrWhiteSpace($resourcePath)) {
+    throw '便携版诊断日志没有提供 resourcesPath，无法验证内置 seed。'
+  }
+  $packagedSeed = Join-Path $resourcePath 'seed\question_bank.db'
+  if (-not (Test-Path -LiteralPath $packagedSeed)) {
+    throw "便携版内置 seed 不存在：$packagedSeed"
+  }
+  $actualPackagedSeedHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $packagedSeed).Hash.ToLowerInvariant()
+  if ($actualPackagedSeedHash -ne $expectedDatabaseHash) {
+    throw "便携版内置 seed 数据库指纹不一致：期望 $expectedDatabaseHash，实际 $actualPackagedSeedHash"
+  }
   $startup = Invoke-RestMethod -Uri "http://127.0.0.1:$Port/api/startup" -TimeoutSec 5
   if (-not $startup.active_profile -or $startup.paper_count -lt 0 -or $startup.question_count -lt 0) {
     throw "便携版首页启动数据无效：未返回 active_profile 或题库计数。"
   }
-  Write-Output ("Windows portable smoke passed: version={0}, content={1}, schema={2}" -f $version.version, $version.content_version, $content.schema_version)
+  Write-Output ("Windows portable smoke passed: version={0}, content={1}, schema={2}, seed={3}" -f $version.version, $version.content_version, $content.schema_version, $actualPackagedSeedHash)
 } finally {
   if (Test-Path -LiteralPath $diagnosticLog) {
     Write-Output "Electron diagnostic log: $diagnosticLog"
