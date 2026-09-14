@@ -14,7 +14,19 @@
 | offline 数据库 SHA-256 | `F513F26D09ED8C0339A481720C1AC3610F6D2C3DC4073BCDCFAACAFF81EFAA67` |
 | 严格逐卷 provenance 门禁 | 通过；`packages_not_publishable=0`、`papers_not_publishable=0` |
 
-Windows、APK 和 Web 静态产物尚未针对 r2 重新构建；在完成重建、签名和相应运行验证前，发布状态保持阻断。
+Web 静态产物、Windows 内部候选和 Android debug 候选已针对 r2 重新构建；但 Windows 仍使用本机自签名证书，APK 仍是 debug 签名，且 Android 真机/模拟器运行尚未验证，因此发布状态仍保持阻断。
+
+## r2 内部候选产物指纹
+
+| 文件 | 大小（bytes） | SHA-256 | 状态 |
+|---|---:|---|---|
+| `electron/dist/epm-setup-2.1.3.exe` | 147701496 | `25C94474D704FC975C06EA449E5EFCB73A75A92C94CA53DD7FD3E15EB85E0DE7` | 本机自签名，内部候选 |
+| `electron/dist/epm-setup-2.1.3.exe.blockmap` | 149489 | `9FF81A7DC22966FF4CA0D71EBE6C66D6510B71C4B03538F1EB4C5C3B95EF9435` | 对应 r2 安装包 |
+| `electron/dist/epm-portable-2.1.3.exe` | 147362352 | `4221A201B2960ADC43C7F4977FE83A0C5AE4BA27D98098421AAD9C62DD4ACAE4` | 本机自签名，内部候选 |
+| `frontend/android/app/build/outputs/apk/debug/app-debug.apk` | 32925180 | `B0805D6862649B3BA72F6781A7DA5C51CDF5F3FCD76E45A8C21DBF1BB09BA4EC` | debug 候选，未做真机验证 |
+| `backend/dist/backend_app/backend_app.exe` | 18153091 | `C2131C2A8B684BA542BBA19B11F33865BFBC862A6FA402AB712FF002F21C2452` | r2 后端重建 |
+
+Windows 安装包和 portable 的 Authenticode 状态均为 `Valid`，签名者为本机自签名证书 `227BFE4360866350CCDE133BA2A6E141F7A50E0E`；这不等同于公共 CA 信任。带上述 artifact 参数的严格 `release_check` 退出码为 `0`，但该门禁不替代正式签名和真实设备运行验证。
 
 ## 构建结果
 
