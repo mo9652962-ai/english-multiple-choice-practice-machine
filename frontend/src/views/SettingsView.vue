@@ -322,6 +322,12 @@ const fbOpen = ref(false)
 const fbCat = ref('other')
 const fbContent = ref('')
 const fbContact = ref('')
+const fbPilotMode = ref(false)
+const fbParticipantCode = ref('')
+const fbDifficultyRating = ref<number | null>(null)
+const fbExplanationRating = ref<number | null>(null)
+const fbCoverageRating = ref<number | null>(null)
+const fbContinueIntent = ref('')
 const fbSending = ref(false)
 const fbMsg = ref('')
 const fbCats = [
@@ -341,11 +347,22 @@ async function submitFeedback() {
       content: fbContent.value.trim(),
       contact: fbContact.value.trim(),
       page: window.location.pathname,
+      participant_code: fbPilotMode.value ? fbParticipantCode.value.trim() : '',
+      difficulty_rating: fbPilotMode.value ? fbDifficultyRating.value : null,
+      explanation_rating: fbPilotMode.value ? fbExplanationRating.value : null,
+      coverage_rating: fbPilotMode.value ? fbCoverageRating.value : null,
+      continue_intent: fbPilotMode.value && fbContinueIntent.value ? fbContinueIntent.value : null,
     })
     void trackMetric('feedback_submitted', { category: fbCat.value })
     fbMsg.value = '反馈已收到，谢谢！'
     fbContent.value = ''
     fbContact.value = ''
+    fbPilotMode.value = false
+    fbParticipantCode.value = ''
+    fbDifficultyRating.value = null
+    fbExplanationRating.value = null
+    fbCoverageRating.value = null
+    fbContinueIntent.value = ''
     setTimeout(() => { fbOpen.value = false; fbMsg.value = '' }, 1200)
   } catch (cause) {
     fbMsg.value = '提交失败：' + String(cause)
@@ -625,6 +642,34 @@ async function submitFeedback() {
         </div>
         <textarea v-model="fbContent" rows="4" maxlength="2000" placeholder="请描述你的问题或建议（必填）"></textarea>
         <input v-model="fbContact" maxlength="200" placeholder="联系方式（选填，方便我们回复你）" />
+        <label class="feedback-pilot-toggle">
+          <input v-model="fbPilotMode" type="checkbox" />
+          <span>我是内测参与者，补充一份体验评价（可选）</span>
+        </label>
+        <div v-if="fbPilotMode" class="feedback-pilot-fields">
+          <p class="feedback-pilot-note">只填匿名编号，例如 P01；不要填写姓名、手机号或 API Key。</p>
+          <input v-model="fbParticipantCode" maxlength="32" pattern="[A-Za-z0-9_-]*" placeholder="匿名内测编号（可选，例如 P01）" />
+          <label>题目难度匹配
+            <select v-model="fbDifficultyRating">
+              <option :value="null">未评价</option><option v-for="n in 5" :key="`difficulty-${n}`" :value="n">{{ n }} / 5</option>
+            </select>
+          </label>
+          <label>解析可信度
+            <select v-model="fbExplanationRating">
+              <option :value="null">未评价</option><option v-for="n in 5" :key="`explanation-${n}`" :value="n">{{ n }} / 5</option>
+            </select>
+          </label>
+          <label>题型覆盖
+            <select v-model="fbCoverageRating">
+              <option :value="null">未评价</option><option v-for="n in 5" :key="`coverage-${n}`" :value="n">{{ n }} / 5</option>
+            </select>
+          </label>
+          <label>是否愿意继续使用
+            <select v-model="fbContinueIntent">
+              <option value="">未评价</option><option value="yes">愿意</option><option value="unsure">还不确定</option><option value="no">不愿意</option>
+            </select>
+          </label>
+        </div>
         <div class="feedback-actions">
           <button class="button secondary" type="button" @click="fbOpen = false">取消</button>
           <button class="button" type="button" :disabled="fbSending || fbContent.trim().length < 2" @click="submitFeedback">{{ fbSending ? '提交中…' : '提交反馈' }}</button>
