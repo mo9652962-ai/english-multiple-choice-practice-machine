@@ -76,6 +76,28 @@ class FeedbackPrivacyApiTests(unittest.TestCase):
             self.assertEqual(administrator_list.json()[0]["coverage_rating"], 4)
             self.assertEqual(administrator_list.json()[0]["continue_intent"], "yes")
 
+            self.assertEqual(self.client.get("/api/feedback/summary").status_code, 401)
+            ordinary_summary = self.client.get(
+                "/api/feedback/summary",
+                headers={"Authorization": f"Bearer {ordinary['token']}"},
+            )
+            self.assertEqual(ordinary_summary.status_code, 403)
+            administrator_summary = self.client.get(
+                "/api/feedback/summary?days=30",
+                headers={"Authorization": f"Bearer {administrator['token']}"},
+            )
+            self.assertEqual(administrator_summary.status_code, 200)
+            summary = administrator_summary.json()
+            self.assertEqual(summary["response_count"], 1)
+            self.assertEqual(summary["participant_count"], 1)
+            self.assertEqual(summary["ratings"]["difficulty_average"], 4.0)
+            self.assertEqual(summary["ratings"]["explanation_average"], 3.0)
+            self.assertEqual(summary["ratings"]["coverage_average"], 4.0)
+            self.assertEqual(summary["continue_intent"], [{"intent": "yes", "count": 1}])
+            self.assertNotIn("content", summary)
+            self.assertNotIn("contact", summary)
+            self.assertNotIn("participant_code", summary)
+
     def test_structured_rating_is_validated_and_anonymous_code_is_constrained(self) -> None:
         invalid_rating = self.client.post(
             "/api/feedback",
