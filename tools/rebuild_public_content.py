@@ -80,20 +80,16 @@ def column_names(connection: sqlite3.Connection, table: str) -> set[str]:
     return {str(row[1]) for row in connection.execute(f'PRAGMA table_info("{table}")')}
 
 
-def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]:
+def _delete_paper_content(
+    connection: sqlite3.Connection,
+    paper_ids: list[int],
+    package_ids: tuple[str, ...] = (),
+) -> dict[str, int]:
     tables = table_names(connection)
-    if "papers" not in tables:
-        return {"papers": 0, "units": 0, "questions": 0, "packages": 0}
-
-    package_placeholders = ",".join("?" for _ in UNPUBLISHABLE_PACKAGE_IDS)
-    paper_rows = connection.execute(
-        f"SELECT id FROM papers WHERE package_id IN ({package_placeholders})",
-        UNPUBLISHABLE_PACKAGE_IDS,
-    ).fetchall()
-    paper_ids = [int(row[0]) for row in paper_rows]
     if not paper_ids:
         return {"papers": 0, "units": 0, "questions": 0, "packages": 0}
 
+    package_placeholders = ",".join("?" for _ in package_ids) or "NULL"
     id_placeholders = ",".join("?" for _ in paper_ids)
     unit_ids = [
         int(row[0])
@@ -133,10 +129,10 @@ def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]
             connection.execute(
                 f'DELETE FROM "{table}" WHERE paper_id IN ({placeholders})', paper_ids
             )
-        if "package_id" in columns:
+        if package_ids and "package_id" in columns:
             connection.execute(
                 f'DELETE FROM "{table}" WHERE package_id IN ({package_placeholders})',
-                UNPUBLISHABLE_PACKAGE_IDS,
+                package_ids,
             )
 
     if question_ids and "questions" in tables:
@@ -147,10 +143,10 @@ def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]
         connection.execute(f"DELETE FROM units WHERE id IN ({placeholders})", unit_ids)
     connection.execute(f"DELETE FROM papers WHERE id IN ({id_placeholders})", paper_ids)
     package_count = 0
-    if "question_bank_packages" in tables:
+    if package_ids and "question_bank_packages" in tables:
         package_count = connection.execute(
             f"DELETE FROM question_bank_packages WHERE package_id IN ({package_placeholders})",
-            UNPUBLISHABLE_PACKAGE_IDS,
+            package_ids,
         ).rowcount
     return {
         "papers": len(paper_ids),
@@ -158,6 +154,56 @@ def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]
         "questions": len(question_ids),
         "packages": int(package_count),
     }
+
+
+def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]:
+    tables = table_names(connection)
+    if "papers" not in tables:
+        return {"papers": 0, "units": 0, "questions": 0, "packages": 0}
+
+    package_placeholders = ",".join("?" for _ in UNPUBLISHABLE_PACKAGE_IDS)
+    paper_rows = connection.execute(
+        f"SELECT id FROM papers WHERE package_id IN ({package_placeholders})",
+        UNPUBLISHABLE_PACKAGE_IDS,
+    ).fetchall()
+    return _delete_paper_content(
+        connection,
+        [int(row[0]) for row in paper_rows],
+        UNPUBLISHABLE_PACKAGE_IDS,
+    )
+
+
+def delete_inactive_paper_content(connection: sqlite3.Connection) -> dict[str, int]:
+    """Remove child rows belonging to deleted or non-published papers.
+
+    Soft deletion is useful for runtime history, but public release databases
+    must not retain those paper's units/questions/options.  This intentionally
+    applies to every inactive paper, not only the known package quarantine list.
+    """
+    tables = table_names(connection)
+    if "papers" not in tables:
+        return {"papers": 0, "units": 0, "questions": 0, "packages": 0, "profiles": 0}
+    columns = column_names(connection, "papers")
+    where = "deleted_at IS NOT NULL" if "deleted_at" in columns else "1 = 0"
+    if "status" in columns:
+        where += " OR COALESCE(status, '') <> 'published'"
+    paper_ids = [
+        int(row[0])
+        for row in connection.execute(f"SELECT id FROM papers WHERE {where}").fetchall()
+    ]
+    removed = _delete_paper_content(connection, paper_ids)
+    profile_count = 0
+    if "question_bank_profiles" in tables and "profile_id" in columns:
+        profile_count = int(
+            connection.execute(
+                "DELETE FROM question_bank_profiles "
+                "WHERE NOT EXISTS ("
+                "SELECT 1 FROM papers WHERE papers.profile_id = question_bank_profiles.id"
+                ")"
+            ).rowcount
+        )
+    removed["profiles"] = profile_count
+    return removed
 
 
 def install_public_packages(database_path: Path) -> list[dict[str, object]]:
@@ -214,7 +260,10 @@ def rebuild(release_db: Path, offline_db: Path, backup_dir: Path) -> dict[str, o
     backup_database(offline_db, backup_dir / "offline-before.db")
     with sqlite3.connect(release_db) as connection:
         connection.execute("PRAGMA foreign_keys = OFF")
-        removed = delete_old_package_content(connection)
+        removed = {
+            "unpublishable_packages": delete_old_package_content(connection),
+            "inactive_papers": delete_inactive_paper_content(connection),
+        }
         connection.commit()
     installed = install_public_packages(release_db)
     sync_offline_content(release_db, offline_db)
