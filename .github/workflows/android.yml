@@ -68,6 +68,44 @@ jobs:
       - name: Assemble debug APK
         run: ./gradlew assembleDebug --no-daemon
         working-directory: frontend/android
+      - name: Prepare Android release keystore for tagged build
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          for name in ANDROID_KEYSTORE_BASE64 ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD; do
+            if [[ -z "${!name}" ]]; then
+              echo "Missing required Android signing secret: $name" >&2
+              exit 1
+            fi
+          done
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/epm-release.keystore"
+          test -s "$RUNNER_TEMP/epm-release.keystore"
+
+      - name: Assemble signed Android release APK
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        env:
+          EPM_ANDROID_KEYSTORE_FILE: ${{ runner.temp }}/epm-release.keystore
+          EPM_ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          EPM_ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          EPM_ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew assembleRelease --no-daemon
+        working-directory: frontend/android
+
+      - name: Verify signed Android release APK
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          apk=frontend/android/app/build/outputs/apk/release/app-release.apk
+          test -s "$apk"
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose "$apk"
+
       - name: Verify APK contains offline seed and version metadata
         shell: bash
         run: |
