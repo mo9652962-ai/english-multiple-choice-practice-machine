@@ -5681,6 +5681,22 @@ body.ink-landscape::before {
   align-items: center;
   gap: 3px;
 }
+.scholar-seal-tag.paper-origin-simulation {
+  color: var(--sec-primary, #4c6643);
+  background: color-mix(in srgb, var(--sec-primary, #4c6643) 12%, transparent);
+  border-color: color-mix(in srgb, var(--sec-primary, #4c6643) 30%, transparent);
+}
+.scholar-seal-tag.paper-origin-imported {
+  color: var(--ink-2, #665e56);
+  background: color-mix(in srgb, var(--ink-2, #665e56) 10%, transparent);
+  border-color: color-mix(in srgb, var(--ink-2, #665e56) 25%, transparent);
+}
+.library-provenance-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 6px 0 0;
+}
 .paper-headline {
   margin-bottom: 8px;
 }

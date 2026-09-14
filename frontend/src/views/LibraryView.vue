@@ -40,6 +40,41 @@ function setClass(title: string): string {
   return 'set-default'
 }
 
+type PaperOriginKind = 'simulation' | 'imported' | 'local'
+
+function paperOrigin(paper: any): { kind: PaperOriginKind; label: string; title: string } {
+  const packageId = String(paper?.package_id || '')
+  let sourceType = ''
+  try {
+    const metadata = typeof paper?.source_metadata === 'string'
+      ? JSON.parse(paper.source_metadata)
+      : paper?.source_metadata
+    sourceType = String(metadata?.type || '')
+  } catch {
+    sourceType = ''
+  }
+
+  if (sourceType === 'ai_generated' || packageId.startsWith('motei.ai.')) {
+    return {
+      kind: 'simulation',
+      label: 'AI 模拟·非真题',
+      title: '项目自建 AI 模拟内容，不是官方真题',
+    }
+  }
+  if (packageId) {
+    return {
+      kind: 'imported',
+      label: '用户导入',
+      title: '来源和授权范围由导入者负责确认',
+    }
+  }
+  return {
+    kind: 'local',
+    label: '本地题库',
+    title: '本机创建或维护的题库内容',
+  }
+}
+
 const availableYears = computed(() => {
   const set = new Set<number>()
   for (const p of papers.value) {
@@ -162,6 +197,7 @@ async function confirmDelete() {
         <span class="eyebrow">题库文库 · 藏书阁</span>
         <h1>卷宗文库</h1>
         <p class="lead">于墨香中抚卷，模拟题与合法导入题库均可整卷研习，中途自动保存作答记录。</p>
+        <p class="library-provenance-note">内置题卷会明确标注“AI 模拟·非真题”；导入内容的来源与授权请由使用者自行确认。</p>
       </div>
     </div>
     <QuestionBankSwitcher @changed="loadPapers" />
@@ -243,7 +279,11 @@ async function confirmDelete() {
 
         <div class="paper-card-body">
           <div class="paper-card-top">
-            <span class="scholar-seal-tag">题卷</span>
+            <span
+              class="scholar-seal-tag"
+              :class="`paper-origin-${paperOrigin(paper).kind}`"
+              :title="paperOrigin(paper).title"
+            >{{ paperOrigin(paper).label }}</span>
             <span class="pill" :class="{ 'pill-published': paper.status === 'published' }">
               {{ paper.status === 'published' ? '已收录' : '未刊布' }}
             </span>
