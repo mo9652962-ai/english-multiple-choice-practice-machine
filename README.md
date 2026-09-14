@@ -468,6 +468,8 @@ node tools/check_offline_runtime.mjs frontend/dist/offline_migrations.json
 
 Android 本地构建前可运行 `.\scripts\android_preflight.ps1` 检查 Node.js 22+、JDK 21、Android SDK 36 和 Capacitor/Gradle 生成目录；CI 会显式安装 Android SDK 36、Build Tools 36.0.0 和 Emulator。干净 CI checkout 会先执行 `npx cap add android`，同步 Web 资源和 `VERSION`，构建 debug APK，并在 Android Emulator 中安装、启动和检查应用进程。Android 发布清单使用 `--offline-only`，记录 APK 对应离线库的 SHA-256、声明 Schema、物理迁移版本和题目/词汇计数。
 
+本地生成 APK 后，使用 `uv run python tools/check_android_artifact.py --apk frontend/android/app/build/outputs/apk/debug/app-debug.apk --dist frontend/dist --write-report work/android-apk-check.json` 检查 APK 内的离线数据库、迁移清单和版本元数据是否与当前 Web dist 逐字节一致。该检查通过只代表产物内容一致，不替代正式签名或真实设备运行验收。
+
 Windows 后端可执行包构建后，可运行 `.\scripts\windows_package_smoke.ps1 -Executable backend\dist\backend_app\backend_app.exe`，在隔离临时数据目录中检查 `/api/health` 和数据库初始化，不会触碰用户数据库。
 
 Windows 便携发布包构建后，Release workflow 还会在隔离的 18765 端口启动 `epm-portable-<version>.exe`，检查桌面包实际拉起的后端健康状态、程序版本、内容版本和 Schema，然后结束整棵进程树；Electron 默认仍使用 8765，冒烟脚本通过 `EPM_PORT` 注入临时端口，避免误复用开发服务。NSIS 安装器保留文件存在性检查，避免无人值守 CI 进入交互式安装。
