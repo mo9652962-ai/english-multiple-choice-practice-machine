@@ -26,7 +26,7 @@ Web 静态产物、Windows 内部候选和 Android debug 候选已针对 r2 重�
 | `frontend/android/app/build/outputs/apk/debug/app-debug.apk` | 32925180 | `B0805D6862649B3BA72F6781A7DA5C51CDF5F3FCD76E45A8C21DBF1BB09BA4EC` | debug 候选，未做真机验证 |
 | `backend/dist/backend_app/backend_app.exe` | 18153091 | `C2131C2A8B684BA542BBA19B11F33865BFBC862A6FA402AB712FF002F21C2452` | r2 后端重建 |
 
-Windows 安装包和 portable 的 Authenticode 状态均为 `Valid`，签名者为本机自签名证书 `227BFE4360866350CCDE133BA2A6E141F7A50E0E`；这不等同于公共 CA 信任。正式 tag workflow 现在还会拒绝自签名、过期或缺少 Code Signing EKU 的证书。带上述 artifact 参数的严格 `release_check` 退出码为 `0`，但该门禁不替代正式签名和真实设备运行验证。
+Windows 安装包和 portable 的 Authenticode 状态均为 `Valid`，签名者为本机自签名证书 `227BFE4360866350CCDE133BA2A6E141F7A50E0E`；这不等同于公共 CA 信任。正式 tag workflow 现在还会拒绝自签名、过期或缺少 Code Signing EKU 的证书。Windows portable smoke 会从本次运行的 `resources/seed/question_bank.db` 直接核对 release DB hash，不把启动后经过 SQLite 迁移的用户数据库 hash 误当作包内 seed hash。带上述 artifact 参数的严格 `release_check` 退出码为 `0`，但该门禁不替代正式签名和真实设备运行验证。
 
 ## 构建结果
 
