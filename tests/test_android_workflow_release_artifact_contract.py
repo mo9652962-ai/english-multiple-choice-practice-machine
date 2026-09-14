@@ -29,3 +29,10 @@ def test_android_tag_upload_contains_release_apk_and_manifest() -> None:
     assert "name: epm-android-release-${{ github.sha }}" in source
     assert "frontend/android/app/build/outputs/apk/release/app-release.apk" in source
     assert "android-release-manifest.json" in source
+
+
+def test_android_workflow_uses_shared_apk_asset_checker() -> None:
+    source = WORKFLOW.read_text(encoding="utf-8")
+
+    assert "tools/check_android_artifact.py" in source
+    assert "--dist frontend/dist" in source

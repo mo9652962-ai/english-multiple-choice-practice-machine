@@ -119,18 +119,6 @@ jobs:
           test -s "$apk"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose "$apk"
 
-      - name: Verify APK contains offline seed and version metadata
-        shell: bash
-        run: |
-          set -euo pipefail
-          apks=("frontend/android/app/build/outputs/apk/debug/app-debug.apk")
-          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
-            apks+=("frontend/android/app/build/outputs/apk/release/app-release.apk")
-          fi
-          for apk in "${apks[@]}"; do
-            unzip -l "$apk" | grep -E 'assets/public/(question_bank\.db|offline_migrations\.json|release-metadata\.json)$'
-            test -s "$apk"
-          done
       - name: Verify APK offline assets match Web dist
         shell: bash
         run: |
@@ -140,14 +128,11 @@ jobs:
             apks+=("frontend/android/app/build/outputs/apk/release/app-release.apk")
           fi
           for apk in "${apks[@]}"; do
-            tmp_dir=$(mktemp -d)
-            trap 'rm -rf "$tmp_dir"' EXIT
-            for asset in question_bank.db offline_migrations.json release-metadata.json; do
-              unzip -p "$apk" "assets/public/$asset" > "$tmp_dir/$asset"
-              cmp -s "$tmp_dir/$asset" "frontend/dist/$asset"
-              sha256sum "$tmp_dir/$asset" "frontend/dist/$asset"
-            done
-            rm -rf "$tmp_dir"
+            report="android-apk-check-$(basename "$apk").json"
+            python tools/check_android_artifact.py \
+              --apk "$apk" \
+              --dist frontend/dist \
+              --write-report "$report"
           done
       - name: Enable KVM for emulator
         run: |
@@ -201,6 +186,7 @@ jobs:
           name: epm-android-debug-${{ github.sha }}
           path: |
             frontend/android/app/build/outputs/apk/debug/app-debug.apk
+            android-apk-check-*.json
             android-release-manifest.json
           if-no-files-found: error
       - name: Upload Android release APK artifacts
@@ -210,5 +196,6 @@ jobs:
           name: epm-android-release-${{ github.sha }}
           path: |
             frontend/android/app/build/outputs/apk/release/app-release.apk
+            android-apk-check-*.json
             android-release-manifest.json
           if-no-files-found: error
