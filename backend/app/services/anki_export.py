@@ -120,7 +120,11 @@ def export_anki(
     # 输出路径
     out_dir = Path(output_dir) if output_dir else Path("exports")
     out_dir.mkdir(parents=True, exist_ok=True)
-    fname = f"vocabulary-{date.today().isoformat()}-{status_filter}.apkg"
+    owner_key = str(user_id) if user_id is not None else "local"
+    fname = (
+        f"vocabulary-{owner_key}-{date.today().isoformat()}-"
+        f"{uuid.uuid4().hex}-{status_filter}.apkg"
+    )
     out_path = out_dir / fname
 
     package = genanki.Package(deck)

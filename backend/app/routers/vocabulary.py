@@ -3,6 +3,7 @@ from __future__ import annotations
 import sqlite3
 import threading
 import time
+import re
 from datetime import datetime
 
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request
@@ -27,6 +28,27 @@ from ..services.vocabulary import (
 
 
 router = APIRouter(prefix="/vocabulary", tags=["vocabulary"])
+
+
+def _export_owner_key(filename: str) -> str | None:
+    """Extract the owner segment from an export basename."""
+    if not filename.lower().endswith(".apkg"):
+        return None
+    parts = filename.split("-")
+    if len(parts) != 7 or parts[0] != "vocabulary":
+        return None
+    owner_key = parts[1]
+    if owner_key != "local" and not owner_key.isdigit():
+        return None
+    if (
+        not re.fullmatch(r"\d{4}", parts[2])
+        or not re.fullmatch(r"\d{2}", parts[3])
+        or not re.fullmatch(r"\d{2}", parts[4])
+        or not re.fullmatch(r"[0-9a-f]{32}", parts[5], re.IGNORECASE)
+        or parts[6][:-5] not in {"all", "mastered", "learning"}
+    ):
+        return None
+    return owner_key
 
 
 @router.post("")
@@ -427,11 +449,15 @@ def export_anki_deck(
 @router.get("/export/anki/download")
 def download_anki_deck(
     filename: str,
+    user: dict | None = Depends(maybe_require_user),
 ) -> FileResponse:
     """下载已生成的 Anki 牌组文件（v9.23: 路径沙箱——防 ../ 任意文件下载）"""
     from pathlib import Path
     exports_dir = Path("exports").resolve()
     safe_name = Path(filename).name  # 仅保留文件名（剥离路径字符）
+    expected_owner = str(user["id"]) if user else "local"
+    if _export_owner_key(safe_name) != expected_owner:
+        raise HTTPException(status_code=404, detail="文件不存在，请先导出")
     file = (exports_dir / safe_name).resolve()
     if not file.is_file() or not file.is_relative_to(exports_dir):
         raise HTTPException(404, "文件不存在，请先导出")
