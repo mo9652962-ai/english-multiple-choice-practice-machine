@@ -122,19 +122,32 @@ jobs:
       - name: Verify APK contains offline seed and version metadata
         shell: bash
         run: |
-          apk=frontend/android/app/build/outputs/apk/debug/app-debug.apk
-          unzip -l "$apk" | grep -E 'assets/public/(question_bank\.db|offline_migrations\.json|release-metadata\.json)$'
-          test -s "$apk"
+          set -euo pipefail
+          apks=("frontend/android/app/build/outputs/apk/debug/app-debug.apk")
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            apks+=("frontend/android/app/build/outputs/apk/release/app-release.apk")
+          fi
+          for apk in "${apks[@]}"; do
+            unzip -l "$apk" | grep -E 'assets/public/(question_bank\.db|offline_migrations\.json|release-metadata\.json)$'
+            test -s "$apk"
+          done
       - name: Verify APK offline assets match Web dist
         shell: bash
         run: |
-          apk=frontend/android/app/build/outputs/apk/debug/app-debug.apk
-          tmp_dir=$(mktemp -d)
-          trap 'rm -rf "$tmp_dir"' EXIT
-          for asset in question_bank.db offline_migrations.json release-metadata.json; do
-            unzip -p "$apk" "assets/public/$asset" > "$tmp_dir/$asset"
-            cmp -s "$tmp_dir/$asset" "frontend/dist/$asset"
-            sha256sum "$tmp_dir/$asset" "frontend/dist/$asset"
+          set -euo pipefail
+          apks=("frontend/android/app/build/outputs/apk/debug/app-debug.apk")
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            apks+=("frontend/android/app/build/outputs/apk/release/app-release.apk")
+          fi
+          for apk in "${apks[@]}"; do
+            tmp_dir=$(mktemp -d)
+            trap 'rm -rf "$tmp_dir"' EXIT
+            for asset in question_bank.db offline_migrations.json release-metadata.json; do
+              unzip -p "$apk" "assets/public/$asset" > "$tmp_dir/$asset"
+              cmp -s "$tmp_dir/$asset" "frontend/dist/$asset"
+              sha256sum "$tmp_dir/$asset" "frontend/dist/$asset"
+            done
+            rm -rf "$tmp_dir"
           done
       - name: Enable KVM for emulator
         run: |
@@ -170,18 +183,32 @@ jobs:
           if-no-files-found: warn
       - name: Write Android release manifest
         run: |
+          apk=frontend/android/app/build/outputs/apk/debug/app-debug.apk
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            apk=frontend/android/app/build/outputs/apk/release/app-release.apk
+          fi
           python tools/release_check.py \
             --offline-only \
             --offline-db frontend/dist/question_bank.db \
             --strict-quality \
             --require-android-metadata \
-            --artifact frontend/android/app/build/outputs/apk/debug/app-debug.apk \
+            --artifact "$apk" \
             --write-report android-release-manifest.json
-      - name: Upload debug APK
+      - name: Upload Android debug APK artifacts
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
         uses: actions/upload-artifact@v4
         with:
           name: epm-android-debug-${{ github.sha }}
           path: |
             frontend/android/app/build/outputs/apk/debug/app-debug.apk
+            android-release-manifest.json
+          if-no-files-found: error
+      - name: Upload Android release APK artifacts
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: epm-android-release-${{ github.sha }}
+          path: |
+            frontend/android/app/build/outputs/apk/release/app-release.apk
             android-release-manifest.json
           if-no-files-found: error
