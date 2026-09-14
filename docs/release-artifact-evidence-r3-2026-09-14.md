@@ -42,7 +42,7 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 
 ## 当前仍不能公开发布的原因
 
-1. Windows 使用本机自签名证书 `227BFE4360866350CCDE133BA2A6E141F7A50E0E`，正式 tag workflow 会拒绝 self-signed 证书；需要公共 CA 代码签名证书或明确的内部信任分发边界。
+1. Windows 使用本机自签名证书 `227BFE4360866350CCDE133BA2A6E141F7A50E0E`；本机当前 `Get-AuthenticodeSignature` 状态为 `UnknownError`（证书链终止于不受信任根），正式 tag workflow 会拒绝 self-signed 或非 `Valid` 证书；需要公共 CA 代码签名证书或明确的内部信任分发边界。
 2. Android 只有 debug APK，没有真实 release keystore Secrets；需要配置 `ANDROID_KEYSTORE_BASE64`、`ANDROID_KEYSTORE_PASSWORD`、`ANDROID_KEY_ALIAS`、`ANDROID_KEY_PASSWORD`。
 3. 本机没有 Android 真机、模拟器或 AVD，尚未完成安装、离线启动、练习、返回键、后台恢复、重启和迁移验证。
 4. GitHub Release、外部 artifact 存储和正式发布目标仍未获得明确授权，因此没有执行上传或 push。
@@ -55,4 +55,5 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 
 - `.github/workflows/android.yml`、`.github/workflows/ci.yml` 和 `.github/workflows/release.yml` 均通过本地 `actionlint`。
 - Android 标签构建会校验并上传 `app-release.apk`；普通分支构建只上传 `app-debug.apk`，避免缺失 release 文件导致误报。
-- 该工作流修复已单独提交为 `89bcc36 fix(ci): publish signed android artifact evidence`；它不等同于真实 release keystore、设备运行或公共证书已经配置。
+- `scripts/check_windows_release_signing.ps1` 现在同时作为本地和 CI 的 Windows Authenticode 预检入口，检查签名状态、证书有效期、Code Signing EKU，并在公共发布模式拒绝自签名证书。
+- Android 工作流修复已单独提交为 `89bcc36 fix(ci): publish signed android artifact evidence`，Windows 签名预检接入已提交为 `c7a0deb ci: centralize windows signing preflight`；这些提交不等同于真实 release keystore、设备运行或公共证书已经配置。
