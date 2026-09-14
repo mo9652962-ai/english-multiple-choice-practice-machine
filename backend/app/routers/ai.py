@@ -188,7 +188,9 @@ def update_settings(
 def read_available_models(
     request: AiModelListRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)
     try:
         return list_available_models(
             connection,
@@ -206,9 +208,9 @@ def read_available_models(
 @router.post("/test")
 def test_connection(
     connection: sqlite3.Connection = Depends(get_db),
-    user: dict | None = Depends(maybe_require_user),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
-    # v9.31: 挂 maybe_require_user（EPM_AUTH=1 时防匿名触发真实 AI 调用烧 key）
+    _require_admin_when_enabled(user)
     try:
         content = chat_with_routing(
             connection,
@@ -219,6 +221,7 @@ def test_connection(
                     "content": "只回复“连接成功”，不要补充其他内容。",
                 }
             ],
+            user_id=_current_user_id(user),
         )
         return {"ok": True, "message": content.strip()}
     except (ValueError, LookupError, httpx.HTTPError) as error:
@@ -395,7 +398,9 @@ def delete_profile(
 def sync_profile_models(
     profile_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)
     profile = _profile_or_404(connection, profile_id)
     try:
         result = list_available_models(
@@ -453,7 +458,9 @@ def set_model_visibility(
     profile_id: int,
     request: AiModelVisibilityUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)
     _profile_or_404(connection, profile_id)
     cursor = connection.execute(
         """
@@ -474,7 +481,9 @@ def set_all_model_visibility(
     profile_id: int,
     request: AiModelsVisibilityUpdate,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)
     _profile_or_404(connection, profile_id)
     connection.execute(
         """
@@ -493,7 +502,9 @@ def test_profile(
     profile_id: int,
     request: AiProfileTestRequest,
     connection: sqlite3.Connection = Depends(get_db),
+    user: dict | None = Depends(get_current_user),
 ) -> dict:
+    _require_admin_when_enabled(user)
     try:
         content = chat_with_routing(
             connection,
@@ -501,6 +512,7 @@ def test_profile(
             [{"role": "user", "content": "只回复“连接成功”，不要补充其他内容。"}],
             profile_id=profile_id,
             model=request.model,
+            user_id=_current_user_id(user),
         )
         return {"ok": True, "message": content.strip()}
     except (ValueError, LookupError, httpx.HTTPError) as error:
