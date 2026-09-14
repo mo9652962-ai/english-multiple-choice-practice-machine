@@ -77,6 +77,9 @@
       }
     ],
     "win": {
+      "signtoolOptions": {
+        "certificateSha1": "227BFE4360866350CCDE133BA2A6E141F7A50E0E"
+      },
       "target": [
         "nsis",
         "portable"

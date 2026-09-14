@@ -17,9 +17,9 @@
 
 | 文件 | 大小（bytes） | SHA-256 |
 |---|---:|---|
-| `electron/dist/epm-setup-2.1.3.exe` | 134449018 | `FD71E70CEE100E2887F4E1124B2D935C1E3FB8BB34A1CF6078D41773E6A2CD43` |
-| `electron/dist/epm-portable-2.1.3.exe` | 134116773 | `8C8D0C766ED1BEEDB37C4C83E6E7FB00FE438BE32949A0CAC354D68B67899BC3` |
-| `electron/dist/epm-setup-2.1.3.exe.blockmap` | 135387 | `36707EEC80D75D2147394B39A7AB2800F4C6E365A8D85A8FD9277E3937519EC9` |
+| `electron/dist/epm-setup-2.1.3.exe` | 134493192 | `4758095D96ED10828A9B34A81EF904348DB2B44EADB54A668A1D0371533AC4A7` |
+| `electron/dist/epm-portable-2.1.3.exe` | 134154048 | `11D3F9B4AD79D69C5905FE48FCC55A7B58A6A237E484CC93FE7D7AF723F6FA2C` |
+| `electron/dist/epm-setup-2.1.3.exe.blockmap` | 135023 | `FAAAC530A5B0D54CD806FBAFB5B65A723D7093A5F941933E5A0F5244298BBEC5` |
 | `frontend/android/app/build/outputs/apk/debug/app-debug.apk` | 32817382 | `47B6A30AB6AA2BAF8413E7FDF15812BBC5562EBFE7D3FA31510AF0178C58B1C0` |
 | `backend/dist/backend_app/backend_app.exe` | 10223257 | `CDE11C3A216D22F9DBF2F416FC32DC8FEBC68A467428E049BD141D29353B26AF` |
 
@@ -56,9 +56,9 @@ python tools/release_check.py `
 
 ## 运行与签名边界
 
-- Windows 安装包和 portable 包已启动后确认版本 `2.1.3`、内容版本 `content-2026-09-14-r1`、Schema `2`，且后端数据库可用。
+- Windows 安装包和 portable 包已启动后确认版本 `2.1.3`、内容版本 `content-2026-09-14-r1`、Schema `2`，且后端数据库可用；重新签名后的 portable 冒烟仍通过。
 - APK 内已确认包含 `release-metadata.json`、`question_bank.db` 和前端入口；解包检查确认内容版本为 `content-2026-09-14-r1`，题库为 48 套/827 题。
-- Electron 构建日志显示当前没有代码签名证书，因此 Windows 产物为未签名构建；APK 为 debug 构建。它们证明构建链路和内容装配正确，不等同于面向终端用户的签名发布包。
+- 当前 Windows 产物已使用本机证书指纹 `227BFE4360866350CCDE133BA2A6E141F7A50E0E` 签名，PowerShell Authenticode 状态为 `Valid`；证书为自签名证书，依赖本机信任配置，不等同于公共 CA 信任。APK 仍为 debug 构建。
 - Android 真机/模拟器验证需要连接设备后重新执行 `tools/android_runtime_smoke.mjs`，当前不应宣称移动端真实运行已通过。
 
 ## 下一阶段签名门禁已落地
@@ -67,7 +67,7 @@ python tools/release_check.py `
 - Android tag workflow 使用以下 GitHub Secrets，不把密钥写入仓库：`ANDROID_KEYSTORE_BASE64`、`ANDROID_KEYSTORE_PASSWORD`、`ANDROID_KEY_ALIAS`、`ANDROID_KEY_PASSWORD`。
 - Windows tag workflow 使用 `WINDOWS_CSC_LINK` 和 `WINDOWS_CSC_KEY_PASSWORD`，并要求两个 Windows 产物的 Authenticode 状态为 `Valid`。
 - 本地使用一次性测试 keystore 验证过 `assembleRelease` 与 `apksigner verify`；测试 keystore 和测试 release APK 已清理，未作为正式产物保留。
-- 当前仓库仍没有真实发布签名密钥，因此本记录中的现有 Windows/APK hash 仍分别属于未签名 Windows 构建和 debug APK。
+- 当前仓库仍不保存签名私钥；Android 尚未配置真实 release keystore，因此本记录中的 APK hash 仍属于 debug APK。Windows hash 为本机自签名后的内部验证产物，正式公开发布仍需确认公共信任证书或明确接受内部信任分发。
 
 ## 内容生成说明
 
