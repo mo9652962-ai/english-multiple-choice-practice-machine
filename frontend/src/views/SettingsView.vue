@@ -312,6 +312,14 @@ function pilotCategoryCount(category: string): number {
   return pilotSummary.value?.by_category.find(item => item.category === category)?.count || 0
 }
 
+function pilotSampleGate(): string {
+  const participants = pilotSummary.value?.participant_count || 0
+  if (participants < 10) {
+    return `样本不足：当前 ${participants} 个匿名编号，首轮还需要至少 ${10 - participants} 个。`
+  }
+  return '已达到首轮样本数门槛；激活率、7 日留存和实际付款仍需单独记录。'
+}
+
 async function loadPilotSummary() {
   if (isOffline()) return
   pilotSummaryLoading.value = true
@@ -494,6 +502,7 @@ async function submitFeedback() {
         <div v-else-if="pilotSummaryLoading && !pilotSummary" class="lead" style="font-size:12px">正在读取匿名摘要…</div>
         <template v-else-if="pilotSummary">
           <p class="pilot-summary-note">近 {{ pilotSummary.days }} 天 · 仅统计匿名聚合结果，不显示反馈正文、联系方式或匿名编号。</p>
+          <p class="pilot-summary-gate" :class="{ ready: pilotSummary.participant_count >= 10 }">{{ pilotSampleGate() }}</p>
           <div class="pilot-summary-grid">
             <div><small>反馈样本</small><strong>{{ pilotSummary.response_count }}</strong></div>
             <div><small>匿名编号</small><strong>{{ pilotSummary.participant_count }}</strong></div>
