@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import sqlite3
 import unittest
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 from backend.app.database import SCHEMA
+from backend.app.routers.vocabulary import _export_owner_key
 from backend.app.services.vocabulary import (
     add_vocabulary,
     clean_machine_meanings,
@@ -24,6 +26,34 @@ class VocabularyTests(unittest.TestCase):
 
     def tearDown(self) -> None:
         self.connection.close()
+
+    def test_anki_export_filename_keeps_owner_segment_opaque(self) -> None:
+        filename = "vocabulary-101-2026-09-14-0123456789abcdef0123456789abcdef-all.apkg"
+        self.assertEqual(_export_owner_key(filename), "101")
+        self.assertEqual(
+            _export_owner_key(
+                "vocabulary-local-2026-09-14-0123456789abcdef0123456789abcdef-all.apkg"
+            ),
+            "local",
+        )
+        self.assertIsNone(_export_owner_key("vocabulary-2026-09-14-all.apkg"))
+        self.assertIsNone(_export_owner_key("vocabulary-101-2026-09-14-token-all.txt"))
+
+    def test_anki_export_generates_user_bound_random_filename(self) -> None:
+        add_vocabulary(self.connection, {"term": "claim"}, user_id=101)
+        from backend.app.services.anki_export import export_anki
+
+        with TemporaryDirectory() as output_dir, patch(
+            "backend.app.services.anki_export.genanki.Package.write_to_file"
+        ):
+            result = export_anki(
+                self.connection,
+                output_dir=output_dir,
+                user_id=101,
+            )
+
+        self.assertEqual(result["count"], 1)
+        self.assertEqual(_export_owner_key(result["filename"]), "101")
 
     def test_duplicate_add_increments_count_and_becomes_frequent(self) -> None:
         first = add_vocabulary(
