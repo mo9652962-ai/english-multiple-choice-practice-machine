@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import sqlite3
 from datetime import datetime
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from pydantic import BaseModel, Field
 from typing import Literal
 
@@ -100,3 +100,56 @@ def list_feedback(
         "continue_intent", "status", "created_at",
     ]
     return [dict(zip(cols, r)) for r in rows]
+
+
+@router.get("/summary")
+def feedback_summary(
+    days: int = Query(default=30, ge=1, le=365),
+    connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
+):
+    """Return anonymous aggregates for the pilot decision gates.
+
+    This endpoint intentionally excludes feedback text, contact details and
+    participant codes.  A self-entered code is only counted as a distinct
+    anonymous label, never as an authenticated user or a payment record.
+    """
+    _ensure_table(connection)
+    window = f"-{days} days"
+    totals = connection.execute(
+        """SELECT COUNT(*) AS response_count,
+                  COUNT(DISTINCT NULLIF(participant_code, '')) AS participant_count,
+                  ROUND(AVG(difficulty_rating), 2) AS difficulty_average,
+                  ROUND(AVG(explanation_rating), 2) AS explanation_average,
+                  ROUND(AVG(coverage_rating), 2) AS coverage_average
+           FROM feedback
+           WHERE created_at >= datetime('now', ?)""",
+        (window,),
+    ).fetchone()
+    category_rows = connection.execute(
+        """SELECT category, COUNT(*) AS count
+           FROM feedback
+           WHERE created_at >= datetime('now', ?)
+           GROUP BY category ORDER BY count DESC, category""",
+        (window,),
+    ).fetchall()
+    intent_rows = connection.execute(
+        """SELECT COALESCE(NULLIF(continue_intent, ''), 'unrated') AS intent,
+                  COUNT(*) AS count
+           FROM feedback
+           WHERE created_at >= datetime('now', ?)
+           GROUP BY intent ORDER BY intent""",
+        (window,),
+    ).fetchall()
+    return {
+        "days": days,
+        "response_count": int(totals["response_count"] or 0),
+        "participant_count": int(totals["participant_count"] or 0),
+        "ratings": {
+            "difficulty_average": totals["difficulty_average"],
+            "explanation_average": totals["explanation_average"],
+            "coverage_average": totals["coverage_average"],
+        },
+        "by_category": [dict(row) for row in category_rows],
+        "continue_intent": [dict(row) for row in intent_rows],
+    }
