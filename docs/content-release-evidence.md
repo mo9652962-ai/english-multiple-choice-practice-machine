@@ -45,7 +45,7 @@
 
 严格门禁结果：`release_check` 退出码为 `0`，`packages_not_publishable=0`，`paper_provenance.papers_not_publishable=0`。release/offline 数据库的 r3 指纹分别为 `21A2C9DC26D780CD55FA685587674065A809D0AC720BFCE80CFA2FE9D3125A6F` 和 `E444341B9DDFB775B48199F0CA9613076EBC3E24808EF166D51EF27B43B79E9A`。可审计内容 bundle 见 `work/release-content-bundle-r3.zip`，其中 release/offline 清洗后内容计数一致。
 
-由于题库内容已变化，旧 r1/r2 的 Windows、APK 和前端产物均视为过期；本轮已按 r3 重新构建 Windows/Web 并重新计算对应 artifact hash，Android 仅完成前端资源同步，debug APK 尚未重建。Windows 仍是内部候选，Android 仍未形成当前源码对应的 APK，不因此解除正式发布阻断。
+由于题库内容已变化，旧 r1/r2 的 Windows、APK 和前端产物均视为过期；本轮已按 r3 重新构建 Windows/Web/Android debug APK 并重新计算对应 artifact hash，且 APK 内离线资源已与 Web dist 对齐。Windows 仍是内部候选，Android 仍为 debug 签名且尚未完成真实设备运行，不因此解除正式发布阻断。
 
 当前公开 starter 源目录已替换为两个明确标注的原创 AI 模拟题包。数据库和离线种子属于被 Git 忽略的本地产物，必须在重新导入/重建后才会反映这次替换；在重建前不得使用旧数据库执行发布。
 
