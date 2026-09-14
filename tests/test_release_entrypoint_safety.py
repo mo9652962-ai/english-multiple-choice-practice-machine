@@ -26,6 +26,24 @@ class ReleaseEntrypointSafetyTests(unittest.TestCase):
 
         self.assertEqual(namespace["main"](), 2)
 
+    def test_build_scripts_do_not_reintroduce_direct_release_side_effects(self) -> None:
+        forbidden_fragments = (
+            "gh release create",
+            "gh release upload",
+            "Set-AuthenticodeSignature",
+        )
+        candidates = [
+            path
+            for directory in (ROOT / "scripts", ROOT / "tools")
+            for path in directory.rglob("*")
+            if path.is_file() and path.suffix.lower() in {".py", ".ps1", ".mjs"}
+        ]
+
+        for path in candidates:
+            source = path.read_text(encoding="utf-8")
+            for fragment in forbidden_fragments:
+                self.assertNotIn(fragment, source, f"unsafe release command in {path}")
+
 
 if __name__ == "__main__":
     unittest.main()
