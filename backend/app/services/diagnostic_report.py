@@ -312,7 +312,11 @@ def generate_diagnostic_report(
     user_id: int | None = None,  # v9.30 安全修复
 ) -> dict[str, Any]:
     """完整诊断报告流程：归因 → 聚合 → level → recommendations → trend → 持久化。"""
-    diagnoses, _ = diagnose_wrong_answers(connection, question_ids)
+    diagnoses, _ = diagnose_wrong_answers(
+        connection,
+        question_ids,
+        user_id=user_id,
+    )
     aggregate = aggregate_diagnoses(diagnoses)
     level = assess_level(connection, aggregate)
     recommendations = build_recommendations(connection, aggregate, profile_id=profile_id)
