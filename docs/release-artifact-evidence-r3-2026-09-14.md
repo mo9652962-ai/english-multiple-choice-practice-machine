@@ -19,7 +19,7 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 
 | 目标 | 结果 | 证据边界 |
 |---|---|---|
-| 全量 Python 测试 | `164 passed, 13 skipped` | 通过，不替代人工内容复核；包含 Android release artifact contract 回归测试 |
+| 全量 Python 测试 | `165 passed, 13 skipped` | 通过，不替代人工内容复核；包含 Android release artifact contract 回归测试 |
 | 前端生产构建 | 通过 | 入口最大 465 KB、最大懒加载块 922 KB；项目自身 512/1024 KB 门禁通过 |
 | 后端 PyInstaller | 通过 | 在 Electron 实际引用的 `backend/dist/backend_app` 路径重建；hash 已更新 |
 | Windows 安装包 / portable | 通过 | 本轮重新打包，builder 退出码 0；portable 新临时目录启动冒烟通过 |
