@@ -88,9 +88,15 @@ def record_anti_cheat(
     allowed = {"screen_switch", "suspend", "copy", "paste", "window_blur", "inactivity"}
     if request.event_type not in allowed:
         raise HTTPException(400, "未知的防作弊事件类型")
-    exam = connection.execute(
-        "SELECT id FROM exam_sessions WHERE id = ?", (exam_id,)
-    ).fetchone()
+    if user and bool(user.get("is_admin")):
+        exam = connection.execute(
+            "SELECT id FROM exam_sessions WHERE id = ?", (exam_id,)
+        ).fetchone()
+    else:
+        exam = connection.execute(
+            "SELECT id FROM exam_sessions WHERE id = ? AND user_id IS ?",
+            (exam_id, user["id"] if user else None),
+        ).fetchone()
     if exam is None:
         raise HTTPException(404, "考试不存在")
     connection.execute(
