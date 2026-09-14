@@ -7,7 +7,7 @@
 - `backend/data/question_bank.db`
 - `frontend/public/question_bank.db`
 
-这两个文件被 `.gitignore` 排除，不会随 clean checkout 自动出现。它们不能由 `initialize_database()` 代替：后者只创建/迁移 schema，不会恢复当前 7,958 条词汇、公开题卷和完整 provenance。
+这两个文件被 `.gitignore` 排除，不会随 clean checkout 自动出现。它们不能由 `initialize_database()` 代替：后者只创建/迁移 schema，不会恢复当前 r3 的 7,958 条词汇、12 套题卷、180 道题和完整 provenance。
 
 当前 workflow 已增加 `scripts/require_release_content.ps1`，在构建前检查两个文件存在、非空并记录 SHA-256。缺少输入时会直接阻断，并明确要求先注入经过核验的 seed；不会把空库或不完整库继续打包。
 

@@ -39,13 +39,13 @@
 
 ## 当前题包状态
 
-### `content-2026-09-14-r2` 重建结果
+### `content-2026-09-14-r3` 重建结果
 
-2026-09-14 对公开库做了逐卷 provenance 收口：除两个旧考研回忆版/本地导出包外，同时隔离了 5 个没有可验证包登记的旧 package identity。共移除 10 条公开题卷、38 个单元和 159 道题；历史删除记录仍保留在 release 数据库中，但不再计入公开内容。最终活跃公开内容为 12 套试卷、95 个单元、668 道题和 7,958 个词汇条目，全部来自两个项目自建 AI 模拟题包。
+2026-09-14 对公开库做了逐卷 provenance 收口，并进一步清除了已删除题卷残留的子表数据。r2 数据库虽然只有 12 套活跃题卷，但仍保留 26 套已删除题卷的 59 个单元、488 道题和 3,654 个选项；这些行不再进入 r3 release/offline seed。最终可公开内容为 12 套试卷、36 个单元、180 道题、720 个选项和 7,958 个词汇条目，全部来自两个项目自建 AI 模拟题包。
 
-严格门禁结果：`release_check` 退出码为 `0`，`packages_not_publishable=0`，`paper_provenance.papers_not_publishable=0`。release/offline 数据库的 r2 指纹分别为 `FFDCB436A9CC93E7E21EAE2C5407FA0880C491D660366C1A870CA1EADE8A934B` 和 `F513F26D09ED8C0339A481720C1AC3610F6D2C3DC4073BCDCFAACAFF81EFAA67`。
+严格门禁结果：`release_check` 退出码为 `0`，`packages_not_publishable=0`，`paper_provenance.papers_not_publishable=0`。release/offline 数据库的 r3 指纹分别为 `2A8F6E4C3EB4AE2F48102A86E7C893AF170AE0CD2E21C610ABCD0B473994BAD6` 和 `E444341B9DDFB775B48199F0CA9613076EBC3E24808EF166D51EF27B43B79E9A`。可审计内容 bundle 见 `work/release-content-bundle-r3.zip`，其中 release/offline 清洗后内容计数一致。
 
-由于题库内容已变化，旧 `content-2026-09-14-r1` / `offline-2026-09-14-r1` 的 Windows、APK 和前端产物均视为过期，必须使用 r2 重新构建并重新计算 artifact hash；本轮不把旧产物宣称为可发布版本。
+由于题库内容已变化，旧 r1/r2 的 Windows、APK 和前端产物均视为过期；本轮已按 r3 重新构建并重新计算 artifact hash。Windows 仍是内部候选，Android 仍是 debug 构建，不因此解除正式发布阻断。
 
 当前公开 starter 源目录已替换为两个明确标注的原创 AI 模拟题包。数据库和离线种子属于被 Git 忽略的本地产物，必须在重新导入/重建后才会反映这次替换；在重建前不得使用旧数据库执行发布。
 
@@ -56,7 +56,7 @@
 
 原考研英语（一/二）题包已移出公开 starter 目录，保留在本机被忽略的 `examples/internal-banks/` 目录，仅用于内部留档，不进入 PyInstaller、Web 或 APK 资源。它们仍然不能公开分发，也不能作为新模拟题的来源文本。
 
-2026-09-14 已完成 release/offline 数据库重建：严格 `release_check` 退出码为 `0`，`packages_not_publishable=0`，前后端题库均不再登记两个旧 package ID。
+2026-09-14 已完成 r3 release/offline 数据库重建：严格 `release_check` 退出码为 `0`，`packages_not_publishable=0`、`papers_not_publishable=0`，前后端题库均不再登记两个旧 package ID，且不再保留非公开题卷的子表残留。
 
 新模拟题的生成记录与 manifest 证据见：[generated-simulation-provenance-2026-09-14.md](content/generated-simulation-provenance-2026-09-14.md)。这里的项目方授权声明是自建内容的发布决策记录，不是第三方官方授权证明。
 
