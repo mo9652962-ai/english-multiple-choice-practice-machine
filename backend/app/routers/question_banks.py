@@ -56,6 +56,7 @@ def _serialize_job(row: sqlite3.Row) -> dict:
 @router.get("/imports")
 def list_question_bank_imports(
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> list[dict]:
     profile_id = get_active_profile_id(connection)
     rows = connection.execute(
@@ -145,6 +146,7 @@ async def upload_question_bank(
 def question_bank_import_detail(
     job_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     row = connection.execute(
         "SELECT * FROM import_jobs WHERE id = ? AND detected_format = 'esq-1.0'",
@@ -268,6 +270,7 @@ def export_question_bank(
     include_answers: bool = Query(default=True),
     include_labels: bool = Query(default=False),
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> Response:
     selected_years: list[int] | None = None
     if years:

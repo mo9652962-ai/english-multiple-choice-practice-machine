@@ -11,7 +11,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from ..database import get_db
-from .auth import maybe_require_user
+from .auth import maybe_require_user, require_admin
 
 router = APIRouter(tags=["certificates"])
 
@@ -43,7 +43,8 @@ def certificate_detail(
 ) -> dict:
     """按证书编号查询（对外校验用，无需登录）。"""
     row = connection.execute(
-        """SELECT c.*, p.name AS profile_name
+        """SELECT c.cert_no, c.title, c.accuracy, c.score, c.pass_score,
+                  c.level, c.issued_at, p.name AS profile_name
            FROM certificates c
            LEFT JOIN question_bank_profiles p ON p.id = c.profile_id
            WHERE c.cert_no = ?""",
@@ -109,6 +110,7 @@ def record_anti_cheat(
 def anti_cheat_log(
     exam_id: int,
     connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
 ) -> dict:
     """考试防作弊事件记录（管理端查看）。"""
     rows = connection.execute(
