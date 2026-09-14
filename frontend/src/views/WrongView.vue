@@ -289,6 +289,7 @@ async function redoQuestion(questionId: number) {
 // v9.28: Gemini batch5 任务3——错题 SRS「今日复习」
 const reviewDue = ref(0)
 const reviewItems = ref<any[]>([])
+const reviewStarting = ref(false)
 async function loadReview() {
   try {
     const res: any = await get('/review/queue')
@@ -297,6 +298,26 @@ async function loadReview() {
   } catch { /* 复习队列不可用不阻断错题本 */ }
 }
 onMounted(() => { loadWrongStats(); loadReview() })
+
+async function startReview() {
+  sound.tap()
+  if (reviewStarting.value || !reviewItems.value.length) return
+  reviewStarting.value = true
+  try {
+    const session: any = await post('/practice/sessions', {
+      mode: 'random',
+      question_ids: reviewItems.value.map(item => item.question_id),
+      count: reviewItems.value.length,
+      shuffle_options: true,
+    })
+    showToast(`已开始今日复习（${reviewItems.value.length} 题）`, 'success')
+    router.push(`/practice/${session.id}`)
+  } catch (e) {
+    showToast(`今日复习启动失败：${String(e)}`, 'error')
+  } finally {
+    reviewStarting.value = false
+  }
+}
 
 function toggleYear(year: number) {
   sound.tap()
@@ -567,11 +588,17 @@ function analysisLabel(unitIds: number[]): string {
 
     <!-- FSRS：错题与词汇共用遗忘曲线复习队列 -->
     <div v-if="(activeWrongTab === 'srs' || activeWrongTab === 'all') && reviewDue > 0" class="card report-panel freq-card">
-      <h3>
-        <CalendarDays :size="17" aria-hidden="true" class="icon-h3" />
-        今日复习
-        <small class="freq-sub">{{ reviewDue }} 题到期 · FSRS 按遗忘曲线排序 · 考前每天巩固</small>
-      </h3>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <h3 style="margin:0">
+          <CalendarDays :size="17" aria-hidden="true" class="icon-h3" />
+          今日复习
+          <small class="freq-sub">{{ reviewDue }} 题到期 · FSRS 按遗忘曲线排序 · 考前每天巩固</small>
+        </h3>
+        <button class="button primary compact" type="button" :disabled="reviewStarting" @click="startReview">
+          <Play :size="14" aria-hidden="true" />
+          {{ reviewStarting ? '准备中…' : '今日复习全部' }}
+        </button>
+      </div>
       <div class="freq-grid">
         <button
           v-for="(item, i) in reviewItems.slice(0, 10)" :key="item.question_id"
