@@ -19,7 +19,7 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 
 | 目标 | 结果 | 证据边界 |
 |---|---|---|
-| 全量 Python 测试 | `165 passed, 13 skipped` | 通过，不替代人工内容复核；包含 Android release artifact contract 回归测试 |
+| 全量 Python 测试 | `167 passed, 13 skipped` | 通过，不替代人工内容复核；包含 Android release artifact contract 与 APK 资源一致性回归测试 |
 | 前端生产构建 | 通过 | 入口最大 465 KB、最大懒加载块 922 KB；项目自身 512/1024 KB 门禁通过 |
 | 后端 PyInstaller | 通过 | 在 Electron 实际引用的 `backend/dist/backend_app` 路径重建；hash 已更新 |
 | Windows 安装包 / portable | 通过 | 本轮重新打包，builder 退出码 0；portable 新临时目录启动冒烟通过 |
@@ -55,6 +55,7 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 ## CI 工作流复核
 
 - `.github/workflows/android.yml`、`.github/workflows/ci.yml` 和 `.github/workflows/release.yml` 均通过本地 `actionlint`。
+- Android workflow 通过 `tools/check_android_artifact.py` 逐项比较 APK 内离线资源与当前 Web dist，并上传检查报告，防止旧 APK 混入新内容版本。
 - Android 标签构建会校验并上传 `app-release.apk`；普通分支构建只上传 `app-debug.apk`，避免缺失 release 文件导致误报。
 - `scripts/check_windows_release_signing.ps1` 现在同时作为本地和 CI 的 Windows Authenticode 预检入口，检查签名状态、证书有效期、Code Signing EKU，并在公共发布模式拒绝自签名证书。
 - 旧的 `scripts/release_all.py` 一键发布入口已安全封存，不再执行本地自签名、debug APK 构建或 GitHub 上传；发布统一走受保护的 GitHub Actions workflow。
