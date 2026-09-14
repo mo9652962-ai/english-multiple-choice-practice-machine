@@ -61,7 +61,14 @@ python tools/release_check.py `
 - Electron 构建日志显示当前没有代码签名证书，因此 Windows 产物为未签名构建；APK 为 debug 构建。它们证明构建链路和内容装配正确，不等同于面向终端用户的签名发布包。
 - Android 真机/模拟器验证需要连接设备后重新执行 `tools/android_runtime_smoke.mjs`，当前不应宣称移动端真实运行已通过。
 
+## 下一阶段签名门禁已落地
+
+- `scripts/sync_android_version.mjs` 会在 Capacitor 生成工程中注入 release signing config；`assembleDebug` 不要求签名变量，`assembleRelease` 缺少签名变量会主动失败。
+- Android tag workflow 使用以下 GitHub Secrets，不把密钥写入仓库：`ANDROID_KEYSTORE_BASE64`、`ANDROID_KEYSTORE_PASSWORD`、`ANDROID_KEY_ALIAS`、`ANDROID_KEY_PASSWORD`。
+- Windows tag workflow 使用 `WINDOWS_CSC_LINK` 和 `WINDOWS_CSC_KEY_PASSWORD`，并要求两个 Windows 产物的 Authenticode 状态为 `Valid`。
+- 本地使用一次性测试 keystore 验证过 `assembleRelease` 与 `apksigner verify`；测试 keystore 和测试 release APK 已清理，未作为正式产物保留。
+- 当前仓库仍没有真实发布签名密钥，因此本记录中的现有 Windows/APK hash 仍分别属于未签名 Windows 构建和 debug APK。
+
 ## 内容生成说明
 
 本轮两个公开模拟题包由仓库内 `tools/generate_ai_simulation_banks.py` 的确定性模板和项目自有主题种子生成，可复现、无外部模型实时调用，也未读取旧未授权题包作为生成输入。它们不是官方真题，也不是本轮实时批量模型生成结果；如要升级为真实模型生成，仍需单独增加模型版本记录、提示词/输入证据、内容质量抽检和人工复核。
-
