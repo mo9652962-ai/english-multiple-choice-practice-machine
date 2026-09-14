@@ -111,6 +111,25 @@ def _authorize_mark_paid(
         raise HTTPException(status_code=403, detail="需要组织 owner/admin 权限")
 
 
+def _authorize_order_read(
+    order: dict[str, Any],
+    organization: dict[str, Any],
+    user: dict | None,
+) -> None:
+    """Keep order and payment-event details to the buyer or billing roles."""
+    if user is None:
+        if auth_module.AUTH_ENABLED:
+            raise HTTPException(status_code=401, detail="未登录")
+        return
+    if bool(user.get("is_admin")):
+        return
+    role = str(organization.get("role") or "").lower()
+    if role in {"owner", "admin"}:
+        return
+    if order.get("buyer_user_id") != int(user["id"]):
+        raise HTTPException(status_code=404, detail="订单不存在")
+
+
 @router.post("/{order_id}/mark-paid")
 def mark_order_paid(
     order_id: int = Path(gt=0),
@@ -144,4 +163,5 @@ def get_order(
         _raise_order_error(error)
     if int(order["organization_id"]) != int(organization["id"]):
         raise HTTPException(status_code=404, detail="订单不存在")
+    _authorize_order_read(order, organization, user)
     return _with_events(connection, order)
