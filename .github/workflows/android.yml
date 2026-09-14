@@ -41,6 +41,19 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
         working-directory: frontend
+      - name: Install or require verified release content inputs
+        shell: bash
+        env:
+          # Optional path supplied by a controlled runner/content-input step.
+          EPM_RELEASE_CONTENT_BUNDLE_PATH: ${{ vars.EPM_RELEASE_CONTENT_BUNDLE_PATH }}
+        run: |
+          set -euo pipefail
+          if [[ -n "${EPM_RELEASE_CONTENT_BUNDLE_PATH:-}" ]]; then
+            python tools/prepare_release_content_bundle.py \
+              --bundle "$EPM_RELEASE_CONTENT_BUNDLE_PATH"
+          fi
+          test -s frontend/public/question_bank.db
+          sha256sum frontend/public/question_bank.db
       - name: Sync shared release metadata
         run: node scripts/sync_release_metadata.mjs
       - name: Build web assets
