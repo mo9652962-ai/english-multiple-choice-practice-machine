@@ -29,7 +29,7 @@ r3 清理掉了 26 套已删除题卷残留的 59 个单元、488 道题和 3,65
 | Android 真机/模拟器运行 | 未完成 | `adb` 无设备、无可用 emulator/AVD；不能宣称运行验收通过 |
 | 严格发布门禁 | 通过 | 退出码 0；`packages_not_publishable=0`、`papers_not_publishable=0` |
 
-当前严格门禁报告：`work/release-manifest-r3-current-2026-09-14.json`；报告记录 r3 数据库和元数据，Windows hash 以本节本轮重建值为准；Android debug APK hash 已更新为本轮重建值，仍不等同于正式 release 签名或真实设备验收。
+当前严格门禁报告：`work/release-manifest-r3-current-2026-09-14.json`；APK 静态资源报告：`work/android-artifact-check-r3-2026-09-14.json`。报告记录 r3 数据库和元数据，Windows hash 以本节本轮重建值为准；Android debug APK hash 已更新为本轮重建值，仍不等同于正式 release 签名或真实设备验收。
 
 ## r3 artifact SHA-256
 
