@@ -3040,6 +3040,8 @@ a, button, input, select, textarea, .card, .stat-card { transition-duration: .22
 .pilot-summary-card .api-profile-heading { align-items: center; }
 .pilot-summary-card .api-profile-heading .button { margin-left: auto; }
 .pilot-summary-note, .pilot-summary-categories { margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.pilot-summary-gate { margin: 0 0 12px; padding: 9px 11px; border: 1px solid color-mix(in srgb, var(--accent-vermilion, #B84A39) 24%, var(--line)); border-radius: 9px; background: color-mix(in srgb, var(--accent-vermilion, #B84A39) 8%, var(--surface-solid)); color: var(--ink-2); font-size: 12px; line-height: 1.5; }
+.pilot-summary-gate.ready { border-color: color-mix(in srgb, var(--accent-bamboo, #4A5F4E) 30%, var(--line)); background: color-mix(in srgb, var(--accent-bamboo, #4A5F4E) 9%, var(--surface-solid)); }
 .pilot-summary-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
 .pilot-summary-grid>div { padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-solid); }
 .pilot-summary-grid small { display: block; color: var(--muted); font-size: 11px; }
