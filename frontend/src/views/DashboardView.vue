@@ -637,7 +637,7 @@ async function sharePoster() {
           type="button"
           @click="switchStudioTab('papers')"
         >
-          <BookOpen :size="15" />历年真题
+          <BookOpen :size="15" />题库练习
           <span v-if="recommendPapers.length" class="tab-badge">{{ recommendPapers.length }}</span>
         </button>
         <button
@@ -703,7 +703,7 @@ async function sharePoster() {
           </div>
           <div class="ai-trinity-card" @click="router.push('/library')">
             <span class="ai-trinity-badge badge-explain">精讲</span>
-            <span class="trinity-title"><BookOpen :size="16" aria-hidden="true" />真题精讲</span>
+            <span class="trinity-title"><BookOpen :size="16" aria-hidden="true" />题目精讲</span>
             <p class="trinity-desc">刷题时点 AI 精讲 · 选项陷阱拆解</p>
           </div>
           <div class="ai-trinity-card" @click="router.push('/chat')">
@@ -714,7 +714,7 @@ async function sharePoster() {
         </div>
       </div>
 
-      <!-- Panel 2: 历年真题 -->
+      <!-- Panel 2: 题库练习 -->
       <div v-show="activeStudioTab === 'papers'" class="studio-tab-panel">
         <div v-if="recommendPapers.length" class="grid grid-4 recommend-papers">
           <RouterLink v-for="p in recommendPapers" :key="p.id" :to="'/library'" class="card recommend-paper">
@@ -724,9 +724,9 @@ async function sharePoster() {
             <span class="stat-link">去练习 <ArrowRight :size="14" /></span>
           </RouterLink>
         </div>
-        <div v-else class="card empty">暂无该级别推荐真题，请前往题库查阅全部试卷。</div>
+        <div v-else class="card empty">暂无该级别推荐题卷，请前往题库查阅全部试卷。</div>
         <div style="margin-top:16px;text-align:center">
-          <RouterLink class="button ghost" to="/library"><BookOpen :size="16" />进入完整真题文库<ArrowRight :size="15" /></RouterLink>
+          <RouterLink class="button ghost" to="/library"><BookOpen :size="16" />进入完整题库<ArrowRight :size="15" /></RouterLink>
         </div>
       </div>
 

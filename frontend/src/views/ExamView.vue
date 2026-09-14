@@ -188,11 +188,11 @@ onBeforeUnmount(() => {
     <div v-if="showStartDialog && !exam" class="exam-start-scholar card">
       <div class="exam-start-header">
         <span class="cinnabar-seal-badge" style="font-size:13px;padding:3px 10px;margin-bottom:10px">
-          贡院开考 · 全真模拟
+          贡院开考 · AI 模拟
         </span>
-        <h2 style="margin:6px 0 8px;font-size:26px">真题模拟考试</h2>
+        <h2 style="margin:6px 0 8px;font-size:26px">限时模拟考试</h2>
         <p class="muted" style="font-size:13.5px;max-width:380px;margin:0 auto">
-          从题库中随机抽取真实语篇真题，限时全真闭卷答题，交卷后即时定级评榜。
+          从当前题库随机抽取题目，限时闭卷答题，交卷后即时查看得分与复盘建议。
         </p>
       </div>
 
@@ -263,7 +263,7 @@ onBeforeUnmount(() => {
       <main class="exam-body" v-if="currentQuestion">
         <div class="exam-question scholar-edition">
           <div class="exam-q-meta">
-            <span class="chip">{{ currentQuestion.year || '真题' }} {{ currentQuestion.paper_title || '' }}</span>
+            <span class="chip">{{ currentQuestion.year || '题库题目' }} {{ currentQuestion.paper_title || '' }}</span>
             <span class="chip">{{ currentQuestion.score }} 分</span>
           </div>
           <h3 class="exam-stem">

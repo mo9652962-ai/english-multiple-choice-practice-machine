@@ -26,9 +26,9 @@ const exam = localStorage.getItem('epm_exam_type') || ''
 
 // 步骤 2: 入口推荐（按考试类型给一条最短路径）
 const entryRoute = computed(() => {
-  if (exam.includes('考研')) return { path: '/practice', label: '去真题练习', hint: '历年考研英语真题已就绪' }
-  if (exam.includes('四级') || exam.includes('六级')) return { path: '/practice', label: '去真题练习', hint: '四六级真题已就绪' }
-  return { path: '/library', label: '先逛题库', hint: '导入真题或从题库开始' }
+  if (exam.includes('考研')) return { path: '/practice', label: '去题库练习', hint: '考研方向 AI 模拟题已就绪' }
+  if (exam.includes('四级') || exam.includes('六级')) return { path: '/practice', label: '去题库练习', hint: '可使用模拟题或导入有权题库' }
+  return { path: '/library', label: '先逛题库', hint: '导入有权题库或从模拟题开始' }
 })
 
 function pickGoal(g: { value: number; label: string }) {

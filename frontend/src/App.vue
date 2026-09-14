@@ -307,7 +307,7 @@ onBeforeUnmount(() => {
                     <component :is="categoryIcons[cat.icon] || BookMarked" :size="26" aria-hidden="true" />
                   </span>
                   <span class="category-modal-name">{{ cat.name }}</span>
-                  <span class="category-modal-desc">{{ cat.description || '英语真题练习' }}</span>
+                  <span class="category-modal-desc">{{ cat.description || '英语题库练习' }}</span>
                   <span v-if="cat.id === activeCategoryId" class="category-modal-active">当前使用 ✓</span>
                   <span class="category-modal-dot" :style="{ background: cat.color || '#486d5c' }"></span>
                 </button>
