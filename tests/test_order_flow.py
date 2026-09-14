@@ -207,6 +207,50 @@ class OrderApiTests(unittest.TestCase):
             self.assertEqual(paid.json()["status"], "paid")
             self.assertEqual(len(paid.json()["payment_events"]), 1)
 
+    def test_student_cannot_read_another_buyers_order(self) -> None:
+        from backend.app.routers import auth
+
+        with patch.object(auth, "AUTH_ENABLED", True):
+            owner = self.client.post(
+                "/api/auth/register",
+                json={"username": "billingowner", "password": "Passw0rd123"},
+            ).json()
+            student = self.client.post(
+                "/api/auth/register",
+                json={"username": "billingstudent", "password": "Passw0rd123"},
+            ).json()
+            owner_headers = {"Authorization": f"Bearer {owner['token']}"}
+            student_headers = {"Authorization": f"Bearer {student['token']}"}
+            organization_id = owner["user"]["active_organization_id"]
+            connection = sqlite3.connect(self.database_path)
+            try:
+                connection.execute(
+                    """
+                    INSERT INTO organization_members(organization_id, user_id, role, status)
+                    VALUES (?, ?, 'student', 'active')
+                    """,
+                    (organization_id, student["user"]["id"]),
+                )
+                connection.commit()
+            finally:
+                connection.close()
+
+            created = self.client.post(
+                "/api/orders",
+                headers=owner_headers,
+                json={"plan_id": self.plan_id, "amount_cents": 50000},
+            )
+            self.assertEqual(created.status_code, 201)
+            order_id = created.json()["id"]
+            forbidden = self.client.get(
+                f"/api/orders/{order_id}",
+                headers={
+                    **student_headers,
+                    "X-Organization-Id": str(organization_id),
+                },
+            )
+            self.assertEqual(forbidden.status_code, 404)
+
 
 if __name__ == "__main__":
     unittest.main()
