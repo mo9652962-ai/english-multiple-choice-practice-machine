@@ -8,7 +8,8 @@ from datetime import datetime
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 
-from ..database import get_active_profile_id, get_db
+from ..database import get_db
+from .auth import require_admin
 
 router = APIRouter(prefix="/feedback", tags=["feedback"])
 
@@ -50,7 +51,10 @@ def submit_feedback(item: FeedbackIn, connection: sqlite3.Connection = Depends(g
 
 
 @router.get("")
-def list_feedback(connection: sqlite3.Connection = Depends(get_db)):
+def list_feedback(
+    connection: sqlite3.Connection = Depends(get_db),
+    _admin: dict = Depends(require_admin),
+):
     _ensure_table(connection)
     rows = connection.execute(
         "SELECT id, category, content, contact, page, status, created_at FROM feedback ORDER BY id DESC LIMIT 200"
