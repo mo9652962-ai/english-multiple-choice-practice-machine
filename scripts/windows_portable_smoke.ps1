@@ -29,7 +29,7 @@ try {
   $env:EPM_DIAGNOSTIC_LOG = $diagnosticLog
   $listeners = @(Get-NetTCPConnection -LocalPort $Port -State Listen -ErrorAction SilentlyContinue)
   if ($listeners.Count -gt 0) {
-    throw "端口 $Port 已被占用，拒绝把已有进程误判为发布包启动成功。"
+    throw "Port $Port is already in use; refusing to mistake an existing process for the packaged app."
   }
 
   $arguments = @(
@@ -42,7 +42,7 @@ try {
   $health = $null
   do {
     if ($process.HasExited) {
-      throw "便携版发布包在健康检查前退出，退出码：$($process.ExitCode)"
+      throw "Portable package exited before health check; exit code: $($process.ExitCode)"
     }
     try {
       $health = Invoke-RestMethod -Uri "http://127.0.0.1:$Port/api/health" -TimeoutSec 3
@@ -52,19 +52,19 @@ try {
   } while (-not $health -and (Get-Date) -lt $deadline)
 
   if (-not $health -or $health.status -ne 'ok') {
-    throw '便携版发布包健康检查失败或超时。'
+    throw 'Portable package health check failed or timed out.'
   }
   if ($health.version -ne $expectedVersion) {
-    throw "便携版程序版本不一致：期望 $expectedVersion，实际 $($health.version)"
+    throw "Portable app version mismatch: expected $expectedVersion, actual $($health.version)"
   }
 
   $version = Invoke-RestMethod -Uri "http://127.0.0.1:$Port/api/version" -TimeoutSec 5
   if ($version.version -ne $expectedVersion -or $version.content_version -ne $expectedContentVersion) {
-    throw "便携版版本元数据不一致：程序=$($version.version)，内容=$($version.content_version)"
+    throw "Portable version metadata mismatch: app=$($version.version), content=$($version.content_version)"
   }
   $content = Invoke-RestMethod -Uri "http://127.0.0.1:$Port/api/content/version" -TimeoutSec 5
   if ($content.content_version -ne $expectedContentVersion -or $content.schema_version -lt 1 -or $content.counts.questions -lt 0) {
-    throw "便携版内容元数据无效：Schema=$($content.schema_version)"
+    throw "Portable content metadata is invalid: schema=$($content.schema_version)"
   }
   $resourcePath = $null
   if (Test-Path -LiteralPath $diagnosticLog) {
@@ -81,19 +81,19 @@ try {
     }
   }
   if ([string]::IsNullOrWhiteSpace($resourcePath)) {
-    throw '便携版诊断日志没有提供 resourcesPath，无法验证内置 seed。'
+    throw 'Portable diagnostic log did not provide resourcesPath; packaged seed cannot be verified.'
   }
   $packagedSeed = Join-Path $resourcePath 'seed\question_bank.db'
   if (-not (Test-Path -LiteralPath $packagedSeed)) {
-    throw "便携版内置 seed 不存在：$packagedSeed"
+    throw "Packaged seed is missing: $packagedSeed"
   }
   $actualPackagedSeedHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $packagedSeed).Hash.ToLowerInvariant()
   if ($actualPackagedSeedHash -ne $expectedDatabaseHash) {
-    throw "便携版内置 seed 数据库指纹不一致：期望 $expectedDatabaseHash，实际 $actualPackagedSeedHash"
+    throw "Packaged seed hash mismatch: expected $expectedDatabaseHash, actual $actualPackagedSeedHash"
   }
   $startup = Invoke-RestMethod -Uri "http://127.0.0.1:$Port/api/startup" -TimeoutSec 5
   if (-not $startup.active_profile -or $startup.paper_count -lt 0 -or $startup.question_count -lt 0) {
-    throw "便携版首页启动数据无效：未返回 active_profile 或题库计数。"
+    throw "Portable startup payload is invalid: active_profile or paper/question counts are missing."
   }
   Write-Output ("Windows portable smoke passed: version={0}, content={1}, schema={2}, seed={3}" -f $version.version, $version.content_version, $content.schema_version, $actualPackagedSeedHash)
 } finally {
