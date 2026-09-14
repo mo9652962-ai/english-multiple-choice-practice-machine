@@ -22,6 +22,16 @@ class AndroidSigningPreflightContractTests(unittest.TestCase):
         self.assertIn("keytool", source)
         self.assertNotIn("Write-Host $env:ANDROID_KEYSTORE_PASSWORD", source)
 
+    def test_android_preflight_detects_common_windows_sdk_locations(self) -> None:
+        source = (ROOT / "scripts" / "android_preflight.ps1").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("LOCALAPPDATA", source)
+        self.assertIn("USERPROFILE", source)
+        self.assertIn("Android\\Sdk", source)
+        self.assertIn("android-sdk", source)
+
 
 if __name__ == "__main__":
     unittest.main()

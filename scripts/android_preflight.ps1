@@ -51,6 +51,22 @@ $sdkRoot = $env:ANDROID_HOME
 if ([string]::IsNullOrWhiteSpace($sdkRoot)) {
     $sdkRoot = $env:ANDROID_SDK_ROOT
 }
+if ([string]::IsNullOrWhiteSpace($sdkRoot)) {
+    $sdkCandidates = @()
+    if (-not [string]::IsNullOrWhiteSpace($env:LOCALAPPDATA)) {
+        $sdkCandidates += (Join-Path $env:LOCALAPPDATA 'Android\Sdk')
+    }
+    if (-not [string]::IsNullOrWhiteSpace($env:USERPROFILE)) {
+        $sdkCandidates += (Join-Path $env:USERPROFILE 'android-sdk')
+    }
+    $sdkRoot = $sdkCandidates |
+        Where-Object { Test-Path -LiteralPath $_ } |
+        Select-Object -First 1
+    if (-not [string]::IsNullOrWhiteSpace($sdkRoot)) {
+        $env:ANDROID_HOME = $sdkRoot
+        $env:ANDROID_SDK_ROOT = $sdkRoot
+    }
+}
 if ([string]::IsNullOrWhiteSpace($sdkRoot) -or -not (Test-Path -LiteralPath $sdkRoot)) {
     $errors += 'Android SDK not found; set ANDROID_HOME or ANDROID_SDK_ROOT.'
 } else {
