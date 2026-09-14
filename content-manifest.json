@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "content_version": "content-2026-09-14-r1",
-  "offline_seed_version": "offline-2026-09-14-r1",
+  "content_version": "content-2026-09-14-r2",
+  "offline_seed_version": "offline-2026-09-14-r2",
   "release": {
     "scope": "backend/data/question_bank.db 的开发/授权范围内扩展库",
     "source_policy": "题库正文按来源和授权独立管理；未标记为已核验的内容不得自动宣称为正式真题",

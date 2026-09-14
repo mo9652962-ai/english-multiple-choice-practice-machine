@@ -1,7 +1,7 @@
-"""Rebuild public content databases after replacing an unlicensed package.
+"""Rebuild public content databases after replacing unpublishable packages.
 
-The script keeps a SQLite backup before every write, removes only the two
-known unlicensed package identities, installs the current public ESQ starter
+The script keeps a SQLite backup before every write, removes only the explicitly
+listed unpublishable package identities, installs the current public ESQ starter
 packages, and synchronises content tables into the offline seed database.
 It deliberately does not alter ESQ manifests or invent provenance evidence.
 """
@@ -18,16 +18,46 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-OLD_PACKAGE_IDS = (
+UNPUBLISHABLE_PACKAGE_IDS = (
     "wssfk.postgraduate-english-one.2010-2026",
     "local.english-practice.postgraduate-english-two.2010-2025",
+    "gaokao-english-2022-2024",
+    "cn.kaoyan2.simulated",
+    "cn.cet4.2025.sim",
+    "cn.cet6.2025.sim",
+    "cn.kaoyan1.2025.sim",
 )
 CONTENT_TABLES = (
     "question_bank_profiles",
+    "question_bank_packages",
     "papers",
     "units",
     "questions",
     "options",
+    "question_bank_assets",
+    "question_bank_revisions",
+    "question_ai_labels",
+    "question_label_run_items",
+    "question_explanations",
+    "explain_collections",
+)
+OFFLINE_RUNTIME_TABLES = (
+    "practice_sessions",
+    "practice_answers",
+    "practice_answer_events",
+    "practice_unit_submissions",
+    "exam_sessions",
+    "exam_answers",
+    "annotations",
+    "wrong_cause_diagnoses",
+    "wrong_stats",
+    "spaced_repetition_records",
+    "wrong_analysis_states",
+    "wrong_analysis_reports",
+    "diagnostic_reports",
+    "local_metrics_events",
+    "learning_days",
+    "vocabulary_occurrences",
 )
 
 
@@ -55,10 +85,10 @@ def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]
     if "papers" not in tables:
         return {"papers": 0, "units": 0, "questions": 0, "packages": 0}
 
-    package_placeholders = ",".join("?" for _ in OLD_PACKAGE_IDS)
+    package_placeholders = ",".join("?" for _ in UNPUBLISHABLE_PACKAGE_IDS)
     paper_rows = connection.execute(
         f"SELECT id FROM papers WHERE package_id IN ({package_placeholders})",
-        OLD_PACKAGE_IDS,
+        UNPUBLISHABLE_PACKAGE_IDS,
     ).fetchall()
     paper_ids = [int(row[0]) for row in paper_rows]
     if not paper_ids:
@@ -105,7 +135,8 @@ def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]
             )
         if "package_id" in columns:
             connection.execute(
-                f'DELETE FROM "{table}" WHERE package_id IN ({package_placeholders})', OLD_PACKAGE_IDS
+                f'DELETE FROM "{table}" WHERE package_id IN ({package_placeholders})',
+                UNPUBLISHABLE_PACKAGE_IDS,
             )
 
     if question_ids and "questions" in tables:
@@ -119,7 +150,7 @@ def delete_old_package_content(connection: sqlite3.Connection) -> dict[str, int]
     if "question_bank_packages" in tables:
         package_count = connection.execute(
             f"DELETE FROM question_bank_packages WHERE package_id IN ({package_placeholders})",
-            OLD_PACKAGE_IDS,
+            UNPUBLISHABLE_PACKAGE_IDS,
         ).rowcount
     return {
         "papers": len(paper_ids),
@@ -140,10 +171,15 @@ def install_public_packages(database_path: Path) -> list[dict[str, object]]:
 
 
 def sync_offline_content(source: Path, target: Path) -> None:
-    with sqlite3.connect(source) as source_connection, sqlite3.connect(target) as target_connection:
+    source_connection = sqlite3.connect(source)
+    target_connection = sqlite3.connect(target)
+    try:
         source_tables = table_names(source_connection)
         target_tables = table_names(target_connection)
         target_connection.execute("PRAGMA foreign_keys = OFF")
+        for table in OFFLINE_RUNTIME_TABLES:
+            if table in target_tables:
+                target_connection.execute(f'DELETE FROM "{table}"')
         for table in reversed(CONTENT_TABLES):
             if table in target_tables:
                 target_connection.execute(f'DELETE FROM "{table}"')
@@ -168,6 +204,9 @@ def sync_offline_content(source: Path, target: Path) -> None:
         violations = target_connection.execute("PRAGMA foreign_key_check").fetchall()
         if violations:
             raise RuntimeError(f"offline database foreign-key check failed: {violations[:3]}")
+    finally:
+        source_connection.close()
+        target_connection.close()
 
 
 def rebuild(release_db: Path, offline_db: Path, backup_dir: Path) -> dict[str, object]:
@@ -181,8 +220,8 @@ def rebuild(release_db: Path, offline_db: Path, backup_dir: Path) -> dict[str, o
     sync_offline_content(release_db, offline_db)
     with sqlite3.connect(release_db) as connection:
         remaining_old = connection.execute(
-            "SELECT COUNT(*) FROM question_bank_packages WHERE package_id IN (?, ?)",
-            OLD_PACKAGE_IDS,
+            f"SELECT COUNT(*) FROM question_bank_packages WHERE package_id IN ({','.join('?' for _ in UNPUBLISHABLE_PACKAGE_IDS)})",
+            UNPUBLISHABLE_PACKAGE_IDS,
         ).fetchone()[0]
         package_rows = connection.execute(
             "SELECT package_id, content_version FROM question_bank_packages ORDER BY package_id"
