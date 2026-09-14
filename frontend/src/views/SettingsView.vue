@@ -17,7 +17,7 @@ import {
   Trash2,
 } from 'lucide-vue-next'
 import { onMounted, reactive, ref } from 'vue'
-import { del, get, post, put } from '../api'
+import { del, get, isOffline, post, put } from '../api'
 import { sound } from '../services/sound'
 import { localMetricsEnabled, setLocalMetricsEnabled, trackMetric } from '../services/metrics'
 
@@ -52,6 +52,21 @@ const soundEnabled = ref(sound.isEnabled())
 const metricsEnabled = ref(localMetricsEnabled())
 const metricsBusy = ref(false)
 const metricsSummary = ref<any>(null)
+type PilotSummary = {
+  days: number
+  response_count: number
+  participant_count: number
+  ratings: {
+    difficulty_average: number | null
+    explanation_average: number | null
+    coverage_average: number | null
+  }
+  by_category: Array<{ category: string; count: number }>
+  continue_intent: Array<{ intent: string; count: number }>
+}
+const pilotSummary = ref<PilotSummary | null>(null)
+const pilotSummaryLoading = ref(false)
+const pilotSummaryError = ref('')
 
 function metricRate(value: unknown): string {
   const numeric = Number(value)
@@ -258,6 +273,7 @@ onMounted(() => {
   load()
   loadUsage()
   void loadMetrics()
+  void loadPilotSummary()
 })
 
 async function loadMetrics() {
@@ -286,6 +302,33 @@ async function toggleMetrics() {
   setLocalMetricsEnabled(metricsEnabled.value)
   if (!metricsEnabled.value) metricsSummary.value = null
   metricsBusy.value = false
+}
+
+function pilotIntentCount(intent: string): number {
+  return pilotSummary.value?.continue_intent.find(item => item.intent === intent)?.count || 0
+}
+
+function pilotCategoryCount(category: string): number {
+  return pilotSummary.value?.by_category.find(item => item.category === category)?.count || 0
+}
+
+async function loadPilotSummary() {
+  if (isOffline()) return
+  pilotSummaryLoading.value = true
+  pilotSummaryError.value = ''
+  try {
+    const me = await get<{ is_admin?: boolean }>('/auth/me')
+    if (!me?.is_admin) return
+    const result = await get<PilotSummary>('/feedback/summary?days=30')
+    if (typeof result?.response_count === 'number') {
+      pilotSummary.value = result
+    }
+  } catch (cause) {
+    const status = Number((cause as { status?: number })?.status)
+    if (status !== 401 && status !== 403) pilotSummaryError.value = String(cause)
+  } finally {
+    pilotSummaryLoading.value = false
+  }
 }
 
 // ── v9.27: Gemini UI4——文枢阁用量（AI Usage） ──
@@ -437,6 +480,35 @@ async function submitFeedback() {
             <span :class="{ on: metricsEnabled }"></span>
           </button>
         </div>
+      </div>
+    </section>
+
+    <section v-if="pilotSummary || pilotSummaryLoading || pilotSummaryError" class="api-profile-card new-profile pilot-summary-card">
+      <div class="api-profile-heading">
+        <span class="api-profile-icon"><BarChart3 :size="20" /></span>
+        <div><span class="eyebrow">仅管理员可见</span><h2>内测反馈摘要</h2></div>
+        <button class="button ghost compact" type="button" :disabled="pilotSummaryLoading" @click="loadPilotSummary">{{ pilotSummaryLoading ? '读取中…' : '刷新' }}</button>
+      </div>
+      <div class="api-profile-body">
+        <div v-if="pilotSummaryError" class="lead" style="font-size:12px;color:var(--zhusha,#B84A39)">{{ pilotSummaryError }}</div>
+        <div v-else-if="pilotSummaryLoading && !pilotSummary" class="lead" style="font-size:12px">正在读取匿名摘要…</div>
+        <template v-else-if="pilotSummary">
+          <p class="pilot-summary-note">近 {{ pilotSummary.days }} 天 · 仅统计匿名聚合结果，不显示反馈正文、联系方式或匿名编号。</p>
+          <div class="pilot-summary-grid">
+            <div><small>反馈样本</small><strong>{{ pilotSummary.response_count }}</strong></div>
+            <div><small>匿名编号</small><strong>{{ pilotSummary.participant_count }}</strong></div>
+            <div><small>难度匹配</small><strong>{{ pilotSummary.ratings.difficulty_average ?? '—' }}</strong></div>
+            <div><small>解析可信度</small><strong>{{ pilotSummary.ratings.explanation_average ?? '—' }}</strong></div>
+            <div><small>题型覆盖</small><strong>{{ pilotSummary.ratings.coverage_average ?? '—' }}</strong></div>
+          </div>
+          <div class="pilot-summary-secondary">
+            <span>愿意继续 {{ pilotIntentCount('yes') }}</span>
+            <span>还不确定 {{ pilotIntentCount('unsure') }}</span>
+            <span>不愿意 {{ pilotIntentCount('no') }}</span>
+            <span>未评价 {{ pilotIntentCount('unrated') }}</span>
+          </div>
+          <p class="pilot-summary-categories">报错 {{ pilotCategoryCount('bug') }} · 不好用 {{ pilotCategoryCount('bad') }} · 新功能 {{ pilotCategoryCount('idea') }} · 其他 {{ pilotCategoryCount('other') }}</p>
+        </template>
       </div>
     </section>
 

@@ -3037,7 +3037,23 @@ a, button, input, select, textarea, .card, .stat-card { transition-duration: .22
 .feedback-pilot-fields label { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--ink-2); }
 .feedback-pilot-fields select { min-width: 116px; border: 1px solid var(--line); border-radius: 7px; padding: 6px 8px; background: var(--surface-solid); color: var(--ink); font: inherit; }
 .feedback-pilot-note { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.pilot-summary-card .api-profile-heading { align-items: center; }
+.pilot-summary-card .api-profile-heading .button { margin-left: auto; }
+.pilot-summary-note, .pilot-summary-categories { margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.pilot-summary-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.pilot-summary-grid>div { padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-solid); }
+.pilot-summary-grid small { display: block; color: var(--muted); font-size: 11px; }
+.pilot-summary-grid strong { display: block; margin-top: 4px; font: 700 20px/1.1 var(--font-serif); color: var(--ink); }
+.pilot-summary-secondary { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0; color: var(--ink-2); font-size: 12px; }
 .feedback-actions { display: flex; justify-content: flex-end; gap: 10px; }
+@media (max-width: 720px) {
+  .pilot-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pilot-summary-grid>div:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 420px) {
+  .pilot-summary-grid { grid-template-columns: 1fr; }
+  .pilot-summary-grid>div:last-child { grid-column: auto; }
+}
 .feedback-msg { margin: 0; font-size: 13px; text-align: center; }
 
 /* ═══ v2.96: AI 变体题弹窗 (竞品借鉴: 举一反三) ═══ */
