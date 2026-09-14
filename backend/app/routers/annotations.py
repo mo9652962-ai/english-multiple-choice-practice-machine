@@ -227,37 +227,21 @@ def annotation_stats(
            WHERE user_id IS ? GROUP BY color ORDER BY c DESC""",
         (user_id,),
     ).fetchall()
+    recent = [
+        dict(row)
+        for row in connection.execute(
+            """SELECT id, unit_id, text, tag, created_at
+               FROM annotations WHERE user_id IS ?
+               ORDER BY id DESC LIMIT 5""",
+            (user_id,),
+        ).fetchall()
+    ]
     return {
         "total": total,
         "week": week,
         "today": today,
         "tags": [{"tag": r["tag"], "count": r["c"]} for r in tags],
         "colors": [{"color": r["color"], "count": r["c"]} for r in colors],
+        "by_tag": {r["tag"]: r["c"] for r in tags},
+        "recent": recent,
     }
-
-
-@router.get("/annotations/stats")
-def annotation_stats_v2(
-    connection: sqlite3.Connection = Depends(get_db),
-    user: dict | None = Depends(maybe_require_user),
-) -> dict:
-    """v9.24: 标注统计（前端 NotesView 调用——此前缺失导致在线模式 404）"""
-    user_id = _current_user_id(user)
-    total = connection.execute(
-        "SELECT COUNT(*) FROM annotations WHERE user_id IS ?", (user_id,)
-    ).fetchone()[0]
-    by_tag = dict(
-        connection.execute(
-            "SELECT tag, COUNT(*) FROM annotations WHERE user_id IS ? AND tag != '' GROUP BY tag",
-            (user_id,),
-        ).fetchall()
-    )
-    recent = [
-        dict(r)
-        for r in connection.execute(
-            """SELECT id, unit_id, text, tag, created_at
-               FROM annotations WHERE user_id IS ? ORDER BY id DESC LIMIT 5""",
-            (user_id,),
-        ).fetchall()
-    ]
-    return {"total": total, "by_tag": by_tag, "recent": recent}
