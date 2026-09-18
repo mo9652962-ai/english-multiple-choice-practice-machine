@@ -1,0 +1,2833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>墨题 MOTI | 东方水墨 × 3D 认知计算 AI 考研英语刷题机</title>
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --bg-rgb: 247, 243, 238;
+      --surface: rgba(253, 250, 243, 0.88);
+      --surface-solid: #fdfaf3;
+      --ink: #2e2a23;
+      --muted: #787369;
+      --line: #e2ddd3;
+      --primary: #403c35;
+      --primary-hover: #26231e;
+      --accent: #c73e3a;
+      --accent-soft: #f8e6e4;
+      --bamboo: #5c7a52;
+      --gold: #a8842f;
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --shadow-sm: 0 4px 16px rgba(46, 42, 35, 0.04);
+      --shadow-lg: 0 20px 48px rgba(46, 42, 35, 0.08);
+    }
+
+    :root.dark {
+      --bg: #181714;
+      --bg-rgb: 24, 23, 20;
+      --surface: rgba(32, 30, 26, 0.88);
+      --surface-solid: #24221d;
+      --ink: #e9e4d9;
+      --muted: #969186;
+      --line: #38352e;
+      --primary: #c2bcb0;
+      --primary-hover: #dfdad0;
+      --accent: #d4554a;
+      --accent-soft: rgba(212, 85, 74, 0.15);
+      --bamboo: #789c6d;
+      --gold: #c29e46;
+      --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* 3D 渲染背景 (全屏固定) */
+    #webgl-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* 点击水墨涟漪与光标拖尾层 */
+    #ink-ripples {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* 导航栏 */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      background: rgba(var(--bg-rgb), 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+      transition: border-color 0.4s ease, background 0.4s ease;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .brand-seal {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-family: "STKaiti", "KaiTi", serif;
+      font-size: 22px;
+      box-shadow: 0 2px 10px rgba(199, 62, 58, 0.4);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .brand:hover .brand-seal {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .nav-center a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-center a:hover { color: var(--ink); }
+    .nav-center a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+    .nav-center a:hover::after { width: 100%; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-btn {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.25s ease;
+    }
+    .icon-btn:hover {
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    .cta-btn {
+      padding: 10px 24px;
+      background: var(--primary);
+      color: var(--bg);
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 4px 14px rgba(64, 60, 53, 0.25);
+    }
+    .cta-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(64, 60, 53, 0.35);
+    }
+
+    /* 页面层叠容器 */
+    main {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Act I: 首屏 Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 80px;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--gold);
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 860px;
+    }
+    .hero h1 span.gradient {
+      background: linear-gradient(135deg, var(--ink) 20%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 660px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+    .btn-secondary {
+      padding: 12px 30px;
+      background: var(--surface-solid);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+    .scroll-indicator:hover { opacity: 1; }
+    .mouse-icon {
+      width: 20px;
+      height: 32px;
+      border: 2px solid var(--muted);
+      border-radius: 12px;
+      position: relative;
+    }
+    .mouse-wheel {
+      width: 4px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: mouseScroll 1.8s infinite ease-in-out;
+    }
+    @keyframes mouseScroll {
+      0% { transform: translate(-50%, 0); opacity: 1; }
+      100% { transform: translate(-50%, 14px); opacity: 0; }
+    }
+
+    /* Section 通用规范 */
+    .section {
+      padding: 120px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-head .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-head h2 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Act II: 3D 卷轴解构展示区 */
+    .narrative-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: center;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 60px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .narrative-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .layer-card {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+      cursor: pointer;
+    }
+    .layer-card.active, .layer-card:hover {
+      border-color: var(--accent);
+      transform: translateX(8px);
+      box-shadow: var(--shadow-sm);
+    }
+    .layer-card .layer-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .tag-l1 { background: rgba(92, 122, 82, 0.15); color: var(--bamboo); }
+    .tag-l2 { background: rgba(168, 132, 47, 0.15); color: var(--gold); }
+    .tag-l3 { background: var(--accent-soft); color: var(--accent); }
+
+    .layer-card h4 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .layer-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .narrative-preview {
+      height: 420px;
+      perspective: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .exploded-stack {
+      width: 320px;
+      height: 380px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(24deg) rotateY(-22deg) rotateZ(4deg);
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .exploded-stack:hover {
+      transform: rotateX(15deg) rotateY(-12deg) rotateZ(0deg) scale(1.04);
+    }
+    .stack-layer {
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 24px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stack-layer.l1 { transform: translateZ(-80px); border-color: var(--bamboo); }
+    .stack-layer.l2 { transform: translateZ(0px); border-color: var(--gold); }
+    .stack-layer.l3 { transform: translateZ(80px); border-color: var(--accent); }
+
+    /* Detail 1: 交互式长难句水墨划词试做窗 (Interactive Simulator) */
+    .simulator-box {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+    .simulator-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 16px;
+    }
+    .sim-tag {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sim-controls {
+      display: flex;
+      gap: 12px;
+    }
+    .sim-btn {
+      padding: 6px 14px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .sim-btn.active, .sim-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface-solid);
+    }
+
+    .sentence-display {
+      font-size: 22px;
+      line-height: 1.8;
+      font-family: "Georgia", serif;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+    .word-token {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .word-token:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .word-token.highlight {
+      border-bottom: 2px solid var(--accent);
+      font-weight: 600;
+    }
+    .word-token.subject { background: rgba(92, 122, 82, 0.18); border-bottom: 2px solid var(--bamboo); }
+    .word-token.predicate { background: rgba(199, 62, 58, 0.18); border-bottom: 2px solid var(--accent); }
+    .word-token.object { background: rgba(168, 132, 47, 0.18); border-bottom: 2px solid var(--gold); }
+
+    .word-popover {
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .pop-word { font-size: 18px; font-weight: 700; color: var(--accent); }
+    .pop-trans { font-size: 14px; color: var(--ink); margin-left: 12px; }
+    .pop-meta { font-size: 12px; color: var(--muted); font-family: monospace; }
+
+    /* Detail 2: 3D 真题星系与罗盘展台 (3D Sphere Section) */
+    .sphere-container {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sphere-canvas-wrap {
+      width: 100%;
+      height: 420px;
+      position: relative;
+      cursor: grab;
+    }
+    .sphere-canvas-wrap:active { cursor: grabbing; }
+    #sphere-canvas {
+      width: 100%;
+      height: 100%;
+    }
+    .sphere-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sphere-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+    .sphere-card h4 {
+      font-size: 17px;
+      margin-bottom: 6px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sphere-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Detail 3: 学习热力图打卡矩阵 (Streak Heatmap) */
+    .heatmap-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      margin-top: 40px;
+    }
+    .heatmap-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .heatmap-head h3 { font-size: 20px; font-weight: 700; }
+    .heatmap-grid {
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .heat-col {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .heat-cell {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 4px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .heat-cell:hover {
+      transform: scale(1.3);
+      border-color: var(--accent);
+      z-index: 5;
+    }
+    .heat-l0 { background: var(--bg); }
+    .heat-l1 { background: rgba(92, 122, 82, 0.25); border-color: transparent; }
+    .heat-l2 { background: rgba(92, 122, 82, 0.5); border-color: transparent; }
+    .heat-l3 { background: rgba(92, 122, 82, 0.75); border-color: transparent; }
+    .heat-l4 { background: var(--bamboo); border-color: transparent; }
+
+    /* Act IV: 下载与转化展台 */
+    .download-section {
+      background: linear-gradient(180deg, transparent 0%, var(--surface-solid) 100%);
+      border-top: 1px solid var(--line);
+      padding: 120px 48px;
+      text-align: center;
+    }
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1040px;
+      margin: 48px auto 0;
+    }
+    .download-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 36px 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+    .download-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .platform-icon { font-size: 44px; margin-bottom: 16px; }
+    .download-card h4 { font-size: 20px; margin-bottom: 8px; }
+    .download-card span.version { font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+    .download-card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 24px; }
+    .dl-btn {
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 20px;
+      background: var(--primary);
+      color: var(--bg);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.2s ease;
+    }
+    .download-card:hover .dl-btn { background: var(--accent); }
+
+    /* 页脚 */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
+      background: var(--bg);
+    }
+
+    @media (max-width: 960px) {
+      nav { padding: 0 24px; }
+      .hero h1 { font-size: 40px; }
+      .narrative-container, .sphere-container { grid-template-columns: 1fr; padding: 36px 24px; }
+      .download-grid { grid-template-columns: 1fr; }
+      .section { padding: 80px 24px; }
+      .heatmap-grid { grid-template-columns: repeat(8, 1fr); }
+    }
+  
+    /* Act 2.5: 极速键盘做题工坊与水墨雷达 */
+    .bench-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .bench-terminal {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .terminal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 14px;
+    }
+    .terminal-meta {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hotkey-hints {
+      display: flex;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .key-badge {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .question-stem {
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .option-item {
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .option-item:hover {
+      border-color: var(--accent);
+      background: var(--surface-solid);
+      transform: translateX(4px);
+    }
+    .option-item.selected-correct {
+      border-color: var(--bamboo);
+      background: rgba(92, 122, 82, 0.12);
+      color: var(--bamboo);
+      font-weight: 600;
+    }
+    .option-item.selected-wrong {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .seal-stamp-tag {
+      font-family: "STKaiti", "KaiTi", serif;
+      font-size: 12px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid currentColor;
+    }
+
+    .ai-analysis-drawer {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      border-left: 3px solid var(--accent);
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .ai-analysis-drawer.show { display: block; }
+
+    /* 水墨五维雷达卡片 */
+    .radar-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .radar-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .radar-head h3 { font-size: 18px; font-weight: 700; }
+    .radar-canvas-wrap {
+      width: 280px;
+      height: 280px;
+      position: relative;
+      margin: 10px 0;
+    }
+    #radar-canvas {
+      width: 100%;
+      height: 100%;
+    }
+    .radar-toggle-group {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .radar-toggle-btn {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .radar-toggle-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface-solid);
+      box-shadow: var(--shadow-sm);
+    }
+
+  
+    /* GSAP 3D 卷轴拆解画板容器 */
+    .narrative-preview {
+      height: 440px;
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: inset 0 2px 12px rgba(0,0,0,0.03);
+    }
+    #narrative-3d-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .scroll-progress-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+  
+    /* Act 2.8: 考研主观题「朱墨对勘」水墨双轨卷轴 (Interactive Dual-Scroll) */
+    .comparison-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .comp-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 16px;
+    }
+    .comp-tabs {
+      display: flex;
+      gap: 12px;
+    }
+    .comp-tab-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .comp-tab-btn.active, .comp-tab-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface-solid);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .duo-scroll-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      position: relative;
+    }
+
+    .scroll-panel {
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+    }
+    .scroll-panel:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+    .scroll-panel.panel-before {
+      border-left: 4px solid var(--muted);
+    }
+    .scroll-panel.panel-after {
+      background: var(--surface-solid);
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 12px 32px rgba(199, 62, 58, 0.06);
+    }
+
+    .panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .score-seal {
+      font-family: "STKaiti", "KaiTi", serif;
+      font-size: 13px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid currentColor;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .seal-raw {
+      color: var(--muted);
+      border-color: var(--muted);
+      background: rgba(120, 115, 105, 0.08);
+    }
+    .seal-ai {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    .panel-body {
+      font-family: "Georgia", serif;
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--ink);
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    .phrase-match {
+      padding: 2px 6px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .phrase-match.raw {
+      background: rgba(120, 115, 105, 0.12);
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+    .phrase-match.raw.highlight, .phrase-match.raw:hover {
+      background: rgba(199, 62, 58, 0.15);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .phrase-match.polished {
+      background: rgba(199, 62, 58, 0.1);
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      font-weight: 600;
+    }
+    .phrase-match.polished.highlight, .phrase-match.polished:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .panel-bottom {
+      border-top: 1px dashed var(--line);
+      padding-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: -apple-system, sans-serif;
+    }
+
+    @media (max-width: 900px) {
+      .duo-scroll-grid { grid-template-columns: 1fr; }
+    }
+/* Act 2.5: 极速键盘做题工坊与水墨雷达 */
+    .bench-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .bench-terminal {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .terminal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 14px;
+    }
+    .terminal-meta {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hotkey-hints {
+      display: flex;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .key-badge {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .question-stem {
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .option-item {
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .option-item:hover {
+      border-color: var(--accent);
+      background: var(--surface-solid);
+      transform: translateX(4px);
+    }
+    .option-item.selected-correct {
+      border-color: var(--bamboo);
+      background: rgba(92, 122, 82, 0.12);
+      color: var(--bamboo);
+      font-weight: 600;
+    }
+    .option-item.selected-wrong {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .seal-stamp-tag {
+      font-family: "STKaiti", "KaiTi", serif;
+      font-size: 12px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid currentColor;
+    }
+
+    .ai-analysis-drawer {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      border-left: 3px solid var(--accent);
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .ai-analysis-drawer.show { display: block; }
+
+    /* 水墨五维雷达卡片 */
+    .radar-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .radar-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .radar-head h3 { font-size: 18px; font-weight: 700; }
+    .radar-canvas-wrap {
+      width: 280px;
+      height: 280px;
+      position: relative;
+      margin: 10px 0;
+    }
+    #radar-canvas {
+      width: 100%;
+      height: 100%;
+    }
+    .radar-toggle-group {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .radar-toggle-btn {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .radar-toggle-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface-solid);
+      box-shadow: var(--shadow-sm);
+    }
+
+  
+    /* GSAP 3D 卷轴拆解画板容器 */
+    .narrative-preview {
+      height: 440px;
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: inset 0 2px 12px rgba(0,0,0,0.03);
+    }
+    #narrative-3d-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .scroll-progress-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+  
+    /* Act 2.8: 考研主观题水墨双轨对比卷 (Before / After Slider) */
+    .comparison-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .comp-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 16px;
+    }
+    .comp-tabs {
+      display: flex;
+      gap: 12px;
+    }
+    .comp-tab-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .comp-tab-btn.active, .comp-tab-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface-solid);
+      box-shadow: var(--shadow-sm);
+    }
+    .comp-hint {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .diff-stage-wrap {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--bg);
+      user-select: none;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+    }
+
+    /* 左右双轨图层 */
+    .diff-pane {
+      position: absolute;
+      inset: 0;
+      padding: 36px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: "Georgia", serif;
+      line-height: 1.8;
+      box-sizing: border-box;
+    }
+    .diff-pane.pane-after {
+      background: var(--surface-solid);
+      z-index: 1;
+    }
+    .diff-pane.pane-before {
+      background: var(--bg);
+      z-index: 2;
+      width: 100%;
+      clip-path: inset(0 calc(100% - var(--split-pos, 50%)) 0 0);
+    }
+
+    .pane-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .pane-badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-before {
+      background: rgba(120, 115, 105, 0.15);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .badge-after {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .pane-text {
+      font-size: 19px;
+      color: var(--ink);
+      flex: 1;
+    }
+    .pane-footer {
+      border-top: 1px dashed var(--line);
+      padding-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: -apple-system, sans-serif;
+    }
+
+    /* 润色词汇高亮高光 */
+    .upgrade-mark {
+      background: rgba(199, 62, 58, 0.12);
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .flaw-mark {
+      text-decoration: line-through;
+      color: var(--muted);
+      background: rgba(120, 115, 105, 0.1);
+      padding: 1px 4px;
+    }
+
+    /* 可拖拽墨笔中缝滑块 */
+    .diff-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--split-pos, 50%);
+      width: 4px;
+      margin-left: -2px;
+      background: var(--accent);
+      z-index: 10;
+      cursor: ew-resize;
+      box-shadow: 0 0 12px rgba(199, 62, 58, 0.5);
+    }
+    .handle-thumb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface-solid);
+      border: 2px solid var(--accent);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--accent);
+      font-family: "STKaiti", "KaiTi", serif;
+      user-select: none;
+    }
+
+  
+    </style>
+</head>
+<body>
+
+  <!-- WebGL 3D 背景交互画布 (Three.js 驱动) -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- 鼠标点击水墨扩散 Canvas -->
+  <canvas id="ink-ripples"></canvas>
+
+  <!-- 顶部导航 -->
+  <nav>
+    <div class="brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      <div class="brand-seal">墨</div>
+      <span>墨题 MOTI</span>
+    </div>
+    <div class="nav-center">
+      <a href="#hero">生词磁斥</a>
+      <a href="#narrative">古卷解构</a>
+      <a href="#simulator">长难句透视</a>
+      <a href="#practice-bench">键盘工坊</a>
+      <a href="#comparison">作文润色</a>
+      <a href="#sphere">真题星系</a>
+      <a href="#download">上岸下载</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="audio-btn" title="纯代码合成水墨滴水音效">🔊</button>
+      <button class="icon-btn" id="theme-btn" title="切换宣纸暖白 / 玄色夜读">🌓</button>
+      <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine" class="cta-btn" target="_blank">开源仓库</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Act I: 首屏 Hero (3D 词汇磁吸排斥) -->
+    <section class="hero" id="hero">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        东方水墨美学 × 3D 认知计算
+      </div>
+      <h1>
+        笔落惊风雨，<br>
+        <span class="gradient">刷题即上岸。</span>
+      </h1>
+      <p>
+        专为考研英语定制的新一代离线优先刷题机。沉浸式长难句语义解构、真题考点精准溯源、AI 独家语境精讲，让提分如水墨晕染般自然发生。
+      </p>
+      <div class="hero-actions">
+        <a href="#download" class="cta-btn" style="padding: 14px 38px; font-size: 16px;">立即下载体验</a>
+        <a href="#narrative" class="btn-secondary">探索 3D 架构解构</a>
+      </div>
+
+      <div class="scroll-indicator" onclick="document.getElementById('narrative').scrollIntoView({behavior:'smooth'})">
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span>向下滚动 · 见证 3D 古卷解构</span>
+      </div>
+    </section>
+
+    <!-- Act II: 滚动驱动 3D 试卷古卷分层解构 -->
+    <section class="section" id="narrative">
+      <div class="section-head">
+        <span class="tag">SCROLL-DRIVEN 3D NARRATIVE</span>
+        <h2>真题古卷 · 三维分层解构</h2>
+        <p>滚轮滑动驱动 3D 空间展开，从底层 15 年真题语料，到顶层 AI 语法树，层层透视硬核壁垒。</p>
+      </div>
+
+      <div class="narrative-container">
+        <div class="narrative-layers">
+          <div class="layer-card active" onclick="focusLayer(3)">
+            <span class="layer-tag tag-l3">顶层交互 · UI / 沉浸式答题</span>
+            <h4>长难句逐词切分与 AI 精讲 <span>Layer 03</span></h4>
+            <p>拒绝死板刷题。点击任意题干生词即时浮动翻译，长难句主谓宾成分实时着色，AI 针对你的思维盲区提供“说人话”的启发式精讲。</p>
+          </div>
+
+          <div class="layer-card" onclick="focusLayer(2)">
+            <span class="layer-tag tag-l2">中层计算 · RAG / 语义路由</span>
+            <h4>DashScope 向量检索与考点雷达 <span>Layer 02</span></h4>
+            <p>基于本地 SQLite + 向量通道，瞬间计算错题考点溯源，智能匹配历史相似真题变式，生成属于你的五维英语能力雷达。</p>
+          </div>
+
+          <div class="layer-card" onclick="focusLayer(1)">
+            <span class="layer-tag tag-l1">底层底座 · 本地语料库</span>
+            <h4>2010–2026 考研真题知识图谱 <span>Layer 01</span></h4>
+            <p>完整收录考研英语一、英语二近 15 年全套完形、阅读理解、新题型与翻译。严格数据清洗与人工校验，断网也能秒级离线刷题。</p>
+          </div>
+        </div>
+
+        <div class="narrative-preview" id="narrative-preview-wrap">
+          <canvas id="narrative-3d-canvas"></canvas>
+          <div class="scroll-progress-badge">
+            <span class="badge-dot"></span>
+            <span id="scroll-phase-text">GSAP 驱动 · 卷轴三维展开中</span>
+          </div>
+        </div>
+      </div></div>
+        </div>
+      </div>
+
+      <!-- Detail 1: 交互式长难句试做演示窗 -->
+      <div class="simulator-box" id="simulator">
+        <div class="simulator-head">
+          <div class="sim-tag">
+            <span>🖋️</span> 考研英语真题 · 长难句语法透视演示窗
+          </div>
+          <div class="sim-controls">
+            <button class="sim-btn active" id="btn-toggle-syntax" onclick="toggleSyntaxHighlight()">语法骨架透视</button>
+            <button class="sim-btn" onclick="resetSimulator()">重置视角</button>
+          </div>
+        </div>
+
+        <div class="sentence-display" id="sentence-container">
+          <!-- 动态长难句渲染 -->
+        </div>
+
+        <div class="word-popover" id="word-popover">
+          <div>
+            <span class="pop-word" id="pop-word">paradigm</span>
+            <span class="pop-trans" id="pop-trans">n. 范式，认知模型；词形变化表</span>
+          </div>
+          <div class="pop-meta" id="pop-meta">
+            考研频次: 18次 · 派生词: paradigmatic · 真题同义: model, framework
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Act 2.5: 键盘极速做题工坊与五维雷达 -->
+    <section class="section" id="practice-bench">
+      <div class="section-head">
+        <span class="tag">KEYBOARD ZEN PRACTICE</span>
+        <h2>键盘极速流 · 考研真题工坊</h2>
+        <p>告别繁琐鼠标点选。在键盘上直接敲击 [A/B/C/D] 秒选答案，[Space] 唤醒 AI 启发精讲，纯沉浸提分。</p>
+      </div>
+
+      <div class="bench-grid">
+        <!-- 左：真题交互机 -->
+        <div class="bench-terminal">
+          <div>
+            <div class="terminal-head">
+              <div class="terminal-meta">
+                <span>⚡</span> 2024 考研英语一 · 阅读 Passage 2 Q21
+              </div>
+              <div class="hotkey-hints">
+                <span>按键提示:</span>
+                <span class="key-badge">A</span>
+                <span class="key-badge">B</span>
+                <span class="key-badge">C</span>
+                <span class="key-badge">D</span>
+                <span class="key-badge">Space</span>
+              </div>
+            </div>
+
+            <div class="question-stem">
+              According to Paragraph 2, the author emphasizes that vulnerability is an inherent trait primarily because ______:
+            </div>
+
+            <div class="options-group" id="options-container">
+              <div class="option-item" onclick="chooseOption('A')" data-key="A">
+                <span><strong>[A]</strong> it represents a permanent, irreparable structural deficiency</span>
+                <span class="seal-stamp-tag" id="stamp-A" style="display:none;"></span>
+              </div>
+              <div class="option-item" onclick="chooseOption('B')" data-key="B">
+                <span><strong>[B]</strong> it can only be verified through empirical cognitive scrutiny</span>
+                <span class="seal-stamp-tag" id="stamp-B" style="display:none;"></span>
+              </div>
+              <div class="option-item" onclick="chooseOption('C')" data-key="C">
+                <span><strong>[C]</strong> it is an intrinsic human condition rather than a temporary state</span>
+                <span class="seal-stamp-tag" id="stamp-C" style="display:none;"></span>
+              </div>
+              <div class="option-item" onclick="chooseOption('D')" data-key="D">
+                <span><strong>[D]</strong> it fundamentally undermines scientific consensus</span>
+                <span class="seal-stamp-tag" id="stamp-D" style="display:none;"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-analysis-drawer" id="analysis-drawer">
+            <strong style="color:var(--accent);">🤖 墨题 AI 破题手记：</strong><br>
+            • <strong>正解溯源 [C]</strong>：精准同义替换第 2 段末句 <em>"inherent trait rather than an empirical fluctuation"</em>（intrinsic 替换 inherent，human condition 替换 trait）。<br>
+            • <strong>避坑排查 [A]</strong>：偷换概念，文章未提及 "irreparable"（不可逆转）。敲击 <span class="key-badge">Space</span> 可再次收起本面板。
+          </div>
+        </div>
+
+        <!-- 右：五维雷达 -->
+        <div class="radar-card">
+          <div class="radar-head">
+            <h3>五维水墨能力雷达</h3>
+            <span style="font-size: 12px; color: var(--gold);" id="score-label">能力评定: 78分</span>
+          </div>
+
+          <div class="radar-canvas-wrap">
+            <canvas id="radar-canvas" width="280" height="280"></canvas>
+          </div>
+
+          <div class="radar-toggle-group">
+            <button class="radar-toggle-btn" id="btn-radar-before" onclick="setRadarState(false)">传统盲目刷题</button>
+            <button class="radar-toggle-btn active" id="btn-radar-after" onclick="setRadarState(true)">墨题三周强化</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Act 2.8: 考研作文与翻译「朱墨对勘」双轨卷轴 -->
+    <section class="section" id="comparison">
+      <div class="section-head">
+        <span class="tag">ESSAY & TRANSLATION REBUILD</span>
+        <h2>朱墨对勘 · 考研主观题重塑</h2>
+        <p>左侧黑墨初稿，右侧朱砂精修。点击任意划线词组，即时体验从「及格边缘初中句」到「考场一档满分金句」的提分质变。</p>
+      </div>
+
+      <div class="comparison-card">
+        <div class="comp-nav">
+          <div class="comp-tabs">
+            <button class="comp-tab-btn active" id="tab-essay" onclick="switchCompTab('essay')">📜 考研图画大作文 · 逆境与韧性</button>
+            <button class="comp-tab-btn" id="tab-trans" onclick="switchCompTab('trans')">🖋️ 考研英译汉 · 认知与科学</button>
+          </div>
+          <div style="font-size: 12px; color: var(--gold); display: flex; align-items: center; gap: 6px;">
+            <span>✨ 悬浮或点击高亮词，查看双向同义升华对照</span>
+          </div>
+        </div>
+
+        <div class="duo-scroll-grid">
+          <!-- 左：黑墨初稿 -->
+          <div class="scroll-panel panel-before">
+            <div class="panel-top">
+              <span class="score-seal seal-raw">⚠️ 备考初稿 · 及格边缘 6/20分</span>
+              <span style="font-size: 12px; color: var(--muted); font-family: sans-serif;">词汇贫乏 · 句式初中化</span>
+            </div>
+            <div class="panel-body" id="before-text">
+              Nowadays, college students <span class="phrase-match raw" data-match="1" onmouseover="highlightMatch(1)" onmouseout="unhighlightMatch()">have many pressures</span>. Some students <span class="phrase-match raw" data-match="2" onmouseover="highlightMatch(2)" onmouseout="unhighlightMatch()">give up easily</span> when facing troubles. We should have strong mind and <span class="phrase-match raw" data-match="3" onmouseover="highlightMatch(3)" onmouseout="unhighlightMatch()">never give up</span>, so that we can be successful in the future.
+            </div>
+            <div class="panel-bottom">
+              <span id="before-diag">存在问题：连用 give up 严重重复，缺少逻辑衔接词，语言扁平无学术感。</span>
+              <span style="font-family: monospace; color: var(--muted);">RAW DRAFT</span>
+            </div>
+          </div>
+
+          <!-- 右：朱墨精修 -->
+          <div class="scroll-panel panel-after">
+            <div class="panel-top">
+              <span class="score-seal seal-ai">✨ 墨题重塑 · 考场一档 18/20分</span>
+              <span style="font-size: 12px; color: var(--gold); font-family: sans-serif;">句式多样性 · 学术级闪光词汇</span>
+            </div>
+            <div class="panel-body" id="after-text">
+              In an era of relentless societal transition, contemporary undergraduates frequently <span class="phrase-match polished" data-match="1" onmouseover="highlightMatch(1)" onmouseout="unhighlightMatch()">confront multifaceted predicaments</span>. Whereas a disheartening faction <span class="phrase-match polished" data-match="2" onmouseover="highlightMatch(2)" onmouseout="unhighlightMatch()">readily capitulates to adversity</span>, fostering psychological resilience remains the <span class="phrase-match polished" data-match="3" onmouseover="highlightMatch(3)" onmouseout="unhighlightMatch()">indispensable prerequisite for ultimate triumphs</span>.
+            </div>
+            <div class="panel-bottom">
+              <span id="after-diag" style="color:var(--accent);">提分升华：用 confront multifaceted predicaments 替代口语化 have many pressures。</span>
+              <span style="font-family: monospace; color: var(--accent); font-weight: 700;">TOP TIER 18/20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Act III: 3D 球面真题星系 / 罗盘展台 -->
+    <section class="section" id="sphere">
+      <div class="section-head">
+        <span class="tag">3D SPHERICAL MATRIX</span>
+        <h2>真题星系 · 三维考点罗盘</h2>
+        <p>告别死板的表格检索。近 15 年真题试卷按球面坐标系三维分布，支持鼠标自由拖拽旋转探索。</p>
+      </div>
+
+      <div class="sphere-container">
+        <div class="sphere-canvas-wrap" id="sphere-wrap">
+          <canvas id="sphere-canvas"></canvas>
+        </div>
+
+        <div class="sphere-info">
+          <div class="sphere-card">
+            <h4>🌌 3D 球面矩阵算法</h4>
+            <p>基于斐波那契球面网格算法（Fibonacci Sphere），将 2010–2026 年考研英语一、英语二全题型节点均匀分布于空间球面，带有惯性阻尼与旋转物理手感。</p>
+          </div>
+          <div class="sphere-card">
+            <h4>🎯 交互式年份聚焦</h4>
+            <p>试着在左侧球体上<strong>拖拽旋转</strong>！点击任意年份考点节点，即可即时在墨题中展开该套卷的题型切片与错题分布雷达。</p>
+          </div>
+          <div class="sphere-card">
+            <h4>💡 智能薄弱点定向</h4>
+            <p>球面上带有朱砂红光晕的节点，代表系统根据你当前错题集智能标注的“高危盲区卷”，点击即可一键专项攻克。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail 2: 考研打卡水墨热力图 -->
+      <div class="heatmap-card">
+        <div class="heatmap-head">
+          <div>
+            <h3>🗓️ 考研上岸打卡热力图 (Learning Days Matrix)</h3>
+            <p style="font-size: 13px; color: var(--muted); margin-top: 4px;">连续坚持，静待花开。墨题独家本地加密打卡追踪。</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted);">
+            少
+            <span style="width: 12px; height: 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 2px;"></span>
+            <span style="width: 12px; height: 12px; background: rgba(92,122,82,0.3); border-radius: 2px;"></span>
+            <span style="width: 12px; height: 12px; background: rgba(92,122,82,0.6); border-radius: 2px;"></span>
+            <span style="width: 12px; height: 12px; background: var(--bamboo); border-radius: 2px;"></span>
+            多
+          </div>
+        </div>
+        <div class="heatmap-grid" id="heatmap-grid">
+          <!-- 7行 x 16列 热力图 -->
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Act IV: 尾屏下载与转化 -->
+    <section class="download-section" id="download">
+      <div class="section-head" style="margin-bottom: 32px;">
+        <span class="tag">GET STARTED</span>
+        <h2>入书院，登金榜</h2>
+        <p>选择你的专属平台，开启水墨沉浸式考研提分之旅。</p>
+      </div>
+
+      <div class="download-grid">
+        <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases" target="_blank" class="download-card">
+          <div class="platform-icon">🪟</div>
+          <h4>Windows 桌面端</h4>
+          <span class="version">v2.39 · 官方推荐</span>
+          <p>单文件免安装便携版，支持双屏布局、真题全量离线离库与本地快捷键。</p>
+          <div class="dl-btn">下载 .exe 安装包</div>
+        </a>
+
+        <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases" target="_blank" class="download-card">
+          <div class="platform-icon">📱</div>
+          <h4>Android 手机端</h4>
+          <span class="version">v2.39 · 原生体验</span>
+          <p>适配竖屏碎片化刷题，排队、自习随时随地快速做题与复盘生词。</p>
+          <div class="dl-btn">下载 .apk 安装包</div>
+        </a>
+
+        <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine" target="_blank" class="download-card">
+          <div class="platform-icon">🌐</div>
+          <h4>Web 源码部署</h4>
+          <span class="version">Open Source · MIT</span>
+          <p>FastAPI + Vue 3 极简现代代码库，支持 Docker 一键自建专属私有题库。</p>
+          <div class="dl-btn">查看 GitHub 仓库</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="display: inline-block; width: 10px; height: 10px; background: var(--accent); border-radius: 2px;"></span>
+      <strong>墨题 MOTI</strong> — 笔落惊风雨，刷题即上岸。
+    </div>
+    <div>2026 © 墨题开源团队 · MIT License</div>
+  </footer>
+
+    <!-- 引入 GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- 引入 Three.js 核心库 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+    // ===== 0. Web Audio 纯代码水墨滴水音效引擎 (Zen Ink Droplet) =====
+    let audioCtx = null;
+    let soundEnabled = true;
+    const audioBtn = document.getElementById('audio-btn');
+
+    function playInkDropSound() {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        // 水滴滑音频率 850Hz -> 220Hz
+        const now = audioCtx.currentTime;
+        osc.frequency.setValueAtTime(850, now);
+        osc.frequency.exponentialRampToValueAtTime(220, now + 0.12);
+        
+        gain.gain.setValueAtTime(0.22, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now);
+        osc.stop(now + 0.12);
+      } catch (e) {}
+    }
+
+    audioBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      audioBtn.textContent = soundEnabled ? '🔊' : '🔇';
+      if (soundEnabled) playInkDropSound();
+    });
+
+    // ===== 1. 主题切换逻辑 (宣纸暖白 / 玄色夜读) =====
+    const themeBtn = document.getElementById('theme-btn');
+    themeBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      themeBtn.textContent = isDark ? '☀️' : '🌓';
+      playInkDropSound();
+      refresh3DTheme(isDark);
+      refreshSphereTheme(isDark);
+    });
+
+    // ===== 2. 鼠标水墨点击涟漪与微拖尾系统 =====
+    const rippleCanvas = document.getElementById('ink-ripples');
+    const rippleCtx = rippleCanvas.getContext('2d');
+    let ripples = [];
+    let trails = [];
+
+    function resizeRippleCanvas() {
+      rippleCanvas.width = window.innerWidth;
+      rippleCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeRippleCanvas);
+    resizeRippleCanvas();
+
+    window.addEventListener('mousemove', (e) => {
+      trails.push({
+        x: e.clientX,
+        y: e.clientY,
+        radius: Math.random() * 2.5 + 1.5,
+        alpha: 0.28
+      });
+      if (trails.length > 22) trails.shift();
+    });
+
+    window.addEventListener('click', (e) => {
+      playInkDropSound();
+      const isDark = document.documentElement.classList.contains('dark');
+      ripples.push({
+        x: e.clientX,
+        y: e.clientY,
+        radius: 4,
+        maxRadius: 70,
+        opacity: 0.65,
+        color: isDark ? '212, 85, 74' : '199, 62, 58'
+      });
+    });
+
+    function drawRipples() {
+      rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+
+      // 绘制拖尾
+      for (let i = trails.length - 1; i >= 0; i--) {
+        const t = trails[i];
+        t.alpha *= 0.91;
+        t.radius *= 0.96;
+        rippleCtx.beginPath();
+        rippleCtx.arc(t.x, t.y, t.radius, 0, Math.PI * 2);
+        rippleCtx.fillStyle = `rgba(64, 60, 53, ${t.alpha})`;
+        rippleCtx.fill();
+        if (t.alpha < 0.01) trails.splice(i, 1);
+      }
+
+      // 绘制扩散水墨涟漪
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const r = ripples[i];
+        r.radius += (r.maxRadius - r.radius) * 0.08;
+        r.opacity *= 0.92;
+
+        rippleCtx.beginPath();
+        rippleCtx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+        rippleCtx.strokeStyle = `rgba(${r.color}, ${r.opacity})`;
+        rippleCtx.lineWidth = 2.5;
+        rippleCtx.stroke();
+
+        if (r.opacity < 0.01) ripples.splice(i, 1);
+      }
+      requestAnimationFrame(drawRipples);
+    }
+    drawRipples();
+
+    // ===== 3. Three.js 3D 浮动生词磁斥主背景 =====
+    const canvas = document.getElementById('webgl-canvas');
+    const scene = new THREE.Scene();
+    
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 40;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const VOCAB = [
+      "epistemic", "paradigm", "scrutiny", "vulnerable", "ambiguity",
+      "consensus", "deteriorate", "empirical", "fluctuation", "hierarchy",
+      "inherent", "justification", "manifest", "normative", "obsolete",
+      "plausible", "quantitative", "resilience", "subsequent", "unprecedented",
+      "考研英语", "真题精讲", "水墨墨题", "长难句拆解", "词根记忆", "核心考点"
+    ];
+
+    function createTextTexture(text, isChinese, isDark = false) {
+      const cvs = document.createElement('canvas');
+      cvs.width = isChinese ? 256 : 384;
+      cvs.height = 128;
+      const ctx = cvs.getContext('2d');
+      
+      const bgColor = isDark ? 'rgba(36, 34, 29, 0.95)' : 'rgba(253, 250, 243, 0.96)';
+      const borderColor = isChinese ? (isDark ? '#d4554a' : '#c73e3a') : (isDark ? '#969186' : '#403c35');
+      const textColor = isChinese ? (isDark ? '#d4554a' : '#c73e3a') : (isDark ? '#e9e4d9' : '#2e2a23');
+
+      ctx.fillStyle = bgColor;
+      ctx.strokeStyle = borderColor;
+      ctx.lineWidth = 3.5;
+      
+      const r = 16;
+      ctx.beginPath();
+      ctx.moveTo(r, 0);
+      ctx.lineTo(cvs.width - r, 0);
+      ctx.quadraticCurveTo(cvs.width, 0, cvs.width, r);
+      ctx.lineTo(cvs.width, cvs.height - r);
+      ctx.quadraticCurveTo(cvs.width, cvs.height, cvs.width - r, cvs.height);
+      ctx.lineTo(r, cvs.height);
+      ctx.quadraticCurveTo(0, cvs.height, 0, cvs.height - r);
+      ctx.lineTo(0, r);
+      ctx.quadraticCurveTo(0, 0, r, 0);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = textColor;
+      ctx.font = isChinese ? 'bold 42px "STKaiti", "KaiTi", serif' : '600 34px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, cvs.width / 2, cvs.height / 2);
+
+      const texture = new THREE.CanvasTexture(cvs);
+      texture.minFilter = THREE.LinearFilter;
+      return texture;
+    }
+
+    const items = [];
+    const count = 38;
+    const heroGroup = new THREE.Group();
+    scene.add(heroGroup);
+
+    const planeGeo = new THREE.PlaneGeometry(7.2, 2.4);
+
+    for (let i = 0; i < count; i++) {
+      const word = VOCAB[i % VOCAB.length];
+      const isCn = /[\u4e00-\u9fa5]/.test(word);
+      const texture = createTextTexture(word, isCn, false);
+      
+      const mat = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        opacity: 0.88,
+        depthWrite: false,
+        side: THREE.FrontSide
+      });
+
+      const mesh = new THREE.Mesh(planeGeo, mat);
+      const initX = (Math.random() - 0.5) * 90;
+      const initY = (Math.random() - 0.5) * 60;
+      const initZ = (Math.random() - 0.5) * 35;
+
+      mesh.position.set(initX, initY, initZ);
+      heroGroup.add(mesh);
+
+      items.push({
+        mesh,
+        word,
+        isCn,
+        originX: initX,
+        originY: initY,
+        originZ: initZ,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+
+    function refresh3DTheme(isDark) {
+      items.forEach(item => {
+        item.mesh.material.map = createTextTexture(item.word, item.isCn, isDark);
+        item.mesh.material.needsUpdate = true;
+      });
+    }
+
+    const mouse = { x: -999, y: -999, targetX: -999, targetY: -999 };
+    const raycaster = new THREE.Raycaster();
+    const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.targetX = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.targetY = -(e.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    let scrollProgress = 0;
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress = Math.min(1, Math.max(0, window.scrollY / (maxScroll || 1)));
+    });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    window.focusLayer = function(layerNum) {
+      playInkDropSound();
+      const stack = document.getElementById('exploded-stack');
+      const cards = document.querySelectorAll('.layer-card');
+      cards.forEach((c, idx) => {
+        c.classList.toggle('active', 3 - idx === layerNum);
+      });
+
+      if (layerNum === 1) {
+        stack.style.transform = 'rotateX(28deg) rotateY(-25deg) translateZ(60px)';
+      } else if (layerNum === 2) {
+        stack.style.transform = 'rotateX(18deg) rotateY(-10deg) scale(1.06)';
+      } else {
+        stack.style.transform = 'rotateX(12deg) rotateY(-4deg) scale(1.1)';
+      }
+    };
+
+    // 动画主循环
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const time = clock.getElapsedTime();
+
+      mouse.x += (mouse.targetX - mouse.x) * 0.08;
+      mouse.y += (mouse.targetY - mouse.y) * 0.08;
+
+      raycaster.setFromCamera(mouse, camera);
+      const mouseWorldPos = new THREE.Vector3();
+      raycaster.ray.intersectPlane(plane, mouseWorldPos);
+
+      camera.position.z = 40 - scrollProgress * 18;
+      heroGroup.position.y = scrollProgress * 45;
+
+      items.forEach((item) => {
+        const naturalY = item.originY + Math.sin(time + item.phase) * 1.5;
+        const naturalX = item.originX + Math.cos(time * 0.8 + item.phase) * 0.8;
+
+        const dx = item.mesh.position.x - mouseWorldPos.x;
+        const dy = item.mesh.position.y - mouseWorldPos.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const threshold = 16;
+
+        if (dist < threshold && dist > 0.01) {
+          const force = (threshold - dist) / threshold;
+          const angle = Math.atan2(dy, dx);
+          item.mesh.position.x += Math.cos(angle) * force * 1.8;
+          item.mesh.position.y += Math.sin(angle) * force * 1.8;
+          item.mesh.rotation.z += (Math.sin(angle) * 0.15 - item.mesh.rotation.z) * 0.08;
+        } else {
+          item.mesh.position.x += (naturalX - item.mesh.position.x) * 0.04;
+          item.mesh.position.y += (naturalY - item.mesh.position.y) * 0.04;
+          item.mesh.rotation.z += (0 - item.mesh.rotation.z) * 0.04;
+        }
+
+        item.mesh.rotation.y = Math.sin(time * 0.4 + item.phase) * 0.08;
+      });
+
+      heroGroup.rotation.x = -mouse.y * 0.05;
+      heroGroup.rotation.y = mouse.x * 0.05;
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // ===== 4. Detail 1: 长难句水墨语法划词模拟器 =====
+    const SAMPLE_SENTENCE = [
+      { text: "The", role: "subject" },
+      { text: "epistemic", role: "subject", isTarget: true, pop: { trans: "adj. 认识论的；认知上的", meta: "考研阅读出现8次 · 核心学术形容词" } },
+      { text: "paradigm", role: "subject", isTarget: true, pop: { trans: "n. 范式，认知模型；理论框架", meta: "真题频次: 18次 · 派生: paradigmatic" } },
+      { text: "that", role: "subject" },
+      { text: "vulnerability", role: "subject", isTarget: true, pop: { trans: "n. 脆弱性，易损性", meta: "考研新题型频次: 14次 · 反义: resilience" } },
+      { text: "is", role: "subject" },
+      { text: "an", role: "subject" },
+      { text: "inherent", role: "subject", isTarget: true, pop: { trans: "adj. 固有的，内在的", meta: "考研高频词 · 搭配: inherent trait" } },
+      { text: "trait", role: "subject" },
+      { text: "rather", role: "subject" },
+      { text: "than", role: "subject" },
+      { text: "an", role: "subject" },
+      { text: "empirical", role: "subject", isTarget: true, pop: { trans: "adj. 经验主义的，以实证为依据的", meta: "阅读A精读常客 · 派生: empirically" } },
+      { text: "fluctuation", role: "subject", isTarget: true, pop: { trans: "n. 波动，起伏", meta: "考研翻译常考 · 动词: fluctuate" } },
+      { text: "requires", role: "predicate", isTarget: true, pop: { trans: "v. 需要，要求（句子核心主干谓语）", meta: "主句谓语动词 · 结构: require sth" } },
+      { text: "rigorous", role: "object", isTarget: true, pop: { trans: "adj. 严密的，周密的", meta: "写作提分替换词: strict -> rigorous" } },
+      { text: "scrutiny.", role: "object", isTarget: true, pop: { trans: "n. 仔细审视，密切监督", meta: "阅读高频短语: under close scrutiny" } }
+    ];
+
+    let syntaxEnabled = true;
+
+    function renderSentence() {
+      const container = document.getElementById('sentence-container');
+      container.replaceChildren(); // 安全清理子节点
+      SAMPLE_SENTENCE.forEach((item, idx) => {
+        const span = document.createElement('span');
+        span.className = 'word-token';
+        span.textContent = item.text + ' ';
+
+        if (syntaxEnabled && item.role) {
+          span.classList.add(item.role);
+        }
+        if (item.isTarget) {
+          span.classList.add('highlight');
+        }
+
+        span.addEventListener('click', () => {
+          playInkDropSound();
+          if (item.pop) {
+            document.getElementById('pop-word').textContent = item.text.replace(/[^a-zA-Z]/g, '');
+            document.getElementById('pop-trans').textContent = item.pop.trans;
+            document.getElementById('pop-meta').textContent = item.pop.meta;
+          }
+        });
+
+        container.appendChild(span);
+      });
+    }
+    renderSentence();
+
+    window.toggleSyntaxHighlight = function() {
+      playInkDropSound();
+      syntaxEnabled = !syntaxEnabled;
+      const btn = document.getElementById('btn-toggle-syntax');
+      btn.classList.toggle('active', syntaxEnabled);
+      renderSentence();
+    };
+
+    window.resetSimulator = function() {
+      playInkDropSound();
+      syntaxEnabled = true;
+      document.getElementById('btn-toggle-syntax').classList.add('active');
+      document.getElementById('pop-word').textContent = 'paradigm';
+      document.getElementById('pop-trans').textContent = 'n. 范式，认知模型；理论框架';
+      document.getElementById('pop-meta').textContent = '真题频次: 18次 · 派生: paradigmatic · 真题同义: model, framework';
+      renderSentence();
+    };
+
+    // ===== 5. Detail 2: 3D 球面真题星系 (Spherical Question Matrix Canvas) =====
+    const sphereCanvas = document.getElementById('sphere-canvas');
+    const sphereWrap = document.getElementById('sphere-wrap');
+    const sScene = new THREE.Scene();
+    const sCamera = new THREE.PerspectiveCamera(50, sphereWrap.clientWidth / sphereWrap.clientHeight, 0.1, 100);
+    sCamera.position.z = 24;
+
+    const sRenderer = new THREE.WebGLRenderer({ canvas: sphereCanvas, alpha: true, antialias: true });
+    sRenderer.setSize(sphereWrap.clientWidth, sphereWrap.clientHeight);
+    sRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const sphereGroup = new THREE.Group();
+    sScene.add(sphereGroup);
+
+    // 绘制浅色水墨球面骨架
+    const wireGeo = new THREE.SphereGeometry(9, 20, 16);
+    const wireMat = new THREE.MeshBasicMaterial({
+      color: 0x787369,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.15
+    });
+    const wireSphere = new THREE.Mesh(wireGeo, wireMat);
+    sphereGroup.add(wireSphere);
+
+    // 斐波那契分布真题年份标签 (2010 ~ 2026)
+    const YEARS = [
+      "2026 英语一", "2026 英语二", "2025 英语一", "2025 英语二",
+      "2024 英语一", "2024 英语二", "2023 英语一", "2023 英语二",
+      "2022 英语一", "2022 英语二", "2021 英语一", "2021 英语二",
+      "2020 英语一", "2020 英语二", "2019 英语一", "2019 英语二",
+      "2018 英语一", "2018 英语二", "2017 英语一", "2016 英语一",
+      "完形精讲", "阅读理解A", "七选五排序", "考研翻译", "小作文模板", "大作文高分"
+    ];
+
+    function createSphereLabel(text, isAlert = false, isDark = false) {
+      const c = document.createElement('canvas');
+      c.width = 180;
+      c.height = 64;
+      const x = c.getContext('2d');
+
+      const bg = isAlert ? (isDark ? '#d4554a' : '#c73e3a') : (isDark ? '#24221d' : '#fdfaf3');
+      const fg = isAlert ? '#ffffff' : (isDark ? '#e9e4d9' : '#2e2a23');
+      const border = isAlert ? '#ffffff' : (isDark ? '#789c6d' : '#5c7a52');
+
+      x.fillStyle = bg;
+      x.strokeStyle = border;
+      x.lineWidth = 3;
+      x.beginPath();
+      x.roundRect(4, 4, c.width - 8, c.height - 8, 12);
+      x.fill();
+      x.stroke();
+
+      x.fillStyle = fg;
+      x.font = 'bold 22px -apple-system, sans-serif';
+      x.textAlign = 'center';
+      x.textBaseline = 'middle';
+      x.fillText(text, c.width / 2, c.height / 2);
+
+      const tex = new THREE.CanvasTexture(c);
+      tex.minFilter = THREE.LinearFilter;
+      return tex;
+    }
+
+    const sphereLabels = [];
+    const N = YEARS.length;
+    const phi = Math.PI * (3 - Math.sqrt(5)); // 黄金角
+
+    for (let i = 0; i < N; i++) {
+      const y = 1 - (i / (N - 1)) * 2;
+      const radius = Math.sqrt(1 - y * y);
+      const theta = phi * i;
+
+      const px = Math.cos(theta) * radius * 9;
+      const py = y * 9;
+      const pz = Math.sin(theta) * radius * 9;
+
+      const isAlert = i < 4; // 最近真题重点标红
+      const tex = createSphereLabel(YEARS[i], isAlert, false);
+      const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+      const sprite = new THREE.Sprite(mat);
+      sprite.position.set(px, py, pz);
+      sprite.scale.set(3.6, 1.3, 1);
+
+      sphereGroup.add(sprite);
+      sphereLabels.push({ sprite, text: YEARS[i], isAlert });
+    }
+
+    function refreshSphereTheme(isDark) {
+      wireMat.color.setHex(isDark ? 0x969186 : 0x787369);
+      wireMat.opacity = isDark ? 0.22 : 0.15;
+      sphereLabels.forEach(l => {
+        l.sprite.material.map = createSphereLabel(l.text, l.isAlert, isDark);
+        l.sprite.material.needsUpdate = true;
+      });
+    }
+
+    // 球面拖拽旋转手感
+    let isDragging = false;
+    let prevMousePos = { x: 0, y: 0 };
+    let rotSpeed = { x: 0.002, y: 0.003 };
+
+    sphereWrap.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      prevMousePos = { x: e.clientX, y: e.clientY };
+    });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - prevMousePos.x;
+      const deltaY = e.clientY - prevMousePos.y;
+      sphereGroup.rotation.y += deltaX * 0.006;
+      sphereGroup.rotation.x += deltaY * 0.006;
+      prevMousePos = { x: e.clientX, y: e.clientY };
+      rotSpeed.x = deltaY * 0.002;
+      rotSpeed.y = deltaX * 0.002;
+    });
+
+    function animateSphere() {
+      requestAnimationFrame(animateSphere);
+      if (!isDragging) {
+        sphereGroup.rotation.y += rotSpeed.y || 0.002;
+        sphereGroup.rotation.x += rotSpeed.x || 0.001;
+        rotSpeed.x *= 0.95;
+        rotSpeed.y *= 0.95;
+      }
+      sRenderer.render(sScene, sCamera);
+    }
+    animateSphere();
+
+    window.addEventListener('resize', () => {
+      if (!sphereWrap) return;
+      sCamera.aspect = sphereWrap.clientWidth / sphereWrap.clientHeight;
+      sCamera.updateProjectionMatrix();
+      sRenderer.setSize(sphereWrap.clientWidth, sphereWrap.clientHeight);
+    });
+
+    // ===== 6. Detail 3: 考研打卡水墨热力图渲染 =====
+    const heatGrid = document.getElementById('heatmap-grid');
+    for (let c = 0; c < 16; c++) {
+      const col = document.createElement('div');
+      col.className = 'heat-col';
+      for (let r = 0; r < 7; r++) {
+        const cell = document.createElement('div');
+        // 模拟打卡热度
+        const rand = Math.random();
+        let level = 'heat-l0';
+        if (rand > 0.75) level = 'heat-l4';
+        else if (rand > 0.5) level = 'heat-l3';
+        else if (rand > 0.3) level = 'heat-l2';
+        else if (rand > 0.15) level = 'heat-l1';
+
+        cell.className = `heat-cell ${level}`;
+        cell.title = `第 ${c + 1} 周 · 打卡记录`;
+        cell.addEventListener('click', playInkDropSound);
+        col.appendChild(cell);
+      }
+      heatGrid.appendChild(col);
+    }
+  
+    // ===== 7. 极速键盘刷题做题逻辑与全局监听 =====
+    let answered = false;
+    let analysisOpen = false;
+
+    window.chooseOption = function(key) {
+      if (typeof playInkDropSound === 'function') playInkDropSound();
+      const items = document.querySelectorAll('.option-item');
+      items.forEach(el => {
+        el.className = 'option-item';
+        const st = el.querySelector('.seal-stamp-tag');
+        if (st) st.style.display = 'none';
+      });
+
+      const selected = document.querySelector(`.option-item[data-key="${key}"]`);
+      const stamp = document.getElementById(`stamp-${key}`);
+      
+      if (selected) {
+        if (key === 'C') {
+          selected.classList.add('selected-correct');
+          if (stamp) {
+            stamp.textContent = '正解';
+            stamp.style.display = 'inline-block';
+          }
+        } else {
+          selected.classList.add('selected-wrong');
+          if (stamp) {
+            stamp.textContent = '排除';
+            stamp.style.display = 'inline-block';
+          }
+        }
+      }
+      answered = true;
+      toggleAnalysis(true);
+    };
+
+    window.toggleAnalysis = function(forceOpen) {
+      const drawer = document.getElementById('analysis-drawer');
+      if (!drawer) return;
+      if (forceOpen !== undefined) {
+        analysisOpen = forceOpen;
+      } else {
+        analysisOpen = !analysisOpen;
+      }
+      drawer.classList.toggle('show', analysisOpen);
+    };
+
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+      const k = e.key.toUpperCase();
+      if (['A', 'B', 'C', 'D'].includes(k)) {
+        chooseOption(k);
+      } else if (e.code === 'Space') {
+        e.preventDefault();
+        if (typeof playInkDropSound === 'function') playInkDropSound();
+        toggleAnalysis();
+      }
+    });
+
+    // ===== 8. 五维水墨能力雷达动画绘制 (Radar Chart) =====
+    const rCanvas = document.getElementById('radar-canvas');
+    if (rCanvas) {
+      const rCtx = rCanvas.getContext('2d');
+      const AXES = ['词汇辨析', '长难句透视', '逻辑推断', '陷阱识别', '答题语速'];
+      
+      const STATE_BEFORE = [0.42, 0.35, 0.48, 0.38, 0.45];
+      const STATE_AFTER = [0.88, 0.85, 0.82, 0.79, 0.90];
+      
+      let currentRadar = [0.88, 0.85, 0.82, 0.79, 0.90];
+      let targetRadar = [0.88, 0.85, 0.82, 0.79, 0.90];
+
+      window.setRadarState = function(isAfter) {
+        if (typeof playInkDropSound === 'function') playInkDropSound();
+        document.getElementById('btn-radar-before').classList.toggle('active', !isAfter);
+        document.getElementById('btn-radar-after').classList.toggle('active', isAfter);
+        document.getElementById('score-label').textContent = isAfter ? '能力评定: 78分 (良好)' : '能力评定: 42分 (基础薄弱)';
+        targetRadar = isAfter ? [...STATE_AFTER] : [...STATE_BEFORE];
+      };
+
+      function drawRadar() {
+        rCtx.clearRect(0, 0, 280, 280);
+        const isDark = document.documentElement.classList.contains('dark');
+        const centerX = 140;
+        const centerY = 140;
+        const radius = 95;
+        const total = AXES.length;
+
+        for (let i = 0; i < total; i++) {
+          currentRadar[i] += (targetRadar[i] - currentRadar[i]) * 0.08;
+        }
+
+        for (let level = 1; level <= 4; level++) {
+          const r = (radius / 4) * level;
+          rCtx.beginPath();
+          for (let i = 0; i < total; i++) {
+            const angle = (Math.PI * 2 / total) * i - Math.PI / 2;
+            const x = centerX + Math.cos(angle) * r;
+            const y = centerY + Math.sin(angle) * r;
+            if (i === 0) rCtx.moveTo(x, y);
+            else rCtx.lineTo(x, y);
+          }
+          rCtx.closePath();
+          rCtx.strokeStyle = isDark ? 'rgba(150, 145, 134, 0.22)' : 'rgba(120, 115, 105, 0.18)';
+          rCtx.lineWidth = 1;
+          rCtx.stroke();
+        }
+
+        rCtx.font = '11px -apple-system, sans-serif';
+        rCtx.fillStyle = isDark ? '#969186' : '#787369';
+        rCtx.textAlign = 'center';
+        rCtx.textBaseline = 'middle';
+
+        for (let i = 0; i < total; i++) {
+          const angle = (Math.PI * 2 / total) * i - Math.PI / 2;
+          const x = centerX + Math.cos(angle) * radius;
+          const y = centerY + Math.sin(angle) * radius;
+          rCtx.beginPath();
+          rCtx.moveTo(centerX, centerY);
+          rCtx.lineTo(x, y);
+          rCtx.strokeStyle = isDark ? 'rgba(150, 145, 134, 0.25)' : 'rgba(120, 115, 105, 0.2)';
+          rCtx.stroke();
+
+          const lx = centerX + Math.cos(angle) * (radius + 22);
+          const ly = centerY + Math.sin(angle) * (radius + 18);
+          rCtx.fillText(AXES[i], lx, ly);
+        }
+
+        rCtx.beginPath();
+        for (let i = 0; i < total; i++) {
+          const angle = (Math.PI * 2 / total) * i - Math.PI / 2;
+          const r = radius * currentRadar[i];
+          const x = centerX + Math.cos(angle) * r;
+          const y = centerY + Math.sin(angle) * r;
+          if (i === 0) rCtx.moveTo(x, y);
+          else rCtx.lineTo(x, y);
+        }
+        rCtx.closePath();
+
+        const fillAlpha = isDark ? 0.35 : 0.25;
+        rCtx.fillStyle = isDark ? `rgba(212, 85, 74, ${fillAlpha})` : `rgba(199, 62, 58, ${fillAlpha})`;
+        rCtx.fill();
+
+        rCtx.strokeStyle = isDark ? '#d4554a' : '#c73e3a';
+        rCtx.lineWidth = 2.5;
+        rCtx.stroke();
+
+        for (let i = 0; i < total; i++) {
+          const angle = (Math.PI * 2 / total) * i - Math.PI / 2;
+          const r = radius * currentRadar[i];
+          const x = centerX + Math.cos(angle) * r;
+          const y = centerY + Math.sin(angle) * r;
+          rCtx.beginPath();
+          rCtx.arc(x, y, 4, 0, Math.PI * 2);
+          rCtx.fillStyle = isDark ? '#d4554a' : '#c73e3a';
+          rCtx.fill();
+          rCtx.strokeStyle = '#fff';
+          rCtx.lineWidth = 1.5;
+          rCtx.stroke();
+        }
+
+        requestAnimationFrame(drawRadar);
+      }
+      drawRadar();
+    }
+
+  
+    // ===== 9. GSAP ScrollTrigger + Three.js 真正的三维试卷古卷爆炸拆解系统 =====
+    (function init3DScrollExplosion() {
+      const wrap = document.getElementById('narrative-preview-wrap');
+      const canvas = document.getElementById('narrative-3d-canvas');
+      if (!wrap || !canvas) return;
+
+      const nScene = new THREE.Scene();
+      const nCamera = new THREE.PerspectiveCamera(40, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+      nCamera.position.set(0, 0, 16);
+
+      const nRenderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+      nRenderer.setSize(wrap.clientWidth, wrap.clientHeight);
+      nRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      nRenderer.shadowMap.enabled = true;
+
+      // 核心主舞台容器
+      const stageGroup = new THREE.Group();
+      stageGroup.rotation.set(0.35, -0.42, 0.06); // 绝美 3D 轴测透视角
+      nScene.add(stageGroup);
+
+      // 高级多光源配置 (营造水墨玉质与流金光影)
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+      nScene.add(ambientLight);
+
+      const keyLight = new THREE.DirectionalLight(0xfff5e6, 1.5);
+      keyLight.position.set(12, 16, 15);
+      nScene.add(keyLight);
+
+      const fillLight = new THREE.PointLight(0xc73e3a, 1.2, 30);
+      fillLight.position.set(-10, -5, 8);
+      nScene.add(fillLight);
+
+      const rimLight = new THREE.DirectionalLight(0x5c7a52, 1.0);
+      rimLight.position.set(-15, 10, -10);
+      nScene.add(rimLight);
+
+      // 高清纹理生成器
+      function makeLayerTexture(tag, title, desc, codeBadge, mainColor, accentColor, isDark) {
+        const cvs = document.createElement('canvas');
+        cvs.width = 640;
+        cvs.height = 420;
+        const ctx = cvs.getContext('2d');
+
+        // 宣纸底色
+        ctx.fillStyle = isDark ? '#22201b' : '#fcf9f2';
+        ctx.fillRect(0, 0, cvs.width, cvs.height);
+
+        // 外围朱丝栏水墨边线
+        ctx.strokeStyle = mainColor;
+        ctx.lineWidth = 6;
+        ctx.strokeRect(10, 10, cvs.width - 20, cvs.height - 20);
+
+        ctx.strokeStyle = accentColor;
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(18, 18, cvs.width - 36, cvs.height - 36);
+
+        // 顶部印章徽章
+        ctx.fillStyle = mainColor;
+        ctx.beginPath();
+        ctx.roundRect(32, 32, 110, 32, 6);
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 15px monospace';
+        ctx.fillText(codeBadge, 44, 54);
+
+        ctx.fillStyle = accentColor;
+        ctx.font = 'bold 16px "STKaiti", "KaiTi", serif';
+        ctx.fillText(tag, 160, 54);
+
+        // 主标题
+        ctx.fillStyle = isDark ? '#f2ece1' : '#24211a';
+        ctx.font = 'bold 30px "STKaiti", "KaiTi", serif';
+        ctx.fillText(title, 32, 126);
+
+        // 描述
+        ctx.fillStyle = isDark ? '#a8a294' : '#6b665c';
+        ctx.font = '16px -apple-system, sans-serif';
+        ctx.fillText(desc, 32, 168);
+
+        // 模拟真题排版切片/语法波形
+        ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+        ctx.lineWidth = 2;
+        for (let i = 0; i < 7; i++) {
+          const y = 210 + i * 26;
+          ctx.beginPath();
+          ctx.moveTo(32, y);
+          ctx.lineTo(cvs.width - 32, y);
+          ctx.stroke();
+        }
+
+        // 底部防伪编码
+        ctx.fillStyle = mainColor;
+        ctx.font = '13px monospace';
+        ctx.fillText("MOTI ARCHITECTURE VERIFIED // 100% OFFLINE LOCAL DB", 32, 390);
+
+        const tex = new THREE.CanvasTexture(cvs);
+        tex.minFilter = THREE.LinearFilter;
+        return tex;
+      }
+
+      // 1. 实体 3D 板块定义 (带厚度的实体 BoxGeometry)
+      const boxWidth = 9.2;
+      const boxHeight = 6.0;
+      const boxDepth = 0.22;
+      const layerGeo = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+      // Layer 1 (底座: 竹青 语料图谱)
+      const texL1 = makeLayerTexture("数据层 · 底座", "2010–2026 考研真题图谱", "15年全年代真题切片 · SQLite WAL 本地加密库", "LAYER 01", "#5c7a52", "#789c6d", false);
+      const matSideL1 = new THREE.MeshStandardMaterial({ color: 0x4a6342, roughness: 0.5, metalness: 0.2 });
+      const matFaceL1 = new THREE.MeshStandardMaterial({ map: texL1, roughness: 0.35, metalness: 0.1 });
+      const meshL1 = new THREE.Mesh(layerGeo, [matSideL1, matSideL1, matSideL1, matSideL1, matFaceL1, matSideL1]);
+      meshL1.position.set(0, 0, 0);
+      stageGroup.add(meshL1);
+
+      // Layer 2 (中层: 秋香金 向量计算与RAG通道)
+      const texL2 = makeLayerTexture("计算层 · RAG", "DashScope 向量化检索通道", "语义考点溯源 · 错题自动同类推荐雷达", "LAYER 02", "#a8842f", "#c29e46", false);
+      const matSideL2 = new THREE.MeshStandardMaterial({ color: 0x8a6c25, roughness: 0.4, metalness: 0.3 });
+      const matFaceL2 = new THREE.MeshStandardMaterial({ map: texL2, roughness: 0.3, metalness: 0.2, transparent: true, opacity: 0.94 });
+      const meshL2 = new THREE.Mesh(layerGeo, [matSideL2, matSideL2, matSideL2, matSideL2, matFaceL2, matSideL2]);
+      meshL2.position.set(0, 0, 0);
+      stageGroup.add(meshL2);
+
+      // Layer 3 (顶层: 朱砂红 水墨原生答题交互)
+      const texL3 = makeLayerTexture("交互层 · UI", "长难句水墨生词画布", "主谓宾语法骨架实时着色 · AI 启发式精讲", "LAYER 03", "#c73e3a", "#d4554a", false);
+      const matSideL3 = new THREE.MeshStandardMaterial({ color: 0x962e2a, roughness: 0.4, metalness: 0.2 });
+      const matFaceL3 = new THREE.MeshStandardMaterial({ map: texL3, roughness: 0.3, metalness: 0.1 });
+      const meshL3 = new THREE.Mesh(layerGeo, [matSideL3, matSideL3, matSideL3, matSideL3, matFaceL3, matSideL3]);
+      meshL3.position.set(0, 0, 0);
+      stageGroup.add(meshL3);
+
+      // 2. 传统木质卷轴上下双轴杆 (带金色封套)
+      const rollerGroup = new THREE.Group();
+      const rollerGeo = new THREE.CylinderGeometry(0.25, 0.25, boxWidth + 1.2, 32);
+      const woodMat = new THREE.MeshStandardMaterial({ color: 0x221e1a, roughness: 0.7 });
+      const goldCapMat = new THREE.MeshStandardMaterial({ color: 0xa8842f, metalness: 0.8, roughness: 0.2 });
+
+      const topRoller = new THREE.Mesh(rollerGeo, woodMat);
+      topRoller.rotation.z = Math.PI / 2;
+      topRoller.position.set(0, boxHeight / 2 + 0.3, 0);
+
+      const btmRoller = new THREE.Mesh(rollerGeo, woodMat);
+      btmRoller.rotation.z = Math.PI / 2;
+      btmRoller.position.set(0, -boxHeight / 2 - 0.3, 0);
+
+      rollerGroup.add(topRoller);
+      rollerGroup.add(btmRoller);
+      stageGroup.add(rollerGroup);
+
+      // 3. 工业爆炸图角隅连接束 (Exploded Corner Guides)
+      const guideGroup = new THREE.Group();
+      stageGroup.add(guideGroup);
+
+      const lineMat = new THREE.LineDashedMaterial({
+        color: 0xc73e3a,
+        dashSize: 0.3,
+        gapSize: 0.15,
+        linewidth: 2,
+        transparent: true,
+        opacity: 0.7
+      });
+
+      const corners = [
+        { x: -boxWidth/2, y: -boxHeight/2 },
+        { x:  boxWidth/2, y: -boxHeight/2 },
+        { x: -boxWidth/2, y:  boxHeight/2 },
+        { x:  boxWidth/2, y:  boxHeight/2 },
+      ];
+
+      const guideLines = [];
+      corners.forEach(c => {
+        const points = [
+          new THREE.Vector3(c.x, c.y, -3),
+          new THREE.Vector3(c.x, c.y, 3)
+        ];
+        const geo = new THREE.BufferGeometry().setFromPoints(points);
+        const line = new THREE.Line(geo, lineMat);
+        line.computeLineDistances();
+        guideGroup.add(line);
+        guideLines.push({ line, x: c.x, y: c.y });
+      });
+
+      // 4. 层间浮动发光粒子阵列 (Data flow particles between layers)
+      const particleCount = 45;
+      const pGeo = new THREE.BufferGeometry();
+      const pPos = new Float32Array(particleCount * 3);
+      for (let i = 0; i < particleCount * 3; i += 3) {
+        pPos[i]   = (Math.random() - 0.5) * (boxWidth - 1);
+        pPos[i+1] = (Math.random() - 0.5) * (boxHeight - 1);
+        pPos[i+2] = (Math.random() - 0.5) * 5;
+      }
+      pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+      const pMat = new THREE.PointsMaterial({ color: 0xa8842f, size: 0.22, transparent: true, opacity: 0.75 });
+      const pSystem = new THREE.Points(pGeo, pMat);
+      stageGroup.add(pSystem);
+
+      // 5. GSAP ScrollTrigger 核心爆炸拆解与展开时间轴
+      let currentExplosionProgress = 0;
+
+      function applyExplosion(p) {
+        currentExplosionProgress = p;
+        // p 从 0 到 1:
+        // 0.0 -> 合拢平整
+        // 1.0 -> 完全立体分层爆炸展开 (Exploded CAD View)
+        const spreadZ = p * 3.4;
+        meshL1.position.z = -spreadZ;
+        meshL2.position.z = 0;
+        meshL3.position.z = spreadZ;
+
+        meshL1.rotation.x = -p * 0.08;
+        meshL3.rotation.x = p * 0.08;
+
+        // 轴杆位移
+        topRoller.position.set(0, boxHeight / 2 + 0.3 + p * 0.6, spreadZ + 0.2);
+        btmRoller.position.set(0, -boxHeight / 2 - 0.3 - p * 0.6, -spreadZ - 0.2);
+
+        // 动态更新连接线
+        guideLines.forEach(g => {
+          const pts = [
+            new THREE.Vector3(g.x, g.y, -spreadZ),
+            new THREE.Vector3(g.x, g.y, spreadZ)
+          ];
+          g.line.geometry.setFromPoints(pts);
+          g.line.computeLineDistances();
+        });
+
+        // 动态更新徽章说明
+        const badge = document.getElementById('scroll-phase-text');
+        if (badge) {
+          if (p < 0.2) badge.textContent = "卷轴合拢待阅 (0% 闭合)";
+          else if (p < 0.8) badge.textContent = `三维空间爆炸拆解中 (${Math.round(p * 100)}% 分层)`;
+          else badge.textContent = "全景三层解构 · 架构聚焦 (100% 展开)";
+        }
+      }
+
+      // 初始化为展开状态（即使用户未滚动也能立刻享受爆炸视觉）
+      applyExplosion(0.85);
+
+      if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.create({
+          trigger: "#narrative",
+          start: "top 85%",
+          end: "bottom 25%",
+          scrub: 1.2,
+          onUpdate: (self) => {
+            applyExplosion(self.progress);
+          }
+        });
+      }
+
+      // 6. 交互式三维拖拽全景旋转 (Orbit drag & inertia)
+      let isDragging = false;
+      let prevMouse = { x: 0, y: 0 };
+      let orbitVelocity = { x: 0, y: 0 };
+
+      wrap.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        prevMouse = { x: e.clientX, y: e.clientY };
+      });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - prevMouse.x;
+        const dy = e.clientY - prevMouse.y;
+        stageGroup.rotation.y += dx * 0.007;
+        stageGroup.rotation.x += dy * 0.007;
+        orbitVelocity.x = dy * 0.003;
+        orbitVelocity.y = dx * 0.003;
+        prevMouse = { x: e.clientX, y: e.clientY };
+      });
+
+      // 7. 点击左侧卡片焦点高亮特定层
+      window.focusLayer = function(layerNum) {
+        if (typeof playInkDropSound === 'function') playInkDropSound();
+        const cards = document.querySelectorAll('.layer-card');
+        cards.forEach((c, idx) => {
+          c.classList.toggle('active', 3 - idx === layerNum);
+        });
+
+        if (window.gsap) {
+          if (layerNum === 1) {
+            gsap.to(stageGroup.rotation, { x: 0.25, y: -0.2, z: 0, duration: 0.6 });
+            gsap.to(meshL1.position, { z: 2.2, duration: 0.5 });
+            gsap.to(meshL3.position, { z: -2.2, duration: 0.5 });
+          } else if (layerNum === 2) {
+            gsap.to(stageGroup.rotation, { x: 0.35, y: -0.45, z: 0.06, duration: 0.6 });
+            gsap.to(meshL1.position, { z: -2.2, duration: 0.5 });
+            gsap.to(meshL3.position, { z: 2.2, duration: 0.5 });
+          } else {
+            gsap.to(stageGroup.rotation, { x: 0.2, y: -0.15, z: 0, duration: 0.6 });
+            gsap.to(meshL3.position, { z: 3.2, duration: 0.5 });
+            gsap.to(meshL1.position, { z: -3.2, duration: 0.5 });
+          }
+        }
+      };
+
+      // 渲染主循环
+      let clock = new THREE.Clock();
+
+      function renderExplosion() {
+        requestAnimationFrame(renderExplosion);
+        const delta = clock.getDelta();
+
+        if (!isDragging) {
+          // 缓慢自转与阻尼衰减
+          stageGroup.rotation.y += (orbitVelocity.y || 0.001);
+          stageGroup.rotation.x += (orbitVelocity.x || 0.0005);
+          orbitVelocity.x *= 0.95;
+          orbitVelocity.y *= 0.95;
+        }
+
+        // 粒子缓缓上升
+        const positions = pGeo.attributes.position.array;
+        for (let i = 1; i < particleCount * 3; i += 3) {
+          positions[i] += delta * 0.6;
+          if (positions[i] > boxHeight / 2) positions[i] = -boxHeight / 2;
+        }
+        pGeo.attributes.position.needsUpdate = true;
+
+        nRenderer.render(nScene, nCamera);
+      }
+      renderExplosion();
+
+      window.addEventListener('resize', () => {
+        if (!wrap) return;
+        nCamera.aspect = wrap.clientWidth / wrap.clientHeight;
+        nCamera.updateProjectionMatrix();
+        nRenderer.setSize(wrap.clientWidth, wrap.clientHeight);
+      });
+    })();
+
+  </script>
+</body>
+</html>

@@ -9,6 +9,8 @@
   **墨题（英语刷题机，English Practice Machine）是开源的本地优先英语学习工作台，为考研、四六级、高考考生提供题库练习、FSRS 间隔重复词汇复习、错题迭代与 AI 学习辅助。项目内置内容为自建 AI 模拟·非真题；用户也可以在拥有合法使用和再分发权的前提下导入自己的题库。**
 
   <p>
+    <a href="https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/">✨ 3D 水墨官网</a>
+    ·
     <a href="README.en.md">English</a>
     ·
     <a href="docs/question-bank-format.md">题库格式</a>
