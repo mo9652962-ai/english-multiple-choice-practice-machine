@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>墨题 MOTI · 官网全功能演示视频播放器</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      padding: 12px 0;
+      color: var(--foreground, #e9e4d9);
+    }
+    .video-card {
+      background: var(--card, #201e19);
+      border: 1px solid var(--border, #38352e);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      max-width: 820px;
+    }
+    .video-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border, #38352e);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .brand-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .seal {
+      width: 22px;
+      height: 22px;
+      background: var(--accent, #c73e3a);
+      color: #fff;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "STKaiti", serif;
+      font-size: 14px;
+    }
+    .video-meta {
+      font-size: 12px;
+      color: var(--accent, #c73e3a);
+      font-family: monospace;
+      font-weight: 600;
+    }
+    video {
+      width: 100%;
+      border-radius: 10px;
+      background: #000;
+      display: block;
+      max-height: 480px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .video-footer {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted-foreground, #969186);
+    }
+  </style>
+</head>
+<body>
+  <div class="video-card">
+    <div class="video-header">
+      <div class="brand-tag">
+        <div class="seal">墨</div>
+        <span>墨题 MOTI · 官网全功能 3D 沉浸式实机演示</span>
+      </div>
+      <div class="video-meta">45.8s 完整版 · 双声道禅音</div>
+    </div>
+    <video controls autoplay muted loop playsinline preload="auto">
+      <source src="images/moti-website-demo.mp4" type="video/mp4">
+      您的浏览器暂不支持该视频播放。
+    </video>
+    <div class="video-footer">
+      <span>✨ 涵盖：3D 生词磁斥 · 3D 古卷解构 · 键盘做题 · 朱墨对勘 · 真题星系 · 玄色夜读</span>
+      <span>1080P / H.264 Baseline</span>
+    </div>
+  </div>
+</body>
+</html>
