@@ -9,6 +9,8 @@
   **English Practice Machine (墨题) is an open-source, local-first English exam practice app for CET-4/CET-6, postgraduate (考研) and Gaokao learners: real past-paper practice, FSRS spaced-repetition vocabulary, mistake iteration and optional AI study assistance. Core practice and grading work fully offline with no API key required.**
 
   <p>
+    <a href="https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/">✨ 3D Interactive Website</a>
+    ·
     <a href="README.md">简体中文</a>
     ·
     <a href="docs/question-bank-format.md">Question-bank format</a>
@@ -22,6 +24,15 @@
     <img src="https://img.shields.io/badge/status-v2.0.0-2563EB?style=flat-square" alt="v2.0.0">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
+</div>
+
+> 🌟 **New 3D Immersive Website is Live**: 👉 [Experience Moti 3D Web Narrative & Practice Workshop](https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/)  
+> **Interactive Highlights**: 3D Vocabulary Magnetic Repulsion · 3D Exploded Scroll Narrative · Keyboard Zen Practice · Dual-Scroll Subjective Refinement · 3D Question Galaxy Compass
+
+<div align="center">
+  <a href="https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/">
+    <img src="docs/images/banner-3d-landing.png" alt="English Practice Machine · 3D Immersive Website" width="100%">
+  </a>
 </div>
 
 ![English Practice Machine](docs/images/banner-home-1200x630.png)
