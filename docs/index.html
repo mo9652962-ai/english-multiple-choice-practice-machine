@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <!-- impeccable-disable cream-palette -- intentional traditional Chinese Xuan paper aesthetic for Moti brand -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>墨题 MOTI | 东方水墨 × 3D 认知计算 AI 考研英语刷题机</title>
@@ -11,14 +12,14 @@
       --surface: rgba(253, 250, 243, 0.88);
       --surface-solid: #fdfaf3;
       --ink: #2e2a23;
-      --muted: #787369;
+      --muted: #57534a;
       --line: #e2ddd3;
       --primary: #403c35;
       --primary-hover: #26231e;
       --accent: #c73e3a;
-      --accent-soft: #f8e6e4;
+      --accent-soft: #faedeb;
       --bamboo: #5c7a52;
-      --gold: #a8842f;
+      --gold: #826017;
       --radius-xl: 28px;
       --radius-lg: 20px;
       --radius-md: 12px;
@@ -32,7 +33,7 @@
       --surface: rgba(32, 30, 26, 0.88);
       --surface-solid: #24221d;
       --ink: #e9e4d9;
-      --muted: #969186;
+      --muted: #b0aba0;
       --line: #38352e;
       --primary: #c2bcb0;
       --primary-hover: #dfdad0;
@@ -226,10 +227,9 @@
       height: 7px;
       background: var(--accent);
       border-radius: 50%;
-      animation: pulse 2s infinite ease-in-out;
+      
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
+    
       50% { transform: scale(1.4); opacity: 0.6; }
     }
 
@@ -242,9 +242,7 @@
       max-width: 860px;
     }
     .hero h1 span.gradient {
-      background: linear-gradient(135deg, var(--ink) 20%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--accent);
     }
 
     .hero p {
@@ -305,7 +303,7 @@
       top: 6px;
       left: 50%;
       transform: translateX(-50%);
-      animation: mouseScroll 1.8s infinite ease-in-out;
+      
     }
     @keyframes mouseScroll {
       0% { transform: translate(-50%, 0); opacity: 1; }
@@ -350,15 +348,9 @@
     .narrative-container {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: 56px;
+      gap: 40px;
       align-items: center;
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 60px;
-      box-shadow: var(--shadow-lg);
       position: relative;
-      overflow: hidden;
       margin-bottom: 40px;
     }
 
@@ -391,9 +383,9 @@
     }
     .tag-l1 { background: rgba(92, 122, 82, 0.15); color: var(--bamboo); }
     .tag-l2 { background: rgba(168, 132, 47, 0.15); color: var(--gold); }
-    .tag-l3 { background: var(--accent-soft); color: var(--accent); }
+    .tag-l3 { background: var(--accent-soft); color: #9c2825; font-weight: 700; }
 
-    .layer-card h4 {
+    .layer-card h3 {
       font-size: 18px;
       margin-bottom: 6px;
       display: flex;
@@ -444,11 +436,7 @@
 
     /* Detail 1: 交互式长难句水墨划词试做窗 (Interactive Simulator) */
     .simulator-box {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      box-shadow: var(--shadow-lg);
+      padding: 20px 0;
     }
     .simulator-head {
       display: flex;
@@ -536,17 +524,11 @@
 
     /* Detail 2: 3D 真题星系与罗盘展台 (3D Sphere Section) */
     .sphere-container {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 48px;
-      box-shadow: var(--shadow-lg);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 40px;
       align-items: center;
       position: relative;
-      overflow: hidden;
     }
     .sphere-canvas-wrap {
       width: 100%;
@@ -571,7 +553,7 @@
       padding: 20px;
       transition: all 0.3s ease;
     }
-    .sphere-card h4 {
+    .sphere-card h3 {
       font-size: 17px;
       margin-bottom: 6px;
       color: var(--accent);
@@ -587,11 +569,7 @@
 
     /* Detail 3: 学习热力图打卡矩阵 (Streak Heatmap) */
     .heatmap-card {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      box-shadow: var(--shadow-lg);
+      padding: 30px 0;
       margin-top: 40px;
     }
     .heatmap-head {
@@ -664,7 +642,7 @@
       box-shadow: var(--shadow-lg);
     }
     .platform-icon { font-size: 44px; margin-bottom: 16px; }
-    .download-card h4 { font-size: 20px; margin-bottom: 8px; }
+    .download-card h3 { font-size: 20px; margin-bottom: 8px; }
     .download-card span.version { font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
     .download-card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 24px; }
     .dl-btn {
@@ -709,11 +687,6 @@
       align-items: stretch;
     }
     .bench-terminal {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 36px;
-      box-shadow: var(--shadow-lg);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -808,7 +781,7 @@
       font-size: 13px;
       line-height: 1.6;
       color: var(--muted);
-      border-left: 3px solid var(--accent);
+      border: 1px solid var(--accent);
       display: none;
       animation: fadeIn 0.3s ease;
     }
@@ -875,10 +848,7 @@
       height: 440px;
       position: relative;
       border-radius: var(--radius-lg);
-      background: var(--bg);
-      border: 1px solid var(--line);
       overflow: hidden;
-      box-shadow: inset 0 2px 12px rgba(0,0,0,0.03);
     }
     #narrative-3d-canvas {
       width: 100%;
@@ -889,8 +859,6 @@
       position: absolute;
       bottom: 16px;
       left: 16px;
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
       border-radius: 20px;
       padding: 6px 14px;
       font-size: 11px;
@@ -898,7 +866,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: var(--shadow-sm);
       pointer-events: none;
       z-index: 5;
     }
@@ -906,11 +873,6 @@
   
     /* Act 2.8: 考研主观题「朱墨对勘」水墨双轨卷轴 (Interactive Dual-Scroll) */
     .comparison-card {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      box-shadow: var(--shadow-lg);
       position: relative;
     }
     .comp-nav {
@@ -966,11 +928,11 @@
       box-shadow: var(--shadow-sm);
     }
     .scroll-panel.panel-before {
-      border-left: 4px solid var(--muted);
+      border: 1px solid var(--line);
     }
     .scroll-panel.panel-after {
       background: var(--surface-solid);
-      border-left: 4px solid var(--accent);
+      border: 1px solid var(--accent);
       box-shadow: 0 12px 32px rgba(199, 62, 58, 0.06);
     }
 
@@ -996,8 +958,8 @@
       background: rgba(120, 115, 105, 0.08);
     }
     .seal-ai {
-      color: var(--accent);
-      border-color: var(--accent);
+      color: #9c2825;
+      border-color: #9c2825;
       background: var(--accent-soft);
       font-weight: 700;
     }
@@ -1062,11 +1024,6 @@
       align-items: stretch;
     }
     .bench-terminal {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 36px;
-      box-shadow: var(--shadow-lg);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1161,7 +1118,7 @@
       font-size: 13px;
       line-height: 1.6;
       color: var(--muted);
-      border-left: 3px solid var(--accent);
+      border: 1px solid var(--accent);
       display: none;
       animation: fadeIn 0.3s ease;
     }
@@ -1228,10 +1185,7 @@
       height: 440px;
       position: relative;
       border-radius: var(--radius-lg);
-      background: var(--bg);
-      border: 1px solid var(--line);
       overflow: hidden;
-      box-shadow: inset 0 2px 12px rgba(0,0,0,0.03);
     }
     #narrative-3d-canvas {
       width: 100%;
@@ -1242,8 +1196,6 @@
       position: absolute;
       bottom: 16px;
       left: 16px;
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
       border-radius: 20px;
       padding: 6px 14px;
       font-size: 11px;
@@ -1251,7 +1203,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: var(--shadow-sm);
       pointer-events: none;
       z-index: 5;
     }
@@ -1259,11 +1210,6 @@
   
     /* Act 2.8: 考研主观题水墨双轨对比卷 (Before / After Slider) */
     .comparison-card {
-      background: var(--surface-solid);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      box-shadow: var(--shadow-lg);
       position: relative;
     }
     .comp-nav {
@@ -1360,8 +1306,8 @@
     }
     .badge-after {
       background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid var(--accent);
+      color: #9c2825;
+      border: 1px solid #9c2825;
     }
 
     .pane-text {
@@ -1407,7 +1353,7 @@
       background: var(--accent);
       z-index: 10;
       cursor: ew-resize;
-      box-shadow: 0 0 12px rgba(199, 62, 58, 0.5);
+      box-shadow: 0 2px 8px rgba(46, 42, 35, 0.15);
     }
     .handle-thumb {
       position: absolute;
@@ -1492,7 +1438,6 @@
     <!-- Act II: 滚动驱动 3D 试卷古卷分层解构 -->
     <section class="section" id="narrative">
       <div class="section-head">
-        <span class="tag">SCROLL-DRIVEN 3D NARRATIVE</span>
         <h2>真题古卷 · 三维分层解构</h2>
         <p>滚轮滑动驱动 3D 空间展开，从底层 15 年真题语料，到顶层 AI 语法树，层层透视硬核壁垒。</p>
       </div>
@@ -1501,19 +1446,19 @@
         <div class="narrative-layers">
           <div class="layer-card active" onclick="focusLayer(3)">
             <span class="layer-tag tag-l3">顶层交互 · UI / 沉浸式答题</span>
-            <h4>长难句逐词切分与 AI 精讲 <span>Layer 03</span></h4>
+            <h3>长难句逐词切分与 AI 精讲 <span>Layer 03</span></h3>
             <p>拒绝死板刷题。点击任意题干生词即时浮动翻译，长难句主谓宾成分实时着色，AI 针对你的思维盲区提供“说人话”的启发式精讲。</p>
           </div>
 
           <div class="layer-card" onclick="focusLayer(2)">
             <span class="layer-tag tag-l2">中层计算 · RAG / 语义路由</span>
-            <h4>DashScope 向量检索与考点雷达 <span>Layer 02</span></h4>
+            <h3>DashScope 向量检索与考点雷达 <span>Layer 02</span></h3>
             <p>基于本地 SQLite + 向量通道，瞬间计算错题考点溯源，智能匹配历史相似真题变式，生成属于你的五维英语能力雷达。</p>
           </div>
 
           <div class="layer-card" onclick="focusLayer(1)">
             <span class="layer-tag tag-l1">底层底座 · 本地语料库</span>
-            <h4>2010–2026 考研真题知识图谱 <span>Layer 01</span></h4>
+            <h3>2010–2026 考研真题知识图谱 <span>Layer 01</span></h3>
             <p>完整收录考研英语一、英语二近 15 年全套完形、阅读理解、新题型与翻译。严格数据清洗与人工校验，断网也能秒级离线刷题。</p>
           </div>
         </div>
@@ -1561,7 +1506,6 @@
     <!-- Act 2.5: 键盘极速做题工坊与五维雷达 -->
     <section class="section" id="practice-bench">
       <div class="section-head">
-        <span class="tag">KEYBOARD ZEN PRACTICE</span>
         <h2>键盘极速流 · 考研真题工坊</h2>
         <p>告别繁琐鼠标点选。在键盘上直接敲击 [A/B/C/D] 秒选答案，[Space] 唤醒 AI 启发精讲，纯沉浸提分。</p>
       </div>
@@ -1638,7 +1582,6 @@
     <!-- Act 2.8: 考研作文与翻译「朱墨对勘」双轨卷轴 -->
     <section class="section" id="comparison">
       <div class="section-head">
-        <span class="tag">ESSAY & TRANSLATION REBUILD</span>
         <h2>朱墨对勘 · 考研主观题重塑</h2>
         <p>左侧黑墨初稿，右侧朱砂精修。点击任意划线词组，即时体验从「及格边缘初中句」到「考场一档满分金句」的提分质变。</p>
       </div>
@@ -1690,7 +1633,6 @@
 <!-- Act III: 3D 球面真题星系 / 罗盘展台 -->
     <section class="section" id="sphere">
       <div class="section-head">
-        <span class="tag">3D SPHERICAL MATRIX</span>
         <h2>真题星系 · 三维考点罗盘</h2>
         <p>告别死板的表格检索。近 15 年真题试卷按球面坐标系三维分布，支持鼠标自由拖拽旋转探索。</p>
       </div>
@@ -1702,15 +1644,15 @@
 
         <div class="sphere-info">
           <div class="sphere-card">
-            <h4>🌌 3D 球面矩阵算法</h4>
+            <h3>🌌 3D 球面矩阵算法</h3>
             <p>基于斐波那契球面网格算法（Fibonacci Sphere），将 2010–2026 年考研英语一、英语二全题型节点均匀分布于空间球面，带有惯性阻尼与旋转物理手感。</p>
           </div>
           <div class="sphere-card">
-            <h4>🎯 交互式年份聚焦</h4>
+            <h3>🎯 交互式年份聚焦</h3>
             <p>试着在左侧球体上<strong>拖拽旋转</strong>！点击任意年份考点节点，即可即时在墨题中展开该套卷的题型切片与错题分布雷达。</p>
           </div>
           <div class="sphere-card">
-            <h4>💡 智能薄弱点定向</h4>
+            <h3>💡 智能薄弱点定向</h3>
             <p>球面上带有朱砂红光晕的节点，代表系统根据你当前错题集智能标注的“高危盲区卷”，点击即可一键专项攻克。</p>
           </div>
         </div>
@@ -1742,7 +1684,6 @@
     <!-- Act IV: 尾屏下载与转化 -->
     <section class="download-section" id="download">
       <div class="section-head" style="margin-bottom: 32px;">
-        <span class="tag">GET STARTED</span>
         <h2>入书院，登金榜</h2>
         <p>选择你的专属平台，开启水墨沉浸式考研提分之旅。</p>
       </div>
@@ -1750,7 +1691,7 @@
       <div class="download-grid">
         <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases" target="_blank" class="download-card">
           <div class="platform-icon">🪟</div>
-          <h4>Windows 桌面端</h4>
+          <h3>Windows 桌面端</h3>
           <span class="version">v2.39 · 官方推荐</span>
           <p>单文件免安装便携版，支持双屏布局、真题全量离线离库与本地快捷键。</p>
           <div class="dl-btn">下载 .exe 安装包</div>
@@ -1758,7 +1699,7 @@
 
         <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases" target="_blank" class="download-card">
           <div class="platform-icon">📱</div>
-          <h4>Android 手机端</h4>
+          <h3>Android 手机端</h3>
           <span class="version">v2.39 · 原生体验</span>
           <p>适配竖屏碎片化刷题，排队、自习随时随地快速做题与复盘生词。</p>
           <div class="dl-btn">下载 .apk 安装包</div>
@@ -1766,7 +1707,7 @@
 
         <a href="https://github.com/mo9652962-ai/english-multiple-choice-practice-machine" target="_blank" class="download-card">
           <div class="platform-icon">🌐</div>
-          <h4>Web 源码部署</h4>
+          <h3>Web 源码部署</h3>
           <span class="version">Open Source · MIT</span>
           <p>FastAPI + Vue 3 极简现代代码库，支持 Docker 一键自建专属私有题库。</p>
           <div class="dl-btn">查看 GitHub 仓库</div>
