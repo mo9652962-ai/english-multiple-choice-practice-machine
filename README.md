@@ -28,6 +28,15 @@
   </p>
 </div>
 
+> 🌟 **全新 3D 水墨沉浸式官网已上线**：👉 [在线体验 3D 卷轴解构与键盘工坊](https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/)  
+> **核心交互体验**：3D 词汇磁斥力场 · 3D 试卷古卷爆炸解构 · 键盘极速做题工坊 · 「朱墨对勘」主观题重塑 · 3D 真题星系罗盘
+
+<div align="center">
+  <a href="https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/">
+    <img src="docs/images/banner-3d-landing.png" alt="墨题 · 3D 水墨沉浸式官网" width="100%">
+  </a>
+</div>
+
 ![墨题 · 英语刷题机](docs/images/banner-home-1200x630.png)
 
 ![墨题演示 · 主页 → 题库练习 → FSRS 词汇 → 错题本](docs/images/demo.gif)
