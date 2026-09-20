@@ -95,10 +95,10 @@ def list_entries(
         return s.replace("/", "//").replace("%", "/%").replace("_", "/_")
 
     if category:
-        # v2.15: 前缀匹配, 支持 "高中" → "高中·高频"/"高中·热点"
+        # v2.15: 分类包含匹配，支持多标签 "考研|四级·扩充"
         # v9.23: 通配符转义
         conditions.append("category LIKE ? ESCAPE '/'")
-        params.append(f"{_escape_like(category)}%")
+        params.append(f"%{_escape_like(category)}%")
     if status == "frequent":
         conditions.append("(encounter_count >= 2 OR manually_frequent = 1)")
     elif status == "review":

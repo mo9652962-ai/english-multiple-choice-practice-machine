@@ -52,6 +52,14 @@ class OfflineAdapterContractTests(unittest.TestCase):
             self.source,
         )
 
+    def test_offline_practice_preserves_answer_contract(self) -> None:
+        self.assertIn(
+            "SELECT stable_key, stable_key AS key, stable_key AS label, content FROM options",
+            self.source,
+        )
+        self.assertIn("user_answer: ansMap[q.id] ?? ''", self.source)
+        self.assertNotIn("answered: ansMap[q.id] ?? null", self.source)
+
 
 if __name__ == "__main__":
     unittest.main()

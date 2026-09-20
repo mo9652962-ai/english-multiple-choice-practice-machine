@@ -2,6 +2,14 @@
 
 本清单用于题库从“本地/授权范围内可用”转为“可公开分发”。它不替代原始许可证、来源页面、人工审核记录或抽样结果；缺少证据时应保持 `pending`，不能用题目数量、结构检查或 AI 输出代替授权证明。
 
+## 2026-09-20 本地扩充题库状态
+
+本轮题库扩充后，开发库包含 50 个题包；其中 2 个项目自建 CC0 模拟包具备完整发布证据，另外 48 个题包仍缺少许可证核验、来源核验、人工复核、AI 差异或发布抽样中的至少一项。新增的 2025/2026 模拟包和 OCR/公开数据整理包暂按 `local-only` 处理，不得随 Windows、Web 或 APK 公开分发。
+
+发布重建脚本已将这 48 个 package identity 纳入隔离清单：[tools/rebuild_public_content.py](../tools/rebuild_public_content.py)。开发库中的题目仍可用于本地研究和质量复核；只有完成真实证据采集、更新 ESQ manifest 并重新导入后，才可从隔离清单移出。
+
+本轮没有把 `NOASSERTION`、`open`、`公开真题数据` 或 `AI生成` 等描述自动当作授权证明，也没有把 `pending` 字段改成通过状态。正式发布前仍需重新运行严格门禁并检查 `packages_not_publishable=0` 与 `papers_not_publishable=0`。
+
 ## 当前发布门禁
 
 正式 Windows release workflow 会运行：

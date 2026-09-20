@@ -42,6 +42,7 @@ const saving = ref<number | null>(null)
 const vocabularyToast = ref('')
 const unansweredNotice = ref('')
 const highlightedQuestionId = ref<number | null>(null)
+const focusedQuestionIndex = ref<number | null>(null)
 const resultPanelVisible = ref(false)
 const resultPanelMode = ref<'unit' | 'session'>('unit')
 const resultPanelUnitId = ref<number | null>(null)
@@ -123,6 +124,7 @@ const isListening = computed(() => activeUnit.value?.unit_type === 'listening')
 function jumpToQuestion(index: number) {
   const q = activeUnit.value?.questions[index]
   if (!q) return
+  focusedQuestionIndex.value = index
   highlightedQuestionId.value = q.id
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const target = document.querySelector<HTMLElement>(`[data-question-id="${q.id}"]`)
@@ -137,9 +139,8 @@ function jumpToQuestion(index: number) {
 const currentQuestionIndex = computed(() => {
   const qs = activeUnit.value?.questions || []
   if (!qs.length) return 0
-  if (highlightedQuestionId.value) {
-    const idx = qs.findIndex((q: any) => q.id === highlightedQuestionId.value)
-    if (idx >= 0) return idx
+  if (focusedQuestionIndex.value !== null) {
+    return Math.min(qs.length - 1, Math.max(0, focusedQuestionIndex.value))
   }
   const firstUnanswered = qs.findIndex((q: any) => !q.user_answer)
   return firstUnanswered >= 0 ? firstUnanswered : 0
@@ -158,6 +159,10 @@ function nextQuestion() {
   const targetIdx = Math.min(qs.length - 1, currentQuestionIndex.value + 1)
   jumpToQuestion(targetIdx)
 }
+
+watch(activeUnitIndex, () => {
+  focusedQuestionIndex.value = null
+})
 const isWordBank = computed(() => activeUnit.value?.unit_type === 'word_bank')
 const isParagraphMatching = computed(() => activeUnit.value?.unit_type === 'paragraph_matching')
 const audioSeekable = computed(() => !timerEnabled.value || timerState.value?.mode === 'finished')

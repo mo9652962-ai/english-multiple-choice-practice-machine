@@ -17,8 +17,8 @@ if (-not $corepack) {
 
 $backend = Start-Process `
     -FilePath $python `
-    -ArgumentList "-m", "uvicorn", "backend.app.main:app", "--host", "127.0.0.1", "--port", "8765", "--reload" `
-    -WorkingDirectory $projectRoot `
+    -ArgumentList "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8765", "--reload" `
+    -WorkingDirectory (Join-Path $projectRoot "backend") `
     -WindowStyle Hidden `
     -PassThru
 
