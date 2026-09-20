@@ -19,10 +19,10 @@ def _current_user_id(user: dict | None) -> int | None:
 # 词书定义: name, category_pattern, target_count, desc
 # target 为上限；实际以词库匹配数为准（get_plans 里 min(target, total)）
 WORD_BOOKS = [
-    {"key": "cet4_core", "name": "四级核心词", "pattern": "四级·高频%", "target": 9999,
-     "desc": "四级真题高频核心词（考频排序）", "icon": "📘"},
-    {"key": "cet6_core", "name": "六级核心词", "pattern": "六级·高频%", "target": 9999,
-     "desc": "六级真题高频核心词", "icon": "📙"},
+    {"key": "cet4_core", "name": "四级核心词", "pattern": "%四级%", "target": 9999,
+     "desc": "四级核心词（包含高频与扩充词）", "icon": "📘"},
+    {"key": "cet6_core", "name": "六级核心词", "pattern": "%六级%", "target": 9999,
+     "desc": "六级核心词（包含高频与扩充词）", "icon": "📙"},
     {"key": "kaoyan_freq", "name": "考研高频词", "pattern": "考研%高频%", "target": 9999,
      "desc": "考研真题高频词（kajweb 考频排序）", "icon": "🎓"},
     {"key": "gaokao_core", "name": "高中核心词", "pattern": "高中·高频%", "target": 9999,

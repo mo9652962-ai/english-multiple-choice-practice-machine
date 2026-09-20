@@ -197,10 +197,11 @@ function buildOfflineSession(sid: number): any {
       id: q.id, number: q.number, stem: q.stem, question_type: q.question_type,
       score: q.score, passage: u.passage || '',
       options: queryAll(
-        "SELECT stable_key AS key, content FROM options WHERE question_id = ? ORDER BY sequence",
+        "SELECT stable_key, stable_key AS key, stable_key AS label, content FROM options WHERE question_id = ? ORDER BY sequence",
         [q.id]
       ),
-      answered: ansMap[q.id] ?? null,
+      answer: q.answer,
+      user_answer: ansMap[q.id] ?? '',
     }))
     const sub = subByUnit[u.id]
     return {
@@ -263,7 +264,7 @@ function offlineGet(path: string): any {
     const conditions: string[] = ['1 = 1']
     const params: any[] = []
     if (status && status !== 'all') { conditions.push('study_status = ?'); params.push(status) }
-    if (category) { conditions.push('category LIKE ?'); params.push(`${category}%`) }
+    if (category) { conditions.push('category LIKE ?'); params.push(`%${category}%`) }
     if (search) {
       conditions.push("(term LIKE ? OR common_meaning LIKE ? OR contextual_meaning LIKE ?)")
       const needle = `%${search}%`
@@ -463,7 +464,7 @@ function offlineGet(path: string): any {
   if (path.startsWith('/vocabulary/plans')) {
     const dm = path.match(/^\/vocabulary\/plans\/([^/]+)\/daily$/)
     if (dm) {
-      const rows = queryAll("SELECT * FROM vocabulary_entries WHERE category = ? ORDER BY RANDOM() LIMIT 10", [dm[1]])
+      const rows = queryAll("SELECT * FROM vocabulary_entries WHERE category LIKE ? ORDER BY RANDOM() LIMIT 10", [`%${dm[1]}%`])
       return { words: rows.map((r: any) => ({ ...r, word: r.term })) }
     }
     const cats = [
@@ -473,8 +474,8 @@ function offlineGet(path: string): any {
       { key: '考研', name: '考研词汇', icon: '📚', target: 828 },
     ]
     const plans = cats.map((c: any) => {
-      const total = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE category = ?", [c.key])?.c || 0
-      const learned = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE category = ? AND study_status != 'new'", [c.key])?.c || 0
+      const total = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE category LIKE ?", [`%${c.key}%`])?.c || 0
+      const learned = queryOne("SELECT COUNT(*) AS c FROM vocabulary_entries WHERE category LIKE ? AND study_status != 'new'", [`%${c.key}%`])?.c || 0
       return { key: c.key, name: c.name, icon: c.icon, desc: `${total} 词 · 真题语境记忆`, target: total, learned, progress: total ? Math.round(learned / total * 100) : 0 }
     })
     return { plans }
