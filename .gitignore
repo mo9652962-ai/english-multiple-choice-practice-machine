@@ -61,3 +61,7 @@ electron/*.zip
 
 # HBuilderX 旧路径（已弃用 2026-08-15，移动端走 Capacitor）
 mobile-app/
+
+# 构建产物与演示媒体（本地保留，不进版本库）
+epm_app/unpackage/
+_keylink_home.png
