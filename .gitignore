@@ -65,3 +65,6 @@ mobile-app/
 # 构建产物与演示媒体（本地保留，不进版本库）
 epm_app/unpackage/
 _keylink_home.png
+docs/images/moti-website-demo.*
+docs/player.html
+.zcodeignore
