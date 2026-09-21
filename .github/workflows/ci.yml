@@ -65,7 +65,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git ls-files -z | tr '\0' '\n' | grep -E '(^|/)(\.env|.*\.(db|sqlite|sqlite3|bak|backup|pfx|pem|key))$'; then
+          # 白名单：frontend/public/question_bank.db 为公开离线入门种子（180 模板样例题，
+          # 随 app 分发，非私库/用户数据）；其余 *.db 一律拒绝。
+          if git ls-files -z | tr '\0' '\n' | grep -E '(^|/)(\.env|.*\.(db|sqlite|sqlite3|bak|backup|pfx|pem|key))$' | grep -v '^frontend/public/question_bank\.db$'; then
             echo 'A private database, secret, or backup file is tracked.' >&2
             exit 1
           fi
