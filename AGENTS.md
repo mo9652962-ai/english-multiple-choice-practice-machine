@@ -87,6 +87,104 @@
 20. **诊断练习交接**：`diagnostic_report.build_recommendations()` 返回的 `practice_path.question_ids` 是完整可执行题集，前端优先使用它启动针对性练习；`PracticeCreate(mode="random", question_ids=[...])` 必须只序列化这些题，不得退化成整篇；练习提交后应回到 `/review/queue`，旧报告没有该字段时才回退到 `sample_questions`。
 21. **Windows 发布包启动门禁**：后端 exe smoke 不能替代桌面包 smoke；Release 构建 portable 包后必须运行 `scripts/windows_portable_smoke.ps1 -Port 18765`，确认 Electron 实际拉起后端并核对 `/api/health`、程序版本、内容版本和 Schema。Electron 默认端口仍是 8765，smoke 通过 `EPM_PORT` 隔离开发服务；NSIS 安装器在无人值守 CI 中只做产物存在性检查。
 22. **AI 配额统一入口**：`chat` 和 `speaking` 路由不要再手动执行 `check_daily_quota` 或 `record_user_usage`；统一交给 `chat_with_routing()`，否则一次用户请求会被重复计数。缓存命中仍不消耗 provider 配额，新增 AI 入口必须保留 `QuotaExceeded` 到 HTTP 429 的映射。
+23. **🔴 密钥绝不进库（本项目已踩）**：`epm_app/unpackage/cache/certdata` 含明文 keystore 密码、`cloudcertificate/package.keystore` 是证书文件——**均曾在 commit `5797176`/`42bef08` 进公开仓库**（2026-08-06），历史泄露待清除。当前 HEAD 已移出（`70ec87b`）+ `.gitignore` 覆盖 `epm_app/unpackage/`。提交前必查：`git ls-files | grep -iE "certdata|keystore|\.jks$|\.p12$|\.pem$|\.env$"`。正式发布应轮换 keystore（现走 `EPM_ANDROID_KEYSTORE_PASSWORD` 环境变量，勿回退硬编码）。
+24. **构建产物/演示媒体不进库**：`epm_app/unpackage/`（19MB，含 APK+keystore）、`docs/images/moti-website-demo.*`（12MB）、`docs/player.html`、`_keylink_home.png` 均已移出（`70ec87b`/`13f5b82`）。提交前 `git ls-files -z | xargs -0 du -k | awk '$1>2048'` 查大文件。
+25. **依赖 lock 必须同步**：`frontend/package.json` 改依赖后**必须**跑 `npm install` 重建 `package-lock.json` 并提交——`npm ci` 是严格模式，版本漂移（如 vue ^3.5.42 vs 锁定 3.5.41）会让 CI 三 job **全部红**（`c85180b` 修复）。改完本地验：`npm ci --dry-run`。
+26. **SSRF 白名单必须放行 fake-ip 网段**：FlClash 等代理工具把公网域名解析到 `198.18.0.0/15`（RFC2544），SSRF 防护若不放行会拦截合法 API（`api.deepseek.com` → `198.18.0.79`）→ 测试误报。`ai_client.py` 已放行该网段 + loopback（`c85180b`）。
+27. **发布版本三轨同步**：`VERSION`（程序）/ `CONTENT_VERSION`（题库）/ `OFFLINE_CONTENT_VERSION`（离线种子）——漏一个 `tests/test_release_check.py` 就红。manifest 的 `content_version`/`offline_seed_version` 必须同步（曾落后 6 天，`c85180b` 修复）。改内容后跑：`python -m pytest tests/test_release_check.py tests/test_rebuild_public_content.py -q`。
+28. **CI 触发条件必须匹配依赖输入**：`android.yml` 曾因两处必败长期红——①`setup-java cache: gradle` 在 `frontend/android/`（CI 生成、被 gitignore）不存在时失败（`f0f97a2`）；②`Install or require verified release content inputs` 要求离线种子库，但 `*.db` 被 gitignore（`12e1a2f` 改为 tag/手动触发）。依赖受控内容的构建不要挂在每次 push 上。
+29. **测试数据必须来自真实常量**：`test_rebuild_public_content.py` 曾用不存在的 `cn.kaoyan2.simulated`（不在 `UNPUBLISHABLE_PACKAGE_IDS` 名单）→ 断言失败。写名单类测试前先 `python -c "from tools.rebuild_public_content import UNPUBLISHABLE_PACKAGE_IDS; print(...)"` 确认真值。
+30. **git 路径遍历必须 `-z` + `quotePath=false`**：`git ls-files` 默认对非 ASCII 路径输出加引号转义形式，Windows git-bash 正常但 Linux CI 直接 `cp` 失败（本项目 219 个中文路径）。统一用：`git -c core.quotePath=false ls-files -z | while IFS= read -r -d '' f; do ...`
+
+## 参考脚本
+
+### 造错题 + 跑诊断（backend 目录）
+
+```python
+from app.database import connect, initialize_database
+initialize_database()
+conn = connect()
+conn.execute("INSERT OR IGNORE INTO practice_sessions (id, mode, unit_ids, status, started_at, submitted_at) VALUES (999901, 'practice', '[1]', 'completed', datetime('now','-3 days'), datetime('now','-3 days'))")
+for qid in [1, 2, 3]:
+    conn.execute("INSERT OR IGNORE INTO practice_answers (session_id, question_id, user_answer, option_order, is_correct, answered_at) VALUES (999901, ?, 'B', '[]', 0, datetime('now','-3 days'))", (qid,))
+    conn.execute("INSERT OR IGNORE INTO wrong_stats (question_id, attempt_count, wrong_count, recent_results, consecutive_correct, manually_frequent, last_wrong_at, last_attempt_at) VALUES (?, 3, 2, '[1,0,0]', 0, 0, datetime('now','-3 days'), datetime('now'))", (qid,))
+conn.commit()
+from app.services.diagnostic_report import generate_diagnostic_report
+print(generate_diagnostic_report(conn, [1, 2, 3]))  # 真实 AI，~80s
+# 清理：
+conn.execute("DELETE FROM practice_answers WHERE session_id = 999901")
+conn.execute("DELETE FROM practice_sessions WHERE id = 999901")
+conn.execute("DELETE FROM wrong_stats WHERE question_id IN (1,2,3)")
+conn.commit(); conn.close()
+```
+
+### AI 路由降级验证（mock，快）
+
+```python
+from unittest.mock import patch
+from app.database import connect
+conn = connect()
+from app.services.ai_router import chat_with_routing
+with patch("app.services.ai_router.chat_completion") as mock_chat:
+    mock_chat.side_effect = [ValueError("模型服务暂时不可用，请稍后重试或切换 API 配置"), "ok"]
+    print(chat_with_routing(conn, "wrong_diagnosis", [{"role": "user", "content": "hi"}]))  # ok（降级成功）
+    print("usage 记录:", conn.execute("SELECT task, status FROM ai_usage ORDER BY id DESC LIMIT 2").fetchall())
+conn.close()
+```
+
+## 后续路线
+
+- [x] 存量调用迁移：vocabulary/import_assist/question_labeling 改走 `chat_with_routing`
+- [ ] 本地 Qwen 接入：加 profile（base_url=http://127.0.0.1:8080/v1, task_tags 按任务, priority 调小做本地优先）——注意 8K 上下文不适合长文归因
+- [x] ai_usage 用量统计 UI（设置页展示每月 token/失败率/任务分布；配额由统一路由执行）
+- [ ] 诊断报告导出/分享（现在是页面内展示）
+- [x] 推荐练习闭环：DiagnosticView 推荐题一键进入 PracticeView；Dashboard 同步承接最近诊断焦点
+
+## 验证命令
+
+```bash
+cd backend && python -c "from app.main import app; print([r.path for r in app.routes if 'diagnostic' in getattr(r,'path','')])"  # 路由注册
+cd frontend && npx vue-tsc --noEmit   # TS 类型
+cd frontend && npx vite build          # 构建（用 background 跑）
+```
+
+---
+
+## v9.26 更新（2026-08-20）——AI 三件套 + 性能 + 安全
+
+### AI 三件套（Gemini 方案落地，全部走现有 AI 配置零新增依赖）
+
+| 功能 | 后端 | 前端 | 成本 |
+|:---|:---|:---|:---|
+| **P0 真题精讲** | `POST /api/questions/{id}/deep-explain`（`backend/app/routers/explanations.py`）| `DeepExplainDrawer.vue`（练习页 ✨AI 精讲按钮）| 单题 ¥0.0034，缓存后 95% 零成本 |
+| **P1 作文批改** | `POST /api/essays/evaluate` + `GET /api/essays[/{id}]`（`routers/essays.py`）| `EssayView.vue`（导航「作文精批」）| 单篇 ¥0.004 |
+| **P2 口语陪练** | `POST /api/speaking/sessions[/{id}/turns|/finish]`（`routers/speaking.py`）| `SpeakingView.vue`（导航「口语陪练」，Web Speech API 浏览器原生语音）| 单轮 ¥0.001 |
+
+**提示词位置**：`backend/prompts/explain_prompt.py`（DEEP_EXPLAIN_SYSTEM_PROMPT）/ `essay_prompt.py` / `speaking_prompt.py`——均为严格 JSON 输出 + response_format=json_object。
+
+**关键坑**：
+- 新表 `essay_submissions` / `speaking_sessions` / `speaking_turns` 在 `database.py` SCHEMA——**旧后端进程不会自动建表，重启（墨题启动.bat）后自动执行**；若手工测试先 `initialize_database()`
+- `explanations.py` 的 `from prompts.explain_prompt import` 是**顶层导入**（prompts 是 backend 根的包，不是 app 子包）——`..prompts` 会 ModuleNotFoundError
+- deep-explain 缓存命中条件：`content` 是 dict 且含 `options_analysis`（深度结构）；旧简单版解析不会命中深度缓存（会重新生成）
+
+### 性能优化（2026-08-20）
+
+- **路由全量懒加载**：`frontend/src/router.ts` 全部 `() => import(...)`——主 bundle 509KB→140KB（-72%，gzip 164→52KB）
+- services 层：`local_similar_matches` 全表+Levenshtein → SQL 前缀候选池（LIMIT 200）；`translate_queued_vocabulary` 去掉 BEGIN IMMEDIATE 改原子 UPDATE 认领 + translating 10 分钟超时自愈；`label_next_unit` 失败熔断防毒丸死循环
+
+### Gemini 审查已修（2026-08-20，安全）
+
+- **P0 严重**：`question_labeling.py` 毒丸死循环（AI 失败 unit 永远重复选）→ 异常标记跳过
+- **services 严重**：translating 僵尸状态（异常崩溃永久锁定）→ 超时自愈认领
+- **Sims4 联机**（不同仓库）：lobby.py 路径穿越 RCE（filename 网络可控 → `_safe_save_filename` 白名单）、travel_ack 路由缺失（每次旅行 10s 超时）已修
+
+### 后续路线补充
+
+- [ ] UI 第四轮审查：Dashboard/单词本三页/登录/导入/题库库（问题包在桌面 gemini-moti-ui4.md，等 Gemini 方案）
+- [ ] Sims4 架构级 4 项（主机迁移/存档竞态/多线程锁/离线级联——问题包在桌面 gemini-sims4-architecture.md）
+- [ ] deep-explain 前端划词联动（点击解析中的单词弹词库释义）
+- [ ] 作文批改多用户隔离（user_id 目前 NULL）
+
 
 ## 参考脚本
 
