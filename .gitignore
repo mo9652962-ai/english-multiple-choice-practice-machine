@@ -30,6 +30,7 @@ outputs/
 scripts/explain_gen/tmp/
 design-system/
 *.db
+!frontend/public/question_bank.db
 examples/internal-banks/
 *.sqlite
 *.sqlite3
