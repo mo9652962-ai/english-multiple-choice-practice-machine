@@ -97,7 +97,7 @@ class RebuildPublicContentTests(unittest.TestCase):
                 "wssfk.postgraduate-english-one.2010-2026",
                 "local.english-practice.postgraduate-english-two.2010-2025",
                 "gaokao-english-2022-2024",
-                "cn.kaoyan2.simulated",
+                "cn.kaoyan2.2025.cloze",
                 "cn.cet4.2025.sim",
                 "cn.cet6.2025.sim",
                 "cn.kaoyan1.2025.sim",
