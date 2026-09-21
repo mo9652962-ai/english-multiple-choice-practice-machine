@@ -41,6 +41,10 @@ def validate_public_url(url: str) -> None:
     # 放行本机回环（127.0.0.0/8, ::1）：本机 Ollama/本地模型是产品功能，非 SSRF 攻击面
     if ip.is_loopback:
         return
+    # 放行 198.18.0.0/15（RFC2544 基准测试网段）：代理工具 fake-ip（FlClash/Clash TUN 等）
+    # 常把域名解析到此网段作为代理出口，属公网服务代理，非 SSRF 攻击面。
+    if ip.version == 4 and ip in ipaddress.ip_network("198.18.0.0/15"):
+        return
     if ip.is_private or ip.is_link_local or ip.is_reserved or ip.is_multicast or ip.is_unspecified:
         raise ValueError(f"禁止访问内网/保留地址: {hostname} ({ip_str})")
 
