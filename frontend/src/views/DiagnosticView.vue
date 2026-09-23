@@ -18,6 +18,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { get, post } from '../api'
 import { sound } from '../services/sound'
 import { showToast } from '../services/toast'
+import StellarCompass3D from '../components/StellarCompass3D.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -202,6 +203,14 @@ async function startRecommendedPractice(qIds: number[], title: string) {
     showToast(`练习生成失败：${e}`, 'error')
   }
 }
+
+function handleReviewStar(star: any) {
+  sound.tap()
+  if (star.id) {
+    showToast(`已锁定考点：${star.title}`, 'info')
+    router.push({ name: 'practice', query: { question_id: star.id } })
+  }
+}
 </script>
 
 <template>
@@ -221,6 +230,11 @@ async function startRecommendedPractice(qIds: number[], title: string) {
           <BookMarked :size="15" />返回错题本
         </button>
       </div>
+    </div>
+
+    <!-- v10.0: 3D 水墨浑天学情仪 -->
+    <div class="compass-section" style="margin-bottom: 24px;">
+      <StellarCompass3D @select-star="handleReviewStar" />
     </div>
 
     <!-- 历史卷宗切换胶囊 -->

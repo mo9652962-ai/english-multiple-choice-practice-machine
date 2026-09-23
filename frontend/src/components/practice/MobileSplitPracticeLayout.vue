@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { GripHorizontal, Grid3x3 } from 'lucide-vue-next'
+import { GripHorizontal, GripVertical, Grid3x3 } from 'lucide-vue-next'
 import {
   sanitizeQuestionOptions,
   type PracticeOption,
@@ -99,12 +99,15 @@ const rootRef = ref<HTMLElement | null>(null)
 const viewportWidth = ref(typeof window === 'undefined' ? 1024 : window.innerWidth)
 const viewportHeight = ref(typeof window === 'undefined' ? 768 : window.innerHeight)
 const internalRatio = ref(props.ratio ?? props.initialRatio)
+const ratioWasAdjusted = ref(false)
 const answerSheetOpen = ref(false)
 const warnedQuestions = new Set<string>()
 let dragCleanup: (() => void) | null = null
 
 const clampRatio = (value: number) => Math.min(props.maxRatio, Math.max(props.minRatio, value))
-const currentRatio = computed(() => clampRatio(props.ratio ?? internalRatio.value))
+const currentRatio = computed(() => clampRatio(
+  props.ratio ?? (ratioWasAdjusted.value ? internalRatio.value : isSplit.value ? props.initialRatio : 58),
+))
 // v44: 平板竖屏(768-980)也启用分屏; 横屏小窗(≤1100)保持双栏, 不与横屏双栏规则冲突
 const isLandscapeSmall = computed(() =>
   viewportHeight.value < viewportWidth.value && viewportWidth.value <= 1100
@@ -113,6 +116,7 @@ const isSplit = computed(() =>
   props.enabled && viewportWidth.value < props.breakpoint && !isLandscapeSmall.value
 )
 const showQuestionPane = computed(() => props.showQuestionPane)
+const isDesktopSplit = computed(() => props.enabled && !isSplit.value && showQuestionPane.value)
 const questionsForSlot = computed(() => {
   if (!props.sanitizeOptions) return props.questions
   return props.questions.map((question) => {
@@ -168,6 +172,7 @@ function isAnswered(question: PracticeQuestion): boolean {
 
 function setRatio(value: number) {
   const next = clampRatio(value)
+  ratioWasAdjusted.value = true
   internalRatio.value = next
   emit('update:ratio', next)
 }
@@ -178,13 +183,18 @@ function onResize() {
 }
 
 function startDragDivider(event: PointerEvent) {
-  if (!rootRef.value || !isSplit.value || !props.draggable) return
+  if (!rootRef.value || (!isSplit.value && !isDesktopSplit.value) || !props.draggable) return
   event.preventDefault()
   dragCleanup?.()
   const rect = rootRef.value.getBoundingClientRect()
   const move = (moveEvent: PointerEvent) => {
-    if (!rect.height) return
-    setRatio(((moveEvent.clientY - rect.top) / rect.height) * 100)
+    if (isSplit.value) {
+      if (!rect.height) return
+      setRatio(((moveEvent.clientY - rect.top) / rect.height) * 100)
+      return
+    }
+    if (!rect.width) return
+    setRatio(((moveEvent.clientX - rect.left) / rect.width) * 100)
   }
   const stop = () => {
     window.removeEventListener('pointermove', move)
@@ -196,6 +206,14 @@ function startDragDivider(event: PointerEvent) {
   window.addEventListener('pointermove', move)
   window.addEventListener('pointerup', stop)
   window.addEventListener('pointercancel', stop)
+}
+
+function adjustRatioWithKeyboard(event: KeyboardEvent) {
+  const ratioKeys = isSplit.value ? ['ArrowUp', 'ArrowDown'] : ['ArrowLeft', 'ArrowRight']
+  if (!ratioKeys.includes(event.key)) return
+  event.preventDefault()
+  const increaseKey = isSplit.value ? 'ArrowDown' : 'ArrowRight'
+  setRatio(currentRatio.value + (event.key === increaseKey ? 2 : -2))
 }
 
 function openAnswerSheet() {
@@ -241,21 +259,28 @@ onBeforeUnmount(() => {
   <div
     ref="rootRef"
     class="practice-layout mobile-split-practice-layout"
-    :class="{ 'is-split': isSplit, 'no-question-pane': !showQuestionPane }"
+    :class="{ 'is-split': isSplit, 'has-horizontal-split': isDesktopSplit, 'no-question-pane': !showQuestionPane }"
+    :style="{ '--passage-ratio': `${currentRatio}%` }"
   >
     <section class="passage-pane" :class="passageClass">
       <slot name="passage" :is-split="isSplit" :ratio="currentRatio" />
     </section>
 
     <div
-      v-if="isSplit && showQuestionPane && draggable"
+      v-if="(isSplit || isDesktopSplit) && showQuestionPane && draggable"
       class="pane-divider"
       role="separator"
-      aria-orientation="horizontal"
-      title="拖动调整上下占比"
+      :aria-orientation="isSplit ? 'horizontal' : 'vertical'"
+      aria-valuemin="30"
+      aria-valuemax="78"
+      :aria-valuenow="currentRatio"
+      :aria-label="isSplit ? '调整文章与答题区高度比例' : '调整文章与题目区宽度比例'"
+      :title="isSplit ? '拖动调整上下占比' : '拖动调整左右占比'"
+      tabindex="0"
       @pointerdown="startDragDivider"
+      @keydown="adjustRatioWithKeyboard"
     >
-      <span class="pane-divider-grip"><GripHorizontal :size="16" /></span>
+      <span class="pane-divider-grip"><component :is="isSplit ? GripHorizontal : GripVertical" :size="16" /></span>
     </div>
 
     <section v-if="showQuestionPane" class="question-pane">
@@ -308,10 +333,22 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .mobile-split-practice-layout {
-  --passage-ratio: 45%;
   min-width: 0;
   min-height: 0;
 }
+
+.mobile-split-practice-layout.has-horizontal-split {
+  grid-template-columns: minmax(0, calc(var(--passage-ratio) - 6px)) 12px minmax(0, calc(100% - var(--passage-ratio) - 6px));
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.mobile-split-practice-layout.has-horizontal-split .passage-pane { grid-column: 1; grid-row: 1; }
+.mobile-split-practice-layout.has-horizontal-split .pane-divider { grid-column: 2; grid-row: 1; cursor: col-resize; touch-action: none; }
+.mobile-split-practice-layout.has-horizontal-split .question-pane { grid-column: 3; grid-row: 1; min-width: 0; overflow: auto; }
+.mobile-split-practice-layout.has-horizontal-split .pane-divider-grip { transform: rotate(90deg); }
+
+.mobile-split-practice-layout.is-split .pane-divider { cursor: row-resize; touch-action: none; }
+.mobile-split-practice-layout .pane-divider:focus-visible { outline: 2px solid var(--accent-vermilion, var(--primary)); outline-offset: 2px; }
 
 .question-scroll-area {
   min-height: 0;
@@ -328,7 +365,7 @@ onBeforeUnmount(() => {
 /* v44: 分屏样式断点与组件 breakpoint(981) 对齐; 平板竖屏同享分屏 */
 @media (max-width: 980px) and (orientation: portrait) {
   .mobile-split-practice-layout.is-split {
-    grid-template-rows: minmax(200px, var(--passage-ratio)) 10px minmax(0, 1fr);
+    grid-template-rows: minmax(0, var(--passage-ratio)) 10px minmax(0, 1fr);
     min-height: 0;
   }
 

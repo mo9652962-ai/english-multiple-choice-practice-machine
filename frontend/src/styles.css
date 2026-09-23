@@ -5,6 +5,14 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   /* ── 水墨文人书房配色 v2.6 (墨色为主 + 朱砂强调 + 宣纸为底) ── */
+  /* ── v10.0: 墨分五色色阶规范体系 ── */
+  --ink-heavy: #141210;             /* 焦墨 */
+  --ink-deep: #2E2A26;              /* 浓墨 */
+  --ink-medium: #5A5550;            /* 重墨 */
+  --ink-light: #8C867F;             /* 淡墨 */
+  --ink-faint: #DED8D0;             /* 清墨 */
+  --paper-grain: radial-gradient(circle at 50% 50%, rgba(46, 42, 35, 0.015) 0%, transparent 80%);
+  --motion-spring: cubic-bezier(0.32, 0.72, 0, 1);
   --bg: #f7f3ee;                    /* 宣纸暖白 (2026 Warm Paper #F7F3EE) */
   --surface: #fdfaf3;         /* 实色象牙白 (v3.0-fix: 取消透明防花纹透出) */
   --surface-solid: #fdfaf3;   /* 与 --surface 一致 */

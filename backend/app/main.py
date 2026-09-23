@@ -58,6 +58,7 @@ from .routers import (
     exam_templates,
     orders,
     metrics,
+    search,
 )
 from .services.ai_client import ensure_ai_model_catalog
 from .services.bundled_banks import install_bundled_question_banks
@@ -180,6 +181,7 @@ app.include_router(agent.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
 app.include_router(orders.router, prefix="/api")  # P1: 商业订单与人工收款
 app.include_router(metrics.router, prefix="/api")  # P2: 用户授权后的本地学习指标
+app.include_router(search.router, prefix="/api")  # v10.0: 全文搜索与极速查词 (FTS5)
 
 
 @app.get("/api/health")

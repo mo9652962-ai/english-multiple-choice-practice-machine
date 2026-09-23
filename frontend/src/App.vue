@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { Activity, BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, Check, Command, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Mic2, Moon, PenLine, Settings, Smartphone, Sparkles, StickyNote, Sun, Target, Timer, Trophy, Volume2, VolumeX } from 'lucide-vue-next'
+import { Activity, BarChart2, BarChart3, BookMarked, BookOpenText, Brain, CalendarDays, Check, Command, FileUp, GraduationCap, Headphones, Home, LayoutGrid, Library, MessageCircle, Mic2, Moon, PenLine, Search, Settings, Smartphone, Sparkles, StickyNote, Sun, Target, Timer, Trophy, Volume2, VolumeX } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppToast from './components/AppToast.vue'
+import GlobalFtsModal from './components/GlobalFtsModal.vue'
+import QuickWordPopover from './components/QuickWordPopover.vue'
 import { Building2 } from 'lucide-vue-next'
 import OrganizationSwitcher from './components/OrganizationSwitcher.vue'
 import { get } from './api'
@@ -19,6 +21,17 @@ const activeCategoryId = ref<number | null>(null)
 const showKeyModal = ref(false)
 const soundOn = ref(sound.isEnabled())
 const hapticOn = ref(isHapticEnabled())
+const ftsModalRef = ref<InstanceType<typeof GlobalFtsModal> | null>(null)
+const quickWordRef = ref<InstanceType<typeof QuickWordPopover> | null>(null)
+
+function handleGlobalWordSelection(e: MouseEvent) {
+  const selection = window.getSelection()
+  if (!selection || selection.isCollapsed) return
+  const text = selection.toString().trim()
+  if (/^[a-zA-Z\s\-']{2,40}$/.test(text)) {
+    quickWordRef.value?.showForSelection(text, e.clientX, e.clientY)
+  }
+}
 
 function toggleSound() {
   soundOn.value = !soundOn.value
@@ -169,10 +182,12 @@ onMounted(() => {
   removeUnhandledErrorTracking = trackUnhandledError()
   void runNativeSecuritySmoke()
   window.addEventListener('keydown', handleGlobalKeydown)
+  window.addEventListener('mouseup', handleGlobalWordSelection)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleGlobalKeydown)
+  window.removeEventListener('mouseup', handleGlobalWordSelection)
   removeUnhandledErrorTracking?.()
 })
 </script>
@@ -187,6 +202,20 @@ onBeforeUnmount(() => {
         <span class="brand-mark" title="墨题文房">墨</span>
         <span class="brand-copy"><strong>墨题</strong><small class="brand-sub">现代数字文房 · 学海无涯</small></span>
       </RouterLink>
+
+      <div class="sidebar-search-wrap" style="padding: 0 16px 10px 16px;">
+        <button
+          class="sidebar-search-btn"
+          type="button"
+          @click="ftsModalRef?.open()"
+          style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 7px 12px; background: rgba(46, 42, 35, 0.05); border: 1px solid var(--line); border-radius: 9999px; font-size: 12px; color: var(--muted); cursor: pointer;"
+        >
+          <Search :size="13" />
+          <span style="flex: 1; text-align: left;">全局真题检索...</span>
+          <kbd style="font-size: 10px; background: rgba(46, 42, 35, 0.08); padding: 1px 5px; border-radius: 4px;">⌘K</kbd>
+        </button>
+      </div>
+
       <nav aria-label="主要导航">
         <div class="nav-section-label">研习核心</div>
         <RouterLink to="/" @click="sound.tap()"><Home :size="18" aria-hidden="true" /><span>首页</span></RouterLink>
@@ -281,6 +310,8 @@ onBeforeUnmount(() => {
         </nav>
       </div>
       <AppToast />
+      <GlobalFtsModal ref="ftsModalRef" />
+      <QuickWordPopover ref="quickWordRef" />
 
       <!-- v2.47: 考试类别选择弹窗 (点击"全部类别"或当前类别打开) -->
       <Teleport to="body">

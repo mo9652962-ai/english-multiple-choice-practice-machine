@@ -2,6 +2,7 @@
 import { BarChart3, Timer } from 'lucide-vue-next'
 // v2.49: 专注计时 (番茄钟, 借鉴专注清单/Forest)
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import InkFlowTimer3D from '../components/InkFlowTimer3D.vue'
 
 const MODES = [
   { key: 'focus', label: '专注', minutes: 25, color: '#c97b4a' },
@@ -103,6 +104,9 @@ onBeforeUnmount(() => { if (timer !== null) window.clearInterval(timer) })
           type="button" @click="switchMode(m.key)"
         >{{ m.label }} {{ m.minutes }}′</button>
       </div>
+
+      <!-- v10.0: 3D 端石云纹砚滴蓄墨 -->
+      <InkFlowTimer3D :progress="progress / 100" :is-running="running" />
 
       <!-- 环形计时 -->
       <div class="focus-ring" :style="{ '--pct': progress, '--color': currentMode.color }">
