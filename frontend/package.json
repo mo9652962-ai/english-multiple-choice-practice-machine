@@ -34,7 +34,7 @@
     "three": "^0.186.0",
     "vue": "^3.5.42",
     "vue-draggable-next": "^2.2.1",
-    "vue-router": "^4.5.0",
+    "vue-router": "^5.3.1",
     "xsai-transformers": "^0.1.0"
   },
   "devDependencies": {
