@@ -32,6 +32,8 @@ design-system/
 *.db
 !frontend/public/question_bank.db
 examples/internal-banks/
+exports/
+.hermes/
 *.sqlite
 *.sqlite3
 *.bak

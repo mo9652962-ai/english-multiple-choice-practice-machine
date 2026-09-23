@@ -1077,12 +1077,15 @@ async function submitSession() {
 
 // v2.40: 庆祝动效 (多邻国式) — 正确率≥80% 撒花
 import CelebrateOverlay from '../components/CelebrateOverlay.vue'
+import SealStamp3D from '../components/SealStamp3D.vue'
+const showSealModal = ref(false)
 const celebrate = ref<{ show: boolean; kind: 'confetti' | 'flame'; title: string; subtitle: string }>({
   show: false, kind: 'confetti', title: '', subtitle: '',
 })
 function maybeCelebrate() {
   const s = session.value
   if (!s) return
+  showSealModal.value = true // v10.0: 3D 朱砂印章金石为开结算
   const rate = s.max_score ? Math.round((s.score / s.max_score) * 100) : 0
   if (rate >= 80) {
     celebrate.value = {
@@ -1740,6 +1743,15 @@ function openDeepExplain(questionId: number) {
       @close="celebrate.show = false"
     />
 
+    <!-- v10.0: 3D 朱砂玉玺印章结算 -->
+    <SealStamp3D
+      :visible="showSealModal"
+      :score="session?.score || 0"
+      :max-score="session?.max_score || 100"
+      :paper-title="session?.paper?.title"
+      @close="showSealModal = false"
+    />
+
     <!-- v3.4: 选词填空——内联答题区（sticky 底部，不遮挡文章；点空格切换当前空） -->
     <div v-if="blankPicker" class="blank-picker-dock" role="dialog" aria-label="选词填空答题区">
       <div class="blank-picker-head">
@@ -1770,3 +1782,94 @@ function openDeepExplain(questionId: number) {
   <!-- v9.26: AI 助教精讲抽屉 -->
   <DeepExplainDrawer v-if="deepExplainQuestionId !== null" ref="deepExplainRef" :question-id="deepExplainQuestionId" @jump="openDeepExplain" />
 </template>
+
+<style scoped>
+.practice-page { --practice-motion: cubic-bezier(.22, 1, .36, 1); }
+
+:deep(.practice-top) {
+  gap: 18px;
+  border-bottom-color: color-mix(in srgb, var(--line) 72%, var(--accent-vermilion, #b84a39));
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 5%, transparent);
+}
+:deep(.practice-top > div:first-child), :deep(.practice-status) { min-width: 0; }
+:deep(.practice-top .button.ghost) { flex: 0 0 auto; min-height: 40px; border-radius: 12px; }
+:deep(.practice-layout:not(.listening-layout)) { background: var(--bg); }
+:deep(.passage-pane) {
+  scrollbar-gutter: stable;
+  background: radial-gradient(ellipse at 12% 0%, color-mix(in srgb, var(--accent-vermilion, #b84a39) 5%, transparent), transparent 42%), var(--bg);
+}
+:deep(.question-pane) {
+  background: linear-gradient(155deg, color-mix(in srgb, var(--surface-solid) 78%, var(--accent-vermilion, #b84a39) 2%), var(--surface));
+}
+:deep(.question-card) { border-bottom-color: color-mix(in srgb, var(--line) 78%, transparent); }
+:deep(.option) {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--line-strong, var(--line)) 75%, var(--accent-vermilion, #b84a39) 10%);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--surface-solid) 96%, var(--bg));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, white 62%, transparent), inset 0 0 0 4px color-mix(in srgb, var(--surface-solid) 82%, transparent), 0 2px 0 color-mix(in srgb, var(--line-strong, var(--line)) 48%, transparent);
+  transition: transform .2s var(--practice-motion), border-color .2s var(--practice-motion), background .2s var(--practice-motion), box-shadow .24s var(--practice-motion);
+}
+:deep(.option:hover:not(:disabled)) {
+  border-color: color-mix(in srgb, var(--accent-vermilion, #b84a39) 42%, var(--line));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, white 66%, transparent), inset 0 0 0 4px color-mix(in srgb, var(--surface-solid) 84%, transparent), 0 5px 16px color-mix(in srgb, var(--ink) 7%, transparent);
+  transform: translateY(-1px);
+}
+:deep(.option.selected) {
+  border-color: color-mix(in srgb, var(--accent-vermilion, #b84a39) 68%, var(--line));
+  background: radial-gradient(ellipse at 8% 50%, color-mix(in srgb, var(--accent-vermilion, #b84a39) 13%, transparent), transparent 48%), color-mix(in srgb, var(--surface-solid) 93%, var(--accent-vermilion, #b84a39));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, white 58%, transparent), inset 0 0 0 4px color-mix(in srgb, var(--surface-solid) 72%, transparent), 0 0 0 2px color-mix(in srgb, var(--accent-vermilion, #b84a39) 11%, transparent), 0 7px 20px color-mix(in srgb, var(--accent-vermilion, #b84a39) 12%, transparent);
+}
+:deep(.pane-divider) {
+  position: relative; z-index: 2;
+  border-color: color-mix(in srgb, var(--accent-vermilion, #b84a39) 14%, var(--line));
+  background: color-mix(in srgb, var(--surface-solid) 72%, var(--accent-vermilion, #b84a39) 5%);
+  transition: background .2s var(--practice-motion), border-color .2s var(--practice-motion);
+}
+:deep(.pane-divider:hover) { border-color: color-mix(in srgb, var(--accent-vermilion, #b84a39) 32%, var(--line)); }
+:deep(.practice-footer) {
+  z-index: 28;
+  border-top-color: color-mix(in srgb, var(--accent-vermilion, #b84a39) 18%, var(--line));
+  box-shadow: 0 -10px 28px color-mix(in srgb, var(--ink) 8%, transparent);
+}
+:deep(.blank-picker-dock) {
+  z-index: 35; max-height: min(48dvh, 420px); overflow-y: auto; overscroll-behavior: contain;
+  border: 1px solid color-mix(in srgb, var(--accent-vermilion, #b84a39) 22%, var(--line));
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--ink) 18%, transparent);
+}
+:deep(.blank-picker-option) {
+  min-height: 44px; border-radius: 12px;
+  transition: border-color .2s var(--practice-motion), background .2s var(--practice-motion), transform .2s var(--practice-motion);
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  :deep(.practice-top) { height: 64px; min-height: 64px; padding: 6px 12px; gap: 8px; flex-wrap: nowrap; }
+  :deep(.practice-top > div:first-child) { flex: 1 1 auto; gap: 8px !important; overflow: hidden; }
+  :deep(.practice-top .button.ghost) { min-height: 42px; padding: 7px 9px; }
+  :deep(.unit-tabs) { flex: 1 1 auto; max-width: none; min-width: 0; scrollbar-width: none; }
+  :deep(.unit-tab) { min-height: 40px; padding: 7px 9px; }
+  :deep(.practice-status) { flex: 0 0 auto; gap: 6px; margin-left: 0; font-size: 12px; }
+  :deep(.practice-layout.is-split) { height: calc(100dvh - 64px - 70px); grid-template-rows: minmax(0, var(--passage-ratio, 45%)) 10px minmax(0, 1fr) !important; }
+  :deep(.passage-pane) { padding-top: 14px; padding-bottom: 18px; }
+  :deep(.question-pane) { padding-top: 12px; padding-bottom: 82px; }
+  :deep(.practice-footer) { bottom: 0; width: 100%; min-height: 62px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px)) !important; gap: 8px; }
+  :deep(.practice-footer-summary) { min-width: 0; }
+  :deep(.practice-submit-actions) { flex: 0 0 auto; gap: 8px; }
+  :deep(.practice-submit-actions .button) { min-height: 44px; padding-inline: 12px; white-space: nowrap; }
+  :deep(.blank-picker-dock) { bottom: calc(66px + env(safe-area-inset-bottom, 0px)); max-height: min(48dvh, 390px); }
+}
+
+@media (max-width: 430px) and (orientation: portrait) {
+  :deep(.practice-top .kbd-hint), :deep(.zen-key-guide) { display: none; }
+  :deep(.practice-status > span) { font-size: 11px; }
+  :deep(.practice-timer) { min-height: 34px; gap: 5px; padding: 4px 6px; }
+  :deep(.practice-timer strong) { min-width: 54px; font-size: 13px; }
+  :deep(.practice-timer button) { min-height: 30px; padding: 4px 6px; font-size: 11px; }
+  :deep(.practice-footer .button) { min-height: 44px !important; padding-inline: 10px; font-size: 13px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :deep(.option), :deep(.option::after), :deep(.pane-divider), :deep(.blank-picker-option) { transition-duration: .01ms !important; }
+}
+</style>
