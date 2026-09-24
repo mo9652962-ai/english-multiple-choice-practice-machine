@@ -4,7 +4,7 @@
 
 ## 项目背景
 
-墨题把「题库导入 → 整卷/随机练习 → 错题迭代 → 词汇复习 → 学习诊断」连成一条闭环，内置 647 道考研真题 + 7,958 词库（首次启动自动装好），无需任何 API Key 即可刷题、判分、复习。AI 功能（作文批改、口语陪练）是可选项，需要用户自配模型提供商。
+墨题把「题库导入 → 整卷/随机练习 → 错题迭代 → 词汇复习 → 学习诊断」连成一条闭环，内置 12 套项目自建 AI 模拟卷（180 道客观题）+ 7,958 词库（首次启动自动装好），无需任何 API Key 即可刷题、判分、复习；用户亦可在遵守版权的前提下自主导入私有合法题库。AI 功能（作文批改、口语陪练）是可选项，需要用户自配模型提供商。
 
 ## 核心文档
 
@@ -22,23 +22,24 @@ git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machi
 cd english-multiple-choice-practice-machine
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
+cd frontend && npm ci && npm run build && cd ..
 .\.venv\Scripts\python.exe run_app.py
 ```
 
-打开 `http://127.0.0.1:8765` 即可开始刷题。环境要求：Windows 10/11、Python 3.12、Node 24、pnpm 11。
+打开 `http://127.0.0.1:8765` 即可开始刷题。环境要求：Windows 10/11、Python 3.11+、Node.js 22+、npm 10+。
 
 ## 核心特性
 
-- 真题整卷刷题：考研英语一/二（2010-2026）内置，支持按年份、随机、Part B 题型
+- 题库整卷练习：内置自建 AI 模拟卷，支持按年份、随机抽取整篇、Part B 题型
 - FSRS 间隔重复：词汇复习采用 FSRS 算法，科学安排复习间隔
-- 错题本与迭代：自动收录错题，支持错题重练、覆盖率统计
+- 错题本与迭代：自动收录错题，支持错题重练、覆盖率统计与递减
 - 本地优先：核心功能 100% 离线，个人数据保存在本机 SQLite
 - 题库自由：支持 Word/PDF 导入，ESQ 格式跨用户分享
 - 三端支持：Windows 桌面、Web 浏览器、Android（Capacitor 打包）
+- 3D 水墨官网：[沉浸式在线体验](https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/)
 
 ## Optional
 
-- [Release v2.0.0](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases): Windows NSIS 安装包与便携版
+- [Release v2.2.0](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases): Windows NSIS 安装包与便携版
 - [GitHub Discussions](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/discussions): 社区讨论、功能建议
 - [问题追踪](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/issues): Bug 报告与功能请求
