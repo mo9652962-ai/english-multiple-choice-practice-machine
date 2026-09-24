@@ -6,7 +6,7 @@
 
   **Open question banks · Your models · Local data · Practice freely**
 
-  **English Practice Machine (墨题) is an open-source, local-first English exam practice app for CET-4/CET-6, postgraduate (考研) and Gaokao learners: real past-paper practice, FSRS spaced-repetition vocabulary, mistake iteration and optional AI study assistance. Core practice and grading work fully offline with no API key required.**
+  **English Practice Machine (墨题) is an open-source, local-first English exam practice app for CET-4/CET-6, postgraduate (考研) and Gaokao learners: full-paper practice, FSRS spaced-repetition vocabulary, mistake iteration and optional AI study assistance. Bundled content is our own AI-simulated, non-real-exam material; you can import your own banks where you hold the rights. Core practice and grading work fully offline with no API key required.**
 
   <p>
     <a href="https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/">✨ 3D Interactive Website</a>
@@ -21,7 +21,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows--Web--Android-2563EB?style=flat-square" alt="Windows/Web/Android">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.0.0-2563EB?style=flat-square" alt="v2.0.0">
+    <img src="https://img.shields.io/badge/status-v2.2.0-2563EB?style=flat-square" alt="v2.2.0">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -60,7 +60,7 @@
 git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machine.git
 cd english-multiple-choice-practice-machine
 
-# 2. Install (bundled 考研 past papers + 7,958-word vocabulary auto-install on first run)
+# 2. Install (bundled AI-simulated 考研 question sets + 7,958-word vocabulary auto-install on first run)
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
@@ -69,7 +69,7 @@ cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run buil
 .\.venv\Scripts\python.exe run_app.py
 ```
 
-⚡ Done! Open `http://127.0.0.1:8765` — 647 real past-paper questions + 7,958 vocabulary words included, no API key needed for practice, grading, or review.
+⚡ Done! Open `http://127.0.0.1:8765` — 12 bundled AI-simulated papers (180 objective questions) + 7,958 vocabulary words included, no API key needed for practice, grading, or review.
 
 > Windows 10/11 · Python 3.12 · Node 24 · pnpm 11.
 
@@ -101,7 +101,7 @@ Random practice selects complete units, options can be shuffled before each atte
 
 > Even with a limited set of questions, every new attempt should require reading, reasoning, and answering again—not simply recalling the correct option.
 
-The project is now `v2.0.0`. The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, and FSRS-based vocabulary review are available. Public GitHub Actions CI, NSIS/portable Windows artifacts, and discoverable Gaokao/TEM-4/TEM-8 import templates are part of the release workflow. Question-bank text remains separately licensed and personal databases are never tracked.
+The project is now `v2.2.0` (2026-09-23). The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, FSRS-based vocabulary review, 3D website, organization workspace with health checks, dynamic paper generation, anti-cheat event logging, and certificate verification are available. Public GitHub Actions CI, NSIS/portable Windows artifacts, and Android debug build gates are part of the release workflow. Bundled question-bank content is our own AI-simulated, non-real-exam material; question-bank text remains separately licensed and personal databases are never tracked.
 
 ## Feature overview
 
@@ -111,13 +111,14 @@ The project is now `v2.0.0`. The main practice, wrong-answer, vocabulary, AI-ass
 | Practice | Full-year papers, random complete units, **shuffled options (anti-answer-memorization)**, **desktop shortcuts (Anki-style 1/2/3/4)**, postgraduate English I/II, CET listening/word bank/paragraph matching/reading |
 | Submission | Unit submission, paper submission, unanswered-question navigation, score/correct/wrong feedback |
 | Wrong answers | Year → unit navigation, redo/analysis, **iterative reduction (redo shows only this round's mistakes)**, frequent-mistake stats |
-| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **phonetics + source-aware bilingual examples**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **sentence fill-in (real-exam cloze)**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
+| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **phonetics + source-aware bilingual examples**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **cloze-style sentence fill-in**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
 | AI assistant | Multiple API profiles, multi-session chat, model sync, wrong-answer analysis, labels, and draft correction |
 | Listening | **MP3/M4A/WAV/OGG import, built-in player, progress-bar lock while timing** |
 | Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import, **CET-4/CET-6, Gaokao, TEM-4/TEM-8 import templates** |
 | Data | Local storage, folder backup, Windows DPAPI / Android Keystore AES-GCM encryption for API keys |
 | Mobile | **Portrait split layout (independent article/question scrolling + draggable divider)**, **merged bottom nav (Notes = Wrong answers + Vocabulary)**, **answer-sheet drawer**, **dynamic home** |
 | Motivation | **14 achievement badges** (streaks/vocabulary milestones/practice achievements), consecutive-day stats, **learning heatmap (GitHub-contribution style, 90 days)**, **check-in poster (Baicizhan-style ink share image via WebShare)**, **report-page vocabulary memory curve (SVG)** |
+| Organization / Enterprise | **Organization workspace (+ health checks)**, **dynamic paper generation (by question type × count)**, **anti-cheat event logging (tab switch/copy/blur)**, **automatic certificate issuance on passing + certificate-ID verification** |
 | Updates | **Front-end auto-update check (60s polling)**, GitHub Release + HTTPS mirror dual source, SHA-256 verification |
 
 ## Features in detail
@@ -475,12 +476,14 @@ Core workflows already available:
 - Postgraduate English II, CET objective formats, Gaokao/TEM-4/TEM-8 import templates, and ESQ 1.1 sharing
 - GPL-3.0-only code license and author metadata
 
-Release checklist completed for v2.0.0:
+Release checklist completed for v2.2.0:
 
 - Public GitHub Actions CI with backend/frontend and repository-hygiene gates.
 - `CONTRIBUTING.md`, `SECURITY.md`, and issue/PR templates.
 - Windows NSIS installer and portable build generated by `.github/workflows/release.yml`.
+- Android debug build gate (JDK 21 / SDK 36) with emulator smoke and artifact verification.
 - Structured bilingual-example import/verification and discoverable exam-template catalog.
+- Bundled content is AI-simulated, non-real-exam material with explicit provenance labels.
 
 ## Contributing question banks and code
 
