@@ -475,7 +475,7 @@ node tools/check_offline_runtime.mjs frontend/dist/offline_migrations.json
 
 后一个检查会验证旧版 `spaced_repetition_records` 能补齐 FSRS 字段，并验证新库不会重复执行 `ADD COLUMN`。
 
-已有安装包时可重复传入 `-Artifact electron\dist\epm-setup-2.1.3.exe -Artifact electron\dist\epm-portable-2.1.3.exe`，将文件大小和 SHA-256 一并写入发布清单。
+已有安装包时可重复传入 `-Artifact electron\dist\epm-setup-2.2.0.exe -Artifact electron\dist\epm-portable-2.2.0.exe`，将文件大小和 SHA-256 一并写入发布清单。
 
 Android 本地构建前可运行 `.\scripts\android_preflight.ps1` 检查 Node.js 22+、JDK 21、Android SDK 36 和 Capacitor/Gradle 生成目录；CI 会显式安装 Android SDK 36、Build Tools 36.0.0 和 Emulator。干净 CI checkout 会先执行 `npx cap add android`，同步 Web 资源和 `VERSION`，构建 debug APK，并在 Android Emulator 中安装、启动和检查应用进程。Android 发布清单使用 `--offline-only`，记录 APK 对应离线库的 SHA-256、声明 Schema、物理迁移版本和题目/词汇计数。
 
@@ -574,7 +574,7 @@ npm run build
 
 ## 当前状态与路线图
 
-截至 `2.1.3`，程序、内容和离线种子已经使用统一版本元数据与发布清单；下一阶段的执行优先级、发布门槛和未完成事项见 [下一阶段执行路线图](docs/next-phase-roadmap-2026-09-13.md)。当前公开库只包含项目自建、明确标注为“AI 模拟·非真题”的题包，provenance 与结构质量门禁已通过；旧考研回忆版/本地导出包保持 `local-only`，不得公开分发。Windows 公共签名、Android release keystore、真实设备运行验收和正式发布目标仍未完成，因此当前只能作为内部候选版本。
+截至 `2.2.0`（2026-09-23），程序、内容和离线种子已经使用统一版本元数据与发布清单；下一阶段的执行优先级、发布门槛和未完成事项见 [下一阶段执行路线图](docs/next-phase-roadmap-2026-09-13.md)。当前公开库只包含项目自建、明确标注为“AI 模拟·非真题”的题包，provenance 与结构质量门禁已通过；旧考研回忆版/本地导出包保持 `local-only`，不得公开分发。Windows 公共签名、Android release keystore、真实设备运行验收和正式发布目标仍未完成，因此当前只能作为内部候选版本。
 
 已完成的核心链路：
 
