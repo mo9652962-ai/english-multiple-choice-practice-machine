@@ -158,7 +158,7 @@ jobs:
               --offline
       - name: Upload Android emulator evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: epm-android-emulator-evidence-${{ github.sha }}
           path: android-emulator-evidence
@@ -178,7 +178,7 @@ jobs:
             --write-report android-release-manifest.json
       - name: Upload Android debug APK artifacts
         if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: epm-android-debug-${{ github.sha }}
           path: |
@@ -188,7 +188,7 @@ jobs:
           if-no-files-found: error
       - name: Upload Android release APK artifacts
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: epm-android-release-${{ github.sha }}
           path: |
