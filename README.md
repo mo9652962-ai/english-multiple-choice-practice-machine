@@ -652,3 +652,13 @@ v2.0.0 发布收口已完成：
 - [墨题当前学习报告截图](docs/images/feature-overview-public.webp)
 - 反馈问题 / 建议 → [Issues](https://github.com/mo9652962-ai/epm-releases/issues)
 Android 原生插件模板位于 `frontend/native/android/`；干净构建完成 `npx cap sync android` 后，还必须执行 `node scripts/sync_android_plugins.mjs`，再运行 Gradle。工作区便携工具链可通过 `scripts/android_preflight.ps1 -ToolchainRoot <工具链目录>` 验证。
+
+---
+
+## 🧩 同作者的其他项目
+
+- 🛡 [agent-audit](https://github.com/mo9652962-ai/agent-audit) — AI Agent 环境安全审计 CLI（OpenSSF passing · GitHub Marketplace Action）
+- 🧠 [Second Brain](https://github.com/mo9652962-ai/second-brain) — 会自己进化的 AI Agent 第二大脑（本项目的知识库底座）
+- 🔧 [esq-builder-mcp](https://github.com/mo9652962-ai/esq-builder-mcp) — ESQ 1.0 题库包 MCP 工具链（本仓库题库格式生态）
+
+> 完整矩阵见 [作者主页](https://github.com/mo9652962-ai)。
