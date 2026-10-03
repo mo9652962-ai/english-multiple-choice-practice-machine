@@ -63,7 +63,7 @@
 git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machine.git
 cd english-multiple-choice-practice-machine
 
-# 2. 安装依赖（内置考研英语一/二方向的 AI 模拟题 + 7,958 词库，首次启动自动装好）
+# 2. 安装依赖（内置考研英语一/二方向的 AI 模拟题 + 7,959 词库，首次启动自动装好）
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 cd frontend && npm ci && npm run build && cd ..
@@ -72,7 +72,7 @@ cd frontend && npm ci && npm run build && cd ..
 .\.venv\Scripts\python.exe run_app.py
 ```
 
-⚡ Done! 打开 `http://127.0.0.1:8765` 即可开始——内置 12 套项目自建 AI 模拟卷（180 道客观题）+ 7,958 词汇，无需任何 API Key 就能练习、判分、复习。
+⚡ Done! 打开 `http://127.0.0.1:8765` 即可开始——内置 12 套项目自建 AI 模拟卷（180 道客观题）+ 7,959 词汇，无需任何 API Key 就能练习、判分、复习。
 
 > Windows 10/11 · Python 3.11+ · Node.js 22+ · npm 10+。完整说明见下文「快速开始」章节。
 
@@ -112,7 +112,7 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 
 在 **v2.2.0** 架构中，项目全面整合了 **3D 水墨沉浸式官网生态**、**组织工作区（Organization Workspace + 健康检查）**、**动态组卷（按题型×数量精准抽题）**、**防作弊事件记录**与**考试达标发证系统**，并在全端落实了严格的无感知本地优先与数据隔离机制。
 
-**当前内置数据**：12 套项目自建 AI 模拟卷、180 道客观题 + **7,958 个全类别核心词汇**（高中 666 / 四级 825 / 六级 1,304 / 考研 5,163——含音标与语境/双语例句）。
+**当前内置数据**：12 套项目自建 AI 模拟卷、180 道客观题 + **7,959 个全类别核心词汇**（高中 666 / 四级 825 / 六级 1,305 / 考研 5,163——7,951 词带音标，全部含中文释义与语境义）。
 
 ## 功能概览
 
@@ -122,7 +122,7 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 | 练习 | 按年份整卷、随机抽整篇、**选项打乱（防记答案）**、**桌面快捷键（Anki 习惯——1/2/3/4 选答案）**、考研英语一/二、四六级听力/选词填空（**点空选题 v3.6**）/段落匹配/阅读 |
 | 提交 | 整篇提交、整卷提交、未答题定位、得分/正确数/错题数反馈 |
 | 错题本 | 按年份 → 篇目组织、重做/分析、**迭代递减（重做只显示本次错的，越做越少）**、高频错题统计、**FSRS 到期复习队列** |
-| 单词本 | 文章/题干/选项右键收藏、退出练习后批量翻译、同义/反义/形近词辨析、高频 🌟、**内置词库音标 + 可追溯双语例句**、**听写模式（TTS 发音→拼写 / 听音 4 选 1）**、**短文填词（真题句挖空）**、**分级背诵计划（FSRS 间隔重复）**、**学习三态（认识/模糊/忘记）**、**词书计划本地生成（百词斩式 4 词书）**、**AI 文章练词 + 划词生词本** |
+| 单词本 | 文章/题干/选项右键收藏、退出练习后批量翻译、同义/反义/形近词辨析、高频 🌟、**内置词库音标 + 中文释义与语境义**、**可追溯双语例句（独立表 + 导入器，随授权语料导入）**、**听写模式（TTS 发音→拼写 / 听音 4 选 1）**、**短文填词（真题句挖空）**、**分级背诵计划（FSRS 间隔重复）**、**学习三态（认识/模糊/忘记）**、**词书计划本地生成（百词斩式 4 词书）**、**AI 文章练词 + 划词生词本** |
 | AI 助手 | 多 API 配置、多会话、模型同步、任务级路由、**结构化结果本地缓存/配额/回退**、聊天、错题分析、题库标注和导入草稿校正 |
 | 陪伴聊天室 | **学习陪伴聊天室（WebSocket + @AI 流式回复）**——像同伴一样实时陪练，流式回复无阻塞等待（Phase 3） |
 | 知识库 RAG | **RAG 知识库（文档上传/分片/embedding/检索/问答）**——上传学习资料，基于内容智能问答（Phase 2） |
@@ -162,7 +162,7 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 | ![练习](docs/screenshots/exam.png) | ![题库](docs/screenshots/library.png) |
 | 题库练习 · 选项打乱 · 计时 | 多题库 · 年份/卷别筛选 |
 | ![四级词汇卡](docs/screenshots/cards-cet4.png) | ![高考词汇卡](docs/screenshots/cards-gaokao.png) |
-| 四级词库 · 音标 · 双语例句 | 高考词库 · 真题例句 |
+| 四级词库 · 音标 · 释义 | 高考词库 · 中文释义 |
 | ![考研词汇卡](docs/screenshots/cards-kaoyan.png) | ![设置](docs/screenshots/settings.png) |
 | 考研词库 · 分级背诵计划 | 模型配置 · 数据备份 · 安全存储 |
 
@@ -462,7 +462,7 @@ backend/data/
 `backend/data/question_bank.db` 可以包含本地开发或授权范围内的扩展题库，`frontend/public/question_bank.db` 是 Web/移动端离线种子库；两者不要求在开发环境中完全相同。程序版本、内容版本和离线种子版本分别由 `VERSION`、`CONTENT_VERSION`、`OFFLINE_CONTENT_VERSION` 管理；每次发布都必须明确记录文件 SHA-256、schema 版本和题目/词汇计数。发布前运行：
 
 ```powershell
-.\scripts\release_check.ps1 -RequirePackageProvenance -StrictQuality -RequireAndroidMetadata -CheckTemplates -MinVocabulary 7958 -MinSchemaVersion 2 -WriteReport work\release-manifest.json
+.\scripts\release_check.ps1 -RequirePackageProvenance -StrictQuality -RequireAndroidMetadata -CheckTemplates -MinVocabulary 7959 -MinSchemaVersion 2 -WriteReport work\release-manifest.json
 ```
 
 题库要公开分发前，还应额外使用 `-RequirePublishableProvenance`。正式 Windows release workflow 已强制启用该门禁：每个题库包必须同时具备已核验的许可证/来源、人工复核状态、AI 修改 diff 和发布前抽样记录；只有“字段存在”但尚未核验的包会被报告为不可公开发布。证据字段和填写边界见 [`docs/content-release-evidence.md`](docs/content-release-evidence.md)。
@@ -624,7 +624,7 @@ v2.0.0 发布收口已完成：
 不用。基础刷题、判分、错题本、单词本完全离线可用；AI 助手、单词翻译、错题分析、题库导入校正是可选增强功能。
 
 **Q: 和百词斩/墨墨/不背单词有什么不同？**
-本工具聚焦"合规可分发的模拟题 + 错题迭代 + 语境记忆"闭环：内置题库是项目自建的 AI 模拟题，外部真题只能在用户拥有合法来源和再分发权时通过 ESQ 导入；错题重做只显示本次错题（迭代递减），词汇保留题目语境和双语例句。不追求游戏化堆功能，先验证是否能让目标用户持续完成复习。数据 100% 本地，不收集隐私。
+本工具聚焦"合规可分发的模拟题 + 错题迭代 + 语境记忆"闭环：内置题库是项目自建的 AI 模拟题，外部真题只能在用户拥有合法来源和再分发权时通过 ESQ 导入；错题重做只显示本次错题（迭代递减），词汇保留题目语境（原句 + 语境义）。不追求游戏化堆功能，先验证是否能让目标用户持续完成复习。数据 100% 本地，不收集隐私。
 
 **Q: 题库可以自己导入吗？**
 可以。支持 Word/PDF 草稿导入、ESQ 1.0/1.1 格式导入导出分享、模型辅助定位题目与答案（需用户确认后入库）。

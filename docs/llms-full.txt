@@ -8,7 +8,7 @@
 - 项目名称: 墨题 MOTI
 - 英文全称: English Multiple-Choice Practice Machine (EPM)
 - 开源协议: GNU General Public License v3.0 (GPL-3.0-only)
-- 软件版本: v2.1.3
+- 软件版本: v2.2.0
 - 仓库地址: https://github.com/mo9652962-ai/english-multiple-choice-practice-machine
 - 文档与展示页: https://mo9652962-ai.github.io/english-multiple-choice-practice-machine/
 - 研发哲学: 笔落惊风雨，刷题即上岸。反击商业化题库的算法剥削、弹窗广告、虚荣社交打卡与数据垄断。

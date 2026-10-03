@@ -60,7 +60,7 @@
 git clone https://github.com/mo9652962-ai/english-multiple-choice-practice-machine.git
 cd english-multiple-choice-practice-machine
 
-# 2. Install (bundled AI-simulated 考研 question sets + 7,958-word vocabulary auto-install on first run)
+# 2. Install (bundled AI-simulated 考研 question sets + 7,959-word vocabulary auto-install on first run)
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run build && cd ..
@@ -69,7 +69,7 @@ cd frontend && corepack pnpm install --frozen-lockfile && corepack pnpm run buil
 .\.venv\Scripts\python.exe run_app.py
 ```
 
-⚡ Done! Open `http://127.0.0.1:8765` — 12 bundled AI-simulated papers (180 objective questions) + 7,958 vocabulary words included, no API key needed for practice, grading, or review.
+⚡ Done! Open `http://127.0.0.1:8765` — 12 bundled AI-simulated papers (180 objective questions) + 7,959 vocabulary words included, no API key needed for practice, grading, or review.
 
 > Windows 10/11 · Python 3.12 · Node 24 · pnpm 11.
 
@@ -111,7 +111,7 @@ The project is now `v2.2.0` (2026-09-23). The main practice, wrong-answer, vocab
 | Practice | Full-year papers, random complete units, **shuffled options (anti-answer-memorization)**, **desktop shortcuts (Anki-style 1/2/3/4)**, postgraduate English I/II, CET listening/word bank/paragraph matching/reading |
 | Submission | Unit submission, paper submission, unanswered-question navigation, score/correct/wrong feedback |
 | Wrong answers | Year → unit navigation, redo/analysis, **iterative reduction (redo shows only this round's mistakes)**, frequent-mistake stats |
-| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **phonetics + source-aware bilingual examples**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **cloze-style sentence fill-in**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
+| Vocabulary | Right-click capture, translation after leaving practice, synonyms/antonyms/similar-form comparison, **phonetics + Chinese meaning and contextual sense**, **source-aware bilingual examples (separate table + importer, populated from licensed corpora)**, **dictation mode (TTS→spelling / listen-4-choice-1)**, **cloze-style sentence fill-in**, **FSRS spaced review**, **three learning states (known/fuzzy/forgotten)**, **local word-book plan (Baicizhan-style 4 books)**, **AI article vocabulary practice + click-to-add words** |
 | AI assistant | Multiple API profiles, multi-session chat, model sync, wrong-answer analysis, labels, and draft correction |
 | Listening | **MP3/M4A/WAV/OGG import, built-in player, progress-bar lock while timing** |
 | Question bank | Multiple bank profiles, recycle bin, Word/PDF drafts, answer/audio attachments, ESQ 1.1, batch import, **CET-4/CET-6, Gaokao, TEM-4/TEM-8 import templates** |
