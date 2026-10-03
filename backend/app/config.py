@@ -28,11 +28,11 @@ def _read_project_metadata(name: str, fallback: str) -> str:
     return value or fallback
 
 
-APP_VERSION = _read_project_metadata("VERSION", "2.1.3")
-APP_RELEASE_DATE = _read_project_metadata("RELEASE_DATE", "2026-09-13")
-CONTENT_VERSION = _read_project_metadata("CONTENT_VERSION", "content-2026-09-13-r1")
+APP_VERSION = _read_project_metadata("VERSION", "2.2.0")
+APP_RELEASE_DATE = _read_project_metadata("RELEASE_DATE", "2026-09-23")
+CONTENT_VERSION = _read_project_metadata("CONTENT_VERSION", "content-2026-09-20-r4")
 OFFLINE_CONTENT_VERSION = _read_project_metadata(
-    "OFFLINE_CONTENT_VERSION", "offline-2026-09-13-r1"
+    "OFFLINE_CONTENT_VERSION", "offline-2026-09-20-r4"
 )
 
 
