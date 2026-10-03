@@ -130,6 +130,20 @@ class VersionConsistencyTests(unittest.TestCase):
         for value in found:
             self.assertEqual(value, _version())
 
+    def test_readme_status_badges_match_version(self) -> None:
+        """The shields.io status badge is hardcoded and silently drifts."""
+        version = _version()
+        for name in ("README.md", "README.en.md"):
+            text = _read(name)
+            badges = re.findall(r"badge/status-v([\d.]+)", text)
+            self.assertTrue(badges, f"{name} has no hardcoded status badge")
+            for value in badges:
+                self.assertEqual(
+                    value,
+                    version,
+                    f"{name} status badge says v{value} but VERSION is {version}",
+                )
+
 
 class ContentCountTests(unittest.TestCase):
     """Every content figure in the docs must match the shipped seed database."""
