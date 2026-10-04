@@ -1,17 +1,32 @@
 from __future__ import annotations
 
+import tempfile
 import unittest
+from pathlib import Path
+from unittest.mock import patch
+
 from fastapi.testclient import TestClient
 
-from backend.app.database import connect
+from backend.app.database import connect, initialize_database
 from backend.app.main import app
 
 
 class LocalFirstSyncTests(unittest.TestCase):
     def setUp(self) -> None:
-        from backend.app.database import initialize_database
+        self.temp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
+        self.database_path = Path(self.temp.name) / "test_sync.db"
+        self.db_patch = patch("backend.app.database.DATABASE_PATH", self.database_path)
+        self.config_patch = patch("backend.app.config.DATABASE_PATH", self.database_path)
+        self.db_patch.start()
+        self.config_patch.start()
         initialize_database()
         self.client = TestClient(app)
+
+    def tearDown(self) -> None:
+        self.client.close()
+        self.db_patch.stop()
+        self.config_patch.stop()
+        self.temp.cleanup()
 
     def test_sync_status_endpoint(self) -> None:
         resp = self.client.get("/api/sync/status")
@@ -29,12 +44,12 @@ class LocalFirstSyncTests(unittest.TestCase):
                 )
                 paper_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
                 conn.execute(
-                    "INSERT INTO units (paper_id, unit_type, number, title) VALUES (?, 'reading', 1, 'Unit 1')",
+                    "INSERT INTO units (paper_id, unit_type, sequence, title) VALUES (?, 'reading', 1, 'Unit 1')",
                     (paper_id,),
                 )
                 unit_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
                 conn.execute(
-                    "INSERT INTO questions (unit_id, number, stem, answer) VALUES (?, 1, 'Question 1', 'A')",
+                    "INSERT INTO questions (unit_id, number, sequence, stem, answer, score) VALUES (?, 1, 1, 'Question 1', 'A', 2.0)",
                     (unit_id,),
                 )
                 conn.commit()
