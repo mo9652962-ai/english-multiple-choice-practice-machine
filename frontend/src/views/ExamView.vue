@@ -11,6 +11,7 @@ import {
   Flag,
   Play,
   RotateCcw,
+  Printer,
   Sparkles,
   XCircle,
 } from 'lucide-vue-next'
@@ -153,6 +154,11 @@ function handleExamKeydown(e: KeyboardEvent) {
   const pressed = e.key.toLowerCase()
   const opt = q.options?.find((o: any) => String(o.key || o.label || '').toLowerCase() === pressed)
   if (opt) { e.preventDefault(); void answer(opt.key) }
+}
+
+function printCurrentExam(paperId: number) {
+  sound.tap()
+  window.open(`/api/export/paper/${paperId}/print`, '_blank')
 }
 
 onMounted(async () => {
@@ -371,6 +377,9 @@ onBeforeUnmount(() => {
         <div class="result-actions" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
           <button class="button primary" type="button" @click="sound.tap(); showStartDialog = true; exam = null">
             <RotateCcw :size="15" />再来一场
+          </button>
+          <button v-if="exam.paper_id" class="button ghost" type="button" @click="printCurrentExam(exam.paper_id)">
+            <Printer :size="15" />导出打印卷
           </button>
           <button v-if="exam.wrong_count > 0" class="button" type="button" @click="sound.tap(); router.push('/wrong')">
             <BookMarked :size="15" />错题手札
