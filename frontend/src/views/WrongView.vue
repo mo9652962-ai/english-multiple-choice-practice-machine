@@ -154,18 +154,14 @@ async function exportWrongPaper() {
     const res = await fetch('/api/wrong/export/html')
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const html = await res.text()
-    if (!html.includes('paper-item')) {
+    if (!html.includes('exam-question-item') && !html.includes('paper-item')) {
       showToast('没有可导出的错题。', 'info')
       return
     }
     const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
     const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `错题卷-${new Date().toISOString().slice(0, 10)}.html`
-    a.click()
-    URL.revokeObjectURL(url)
-    showToast('错题卷已导出，可用浏览器打开后打印', 'success')
+    window.open(url, '_blank')
+    showToast('A4 双栏考场错题卷已生成，可直接在新窗口打印或存为 PDF', 'success')
   } catch (e) {
     showToast(`导出失败：${e}`, 'error')
   } finally {
