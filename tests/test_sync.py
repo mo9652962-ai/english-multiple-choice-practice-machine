@@ -9,6 +9,8 @@ from backend.app.main import app
 
 class LocalFirstSyncTests(unittest.TestCase):
     def setUp(self) -> None:
+        from backend.app.database import initialize_database
+        initialize_database()
         self.client = TestClient(app)
 
     def test_sync_status_endpoint(self) -> None:
@@ -22,7 +24,21 @@ class LocalFirstSyncTests(unittest.TestCase):
         with connect() as conn:
             q = conn.execute("SELECT id FROM questions LIMIT 1").fetchone()
             if not q:
-                self.skipTest("No questions in database")
+                conn.execute(
+                    "INSERT INTO papers (profile_id, year, title, status) VALUES (1, 2026, '测试同步试卷', 'published')"
+                )
+                paper_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO units (paper_id, unit_type, number, title) VALUES (?, 'reading', 1, 'Unit 1')",
+                    (paper_id,),
+                )
+                unit_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO questions (unit_id, number, stem, answer) VALUES (?, 1, 'Question 1', 'A')",
+                    (unit_id,),
+                )
+                conn.commit()
+                q = conn.execute("SELECT id FROM questions LIMIT 1").fetchone()
             qid = q["id"]
 
         payload = {

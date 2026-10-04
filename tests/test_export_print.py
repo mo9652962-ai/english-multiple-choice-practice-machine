@@ -16,6 +16,8 @@ from backend.app.services.exam_print import (
 
 class ExamPrintTests(unittest.TestCase):
     def setUp(self) -> None:
+        from backend.app.database import initialize_database
+        initialize_database()
         self.client = TestClient(app)
 
     def test_export_paper_print_html(self) -> None:
@@ -24,8 +26,22 @@ class ExamPrintTests(unittest.TestCase):
                 "SELECT id FROM papers WHERE deleted_at IS NULL LIMIT 1"
             ).fetchone()
             if not paper:
-                self.skipTest("No papers in seed database")
-            paper_id = paper["id"]
+                conn.execute(
+                    "INSERT INTO papers (profile_id, year, title, status) VALUES (1, 2026, '测试打印试卷', 'published')"
+                )
+                paper_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO units (paper_id, unit_type, number, title) VALUES (?, 'reading', 1, 'Unit 1')",
+                    (paper_id,),
+                )
+                unit_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO questions (unit_id, number, stem, answer) VALUES (?, 1, 'Question 1', 'A')",
+                    (unit_id,),
+                )
+                conn.commit()
+            else:
+                paper_id = paper["id"]
 
             html = generate_paper_print_html(conn, paper_id)
             self.assertIn("<!DOCTYPE html>", html)
@@ -40,8 +56,22 @@ class ExamPrintTests(unittest.TestCase):
                 "SELECT id FROM papers WHERE deleted_at IS NULL LIMIT 1"
             ).fetchone()
             if not paper:
-                self.skipTest("No papers in seed database")
-            paper_id = paper["id"]
+                conn.execute(
+                    "INSERT INTO papers (profile_id, year, title, status) VALUES (1, 2026, '测试打印试卷', 'published')"
+                )
+                paper_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO units (paper_id, unit_type, number, title) VALUES (?, 'reading', 1, 'Unit 1')",
+                    (paper_id,),
+                )
+                unit_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO questions (unit_id, number, stem, answer) VALUES (?, 1, 'Question 1', 'A')",
+                    (unit_id,),
+                )
+                conn.commit()
+            else:
+                paper_id = paper["id"]
 
         resp = self.client.get(f"/api/export/paper/{paper_id}/print")
         self.assertEqual(resp.status_code, 200)
@@ -53,7 +83,21 @@ class ExamPrintTests(unittest.TestCase):
         with connect() as conn:
             q_rows = conn.execute("SELECT id FROM questions LIMIT 3").fetchall()
             if not q_rows:
-                self.skipTest("No questions in seed database")
+                conn.execute(
+                    "INSERT INTO papers (profile_id, year, title, status) VALUES (1, 2026, '测试打印试卷', 'published')"
+                )
+                paper_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO units (paper_id, unit_type, number, title) VALUES (?, 'reading', 1, 'Unit 1')",
+                    (paper_id,),
+                )
+                unit_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+                conn.execute(
+                    "INSERT INTO questions (unit_id, number, stem, answer) VALUES (?, 1, 'Question 1', 'A')",
+                    (unit_id,),
+                )
+                conn.commit()
+                q_rows = conn.execute("SELECT id FROM questions LIMIT 3").fetchall()
             q_ids = [r["id"] for r in q_rows]
 
         resp = self.client.post(
