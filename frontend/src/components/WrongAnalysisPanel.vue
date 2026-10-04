@@ -24,9 +24,11 @@ import {
   Share2,
   Sparkles,
   Puzzle,
+  Play,
   Zap,
 } from 'lucide-vue-next'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { get, post } from '../api'
 import { showToast } from '../services/toast'
 import DonutChart from './charts/DonutChart.vue'
@@ -522,6 +524,32 @@ async function shareAnalysis() {
   }
 }
 
+const router = useRouter()
+
+async function startTargetedDrill(suggestion: Suggestion) {
+  vibrate(10)
+  try {
+    showToast(`正在生成「${suggestion.label}」针对性攻坚卷...`, 'info')
+    const unitType = suggestion.recommended_unit_types?.[0]
+    const payload: any = {
+      mode: 'random',
+      count: 5,
+      shuffle_options: true,
+    }
+    if (unitType) {
+      payload.unit_type = unitType
+    }
+    const session: any = await post('/practice/sessions', payload)
+    showToast(`已生成 ${suggestion.label} 5 题攻坚练习`, 'success')
+    closeSheet()
+    if (router && session?.id) {
+      router.push(`/practice/${session.id}`)
+    }
+  } catch (e) {
+    showToast(`攻坚卷生成失败：${e}`, 'error')
+  }
+}
+
 async function refresh() {
   await Promise.all([loadTrend(), loadKnowledgePoints(), loadHistory()])
 }
@@ -774,6 +802,16 @@ onBeforeUnmount(() => {
                     </ol>
                     <div v-if="suggestion.recommended_unit_types.length" class="wa-unit-types">
                       推荐题型：<span v-for="t in suggestion.recommended_unit_types" :key="t" class="wa-unit-chip">{{ t }}</span>
+                    </div>
+                    <div class="wa-drill-action" style="margin-top: 12px; display: flex; justify-content: flex-end;">
+                      <button
+                        type="button"
+                        class="button primary compact"
+                        style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer;"
+                        @click.stop="startTargetedDrill(suggestion)"
+                      >
+                        <Play :size="12" aria-hidden="true" /> 启动该项 5 题攻坚卷
+                      </button>
                     </div>
                   </div>
                 </article>

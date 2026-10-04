@@ -793,11 +793,11 @@ function handleWindowKeydown(event: KeyboardEvent) {
       }
     }
   }
-  // ←/→：上一题/下一题
-  if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+  // ←/→ / J/K：上一题/下一题（极速无鼠标键盘流）
+  if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key.toLowerCase() === 'j') {
     nextHighlighted()
     event.preventDefault()
-  } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+  } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp' || event.key.toLowerCase() === 'k') {
     prevHighlighted()
     event.preventDefault()
   } else if (event.key.toLowerCase() === 's') {
@@ -812,7 +812,10 @@ function nextHighlighted() {
   const ids = unit.questions.map((q: any) => q.id)
   const cur = highlightedQuestionId.value
   const idx = ids.indexOf(cur)
-  highlightedQuestionId.value = ids[Math.min(idx + 1, ids.length - 1)]
+  const targetId = ids[Math.min(idx + 1, ids.length - 1)]
+  highlightedQuestionId.value = targetId
+  const el = document.querySelector(`[data-question-id="${targetId}"]`)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
 }
 function prevHighlighted() {
   const unit = activeUnit.value
@@ -820,7 +823,10 @@ function prevHighlighted() {
   const ids = unit.questions.map((q: any) => q.id)
   const cur = highlightedQuestionId.value
   const idx = ids.indexOf(cur)
-  highlightedQuestionId.value = ids[Math.max(idx - 1, 0)]
+  const targetId = ids[Math.max(idx - 1, 0)]
+  highlightedQuestionId.value = targetId
+  const el = document.querySelector(`[data-question-id="${targetId}"]`)
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
 }
 
 async function select(question: any, key: string) {
