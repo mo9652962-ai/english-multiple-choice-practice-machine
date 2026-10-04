@@ -46,6 +46,8 @@ exports/
 .env
 .env.*
 !.env.example
+config.yaml
+**/config.yaml
 *.pem
 *.key
 *.p12
