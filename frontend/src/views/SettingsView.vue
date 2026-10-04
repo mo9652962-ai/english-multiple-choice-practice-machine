@@ -20,6 +20,22 @@ import { onMounted, reactive, ref } from 'vue'
 import { del, get, isOffline, post, put } from '../api'
 import { sound } from '../services/sound'
 import { localMetricsEnabled, setLocalMetricsEnabled, trackMetric } from '../services/metrics'
+import { triggerIncrementalSync, getLastSyncTime } from '../services/sync'
+
+const syncing = ref(false)
+const lastSyncTime = ref(getLastSyncTime())
+
+async function doSync() {
+  sound.tap()
+  if (syncing.value) return
+  syncing.value = true
+  try {
+    await triggerIncrementalSync()
+    lastSyncTime.value = getLastSyncTime()
+  } finally {
+    syncing.value = false
+  }
+}
 
 type AiModel = {
   model_id: string
@@ -695,6 +711,24 @@ async function submitFeedback() {
       <article class="card feedback-card">
         <div class="card-header"><h2>反馈建议</h2><p>遇到问题？有想法？3 秒告诉我们——帮助我们把墨题做得更好。</p></div>
         <button class="button" type="button" @click="fbOpen = true"><Mail :size="15" aria-hidden="true" />提交反馈</button>
+              </article>
+
+              <!-- Local-First 跨端增量同步卡片 -->
+              <article class="card">
+                <div class="card-header">
+                  <div>
+                    <span class="eyebrow">多端协同</span>
+                    <h2>跨端学习进度同步</h2>
+                    <p>在 Windows 桌面端、网页端与安卓手机端之间增量同步做题记录、FSRS 队列与错题本</p>
+                  </div>
+                  <button class="button secondary" type="button" :disabled="syncing" @click="doSync">
+                    <RefreshCw :size="16" :class="{ spinning: syncing }" />
+                    {{ syncing ? '正在对账…' : '立即双向同步' }}
+                  </button>
+                </div>
+                <div v-if="lastSyncTime" style="font-size: 12px; color: var(--muted); margin-top: 8px;">
+                  上次同步时间：{{ new Date(lastSyncTime).toLocaleString() }}
+                </div>
               </article>
 
               <!-- v3.3: 我的墨题——版本信息 + 检查更新入口 -->
