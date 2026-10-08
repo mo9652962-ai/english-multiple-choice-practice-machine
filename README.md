@@ -655,6 +655,14 @@ Android 原生插件模板位于 `frontend/native/android/`；干净构建完成
 
 ---
 
+## 📄 许可证、安全与隐私 (License, Security & Privacy)
+
+- **开源许可证**：[GNU GPL v3.0](LICENSE)
+- **安全政策**：[SECURITY.md](SECURITY.md)（凭据 DPAPI 加密、离线沙箱、漏洞上报）
+- **隐私保护**：[PRIVACY.md](PRIVACY.md)（100% 本地优先存储、数据归用户所有、零遥测）
+
+---
+
 ## 🧩 同作者的其他项目
 
 - 🛡 [agent-audit](https://github.com/mo9652962-ai/agent-audit) — AI Agent 环境安全审计 CLI（OpenSSF passing · GitHub Marketplace Action）
