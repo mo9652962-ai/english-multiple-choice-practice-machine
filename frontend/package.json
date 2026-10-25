@@ -28,7 +28,7 @@
     "@huggingface/transformers": "^4.3.1",
     "@types/three": "^0.186.0",
     "@xsai/generate-transcription": "^0.5.1",
-    "dompurify": "^3.4.16",
+    "dompurify": "^3.4.17",
     "lucide-vue-next": "^0.468.0",
     "sql.js": "^1.15.0",
     "three": "^0.186.1",
