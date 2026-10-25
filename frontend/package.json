@@ -30,7 +30,7 @@
     "@xsai/generate-transcription": "^0.5.1",
     "dompurify": "^3.4.17",
     "lucide-vue-next": "^0.468.0",
-    "sql.js": "^1.15.0",
+    "sql.js": "^1.15.1",
     "three": "^0.186.1",
     "vue": "^3.5.44",
     "vue-draggable-next": "^2.2.1",
