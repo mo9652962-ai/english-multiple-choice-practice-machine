@@ -22,7 +22,7 @@
     "@capacitor/android": "^8.5.0",
     "@capacitor/app": "^8.1.2",
     "@capacitor/cli": "^8.5.3",
-    "@capacitor/core": "^8.5.0",
+    "@capacitor/core": "^8.5.3",
     "@capacitor/filesystem": "^8.1.5",
     "@formkit/auto-animate": "^0.9.0",
     "@huggingface/transformers": "^4.3.1",
