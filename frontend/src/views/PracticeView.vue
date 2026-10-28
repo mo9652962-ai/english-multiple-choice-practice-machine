@@ -1290,7 +1290,7 @@ function openDeepExplain(questionId: number) {
       <div style="display:flex;align-items:center;gap:18px">
         <button class="button ghost" @click="router.push('/library')"><ArrowLeft :size="18" />退出</button>
         <div class="unit-tabs" v-if="session">
-          <button v-for="(unit, i) in session.units" :key="unit.id" class="unit-tab" :class="{active:i===activeUnitIndex,submitted:unit.submission?.submitted}" @click="switchUnit(i)">
+          <button v-for="(unit, i) in (session.units as any[])" :key="unit.id" class="unit-tab" :class="{active:i===activeUnitIndex,submitted:unit.submission?.submitted}" @click="switchUnit(i)">
             {{ unit.title }}<CheckCircle2 v-if="unit.submission?.submitted" :size="13" />
           </button>
         </div>
@@ -1683,7 +1683,7 @@ function openDeepExplain(questionId: number) {
           </div>
           <div class="unit-result-list" aria-label="各篇成绩">
             <button
-              v-for="unit in session.units"
+              v-for="unit in (session.units as any[])"
               :key="unit.id"
               type="button"
               class="unit-result-row"

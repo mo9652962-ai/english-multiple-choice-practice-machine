@@ -632,7 +632,7 @@ function analysisLabel(unitIds: number[]): string {
       </div>
       <div class="freq-grid">
         <button
-          v-for="(item, i) in wrongStats.top.slice(0, 5)" :key="item.id"
+          v-for="(item, i) in (wrongStats.top.slice(0, 5) as any[])" :key="item.id"
           class="freq-item scholar-edition" type="button" @click="redoQuestion(item.id)"
         >
           <span class="freq-rank">{{ i + 1 }}</span>
@@ -868,7 +868,7 @@ function analysisLabel(unitIds: number[]): string {
         <div v-for="(q, qi) in aiVariantsList" :key="qi" class="ai-variant-item">
           <div class="ai-variant-stem">{{ qi + 1 }}. {{ q.stem }}</div>
           <div v-if="q.options?.length" class="ai-variant-options">
-            <div v-for="(o, oi) in q.options" :key="oi" class="ai-variant-option">
+            <div v-for="(o, oi) in (q.options as any[])" :key="oi" class="ai-variant-option">
               <span class="ai-variant-key">{{ ['A','B','C','D'][oi] }}.</span> {{ o }}
             </div>
           </div>

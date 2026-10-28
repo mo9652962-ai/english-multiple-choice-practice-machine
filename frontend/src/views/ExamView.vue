@@ -297,7 +297,7 @@ onBeforeUnmount(() => {
           </button>
           <div class="exam-dots">
             <button
-              v-for="(q, i) in exam.questions"
+              v-for="(q, i) in (exam.questions as any[])"
               :key="q.id"
               class="exam-dot scholar-edition"
               :class="{ answered: q.answered, current: i === current }"

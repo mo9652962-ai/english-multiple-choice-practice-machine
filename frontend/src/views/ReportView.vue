@@ -176,7 +176,7 @@ const memoryCurvePoints = computed(() => {
           <div v-if="report?.vocabulary_trend?.length" class="memory-curve">
             <svg :viewBox="`0 0 ${Math.max(280, report.vocabulary_trend.length * 24)} 120`" preserveAspectRatio="none" class="memory-curve-svg">
               <polyline :points="memoryCurvePoints" fill="none" stroke="#486d5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-              <circle v-for="(p, i) in report.vocabulary_trend" :key="i" :cx="12 + i * 24" :cy="108 - (p.rate / 100) * 96" r="3" fill="#a4342a" :title="`${p.date} 认识率 ${p.rate}% (${p.total}次)`" />
+              <circle v-for="(p, i) in (report.vocabulary_trend as any[])" :key="i" :cx="12 + i * 24" :cy="108 - (p.rate / 100) * 96" r="3" fill="#a4342a" :title="`${p.date} 认识率 ${p.rate}% (${p.total}次)`" />
             </svg>
             <div class="memory-curve-legend"><span class="dot"></span>认识率（认识/模糊记作认识，忘记不计）</div>
           </div>
