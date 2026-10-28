@@ -20,6 +20,9 @@ jobs:
 
       - name: Enable auto-merge for Dependabot PRs
         if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        # 仓库未开启 "Allow auto-merge" 时 gh 会报错（enablePullRequestAutoMerge），
+        # 这只是便利步骤，不应让 Dependabot PR 的检查变红。
+        continue-on-error: true
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
