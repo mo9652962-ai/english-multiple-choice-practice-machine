@@ -22,7 +22,8 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "pip"
-    directory: "/backend"
+    # requirements.txt / requirements-dev.txt 位于仓库根目录（/backend 下没有依赖清单）
+    directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
