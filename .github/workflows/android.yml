@@ -145,17 +145,8 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           working-directory: frontend/android
-          script: |
-            set -u
-            evidence_dir="$GITHUB_WORKSPACE/android-emulator-evidence"
-            mkdir -p "$evidence_dir"
-            node "$GITHUB_WORKSPACE/tools/android_runtime_smoke.mjs" \
-              --apk "$GITHUB_WORKSPACE/frontend/android/app/build/outputs/apk/debug/app-debug.apk" \
-              --version-file "$GITHUB_WORKSPACE/VERSION" \
-              --evidence-dir "$evidence_dir" \
-              --extended-input \
-              --emulator-rotation \
-              --offline
+          # android-emulator-runner runs each script line in its own shell, so keep this to one line.
+          script: mkdir -p "$GITHUB_WORKSPACE/android-emulator-evidence" && node "$GITHUB_WORKSPACE/tools/android_runtime_smoke.mjs" --apk "$GITHUB_WORKSPACE/frontend/android/app/build/outputs/apk/debug/app-debug.apk" --version-file "$GITHUB_WORKSPACE/VERSION" --evidence-dir "$GITHUB_WORKSPACE/android-emulator-evidence" --extended-input --emulator-rotation --offline
       - name: Upload Android emulator evidence
         if: always()
         uses: actions/upload-artifact@v7
