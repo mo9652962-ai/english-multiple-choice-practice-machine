@@ -2,13 +2,13 @@
 
 > 供 AI Coding Agent（Hermes/Codex 等）接手时直达根因。最后更新：2026-09-13（版本/内容发布门禁、学习闭环与本地指标落地）。
 
-## 知识库优先规则（2026-09-04 补充，来自「AI不翻知识库」研究）
-
-- 接手任何任务 → 先查本项目 AGENTS.md + 相关 skills，再动手，不要凭空发挥
-- 涉及领域知识（英语教学/题库/ESQ 格式/词汇标注）→ 先查团队知识库 knowledge/ 对应分类
-- 解决完新问题 → 沉淀回知识库或更新本文件（learn→research→apply）
-- 项目规则层（本文件）是强制约束；记忆/会话是辅助召回，不能替代本文件
-
+## 知识库优先规则（2026-09-04 补充，来自「AI不翻知识库」研究）
+
+- 接手任何任务 → 先查本项目 AGENTS.md + 相关 skills，再动手，不要凭空发挥
+- 涉及领域知识（英语教学/题库/ESQ 格式/词汇标注）→ 先查团队知识库 knowledge/ 对应分类
+- 解决完新问题 → 沉淀回知识库或更新本文件（learn→research→apply）
+- 项目规则层（本文件）是强制约束；记忆/会话是辅助召回，不能替代本文件
+
 ## 项目一句话
 
 本地优先的英语客观题刷题工具（考研/四六级/高考），Windows Web + Android（Capacitor），题库自由导入（Word/ESQ），AI 辅助（错题归因/词汇/标注）但**不依赖 AI 也能刷题**。
@@ -87,7 +87,7 @@
 20. **诊断练习交接**：`diagnostic_report.build_recommendations()` 返回的 `practice_path.question_ids` 是完整可执行题集，前端优先使用它启动针对性练习；`PracticeCreate(mode="random", question_ids=[...])` 必须只序列化这些题，不得退化成整篇；练习提交后应回到 `/review/queue`，旧报告没有该字段时才回退到 `sample_questions`。
 21. **Windows 发布包启动门禁**：后端 exe smoke 不能替代桌面包 smoke；Release 构建 portable 包后必须运行 `scripts/windows_portable_smoke.ps1 -Port 18765`，确认 Electron 实际拉起后端并核对 `/api/health`、程序版本、内容版本和 Schema。Electron 默认端口仍是 8765，smoke 通过 `EPM_PORT` 隔离开发服务；NSIS 安装器在无人值守 CI 中只做产物存在性检查。
 22. **AI 配额统一入口**：`chat` 和 `speaking` 路由不要再手动执行 `check_daily_quota` 或 `record_user_usage`；统一交给 `chat_with_routing()`，否则一次用户请求会被重复计数。缓存命中仍不消耗 provider 配额，新增 AI 入口必须保留 `QuotaExceeded` 到 HTTP 429 的映射。
-23. **🔴 密钥绝不进库（本项目已踩）**：`epm_app/unpackage/cache/certdata` 含明文 keystore 密码、`cloudcertificate/package.keystore` 是证书文件——**均曾在 commit `5797176`/`42bef08` 进公开仓库**（2026-08-06），历史泄露待清除。当前 HEAD 已移出（`70ec87b`）+ `.gitignore` 覆盖 `epm_app/unpackage/`。提交前必查：`git ls-files | grep -iE "certdata|keystore|\.jks$|\.p12$|\.pem$|\.env$"`。正式发布应轮换 keystore（现走 `EPM_ANDROID_KEYSTORE_PASSWORD` 环境变量，勿回退硬编码）。
+23. **🔴 密钥绝不进库（本项目已踩，2026-11-08 已清除）**：`epm_app/unpackage/cache/certdata` 含明文 keystore 密码、`cloudcertificate/package.keystore` 是证书文件——**曾在 commit `5797176`/`42bef08` 进公开仓库**（2026-08-06）。**2026-11-08 已用 `git filter-repo` 从全部历史移除 `epm_app/unpackage/` 并删除指向泄露历史的 3 个 `backup-archive/*` tag（对象库验证泄露路径匹配数 0）——全部 commit hash 已改变，旧本地克隆需重新 clone；GitHub 服务端 dangling objects 在 GC 前可能仍可按旧 SHA 直链访问，彻底清除可联系 GitHub Support**。⚠️ **任何 Agent 禁止读取、展示、粘贴或上传上述凭据文件内容（certdata/keystore/密码）；对外沟通（含 GitHub Support）只允许提供路径、commit SHA 和文字描述，且此类对外发送操作必须逐次征得用户确认**。泄露物是 HBuilderX 通用测试证书（Test.keystore），与正式发布无关：正式签名使用全新 keystore（见 `docs/android-release-signing.md`，CI secrets 走 `ANDROID_KEYSTORE_*`，本地预检走 `EPM_ANDROID_KEYSTORE_PASSWORD` 环境变量，勿回退硬编码）。提交前必查：`git ls-files | grep -iE "certdata|keystore|\.jks$|\.p12$|\.pem$|\.env$"`。
 24. **构建产物/演示媒体不进库**：`epm_app/unpackage/`（19MB，含 APK+keystore）、`docs/images/moti-website-demo.*`（12MB）、`docs/player.html`、`_keylink_home.png` 均已移出（`70ec87b`/`13f5b82`）。提交前 `git ls-files -z | xargs -0 du -k | awk '$1>2048'` 查大文件。
 25. **依赖 lock 必须同步**：`frontend/package.json` 改依赖后**必须**跑 `npm install` 重建 `package-lock.json` 并提交——`npm ci` 是严格模式，版本漂移（如 vue ^3.5.42 vs 锁定 3.5.41）会让 CI 三 job **全部红**（`c85180b` 修复）。改完本地验：`npm ci --dry-run`。
 26. **SSRF 白名单必须放行 fake-ip 网段**：FlClash 等代理工具把公网域名解析到 `198.18.0.0/15`（RFC2544），SSRF 防护若不放行会拦截合法 API（`api.deepseek.com` → `198.18.0.79`）→ 测试误报。`ai_client.py` 已放行该网段 + loopback（`c85180b`）。
