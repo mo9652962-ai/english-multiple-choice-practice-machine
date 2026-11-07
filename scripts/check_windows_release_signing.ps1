@@ -3,6 +3,9 @@ param(
     [Parameter(Mandatory = $true)]
     [string[]]$Artifact,
     [switch]$RequirePublicCertificate,
+    # 显式未签名分发模式（repo variable EPM_WINDOWS_UNSIGNED_DISTRIBUTION=true 时启用）：
+    # 接受 NotSigned 产物并输出声明；仍拒绝损坏/无效签名状态。
+    [switch]$AllowUnsigned,
     [switch]$RequireCiVariables
 )
 
@@ -26,6 +29,13 @@ if ($RequireCiVariables) {
 foreach ($rawPath in $Artifact) {
     $resolvedPath = (Resolve-Path -LiteralPath $rawPath -ErrorAction Stop).Path
     $signature = Get-AuthenticodeSignature -LiteralPath $resolvedPath
+
+    if ($AllowUnsigned -and $signature.Status -eq 'NotSigned') {
+        Write-Output ("UNSIGNED DISTRIBUTION (explicit): path={0}; status=NotSigned" -f $resolvedPath)
+        Write-Output "This artifact carries no Authenticode signature. Source verification relies on the SHA-256 fingerprints in release-manifest.json."
+        continue
+    }
+
     if ($signature.Status -ne 'Valid') {
         throw "Unsigned or invalid Windows artifact: $resolvedPath (status=$($signature.Status))"
     }

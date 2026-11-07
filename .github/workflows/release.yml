@@ -95,7 +95,10 @@ jobs:
         run: npm ci
         working-directory: electron
       - name: Require Windows signing inputs for tagged release
-        if: startsWith(github.ref, 'refs/tags/')
+        # Fail-closed 默认：tag 发布必须有正式代码签名证书。
+        # 豁免通道：repo variable EPM_WINDOWS_UNSIGNED_DISTRIBUTION=true 时跳过，
+        # 产物以未签名状态发布并在 Release notes 中声明（见 Verify/Publish 步骤）。
+        if: startsWith(github.ref, 'refs/tags/') && vars.EPM_WINDOWS_UNSIGNED_DISTRIBUTION != 'true'
         shell: pwsh
         env:
           CSC_LINK: ${{ secrets.WINDOWS_CSC_LINK }}
@@ -126,18 +129,23 @@ jobs:
           }
           .\scripts\windows_portable_smoke.ps1 -Executable "electron\dist\epm-portable-$version.exe" -Port 18765
 
-      - name: Verify signed Windows artifacts
+      - name: Verify Windows artifacts signature state
         if: startsWith(github.ref, 'refs/tags/')
         shell: pwsh
+        env:
+          EPM_UNSIGNED_DISTRIBUTION: ${{ vars.EPM_WINDOWS_UNSIGNED_DISTRIBUTION }}
         run: |
           $version = (Get-Content -LiteralPath VERSION -Raw).Trim()
           $artifacts = @(
             "electron/dist/epm-setup-$version.exe",
             "electron/dist/epm-portable-$version.exe"
           )
-          .\scripts\check_windows_release_signing.ps1 `
-            -Artifact $artifacts `
-            -RequirePublicCertificate
+          if ($env:EPM_UNSIGNED_DISTRIBUTION -eq 'true') {
+            .\scripts\check_windows_release_signing.ps1 -Artifact $artifacts -AllowUnsigned
+          }
+          else {
+            .\scripts\check_windows_release_signing.ps1 -Artifact $artifacts -RequirePublicCertificate
+          }
 
       - name: Verify release artifacts
         shell: pwsh
@@ -172,6 +180,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         env:
           GH_TOKEN: ${{ github.token }}
+          EPM_UNSIGNED_DISTRIBUTION: ${{ vars.EPM_WINDOWS_UNSIGNED_DISTRIBUTION }}
         shell: pwsh
         run: |
           $version = (Get-Content -LiteralPath VERSION -Raw).Trim()
@@ -195,6 +204,15 @@ jobs:
 
           详细校验结果见随发布附带的 `release-manifest.json`。
           "@ | Set-Content -LiteralPath release-notes.md -Encoding utf8
+          if ($env:EPM_UNSIGNED_DISTRIBUTION -eq 'true') {
+            Add-Content -LiteralPath release-notes.md -Encoding utf8 -Value @"
+
+          ---
+
+          > ⚠️ **未签名安装包**：本 Windows 包未附带代码签名证书（项目尚未购买正式证书）。首次运行可能触发 SmartScreen「未知发布者」提示，请选择「仍要运行」。
+          > 来源校验请以随发布附带的 `release-manifest.json` 中各产物的 SHA-256 指纹为准。
+          "@
+          }
           $assets = @(
             "electron/dist/epm-setup-$version.exe",
             "electron/dist/epm-setup-$version.exe.blockmap",
