@@ -40,6 +40,6 @@ cd frontend && npm ci && npm run build && cd ..
 
 ## Optional
 
-- [Release v2.2.0](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases): Windows NSIS 安装包与便携版
+- [Release v2.3.0](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/releases): Windows NSIS 安装包与便携版
 - [GitHub Discussions](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/discussions): 社区讨论、功能建议
 - [问题追踪](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine/issues): Bug 报告与功能请求

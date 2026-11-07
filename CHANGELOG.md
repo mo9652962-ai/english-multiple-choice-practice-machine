@@ -2,6 +2,16 @@
 
 本项目遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范。
 
+## [2.3.0] - 2026-11-08
+
+### 🔐 分发收口（可负责分发）
+
+- **Android 正式签名工程**：新增 `scripts/setup_android_keystore.ps1`（keytool 生成 RSA 4096 / 11000 天 keystore 至仓库外，密码交互输入不落盘，自动调用 `check_android_release_signing.ps1` 预检并支持一键 `gh secret set` 配置 4 个 CI secrets）；完整签名/secrets/轮换指南见 `docs/android-release-signing.md`。
+- **Windows 未签名分发豁免通道（fail-closed）**：`release.yml` 支持 repo variable `EPM_WINDOWS_UNSIGNED_DISTRIBUTION=true` 时跳过正式证书强制门禁，以 `check_windows_release_signing.ps1 -AllowUnsigned` 显式确认未签名状态并在 Release notes 自动追加未签名声明与 SHA-256 校验指引；variable 未设置时行为与旧版完全一致。清理 `electron/package.json` 中过期自签名证书指纹（签名统一由 CI CSC_* secrets 控制）。
+- **git 历史密钥泄露清除**：使用 `git filter-repo` 从全部历史移除 `epm_app/unpackage/`（HBuilderX 云打包证书配置，commit `42bef08`/`5797176`），删除指向泄露历史的 3 个 `backup-archive/*` tag；对象库验证泄露路径匹配数为 0。**历史 hash 已全部改变，需重新 clone**。
+- **真机验收如实记录**：新增 `docs/android-device-acceptance-evidence.md`（11 项验收清单模板）；当前无可用真机，CI 模拟器矩阵（API 36 extended-input/rotation/offline）继续作为移动端自动化验收基线，真机项保持未勾选。
+- **版本推进**：程序版本 2.3.0（内容/离线种子版本保持 `r4`，本版无内容变更）。
+
 ## [2.2.0] - 2026-09-23
 
 ### 🚀 架构升维与多端基准

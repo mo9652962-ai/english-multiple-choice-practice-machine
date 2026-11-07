@@ -21,7 +21,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows--Web--Android-2563EB?style=flat-square" alt="Windows/Web/Android">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.2.0-2563EB?style=flat-square" alt="v2.2.0">
+    <img src="https://img.shields.io/badge/status-v2.3.0-2563EB?style=flat-square" alt="v2.3.0">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -101,7 +101,7 @@ Random practice selects complete units, options can be shuffled before each atte
 
 > Even with a limited set of questions, every new attempt should require reading, reasoning, and answering again—not simply recalling the correct option.
 
-The project is now `v2.2.0` (2026-09-23). The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, FSRS-based vocabulary review, 3D website, organization workspace with health checks, dynamic paper generation, anti-cheat event logging, and certificate verification are available. Public GitHub Actions CI, NSIS/portable Windows artifacts, and Android debug build gates are part of the release workflow. Bundled question-bank content is our own AI-simulated, non-real-exam material; question-bank text remains separately licensed and personal databases are never tracked.
+The project is now `v2.3.0` (2026-11-08). The main practice, wrong-answer, vocabulary, AI-assistant, model-assisted import, ESQ sharing workflows, learning heatmap, check-in posters, FSRS-based vocabulary review, 3D website, organization workspace with health checks, dynamic paper generation, anti-cheat event logging, and certificate verification are available. Public GitHub Actions CI, NSIS/portable Windows artifacts, and Android debug build gates are part of the release workflow. Bundled question-bank content is our own AI-simulated, non-real-exam material; question-bank text remains separately licensed and personal databases are never tracked.
 
 ## Feature overview
 
@@ -476,7 +476,7 @@ Core workflows already available:
 - Postgraduate English II, CET objective formats, Gaokao/TEM-4/TEM-8 import templates, and ESQ 1.1 sharing
 - GPL-3.0-only code license and author metadata
 
-Release checklist completed for v2.2.0:
+Release checklist completed for v2.3.0:
 
 - Public GitHub Actions CI with backend/frontend and repository-hygiene gates.
 - `CONTRIBUTING.md`, `SECURITY.md`, and issue/PR templates.

@@ -100,8 +100,8 @@
 - [x] 程序/内容/离线版本与数据库指纹进入统一发布清单。
 - [x] Windows 安装包、portable、Web 静态包和 Android 构建具备自动化检查；Android CI 还包含输入、旋转和断网启动 smoke。
 - [x] 后端学习闭环和离线迁移有自动化回归。
-- [ ] 至少一台真实 Android 设备完成触控、离线、重启和迁移验收。
-- [ ] Windows/APK 正式分发签名、密钥保管和回滚记录完成；当前未签名 Windows 包和调试 APK 不等同于公开发行包。
+- [ ] 至少一台真实 Android 设备完成触控、离线、重启和迁移验收。**（2026-11-08 修订：当前无可用真机，11 项验收清单与状态如实记录于 `docs/android-device-acceptance-evidence.md`；CI 模拟器矩阵继续作为自动化基线，设备可用时逐项执行回填。本项保持未完成。）**
+- [ ] Windows/APK 正式分发签名、密钥保管和回滚记录完成；当前未签名 Windows 包和调试 APK 不等同于公开发行包。**（2026-11-08 修订：签名工程已完成——Android 链路见 `docs/android-release-signing.md`（keystore 生成工具 + 4 secrets，材料配置为一次性人工操作，未完成前 tag 的 Android job 会按设计失败），Windows 支持 `EPM_WINDOWS_UNSIGNED_DISTRIBUTION` 显式豁免发布未签名包并在 Release notes 声明；keystore 历史泄露已清除。工程就绪但 secrets/材料配置未完成前，本项保持未完成。）**
 
 ## 本阶段不做的事情
 

@@ -1,8 +1,8 @@
 {
   "manifest_version": 1,
   "metadata": {
-    "version": "2.2.0",
-    "release_date": "2026-09-23",
+    "version": "2.3.0",
+    "release_date": "2026-11-08",
     "content_version": "content-2026-09-20-r4",
     "offline_seed_version": "offline-2026-09-20-r4",
     "schema_version": 2

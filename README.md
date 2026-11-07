@@ -23,7 +23,7 @@
   <p>
     <img src="https://img.shields.io/badge/platform-Windows--web--Android-2563EB?style=flat-square" alt="Windows/Web/Android">
     <img src="https://img.shields.io/badge/privacy-local--first-16A34A?style=flat-square" alt="Local first">
-    <img src="https://img.shields.io/badge/status-v2.2.0-2563EB?style=flat-square" alt="v2.2.0">
+    <img src="https://img.shields.io/badge/status-v2.3.0-2563EB?style=flat-square" alt="v2.3.0">
     <img src="https://img.shields.io/badge/license-GPL--3.0--only-7C3AED?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
@@ -108,9 +108,9 @@ AI 不只是普通聊天入口，还可以辅助完成错题归因与学习诊�
 
 > 我们希望即使题目数量有限，每一次重新练习仍然需要理解文章、判断逻辑和重新作答，而不是把反复刷题变成机械地背答案。
 
-项目当前为 `v2.2.0`（2026-09-23）。核心刷题与复习链路、公开 GitHub Actions CI、Windows NSIS 安装包、portable 便携版和 Android debug 构建门禁均已纳入持续验证流程；题库导入支持 CET-4/CET-6、高考英语、英语专业四级和英语专业八级模板。题库正文仍按来源和授权独立管理，不把个人数据库提交到 GitHub。
+项目当前为 `v2.3.0`（2026-11-08）。核心刷题与复习链路、公开 GitHub Actions CI、Windows NSIS 安装包、portable 便携版和 Android debug 构建门禁均已纳入持续验证流程；题库导入支持 CET-4/CET-6、高考英语、英语专业四级和英语专业八级模板。题库正文仍按来源和授权独立管理，不把个人数据库提交到 GitHub。
 
-在 **v2.2.0** 架构中，项目全面整合了 **3D 水墨沉浸式官网生态**、**组织工作区（Organization Workspace + 健康检查）**、**动态组卷（按题型×数量精准抽题）**、**防作弊事件记录**与**考试达标发证系统**，并在全端落实了严格的无感知本地优先与数据隔离机制。
+在 **v2.3.0** 架构中，项目全面整合了 **3D 水墨沉浸式官网生态**、**组织工作区（Organization Workspace + 健康检查）**、**动态组卷（按题型×数量精准抽题）**、**防作弊事件记录**与**考试达标发证系统**，并在全端落实了严格的无感知本地优先与数据隔离机制。
 
 **当前内置数据**：12 套项目自建 AI 模拟卷、180 道客观题 + **7,959 个全类别核心词汇**（高中 666 / 四级 825 / 六级 1,305 / 考研 5,163——7,951 词带音标，全部含中文释义与语境义）。
 
@@ -476,7 +476,7 @@ node tools/check_offline_runtime.mjs frontend/dist/offline_migrations.json
 
 后一个检查会验证旧版 `spaced_repetition_records` 能补齐 FSRS 字段，并验证新库不会重复执行 `ADD COLUMN`。
 
-已有安装包时可重复传入 `-Artifact electron\dist\epm-setup-2.2.0.exe -Artifact electron\dist\epm-portable-2.2.0.exe`，将文件大小和 SHA-256 一并写入发布清单。
+已有安装包时可重复传入 `-Artifact electron\dist\epm-setup-2.3.0.exe -Artifact electron\dist\epm-portable-2.3.0.exe`，将文件大小和 SHA-256 一并写入发布清单。
 
 Android 本地构建前可运行 `.\scripts\android_preflight.ps1` 检查 Node.js 22+、JDK 21、Android SDK 36 和 Capacitor/Gradle 生成目录；CI 会显式安装 Android SDK 36、Build Tools 36.0.0 和 Emulator。干净 CI checkout 会先执行 `npx cap add android`，同步 Web 资源和 `VERSION`，构建 debug APK，并在 Android Emulator 中安装、启动和检查应用进程。Android 发布清单使用 `--offline-only`，记录 APK 对应离线库的 SHA-256、声明 Schema、物理迁移版本和题目/词汇计数。
 
@@ -575,7 +575,7 @@ npm run build
 
 ## 当前状态与路线图
 
-截至 `2.2.0`（2026-09-23），程序、内容和离线种子已经使用统一版本元数据与发布清单；下一阶段的执行优先级、发布门槛和未完成事项见 [下一阶段执行路线图](docs/next-phase-roadmap-2026-09-13.md)。当前公开库只包含项目自建、明确标注为“AI 模拟·非真题”的题包，provenance 与结构质量门禁已通过；旧考研回忆版/本地导出包保持 `local-only`，不得公开分发。Windows 公共签名、Android release keystore、真实设备运行验收和正式发布目标仍未完成，因此当前只能作为内部候选版本。
+截至 `2.3.0`（2026-11-08），程序、内容和离线种子已经使用统一版本元数据与发布清单；下一阶段的执行优先级、发布门槛和未完成事项见 [下一阶段执行路线图](docs/next-phase-roadmap-2026-09-13.md)。当前公开库只包含项目自建、明确标注为“AI 模拟·非真题”的题包，provenance 与结构质量门禁已通过；旧考研回忆版/本地导出包保持 `local-only`，不得公开分发。v2.3.0 已完成分发收口工程：Android release 签名链路（keystore 生成工具 + CI secrets 门禁 + apksigner 验签）、Windows 未签名分发的显式豁免通道（EPM_WINDOWS_UNSIGNED_DISTRIBUTION，fail-closed 默认）、git 历史密钥泄露清除与真机验收记录模板（docs/android-device-acceptance-evidence.md）；正式发布仍需配置签名 secrets 并完成真机验收（docs/android-release-signing.md）。
 
 已完成的核心链路：
 
