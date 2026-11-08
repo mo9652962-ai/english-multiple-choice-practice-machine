@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/sql.js": "^1.4.11",
-    "@vitejs/plugin-legacy": "^8.2.3",
+    "@vitejs/plugin-legacy": "^8.2.4",
     "@vitejs/plugin-vue": "^6.0.10",
     "terser": "^5.49.2",
     "typescript": "^5.7.2",
