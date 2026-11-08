@@ -24,7 +24,7 @@
     "@capacitor/cli": "^8.5.2",
     "@capacitor/core": "^8.6.0",
     "@capacitor/filesystem": "^8.1.2",
-    "@formkit/auto-animate": "^0.9.0",
+    "@formkit/auto-animate": "^0.10.1",
     "@huggingface/transformers": "^4.2.0",
     "@types/three": "^0.187.0",
     "@xsai/generate-transcription": "^0.5.1",
