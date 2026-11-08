@@ -73,3 +73,6 @@ _keylink_home.png
 docs/images/moti-website-demo.*
 docs/player.html
 .zcodeignore
+
+# 本地 agent 工具工作区（含签名/证书排查笔记，禁止入库）
+.zcode/
