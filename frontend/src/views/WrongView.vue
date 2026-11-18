@@ -635,7 +635,7 @@ function analysisLabel(unitIds: number[]): string {
           v-for="(item, i) in wrongStats.top.slice(0, 5)" :key="item.id"
           class="freq-item scholar-edition" type="button" @click="redoQuestion(item.id)"
         >
-          <span class="freq-rank">{{ i + 1 }}</span>
+          <span class="freq-rank">{{ Number(i) + 1 }}</span>
           <span class="freq-body">
             <span class="freq-stem">{{ item.stem }}</span>
             <span class="freq-meta">
@@ -869,7 +869,7 @@ function analysisLabel(unitIds: number[]): string {
           <div class="ai-variant-stem">{{ qi + 1 }}. {{ q.stem }}</div>
           <div v-if="q.options?.length" class="ai-variant-options">
             <div v-for="(o, oi) in q.options" :key="oi" class="ai-variant-option">
-              <span class="ai-variant-key">{{ ['A','B','C','D'][oi] }}.</span> {{ o }}
+              <span class="ai-variant-key">{{ ['A','B','C','D'][Number(oi)] }}.</span> {{ o }}
             </div>
           </div>
           <div class="ai-variant-answer">答案：{{ q.answer || '见解析' }}</div>

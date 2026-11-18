@@ -36,7 +36,7 @@
               <h4><Route :size="14" aria-hidden="true" />解题路径</h4>
               <ol class="solution-steps">
                 <li v-for="(s, i) in data.solution_steps" :key="i">
-                  <span class="step-num">{{ i + 1 }}</span>{{ s }}
+                  <span class="step-num">{{ Number(i) + 1 }}</span>{{ s }}
                 </li>
               </ol>
             </div>
