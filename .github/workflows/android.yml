@@ -38,6 +38,10 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
         working-directory: frontend
+        env:
+          # onnxruntime-node (via xsai-transformers) downloads CUDA EP binaries on linux-x64;
+          # the v1.21.0 GPU tarball now 404s and the app never uses CUDA.
+          ONNXRUNTIME_NODE_INSTALL_CUDA: skip
       - name: Install or require verified release content inputs
         shell: bash
         env:
