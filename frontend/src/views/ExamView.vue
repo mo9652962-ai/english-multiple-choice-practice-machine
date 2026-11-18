@@ -301,9 +301,9 @@ onBeforeUnmount(() => {
               :key="q.id"
               class="exam-dot scholar-edition"
               :class="{ answered: q.answered, current: i === current }"
-              @click="go(i)"
+              @click="go(Number(i))"
             >
-              {{ i + 1 }}
+              {{ Number(i) + 1 }}
             </button>
           </div>
           <button class="button ghost" :disabled="current >= exam.questions.length - 1" @click="go(current + 1)">

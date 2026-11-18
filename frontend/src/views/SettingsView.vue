@@ -565,12 +565,12 @@ async function submitFeedback() {
           <div style="font-size:12px;color:var(--muted);margin-bottom:4px">任务类型分布</div>
           <svg :viewBox="'0 0 ' + usageBarWidth + ' 24'" width="100%" height="24" style="border-radius:6px;overflow:hidden;border:1px solid #E8E0D2">
             <rect v-for="(d, i) in usage.distribution" :key="i"
-                  :x="usageBarOffset(i)" y="0" :width="usageBarWidth * d.percent / 100" height="24"
-                  :fill="usageColors[i % usageColors.length]" />
+                  :x="usageBarOffset(Number(i))" y="0" :width="usageBarWidth * d.percent / 100" height="24"
+                  :fill="usageColors[Number(i) % usageColors.length]" />
           </svg>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:11px;color:var(--muted)">
             <span v-for="(d, i) in usage.distribution" :key="i">
-              <span :style="{ display:'inline-block', width:8, height:8, borderRadius:2, background: usageColors[i % usageColors.length], marginRight: 3 }"></span>
+              <span :style="{ display:'inline-block', width:8, height:8, borderRadius:2, background: usageColors[Number(i) % usageColors.length], marginRight: 3 }"></span>
               {{ usageTaskLabel(d.task) }} {{ d.percent }}%
             </span>
             <span v-if="!usage.distribution.length">本月暂无 AI 调用记录</span>
