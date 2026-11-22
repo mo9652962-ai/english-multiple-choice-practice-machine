@@ -23,7 +23,7 @@
     "@capacitor/app": "^8.1.2",
     "@capacitor/cli": "^8.6.2",
     "@capacitor/core": "^8.6.0",
-    "@capacitor/filesystem": "^8.1.2",
+    "@capacitor/filesystem": "^8.1.5",
     "@formkit/auto-animate": "^0.10.2",
     "@huggingface/transformers": "^4.2.0",
     "@types/three": "^0.187.0",
